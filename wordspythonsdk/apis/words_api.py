@@ -39,7 +39,7 @@ from wordspythonsdk.api_client import ApiClient
 class WordsApi(object):
     """
     Aspose.Words for Cloud API
-    
+
     :param api_client: an api client to perfom http requests
     """
     def __init__(self, api_client=None):
@@ -69,10 +69,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.accept_all_revisions_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.accept_all_revisions_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.accept_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.accept_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def accept_all_revisions_with_http_info(self, request, **kwargs):  # noqa: E501
         """Accept all revisions in document  # noqa: E501
@@ -103,7 +102,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `accept_all_revisions`")  # noqa: E501
 
         collection_formats = {}
@@ -174,10 +173,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.classify_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.classify_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.classify_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.classify_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def classify_with_http_info(self, request, **kwargs):  # noqa: E501
         """Classify raw text.  # noqa: E501
@@ -208,7 +206,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'text' is set
-        if (request.text is None):
+        if request.text is None:
             raise ValueError("Missing the required parameter `text` when calling `classify`")  # noqa: E501
 
         collection_formats = {}
@@ -275,10 +273,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.classify_document_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.classify_document_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.classify_document_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.classify_document_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def classify_document_with_http_info(self, request, **kwargs):  # noqa: E501
         """Classify document.  # noqa: E501
@@ -309,7 +306,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'document_name' is set
-        if (request.document_name is None):
+        if request.document_name is None:
             raise ValueError("Missing the required parameter `document_name` when calling `classify_document`")  # noqa: E501
 
         collection_formats = {}
@@ -388,10 +385,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.create_or_update_document_property_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.create_or_update_document_property_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.create_or_update_document_property_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.create_or_update_document_property_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def create_or_update_document_property_with_http_info(self, request, **kwargs):  # noqa: E501
         """Add new or update existing document property.  # noqa: E501
@@ -422,13 +418,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `create_or_update_document_property`")  # noqa: E501
         # verify the required parameter 'property_name' is set
-        if (request.property_name is None):
+        if request.property_name is None:
             raise ValueError("Missing the required parameter `property_name` when calling `create_or_update_document_property`")  # noqa: E501
         # verify the required parameter '_property' is set
-        if (request._property is None):
+        if request._property is None:
             raise ValueError("Missing the required parameter `_property` when calling `create_or_update_document_property`")  # noqa: E501
 
         collection_formats = {}
@@ -516,10 +512,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_border_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_border_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.delete_border_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.delete_border_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def delete_border_with_http_info(self, request, **kwargs):  # noqa: E501
         """Resets border properties to default values.               # noqa: E501
@@ -551,13 +546,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_border`")  # noqa: E501
         # verify the required parameter 'node_path' is set
-        if (request.node_path is None):
+        if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `delete_border`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_border`")  # noqa: E501
 
         collection_formats = {}
@@ -644,10 +639,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_borders_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_borders_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.delete_borders_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.delete_borders_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def delete_borders_with_http_info(self, request, **kwargs):  # noqa: E501
         """Resets borders properties to default values.               # noqa: E501
@@ -679,10 +673,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_borders`")  # noqa: E501
         # verify the required parameter 'node_path' is set
-        if (request.node_path is None):
+        if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `delete_borders`")  # noqa: E501
 
         collection_formats = {}
@@ -766,10 +760,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_comment_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_comment_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.delete_comment_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.delete_comment_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def delete_comment_with_http_info(self, request, **kwargs):  # noqa: E501
         """Remove comment from document.  # noqa: E501
@@ -800,10 +793,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_comment`")  # noqa: E501
         # verify the required parameter 'comment_index' is set
-        if (request.comment_index is None):
+        if request.comment_index is None:
             raise ValueError("Missing the required parameter `comment_index` when calling `delete_comment`")  # noqa: E501
 
         collection_formats = {}
@@ -886,10 +879,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_document_macros_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_document_macros_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.delete_document_macros_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.delete_document_macros_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def delete_document_macros_with_http_info(self, request, **kwargs):  # noqa: E501
         """Remove macros from document.  # noqa: E501
@@ -920,7 +912,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_document_macros`")  # noqa: E501
 
         collection_formats = {}
@@ -1002,10 +994,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_document_property_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_document_property_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.delete_document_property_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.delete_document_property_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def delete_document_property_with_http_info(self, request, **kwargs):  # noqa: E501
         """Delete document property.  # noqa: E501
@@ -1036,10 +1027,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_document_property`")  # noqa: E501
         # verify the required parameter 'property_name' is set
-        if (request.property_name is None):
+        if request.property_name is None:
             raise ValueError("Missing the required parameter `property_name` when calling `delete_document_property`")  # noqa: E501
 
         collection_formats = {}
@@ -1122,10 +1113,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_document_watermark_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_document_watermark_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.delete_document_watermark_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.delete_document_watermark_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def delete_document_watermark_with_http_info(self, request, **kwargs):  # noqa: E501
         """Delete watermark (for deleting last watermark from the document).  # noqa: E501
@@ -1156,7 +1146,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_document_watermark`")  # noqa: E501
 
         collection_formats = {}
@@ -1239,10 +1229,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_drawing_object_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_drawing_object_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.delete_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.delete_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def delete_drawing_object_with_http_info(self, request, **kwargs):  # noqa: E501
         """Removes drawing object from document.  # noqa: E501
@@ -1273,10 +1262,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_drawing_object`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_drawing_object`")  # noqa: E501
 
         collection_formats = {}
@@ -1363,10 +1352,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_field_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_field_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.delete_field_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.delete_field_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def delete_field_with_http_info(self, request, **kwargs):  # noqa: E501
         """Delete field from document.  # noqa: E501
@@ -1397,10 +1385,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_field`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_field`")  # noqa: E501
 
         collection_formats = {}
@@ -1486,10 +1474,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_fields_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_fields_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.delete_fields_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.delete_fields_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def delete_fields_with_http_info(self, request, **kwargs):  # noqa: E501
         """Remove fields from section paragraph.  # noqa: E501
@@ -1520,7 +1507,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_fields`")  # noqa: E501
 
         collection_formats = {}
@@ -1605,10 +1592,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_footnote_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_footnote_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.delete_footnote_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.delete_footnote_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def delete_footnote_with_http_info(self, request, **kwargs):  # noqa: E501
         """Removes footnote from document.  # noqa: E501
@@ -1639,10 +1625,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_footnote`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_footnote`")  # noqa: E501
 
         collection_formats = {}
@@ -1729,10 +1715,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_form_field_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_form_field_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.delete_form_field_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.delete_form_field_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def delete_form_field_with_http_info(self, request, **kwargs):  # noqa: E501
         """Removes form field from document.  # noqa: E501
@@ -1763,10 +1748,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_form_field`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_form_field`")  # noqa: E501
 
         collection_formats = {}
@@ -1853,10 +1838,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_header_footer_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_header_footer_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.delete_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.delete_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def delete_header_footer_with_http_info(self, request, **kwargs):  # noqa: E501
         """Delete header/footer from document.  # noqa: E501
@@ -1887,10 +1871,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_header_footer`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_header_footer`")  # noqa: E501
 
         collection_formats = {}
@@ -1977,10 +1961,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_headers_footers_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_headers_footers_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.delete_headers_footers_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.delete_headers_footers_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def delete_headers_footers_with_http_info(self, request, **kwargs):  # noqa: E501
         """Delete document headers and footers.  # noqa: E501
@@ -2011,7 +1994,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_headers_footers`")  # noqa: E501
 
         collection_formats = {}
@@ -2098,10 +2081,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_office_math_object_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_office_math_object_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.delete_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.delete_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def delete_office_math_object_with_http_info(self, request, **kwargs):  # noqa: E501
         """Removes OfficeMath object from document.  # noqa: E501
@@ -2132,10 +2114,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_office_math_object`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_office_math_object`")  # noqa: E501
 
         collection_formats = {}
@@ -2222,10 +2204,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_paragraph_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_paragraph_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.delete_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.delete_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def delete_paragraph_with_http_info(self, request, **kwargs):  # noqa: E501
         """Remove paragraph from section.  # noqa: E501
@@ -2256,10 +2237,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_paragraph`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_paragraph`")  # noqa: E501
 
         collection_formats = {}
@@ -2346,10 +2327,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_run_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_run_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.delete_run_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.delete_run_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def delete_run_with_http_info(self, request, **kwargs):  # noqa: E501
         """Removes run from document.  # noqa: E501
@@ -2380,13 +2360,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_run`")  # noqa: E501
         # verify the required parameter 'paragraph_path' is set
-        if (request.paragraph_path is None):
+        if request.paragraph_path is None:
             raise ValueError("Missing the required parameter `paragraph_path` when calling `delete_run`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_run`")  # noqa: E501
 
         collection_formats = {}
@@ -2473,10 +2453,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_table_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_table_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.delete_table_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.delete_table_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def delete_table_with_http_info(self, request, **kwargs):  # noqa: E501
         """Delete a table.  # noqa: E501
@@ -2507,10 +2486,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_table`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_table`")  # noqa: E501
 
         collection_formats = {}
@@ -2597,10 +2576,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_table_cell_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_table_cell_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.delete_table_cell_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.delete_table_cell_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def delete_table_cell_with_http_info(self, request, **kwargs):  # noqa: E501
         """Delete a table cell.  # noqa: E501
@@ -2631,13 +2609,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_table_cell`")  # noqa: E501
         # verify the required parameter 'table_row_path' is set
-        if (request.table_row_path is None):
+        if request.table_row_path is None:
             raise ValueError("Missing the required parameter `table_row_path` when calling `delete_table_cell`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_table_cell`")  # noqa: E501
 
         collection_formats = {}
@@ -2724,10 +2702,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_table_row_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_table_row_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.delete_table_row_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.delete_table_row_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def delete_table_row_with_http_info(self, request, **kwargs):  # noqa: E501
         """Delete a table row.  # noqa: E501
@@ -2758,13 +2735,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_table_row`")  # noqa: E501
         # verify the required parameter 'table_path' is set
-        if (request.table_path is None):
+        if request.table_path is None:
             raise ValueError("Missing the required parameter `table_path` when calling `delete_table_row`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_table_row`")  # noqa: E501
 
         collection_formats = {}
@@ -2848,10 +2825,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_unprotect_document_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_unprotect_document_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.delete_unprotect_document_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.delete_unprotect_document_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def delete_unprotect_document_with_http_info(self, request, **kwargs):  # noqa: E501
         """Unprotect document.  # noqa: E501
@@ -2882,10 +2858,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_unprotect_document`")  # noqa: E501
         # verify the required parameter 'protection_request' is set
-        if (request.protection_request is None):
+        if request.protection_request is None:
             raise ValueError("Missing the required parameter `protection_request` when calling `delete_unprotect_document`")  # noqa: E501
 
         collection_formats = {}
@@ -2964,10 +2940,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_border_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_border_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_border_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_border_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_border_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a border.  # noqa: E501
@@ -2999,13 +2974,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_border`")  # noqa: E501
         # verify the required parameter 'node_path' is set
-        if (request.node_path is None):
+        if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `get_border`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_border`")  # noqa: E501
 
         collection_formats = {}
@@ -3083,10 +3058,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_borders_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_borders_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_borders_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_borders_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_borders_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a collection of borders.  # noqa: E501
@@ -3118,10 +3092,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_borders`")  # noqa: E501
         # verify the required parameter 'node_path' is set
-        if (request.node_path is None):
+        if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `get_borders`")  # noqa: E501
 
         collection_formats = {}
@@ -3196,10 +3170,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_comment_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_comment_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_comment_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_comment_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_comment_with_http_info(self, request, **kwargs):  # noqa: E501
         """Get comment from document.  # noqa: E501
@@ -3230,10 +3203,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_comment`")  # noqa: E501
         # verify the required parameter 'comment_index' is set
-        if (request.comment_index is None):
+        if request.comment_index is None:
             raise ValueError("Missing the required parameter `comment_index` when calling `get_comment`")  # noqa: E501
 
         collection_formats = {}
@@ -3307,10 +3280,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_comments_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_comments_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_comments_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_comments_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_comments_with_http_info(self, request, **kwargs):  # noqa: E501
         """Get comments from document.  # noqa: E501
@@ -3341,7 +3313,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_comments`")  # noqa: E501
 
         collection_formats = {}
@@ -3413,10 +3385,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document common info.  # noqa: E501
@@ -3447,7 +3418,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'document_name' is set
-        if (request.document_name is None):
+        if request.document_name is None:
             raise ValueError("Missing the required parameter `document_name` when calling `get_document`")  # noqa: E501
 
         collection_formats = {}
@@ -3520,10 +3491,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_bookmark_by_name_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_bookmark_by_name_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_bookmark_by_name_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_bookmark_by_name_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_bookmark_by_name_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document bookmark data by its name.  # noqa: E501
@@ -3554,10 +3524,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_bookmark_by_name`")  # noqa: E501
         # verify the required parameter 'bookmark_name' is set
-        if (request.bookmark_name is None):
+        if request.bookmark_name is None:
             raise ValueError("Missing the required parameter `bookmark_name` when calling `get_document_bookmark_by_name`")  # noqa: E501
 
         collection_formats = {}
@@ -3631,10 +3601,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_bookmarks_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_bookmarks_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_bookmarks_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_bookmarks_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_bookmarks_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document bookmarks common info.  # noqa: E501
@@ -3665,7 +3634,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_bookmarks`")  # noqa: E501
 
         collection_formats = {}
@@ -3739,10 +3708,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_drawing_object_by_index_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_drawing_object_by_index_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_drawing_object_by_index_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_drawing_object_by_index_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_drawing_object_by_index_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document drawing object common info by its index or convert to format specified.  # noqa: E501
@@ -3773,10 +3741,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_drawing_object_by_index`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_by_index`")  # noqa: E501
 
         collection_formats = {}
@@ -3854,10 +3822,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_drawing_object_image_data_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_drawing_object_image_data_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_drawing_object_image_data_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_drawing_object_image_data_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_drawing_object_image_data_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read drawing object image data.  # noqa: E501
@@ -3888,10 +3855,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_drawing_object_image_data`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_image_data`")  # noqa: E501
 
         collection_formats = {}
@@ -3969,10 +3936,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_drawing_object_ole_data_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_drawing_object_ole_data_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_drawing_object_ole_data_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_drawing_object_ole_data_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_drawing_object_ole_data_with_http_info(self, request, **kwargs):  # noqa: E501
         """Get drawing object OLE data.  # noqa: E501
@@ -4003,10 +3969,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_drawing_object_ole_data`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_ole_data`")  # noqa: E501
 
         collection_formats = {}
@@ -4083,10 +4049,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_drawing_objects_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_drawing_objects_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_drawing_objects_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_drawing_objects_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_drawing_objects_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document drawing objects common info.  # noqa: E501
@@ -4117,7 +4082,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_drawing_objects`")  # noqa: E501
 
         collection_formats = {}
@@ -4192,10 +4157,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_field_names_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_field_names_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_field_names_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_field_names_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_field_names_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document field names.  # noqa: E501
@@ -4226,7 +4190,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_field_names`")  # noqa: E501
 
         collection_formats = {}
@@ -4301,10 +4265,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_hyperlink_by_index_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_hyperlink_by_index_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_hyperlink_by_index_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_hyperlink_by_index_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_hyperlink_by_index_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document hyperlink by its index.  # noqa: E501
@@ -4335,10 +4298,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_hyperlink_by_index`")  # noqa: E501
         # verify the required parameter 'hyperlink_index' is set
-        if (request.hyperlink_index is None):
+        if request.hyperlink_index is None:
             raise ValueError("Missing the required parameter `hyperlink_index` when calling `get_document_hyperlink_by_index`")  # noqa: E501
 
         collection_formats = {}
@@ -4412,10 +4375,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_hyperlinks_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_hyperlinks_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_hyperlinks_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_hyperlinks_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_hyperlinks_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document hyperlinks common info.  # noqa: E501
@@ -4446,7 +4408,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_hyperlinks`")  # noqa: E501
 
         collection_formats = {}
@@ -4520,10 +4482,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_paragraph_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_paragraph_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_paragraph_with_http_info(self, request, **kwargs):  # noqa: E501
         """This resource represents one of the paragraphs contained in the document.  # noqa: E501
@@ -4554,10 +4515,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_paragraph`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_document_paragraph`")  # noqa: E501
 
         collection_formats = {}
@@ -4635,10 +4596,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_paragraph_run_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_paragraph_run_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_paragraph_run_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_paragraph_run_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_paragraph_run_with_http_info(self, request, **kwargs):  # noqa: E501
         """This resource represents run of text contained in the document.  # noqa: E501
@@ -4669,13 +4629,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_paragraph_run`")  # noqa: E501
         # verify the required parameter 'paragraph_path' is set
-        if (request.paragraph_path is None):
+        if request.paragraph_path is None:
             raise ValueError("Missing the required parameter `paragraph_path` when calling `get_document_paragraph_run`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_document_paragraph_run`")  # noqa: E501
 
         collection_formats = {}
@@ -4753,10 +4713,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_paragraph_run_font_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_paragraph_run_font_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_paragraph_run_font_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_paragraph_run_font_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_paragraph_run_font_with_http_info(self, request, **kwargs):  # noqa: E501
         """This resource represents font of run.  # noqa: E501
@@ -4787,13 +4746,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_paragraph_run_font`")  # noqa: E501
         # verify the required parameter 'paragraph_path' is set
-        if (request.paragraph_path is None):
+        if request.paragraph_path is None:
             raise ValueError("Missing the required parameter `paragraph_path` when calling `get_document_paragraph_run_font`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_document_paragraph_run_font`")  # noqa: E501
 
         collection_formats = {}
@@ -4870,10 +4829,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_paragraph_runs_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_paragraph_runs_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_paragraph_runs_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_paragraph_runs_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_paragraph_runs_with_http_info(self, request, **kwargs):  # noqa: E501
         """This resource represents collection of runs in the paragraph.  # noqa: E501
@@ -4904,10 +4862,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_paragraph_runs`")  # noqa: E501
         # verify the required parameter 'paragraph_path' is set
-        if (request.paragraph_path is None):
+        if request.paragraph_path is None:
             raise ValueError("Missing the required parameter `paragraph_path` when calling `get_document_paragraph_runs`")  # noqa: E501
 
         collection_formats = {}
@@ -4982,10 +4940,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_paragraphs_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_paragraphs_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_paragraphs_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_paragraphs_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_paragraphs_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a list of paragraphs that are contained in the document.  # noqa: E501
@@ -5016,7 +4973,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_paragraphs`")  # noqa: E501
 
         collection_formats = {}
@@ -5090,10 +5047,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_properties_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_properties_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_properties_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_properties_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_properties_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document properties info.  # noqa: E501
@@ -5124,7 +5080,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_properties`")  # noqa: E501
 
         collection_formats = {}
@@ -5197,10 +5153,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_property_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_property_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_property_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_property_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_property_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document property info by the property name.  # noqa: E501
@@ -5231,10 +5186,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_property`")  # noqa: E501
         # verify the required parameter 'property_name' is set
-        if (request.property_name is None):
+        if request.property_name is None:
             raise ValueError("Missing the required parameter `property_name` when calling `get_document_property`")  # noqa: E501
 
         collection_formats = {}
@@ -5308,10 +5263,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_protection_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_protection_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_protection_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_protection_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_protection_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document protection common info.  # noqa: E501
@@ -5342,7 +5296,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_protection`")  # noqa: E501
 
         collection_formats = {}
@@ -5417,10 +5371,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_statistics_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_statistics_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_statistics_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_statistics_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_statistics_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document statistics.  # noqa: E501
@@ -5451,7 +5404,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_statistics`")  # noqa: E501
 
         collection_formats = {}
@@ -5529,10 +5482,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_text_items_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_text_items_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_text_items_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_text_items_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_text_items_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document text items.  # noqa: E501
@@ -5563,7 +5515,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_text_items`")  # noqa: E501
 
         collection_formats = {}
@@ -5638,10 +5590,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_document_with_format_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_document_with_format_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_document_with_format_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_document_with_format_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_document_with_format_with_http_info(self, request, **kwargs):  # noqa: E501
         """Export the document into the specified format.  # noqa: E501
@@ -5672,10 +5623,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_with_format`")  # noqa: E501
         # verify the required parameter 'format' is set
-        if (request.format is None):
+        if request.format is None:
             raise ValueError("Missing the required parameter `format` when calling `get_document_with_format`")  # noqa: E501
 
         collection_formats = {}
@@ -5755,10 +5706,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_field_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_field_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_field_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_field_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_field_with_http_info(self, request, **kwargs):  # noqa: E501
         """Get field from document.  # noqa: E501
@@ -5789,10 +5739,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_field`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_field`")  # noqa: E501
 
         collection_formats = {}
@@ -5869,10 +5819,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_fields_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_fields_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_fields_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_fields_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_fields_with_http_info(self, request, **kwargs):  # noqa: E501
         """Get fields from document.  # noqa: E501
@@ -5903,7 +5852,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_fields`")  # noqa: E501
 
         collection_formats = {}
@@ -5979,10 +5928,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_footnote_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_footnote_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_footnote_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_footnote_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_footnote_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read footnote by index.  # noqa: E501
@@ -6013,10 +5961,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_footnote`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_footnote`")  # noqa: E501
 
         collection_formats = {}
@@ -6093,10 +6041,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_footnotes_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_footnotes_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_footnotes_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_footnotes_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_footnotes_with_http_info(self, request, **kwargs):  # noqa: E501
         """Get footnotes from document.  # noqa: E501
@@ -6127,7 +6074,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_footnotes`")  # noqa: E501
 
         collection_formats = {}
@@ -6203,10 +6150,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_form_field_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_form_field_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_form_field_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_form_field_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_form_field_with_http_info(self, request, **kwargs):  # noqa: E501
         """Returns representation of an one of the form field.  # noqa: E501
@@ -6237,10 +6183,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_form_field`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_form_field`")  # noqa: E501
 
         collection_formats = {}
@@ -6317,10 +6263,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_form_fields_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_form_fields_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_form_fields_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_form_fields_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_form_fields_with_http_info(self, request, **kwargs):  # noqa: E501
         """Get form fields from document.  # noqa: E501
@@ -6351,7 +6296,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_form_fields`")  # noqa: E501
 
         collection_formats = {}
@@ -6427,10 +6372,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_header_footer_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_header_footer_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_header_footer_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a header/footer that is contained in the document.  # noqa: E501
@@ -6461,10 +6405,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_header_footer`")  # noqa: E501
         # verify the required parameter 'header_footer_index' is set
-        if (request.header_footer_index is None):
+        if request.header_footer_index is None:
             raise ValueError("Missing the required parameter `header_footer_index` when calling `get_header_footer`")  # noqa: E501
 
         collection_formats = {}
@@ -6543,10 +6487,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_header_footer_of_section_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_header_footer_of_section_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_header_footer_of_section_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_header_footer_of_section_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_header_footer_of_section_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a header/footer that is contained in the document.  # noqa: E501
@@ -6577,13 +6520,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_header_footer_of_section`")  # noqa: E501
         # verify the required parameter 'header_footer_index' is set
-        if (request.header_footer_index is None):
+        if request.header_footer_index is None:
             raise ValueError("Missing the required parameter `header_footer_index` when calling `get_header_footer_of_section`")  # noqa: E501
         # verify the required parameter 'section_index' is set
-        if (request.section_index is None):
+        if request.section_index is None:
             raise ValueError("Missing the required parameter `section_index` when calling `get_header_footer_of_section`")  # noqa: E501
 
         collection_formats = {}
@@ -6663,10 +6606,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_header_footers_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_header_footers_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_header_footers_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_header_footers_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_header_footers_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a list of header/footers that are contained in the document.  # noqa: E501
@@ -6697,7 +6639,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_header_footers`")  # noqa: E501
 
         collection_formats = {}
@@ -6775,10 +6717,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_office_math_object_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_office_math_object_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_office_math_object_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read OfficeMath object by index.  # noqa: E501
@@ -6809,10 +6750,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_office_math_object`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_office_math_object`")  # noqa: E501
 
         collection_formats = {}
@@ -6889,10 +6830,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_office_math_objects_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_office_math_objects_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_office_math_objects_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_office_math_objects_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_office_math_objects_with_http_info(self, request, **kwargs):  # noqa: E501
         """Get OfficeMath objects from document.  # noqa: E501
@@ -6923,7 +6863,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_office_math_objects`")  # noqa: E501
 
         collection_formats = {}
@@ -6998,10 +6938,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_section_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_section_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_section_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_section_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_section_with_http_info(self, request, **kwargs):  # noqa: E501
         """Get document section by index.  # noqa: E501
@@ -7032,10 +6971,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_section`")  # noqa: E501
         # verify the required parameter 'section_index' is set
-        if (request.section_index is None):
+        if request.section_index is None:
             raise ValueError("Missing the required parameter `section_index` when calling `get_section`")  # noqa: E501
 
         collection_formats = {}
@@ -7110,10 +7049,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_section_page_setup_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_section_page_setup_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_section_page_setup_with_http_info(self, request, **kwargs):  # noqa: E501
         """Get page setup of section.  # noqa: E501
@@ -7144,10 +7082,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_section_page_setup`")  # noqa: E501
         # verify the required parameter 'section_index' is set
-        if (request.section_index is None):
+        if request.section_index is None:
             raise ValueError("Missing the required parameter `section_index` when calling `get_section_page_setup`")  # noqa: E501
 
         collection_formats = {}
@@ -7221,10 +7159,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_sections_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_sections_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_sections_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_sections_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_sections_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a list of sections that are contained in the document.  # noqa: E501
@@ -7255,7 +7192,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_sections`")  # noqa: E501
 
         collection_formats = {}
@@ -7329,10 +7266,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_table_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_table_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_table_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_table_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_table_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a table.  # noqa: E501
@@ -7363,10 +7299,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_table`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_table`")  # noqa: E501
 
         collection_formats = {}
@@ -7444,10 +7380,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_table_cell_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_table_cell_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_table_cell_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_table_cell_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_table_cell_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a table cell.  # noqa: E501
@@ -7478,13 +7413,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_table_cell`")  # noqa: E501
         # verify the required parameter 'table_row_path' is set
-        if (request.table_row_path is None):
+        if request.table_row_path is None:
             raise ValueError("Missing the required parameter `table_row_path` when calling `get_table_cell`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_table_cell`")  # noqa: E501
 
         collection_formats = {}
@@ -7562,10 +7497,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_table_cell_format_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_table_cell_format_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_table_cell_format_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a table cell format.  # noqa: E501
@@ -7596,13 +7530,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_table_cell_format`")  # noqa: E501
         # verify the required parameter 'table_row_path' is set
-        if (request.table_row_path is None):
+        if request.table_row_path is None:
             raise ValueError("Missing the required parameter `table_row_path` when calling `get_table_cell_format`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_table_cell_format`")  # noqa: E501
 
         collection_formats = {}
@@ -7680,10 +7614,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_table_properties_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_table_properties_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_table_properties_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_table_properties_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_table_properties_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a table properties.  # noqa: E501
@@ -7714,10 +7647,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_table_properties`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_table_properties`")  # noqa: E501
 
         collection_formats = {}
@@ -7795,10 +7728,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_table_row_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_table_row_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_table_row_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_table_row_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_table_row_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a table row.  # noqa: E501
@@ -7829,13 +7761,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_table_row`")  # noqa: E501
         # verify the required parameter 'table_path' is set
-        if (request.table_path is None):
+        if request.table_path is None:
             raise ValueError("Missing the required parameter `table_path` when calling `get_table_row`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_table_row`")  # noqa: E501
 
         collection_formats = {}
@@ -7913,10 +7845,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_table_row_format_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_table_row_format_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_table_row_format_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a table row format.  # noqa: E501
@@ -7947,13 +7878,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_table_row_format`")  # noqa: E501
         # verify the required parameter 'table_path' is set
-        if (request.table_path is None):
+        if request.table_path is None:
             raise ValueError("Missing the required parameter `table_path` when calling `get_table_row_format`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_table_row_format`")  # noqa: E501
 
         collection_formats = {}
@@ -8030,10 +7961,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_tables_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_tables_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.get_tables_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.get_tables_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def get_tables_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a list of tables that are contained in the document.  # noqa: E501
@@ -8064,7 +7994,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_tables`")  # noqa: E501
 
         collection_formats = {}
@@ -8143,10 +8073,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.insert_table_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.insert_table_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.insert_table_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.insert_table_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def insert_table_with_http_info(self, request, **kwargs):  # noqa: E501
         """Adds table to document, returns added table&#39;s data.               # noqa: E501
@@ -8177,7 +8106,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_table`")  # noqa: E501
 
         collection_formats = {}
@@ -8264,10 +8193,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.insert_table_cell_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.insert_table_cell_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.insert_table_cell_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.insert_table_cell_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def insert_table_cell_with_http_info(self, request, **kwargs):  # noqa: E501
         """Adds table cell to table, returns added cell&#39;s data.               # noqa: E501
@@ -8298,10 +8226,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_table_cell`")  # noqa: E501
         # verify the required parameter 'table_row_path' is set
-        if (request.table_row_path is None):
+        if request.table_row_path is None:
             raise ValueError("Missing the required parameter `table_row_path` when calling `insert_table_cell`")  # noqa: E501
 
         collection_formats = {}
@@ -8388,10 +8316,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.insert_table_row_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.insert_table_row_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.insert_table_row_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.insert_table_row_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def insert_table_row_with_http_info(self, request, **kwargs):  # noqa: E501
         """Adds table row to table, returns added row&#39;s data.               # noqa: E501
@@ -8422,10 +8349,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_table_row`")  # noqa: E501
         # verify the required parameter 'table_path' is set
-        if (request.table_path is None):
+        if request.table_path is None:
             raise ValueError("Missing the required parameter `table_path` when calling `insert_table_row`")  # noqa: E501
 
         collection_formats = {}
@@ -8511,10 +8438,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_append_document_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_append_document_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_append_document_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_append_document_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_append_document_with_http_info(self, request, **kwargs):  # noqa: E501
         """Append documents to original document.  # noqa: E501
@@ -8545,10 +8471,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `post_append_document`")  # noqa: E501
         # verify the required parameter 'document_list' is set
-        if (request.document_list is None):
+        if request.document_list is None:
             raise ValueError("Missing the required parameter `document_list` when calling `post_append_document`")  # noqa: E501
 
         collection_formats = {}
@@ -8630,10 +8556,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_change_document_protection_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_change_document_protection_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_change_document_protection_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_change_document_protection_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_change_document_protection_with_http_info(self, request, **kwargs):  # noqa: E501
         """Change document protection.  # noqa: E501
@@ -8664,10 +8589,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `post_change_document_protection`")  # noqa: E501
         # verify the required parameter 'protection_request' is set
-        if (request.protection_request is None):
+        if request.protection_request is None:
             raise ValueError("Missing the required parameter `protection_request` when calling `post_change_document_protection`")  # noqa: E501
 
         collection_formats = {}
@@ -8748,10 +8673,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_comment_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_comment_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_comment_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_comment_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_comment_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates the comment, returns updated comment&#39;s data.  # noqa: E501
@@ -8782,13 +8706,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `post_comment`")  # noqa: E501
         # verify the required parameter 'comment_index' is set
-        if (request.comment_index is None):
+        if request.comment_index is None:
             raise ValueError("Missing the required parameter `comment_index` when calling `post_comment`")  # noqa: E501
         # verify the required parameter 'comment' is set
-        if (request.comment is None):
+        if request.comment is None:
             raise ValueError("Missing the required parameter `comment` when calling `post_comment`")  # noqa: E501
 
         collection_formats = {}
@@ -8872,10 +8796,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_compare_document_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_compare_document_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_compare_document_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_compare_document_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_compare_document_with_http_info(self, request, **kwargs):  # noqa: E501
         """Compare document with original document.  # noqa: E501
@@ -8906,10 +8829,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `post_compare_document`")  # noqa: E501
         # verify the required parameter 'compare_data' is set
-        if (request.compare_data is None):
+        if request.compare_data is None:
             raise ValueError("Missing the required parameter `compare_data` when calling `post_compare_document`")  # noqa: E501
 
         collection_formats = {}
@@ -8991,10 +8914,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_document_execute_mail_merge_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_document_execute_mail_merge_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_document_execute_mail_merge_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_document_execute_mail_merge_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_document_execute_mail_merge_with_http_info(self, request, **kwargs):  # noqa: E501
         """Execute document mail merge operation.  # noqa: E501
@@ -9025,7 +8947,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `post_document_execute_mail_merge`")  # noqa: E501
 
         collection_formats = {}
@@ -9115,10 +9037,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_document_paragraph_run_font_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_document_paragraph_run_font_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_document_paragraph_run_font_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_document_paragraph_run_font_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_document_paragraph_run_font_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates font properties, returns updated font data.  # noqa: E501
@@ -9149,16 +9070,16 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `post_document_paragraph_run_font`")  # noqa: E501
         # verify the required parameter 'font_dto' is set
-        if (request.font_dto is None):
+        if request.font_dto is None:
             raise ValueError("Missing the required parameter `font_dto` when calling `post_document_paragraph_run_font`")  # noqa: E501
         # verify the required parameter 'paragraph_path' is set
-        if (request.paragraph_path is None):
+        if request.paragraph_path is None:
             raise ValueError("Missing the required parameter `paragraph_path` when calling `post_document_paragraph_run_font`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `post_document_paragraph_run_font`")  # noqa: E501
 
         collection_formats = {}
@@ -9245,10 +9166,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_document_save_as_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_document_save_as_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_document_save_as_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_document_save_as_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_document_save_as_with_http_info(self, request, **kwargs):  # noqa: E501
         """Convert document to destination format with detailed settings and save result to storage.  # noqa: E501
@@ -9279,10 +9199,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `post_document_save_as`")  # noqa: E501
         # verify the required parameter 'save_options_data' is set
-        if (request.save_options_data is None):
+        if request.save_options_data is None:
             raise ValueError("Missing the required parameter `save_options_data` when calling `post_document_save_as`")  # noqa: E501
 
         collection_formats = {}
@@ -9367,10 +9287,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_drawing_object_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_drawing_object_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_drawing_object_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates drawing object, returns updated  drawing object&#39;s data.  # noqa: E501
@@ -9401,16 +9320,16 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `post_drawing_object`")  # noqa: E501
         # verify the required parameter 'drawing_object' is set
-        if (request.drawing_object is None):
+        if request.drawing_object is None:
             raise ValueError("Missing the required parameter `drawing_object` when calling `post_drawing_object`")  # noqa: E501
         # verify the required parameter 'image_file' is set
-        if (request.image_file is None):
+        if request.image_file is None:
             raise ValueError("Missing the required parameter `image_file` when calling `post_drawing_object`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `post_drawing_object`")  # noqa: E501
 
         collection_formats = {}
@@ -9446,7 +9365,7 @@ class WordsApi(object):
         if request.drawing_object is not None:
             form_params.append((self.__downcase_first_letter('DrawingObject'), request.drawing_object))  # noqa: E501
         if request.image_file is not None:
-            local_var_files[self.__downcase_first_letter('ImageFile')] = equest.image_file  # noqa: E501
+            local_var_files[self.__downcase_first_letter('ImageFile')] = request.image_file  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -9501,10 +9420,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_execute_template_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_execute_template_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_execute_template_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_execute_template_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_execute_template_with_http_info(self, request, **kwargs):  # noqa: E501
         """Populate document template with data.  # noqa: E501
@@ -9535,10 +9453,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `post_execute_template`")  # noqa: E501
         # verify the required parameter 'data' is set
-        if (request.data is None):
+        if request.data is None:
             raise ValueError("Missing the required parameter `data` when calling `post_execute_template`")  # noqa: E501
 
         collection_formats = {}
@@ -9626,10 +9544,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_field_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_field_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_field_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_field_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_field_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates field&#39;s properties, returns updated field&#39;s data.  # noqa: E501
@@ -9660,13 +9577,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `post_field`")  # noqa: E501
         # verify the required parameter 'field' is set
-        if (request.field is None):
+        if request.field is None:
             raise ValueError("Missing the required parameter `field` when calling `post_field`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `post_field`")  # noqa: E501
 
         collection_formats = {}
@@ -9756,10 +9673,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_footnote_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_footnote_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_footnote_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_footnote_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_footnote_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates footnote&#39;s properties, returns updated run&#39;s data.  # noqa: E501
@@ -9790,13 +9706,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `post_footnote`")  # noqa: E501
         # verify the required parameter 'footnote_dto' is set
-        if (request.footnote_dto is None):
+        if request.footnote_dto is None:
             raise ValueError("Missing the required parameter `footnote_dto` when calling `post_footnote`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `post_footnote`")  # noqa: E501
 
         collection_formats = {}
@@ -9886,10 +9802,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_form_field_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_form_field_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_form_field_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_form_field_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_form_field_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates properties of form field, returns updated form field.  # noqa: E501
@@ -9920,13 +9835,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `post_form_field`")  # noqa: E501
         # verify the required parameter 'form_field' is set
-        if (request.form_field is None):
+        if request.form_field is None:
             raise ValueError("Missing the required parameter `form_field` when calling `post_form_field`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `post_form_field`")  # noqa: E501
 
         collection_formats = {}
@@ -10016,10 +9931,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_insert_document_watermark_image_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_insert_document_watermark_image_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_insert_document_watermark_image_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_insert_document_watermark_image_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_insert_document_watermark_image_with_http_info(self, request, **kwargs):  # noqa: E501
         """Insert document watermark image.  # noqa: E501
@@ -10050,7 +9964,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `post_insert_document_watermark_image`")  # noqa: E501
 
         collection_formats = {}
@@ -10084,7 +9998,7 @@ class WordsApi(object):
         form_params = []
         local_var_files = {}
         if request.image_file is not None:
-            local_var_files[self.__downcase_first_letter('ImageFile')] = equest.image_file  # noqa: E501
+            local_var_files[self.__downcase_first_letter('ImageFile')] = request.image_file  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -10138,10 +10052,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_insert_document_watermark_text_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_insert_document_watermark_text_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_insert_document_watermark_text_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_insert_document_watermark_text_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_insert_document_watermark_text_with_http_info(self, request, **kwargs):  # noqa: E501
         """Insert document watermark text.  # noqa: E501
@@ -10172,10 +10085,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `post_insert_document_watermark_text`")  # noqa: E501
         # verify the required parameter 'watermark_text' is set
-        if (request.watermark_text is None):
+        if request.watermark_text is None:
             raise ValueError("Missing the required parameter `watermark_text` when calling `post_insert_document_watermark_text`")  # noqa: E501
 
         collection_formats = {}
@@ -10259,10 +10172,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_insert_page_numbers_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_insert_page_numbers_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_insert_page_numbers_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_insert_page_numbers_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_insert_page_numbers_with_http_info(self, request, **kwargs):  # noqa: E501
         """Insert document page numbers.  # noqa: E501
@@ -10293,10 +10205,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `post_insert_page_numbers`")  # noqa: E501
         # verify the required parameter 'page_number' is set
-        if (request.page_number is None):
+        if request.page_number is None:
             raise ValueError("Missing the required parameter `page_number` when calling `post_insert_page_numbers`")  # noqa: E501
 
         collection_formats = {}
@@ -10373,10 +10285,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_load_web_document_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_load_web_document_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_load_web_document_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_load_web_document_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_load_web_document_with_http_info(self, request, **kwargs):  # noqa: E501
         """Loads new document from web into the file with any supported format of data.  # noqa: E501
@@ -10407,7 +10318,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'data' is set
-        if (request.data is None):
+        if request.data is None:
             raise ValueError("Missing the required parameter `data` when calling `post_load_web_document`")  # noqa: E501
 
         collection_formats = {}
@@ -10477,10 +10388,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_replace_text_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_replace_text_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_replace_text_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_replace_text_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_replace_text_with_http_info(self, request, **kwargs):  # noqa: E501
         """Replace document text.  # noqa: E501
@@ -10511,10 +10421,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `post_replace_text`")  # noqa: E501
         # verify the required parameter 'replace_text' is set
-        if (request.replace_text is None):
+        if request.replace_text is None:
             raise ValueError("Missing the required parameter `replace_text` when calling `post_replace_text`")  # noqa: E501
 
         collection_formats = {}
@@ -10600,10 +10510,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_run_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_run_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_run_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_run_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_run_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates run&#39;s properties, returns updated run&#39;s data.  # noqa: E501
@@ -10634,16 +10543,16 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `post_run`")  # noqa: E501
         # verify the required parameter 'run' is set
-        if (request.run is None):
+        if request.run is None:
             raise ValueError("Missing the required parameter `run` when calling `post_run`")  # noqa: E501
         # verify the required parameter 'paragraph_path' is set
-        if (request.paragraph_path is None):
+        if request.paragraph_path is None:
             raise ValueError("Missing the required parameter `paragraph_path` when calling `post_run`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `post_run`")  # noqa: E501
 
         collection_formats = {}
@@ -10733,10 +10642,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_split_document_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_split_document_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_split_document_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_split_document_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_split_document_with_http_info(self, request, **kwargs):  # noqa: E501
         """Split document.  # noqa: E501
@@ -10767,7 +10675,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `post_split_document`")  # noqa: E501
 
         collection_formats = {}
@@ -10856,10 +10764,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_update_document_bookmark_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_update_document_bookmark_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_update_document_bookmark_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_update_document_bookmark_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_update_document_bookmark_with_http_info(self, request, **kwargs):  # noqa: E501
         """Update document bookmark.  # noqa: E501
@@ -10890,13 +10797,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `post_update_document_bookmark`")  # noqa: E501
         # verify the required parameter 'bookmark_data' is set
-        if (request.bookmark_data is None):
+        if request.bookmark_data is None:
             raise ValueError("Missing the required parameter `bookmark_data` when calling `post_update_document_bookmark`")  # noqa: E501
         # verify the required parameter 'bookmark_name' is set
-        if (request.bookmark_name is None):
+        if request.bookmark_name is None:
             raise ValueError("Missing the required parameter `bookmark_name` when calling `post_update_document_bookmark`")  # noqa: E501
 
         collection_formats = {}
@@ -10979,10 +10886,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.post_update_document_fields_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.post_update_document_fields_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.post_update_document_fields_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.post_update_document_fields_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def post_update_document_fields_with_http_info(self, request, **kwargs):  # noqa: E501
         """Update (reevaluate) fields in document.  # noqa: E501
@@ -11013,7 +10919,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `post_update_document_fields`")  # noqa: E501
 
         collection_formats = {}
@@ -11091,10 +10997,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.put_comment_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.put_comment_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.put_comment_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.put_comment_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def put_comment_with_http_info(self, request, **kwargs):  # noqa: E501
         """Adds comment to document, returns inserted comment&#39;s data.  # noqa: E501
@@ -11125,10 +11030,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `put_comment`")  # noqa: E501
         # verify the required parameter 'comment' is set
-        if (request.comment is None):
+        if request.comment is None:
             raise ValueError("Missing the required parameter `comment` when calling `put_comment`")  # noqa: E501
 
         collection_formats = {}
@@ -11209,10 +11114,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.put_convert_document_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.put_convert_document_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.put_convert_document_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.put_convert_document_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def put_convert_document_with_http_info(self, request, **kwargs):  # noqa: E501
         """Convert document from request content to format specified.  # noqa: E501
@@ -11243,10 +11147,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'document' is set
-        if (request.document is None):
+        if request.document is None:
             raise ValueError("Missing the required parameter `document` when calling `put_convert_document`")  # noqa: E501
         # verify the required parameter 'format' is set
-        if (request.format is None):
+        if request.format is None:
             raise ValueError("Missing the required parameter `format` when calling `put_convert_document`")  # noqa: E501
 
         collection_formats = {}
@@ -11270,7 +11174,7 @@ class WordsApi(object):
         form_params = []
         local_var_files = {}
         if request.document is not None:
-            local_var_files[self.__downcase_first_letter('Document')] = equest.document  # noqa: E501
+            local_var_files[self.__downcase_first_letter('Document')] = request.document  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -11318,10 +11222,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.put_create_document_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.put_create_document_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.put_create_document_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.put_create_document_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def put_create_document_with_http_info(self, request, **kwargs):  # noqa: E501
         """Creates new document. Document is created with format which is recognized from file extensions.  Supported extentions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot;  # noqa: E501
@@ -11414,10 +11317,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.put_document_field_names_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.put_document_field_names_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.put_document_field_names_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.put_document_field_names_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def put_document_field_names_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document field names.  # noqa: E501
@@ -11448,7 +11350,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'template' is set
-        if (request.template is None):
+        if request.template is None:
             raise ValueError("Missing the required parameter `template` when calling `put_document_field_names`")  # noqa: E501
 
         collection_formats = {}
@@ -11464,7 +11366,7 @@ class WordsApi(object):
         form_params = []
         local_var_files = {}
         if request.template is not None:
-            local_var_files[self.__downcase_first_letter('Template')] = equest.template  # noqa: E501
+            local_var_files[self.__downcase_first_letter('Template')] = request.template  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -11535,10 +11437,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.put_document_save_as_tiff_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.put_document_save_as_tiff_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.put_document_save_as_tiff_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.put_document_save_as_tiff_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def put_document_save_as_tiff_with_http_info(self, request, **kwargs):  # noqa: E501
         """Convert document to tiff with detailed settings and save result to storage.  # noqa: E501
@@ -11569,10 +11470,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `put_document_save_as_tiff`")  # noqa: E501
         # verify the required parameter 'save_options' is set
-        if (request.save_options is None):
+        if request.save_options is None:
             raise ValueError("Missing the required parameter `save_options` when calling `put_document_save_as_tiff`")  # noqa: E501
 
         collection_formats = {}
@@ -11692,10 +11593,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.put_drawing_object_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.put_drawing_object_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.put_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.put_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def put_drawing_object_with_http_info(self, request, **kwargs):  # noqa: E501
         """Adds  drawing object to document, returns added  drawing object&#39;s data.  # noqa: E501
@@ -11726,13 +11626,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `put_drawing_object`")  # noqa: E501
         # verify the required parameter 'drawing_object' is set
-        if (request.drawing_object is None):
+        if request.drawing_object is None:
             raise ValueError("Missing the required parameter `drawing_object` when calling `put_drawing_object`")  # noqa: E501
         # verify the required parameter 'image_file' is set
-        if (request.image_file is None):
+        if request.image_file is None:
             raise ValueError("Missing the required parameter `image_file` when calling `put_drawing_object`")  # noqa: E501
 
         collection_formats = {}
@@ -11766,7 +11666,7 @@ class WordsApi(object):
         if request.drawing_object is not None:
             form_params.append((self.__downcase_first_letter('DrawingObject'), request.drawing_object))  # noqa: E501
         if request.image_file is not None:
-            local_var_files[self.__downcase_first_letter('ImageFile')] = equest.image_file  # noqa: E501
+            local_var_files[self.__downcase_first_letter('ImageFile')] = request.image_file  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -11816,10 +11716,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.put_execute_mail_merge_online_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.put_execute_mail_merge_online_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.put_execute_mail_merge_online_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.put_execute_mail_merge_online_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def put_execute_mail_merge_online_with_http_info(self, request, **kwargs):  # noqa: E501
         """Execute document mail merge online.  # noqa: E501
@@ -11850,10 +11749,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'template' is set
-        if (request.template is None):
+        if request.template is None:
             raise ValueError("Missing the required parameter `template` when calling `put_execute_mail_merge_online`")  # noqa: E501
         # verify the required parameter 'data' is set
-        if (request.data is None):
+        if request.data is None:
             raise ValueError("Missing the required parameter `data` when calling `put_execute_mail_merge_online`")  # noqa: E501
 
         collection_formats = {}
@@ -11873,9 +11772,9 @@ class WordsApi(object):
         form_params = []
         local_var_files = {}
         if request.template is not None:
-            local_var_files[self.__downcase_first_letter('Template')] = equest.template  # noqa: E501
+            local_var_files[self.__downcase_first_letter('Template')] = request.template  # noqa: E501
         if request.data is not None:
-            local_var_files[self.__downcase_first_letter('Data')] = equest.data  # noqa: E501
+            local_var_files[self.__downcase_first_letter('Data')] = request.data  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -11926,10 +11825,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.put_execute_template_online_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.put_execute_template_online_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.put_execute_template_online_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.put_execute_template_online_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def put_execute_template_online_with_http_info(self, request, **kwargs):  # noqa: E501
         """Populate document template with data online.  # noqa: E501
@@ -11960,10 +11858,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'template' is set
-        if (request.template is None):
+        if request.template is None:
             raise ValueError("Missing the required parameter `template` when calling `put_execute_template_online`")  # noqa: E501
         # verify the required parameter 'data' is set
-        if (request.data is None):
+        if request.data is None:
             raise ValueError("Missing the required parameter `data` when calling `put_execute_template_online`")  # noqa: E501
 
         collection_formats = {}
@@ -11985,9 +11883,9 @@ class WordsApi(object):
         form_params = []
         local_var_files = {}
         if request.template is not None:
-            local_var_files[self.__downcase_first_letter('Template')] = equest.template  # noqa: E501
+            local_var_files[self.__downcase_first_letter('Template')] = request.template  # noqa: E501
         if request.data is not None:
-            local_var_files[self.__downcase_first_letter('Data')] = equest.data  # noqa: E501
+            local_var_files[self.__downcase_first_letter('Data')] = request.data  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -12043,10 +11941,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.put_field_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.put_field_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.put_field_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.put_field_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def put_field_with_http_info(self, request, **kwargs):  # noqa: E501
         """Adds field to document, returns inserted field&#39;s data.  # noqa: E501
@@ -12077,10 +11974,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `put_field`")  # noqa: E501
         # verify the required parameter 'field' is set
-        if (request.field is None):
+        if request.field is None:
             raise ValueError("Missing the required parameter `field` when calling `put_field`")  # noqa: E501
 
         collection_formats = {}
@@ -12169,10 +12066,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.put_footnote_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.put_footnote_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.put_footnote_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.put_footnote_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def put_footnote_with_http_info(self, request, **kwargs):  # noqa: E501
         """Adds footnote to document, returns added footnote&#39;s data.  # noqa: E501
@@ -12203,10 +12099,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `put_footnote`")  # noqa: E501
         # verify the required parameter 'footnote_dto' is set
-        if (request.footnote_dto is None):
+        if request.footnote_dto is None:
             raise ValueError("Missing the required parameter `footnote_dto` when calling `put_footnote`")  # noqa: E501
 
         collection_formats = {}
@@ -12294,10 +12190,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.put_form_field_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.put_form_field_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.put_form_field_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.put_form_field_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def put_form_field_with_http_info(self, request, **kwargs):  # noqa: E501
         """Adds form field to paragraph, returns added form field&#39;s data.  # noqa: E501
@@ -12328,10 +12223,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `put_form_field`")  # noqa: E501
         # verify the required parameter 'form_field' is set
-        if (request.form_field is None):
+        if request.form_field is None:
             raise ValueError("Missing the required parameter `form_field` when calling `put_form_field`")  # noqa: E501
 
         collection_formats = {}
@@ -12420,10 +12315,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.put_header_footer_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.put_header_footer_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.put_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.put_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def put_header_footer_with_http_info(self, request, **kwargs):  # noqa: E501
         """Insert to document header or footer.  # noqa: E501
@@ -12454,10 +12348,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `put_header_footer`")  # noqa: E501
         # verify the required parameter 'header_footer_type' is set
-        if (request.header_footer_type is None):
+        if request.header_footer_type is None:
             raise ValueError("Missing the required parameter `header_footer_type` when calling `put_header_footer`")  # noqa: E501
 
         collection_formats = {}
@@ -12545,10 +12439,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.put_paragraph_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.put_paragraph_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.put_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.put_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def put_paragraph_with_http_info(self, request, **kwargs):  # noqa: E501
         """Adds paragraph to document, returns added paragraph&#39;s data.  # noqa: E501
@@ -12579,10 +12472,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `put_paragraph`")  # noqa: E501
         # verify the required parameter 'paragraph' is set
-        if (request.paragraph is None):
+        if request.paragraph is None:
             raise ValueError("Missing the required parameter `paragraph` when calling `put_paragraph`")  # noqa: E501
 
         collection_formats = {}
@@ -12668,10 +12561,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.put_protect_document_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.put_protect_document_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.put_protect_document_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.put_protect_document_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def put_protect_document_with_http_info(self, request, **kwargs):  # noqa: E501
         """Protect document.  # noqa: E501
@@ -12702,10 +12594,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `put_protect_document`")  # noqa: E501
         # verify the required parameter 'protection_request' is set
-        if (request.protection_request is None):
+        if request.protection_request is None:
             raise ValueError("Missing the required parameter `protection_request` when calling `put_protect_document`")  # noqa: E501
 
         collection_formats = {}
@@ -12787,10 +12679,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.put_run_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.put_run_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.put_run_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.put_run_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def put_run_with_http_info(self, request, **kwargs):  # noqa: E501
         """Adds run to document, returns added paragraph&#39;s data.  # noqa: E501
@@ -12821,13 +12712,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `put_run`")  # noqa: E501
         # verify the required parameter 'paragraph_path' is set
-        if (request.paragraph_path is None):
+        if request.paragraph_path is None:
             raise ValueError("Missing the required parameter `paragraph_path` when calling `put_run`")  # noqa: E501
         # verify the required parameter 'run' is set
-        if (request.run is None):
+        if request.run is None:
             raise ValueError("Missing the required parameter `run` when calling `put_run`")  # noqa: E501
 
         collection_formats = {}
@@ -12912,10 +12803,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.reject_all_revisions_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.reject_all_revisions_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.reject_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.reject_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def reject_all_revisions_with_http_info(self, request, **kwargs):  # noqa: E501
         """Reject all revisions in document  # noqa: E501
@@ -12946,7 +12836,7 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `reject_all_revisions`")  # noqa: E501
 
         collection_formats = {}
@@ -13024,10 +12914,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.render_drawing_object_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.render_drawing_object_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.render_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.render_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def render_drawing_object_with_http_info(self, request, **kwargs):  # noqa: E501
         """Renders drawing object to specified format.  # noqa: E501
@@ -13058,13 +12947,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `render_drawing_object`")  # noqa: E501
         # verify the required parameter 'format' is set
-        if (request.format is None):
+        if request.format is None:
             raise ValueError("Missing the required parameter `format` when calling `render_drawing_object`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `render_drawing_object`")  # noqa: E501
 
         collection_formats = {}
@@ -13148,10 +13037,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.render_math_object_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.render_math_object_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.render_math_object_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.render_math_object_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def render_math_object_with_http_info(self, request, **kwargs):  # noqa: E501
         """Renders math object to specified format.  # noqa: E501
@@ -13182,13 +13070,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `render_math_object`")  # noqa: E501
         # verify the required parameter 'format' is set
-        if (request.format is None):
+        if request.format is None:
             raise ValueError("Missing the required parameter `format` when calling `render_math_object`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `render_math_object`")  # noqa: E501
 
         collection_formats = {}
@@ -13271,10 +13159,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.render_page_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.render_page_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.render_page_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.render_page_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def render_page_with_http_info(self, request, **kwargs):  # noqa: E501
         """Renders page to specified format.  # noqa: E501
@@ -13305,13 +13192,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `render_page`")  # noqa: E501
         # verify the required parameter 'page_index' is set
-        if (request.page_index is None):
+        if request.page_index is None:
             raise ValueError("Missing the required parameter `page_index` when calling `render_page`")  # noqa: E501
         # verify the required parameter 'format' is set
-        if (request.format is None):
+        if request.format is None:
             raise ValueError("Missing the required parameter `format` when calling `render_page`")  # noqa: E501
 
         collection_formats = {}
@@ -13393,10 +13280,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.render_paragraph_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.render_paragraph_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.render_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.render_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def render_paragraph_with_http_info(self, request, **kwargs):  # noqa: E501
         """Renders paragraph to specified format.  # noqa: E501
@@ -13427,13 +13313,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `render_paragraph`")  # noqa: E501
         # verify the required parameter 'format' is set
-        if (request.format is None):
+        if request.format is None:
             raise ValueError("Missing the required parameter `format` when calling `render_paragraph`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `render_paragraph`")  # noqa: E501
 
         collection_formats = {}
@@ -13517,10 +13403,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.render_table_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.render_table_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.render_table_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.render_table_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def render_table_with_http_info(self, request, **kwargs):  # noqa: E501
         """Renders table to specified format.  # noqa: E501
@@ -13551,13 +13436,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `render_table`")  # noqa: E501
         # verify the required parameter 'format' is set
-        if (request.format is None):
+        if request.format is None:
             raise ValueError("Missing the required parameter `format` when calling `render_table`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `render_table`")  # noqa: E501
 
         collection_formats = {}
@@ -13632,10 +13517,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.reset_cache_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.reset_cache_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.reset_cache_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.reset_cache_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def reset_cache_with_http_info(self, request, **kwargs):  # noqa: E501
         """Resets font&#39;s cache.  # noqa: E501
@@ -13726,10 +13610,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.search_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.search_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.search_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.search_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def search_with_http_info(self, request, **kwargs):  # noqa: E501
         """Search text in document.  # noqa: E501
@@ -13760,10 +13643,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `search`")  # noqa: E501
         # verify the required parameter 'pattern' is set
-        if (request.pattern is None):
+        if request.pattern is None:
             raise ValueError("Missing the required parameter `pattern` when calling `search`")  # noqa: E501
 
         collection_formats = {}
@@ -13844,10 +13727,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.update_border_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.update_border_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.update_border_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.update_border_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def update_border_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates border properties.               # noqa: E501
@@ -13879,16 +13761,16 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_border`")  # noqa: E501
         # verify the required parameter 'border_properties' is set
-        if (request.border_properties is None):
+        if request.border_properties is None:
             raise ValueError("Missing the required parameter `border_properties` when calling `update_border`")  # noqa: E501
         # verify the required parameter 'node_path' is set
-        if (request.node_path is None):
+        if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `update_border`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_border`")  # noqa: E501
 
         collection_formats = {}
@@ -13977,10 +13859,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.update_section_page_setup_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.update_section_page_setup_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.update_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.update_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def update_section_page_setup_with_http_info(self, request, **kwargs):  # noqa: E501
         """Update page setup of section.  # noqa: E501
@@ -14011,13 +13892,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_section_page_setup`")  # noqa: E501
         # verify the required parameter 'section_index' is set
-        if (request.section_index is None):
+        if request.section_index is None:
             raise ValueError("Missing the required parameter `section_index` when calling `update_section_page_setup`")  # noqa: E501
         # verify the required parameter 'page_setup' is set
-        if (request.page_setup is None):
+        if request.page_setup is None:
             raise ValueError("Missing the required parameter `page_setup` when calling `update_section_page_setup`")  # noqa: E501
 
         collection_formats = {}
@@ -14105,10 +13986,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.update_table_cell_format_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.update_table_cell_format_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.update_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.update_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def update_table_cell_format_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates a table cell format.  # noqa: E501
@@ -14139,13 +14019,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_table_cell_format`")  # noqa: E501
         # verify the required parameter 'table_row_path' is set
-        if (request.table_row_path is None):
+        if request.table_row_path is None:
             raise ValueError("Missing the required parameter `table_row_path` when calling `update_table_cell_format`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_table_cell_format`")  # noqa: E501
 
         collection_formats = {}
@@ -14235,10 +14115,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.update_table_properties_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.update_table_properties_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.update_table_properties_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.update_table_properties_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def update_table_properties_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates a table properties.  # noqa: E501
@@ -14269,10 +14148,10 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_table_properties`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_table_properties`")  # noqa: E501
 
         collection_formats = {}
@@ -14362,10 +14241,9 @@ class WordsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.update_table_row_format_with_http_info(self, request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.update_table_row_format_with_http_info(self, request, **kwargs)  # noqa: E501
-            return data
+            return self.update_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
+        (data) = self.update_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
+        return data
 
     def update_table_row_format_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates a table row format.  # noqa: E501
@@ -14396,13 +14274,13 @@ class WordsApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
-        if (request.name is None):
+        if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_table_row_format`")  # noqa: E501
         # verify the required parameter 'table_path' is set
-        if (request.table_path is None):
+        if request.table_path is None:
             raise ValueError("Missing the required parameter `table_path` when calling `update_table_row_format`")  # noqa: E501
         # verify the required parameter 'index' is set
-        if (request.index is None):
+        if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_table_row_format`")  # noqa: E501
 
         collection_formats = {}
@@ -14467,21 +14345,20 @@ class WordsApi(object):
             collection_formats=collection_formats)
 
     # Helper method to convert first letter to downcase
-    def __downcase_first_letter(self, str):
+    def __downcase_first_letter(self, s):
         if len(s) == 0:
-            return s
+            return str
         else:
             return s[0].lower() + s[1:]
-			
+
     def __request_token(self):
         config = self.api_client.configuration
         api_version = config.api_version
         config.api_version = ''
         request_url = "/oauth2/token"
         post_data = "grant_type=client_credentials" + "&client_id=" + config.api_key['app_sid'] + "&client_secret=" + config.api_key['api_key']
-        data, status_code, header = self.api_client.call_api(request_url, 'POST', body=post_data, response_type= 'object')
+        data, status_code, header = self.api_client.call_api(request_url, 'POST', body=post_data, response_type='object')
         self.api_client.configuration.access_token = data['access_token']
         self.api_client.configuration.api_version = api_version
         self.api_client.configuration.refresh_token = data['refresh_token']
-
  

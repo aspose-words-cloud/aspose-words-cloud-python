@@ -60,7 +60,7 @@ class ApiClient(object):
     PRIMITIVE_TYPES = (float, bool, bytes, six.text_type) + six.integer_types
     NATIVE_TYPES_MAPPING = {
         'int': int,
-        'long': int if six.PY3 else long,  # noqa: F821
+        'long': int if six.PY3 else long,  #pylint: disable=undefined-variable
         'float': float,
         'str': str,
         'bool': bool,
@@ -174,7 +174,7 @@ class ApiClient(object):
         if _return_http_data_only:
             return return_data
         return (return_data, response_data.status,
-               response_data.getheaders())
+                response_data.getheaders())
 
     def sanitize_for_serialization(self, obj):
         """Builds a JSON POST object.
@@ -336,7 +336,7 @@ class ApiClient(object):
                                                              response_type, auth_settings,
                                                              _return_http_data_only,
                                                              collection_formats,
-                                                            _preload_content, _request_timeout))
+                                                             _preload_content, _request_timeout))
         return thread
 
     def request(self, method, url, query_params=None, headers=None,
