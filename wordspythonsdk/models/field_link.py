@@ -41,22 +41,74 @@ class FieldLink(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
+        'node_id': 'str',
         'field_code': 'str'
     }
 
     attribute_map = {
+        'link': 'link',
+        'node_id': 'NodeId',
         'field_code': 'FieldCode'
     }
 
-    def __init__(self, field_code=None):  # noqa: E501
+    def __init__(self, link=None, node_id=None, field_code=None):  # noqa: E501
         """FieldLink - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
+        self._node_id = None
         self._field_code = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
+        if node_id is not None:
+            self.node_id = node_id
         if field_code is not None:
             self.field_code = field_code
 
+    @property
+    def link(self):
+        """Gets the link of this FieldLink.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this FieldLink.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this FieldLink.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this FieldLink.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
+    @property
+    def node_id(self):
+        """Gets the node_id of this FieldLink.  # noqa: E501
+
+        Node id  # noqa: E501
+
+        :return: The node_id of this FieldLink.  # noqa: E501
+        :rtype: str
+        """
+        return self._node_id
+
+    @node_id.setter
+    def node_id(self, node_id):
+        """Sets the node_id of this FieldLink.
+
+        Node id  # noqa: E501
+
+        :param node_id: The node_id of this FieldLink.  # noqa: E501
+        :type: str
+        """
+        self._node_id = node_id
     @property
     def field_code(self):
         """Gets the field_code of this FieldLink.  # noqa: E501
@@ -77,9 +129,7 @@ class FieldLink(object):
         :param field_code: The field_code of this FieldLink.  # noqa: E501
         :type: str
         """
-
         self._field_code = field_code
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

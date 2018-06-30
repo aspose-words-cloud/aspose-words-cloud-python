@@ -41,6 +41,7 @@ class Border(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'border_type': 'str',
         'color': 'XmlColor',
         'distance_from_text': 'float',
@@ -50,6 +51,7 @@ class Border(object):
     }
 
     attribute_map = {
+        'link': 'link',
         'border_type': 'BorderType',
         'color': 'Color',
         'distance_from_text': 'DistanceFromText',
@@ -58,9 +60,10 @@ class Border(object):
         'shadow': 'Shadow'
     }
 
-    def __init__(self, border_type=None, color=None, distance_from_text=None, line_style=None, line_width=None, shadow=None):  # noqa: E501
+    def __init__(self, link=None, border_type=None, color=None, distance_from_text=None, line_style=None, line_width=None, shadow=None):  # noqa: E501
         """Border - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._border_type = None
         self._color = None
         self._distance_from_text = None
@@ -69,6 +72,8 @@ class Border(object):
         self._shadow = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if border_type is not None:
             self.border_type = border_type
         if color is not None:
@@ -82,6 +87,27 @@ class Border(object):
         if shadow is not None:
             self.shadow = shadow
 
+    @property
+    def link(self):
+        """Gets the link of this Border.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this Border.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this Border.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this Border.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def border_type(self):
         """Gets the border_type of this Border.  # noqa: E501
@@ -103,14 +129,14 @@ class Border(object):
         :type: str
         """
         allowed_values = ["Bottom", "Left", "Right", "Top", "Horizontal", "Vertical", "DiagonalDown", "DiagonalUp", "None"]  # noqa: E501
-        if border_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `border_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(border_type, allowed_values)
-            )
-
-        self._border_type = border_type
-
+        if not border_type.isdigit():	
+            if border_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `border_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(border_type, allowed_values))
+            self._border_type = border_type
+        else:
+            self._border_type = allowed_values[int(border_type) if six.PY3 else long(border_type)]
     @property
     def color(self):
         """Gets the color of this Border.  # noqa: E501
@@ -131,9 +157,7 @@ class Border(object):
         :param color: The color of this Border.  # noqa: E501
         :type: XmlColor
         """
-
         self._color = color
-
     @property
     def distance_from_text(self):
         """Gets the distance_from_text of this Border.  # noqa: E501
@@ -154,9 +178,7 @@ class Border(object):
         :param distance_from_text: The distance_from_text of this Border.  # noqa: E501
         :type: float
         """
-
         self._distance_from_text = distance_from_text
-
     @property
     def line_style(self):
         """Gets the line_style of this Border.  # noqa: E501
@@ -178,14 +200,14 @@ class Border(object):
         :type: str
         """
         allowed_values = ["None", "Single", "Thick", "Double", "Hairline", "Dot", "DashLargeGap", "DotDash", "DotDotDash", "Triple", "ThinThickSmallGap", "ThickThinSmallGap", "ThinThickThinSmallGap", "ThinThickMediumGap", "ThickThinMediumGap", "ThinThickThinMediumGap", "ThinThickLargeGap", "ThickThinLargeGap", "ThinThickThinLargeGap", "Wave", "DoubleWave", "DashSmallGap", "DashDotStroker", "Emboss3D", "Engrave3D", "Outset", "Inset"]  # noqa: E501
-        if line_style not in allowed_values:
-            raise ValueError(
-                "Invalid value for `line_style` ({0}), must be one of {1}"  # noqa: E501
-                .format(line_style, allowed_values)
-            )
-
-        self._line_style = line_style
-
+        if not line_style.isdigit():	
+            if line_style not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `line_style` ({0}), must be one of {1}"  # noqa: E501
+                    .format(line_style, allowed_values))
+            self._line_style = line_style
+        else:
+            self._line_style = allowed_values[int(line_style) if six.PY3 else long(line_style)]
     @property
     def line_width(self):
         """Gets the line_width of this Border.  # noqa: E501
@@ -206,9 +228,7 @@ class Border(object):
         :param line_width: The line_width of this Border.  # noqa: E501
         :type: float
         """
-
         self._line_width = line_width
-
     @property
     def shadow(self):
         """Gets the shadow of this Border.  # noqa: E501
@@ -229,9 +249,7 @@ class Border(object):
         :param shadow: The shadow of this Border.  # noqa: E501
         :type: bool
         """
-
         self._shadow = shadow
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

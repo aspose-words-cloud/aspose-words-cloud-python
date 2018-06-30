@@ -87,9 +87,7 @@ class ProtectionRequest(object):
         :param password: The password of this ProtectionRequest.  # noqa: E501
         :type: str
         """
-
         self._password = password
-
     @property
     def new_password(self):
         """Gets the new_password of this ProtectionRequest.  # noqa: E501
@@ -110,9 +108,7 @@ class ProtectionRequest(object):
         :param new_password: The new_password of this ProtectionRequest.  # noqa: E501
         :type: str
         """
-
         self._new_password = new_password
-
     @property
     def protection_type(self):
         """Gets the protection_type of this ProtectionRequest.  # noqa: E501
@@ -133,9 +129,7 @@ class ProtectionRequest(object):
         :param protection_type: The protection_type of this ProtectionRequest.  # noqa: E501
         :type: str
         """
-
         self._protection_type = protection_type
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

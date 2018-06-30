@@ -66,9 +66,12 @@ class DocumentStatData(object):
         self._page_stat_data = None
         self.discriminator = None
 
-        self.word_count = word_count
-        self.paragraph_count = paragraph_count
-        self.page_count = page_count
+        if word_count is not None:
+            self.word_count = word_count
+        if paragraph_count is not None:
+            self.paragraph_count = paragraph_count
+        if page_count is not None:
+            self.page_count = page_count
         if footnotes_stat_data is not None:
             self.footnotes_stat_data = footnotes_stat_data
         if page_stat_data is not None:
@@ -96,9 +99,7 @@ class DocumentStatData(object):
         """
         if word_count is None:
             raise ValueError("Invalid value for `word_count`, must not be `None`")  # noqa: E501
-
         self._word_count = word_count
-
     @property
     def paragraph_count(self):
         """Gets the paragraph_count of this DocumentStatData.  # noqa: E501
@@ -121,9 +122,7 @@ class DocumentStatData(object):
         """
         if paragraph_count is None:
             raise ValueError("Invalid value for `paragraph_count`, must not be `None`")  # noqa: E501
-
         self._paragraph_count = paragraph_count
-
     @property
     def page_count(self):
         """Gets the page_count of this DocumentStatData.  # noqa: E501
@@ -146,9 +145,7 @@ class DocumentStatData(object):
         """
         if page_count is None:
             raise ValueError("Invalid value for `page_count`, must not be `None`")  # noqa: E501
-
         self._page_count = page_count
-
     @property
     def footnotes_stat_data(self):
         """Gets the footnotes_stat_data of this DocumentStatData.  # noqa: E501
@@ -169,9 +166,7 @@ class DocumentStatData(object):
         :param footnotes_stat_data: The footnotes_stat_data of this DocumentStatData.  # noqa: E501
         :type: FootnotesStatData
         """
-
         self._footnotes_stat_data = footnotes_stat_data
-
     @property
     def page_stat_data(self):
         """Gets the page_stat_data of this DocumentStatData.  # noqa: E501
@@ -192,9 +187,7 @@ class DocumentStatData(object):
         :param page_stat_data: The page_stat_data of this DocumentStatData.  # noqa: E501
         :type: list[PageStatData]
         """
-
         self._page_stat_data = page_stat_data
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -82,9 +82,7 @@ class DocumentPosition(object):
         :param node: The node of this DocumentPosition.  # noqa: E501
         :type: NodeLink
         """
-
         self._node = node
-
     @property
     def offset(self):
         """Gets the offset of this DocumentPosition.  # noqa: E501
@@ -105,9 +103,7 @@ class DocumentPosition(object):
         :param offset: The offset of this DocumentPosition.  # noqa: E501
         :type: int
         """
-
         self._offset = offset
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

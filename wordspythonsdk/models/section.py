@@ -41,6 +41,7 @@ class Section(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'child_nodes': 'list[NodeLink]',
         'header_footers': 'LinkElement',
         'page_setup': 'LinkElement',
@@ -49,6 +50,7 @@ class Section(object):
     }
 
     attribute_map = {
+        'link': 'link',
         'child_nodes': 'ChildNodes',
         'header_footers': 'HeaderFooters',
         'page_setup': 'PageSetup',
@@ -56,9 +58,10 @@ class Section(object):
         'tables': 'Tables'
     }
 
-    def __init__(self, child_nodes=None, header_footers=None, page_setup=None, paragraphs=None, tables=None):  # noqa: E501
+    def __init__(self, link=None, child_nodes=None, header_footers=None, page_setup=None, paragraphs=None, tables=None):  # noqa: E501
         """Section - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._child_nodes = None
         self._header_footers = None
         self._page_setup = None
@@ -66,6 +69,8 @@ class Section(object):
         self._tables = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if child_nodes is not None:
             self.child_nodes = child_nodes
         if header_footers is not None:
@@ -77,6 +82,27 @@ class Section(object):
         if tables is not None:
             self.tables = tables
 
+    @property
+    def link(self):
+        """Gets the link of this Section.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this Section.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this Section.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this Section.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def child_nodes(self):
         """Gets the child_nodes of this Section.  # noqa: E501
@@ -97,9 +123,7 @@ class Section(object):
         :param child_nodes: The child_nodes of this Section.  # noqa: E501
         :type: list[NodeLink]
         """
-
         self._child_nodes = child_nodes
-
     @property
     def header_footers(self):
         """Gets the header_footers of this Section.  # noqa: E501
@@ -120,9 +144,7 @@ class Section(object):
         :param header_footers: The header_footers of this Section.  # noqa: E501
         :type: LinkElement
         """
-
         self._header_footers = header_footers
-
     @property
     def page_setup(self):
         """Gets the page_setup of this Section.  # noqa: E501
@@ -143,9 +165,7 @@ class Section(object):
         :param page_setup: The page_setup of this Section.  # noqa: E501
         :type: LinkElement
         """
-
         self._page_setup = page_setup
-
     @property
     def paragraphs(self):
         """Gets the paragraphs of this Section.  # noqa: E501
@@ -166,9 +186,7 @@ class Section(object):
         :param paragraphs: The paragraphs of this Section.  # noqa: E501
         :type: LinkElement
         """
-
         self._paragraphs = paragraphs
-
     @property
     def tables(self):
         """Gets the tables of this Section.  # noqa: E501
@@ -189,9 +207,7 @@ class Section(object):
         :param tables: The tables of this Section.  # noqa: E501
         :type: LinkElement
         """
-
         self._tables = tables
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

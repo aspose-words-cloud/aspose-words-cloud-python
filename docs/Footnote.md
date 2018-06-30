@@ -3,6 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**link** | [**WordsApiLink**](WordsApiLink.md) | Link to the document. | [optional] 
+**node_id** | **str** | Node id | [optional] 
 **content** | [**StoryChildNodes**](StoryChildNodes.md) | Content of footnote. | [optional] 
 **footnote_type** | **str** | Returns a value that specifies whether this is a footnote or endnote. | [optional] 
 **position** | [**DocumentPosition**](DocumentPosition.md) | Link to comment range start node. | [optional] 

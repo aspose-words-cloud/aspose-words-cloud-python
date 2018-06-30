@@ -41,22 +41,48 @@ class SearchResultsCollection(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'results_list': 'list[SearchResult]'
     }
 
     attribute_map = {
+        'link': 'link',
         'results_list': 'ResultsList'
     }
 
-    def __init__(self, results_list=None):  # noqa: E501
+    def __init__(self, link=None, results_list=None):  # noqa: E501
         """SearchResultsCollection - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._results_list = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if results_list is not None:
             self.results_list = results_list
 
+    @property
+    def link(self):
+        """Gets the link of this SearchResultsCollection.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this SearchResultsCollection.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this SearchResultsCollection.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this SearchResultsCollection.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def results_list(self):
         """Gets the results_list of this SearchResultsCollection.  # noqa: E501
@@ -77,9 +103,7 @@ class SearchResultsCollection(object):
         :param results_list: The results_list of this SearchResultsCollection.  # noqa: E501
         :type: list[SearchResult]
         """
-
         self._results_list = results_list
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

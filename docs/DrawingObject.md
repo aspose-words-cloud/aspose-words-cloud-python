@@ -3,6 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**link** | [**WordsApiLink**](WordsApiLink.md) | Link to the document. | [optional] 
+**node_id** | **str** | Node id | [optional] 
 **height** | **float** | Height of the drawing object in points. | [optional] 
 **image_data_link** | [**WordsApiLink**](WordsApiLink.md) | Link to image data. Can be null if shape does not have an image. | [optional] 
 **left** | **float** | Distance in points from the origin to the left side of the image.              | [optional] 

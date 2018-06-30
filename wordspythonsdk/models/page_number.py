@@ -67,8 +67,10 @@ class PageNumber(object):
             self.format = format
         if alignment is not None:
             self.alignment = alignment
-        self.is_top = is_top
-        self.set_page_number_on_first_page = set_page_number_on_first_page
+        if is_top is not None:
+            self.is_top = is_top
+        if set_page_number_on_first_page is not None:
+            self.set_page_number_on_first_page = set_page_number_on_first_page
 
     @property
     def format(self):
@@ -90,9 +92,7 @@ class PageNumber(object):
         :param format: The format of this PageNumber.  # noqa: E501
         :type: str
         """
-
         self._format = format
-
     @property
     def alignment(self):
         """Gets the alignment of this PageNumber.  # noqa: E501
@@ -113,9 +113,7 @@ class PageNumber(object):
         :param alignment: The alignment of this PageNumber.  # noqa: E501
         :type: str
         """
-
         self._alignment = alignment
-
     @property
     def is_top(self):
         """Gets the is_top of this PageNumber.  # noqa: E501
@@ -138,9 +136,7 @@ class PageNumber(object):
         """
         if is_top is None:
             raise ValueError("Invalid value for `is_top`, must not be `None`")  # noqa: E501
-
         self._is_top = is_top
-
     @property
     def set_page_number_on_first_page(self):
         """Gets the set_page_number_on_first_page of this PageNumber.  # noqa: E501
@@ -163,9 +159,7 @@ class PageNumber(object):
         """
         if set_page_number_on_first_page is None:
             raise ValueError("Invalid value for `set_page_number_on_first_page`, must not be `None`")  # noqa: E501
-
         self._set_page_number_on_first_page = set_page_number_on_first_page
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

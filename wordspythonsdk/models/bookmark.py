@@ -41,27 +41,53 @@ class Bookmark(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'name': 'str',
         'text': 'str'
     }
 
     attribute_map = {
+        'link': 'link',
         'name': 'Name',
         'text': 'Text'
     }
 
-    def __init__(self, name=None, text=None):  # noqa: E501
+    def __init__(self, link=None, name=None, text=None):  # noqa: E501
         """Bookmark - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._name = None
         self._text = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if name is not None:
             self.name = name
         if text is not None:
             self.text = text
 
+    @property
+    def link(self):
+        """Gets the link of this Bookmark.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this Bookmark.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this Bookmark.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this Bookmark.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def name(self):
         """Gets the name of this Bookmark.  # noqa: E501
@@ -82,9 +108,7 @@ class Bookmark(object):
         :param name: The name of this Bookmark.  # noqa: E501
         :type: str
         """
-
         self._name = name
-
     @property
     def text(self):
         """Gets the text of this Bookmark.  # noqa: E501
@@ -105,9 +129,7 @@ class Bookmark(object):
         :param text: The text of this Bookmark.  # noqa: E501
         :type: str
         """
-
         self._text = text
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**link** | [**WordsApiLink**](WordsApiLink.md) | Link to the document. | [optional] 
 **bidi** | **bool** | Specifies that this section contains bidirectional (complex scripts) text.              | [optional] 
 **border_always_in_front** | **bool** | Specifies where the page border is positioned relative to intersecting texts and objects.              | [optional] 
 **border_applies_to** | **str** | Specifies which pages the page border is printed on.              | [optional] 

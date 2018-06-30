@@ -41,22 +41,76 @@ class DocumentPropertiesResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'code': 'int',
+        'status': 'str',
         'document_properties': 'DocumentProperties'
     }
 
     attribute_map = {
+        'code': 'Code',
+        'status': 'Status',
         'document_properties': 'DocumentProperties'
     }
 
-    def __init__(self, document_properties=None):  # noqa: E501
+    def __init__(self, code=None, status=None, document_properties=None):  # noqa: E501
         """DocumentPropertiesResponse - a model defined in Swagger"""  # noqa: E501
 
+        self._code = None
+        self._status = None
         self._document_properties = None
         self.discriminator = None
 
+        if code is not None:
+            self.code = code
+        if status is not None:
+            self.status = status
         if document_properties is not None:
             self.document_properties = document_properties
 
+    @property
+    def code(self):
+        """Gets the code of this DocumentPropertiesResponse.  # noqa: E501
+
+        Response status code.  # noqa: E501
+
+        :return: The code of this DocumentPropertiesResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._code
+
+    @code.setter
+    def code(self, code):
+        """Sets the code of this DocumentPropertiesResponse.
+
+        Response status code.  # noqa: E501
+
+        :param code: The code of this DocumentPropertiesResponse.  # noqa: E501
+        :type: int
+        """
+        if code is None:
+            raise ValueError("Invalid value for `code`, must not be `None`")  # noqa: E501
+        self._code = code
+    @property
+    def status(self):
+        """Gets the status of this DocumentPropertiesResponse.  # noqa: E501
+
+        Response status.  # noqa: E501
+
+        :return: The status of this DocumentPropertiesResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this DocumentPropertiesResponse.
+
+        Response status.  # noqa: E501
+
+        :param status: The status of this DocumentPropertiesResponse.  # noqa: E501
+        :type: str
+        """
+        self._status = status
     @property
     def document_properties(self):
         """Gets the document_properties of this DocumentPropertiesResponse.  # noqa: E501
@@ -77,9 +131,7 @@ class DocumentPropertiesResponse(object):
         :param document_properties: The document_properties of this DocumentPropertiesResponse.  # noqa: E501
         :type: DocumentProperties
         """
-
         self._document_properties = document_properties
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -167,6 +167,8 @@ class RESTClientObject(object):
             if method in ['POST', 'PUT', 'PATCH', 'OPTIONS', 'DELETE']:
                 if query_params:
                     url += '?' + urlencode(query_params)
+                if not six.PY3:
+                    url = url.encode('utf8')
                 if re.search('json', headers['Content-Type'], re.IGNORECASE):
                     request_body = None
                     if body is not None:
@@ -227,11 +229,6 @@ class RESTClientObject(object):
 
         if _preload_content:
             r = RESTResponse(r)
-
-            # In the python 3, the response.data is bytes.
-            # we need to decode it to string.
-            if six.PY3:
-                r.data = r.data.decode('utf8')
 
             # log response body
             logger.debug("response body: %s", r.data)

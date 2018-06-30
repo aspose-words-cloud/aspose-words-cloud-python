@@ -1,29 +1,31 @@
-# --------------------------------------------------------------------------------
- # <copyright company="Aspose" file="put_document_save_as_tiff_request.py">
- #   Copyright (c) 2018 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- # 
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- # 
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------
 
-class put_document_save_as_tiff_request
+# --------------------------------------------------------------------------------
+# <copyright company="Aspose" file="PutDocumentSaveAsTiffRequest.py">
+#   Copyright (c) 2018 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#   Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+# 
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+# 
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# --------------------------------------------------------------------------------
+
+
+class PutDocumentSaveAsTiffRequest(object):
     """
     Request model for put_document_save_as_tiff operation.
     Initializes a new instance.
@@ -54,32 +56,31 @@ class put_document_save_as_tiff_request
     :param zip_output Optional. A value determining zip output or not.
     :param fonts_location Folder in filestorage with custom fonts.
     """
-	def __init__(self, name, save_options, folder=nil, storage=nil, load_encoding=nil, password=nil, dest_file_name=nil, result_file=nil, use_anti_aliasing=nil, use_high_quality_rendering=nil, image_brightness=nil, image_color_mode=nil, image_contrast=nil, numeral_format=nil, page_count=nil, page_index=nil, paper_color=nil, pixel_format=nil, resolution=nil, scale=nil, tiff_compression=nil, dml_rendering_mode=nil, dml_effects_rendering_mode=nil, tiff_binarization_method=nil, zip_output=nil, fonts_location=nil)
-		self.name=name
-		self.save_options=save_options
-		self.folder=folder
-		self.storage=storage
-		self.load_encoding=load_encoding
-		self.password=password
-		self.dest_file_name=dest_file_name
-		self.result_file=result_file
-		self.use_anti_aliasing=use_anti_aliasing
-		self.use_high_quality_rendering=use_high_quality_rendering
-		self.image_brightness=image_brightness
-		self.image_color_mode=image_color_mode
-		self.image_contrast=image_contrast
-		self.numeral_format=numeral_format
-		self.page_count=page_count
-		self.page_index=page_index
-		self.paper_color=paper_color
-		self.pixel_format=pixel_format
-		self.resolution=resolution
-		self.scale=scale
-		self.tiff_compression=tiff_compression
-		self.dml_rendering_mode=dml_rendering_mode
-		self.dml_effects_rendering_mode=dml_effects_rendering_mode
-		self.tiff_binarization_method=tiff_binarization_method
-		self.zip_output=zip_output
-		self.fonts_location=fonts_location
 
- 
+    def __init__(self, name, save_options, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, result_file=None, use_anti_aliasing=None, use_high_quality_rendering=None, image_brightness=None, image_color_mode=None, image_contrast=None, numeral_format=None, page_count=None, page_index=None, paper_color=None, pixel_format=None, resolution=None, scale=None, tiff_compression=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, tiff_binarization_method=None, zip_output=None, fonts_location=None):
+        self.name = name
+        self.save_options = save_options
+        self.folder = folder
+        self.storage = storage
+        self.load_encoding = load_encoding
+        self.password = password
+        self.dest_file_name = dest_file_name
+        self.result_file = result_file
+        self.use_anti_aliasing = use_anti_aliasing
+        self.use_high_quality_rendering = use_high_quality_rendering
+        self.image_brightness = image_brightness
+        self.image_color_mode = image_color_mode
+        self.image_contrast = image_contrast
+        self.numeral_format = numeral_format
+        self.page_count = page_count
+        self.page_index = page_index
+        self.paper_color = paper_color
+        self.pixel_format = pixel_format
+        self.resolution = resolution
+        self.scale = scale
+        self.tiff_compression = tiff_compression
+        self.dml_rendering_mode = dml_rendering_mode
+        self.dml_effects_rendering_mode = dml_effects_rendering_mode
+        self.tiff_binarization_method = tiff_binarization_method
+        self.zip_output = zip_output
+        self.fonts_location = fonts_location

@@ -1,29 +1,31 @@
-# --------------------------------------------------------------------------------
- # <copyright company="Aspose" file="post_insert_document_watermark_image_request.py">
- #   Copyright (c) 2018 Aspose.Words for Cloud
- # </copyright>
- # <summary>
- #   Permission is hereby granted, free of charge, to any person obtaining a copy
- #  of this software and associated documentation files (the "Software"), to deal
- #  in the Software without restriction, including without limitation the rights
- #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- #  copies of the Software, and to permit persons to whom the Software is
- #  furnished to do so, subject to the following conditions:
- # 
- #  The above copyright notice and this permission notice shall be included in all
- #  copies or substantial portions of the Software.
- # 
- #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- #  SOFTWARE.
- # </summary>
- # --------------------------------------------------------------------------------
 
-class post_insert_document_watermark_image_request
+# --------------------------------------------------------------------------------
+# <copyright company="Aspose" file="PostInsertDocumentWatermarkImageRequest.py">
+#   Copyright (c) 2018 Aspose.Words for Cloud
+# </copyright>
+# <summary>
+#   Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+# 
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+# 
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+# </summary>
+# --------------------------------------------------------------------------------
+
+
+class PostInsertDocumentWatermarkImageRequest(object):
     """
     Request model for post_insert_document_watermark_image operation.
     Initializes a new instance.
@@ -39,17 +41,16 @@ class post_insert_document_watermark_image_request
     :param rotation_angle The watermark rotation angle.
     :param image The image file server full name. If the name is empty the image is expected in request content.
     """
-	def __init__(self, name, image_file=nil, folder=nil, storage=nil, load_encoding=nil, password=nil, dest_file_name=nil, revision_author=nil, revision_date_time=nil, rotation_angle=nil, image=nil)
-		self.name=name
-		self.image_file=image_file
-		self.folder=folder
-		self.storage=storage
-		self.load_encoding=load_encoding
-		self.password=password
-		self.dest_file_name=dest_file_name
-		self.revision_author=revision_author
-		self.revision_date_time=revision_date_time
-		self.rotation_angle=rotation_angle
-		self.image=image
 
- 
+    def __init__(self, name, image_file=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None, rotation_angle=None, image=None):
+        self.name = name
+        self.image_file = image_file
+        self.folder = folder
+        self.storage = storage
+        self.load_encoding = load_encoding
+        self.password = password
+        self.dest_file_name = dest_file_name
+        self.revision_author = revision_author
+        self.revision_date_time = revision_date_time
+        self.rotation_angle = rotation_angle
+        self.image = image

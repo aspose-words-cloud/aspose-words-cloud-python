@@ -41,22 +41,76 @@ class RunsResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'code': 'int',
+        'status': 'str',
         'runs': 'Runs'
     }
 
     attribute_map = {
+        'code': 'Code',
+        'status': 'Status',
         'runs': 'Runs'
     }
 
-    def __init__(self, runs=None):  # noqa: E501
+    def __init__(self, code=None, status=None, runs=None):  # noqa: E501
         """RunsResponse - a model defined in Swagger"""  # noqa: E501
 
+        self._code = None
+        self._status = None
         self._runs = None
         self.discriminator = None
 
+        if code is not None:
+            self.code = code
+        if status is not None:
+            self.status = status
         if runs is not None:
             self.runs = runs
 
+    @property
+    def code(self):
+        """Gets the code of this RunsResponse.  # noqa: E501
+
+        Response status code.  # noqa: E501
+
+        :return: The code of this RunsResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._code
+
+    @code.setter
+    def code(self, code):
+        """Sets the code of this RunsResponse.
+
+        Response status code.  # noqa: E501
+
+        :param code: The code of this RunsResponse.  # noqa: E501
+        :type: int
+        """
+        if code is None:
+            raise ValueError("Invalid value for `code`, must not be `None`")  # noqa: E501
+        self._code = code
+    @property
+    def status(self):
+        """Gets the status of this RunsResponse.  # noqa: E501
+
+        Response status.  # noqa: E501
+
+        :return: The status of this RunsResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this RunsResponse.
+
+        Response status.  # noqa: E501
+
+        :param status: The status of this RunsResponse.  # noqa: E501
+        :type: str
+        """
+        self._status = status
     @property
     def runs(self):
         """Gets the runs of this RunsResponse.  # noqa: E501
@@ -77,9 +131,7 @@ class RunsResponse(object):
         :param runs: The runs of this RunsResponse.  # noqa: E501
         :type: Runs
         """
-
         self._runs = runs
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -41,6 +41,7 @@ class PageSetup(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'bidi': 'bool',
         'border_always_in_front': 'bool',
         'border_applies_to': 'str',
@@ -73,6 +74,7 @@ class PageSetup(object):
     }
 
     attribute_map = {
+        'link': 'link',
         'bidi': 'Bidi',
         'border_always_in_front': 'BorderAlwaysInFront',
         'border_applies_to': 'BorderAppliesTo',
@@ -104,9 +106,10 @@ class PageSetup(object):
         'vertical_alignment': 'VerticalAlignment'
     }
 
-    def __init__(self, bidi=None, border_always_in_front=None, border_applies_to=None, border_distance_from=None, bottom_margin=None, different_first_page_header_footer=None, first_page_tray=None, footer_distance=None, gutter=None, header_distance=None, left_margin=None, line_number_count_by=None, line_number_distance_from_text=None, line_number_restart_mode=None, line_starting_number=None, orientation=None, other_pages_tray=None, page_height=None, page_number_style=None, page_starting_number=None, page_width=None, paper_size=None, restart_page_numbering=None, right_margin=None, rtl_gutter=None, section_start=None, suppress_endnotes=None, top_margin=None, vertical_alignment=None):  # noqa: E501
+    def __init__(self, link=None, bidi=None, border_always_in_front=None, border_applies_to=None, border_distance_from=None, bottom_margin=None, different_first_page_header_footer=None, first_page_tray=None, footer_distance=None, gutter=None, header_distance=None, left_margin=None, line_number_count_by=None, line_number_distance_from_text=None, line_number_restart_mode=None, line_starting_number=None, orientation=None, other_pages_tray=None, page_height=None, page_number_style=None, page_starting_number=None, page_width=None, paper_size=None, restart_page_numbering=None, right_margin=None, rtl_gutter=None, section_start=None, suppress_endnotes=None, top_margin=None, vertical_alignment=None):  # noqa: E501
         """PageSetup - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._bidi = None
         self._border_always_in_front = None
         self._border_applies_to = None
@@ -138,6 +141,8 @@ class PageSetup(object):
         self._vertical_alignment = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if bidi is not None:
             self.bidi = bidi
         if border_always_in_front is not None:
@@ -198,6 +203,27 @@ class PageSetup(object):
             self.vertical_alignment = vertical_alignment
 
     @property
+    def link(self):
+        """Gets the link of this PageSetup.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this PageSetup.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this PageSetup.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this PageSetup.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
+    @property
     def bidi(self):
         """Gets the bidi of this PageSetup.  # noqa: E501
 
@@ -217,9 +243,7 @@ class PageSetup(object):
         :param bidi: The bidi of this PageSetup.  # noqa: E501
         :type: bool
         """
-
         self._bidi = bidi
-
     @property
     def border_always_in_front(self):
         """Gets the border_always_in_front of this PageSetup.  # noqa: E501
@@ -240,9 +264,7 @@ class PageSetup(object):
         :param border_always_in_front: The border_always_in_front of this PageSetup.  # noqa: E501
         :type: bool
         """
-
         self._border_always_in_front = border_always_in_front
-
     @property
     def border_applies_to(self):
         """Gets the border_applies_to of this PageSetup.  # noqa: E501
@@ -264,14 +286,14 @@ class PageSetup(object):
         :type: str
         """
         allowed_values = ["AllPages", "FirstPage", "OtherPages"]  # noqa: E501
-        if border_applies_to not in allowed_values:
-            raise ValueError(
-                "Invalid value for `border_applies_to` ({0}), must be one of {1}"  # noqa: E501
-                .format(border_applies_to, allowed_values)
-            )
-
-        self._border_applies_to = border_applies_to
-
+        if not border_applies_to.isdigit():	
+            if border_applies_to not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `border_applies_to` ({0}), must be one of {1}"  # noqa: E501
+                    .format(border_applies_to, allowed_values))
+            self._border_applies_to = border_applies_to
+        else:
+            self._border_applies_to = allowed_values[int(border_applies_to) if six.PY3 else long(border_applies_to)]
     @property
     def border_distance_from(self):
         """Gets the border_distance_from of this PageSetup.  # noqa: E501
@@ -293,14 +315,14 @@ class PageSetup(object):
         :type: str
         """
         allowed_values = ["Text", "PageEdge"]  # noqa: E501
-        if border_distance_from not in allowed_values:
-            raise ValueError(
-                "Invalid value for `border_distance_from` ({0}), must be one of {1}"  # noqa: E501
-                .format(border_distance_from, allowed_values)
-            )
-
-        self._border_distance_from = border_distance_from
-
+        if not border_distance_from.isdigit():	
+            if border_distance_from not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `border_distance_from` ({0}), must be one of {1}"  # noqa: E501
+                    .format(border_distance_from, allowed_values))
+            self._border_distance_from = border_distance_from
+        else:
+            self._border_distance_from = allowed_values[int(border_distance_from) if six.PY3 else long(border_distance_from)]
     @property
     def bottom_margin(self):
         """Gets the bottom_margin of this PageSetup.  # noqa: E501
@@ -321,9 +343,7 @@ class PageSetup(object):
         :param bottom_margin: The bottom_margin of this PageSetup.  # noqa: E501
         :type: float
         """
-
         self._bottom_margin = bottom_margin
-
     @property
     def different_first_page_header_footer(self):
         """Gets the different_first_page_header_footer of this PageSetup.  # noqa: E501
@@ -344,9 +364,7 @@ class PageSetup(object):
         :param different_first_page_header_footer: The different_first_page_header_footer of this PageSetup.  # noqa: E501
         :type: bool
         """
-
         self._different_first_page_header_footer = different_first_page_header_footer
-
     @property
     def first_page_tray(self):
         """Gets the first_page_tray of this PageSetup.  # noqa: E501
@@ -367,9 +385,7 @@ class PageSetup(object):
         :param first_page_tray: The first_page_tray of this PageSetup.  # noqa: E501
         :type: int
         """
-
         self._first_page_tray = first_page_tray
-
     @property
     def footer_distance(self):
         """Gets the footer_distance of this PageSetup.  # noqa: E501
@@ -390,9 +406,7 @@ class PageSetup(object):
         :param footer_distance: The footer_distance of this PageSetup.  # noqa: E501
         :type: float
         """
-
         self._footer_distance = footer_distance
-
     @property
     def gutter(self):
         """Gets the gutter of this PageSetup.  # noqa: E501
@@ -413,9 +427,7 @@ class PageSetup(object):
         :param gutter: The gutter of this PageSetup.  # noqa: E501
         :type: float
         """
-
         self._gutter = gutter
-
     @property
     def header_distance(self):
         """Gets the header_distance of this PageSetup.  # noqa: E501
@@ -436,9 +448,7 @@ class PageSetup(object):
         :param header_distance: The header_distance of this PageSetup.  # noqa: E501
         :type: float
         """
-
         self._header_distance = header_distance
-
     @property
     def left_margin(self):
         """Gets the left_margin of this PageSetup.  # noqa: E501
@@ -459,9 +469,7 @@ class PageSetup(object):
         :param left_margin: The left_margin of this PageSetup.  # noqa: E501
         :type: float
         """
-
         self._left_margin = left_margin
-
     @property
     def line_number_count_by(self):
         """Gets the line_number_count_by of this PageSetup.  # noqa: E501
@@ -482,9 +490,7 @@ class PageSetup(object):
         :param line_number_count_by: The line_number_count_by of this PageSetup.  # noqa: E501
         :type: int
         """
-
         self._line_number_count_by = line_number_count_by
-
     @property
     def line_number_distance_from_text(self):
         """Gets the line_number_distance_from_text of this PageSetup.  # noqa: E501
@@ -505,9 +511,7 @@ class PageSetup(object):
         :param line_number_distance_from_text: The line_number_distance_from_text of this PageSetup.  # noqa: E501
         :type: float
         """
-
         self._line_number_distance_from_text = line_number_distance_from_text
-
     @property
     def line_number_restart_mode(self):
         """Gets the line_number_restart_mode of this PageSetup.  # noqa: E501
@@ -529,14 +533,14 @@ class PageSetup(object):
         :type: str
         """
         allowed_values = ["RestartPage", "RestartSection", "Continuous"]  # noqa: E501
-        if line_number_restart_mode not in allowed_values:
-            raise ValueError(
-                "Invalid value for `line_number_restart_mode` ({0}), must be one of {1}"  # noqa: E501
-                .format(line_number_restart_mode, allowed_values)
-            )
-
-        self._line_number_restart_mode = line_number_restart_mode
-
+        if not line_number_restart_mode.isdigit():	
+            if line_number_restart_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `line_number_restart_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(line_number_restart_mode, allowed_values))
+            self._line_number_restart_mode = line_number_restart_mode
+        else:
+            self._line_number_restart_mode = allowed_values[int(line_number_restart_mode) if six.PY3 else long(line_number_restart_mode)]
     @property
     def line_starting_number(self):
         """Gets the line_starting_number of this PageSetup.  # noqa: E501
@@ -557,9 +561,7 @@ class PageSetup(object):
         :param line_starting_number: The line_starting_number of this PageSetup.  # noqa: E501
         :type: int
         """
-
         self._line_starting_number = line_starting_number
-
     @property
     def orientation(self):
         """Gets the orientation of this PageSetup.  # noqa: E501
@@ -581,14 +583,14 @@ class PageSetup(object):
         :type: str
         """
         allowed_values = ["Portrait", "Landscape"]  # noqa: E501
-        if orientation not in allowed_values:
-            raise ValueError(
-                "Invalid value for `orientation` ({0}), must be one of {1}"  # noqa: E501
-                .format(orientation, allowed_values)
-            )
-
-        self._orientation = orientation
-
+        if not orientation.isdigit():	
+            if orientation not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `orientation` ({0}), must be one of {1}"  # noqa: E501
+                    .format(orientation, allowed_values))
+            self._orientation = orientation
+        else:
+            self._orientation = allowed_values[int(orientation) if six.PY3 else long(orientation)]
     @property
     def other_pages_tray(self):
         """Gets the other_pages_tray of this PageSetup.  # noqa: E501
@@ -609,9 +611,7 @@ class PageSetup(object):
         :param other_pages_tray: The other_pages_tray of this PageSetup.  # noqa: E501
         :type: int
         """
-
         self._other_pages_tray = other_pages_tray
-
     @property
     def page_height(self):
         """Gets the page_height of this PageSetup.  # noqa: E501
@@ -632,9 +632,7 @@ class PageSetup(object):
         :param page_height: The page_height of this PageSetup.  # noqa: E501
         :type: float
         """
-
         self._page_height = page_height
-
     @property
     def page_number_style(self):
         """Gets the page_number_style of this PageSetup.  # noqa: E501
@@ -656,14 +654,14 @@ class PageSetup(object):
         :type: str
         """
         allowed_values = ["Arabic", "UppercaseRoman", "LowercaseRoman", "UppercaseLetter", "LowercaseLetter", "Ordinal", "Number", "OrdinalText", "Hex", "ChicagoManual", "Kanji", "KanjiDigit", "AiueoHalfWidth", "IrohaHalfWidth", "ArabicFullWidth", "ArabicHalfWidth", "KanjiTraditional", "KanjiTraditional2", "NumberInCircle", "DecimalFullWidth", "Aiueo", "Iroha", "LeadingZero", "Bullet", "Ganada", "Chosung", "GB1", "GB2", "GB3", "GB4", "Zodiac1", "Zodiac2", "Zodiac3", "TradChinNum1", "TradChinNum2", "TradChinNum3", "TradChinNum4", "SimpChinNum1", "SimpChinNum2", "SimpChinNum3", "SimpChinNum4", "HanjaRead", "HanjaReadDigit", "Hangul", "Hanja", "Hebrew1", "Arabic1", "Hebrew2", "Arabic2", "HindiLetter1", "HindiLetter2", "HindiArabic", "HindiCardinalText", "ThaiLetter", "ThaiArabic", "ThaiCardinalText", "VietCardinalText", "NumberInDash", "NumInDash", "LowercaseRussian", "UppercaseRussian", "None", "Custom"]  # noqa: E501
-        if page_number_style not in allowed_values:
-            raise ValueError(
-                "Invalid value for `page_number_style` ({0}), must be one of {1}"  # noqa: E501
-                .format(page_number_style, allowed_values)
-            )
-
-        self._page_number_style = page_number_style
-
+        if not page_number_style.isdigit():	
+            if page_number_style not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `page_number_style` ({0}), must be one of {1}"  # noqa: E501
+                    .format(page_number_style, allowed_values))
+            self._page_number_style = page_number_style
+        else:
+            self._page_number_style = allowed_values[int(page_number_style) if six.PY3 else long(page_number_style)]
     @property
     def page_starting_number(self):
         """Gets the page_starting_number of this PageSetup.  # noqa: E501
@@ -684,9 +682,7 @@ class PageSetup(object):
         :param page_starting_number: The page_starting_number of this PageSetup.  # noqa: E501
         :type: int
         """
-
         self._page_starting_number = page_starting_number
-
     @property
     def page_width(self):
         """Gets the page_width of this PageSetup.  # noqa: E501
@@ -707,9 +703,7 @@ class PageSetup(object):
         :param page_width: The page_width of this PageSetup.  # noqa: E501
         :type: float
         """
-
         self._page_width = page_width
-
     @property
     def paper_size(self):
         """Gets the paper_size of this PageSetup.  # noqa: E501
@@ -731,14 +725,14 @@ class PageSetup(object):
         :type: str
         """
         allowed_values = ["A3", "A4", "A5", "B4", "B5", "Executive", "Folio", "Ledger", "Legal", "Letter", "EnvelopeDL", "Quarto", "Statement", "Tabloid", "Paper10x14", "Paper11x17", "Custom"]  # noqa: E501
-        if paper_size not in allowed_values:
-            raise ValueError(
-                "Invalid value for `paper_size` ({0}), must be one of {1}"  # noqa: E501
-                .format(paper_size, allowed_values)
-            )
-
-        self._paper_size = paper_size
-
+        if not paper_size.isdigit():	
+            if paper_size not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `paper_size` ({0}), must be one of {1}"  # noqa: E501
+                    .format(paper_size, allowed_values))
+            self._paper_size = paper_size
+        else:
+            self._paper_size = allowed_values[int(paper_size) if six.PY3 else long(paper_size)]
     @property
     def restart_page_numbering(self):
         """Gets the restart_page_numbering of this PageSetup.  # noqa: E501
@@ -759,9 +753,7 @@ class PageSetup(object):
         :param restart_page_numbering: The restart_page_numbering of this PageSetup.  # noqa: E501
         :type: bool
         """
-
         self._restart_page_numbering = restart_page_numbering
-
     @property
     def right_margin(self):
         """Gets the right_margin of this PageSetup.  # noqa: E501
@@ -782,9 +774,7 @@ class PageSetup(object):
         :param right_margin: The right_margin of this PageSetup.  # noqa: E501
         :type: float
         """
-
         self._right_margin = right_margin
-
     @property
     def rtl_gutter(self):
         """Gets the rtl_gutter of this PageSetup.  # noqa: E501
@@ -805,9 +795,7 @@ class PageSetup(object):
         :param rtl_gutter: The rtl_gutter of this PageSetup.  # noqa: E501
         :type: bool
         """
-
         self._rtl_gutter = rtl_gutter
-
     @property
     def section_start(self):
         """Gets the section_start of this PageSetup.  # noqa: E501
@@ -829,14 +817,14 @@ class PageSetup(object):
         :type: str
         """
         allowed_values = ["Continuous", "NewColumn", "NewPage", "EvenPage", "OddPage"]  # noqa: E501
-        if section_start not in allowed_values:
-            raise ValueError(
-                "Invalid value for `section_start` ({0}), must be one of {1}"  # noqa: E501
-                .format(section_start, allowed_values)
-            )
-
-        self._section_start = section_start
-
+        if not section_start.isdigit():	
+            if section_start not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `section_start` ({0}), must be one of {1}"  # noqa: E501
+                    .format(section_start, allowed_values))
+            self._section_start = section_start
+        else:
+            self._section_start = allowed_values[int(section_start) if six.PY3 else long(section_start)]
     @property
     def suppress_endnotes(self):
         """Gets the suppress_endnotes of this PageSetup.  # noqa: E501
@@ -857,9 +845,7 @@ class PageSetup(object):
         :param suppress_endnotes: The suppress_endnotes of this PageSetup.  # noqa: E501
         :type: bool
         """
-
         self._suppress_endnotes = suppress_endnotes
-
     @property
     def top_margin(self):
         """Gets the top_margin of this PageSetup.  # noqa: E501
@@ -880,9 +866,7 @@ class PageSetup(object):
         :param top_margin: The top_margin of this PageSetup.  # noqa: E501
         :type: float
         """
-
         self._top_margin = top_margin
-
     @property
     def vertical_alignment(self):
         """Gets the vertical_alignment of this PageSetup.  # noqa: E501
@@ -904,14 +888,14 @@ class PageSetup(object):
         :type: str
         """
         allowed_values = ["Top", "Center", "Justify", "Bottom"]  # noqa: E501
-        if vertical_alignment not in allowed_values:
-            raise ValueError(
-                "Invalid value for `vertical_alignment` ({0}), must be one of {1}"  # noqa: E501
-                .format(vertical_alignment, allowed_values)
-            )
-
-        self._vertical_alignment = vertical_alignment
-
+        if not vertical_alignment.isdigit():	
+            if vertical_alignment not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `vertical_alignment` ({0}), must be one of {1}"  # noqa: E501
+                    .format(vertical_alignment, allowed_values))
+            self._vertical_alignment = vertical_alignment
+        else:
+            self._vertical_alignment = allowed_values[int(vertical_alignment) if six.PY3 else long(vertical_alignment)]
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

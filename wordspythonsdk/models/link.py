@@ -54,11 +54,6 @@ class Link(object):
         'title': 'Title'
     }
 
-    discriminator_value_class_map = {
-        'FileLink': 'FileLink',
-        'WordsApiLink': 'WordsApiLink'
-    }
-
     def __init__(self, href=None, rel=None, type=None, title=None):  # noqa: E501
         """Link - a model defined in Swagger"""  # noqa: E501
 
@@ -66,7 +61,7 @@ class Link(object):
         self._rel = None
         self._type = None
         self._title = None
-        self.discriminator = 'Type'
+        self.discriminator = None
 
         if href is not None:
             self.href = href
@@ -97,9 +92,7 @@ class Link(object):
         :param href: The href of this Link.  # noqa: E501
         :type: str
         """
-
         self._href = href
-
     @property
     def rel(self):
         """Gets the rel of this Link.  # noqa: E501
@@ -120,9 +113,7 @@ class Link(object):
         :param rel: The rel of this Link.  # noqa: E501
         :type: str
         """
-
         self._rel = rel
-
     @property
     def type(self):
         """Gets the type of this Link.  # noqa: E501
@@ -143,9 +134,7 @@ class Link(object):
         :param type: The type of this Link.  # noqa: E501
         :type: str
         """
-
         self._type = type
-
     @property
     def title(self):
         """Gets the title of this Link.  # noqa: E501
@@ -166,14 +155,7 @@ class Link(object):
         :param title: The title of this Link.  # noqa: E501
         :type: str
         """
-
         self._title = title
-
-    def get_real_child_model(self, data):
-        """Returns the real base class specified by the discriminator"""
-        discriminator_value = data[self.discriminator].lower()
-        return self.discriminator_value_class_map.get(discriminator_value)
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

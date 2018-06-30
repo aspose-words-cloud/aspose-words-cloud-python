@@ -41,25 +41,30 @@ class DocumentProperty(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'built_in': 'bool',
         'name': 'str',
         'value': 'str'
     }
 
     attribute_map = {
+        'link': 'link',
         'built_in': 'BuiltIn',
         'name': 'Name',
         'value': 'Value'
     }
 
-    def __init__(self, built_in=None, name=None, value=None):  # noqa: E501
+    def __init__(self, link=None, built_in=None, name=None, value=None):  # noqa: E501
         """DocumentProperty - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._built_in = None
         self._name = None
         self._value = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if built_in is not None:
             self.built_in = built_in
         if name is not None:
@@ -67,6 +72,27 @@ class DocumentProperty(object):
         if value is not None:
             self.value = value
 
+    @property
+    def link(self):
+        """Gets the link of this DocumentProperty.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this DocumentProperty.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this DocumentProperty.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this DocumentProperty.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def built_in(self):
         """Gets the built_in of this DocumentProperty.  # noqa: E501
@@ -87,9 +113,7 @@ class DocumentProperty(object):
         :param built_in: The built_in of this DocumentProperty.  # noqa: E501
         :type: bool
         """
-
         self._built_in = built_in
-
     @property
     def name(self):
         """Gets the name of this DocumentProperty.  # noqa: E501
@@ -110,9 +134,7 @@ class DocumentProperty(object):
         :param name: The name of this DocumentProperty.  # noqa: E501
         :type: str
         """
-
         self._name = name
-
     @property
     def value(self):
         """Gets the value of this DocumentProperty.  # noqa: E501
@@ -133,9 +155,7 @@ class DocumentProperty(object):
         :param value: The value of this DocumentProperty.  # noqa: E501
         :type: str
         """
-
         self._value = value
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

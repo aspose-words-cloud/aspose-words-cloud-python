@@ -77,9 +77,7 @@ class TableCellInsert(object):
         :param insert_after: The insert_after of this TableCellInsert.  # noqa: E501
         :type: int
         """
-
         self._insert_after = insert_after
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

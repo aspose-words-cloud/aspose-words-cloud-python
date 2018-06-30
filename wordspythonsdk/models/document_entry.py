@@ -82,9 +82,7 @@ class DocumentEntry(object):
         :param href: The href of this DocumentEntry.  # noqa: E501
         :type: str
         """
-
         self._href = href
-
     @property
     def import_format_mode(self):
         """Gets the import_format_mode of this DocumentEntry.  # noqa: E501
@@ -105,9 +103,7 @@ class DocumentEntry(object):
         :param import_format_mode: The import_format_mode of this DocumentEntry.  # noqa: E501
         :type: str
         """
-
         self._import_format_mode = import_format_mode
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

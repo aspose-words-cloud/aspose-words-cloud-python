@@ -41,22 +41,48 @@ class SectionLinkCollection(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'section_link_list': 'list[SectionLink]'
     }
 
     attribute_map = {
+        'link': 'link',
         'section_link_list': 'SectionLinkList'
     }
 
-    def __init__(self, section_link_list=None):  # noqa: E501
+    def __init__(self, link=None, section_link_list=None):  # noqa: E501
         """SectionLinkCollection - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._section_link_list = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if section_link_list is not None:
             self.section_link_list = section_link_list
 
+    @property
+    def link(self):
+        """Gets the link of this SectionLinkCollection.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this SectionLinkCollection.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this SectionLinkCollection.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this SectionLinkCollection.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def section_link_list(self):
         """Gets the section_link_list of this SectionLinkCollection.  # noqa: E501
@@ -77,9 +103,7 @@ class SectionLinkCollection(object):
         :param section_link_list: The section_link_list of this SectionLinkCollection.  # noqa: E501
         :type: list[SectionLink]
         """
-
         self._section_link_list = section_link_list
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

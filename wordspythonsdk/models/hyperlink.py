@@ -41,27 +41,53 @@ class Hyperlink(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'display_text': 'str',
         'value': 'str'
     }
 
     attribute_map = {
+        'link': 'link',
         'display_text': 'DisplayText',
         'value': 'Value'
     }
 
-    def __init__(self, display_text=None, value=None):  # noqa: E501
+    def __init__(self, link=None, display_text=None, value=None):  # noqa: E501
         """Hyperlink - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._display_text = None
         self._value = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if display_text is not None:
             self.display_text = display_text
         if value is not None:
             self.value = value
 
+    @property
+    def link(self):
+        """Gets the link of this Hyperlink.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this Hyperlink.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this Hyperlink.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this Hyperlink.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def display_text(self):
         """Gets the display_text of this Hyperlink.  # noqa: E501
@@ -82,9 +108,7 @@ class Hyperlink(object):
         :param display_text: The display_text of this Hyperlink.  # noqa: E501
         :type: str
         """
-
         self._display_text = display_text
-
     @property
     def value(self):
         """Gets the value of this Hyperlink.  # noqa: E501
@@ -105,9 +129,7 @@ class Hyperlink(object):
         :param value: The value of this Hyperlink.  # noqa: E501
         :type: str
         """
-
         self._value = value
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

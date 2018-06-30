@@ -41,6 +41,7 @@ class TableCellFormat(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'bottom_padding': 'float',
         'fit_text': 'bool',
         'horizontal_merge': 'str',
@@ -56,6 +57,7 @@ class TableCellFormat(object):
     }
 
     attribute_map = {
+        'link': 'link',
         'bottom_padding': 'BottomPadding',
         'fit_text': 'FitText',
         'horizontal_merge': 'HorizontalMerge',
@@ -70,9 +72,10 @@ class TableCellFormat(object):
         'wrap_text': 'WrapText'
     }
 
-    def __init__(self, bottom_padding=None, fit_text=None, horizontal_merge=None, left_padding=None, orientation=None, preferred_width=None, right_padding=None, top_padding=None, vertical_alignment=None, vertical_merge=None, width=None, wrap_text=None):  # noqa: E501
+    def __init__(self, link=None, bottom_padding=None, fit_text=None, horizontal_merge=None, left_padding=None, orientation=None, preferred_width=None, right_padding=None, top_padding=None, vertical_alignment=None, vertical_merge=None, width=None, wrap_text=None):  # noqa: E501
         """TableCellFormat - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._bottom_padding = None
         self._fit_text = None
         self._horizontal_merge = None
@@ -87,6 +90,8 @@ class TableCellFormat(object):
         self._wrap_text = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if bottom_padding is not None:
             self.bottom_padding = bottom_padding
         if fit_text is not None:
@@ -113,6 +118,27 @@ class TableCellFormat(object):
             self.wrap_text = wrap_text
 
     @property
+    def link(self):
+        """Gets the link of this TableCellFormat.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this TableCellFormat.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this TableCellFormat.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this TableCellFormat.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
+    @property
     def bottom_padding(self):
         """Gets the bottom_padding of this TableCellFormat.  # noqa: E501
 
@@ -132,9 +158,7 @@ class TableCellFormat(object):
         :param bottom_padding: The bottom_padding of this TableCellFormat.  # noqa: E501
         :type: float
         """
-
         self._bottom_padding = bottom_padding
-
     @property
     def fit_text(self):
         """Gets the fit_text of this TableCellFormat.  # noqa: E501
@@ -155,9 +179,7 @@ class TableCellFormat(object):
         :param fit_text: The fit_text of this TableCellFormat.  # noqa: E501
         :type: bool
         """
-
         self._fit_text = fit_text
-
     @property
     def horizontal_merge(self):
         """Gets the horizontal_merge of this TableCellFormat.  # noqa: E501
@@ -179,14 +201,14 @@ class TableCellFormat(object):
         :type: str
         """
         allowed_values = ["None", "First", "Previous"]  # noqa: E501
-        if horizontal_merge not in allowed_values:
-            raise ValueError(
-                "Invalid value for `horizontal_merge` ({0}), must be one of {1}"  # noqa: E501
-                .format(horizontal_merge, allowed_values)
-            )
-
-        self._horizontal_merge = horizontal_merge
-
+        if not horizontal_merge.isdigit():	
+            if horizontal_merge not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `horizontal_merge` ({0}), must be one of {1}"  # noqa: E501
+                    .format(horizontal_merge, allowed_values))
+            self._horizontal_merge = horizontal_merge
+        else:
+            self._horizontal_merge = allowed_values[int(horizontal_merge) if six.PY3 else long(horizontal_merge)]
     @property
     def left_padding(self):
         """Gets the left_padding of this TableCellFormat.  # noqa: E501
@@ -207,9 +229,7 @@ class TableCellFormat(object):
         :param left_padding: The left_padding of this TableCellFormat.  # noqa: E501
         :type: float
         """
-
         self._left_padding = left_padding
-
     @property
     def orientation(self):
         """Gets the orientation of this TableCellFormat.  # noqa: E501
@@ -231,14 +251,14 @@ class TableCellFormat(object):
         :type: str
         """
         allowed_values = ["Horizontal", "Downward", "Upward", "HorizontalRotatedFarEast", "VerticalFarEast", "VerticalRotatedFarEast"]  # noqa: E501
-        if orientation not in allowed_values:
-            raise ValueError(
-                "Invalid value for `orientation` ({0}), must be one of {1}"  # noqa: E501
-                .format(orientation, allowed_values)
-            )
-
-        self._orientation = orientation
-
+        if not orientation.isdigit():	
+            if orientation not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `orientation` ({0}), must be one of {1}"  # noqa: E501
+                    .format(orientation, allowed_values))
+            self._orientation = orientation
+        else:
+            self._orientation = allowed_values[int(orientation) if six.PY3 else long(orientation)]
     @property
     def preferred_width(self):
         """Gets the preferred_width of this TableCellFormat.  # noqa: E501
@@ -259,9 +279,7 @@ class TableCellFormat(object):
         :param preferred_width: The preferred_width of this TableCellFormat.  # noqa: E501
         :type: PreferredWidth
         """
-
         self._preferred_width = preferred_width
-
     @property
     def right_padding(self):
         """Gets the right_padding of this TableCellFormat.  # noqa: E501
@@ -282,9 +300,7 @@ class TableCellFormat(object):
         :param right_padding: The right_padding of this TableCellFormat.  # noqa: E501
         :type: float
         """
-
         self._right_padding = right_padding
-
     @property
     def top_padding(self):
         """Gets the top_padding of this TableCellFormat.  # noqa: E501
@@ -305,9 +321,7 @@ class TableCellFormat(object):
         :param top_padding: The top_padding of this TableCellFormat.  # noqa: E501
         :type: float
         """
-
         self._top_padding = top_padding
-
     @property
     def vertical_alignment(self):
         """Gets the vertical_alignment of this TableCellFormat.  # noqa: E501
@@ -329,14 +343,14 @@ class TableCellFormat(object):
         :type: str
         """
         allowed_values = ["Top", "Center", "Bottom"]  # noqa: E501
-        if vertical_alignment not in allowed_values:
-            raise ValueError(
-                "Invalid value for `vertical_alignment` ({0}), must be one of {1}"  # noqa: E501
-                .format(vertical_alignment, allowed_values)
-            )
-
-        self._vertical_alignment = vertical_alignment
-
+        if not vertical_alignment.isdigit():	
+            if vertical_alignment not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `vertical_alignment` ({0}), must be one of {1}"  # noqa: E501
+                    .format(vertical_alignment, allowed_values))
+            self._vertical_alignment = vertical_alignment
+        else:
+            self._vertical_alignment = allowed_values[int(vertical_alignment) if six.PY3 else long(vertical_alignment)]
     @property
     def vertical_merge(self):
         """Gets the vertical_merge of this TableCellFormat.  # noqa: E501
@@ -358,14 +372,14 @@ class TableCellFormat(object):
         :type: str
         """
         allowed_values = ["None", "First", "Previous"]  # noqa: E501
-        if vertical_merge not in allowed_values:
-            raise ValueError(
-                "Invalid value for `vertical_merge` ({0}), must be one of {1}"  # noqa: E501
-                .format(vertical_merge, allowed_values)
-            )
-
-        self._vertical_merge = vertical_merge
-
+        if not vertical_merge.isdigit():	
+            if vertical_merge not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `vertical_merge` ({0}), must be one of {1}"  # noqa: E501
+                    .format(vertical_merge, allowed_values))
+            self._vertical_merge = vertical_merge
+        else:
+            self._vertical_merge = allowed_values[int(vertical_merge) if six.PY3 else long(vertical_merge)]
     @property
     def width(self):
         """Gets the width of this TableCellFormat.  # noqa: E501
@@ -386,9 +400,7 @@ class TableCellFormat(object):
         :param width: The width of this TableCellFormat.  # noqa: E501
         :type: float
         """
-
         self._width = width
-
     @property
     def wrap_text(self):
         """Gets the wrap_text of this TableCellFormat.  # noqa: E501
@@ -409,9 +421,7 @@ class TableCellFormat(object):
         :param wrap_text: The wrap_text of this TableCellFormat.  # noqa: E501
         :type: bool
         """
-
         self._wrap_text = wrap_text
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

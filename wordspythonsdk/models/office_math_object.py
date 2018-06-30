@@ -41,6 +41,8 @@ class OfficeMathObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
+        'node_id': 'str',
         'content': 'StoryChildNodes',
         'display_type': 'str',
         'justification': 'str',
@@ -48,21 +50,29 @@ class OfficeMathObject(object):
     }
 
     attribute_map = {
+        'link': 'link',
+        'node_id': 'NodeId',
         'content': 'Content',
         'display_type': 'DisplayType',
         'justification': 'Justification',
         'math_object_type': 'MathObjectType'
     }
 
-    def __init__(self, content=None, display_type=None, justification=None, math_object_type=None):  # noqa: E501
+    def __init__(self, link=None, node_id=None, content=None, display_type=None, justification=None, math_object_type=None):  # noqa: E501
         """OfficeMathObject - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
+        self._node_id = None
         self._content = None
         self._display_type = None
         self._justification = None
         self._math_object_type = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
+        if node_id is not None:
+            self.node_id = node_id
         if content is not None:
             self.content = content
         if display_type is not None:
@@ -72,6 +82,48 @@ class OfficeMathObject(object):
         if math_object_type is not None:
             self.math_object_type = math_object_type
 
+    @property
+    def link(self):
+        """Gets the link of this OfficeMathObject.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this OfficeMathObject.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this OfficeMathObject.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this OfficeMathObject.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
+    @property
+    def node_id(self):
+        """Gets the node_id of this OfficeMathObject.  # noqa: E501
+
+        Node id  # noqa: E501
+
+        :return: The node_id of this OfficeMathObject.  # noqa: E501
+        :rtype: str
+        """
+        return self._node_id
+
+    @node_id.setter
+    def node_id(self, node_id):
+        """Sets the node_id of this OfficeMathObject.
+
+        Node id  # noqa: E501
+
+        :param node_id: The node_id of this OfficeMathObject.  # noqa: E501
+        :type: str
+        """
+        self._node_id = node_id
     @property
     def content(self):
         """Gets the content of this OfficeMathObject.  # noqa: E501
@@ -92,9 +144,7 @@ class OfficeMathObject(object):
         :param content: The content of this OfficeMathObject.  # noqa: E501
         :type: StoryChildNodes
         """
-
         self._content = content
-
     @property
     def display_type(self):
         """Gets the display_type of this OfficeMathObject.  # noqa: E501
@@ -116,14 +166,14 @@ class OfficeMathObject(object):
         :type: str
         """
         allowed_values = ["Display", "Inline"]  # noqa: E501
-        if display_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `display_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(display_type, allowed_values)
-            )
-
-        self._display_type = display_type
-
+        if not display_type.isdigit():	
+            if display_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `display_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(display_type, allowed_values))
+            self._display_type = display_type
+        else:
+            self._display_type = allowed_values[int(display_type) if six.PY3 else long(display_type)]
     @property
     def justification(self):
         """Gets the justification of this OfficeMathObject.  # noqa: E501
@@ -145,14 +195,14 @@ class OfficeMathObject(object):
         :type: str
         """
         allowed_values = ["CenterGroup", "Default", "Center", "Left", "Right", "Inline"]  # noqa: E501
-        if justification not in allowed_values:
-            raise ValueError(
-                "Invalid value for `justification` ({0}), must be one of {1}"  # noqa: E501
-                .format(justification, allowed_values)
-            )
-
-        self._justification = justification
-
+        if not justification.isdigit():	
+            if justification not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `justification` ({0}), must be one of {1}"  # noqa: E501
+                    .format(justification, allowed_values))
+            self._justification = justification
+        else:
+            self._justification = allowed_values[int(justification) if six.PY3 else long(justification)]
     @property
     def math_object_type(self):
         """Gets the math_object_type of this OfficeMathObject.  # noqa: E501
@@ -174,14 +224,14 @@ class OfficeMathObject(object):
         :type: str
         """
         allowed_values = ["OMath", "OMathPara", "Accent", "Bar", "BorderBox", "Box", "Delimiter", "Degree", "Argument", "Array", "Fraction", "Denominator", "Numerator", "Function", "FunctionName", "GroupCharacter", "Limit", "LowerLimit", "UpperLimit", "Matrix", "MatrixRow", "NAry", "Phantom", "Radical", "SubscriptPart", "SuperscriptPart", "PreSubSuperscript", "Subscript", "SubSuperscript", "Supercript"]  # noqa: E501
-        if math_object_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `math_object_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(math_object_type, allowed_values)
-            )
-
-        self._math_object_type = math_object_type
-
+        if not math_object_type.isdigit():	
+            if math_object_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `math_object_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(math_object_type, allowed_values))
+            self._math_object_type = math_object_type
+        else:
+            self._math_object_type = allowed_values[int(math_object_type) if six.PY3 else long(math_object_type)]
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

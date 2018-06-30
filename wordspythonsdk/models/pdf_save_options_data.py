@@ -41,6 +41,21 @@ class PdfSaveOptionsData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'color_mode': 'str',
+        'save_format': 'str',
+        'file_name': 'str',
+        'dml_rendering_mode': 'str',
+        'dml_effects_rendering_mode': 'str',
+        'zip_output': 'bool',
+        'update_last_saved_time_property': 'bool',
+        'update_sdt_content': 'bool',
+        'update_fields': 'bool',
+        'jpeg_quality': 'int',
+        'metafile_rendering_options': 'MetafileRenderingOptionsData',
+        'numeral_format': 'str',
+        'optimize_output': 'bool',
+        'page_count': 'int',
+        'page_index': 'int',
         'compliance': 'str',
         'create_note_hyperlinks': 'bool',
         'custom_properties_export': 'str',
@@ -66,6 +81,21 @@ class PdfSaveOptionsData(object):
     }
 
     attribute_map = {
+        'color_mode': 'ColorMode',
+        'save_format': 'SaveFormat',
+        'file_name': 'FileName',
+        'dml_rendering_mode': 'DmlRenderingMode',
+        'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
+        'zip_output': 'ZipOutput',
+        'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
+        'update_sdt_content': 'UpdateSdtContent',
+        'update_fields': 'UpdateFields',
+        'jpeg_quality': 'JpegQuality',
+        'metafile_rendering_options': 'MetafileRenderingOptions',
+        'numeral_format': 'NumeralFormat',
+        'optimize_output': 'OptimizeOutput',
+        'page_count': 'PageCount',
+        'page_index': 'PageIndex',
         'compliance': 'Compliance',
         'create_note_hyperlinks': 'CreateNoteHyperlinks',
         'custom_properties_export': 'CustomPropertiesExport',
@@ -90,9 +120,24 @@ class PdfSaveOptionsData(object):
         'zoom_factor': 'ZoomFactor'
     }
 
-    def __init__(self, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_full_fonts=None, encryption_details=None, export_document_structure=None, font_embedding_mode=None, image_color_space_export_mode=None, image_compression=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
+    def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_full_fonts=None, encryption_details=None, export_document_structure=None, font_embedding_mode=None, image_color_space_export_mode=None, image_compression=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
         """PdfSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
+        self._color_mode = None
+        self._save_format = None
+        self._file_name = None
+        self._dml_rendering_mode = None
+        self._dml_effects_rendering_mode = None
+        self._zip_output = None
+        self._update_last_saved_time_property = None
+        self._update_sdt_content = None
+        self._update_fields = None
+        self._jpeg_quality = None
+        self._metafile_rendering_options = None
+        self._numeral_format = None
+        self._optimize_output = None
+        self._page_count = None
+        self._page_index = None
         self._compliance = None
         self._create_note_hyperlinks = None
         self._custom_properties_export = None
@@ -117,6 +162,36 @@ class PdfSaveOptionsData(object):
         self._zoom_factor = None
         self.discriminator = None
 
+        if color_mode is not None:
+            self.color_mode = color_mode
+        if save_format is not None:
+            self.save_format = save_format
+        if file_name is not None:
+            self.file_name = file_name
+        if dml_rendering_mode is not None:
+            self.dml_rendering_mode = dml_rendering_mode
+        if dml_effects_rendering_mode is not None:
+            self.dml_effects_rendering_mode = dml_effects_rendering_mode
+        if zip_output is not None:
+            self.zip_output = zip_output
+        if update_last_saved_time_property is not None:
+            self.update_last_saved_time_property = update_last_saved_time_property
+        if update_sdt_content is not None:
+            self.update_sdt_content = update_sdt_content
+        if update_fields is not None:
+            self.update_fields = update_fields
+        if jpeg_quality is not None:
+            self.jpeg_quality = jpeg_quality
+        if metafile_rendering_options is not None:
+            self.metafile_rendering_options = metafile_rendering_options
+        if numeral_format is not None:
+            self.numeral_format = numeral_format
+        if optimize_output is not None:
+            self.optimize_output = optimize_output
+        if page_count is not None:
+            self.page_count = page_count
+        if page_index is not None:
+            self.page_index = page_index
         if compliance is not None:
             self.compliance = compliance
         if create_note_hyperlinks is not None:
@@ -163,6 +238,321 @@ class PdfSaveOptionsData(object):
             self.zoom_factor = zoom_factor
 
     @property
+    def color_mode(self):
+        """Gets the color_mode of this PdfSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}  # noqa: E501
+
+        :return: The color_mode of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._color_mode
+
+    @color_mode.setter
+    def color_mode(self, color_mode):
+        """Sets the color_mode of this PdfSaveOptionsData.
+
+        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}  # noqa: E501
+
+        :param color_mode: The color_mode of this PdfSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        self._color_mode = color_mode
+    @property
+    def save_format(self):
+        """Gets the save_format of this PdfSaveOptionsData.  # noqa: E501
+
+        format of save  # noqa: E501
+
+        :return: The save_format of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._save_format
+
+    @save_format.setter
+    def save_format(self, save_format):
+        """Sets the save_format of this PdfSaveOptionsData.
+
+        format of save  # noqa: E501
+
+        :param save_format: The save_format of this PdfSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        self._save_format = save_format
+    @property
+    def file_name(self):
+        """Gets the file_name of this PdfSaveOptionsData.  # noqa: E501
+
+        name of destination file  # noqa: E501
+
+        :return: The file_name of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._file_name
+
+    @file_name.setter
+    def file_name(self, file_name):
+        """Sets the file_name of this PdfSaveOptionsData.
+
+        name of destination file  # noqa: E501
+
+        :param file_name: The file_name of this PdfSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        self._file_name = file_name
+    @property
+    def dml_rendering_mode(self):
+        """Gets the dml_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }  # noqa: E501
+
+        :return: The dml_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._dml_rendering_mode
+
+    @dml_rendering_mode.setter
+    def dml_rendering_mode(self, dml_rendering_mode):
+        """Sets the dml_rendering_mode of this PdfSaveOptionsData.
+
+        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }  # noqa: E501
+
+        :param dml_rendering_mode: The dml_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        self._dml_rendering_mode = dml_rendering_mode
+    @property
+    def dml_effects_rendering_mode(self):
+        """Gets the dml_effects_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }  # noqa: E501
+
+        :return: The dml_effects_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._dml_effects_rendering_mode
+
+    @dml_effects_rendering_mode.setter
+    def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
+        """Sets the dml_effects_rendering_mode of this PdfSaveOptionsData.
+
+        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }  # noqa: E501
+
+        :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        self._dml_effects_rendering_mode = dml_effects_rendering_mode
+    @property
+    def zip_output(self):
+        """Gets the zip_output of this PdfSaveOptionsData.  # noqa: E501
+
+        Controls zip output or not. Default value is false.  # noqa: E501
+
+        :return: The zip_output of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._zip_output
+
+    @zip_output.setter
+    def zip_output(self, zip_output):
+        """Sets the zip_output of this PdfSaveOptionsData.
+
+        Controls zip output or not. Default value is false.  # noqa: E501
+
+        :param zip_output: The zip_output of this PdfSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._zip_output = zip_output
+    @property
+    def update_last_saved_time_property(self):
+        """Gets the update_last_saved_time_property of this PdfSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+
+        :return: The update_last_saved_time_property of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._update_last_saved_time_property
+
+    @update_last_saved_time_property.setter
+    def update_last_saved_time_property(self, update_last_saved_time_property):
+        """Sets the update_last_saved_time_property of this PdfSaveOptionsData.
+
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+
+        :param update_last_saved_time_property: The update_last_saved_time_property of this PdfSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._update_last_saved_time_property = update_last_saved_time_property
+    @property
+    def update_sdt_content(self):
+        """Gets the update_sdt_content of this PdfSaveOptionsData.  # noqa: E501
+
+        Gets or sets value determining whether content of  is updated before saving.  # noqa: E501
+
+        :return: The update_sdt_content of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._update_sdt_content
+
+    @update_sdt_content.setter
+    def update_sdt_content(self, update_sdt_content):
+        """Sets the update_sdt_content of this PdfSaveOptionsData.
+
+        Gets or sets value determining whether content of  is updated before saving.  # noqa: E501
+
+        :param update_sdt_content: The update_sdt_content of this PdfSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._update_sdt_content = update_sdt_content
+    @property
+    def update_fields(self):
+        """Gets the update_fields of this PdfSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true  # noqa: E501
+
+        :return: The update_fields of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._update_fields
+
+    @update_fields.setter
+    def update_fields(self, update_fields):
+        """Sets the update_fields of this PdfSaveOptionsData.
+
+        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true  # noqa: E501
+
+        :param update_fields: The update_fields of this PdfSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._update_fields = update_fields
+    @property
+    def jpeg_quality(self):
+        """Gets the jpeg_quality of this PdfSaveOptionsData.  # noqa: E501
+
+        Determines the quality of the JPEG images inside PDF document.  # noqa: E501
+
+        :return: The jpeg_quality of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: int
+        """
+        return self._jpeg_quality
+
+    @jpeg_quality.setter
+    def jpeg_quality(self, jpeg_quality):
+        """Sets the jpeg_quality of this PdfSaveOptionsData.
+
+        Determines the quality of the JPEG images inside PDF document.  # noqa: E501
+
+        :param jpeg_quality: The jpeg_quality of this PdfSaveOptionsData.  # noqa: E501
+        :type: int
+        """
+        self._jpeg_quality = jpeg_quality
+    @property
+    def metafile_rendering_options(self):
+        """Gets the metafile_rendering_options of this PdfSaveOptionsData.  # noqa: E501
+
+        Allows to specify metafile rendering options.  # noqa: E501
+
+        :return: The metafile_rendering_options of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: MetafileRenderingOptionsData
+        """
+        return self._metafile_rendering_options
+
+    @metafile_rendering_options.setter
+    def metafile_rendering_options(self, metafile_rendering_options):
+        """Sets the metafile_rendering_options of this PdfSaveOptionsData.
+
+        Allows to specify metafile rendering options.  # noqa: E501
+
+        :param metafile_rendering_options: The metafile_rendering_options of this PdfSaveOptionsData.  # noqa: E501
+        :type: MetafileRenderingOptionsData
+        """
+        self._metafile_rendering_options = metafile_rendering_options
+    @property
+    def numeral_format(self):
+        """Gets the numeral_format of this PdfSaveOptionsData.  # noqa: E501
+
+        Indicates the symbol set that is used to represent numbers while rendering to fixed page formats  # noqa: E501
+
+        :return: The numeral_format of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._numeral_format
+
+    @numeral_format.setter
+    def numeral_format(self, numeral_format):
+        """Sets the numeral_format of this PdfSaveOptionsData.
+
+        Indicates the symbol set that is used to represent numbers while rendering to fixed page formats  # noqa: E501
+
+        :param numeral_format: The numeral_format of this PdfSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        self._numeral_format = numeral_format
+    @property
+    def optimize_output(self):
+        """Gets the optimize_output of this PdfSaveOptionsData.  # noqa: E501
+
+        Flag indicates whether it is required to optimize output of XPS.  If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.  Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
+
+        :return: The optimize_output of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._optimize_output
+
+    @optimize_output.setter
+    def optimize_output(self, optimize_output):
+        """Sets the optimize_output of this PdfSaveOptionsData.
+
+        Flag indicates whether it is required to optimize output of XPS.  If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.  Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
+
+        :param optimize_output: The optimize_output of this PdfSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._optimize_output = optimize_output
+    @property
+    def page_count(self):
+        """Gets the page_count of this PdfSaveOptionsData.  # noqa: E501
+
+        Determines number of pages to render  # noqa: E501
+
+        :return: The page_count of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: int
+        """
+        return self._page_count
+
+    @page_count.setter
+    def page_count(self, page_count):
+        """Sets the page_count of this PdfSaveOptionsData.
+
+        Determines number of pages to render  # noqa: E501
+
+        :param page_count: The page_count of this PdfSaveOptionsData.  # noqa: E501
+        :type: int
+        """
+        self._page_count = page_count
+    @property
+    def page_index(self):
+        """Gets the page_index of this PdfSaveOptionsData.  # noqa: E501
+
+        Determines 0-based index of the first page to render  # noqa: E501
+
+        :return: The page_index of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: int
+        """
+        return self._page_index
+
+    @page_index.setter
+    def page_index(self, page_index):
+        """Sets the page_index of this PdfSaveOptionsData.
+
+        Determines 0-based index of the first page to render  # noqa: E501
+
+        :param page_index: The page_index of this PdfSaveOptionsData.  # noqa: E501
+        :type: int
+        """
+        self._page_index = page_index
+    @property
     def compliance(self):
         """Gets the compliance of this PdfSaveOptionsData.  # noqa: E501
 
@@ -182,9 +572,7 @@ class PdfSaveOptionsData(object):
         :param compliance: The compliance of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-
         self._compliance = compliance
-
     @property
     def create_note_hyperlinks(self):
         """Gets the create_note_hyperlinks of this PdfSaveOptionsData.  # noqa: E501
@@ -205,9 +593,7 @@ class PdfSaveOptionsData(object):
         :param create_note_hyperlinks: The create_note_hyperlinks of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
         """
-
         self._create_note_hyperlinks = create_note_hyperlinks
-
     @property
     def custom_properties_export(self):
         """Gets the custom_properties_export of this PdfSaveOptionsData.  # noqa: E501
@@ -228,9 +614,7 @@ class PdfSaveOptionsData(object):
         :param custom_properties_export: The custom_properties_export of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-
         self._custom_properties_export = custom_properties_export
-
     @property
     def digital_signature_details(self):
         """Gets the digital_signature_details of this PdfSaveOptionsData.  # noqa: E501
@@ -251,9 +635,7 @@ class PdfSaveOptionsData(object):
         :param digital_signature_details: The digital_signature_details of this PdfSaveOptionsData.  # noqa: E501
         :type: PdfDigitalSignatureDetailsData
         """
-
         self._digital_signature_details = digital_signature_details
-
     @property
     def display_doc_title(self):
         """Gets the display_doc_title of this PdfSaveOptionsData.  # noqa: E501
@@ -274,9 +656,7 @@ class PdfSaveOptionsData(object):
         :param display_doc_title: The display_doc_title of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
         """
-
         self._display_doc_title = display_doc_title
-
     @property
     def downsample_options(self):
         """Gets the downsample_options of this PdfSaveOptionsData.  # noqa: E501
@@ -297,9 +677,7 @@ class PdfSaveOptionsData(object):
         :param downsample_options: The downsample_options of this PdfSaveOptionsData.  # noqa: E501
         :type: DownsampleOptionsData
         """
-
         self._downsample_options = downsample_options
-
     @property
     def embed_full_fonts(self):
         """Gets the embed_full_fonts of this PdfSaveOptionsData.  # noqa: E501
@@ -320,9 +698,7 @@ class PdfSaveOptionsData(object):
         :param embed_full_fonts: The embed_full_fonts of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
         """
-
         self._embed_full_fonts = embed_full_fonts
-
     @property
     def encryption_details(self):
         """Gets the encryption_details of this PdfSaveOptionsData.  # noqa: E501
@@ -343,9 +719,7 @@ class PdfSaveOptionsData(object):
         :param encryption_details: The encryption_details of this PdfSaveOptionsData.  # noqa: E501
         :type: PdfEncryptionDetailsData
         """
-
         self._encryption_details = encryption_details
-
     @property
     def export_document_structure(self):
         """Gets the export_document_structure of this PdfSaveOptionsData.  # noqa: E501
@@ -366,9 +740,7 @@ class PdfSaveOptionsData(object):
         :param export_document_structure: The export_document_structure of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
         """
-
         self._export_document_structure = export_document_structure
-
     @property
     def font_embedding_mode(self):
         """Gets the font_embedding_mode of this PdfSaveOptionsData.  # noqa: E501
@@ -389,9 +761,7 @@ class PdfSaveOptionsData(object):
         :param font_embedding_mode: The font_embedding_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-
         self._font_embedding_mode = font_embedding_mode
-
     @property
     def image_color_space_export_mode(self):
         """Gets the image_color_space_export_mode of this PdfSaveOptionsData.  # noqa: E501
@@ -412,9 +782,7 @@ class PdfSaveOptionsData(object):
         :param image_color_space_export_mode: The image_color_space_export_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-
         self._image_color_space_export_mode = image_color_space_export_mode
-
     @property
     def image_compression(self):
         """Gets the image_compression of this PdfSaveOptionsData.  # noqa: E501
@@ -435,9 +803,7 @@ class PdfSaveOptionsData(object):
         :param image_compression: The image_compression of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-
         self._image_compression = image_compression
-
     @property
     def open_hyperlinks_in_new_window(self):
         """Gets the open_hyperlinks_in_new_window of this PdfSaveOptionsData.  # noqa: E501
@@ -458,9 +824,7 @@ class PdfSaveOptionsData(object):
         :param open_hyperlinks_in_new_window: The open_hyperlinks_in_new_window of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
         """
-
         self._open_hyperlinks_in_new_window = open_hyperlinks_in_new_window
-
     @property
     def outline_options(self):
         """Gets the outline_options of this PdfSaveOptionsData.  # noqa: E501
@@ -481,9 +845,7 @@ class PdfSaveOptionsData(object):
         :param outline_options: The outline_options of this PdfSaveOptionsData.  # noqa: E501
         :type: OutlineOptionsData
         """
-
         self._outline_options = outline_options
-
     @property
     def page_mode(self):
         """Gets the page_mode of this PdfSaveOptionsData.  # noqa: E501
@@ -504,9 +866,7 @@ class PdfSaveOptionsData(object):
         :param page_mode: The page_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-
         self._page_mode = page_mode
-
     @property
     def preblend_images(self):
         """Gets the preblend_images of this PdfSaveOptionsData.  # noqa: E501
@@ -527,9 +887,7 @@ class PdfSaveOptionsData(object):
         :param preblend_images: The preblend_images of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
         """
-
         self._preblend_images = preblend_images
-
     @property
     def preserve_form_fields(self):
         """Gets the preserve_form_fields of this PdfSaveOptionsData.  # noqa: E501
@@ -550,9 +908,7 @@ class PdfSaveOptionsData(object):
         :param preserve_form_fields: The preserve_form_fields of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
         """
-
         self._preserve_form_fields = preserve_form_fields
-
     @property
     def text_compression(self):
         """Gets the text_compression of this PdfSaveOptionsData.  # noqa: E501
@@ -573,9 +929,7 @@ class PdfSaveOptionsData(object):
         :param text_compression: The text_compression of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-
         self._text_compression = text_compression
-
     @property
     def use_book_fold_printing_settings(self):
         """Gets the use_book_fold_printing_settings of this PdfSaveOptionsData.  # noqa: E501
@@ -596,9 +950,7 @@ class PdfSaveOptionsData(object):
         :param use_book_fold_printing_settings: The use_book_fold_printing_settings of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
         """
-
         self._use_book_fold_printing_settings = use_book_fold_printing_settings
-
     @property
     def use_core_fonts(self):
         """Gets the use_core_fonts of this PdfSaveOptionsData.  # noqa: E501
@@ -619,9 +971,7 @@ class PdfSaveOptionsData(object):
         :param use_core_fonts: The use_core_fonts of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
         """
-
         self._use_core_fonts = use_core_fonts
-
     @property
     def zoom_behavior(self):
         """Gets the zoom_behavior of this PdfSaveOptionsData.  # noqa: E501
@@ -642,9 +992,7 @@ class PdfSaveOptionsData(object):
         :param zoom_behavior: The zoom_behavior of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-
         self._zoom_behavior = zoom_behavior
-
     @property
     def zoom_factor(self):
         """Gets the zoom_factor of this PdfSaveOptionsData.  # noqa: E501
@@ -665,9 +1013,7 @@ class PdfSaveOptionsData(object):
         :param zoom_factor: The zoom_factor of this PdfSaveOptionsData.  # noqa: E501
         :type: int
         """
-
         self._zoom_factor = zoom_factor
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

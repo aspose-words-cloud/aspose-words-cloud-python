@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**link** | [**WordsApiLink**](WordsApiLink.md) | Link to the document. | [optional] 
 **author** | **str** | Returns or sets the author name for a comment. | [optional] 
 **content** | [**StoryChildNodes**](StoryChildNodes.md) | Content of comment | [optional] 
 **date_time** | **datetime** | Gets the date and time that the comment was made. | [optional] 

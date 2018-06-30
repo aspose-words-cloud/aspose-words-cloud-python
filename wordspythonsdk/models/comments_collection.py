@@ -41,22 +41,48 @@ class CommentsCollection(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'comment_list': 'list[Comment]'
     }
 
     attribute_map = {
+        'link': 'link',
         'comment_list': 'CommentList'
     }
 
-    def __init__(self, comment_list=None):  # noqa: E501
+    def __init__(self, link=None, comment_list=None):  # noqa: E501
         """CommentsCollection - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._comment_list = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if comment_list is not None:
             self.comment_list = comment_list
 
+    @property
+    def link(self):
+        """Gets the link of this CommentsCollection.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this CommentsCollection.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this CommentsCollection.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this CommentsCollection.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def comment_list(self):
         """Gets the comment_list of this CommentsCollection.  # noqa: E501
@@ -77,9 +103,7 @@ class CommentsCollection(object):
         :param comment_list: The comment_list of this CommentsCollection.  # noqa: E501
         :type: list[Comment]
         """
-
         self._comment_list = comment_list
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

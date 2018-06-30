@@ -59,7 +59,8 @@ class ClassificationResult(object):
 
         if class_name is not None:
             self.class_name = class_name
-        self.class_probability = class_probability
+        if class_probability is not None:
+            self.class_probability = class_probability
 
     @property
     def class_name(self):
@@ -81,9 +82,7 @@ class ClassificationResult(object):
         :param class_name: The class_name of this ClassificationResult.  # noqa: E501
         :type: str
         """
-
         self._class_name = class_name
-
     @property
     def class_probability(self):
         """Gets the class_probability of this ClassificationResult.  # noqa: E501
@@ -106,9 +105,7 @@ class ClassificationResult(object):
         """
         if class_probability is None:
             raise ValueError("Invalid value for `class_probability`, must not be `None`")  # noqa: E501
-
         self._class_probability = class_probability
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

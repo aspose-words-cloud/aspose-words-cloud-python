@@ -77,9 +77,7 @@ class ProtectionData(object):
         :param protection_type: The protection_type of this ProtectionData.  # noqa: E501
         :type: str
         """
-
         self._protection_type = protection_type
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

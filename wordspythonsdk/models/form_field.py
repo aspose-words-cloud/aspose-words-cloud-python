@@ -41,6 +41,8 @@ class FormField(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
+        'node_id': 'str',
         'calculate_on_exit': 'bool',
         'enabled': 'bool',
         'entry_macro': 'str',
@@ -53,6 +55,8 @@ class FormField(object):
     }
 
     attribute_map = {
+        'link': 'link',
+        'node_id': 'NodeId',
         'calculate_on_exit': 'CalculateOnExit',
         'enabled': 'Enabled',
         'entry_macro': 'EntryMacro',
@@ -64,9 +68,11 @@ class FormField(object):
         'status_text': 'StatusText'
     }
 
-    def __init__(self, calculate_on_exit=None, enabled=None, entry_macro=None, exit_macro=None, help_text=None, name=None, own_help=None, own_status=None, status_text=None):  # noqa: E501
+    def __init__(self, link=None, node_id=None, calculate_on_exit=None, enabled=None, entry_macro=None, exit_macro=None, help_text=None, name=None, own_help=None, own_status=None, status_text=None):  # noqa: E501
         """FormField - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
+        self._node_id = None
         self._calculate_on_exit = None
         self._enabled = None
         self._entry_macro = None
@@ -78,6 +84,10 @@ class FormField(object):
         self._status_text = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
+        if node_id is not None:
+            self.node_id = node_id
         if calculate_on_exit is not None:
             self.calculate_on_exit = calculate_on_exit
         if enabled is not None:
@@ -98,6 +108,48 @@ class FormField(object):
             self.status_text = status_text
 
     @property
+    def link(self):
+        """Gets the link of this FormField.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this FormField.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this FormField.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this FormField.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
+    @property
+    def node_id(self):
+        """Gets the node_id of this FormField.  # noqa: E501
+
+        Node id  # noqa: E501
+
+        :return: The node_id of this FormField.  # noqa: E501
+        :rtype: str
+        """
+        return self._node_id
+
+    @node_id.setter
+    def node_id(self, node_id):
+        """Sets the node_id of this FormField.
+
+        Node id  # noqa: E501
+
+        :param node_id: The node_id of this FormField.  # noqa: E501
+        :type: str
+        """
+        self._node_id = node_id
+    @property
     def calculate_on_exit(self):
         """Gets the calculate_on_exit of this FormField.  # noqa: E501
 
@@ -117,9 +169,7 @@ class FormField(object):
         :param calculate_on_exit: The calculate_on_exit of this FormField.  # noqa: E501
         :type: bool
         """
-
         self._calculate_on_exit = calculate_on_exit
-
     @property
     def enabled(self):
         """Gets the enabled of this FormField.  # noqa: E501
@@ -140,9 +190,7 @@ class FormField(object):
         :param enabled: The enabled of this FormField.  # noqa: E501
         :type: bool
         """
-
         self._enabled = enabled
-
     @property
     def entry_macro(self):
         """Gets the entry_macro of this FormField.  # noqa: E501
@@ -163,9 +211,7 @@ class FormField(object):
         :param entry_macro: The entry_macro of this FormField.  # noqa: E501
         :type: str
         """
-
         self._entry_macro = entry_macro
-
     @property
     def exit_macro(self):
         """Gets the exit_macro of this FormField.  # noqa: E501
@@ -186,9 +232,7 @@ class FormField(object):
         :param exit_macro: The exit_macro of this FormField.  # noqa: E501
         :type: str
         """
-
         self._exit_macro = exit_macro
-
     @property
     def help_text(self):
         """Gets the help_text of this FormField.  # noqa: E501
@@ -209,9 +253,7 @@ class FormField(object):
         :param help_text: The help_text of this FormField.  # noqa: E501
         :type: str
         """
-
         self._help_text = help_text
-
     @property
     def name(self):
         """Gets the name of this FormField.  # noqa: E501
@@ -232,9 +274,7 @@ class FormField(object):
         :param name: The name of this FormField.  # noqa: E501
         :type: str
         """
-
         self._name = name
-
     @property
     def own_help(self):
         """Gets the own_help of this FormField.  # noqa: E501
@@ -255,9 +295,7 @@ class FormField(object):
         :param own_help: The own_help of this FormField.  # noqa: E501
         :type: bool
         """
-
         self._own_help = own_help
-
     @property
     def own_status(self):
         """Gets the own_status of this FormField.  # noqa: E501
@@ -278,9 +316,7 @@ class FormField(object):
         :param own_status: The own_status of this FormField.  # noqa: E501
         :type: bool
         """
-
         self._own_status = own_status
-
     @property
     def status_text(self):
         """Gets the status_text of this FormField.  # noqa: E501
@@ -301,9 +337,7 @@ class FormField(object):
         :param status_text: The status_text of this FormField.  # noqa: E501
         :type: str
         """
-
         self._status_text = status_text
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

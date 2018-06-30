@@ -92,9 +92,7 @@ class OutlineOptionsData(object):
         :param bookmarks_outline_levels: The bookmarks_outline_levels of this OutlineOptionsData.  # noqa: E501
         :type: list[BookmarksOutlineLevelData]
         """
-
         self._bookmarks_outline_levels = bookmarks_outline_levels
-
     @property
     def default_bookmarks_outline_level(self):
         """Gets the default_bookmarks_outline_level of this OutlineOptionsData.  # noqa: E501
@@ -115,9 +113,7 @@ class OutlineOptionsData(object):
         :param default_bookmarks_outline_level: The default_bookmarks_outline_level of this OutlineOptionsData.  # noqa: E501
         :type: int
         """
-
         self._default_bookmarks_outline_level = default_bookmarks_outline_level
-
     @property
     def expanded_outline_levels(self):
         """Gets the expanded_outline_levels of this OutlineOptionsData.  # noqa: E501
@@ -138,9 +134,7 @@ class OutlineOptionsData(object):
         :param expanded_outline_levels: The expanded_outline_levels of this OutlineOptionsData.  # noqa: E501
         :type: int
         """
-
         self._expanded_outline_levels = expanded_outline_levels
-
     @property
     def headings_outline_levels(self):
         """Gets the headings_outline_levels of this OutlineOptionsData.  # noqa: E501
@@ -161,9 +155,7 @@ class OutlineOptionsData(object):
         :param headings_outline_levels: The headings_outline_levels of this OutlineOptionsData.  # noqa: E501
         :type: int
         """
-
         self._headings_outline_levels = headings_outline_levels
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

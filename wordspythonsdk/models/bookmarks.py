@@ -41,22 +41,48 @@ class Bookmarks(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'bookmark_list': 'list[Bookmark]'
     }
 
     attribute_map = {
+        'link': 'link',
         'bookmark_list': 'BookmarkList'
     }
 
-    def __init__(self, bookmark_list=None):  # noqa: E501
+    def __init__(self, link=None, bookmark_list=None):  # noqa: E501
         """Bookmarks - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._bookmark_list = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if bookmark_list is not None:
             self.bookmark_list = bookmark_list
 
+    @property
+    def link(self):
+        """Gets the link of this Bookmarks.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this Bookmarks.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this Bookmarks.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this Bookmarks.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def bookmark_list(self):
         """Gets the bookmark_list of this Bookmarks.  # noqa: E501
@@ -77,9 +103,7 @@ class Bookmarks(object):
         :param bookmark_list: The bookmark_list of this Bookmarks.  # noqa: E501
         :type: list[Bookmark]
         """
-
         self._bookmark_list = bookmark_list
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -3,6 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**link** | [**WordsApiLink**](WordsApiLink.md) | Link to the document. | [optional] 
+**node_id** | **str** | Node id | [optional] 
 **calculate_on_exit** | **bool** | True if references to the specified form field are automatically updated whenever the field is exited. | [optional] 
 **enabled** | **bool** | True if a form field is enabled. | [optional] 
 **entry_macro** | **str** | Returns or sets an entry macro name for the form field. | [optional] 

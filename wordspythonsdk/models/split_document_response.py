@@ -41,22 +41,76 @@ class SplitDocumentResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'code': 'int',
+        'status': 'str',
         'split_result': 'SplitDocumentResult'
     }
 
     attribute_map = {
+        'code': 'Code',
+        'status': 'Status',
         'split_result': 'SplitResult'
     }
 
-    def __init__(self, split_result=None):  # noqa: E501
+    def __init__(self, code=None, status=None, split_result=None):  # noqa: E501
         """SplitDocumentResponse - a model defined in Swagger"""  # noqa: E501
 
+        self._code = None
+        self._status = None
         self._split_result = None
         self.discriminator = None
 
+        if code is not None:
+            self.code = code
+        if status is not None:
+            self.status = status
         if split_result is not None:
             self.split_result = split_result
 
+    @property
+    def code(self):
+        """Gets the code of this SplitDocumentResponse.  # noqa: E501
+
+        Response status code.  # noqa: E501
+
+        :return: The code of this SplitDocumentResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._code
+
+    @code.setter
+    def code(self, code):
+        """Sets the code of this SplitDocumentResponse.
+
+        Response status code.  # noqa: E501
+
+        :param code: The code of this SplitDocumentResponse.  # noqa: E501
+        :type: int
+        """
+        if code is None:
+            raise ValueError("Invalid value for `code`, must not be `None`")  # noqa: E501
+        self._code = code
+    @property
+    def status(self):
+        """Gets the status of this SplitDocumentResponse.  # noqa: E501
+
+        Response status.  # noqa: E501
+
+        :return: The status of this SplitDocumentResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this SplitDocumentResponse.
+
+        Response status.  # noqa: E501
+
+        :param status: The status of this SplitDocumentResponse.  # noqa: E501
+        :type: str
+        """
+        self._status = status
     @property
     def split_result(self):
         """Gets the split_result of this SplitDocumentResponse.  # noqa: E501
@@ -77,9 +131,7 @@ class SplitDocumentResponse(object):
         :param split_result: The split_result of this SplitDocumentResponse.  # noqa: E501
         :type: SplitDocumentResult
         """
-
         self._split_result = split_result
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

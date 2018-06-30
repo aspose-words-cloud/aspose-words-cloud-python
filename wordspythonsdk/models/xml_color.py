@@ -59,7 +59,8 @@ class XmlColor(object):
 
         if web is not None:
             self.web = web
-        self.alpha = alpha
+        if alpha is not None:
+            self.alpha = alpha
 
     @property
     def web(self):
@@ -81,9 +82,7 @@ class XmlColor(object):
         :param web: The web of this XmlColor.  # noqa: E501
         :type: str
         """
-
         self._web = web
-
     @property
     def alpha(self):
         """Gets the alpha of this XmlColor.  # noqa: E501
@@ -106,9 +105,7 @@ class XmlColor(object):
         """
         if alpha is None:
             raise ValueError("Invalid value for `alpha`, must not be `None`")  # noqa: E501
-
         self._alpha = alpha
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

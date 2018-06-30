@@ -48,69 +48,11 @@ class LinkElement(object):
         'link': 'link'
     }
 
-    discriminator_value_class_map = {
-        'Bookmarks': 'Bookmarks',
-        'DocumentProperties': 'DocumentProperties',
-        'TextItem': 'TextItem',
-        'TextItems': 'TextItems',
-        'OfficeMathObject': 'OfficeMathObject',
-        'CommentLink': 'CommentLink',
-        'FieldLink': 'FieldLink',
-        'HeaderFooterLinkCollection': 'HeaderFooterLinkCollection',
-        'FootnoteCollection': 'FootnoteCollection',
-        'TableLink': 'TableLink',
-        'Bookmark': 'Bookmark',
-        'FormFieldTextInput': 'FormFieldTextInput',
-        'TableRow': 'TableRow',
-        'FormFieldCollection': 'FormFieldCollection',
-        'TableCellFormat': 'TableCellFormat',
-        'SearchResultsCollection': 'SearchResultsCollection',
-        'FormFieldDropDown': 'FormFieldDropDown',
-        'HeaderFooter': 'HeaderFooter',
-        'FootnoteLink': 'FootnoteLink',
-        'Font': 'Font',
-        'Runs': 'Runs',
-        'DrawingObject': 'DrawingObject',
-        'BordersCollection': 'BordersCollection',
-        'TableRowFormat': 'TableRowFormat',
-        'TableLinkCollection': 'TableLinkCollection',
-        'Table': 'Table',
-        'Run': 'Run',
-        'Section': 'Section',
-        'SectionLinkCollection': 'SectionLinkCollection',
-        'OfficeMathLink': 'OfficeMathLink',
-        'TableProperties': 'TableProperties',
-        'Hyperlink': 'Hyperlink',
-        'PageSetup': 'PageSetup',
-        'DocumentProperty': 'DocumentProperty',
-        'ParagraphLink': 'ParagraphLink',
-        'FormField': 'FormField',
-        'RunLink': 'RunLink',
-        'FormFieldCheckbox': 'FormFieldCheckbox',
-        'FieldNames': 'FieldNames',
-        'DrawingObjectLink': 'DrawingObjectLink',
-        'Border': 'Border',
-        'CommentsCollection': 'CommentsCollection',
-        'Field': 'Field',
-        'TableCell': 'TableCell',
-        'ParagraphLinkCollection': 'ParagraphLinkCollection',
-        'Comment': 'Comment',
-        'Footnote': 'Footnote',
-        'Hyperlinks': 'Hyperlinks',
-        'OfficeMathObjectsCollection': 'OfficeMathObjectsCollection',
-        'DrawingObjectCollection': 'DrawingObjectCollection',
-        'FieldCollection': 'FieldCollection',
-        'Paragraph': 'Paragraph',
-        'HeaderFooterLink': 'HeaderFooterLink',
-        'SectionLink': 'SectionLink',
-        'NodeLink': 'NodeLink'
-    }
-
     def __init__(self, link=None):  # noqa: E501
         """LinkElement - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
-        self.discriminator = 'Type'
+        self.discriminator = None
 
         if link is not None:
             self.link = link
@@ -135,14 +77,7 @@ class LinkElement(object):
         :param link: The link of this LinkElement.  # noqa: E501
         :type: WordsApiLink
         """
-
         self._link = link
-
-    def get_real_child_model(self, data):
-        """Returns the real base class specified by the discriminator"""
-        discriminator_value = data[self.discriminator].lower()
-        return self.discriminator_value_class_map.get(discriminator_value)
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

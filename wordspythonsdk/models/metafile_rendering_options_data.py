@@ -87,9 +87,7 @@ class MetafileRenderingOptionsData(object):
         :param emf_plus_dual_rendering_mode: The emf_plus_dual_rendering_mode of this MetafileRenderingOptionsData.  # noqa: E501
         :type: str
         """
-
         self._emf_plus_dual_rendering_mode = emf_plus_dual_rendering_mode
-
     @property
     def rendering_mode(self):
         """Gets the rendering_mode of this MetafileRenderingOptionsData.  # noqa: E501
@@ -110,9 +108,7 @@ class MetafileRenderingOptionsData(object):
         :param rendering_mode: The rendering_mode of this MetafileRenderingOptionsData.  # noqa: E501
         :type: str
         """
-
         self._rendering_mode = rendering_mode
-
     @property
     def use_emf_embedded_to_wmf(self):
         """Gets the use_emf_embedded_to_wmf of this MetafileRenderingOptionsData.  # noqa: E501
@@ -133,9 +129,7 @@ class MetafileRenderingOptionsData(object):
         :param use_emf_embedded_to_wmf: The use_emf_embedded_to_wmf of this MetafileRenderingOptionsData.  # noqa: E501
         :type: bool
         """
-
         self._use_emf_embedded_to_wmf = use_emf_embedded_to_wmf
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

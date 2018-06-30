@@ -57,7 +57,8 @@ class PreferredWidth(object):
         self._value = None
         self.discriminator = None
 
-        self.type = type
+        if type is not None:
+            self.type = type
         if value is not None:
             self.value = value
 
@@ -84,14 +85,14 @@ class PreferredWidth(object):
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         allowed_values = ["Auto", "Percent", "Points"]  # noqa: E501
-        if type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
-                .format(type, allowed_values)
-            )
-
-        self._type = type
-
+        if not type.isdigit():	
+            if type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(type, allowed_values))
+            self._type = type
+        else:
+            self._type = allowed_values[int(type) if six.PY3 else long(type)]
     @property
     def value(self):
         """Gets the value of this PreferredWidth.  # noqa: E501
@@ -112,9 +113,7 @@ class PreferredWidth(object):
         :param value: The value of this PreferredWidth.  # noqa: E501
         :type: float
         """
-
         self._value = value
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -41,27 +41,81 @@ class ProtectionResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'code': 'int',
+        'status': 'str',
         'document_link': 'FileLink',
         'protection_result': 'bool'
     }
 
     attribute_map = {
+        'code': 'Code',
+        'status': 'Status',
         'document_link': 'DocumentLink',
         'protection_result': 'ProtectionResult'
     }
 
-    def __init__(self, document_link=None, protection_result=None):  # noqa: E501
+    def __init__(self, code=None, status=None, document_link=None, protection_result=None):  # noqa: E501
         """ProtectionResponse - a model defined in Swagger"""  # noqa: E501
 
+        self._code = None
+        self._status = None
         self._document_link = None
         self._protection_result = None
         self.discriminator = None
 
+        if code is not None:
+            self.code = code
+        if status is not None:
+            self.status = status
         if document_link is not None:
             self.document_link = document_link
         if protection_result is not None:
             self.protection_result = protection_result
 
+    @property
+    def code(self):
+        """Gets the code of this ProtectionResponse.  # noqa: E501
+
+        Response status code.  # noqa: E501
+
+        :return: The code of this ProtectionResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._code
+
+    @code.setter
+    def code(self, code):
+        """Sets the code of this ProtectionResponse.
+
+        Response status code.  # noqa: E501
+
+        :param code: The code of this ProtectionResponse.  # noqa: E501
+        :type: int
+        """
+        if code is None:
+            raise ValueError("Invalid value for `code`, must not be `None`")  # noqa: E501
+        self._code = code
+    @property
+    def status(self):
+        """Gets the status of this ProtectionResponse.  # noqa: E501
+
+        Response status.  # noqa: E501
+
+        :return: The status of this ProtectionResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this ProtectionResponse.
+
+        Response status.  # noqa: E501
+
+        :param status: The status of this ProtectionResponse.  # noqa: E501
+        :type: str
+        """
+        self._status = status
     @property
     def document_link(self):
         """Gets the document_link of this ProtectionResponse.  # noqa: E501
@@ -82,9 +136,7 @@ class ProtectionResponse(object):
         :param document_link: The document_link of this ProtectionResponse.  # noqa: E501
         :type: FileLink
         """
-
         self._document_link = document_link
-
     @property
     def protection_result(self):
         """Gets the protection_result of this ProtectionResponse.  # noqa: E501
@@ -105,9 +157,7 @@ class ProtectionResponse(object):
         :param protection_result: The protection_result of this ProtectionResponse.  # noqa: E501
         :type: bool
         """
-
         self._protection_result = protection_result
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

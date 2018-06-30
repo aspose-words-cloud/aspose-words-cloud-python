@@ -164,12 +164,7 @@ class ApiClient(object):
 
         self.last_response = response_data
 
-        return_data = response_data
-        if _preload_content:
-            # deserialize response data
-            if response_type:
-                return_data = self.deserialize(response_data, response_type)
-            return_data = None
+        return_data = self.deserialize(response_data, response_type)
 
         if _return_http_data_only:
             return return_data
@@ -282,7 +277,7 @@ class ApiClient(object):
     def call_api(self, resource_path, method,
                  path_params=None, query_params=None, header_params=None,
                  body=None, post_params=None, files=None,
-                 response_type=None, auth_settings=None, async=None,
+                 response_type=None, auth_settings=None, is_async=None,
                  _return_http_data_only=None, collection_formats=None,
                  _preload_content=True, _request_timeout=None):
         """Makes the HTTP request (synchronous) and returns deserialized data.
@@ -302,7 +297,7 @@ class ApiClient(object):
         :param response: Response data type.
         :param files dict: key -> filename, value -> filepath,
             for `multipart/form-data`.
-        :param async bool: execute request asynchronously
+        :param is_async bool: execute request asynchronously
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param collection_formats: dict of collection formats for path, query,
@@ -315,13 +310,13 @@ class ApiClient(object):
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
         :return:
-            If async parameter is True,
+            If is_async parameter is True,
             the request will be called asynchronously.
             The method will return the request thread.
-            If parameter async is False or missing,
+            If parameter is_async is False or missing,
             then the method will return the response directly.
         """
-        if not async:
+        if not is_async:
             return self.__call_api(resource_path, method,
                                    path_params, query_params, header_params,
                                    body, post_params, files,
@@ -435,7 +430,7 @@ class ApiClient(object):
 
         :param post_params: Normal form parameters.
         :param files: File parameters.
-        :return: Form parameters with files.
+        :return: Form parameters with files. 
         """
         params = []
 
@@ -443,7 +438,7 @@ class ApiClient(object):
             params = post_params
 
         if files:
-            for k, v in six.iteritems(files):
+            for k, v in files:
                 if not v:
                     continue
                 file_names = v if type(v) is list else [v]
@@ -531,9 +526,10 @@ class ApiClient(object):
         if content_disposition:
             filename = re.search(r'filename=[\'"]?([^\'"\s]+)[\'"]?',
                                  content_disposition).group(1)
+            filename = filename.replace('/', '_')
             path = os.path.join(os.path.dirname(path), filename)
 
-        with open(path, "w") as f:
+        with open(path, "wb") as f:
             f.write(response.data)
 
         return path
@@ -549,6 +545,8 @@ class ApiClient(object):
         try:
             return klass(data)
         except UnicodeEncodeError:
+            if not six.PY3:
+                return data.encode('utf8')
             return six.u(data)
         except TypeError:
             return data
@@ -587,7 +585,7 @@ class ApiClient(object):
         """
         try:
             from dateutil.parser import parse
-            return parse(string)
+            return parse(re.search('[0-9]', string).group(0))
         except ImportError:
             return string
         except ValueError:

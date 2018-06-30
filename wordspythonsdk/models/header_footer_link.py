@@ -41,22 +41,48 @@ class HeaderFooterLink(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'type': 'str'
     }
 
     attribute_map = {
+        'link': 'link',
         'type': 'Type'
     }
 
-    def __init__(self, type=None):  # noqa: E501
+    def __init__(self, link=None, type=None):  # noqa: E501
         """HeaderFooterLink - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._type = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if type is not None:
             self.type = type
 
+    @property
+    def link(self):
+        """Gets the link of this HeaderFooterLink.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this HeaderFooterLink.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this HeaderFooterLink.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this HeaderFooterLink.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def type(self):
         """Gets the type of this HeaderFooterLink.  # noqa: E501
@@ -78,14 +104,14 @@ class HeaderFooterLink(object):
         :type: str
         """
         allowed_values = ["HeaderEven", "HeaderPrimary", "FooterEven", "FooterPrimary", "HeaderFirst", "FooterFirst"]  # noqa: E501
-        if type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
-                .format(type, allowed_values)
-            )
-
-        self._type = type
-
+        if not type.isdigit():	
+            if type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(type, allowed_values))
+            self._type = type
+        else:
+            self._type = allowed_values[int(type) if six.PY3 else long(type)]
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

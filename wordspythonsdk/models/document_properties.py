@@ -41,22 +41,48 @@ class DocumentProperties(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'list': 'list[DocumentProperty]'
     }
 
     attribute_map = {
+        'link': 'link',
         'list': 'List'
     }
 
-    def __init__(self, list=None):  # noqa: E501
+    def __init__(self, link=None, list=None):  # noqa: E501
         """DocumentProperties - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._list = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if list is not None:
             self.list = list
 
+    @property
+    def link(self):
+        """Gets the link of this DocumentProperties.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this DocumentProperties.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this DocumentProperties.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this DocumentProperties.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def list(self):
         """Gets the list of this DocumentProperties.  # noqa: E501
@@ -77,9 +103,7 @@ class DocumentProperties(object):
         :param list: The list of this DocumentProperties.  # noqa: E501
         :type: list[DocumentProperty]
         """
-
         self._list = list
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

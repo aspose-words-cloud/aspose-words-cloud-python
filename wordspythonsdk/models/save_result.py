@@ -87,9 +87,7 @@ class SaveResult(object):
         :param source_document: The source_document of this SaveResult.  # noqa: E501
         :type: FileLink
         """
-
         self._source_document = source_document
-
     @property
     def dest_document(self):
         """Gets the dest_document of this SaveResult.  # noqa: E501
@@ -110,9 +108,7 @@ class SaveResult(object):
         :param dest_document: The dest_document of this SaveResult.  # noqa: E501
         :type: FileLink
         """
-
         self._dest_document = dest_document
-
     @property
     def additional_items(self):
         """Gets the additional_items of this SaveResult.  # noqa: E501
@@ -133,9 +129,7 @@ class SaveResult(object):
         :param additional_items: The additional_items of this SaveResult.  # noqa: E501
         :type: list[FileLink]
         """
-
         self._additional_items = additional_items
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

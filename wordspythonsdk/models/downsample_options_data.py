@@ -87,9 +87,7 @@ class DownsampleOptionsData(object):
         :param downsample_images: The downsample_images of this DownsampleOptionsData.  # noqa: E501
         :type: bool
         """
-
         self._downsample_images = downsample_images
-
     @property
     def resolution(self):
         """Gets the resolution of this DownsampleOptionsData.  # noqa: E501
@@ -110,9 +108,7 @@ class DownsampleOptionsData(object):
         :param resolution: The resolution of this DownsampleOptionsData.  # noqa: E501
         :type: int
         """
-
         self._resolution = resolution
-
     @property
     def resolution_threshold(self):
         """Gets the resolution_threshold of this DownsampleOptionsData.  # noqa: E501
@@ -133,9 +129,7 @@ class DownsampleOptionsData(object):
         :param resolution_threshold: The resolution_threshold of this DownsampleOptionsData.  # noqa: E501
         :type: int
         """
-
         self._resolution_threshold = resolution_threshold
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -82,9 +82,7 @@ class BookmarkData(object):
         :param name: The name of this BookmarkData.  # noqa: E501
         :type: str
         """
-
         self._name = name
-
     @property
     def text(self):
         """Gets the text of this BookmarkData.  # noqa: E501
@@ -105,9 +103,7 @@ class BookmarkData(object):
         :param text: The text of this BookmarkData.  # noqa: E501
         :type: str
         """
-
         self._text = text
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

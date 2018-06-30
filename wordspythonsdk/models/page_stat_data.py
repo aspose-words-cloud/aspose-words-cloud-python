@@ -63,9 +63,12 @@ class PageStatData(object):
         self._footnotes_stat_data = None
         self.discriminator = None
 
-        self.page_number = page_number
-        self.word_count = word_count
-        self.paragraph_count = paragraph_count
+        if page_number is not None:
+            self.page_number = page_number
+        if word_count is not None:
+            self.word_count = word_count
+        if paragraph_count is not None:
+            self.paragraph_count = paragraph_count
         if footnotes_stat_data is not None:
             self.footnotes_stat_data = footnotes_stat_data
 
@@ -91,9 +94,7 @@ class PageStatData(object):
         """
         if page_number is None:
             raise ValueError("Invalid value for `page_number`, must not be `None`")  # noqa: E501
-
         self._page_number = page_number
-
     @property
     def word_count(self):
         """Gets the word_count of this PageStatData.  # noqa: E501
@@ -116,9 +117,7 @@ class PageStatData(object):
         """
         if word_count is None:
             raise ValueError("Invalid value for `word_count`, must not be `None`")  # noqa: E501
-
         self._word_count = word_count
-
     @property
     def paragraph_count(self):
         """Gets the paragraph_count of this PageStatData.  # noqa: E501
@@ -141,9 +140,7 @@ class PageStatData(object):
         """
         if paragraph_count is None:
             raise ValueError("Invalid value for `paragraph_count`, must not be `None`")  # noqa: E501
-
         self._paragraph_count = paragraph_count
-
     @property
     def footnotes_stat_data(self):
         """Gets the footnotes_stat_data of this PageStatData.  # noqa: E501
@@ -164,9 +161,7 @@ class PageStatData(object):
         :param footnotes_stat_data: The footnotes_stat_data of this PageStatData.  # noqa: E501
         :type: FootnotesStatData
         """
-
         self._footnotes_stat_data = footnotes_stat_data
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

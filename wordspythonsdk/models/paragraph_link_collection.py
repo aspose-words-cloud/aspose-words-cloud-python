@@ -41,22 +41,48 @@ class ParagraphLinkCollection(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'paragraph_link_list': 'list[ParagraphLink]'
     }
 
     attribute_map = {
+        'link': 'link',
         'paragraph_link_list': 'ParagraphLinkList'
     }
 
-    def __init__(self, paragraph_link_list=None):  # noqa: E501
+    def __init__(self, link=None, paragraph_link_list=None):  # noqa: E501
         """ParagraphLinkCollection - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._paragraph_link_list = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if paragraph_link_list is not None:
             self.paragraph_link_list = paragraph_link_list
 
+    @property
+    def link(self):
+        """Gets the link of this ParagraphLinkCollection.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this ParagraphLinkCollection.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this ParagraphLinkCollection.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this ParagraphLinkCollection.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def paragraph_link_list(self):
         """Gets the paragraph_link_list of this ParagraphLinkCollection.  # noqa: E501
@@ -77,9 +103,7 @@ class ParagraphLinkCollection(object):
         :param paragraph_link_list: The paragraph_link_list of this ParagraphLinkCollection.  # noqa: E501
         :type: list[ParagraphLink]
         """
-
         self._paragraph_link_list = paragraph_link_list
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

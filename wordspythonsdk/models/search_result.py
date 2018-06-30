@@ -82,9 +82,7 @@ class SearchResult(object):
         :param range_start: The range_start of this SearchResult.  # noqa: E501
         :type: DocumentPosition
         """
-
         self._range_start = range_start
-
     @property
     def range_end(self):
         """Gets the range_end of this SearchResult.  # noqa: E501
@@ -105,9 +103,7 @@ class SearchResult(object):
         :param range_end: The range_end of this SearchResult.  # noqa: E501
         :type: DocumentPosition
         """
-
         self._range_end = range_end
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

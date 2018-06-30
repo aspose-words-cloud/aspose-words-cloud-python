@@ -41,6 +41,8 @@ class DrawingObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
+        'node_id': 'str',
         'height': 'float',
         'image_data_link': 'WordsApiLink',
         'left': 'float',
@@ -54,6 +56,8 @@ class DrawingObject(object):
     }
 
     attribute_map = {
+        'link': 'link',
+        'node_id': 'NodeId',
         'height': 'Height',
         'image_data_link': 'ImageDataLink',
         'left': 'Left',
@@ -66,9 +70,11 @@ class DrawingObject(object):
         'wrap_type': 'WrapType'
     }
 
-    def __init__(self, height=None, image_data_link=None, left=None, ole_data_link=None, relative_horizontal_position=None, relative_vertical_position=None, render_links=None, top=None, width=None, wrap_type=None):  # noqa: E501
+    def __init__(self, link=None, node_id=None, height=None, image_data_link=None, left=None, ole_data_link=None, relative_horizontal_position=None, relative_vertical_position=None, render_links=None, top=None, width=None, wrap_type=None):  # noqa: E501
         """DrawingObject - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
+        self._node_id = None
         self._height = None
         self._image_data_link = None
         self._left = None
@@ -81,6 +87,10 @@ class DrawingObject(object):
         self._wrap_type = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
+        if node_id is not None:
+            self.node_id = node_id
         if height is not None:
             self.height = height
         if image_data_link is not None:
@@ -103,6 +113,48 @@ class DrawingObject(object):
             self.wrap_type = wrap_type
 
     @property
+    def link(self):
+        """Gets the link of this DrawingObject.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this DrawingObject.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this DrawingObject.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this DrawingObject.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
+    @property
+    def node_id(self):
+        """Gets the node_id of this DrawingObject.  # noqa: E501
+
+        Node id  # noqa: E501
+
+        :return: The node_id of this DrawingObject.  # noqa: E501
+        :rtype: str
+        """
+        return self._node_id
+
+    @node_id.setter
+    def node_id(self, node_id):
+        """Sets the node_id of this DrawingObject.
+
+        Node id  # noqa: E501
+
+        :param node_id: The node_id of this DrawingObject.  # noqa: E501
+        :type: str
+        """
+        self._node_id = node_id
+    @property
     def height(self):
         """Gets the height of this DrawingObject.  # noqa: E501
 
@@ -122,9 +174,7 @@ class DrawingObject(object):
         :param height: The height of this DrawingObject.  # noqa: E501
         :type: float
         """
-
         self._height = height
-
     @property
     def image_data_link(self):
         """Gets the image_data_link of this DrawingObject.  # noqa: E501
@@ -145,9 +195,7 @@ class DrawingObject(object):
         :param image_data_link: The image_data_link of this DrawingObject.  # noqa: E501
         :type: WordsApiLink
         """
-
         self._image_data_link = image_data_link
-
     @property
     def left(self):
         """Gets the left of this DrawingObject.  # noqa: E501
@@ -168,9 +216,7 @@ class DrawingObject(object):
         :param left: The left of this DrawingObject.  # noqa: E501
         :type: float
         """
-
         self._left = left
-
     @property
     def ole_data_link(self):
         """Gets the ole_data_link of this DrawingObject.  # noqa: E501
@@ -191,9 +237,7 @@ class DrawingObject(object):
         :param ole_data_link: The ole_data_link of this DrawingObject.  # noqa: E501
         :type: WordsApiLink
         """
-
         self._ole_data_link = ole_data_link
-
     @property
     def relative_horizontal_position(self):
         """Gets the relative_horizontal_position of this DrawingObject.  # noqa: E501
@@ -215,14 +259,14 @@ class DrawingObject(object):
         :type: str
         """
         allowed_values = ["Margin", "Page", "Column", "Default", "Character", "LeftMargin", "RightMargin", "InsideMargin", "OutsideMargin"]  # noqa: E501
-        if relative_horizontal_position not in allowed_values:
-            raise ValueError(
-                "Invalid value for `relative_horizontal_position` ({0}), must be one of {1}"  # noqa: E501
-                .format(relative_horizontal_position, allowed_values)
-            )
-
-        self._relative_horizontal_position = relative_horizontal_position
-
+        if not relative_horizontal_position.isdigit():	
+            if relative_horizontal_position not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `relative_horizontal_position` ({0}), must be one of {1}"  # noqa: E501
+                    .format(relative_horizontal_position, allowed_values))
+            self._relative_horizontal_position = relative_horizontal_position
+        else:
+            self._relative_horizontal_position = allowed_values[int(relative_horizontal_position) if six.PY3 else long(relative_horizontal_position)]
     @property
     def relative_vertical_position(self):
         """Gets the relative_vertical_position of this DrawingObject.  # noqa: E501
@@ -244,14 +288,14 @@ class DrawingObject(object):
         :type: str
         """
         allowed_values = ["Margin", "TableDefault", "Page", "Paragraph", "TextFrameDefault", "Line", "TopMargin", "BottomMargin", "InsideMargin", "OutsideMargin"]  # noqa: E501
-        if relative_vertical_position not in allowed_values:
-            raise ValueError(
-                "Invalid value for `relative_vertical_position` ({0}), must be one of {1}"  # noqa: E501
-                .format(relative_vertical_position, allowed_values)
-            )
-
-        self._relative_vertical_position = relative_vertical_position
-
+        if not relative_vertical_position.isdigit():	
+            if relative_vertical_position not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `relative_vertical_position` ({0}), must be one of {1}"  # noqa: E501
+                    .format(relative_vertical_position, allowed_values))
+            self._relative_vertical_position = relative_vertical_position
+        else:
+            self._relative_vertical_position = allowed_values[int(relative_vertical_position) if six.PY3 else long(relative_vertical_position)]
     @property
     def render_links(self):
         """Gets the render_links of this DrawingObject.  # noqa: E501
@@ -272,9 +316,7 @@ class DrawingObject(object):
         :param render_links: The render_links of this DrawingObject.  # noqa: E501
         :type: list[WordsApiLink]
         """
-
         self._render_links = render_links
-
     @property
     def top(self):
         """Gets the top of this DrawingObject.  # noqa: E501
@@ -295,9 +337,7 @@ class DrawingObject(object):
         :param top: The top of this DrawingObject.  # noqa: E501
         :type: float
         """
-
         self._top = top
-
     @property
     def width(self):
         """Gets the width of this DrawingObject.  # noqa: E501
@@ -318,9 +358,7 @@ class DrawingObject(object):
         :param width: The width of this DrawingObject.  # noqa: E501
         :type: float
         """
-
         self._width = width
-
     @property
     def wrap_type(self):
         """Gets the wrap_type of this DrawingObject.  # noqa: E501
@@ -342,14 +380,14 @@ class DrawingObject(object):
         :type: str
         """
         allowed_values = ["Inline", "TopBottom", "Square", "None", "Tight", "Through"]  # noqa: E501
-        if wrap_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `wrap_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(wrap_type, allowed_values)
-            )
-
-        self._wrap_type = wrap_type
-
+        if not wrap_type.isdigit():	
+            if wrap_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `wrap_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(wrap_type, allowed_values))
+            self._wrap_type = wrap_type
+        else:
+            self._wrap_type = allowed_values[int(wrap_type) if six.PY3 else long(wrap_type)]
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

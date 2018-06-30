@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**link** | [**WordsApiLink**](WordsApiLink.md) | Link to the document. | [optional] 
 **alignment** | **str** | Specifies how an inline table is aligned in the document. | [optional] 
 **allow_auto_fit** | **bool** | Allows Microsoft Word and Aspose.Words to automatically resize cells in a table to fit their contents. | [optional] 
 **bidi** | **bool** | Gets or sets whether this is a right-to-left table. | [optional] 

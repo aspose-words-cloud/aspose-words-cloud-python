@@ -57,8 +57,10 @@ class FootnotesStatData(object):
         self._paragraph_count = None
         self.discriminator = None
 
-        self.word_count = word_count
-        self.paragraph_count = paragraph_count
+        if word_count is not None:
+            self.word_count = word_count
+        if paragraph_count is not None:
+            self.paragraph_count = paragraph_count
 
     @property
     def word_count(self):
@@ -82,9 +84,7 @@ class FootnotesStatData(object):
         """
         if word_count is None:
             raise ValueError("Invalid value for `word_count`, must not be `None`")  # noqa: E501
-
         self._word_count = word_count
-
     @property
     def paragraph_count(self):
         """Gets the paragraph_count of this FootnotesStatData.  # noqa: E501
@@ -107,9 +107,7 @@ class FootnotesStatData(object):
         """
         if paragraph_count is None:
             raise ValueError("Invalid value for `paragraph_count`, must not be `None`")  # noqa: E501
-
         self._paragraph_count = paragraph_count
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

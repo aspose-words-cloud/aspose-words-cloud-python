@@ -77,9 +77,7 @@ class StoryChildNodes(object):
         :param child_nodes: The child_nodes of this StoryChildNodes.  # noqa: E501
         :type: list[NodeLink]
         """
-
         self._child_nodes = child_nodes
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

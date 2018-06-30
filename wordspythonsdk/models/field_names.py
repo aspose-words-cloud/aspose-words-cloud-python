@@ -41,22 +41,48 @@ class FieldNames(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'names': 'list[str]'
     }
 
     attribute_map = {
+        'link': 'link',
         'names': 'Names'
     }
 
-    def __init__(self, names=None):  # noqa: E501
+    def __init__(self, link=None, names=None):  # noqa: E501
         """FieldNames - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._names = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if names is not None:
             self.names = names
 
+    @property
+    def link(self):
+        """Gets the link of this FieldNames.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this FieldNames.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this FieldNames.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this FieldNames.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def names(self):
         """Gets the names of this FieldNames.  # noqa: E501
@@ -77,9 +103,7 @@ class FieldNames(object):
         :param names: The names of this FieldNames.  # noqa: E501
         :type: list[str]
         """
-
         self._names = names
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -87,9 +87,7 @@ class SplitDocumentResult(object):
         :param source_document: The source_document of this SplitDocumentResult.  # noqa: E501
         :type: FileLink
         """
-
         self._source_document = source_document
-
     @property
     def pages(self):
         """Gets the pages of this SplitDocumentResult.  # noqa: E501
@@ -110,9 +108,7 @@ class SplitDocumentResult(object):
         :param pages: The pages of this SplitDocumentResult.  # noqa: E501
         :type: list[FileLink]
         """
-
         self._pages = pages
-
     @property
     def zipped_pages(self):
         """Gets the zipped_pages of this SplitDocumentResult.  # noqa: E501
@@ -133,9 +129,7 @@ class SplitDocumentResult(object):
         :param zipped_pages: The zipped_pages of this SplitDocumentResult.  # noqa: E501
         :type: FileLink
         """
-
         self._zipped_pages = zipped_pages
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

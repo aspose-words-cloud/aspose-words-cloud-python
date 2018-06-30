@@ -62,8 +62,10 @@ class TableInsert(object):
 
         if postion is not None:
             self.postion = postion
-        self.columns_count = columns_count
-        self.rows_count = rows_count
+        if columns_count is not None:
+            self.columns_count = columns_count
+        if rows_count is not None:
+            self.rows_count = rows_count
 
     @property
     def postion(self):
@@ -85,9 +87,7 @@ class TableInsert(object):
         :param postion: The postion of this TableInsert.  # noqa: E501
         :type: DocumentPosition
         """
-
         self._postion = postion
-
     @property
     def columns_count(self):
         """Gets the columns_count of this TableInsert.  # noqa: E501
@@ -110,9 +110,7 @@ class TableInsert(object):
         """
         if columns_count is None:
             raise ValueError("Invalid value for `columns_count`, must not be `None`")  # noqa: E501
-
         self._columns_count = columns_count
-
     @property
     def rows_count(self):
         """Gets the rows_count of this TableInsert.  # noqa: E501
@@ -135,9 +133,7 @@ class TableInsert(object):
         """
         if rows_count is None:
             raise ValueError("Invalid value for `rows_count`, must not be `None`")  # noqa: E501
-
         self._rows_count = rows_count
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

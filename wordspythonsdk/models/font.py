@@ -41,6 +41,7 @@ class Font(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'all_caps': 'bool',
         'bidi': 'bool',
         'bold': 'bool',
@@ -84,6 +85,7 @@ class Font(object):
     }
 
     attribute_map = {
+        'link': 'link',
         'all_caps': 'AllCaps',
         'bidi': 'Bidi',
         'bold': 'Bold',
@@ -126,9 +128,10 @@ class Font(object):
         'underline_color': 'UnderlineColor'
     }
 
-    def __init__(self, all_caps=None, bidi=None, bold=None, bold_bi=None, border=None, color=None, complex_script=None, double_strike_through=None, emboss=None, engrave=None, hidden=None, highlight_color=None, italic=None, italic_bi=None, kerning=None, locale_id=None, locale_id_bi=None, locale_id_far_east=None, name=None, name_ascii=None, name_bi=None, name_far_east=None, name_other=None, no_proofing=None, outline=None, position=None, scaling=None, shadow=None, size=None, size_bi=None, small_caps=None, spacing=None, strike_through=None, style_identifier=None, style_name=None, subscript=None, superscript=None, text_effect=None, underline=None, underline_color=None):  # noqa: E501
+    def __init__(self, link=None, all_caps=None, bidi=None, bold=None, bold_bi=None, border=None, color=None, complex_script=None, double_strike_through=None, emboss=None, engrave=None, hidden=None, highlight_color=None, italic=None, italic_bi=None, kerning=None, locale_id=None, locale_id_bi=None, locale_id_far_east=None, name=None, name_ascii=None, name_bi=None, name_far_east=None, name_other=None, no_proofing=None, outline=None, position=None, scaling=None, shadow=None, size=None, size_bi=None, small_caps=None, spacing=None, strike_through=None, style_identifier=None, style_name=None, subscript=None, superscript=None, text_effect=None, underline=None, underline_color=None):  # noqa: E501
         """Font - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._all_caps = None
         self._bidi = None
         self._bold = None
@@ -171,6 +174,8 @@ class Font(object):
         self._underline_color = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if all_caps is not None:
             self.all_caps = all_caps
         if bidi is not None:
@@ -253,6 +258,27 @@ class Font(object):
             self.underline_color = underline_color
 
     @property
+    def link(self):
+        """Gets the link of this Font.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this Font.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this Font.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this Font.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
+    @property
     def all_caps(self):
         """Gets the all_caps of this Font.  # noqa: E501
 
@@ -272,9 +298,7 @@ class Font(object):
         :param all_caps: The all_caps of this Font.  # noqa: E501
         :type: bool
         """
-
         self._all_caps = all_caps
-
     @property
     def bidi(self):
         """Gets the bidi of this Font.  # noqa: E501
@@ -295,9 +319,7 @@ class Font(object):
         :param bidi: The bidi of this Font.  # noqa: E501
         :type: bool
         """
-
         self._bidi = bidi
-
     @property
     def bold(self):
         """Gets the bold of this Font.  # noqa: E501
@@ -318,9 +340,7 @@ class Font(object):
         :param bold: The bold of this Font.  # noqa: E501
         :type: bool
         """
-
         self._bold = bold
-
     @property
     def bold_bi(self):
         """Gets the bold_bi of this Font.  # noqa: E501
@@ -341,9 +361,7 @@ class Font(object):
         :param bold_bi: The bold_bi of this Font.  # noqa: E501
         :type: bool
         """
-
         self._bold_bi = bold_bi
-
     @property
     def border(self):
         """Gets the border of this Font.  # noqa: E501
@@ -364,9 +382,7 @@ class Font(object):
         :param border: The border of this Font.  # noqa: E501
         :type: Border
         """
-
         self._border = border
-
     @property
     def color(self):
         """Gets the color of this Font.  # noqa: E501
@@ -387,9 +403,7 @@ class Font(object):
         :param color: The color of this Font.  # noqa: E501
         :type: XmlColor
         """
-
         self._color = color
-
     @property
     def complex_script(self):
         """Gets the complex_script of this Font.  # noqa: E501
@@ -410,9 +424,7 @@ class Font(object):
         :param complex_script: The complex_script of this Font.  # noqa: E501
         :type: bool
         """
-
         self._complex_script = complex_script
-
     @property
     def double_strike_through(self):
         """Gets the double_strike_through of this Font.  # noqa: E501
@@ -433,9 +445,7 @@ class Font(object):
         :param double_strike_through: The double_strike_through of this Font.  # noqa: E501
         :type: bool
         """
-
         self._double_strike_through = double_strike_through
-
     @property
     def emboss(self):
         """Gets the emboss of this Font.  # noqa: E501
@@ -456,9 +466,7 @@ class Font(object):
         :param emboss: The emboss of this Font.  # noqa: E501
         :type: bool
         """
-
         self._emboss = emboss
-
     @property
     def engrave(self):
         """Gets the engrave of this Font.  # noqa: E501
@@ -479,9 +487,7 @@ class Font(object):
         :param engrave: The engrave of this Font.  # noqa: E501
         :type: bool
         """
-
         self._engrave = engrave
-
     @property
     def hidden(self):
         """Gets the hidden of this Font.  # noqa: E501
@@ -502,9 +508,7 @@ class Font(object):
         :param hidden: The hidden of this Font.  # noqa: E501
         :type: bool
         """
-
         self._hidden = hidden
-
     @property
     def highlight_color(self):
         """Gets the highlight_color of this Font.  # noqa: E501
@@ -525,9 +529,7 @@ class Font(object):
         :param highlight_color: The highlight_color of this Font.  # noqa: E501
         :type: XmlColor
         """
-
         self._highlight_color = highlight_color
-
     @property
     def italic(self):
         """Gets the italic of this Font.  # noqa: E501
@@ -548,9 +550,7 @@ class Font(object):
         :param italic: The italic of this Font.  # noqa: E501
         :type: bool
         """
-
         self._italic = italic
-
     @property
     def italic_bi(self):
         """Gets the italic_bi of this Font.  # noqa: E501
@@ -571,9 +571,7 @@ class Font(object):
         :param italic_bi: The italic_bi of this Font.  # noqa: E501
         :type: bool
         """
-
         self._italic_bi = italic_bi
-
     @property
     def kerning(self):
         """Gets the kerning of this Font.  # noqa: E501
@@ -594,9 +592,7 @@ class Font(object):
         :param kerning: The kerning of this Font.  # noqa: E501
         :type: float
         """
-
         self._kerning = kerning
-
     @property
     def locale_id(self):
         """Gets the locale_id of this Font.  # noqa: E501
@@ -617,9 +613,7 @@ class Font(object):
         :param locale_id: The locale_id of this Font.  # noqa: E501
         :type: int
         """
-
         self._locale_id = locale_id
-
     @property
     def locale_id_bi(self):
         """Gets the locale_id_bi of this Font.  # noqa: E501
@@ -640,9 +634,7 @@ class Font(object):
         :param locale_id_bi: The locale_id_bi of this Font.  # noqa: E501
         :type: int
         """
-
         self._locale_id_bi = locale_id_bi
-
     @property
     def locale_id_far_east(self):
         """Gets the locale_id_far_east of this Font.  # noqa: E501
@@ -663,9 +655,7 @@ class Font(object):
         :param locale_id_far_east: The locale_id_far_east of this Font.  # noqa: E501
         :type: int
         """
-
         self._locale_id_far_east = locale_id_far_east
-
     @property
     def name(self):
         """Gets the name of this Font.  # noqa: E501
@@ -686,9 +676,7 @@ class Font(object):
         :param name: The name of this Font.  # noqa: E501
         :type: str
         """
-
         self._name = name
-
     @property
     def name_ascii(self):
         """Gets the name_ascii of this Font.  # noqa: E501
@@ -709,9 +697,7 @@ class Font(object):
         :param name_ascii: The name_ascii of this Font.  # noqa: E501
         :type: str
         """
-
         self._name_ascii = name_ascii
-
     @property
     def name_bi(self):
         """Gets the name_bi of this Font.  # noqa: E501
@@ -732,9 +718,7 @@ class Font(object):
         :param name_bi: The name_bi of this Font.  # noqa: E501
         :type: str
         """
-
         self._name_bi = name_bi
-
     @property
     def name_far_east(self):
         """Gets the name_far_east of this Font.  # noqa: E501
@@ -755,9 +739,7 @@ class Font(object):
         :param name_far_east: The name_far_east of this Font.  # noqa: E501
         :type: str
         """
-
         self._name_far_east = name_far_east
-
     @property
     def name_other(self):
         """Gets the name_other of this Font.  # noqa: E501
@@ -778,9 +760,7 @@ class Font(object):
         :param name_other: The name_other of this Font.  # noqa: E501
         :type: str
         """
-
         self._name_other = name_other
-
     @property
     def no_proofing(self):
         """Gets the no_proofing of this Font.  # noqa: E501
@@ -801,9 +781,7 @@ class Font(object):
         :param no_proofing: The no_proofing of this Font.  # noqa: E501
         :type: bool
         """
-
         self._no_proofing = no_proofing
-
     @property
     def outline(self):
         """Gets the outline of this Font.  # noqa: E501
@@ -824,9 +802,7 @@ class Font(object):
         :param outline: The outline of this Font.  # noqa: E501
         :type: bool
         """
-
         self._outline = outline
-
     @property
     def position(self):
         """Gets the position of this Font.  # noqa: E501
@@ -847,9 +823,7 @@ class Font(object):
         :param position: The position of this Font.  # noqa: E501
         :type: float
         """
-
         self._position = position
-
     @property
     def scaling(self):
         """Gets the scaling of this Font.  # noqa: E501
@@ -870,9 +844,7 @@ class Font(object):
         :param scaling: The scaling of this Font.  # noqa: E501
         :type: int
         """
-
         self._scaling = scaling
-
     @property
     def shadow(self):
         """Gets the shadow of this Font.  # noqa: E501
@@ -893,9 +865,7 @@ class Font(object):
         :param shadow: The shadow of this Font.  # noqa: E501
         :type: bool
         """
-
         self._shadow = shadow
-
     @property
     def size(self):
         """Gets the size of this Font.  # noqa: E501
@@ -916,9 +886,7 @@ class Font(object):
         :param size: The size of this Font.  # noqa: E501
         :type: float
         """
-
         self._size = size
-
     @property
     def size_bi(self):
         """Gets the size_bi of this Font.  # noqa: E501
@@ -939,9 +907,7 @@ class Font(object):
         :param size_bi: The size_bi of this Font.  # noqa: E501
         :type: float
         """
-
         self._size_bi = size_bi
-
     @property
     def small_caps(self):
         """Gets the small_caps of this Font.  # noqa: E501
@@ -962,9 +928,7 @@ class Font(object):
         :param small_caps: The small_caps of this Font.  # noqa: E501
         :type: bool
         """
-
         self._small_caps = small_caps
-
     @property
     def spacing(self):
         """Gets the spacing of this Font.  # noqa: E501
@@ -985,9 +949,7 @@ class Font(object):
         :param spacing: The spacing of this Font.  # noqa: E501
         :type: float
         """
-
         self._spacing = spacing
-
     @property
     def strike_through(self):
         """Gets the strike_through of this Font.  # noqa: E501
@@ -1008,9 +970,7 @@ class Font(object):
         :param strike_through: The strike_through of this Font.  # noqa: E501
         :type: bool
         """
-
         self._strike_through = strike_through
-
     @property
     def style_identifier(self):
         """Gets the style_identifier of this Font.  # noqa: E501
@@ -1032,14 +992,14 @@ class Font(object):
         :type: str
         """
         allowed_values = ["Normal", "Heading1", "Heading2", "Heading3", "Heading4", "Heading5", "Heading6", "Heading7", "Heading8", "Heading9", "Index1", "Index2", "Index3", "Index4", "Index5", "Index6", "Index7", "Index8", "Index9", "Toc1", "Toc2", "Toc3", "Toc4", "Toc5", "Toc6", "Toc7", "Toc8", "Toc9", "NormalIndent", "FootnoteText", "CommentText", "Header", "Footer", "IndexHeading", "Caption", "TableOfFigures", "EnvelopeAddress", "EnvelopeReturn", "FootnoteReference", "CommentReference", "LineNumber", "PageNumber", "EndnoteReference", "EndnoteText", "TableOfAuthorities", "Macro", "ToaHeading", "List", "ListBullet", "ListNumber", "List2", "List3", "List4", "List5", "ListBullet2", "ListBullet3", "ListBullet4", "ListBullet5", "ListNumber2", "ListNumber3", "ListNumber4", "ListNumber5", "Title", "Closing", "Signature", "DefaultParagraphFont", "BodyText", "BodyTextInd", "ListContinue", "ListContinue2", "ListContinue3", "ListContinue4", "ListContinue5", "MessageHeader", "Subtitle", "Salutation", "Date", "BodyText1I", "BodyText1I2", "NoteHeading", "BodyText2", "BodyText3", "BodyTextInd2", "BodyTextInd3", "BlockText", "Hyperlink", "FollowedHyperlink", "Strong", "Emphasis", "DocumentMap", "PlainText", "EmailSignature", "HtmlTopOfForm", "HtmlBottomOfForm", "NormalWeb", "HtmlAcronym", "HtmlAddress", "HtmlCite", "HtmlCode", "HtmlDefinition", "HtmlKeyboard", "HtmlPreformatted", "HtmlSample", "HtmlTypewriter", "HtmlVariable", "TableNormal", "CommentSubject", "NoList", "OutlineList1", "OutlineList2", "OutlineList3", "TableSimple1", "TableSimple2", "TableSimple3", "TableClassic1", "TableClassic2", "TableClassic3", "TableClassic4", "TableColorful1", "TableColorful2", "TableColorful3", "TableColumns1", "TableColumns2", "TableColumns3", "TableColumns4", "TableColumns5", "TableGrid1", "TableGrid2", "TableGrid3", "TableGrid4", "TableGrid5", "TableGrid6", "TableGrid7", "TableGrid8", "TableList1", "TableList2", "TableList3", "TableList4", "TableList5", "TableList6", "TableList7", "TableList8", "Table3DEffects1", "Table3DEffects2", "Table3DEffects3", "TableContemporary", "TableElegant", "TableProfessional", "TableSubtle1", "TableSubtle2", "TableWeb1", "TableWeb2", "TableWeb3", "BalloonText", "TableGrid", "TableTheme", "PlaceholderText", "NoSpacing", "LightShading", "LightList", "LightGrid", "MediumShading1", "MediumShading2", "MediumList1", "MediumList2", "MediumGrid1", "MediumGrid2", "MediumGrid3", "DarkList", "ColorfulShading", "ColorfulList", "ColorfulGrid", "LightShadingAccent1", "LightListAccent1", "LightGridAccent1", "MediumShading1Accent1", "MediumShading2Accent1", "MediumList1Accent1", "Revision", "ListParagraph", "Quote", "IntenseQuote", "MediumList2Accent1", "MediumGrid1Accent1", "MediumGrid2Accent1", "MediumGrid3Accent1", "DarkListAccent1", "ColorfulShadingAccent1", "ColorfulListAccent1", "ColorfulGridAccent1", "LightShadingAccent2", "LightListAccent2", "LightGridAccent2", "MediumShading1Accent2", "MediumShading2Accent2", "MediumList1Accent2", "MediumList2Accent2", "MediumGrid1Accent2", "MediumGrid2Accent2", "MediumGrid3Accent2", "DarkListAccent2", "ColorfulShadingAccent2", "ColorfulListAccent2", "ColorfulGridAccent2", "LightShadingAccent3", "LightListAccent3", "LightGridAccent3", "MediumShading1Accent3", "MediumShading2Accent3", "MediumList1Accent3", "MediumList2Accent3", "MediumGrid1Accent3", "MediumGrid2Accent3", "MediumGrid3Accent3", "DarkListAccent3", "ColorfulShadingAccent3", "ColorfulListAccent3", "ColorfulGridAccent3", "LightShadingAccent4", "LightListAccent4", "LightGridAccent4", "MediumShading1Accent4", "MediumShading2Accent4", "MediumList1Accent4", "MediumList2Accent4", "MediumGrid1Accent4", "MediumGrid2Accent4", "MediumGrid3Accent4", "DarkListAccent4", "ColorfulShadingAccent4", "ColorfulListAccent4", "ColorfulGridAccent4", "LightShadingAccent5", "LightListAccent5", "LightGridAccent5", "MediumShading1Accent5", "MediumShading2Accent5", "MediumList1Accent5", "MediumList2Accent5", "MediumGrid1Accent5", "MediumGrid2Accent5", "MediumGrid3Accent5", "DarkListAccent5", "ColorfulShadingAccent5", "ColorfulListAccent5", "ColorfulGridAccent5", "LightShadingAccent6", "LightListAccent6", "LightGridAccent6", "MediumShading1Accent6", "MediumShading2Accent6", "MediumList1Accent6", "MediumList2Accent6", "MediumGrid1Accent6", "MediumGrid2Accent6", "MediumGrid3Accent6", "DarkListAccent6", "ColorfulShadingAccent6", "ColorfulListAccent6", "ColorfulGridAccent6", "SubtleEmphasis", "IntenseEmphasis", "SubtleReference", "IntenseReference", "BookTitle", "Bibliography", "TocHeading", "PlainTable1", "PlainTable2", "PlainTable3", "PlainTable4", "PlainTable5", "TableGridLight", "GridTable1Light", "GridTable2", "GridTable3", "GridTable4", "GridTable5Dark", "GridTable6Colorful", "GridTable7Colorful", "GridTable1LightAccent1", "GridTable2Accent1", "GridTable3Accent1", "GridTable4Accent1", "GridTable5DarkAccent1", "GridTable6ColorfulAccent1", "GridTable7ColorfulAccent1", "GridTable1LightAccent2", "GridTable2Accent2", "GridTable3Accent2", "GridTable4Accent2", "GridTable5DarkAccent2", "GridTable6ColorfulAccent2", "GridTable7ColorfulAccent2", "GridTable1LightAccent3", "GridTable2Accent3", "GridTable3Accent3", "GridTable4Accent3", "GridTable5DarkAccent3", "GridTable6ColorfulAccent3", "GridTable7ColorfulAccent3", "GridTable1LightAccent4", "GridTable2Accent4", "GridTable3Accent4", "GridTable4Accent4", "GridTable5DarkAccent4", "GridTable6ColorfulAccent4", "GridTable7ColorfulAccent4", "GridTable1LightAccent5", "GridTable2Accent5", "GridTable3Accent5", "GridTable4Accent5", "GridTable5DarkAccent5", "GridTable6ColorfulAccent5", "GridTable7ColorfulAccent5", "GridTable1LightAccent6", "GridTable2Accent6", "GridTable3Accent6", "GridTable4Accent6", "GridTable5DarkAccent6", "GridTable6ColorfulAccent6", "GridTable7ColorfulAccent6", "ListTable1Light", "ListTable2", "ListTable3", "ListTable4", "ListTable5Dark", "ListTable6Colorful", "ListTable7Colorful", "ListTable1LightAccent1", "ListTable2Accent1", "ListTable3Accent1", "ListTable4Accent1", "ListTable5DarkAccent1", "ListTable6ColorfulAccent1", "ListTable7ColorfulAccent1", "ListTable1LightAccent2", "ListTable2Accent2", "ListTable3Accent2", "ListTable4Accent2", "ListTable5DarkAccent2", "ListTable6ColorfulAccent2", "ListTable7ColorfulAccent2", "ListTable1LightAccent3", "ListTable2Accent3", "ListTable3Accent3", "ListTable4Accent3", "ListTable5DarkAccent3", "ListTable6ColorfulAccent3", "ListTable7ColorfulAccent3", "ListTable1LightAccent4", "ListTable2Accent4", "ListTable3Accent4", "ListTable4Accent4", "ListTable5DarkAccent4", "ListTable6ColorfulAccent4", "ListTable7ColorfulAccent4", "ListTable1LightAccent5", "ListTable2Accent5", "ListTable3Accent5", "ListTable4Accent5", "ListTable5DarkAccent5", "ListTable6ColorfulAccent5", "ListTable7ColorfulAccent5", "ListTable1LightAccent6", "ListTable2Accent6", "ListTable3Accent6", "ListTable4Accent6", "ListTable5DarkAccent6", "ListTable6ColorfulAccent6", "ListTable7ColorfulAccent6", "User", "Nil"]  # noqa: E501
-        if style_identifier not in allowed_values:
-            raise ValueError(
-                "Invalid value for `style_identifier` ({0}), must be one of {1}"  # noqa: E501
-                .format(style_identifier, allowed_values)
-            )
-
-        self._style_identifier = style_identifier
-
+        if not style_identifier.isdigit():	
+            if style_identifier not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `style_identifier` ({0}), must be one of {1}"  # noqa: E501
+                    .format(style_identifier, allowed_values))
+            self._style_identifier = style_identifier
+        else:
+            self._style_identifier = allowed_values[int(style_identifier) if six.PY3 else long(style_identifier)]
     @property
     def style_name(self):
         """Gets the style_name of this Font.  # noqa: E501
@@ -1060,9 +1020,7 @@ class Font(object):
         :param style_name: The style_name of this Font.  # noqa: E501
         :type: str
         """
-
         self._style_name = style_name
-
     @property
     def subscript(self):
         """Gets the subscript of this Font.  # noqa: E501
@@ -1083,9 +1041,7 @@ class Font(object):
         :param subscript: The subscript of this Font.  # noqa: E501
         :type: bool
         """
-
         self._subscript = subscript
-
     @property
     def superscript(self):
         """Gets the superscript of this Font.  # noqa: E501
@@ -1106,9 +1062,7 @@ class Font(object):
         :param superscript: The superscript of this Font.  # noqa: E501
         :type: bool
         """
-
         self._superscript = superscript
-
     @property
     def text_effect(self):
         """Gets the text_effect of this Font.  # noqa: E501
@@ -1130,14 +1084,14 @@ class Font(object):
         :type: str
         """
         allowed_values = ["None", "LasVegasLights", "BlinkingBackground", "SparkleText", "MarchingBlackAnts", "MarchingRedAnts", "Shimmer"]  # noqa: E501
-        if text_effect not in allowed_values:
-            raise ValueError(
-                "Invalid value for `text_effect` ({0}), must be one of {1}"  # noqa: E501
-                .format(text_effect, allowed_values)
-            )
-
-        self._text_effect = text_effect
-
+        if not text_effect.isdigit():	
+            if text_effect not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `text_effect` ({0}), must be one of {1}"  # noqa: E501
+                    .format(text_effect, allowed_values))
+            self._text_effect = text_effect
+        else:
+            self._text_effect = allowed_values[int(text_effect) if six.PY3 else long(text_effect)]
     @property
     def underline(self):
         """Gets the underline of this Font.  # noqa: E501
@@ -1159,14 +1113,14 @@ class Font(object):
         :type: str
         """
         allowed_values = ["None", "Single", "Words", "Double", "Dotted", "Thick", "Dash", "DotDash", "DotDotDash", "Wavy", "DottedHeavy", "DashHeavy", "DotDashHeavy", "DotDotDashHeavy", "WavyHeavy", "DashLong", "WavyDouble", "DashLongHeavy"]  # noqa: E501
-        if underline not in allowed_values:
-            raise ValueError(
-                "Invalid value for `underline` ({0}), must be one of {1}"  # noqa: E501
-                .format(underline, allowed_values)
-            )
-
-        self._underline = underline
-
+        if not underline.isdigit():	
+            if underline not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `underline` ({0}), must be one of {1}"  # noqa: E501
+                    .format(underline, allowed_values))
+            self._underline = underline
+        else:
+            self._underline = allowed_values[int(underline) if six.PY3 else long(underline)]
     @property
     def underline_color(self):
         """Gets the underline_color of this Font.  # noqa: E501
@@ -1187,9 +1141,7 @@ class Font(object):
         :param underline_color: The underline_color of this Font.  # noqa: E501
         :type: XmlColor
         """
-
         self._underline_color = underline_color
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -73,9 +73,12 @@ class Document(object):
             self.links = links
         if file_name is not None:
             self.file_name = file_name
-        self.source_format = source_format
-        self.is_encrypted = is_encrypted
-        self.is_signed = is_signed
+        if source_format is not None:
+            self.source_format = source_format
+        if is_encrypted is not None:
+            self.is_encrypted = is_encrypted
+        if is_signed is not None:
+            self.is_signed = is_signed
         if document_properties is not None:
             self.document_properties = document_properties
 
@@ -99,9 +102,7 @@ class Document(object):
         :param links: The links of this Document.  # noqa: E501
         :type: list[Link]
         """
-
         self._links = links
-
     @property
     def file_name(self):
         """Gets the file_name of this Document.  # noqa: E501
@@ -122,9 +123,7 @@ class Document(object):
         :param file_name: The file_name of this Document.  # noqa: E501
         :type: str
         """
-
         self._file_name = file_name
-
     @property
     def source_format(self):
         """Gets the source_format of this Document.  # noqa: E501
@@ -148,14 +147,14 @@ class Document(object):
         if source_format is None:
             raise ValueError("Invalid value for `source_format`, must not be `None`")  # noqa: E501
         allowed_values = ["Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Tiff", "Svg"]  # noqa: E501
-        if source_format not in allowed_values:
-            raise ValueError(
-                "Invalid value for `source_format` ({0}), must be one of {1}"  # noqa: E501
-                .format(source_format, allowed_values)
-            )
-
-        self._source_format = source_format
-
+        if not source_format.isdigit():	
+            if source_format not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `source_format` ({0}), must be one of {1}"  # noqa: E501
+                    .format(source_format, allowed_values))
+            self._source_format = source_format
+        else:
+            self._source_format = allowed_values[int(source_format) if six.PY3 else long(source_format)]
     @property
     def is_encrypted(self):
         """Gets the is_encrypted of this Document.  # noqa: E501
@@ -178,9 +177,7 @@ class Document(object):
         """
         if is_encrypted is None:
             raise ValueError("Invalid value for `is_encrypted`, must not be `None`")  # noqa: E501
-
         self._is_encrypted = is_encrypted
-
     @property
     def is_signed(self):
         """Gets the is_signed of this Document.  # noqa: E501
@@ -203,9 +200,7 @@ class Document(object):
         """
         if is_signed is None:
             raise ValueError("Invalid value for `is_signed`, must not be `None`")  # noqa: E501
-
         self._is_signed = is_signed
-
     @property
     def document_properties(self):
         """Gets the document_properties of this Document.  # noqa: E501
@@ -226,9 +221,7 @@ class Document(object):
         :param document_properties: The document_properties of this Document.  # noqa: E501
         :type: DocumentProperties
         """
-
         self._document_properties = document_properties
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -50,67 +50,15 @@ class AsposeResponse(object):
         'status': 'Status'
     }
 
-    discriminator_value_class_map = {
-        'TablePropertiesResponse': 'TablePropertiesResponse',
-        'FootnoteResponse': 'FootnoteResponse',
-        'RunResponse': 'RunResponse',
-        'FieldResponse': 'FieldResponse',
-        'SplitDocumentResponse': 'SplitDocumentResponse',
-        'TableCellFormatResponse': 'TableCellFormatResponse',
-        'CommentsResponse': 'CommentsResponse',
-        'FontResponse': 'FontResponse',
-        'TableRowResponse': 'TableRowResponse',
-        'DocumentResponse': 'DocumentResponse',
-        'ProtectionDataResponse': 'ProtectionDataResponse',
-        'StatDataResponse': 'StatDataResponse',
-        'OfficeMathObjectResponse': 'OfficeMathObjectResponse',
-        'DrawingObjectResponse': 'DrawingObjectResponse',
-        'DrawingObjectsResponse': 'DrawingObjectsResponse',
-        'OfficeMathObjectsResponse': 'OfficeMathObjectsResponse',
-        'HeaderFootersResponse': 'HeaderFootersResponse',
-        'SectionPageSetupResponse': 'SectionPageSetupResponse',
-        'SectionResponse': 'SectionResponse',
-        'SaveResponse': 'SaveResponse',
-        'ReplaceTextResponse': 'ReplaceTextResponse',
-        'ClassificationResponse': 'ClassificationResponse',
-        'BookmarkResponse': 'BookmarkResponse',
-        'WordsApiErrorResponse': 'WordsApiErrorResponse',
-        'ParagraphLinkCollectionResponse': 'ParagraphLinkCollectionResponse',
-        'TableResponse': 'TableResponse',
-        'ProtectionResponse': 'ProtectionResponse',
-        'RunsResponse': 'RunsResponse',
-        'TextItemsResponse': 'TextItemsResponse',
-        'RevisionsModificationResponse': 'RevisionsModificationResponse',
-        'DocumentPropertyResponse': 'DocumentPropertyResponse',
-        'HyperlinkResponse': 'HyperlinkResponse',
-        'HyperlinksResponse': 'HyperlinksResponse',
-        'SearchResponse': 'SearchResponse',
-        'ParagraphResponse': 'ParagraphResponse',
-        'BordersResponse': 'BordersResponse',
-        'CommentResponse': 'CommentResponse',
-        'FootnotesResponse': 'FootnotesResponse',
-        'HeaderFooterResponse': 'HeaderFooterResponse',
-        'FieldsResponse': 'FieldsResponse',
-        'DocumentPropertiesResponse': 'DocumentPropertiesResponse',
-        'SectionLinkCollectionResponse': 'SectionLinkCollectionResponse',
-        'FieldNamesResponse': 'FieldNamesResponse',
-        'BorderResponse': 'BorderResponse',
-        'FormFieldResponse': 'FormFieldResponse',
-        'BookmarksResponse': 'BookmarksResponse',
-        'TableLinkCollectionResponse': 'TableLinkCollectionResponse',
-        'TableCellResponse': 'TableCellResponse',
-        'TableRowFormatResponse': 'TableRowFormatResponse',
-        'FormFieldsResponse': 'FormFieldsResponse'
-    }
-
     def __init__(self, code=None, status=None):  # noqa: E501
         """AsposeResponse - a model defined in Swagger"""  # noqa: E501
 
         self._code = None
         self._status = None
-        self.discriminator = 'Type'
+        self.discriminator = None
 
-        self.code = code
+        if code is not None:
+            self.code = code
         if status is not None:
             self.status = status
 
@@ -136,9 +84,7 @@ class AsposeResponse(object):
         """
         if code is None:
             raise ValueError("Invalid value for `code`, must not be `None`")  # noqa: E501
-
         self._code = code
-
     @property
     def status(self):
         """Gets the status of this AsposeResponse.  # noqa: E501
@@ -159,14 +105,7 @@ class AsposeResponse(object):
         :param status: The status of this AsposeResponse.  # noqa: E501
         :type: str
         """
-
         self._status = status
-
-    def get_real_child_model(self, data):
-        """Returns the real base class specified by the discriminator"""
-        discriminator_value = data[self.discriminator].lower()
-        return self.discriminator_value_class_map.get(discriminator_value)
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

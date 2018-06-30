@@ -59,7 +59,8 @@ class TableRowInsert(object):
 
         if insert_after is not None:
             self.insert_after = insert_after
-        self.columns_count = columns_count
+        if columns_count is not None:
+            self.columns_count = columns_count
 
     @property
     def insert_after(self):
@@ -81,9 +82,7 @@ class TableRowInsert(object):
         :param insert_after: The insert_after of this TableRowInsert.  # noqa: E501
         :type: int
         """
-
         self._insert_after = insert_after
-
     @property
     def columns_count(self):
         """Gets the columns_count of this TableRowInsert.  # noqa: E501
@@ -106,9 +105,7 @@ class TableRowInsert(object):
         """
         if columns_count is None:
             raise ValueError("Invalid value for `columns_count`, must not be `None`")  # noqa: E501
-
         self._columns_count = columns_count
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

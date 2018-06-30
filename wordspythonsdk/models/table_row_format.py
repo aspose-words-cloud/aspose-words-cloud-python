@@ -41,6 +41,7 @@ class TableRowFormat(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'allow_break_across_pages': 'bool',
         'heading_format': 'bool',
         'height': 'float',
@@ -48,21 +49,25 @@ class TableRowFormat(object):
     }
 
     attribute_map = {
+        'link': 'link',
         'allow_break_across_pages': 'AllowBreakAcrossPages',
         'heading_format': 'HeadingFormat',
         'height': 'Height',
         'height_rule': 'HeightRule'
     }
 
-    def __init__(self, allow_break_across_pages=None, heading_format=None, height=None, height_rule=None):  # noqa: E501
+    def __init__(self, link=None, allow_break_across_pages=None, heading_format=None, height=None, height_rule=None):  # noqa: E501
         """TableRowFormat - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._allow_break_across_pages = None
         self._heading_format = None
         self._height = None
         self._height_rule = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if allow_break_across_pages is not None:
             self.allow_break_across_pages = allow_break_across_pages
         if heading_format is not None:
@@ -72,6 +77,27 @@ class TableRowFormat(object):
         if height_rule is not None:
             self.height_rule = height_rule
 
+    @property
+    def link(self):
+        """Gets the link of this TableRowFormat.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this TableRowFormat.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this TableRowFormat.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this TableRowFormat.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def allow_break_across_pages(self):
         """Gets the allow_break_across_pages of this TableRowFormat.  # noqa: E501
@@ -92,9 +118,7 @@ class TableRowFormat(object):
         :param allow_break_across_pages: The allow_break_across_pages of this TableRowFormat.  # noqa: E501
         :type: bool
         """
-
         self._allow_break_across_pages = allow_break_across_pages
-
     @property
     def heading_format(self):
         """Gets the heading_format of this TableRowFormat.  # noqa: E501
@@ -115,9 +139,7 @@ class TableRowFormat(object):
         :param heading_format: The heading_format of this TableRowFormat.  # noqa: E501
         :type: bool
         """
-
         self._heading_format = heading_format
-
     @property
     def height(self):
         """Gets the height of this TableRowFormat.  # noqa: E501
@@ -138,9 +160,7 @@ class TableRowFormat(object):
         :param height: The height of this TableRowFormat.  # noqa: E501
         :type: float
         """
-
         self._height = height
-
     @property
     def height_rule(self):
         """Gets the height_rule of this TableRowFormat.  # noqa: E501
@@ -162,14 +182,14 @@ class TableRowFormat(object):
         :type: str
         """
         allowed_values = ["AtLeast", "Exactly", "Auto"]  # noqa: E501
-        if height_rule not in allowed_values:
-            raise ValueError(
-                "Invalid value for `height_rule` ({0}), must be one of {1}"  # noqa: E501
-                .format(height_rule, allowed_values)
-            )
-
-        self._height_rule = height_rule
-
+        if not height_rule.isdigit():	
+            if height_rule not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `height_rule` ({0}), must be one of {1}"  # noqa: E501
+                    .format(height_rule, allowed_values))
+            self._height_rule = height_rule
+        else:
+            self._height_rule = allowed_values[int(height_rule) if six.PY3 else long(height_rule)]
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

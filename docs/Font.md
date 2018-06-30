@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**link** | [**WordsApiLink**](WordsApiLink.md) | Link to the document. | [optional] 
 **all_caps** | **bool** | True if the font is formatted as all capital letters.              | [optional] 
 **bidi** | **bool** | Specifies whether the contents of this run shall have right-to-left characteristics.              | [optional] 
 **bold** | **bool** | True if the font is formatted as bold.              | [optional] 

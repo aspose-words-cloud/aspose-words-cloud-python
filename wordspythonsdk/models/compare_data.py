@@ -87,9 +87,7 @@ class CompareData(object):
         :param comparing_with_document: The comparing_with_document of this CompareData.  # noqa: E501
         :type: str
         """
-
         self._comparing_with_document = comparing_with_document
-
     @property
     def author(self):
         """Gets the author of this CompareData.  # noqa: E501
@@ -110,9 +108,7 @@ class CompareData(object):
         :param author: The author of this CompareData.  # noqa: E501
         :type: str
         """
-
         self._author = author
-
     @property
     def date_time(self):
         """Gets the date_time of this CompareData.  # noqa: E501
@@ -133,9 +129,7 @@ class CompareData(object):
         :param date_time: The date_time of this CompareData.  # noqa: E501
         :type: datetime
         """
-
         self._date_time = date_time
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

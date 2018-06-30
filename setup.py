@@ -23,6 +23,7 @@ VERSION = "18.6"
 # http://pypi.python.org/pypi/setuptools
 
 REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
+TEST_REQUIRES = ['asposestoragecloud >=1.0.5']
 
 setup(
     name=NAME,
@@ -32,6 +33,7 @@ setup(
     url="https://github.com/aspose-words-cloud",
     keywords=["aspose", "python", "aspose cloud"],
     install_requires=REQUIRES,
+	tests_require=TEST_REQUIRES,
     packages=find_packages(),
     include_package_data=True,
     long_description="""\

@@ -41,15 +41,121 @@ class FileLink(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'href': 'str',
+        'rel': 'str',
+        'type': 'str',
+        'title': 'str'
     }
 
     attribute_map = {
+        'href': 'Href',
+        'rel': 'Rel',
+        'type': 'Type',
+        'title': 'Title'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, href=None, rel=None, type=None, title=None):  # noqa: E501
         """FileLink - a model defined in Swagger"""  # noqa: E501
+
+        self._href = None
+        self._rel = None
+        self._type = None
+        self._title = None
         self.discriminator = None
 
+        if href is not None:
+            self.href = href
+        if rel is not None:
+            self.rel = rel
+        if type is not None:
+            self.type = type
+        if title is not None:
+            self.title = title
+
+    @property
+    def href(self):
+        """Gets the href of this FileLink.  # noqa: E501
+
+        The \"href\" attribute contains the link's IRI. atom:link elements MUST have an href attribute, whose value MUST be a IRI reference  # noqa: E501
+
+        :return: The href of this FileLink.  # noqa: E501
+        :rtype: str
+        """
+        return self._href
+
+    @href.setter
+    def href(self, href):
+        """Sets the href of this FileLink.
+
+        The \"href\" attribute contains the link's IRI. atom:link elements MUST have an href attribute, whose value MUST be a IRI reference  # noqa: E501
+
+        :param href: The href of this FileLink.  # noqa: E501
+        :type: str
+        """
+        self._href = href
+    @property
+    def rel(self):
+        """Gets the rel of this FileLink.  # noqa: E501
+
+        atom:link elements MAY have a \"rel\" attribute that indicates the link relation type.  If the \"rel\" attribute is not present, the link element MUST be interpreted as if the link relation type is \"alternate\".  # noqa: E501
+
+        :return: The rel of this FileLink.  # noqa: E501
+        :rtype: str
+        """
+        return self._rel
+
+    @rel.setter
+    def rel(self, rel):
+        """Sets the rel of this FileLink.
+
+        atom:link elements MAY have a \"rel\" attribute that indicates the link relation type.  If the \"rel\" attribute is not present, the link element MUST be interpreted as if the link relation type is \"alternate\".  # noqa: E501
+
+        :param rel: The rel of this FileLink.  # noqa: E501
+        :type: str
+        """
+        self._rel = rel
+    @property
+    def type(self):
+        """Gets the type of this FileLink.  # noqa: E501
+
+        On the link element, the \"type\" attribute's value is an advisory media type: it is a hint about the type of the representation that is expected to be returned when the value of the href attribute is dereferenced.  Note that the type attribute does not override the actual media type returned with the representation.  # noqa: E501
+
+        :return: The type of this FileLink.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this FileLink.
+
+        On the link element, the \"type\" attribute's value is an advisory media type: it is a hint about the type of the representation that is expected to be returned when the value of the href attribute is dereferenced.  Note that the type attribute does not override the actual media type returned with the representation.  # noqa: E501
+
+        :param type: The type of this FileLink.  # noqa: E501
+        :type: str
+        """
+        self._type = type
+    @property
+    def title(self):
+        """Gets the title of this FileLink.  # noqa: E501
+
+        The \"title\" attribute conveys human-readable information about the link.  The content of the \"title\" attribute is Language-Sensitive.  # noqa: E501
+
+        :return: The title of this FileLink.  # noqa: E501
+        :rtype: str
+        """
+        return self._title
+
+    @title.setter
+    def title(self, title):
+        """Sets the title of this FileLink.
+
+        The \"title\" attribute conveys human-readable information about the link.  The content of the \"title\" attribute is Language-Sensitive.  # noqa: E501
+
+        :param title: The title of this FileLink.  # noqa: E501
+        :type: str
+        """
+        self._title = title
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

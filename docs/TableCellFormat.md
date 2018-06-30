@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**link** | [**WordsApiLink**](WordsApiLink.md) | Link to the document. | [optional] 
 **bottom_padding** | **float** | Returns or sets the amount of space (in points) to add below the contents of cell. | [optional] 
 **fit_text** | **bool** | If true, fits text in the cell, compressing each paragraph to the width of the cell. | [optional] 
 **horizontal_merge** | **str** | Specifies how the cell is merged horizontally with other cells in the row. | [optional] 

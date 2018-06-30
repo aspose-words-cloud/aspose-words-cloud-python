@@ -77,9 +77,7 @@ class DocumentEntryList(object):
         :param document_entries: The document_entries of this DocumentEntryList.  # noqa: E501
         :type: list[DocumentEntry]
         """
-
         self._document_entries = document_entries
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

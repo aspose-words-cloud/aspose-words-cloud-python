@@ -41,22 +41,48 @@ class TextItem(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'text': 'str'
     }
 
     attribute_map = {
+        'link': 'link',
         'text': 'Text'
     }
 
-    def __init__(self, text=None):  # noqa: E501
+    def __init__(self, link=None, text=None):  # noqa: E501
         """TextItem - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._text = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if text is not None:
             self.text = text
 
+    @property
+    def link(self):
+        """Gets the link of this TextItem.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this TextItem.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this TextItem.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this TextItem.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def text(self):
         """Gets the text of this TextItem.  # noqa: E501
@@ -77,9 +103,7 @@ class TextItem(object):
         :param text: The text of this TextItem.  # noqa: E501
         :type: str
         """
-
         self._text = text
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

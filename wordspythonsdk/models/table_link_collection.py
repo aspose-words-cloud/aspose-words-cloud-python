@@ -41,22 +41,48 @@ class TableLinkCollection(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'table_link_list': 'list[TableLink]'
     }
 
     attribute_map = {
+        'link': 'link',
         'table_link_list': 'TableLinkList'
     }
 
-    def __init__(self, table_link_list=None):  # noqa: E501
+    def __init__(self, link=None, table_link_list=None):  # noqa: E501
         """TableLinkCollection - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._table_link_list = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if table_link_list is not None:
             self.table_link_list = table_link_list
 
+    @property
+    def link(self):
+        """Gets the link of this TableLinkCollection.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this TableLinkCollection.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this TableLinkCollection.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this TableLinkCollection.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def table_link_list(self):
         """Gets the table_link_list of this TableLinkCollection.  # noqa: E501
@@ -77,9 +103,7 @@ class TableLinkCollection(object):
         :param table_link_list: The table_link_list of this TableLinkCollection.  # noqa: E501
         :type: list[TableLink]
         """
-
         self._table_link_list = table_link_list
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

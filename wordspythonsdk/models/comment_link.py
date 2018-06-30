@@ -41,15 +41,43 @@ class CommentLink(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink'
     }
 
     attribute_map = {
+        'link': 'link'
     }
 
-    def __init__(self):  # noqa: E501
+    def __init__(self, link=None):  # noqa: E501
         """CommentLink - a model defined in Swagger"""  # noqa: E501
+
+        self._link = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
+
+    @property
+    def link(self):
+        """Gets the link of this CommentLink.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this CommentLink.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this CommentLink.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this CommentLink.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

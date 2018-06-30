@@ -59,7 +59,8 @@ class BookmarksOutlineLevelData(object):
 
         if name is not None:
             self.name = name
-        self.bookmarks_outline_level = bookmarks_outline_level
+        if bookmarks_outline_level is not None:
+            self.bookmarks_outline_level = bookmarks_outline_level
 
     @property
     def name(self):
@@ -81,9 +82,7 @@ class BookmarksOutlineLevelData(object):
         :param name: The name of this BookmarksOutlineLevelData.  # noqa: E501
         :type: str
         """
-
         self._name = name
-
     @property
     def bookmarks_outline_level(self):
         """Gets the bookmarks_outline_level of this BookmarksOutlineLevelData.  # noqa: E501
@@ -106,9 +105,7 @@ class BookmarksOutlineLevelData(object):
         """
         if bookmarks_outline_level is None:
             raise ValueError("Invalid value for `bookmarks_outline_level`, must not be `None`")  # noqa: E501
-
         self._bookmarks_outline_level = bookmarks_outline_level
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

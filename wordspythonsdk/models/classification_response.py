@@ -41,25 +41,35 @@ class ClassificationResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'code': 'int',
+        'status': 'str',
         'best_class_name': 'str',
         'best_class_probability': 'float',
         'best_results': 'list[ClassificationResult]'
     }
 
     attribute_map = {
+        'code': 'Code',
+        'status': 'Status',
         'best_class_name': 'BestClassName',
         'best_class_probability': 'BestClassProbability',
         'best_results': 'BestResults'
     }
 
-    def __init__(self, best_class_name=None, best_class_probability=None, best_results=None):  # noqa: E501
+    def __init__(self, code=None, status=None, best_class_name=None, best_class_probability=None, best_results=None):  # noqa: E501
         """ClassificationResponse - a model defined in Swagger"""  # noqa: E501
 
+        self._code = None
+        self._status = None
         self._best_class_name = None
         self._best_class_probability = None
         self._best_results = None
         self.discriminator = None
 
+        if code is not None:
+            self.code = code
+        if status is not None:
+            self.status = status
         if best_class_name is not None:
             self.best_class_name = best_class_name
         if best_class_probability is not None:
@@ -67,6 +77,50 @@ class ClassificationResponse(object):
         if best_results is not None:
             self.best_results = best_results
 
+    @property
+    def code(self):
+        """Gets the code of this ClassificationResponse.  # noqa: E501
+
+        Response status code.  # noqa: E501
+
+        :return: The code of this ClassificationResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._code
+
+    @code.setter
+    def code(self, code):
+        """Sets the code of this ClassificationResponse.
+
+        Response status code.  # noqa: E501
+
+        :param code: The code of this ClassificationResponse.  # noqa: E501
+        :type: int
+        """
+        if code is None:
+            raise ValueError("Invalid value for `code`, must not be `None`")  # noqa: E501
+        self._code = code
+    @property
+    def status(self):
+        """Gets the status of this ClassificationResponse.  # noqa: E501
+
+        Response status.  # noqa: E501
+
+        :return: The status of this ClassificationResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this ClassificationResponse.
+
+        Response status.  # noqa: E501
+
+        :param status: The status of this ClassificationResponse.  # noqa: E501
+        :type: str
+        """
+        self._status = status
     @property
     def best_class_name(self):
         """Gets the best_class_name of this ClassificationResponse.  # noqa: E501
@@ -87,9 +141,7 @@ class ClassificationResponse(object):
         :param best_class_name: The best_class_name of this ClassificationResponse.  # noqa: E501
         :type: str
         """
-
         self._best_class_name = best_class_name
-
     @property
     def best_class_probability(self):
         """Gets the best_class_probability of this ClassificationResponse.  # noqa: E501
@@ -110,9 +162,7 @@ class ClassificationResponse(object):
         :param best_class_probability: The best_class_probability of this ClassificationResponse.  # noqa: E501
         :type: float
         """
-
         self._best_class_probability = best_class_probability
-
     @property
     def best_results(self):
         """Gets the best_results of this ClassificationResponse.  # noqa: E501
@@ -133,9 +183,7 @@ class ClassificationResponse(object):
         :param best_results: The best_results of this ClassificationResponse.  # noqa: E501
         :type: list[ClassificationResult]
         """
-
         self._best_results = best_results
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -41,22 +41,48 @@ class Hyperlinks(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'hyperlink_list': 'list[Hyperlink]'
     }
 
     attribute_map = {
+        'link': 'link',
         'hyperlink_list': 'HyperlinkList'
     }
 
-    def __init__(self, hyperlink_list=None):  # noqa: E501
+    def __init__(self, link=None, hyperlink_list=None):  # noqa: E501
         """Hyperlinks - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._hyperlink_list = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if hyperlink_list is not None:
             self.hyperlink_list = hyperlink_list
 
+    @property
+    def link(self):
+        """Gets the link of this Hyperlinks.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this Hyperlinks.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this Hyperlinks.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this Hyperlinks.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def hyperlink_list(self):
         """Gets the hyperlink_list of this Hyperlinks.  # noqa: E501
@@ -77,9 +103,7 @@ class Hyperlinks(object):
         :param hyperlink_list: The hyperlink_list of this Hyperlinks.  # noqa: E501
         :type: list[Hyperlink]
         """
-
         self._hyperlink_list = hyperlink_list
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

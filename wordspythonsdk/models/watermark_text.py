@@ -59,7 +59,8 @@ class WatermarkText(object):
 
         if text is not None:
             self.text = text
-        self.rotation_angle = rotation_angle
+        if rotation_angle is not None:
+            self.rotation_angle = rotation_angle
 
     @property
     def text(self):
@@ -81,9 +82,7 @@ class WatermarkText(object):
         :param text: The text of this WatermarkText.  # noqa: E501
         :type: str
         """
-
         self._text = text
-
     @property
     def rotation_angle(self):
         """Gets the rotation_angle of this WatermarkText.  # noqa: E501
@@ -106,9 +105,7 @@ class WatermarkText(object):
         """
         if rotation_angle is None:
             raise ValueError("Invalid value for `rotation_angle`, must not be `None`")  # noqa: E501
-
         self._rotation_angle = rotation_angle
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

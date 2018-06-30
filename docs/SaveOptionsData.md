@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **dml_rendering_mode** | **str** | Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML } | [optional] 
 **dml_effects_rendering_mode** | **str** | Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine } | [optional] 
 **zip_output** | **bool** | Controls zip output or not. Default value is false. | [optional] 
+**update_last_saved_time_property** | **bool** | Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving. | [optional] 
 **update_sdt_content** | **bool** | Gets or sets value determining whether content of  is updated before saving. | [optional] 
 **update_fields** | **bool** | Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true | [optional] 
 

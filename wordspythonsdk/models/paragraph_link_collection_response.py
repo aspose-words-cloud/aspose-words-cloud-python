@@ -41,22 +41,76 @@ class ParagraphLinkCollectionResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'code': 'int',
+        'status': 'str',
         'paragraphs': 'ParagraphLinkCollection'
     }
 
     attribute_map = {
+        'code': 'Code',
+        'status': 'Status',
         'paragraphs': 'Paragraphs'
     }
 
-    def __init__(self, paragraphs=None):  # noqa: E501
+    def __init__(self, code=None, status=None, paragraphs=None):  # noqa: E501
         """ParagraphLinkCollectionResponse - a model defined in Swagger"""  # noqa: E501
 
+        self._code = None
+        self._status = None
         self._paragraphs = None
         self.discriminator = None
 
+        if code is not None:
+            self.code = code
+        if status is not None:
+            self.status = status
         if paragraphs is not None:
             self.paragraphs = paragraphs
 
+    @property
+    def code(self):
+        """Gets the code of this ParagraphLinkCollectionResponse.  # noqa: E501
+
+        Response status code.  # noqa: E501
+
+        :return: The code of this ParagraphLinkCollectionResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._code
+
+    @code.setter
+    def code(self, code):
+        """Sets the code of this ParagraphLinkCollectionResponse.
+
+        Response status code.  # noqa: E501
+
+        :param code: The code of this ParagraphLinkCollectionResponse.  # noqa: E501
+        :type: int
+        """
+        if code is None:
+            raise ValueError("Invalid value for `code`, must not be `None`")  # noqa: E501
+        self._code = code
+    @property
+    def status(self):
+        """Gets the status of this ParagraphLinkCollectionResponse.  # noqa: E501
+
+        Response status.  # noqa: E501
+
+        :return: The status of this ParagraphLinkCollectionResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this ParagraphLinkCollectionResponse.
+
+        Response status.  # noqa: E501
+
+        :param status: The status of this ParagraphLinkCollectionResponse.  # noqa: E501
+        :type: str
+        """
+        self._status = status
     @property
     def paragraphs(self):
         """Gets the paragraphs of this ParagraphLinkCollectionResponse.  # noqa: E501
@@ -77,9 +131,7 @@ class ParagraphLinkCollectionResponse(object):
         :param paragraphs: The paragraphs of this ParagraphLinkCollectionResponse.  # noqa: E501
         :type: ParagraphLinkCollection
         """
-
         self._paragraphs = paragraphs
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

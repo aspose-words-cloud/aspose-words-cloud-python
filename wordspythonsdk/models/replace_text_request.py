@@ -70,9 +70,12 @@ class ReplaceTextRequest(object):
             self.old_value = old_value
         if new_value is not None:
             self.new_value = new_value
-        self.is_match_case = is_match_case
-        self.is_match_whole_word = is_match_whole_word
-        self.is_old_value_regex = is_old_value_regex
+        if is_match_case is not None:
+            self.is_match_case = is_match_case
+        if is_match_whole_word is not None:
+            self.is_match_whole_word = is_match_whole_word
+        if is_old_value_regex is not None:
+            self.is_old_value_regex = is_old_value_regex
 
     @property
     def old_value(self):
@@ -94,9 +97,7 @@ class ReplaceTextRequest(object):
         :param old_value: The old_value of this ReplaceTextRequest.  # noqa: E501
         :type: str
         """
-
         self._old_value = old_value
-
     @property
     def new_value(self):
         """Gets the new_value of this ReplaceTextRequest.  # noqa: E501
@@ -117,9 +118,7 @@ class ReplaceTextRequest(object):
         :param new_value: The new_value of this ReplaceTextRequest.  # noqa: E501
         :type: str
         """
-
         self._new_value = new_value
-
     @property
     def is_match_case(self):
         """Gets the is_match_case of this ReplaceTextRequest.  # noqa: E501
@@ -142,9 +141,7 @@ class ReplaceTextRequest(object):
         """
         if is_match_case is None:
             raise ValueError("Invalid value for `is_match_case`, must not be `None`")  # noqa: E501
-
         self._is_match_case = is_match_case
-
     @property
     def is_match_whole_word(self):
         """Gets the is_match_whole_word of this ReplaceTextRequest.  # noqa: E501
@@ -167,9 +164,7 @@ class ReplaceTextRequest(object):
         """
         if is_match_whole_word is None:
             raise ValueError("Invalid value for `is_match_whole_word`, must not be `None`")  # noqa: E501
-
         self._is_match_whole_word = is_match_whole_word
-
     @property
     def is_old_value_regex(self):
         """Gets the is_old_value_regex of this ReplaceTextRequest.  # noqa: E501
@@ -192,9 +187,7 @@ class ReplaceTextRequest(object):
         """
         if is_old_value_regex is None:
             raise ValueError("Invalid value for `is_old_value_regex`, must not be `None`")  # noqa: E501
-
         self._is_old_value_regex = is_old_value_regex
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

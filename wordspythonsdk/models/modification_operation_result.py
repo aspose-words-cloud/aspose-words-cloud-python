@@ -82,9 +82,7 @@ class ModificationOperationResult(object):
         :param source: The source of this ModificationOperationResult.  # noqa: E501
         :type: FileLink
         """
-
         self._source = source
-
     @property
     def dest(self):
         """Gets the dest of this ModificationOperationResult.  # noqa: E501
@@ -105,9 +103,7 @@ class ModificationOperationResult(object):
         :param dest: The dest of this ModificationOperationResult.  # noqa: E501
         :type: FileLink
         """
-
         self._dest = dest
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

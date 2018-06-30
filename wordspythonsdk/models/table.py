@@ -41,27 +41,79 @@ class Table(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
+        'node_id': 'str',
         'table_properties': 'TableProperties',
         'table_row_list': 'list[TableRow]'
     }
 
     attribute_map = {
+        'link': 'link',
+        'node_id': 'NodeId',
         'table_properties': 'TableProperties',
         'table_row_list': 'TableRowList'
     }
 
-    def __init__(self, table_properties=None, table_row_list=None):  # noqa: E501
+    def __init__(self, link=None, node_id=None, table_properties=None, table_row_list=None):  # noqa: E501
         """Table - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
+        self._node_id = None
         self._table_properties = None
         self._table_row_list = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
+        if node_id is not None:
+            self.node_id = node_id
         if table_properties is not None:
             self.table_properties = table_properties
         if table_row_list is not None:
             self.table_row_list = table_row_list
 
+    @property
+    def link(self):
+        """Gets the link of this Table.  # noqa: E501
+
+        Link to the document.  # noqa: E501
+
+        :return: The link of this Table.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this Table.
+
+        Link to the document.  # noqa: E501
+
+        :param link: The link of this Table.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
+    @property
+    def node_id(self):
+        """Gets the node_id of this Table.  # noqa: E501
+
+        Node id  # noqa: E501
+
+        :return: The node_id of this Table.  # noqa: E501
+        :rtype: str
+        """
+        return self._node_id
+
+    @node_id.setter
+    def node_id(self, node_id):
+        """Sets the node_id of this Table.
+
+        Node id  # noqa: E501
+
+        :param node_id: The node_id of this Table.  # noqa: E501
+        :type: str
+        """
+        self._node_id = node_id
     @property
     def table_properties(self):
         """Gets the table_properties of this Table.  # noqa: E501
@@ -82,9 +134,7 @@ class Table(object):
         :param table_properties: The table_properties of this Table.  # noqa: E501
         :type: TableProperties
         """
-
         self._table_properties = table_properties
-
     @property
     def table_row_list(self):
         """Gets the table_row_list of this Table.  # noqa: E501
@@ -105,9 +155,7 @@ class Table(object):
         :param table_row_list: The table_row_list of this Table.  # noqa: E501
         :type: list[TableRow]
         """
-
         self._table_row_list = table_row_list
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

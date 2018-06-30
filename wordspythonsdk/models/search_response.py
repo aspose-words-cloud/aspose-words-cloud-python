@@ -41,27 +41,81 @@ class SearchResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'code': 'int',
+        'status': 'str',
         'searching_pattern': 'str',
         'search_results': 'SearchResultsCollection'
     }
 
     attribute_map = {
+        'code': 'Code',
+        'status': 'Status',
         'searching_pattern': 'SearchingPattern',
         'search_results': 'SearchResults'
     }
 
-    def __init__(self, searching_pattern=None, search_results=None):  # noqa: E501
+    def __init__(self, code=None, status=None, searching_pattern=None, search_results=None):  # noqa: E501
         """SearchResponse - a model defined in Swagger"""  # noqa: E501
 
+        self._code = None
+        self._status = None
         self._searching_pattern = None
         self._search_results = None
         self.discriminator = None
 
+        if code is not None:
+            self.code = code
+        if status is not None:
+            self.status = status
         if searching_pattern is not None:
             self.searching_pattern = searching_pattern
         if search_results is not None:
             self.search_results = search_results
 
+    @property
+    def code(self):
+        """Gets the code of this SearchResponse.  # noqa: E501
+
+        Response status code.  # noqa: E501
+
+        :return: The code of this SearchResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._code
+
+    @code.setter
+    def code(self, code):
+        """Sets the code of this SearchResponse.
+
+        Response status code.  # noqa: E501
+
+        :param code: The code of this SearchResponse.  # noqa: E501
+        :type: int
+        """
+        if code is None:
+            raise ValueError("Invalid value for `code`, must not be `None`")  # noqa: E501
+        self._code = code
+    @property
+    def status(self):
+        """Gets the status of this SearchResponse.  # noqa: E501
+
+        Response status.  # noqa: E501
+
+        :return: The status of this SearchResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this SearchResponse.
+
+        Response status.  # noqa: E501
+
+        :param status: The status of this SearchResponse.  # noqa: E501
+        :type: str
+        """
+        self._status = status
     @property
     def searching_pattern(self):
         """Gets the searching_pattern of this SearchResponse.  # noqa: E501
@@ -82,9 +136,7 @@ class SearchResponse(object):
         :param searching_pattern: The searching_pattern of this SearchResponse.  # noqa: E501
         :type: str
         """
-
         self._searching_pattern = searching_pattern
-
     @property
     def search_results(self):
         """Gets the search_results of this SearchResponse.  # noqa: E501
@@ -105,9 +157,7 @@ class SearchResponse(object):
         :param search_results: The search_results of this SearchResponse.  # noqa: E501
         :type: SearchResultsCollection
         """
-
         self._search_results = search_results
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

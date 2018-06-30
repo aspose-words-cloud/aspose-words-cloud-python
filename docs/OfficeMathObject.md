@@ -3,6 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**link** | [**WordsApiLink**](WordsApiLink.md) | Link to the document. | [optional] 
+**node_id** | **str** | Node id | [optional] 
 **content** | [**StoryChildNodes**](StoryChildNodes.md) | Content of footnote. | [optional] 
 **display_type** | **str** | Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text or displayed on its own line. | [optional] 
 **justification** | **str** | Gets/sets Office Math justification. | [optional] 

@@ -77,9 +77,7 @@ class ParagraphInsert(object):
         :param text: The text of this ParagraphInsert.  # noqa: E501
         :type: str
         """
-
         self._text = text
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

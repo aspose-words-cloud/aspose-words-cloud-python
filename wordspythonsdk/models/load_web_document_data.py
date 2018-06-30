@@ -82,9 +82,7 @@ class LoadWebDocumentData(object):
         :param loading_document_url: The loading_document_url of this LoadWebDocumentData.  # noqa: E501
         :type: str
         """
-
         self._loading_document_url = loading_document_url
-
     @property
     def save_options(self):
         """Gets the save_options of this LoadWebDocumentData.  # noqa: E501
@@ -105,9 +103,7 @@ class LoadWebDocumentData(object):
         :param save_options: The save_options of this LoadWebDocumentData.  # noqa: E501
         :type: SaveOptionsData
         """
-
         self._save_options = save_options
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
