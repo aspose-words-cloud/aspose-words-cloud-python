@@ -81,7 +81,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
 
         # Logging Settings
         self.logger = {}
-        self.logger["package_logger"] = logging.getLogger("wordspythonsdk")
+        self.logger["package_logger"] = logging.getLogger("asposewordscloud")
         self.logger["urllib3_logger"] = logging.getLogger("urllib3")
         # Log format
         self.logger_format = '%(asctime)s %(levelname)s %(message)s'
@@ -276,5 +276,5 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 18.6.0\n"\
-               "SDK Package Version: 18.6".\
+               "SDK Package Version: 18.7".\
                format(env=sys.platform, pyversion=sys.version)

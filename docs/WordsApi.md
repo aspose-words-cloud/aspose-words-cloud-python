@@ -1,4 +1,4 @@
-# wordspythonsdk.WordsApi
+# asposewordscloud.WordsApi
 
 All URIs are relative to *https://localhost/v1.1*
 
@@ -137,12 +137,12 @@ Accept all revisions in document
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -193,12 +193,12 @@ Classify raw text.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 text = 'text_example' # str | Text to classify.
 best_classes_count = '1' # str | Count of the best classes to return. (optional) (default to 1)
 
@@ -241,12 +241,12 @@ Classify document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 document_name = 'document_name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -297,15 +297,15 @@ Add new or update existing document property.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 property_name = 'property_name_example' # str | The property name.
-_property = wordspythonsdk.DocumentProperty() # DocumentProperty | The property with new value.
+_property = asposewordscloud.DocumentProperty() # DocumentProperty | The property with new value.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -363,12 +363,12 @@ Resets border properties to default values.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 node_path = 'node_path_example' # str | Path to node with border(node should be cell or row).
 index = 56 # int | Object's index
@@ -429,12 +429,12 @@ Resets borders properties to default values.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 node_path = 'node_path_example' # str | Path to node with borders(node should be cell or row).
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -491,12 +491,12 @@ Remove comment from document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 comment_index = 56 # int | Comment index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -553,12 +553,12 @@ Remove macros from document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -613,12 +613,12 @@ Delete document property.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 property_name = 'property_name_example' # str | The property name.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -675,12 +675,12 @@ Delete watermark (for deleting last watermark from the document).
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -735,12 +735,12 @@ Removes drawing object from document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -799,12 +799,12 @@ Delete field from document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -863,12 +863,12 @@ Remove fields from section paragraph.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -925,12 +925,12 @@ Removes footnote from document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -989,12 +989,12 @@ Removes form field from document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -1053,12 +1053,12 @@ Delete header/footer from document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -1117,12 +1117,12 @@ Delete document headers and footers.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -1181,12 +1181,12 @@ Removes OfficeMath object from document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -1245,12 +1245,12 @@ Remove paragraph from section.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -1309,12 +1309,12 @@ Removes run from document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 paragraph_path = 'paragraph_path_example' # str | Path to parent paragraph.
 index = 56 # int | Object's index
@@ -1373,12 +1373,12 @@ Delete a table.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -1437,12 +1437,12 @@ Delete a table cell.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 table_row_path = 'table_row_path_example' # str | Path to table row.
 index = 56 # int | Object's index
@@ -1501,12 +1501,12 @@ Delete a table row.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 table_path = 'table_path_example' # str | Path to table.
 index = 56 # int | Object's index
@@ -1565,14 +1565,14 @@ Unprotect document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
-protection_request = wordspythonsdk.ProtectionRequest() # ProtectionRequest | with protection settings.            
+protection_request = asposewordscloud.ProtectionRequest() # ProtectionRequest | with protection settings.            
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -1625,12 +1625,12 @@ Return a border.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 node_path = 'node_path_example' # str | Path to node with border(node should be cell or row).
 index = 56 # int | Object's index
@@ -1685,12 +1685,12 @@ Return a collection of borders.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 node_path = 'node_path_example' # str | Path to node with borders(node should be cell or row).
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -1741,12 +1741,12 @@ Get comment from document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 comment_index = 56 # int | Comment index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -1797,12 +1797,12 @@ Get comments from document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -1851,12 +1851,12 @@ Read document common info.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 document_name = 'document_name_example' # str | The file name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -1905,12 +1905,12 @@ Read document bookmark data by its name.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 bookmark_name = 'bookmark_name_example' # str | The bookmark name.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -1961,12 +1961,12 @@ Read document bookmarks common info.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -2015,12 +2015,12 @@ Read document drawing object common info by its index or convert to format speci
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -2073,12 +2073,12 @@ Read drawing object image data.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -2131,12 +2131,12 @@ Get drawing object OLE data.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -2189,12 +2189,12 @@ Read document drawing objects common info.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -2245,12 +2245,12 @@ Read document field names.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -2301,12 +2301,12 @@ Read document hyperlink by its index.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 hyperlink_index = 56 # int | The hyperlink index.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -2357,12 +2357,12 @@ Read document hyperlinks common info.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -2411,12 +2411,12 @@ This resource represents one of the paragraphs contained in the document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -2469,12 +2469,12 @@ This resource represents run of text contained in the document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 paragraph_path = 'paragraph_path_example' # str | Path to parent paragraph.
 index = 56 # int | Object's index
@@ -2527,12 +2527,12 @@ This resource represents font of run.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 paragraph_path = 'paragraph_path_example' # str | Path to parent paragraph.
 index = 56 # int | Object's index
@@ -2585,12 +2585,12 @@ This resource represents collection of runs in the paragraph.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 paragraph_path = 'paragraph_path_example' # str | Path to parent paragraph.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -2641,12 +2641,12 @@ Return a list of paragraphs that are contained in the document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -2697,12 +2697,12 @@ Read document properties info.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document's name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -2751,12 +2751,12 @@ Read document property info by the property name.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 property_name = 'property_name_example' # str | The property name.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -2807,12 +2807,12 @@ Read document protection common info.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -2861,12 +2861,12 @@ Read document statistics.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -2921,12 +2921,12 @@ Read document text items.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -2975,12 +2975,12 @@ Export the document into the specified format.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 format = 'format_example' # str | The destination format.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -3035,12 +3035,12 @@ Get field from document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -3093,12 +3093,12 @@ Get fields from document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -3149,12 +3149,12 @@ Read footnote by index.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -3207,12 +3207,12 @@ Get footnotes from document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -3263,12 +3263,12 @@ Returns representation of an one of the form field.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -3321,12 +3321,12 @@ Get form fields from document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -3377,12 +3377,12 @@ Return a header/footer that is contained in the document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 header_footer_index = 56 # int | Header/footer index.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -3435,12 +3435,12 @@ Return a header/footer that is contained in the document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 header_footer_index = 56 # int | Header/footer index.
 section_index = 56 # int | Section index.
@@ -3495,12 +3495,12 @@ Return a list of header/footers that are contained in the document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -3553,12 +3553,12 @@ Read OfficeMath object by index.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -3611,12 +3611,12 @@ Get OfficeMath objects from document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -3667,12 +3667,12 @@ Get document section by index.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 section_index = 56 # int | Section index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -3723,12 +3723,12 @@ Get page setup of section.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 section_index = 56 # int | Section index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -3779,12 +3779,12 @@ Return a list of sections that are contained in the document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -3833,12 +3833,12 @@ Return a table.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -3891,12 +3891,12 @@ Return a table cell.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 table_row_path = 'table_row_path_example' # str | Path to table row.
 index = 56 # int | Object's index
@@ -3949,12 +3949,12 @@ Return a table cell format.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 table_row_path = 'table_row_path_example' # str | Path to table row.
 index = 56 # int | Object's index
@@ -4007,12 +4007,12 @@ Return a table properties.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -4065,12 +4065,12 @@ Return a table row.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 table_path = 'table_path_example' # str | Path to table.
 index = 56 # int | Object's index
@@ -4123,12 +4123,12 @@ Return a table row format.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 table_path = 'table_path_example' # str | Path to table.
 index = 56 # int | Object's index
@@ -4181,12 +4181,12 @@ Return a list of tables that are contained in the document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -4237,12 +4237,12 @@ Adds table to document, returns added table's data.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -4251,7 +4251,7 @@ password = 'password_example' # str | Password for opening an encrypted document
 dest_file_name = 'dest_file_name_example' # str | Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
-table = wordspythonsdk.TableInsert() # TableInsert | Table parameters/ (optional)
+table = asposewordscloud.TableInsert() # TableInsert | Table parameters/ (optional)
 node_path = 'node_path_example' # str | Path to node, which contains tables. (optional)
 
 try:
@@ -4301,12 +4301,12 @@ Adds table cell to table, returns added cell's data.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 table_row_path = 'table_row_path_example' # str | Path to table row.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -4316,7 +4316,7 @@ password = 'password_example' # str | Password for opening an encrypted document
 dest_file_name = 'dest_file_name_example' # str | Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
-cell = wordspythonsdk.TableCellInsert() # TableCellInsert | Table cell parameters/ (optional)
+cell = asposewordscloud.TableCellInsert() # TableCellInsert | Table cell parameters/ (optional)
 
 try:
     # Adds table cell to table, returns added cell's data.             
@@ -4365,12 +4365,12 @@ Adds table row to table, returns added row's data.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 table_path = 'table_path_example' # str | Path to table.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -4380,7 +4380,7 @@ password = 'password_example' # str | Password for opening an encrypted document
 dest_file_name = 'dest_file_name_example' # str | Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
-row = wordspythonsdk.TableRowInsert() # TableRowInsert | Table row parameters/ (optional)
+row = asposewordscloud.TableRowInsert() # TableRowInsert | Table row parameters/ (optional)
 
 try:
     # Adds table row to table, returns added row's data.             
@@ -4429,14 +4429,14 @@ Append documents to original document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | Original document name.
-document_list = wordspythonsdk.DocumentEntryList() # DocumentEntryList | with a list of documents to append.            
+document_list = asposewordscloud.DocumentEntryList() # DocumentEntryList | with a list of documents to append.            
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -4491,14 +4491,14 @@ Change document protection.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
-protection_request = wordspythonsdk.ProtectionRequest() # ProtectionRequest | with protection settings.            
+protection_request = asposewordscloud.ProtectionRequest() # ProtectionRequest | with protection settings.            
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -4549,15 +4549,15 @@ Updates the comment, returns updated comment's data.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 comment_index = 56 # int | Comment index
-comment = wordspythonsdk.Comment() # Comment | Comment data.
+comment = asposewordscloud.Comment() # Comment | Comment data.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -4613,14 +4613,14 @@ Compare document with original document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | Original document name.
-compare_data = wordspythonsdk.CompareData() # CompareData | with a document to compare.            
+compare_data = asposewordscloud.CompareData() # CompareData | with a document to compare.            
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -4671,12 +4671,12 @@ Execute document mail merge operation.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 data = 'data_example' # str | Mail merge data (optional)
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -4737,14 +4737,14 @@ Updates font properties, returns updated font data.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
-font_dto = wordspythonsdk.Font() # Font | Font dto object
+font_dto = asposewordscloud.Font() # Font | Font dto object
 paragraph_path = 'paragraph_path_example' # str | Path to parent paragraph.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -4803,14 +4803,14 @@ Convert document to destination format with detailed settings and save result to
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
-save_options_data = wordspythonsdk.SaveOptionsData() # SaveOptionsData | Save options.
+save_options_data = asposewordscloud.SaveOptionsData() # SaveOptionsData | Save options.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -4863,12 +4863,12 @@ Updates drawing object, returns updated  drawing object's data.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 drawing_object = 'drawing_object_example' # str | Drawing object parameters
 image_file = '/path/to/file.txt' # file | File with image
@@ -4931,12 +4931,12 @@ Populate document template with data.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The template document name.
 data = 'data_example' # str | Mail merge data
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -4995,14 +4995,14 @@ Updates field's properties, returns updated field's data.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
-field = wordspythonsdk.Field() # Field | Field data.
+field = asposewordscloud.Field() # Field | Field data.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -5061,14 +5061,14 @@ Updates footnote's properties, returns updated run's data.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
-footnote_dto = wordspythonsdk.Footnote() # Footnote | Footnote data.
+footnote_dto = asposewordscloud.Footnote() # Footnote | Footnote data.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -5127,14 +5127,14 @@ Updates properties of form field, returns updated form field.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
-form_field = wordspythonsdk.FormField() # FormField | From field data.
+form_field = asposewordscloud.FormField() # FormField | From field data.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -5193,12 +5193,12 @@ Insert document watermark image.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 image_file = '/path/to/file.txt' # file | File with image (optional)
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -5259,14 +5259,14 @@ Insert document watermark text.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
-watermark_text = wordspythonsdk.WatermarkText() # WatermarkText | with the watermark data.            
+watermark_text = asposewordscloud.WatermarkText() # WatermarkText | with the watermark data.            
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -5321,14 +5321,14 @@ Insert document page numbers.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | A document name.
-page_number = wordspythonsdk.PageNumber() # PageNumber | with the page numbers settings.
+page_number = asposewordscloud.PageNumber() # PageNumber | with the page numbers settings.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -5383,13 +5383,13 @@ Loads new document from web into the file with any supported format of data.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
-data = wordspythonsdk.LoadWebDocumentData() # LoadWebDocumentData | Parameters of loading.
+api_instance = asposewordscloud.WordsApi()
+data = asposewordscloud.LoadWebDocumentData() # LoadWebDocumentData | Parameters of loading.
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 
 try:
@@ -5431,14 +5431,14 @@ Replace document text.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
-replace_text = wordspythonsdk.ReplaceTextRequest() # ReplaceTextRequest | with the replace operation settings.            
+replace_text = asposewordscloud.ReplaceTextRequest() # ReplaceTextRequest | with the replace operation settings.            
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -5493,14 +5493,14 @@ Updates run's properties, returns updated run's data.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
-run = wordspythonsdk.Run() # Run | Run data.
+run = asposewordscloud.Run() # Run | Run data.
 paragraph_path = 'paragraph_path_example' # str | Path to parent paragraph.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -5559,12 +5559,12 @@ Split document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | Original document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -5625,14 +5625,14 @@ Update document bookmark.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
-bookmark_data = wordspythonsdk.BookmarkData() # BookmarkData | with new bookmark data.            
+bookmark_data = asposewordscloud.BookmarkData() # BookmarkData | with new bookmark data.            
 bookmark_name = 'bookmark_name_example' # str | The bookmark name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -5689,12 +5689,12 @@ Update (reevaluate) fields in document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -5745,14 +5745,14 @@ Adds comment to document, returns inserted comment's data.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
-comment = wordspythonsdk.Comment() # Comment | Comment data.
+comment = asposewordscloud.Comment() # Comment | Comment data.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -5807,12 +5807,12 @@ Convert document from request content to format specified.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 document = '/path/to/file.txt' # file | Converting document
 format = 'format_example' # str | Format to convert.
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -5863,12 +5863,12 @@ Creates new document. Document is created with format which is recognized from f
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 file_name = 'file_name_example' # str | The file name. (optional)
 folder = 'folder_example' # str | The document folder. (optional)
@@ -5913,12 +5913,12 @@ Read document field names.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 template = '/path/to/file.txt' # file | File with template
 use_non_merge_fields = false # bool | Use non merge fields or not. (optional) (default to false)
 
@@ -5961,14 +5961,14 @@ Convert document to tiff with detailed settings and save result to storage.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
-save_options = wordspythonsdk.TiffSaveOptionsData() # TiffSaveOptionsData | Tiff save options.
+save_options = asposewordscloud.TiffSaveOptionsData() # TiffSaveOptionsData | Tiff save options.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -6057,12 +6057,12 @@ Adds  drawing object to document, returns added  drawing object's data.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 drawing_object = 'drawing_object_example' # str | Drawing object parameters
 image_file = '/path/to/file.txt' # file | File with image
@@ -6123,12 +6123,12 @@ Execute document mail merge online.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 template = '/path/to/file.txt' # file | File with template
 data = '/path/to/file.txt' # file | File with mailmerge data
 with_regions = false # bool | With regions flag. (optional) (default to false)
@@ -6177,12 +6177,12 @@ Populate document template with data online.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 template = '/path/to/file.txt' # file | File with template
 data = '/path/to/file.txt' # file | File with mailmerge data
 cleanup = 'cleanup_example' # str | Clean up options. (optional)
@@ -6233,14 +6233,14 @@ Adds field to document, returns inserted field's data.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
-field = wordspythonsdk.Field() # Field | Field data.
+field = asposewordscloud.Field() # Field | Field data.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -6299,14 +6299,14 @@ Adds footnote to document, returns added footnote's data.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
-footnote_dto = wordspythonsdk.Footnote() # Footnote | Footnote data.
+footnote_dto = asposewordscloud.Footnote() # Footnote | Footnote data.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -6363,14 +6363,14 @@ Adds form field to paragraph, returns added form field's data.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
-form_field = wordspythonsdk.FormField() # FormField | From field data.
+form_field = asposewordscloud.FormField() # FormField | From field data.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -6429,12 +6429,12 @@ Insert to document header or footer.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 header_footer_type = 'header_footer_type_example' # str | Type of header/footer.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -6493,14 +6493,14 @@ Adds paragraph to document, returns added paragraph's data.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
-paragraph = wordspythonsdk.ParagraphInsert() # ParagraphInsert | Paragraph data.
+paragraph = asposewordscloud.ParagraphInsert() # ParagraphInsert | Paragraph data.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -6559,14 +6559,14 @@ Protect document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
-protection_request = wordspythonsdk.ProtectionRequest() # ProtectionRequest | with protection settings.            
+protection_request = asposewordscloud.ProtectionRequest() # ProtectionRequest | with protection settings.            
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -6617,15 +6617,15 @@ Adds run to document, returns added paragraph's data.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 paragraph_path = 'paragraph_path_example' # str | Path to parent paragraph.
-run = wordspythonsdk.Run() # Run | Run data.
+run = asposewordscloud.Run() # Run | Run data.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -6683,12 +6683,12 @@ Reject all revisions in document
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
@@ -6739,12 +6739,12 @@ Renders drawing object to specified format.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 format = 'format_example' # str | The destination format.
 index = 56 # int | Object's index
@@ -6801,12 +6801,12 @@ Renders math object to specified format.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 format = 'format_example' # str | The destination format.
 index = 56 # int | Object's index
@@ -6863,12 +6863,12 @@ Renders page to specified format.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 page_index = 56 # int | Comment index
 format = 'format_example' # str | The destination format.
@@ -6923,12 +6923,12 @@ Renders paragraph to specified format.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 format = 'format_example' # str | The destination format.
 index = 56 # int | Object's index
@@ -6985,12 +6985,12 @@ Renders table to specified format.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The file name.
 format = 'format_example' # str | The destination format.
 index = 56 # int | Object's index
@@ -7047,12 +7047,12 @@ Resets font's cache.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 
 try:
     # Resets font's cache.
@@ -7089,12 +7089,12 @@ Search text in document.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 pattern = 'pattern_example' # str | The regular expression used to find matches.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -7147,14 +7147,14 @@ Updates border properties.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
-border_properties = wordspythonsdk.Border() # Border | Border properties
+border_properties = asposewordscloud.Border() # Border | Border properties
 node_path = 'node_path_example' # str | Path to node with border(node should be cell or row).
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -7213,15 +7213,15 @@ Update page setup of section.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 section_index = 56 # int | Section index
-page_setup = wordspythonsdk.PageSetup() # PageSetup | Page setup properties dto
+page_setup = asposewordscloud.PageSetup() # PageSetup | Page setup properties dto
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | File storage, which have to be used. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -7277,12 +7277,12 @@ Updates a table cell format.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 table_row_path = 'table_row_path_example' # str | Path to table row.
 index = 56 # int | Object's index
@@ -7293,7 +7293,7 @@ password = 'password_example' # str | Password for opening an encrypted document
 dest_file_name = 'dest_file_name_example' # str | Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
-format = wordspythonsdk.TableCellFormat() # TableCellFormat | The properties. (optional)
+format = asposewordscloud.TableCellFormat() # TableCellFormat | The properties. (optional)
 
 try:
     # Updates a table cell format.
@@ -7343,12 +7343,12 @@ Updates a table properties.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 index = 56 # int | Object's index
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -7358,7 +7358,7 @@ password = 'password_example' # str | Password for opening an encrypted document
 dest_file_name = 'dest_file_name_example' # str | Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
-properties = wordspythonsdk.TableProperties() # TableProperties | The properties. (optional)
+properties = asposewordscloud.TableProperties() # TableProperties | The properties. (optional)
 node_path = 'node_path_example' # str | Path to node, which contains tables. (optional)
 
 try:
@@ -7409,12 +7409,12 @@ Updates a table row format.
 ```python
 from __future__ import print_function
 import time
-import wordspythonsdk
-from wordspythonsdk.rest import ApiException
+import asposewordscloud
+from asposewordscloud.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = wordspythonsdk.WordsApi()
+api_instance = asposewordscloud.WordsApi()
 name = 'name_example' # str | The document name.
 table_path = 'table_path_example' # str | Path to table.
 index = 56 # int | Object's index
@@ -7425,7 +7425,7 @@ password = 'password_example' # str | Password for opening an encrypted document
 dest_file_name = 'dest_file_name_example' # str | Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
-format = wordspythonsdk.TableRowFormat() # TableRowFormat | Table row format. (optional)
+format = asposewordscloud.TableRowFormat() # TableRowFormat | Table row format. (optional)
 
 try:
     # Updates a table row format.

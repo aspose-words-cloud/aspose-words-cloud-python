@@ -38,9 +38,9 @@ import tempfile
 from six.moves.urllib.parse import quote
 import six
 
-from wordspythonsdk.configuration import Configuration
-import wordspythonsdk.models
-from wordspythonsdk import rest
+from asposewordscloud.configuration import Configuration
+import asposewordscloud.models
+from asposewordscloud import rest
 
 
 class ApiClient(object):
@@ -77,12 +77,12 @@ class ApiClient(object):
 
         self.pool = ThreadPool()
         self.rest_client = rest.RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '18.6'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '18.7'}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'python sdk 18.6'
+        self.user_agent = 'python sdk 18.7'
 
     def __del__(self):
         self.pool.close()
@@ -261,7 +261,7 @@ class ApiClient(object):
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
-                klass = getattr(wordspythonsdk.models, klass)
+                klass = getattr(asposewordscloud.models, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)
