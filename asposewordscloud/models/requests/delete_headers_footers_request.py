@@ -1,4 +1,3 @@
-h
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="DeleteHeadersFootersRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -51,4 +50,4 @@ class DeleteHeadersFootersRequest(object):
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
         self.section_path = section_path
-        self.headers_footers_types = headers_footers_type
+        self.headers_footers_types = headers_footers_types

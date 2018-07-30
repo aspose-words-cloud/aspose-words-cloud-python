@@ -1,4 +1,3 @@
-e
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="PostUpdateDocumentFieldsRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -43,4 +42,4 @@ class PostUpdateDocumentFieldsRequest(object):
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
-        self.dest_file_name = dest_file_nam
+        self.dest_file_name = dest_file_name

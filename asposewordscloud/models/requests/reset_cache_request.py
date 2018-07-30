@@ -1,4 +1,3 @@
-n
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="ResetCacheRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -32,4 +31,4 @@ class ResetCacheRequest(object):
     """
 
     def __init__(self):
-        pas
+        pass

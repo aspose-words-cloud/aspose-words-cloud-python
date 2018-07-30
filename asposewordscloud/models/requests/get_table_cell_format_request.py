@@ -1,4 +1,3 @@
-d
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetTableCellFormatRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -45,4 +44,4 @@ class GetTableCellFormatRequest(object):
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
-        self.password = passwor
+        self.password = password

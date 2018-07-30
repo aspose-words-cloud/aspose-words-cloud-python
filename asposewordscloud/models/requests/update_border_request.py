@@ -1,4 +1,3 @@
-d
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="UpdateBorderRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -53,4 +52,4 @@ class UpdateBorderRequest(object):
         self.password = password
         self.dest_file_name = dest_file_name
         self.revision_author = revision_author
-        self.revision_date_time = revision_date_tim
+        self.revision_date_time = revision_date_time

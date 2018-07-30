@@ -1,4 +1,3 @@
-h
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="PutExecuteMailMergeOnlineRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -41,4 +40,4 @@ class PutExecuteMailMergeOnlineRequest(object):
         self.data = data
         self.with_regions = with_regions
         self.cleanup = cleanup
-        self.document_file_name = document_file_nam
+        self.document_file_name = document_file_name

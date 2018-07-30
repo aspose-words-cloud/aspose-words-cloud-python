@@ -1,4 +1,3 @@
-d
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetDocumentStatisticsRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -47,4 +46,4 @@ class GetDocumentStatisticsRequest(object):
         self.password = password
         self.include_comments = include_comments
         self.include_footnotes = include_footnotes
-        self.include_text_in_shapes = include_text_in_shape
+        self.include_text_in_shapes = include_text_in_shapes

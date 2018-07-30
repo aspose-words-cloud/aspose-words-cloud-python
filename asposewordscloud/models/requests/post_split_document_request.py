@@ -1,4 +1,3 @@
-e
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="PostSplitDocumentRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -53,4 +52,4 @@ class PostSplitDocumentRequest(object):
         self._from = _from
         self.to = to
         self.zip_output = zip_output
-        self.fonts_location = fonts_locatio
+        self.fonts_location = fonts_location

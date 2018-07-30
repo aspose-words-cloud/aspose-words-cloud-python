@@ -1,4 +1,3 @@
-h
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="PostInsertDocumentWatermarkImageRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -53,4 +52,4 @@ class PostInsertDocumentWatermarkImageRequest(object):
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
         self.rotation_angle = rotation_angle
-        self.image = imag
+        self.image = image

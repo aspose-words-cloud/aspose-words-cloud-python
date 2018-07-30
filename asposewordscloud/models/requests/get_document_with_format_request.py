@@ -1,4 +1,3 @@
-d
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetDocumentWithFormatRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -47,4 +46,4 @@ class GetDocumentWithFormatRequest(object):
         self.load_encoding = load_encoding
         self.password = password
         self.out_path = out_path
-        self.fonts_location = fonts_locatio
+        self.fonts_location = fonts_location
