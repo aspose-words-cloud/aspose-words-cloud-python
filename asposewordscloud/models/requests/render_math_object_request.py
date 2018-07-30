@@ -1,4 +1,3 @@
-n
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="RenderMathObjectRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -49,4 +48,4 @@ class RenderMathObjectRequest(object):
         self.load_encoding = load_encoding
         self.password = password
         self.node_path = node_path
-        self.fonts_location = fonts_locatio
+        self.fonts_location = fonts_location

@@ -1,4 +1,3 @@
-n
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetBorderRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -45,4 +44,4 @@ class GetBorderRequest(object):
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
-        self.password = passwor
+        self.password = password

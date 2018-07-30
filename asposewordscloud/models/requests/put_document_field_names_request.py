@@ -1,4 +1,3 @@
-r
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="PutDocumentFieldNamesRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -35,4 +34,4 @@ class PutDocumentFieldNamesRequest(object):
 
     def __init__(self, template, use_non_merge_fields=None):
         self.template = template
-        self.use_non_merge_fields = use_non_merge_field
+        self.use_non_merge_fields = use_non_merge_fields

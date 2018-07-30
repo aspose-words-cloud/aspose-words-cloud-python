@@ -1,4 +1,3 @@
-l
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="InsertTableRowRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -51,4 +50,4 @@ class InsertTableRowRequest(object):
         self.dest_file_name = dest_file_name
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
-        self.row = ro
+        self.row = row

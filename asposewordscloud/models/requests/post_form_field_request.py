@@ -1,4 +1,3 @@
-h
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="PostFormFieldRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -53,4 +52,4 @@ class PostFormFieldRequest(object):
         self.dest_file_name = dest_file_name
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
-        self.node_path = node_pat
+        self.node_path = node_path

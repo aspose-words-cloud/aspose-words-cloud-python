@@ -1,4 +1,3 @@
-d
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetDocumentParagraphsRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -43,4 +42,4 @@ class GetDocumentParagraphsRequest(object):
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
-        self.node_path = node_pat
+        self.node_path = node_path

@@ -1,4 +1,3 @@
-e
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="PutFieldRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -53,4 +52,4 @@ class PutFieldRequest(object):
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
         self.node_path = node_path
-        self.insert_before_node = insert_before_nod
+        self.insert_before_node = insert_before_node

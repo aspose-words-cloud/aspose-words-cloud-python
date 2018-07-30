@@ -1,4 +1,3 @@
-e
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="ClassifyRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -35,4 +34,4 @@ class ClassifyRequest(object):
 
     def __init__(self, text, best_classes_count=None):
         self.text = text
-        self.best_classes_count = best_classes_coun
+        self.best_classes_count = best_classes_count

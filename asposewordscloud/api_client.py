@@ -232,8 +232,10 @@ class ApiClient(object):
             return self.__deserialize_file(response)
 
         # fetch data from response object
+        if PY3:
+            response.data = response.data.decode('utf8')
         try:
-            data = json.loads(response.data.decode('utf8')) if six.PY3 else: json.loads(response.data)
+            data = json.loads(response.data)
         except ValueError:
             data = response.data
 

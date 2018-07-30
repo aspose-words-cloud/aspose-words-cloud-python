@@ -1,4 +1,3 @@
-e
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="PutConvertDocumentRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -43,4 +42,4 @@ class PutConvertDocumentRequest(object):
         self.storage = storage
         self.out_path = out_path
         self.document_file_name = document_file_name
-        self.fonts_location = fonts_locatio
+        self.fonts_location = fonts_location

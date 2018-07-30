@@ -1,4 +1,3 @@
-t
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="UpdateTablePropertiesRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -53,4 +52,4 @@ class UpdateTablePropertiesRequest(object):
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
         self.properties = properties
-        self.node_path = node_pat
+        self.node_path = node_path

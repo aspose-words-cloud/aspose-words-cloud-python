@@ -1,4 +1,3 @@
-e
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="PutExecuteTemplateOnlineRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -43,4 +42,4 @@ class PutExecuteTemplateOnlineRequest(object):
         self.cleanup = cleanup
         self.use_whole_paragraph_as_region = use_whole_paragraph_as_region
         self.with_regions = with_regions
-        self.document_file_name = document_file_nam
+        self.document_file_name = document_file_name

@@ -1,4 +1,3 @@
-n
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="PutCreateDocumentRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -37,4 +36,4 @@ class PutCreateDocumentRequest(object):
     def __init__(self, storage=None, file_name=None, folder=None):
         self.storage = storage
         self.file_name = file_name
-        self.folder = folde
+        self.folder = folder

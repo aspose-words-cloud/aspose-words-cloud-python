@@ -1,4 +1,3 @@
-e
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="PostDocumentSaveAsRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -47,4 +46,4 @@ class PostDocumentSaveAsRequest(object):
         self.load_encoding = load_encoding
         self.password = password
         self.dest_file_name = dest_file_name
-        self.fonts_location = fonts_locatio
+        self.fonts_location = fonts_location

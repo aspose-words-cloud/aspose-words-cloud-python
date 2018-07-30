@@ -1,4 +1,3 @@
-s
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="PutDocumentSaveAsTiffRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -83,4 +82,4 @@ class PutDocumentSaveAsTiffRequest(object):
         self.dml_effects_rendering_mode = dml_effects_rendering_mode
         self.tiff_binarization_method = tiff_binarization_method
         self.zip_output = zip_output
-        self.fonts_location = fonts_locatio
+        self.fonts_location = fonts_location

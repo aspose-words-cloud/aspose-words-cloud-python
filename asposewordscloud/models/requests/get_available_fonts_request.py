@@ -1,4 +1,3 @@
-e
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetAvailableFontsRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -33,4 +32,4 @@ class GetAvailableFontsRequest(object):
     """
 
     def __init__(self, fonts_location=None):
-        self.fonts_location = fonts_locatio
+        self.fonts_location = fonts_location

@@ -1,4 +1,3 @@
-e
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="PostLoadWebDocumentRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -35,4 +34,4 @@ class PostLoadWebDocumentRequest(object):
 
     def __init__(self, data, storage=None):
         self.data = data
-        self.storage = storag
+        self.storage = storage

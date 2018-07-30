@@ -1,5 +1,3 @@
-
-
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="AcceptAllRevisionsRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -44,4 +42,4 @@ class AcceptAllRevisionsRequest(object):
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
-        self.dest_file_name = dest_file_nam
+        self.dest_file_name = dest_file_name

@@ -1,4 +1,3 @@
-e
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="PostDocumentExecuteMailMergeRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -53,4 +52,4 @@ class PostDocumentExecuteMailMergeRequest(object):
         self.mail_merge_data_file = mail_merge_data_file
         self.cleanup = cleanup
         self.use_whole_paragraph_as_region = use_whole_paragraph_as_region
-        self.dest_file_name = dest_file_nam
+        self.dest_file_name = dest_file_name
