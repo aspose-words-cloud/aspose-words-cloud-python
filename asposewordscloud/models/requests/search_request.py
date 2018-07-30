@@ -1,4 +1,3 @@
-s
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="SearchRequest.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
@@ -43,4 +42,4 @@ class SearchRequest(object):
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
-        self.password = passwor
+        self.password = password
