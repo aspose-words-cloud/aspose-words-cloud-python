@@ -1,0 +1,50 @@
+# Font
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**link** | [**WordsApiLink**](WordsApiLink.md) | Link to the document. | [optional] 
+**all_caps** | **bool** | True if the font is formatted as all capital letters.              | [optional] 
+**bidi** | **bool** | Specifies whether the contents of this run shall have right-to-left characteristics.              | [optional] 
+**bold** | **bool** | True if the font is formatted as bold.              | [optional] 
+**bold_bi** | **bool** | True if the right-to-left text is formatted as bold.              | [optional] 
+**border** | [**Border**](Border.md) | Border object that specifies border for the font. | [optional] 
+**color** | [**XmlColor**](XmlColor.md) | Gets or sets the color of the font.              | [optional] 
+**complex_script** | **bool** | Specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.              | [optional] 
+**double_strike_through** | **bool** | True if the font is formatted as double strikethrough text.              | [optional] 
+**emboss** | **bool** | True if the font is formatted as embossed.              | [optional] 
+**engrave** | **bool** | True if the font is formatted as engraved.              | [optional] 
+**hidden** | **bool** | True if the font is formatted as hidden text.              | [optional] 
+**highlight_color** | [**XmlColor**](XmlColor.md) | Gets or sets the highlight (marker) color.              | [optional] 
+**italic** | **bool** | True if the font is formatted as italic.              | [optional] 
+**italic_bi** | **bool** | True if the right-to-left text is formatted as italic.              | [optional] 
+**kerning** | **float** | Gets or sets the font size at which kerning starts.              | [optional] 
+**locale_id** | **int** | Gets or sets the locale identifier (language) of the formatted characters.              | [optional] 
+**locale_id_bi** | **int** | Gets or sets the locale identifier (language) of the formatted right-to-left characters.              | [optional] 
+**locale_id_far_east** | **int** | Gets or sets the locale identifier (language) of the formatted Asian characters.              | [optional] 
+**name** | **str** | Gets or sets the name of the font              | [optional] 
+**name_ascii** | **str** | Returns or sets the font used for Latin text (characters with character codes from 0 (zero) through 127).              | [optional] 
+**name_bi** | **str** | Returns or sets the name of the font in a right-to-left language document.              | [optional] 
+**name_far_east** | **str** | Returns or sets an East Asian font name.              | [optional] 
+**name_other** | **str** | Returns or sets the font used for characters with character codes from 128 through 255.              | [optional] 
+**no_proofing** | **bool** | True when the formatted characters are not to be spell checked. | [optional] 
+**outline** | **bool** | True if the font is formatted as outline.              | [optional] 
+**position** | **float** | Gets or sets the position of text (in points) relative to the base line. A positive number raises the text, and a negative number lowers it.              | [optional] 
+**scaling** | **int** | Gets or sets character width scaling in percent.              | [optional] 
+**shadow** | **bool** | True if the font is formatted as shadowed.              | [optional] 
+**size** | **float** | Gets or sets the font size in points.              | [optional] 
+**size_bi** | **float** | Gets or sets the font size in points used in a right-to-left document.              | [optional] 
+**small_caps** | **bool** | True if the font is formatted as small capital letters.              | [optional] 
+**spacing** | **float** | Returns or sets the spacing (in points) between characters.              | [optional] 
+**strike_through** | **bool** | True if the font is formatted as strikethrough text.              | [optional] 
+**style_identifier** | **str** | Gets or sets the locale independent style identifier of the character style applied to this formatting. | [optional] 
+**style_name** | **str** | Gets or sets the name of the character style applied to this formatting.              | [optional] 
+**subscript** | **bool** | True if the font is formatted as subscript.              | [optional] 
+**superscript** | **bool** | True if the font is formatted as superscript.              | [optional] 
+**text_effect** | **str** | Gets or sets the font animation effect. | [optional] 
+**underline** | **str** | Gets or sets the type of underline applied to the font. | [optional] 
+**underline_color** | [**XmlColor**](XmlColor.md) | Gets or sets the color of the underline applied to the font. | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
