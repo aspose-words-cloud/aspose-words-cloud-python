@@ -14,14 +14,18 @@ def runtests(dockerImageVersion)
                     sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"${testServerUrl}\\"}" > Settings/servercreds.json'
                 }
             }
+			docker {
+				image 'python:' + dockerImageVersion
+				args '-u root:sudo -v /home/jenkins/workspace/aspose-for-cloud/words-sdk-python/' + dockerImageVersion + ':/home/jenkins/workspace/aspose-for-cloud/words-sdk-python/' + dockerImageVersion
+			}
             
-            docker.image('python:' + dockerImageVersion).inside{
+            docker.inside{
                 stage('build'){
-                  			
+					sh "pip install -r requirements.txt && pip install -r test-requirements.txt"
                 }
             
                 stage('tests'){   
-					
+					sh "python -m unittest discover -v -s ."
                 }
             
                 stage('bdd-tests'){
@@ -35,6 +39,6 @@ def runtests(dockerImageVersion)
 }
 
 node('billing-qa-ubuntu-16.04.4') {
-    runtests("2")
-	runtests("3")          
+    runtests("2.7.15")
+	runtests("3.6")          
 }
