@@ -1,6 +1,6 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="test_font_cache.py">
+# <copyright company="Aspose" file="test_font_.py">
 #   Copyright (c) 2018 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -30,7 +30,7 @@ import asposewordscloud.models.requests
 from test.base_test_context import BaseTestContext
 
 
-class TestFontCache(BaseTestContext):
+class TestFont(BaseTestContext):
 
     #
     # Test for resetting font cache
@@ -39,3 +39,8 @@ class TestFontCache(BaseTestContext):
         request = asposewordscloud.models.requests.ResetCacheRequest()
         result = self.words_api.reset_cache(request)
         self.assertTrue(result.code == 200, 'Error has occurred while reset font cache')
+
+    def test_get_available_fonts(self):
+        request = asposewordscloud.models.requests.GetAvailableFontsRequest()
+        result = self.words_api.get_available_fonts(request)
+        self.assertTrue(result.code == 200, 'Error has occurred while get fonts')

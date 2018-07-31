@@ -1,5 +1,5 @@
 from test.Common.test_error_handling import TestErrorHandling
-from test.Common.test_font_cache import TestFontCache
+from test.Common.test_font import TestFont
 from test.Document.test_document import TestDocument
 from test.DocumentActions.test_append_document import TestAppendDocument
 from test.DocumentActions.test_classification import TestClassification
