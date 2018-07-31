@@ -1,1 +1,1 @@
-docker run --rm -v %cd%:/opt/project -w="/opt/project" python:3.6 /bin/bash test.sh
+docker run --rm -v %cd%:/opt/project -w="/opt/project" python:2.7.15 /bin/bash test.sh

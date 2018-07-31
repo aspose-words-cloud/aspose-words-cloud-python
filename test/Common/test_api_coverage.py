@@ -42,7 +42,7 @@ class TestApiCoverage(BaseTestContext):
                test.TestHyperlinks, test.TestMacros,
                test.TestExecuteMailMerge, test.TestExecuteTemplate, test.TestMathObjects, test.TestPages,
                test.TestParagraphs, test.TestRuns,
-               test.TestSections, test.TestTables, test.TestText, test.TestWatermarks, test.TestFontCache,
+               test.TestSections, test.TestTables, test.TestText, test.TestWatermarks, test.TestFont,
                test.TestClassification]
         test_methods = []
         uncovered_methods = []

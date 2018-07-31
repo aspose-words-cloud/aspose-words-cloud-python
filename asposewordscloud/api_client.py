@@ -232,7 +232,7 @@ class ApiClient(object):
             return self.__deserialize_file(response)
 
         # fetch data from response object
-        if PY3:
+        if six.PY3:
             response.data = response.data.decode('utf8')
         try:
             data = json.loads(response.data)

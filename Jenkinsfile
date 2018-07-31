@@ -14,31 +14,48 @@ def runtests(dockerImageVersion)
                     sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"${testServerUrl}\\"}" > Settings/servercreds.json'
                 }
             }
-			docker {
-				image 'python:' + dockerImageVersion
-				args '-u root:sudo -v /home/jenkins/workspace/aspose-for-cloud/words-sdk-python/' + dockerImageVersion + ':/home/jenkins/workspace/aspose-for-cloud/words-sdk-python/' + dockerImageVersion
-			}
             
-            docker.inside{
+            docker.image('python:' + dockerImageVersion).inside('-u root'){
                 stage('build'){
-					sh "pip install -r requirements.txt && pip install -r test-requirements.txt"
-                }
+					sh "python -m pip install -r requirements.txt && python -m pip install -r test-requirements.txt"
+				}
             
-                stage('tests'){   
-					sh "python -m unittest discover -v -s ."
+                stage('tests'){
+					try{
+						sh "nosetests --with-xunit"
+					} finally{
+						junit 'nosetests.xml'
+					}
                 }
             
                 stage('bdd-tests'){
 					
                 }
+				
+				stage('clean-compiled'){
+					sh "rm -rf %s"
+				}
             }        
-        } finally {                       
-            deleteDir()
+        } finally {
+			 cleanWs()
         }
     }
 }
 
 node('billing-qa-ubuntu-16.04.4') {
-    runtests("2.7.15")
-	runtests("3.6")          
+	stage('oldpy'){
+		try {
+			runtests("2.7.15")
+		} finally {
+			cleanWs()
+		}
+	}
+	
+	stage('newpy'){
+		try {
+			runtests("3.6") 
+		} finally {
+			cleanWs()
+		}
+	}
 }
