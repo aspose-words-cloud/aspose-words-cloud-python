@@ -46,10 +46,10 @@ class TestExecuteMailMerge(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.PostDocumentExecuteMailMergeRequest(remote_name, data,
-                                                                                     os.path.join(
-                                                                                         self.remote_test_folder,
-                                                                                         self.test_folder),
-                                                                                     dest_file_name=dest_name)
+                                                                                       os.path.join(
+                                                                                           self.remote_test_folder,
+                                                                                           self.test_folder),
+                                                                                       dest_file_name=dest_name)
         result = self.words_api.post_document_execute_mail_merge(request)
         self.assertTrue(result.code == 200, 'Error has occurred while execute mail merge')
 

@@ -43,9 +43,9 @@ class TestMailMergeFields(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.GetDocumentFieldNamesRequest(remote_name,
-                                                                              os.path.join(
-                                                                                  self.remote_test_folder,
-                                                                                  self.test_folder))
+                                                                                os.path.join(
+                                                                                    self.remote_test_folder,
+                                                                                    self.test_folder))
         result = self.words_api.get_document_field_names(request)
         self.assertTrue(result.code == 200, 'Error has occurred while get document field names')
 

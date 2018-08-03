@@ -44,9 +44,9 @@ class TestBookmarks(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.GetDocumentBookmarkByNameRequest(remote_name, bookmark_name,
-                                                                                  os.path.join(
-                                                                                      self.remote_test_folder,
-                                                                                      self.test_folder))
+                                                                                    os.path.join(
+                                                                                        self.remote_test_folder,
+                                                                                        self.test_folder))
         result = self.words_api.get_document_bookmark_by_name(request)
         self.assertTrue(result.code == 200, 'Error has occurred while get document bookmark by name')
 
@@ -60,9 +60,9 @@ class TestBookmarks(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.GetDocumentBookmarksRequest(remote_name,
-                                                                             os.path.join(
-                                                                                 self.remote_test_folder,
-                                                                                 self.test_folder))
+                                                                               os.path.join(
+                                                                                   self.remote_test_folder,
+                                                                                   self.test_folder))
         result = self.words_api.get_document_bookmarks(request)
         self.assertTrue(result.code == 200, 'Error has occurred while get document bookmarks')
 
@@ -79,9 +79,9 @@ class TestBookmarks(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.PostUpdateDocumentBookmarkRequest(remote_name, body, bookmark_name,
-                                                                                   os.path.join(
-                                                                                       self.remote_test_folder,
-                                                                                       self.test_folder),
-                                                                                   dest_file_name=dest_name)
+                                                                                     os.path.join(
+                                                                                         self.remote_test_folder,
+                                                                                         self.test_folder),
+                                                                                     dest_file_name=dest_name)
         result = self.words_api.post_update_document_bookmark(request)
         self.assertTrue(result.code == 200, 'Error has occurred while update document bookmark')

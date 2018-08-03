@@ -44,9 +44,9 @@ class TestWatermarks(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.DeleteDocumentWatermarkRequest(remote_name,
-                                                                                os.path.join(
-                                                                                    self.remote_test_folder,
-                                                                                    self.test_folder))
+                                                                                  os.path.join(
+                                                                                      self.remote_test_folder,
+                                                                                      self.test_folder))
         result = self.words_api.delete_document_watermark(request)
         self.assertTrue(result.code == 200, 'Error has occurred while delete document watermark')
 
@@ -64,11 +64,11 @@ class TestWatermarks(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.PostInsertDocumentWatermarkImageRequest(remote_name, image,
-                                                                                         os.path.join(
-                                                                                             self.remote_test_folder,
-                                                                                             self.test_folder),
-                                                                                         dest_file_name=dest_name,
-                                                                                         rotation_angle=rotation_angle)
+                                                                                           os.path.join(
+                                                                                               self.remote_test_folder,
+                                                                                               self.test_folder),
+                                                                                           dest_file_name=dest_name,
+                                                                                           rotation_angle=rotation_angle)
         result = self.words_api.post_insert_document_watermark_image(request)
         self.assertTrue(result.code == 200, 'Error has occurred while post insert document watermark')
 
@@ -85,9 +85,9 @@ class TestWatermarks(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.PostInsertDocumentWatermarkTextRequest(remote_name, body,
-                                                                                        os.path.join(
-                                                                                            self.remote_test_folder,
-                                                                                            self.test_folder),
-                                                                                        dest_file_name=dest_name)
+                                                                                          os.path.join(
+                                                                                              self.remote_test_folder,
+                                                                                              self.test_folder),
+                                                                                          dest_file_name=dest_name)
         result = self.words_api.post_insert_document_watermark_text(request)
         self.assertTrue(result.code == 200, 'Error has occurred while post insert document watermark text')

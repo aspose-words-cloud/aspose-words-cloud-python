@@ -30,7 +30,7 @@ import json
 import unittest
 import warnings
 import asposestoragecloud
-import asposewordscloud
+from asposewordscloud import WordsApi, ApiClient
 import six
 
 
@@ -44,13 +44,13 @@ class BaseTestContext(unittest.TestCase):
         self.local_common_folder = os.path.join(self.local_test_folder, 'Common')
         with open(os.path.join(root_path, 'Settings', 'servercreds.json')) as f:
             creds = json.loads(f.read())
-        api_client = asposewordscloud.ApiClient()
+        api_client = ApiClient()
         api_client.configuration.host = creds['BaseUrl']
         api_client.configuration.api_key['api_key'] = creds['AppKey']
         api_client.configuration.api_key['app_sid'] = creds['AppSid']
         self.storage_api = asposestoragecloud.StorageApi(asposestoragecloud.ApiClient(creds['AppKey'], creds['AppSid']))
         self.storage_api.api_client.configuration.base_url = creds['BaseUrl'] + '/v1.1'
-        self.words_api = asposewordscloud.WordsApi(api_client)
+        self.words_api = WordsApi(api_client)
         if six.PY3:
             warnings.simplefilter("ignore", ResourceWarning)
 

@@ -45,9 +45,9 @@ class TestHeaderFooter(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.PutHeaderFooterRequest(remote_name, footer_type,
-                                                                        os.path.join(
-                                                                            self.remote_test_folder,
-                                                                            self.test_folder))
+                                                                          os.path.join(
+                                                                              self.remote_test_folder,
+                                                                              self.test_folder))
         result = self.words_api.put_header_footer(request)
         self.assertTrue(result.code == 200, 'Error has occurred while insert header footer')
 
@@ -63,9 +63,9 @@ class TestHeaderFooter(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.GetHeaderFooterRequest(remote_name, index,
-                                                                        os.path.join(
-                                                                            self.remote_test_folder,
-                                                                            self.test_folder))
+                                                                          os.path.join(
+                                                                              self.remote_test_folder,
+                                                                              self.test_folder))
         result = self.words_api.get_header_footer(request)
         self.assertTrue(result.code == 200, 'Error has occurred while get header footer')
 
@@ -80,9 +80,9 @@ class TestHeaderFooter(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.GetHeaderFootersRequest(remote_name,
-                                                                         os.path.join(
-                                                                             self.remote_test_folder,
-                                                                             self.test_folder))
+                                                                           os.path.join(
+                                                                               self.remote_test_folder,
+                                                                               self.test_folder))
         result = self.words_api.get_header_footers(request)
         self.assertTrue(result.code == 200, 'Error has occurred while get headers footers')
 
@@ -99,9 +99,9 @@ class TestHeaderFooter(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.GetHeaderFooterOfSectionRequest(remote_name, index, section_index,
-                                                                                 os.path.join(
-                                                                                     self.remote_test_folder,
-                                                                                     self.test_folder))
+                                                                                   os.path.join(
+                                                                                       self.remote_test_folder,
+                                                                                       self.test_folder))
         result = self.words_api.get_header_footer_of_section(request)
         self.assertTrue(result.code == 200, 'Error has occurred while get header footer of section')
 
@@ -116,9 +116,9 @@ class TestHeaderFooter(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.DeleteHeaderFooterRequest(remote_name, index,
-                                                                           os.path.join(
-                                                                               self.remote_test_folder,
-                                                                               self.test_folder))
+                                                                             os.path.join(
+                                                                                 self.remote_test_folder,
+                                                                                 self.test_folder))
         result = self.words_api.delete_header_footer(request)
         self.assertTrue(result.code == 200, 'Error has occurred while delete header footer')
 
@@ -133,8 +133,8 @@ class TestHeaderFooter(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.DeleteHeadersFootersRequest(remote_name,
-                                                                             os.path.join(
-                                                                                 self.remote_test_folder,
-                                                                                 self.test_folder))
+                                                                               os.path.join(
+                                                                                   self.remote_test_folder,
+                                                                                   self.test_folder))
         result = self.words_api.delete_headers_footers(request)
         self.assertTrue(result.code == 200, 'Error has occurred while delete headers footers')

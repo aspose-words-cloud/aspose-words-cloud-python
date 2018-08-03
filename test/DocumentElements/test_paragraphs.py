@@ -45,9 +45,9 @@ class TestParagraphs(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.DeleteParagraphRequest(remote_name, index,
-                                                                        os.path.join(
-                                                                            self.remote_test_folder,
-                                                                            self.test_folder))
+                                                                          os.path.join(
+                                                                              self.remote_test_folder,
+                                                                              self.test_folder))
         result = self.words_api.delete_paragraph(request)
         self.assertTrue(result.code == 200, 'Error has occurred while delete paragraph')
 
@@ -63,9 +63,9 @@ class TestParagraphs(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.GetDocumentParagraphRequest(remote_name, index,
-                                                                             os.path.join(
-                                                                                 self.remote_test_folder,
-                                                                                 self.test_folder))
+                                                                               os.path.join(
+                                                                                   self.remote_test_folder,
+                                                                                   self.test_folder))
         result = self.words_api.get_document_paragraph(request)
         self.assertTrue(result.code == 200, 'Error has occurred while get document paragraph')
 
@@ -82,9 +82,9 @@ class TestParagraphs(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.GetDocumentParagraphRunRequest(remote_name, paragraph_path, index,
-                                                                                os.path.join(
-                                                                                    self.remote_test_folder,
-                                                                                    self.test_folder))
+                                                                                  os.path.join(
+                                                                                      self.remote_test_folder,
+                                                                                      self.test_folder))
         result = self.words_api.get_document_paragraph_run(request)
         self.assertTrue(result.code == 200, 'Error has occurred while get document paragraph run')
 
@@ -100,10 +100,11 @@ class TestParagraphs(BaseTestContext):
         with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.GetDocumentParagraphRunFontRequest(remote_name, paragraph_path, index,
-                                                                                    os.path.join(
-                                                                                        self.remote_test_folder,
-                                                                                        self.test_folder))
+        request = asposewordscloud.models.requests.GetDocumentParagraphRunFontRequest(remote_name, paragraph_path,
+                                                                                      index,
+                                                                                      os.path.join(
+                                                                                          self.remote_test_folder,
+                                                                                          self.test_folder))
         result = self.words_api.get_document_paragraph_run_font(request)
         self.assertTrue(result.code == 200, 'Error has occurred while get document paragraph run font')
 
@@ -119,9 +120,9 @@ class TestParagraphs(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.GetDocumentParagraphRunsRequest(remote_name, paragraph_path,
-                                                                                 os.path.join(
-                                                                                     self.remote_test_folder,
-                                                                                     self.test_folder))
+                                                                                   os.path.join(
+                                                                                       self.remote_test_folder,
+                                                                                       self.test_folder))
         result = self.words_api.get_document_paragraph_runs(request)
         self.assertTrue(result.code == 200, 'Error has occurred while get document paragraph runs')
 
@@ -137,10 +138,10 @@ class TestParagraphs(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.GetDocumentParagraphsRequest(remote_name,
-                                                                              os.path.join(
-                                                                                  self.remote_test_folder,
-                                                                                  self.test_folder),
-                                                                              node_path=node_path)
+                                                                                os.path.join(
+                                                                                    self.remote_test_folder,
+                                                                                    self.test_folder),
+                                                                                node_path=node_path)
         result = self.words_api.get_document_paragraphs(request)
         self.assertTrue(result.code == 200, 'Error has occurred while get document paragraph')
 
@@ -158,12 +159,13 @@ class TestParagraphs(BaseTestContext):
         with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.PostDocumentParagraphRunFontRequest(remote_name, body, paragraph_path,
-                                                                                     index,
-                                                                                     os.path.join(
-                                                                                         self.remote_test_folder,
-                                                                                         self.test_folder),
-                                                                                     dest_file_name=dest_name)
+        request = asposewordscloud.models.requests.PostDocumentParagraphRunFontRequest(remote_name, body,
+                                                                                       paragraph_path,
+                                                                                       index,
+                                                                                       os.path.join(
+                                                                                           self.remote_test_folder,
+                                                                                           self.test_folder),
+                                                                                       dest_file_name=dest_name)
         result = self.words_api.post_document_paragraph_run_font(request)
         self.assertTrue(result.code == 200, 'Error has occurred while update document paragraph font')
 
@@ -180,10 +182,10 @@ class TestParagraphs(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.PutParagraphRequest(remote_name, body,
-                                                                     os.path.join(
-                                                                         self.remote_test_folder,
-                                                                         self.test_folder),
-                                                                     node_path=node_path)
+                                                                       os.path.join(
+                                                                           self.remote_test_folder,
+                                                                           self.test_folder),
+                                                                       node_path=node_path)
         result = self.words_api.put_paragraph(request)
         self.assertTrue(result.code == 200, 'Error has occurred while put document paragraph')
 
@@ -200,8 +202,8 @@ class TestParagraphs(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.RenderParagraphRequest(remote_name, format, index,
-                                                                        os.path.join(
-                                                                            self.remote_test_folder,
-                                                                            self.test_folder))
+                                                                          os.path.join(
+                                                                              self.remote_test_folder,
+                                                                              self.test_folder))
         result = self.words_api.render_paragraph(request)
         self.assertTrue(len(result) > 0, 'Error has occurred while render paragraph')

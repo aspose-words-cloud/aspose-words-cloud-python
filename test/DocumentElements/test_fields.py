@@ -43,10 +43,10 @@ class TestFields(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.GetFieldsRequest(remote_name,
-                                                                  os.path.join(
-                                                                      self.remote_test_folder,
-                                                                      self.test_folder),
-                                                                  node_path='sections/0')
+                                                                    os.path.join(
+                                                                        self.remote_test_folder,
+                                                                        self.test_folder),
+                                                                    node_path='sections/0')
         result = self.words_api.get_fields(request)
         self.assertTrue(result.code == 200, 'Error has occurred while get fields')
 
@@ -61,10 +61,10 @@ class TestFields(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.GetFieldRequest(remote_name, index,
-                                                                 os.path.join(
-                                                                     self.remote_test_folder,
-                                                                     self.test_folder),
-                                                                 node_path='sections/0/paragraphs/0')
+                                                                   os.path.join(
+                                                                       self.remote_test_folder,
+                                                                       self.test_folder),
+                                                                   node_path='sections/0/paragraphs/0')
         result = self.words_api.get_field(request)
         self.assertTrue(result.code == 200, 'Error has occurred while get field')
 
@@ -81,11 +81,11 @@ class TestFields(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.PostFieldRequest(remote_name, body, index,
-                                                                  os.path.join(
-                                                                      self.remote_test_folder,
-                                                                      self.test_folder),
-                                                                  node_path='sections/0/paragraphs/0',
-                                                                  dest_file_name=dest_name)
+                                                                    os.path.join(
+                                                                        self.remote_test_folder,
+                                                                        self.test_folder),
+                                                                    node_path='sections/0/paragraphs/0',
+                                                                    dest_file_name=dest_name)
         result = self.words_api.post_field(request)
         self.assertTrue(result.code == 200, 'Error has occurred while post field')
 
@@ -100,10 +100,10 @@ class TestFields(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.PutFieldRequest(remote_name, body,
-                                                                 os.path.join(
-                                                                     self.remote_test_folder,
-                                                                     self.test_folder),
-                                                                 node_path='sections/0/paragraphs/0')
+                                                                   os.path.join(
+                                                                       self.remote_test_folder,
+                                                                       self.test_folder),
+                                                                   node_path='sections/0/paragraphs/0')
         result = self.words_api.put_field(request)
         self.assertTrue(result.code == 200, 'Error has occurred while put field')
 
@@ -117,9 +117,9 @@ class TestFields(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.PostUpdateDocumentFieldsRequest(remote_name,
-                                                                                 os.path.join(
-                                                                                     self.remote_test_folder,
-                                                                                     self.test_folder))
+                                                                                   os.path.join(
+                                                                                       self.remote_test_folder,
+                                                                                       self.test_folder))
         result = self.words_api.post_update_document_fields(request)
         self.assertTrue(result.code == 200, 'Error has occurred while post update document fields')
 
@@ -135,10 +135,10 @@ class TestFields(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.PostInsertPageNumbersRequest(remote_name, body,
-                                                                              os.path.join(
-                                                                                  self.remote_test_folder,
-                                                                                  self.test_folder),
-                                                                              dest_file_name=dest_name)
+                                                                                os.path.join(
+                                                                                    self.remote_test_folder,
+                                                                                    self.test_folder),
+                                                                                dest_file_name=dest_name)
         result = self.words_api.post_insert_page_numbers(request)
         self.assertTrue(result.code == 200, 'Error has occurred while post insert page numbers')
 
@@ -153,10 +153,10 @@ class TestFields(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.DeleteFieldRequest(remote_name, index,
-                                                                    os.path.join(
-                                                                        self.remote_test_folder,
-                                                                        self.test_folder),
-                                                                    node_path='sections/0/paragraphs/0')
+                                                                      os.path.join(
+                                                                          self.remote_test_folder,
+                                                                          self.test_folder),
+                                                                      node_path='sections/0/paragraphs/0')
         result = self.words_api.delete_field(request)
         self.assertTrue(result.code == 200, 'Error has occurred while delete field')
 
@@ -170,8 +170,8 @@ class TestFields(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.DeleteFieldsRequest(remote_name,
-                                                                     os.path.join(
-                                                                         self.remote_test_folder,
-                                                                         self.test_folder))
+                                                                       os.path.join(
+                                                                           self.remote_test_folder,
+                                                                           self.test_folder))
         result = self.words_api.delete_fields(request)
         self.assertTrue(result.code == 200, 'Error has occurred while delete fields')

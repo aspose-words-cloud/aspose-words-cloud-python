@@ -46,8 +46,8 @@ class TestConvertDocument(BaseTestContext):
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
 
         request = asposewordscloud.models.requests.PostDocumentSaveAsRequest(remote_name, save_options,
-                                                                           os.path.join(self.remote_test_folder,
-                                                                                        self.test_folder))
+                                                                             os.path.join(self.remote_test_folder,
+                                                                                          self.test_folder))
         result = self.words_api.post_document_save_as(request)
         self.assertTrue(result.code == 200, 'Error has occurred while convert document')
 
@@ -64,9 +64,9 @@ class TestConvertDocument(BaseTestContext):
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
 
         request = asposewordscloud.models.requests.PostDocumentSaveAsRequest(remote_name, save_options,
-                                                                           os.path.join(self.remote_test_folder,
-                                                                                        self.test_folder),
-                                                                           dest_file_name=dest_name)
+                                                                             os.path.join(self.remote_test_folder,
+                                                                                          self.test_folder),
+                                                                             dest_file_name=dest_name)
         result = self.words_api.post_document_save_as(request)
         self.assertTrue(result.code == 200, 'Error has occurred while convert document')
 
@@ -77,8 +77,8 @@ class TestConvertDocument(BaseTestContext):
         _format = 'pdf'
         filename = 'test_multi_pages.docx'
         request = asposewordscloud.models.requests.PutConvertDocumentRequest(os.path.join(self.local_common_folder,
-                                                                                        filename),
-                                                                           _format)
+                                                                                          filename),
+                                                                             _format)
         result = self.words_api.put_convert_document(request)
         self.assertTrue(len(result) > 0, 'Error has occurred while convert document')
 
@@ -95,9 +95,9 @@ class TestConvertDocument(BaseTestContext):
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
 
         request = asposewordscloud.models.requests.PutDocumentSaveAsTiffRequest(remote_name, save_options,
-                                                                              os.path.join(self.remote_test_folder,
-                                                                                           self.test_folder),
-                                                                              dest_file_name=dest_name)
+                                                                                os.path.join(self.remote_test_folder,
+                                                                                             self.test_folder),
+                                                                                dest_file_name=dest_name)
         result = self.words_api.put_document_save_as_tiff(request)
         self.assertTrue(result.code == 200, 'Error has occurred while convert document')
 
@@ -112,8 +112,8 @@ class TestConvertDocument(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.GetDocumentWithFormatRequest(remote_name, _format,
-                                                                              os.path.join(self.remote_test_folder,
-                                                                                           self.test_folder))
+                                                                                os.path.join(self.remote_test_folder,
+                                                                                             self.test_folder))
         result = self.words_api.get_document_with_format(request)
         self.assertTrue(len(result) > 0, 'Error has occurred while convert document')
 
@@ -129,8 +129,8 @@ class TestConvertDocument(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.GetDocumentWithFormatRequest(remote_name, _format,
-                                                                              os.path.join(self.remote_test_folder,
-                                                                                           self.test_folder),
-                                                                              out_path=out_path)
+                                                                                os.path.join(self.remote_test_folder,
+                                                                                             self.test_folder),
+                                                                                out_path=out_path)
         result = self.words_api.get_document_with_format(request)
         self.assertTrue(len(result) > 0, 'Error has occurred while convert document')

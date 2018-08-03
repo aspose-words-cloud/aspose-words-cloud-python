@@ -45,9 +45,9 @@ class TestMathObjects(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.DeleteOfficeMathObjectRequest(remote_name, index,
-                                                                               os.path.join(
-                                                                                   self.remote_test_folder,
-                                                                                   self.test_folder))
+                                                                                 os.path.join(
+                                                                                     self.remote_test_folder,
+                                                                                     self.test_folder))
         result = self.words_api.delete_office_math_object(request)
         self.assertTrue(result.code == 200, 'Error has occurred while delete math object')
 
@@ -63,9 +63,9 @@ class TestMathObjects(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.GetOfficeMathObjectRequest(remote_name, index,
-                                                                            os.path.join(
-                                                                                self.remote_test_folder,
-                                                                                self.test_folder))
+                                                                              os.path.join(
+                                                                                  self.remote_test_folder,
+                                                                                  self.test_folder))
         result = self.words_api.get_office_math_object(request)
         self.assertTrue(result.code == 200, 'Error has occurred while get math object')
 
@@ -80,9 +80,9 @@ class TestMathObjects(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.GetOfficeMathObjectsRequest(remote_name,
-                                                                             os.path.join(
-                                                                                 self.remote_test_folder,
-                                                                                 self.test_folder))
+                                                                               os.path.join(
+                                                                                   self.remote_test_folder,
+                                                                                   self.test_folder))
         result = self.words_api.get_office_math_objects(request)
         self.assertTrue(result.code == 200, 'Error has occurred while get math objects')
 
@@ -99,8 +99,8 @@ class TestMathObjects(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.RenderMathObjectRequest(remote_name, format, index,
-                                                                         os.path.join(
-                                                                             self.remote_test_folder,
-                                                                             self.test_folder))
+                                                                           os.path.join(
+                                                                               self.remote_test_folder,
+                                                                               self.test_folder))
         result = self.words_api.render_math_object(request)
         self.assertTrue(len(result) > 0, 'Error has occurred while render math objects')

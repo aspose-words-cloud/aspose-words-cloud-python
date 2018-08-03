@@ -51,7 +51,7 @@ class TestClassification(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.ClassifyDocumentRequest(remote_name,
-                                                                         os.path.join(self.remote_test_folder,
-                                                                                      self.test_folder))
+                                                                           os.path.join(self.remote_test_folder,
+                                                                                        self.test_folder))
         result = self.words_api.classify_document(request)
         self.assertTrue(result.code == 200, 'Error has occurred while classify document')

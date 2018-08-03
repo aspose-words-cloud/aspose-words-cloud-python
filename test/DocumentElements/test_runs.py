@@ -46,9 +46,9 @@ class TestRuns(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.DeleteRunRequest(remote_name, paragraph_path, index,
-                                                                  os.path.join(
-                                                                      self.remote_test_folder,
-                                                                      self.test_folder))
+                                                                    os.path.join(
+                                                                        self.remote_test_folder,
+                                                                        self.test_folder))
         result = self.words_api.delete_run(request)
         self.assertTrue(result.code == 200, 'Error has occurred while delete run')
 
@@ -66,9 +66,9 @@ class TestRuns(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.PostRunRequest(remote_name, body, paragraph_path, index,
-                                                                os.path.join(
-                                                                    self.remote_test_folder,
-                                                                    self.test_folder))
+                                                                  os.path.join(
+                                                                      self.remote_test_folder,
+                                                                      self.test_folder))
         result = self.words_api.post_run(request)
         self.assertTrue(result.code == 200, 'Error has occurred while update run')
 
@@ -85,8 +85,8 @@ class TestRuns(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.PutRunRequest(remote_name, paragraph_path, body,
-                                                               os.path.join(
-                                                                   self.remote_test_folder,
-                                                                   self.test_folder))
+                                                                 os.path.join(
+                                                                     self.remote_test_folder,
+                                                                     self.test_folder))
         result = self.words_api.put_run(request)
         self.assertTrue(result.code == 200, 'Error has occurred while insert run')

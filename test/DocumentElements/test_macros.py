@@ -44,8 +44,8 @@ class TestMacros(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.DeleteDocumentMacrosRequest(remote_name,
-                                                                             os.path.join(
-                                                                                 self.remote_test_folder,
-                                                                                 self.test_folder))
+                                                                               os.path.join(
+                                                                                   self.remote_test_folder,
+                                                                                   self.test_folder))
         result = self.words_api.delete_document_macros(request)
         self.assertTrue(result.code == 200, 'Error has occurred while delete document macros')

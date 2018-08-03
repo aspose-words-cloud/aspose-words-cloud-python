@@ -26,7 +26,7 @@
 #
 
 import test
-import asposewordscloud.apis.words_api
+import asposewordscloud
 from test.base_test_context import BaseTestContext
 
 

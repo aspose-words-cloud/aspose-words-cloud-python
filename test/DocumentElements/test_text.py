@@ -44,9 +44,9 @@ class TestText(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.GetDocumentTextItemsRequest(remote_name,
-                                                                             os.path.join(
-                                                                                 self.remote_test_folder,
-                                                                                 self.test_folder))
+                                                                               os.path.join(
+                                                                                   self.remote_test_folder,
+                                                                                   self.test_folder))
         result = self.words_api.get_document_text_items(request)
         self.assertTrue(result.code == 200, 'Error has occurred while get document text items')
 
@@ -63,10 +63,10 @@ class TestText(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.PostReplaceTextRequest(remote_name, body,
-                                                                        os.path.join(
-                                                                            self.remote_test_folder,
-                                                                            self.test_folder),
-                                                                        dest_file_name=dest_name)
+                                                                          os.path.join(
+                                                                              self.remote_test_folder,
+                                                                              self.test_folder),
+                                                                          dest_file_name=dest_name)
         result = self.words_api.post_replace_text(request)
         self.assertTrue(result.code == 200, 'Error has occurred while post replace text')
 
@@ -82,8 +82,8 @@ class TestText(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.SearchRequest(remote_name, pattern,
-                                                               os.path.join(
-                                                                   self.remote_test_folder,
-                                                                   self.test_folder))
+                                                                 os.path.join(
+                                                                     self.remote_test_folder,
+                                                                     self.test_folder))
         result = self.words_api.search(request)
         self.assertTrue(result.code == 200, 'Error has occurred while search text')

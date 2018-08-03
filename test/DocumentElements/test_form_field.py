@@ -41,16 +41,18 @@ class TestFormField(BaseTestContext):
         remote_name = 'TestPostFormField.docx'
         dest_name = os.path.join(self.remote_test_out, remote_name)
         index = 0
-        body = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='',
-                                                 text_input_type='Regular', text_input_default='')
+        body = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True,
+                                                   status_text='',
+                                                   text_input_type='Regular', text_input_default='')
         with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.PostFormFieldRequest(remote_name, body, index,
-                                                                      os.path.join(
-                                                                          self.remote_test_folder,
-                                                                          self.test_folder),
-                                                                      dest_file_name=dest_name, node_path='sections/0')
+                                                                        os.path.join(
+                                                                            self.remote_test_folder,
+                                                                            self.test_folder),
+                                                                        dest_file_name=dest_name,
+                                                                        node_path='sections/0')
         result = self.words_api.post_form_field(request)
         self.assertTrue(result.code == 200, 'Error has occurred while update from field')
 
@@ -61,17 +63,18 @@ class TestFormField(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPutFormField.docx'
         dest_name = os.path.join(self.remote_test_out, remote_name)
-        body = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='',
-                                                 text_input_type='Regular', text_input_default='123',
-                                                 text_input_format='UPPERCASE')
+        body = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True,
+                                                   status_text='',
+                                                   text_input_type='Regular', text_input_default='123',
+                                                   text_input_format='UPPERCASE')
         with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.PutFormFieldRequest(remote_name, body,
-                                                                     os.path.join(
-                                                                         self.remote_test_folder,
-                                                                         self.test_folder),
-                                                                     dest_file_name=dest_name, node_path='sections/0')
+                                                                       os.path.join(
+                                                                           self.remote_test_folder,
+                                                                           self.test_folder),
+                                                                       dest_file_name=dest_name, node_path='sections/0')
         result = self.words_api.put_form_field(request)
         self.assertTrue(result.code == 200, 'Error has occurred while insert from field')
 
@@ -86,10 +89,10 @@ class TestFormField(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.DeleteFormFieldRequest(remote_name, index,
-                                                                        os.path.join(
-                                                                            self.remote_test_folder,
-                                                                            self.test_folder),
-                                                                        node_path='sections/0')
+                                                                          os.path.join(
+                                                                              self.remote_test_folder,
+                                                                              self.test_folder),
+                                                                          node_path='sections/0')
         result = self.words_api.delete_form_field(request)
         self.assertTrue(result.code == 200, 'Error has occurred while delete from field')
 
@@ -104,10 +107,10 @@ class TestFormField(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.GetFormFieldRequest(remote_name, index,
-                                                                     os.path.join(
-                                                                         self.remote_test_folder,
-                                                                         self.test_folder),
-                                                                     node_path='sections/0')
+                                                                       os.path.join(
+                                                                           self.remote_test_folder,
+                                                                           self.test_folder),
+                                                                       node_path='sections/0')
         result = self.words_api.get_form_field(request)
         self.assertTrue(result.code == 200, 'Error has occurred while get from field')
 
@@ -121,9 +124,9 @@ class TestFormField(BaseTestContext):
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
         request = asposewordscloud.models.requests.GetFormFieldsRequest(remote_name,
-                                                                      os.path.join(
-                                                                          self.remote_test_folder,
-                                                                          self.test_folder),
-                                                                      node_path='sections/0')
+                                                                        os.path.join(
+                                                                            self.remote_test_folder,
+                                                                            self.test_folder),
+                                                                        node_path='sections/0')
         result = self.words_api.get_form_fields(request)
         self.assertTrue(result.code == 200, 'Error has occurred while get from fields')
