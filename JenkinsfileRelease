@@ -29,8 +29,9 @@ stage('wait for publishing'){
 	}
 }
 
-node('billing-qa-ubuntu-16.04.4') {         
-    try {	
+def publishToTestPypi()
+{
+	try {	
         stage('checkout again'){
             checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-python.git/']]])			
         }              	
@@ -65,4 +66,12 @@ node('billing-qa-ubuntu-16.04.4') {
     } finally {                       
         cleanWs()
     }
+}
+
+node('billing-qa-ubuntu-16.04.4') {
+	try {
+		publishToTestPypi()
+	} finally {
+		cleanWs()
+	}
 }
