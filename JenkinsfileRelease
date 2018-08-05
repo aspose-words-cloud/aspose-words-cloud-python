@@ -1,0 +1,69 @@
+parameters {
+        string(name: 'username', defaultValue: 'username', description: 'user name')		
+		string(name: 'password', defaultValue: 'xxx', description: 'password')		
+}
+node('billing-qa-ubuntu-16.04.4') {         
+    try {		
+	    stage('Merge master to testPackage'){		
+			checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-python.git/']]])
+			
+	    	sh "git checkout --merge testPackage"
+	    	sh "git reset --hard origin/testPackage"
+	    	sh "git merge --no-ff --allow-unrelated-histories origin/master"
+	    	sh "git diff --name-status"			
+	    	sh 'git commit -am "Merged master branch to testPackage" || exit 0'
+	    	
+	    	withCredentials([usernamePassword(credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
+	    		sh "git push https://WordsCloud:$gitPass@github.com/aspose-words-cloud/aspose-words-cloud-python testPackage"
+	    	}
+	    }	   
+		    			                
+    } finally {                       
+        deleteDir()
+    }
+}
+
+stage('wait for publishing'){
+	timeout(time:1, unit:'DAYS') {
+		input message:'Ready for publishing to testpypi?'
+	}
+}
+
+node('billing-qa-ubuntu-16.04.4') {         
+    try {	
+        stage('checkout again'){
+            checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-python.git/']]])			
+        }              	
+		    
+	    stage('build package and post on testpypi'){	    	
+			docker.image('python:3.6').inside('-u root'){
+                stage('upload to testpypi'){
+					sh "python -m pip install --upgrade setuptools wheel"
+					sh "python setup.py sdist bdist_wheel"
+					sh "python -m pip install --upgrade twine"
+					sh "touch ~/.pypirc"
+					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = ${username} \\n password = ${password} \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = ${username} \\n password = ${password}' > ~/.pypirc"
+					sh "cat ~/.pypirc"
+					sh "python setup.py sdist && twine upload dist/* -r pypitest"
+					sh "pip install --index-url https://test.pypi.org/simple/ asposewordscloud"
+					sh "python -m pip install -r requirements.txt && python -m pip install -r test-requirements.txt"
+				}
+            
+                stage('package test'){
+					try{
+						sh "nosetests --with-xunit"
+					} finally{
+						junit 'nosetests.xml'
+					}
+                }
+				
+				stage('clean-compiled'){
+					sh "rm -rf %s"
+				}
+            } 
+	    }
+		    			                
+    } finally {                       
+        deleteDir()
+    }
+}
