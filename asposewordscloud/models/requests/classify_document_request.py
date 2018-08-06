@@ -34,12 +34,14 @@ class ClassifyDocumentRequest(object):
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
     :param best_classes_count Count of the best classes to return.
+    :param taxonomy Taxonomy to use for classification return.
     """
 
-    def __init__(self, document_name, folder=None, storage=None, load_encoding=None, password=None, best_classes_count=None):
+    def __init__(self, document_name, folder=None, storage=None, load_encoding=None, password=None, best_classes_count=None, taxonomy=None):
         self.document_name = document_name
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
         self.best_classes_count = best_classes_count
+        self.taxonomy = taxonomy

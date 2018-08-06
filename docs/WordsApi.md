@@ -234,7 +234,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **classify_document**
-> ClassificationResponse classify_document(document_name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, best_classes_count=best_classes_count)
+> ClassificationResponse classify_document(document_name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, best_classes_count=best_classes_count, taxonomy=taxonomy)
 
 Classify document.
 
@@ -254,10 +254,11 @@ storage = 'storage_example' # str | File storage, which have to be used. (option
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
 password = 'password_example' # str | Password for opening an encrypted document. (optional)
 best_classes_count = '1' # str | Count of the best classes to return. (optional) (default to 1)
+taxonomy = 'default' # str | Taxonomy to use for classification return. (optional) (default to default)
 
 try:
     # Classify document.
-    api_response = api_instance.classify_document(document_name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, best_classes_count=best_classes_count)
+    api_response = api_instance.classify_document(document_name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, best_classes_count=best_classes_count, taxonomy=taxonomy)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->classify_document: %s\n" % e)
@@ -273,6 +274,7 @@ Name | Type | Description  | Notes
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
  **password** | **str**| Password for opening an encrypted document. | [optional] 
  **best_classes_count** | **str**| Count of the best classes to return. | [optional] [default to 1]
+ **taxonomy** | **str**| Taxonomy to use for classification return. | [optional] [default to default]
 
 ### Return type
 
