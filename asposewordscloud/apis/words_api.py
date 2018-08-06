@@ -285,6 +285,7 @@ class WordsApi(object):
         :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param str password: Password for opening an encrypted document.
         :param str best_classes_count: Count of the best classes to return.
+        :param str taxonomy: Taxonomy to use for classification return.
         :return: ClassificationResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -362,6 +363,11 @@ class WordsApi(object):
         else:
             if request.best_classes_count is not None:
                 query_params.append((self.__downcase_first_letter('BestClassesCount'), request.best_classes_count))  # noqa: E501
+        if self.__downcase_first_letter('Taxonomy') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Taxonomy' + '}'), request.taxonomy if request.taxonomy is not None else '')
+        else:
+            if request.taxonomy is not None:
+                query_params.append((self.__downcase_first_letter('Taxonomy'), request.taxonomy))  # noqa: E501
 
         header_params = {}
 
