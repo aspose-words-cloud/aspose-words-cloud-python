@@ -43,7 +43,7 @@ def publishToTestPypi()
 					sh "python setup.py sdist bdist_wheel"
 					sh "python -m pip install --upgrade twine"
 					sh "touch ~/.pypirc"
-					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = ${username} \\n password = ${password} \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = ${username} \\n password = ${password}' > ~/.pypirc"
+					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = ${username} \\n password = '${password}' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = ${username} \\n password = '${password}'' > ~/.pypirc"
 					sh "python setup.py sdist && twine upload dist/* -r pypitest"
 					sh "pip install --index-url https://test.pypi.org/simple/ asposewordscloud"
 					sh "python -m pip install -r requirements.txt && python -m pip install -r test-requirements.txt"
@@ -82,7 +82,7 @@ def publishToPypi()
 					sh "python setup.py sdist bdist_wheel"
 					sh "python -m pip install --upgrade twine"
 					sh "touch ~/.pypirc"
-					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = ${username} \\n password = ${password} \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = ${username} \\n password = ${password}' > ~/.pypirc"
+					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = ${username} \\n password = '${password}' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = ${username} \\n password = '${password}'' > ~/.pypirc"
 					sh "python setup.py sdist && twine upload dist/*"
 				}
 				
