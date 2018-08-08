@@ -43,7 +43,7 @@ def publishToTestPypi()
 					sh "python setup.py sdist bdist_wheel"
 					sh "python -m pip install --upgrade twine"
 					sh "touch ~/.pypirc"
-					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = ${username} \\n password = ${password} \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = ${username} \\n password = ${password}' > ~/.pypirc"
+					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = ${username} \\n password = '${password}' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = ${username} \\n password = '${password}'' > ~/.pypirc"
 					sh "python setup.py sdist && twine upload dist/* -r pypitest"
 					sh "pip install --index-url https://test.pypi.org/simple/ asposewordscloud"
 					sh "python -m pip install -r requirements.txt && python -m pip install -r test-requirements.txt"
@@ -72,17 +72,17 @@ def publishToPypi()
 {
 	try {	
         stage('checkout again'){
-            checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-python.git/']]])			
+            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-python.git/']]])			
         }              	
 		    
 	    stage('build package and post on pypi'){	    	
 			docker.image('python:3.6').inside('-u root'){
-                stage('upload to testpypi'){
+                stage('upload to pypi'){
 					sh "python -m pip install --upgrade setuptools wheel"
 					sh "python setup.py sdist bdist_wheel"
 					sh "python -m pip install --upgrade twine"
 					sh "touch ~/.pypirc"
-					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = ${username} \\n password = ${password} \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = ${username} \\n password = ${password}' > ~/.pypirc"
+					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = ${username} \\n password = '${password}' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = ${username} \\n password = '${password}'' > ~/.pypirc"
 					sh "python setup.py sdist && twine upload dist/*"
 				}
 				
