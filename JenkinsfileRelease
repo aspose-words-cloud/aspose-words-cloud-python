@@ -39,26 +39,26 @@ def publishToTestPypi()
 	    stage('build package and post on testpypi'){	    	
 			docker.image('python:3.6').inside('-u root'){
                 stage('upload to testpypi'){
-					sh "python -m pip install --upgrade setuptools wheel"
-					sh "python setup.py sdist bdist_wheel"
-					sh "python -m pip install --upgrade twine"
-					sh "touch ~/.pypirc"
-					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = ${username} \\n password = '${password}' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = ${username} \\n password = '${password}'' > ~/.pypirc"
-					sh "python setup.py sdist && twine upload dist/* -r pypitest"
-					sh "pip install --index-url https://test.pypi.org/simple/ asposewordscloud"
-					sh "python -m pip install -r requirements.txt && python -m pip install -r test-requirements.txt"
+					bash "python -m pip install --upgrade setuptools wheel"
+					bash "python setup.py sdist bdist_wheel"
+					bash "python -m pip install --upgrade twine"
+					bash "touch ~/.pypirc"
+					bash "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = ${username} \\n password = '${password}' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = ${username} \\n password = '${password}'' > ~/.pypirc"
+					bash "python setup.py sdist && twine upload dist/* -r pypitest"
+					bash "pip install --index-url https://test.pypi.org/simple/ asposewordscloud"
+					bash "python -m pip install -r requirements.txt && python -m pip install -r test-requirements.txt"
 				}
             
                 stage('package test'){
 					try{
-						sh "nosetests --with-xunit"
+						bash "nosetests --with-xunit"
 					} finally{
 						junit 'nosetests.xml'
 					}
                 }
 				
 				stage('clean-compiled'){
-					sh "rm -rf %s"
+					bash "rm -rf %s"
 				}
             } 
 	    }
@@ -78,16 +78,16 @@ def publishToPypi()
 	    stage('build package and post on pypi'){	    	
 			docker.image('python:3.6').inside('-u root'){
                 stage('upload to pypi'){
-					sh "python -m pip install --upgrade setuptools wheel"
-					sh "python setup.py sdist bdist_wheel"
-					sh "python -m pip install --upgrade twine"
-					sh "touch ~/.pypirc"
-					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = ${username} \\n password = '${password}' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = ${username} \\n password = '${password}'' > ~/.pypirc"
-					sh "python setup.py sdist && twine upload dist/*"
+					bash "python -m pip install --upgrade setuptools wheel"
+					bash "python setup.py sdist bdist_wheel"
+					bash "python -m pip install --upgrade twine"
+					bash "touch ~/.pypirc"
+					bash "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = ${username} \\n password = '${password}' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = ${username} \\n password = '${password}'' > ~/.pypirc"
+					bash "python setup.py sdist && twine upload dist/*"
 				}
 				
 				stage('clean-compiled'){
-					sh "rm -rf %s"
+					bash "rm -rf %s"
 				}
             } 
 	    }
