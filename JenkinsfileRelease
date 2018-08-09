@@ -1,6 +1,7 @@
 parameters {
         string(name: 'username', defaultValue: 'username', description: 'user name')		
-		string(name: 'password', defaultValue: 'xxx', description: 'password')		
+		string(name: 'password', defaultValue: 'xxx', description: 'password')
+		string(name: 'testServerUrl', defaultValue: 'https://auckland-words-cloud-staging.dynabic.com', description: 'server url')			
 }
 node('billing-qa-ubuntu-16.04.4') {         
     try {		
@@ -34,31 +35,35 @@ def publishToTestPypi()
 	try {	
         stage('checkout again'){
             checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-python.git/']]])			
-        }              	
+        }
+		withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
+			sh 'mkdir -p Settings'
+            sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"${testServerUrl}\\"}" > Settings/servercreds.json'
+        }		
 		    
 	    stage('build package and post on testpypi'){	    	
 			docker.image('python:3.6').inside('-u root'){
                 stage('upload to testpypi'){
-					bash "python -m pip install --upgrade setuptools wheel"
-					bash "python setup.py sdist bdist_wheel"
-					bash "python -m pip install --upgrade twine"
-					bash "touch ~/.pypirc"
-					bash "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = ${username} \\n password = '${password}' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = ${username} \\n password = '${password}'' > ~/.pypirc"
-					bash "python setup.py sdist && twine upload dist/* -r pypitest"
-					bash "pip install --index-url https://test.pypi.org/simple/ asposewordscloud"
-					bash "python -m pip install -r requirements.txt && python -m pip install -r test-requirements.txt"
+					sh "python -m pip install --upgrade setuptools wheel"
+					sh "python setup.py sdist bdist_wheel"
+					sh "python -m pip install --upgrade twine"
+					sh "touch ~/.pypirc"
+					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = ${username} \\n password = '${password}' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = ${username} \\n password = '${password}'' > ~/.pypirc"
+					sh "python setup.py sdist && twine upload dist/* -r pypitest"
+					sh "pip install --index-url https://test.pypi.org/simple/ asposewordscloud"
+					sh "python -m pip install -r requirements.txt && python -m pip install -r test-requirements.txt"
 				}
             
                 stage('package test'){
 					try{
-						bash "nosetests --with-xunit"
+						sh "nosetests --with-xunit"
 					} finally{
 						junit 'nosetests.xml'
 					}
                 }
 				
 				stage('clean-compiled'){
-					bash "rm -rf %s"
+					sh "rm -rf %s"
 				}
             } 
 	    }
@@ -73,21 +78,21 @@ def publishToPypi()
 	try {	
         stage('checkout again'){
             checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-python.git/']]])			
-        }              	
-		    
+        }
+				    
 	    stage('build package and post on pypi'){	    	
 			docker.image('python:3.6').inside('-u root'){
                 stage('upload to pypi'){
-					bash "python -m pip install --upgrade setuptools wheel"
-					bash "python setup.py sdist bdist_wheel"
-					bash "python -m pip install --upgrade twine"
-					bash "touch ~/.pypirc"
-					bash "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = ${username} \\n password = '${password}' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = ${username} \\n password = '${password}'' > ~/.pypirc"
-					bash "python setup.py sdist && twine upload dist/*"
+					sh "python -m pip install --upgrade setuptools wheel"
+					sh "python setup.py sdist bdist_wheel"
+					sh "python -m pip install --upgrade twine"
+					sh "touch ~/.pypirc"
+					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = ${username} \\n password = '${password}' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = ${username} \\n password = '${password}'' > ~/.pypirc"
+					sh "python setup.py sdist && twine upload dist/*"
 				}
 				
 				stage('clean-compiled'){
-					bash "rm -rf %s"
+					sh "rm -rf %s"
 				}
             } 
 	    }
