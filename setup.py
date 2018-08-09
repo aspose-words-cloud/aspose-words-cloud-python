@@ -33,7 +33,7 @@ setup(
     url="https://github.com/aspose-words-cloud",
     keywords=["aspose", "python", "aspose cloud"],
 	classifiers=[
-		'Development Status :: 5 - Production/Stable,
+		'Development Status :: 5 - Production/Stable',
 		'Intended Audience :: Developers',
         'Topic :: Office/Business :: Office Suites',
 		'Topic :: Software Development :: Libraries',
