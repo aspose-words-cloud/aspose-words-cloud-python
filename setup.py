@@ -29,9 +29,9 @@ setup(
     name=NAME,
     version=VERSION,
     description="Aspose.Words for Cloud API Reference",
+    author='Yaroslaw Ekimov',
     author_email="yaroslaw.ekimov@aspose.com",
     url="https://github.com/aspose-words-cloud",
-    keywords=["aspose", "python", "aspose cloud"],
 	classifiers=[
 		'Development Status :: 5 - Production/Stable',
 		'Intended Audience :: Developers',
