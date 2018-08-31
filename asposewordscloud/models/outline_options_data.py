@@ -44,6 +44,7 @@ class OutlineOptionsData(object):
         'bookmarks_outline_levels': 'list[BookmarksOutlineLevelData]',
         'default_bookmarks_outline_level': 'int',
         'create_missing_outline_levels': 'bool',
+        'create_outlines_for_headings_in_tables': 'bool',
         'expanded_outline_levels': 'int',
         'headings_outline_levels': 'int'
     }
@@ -52,16 +53,18 @@ class OutlineOptionsData(object):
         'bookmarks_outline_levels': 'BookmarksOutlineLevels',
         'default_bookmarks_outline_level': 'DefaultBookmarksOutlineLevel',
         'create_missing_outline_levels': 'CreateMissingOutlineLevels',
+        'create_outlines_for_headings_in_tables': 'CreateOutlinesForHeadingsInTables',
         'expanded_outline_levels': 'ExpandedOutlineLevels',
         'headings_outline_levels': 'HeadingsOutlineLevels'
     }
 
-    def __init__(self, bookmarks_outline_levels=None, default_bookmarks_outline_level=None, create_missing_outline_levels=None, expanded_outline_levels=None, headings_outline_levels=None):  # noqa: E501
+    def __init__(self, bookmarks_outline_levels=None, default_bookmarks_outline_level=None, create_missing_outline_levels=None, create_outlines_for_headings_in_tables=None, expanded_outline_levels=None, headings_outline_levels=None):  # noqa: E501
         """OutlineOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._bookmarks_outline_levels = None
         self._default_bookmarks_outline_level = None
         self._create_missing_outline_levels = None
+        self._create_outlines_for_headings_in_tables = None
         self._expanded_outline_levels = None
         self._headings_outline_levels = None
         self.discriminator = None
@@ -72,6 +75,8 @@ class OutlineOptionsData(object):
             self.default_bookmarks_outline_level = default_bookmarks_outline_level
         if create_missing_outline_levels is not None:
             self.create_missing_outline_levels = create_missing_outline_levels
+        if create_outlines_for_headings_in_tables is not None:
+            self.create_outlines_for_headings_in_tables = create_outlines_for_headings_in_tables
         if expanded_outline_levels is not None:
             self.expanded_outline_levels = expanded_outline_levels
         if headings_outline_levels is not None:
@@ -140,6 +145,27 @@ class OutlineOptionsData(object):
         :type: bool
         """
         self._create_missing_outline_levels = create_missing_outline_levels
+    @property
+    def create_outlines_for_headings_in_tables(self):
+        """Gets the create_outlines_for_headings_in_tables of this OutlineOptionsData.  # noqa: E501
+
+        Specifies whether or not to create outlines for headings (paragraphs formatted     with the Heading styles) inside tables.  # noqa: E501
+
+        :return: The create_outlines_for_headings_in_tables of this OutlineOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._create_outlines_for_headings_in_tables
+
+    @create_outlines_for_headings_in_tables.setter
+    def create_outlines_for_headings_in_tables(self, create_outlines_for_headings_in_tables):
+        """Sets the create_outlines_for_headings_in_tables of this OutlineOptionsData.
+
+        Specifies whether or not to create outlines for headings (paragraphs formatted     with the Heading styles) inside tables.  # noqa: E501
+
+        :param create_outlines_for_headings_in_tables: The create_outlines_for_headings_in_tables of this OutlineOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._create_outlines_for_headings_in_tables = create_outlines_for_headings_in_tables
     @property
     def expanded_outline_levels(self):
         """Gets the expanded_outline_levels of this OutlineOptionsData.  # noqa: E501

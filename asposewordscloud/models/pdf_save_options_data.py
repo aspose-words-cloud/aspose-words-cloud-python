@@ -67,6 +67,7 @@ class PdfSaveOptionsData(object):
         'escape_uri': 'bool',
         'export_document_structure': 'bool',
         'font_embedding_mode': 'str',
+        'header_footer_bookmarks_export_mode': 'str',
         'image_color_space_export_mode': 'str',
         'image_compression': 'str',
         'open_hyperlinks_in_new_window': 'bool',
@@ -108,6 +109,7 @@ class PdfSaveOptionsData(object):
         'escape_uri': 'EscapeUri',
         'export_document_structure': 'ExportDocumentStructure',
         'font_embedding_mode': 'FontEmbeddingMode',
+        'header_footer_bookmarks_export_mode': 'HeaderFooterBookmarksExportMode',
         'image_color_space_export_mode': 'ImageColorSpaceExportMode',
         'image_compression': 'ImageCompression',
         'open_hyperlinks_in_new_window': 'OpenHyperlinksInNewWindow',
@@ -122,7 +124,7 @@ class PdfSaveOptionsData(object):
         'zoom_factor': 'ZoomFactor'
     }
 
-    def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_full_fonts=None, encryption_details=None, escape_uri=None, export_document_structure=None, font_embedding_mode=None, image_color_space_export_mode=None, image_compression=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
+    def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_full_fonts=None, encryption_details=None, escape_uri=None, export_document_structure=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
         """PdfSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._color_mode = None
@@ -151,6 +153,7 @@ class PdfSaveOptionsData(object):
         self._escape_uri = None
         self._export_document_structure = None
         self._font_embedding_mode = None
+        self._header_footer_bookmarks_export_mode = None
         self._image_color_space_export_mode = None
         self._image_compression = None
         self._open_hyperlinks_in_new_window = None
@@ -217,6 +220,8 @@ class PdfSaveOptionsData(object):
             self.export_document_structure = export_document_structure
         if font_embedding_mode is not None:
             self.font_embedding_mode = font_embedding_mode
+        if header_footer_bookmarks_export_mode is not None:
+            self.header_footer_bookmarks_export_mode = header_footer_bookmarks_export_mode
         if image_color_space_export_mode is not None:
             self.image_color_space_export_mode = image_color_space_export_mode
         if image_compression is not None:
@@ -788,6 +793,35 @@ class PdfSaveOptionsData(object):
         :type: str
         """
         self._font_embedding_mode = font_embedding_mode
+    @property
+    def header_footer_bookmarks_export_mode(self):
+        """Gets the header_footer_bookmarks_export_mode of this PdfSaveOptionsData.  # noqa: E501
+
+        Determines how bookmarks in headers/footers are exported. The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.  # noqa: E501
+
+        :return: The header_footer_bookmarks_export_mode of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._header_footer_bookmarks_export_mode
+
+    @header_footer_bookmarks_export_mode.setter
+    def header_footer_bookmarks_export_mode(self, header_footer_bookmarks_export_mode):
+        """Sets the header_footer_bookmarks_export_mode of this PdfSaveOptionsData.
+
+        Determines how bookmarks in headers/footers are exported. The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.  # noqa: E501
+
+        :param header_footer_bookmarks_export_mode: The header_footer_bookmarks_export_mode of this PdfSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["None", "First", "All"]  # noqa: E501
+        if not header_footer_bookmarks_export_mode.isdigit():	
+            if header_footer_bookmarks_export_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `header_footer_bookmarks_export_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(header_footer_bookmarks_export_mode, allowed_values))
+            self._header_footer_bookmarks_export_mode = header_footer_bookmarks_export_mode
+        else:
+            self._header_footer_bookmarks_export_mode = allowed_values[int(header_footer_bookmarks_export_mode) if six.PY3 else long(header_footer_bookmarks_export_mode)]
     @property
     def image_color_space_export_mode(self):
         """Gets the image_color_space_export_mode of this PdfSaveOptionsData.  # noqa: E501
