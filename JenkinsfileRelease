@@ -1,7 +1,8 @@
 parameters {
         string(name: 'username', defaultValue: 'username', description: 'user name')		
 		string(name: 'password', defaultValue: 'xxx', description: 'password')
-		string(name: 'testServerUrl', defaultValue: 'https://auckland-words-cloud-staging.dynabic.com', description: 'server url')			
+		string(name: 'testServerUrl', defaultValue: 'https://auckland-words-cloud-staging.dynabic.com', description: 'server url')
+		string(name: 'version', defaultValue: '18.7', description: 'version of the package')
 }
 node('billing-qa-ubuntu-16.04.4') {         
     try {		
@@ -96,6 +97,18 @@ def publishToPypi()
 				}
             } 
 	    }
+		
+		stage('add version tag'){
+            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-python.git/']]])
+            		
+			sh "git config user.email \"jenkins.aspose@gmail.com\""
+			sh "git config user.name \"jenkins\""
+			sh "git tag -a ${version} -m 'version ${version}' | exit 0"
+			
+			withCredentials([usernamePassword(credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
+	    		sh "git push https://WordsCloud:$gitPass@github.com/aspose-words-cloud/aspose-words-cloud-python ${version}"
+	    	}			
+        }        
 		    			                
     } finally {                       
         cleanWs()
