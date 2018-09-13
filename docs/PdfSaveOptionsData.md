@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **escape_uri** | **bool** | A flag specifying whether URI should be escaped before writing.              | [optional] 
 **export_document_structure** | **bool** | Determines whether or not to export document structure | [optional] 
 **font_embedding_mode** | **str** | Specifies the font embedding mode | [optional] 
+**header_footer_bookmarks_export_mode** | **str** | Determines how bookmarks in headers/footers are exported. The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All. | [optional] 
 **image_color_space_export_mode** | **str** | Specifies how the color space will be selected for the images in PDF document. | [optional] 
 **image_compression** | **str** | Specifies compression type to be used for all images in the document | [optional] 
 **open_hyperlinks_in_new_window** | **bool** | Determines whether hyperlinks in the output Pdf document are forced to be opened in a new window (or tab) of a browser | [optional] 

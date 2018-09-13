@@ -55,3 +55,20 @@ class TestClassification(BaseTestContext):
                                                                                         self.test_folder))
         result = self.words_api.classify_document(request)
         self.assertTrue(result.code == 200, 'Error has occurred while classify document')
+
+    #
+    # Test for document classification with taxonomy "documents"
+    #
+    def test_classify_taxonomy_documents(self):
+        filename = "test_multi_pages.docx"
+        remote_name = "Source.docx"
+        taxonomy = "documents"
+        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
+            file = f.read()
+        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        request = asposewordscloud.models.requests.ClassifyDocumentRequest(remote_name,
+                                                                           os.path.join(self.remote_test_folder,
+                                                                                        self.test_folder),
+                                                                           taxonomy=taxonomy)
+        result = self.words_api.classify_document(request)
+        self.assertTrue(result.code == 200, 'Error has occurred while classify document')
