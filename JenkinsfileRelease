@@ -3,21 +3,24 @@ parameters {
 		string(name: 'password', defaultValue: 'xxx', description: 'password')
 		string(name: 'testServerUrl', defaultValue: 'https://auckland-words-cloud-staging.dynabic.com', description: 'server url')
 		string(name: 'version', defaultValue: '18.7', description: 'version of the package')
+		string(name: 'StartFromStage', defaultValue: '0', description: '0 based index of stage which will be started')
 }
 node('billing-qa-ubuntu-16.04.4') {         
     try {		
-	    stage('Merge master to testPackage'){		
-			checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-python.git/']]])
+	    stage('0:Merge master to testPackage'){
+			if (params.StartFromStage.toInteger() < 1) {
+				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-python.git/']]])
 			
-	    	sh "git checkout --merge testPackage"
-	    	sh "git reset --hard origin/testPackage"
-	    	sh "git merge --no-ff --allow-unrelated-histories origin/master"
-	    	sh "git diff --name-status"			
-	    	sh 'git commit -am "Merged master branch to testPackage" || exit 0'
+				sh "git checkout --merge testPackage"
+				sh "git reset --hard origin/testPackage"
+				sh "git merge --no-ff --allow-unrelated-histories origin/master"
+				sh "git diff --name-status"			
+				sh 'git commit -am "Merged master branch to testPackage" || exit 0'
 	    	
-	    	withCredentials([usernamePassword(credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
-	    		sh "git push https://WordsCloud:$gitPass@github.com/aspose-words-cloud/aspose-words-cloud-python testPackage"
-	    	}
+				withCredentials([usernamePassword(credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
+					sh "git push https://WordsCloud:$gitPass@github.com/aspose-words-cloud/aspose-words-cloud-python testPackage"
+				}
+			}
 	    }	   
 		    			                
     } finally {                       
@@ -25,50 +28,55 @@ node('billing-qa-ubuntu-16.04.4') {
     }
 }
 
-stage('wait for publishing'){
-	timeout(time:1, unit:'DAYS') {
-		input message:'Ready for publishing to testpypi?'
+stage('1:wait for publishing'){
+	if (params.StartFromStage.toInteger() < 2) {
+		timeout(time:1, unit:'DAYS') {
+			input message:'Ready for publishing to testpypi?'
+		}
 	}
 }
 
 def publishToTestPypi()
 {
 	try {	
-        stage('checkout again'){
-            checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-python.git/']]])			
-        }
-		withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
-			sh 'mkdir -p Settings'
-            sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"${testServerUrl}\\"}" > Settings/servercreds.json'
-        }		
-		    
-	    stage('build package and post on testpypi'){	    	
-			docker.image('python:3.6').inside('-u root'){
-                stage('upload to testpypi'){
+        stage('2:checkout again'){
+			if (params.StartFromStage.toInteger() < 3) {
+				checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-python.git/']]])
+				withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
+					sh 'mkdir -p Settings'
+				sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"${testServerUrl}\\"}" > Settings/servercreds.json'
+				}	
+			}
+		}			
+		
+		stage('3: upload to testPyPi') {
+			if (params.StartFromStage.toInteger() < 4) {
+				docker.image('python:3.6').inside('-u root'){
 					sh "python -m pip install --upgrade setuptools wheel"
 					sh "python setup.py sdist bdist_wheel"
 					sh "python -m pip install --upgrade twine"
 					sh "touch ~/.pypirc"
 					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = ${username} \\n password = '${password}' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = ${username} \\n password = '${password}'' > ~/.pypirc"
 					sh "python setup.py sdist && twine upload dist/* -r pypitest"
-					sh "pip install --index-url https://test.pypi.org/simple/ asposewordscloud"
-					sh "python -m pip install -r requirements.txt && python -m pip install -r test-requirements.txt"
 				}
-            
-                stage('package test'){
+			}
+		}
+		
+		stage('4:package test'){
+			if (params.StartFromStage.toInteger() < 5) {
+				docker.image('python:3.6').inside('-u root') {
 					try{
+						sh "pip install --index-url https://test.pypi.org/simple/ asposewordscloud"
+						sh "python -m pip install -r requirements.txt && python -m pip install -r test-requirements.txt"
 						sh "nosetests --with-xunit"
 					} finally{
 						junit 'nosetests.xml'
 					}
-                }
-				
-				stage('clean-compiled'){
+			
 					sh "rm -rf %s"
 				}
-            } 
-	    }
-		    			                
+			}
+		}   
     } finally {                       
         cleanWs()
     }
@@ -77,13 +85,19 @@ def publishToTestPypi()
 def publishToPypi()
 {
 	try {	
-        stage('checkout again'){
-            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-python.git/']]])			
-        }
-				    
-	    stage('build package and post on pypi'){	    	
-			docker.image('python:3.6').inside('-u root'){
-                stage('upload to pypi'){
+		stage('5:checkout again'){
+			if (params.StartFromStage.toInteger() < 6) {
+				checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-python.git/']]])
+				withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
+					sh 'mkdir -p Settings'
+				sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"${testServerUrl}\\"}" > Settings/servercreds.json'
+				}	
+			}
+		}			
+		
+		stage('6: upload to PyPi') {
+			if (params.StartFromStage.toInteger() < 7) {
+				docker.image('python:3.6').inside('-u root'){
 					sh "python -m pip install --upgrade setuptools wheel"
 					sh "python setup.py sdist bdist_wheel"
 					sh "python -m pip install --upgrade twine"
@@ -91,25 +105,23 @@ def publishToPypi()
 					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = ${username} \\n password = '${password}' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = ${username} \\n password = '${password}'' > ~/.pypirc"
 					sh "python setup.py sdist && twine upload dist/*"
 				}
-				
-				stage('clean-compiled'){
-					sh "rm -rf %s"
-				}
-            } 
-	    }
+			}
+		}
 		
-		stage('add version tag'){
-            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-python.git/']]])
+		
+		stage('7:add version tag'){
+			if (params.StartFromStage.toInteger() < 8) {
+				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-python.git/']]])
             		
-			sh "git config user.email \"jenkins.aspose@gmail.com\""
-			sh "git config user.name \"jenkins\""
-			sh "git tag -a ${version} -m 'version ${version}' | exit 0"
+				sh "git config user.email \"jenkins.aspose@gmail.com\""
+				sh "git config user.name \"jenkins\""
+				sh "git tag -a ${version} -m 'version ${version}' | exit 0"
 			
-			withCredentials([usernamePassword(credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
-	    		sh "git push https://WordsCloud:$gitPass@github.com/aspose-words-cloud/aspose-words-cloud-python ${version}"
-	    	}			
-        }        
-		    			                
+				withCredentials([usernamePassword(credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
+					sh "git push https://WordsCloud:$gitPass@github.com/aspose-words-cloud/aspose-words-cloud-python ${version}"
+				}
+			}
+        }  
     } finally {                       
         cleanWs()
     }
