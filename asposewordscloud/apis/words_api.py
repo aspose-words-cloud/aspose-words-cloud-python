@@ -55,12 +55,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: RevisionsModificationResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -73,8 +73,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.accept_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.accept_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def accept_all_revisions_with_http_info(self, request, **kwargs):  # noqa: E501
         """Accept all revisions in document  # noqa: E501
@@ -83,7 +86,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param AcceptAllRevisionsRequest request object with parameters
+        :param request AcceptAllRevisionsRequest object with parameters
         :return: RevisionsModificationResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -179,8 +182,8 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str text: Text to classify. (required)
-        :param str best_classes_count: Count of the best classes to return.
+        :param text str : Text to classify. (required)
+        :param best_classes_count str : Count of the best classes to return.
         :return: ClassificationResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -193,8 +196,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.classify_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.classify_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def classify_with_http_info(self, request, **kwargs):  # noqa: E501
         """Classify raw text.  # noqa: E501
@@ -203,7 +209,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param ClassifyRequest request object with parameters
+        :param request ClassifyRequest object with parameters
         :return: ClassificationResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -279,13 +285,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str document_name: The document name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str best_classes_count: Count of the best classes to return.
-        :param str taxonomy: Taxonomy to use for classification return.
+        :param document_name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param best_classes_count str : Count of the best classes to return.
+        :param taxonomy str : Taxonomy to use for classification return.
         :return: ClassificationResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -298,8 +304,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.classify_document_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.classify_document_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def classify_document_with_http_info(self, request, **kwargs):  # noqa: E501
         """Classify document.  # noqa: E501
@@ -308,7 +317,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param ClassifyDocumentRequest request object with parameters
+        :param request ClassifyDocumentRequest object with parameters
         :return: ClassificationResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -409,16 +418,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str property_name: The property name. (required)
-        :param DocumentProperty _property: The property with new value. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : The document name. (required)
+        :param property_name str : The property name. (required)
+        :param _property DocumentProperty : The property with new value. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: DocumentPropertyResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -431,8 +440,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.create_or_update_document_property_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.create_or_update_document_property_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def create_or_update_document_property_with_http_info(self, request, **kwargs):  # noqa: E501
         """Add new or update existing document property.  # noqa: E501
@@ -441,7 +453,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param CreateOrUpdateDocumentPropertyRequest request object with parameters
+        :param request CreateOrUpdateDocumentPropertyRequest object with parameters
         :return: DocumentPropertyResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -558,16 +570,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str node_path: Path to node with border(node should be cell or row). (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : The document name. (required)
+        :param node_path str : Path to node with border(node should be cell or row). (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: BorderResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -580,8 +592,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_border_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_border_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def delete_border_with_http_info(self, request, **kwargs):  # noqa: E501
         """Resets border properties to default values.               # noqa: E501
@@ -591,7 +606,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param DeleteBorderRequest request object with parameters
+        :param request DeleteBorderRequest object with parameters
         :return: BorderResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -708,15 +723,15 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str node_path: Path to node with borders(node should be cell or row). (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : The document name. (required)
+        :param node_path str : Path to node with borders(node should be cell or row). (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: BordersResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -729,8 +744,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_borders_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_borders_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def delete_borders_with_http_info(self, request, **kwargs):  # noqa: E501
         """Resets borders properties to default values.               # noqa: E501
@@ -740,7 +758,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param DeleteBordersRequest request object with parameters
+        :param request DeleteBordersRequest object with parameters
         :return: BordersResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -851,15 +869,15 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param int comment_index: Comment index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : The file name. (required)
+        :param comment_index int : Comment index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -872,8 +890,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_comment_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_comment_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def delete_comment_with_http_info(self, request, **kwargs):  # noqa: E501
         """Remove comment from document.  # noqa: E501
@@ -882,7 +903,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param DeleteCommentRequest request object with parameters
+        :param request DeleteCommentRequest object with parameters
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -993,14 +1014,14 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : The file name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1013,8 +1034,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_document_macros_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_document_macros_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def delete_document_macros_with_http_info(self, request, **kwargs):  # noqa: E501
         """Remove macros from document.  # noqa: E501
@@ -1023,7 +1047,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param DeleteDocumentMacrosRequest request object with parameters
+        :param request DeleteDocumentMacrosRequest object with parameters
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1129,15 +1153,15 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str property_name: The property name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : The document name. (required)
+        :param property_name str : The property name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1150,8 +1174,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_document_property_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_document_property_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def delete_document_property_with_http_info(self, request, **kwargs):  # noqa: E501
         """Delete document property.  # noqa: E501
@@ -1160,7 +1187,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param DeleteDocumentPropertyRequest request object with parameters
+        :param request DeleteDocumentPropertyRequest object with parameters
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1271,14 +1298,14 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1291,8 +1318,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_document_watermark_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_document_watermark_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def delete_document_watermark_with_http_info(self, request, **kwargs):  # noqa: E501
         """Delete watermark (for deleting last watermark from the document).  # noqa: E501
@@ -1301,7 +1331,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param DeleteDocumentWatermarkRequest request object with parameters
+        :param request DeleteDocumentWatermarkRequest object with parameters
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1407,16 +1437,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str node_path: Path to node, which contains collection of drawing objects.
+        :param name str : The file name. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param node_path str : Path to node, which contains collection of drawing objects.
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1429,8 +1459,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def delete_drawing_object_with_http_info(self, request, **kwargs):  # noqa: E501
         """Removes drawing object from document.  # noqa: E501
@@ -1439,7 +1472,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param DeleteDrawingObjectRequest request object with parameters
+        :param request DeleteDrawingObjectRequest object with parameters
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1555,16 +1588,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str node_path: Path to node, which contains collection of fields.
+        :param name str : The file name. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param node_path str : Path to node, which contains collection of fields.
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1577,8 +1610,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_field_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_field_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def delete_field_with_http_info(self, request, **kwargs):  # noqa: E501
         """Delete field from document.  # noqa: E501
@@ -1587,7 +1623,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param DeleteFieldRequest request object with parameters
+        :param request DeleteFieldRequest object with parameters
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1703,15 +1739,15 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str node_path: Path to node, which contains collection of fields.
+        :param name str : The file name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param node_path str : Path to node, which contains collection of fields.
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1724,8 +1760,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_fields_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_fields_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def delete_fields_with_http_info(self, request, **kwargs):  # noqa: E501
         """Remove fields from section paragraph.  # noqa: E501
@@ -1734,7 +1773,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param DeleteFieldsRequest request object with parameters
+        :param request DeleteFieldsRequest object with parameters
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1845,16 +1884,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str node_path: Path to node, which contains collection of footnotes.
+        :param name str : The file name. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param node_path str : Path to node, which contains collection of footnotes.
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1867,8 +1906,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_footnote_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_footnote_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def delete_footnote_with_http_info(self, request, **kwargs):  # noqa: E501
         """Removes footnote from document.  # noqa: E501
@@ -1877,7 +1919,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param DeleteFootnoteRequest request object with parameters
+        :param request DeleteFootnoteRequest object with parameters
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1993,16 +2035,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str node_path: Path to node that contains collection of formfields.
+        :param name str : The document name. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param node_path str : Path to node that contains collection of formfields.
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2015,8 +2057,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_form_field_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_form_field_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def delete_form_field_with_http_info(self, request, **kwargs):  # noqa: E501
         """Removes form field from document.  # noqa: E501
@@ -2025,7 +2070,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param DeleteFormFieldRequest request object with parameters
+        :param request DeleteFormFieldRequest object with parameters
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2141,16 +2186,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str section_path: Path to parent section.
+        :param name str : The document name. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param section_path str : Path to parent section.
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2163,8 +2208,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def delete_header_footer_with_http_info(self, request, **kwargs):  # noqa: E501
         """Delete header/footer from document.  # noqa: E501
@@ -2173,7 +2221,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param DeleteHeaderFooterRequest request object with parameters
+        :param request DeleteHeaderFooterRequest object with parameters
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2289,16 +2337,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str section_path: Path to parent section.
-        :param str headers_footers_types: List of types of headers and footers.
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param section_path str : Path to parent section.
+        :param headers_footers_types str : List of types of headers and footers.
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2311,8 +2359,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_headers_footers_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_headers_footers_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def delete_headers_footers_with_http_info(self, request, **kwargs):  # noqa: E501
         """Delete document headers and footers.  # noqa: E501
@@ -2321,7 +2372,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param DeleteHeadersFootersRequest request object with parameters
+        :param request DeleteHeadersFootersRequest object with parameters
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2437,16 +2488,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str node_path: Path to node, which contains collection of OfficeMath objects.
+        :param name str : The file name. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param node_path str : Path to node, which contains collection of OfficeMath objects.
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2459,8 +2510,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def delete_office_math_object_with_http_info(self, request, **kwargs):  # noqa: E501
         """Removes OfficeMath object from document.  # noqa: E501
@@ -2469,7 +2523,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param DeleteOfficeMathObjectRequest request object with parameters
+        :param request DeleteOfficeMathObjectRequest object with parameters
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2585,16 +2639,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str node_path: Path to node which contains paragraphs.
+        :param name str : The file name. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param node_path str : Path to node which contains paragraphs.
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2607,8 +2661,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def delete_paragraph_with_http_info(self, request, **kwargs):  # noqa: E501
         """Remove paragraph from section.  # noqa: E501
@@ -2617,7 +2674,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param DeleteParagraphRequest request object with parameters
+        :param request DeleteParagraphRequest object with parameters
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2733,16 +2790,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param str paragraph_path: Path to parent paragraph. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : The file name. (required)
+        :param paragraph_path str : Path to parent paragraph. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2755,8 +2812,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_run_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_run_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def delete_run_with_http_info(self, request, **kwargs):  # noqa: E501
         """Removes run from document.  # noqa: E501
@@ -2765,7 +2825,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param DeleteRunRequest request object with parameters
+        :param request DeleteRunRequest object with parameters
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2881,16 +2941,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str node_path: Path to node, which contains tables.
+        :param name str : The document name. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param node_path str : Path to node, which contains tables.
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2903,8 +2963,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_table_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_table_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def delete_table_with_http_info(self, request, **kwargs):  # noqa: E501
         """Delete a table.  # noqa: E501
@@ -2913,7 +2976,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param DeleteTableRequest request object with parameters
+        :param request DeleteTableRequest object with parameters
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3029,16 +3092,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str table_row_path: Path to table row. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : The document name. (required)
+        :param table_row_path str : Path to table row. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3051,8 +3114,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_table_cell_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_table_cell_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def delete_table_cell_with_http_info(self, request, **kwargs):  # noqa: E501
         """Delete a table cell.  # noqa: E501
@@ -3061,7 +3127,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param DeleteTableCellRequest request object with parameters
+        :param request DeleteTableCellRequest object with parameters
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3177,16 +3243,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str table_path: Path to table. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : The document name. (required)
+        :param table_path str : Path to table. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3199,8 +3265,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_table_row_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_table_row_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def delete_table_row_with_http_info(self, request, **kwargs):  # noqa: E501
         """Delete a table row.  # noqa: E501
@@ -3209,7 +3278,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param DeleteTableRowRequest request object with parameters
+        :param request DeleteTableRowRequest object with parameters
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3325,13 +3394,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param ProtectionRequest protection_request: with protection settings.             (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param name str : The document name. (required)
+        :param protection_request ProtectionRequest : with protection settings.             (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: ProtectionDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3344,8 +3413,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_unprotect_document_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_unprotect_document_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def delete_unprotect_document_with_http_info(self, request, **kwargs):  # noqa: E501
         """Unprotect document.  # noqa: E501
@@ -3354,7 +3426,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param DeleteUnprotectDocumentRequest request object with parameters
+        :param request DeleteUnprotectDocumentRequest object with parameters
         :return: ProtectionDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3455,7 +3527,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str fonts_location: Folder in filestorage with custom fonts.
+        :param fonts_location str : Folder in filestorage with custom fonts.
         :return: AvailableFontsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3468,8 +3540,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_available_fonts_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_available_fonts_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_available_fonts_with_http_info(self, request, **kwargs):  # noqa: E501
         """Gets the list of fonts, available for document processing  # noqa: E501
@@ -3478,7 +3553,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetAvailableFontsRequest request object with parameters
+        :param request GetAvailableFontsRequest object with parameters
         :return: AvailableFontsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3550,13 +3625,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str node_path: Path to node with border(node should be cell or row). (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document name. (required)
+        :param node_path str : Path to node with border(node should be cell or row). (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: BorderResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3569,8 +3644,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_border_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_border_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_border_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a border.  # noqa: E501
@@ -3580,7 +3658,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetBorderRequest request object with parameters
+        :param request GetBorderRequest object with parameters
         :return: BorderResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3682,12 +3760,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str node_path: Path to node with borders(node should be cell or row). (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document name. (required)
+        :param node_path str : Path to node with borders(node should be cell or row). (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: BordersResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3700,8 +3778,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_borders_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_borders_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_borders_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a collection of borders.  # noqa: E501
@@ -3711,7 +3792,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetBordersRequest request object with parameters
+        :param request GetBordersRequest object with parameters
         :return: BordersResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3807,12 +3888,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param int comment_index: Comment index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The file name. (required)
+        :param comment_index int : Comment index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: CommentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3825,8 +3906,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_comment_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_comment_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_comment_with_http_info(self, request, **kwargs):  # noqa: E501
         """Get comment from document.  # noqa: E501
@@ -3835,7 +3919,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetCommentRequest request object with parameters
+        :param request GetCommentRequest object with parameters
         :return: CommentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3931,11 +4015,11 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The file name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: CommentsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3948,8 +4032,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_comments_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_comments_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_comments_with_http_info(self, request, **kwargs):  # noqa: E501
         """Get comments from document.  # noqa: E501
@@ -3958,7 +4045,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetCommentsRequest request object with parameters
+        :param request GetCommentsRequest object with parameters
         :return: CommentsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4049,11 +4136,11 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str document_name: The file name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param document_name str : The file name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4066,8 +4153,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document common info.  # noqa: E501
@@ -4076,7 +4166,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentRequest request object with parameters
+        :param request GetDocumentRequest object with parameters
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4167,12 +4257,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str bookmark_name: The bookmark name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document name. (required)
+        :param bookmark_name str : The bookmark name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: BookmarkResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4185,8 +4275,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_bookmark_by_name_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_bookmark_by_name_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_bookmark_by_name_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document bookmark data by its name.  # noqa: E501
@@ -4195,7 +4288,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentBookmarkByNameRequest request object with parameters
+        :param request GetDocumentBookmarkByNameRequest object with parameters
         :return: BookmarkResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4291,11 +4384,11 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: BookmarksResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4308,8 +4401,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_bookmarks_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_bookmarks_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_bookmarks_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document bookmarks common info.  # noqa: E501
@@ -4318,7 +4414,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentBookmarksRequest request object with parameters
+        :param request GetDocumentBookmarksRequest object with parameters
         :return: BookmarksResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4409,13 +4505,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node, which contains collection of drawing objects.
+        :param name str : The document name. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node, which contains collection of drawing objects.
         :return: DrawingObjectResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4428,8 +4524,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_drawing_object_by_index_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_drawing_object_by_index_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_drawing_object_by_index_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document drawing object common info by its index or convert to format specified.  # noqa: E501
@@ -4438,7 +4537,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentDrawingObjectByIndexRequest request object with parameters
+        :param request GetDocumentDrawingObjectByIndexRequest object with parameters
         :return: DrawingObjectResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4539,13 +4638,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node, which contains collection of drawing objects.
+        :param name str : The document name. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node, which contains collection of drawing objects.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4558,8 +4657,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_drawing_object_image_data_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_drawing_object_image_data_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_drawing_object_image_data_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read drawing object image data.  # noqa: E501
@@ -4568,7 +4670,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentDrawingObjectImageDataRequest request object with parameters
+        :param request GetDocumentDrawingObjectImageDataRequest object with parameters
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4669,13 +4771,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node, which contains collection of drawing objects.
+        :param name str : The document name. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node, which contains collection of drawing objects.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4688,8 +4790,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_drawing_object_ole_data_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_drawing_object_ole_data_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_drawing_object_ole_data_with_http_info(self, request, **kwargs):  # noqa: E501
         """Get drawing object OLE data.  # noqa: E501
@@ -4698,7 +4803,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentDrawingObjectOleDataRequest request object with parameters
+        :param request GetDocumentDrawingObjectOleDataRequest object with parameters
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4799,12 +4904,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node, which contains collection of drawing objects.
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node, which contains collection of drawing objects.
         :return: DrawingObjectsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4817,8 +4922,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_drawing_objects_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_drawing_objects_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_drawing_objects_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document drawing objects common info.  # noqa: E501
@@ -4827,7 +4935,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentDrawingObjectsRequest request object with parameters
+        :param request GetDocumentDrawingObjectsRequest object with parameters
         :return: DrawingObjectsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4923,12 +5031,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param bool use_non_merge_fields: If true, result includes \"mustache\" field names.
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param use_non_merge_fields bool : If true, result includes \"mustache\" field names.
         :return: FieldNamesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4941,8 +5049,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_field_names_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_field_names_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_field_names_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document field names.  # noqa: E501
@@ -4951,7 +5062,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentFieldNamesRequest request object with parameters
+        :param request GetDocumentFieldNamesRequest object with parameters
         :return: FieldNamesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5047,12 +5158,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int hyperlink_index: The hyperlink index. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document name. (required)
+        :param hyperlink_index int : The hyperlink index. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: HyperlinkResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5065,8 +5176,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_hyperlink_by_index_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_hyperlink_by_index_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_hyperlink_by_index_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document hyperlink by its index.  # noqa: E501
@@ -5075,7 +5189,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentHyperlinkByIndexRequest request object with parameters
+        :param request GetDocumentHyperlinkByIndexRequest object with parameters
         :return: HyperlinkResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5171,11 +5285,11 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: HyperlinksResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5188,8 +5302,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_hyperlinks_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_hyperlinks_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_hyperlinks_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document hyperlinks common info.  # noqa: E501
@@ -5198,7 +5315,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentHyperlinksRequest request object with parameters
+        :param request GetDocumentHyperlinksRequest object with parameters
         :return: HyperlinksResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5289,13 +5406,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node which contains paragraphs.
+        :param name str : The document name. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node which contains paragraphs.
         :return: ParagraphResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5308,8 +5425,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_paragraph_with_http_info(self, request, **kwargs):  # noqa: E501
         """This resource represents one of the paragraphs contained in the document.  # noqa: E501
@@ -5318,7 +5438,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentParagraphRequest request object with parameters
+        :param request GetDocumentParagraphRequest object with parameters
         :return: ParagraphResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5419,13 +5539,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node which contains paragraphs.
+        :param name str : The document name. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node which contains paragraphs.
         :return: ParagraphFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5438,8 +5558,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_paragraph_format_with_http_info(self, request, **kwargs):  # noqa: E501
         """Represents all the formatting for a paragraph.  # noqa: E501
@@ -5448,7 +5571,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentParagraphFormatRequest request object with parameters
+        :param request GetDocumentParagraphFormatRequest object with parameters
         :return: ParagraphFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5549,13 +5672,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str paragraph_path: Path to parent paragraph. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document name. (required)
+        :param paragraph_path str : Path to parent paragraph. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: RunResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5568,8 +5691,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_paragraph_run_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_paragraph_run_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_paragraph_run_with_http_info(self, request, **kwargs):  # noqa: E501
         """This resource represents run of text contained in the document.  # noqa: E501
@@ -5578,7 +5704,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentParagraphRunRequest request object with parameters
+        :param request GetDocumentParagraphRunRequest object with parameters
         :return: RunResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5679,13 +5805,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str paragraph_path: Path to parent paragraph. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document name. (required)
+        :param paragraph_path str : Path to parent paragraph. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: FontResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5698,8 +5824,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_paragraph_run_font_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_paragraph_run_font_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_paragraph_run_font_with_http_info(self, request, **kwargs):  # noqa: E501
         """This resource represents font of run.  # noqa: E501
@@ -5708,7 +5837,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentParagraphRunFontRequest request object with parameters
+        :param request GetDocumentParagraphRunFontRequest object with parameters
         :return: FontResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5809,12 +5938,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str paragraph_path: Path to parent paragraph. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document name. (required)
+        :param paragraph_path str : Path to parent paragraph. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: RunsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5827,8 +5956,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_paragraph_runs_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_paragraph_runs_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_paragraph_runs_with_http_info(self, request, **kwargs):  # noqa: E501
         """This resource represents collection of runs in the paragraph.  # noqa: E501
@@ -5837,7 +5969,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentParagraphRunsRequest request object with parameters
+        :param request GetDocumentParagraphRunsRequest object with parameters
         :return: RunsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5933,12 +6065,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node which contains paragraphs.
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node which contains paragraphs.
         :return: ParagraphLinkCollectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5951,8 +6083,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_paragraphs_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_paragraphs_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_paragraphs_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a list of paragraphs that are contained in the document.  # noqa: E501
@@ -5961,7 +6096,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentParagraphsRequest request object with parameters
+        :param request GetDocumentParagraphsRequest object with parameters
         :return: ParagraphLinkCollectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6057,11 +6192,11 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document's name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document's name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: DocumentPropertiesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6074,8 +6209,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_properties_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_properties_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_properties_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document properties info.  # noqa: E501
@@ -6084,7 +6222,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentPropertiesRequest request object with parameters
+        :param request GetDocumentPropertiesRequest object with parameters
         :return: DocumentPropertiesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6175,12 +6313,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str property_name: The property name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document name. (required)
+        :param property_name str : The property name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: DocumentPropertyResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6193,8 +6331,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_property_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_property_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_property_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document property info by the property name.  # noqa: E501
@@ -6203,7 +6344,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentPropertyRequest request object with parameters
+        :param request GetDocumentPropertyRequest object with parameters
         :return: DocumentPropertyResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6299,11 +6440,11 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: ProtectionDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6316,8 +6457,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_protection_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_protection_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_protection_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document protection common info.  # noqa: E501
@@ -6326,7 +6470,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentProtectionRequest request object with parameters
+        :param request GetDocumentProtectionRequest object with parameters
         :return: ProtectionDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6417,14 +6561,14 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param bool include_comments: Support including/excluding comments from the WordCount. Default value is \"true\".
-        :param bool include_footnotes: Support including/excluding footnotes from the WordCount. Default value is \"false\".
-        :param bool include_text_in_shapes: Support including/excluding shape's text from the WordCount. Default value is \"false\"
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param include_comments bool : Support including/excluding comments from the WordCount. Default value is \"true\".
+        :param include_footnotes bool : Support including/excluding footnotes from the WordCount. Default value is \"false\".
+        :param include_text_in_shapes bool : Support including/excluding shape's text from the WordCount. Default value is \"false\"
         :return: StatDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6437,8 +6581,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_statistics_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_statistics_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_statistics_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document statistics.  # noqa: E501
@@ -6447,7 +6594,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentStatisticsRequest request object with parameters
+        :param request GetDocumentStatisticsRequest object with parameters
         :return: StatDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6553,11 +6700,11 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: TextItemsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6570,8 +6717,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_text_items_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_text_items_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_text_items_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document text items.  # noqa: E501
@@ -6580,7 +6730,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentTextItemsRequest request object with parameters
+        :param request GetDocumentTextItemsRequest object with parameters
         :return: TextItemsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6671,14 +6821,14 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param str format: The destination format. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str out_path: Path to save result
-        :param str fonts_location: Folder in filestorage with custom fonts.
+        :param name str : The file name. (required)
+        :param format str : The destination format. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param out_path str : Path to save result
+        :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6691,8 +6841,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_with_format_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_with_format_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_document_with_format_with_http_info(self, request, **kwargs):  # noqa: E501
         """Export the document into the specified format.  # noqa: E501
@@ -6701,7 +6854,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetDocumentWithFormatRequest request object with parameters
+        :param request GetDocumentWithFormatRequest object with parameters
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6810,13 +6963,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node, which contains collection of fields.
+        :param name str : The file name. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node, which contains collection of fields.
         :return: FieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6829,8 +6982,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_field_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_field_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_field_with_http_info(self, request, **kwargs):  # noqa: E501
         """Get field from document.  # noqa: E501
@@ -6839,7 +6995,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetFieldRequest request object with parameters
+        :param request GetFieldRequest object with parameters
         :return: FieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6940,12 +7096,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node, which contains collection of fields.
+        :param name str : The file name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node, which contains collection of fields.
         :return: FieldsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6958,8 +7114,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_fields_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_fields_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_fields_with_http_info(self, request, **kwargs):  # noqa: E501
         """Get fields from document.  # noqa: E501
@@ -6968,7 +7127,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetFieldsRequest request object with parameters
+        :param request GetFieldsRequest object with parameters
         :return: FieldsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7064,13 +7223,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node, which contains collection of footnotes.
+        :param name str : The document name. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node, which contains collection of footnotes.
         :return: FootnoteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7083,8 +7242,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_footnote_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_footnote_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_footnote_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read footnote by index.  # noqa: E501
@@ -7093,7 +7255,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetFootnoteRequest request object with parameters
+        :param request GetFootnoteRequest object with parameters
         :return: FootnoteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7194,12 +7356,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node, which contains collection of footnotes.
+        :param name str : The file name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node, which contains collection of footnotes.
         :return: FootnotesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7212,8 +7374,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_footnotes_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_footnotes_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_footnotes_with_http_info(self, request, **kwargs):  # noqa: E501
         """Get footnotes from document.  # noqa: E501
@@ -7222,7 +7387,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetFootnotesRequest request object with parameters
+        :param request GetFootnotesRequest object with parameters
         :return: FootnotesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7318,13 +7483,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node that contains collection of formfields.
+        :param name str : The document name. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node that contains collection of formfields.
         :return: FormFieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7337,8 +7502,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_form_field_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_form_field_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_form_field_with_http_info(self, request, **kwargs):  # noqa: E501
         """Returns representation of an one of the form field.  # noqa: E501
@@ -7347,7 +7515,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetFormFieldRequest request object with parameters
+        :param request GetFormFieldRequest object with parameters
         :return: FormFieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7448,12 +7616,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node containing collection of form fields.
+        :param name str : The file name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node containing collection of form fields.
         :return: FormFieldsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7466,8 +7634,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_form_fields_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_form_fields_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_form_fields_with_http_info(self, request, **kwargs):  # noqa: E501
         """Get form fields from document.  # noqa: E501
@@ -7476,7 +7647,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetFormFieldsRequest request object with parameters
+        :param request GetFormFieldsRequest object with parameters
         :return: FormFieldsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7572,13 +7743,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int header_footer_index: Header/footer index. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str filter_by_type: List of types of headers and footers.
+        :param name str : The document name. (required)
+        :param header_footer_index int : Header/footer index. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param filter_by_type str : List of types of headers and footers.
         :return: HeaderFooterResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7591,8 +7762,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_header_footer_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a header/footer that is contained in the document.  # noqa: E501
@@ -7601,7 +7775,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetHeaderFooterRequest request object with parameters
+        :param request GetHeaderFooterRequest object with parameters
         :return: HeaderFooterResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7702,14 +7876,14 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int header_footer_index: Header/footer index. (required)
-        :param int section_index: Section index. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str filter_by_type: List of types of headers and footers.
+        :param name str : The document name. (required)
+        :param header_footer_index int : Header/footer index. (required)
+        :param section_index int : Section index. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param filter_by_type str : List of types of headers and footers.
         :return: HeaderFooterResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7722,8 +7896,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_header_footer_of_section_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_header_footer_of_section_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_header_footer_of_section_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a header/footer that is contained in the document.  # noqa: E501
@@ -7732,7 +7909,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetHeaderFooterOfSectionRequest request object with parameters
+        :param request GetHeaderFooterOfSectionRequest object with parameters
         :return: HeaderFooterResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7838,13 +8015,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str section_path: Path to parent section.
-        :param str filter_by_type: List of types of headers and footers.
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param section_path str : Path to parent section.
+        :param filter_by_type str : List of types of headers and footers.
         :return: HeaderFootersResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7857,8 +8034,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_header_footers_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_header_footers_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_header_footers_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a list of header/footers that are contained in the document.  # noqa: E501
@@ -7867,7 +8047,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetHeaderFootersRequest request object with parameters
+        :param request GetHeaderFootersRequest object with parameters
         :return: HeaderFootersResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7968,13 +8148,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node, which contains collection of OfficeMath objects.
+        :param name str : The document name. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node, which contains collection of OfficeMath objects.
         :return: OfficeMathObjectResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7987,8 +8167,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_office_math_object_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read OfficeMath object by index.  # noqa: E501
@@ -7997,7 +8180,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetOfficeMathObjectRequest request object with parameters
+        :param request GetOfficeMathObjectRequest object with parameters
         :return: OfficeMathObjectResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8098,12 +8281,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node, which contains collection of OfficeMath objects.
+        :param name str : The file name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node, which contains collection of OfficeMath objects.
         :return: OfficeMathObjectsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8116,8 +8299,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_office_math_objects_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_office_math_objects_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_office_math_objects_with_http_info(self, request, **kwargs):  # noqa: E501
         """Get OfficeMath objects from document.  # noqa: E501
@@ -8126,7 +8312,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetOfficeMathObjectsRequest request object with parameters
+        :param request GetOfficeMathObjectsRequest object with parameters
         :return: OfficeMathObjectsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8222,12 +8408,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int section_index: Section index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document name. (required)
+        :param section_index int : Section index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: SectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8240,8 +8426,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_section_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_section_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_section_with_http_info(self, request, **kwargs):  # noqa: E501
         """Get document section by index.  # noqa: E501
@@ -8250,7 +8439,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetSectionRequest request object with parameters
+        :param request GetSectionRequest object with parameters
         :return: SectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8346,12 +8535,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int section_index: Section index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document name. (required)
+        :param section_index int : Section index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: SectionPageSetupResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8364,8 +8553,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_section_page_setup_with_http_info(self, request, **kwargs):  # noqa: E501
         """Get page setup of section.  # noqa: E501
@@ -8374,7 +8566,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetSectionPageSetupRequest request object with parameters
+        :param request GetSectionPageSetupRequest object with parameters
         :return: SectionPageSetupResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8470,11 +8662,11 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: SectionLinkCollectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8487,8 +8679,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_sections_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_sections_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_sections_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a list of sections that are contained in the document.  # noqa: E501
@@ -8497,7 +8692,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetSectionsRequest request object with parameters
+        :param request GetSectionsRequest object with parameters
         :return: SectionLinkCollectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8588,13 +8783,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node, which contains tables.
+        :param name str : The document name. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node, which contains tables.
         :return: TableResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8607,8 +8802,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_table_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_table_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_table_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a table.  # noqa: E501
@@ -8617,7 +8815,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetTableRequest request object with parameters
+        :param request GetTableRequest object with parameters
         :return: TableResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8718,13 +8916,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str table_row_path: Path to table row. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document name. (required)
+        :param table_row_path str : Path to table row. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: TableCellResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8737,8 +8935,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_table_cell_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_table_cell_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_table_cell_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a table cell.  # noqa: E501
@@ -8747,7 +8948,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetTableCellRequest request object with parameters
+        :param request GetTableCellRequest object with parameters
         :return: TableCellResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8848,13 +9049,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str table_row_path: Path to table row. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document name. (required)
+        :param table_row_path str : Path to table row. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: TableCellFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8867,8 +9068,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_table_cell_format_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a table cell format.  # noqa: E501
@@ -8877,7 +9081,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetTableCellFormatRequest request object with parameters
+        :param request GetTableCellFormatRequest object with parameters
         :return: TableCellFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8978,13 +9182,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node, which contains tables.
+        :param name str : The document name. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node, which contains tables.
         :return: TablePropertiesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8997,8 +9201,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_table_properties_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_table_properties_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_table_properties_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a table properties.  # noqa: E501
@@ -9007,7 +9214,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetTablePropertiesRequest request object with parameters
+        :param request GetTablePropertiesRequest object with parameters
         :return: TablePropertiesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9108,13 +9315,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str table_path: Path to table. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document name. (required)
+        :param table_path str : Path to table. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: TableRowResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9127,8 +9334,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_table_row_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_table_row_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_table_row_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a table row.  # noqa: E501
@@ -9137,7 +9347,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetTableRowRequest request object with parameters
+        :param request GetTableRowRequest object with parameters
         :return: TableRowResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9238,13 +9448,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str table_path: Path to table. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document name. (required)
+        :param table_path str : Path to table. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: TableRowFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9257,8 +9467,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_table_row_format_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a table row format.  # noqa: E501
@@ -9267,7 +9480,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetTableRowFormatRequest request object with parameters
+        :param request GetTableRowFormatRequest object with parameters
         :return: TableRowFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9368,12 +9581,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node, which contains tables.
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node, which contains tables.
         :return: TableLinkCollectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9386,8 +9599,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_tables_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_tables_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def get_tables_with_http_info(self, request, **kwargs):  # noqa: E501
         """Return a list of tables that are contained in the document.  # noqa: E501
@@ -9396,7 +9612,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param GetTablesRequest request object with parameters
+        :param request GetTablesRequest object with parameters
         :return: TableLinkCollectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9492,16 +9708,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param TableInsert table: Table parameters/
-        :param str node_path: Path to node, which contains tables.
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param table TableInsert : Table parameters/
+        :param node_path str : Path to node, which contains tables.
         :return: TableResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9514,8 +9730,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_table_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.insert_table_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def insert_table_with_http_info(self, request, **kwargs):  # noqa: E501
         """Adds table to document, returns added table&#39;s data.               # noqa: E501
@@ -9524,7 +9743,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param InsertTableRequest request object with parameters
+        :param request InsertTableRequest object with parameters
         :return: TableResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9637,16 +9856,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str table_row_path: Path to table row. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param TableCellInsert cell: Table cell parameters/
+        :param name str : The document name. (required)
+        :param table_row_path str : Path to table row. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param cell TableCellInsert : Table cell parameters/
         :return: TableCellResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9659,8 +9878,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_table_cell_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.insert_table_cell_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def insert_table_cell_with_http_info(self, request, **kwargs):  # noqa: E501
         """Adds table cell to table, returns added cell&#39;s data.               # noqa: E501
@@ -9669,7 +9891,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param InsertTableCellRequest request object with parameters
+        :param request InsertTableCellRequest object with parameters
         :return: TableCellResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9782,16 +10004,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str table_path: Path to table. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param TableRowInsert row: Table row parameters/
+        :param name str : The document name. (required)
+        :param table_path str : Path to table. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param row TableRowInsert : Table row parameters/
         :return: TableRowResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9804,8 +10026,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_table_row_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.insert_table_row_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def insert_table_row_with_http_info(self, request, **kwargs):  # noqa: E501
         """Adds table row to table, returns added row&#39;s data.               # noqa: E501
@@ -9814,7 +10039,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param InsertTableRowRequest request object with parameters
+        :param request InsertTableRowRequest object with parameters
         :return: TableRowResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9927,15 +10152,15 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: Original document name. (required)
-        :param DocumentEntryList document_list: with a list of documents to append.             (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : Original document name. (required)
+        :param document_list DocumentEntryList : with a list of documents to append.             (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9948,8 +10173,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_append_document_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_append_document_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_append_document_with_http_info(self, request, **kwargs):  # noqa: E501
         """Append documents to original document.  # noqa: E501
@@ -9958,7 +10186,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostAppendDocumentRequest request object with parameters
+        :param request PostAppendDocumentRequest object with parameters
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10069,13 +10297,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param ProtectionRequest protection_request: with protection settings.             (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param name str : The document name. (required)
+        :param protection_request ProtectionRequest : with protection settings.             (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: ProtectionDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10088,8 +10316,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_change_document_protection_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_change_document_protection_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_change_document_protection_with_http_info(self, request, **kwargs):  # noqa: E501
         """Change document protection.  # noqa: E501
@@ -10098,7 +10329,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostChangeDocumentProtectionRequest request object with parameters
+        :param request PostChangeDocumentProtectionRequest object with parameters
         :return: ProtectionDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10199,16 +10430,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int comment_index: Comment index (required)
-        :param Comment comment: Comment data. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : The document name. (required)
+        :param comment_index int : Comment index (required)
+        :param comment Comment : Comment data. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: CommentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10221,8 +10452,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_comment_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_comment_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_comment_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates the comment, returns updated comment&#39;s data.  # noqa: E501
@@ -10231,7 +10465,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostCommentRequest request object with parameters
+        :param request PostCommentRequest object with parameters
         :return: CommentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10347,13 +10581,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: Original document name. (required)
-        :param CompareData compare_data: with a document to compare.             (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param name str : Original document name. (required)
+        :param compare_data CompareData : with a document to compare.             (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10366,8 +10600,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_compare_document_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_compare_document_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_compare_document_with_http_info(self, request, **kwargs):  # noqa: E501
         """Compare document with original document.  # noqa: E501
@@ -10376,7 +10613,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostCompareDocumentRequest request object with parameters
+        :param request PostCompareDocumentRequest object with parameters
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10477,17 +10714,17 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str data: Mail merge data
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param bool with_regions: With regions flag.
-        :param str mail_merge_data_file: Mail merge data.
-        :param str cleanup: Clean up options.
-        :param bool use_whole_paragraph_as_region: Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name.
+        :param name str : The document name. (required)
+        :param data str : Mail merge data
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param with_regions bool : With regions flag.
+        :param mail_merge_data_file str : Mail merge data.
+        :param cleanup str : Clean up options.
+        :param use_whole_paragraph_as_region bool : Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10500,8 +10737,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_document_execute_mail_merge_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_document_execute_mail_merge_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_document_execute_mail_merge_with_http_info(self, request, **kwargs):  # noqa: E501
         """Execute document mail merge operation.  # noqa: E501
@@ -10510,7 +10750,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostDocumentExecuteMailMergeRequest request object with parameters
+        :param request PostDocumentExecuteMailMergeRequest object with parameters
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10628,17 +10868,17 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param ParagraphFormat dto: Paragraph format object (required)
-        :param str node_path: Path to node which contains paragraphs. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : The document name. (required)
+        :param dto ParagraphFormat : Paragraph format object (required)
+        :param node_path str : Path to node which contains paragraphs. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: ParagraphFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10651,8 +10891,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_document_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_document_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_document_paragraph_format_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates paragrpaph format properties, returns updated format properties.  # noqa: E501
@@ -10661,7 +10904,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostDocumentParagraphFormatRequest request object with parameters
+        :param request PostDocumentParagraphFormatRequest object with parameters
         :return: ParagraphFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10782,17 +11025,17 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param Font font_dto: Font dto object (required)
-        :param str paragraph_path: Path to parent paragraph. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : The document name. (required)
+        :param font_dto Font : Font dto object (required)
+        :param paragraph_path str : Path to parent paragraph. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: FontResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10805,8 +11048,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_document_paragraph_run_font_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_document_paragraph_run_font_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_document_paragraph_run_font_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates font properties, returns updated font data.  # noqa: E501
@@ -10815,7 +11061,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostDocumentParagraphRunFontRequest request object with parameters
+        :param request PostDocumentParagraphRunFontRequest object with parameters
         :return: FontResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10936,14 +11182,14 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param SaveOptionsData save_options_data: Save options. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str fonts_location: Folder in filestorage with custom fonts.
+        :param name str : The document name. (required)
+        :param save_options_data SaveOptionsData : Save options. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param fonts_location str : Folder in filestorage with custom fonts.
         :return: SaveResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10956,8 +11202,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_document_save_as_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_document_save_as_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_document_save_as_with_http_info(self, request, **kwargs):  # noqa: E501
         """Convert document to destination format with detailed settings and save result to storage.  # noqa: E501
@@ -10966,7 +11215,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostDocumentSaveAsRequest request object with parameters
+        :param request PostDocumentSaveAsRequest object with parameters
         :return: SaveResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11072,18 +11321,18 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str drawing_object: Drawing object parameters (required)
-        :param file image_file: File with image (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str node_path: Path to node, which contains collection of drawing objects.
+        :param name str : The document name. (required)
+        :param drawing_object str : Drawing object parameters (required)
+        :param image_file file : File with image (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param node_path str : Path to node, which contains collection of drawing objects.
         :return: DrawingObjectResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11096,8 +11345,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_drawing_object_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates drawing object, returns updated  drawing object&#39;s data.  # noqa: E501
@@ -11106,7 +11358,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostDrawingObjectRequest request object with parameters
+        :param request PostDrawingObjectRequest object with parameters
         :return: DrawingObjectResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11232,16 +11484,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The template document name. (required)
-        :param str data: Mail merge data (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str cleanup: Clean up options.
-        :param bool use_whole_paragraph_as_region: Gets or sets a value indicating whether paragraph with TableStart or  TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.   The default value is true.
-        :param bool with_regions: Merge with regions or not. True by default
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name.
+        :param name str : The template document name. (required)
+        :param data str : Mail merge data (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param cleanup str : Clean up options.
+        :param use_whole_paragraph_as_region bool : Gets or sets a value indicating whether paragraph with TableStart or  TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.   The default value is true.
+        :param with_regions bool : Merge with regions or not. True by default
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11254,8 +11506,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_execute_template_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_execute_template_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_execute_template_with_http_info(self, request, **kwargs):  # noqa: E501
         """Populate document template with data.  # noqa: E501
@@ -11264,7 +11519,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostExecuteTemplateRequest request object with parameters
+        :param request PostExecuteTemplateRequest object with parameters
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11380,17 +11635,17 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param Field field: Field data. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str node_path: Path to node, which contains collection of fields.
+        :param name str : The document name. (required)
+        :param field Field : Field data. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param node_path str : Path to node, which contains collection of fields.
         :return: FieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11403,8 +11658,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_field_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_field_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_field_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates field&#39;s properties, returns updated field&#39;s data.  # noqa: E501
@@ -11413,7 +11671,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostFieldRequest request object with parameters
+        :param request PostFieldRequest object with parameters
         :return: FieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11534,17 +11792,17 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param Footnote footnote_dto: Footnote data. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str node_path: Path to node, which contains collection of footnotes.
+        :param name str : The document name. (required)
+        :param footnote_dto Footnote : Footnote data. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param node_path str : Path to node, which contains collection of footnotes.
         :return: FootnoteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11557,8 +11815,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_footnote_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_footnote_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_footnote_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates footnote&#39;s properties, returns updated run&#39;s data.  # noqa: E501
@@ -11567,7 +11828,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostFootnoteRequest request object with parameters
+        :param request PostFootnoteRequest object with parameters
         :return: FootnoteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11688,17 +11949,17 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param FormField form_field: From field data. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str node_path: Path to node that contains collection of formfields.
+        :param name str : The document name. (required)
+        :param form_field FormField : From field data. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param node_path str : Path to node that contains collection of formfields.
         :return: FormFieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11711,8 +11972,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_form_field_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_form_field_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_form_field_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates properties of form field, returns updated form field.  # noqa: E501
@@ -11721,7 +11985,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostFormFieldRequest request object with parameters
+        :param request PostFormFieldRequest object with parameters
         :return: FormFieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11842,17 +12106,17 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param file image_file: File with image
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param float rotation_angle: The watermark rotation angle.
-        :param str image: The image file server full name. If the name is empty the image is expected in request content.
+        :param name str : The document name. (required)
+        :param image_file file : File with image
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param rotation_angle float : The watermark rotation angle.
+        :param image str : The image file server full name. If the name is empty the image is expected in request content.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11865,8 +12129,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_insert_document_watermark_image_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_insert_document_watermark_image_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_insert_document_watermark_image_with_http_info(self, request, **kwargs):  # noqa: E501
         """Insert document watermark image.  # noqa: E501
@@ -11875,7 +12142,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostInsertDocumentWatermarkImageRequest request object with parameters
+        :param request PostInsertDocumentWatermarkImageRequest object with parameters
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11993,15 +12260,15 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param WatermarkText watermark_text: with the watermark data.             (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : The document name. (required)
+        :param watermark_text WatermarkText : with the watermark data.             (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12014,8 +12281,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_insert_document_watermark_text_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_insert_document_watermark_text_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_insert_document_watermark_text_with_http_info(self, request, **kwargs):  # noqa: E501
         """Insert document watermark text.  # noqa: E501
@@ -12024,7 +12294,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostInsertDocumentWatermarkTextRequest request object with parameters
+        :param request PostInsertDocumentWatermarkTextRequest object with parameters
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12135,15 +12405,15 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: A document name. (required)
-        :param PageNumber page_number: with the page numbers settings. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : A document name. (required)
+        :param page_number PageNumber : with the page numbers settings. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12156,8 +12426,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_insert_page_numbers_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_insert_page_numbers_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_insert_page_numbers_with_http_info(self, request, **kwargs):  # noqa: E501
         """Insert document page numbers.  # noqa: E501
@@ -12166,7 +12439,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostInsertPageNumbersRequest request object with parameters
+        :param request PostInsertPageNumbersRequest object with parameters
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12277,8 +12550,8 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param LoadWebDocumentData data: Parameters of loading. (required)
-        :param str storage: File storage, which have to be used.
+        :param data LoadWebDocumentData : Parameters of loading. (required)
+        :param storage str : File storage, which have to be used.
         :return: SaveResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12291,8 +12564,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_load_web_document_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_load_web_document_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_load_web_document_with_http_info(self, request, **kwargs):  # noqa: E501
         """Loads new document from web into the file with any supported format of data.  # noqa: E501
@@ -12301,7 +12577,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostLoadWebDocumentRequest request object with parameters
+        :param request PostLoadWebDocumentRequest object with parameters
         :return: SaveResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12377,15 +12653,15 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param ReplaceTextRequest replace_text: with the replace operation settings.             (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : The document name. (required)
+        :param replace_text ReplaceTextRequest : with the replace operation settings.             (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: ReplaceTextResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12398,8 +12674,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_replace_text_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_replace_text_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_replace_text_with_http_info(self, request, **kwargs):  # noqa: E501
         """Replace document text.  # noqa: E501
@@ -12408,7 +12687,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostReplaceTextRequest request object with parameters
+        :param request PostReplaceTextRequest object with parameters
         :return: ReplaceTextResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12519,17 +12798,17 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param Run run: Run data. (required)
-        :param str paragraph_path: Path to parent paragraph. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : The document name. (required)
+        :param run Run : Run data. (required)
+        :param paragraph_path str : Path to parent paragraph. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: RunResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12542,8 +12821,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_run_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_run_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_run_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates run&#39;s properties, returns updated run&#39;s data.  # noqa: E501
@@ -12552,7 +12834,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostRunRequest request object with parameters
+        :param request PostRunRequest object with parameters
         :return: RunResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12673,17 +12955,17 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: Original document name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str format: Format to split.
-        :param int _from: Start page.
-        :param int to: End page.
-        :param bool zip_output: ZipOutput or not.
-        :param str fonts_location: Folder in filestorage with custom fonts.
+        :param name str : Original document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param format str : Format to split.
+        :param _from int : Start page.
+        :param to int : End page.
+        :param zip_output bool : ZipOutput or not.
+        :param fonts_location str : Folder in filestorage with custom fonts.
         :return: SplitDocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12696,8 +12978,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_split_document_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_split_document_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_split_document_with_http_info(self, request, **kwargs):  # noqa: E501
         """Split document.  # noqa: E501
@@ -12706,7 +12991,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostSplitDocumentRequest request object with parameters
+        :param request PostSplitDocumentRequest object with parameters
         :return: SplitDocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12827,16 +13112,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param BookmarkData bookmark_data: with new bookmark data.             (required)
-        :param str bookmark_name: The bookmark name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : The document name. (required)
+        :param bookmark_data BookmarkData : with new bookmark data.             (required)
+        :param bookmark_name str : The bookmark name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: BookmarkResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12849,8 +13134,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_update_document_bookmark_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_update_document_bookmark_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_update_document_bookmark_with_http_info(self, request, **kwargs):  # noqa: E501
         """Update document bookmark.  # noqa: E501
@@ -12859,7 +13147,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostUpdateDocumentBookmarkRequest request object with parameters
+        :param request PostUpdateDocumentBookmarkRequest object with parameters
         :return: BookmarkResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12975,12 +13263,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12993,8 +13281,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.post_update_document_fields_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.post_update_document_fields_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def post_update_document_fields_with_http_info(self, request, **kwargs):  # noqa: E501
         """Update (reevaluate) fields in document.  # noqa: E501
@@ -13003,7 +13294,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PostUpdateDocumentFieldsRequest request object with parameters
+        :param request PostUpdateDocumentFieldsRequest object with parameters
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13099,15 +13390,15 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param Comment comment: Comment data. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : The document name. (required)
+        :param comment Comment : Comment data. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: CommentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13120,8 +13411,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.put_comment_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.put_comment_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def put_comment_with_http_info(self, request, **kwargs):  # noqa: E501
         """Adds comment to document, returns inserted comment&#39;s data.  # noqa: E501
@@ -13130,7 +13424,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PutCommentRequest request object with parameters
+        :param request PutCommentRequest object with parameters
         :return: CommentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13241,12 +13535,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param file document: Converting document (required)
-        :param str format: Format to convert. (required)
-        :param str storage: File storage, which have to be used.
-        :param str out_path: Path for saving operation result to the local storage.
-        :param str document_file_name: This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"sourceFilename\" will be used instead. 
-        :param str fonts_location: Folder in filestorage with custom fonts.
+        :param document file : Converting document (required)
+        :param format str : Format to convert. (required)
+        :param storage str : File storage, which have to be used.
+        :param out_path str : Path for saving operation result to the local storage.
+        :param document_file_name str : This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"sourceFilename\" will be used instead. 
+        :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13259,8 +13553,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.put_convert_document_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.put_convert_document_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def put_convert_document_with_http_info(self, request, **kwargs):  # noqa: E501
         """Convert document from request content to format specified.  # noqa: E501
@@ -13269,7 +13566,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PutConvertDocumentRequest request object with parameters
+        :param request PutConvertDocumentRequest object with parameters
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13368,9 +13665,9 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str storage: File storage, which have to be used.
-        :param str file_name: The file name.
-        :param str folder: The document folder.
+        :param storage str : File storage, which have to be used.
+        :param file_name str : The file name.
+        :param folder str : The document folder.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13383,8 +13680,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.put_create_document_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.put_create_document_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def put_create_document_with_http_info(self, request, **kwargs):  # noqa: E501
         """Creates new document. Document is created with format which is recognized from file extensions.  Supported extentions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot;  # noqa: E501
@@ -13393,7 +13693,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PutCreateDocumentRequest request object with parameters
+        :param request PutCreateDocumentRequest object with parameters
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13474,8 +13774,8 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param file template: File with template (required)
-        :param bool use_non_merge_fields: Use non merge fields or not.
+        :param template file : File with template (required)
+        :param use_non_merge_fields bool : Use non merge fields or not.
         :return: FieldNamesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13488,8 +13788,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.put_document_field_names_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.put_document_field_names_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def put_document_field_names_with_http_info(self, request, **kwargs):  # noqa: E501
         """Read document field names.  # noqa: E501
@@ -13498,7 +13801,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PutDocumentFieldNamesRequest request object with parameters
+        :param request PutDocumentFieldNamesRequest object with parameters
         :return: FieldNamesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13574,32 +13877,32 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param TiffSaveOptionsData save_options: Tiff save options. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str result_file: The resulting file name.
-        :param bool use_anti_aliasing: Use antialiasing flag.
-        :param bool use_high_quality_rendering: Use high quality flag.
-        :param float image_brightness: Brightness for the generated images.
-        :param str image_color_mode: Color mode for the generated images.
-        :param float image_contrast: The contrast for the generated images.
-        :param str numeral_format: The images numeral format.
-        :param int page_count: Number of pages to render.
-        :param int page_index: Page index to start rendering.
-        :param str paper_color: Background image color.
-        :param str pixel_format: The pixel format of generated images.
-        :param float resolution: The resolution of generated images.
-        :param float scale: Zoom factor for generated images.
-        :param str tiff_compression: The compression tipe.
-        :param str dml_rendering_mode: Optional, default is Fallback.
-        :param str dml_effects_rendering_mode: Optional, default is Simplified.
-        :param str tiff_binarization_method: Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
-        :param bool zip_output: Optional. A value determining zip output or not.
-        :param str fonts_location: Folder in filestorage with custom fonts.
+        :param name str : The document name. (required)
+        :param save_options TiffSaveOptionsData : Tiff save options. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param result_file str : The resulting file name.
+        :param use_anti_aliasing bool : Use antialiasing flag.
+        :param use_high_quality_rendering bool : Use high quality flag.
+        :param image_brightness float : Brightness for the generated images.
+        :param image_color_mode str : Color mode for the generated images.
+        :param image_contrast float : The contrast for the generated images.
+        :param numeral_format str : The images numeral format.
+        :param page_count int : Number of pages to render.
+        :param page_index int : Page index to start rendering.
+        :param paper_color str : Background image color.
+        :param pixel_format str : The pixel format of generated images.
+        :param resolution float : The resolution of generated images.
+        :param scale float : Zoom factor for generated images.
+        :param tiff_compression str : The compression tipe.
+        :param dml_rendering_mode str : Optional, default is Fallback.
+        :param dml_effects_rendering_mode str : Optional, default is Simplified.
+        :param tiff_binarization_method str : Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
+        :param zip_output bool : Optional. A value determining zip output or not.
+        :param fonts_location str : Folder in filestorage with custom fonts.
         :return: SaveResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13612,8 +13915,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.put_document_save_as_tiff_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.put_document_save_as_tiff_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def put_document_save_as_tiff_with_http_info(self, request, **kwargs):  # noqa: E501
         """Convert document to tiff with detailed settings and save result to storage.  # noqa: E501
@@ -13622,7 +13928,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PutDocumentSaveAsTiffRequest request object with parameters
+        :param request PutDocumentSaveAsTiffRequest object with parameters
         :return: SaveResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13818,17 +14124,17 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str drawing_object: Drawing object parameters (required)
-        :param file image_file: File with image (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str node_path: Path to node, which contains collection of drawing objects.
+        :param name str : The document name. (required)
+        :param drawing_object str : Drawing object parameters (required)
+        :param image_file file : File with image (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param node_path str : Path to node, which contains collection of drawing objects.
         :return: DrawingObjectResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13841,8 +14147,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.put_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.put_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def put_drawing_object_with_http_info(self, request, **kwargs):  # noqa: E501
         """Adds  drawing object to document, returns added  drawing object&#39;s data.  # noqa: E501
@@ -13851,7 +14160,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PutDrawingObjectRequest request object with parameters
+        :param request PutDrawingObjectRequest object with parameters
         :return: DrawingObjectResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13972,11 +14281,11 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param file template: File with template (required)
-        :param file data: File with mailmerge data (required)
-        :param bool with_regions: With regions flag.
-        :param str cleanup: Clean up options.
-        :param str document_file_name: This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead. 
+        :param template file : File with template (required)
+        :param data file : File with mailmerge data (required)
+        :param with_regions bool : With regions flag.
+        :param cleanup str : Clean up options.
+        :param document_file_name str : This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead. 
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13989,8 +14298,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.put_execute_mail_merge_online_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.put_execute_mail_merge_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def put_execute_mail_merge_online_with_http_info(self, request, **kwargs):  # noqa: E501
         """Execute document mail merge online.  # noqa: E501
@@ -13999,7 +14311,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PutExecuteMailMergeOnlineRequest request object with parameters
+        :param request PutExecuteMailMergeOnlineRequest object with parameters
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14090,12 +14402,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param file template: File with template (required)
-        :param file data: File with mailmerge data (required)
-        :param str cleanup: Clean up options.
-        :param bool use_whole_paragraph_as_region: Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.
-        :param bool with_regions: Merge with regions or not. True by default
-        :param str document_file_name: This file name will be used when resulting document has dynamic field for document file name {filename}.  If it is not setted, \"template\" will be used instead.  Note: if withRegions == true executeTemplate updates fields only inside regions
+        :param template file : File with template (required)
+        :param data file : File with mailmerge data (required)
+        :param cleanup str : Clean up options.
+        :param use_whole_paragraph_as_region bool : Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.
+        :param with_regions bool : Merge with regions or not. True by default
+        :param document_file_name str : This file name will be used when resulting document has dynamic field for document file name {filename}.  If it is not setted, \"template\" will be used instead.  Note: if withRegions == true executeTemplate updates fields only inside regions
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14108,8 +14420,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.put_execute_template_online_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.put_execute_template_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def put_execute_template_online_with_http_info(self, request, **kwargs):  # noqa: E501
         """Populate document template with data online.  # noqa: E501
@@ -14118,7 +14433,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PutExecuteTemplateOnlineRequest request object with parameters
+        :param request PutExecuteTemplateOnlineRequest object with parameters
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14214,17 +14529,17 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param Field field: Field data. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str node_path: Path to node, which contains collection of fields.
-        :param str insert_before_node: Field will be inserted before node with id=\"nodeId\".
+        :param name str : The document name. (required)
+        :param field Field : Field data. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param node_path str : Path to node, which contains collection of fields.
+        :param insert_before_node str : Field will be inserted before node with id=\"nodeId\".
         :return: FieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14237,8 +14552,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.put_field_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.put_field_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def put_field_with_http_info(self, request, **kwargs):  # noqa: E501
         """Adds field to document, returns inserted field&#39;s data.  # noqa: E501
@@ -14247,7 +14565,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PutFieldRequest request object with parameters
+        :param request PutFieldRequest object with parameters
         :return: FieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14368,16 +14686,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param Footnote footnote_dto: Footnote data. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str node_path: Path to node, which contains collection of footnotes.
+        :param name str : The document name. (required)
+        :param footnote_dto Footnote : Footnote data. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param node_path str : Path to node, which contains collection of footnotes.
         :return: FootnoteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14390,8 +14708,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.put_footnote_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.put_footnote_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def put_footnote_with_http_info(self, request, **kwargs):  # noqa: E501
         """Adds footnote to document, returns added footnote&#39;s data.  # noqa: E501
@@ -14400,7 +14721,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PutFootnoteRequest request object with parameters
+        :param request PutFootnoteRequest object with parameters
         :return: FootnoteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14516,17 +14837,17 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param FormField form_field: From field data. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str node_path: Path to node that contains collection of formfields.
-        :param str insert_before_node: Form field will be inserted before node with index.
+        :param name str : The document name. (required)
+        :param form_field FormField : From field data. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param node_path str : Path to node that contains collection of formfields.
+        :param insert_before_node str : Form field will be inserted before node with index.
         :return: FormFieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14539,8 +14860,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.put_form_field_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.put_form_field_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def put_form_field_with_http_info(self, request, **kwargs):  # noqa: E501
         """Adds form field to paragraph, returns added form field&#39;s data.  # noqa: E501
@@ -14549,7 +14873,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PutFormFieldRequest request object with parameters
+        :param request PutFormFieldRequest object with parameters
         :return: FormFieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14670,16 +14994,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str header_footer_type: Type of header/footer. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str section_path: Path to parent section.
+        :param name str : The document name. (required)
+        :param header_footer_type str : Type of header/footer. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param section_path str : Path to parent section.
         :return: HeaderFooterResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14692,8 +15016,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.put_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.put_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def put_header_footer_with_http_info(self, request, **kwargs):  # noqa: E501
         """Insert to document header or footer.  # noqa: E501
@@ -14702,7 +15029,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PutHeaderFooterRequest request object with parameters
+        :param request PutHeaderFooterRequest object with parameters
         :return: HeaderFooterResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14818,17 +15145,17 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param ParagraphInsert paragraph: Paragraph data. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str node_path: Path to node which contains paragraphs.
-        :param str insert_before_node: Paragraph will be inserted before node with index.
+        :param name str : The document name. (required)
+        :param paragraph ParagraphInsert : Paragraph data. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param node_path str : Path to node which contains paragraphs.
+        :param insert_before_node str : Paragraph will be inserted before node with index.
         :return: ParagraphResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14841,8 +15168,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.put_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.put_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def put_paragraph_with_http_info(self, request, **kwargs):  # noqa: E501
         """Adds paragraph to document, returns added paragraph&#39;s data.  # noqa: E501
@@ -14851,7 +15181,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PutParagraphRequest request object with parameters
+        :param request PutParagraphRequest object with parameters
         :return: ParagraphResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14972,13 +15302,13 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param ProtectionRequest protection_request: with protection settings.             (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param name str : The document name. (required)
+        :param protection_request ProtectionRequest : with protection settings.             (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: ProtectionDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14991,8 +15321,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.put_protect_document_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.put_protect_document_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def put_protect_document_with_http_info(self, request, **kwargs):  # noqa: E501
         """Protect document.  # noqa: E501
@@ -15001,7 +15334,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PutProtectDocumentRequest request object with parameters
+        :param request PutProtectDocumentRequest object with parameters
         :return: ProtectionDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15102,17 +15435,17 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str paragraph_path: Path to parent paragraph. (required)
-        :param Run run: Run data. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param str insert_before_node: Paragraph will be inserted before node with index.
+        :param name str : The document name. (required)
+        :param paragraph_path str : Path to parent paragraph. (required)
+        :param run Run : Run data. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param insert_before_node str : Paragraph will be inserted before node with index.
         :return: RunResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15125,8 +15458,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.put_run_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.put_run_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def put_run_with_http_info(self, request, **kwargs):  # noqa: E501
         """Adds run to document, returns added paragraph&#39;s data.  # noqa: E501
@@ -15135,7 +15471,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param PutRunRequest request object with parameters
+        :param request PutRunRequest object with parameters
         :return: RunResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15256,12 +15592,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: RevisionsModificationResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15274,8 +15610,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.reject_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.reject_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def reject_all_revisions_with_http_info(self, request, **kwargs):  # noqa: E501
         """Reject all revisions in document  # noqa: E501
@@ -15284,7 +15623,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param RejectAllRevisionsRequest request object with parameters
+        :param request RejectAllRevisionsRequest object with parameters
         :return: RevisionsModificationResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15380,15 +15719,15 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param str format: The destination format. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node, which contains drawing objects.
-        :param str fonts_location: Folder in filestorage with custom fonts.
+        :param name str : The file name. (required)
+        :param format str : The destination format. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node, which contains drawing objects.
+        :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15401,8 +15740,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.render_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.render_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def render_drawing_object_with_http_info(self, request, **kwargs):  # noqa: E501
         """Renders drawing object to specified format.  # noqa: E501
@@ -15411,7 +15753,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param RenderDrawingObjectRequest request object with parameters
+        :param request RenderDrawingObjectRequest object with parameters
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15525,15 +15867,15 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param str format: The destination format. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node, which contains office math objects.
-        :param str fonts_location: Folder in filestorage with custom fonts.
+        :param name str : The file name. (required)
+        :param format str : The destination format. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node, which contains office math objects.
+        :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15546,8 +15888,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.render_math_object_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.render_math_object_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def render_math_object_with_http_info(self, request, **kwargs):  # noqa: E501
         """Renders math object to specified format.  # noqa: E501
@@ -15556,7 +15901,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param RenderMathObjectRequest request object with parameters
+        :param request RenderMathObjectRequest object with parameters
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15670,14 +16015,14 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param int page_index: Comment index (required)
-        :param str format: The destination format. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str fonts_location: Folder in filestorage with custom fonts.
+        :param name str : The file name. (required)
+        :param page_index int : Comment index (required)
+        :param format str : The destination format. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15690,8 +16035,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.render_page_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.render_page_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def render_page_with_http_info(self, request, **kwargs):  # noqa: E501
         """Renders page to specified format.  # noqa: E501
@@ -15700,7 +16048,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param RenderPageRequest request object with parameters
+        :param request RenderPageRequest object with parameters
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15809,15 +16157,15 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param str format: The destination format. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node, which contains paragraphs.
-        :param str fonts_location: Folder in filestorage with custom fonts.
+        :param name str : The file name. (required)
+        :param format str : The destination format. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node, which contains paragraphs.
+        :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15830,8 +16178,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.render_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.render_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def render_paragraph_with_http_info(self, request, **kwargs):  # noqa: E501
         """Renders paragraph to specified format.  # noqa: E501
@@ -15840,7 +16191,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param RenderParagraphRequest request object with parameters
+        :param request RenderParagraphRequest object with parameters
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15954,15 +16305,15 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The file name. (required)
-        :param str format: The destination format. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str node_path: Path to node, which contains tables.
-        :param str fonts_location: Folder in filestorage with custom fonts.
+        :param name str : The file name. (required)
+        :param format str : The destination format. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param node_path str : Path to node, which contains tables.
+        :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15975,8 +16326,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.render_table_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.render_table_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def render_table_with_http_info(self, request, **kwargs):  # noqa: E501
         """Renders table to specified format.  # noqa: E501
@@ -15985,7 +16339,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param RenderTableRequest request object with parameters
+        :param request RenderTableRequest object with parameters
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16111,8 +16465,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.reset_cache_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.reset_cache_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def reset_cache_with_http_info(self, request, **kwargs):  # noqa: E501
         """Resets font&#39;s cache.  # noqa: E501
@@ -16121,7 +16478,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param ResetCacheRequest request object with parameters
+        :param request ResetCacheRequest object with parameters
         :return: AsposeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16187,12 +16544,12 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str pattern: The regular expression used to find matches. (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
+        :param name str : The document name. (required)
+        :param pattern str : The regular expression used to find matches. (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :return: SearchResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16205,8 +16562,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.search_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.search_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def search_with_http_info(self, request, **kwargs):  # noqa: E501
         """Search text in document.  # noqa: E501
@@ -16215,7 +16575,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param SearchRequest request object with parameters
+        :param request SearchRequest object with parameters
         :return: SearchResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16315,17 +16675,17 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param Border border_properties: Border properties (required)
-        :param str node_path: Path to node with border(node should be cell or row). (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : The document name. (required)
+        :param border_properties Border : Border properties (required)
+        :param node_path str : Path to node with border(node should be cell or row). (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: BorderResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16338,8 +16698,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.update_border_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.update_border_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def update_border_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates border properties.               # noqa: E501
@@ -16349,7 +16712,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param UpdateBorderRequest request object with parameters
+        :param request UpdateBorderRequest object with parameters
         :return: BorderResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16470,16 +16833,16 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int section_index: Section index (required)
-        :param PageSetup page_setup: Page setup properties dto (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
+        :param name str : The document name. (required)
+        :param section_index int : Section index (required)
+        :param page_setup PageSetup : Page setup properties dto (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
         :return: SectionPageSetupResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16492,8 +16855,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.update_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.update_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def update_section_page_setup_with_http_info(self, request, **kwargs):  # noqa: E501
         """Update page setup of section.  # noqa: E501
@@ -16502,7 +16868,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param UpdateSectionPageSetupRequest request object with parameters
+        :param request UpdateSectionPageSetupRequest object with parameters
         :return: SectionPageSetupResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16618,17 +16984,17 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str table_row_path: Path to table row. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param TableCellFormat format: The properties.
+        :param name str : The document name. (required)
+        :param table_row_path str : Path to table row. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param format TableCellFormat : The properties.
         :return: TableCellFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16641,8 +17007,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.update_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.update_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def update_table_cell_format_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates a table cell format.  # noqa: E501
@@ -16651,7 +17020,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param UpdateTableCellFormatRequest request object with parameters
+        :param request UpdateTableCellFormatRequest object with parameters
         :return: TableCellFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16769,17 +17138,17 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param TableProperties properties: The properties.
-        :param str node_path: Path to node, which contains tables.
+        :param name str : The document name. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param properties TableProperties : The properties.
+        :param node_path str : Path to node, which contains tables.
         :return: TablePropertiesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16792,8 +17161,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.update_table_properties_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.update_table_properties_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def update_table_properties_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates a table properties.  # noqa: E501
@@ -16802,7 +17174,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param UpdateTablePropertiesRequest request object with parameters
+        :param request UpdateTablePropertiesRequest object with parameters
         :return: TablePropertiesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16920,17 +17292,17 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param str name: The document name. (required)
-        :param str table_path: Path to table. (required)
-        :param int index: Object's index (required)
-        :param str folder: Original document folder.
-        :param str storage: File storage, which have to be used.
-        :param str load_encoding: Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param str password: Password for opening an encrypted document.
-        :param str dest_file_name: Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param str revision_author: Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-        :param str revision_date_time: The date and time to use for revisions.
-        :param TableRowFormat format: Table row format.
+        :param name str : The document name. (required)
+        :param table_path str : Path to table. (required)
+        :param index int : Object's index (required)
+        :param folder str : Original document folder.
+        :param storage str : File storage, which have to be used.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param format TableRowFormat : Table row format.
         :return: TableRowFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16943,8 +17315,11 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__refresh_token()
-                raise ApiException('Access token has expired. Token has been refreshed, please run request again.')
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.update_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.update_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
+            return data
         
     def update_table_row_format_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates a table row format.  # noqa: E501
@@ -16953,7 +17328,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param UpdateTableRowFormatRequest request object with parameters
+        :param request UpdateTableRowFormatRequest object with parameters
         :return: TableRowFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17067,10 +17442,9 @@ class WordsApi(object):
     # Helper method to convert first letter to downcase
     def __downcase_first_letter(self, s):
         if len(s) == 0:
-            return str
+            return s
         else:
             return s[0].lower() + s[1:]
-
 
     def __request_token(self):
         config = self.api_client.configuration
@@ -17095,7 +17469,8 @@ class WordsApi(object):
         self.api_client.configuration.api_version = api_version
         self.api_client.configuration.refresh_token = refresh_token
 
-
+    
+    # Refresh token method is going to be removed soon. Obsolete, do not use
     def __refresh_token(self):
         config = self.api_client.configuration
         api_version = config.api_version
