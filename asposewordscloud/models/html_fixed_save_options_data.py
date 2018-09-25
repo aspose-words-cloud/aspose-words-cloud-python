@@ -67,6 +67,7 @@ class HtmlFixedSaveOptionsData(object):
         'page_margins': 'float',
         'resources_folder': 'str',
         'resources_folder_alias': 'str',
+        'save_font_face_css_separately': 'bool',
         'show_page_border': 'bool'
     }
 
@@ -97,10 +98,11 @@ class HtmlFixedSaveOptionsData(object):
         'page_margins': 'PageMargins',
         'resources_folder': 'ResourcesFolder',
         'resources_folder_alias': 'ResourcesFolderAlias',
+        'save_font_face_css_separately': 'SaveFontFaceCssSeparately',
         'show_page_border': 'ShowPageBorder'
     }
 
-    def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, css_class_names_prefix=None, encoding=None, export_embedded_css=None, export_embedded_fonts=None, export_embedded_images=None, export_form_fields=None, font_format=None, page_horizontal_alignment=None, page_margins=None, resources_folder=None, resources_folder_alias=None, show_page_border=None):  # noqa: E501
+    def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, css_class_names_prefix=None, encoding=None, export_embedded_css=None, export_embedded_fonts=None, export_embedded_images=None, export_form_fields=None, font_format=None, page_horizontal_alignment=None, page_margins=None, resources_folder=None, resources_folder_alias=None, save_font_face_css_separately=None, show_page_border=None):  # noqa: E501
         """HtmlFixedSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._color_mode = None
@@ -129,6 +131,7 @@ class HtmlFixedSaveOptionsData(object):
         self._page_margins = None
         self._resources_folder = None
         self._resources_folder_alias = None
+        self._save_font_face_css_separately = None
         self._show_page_border = None
         self.discriminator = None
 
@@ -184,6 +187,8 @@ class HtmlFixedSaveOptionsData(object):
             self.resources_folder = resources_folder
         if resources_folder_alias is not None:
             self.resources_folder_alias = resources_folder_alias
+        if save_font_face_css_separately is not None:
+            self.save_font_face_css_separately = save_font_face_css_separately
         if show_page_border is not None:
             self.show_page_border = show_page_border
 
@@ -733,6 +738,27 @@ class HtmlFixedSaveOptionsData(object):
         :type: str
         """
         self._resources_folder_alias = resources_folder_alias
+    @property
+    def save_font_face_css_separately(self):
+        """Gets the save_font_face_css_separately of this HtmlFixedSaveOptionsData.  # noqa: E501
+
+        Flag indicates whether \"@font-face\" CSS rules should be placed into a separate file \"fontFaces.css\" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file \"styles.css\".  # noqa: E501
+
+        :return: The save_font_face_css_separately of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._save_font_face_css_separately
+
+    @save_font_face_css_separately.setter
+    def save_font_face_css_separately(self, save_font_face_css_separately):
+        """Sets the save_font_face_css_separately of this HtmlFixedSaveOptionsData.
+
+        Flag indicates whether \"@font-face\" CSS rules should be placed into a separate file \"fontFaces.css\" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file \"styles.css\".  # noqa: E501
+
+        :param save_font_face_css_separately: The save_font_face_css_separately of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._save_font_face_css_separately = save_font_face_css_separately
     @property
     def show_page_border(self):
         """Gets the show_page_border of this HtmlFixedSaveOptionsData.  # noqa: E501

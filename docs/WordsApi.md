@@ -44,6 +44,7 @@ Method | HTTP request | Description
 [**get_document_hyperlink_by_index**](WordsApi.md#get_document_hyperlink_by_index) | **GET** /words/{name}/hyperlinks/{hyperlinkIndex} | Read document hyperlink by its index.
 [**get_document_hyperlinks**](WordsApi.md#get_document_hyperlinks) | **GET** /words/{name}/hyperlinks | Read document hyperlinks common info.
 [**get_document_paragraph**](WordsApi.md#get_document_paragraph) | **GET** /words/{name}/{nodePath}/paragraphs/{index} | This resource represents one of the paragraphs contained in the document.
+[**get_document_paragraph_format**](WordsApi.md#get_document_paragraph_format) | **GET** /words/{name}/{nodePath}/paragraphs/{index}/format | Represents all the formatting for a paragraph.
 [**get_document_paragraph_run**](WordsApi.md#get_document_paragraph_run) | **GET** /words/{name}/{paragraphPath}/runs/{index} | This resource represents run of text contained in the document.
 [**get_document_paragraph_run_font**](WordsApi.md#get_document_paragraph_run_font) | **GET** /words/{name}/{paragraphPath}/runs/{index}/font | This resource represents font of run.
 [**get_document_paragraph_runs**](WordsApi.md#get_document_paragraph_runs) | **GET** /words/{name}/{paragraphPath}/runs | This resource represents collection of runs in the paragraph.
@@ -83,6 +84,7 @@ Method | HTTP request | Description
 [**post_comment**](WordsApi.md#post_comment) | **POST** /words/{name}/comments/{commentIndex} | Updates the comment, returns updated comment&#39;s data.
 [**post_compare_document**](WordsApi.md#post_compare_document) | **POST** /words/{name}/compareDocument | Compare document with original document.
 [**post_document_execute_mail_merge**](WordsApi.md#post_document_execute_mail_merge) | **POST** /words/{name}/executeMailMerge | Execute document mail merge operation.
+[**post_document_paragraph_format**](WordsApi.md#post_document_paragraph_format) | **POST** /words/{name}/{nodePath}/paragraphs/{index}/format | Updates paragrpaph format properties, returns updated format properties.
 [**post_document_paragraph_run_font**](WordsApi.md#post_document_paragraph_run_font) | **POST** /words/{name}/{paragraphPath}/runs/{index}/font | Updates font properties, returns updated font data.
 [**post_document_save_as**](WordsApi.md#post_document_save_as) | **POST** /words/{name}/saveAs | Convert document to destination format with detailed settings and save result to storage.
 [**post_drawing_object**](WordsApi.md#post_drawing_object) | **POST** /words/{name}/{nodePath}/drawingObjects/{index} | Updates drawing object, returns updated  drawing object&#39;s data.
@@ -2509,6 +2511,64 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_document_paragraph_format**
+> ParagraphFormatResponse get_document_paragraph_format(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, node_path=node_path)
+
+Represents all the formatting for a paragraph.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi()
+name = 'name_example' # str | The document name.
+index = 56 # int | Object's index
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | File storage, which have to be used. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+node_path = 'node_path_example' # str | Path to node which contains paragraphs. (optional)
+
+try:
+    # Represents all the formatting for a paragraph.
+    api_response = api_instance.get_document_paragraph_format(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, node_path=node_path)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_document_paragraph_format: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **index** | **int**| Object&#39;s index | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| File storage, which have to be used. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **node_path** | **str**| Path to node which contains paragraphs. | [optional] 
+
+### Return type
+
+[**ParagraphFormatResponse**](ParagraphFormatResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_document_paragraph_run**
 > RunResponse get_document_paragraph_run(name, paragraph_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
@@ -4773,6 +4833,72 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_document_paragraph_format**
+> ParagraphFormatResponse post_document_paragraph_format(name, dto, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+
+Updates paragrpaph format properties, returns updated format properties.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi()
+name = 'name_example' # str | The document name.
+dto = asposewordscloud.ParagraphFormat() # ParagraphFormat | Paragraph format object
+node_path = 'node_path_example' # str | Path to node which contains paragraphs.
+index = 56 # int | Object's index
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | File storage, which have to be used. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
+revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
+
+try:
+    # Updates paragrpaph format properties, returns updated format properties.
+    api_response = api_instance.post_document_paragraph_format(name, dto, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->post_document_paragraph_format: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **dto** | [**ParagraphFormat**](ParagraphFormat.md)| Paragraph format object | 
+ **node_path** | **str**| Path to node which contains paragraphs. | 
+ **index** | **int**| Object&#39;s index | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| File storage, which have to be used. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+ **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
+ **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
+
+### Return type
+
+[**ParagraphFormatResponse**](ParagraphFormatResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
  - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

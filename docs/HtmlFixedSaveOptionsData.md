@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **page_margins** | **float** | Specifies the margins around pages in an HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points. | [optional] 
 **resources_folder** | **str** | Specifies the physical folder where resources are saved when exporting a document | [optional] 
 **resources_folder_alias** | **str** | Specifies the name of the folder used to construct resource URIs | [optional] 
+**save_font_face_css_separately** | **bool** | Flag indicates whether \&quot;@font-face\&quot; CSS rules should be placed into a separate file \&quot;fontFaces.css\&quot; when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file \&quot;styles.css\&quot;. | [optional] 
 **show_page_border** | **bool** | Specifies whether border around pages should be shown. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
