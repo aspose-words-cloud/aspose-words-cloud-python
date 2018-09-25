@@ -87,7 +87,8 @@ class MhtmlSaveOptionsData(object):
         'resource_folder': 'str',
         'resource_folder_alias': 'str',
         'scale_image_to_shape_size': 'bool',
-        'table_width_output_mode': 'str'
+        'table_width_output_mode': 'str',
+        'export_cid_urls_for_mhtml_resources': 'bool'
     }
 
     attribute_map = {
@@ -137,10 +138,11 @@ class MhtmlSaveOptionsData(object):
         'resource_folder': 'ResourceFolder',
         'resource_folder_alias': 'ResourceFolderAlias',
         'scale_image_to_shape_size': 'ScaleImageToShapeSize',
-        'table_width_output_mode': 'TableWidthOutputMode'
+        'table_width_output_mode': 'TableWidthOutputMode',
+        'export_cid_urls_for_mhtml_resources': 'ExportCidUrlsForMhtmlResources'
     }
 
-    def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, allow_negative_indent=None, css_class_name_prefix=None, css_style_sheet_file_name=None, css_style_sheet_type=None, document_split_criteria=None, document_split_heading_level=None, encoding=None, export_document_properties=None, export_drop_down_form_field_as_text=None, export_font_resources=None, export_fonts_as_base64=None, export_headers_footers_mode=None, export_images_as_base64=None, export_language_information=None, export_list_labels=None, export_original_url_for_linked_images=None, export_page_margins=None, export_page_setup=None, export_relative_font_size=None, export_roundtrip_information=None, export_text_box_as_svg=None, export_text_input_form_field_as_text=None, export_toc_page_numbers=None, export_xhtml_transitional=None, font_resources_subsetting_size_threshold=None, fonts_folder=None, fonts_folder_alias=None, html_version=None, image_resolution=None, images_folder=None, images_folder_alias=None, metafile_format=None, office_math_output_mode=None, pretty_format=None, resource_folder=None, resource_folder_alias=None, scale_image_to_shape_size=None, table_width_output_mode=None):  # noqa: E501
+    def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, allow_negative_indent=None, css_class_name_prefix=None, css_style_sheet_file_name=None, css_style_sheet_type=None, document_split_criteria=None, document_split_heading_level=None, encoding=None, export_document_properties=None, export_drop_down_form_field_as_text=None, export_font_resources=None, export_fonts_as_base64=None, export_headers_footers_mode=None, export_images_as_base64=None, export_language_information=None, export_list_labels=None, export_original_url_for_linked_images=None, export_page_margins=None, export_page_setup=None, export_relative_font_size=None, export_roundtrip_information=None, export_text_box_as_svg=None, export_text_input_form_field_as_text=None, export_toc_page_numbers=None, export_xhtml_transitional=None, font_resources_subsetting_size_threshold=None, fonts_folder=None, fonts_folder_alias=None, html_version=None, image_resolution=None, images_folder=None, images_folder_alias=None, metafile_format=None, office_math_output_mode=None, pretty_format=None, resource_folder=None, resource_folder_alias=None, scale_image_to_shape_size=None, table_width_output_mode=None, export_cid_urls_for_mhtml_resources=None):  # noqa: E501
         """MhtmlSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._color_mode = None
@@ -190,6 +192,7 @@ class MhtmlSaveOptionsData(object):
         self._resource_folder_alias = None
         self._scale_image_to_shape_size = None
         self._table_width_output_mode = None
+        self._export_cid_urls_for_mhtml_resources = None
         self.discriminator = None
 
         if color_mode is not None:
@@ -286,6 +289,8 @@ class MhtmlSaveOptionsData(object):
             self.scale_image_to_shape_size = scale_image_to_shape_size
         if table_width_output_mode is not None:
             self.table_width_output_mode = table_width_output_mode
+        if export_cid_urls_for_mhtml_resources is not None:
+            self.export_cid_urls_for_mhtml_resources = export_cid_urls_for_mhtml_resources
 
     @property
     def color_mode(self):
@@ -1298,6 +1303,27 @@ class MhtmlSaveOptionsData(object):
         :type: str
         """
         self._table_width_output_mode = table_width_output_mode
+    @property
+    def export_cid_urls_for_mhtml_resources(self):
+        """Gets the export_cid_urls_for_mhtml_resources of this MhtmlSaveOptionsData.  # noqa: E501
+
+        Specifies whether to use CID (Content-ID) URLs to reference resources (images, fonts, CSS) included in MHTML documents. Default value is false.               # noqa: E501
+
+        :return: The export_cid_urls_for_mhtml_resources of this MhtmlSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._export_cid_urls_for_mhtml_resources
+
+    @export_cid_urls_for_mhtml_resources.setter
+    def export_cid_urls_for_mhtml_resources(self, export_cid_urls_for_mhtml_resources):
+        """Sets the export_cid_urls_for_mhtml_resources of this MhtmlSaveOptionsData.
+
+        Specifies whether to use CID (Content-ID) URLs to reference resources (images, fonts, CSS) included in MHTML documents. Default value is false.               # noqa: E501
+
+        :param export_cid_urls_for_mhtml_resources: The export_cid_urls_for_mhtml_resources of this MhtmlSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._export_cid_urls_for_mhtml_resources = export_cid_urls_for_mhtml_resources
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
