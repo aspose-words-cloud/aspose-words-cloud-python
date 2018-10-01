@@ -22,6 +22,7 @@ def runtests(dockerImageVersion)
             
                 stage('tests'){
 					try{
+						cat Settings/servercreds.json
 						sh "nosetests --with-xunit"
 					} finally{
 						junit 'nosetests.xml'
