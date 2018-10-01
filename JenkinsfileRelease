@@ -66,6 +66,7 @@ def publishToTestPypi()
 			if (params.StartFromStage.toInteger() < 5) {
 				docker.image('python:3.6').inside('-u root') {
 					try{
+					    sh "python -m pip install --upgrade setuptools wheel"
 						sh "pip install --index-url https://test.pypi.org/simple/ asposewordscloud"
 						sh "python -m pip install -r requirements.txt && python -m pip install -r test-requirements.txt"
 						sh "nosetests --with-xunit"
