@@ -62,8 +62,18 @@ def publishToTestPypi()
 			}
 		}
 		
-		stage('4:package test'){
+		stage('4:checkout again'){
 			if (params.StartFromStage.toInteger() < 5) {
+				checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-python.git/']]])
+				withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
+					sh 'mkdir -p Settings'
+				sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"${testServerUrl}\\"}" > Settings/servercreds.json'
+				}	
+			}
+		}		
+		
+		stage('5:package test'){
+			if (params.StartFromStage.toInteger() < 6) {
 				docker.image('python:3.6').inside('-u root') {
 					try{
 					    sh "python -m pip install --upgrade setuptools wheel"
@@ -87,8 +97,8 @@ def publishToTestPypi()
 def publishToPypi()
 {
 	try {	
-		stage('5:checkout again'){
-			if (params.StartFromStage.toInteger() < 6) {
+		stage('6:checkout again'){
+			if (params.StartFromStage.toInteger() < 7) {
 				checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-python.git/']]])
 				withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
 					sh 'mkdir -p Settings'
@@ -97,8 +107,8 @@ def publishToPypi()
 			}
 		}			
 		
-		stage('6: upload to PyPi') {
-			if (params.StartFromStage.toInteger() < 7) {
+		stage('7: upload to PyPi') {
+			if (params.StartFromStage.toInteger() < 8) {
 				docker.image('python:3.6').inside('-u root'){
 					sh "python -m pip install --upgrade setuptools wheel"
 					sh "python setup.py sdist bdist_wheel"
@@ -111,8 +121,8 @@ def publishToPypi()
 		}
 		
 		
-		stage('7:add version tag'){
-			if (params.StartFromStage.toInteger() < 8) {
+		stage('8:add version tag'){
+			if (params.StartFromStage.toInteger() < 9) {
 				checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', url: 'https://github.com/aspose-words-cloud/aspose-words-cloud-python.git/']]])
             		
 				sh "git config user.email \"jenkins.aspose@gmail.com\""
