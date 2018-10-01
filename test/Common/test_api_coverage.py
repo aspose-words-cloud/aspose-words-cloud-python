@@ -58,4 +58,4 @@ class TestApiCoverage(BaseTestContext):
             if not 'test_' + api_method in test_methods:
                 uncovered_methods += api_method
         self.assertTrue(len(uncovered_methods) == 0,
-                        "There are methods you have to cover with tests " + ''.join(uncovered_methods))
+                        "There are methods you have to cover with tests " + ', '.join(uncovered_methods))

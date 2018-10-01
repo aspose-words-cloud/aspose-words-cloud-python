@@ -50,6 +50,7 @@ Name | Type | Description | Notes
 **resource_folder_alias** | **str** | Specifies the name of the folder used to construct URIs of all resources written into an HTML document.  Default is an empty string. | [optional] 
 **scale_image_to_shape_size** | **bool** | Specifies whether images are scaled by Aspose.Words to the bounding shape size when exporting | [optional] 
 **table_width_output_mode** | **str** | Controls how table, row and cell widths are exported | [optional] 
+**export_cid_urls_for_mhtml_resources** | **bool** | Specifies whether to use CID (Content-ID) URLs to reference resources (images, fonts, CSS) included in MHTML documents. Default value is false.              | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

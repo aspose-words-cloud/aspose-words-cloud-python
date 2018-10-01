@@ -207,3 +207,40 @@ class TestParagraphs(BaseTestContext):
                                                                               self.test_folder))
         result = self.words_api.render_paragraph(request)
         self.assertTrue(len(result) > 0, 'Error has occurred while render paragraph')
+
+    #
+    # Test for getting paragraph format
+    #
+    def test_get_document_paragraph_format(self):
+        filename = 'test_multi_pages.docx'
+        remote_name = 'GetDocumentParagraphFormat.docx'
+        index = 0
+
+        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
+            file = f.read()
+        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        request = asposewordscloud.models.requests.GetDocumentParagraphFormatRequest(remote_name, index,
+                                                                                     os.path.join(
+                                                                                         self.remote_test_folder,
+                                                                                         self.test_folder))
+        result = self.words_api.get_document_paragraph_format(request)
+        self.assertTrue(result.code == 200, 'Error has occurred while get document paragraph format')
+
+    #
+    # Test for updating paragraph format
+    #
+    def test_post_document_paragraph_format(self):
+        filename = 'test_multi_pages.docx'
+        remote_name = 'PostDocumentParagraphFormat.docx'
+        index = 0
+        body = asposewordscloud.ParagraphFormat(alignment='Right')
+
+        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
+            file = f.read()
+        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        request = asposewordscloud.models.requests.PostDocumentParagraphFormatRequest(remote_name, body, '', index,
+                                                                                      folder=os.path.join(
+                                                                                          self.remote_test_folder,
+                                                                                          self.test_folder))
+        result = self.words_api.post_document_paragraph_format(request)
+        self.assertTrue(result.code == 200, 'Error has occurred while update section page setup')

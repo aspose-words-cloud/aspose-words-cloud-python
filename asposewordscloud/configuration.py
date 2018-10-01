@@ -275,6 +275,6 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         return "Python SDK Debug Report:\n"\
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
-               "Version of the API: 18.8.0\n"\
-               "SDK Package Version: 18.7.0".\
+               "Version of the API: 18.9.0\n"\
+               "SDK Package Version: 18.9.0".\
                format(env=sys.platform, pyversion=sys.version)
