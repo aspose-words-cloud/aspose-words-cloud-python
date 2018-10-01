@@ -238,8 +238,8 @@ class TestParagraphs(BaseTestContext):
         with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
             file = f.read()
         self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.PostDocumentParagraphFormatRequest(remote_name, index, body,
-                                                                                      os.path.join(
+        request = asposewordscloud.models.requests.PostDocumentParagraphFormatRequest(remote_name, body, '', index,
+                                                                                      folder=os.path.join(
                                                                                           self.remote_test_folder,
                                                                                           self.test_folder))
         result = self.words_api.post_document_paragraph_format(request)
