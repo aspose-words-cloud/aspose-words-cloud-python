@@ -38,9 +38,9 @@ import tempfile
 from six.moves.urllib.parse import quote
 import six
 
-from aspose-words-cloud.configuration import Configuration
-import aspose-words-cloud.models
-from aspose-words-cloud import rest
+from asposewordscloud.configuration import Configuration
+import asposewordscloud.models
+from asposewordscloud import rest
 
 
 class ApiClient(object):
@@ -267,7 +267,7 @@ class ApiClient(object):
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
-                klass = getattr(aspose-words-cloud.models, klass)
+                klass = getattr(asposewordscloud.models, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)
