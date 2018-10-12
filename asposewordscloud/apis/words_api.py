@@ -33,7 +33,7 @@ import re  # noqa: F401
 # python 2 and python 3 compatibility library
 import six
 from asposewordscloud.rest import ApiException
-from aspose-words-cloud.api_client import ApiClient
+from asposewordscloud.api_client import ApiClient
 
 
 class WordsApi(object):
