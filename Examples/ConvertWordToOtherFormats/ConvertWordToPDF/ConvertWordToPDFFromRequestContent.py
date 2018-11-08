@@ -16,9 +16,9 @@ class Document(object):
 		self.storage_api.api_client.configuration.base_url = 'https://api.aspose.cloud' + '/v1.1'
 		self.words_api = asposewordscloud.WordsApi(api_client)
 
-		ABSPATH = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../..")
-		self.dataFolder = os.path.join(ABSPATH, "Data")
-		self.outputFolder = os.path.join(ABSPATH, "Ouput")
+		ABSPATH = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../../..")
+		self.dataFolder = os.path.join(ABSPATH, "TestData/Common")
+		self.outputFolder = os.path.join(ABSPATH, "TestData/Output")
 
 	def convertWordToPDF(self):
 		filename = 'test_multi_pages.docx'
