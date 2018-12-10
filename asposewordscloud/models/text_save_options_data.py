@@ -50,6 +50,7 @@ class TextSaveOptionsData(object):
         'update_last_saved_time_property': 'bool',
         'update_sdt_content': 'bool',
         'update_fields': 'bool',
+        'add_bidi_marks': 'bool',
         'encoding': 'str',
         'export_headers_footers': 'bool',
         'force_page_breaks': 'bool',
@@ -68,6 +69,7 @@ class TextSaveOptionsData(object):
         'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
         'update_sdt_content': 'UpdateSdtContent',
         'update_fields': 'UpdateFields',
+        'add_bidi_marks': 'AddBidiMarks',
         'encoding': 'Encoding',
         'export_headers_footers': 'ExportHeadersFooters',
         'force_page_breaks': 'ForcePageBreaks',
@@ -76,7 +78,7 @@ class TextSaveOptionsData(object):
         'simplify_list_labels': 'SimplifyListLabels'
     }
 
-    def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, encoding=None, export_headers_footers=None, force_page_breaks=None, paragraph_break=None, preserve_table_layout=None, simplify_list_labels=None):  # noqa: E501
+    def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, add_bidi_marks=None, encoding=None, export_headers_footers=None, force_page_breaks=None, paragraph_break=None, preserve_table_layout=None, simplify_list_labels=None):  # noqa: E501
         """TextSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._color_mode = None
@@ -88,6 +90,7 @@ class TextSaveOptionsData(object):
         self._update_last_saved_time_property = None
         self._update_sdt_content = None
         self._update_fields = None
+        self._add_bidi_marks = None
         self._encoding = None
         self._export_headers_footers = None
         self._force_page_breaks = None
@@ -114,6 +117,8 @@ class TextSaveOptionsData(object):
             self.update_sdt_content = update_sdt_content
         if update_fields is not None:
             self.update_fields = update_fields
+        if add_bidi_marks is not None:
+            self.add_bidi_marks = add_bidi_marks
         if encoding is not None:
             self.encoding = encoding
         if export_headers_footers is not None:
@@ -316,6 +321,27 @@ class TextSaveOptionsData(object):
         :type: bool
         """
         self._update_fields = update_fields
+    @property
+    def add_bidi_marks(self):
+        """Gets the add_bidi_marks of this TextSaveOptionsData.  # noqa: E501
+
+        Specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true.  # noqa: E501
+
+        :return: The add_bidi_marks of this TextSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._add_bidi_marks
+
+    @add_bidi_marks.setter
+    def add_bidi_marks(self, add_bidi_marks):
+        """Sets the add_bidi_marks of this TextSaveOptionsData.
+
+        Specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true.  # noqa: E501
+
+        :param add_bidi_marks: The add_bidi_marks of this TextSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._add_bidi_marks = add_bidi_marks
     @property
     def encoding(self):
         """Gets the encoding of this TextSaveOptionsData.  # noqa: E501
