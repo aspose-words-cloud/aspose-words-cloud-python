@@ -21,7 +21,7 @@ class Document(object):
 		self.outputFolder = os.path.join(ABSPATH, "TestData/Output")
 
 	def convertWordToPDF(self):
-		filename = 'test_multi_pages.docx'
+		filename = '9ac0b6e4-f5fe-44a3-a9eb-d5f3e7288e42.doc'
 		filePath = os.path.join(self.dataFolder, filename)
 		
 		# Send the Word document in the API request
@@ -29,9 +29,10 @@ class Document(object):
 		# The API returns PDF document and save in the local temporary folder
 		pdfFilePath = self.words_api.put_convert_document(request)
 
+		print("Output {}".format(pdfFilePath))
 		# Move the PDF document from the temporary folder to the Output folder
-		os.rename(pdfFilePath, os.path.join(self.outputFolder, os.path.basename(pdfFilePath)))
-		print("Successfully converted Word Document to PDF and saved the PDF documment in the Output Folder")
+		#os.rename(pdfFilePath, os.path.join(self.outputFolder, os.path.basename(pdfFilePath)))
+		#print("Successfully converted Word Document to PDF and saved the PDF documment in the Output Folder")
 
 document = Document()
 document.convertWordToPDF()
