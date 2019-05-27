@@ -1,0 +1,1 @@
+python -m pip install -r requirements.txt && python -m pip install -r test-requirements.txt && nosetests --with-xunit && (pylint asposewordscloud/ test/ > lintResults.txt || exit 0)
