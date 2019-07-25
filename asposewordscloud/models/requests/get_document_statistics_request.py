@@ -1,6 +1,6 @@
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetDocumentStatisticsRequest.py">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,10 +30,10 @@ class GetDocumentStatisticsRequest(object):
     Initializes a new instance.
     :param name The document name.
     :param folder Original document folder.
-    :param storage File storage, which have to be used.
+    :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
-    :param include_comments Support including/excluding comments from the WordCount. Default value is \"true\".
+    :param include_comments Support including/excluding comments from the WordCount. Default value is \"false\".
     :param include_footnotes Support including/excluding footnotes from the WordCount. Default value is \"false\".
     :param include_text_in_shapes Support including/excluding shape's text from the WordCount. Default value is \"false\"
     """

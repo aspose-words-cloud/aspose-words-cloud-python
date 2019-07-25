@@ -4,7 +4,7 @@
 from __future__ import absolute_import
 
 # import models into model package
-from asposewordscloud.models.aspose_response import AsposeResponse
+from asposewordscloud.models.api_error import ApiError
 from asposewordscloud.models.bookmark_data import BookmarkData
 from asposewordscloud.models.bookmarks_outline_level_data import BookmarksOutlineLevelData
 from asposewordscloud.models.classification_result import ClassificationResult
@@ -15,6 +15,10 @@ from asposewordscloud.models.document_entry_list import DocumentEntryList
 from asposewordscloud.models.document_position import DocumentPosition
 from asposewordscloud.models.document_stat_data import DocumentStatData
 from asposewordscloud.models.downsample_options_data import DownsampleOptionsData
+from asposewordscloud.models.error import Error
+from asposewordscloud.models.error_details import ErrorDetails
+from asposewordscloud.models.files_list import FilesList
+from asposewordscloud.models.files_upload_result import FilesUploadResult
 from asposewordscloud.models.font_info import FontInfo
 from asposewordscloud.models.footnotes_stat_data import FootnotesStatData
 from asposewordscloud.models.graphics_quality_options_data import GraphicsQualityOptionsData
@@ -32,17 +36,19 @@ from asposewordscloud.models.pdf_encryption_details_data import PdfEncryptionDet
 from asposewordscloud.models.preferred_width import PreferredWidth
 from asposewordscloud.models.protection_data import ProtectionData
 from asposewordscloud.models.protection_request import ProtectionRequest
-from asposewordscloud.models.replace_text_request import ReplaceTextRequest
+from asposewordscloud.models.replace_text_parameters import ReplaceTextParameters
 from asposewordscloud.models.save_options_data import SaveOptionsData
 from asposewordscloud.models.save_result import SaveResult
 from asposewordscloud.models.search_result import SearchResult
 from asposewordscloud.models.split_document_result import SplitDocumentResult
+from asposewordscloud.models.storage_file import StorageFile
 from asposewordscloud.models.story_child_nodes import StoryChildNodes
 from asposewordscloud.models.string_format_data import StringFormatData
 from asposewordscloud.models.table_cell_insert import TableCellInsert
 from asposewordscloud.models.table_insert import TableInsert
 from asposewordscloud.models.table_row_insert import TableRowInsert
 from asposewordscloud.models.watermark_text import WatermarkText
+from asposewordscloud.models.words_response import WordsResponse
 from asposewordscloud.models.xml_color import XmlColor
 from asposewordscloud.models.available_fonts_response import AvailableFontsResponse
 from asposewordscloud.models.bookmark import Bookmark
@@ -104,7 +110,6 @@ from asposewordscloud.models.paragraph_link_collection import ParagraphLinkColle
 from asposewordscloud.models.paragraph_link_collection_response import ParagraphLinkCollectionResponse
 from asposewordscloud.models.paragraph_response import ParagraphResponse
 from asposewordscloud.models.protection_data_response import ProtectionDataResponse
-from asposewordscloud.models.protection_response import ProtectionResponse
 from asposewordscloud.models.replace_text_response import ReplaceTextResponse
 from asposewordscloud.models.revisions_modification_response import RevisionsModificationResponse
 from asposewordscloud.models.rtf_save_options_data import RtfSaveOptionsData
@@ -133,9 +138,6 @@ from asposewordscloud.models.table_response import TableResponse
 from asposewordscloud.models.table_row_format import TableRowFormat
 from asposewordscloud.models.table_row_format_response import TableRowFormatResponse
 from asposewordscloud.models.table_row_response import TableRowResponse
-from asposewordscloud.models.text_item import TextItem
-from asposewordscloud.models.text_items import TextItems
-from asposewordscloud.models.text_items_response import TextItemsResponse
 from asposewordscloud.models.text_save_options_data import TextSaveOptionsData
 from asposewordscloud.models.word_ml_save_options_data import WordMLSaveOptionsData
 from asposewordscloud.models.words_api_error_response import WordsApiErrorResponse
