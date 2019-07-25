@@ -42,15 +42,13 @@ class TestPages(BaseTestContext):
         page_number = 1
         format = 'png'
 
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.RenderPageRequest(remote_name, page_number, format,
                                                                    os.path.join(
                                                                        self.remote_test_folder,
                                                                        self.test_folder))
         result = self.words_api.render_page(request)
-        self.assertTrue(len(result) > 0, 'Error has occurred while render page')
+        self.assertIsNotNone(result, 'Error has occurred while render page')
 
     #
     # Test for getting page setup
@@ -60,15 +58,13 @@ class TestPages(BaseTestContext):
         remote_name = 'TestGetSectionPageSetup.docx'
         index = 0
 
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetSectionPageSetupRequest(remote_name, index,
                                                                             os.path.join(
                                                                                 self.remote_test_folder,
                                                                                 self.test_folder))
         result = self.words_api.get_section_page_setup(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get section page setup')
+        self.assertIsNotNone(result, 'Error has occurred while get section page setup')
 
     #
     # Test for updating page setup
@@ -79,12 +75,10 @@ class TestPages(BaseTestContext):
         index = 0
         body = asposewordscloud.PageSetup(rtl_gutter=True, left_margin=10, orientation='Landscape', paper_size='A5')
 
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.UpdateSectionPageSetupRequest(remote_name, index, body,
                                                                                os.path.join(
                                                                                    self.remote_test_folder,
                                                                                    self.test_folder))
         result = self.words_api.update_section_page_setup(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while update section page setup')
+        self.assertIsNotNone(result, 'Error has occurred while update section page setup')

@@ -39,11 +39,9 @@ class TestDocumentStatistics(BaseTestContext):
     def test_get_document_statistics(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentStatistics.docx'
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetDocumentStatisticsRequest(remote_name,
                                                                               os.path.join(self.remote_test_folder,
                                                                                            self.test_folder))
         result = self.words_api.get_document_statistics(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get document statistics')
+        self.assertIsNotNone(result, 'Error has occurred while get document statistics')

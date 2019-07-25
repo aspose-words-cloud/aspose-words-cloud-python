@@ -36,30 +36,28 @@ class TestExecuteMailMerge(BaseTestContext):
     #
     # Test for mail merge execution
     #
-    def test_post_document_execute_mail_merge(self):
+    def test_execute_mail_merge(self):
         filename = 'SampleMailMergeTemplate.docx'
         remote_name = 'TestPostDocumentExecuteMailMerge.docx'
         dest_name = os.path.join(self.remote_test_out, remote_name)
         with open(os.path.join(self.local_test_folder, self.test_folder, 'SampleMailMergeTemplateData.txt')) as f:
             data = f.read()
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.PostDocumentExecuteMailMergeRequest(remote_name, data,
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, 'SampleMailMergeTemplateData.txt'))
+        request = asposewordscloud.models.requests.ExecuteMailMergeRequest(remote_name, data,
                                                                                      os.path.join(
                                                                                          self.remote_test_folder,
                                                                                          self.test_folder),
                                                                                      dest_file_name=dest_name)
-        result = self.words_api.post_document_execute_mail_merge(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while execute mail merge')
+        result = self.words_api.execute_mail_merge(request)
+        self.assertIsNotNone(result, 'Error has occurred while execute mail merge')
 
     #
     # Test for executing mail merge online
     #
-    def test_put_execute_mail_merge_online(self):
+    def test_execute_mail_merge_online(self):
         filename = 'SampleMailMergeTemplate.docx'
         file = os.path.join(self.local_test_folder, self.test_folder, filename)
         data = os.path.join(self.local_test_folder, self.test_folder, 'SampleMailMergeTemplateData.txt')
-        request = asposewordscloud.models.requests.PutExecuteMailMergeOnlineRequest(file, data)
-        result = self.words_api.put_execute_mail_merge_online(request)
+        request = asposewordscloud.models.requests.ExecuteMailMergeOnlineRequest(file, data)
+        result = self.words_api.execute_mail_merge_online(request)
         self.assertTrue(len(result) > 0, 'Error has occurred while execute mail merge')

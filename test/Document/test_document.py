@@ -39,27 +39,22 @@ class TestDocument(BaseTestContext):
     def test_get_document(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocument.docx'
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
 
         request = asposewordscloud.models.requests.GetDocumentRequest(remote_name, os.path.join(self.remote_test_folder,
                                                                                               self.test_folder))
         result = self.words_api.get_document(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get document')
+        self.assertTrue(result.document is not None, 'Error has occurred while get document')
 
     #
     # Test for creating document
     #
-    def test_put_create_document(self):
+    def test_create_document(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPutCreateDocument.docx'
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-
-        request = asposewordscloud.models.requests.PutCreateDocumentRequest(None, remote_name,
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        request = asposewordscloud.models.requests.CreateDocumentRequest(None, remote_name,
                                                                           os.path.join(self.remote_test_folder,
                                                                                        self.test_folder))
-        result = self.words_api.put_create_document(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while create document')
+        result = self.words_api.create_document(request)
+        self.assertTrue(result.document is not None, 'Error has occurred while create document')

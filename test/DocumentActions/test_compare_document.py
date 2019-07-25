@@ -37,7 +37,7 @@ class TestCompareDocument(BaseTestContext):
     #
     # Test for document comparison
     #
-    def test_post_compare_document(self):
+    def test_compare_document(self):
         local_name1 = "compareTestDoc1.doc"
         local_name2 = "compareTestDoc2.doc"
         remote_name1 = "TestPostCompareDocument1.doc"
@@ -45,16 +45,12 @@ class TestCompareDocument(BaseTestContext):
         dest_name = os.path.join(self.remote_test_out, 'TestCompareOut.doc')
         compare_data = asposewordscloud.CompareData(os.path.join(self.remote_test_folder, self.test_folder, remote_name2),
                                                   'author', datetime.datetime.now())
-        with open(os.path.join(self.local_test_folder, self.test_folder, local_name1), 'rb') as f:
-            file1 = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name1), file1)
-        with open(os.path.join(self.local_test_folder, self.test_folder, local_name2), 'rb') as f:
-            file2 = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name2), file2)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name1), os.path.join(self.local_test_folder, self.test_folder, local_name1))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name2), os.path.join(self.local_test_folder, self.test_folder, local_name2))
 
-        request = asposewordscloud.models.requests.PostCompareDocumentRequest(remote_name1, compare_data,
+        request = asposewordscloud.models.requests.CompareDocumentRequest(remote_name1, compare_data,
                                                                             os.path.join(self.remote_test_folder,
                                                                                          self.test_folder),
                                                                             dest_file_name=dest_name)
-        result = self.words_api.post_compare_document(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while compare document')
+        result = self.words_api.compare_document(request)
+        self.assertTrue(result.document is not None, 'Error has occurred while compare document')

@@ -19,8 +19,6 @@ tests:
     reports: 
       junit: 
         - 'nosetests.xml'
-  only:
-    - master
   tags:
     - awcloud-linux
 

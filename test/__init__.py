@@ -8,7 +8,6 @@ from test.DocumentActions.test_convert_document import TestConvertDocument
 from test.DocumentActions.test_document_protection import TestDocumentProtection
 from test.DocumentActions.test_document_statistics import TestDocumentStatistics
 from test.DocumentActions.test_execute_mail_merge import TestExecuteMailMerge
-from test.DocumentActions.test_execute_template import TestExecuteTemplate
 from test.DocumentActions.test_load_web_document import TestLoadWebDocument
 from test.DocumentActions.test_mail_merge_fields import TestMailMergeFields
 from test.DocumentActions.test_revisions import TestRevisions
@@ -31,3 +30,5 @@ from test.DocumentElements.test_sections import TestSections
 from test.DocumentElements.test_tables import TestTables
 from test.DocumentElements.test_text import TestText
 from test.DocumentElements.test_watermarks import TestWatermarks
+from test.Storage.test_file import TestFile
+from test.Storage.test_folder import TestFolder

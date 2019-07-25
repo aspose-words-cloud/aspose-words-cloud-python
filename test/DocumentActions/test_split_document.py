@@ -36,22 +36,20 @@ class TestSplitDocument(BaseTestContext):
     #
     # Test for splitting document
     #
-    def test_post_split_document(self):
+    def test_split_document(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPostSplitDocument.docx'
         dest_name = os.path.join(self.remote_test_out, remote_name)
         _format = 'text'
         _from = 1
         _to = 2
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.PostSplitDocumentRequest(remote_name,
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        request = asposewordscloud.models.requests.SplitDocumentRequest(remote_name,
                                                                           os.path.join(
                                                                               self.remote_test_folder,
                                                                               self.test_folder),
                                                                           format=_format, _from=_from, to=_to,
                                                                           dest_file_name=dest_name)
-        result = self.words_api.post_split_document(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while split document')
+        result = self.words_api.split_document(request)
+        self.assertIsNotNone(result, 'Error has occurred while split document')
 

@@ -41,15 +41,13 @@ class TestHyperlinks(BaseTestContext):
         remote_name = 'TestGetDocumentHyperlinkByIndex.docx'
         index = 0
 
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetDocumentHyperlinkByIndexRequest(remote_name, index,
                                                                                     os.path.join(
                                                                                         self.remote_test_folder,
                                                                                         self.test_folder))
         result = self.words_api.get_document_hyperlink_by_index(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get document hyperlink by index')
+        self.assertIsNotNone(result, 'Error has occurred while get document hyperlink by index')
 
     #
     #  Test for getting document hyperlinks
@@ -58,12 +56,10 @@ class TestHyperlinks(BaseTestContext):
         filename = 'test_doc.docx'
         remote_name = 'TestGetDocumentHyperlinks.docx'
 
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetDocumentHyperlinksRequest(remote_name,
                                                                               os.path.join(
                                                                                   self.remote_test_folder,
                                                                                   self.test_folder))
         result = self.words_api.get_document_hyperlinks(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get document hyperlinks')
+        self.assertIsNotNone(result, 'Error has occurred while get document hyperlinks')
