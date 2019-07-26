@@ -5,12 +5,29 @@ stages:
   - publishing
   - version_tag
 
-tests:
+2.7-tests:
   stage: build&test  
   script: 
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
     - docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/build.sh
+    - ls -l
+  artifacts:
+    paths:       
+      - 'nosetests.xml'  
+      - 'lintResults.txt' 
+    reports: 
+      junit: 
+        - 'nosetests.xml'
+  tags:
+    - awcloud-linux
+
+3.6-tests:
+  stage: build&test  
+  script: 
+    - mkdir -p Settings
+    - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
+    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.6 bash scripts/build.sh
     - ls -l
   artifacts:
     paths:       
