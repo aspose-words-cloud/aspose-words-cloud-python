@@ -35,9 +35,9 @@ class TestLoadWebDocument(BaseTestContext):
     #
     # Test for loading web document
     #
-    def test_post_load_web_document(self):
+    def test_load_web_document(self):
         save_options = asposewordscloud.SaveOptionsData('1', 'doc', 'google.doc', '1', '1', False, False)
         body = asposewordscloud.LoadWebDocumentData('http://google.com', save_options)
-        request = asposewordscloud.models.requests.PostLoadWebDocumentRequest(body)
-        result = self.words_api.post_load_web_document(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while load document')
+        request = asposewordscloud.models.requests.LoadWebDocumentRequest(body)
+        result = self.words_api.load_web_document(request)
+        self.assertIsNotNone(result, 'Error has occurred while load document')

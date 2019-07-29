@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="DocumentPropertyResponse.py">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,76 +41,48 @@ class DocumentPropertyResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'code': 'int',
-        'status': 'str',
+        'request_id': 'str',
         'document_property': 'DocumentProperty'
     }
 
     attribute_map = {
-        'code': 'Code',
-        'status': 'Status',
+        'request_id': 'RequestId',
         'document_property': 'DocumentProperty'
     }
 
-    def __init__(self, code=None, status=None, document_property=None):  # noqa: E501
+    def __init__(self, request_id=None, document_property=None):  # noqa: E501
         """DocumentPropertyResponse - a model defined in Swagger"""  # noqa: E501
 
-        self._code = None
-        self._status = None
+        self._request_id = None
         self._document_property = None
         self.discriminator = None
 
-        if code is not None:
-            self.code = code
-        if status is not None:
-            self.status = status
+        if request_id is not None:
+            self.request_id = request_id
         if document_property is not None:
             self.document_property = document_property
 
     @property
-    def code(self):
-        """Gets the code of this DocumentPropertyResponse.  # noqa: E501
+    def request_id(self):
+        """Gets the request_id of this DocumentPropertyResponse.  # noqa: E501
 
-        Response status code.  # noqa: E501
+        Request Id.  # noqa: E501
 
-        :return: The code of this DocumentPropertyResponse.  # noqa: E501
-        :rtype: int
-        """
-        return self._code
-
-    @code.setter
-    def code(self, code):
-        """Sets the code of this DocumentPropertyResponse.
-
-        Response status code.  # noqa: E501
-
-        :param code: The code of this DocumentPropertyResponse.  # noqa: E501
-        :type: int
-        """
-        if code is None:
-            raise ValueError("Invalid value for `code`, must not be `None`")  # noqa: E501
-        self._code = code
-    @property
-    def status(self):
-        """Gets the status of this DocumentPropertyResponse.  # noqa: E501
-
-        Response status.  # noqa: E501
-
-        :return: The status of this DocumentPropertyResponse.  # noqa: E501
+        :return: The request_id of this DocumentPropertyResponse.  # noqa: E501
         :rtype: str
         """
-        return self._status
+        return self._request_id
 
-    @status.setter
-    def status(self, status):
-        """Sets the status of this DocumentPropertyResponse.
+    @request_id.setter
+    def request_id(self, request_id):
+        """Sets the request_id of this DocumentPropertyResponse.
 
-        Response status.  # noqa: E501
+        Request Id.  # noqa: E501
 
-        :param status: The status of this DocumentPropertyResponse.  # noqa: E501
+        :param request_id: The request_id of this DocumentPropertyResponse.  # noqa: E501
         :type: str
         """
-        self._status = status
+        self._request_id = request_id
     @property
     def document_property(self):
         """Gets the document_property of this DocumentPropertyResponse.  # noqa: E501

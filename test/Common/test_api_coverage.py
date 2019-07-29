@@ -40,10 +40,10 @@ class TestApiCoverage(BaseTestContext):
                test.TestDrawingObjects, test.TestFields,
                test.TestFormField, test.TestMailMergeFields, test.TestFootnote, test.TestHeaderFooter,
                test.TestHyperlinks, test.TestMacros,
-               test.TestExecuteMailMerge, test.TestExecuteTemplate, test.TestMathObjects, test.TestPages,
+               test.TestExecuteMailMerge, test.TestMathObjects, test.TestPages,
                test.TestParagraphs, test.TestRuns,
                test.TestSections, test.TestTables, test.TestText, test.TestWatermarks, test.TestFont,
-               test.TestClassification]
+               test.TestClassification, test.TestFile, test.TestFolder]
         test_methods = []
         uncovered_methods = []
         for ar in arr:
@@ -58,4 +58,4 @@ class TestApiCoverage(BaseTestContext):
             if not 'test_' + api_method in test_methods:
                 uncovered_methods += api_method
         self.assertTrue(len(uncovered_methods) == 0,
-                        "There are methods you have to cover with tests " + ', '.join(uncovered_methods))
+                        "There are methods you have to cover with tests " + ''.join(uncovered_methods))

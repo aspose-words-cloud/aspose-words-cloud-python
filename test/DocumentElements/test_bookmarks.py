@@ -36,52 +36,46 @@ class TestBookmarks(BaseTestContext):
     #
     # Test for getting document bookmark by name
     #
-    def test_get_document_bookmark_by_name(self):
+    def test_get_bookmark_by_name(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentBookmarkByName.docx'
         bookmark_name = 'aspose'
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.GetDocumentBookmarkByNameRequest(remote_name, bookmark_name,
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        request = asposewordscloud.models.requests.GetBookmarkByNameRequest(remote_name, bookmark_name,
                                                                                   os.path.join(
                                                                                       self.remote_test_folder,
                                                                                       self.test_folder))
-        result = self.words_api.get_document_bookmark_by_name(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get document bookmark by name')
+        result = self.words_api.get_bookmark_by_name(request)
+        self.assertIsNotNone(result, 'Error has occurred while get document bookmark by name')
 
     #
     # Test for getting all bookmarks from document
     #
-    def test_get_document_bookmarks(self):
+    def test_get_bookmarks(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentBookmarks.docx'
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.GetDocumentBookmarksRequest(remote_name,
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        request = asposewordscloud.models.requests.GetBookmarksRequest(remote_name,
                                                                              os.path.join(
                                                                                  self.remote_test_folder,
                                                                                  self.test_folder))
-        result = self.words_api.get_document_bookmarks(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get document bookmarks')
+        result = self.words_api.get_bookmarks(request)
+        self.assertIsNotNone(result, 'Error has occurred while get document bookmarks')
 
     #
     # Test for updating document bookmark
     #
-    def test_post_update_document_bookmark(self):
+    def test_update_bookmark(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPostUpdateDocumentBookmark.docx'
         bookmark_name = 'aspose'
         dest_name = os.path.join(self.remote_test_out, remote_name)
         body = asposewordscloud.BookmarkData(bookmark_name, 'This will be the text for Aspose')
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.PostUpdateDocumentBookmarkRequest(remote_name, body, bookmark_name,
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        request = asposewordscloud.models.requests.UpdateBookmarkRequest(remote_name, body, bookmark_name,
                                                                                    os.path.join(
                                                                                        self.remote_test_folder,
                                                                                        self.test_folder),
                                                                                    dest_file_name=dest_name)
-        result = self.words_api.post_update_document_bookmark(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while update document bookmark')
+        result = self.words_api.update_bookmark(request)
+        self.assertIsNotNone(result, 'Error has occurred while update document bookmark')

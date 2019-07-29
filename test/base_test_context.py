@@ -29,7 +29,6 @@ import os
 import json
 import unittest
 import warnings
-import asposestoragecloud
 import asposewordscloud
 import six
 
@@ -48,9 +47,11 @@ class BaseTestContext(unittest.TestCase):
         api_client.configuration.host = creds['BaseUrl']
         api_client.configuration.api_key['api_key'] = creds['AppKey']
         api_client.configuration.api_key['app_sid'] = creds['AppSid']
-        self.storage_api = asposestoragecloud.StorageApi(asposestoragecloud.ApiClient(creds['AppKey'], creds['AppSid']))
-        self.storage_api.api_client.configuration.base_url = creds['BaseUrl'] + '/v1.1'
         self.words_api = asposewordscloud.WordsApi(api_client)
         if six.PY3:
             warnings.simplefilter("ignore", ResourceWarning)
+
+    def upload_file(self, path, file):
+        request = asposewordscloud.models.requests.UploadFileRequest(file, path)
+        result = self.words_api.upload_file(request)
 

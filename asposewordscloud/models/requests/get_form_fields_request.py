@@ -1,6 +1,6 @@
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetFormFieldsRequest.py">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -28,18 +28,18 @@ class GetFormFieldsRequest(object):
     """
     Request model for get_form_fields operation.
     Initializes a new instance.
-    :param name The file name.
+    :param name The document name.
+    :param node_path Path to the node containing collection of form fields.
     :param folder Original document folder.
-    :param storage File storage, which have to be used.
+    :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
-    :param node_path Path to node containing collection of form fields.
     """
 
-    def __init__(self, name, folder=None, storage=None, load_encoding=None, password=None, node_path=None):
+    def __init__(self, name, node_path, folder=None, storage=None, load_encoding=None, password=None):
         self.name = name
+        self.node_path = node_path
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
-        self.node_path = node_path

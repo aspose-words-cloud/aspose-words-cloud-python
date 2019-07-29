@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="api_client.py">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -113,6 +113,7 @@ class ApiClient(object):
         # header parameters
         header_params = header_params or {}
         header_params.update(self.default_headers)
+        header_params['Authorization'] = "Bearer " + self.configuration.access_token
         if self.cookie:
             header_params['Cookie'] = self.cookie
         if header_params:
@@ -155,9 +156,9 @@ class ApiClient(object):
         # request url
         url = ''
         if six.PY3:
-            url = self.configuration.host + '/' + self.configuration.api_version + resource_path
+            url = self.configuration.host + resource_path
         else:
-            url = (self.configuration.host + '/' + self.configuration.api_version + resource_path).encode('utf8')
+            url = (self.configuration.host + resource_path).encode('utf8')
 
         # perform request and return response
         response_data = self.request(
@@ -590,8 +591,11 @@ class ApiClient(object):
         :return: datetime.
         """
         try:
-            from dateutil.parser import parse
-            return parse(re.search('[0-9]', string).group(0))
+            if string == '0001-01-01T00:00:00':
+                return datetime.datetime.min
+            else:
+                from dateutil.parser import parse
+                return parse(re.search('[0-9]', string).group(0))
         except ImportError:
             return string
         except ValueError:
@@ -610,7 +614,9 @@ class ApiClient(object):
         :param klass: class literal.
         :return: model object.
         """
-
+        if klass is None: 
+            return data
+            
         if not klass.swagger_types and not hasattr(klass,
                                                    'get_real_child_model'):
             return data

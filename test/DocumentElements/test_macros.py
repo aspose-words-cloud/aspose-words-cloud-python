@@ -36,16 +36,14 @@ class TestMacros(BaseTestContext):
     #
     #  Test for removing document macros
     #
-    def test_delete_document_macros(self):
+    def test_delete_macros(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestDeleteDocumentMacros.docx'
 
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.DeleteDocumentMacrosRequest(remote_name,
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        request = asposewordscloud.models.requests.DeleteMacrosRequest(remote_name,
                                                                              os.path.join(
                                                                                  self.remote_test_folder,
                                                                                  self.test_folder))
-        result = self.words_api.delete_document_macros(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while delete document macros')
+        result = self.words_api.delete_macros(request)
+        self.assertIsNotNone(result, 'Error has occurred while delete document macros')

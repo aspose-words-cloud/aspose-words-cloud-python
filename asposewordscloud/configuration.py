@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="configuration.py">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -59,8 +59,6 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         """Constructor"""
         # Default Base url
         self.host = "https://api.aspose.com"
-        # Default api version is v1. Available values are v1, v1.1, v2, v3
-        self.api_version = "v1"
         # Temp file folder for downloading files
         self.temp_folder_path = None
 
@@ -242,27 +240,13 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         :return: The Auth Settings information dict.
         """
         return {
-            'appsid':
-                {
-                    'type': 'api_key',
-                    'in': 'query',
-                    'key': 'Appsid',
-                    'value': self.get_api_key_with_prefix('Appsid')
-                },
 
-            'oauth':
+            'JWT':
                 {
                     'type': 'oauth2',
                     'in': 'header',
                     'key': 'Authorization',
                     'value': 'Bearer ' + self.access_token
-                },
-            'signature':
-                {
-                    'type': 'api_key',
-                    'in': 'query',
-                    'key': 'Signature',
-                    'value': self.get_api_key_with_prefix('Signature')
                 },
 
         }
@@ -275,6 +259,6 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         return "Python SDK Debug Report:\n"\
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
-               "Version of the API: 19.1.0\n"\
+               "Version of the API: 19.5.0\n"\
                "SDK Package Version: 18.9.0".\
                format(env=sys.platform, pyversion=sys.version)

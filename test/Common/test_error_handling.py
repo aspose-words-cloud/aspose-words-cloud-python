@@ -25,7 +25,6 @@
 # --------------------------------------------------------------------------------------------------------------------
 #
 
-
 import asposewordscloud.models.requests
 from test.base_test_context import BaseTestContext
 from asposewordscloud.rest import ApiException
@@ -43,4 +42,6 @@ class TestErrorHandling(BaseTestContext):
             self.words_api.get_section(request)
             self.assertRaises(ApiException)
         except ApiException as e:
-            self.assertTrue(e.status == 400, 'Error while testing handle server error')
+            self.assertTrue(e.status == 404, 'Error while testing handle server error')
+            self.assertTrue(e.body.error.message.startswith("Error while loading file 'noFileWithThisName.docx' from storage:"), "Current message: " + e.body.error.message)
+            self.assertNotEqual(e.body.error.inner_error, None, "Inner Error must be set")

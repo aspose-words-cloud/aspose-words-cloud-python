@@ -40,17 +40,16 @@ class TestDocumentProperties(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPutUpdateDocumentProperty.docx'
         property_name = 'AsposeAuthor'
-        _prop = asposewordscloud.DocumentProperty(False, property_name, value='Yaroslav Ekimov')
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        _prop = asposewordscloud.DocumentProperty(name=property_name, value='Yaroslav Ekimov')
+        
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.CreateOrUpdateDocumentPropertyRequest(remote_name, property_name,
                                                                                        _prop,
                                                                                        os.path.join(
                                                                                            self.remote_test_folder,
                                                                                            self.test_folder))
         result = self.words_api.create_or_update_document_property(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while create or update document property')
+        self.assertIsNotNone(result, 'Error has occurred while create or update document property')
 
     #
     # Test for deleting document property
@@ -60,16 +59,15 @@ class TestDocumentProperties(BaseTestContext):
         remote_name = 'TestDeleteDocumentProperty.docx'
         dest_name = os.path.join(self.remote_test_out, remote_name)
         property_name = 'testProp'
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.DeleteDocumentPropertyRequest(remote_name, property_name,
                                                                                os.path.join(
                                                                                    self.remote_test_folder,
                                                                                    self.test_folder),
                                                                                dest_file_name=dest_name)
         result = self.words_api.delete_document_property(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while delete property')
+        self.assertIsNotNone(result, 'Error has occurred while delete property')
 
     #
     # Test for getting document properties
@@ -77,15 +75,13 @@ class TestDocumentProperties(BaseTestContext):
     def test_get_document_properties(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentProperties.docx'
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetDocumentPropertiesRequest(remote_name,
                                                                               os.path.join(
                                                                                   self.remote_test_folder,
                                                                                   self.test_folder))
         result = self.words_api.get_document_properties(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get properties')
+        self.assertIsNotNone(result, 'Error has occurred while get properties')
 
     #
     # Test for getting document property
@@ -94,13 +90,11 @@ class TestDocumentProperties(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentProperty.docx'
         property_name = 'Author'
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetDocumentPropertyRequest(remote_name, property_name,
                                                                             os.path.join(
                                                                                 self.remote_test_folder,
                                                                                 self.test_folder))
         result = self.words_api.get_document_property(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get property')
+        self.assertIsNotNone(result, 'Error has occurred while get property')
 

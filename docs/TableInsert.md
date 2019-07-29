@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**postion** | [**DocumentPosition**](DocumentPosition.md) | Table will be inserted before specified position. | [optional] 
+**position** | [**DocumentPosition**](DocumentPosition.md) | Table will be inserted before specified position. | [optional] 
 **columns_count** | **int** | Count of columns. Default is 2. | 
 **rows_count** | **int** | Count of rows. Default is 2. | 
 

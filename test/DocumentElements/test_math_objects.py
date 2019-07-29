@@ -41,15 +41,13 @@ class TestMathObjects(BaseTestContext):
         remote_name = 'TestDeleteOfficeMathObject.docx'
         index = 0
 
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.DeleteOfficeMathObjectRequest(remote_name, index,
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.DeleteOfficeMathObjectRequest(remote_name, index, '',
                                                                                os.path.join(
                                                                                    self.remote_test_folder,
                                                                                    self.test_folder))
         result = self.words_api.delete_office_math_object(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while delete math object')
+        self.assertIsNotNone(result, 'Error has occurred while delete math object')
 
     #
     # Test for getting math object from document
@@ -59,15 +57,13 @@ class TestMathObjects(BaseTestContext):
         remote_name = 'TestGetOfficeMathObject.docx'
         index = 0
 
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.GetOfficeMathObjectRequest(remote_name, index,
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.GetOfficeMathObjectRequest(remote_name, index, '', 
                                                                             os.path.join(
                                                                                 self.remote_test_folder,
                                                                                 self.test_folder))
         result = self.words_api.get_office_math_object(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get math object')
+        self.assertIsNotNone(result, 'Error has occurred while get math object')
 
     #
     # Test for getting math objects from document
@@ -76,15 +72,13 @@ class TestMathObjects(BaseTestContext):
         filename = 'MathObjects.docx'
         remote_name = 'TestGetOfficeMathObjects.docx'
 
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.GetOfficeMathObjectsRequest(remote_name,
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.GetOfficeMathObjectsRequest(remote_name, '',
                                                                              os.path.join(
                                                                                  self.remote_test_folder,
                                                                                  self.test_folder))
         result = self.words_api.get_office_math_objects(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get math objects')
+        self.assertIsNotNone(result, 'Error has occurred while get math objects')
 
     #
     # Test for getting math object from document
@@ -95,12 +89,10 @@ class TestMathObjects(BaseTestContext):
         index = 0
         format = 'png'
 
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.RenderMathObjectRequest(remote_name, format, index,
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.RenderMathObjectRequest(remote_name, format, index, '', 
                                                                          os.path.join(
                                                                              self.remote_test_folder,
                                                                              self.test_folder))
         result = self.words_api.render_math_object(request)
-        self.assertTrue(len(result) > 0, 'Error has occurred while render math objects')
+        self.assertIsNotNone(result, 'Error has occurred while render math objects')

@@ -1,6 +1,6 @@
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="ClassifyRequest.py">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +29,7 @@ class ClassifyRequest(object):
     Request model for classify operation.
     Initializes a new instance.
     :param text Text to classify.
-    :param best_classes_count Count of the best classes to return.
+    :param best_classes_count Number of the best classes to return.
     """
 
     def __init__(self, text, best_classes_count=None):

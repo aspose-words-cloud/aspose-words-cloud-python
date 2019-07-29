@@ -3,8 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **int** | Response status code. | 
-**status** | **str** | Response status. | [optional] 
+**request_id** | **str** | Request Id. | [optional] 
 **document_link** | [**FileLink**](FileLink.md) | Link to the document | [optional] 
 **stat_data** | [**DocumentStatData**](DocumentStatData.md) | Statistical data of the document | [optional] 
 
