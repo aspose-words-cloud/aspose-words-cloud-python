@@ -1,12 +1,13 @@
 stages:
-  - build&test
+  - build&test-2.7
+  - build&test-3.6
   - test-publishing
   - test-publishing-test
   - publishing
   - version_tag
 
-2.7-tests:
-  stage: build&test  
+tests:
+  stage: build&test-2.7  
   before_script:
     - chmod 777 -R .
   script: 
@@ -23,8 +24,8 @@ stages:
   tags:
     - awcloud-linux
 
-3.6-tests:
-  stage: build&test  
+tests:
+  stage: build&test-3.6  
   before_script:
     - chmod 777 -R .
   script: 
