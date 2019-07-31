@@ -7,11 +7,12 @@ stages:
 
 2.7-tests:
   stage: build&test  
+  before_script:
+    - chmod 777 -R .
   script: 
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
     - docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/build.sh
-    - ls -l
   artifacts:
     paths:       
       - 'nosetests.xml'  
@@ -24,6 +25,8 @@ stages:
 
 3.6-tests:
   stage: build&test  
+  before_script:
+    - chmod 777 -R .
   script: 
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
