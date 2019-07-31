@@ -40,16 +40,14 @@ class TestDrawingObjects(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentDrawingObjectByIndex.docx'
         index = 0
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetDocumentDrawingObjectByIndexRequest(remote_name, index,
-                                                                                          os.path.join(
-                                                                                              self.remote_test_folder,
-                                                                                              self.test_folder),
-                                                                                          node_path='sections/0')
+                                                                                        folder= os.path.join(
+                                                                                            self.remote_test_folder,
+                                                                                            self.test_folder),
+                                                                                        node_path='sections/0')
         result = self.words_api.get_document_drawing_object_by_index(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get drawing object by index')
+        self.assertIsNotNone(result, 'Error has occurred while get drawing object by index')
 
     #
     # Test for getting drawing object image data
@@ -58,16 +56,14 @@ class TestDrawingObjects(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentDrawingObjectImageData.docx'
         index = 0
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetDocumentDrawingObjectImageDataRequest(remote_name, index,
-                                                                                            os.path.join(
-                                                                                                self.remote_test_folder,
-                                                                                                self.test_folder),
-                                                                                            node_path='sections/0')
+                                                                                          folder= os.path.join(
+                                                                                              self.remote_test_folder,
+                                                                                              self.test_folder),
+                                                                                          node_path='sections/0')
         result = self.words_api.get_document_drawing_object_image_data(request)
-        self.assertTrue(len(result) > 0, 'Error has occurred while get drawing object image data')
+        self.assertIsNotNone(result, 'Error has occurred while get drawing object image data')
 
     #
     # Test for getting drawing object ole data
@@ -76,16 +72,16 @@ class TestDrawingObjects(BaseTestContext):
         filename = 'sample_EmbeddedOLE.docx'
         remote_name = 'TestGetDocumentDrawingObjectOleData.docx'
         index = 0
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, 
+                                                                                                            self.test_folder,
+                                                                                                            filename))
         request = asposewordscloud.models.requests.GetDocumentDrawingObjectOleDataRequest(remote_name, index,
-                                                                                          os.path.join(
-                                                                                              self.remote_test_folder,
-                                                                                              self.test_folder),
-                                                                                          node_path='sections/0')
+                                                                                        folder= os.path.join(
+                                                                                            self.remote_test_folder,
+                                                                                            self.test_folder),
+                                                                                        node_path='sections/0')
         result = self.words_api.get_document_drawing_object_ole_data(request)
-        self.assertTrue(len(result) > 0, 'Error has occurred while get drawing object ole data')
+        self.assertIsNotNone(result, 'Error has occurred while get drawing object ole data')
 
     #
     # Test for getting drawing objects
@@ -93,50 +89,45 @@ class TestDrawingObjects(BaseTestContext):
     def test_get_document_drawing_objects(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentDrawingObjects.docx'
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetDocumentDrawingObjectsRequest(remote_name,
-                                                                                    os.path.join(
-                                                                                        self.remote_test_folder,
-                                                                                        self.test_folder))
+                                                                                  folder= os.path.join(
+                                                                                      self.remote_test_folder,
+                                                                                      self.test_folder),
+                                                                                    node_path= 'sections/0')
         result = self.words_api.get_document_drawing_objects(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get drawing objects')
+        self.assertIsNotNone(result, 'Error has occurred while get drawing objects')
 
     #
     # Test for updating drawing object
     #
-    def test_post_drawing_object(self):
+    def test_update_drawing_object(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPostDrawingObject.docx'
         data = os.path.join(self.local_common_folder, 'aspose-cloud.png')
         index = 0
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.PostDrawingObjectRequest(remote_name, '{"Left": 0}', data, index,
-                                                                            os.path.join(
-                                                                                self.remote_test_folder,
-                                                                                self.test_folder))
-        result = self.words_api.post_drawing_object(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while update drawing object')
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        request = asposewordscloud.models.requests.UpdateDrawingObjectRequest(remote_name, '{"Left": 0}', data, index, 'sections/0',
+                                                                          os.path.join(
+                                                                              self.remote_test_folder,
+                                                                              self.test_folder))
+        result = self.words_api.update_drawing_object(request)
+        self.assertIsNotNone(result, 'Error has occurred while update drawing object')
 
     #
     # Test for adding drawing object
     #
-    def test_put_drawing_object(self):
+    def test_insert_drawing_object(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPutDrawingObject.docx'
         data = os.path.join(self.local_common_folder, 'aspose-cloud.png')
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.PutDrawingObjectRequest(remote_name, '{"Left": 0}', data,
-                                                                           os.path.join(
-                                                                               self.remote_test_folder,
-                                                                               self.test_folder))
-        result = self.words_api.put_drawing_object(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while add drawing object')
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        request = asposewordscloud.models.requests.InsertDrawingObjectRequest(remote_name, '{"Left": 0}', data, 'sections/0',
+                                                                         os.path.join(
+                                                                             self.remote_test_folder,
+                                                                             self.test_folder))
+        result = self.words_api.insert_drawing_object(request)
+        self.assertIsNotNone(result, 'Error has occurred while add drawing object')
 
     #
     # Test for rendering drawing object
@@ -146,16 +137,14 @@ class TestDrawingObjects(BaseTestContext):
         remote_name = 'TestRenderDrawingObject.docx'
         _format = 'png'
         index = 0
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.RenderDrawingObjectRequest(remote_name, _format, index,
-                                                                              os.path.join(
-                                                                                  self.remote_test_folder,
-                                                                                  self.test_folder),
-                                                                              node_path='sections/0')
+                                                                            folder=os.path.join(
+                                                                              self.remote_test_folder,
+                                                                              self.test_folder),
+                                                                            node_path='sections/0')
         result = self.words_api.render_drawing_object(request)
-        self.assertTrue(len(result) > 0, 'Error has occurred while render drawing object')
+        self.assertIsNotNone(result, 'Error has occurred while render drawing object')
 
     #
     # Test for removing drawing object from document
@@ -164,12 +153,10 @@ class TestDrawingObjects(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestDeleteDrawingObject.docx'
         index = 0
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.DeleteDrawingObjectRequest(remote_name, index,
-                                                                              os.path.join(
-                                                                                  self.remote_test_folder,
-                                                                                  self.test_folder))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        request = asposewordscloud.models.requests.DeleteDrawingObjectRequest(remote_name, index, 'sections/0',
+                                                                            os.path.join(
+                                                                              self.remote_test_folder,
+                                                                              self.test_folder))
         result = self.words_api.delete_drawing_object(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while delete drawing object')
+        self.assertIsNotNone(result, 'Error has occurred while delete drawing object')

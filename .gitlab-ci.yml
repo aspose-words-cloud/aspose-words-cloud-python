@@ -1,0 +1,101 @@
+stages:
+  - build&test
+  - test-publishing
+  - test-publishing-test
+  - publishing
+  - version_tag
+
+2.7-tests:
+  stage: build&test  
+  script: 
+    - mkdir -p Settings
+    - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
+    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/build.sh
+    - ls -l
+  artifacts:
+    paths:       
+      - 'nosetests.xml'  
+      - 'lintResults.txt' 
+    reports: 
+      junit: 
+        - 'nosetests.xml'
+  tags:
+    - awcloud-linux
+
+3.6-tests:
+  stage: build&test  
+  script: 
+    - mkdir -p Settings
+    - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
+    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.6 bash scripts/build.sh
+    - ls -l
+  artifacts:
+    paths:       
+      - 'nosetests.xml'  
+      - 'lintResults.txt' 
+    reports: 
+      junit: 
+        - 'nosetests.xml'
+  tags:
+    - awcloud-linux
+
+merge-to-testPackage:
+  stage: publishing
+  before_script:
+    - $env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-python.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS
+  script: 
+    - git checkout master
+    - 'git remote set-url origin $env:ORIGIN'
+    - git checkout testPackage
+    - git reset --hard origin/testPackage
+    - git merge --no-ff --allow-unrelated-histories origin/master
+    - git diff --name-status
+    - git push
+  only: 
+    - master
+  tags: 
+    - awcloud
+  when: manual
+
+publish-test:
+  stage: test-publishing
+  script:
+    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/test-publish.sh $PypiLogin $PypiPass
+  only:
+    - testPackage
+  tags:
+    - awcloud-linux
+
+test-package:
+  stage: test-publishing-test
+  script: 
+    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.6 bash scripts/test-package.sh $WordsAppSid $WordsAppKey $WordsBaseUrl
+  tags: 
+    - awcloud-linux
+  artifacts:
+    paths:
+      - nosetests.xml
+    reports:
+      junit:
+        - nosetests.xml
+  only:
+    - testPackage
+
+publish to PyPi:
+  stage: publishing
+  only:
+    - testPackage
+  script:
+    - git reset --hard
+    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/publish.sh $PypiLogin $PypiPass
+
+add version tag:
+  stage: version_tag
+  only:
+    - testPackage
+  before_script:
+    - $env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-python.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS
+    - $env:SDK_VERSION += ((Get-Date).AddMonths(1)).tostring("yy.M")
+  script: 
+    - git tag -a $env:SDK_VERSION -m 'version $env:SDK_VERSION' | exit 0
+    - git push $env:ORIGIN $env:SDK_VERSION    

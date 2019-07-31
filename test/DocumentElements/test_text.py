@@ -34,41 +34,22 @@ class TestText(BaseTestContext):
     test_folder = 'DocumentElements/Text'
 
     #
-    #  Test for getting text
-    #
-    def test_get_document_text_items(self):
-        filename = 'test_multi_pages.docx'
-        remote_name = 'TestGetDocumentTextItems.docx'
-
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.GetDocumentTextItemsRequest(remote_name,
-                                                                               os.path.join(
-                                                                                   self.remote_test_folder,
-                                                                                   self.test_folder))
-        result = self.words_api.get_document_text_items(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get document text items')
-
-    #
     #  Test for replacing text
     #
-    def test_post_replace_text(self):
+    def test_replace_text(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPostReplaceText.docx'
         dest_name = os.path.join(self.remote_test_out, remote_name)
-        body = asposewordscloud.ReplaceTextRequest('aspose', 'aspose new')
+        body = asposewordscloud.ReplaceTextParameters('aspose', 'aspose new')
 
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.PostReplaceTextRequest(remote_name, body,
-                                                                          os.path.join(
-                                                                              self.remote_test_folder,
-                                                                              self.test_folder),
-                                                                          dest_file_name=dest_name)
-        result = self.words_api.post_replace_text(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while post replace text')
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        request = asposewordscloud.models.requests.ReplaceTextRequest(remote_name, body,
+                                                                        os.path.join(
+                                                                            self.remote_test_folder,
+                                                                            self.test_folder),
+                                                                        dest_file_name=dest_name)
+        result = self.words_api.replace_text(request)
+        self.assertIsNotNone(result, 'Error has occurred while post replace text')
 
     #
     #  Test for searching text
@@ -78,12 +59,10 @@ class TestText(BaseTestContext):
         remote_name = 'TestSearch.docx'
         pattern = 'aspose'
 
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.SearchRequest(remote_name, pattern,
                                                                  os.path.join(
                                                                      self.remote_test_folder,
                                                                      self.test_folder))
         result = self.words_api.search(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while search text')
+        self.assertIsNotNone(result, 'Error has occurred while search text')

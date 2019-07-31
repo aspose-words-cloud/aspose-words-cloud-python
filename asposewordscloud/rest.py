@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="rest.py">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,6 +41,7 @@ try:
 except ImportError:
     raise ImportError('Swagger python client requires urllib3.')
 
+from asposewordscloud.models import WordsApiErrorResponse, ApiError
 
 logger = logging.getLogger(__name__)
 
@@ -310,8 +311,8 @@ class ApiException(Exception):
         if http_resp:
             self.status = http_resp.status
             self.reason = http_resp.reason
-            self.body = http_resp.data
             self.headers = http_resp.getheaders()
+            self.init_error_response(json.loads(http_resp.data))
         else:
             self.status = status
             self.reason = reason
@@ -330,3 +331,12 @@ class ApiException(Exception):
             error_message += "HTTP response body: {0}\n".format(self.body)
 
         return error_message
+
+        
+    def init_error_response(self, json_object):
+        self.body = WordsApiErrorResponse(json_object["RequestId"], self.init_error(json_object["Error"]))
+        
+
+    def init_error(self, error_object):
+        return ApiError(error_object.get("Code", None), error_object.get("Message", None), error_object.get("Description", None), error_object.get("DateTime", None), 
+        self.init_error(error_object["InnerError"]) if "InnerError" in error_object else None)

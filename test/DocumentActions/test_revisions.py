@@ -39,15 +39,13 @@ class TestRevisions(BaseTestContext):
     def test_accept_all_revisions(self):
         filename = 'test_doc.docx'
         remote_name = 'TestAcceptAllRevisions.docx'
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.AcceptAllRevisionsRequest(remote_name,
                                                                              os.path.join(
                                                                                  self.remote_test_folder,
                                                                                  self.test_folder))
         result = self.words_api.accept_all_revisions(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while accept revisions')
+        self.assertIsNotNone(result, 'Error has occurred while accept revisions')
 
     #
     # Test for rejecting all revisions
@@ -55,12 +53,10 @@ class TestRevisions(BaseTestContext):
     def test_reject_all_revisions(self):
         filename = 'test_doc.docx'
         remote_name = 'TestRejectAllRevisions.docx'
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.RejectAllRevisionsRequest(remote_name,
                                                                              os.path.join(
                                                                                  self.remote_test_folder,
                                                                                  self.test_folder))
         result = self.words_api.reject_all_revisions(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while accept revisions')
+        self.assertIsNotNone(result, 'Error has occurred while accept revisions')

@@ -39,16 +39,14 @@ class TestFields(BaseTestContext):
     def test_get_fields(self):
         filename = 'GetField.docx'
         remote_name = 'TestGetFields.docx'
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.GetFieldsRequest(remote_name,
-                                                                    os.path.join(
-                                                                        self.remote_test_folder,
-                                                                        self.test_folder),
-                                                                    node_path='sections/0')
+                                                                  folder= os.path.join(
+                                                                      self.remote_test_folder,
+                                                                      self.test_folder),
+                                                                  node_path='sections/0')
         result = self.words_api.get_fields(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get fields')
+        self.assertIsNotNone(result, 'Error has occurred while get fields')
 
     #
     #  Test for getting field from document
@@ -57,90 +55,80 @@ class TestFields(BaseTestContext):
         filename = 'GetField.docx'
         remote_name = 'TestGetField.docx'
         index = 0
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.GetFieldRequest(remote_name, index,
-                                                                   os.path.join(
-                                                                       self.remote_test_folder,
-                                                                       self.test_folder),
-                                                                   node_path='sections/0/paragraphs/0')
+                                                                 folder= os.path.join(
+                                                                     self.remote_test_folder,
+                                                                     self.test_folder),
+                                                                 node_path='sections/0/paragraphs/0')
         result = self.words_api.get_field(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get field')
+        self.assertIsNotNone(result, 'Error has occurred while get field')
 
     #
     # Test for updating document field
     #
-    def test_post_field(self):
+    def test_update_field(self):
         filename = 'GetField.docx'
         remote_name = 'TestPostField.docx'
         dest_name = os.path.join(self.remote_test_out, remote_name)
         index = 0
         body = asposewordscloud.Field(None, '0.0.3', '{ NUMPAGES }')
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.PostFieldRequest(remote_name, body, index,
-                                                                    os.path.join(
-                                                                        self.remote_test_folder,
-                                                                        self.test_folder),
-                                                                    node_path='sections/0/paragraphs/0',
-                                                                    dest_file_name=dest_name)
-        result = self.words_api.post_field(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while post field')
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.UpdateFieldRequest(remote_name, body, index,
+                                                                  folder= os.path.join(
+                                                                      self.remote_test_folder,
+                                                                      self.test_folder),
+                                                                  node_path='sections/0/paragraphs/0',
+                                                                  dest_file_name=dest_name)
+        result = self.words_api.update_field(request)
+        self.assertIsNotNone(result, 'Error has occurred while post field')
 
     #
     # Test for inserting document field
     #
-    def test_put_field(self):
+    def test_insert_field(self):
         filename = 'GetField.docx'
         remote_name = 'TestPutField.docx'
         body = asposewordscloud.Field(None, '0.0.3', '{ NUMPAGES }')
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.PutFieldRequest(remote_name, body,
-                                                                   os.path.join(
-                                                                       self.remote_test_folder,
-                                                                       self.test_folder),
-                                                                   node_path='sections/0/paragraphs/0')
-        result = self.words_api.put_field(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while put field')
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.InsertFieldRequest(remote_name, body,
+                                                                 folder= os.path.join(
+                                                                     self.remote_test_folder,
+                                                                     self.test_folder),
+                                                                 node_path='sections/0/paragraphs/0')
+        result = self.words_api.insert_field(request)
+        self.assertIsNotNone(result, 'Error has occurred while put field')
 
     #
     # Test for reevaluating fields in document
     #
-    def test_post_update_document_fields(self):
+    def test_update_fields(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPostUpdateDocumentFields.docx'
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.PostUpdateDocumentFieldsRequest(remote_name,
-                                                                                   os.path.join(
-                                                                                       self.remote_test_folder,
-                                                                                       self.test_folder))
-        result = self.words_api.post_update_document_fields(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while post update document fields')
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        request = asposewordscloud.models.requests.UpdateFieldsRequest(remote_name,
+                                                                                 os.path.join(
+                                                                                     self.remote_test_folder,
+                                                                                     self.test_folder))
+        result = self.words_api.update_fields(request)
+        self.assertIsNotNone(result, 'Error has occurred while post update document fields')
 
     #
     # Test for inserting page numbers
     #
-    def test_post_insert_page_numbers(self):
+    def test_insert_page_numbers(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPostInsertPageNumbers.docx'
         dest_name = os.path.join(self.remote_test_out, remote_name)
         body = asposewordscloud.models.PageNumber('{PAGE} of { NUMPAGES }', 'center', False, True)
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.PostInsertPageNumbersRequest(remote_name, body,
-                                                                                os.path.join(
-                                                                                    self.remote_test_folder,
-                                                                                    self.test_folder),
-                                                                                dest_file_name=dest_name)
-        result = self.words_api.post_insert_page_numbers(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while post insert page numbers')
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        request = asposewordscloud.models.requests.InsertPageNumbersRequest(remote_name, body,
+                                                                              os.path.join(
+                                                                                  self.remote_test_folder,
+                                                                                  self.test_folder),
+                                                                              dest_file_name=dest_name)
+        result = self.words_api.insert_page_numbers(request)
+        self.assertIsNotNone(result, 'Error has occurred while post insert page numbers')
 
     #
     # Test for removing field
@@ -149,16 +137,14 @@ class TestFields(BaseTestContext):
         filename = 'GetField.docx'
         remote_name = 'TestDeleteField.docx'
         index = 0
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.DeleteFieldRequest(remote_name, index,
-                                                                      os.path.join(
-                                                                          self.remote_test_folder,
-                                                                          self.test_folder),
-                                                                      node_path='sections/0/paragraphs/0')
+                                                                    folder= os.path.join(
+                                                                        self.remote_test_folder,
+                                                                        self.test_folder),
+                                                                    node_path='sections/0/paragraphs/0')
         result = self.words_api.delete_field(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while delete field')
+        self.assertIsNotNone(result, 'Error has occurred while delete field')
 
     #
     # Test for removing field
@@ -166,12 +152,11 @@ class TestFields(BaseTestContext):
     def test_delete_fields(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestDeleteFields.docx'
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.DeleteFieldsRequest(remote_name,
-                                                                       os.path.join(
-                                                                           self.remote_test_folder,
-                                                                           self.test_folder))
+                                                                    'sections/0',
+                                                                     os.path.join(
+                                                                         self.remote_test_folder,
+                                                                         self.test_folder))
         result = self.words_api.delete_fields(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while delete fields')
+        self.assertIsNotNone(result, 'Error has occurred while delete fields')

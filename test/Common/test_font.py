@@ -38,9 +38,9 @@ class TestFont(BaseTestContext):
     def test_reset_cache(self):
         request = asposewordscloud.models.requests.ResetCacheRequest()
         result = self.words_api.reset_cache(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while reset font cache')
+        self.assertIsNotNone(result, 'Error has occurred while reset font cache')
 
     def test_get_available_fonts(self):
         request = asposewordscloud.models.requests.GetAvailableFontsRequest()
         result = self.words_api.get_available_fonts(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get fonts')
+        self.assertIsNotNone(result, 'Error has occurred while get fonts')

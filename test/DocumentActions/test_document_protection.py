@@ -39,65 +39,57 @@ class TestDocumentProtection(BaseTestContext):
     def test_get_document_protection(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentProtection.docx'
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
 
         request = asposewordscloud.models.requests.GetDocumentProtectionRequest(remote_name,
                                                                                 os.path.join(self.remote_test_folder,
                                                                                              self.test_folder))
         result = self.words_api.get_document_protection(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get protect document')
+        self.assertIsNotNone(result, 'Error has occurred while get protect document')
 
     #
     # Test for inserting document protection
     #
-    def test_put_protect_document(self):
+    def test_protect_document(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPutProtectDocument.docx'
         body = asposewordscloud.ProtectionRequest(new_password='123')
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
 
-        request = asposewordscloud.models.requests.PutProtectDocumentRequest(remote_name, body,
-                                                                             os.path.join(self.remote_test_folder,
-                                                                                          self.test_folder))
-        result = self.words_api.put_protect_document(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while put protect document')
+        request = asposewordscloud.models.requests.ProtectDocumentRequest(remote_name, body,
+                                                                           os.path.join(self.remote_test_folder,
+                                                                                        self.test_folder))
+        result = self.words_api.protect_document(request)
+        self.assertIsNotNone(result, 'Error has occurred while put protect document')
 
     #
     # Test for updating document protection
     #
-    def test_post_change_document_protection(self):
+    def test_change_document_protection(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPostChangeDocumentProtection.docx'
         body = asposewordscloud.ProtectionRequest(new_password='')
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
 
-        request = asposewordscloud.models.requests.PostChangeDocumentProtectionRequest(remote_name, body,
-                                                                                       os.path.join(
-                                                                                           self.remote_test_folder,
-                                                                                           self.test_folder))
-        result = self.words_api.post_change_document_protection(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while put protect document')
+        request = asposewordscloud.models.requests.ProtectDocumentRequest(remote_name, body,
+                                                                                     os.path.join(
+                                                                                         self.remote_test_folder,
+                                                                                         self.test_folder))
+        result = self.words_api.protect_document(request)
+        self.assertIsNotNone(result, 'Error has occurred while put protect document')
 
     #
     # Test for removing document protection
     #
-    def test_delete_unprotect_document(self):
+    def test_unprotect_document(self):
         filename = 'SampleProtectedBlankWordDocument.docx'
         remote_name = 'TestDeleteUnprotectDocument.docx'
         body = asposewordscloud.ProtectionRequest('aspose')
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
 
-        request = asposewordscloud.models.requests.DeleteUnprotectDocumentRequest(remote_name, body,
-                                                                                  os.path.join(
-                                                                                      self.remote_test_folder,
-                                                                                      self.test_folder))
-        result = self.words_api.delete_unprotect_document(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while put protect document')
+        request = asposewordscloud.models.requests.UnprotectDocumentRequest(remote_name, body,
+                                                                                os.path.join(
+                                                                                    self.remote_test_folder,
+                                                                                    self.test_folder))
+        result = self.words_api.unprotect_document(request)
+        self.assertIsNotNone(result, 'Error has occurred while put protect document')

@@ -1,6 +1,6 @@
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="RenderMathObjectRequest.py">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -28,24 +28,24 @@ class RenderMathObjectRequest(object):
     """
     Request model for render_math_object operation.
     Initializes a new instance.
-    :param name The file name.
+    :param name The document name.
     :param format The destination format.
-    :param index Object's index
+    :param index Object index.
+    :param node_path Path to the node, which contains office math objects.
     :param folder Original document folder.
-    :param storage File storage, which have to be used.
+    :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
-    :param node_path Path to node, which contains office math objects.
     :param fonts_location Folder in filestorage with custom fonts.
     """
 
-    def __init__(self, name, format, index, folder=None, storage=None, load_encoding=None, password=None, node_path=None, fonts_location=None):
+    def __init__(self, name, format, index, node_path, folder=None, storage=None, load_encoding=None, password=None, fonts_location=None):
         self.name = name
         self.format = format
         self.index = index
+        self.node_path = node_path
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
-        self.node_path = node_path
         self.fonts_location = fonts_location

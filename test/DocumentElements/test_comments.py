@@ -40,15 +40,14 @@ class TestComments(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestDeleteComment.docx'
         comment_index = 0
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.DeleteCommentRequest(remote_name, comment_index,
                                                                         os.path.join(
                                                                             self.remote_test_folder,
                                                                             self.test_folder))
         result = self.words_api.delete_comment(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while delete comment')
+        self.assertIsNotNone(result, 'Error has occurred while delete comment')
 
     #
     # Test for getting comment
@@ -57,15 +56,14 @@ class TestComments(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetComment.docx'
         comment_index = 0
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetCommentRequest(remote_name, comment_index,
                                                                      os.path.join(
                                                                          self.remote_test_folder,
                                                                          self.test_folder))
         result = self.words_api.get_comment(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get comment')
+        self.assertIsNotNone(result, 'Error has occurred while get comment')
 
     #
     # Test for getting comment
@@ -73,53 +71,50 @@ class TestComments(BaseTestContext):
     def test_get_comments(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetComments.docx'
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetCommentsRequest(remote_name,
                                                                       os.path.join(
                                                                           self.remote_test_folder,
                                                                           self.test_folder))
         result = self.words_api.get_comments(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get comments')
+        self.assertIsNotNone(result, 'Error has occurred while get comments')
 
     #
     # Test for updating comment
     #
-    def test_post_comment(self):
+    def test_update_comment(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPostComment.docx'
         comment_index = 0
         node_link = asposewordscloud.NodeLink(None, '0.0.3')
         doc_pos = asposewordscloud.DocumentPosition(node_link, 0)
         body = asposewordscloud.Comment(None, 'Yaroslav Ekimov', initial='YE', range_start=doc_pos, range_end=doc_pos,
-                                        text='A new comment')
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.PostCommentRequest(remote_name, comment_index, body,
-                                                                      os.path.join(
-                                                                          self.remote_test_folder,
-                                                                          self.test_folder))
-        result = self.words_api.post_comment(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while post comment')
+                                      text='A new comment')
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        request = asposewordscloud.models.requests.UpdateCommentRequest(remote_name, comment_index, body,
+                                                                    os.path.join(
+                                                                        self.remote_test_folder,
+                                                                        self.test_folder))
+        result = self.words_api.update_comment(request)
+        self.assertIsNotNone(result, 'Error has occurred while post comment')
 
     #
     # Test for adding comment
     #
-    def test_put_comment(self):
+    def test_insert_comment(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPutComment.docx'
         node_link = asposewordscloud.NodeLink(None, '0.0.3')
         doc_pos = asposewordscloud.DocumentPosition(node_link, 0)
         body = asposewordscloud.Comment(None, 'Yaroslav Ekimov', initial='YE', range_start=doc_pos, range_end=doc_pos,
-                                        text='A new comment')
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.PutCommentRequest(remote_name, body,
-                                                                     os.path.join(
-                                                                         self.remote_test_folder,
-                                                                         self.test_folder))
-        result = self.words_api.put_comment(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while put comment')
+                                      text='A new comment')
+        
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        request = asposewordscloud.models.requests.InsertCommentRequest(remote_name, body,
+                                                                   os.path.join(
+                                                                       self.remote_test_folder,
+                                                                       self.test_folder))
+        result = self.words_api.insert_comment(request)
+        self.assertIsNotNone(result, 'Error has occurred while put comment')

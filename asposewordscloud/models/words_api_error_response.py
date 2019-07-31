@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="WordsApiErrorResponse.py">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,97 +41,69 @@ class WordsApiErrorResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'code': 'int',
-        'status': 'str',
-        'message': 'str'
+        'request_id': 'str',
+        'error': 'ApiError'
     }
 
     attribute_map = {
-        'code': 'Code',
-        'status': 'Status',
-        'message': 'Message'
+        'request_id': 'RequestId',
+        'error': 'Error'
     }
 
-    def __init__(self, code=None, status=None, message=None):  # noqa: E501
+    def __init__(self, request_id=None, error=None):  # noqa: E501
         """WordsApiErrorResponse - a model defined in Swagger"""  # noqa: E501
 
-        self._code = None
-        self._status = None
-        self._message = None
+        self._request_id = None
+        self._error = None
         self.discriminator = None
 
-        if code is not None:
-            self.code = code
-        if status is not None:
-            self.status = status
-        if message is not None:
-            self.message = message
+        if request_id is not None:
+            self.request_id = request_id
+        if error is not None:
+            self.error = error
 
     @property
-    def code(self):
-        """Gets the code of this WordsApiErrorResponse.  # noqa: E501
+    def request_id(self):
+        """Gets the request_id of this WordsApiErrorResponse.  # noqa: E501
 
-        Response status code.  # noqa: E501
+        Request Id.  # noqa: E501
 
-        :return: The code of this WordsApiErrorResponse.  # noqa: E501
-        :rtype: int
-        """
-        return self._code
-
-    @code.setter
-    def code(self, code):
-        """Sets the code of this WordsApiErrorResponse.
-
-        Response status code.  # noqa: E501
-
-        :param code: The code of this WordsApiErrorResponse.  # noqa: E501
-        :type: int
-        """
-        if code is None:
-            raise ValueError("Invalid value for `code`, must not be `None`")  # noqa: E501
-        self._code = code
-    @property
-    def status(self):
-        """Gets the status of this WordsApiErrorResponse.  # noqa: E501
-
-        Response status.  # noqa: E501
-
-        :return: The status of this WordsApiErrorResponse.  # noqa: E501
+        :return: The request_id of this WordsApiErrorResponse.  # noqa: E501
         :rtype: str
         """
-        return self._status
+        return self._request_id
 
-    @status.setter
-    def status(self, status):
-        """Sets the status of this WordsApiErrorResponse.
+    @request_id.setter
+    def request_id(self, request_id):
+        """Sets the request_id of this WordsApiErrorResponse.
 
-        Response status.  # noqa: E501
+        Request Id.  # noqa: E501
 
-        :param status: The status of this WordsApiErrorResponse.  # noqa: E501
+        :param request_id: The request_id of this WordsApiErrorResponse.  # noqa: E501
         :type: str
         """
-        self._status = status
+        self._request_id = request_id
     @property
-    def message(self):
-        """Gets the message of this WordsApiErrorResponse.  # noqa: E501
+    def error(self):
+        """Gets the error of this WordsApiErrorResponse.  # noqa: E501
 
-        Error message.  # noqa: E501
+        Error.  # noqa: E501
 
-        :return: The message of this WordsApiErrorResponse.  # noqa: E501
-        :rtype: str
+        :return: The error of this WordsApiErrorResponse.  # noqa: E501
+        :rtype: ApiError
         """
-        return self._message
+        return self._error
 
-    @message.setter
-    def message(self, message):
-        """Sets the message of this WordsApiErrorResponse.
+    @error.setter
+    def error(self, error):
+        """Sets the error of this WordsApiErrorResponse.
 
-        Error message.  # noqa: E501
+        Error.  # noqa: E501
 
-        :param message: The message of this WordsApiErrorResponse.  # noqa: E501
-        :type: str
+        :param error: The error of this WordsApiErrorResponse.  # noqa: E501
+        :type: ApiError
         """
-        self._message = message
+        self._error = error
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

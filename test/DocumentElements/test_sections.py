@@ -41,15 +41,13 @@ class TestSections(BaseTestContext):
         remote_name = 'TestGetSection.docx'
         index = 0
 
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetSectionRequest(remote_name, index,
                                                                      os.path.join(
                                                                          self.remote_test_folder,
                                                                          self.test_folder))
         result = self.words_api.get_section(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get section')
+        self.assertIsNotNone(result, 'Error has occurred while get section')
 
     #
     # Test for getting section
@@ -58,12 +56,10 @@ class TestSections(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetSections.docx'
 
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetSectionsRequest(remote_name,
                                                                       os.path.join(
                                                                           self.remote_test_folder,
                                                                           self.test_folder))
         result = self.words_api.get_sections(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get sections')
+        self.assertIsNotNone(result, 'Error has occurred while get sections')

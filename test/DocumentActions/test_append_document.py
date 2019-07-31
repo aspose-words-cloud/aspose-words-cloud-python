@@ -36,20 +36,17 @@ class TestAppendDocument(BaseTestContext):
     #
     # Test for appending document
     #
-    def test_post_append_document(self):
+    def test_append_document(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPostAppendDocument.docx'
         dest_name = os.path.join(self.remote_test_out, remote_name)
         doc_entry = asposewordscloud.DocumentEntry(os.path.join(self.remote_test_folder, self.test_folder, remote_name),
                                                    'KeepSourceFormatting')
         body = asposewordscloud.DocumentEntryList([doc_entry])
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-
-        request = asposewordscloud.models.requests.PostAppendDocumentRequest(remote_name, body,
-                                                                             os.path.join(self.remote_test_folder,
-                                                                                          self.test_folder),
-                                                                             dest_file_name=dest_name)
-        result = self.words_api.post_append_document(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while append document')
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        request = asposewordscloud.models.requests.AppendDocumentRequest(remote_name, body,
+                                                                           os.path.join(self.remote_test_folder,
+                                                                                        self.test_folder),
+                                                                           dest_file_name=dest_name)
+        result = self.words_api.append_document(request)
+        self.assertTrue(result.document is not None, 'Error has occurred while append document')

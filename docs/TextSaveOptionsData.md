@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **update_last_saved_time_property** | **bool** | Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving. | [optional] 
 **update_sdt_content** | **bool** | Gets or sets value determining whether content of  is updated before saving. | [optional] 
 **update_fields** | **bool** | Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true | [optional] 
+**add_bidi_marks** | **bool** | Specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true. | [optional] 
 **encoding** | **str** | Specifies the encoding to use when exporting in plain text format | [optional] 
 **export_headers_footers** | **bool** | Specifies whether to output headers and footers when exporting in plain text format | [optional] 
 **force_page_breaks** | **bool** | Allows to specify whether the page breaks should be preserved during export. The default value is false. | [optional] 

@@ -36,58 +36,52 @@ class TestWatermarks(BaseTestContext):
     #
     #  Test for removing watermark
     #
-    def test_delete_document_watermark(self):
+    def test_delete_watermark(self):
         filename = 'test_doc.docx'
         remote_name = 'TestDeleteDocumentWatermark.docx'
 
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.DeleteDocumentWatermarkRequest(remote_name,
-                                                                                  os.path.join(
-                                                                                      self.remote_test_folder,
-                                                                                      self.test_folder))
-        result = self.words_api.delete_document_watermark(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while delete document watermark')
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        request = asposewordscloud.models.requests.DeleteWatermarkRequest(remote_name,
+                                                                                os.path.join(
+                                                                                    self.remote_test_folder,
+                                                                                    self.test_folder))
+        result = self.words_api.delete_watermark(request)
+        self.assertIsNotNone(result, 'Error has occurred while delete document watermark')
 
     #
     #  Test for inserting watermark image
     #
-    def test_post_insert_document_watermark_image(self):
+    def test_insert_watermark_image(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPostInsertDocumentWatermarkImage.docx'
         rotation_angle = 0
         dest_name = os.path.join(self.remote_test_out, remote_name)
         image = os.path.join(self.local_common_folder, 'aspose-cloud.png')
 
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.PostInsertDocumentWatermarkImageRequest(remote_name, image,
-                                                                                           os.path.join(
-                                                                                               self.remote_test_folder,
-                                                                                               self.test_folder),
-                                                                                           dest_file_name=dest_name,
-                                                                                           rotation_angle=rotation_angle)
-        result = self.words_api.post_insert_document_watermark_image(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while post insert document watermark')
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        request = asposewordscloud.models.requests.InsertWatermarkImageRequest(remote_name, image,
+                                                                                         os.path.join(
+                                                                                             self.remote_test_folder,
+                                                                                             self.test_folder),
+                                                                                         dest_file_name=dest_name,
+                                                                                         rotation_angle=rotation_angle)
+        result = self.words_api.insert_watermark_image(request)
+        self.assertIsNotNone(result, 'Error has occurred while post insert document watermark')
 
     #
     #  Test for inserting watermark text
     #
-    def test_post_insert_document_watermark_text(self):
+    def test_insert_watermark_text(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPostInsertDocumentWatermarkText.docx'
         dest_name = os.path.join(self.remote_test_out, remote_name)
         body = asposewordscloud.WatermarkText('This is the text', 90)
 
-        with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.PostInsertDocumentWatermarkTextRequest(remote_name, body,
-                                                                                          os.path.join(
-                                                                                              self.remote_test_folder,
-                                                                                              self.test_folder),
-                                                                                          dest_file_name=dest_name)
-        result = self.words_api.post_insert_document_watermark_text(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while post insert document watermark text')
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        request = asposewordscloud.models.requests.InsertWatermarkTextRequest(remote_name, body,
+                                                                                        os.path.join(
+                                                                                            self.remote_test_folder,
+                                                                                            self.test_folder),
+                                                                                        dest_file_name=dest_name)
+        result = self.words_api.insert_watermark_text(request)
+        self.assertIsNotNone(result, 'Error has occurred while post insert document watermark text')

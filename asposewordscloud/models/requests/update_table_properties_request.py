@@ -1,6 +1,6 @@
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="UpdateTablePropertiesRequest.py">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,21 +29,22 @@ class UpdateTablePropertiesRequest(object):
     Request model for update_table_properties operation.
     Initializes a new instance.
     :param name The document name.
-    :param index Object's index
+    :param index Object index.
+    :param node_path Path to the node, which contains tables.
     :param folder Original document folder.
-    :param storage File storage, which have to be used.
+    :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
-    :param dest_file_name Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+    :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     :param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     :param revision_date_time The date and time to use for revisions.
     :param properties The properties.
-    :param node_path Path to node, which contains tables.
     """
 
-    def __init__(self, name, index, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None, properties=None, node_path=None):
+    def __init__(self, name, index, node_path, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None, properties=None):
         self.name = name
         self.index = index
+        self.node_path = node_path
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
@@ -52,4 +53,3 @@ class UpdateTablePropertiesRequest(object):
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
         self.properties = properties
-        self.node_path = node_path

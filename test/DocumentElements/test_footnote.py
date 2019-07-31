@@ -40,15 +40,13 @@ class TestFootnote(BaseTestContext):
         filename = 'Footnote.doc'
         remote_name = 'TestGetFootnote.docx'
         index = 0
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.GetFootnoteRequest(remote_name, index,
-                                                                      os.path.join(
-                                                                          self.remote_test_folder,
-                                                                          self.test_folder))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.GetFootnoteRequest(remote_name, index, 'sections/0',
+                                                                    os.path.join(
+                                                                        self.remote_test_folder,
+                                                                        self.test_folder))
         result = self.words_api.get_footnote(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get footnote')
+        self.assertIsNotNone(result, 'Error has occurred while get footnote')
 
     #
     #  Test for getting footnotes from document
@@ -56,15 +54,13 @@ class TestFootnote(BaseTestContext):
     def test_get_footnotes(self):
         filename = 'Footnote.doc'
         remote_name = 'TestGetFootnotes.docx'
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.GetFootnotesRequest(remote_name,
-                                                                       os.path.join(
-                                                                           self.remote_test_folder,
-                                                                           self.test_folder))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.GetFootnotesRequest(remote_name, 'sections/0',
+                                                                     os.path.join(
+                                                                         self.remote_test_folder,
+                                                                         self.test_folder))
         result = self.words_api.get_footnotes(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get footnotes')
+        self.assertIsNotNone(result, 'Error has occurred while get footnotes')
 
     #
     #  Test for delete footnote from document
@@ -73,47 +69,41 @@ class TestFootnote(BaseTestContext):
         filename = 'Footnote.doc'
         remote_name = 'TestDeleteFootnote.docx'
         index = 0
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.DeleteFootnoteRequest(remote_name, index,
-                                                                         os.path.join(
-                                                                             self.remote_test_folder,
-                                                                             self.test_folder))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.DeleteFootnoteRequest(remote_name, index, 'sections/0',
+                                                                       os.path.join(
+                                                                           self.remote_test_folder,
+                                                                           self.test_folder))
         result = self.words_api.delete_footnote(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while delete footnote')
+        self.assertIsNotNone(result, 'Error has occurred while delete footnote')
 
     #
     #  Test for update footnote from document
     #
-    def test_post_footnote(self):
+    def test_update_footnote(self):
         filename = 'Footnote.doc'
         remote_name = 'TestPostFootnote.docx'
         index = 0
         footnote = asposewordscloud.Footnote(text='new text is here')
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.PostFootnoteRequest(remote_name, footnote, index,
-                                                                       os.path.join(
-                                                                           self.remote_test_folder,
-                                                                           self.test_folder))
-        result = self.words_api.post_footnote(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while update footnote')
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.UpdateFootnoteRequest(remote_name, footnote, index, 'sections/0',
+                                                                     os.path.join(
+                                                                         self.remote_test_folder,
+                                                                         self.test_folder))
+        result = self.words_api.update_footnote(request)
+        self.assertIsNotNone(result, 'Error has occurred while update footnote')
 
     #
     #  Test for insert footnote from document
     #
-    def test_put_footnote(self):
+    def test_insert_footnote(self):
         filename = 'Footnote.doc'
         remote_name = 'TestPutFootnote.docx'
         footnote = asposewordscloud.Footnote(text='new text is here', footnote_type='Endnote')
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.PutFootnoteRequest(remote_name, footnote,
-                                                                      os.path.join(
-                                                                          self.remote_test_folder,
-                                                                          self.test_folder))
-        result = self.words_api.put_footnote(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while insert footnote')
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.InsertFootnoteRequest(remote_name, footnote, "",
+                                                                    os.path.join(
+                                                                        self.remote_test_folder,
+                                                                        self.test_folder))
+        result = self.words_api.insert_footnote(request)
+        self.assertIsNotNone(result, 'Error has occurred while insert footnote')

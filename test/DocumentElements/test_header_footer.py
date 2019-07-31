@@ -36,20 +36,18 @@ class TestHeaderFooter(BaseTestContext):
     #
     #  Test for inserting header or footer
     #
-    def test_put_header_footer(self):
+    def test_insert_header_footer(self):
         filename = 'HeadersFooters.doc'
         remote_name = 'TestPutHeaderFooter.doc'
         footer_type = "FooterEven"
 
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.PutHeaderFooterRequest(remote_name, footer_type,
-                                                                          os.path.join(
-                                                                              self.remote_test_folder,
-                                                                              self.test_folder))
-        result = self.words_api.put_header_footer(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while insert header footer')
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.InsertHeaderFooterRequest(remote_name, footer_type, "",
+                                                                        os.path.join(
+                                                                            self.remote_test_folder,
+                                                                            self.test_folder))
+        result = self.words_api.insert_header_footer(request)
+        self.assertIsNotNone(result, 'Error has occurred while insert header footer')
 
     #
     #  Test for getting header or footer
@@ -59,15 +57,13 @@ class TestHeaderFooter(BaseTestContext):
         remote_name = 'TestGetHeaderFooter.doc'
         index = 0
 
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.GetHeaderFooterRequest(remote_name, index,
                                                                           os.path.join(
                                                                               self.remote_test_folder,
                                                                               self.test_folder))
         result = self.words_api.get_header_footer(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get header footer')
+        self.assertIsNotNone(result, 'Error has occurred while get header footer')
 
     #
     #  Test for getting headers or footers
@@ -76,15 +72,13 @@ class TestHeaderFooter(BaseTestContext):
         filename = 'HeadersFooters.doc'
         remote_name = 'TestGetHeaderFooters.doc'
 
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.GetHeaderFootersRequest(remote_name,
-                                                                           os.path.join(
-                                                                               self.remote_test_folder,
-                                                                               self.test_folder))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.GetHeaderFootersRequest(remote_name, '',
+                                                                         os.path.join(
+                                                                             self.remote_test_folder,
+                                                                             self.test_folder))
         result = self.words_api.get_header_footers(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get headers footers')
+        self.assertIsNotNone(result, 'Error has occurred while get headers footers')
 
     #
     # Test for getting section headers/footers
@@ -95,15 +89,13 @@ class TestHeaderFooter(BaseTestContext):
         index = 0
         section_index = 0
 
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.GetHeaderFooterOfSectionRequest(remote_name, index, section_index,
                                                                                    os.path.join(
                                                                                        self.remote_test_folder,
                                                                                        self.test_folder))
         result = self.words_api.get_header_footer_of_section(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while get header footer of section')
+        self.assertIsNotNone(result, 'Error has occurred while get header footer of section')
 
     #
     #  Test for removing header/footer
@@ -112,15 +104,13 @@ class TestHeaderFooter(BaseTestContext):
         filename = 'HeadersFooters.doc'
         remote_name = 'TestDeleteHeaderFooter.doc'
         index = 0
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.DeleteHeaderFooterRequest(remote_name, index,
-                                                                             os.path.join(
-                                                                                 self.remote_test_folder,
-                                                                                 self.test_folder))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.DeleteHeaderFooterRequest(remote_name, index, '',
+                                                                           os.path.join(
+                                                                               self.remote_test_folder,
+                                                                               self.test_folder))
         result = self.words_api.delete_header_footer(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while delete header footer')
+        self.assertIsNotNone(result, 'Error has occurred while delete header footer')
 
     #
     #  Test for removing headers/footers
@@ -129,12 +119,10 @@ class TestHeaderFooter(BaseTestContext):
         filename = 'HeadersFooters.doc'
         remote_name = 'TestDeleteHeadersFooters.doc'
 
-        with open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb') as f:
-            file = f.read()
-        self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-        request = asposewordscloud.models.requests.DeleteHeadersFootersRequest(remote_name,
-                                                                               os.path.join(
-                                                                                   self.remote_test_folder,
-                                                                                   self.test_folder))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.DeleteHeadersFootersRequest(remote_name, '',
+                                                                             os.path.join(
+                                                                                 self.remote_test_folder,
+                                                                                 self.test_folder))
         result = self.words_api.delete_headers_footers(request)
-        self.assertTrue(result.code == 200, 'Error has occurred while delete headers footers')
+        self.assertIsNotNone(result, 'Error has occurred while delete headers footers')
