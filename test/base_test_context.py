@@ -43,7 +43,7 @@ class BaseTestContext(unittest.TestCase):
         self.local_common_folder = os.path.join(self.local_test_folder, 'Common')
         with open(os.path.join(root_path, 'Settings', 'servercreds.json')) as f:
             creds = json.loads(f.read())
-        api_client = ApiClient()
+        api_client = asposewordscloud.ApiClient()
         api_client.configuration.host = creds['BaseUrl']
         api_client.configuration.api_key['api_key'] = creds['AppKey']
         api_client.configuration.api_key['app_sid'] = creds['AppSid']
