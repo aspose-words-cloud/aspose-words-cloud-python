@@ -8,12 +8,10 @@ stages:
 
 tests-2.7:
   stage: build&test-2.7  
-  before_script:
-    - chmod 777 -R .
   script: 
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
-    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/build.sh
+    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash -c "scripts/build.sh; rm -rf ."
   artifacts:
     paths:       
       - 'nosetests.xml'  
@@ -26,12 +24,10 @@ tests-2.7:
 
 tests-3.6:
   stage: build&test-3.6  
-  before_script:
-    - chmod 777 -R .
   script: 
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
-    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.6 bash scripts/build.sh
+    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.6 bash -c "scripts/build.sh; rm -rf ."
     - ls -l
   artifacts:
     paths:       
