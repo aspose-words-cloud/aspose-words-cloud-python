@@ -18042,7 +18042,7 @@ class WordsApi(object):
 
     def __request_token(self):
         config = self.api_client.configuration
-        request_url = "connect/token"
+        request_url = "/connect/token"
         form_params = [('grant_type', 'client_credentials'), ('client_id', config.api_key['app_sid']),
                        ('client_secret', config.api_key['api_key'])]
 
