@@ -235,6 +235,8 @@ class RESTClientObject(object):
             logger.debug("response body: %s", r.data)
 
         if not 200 <= r.status <= 299:
+            logger.debug r.status
+            logger.debug r.data
             raise ApiException(http_resp=r)
 
         return r
@@ -312,7 +314,8 @@ class ApiException(Exception):
             self.status = http_resp.status
             self.reason = http_resp.reason
             self.headers = http_resp.getheaders()
-            self.init_error_response(json.loads(http_resp.data))
+            if http_resp.data:
+                self.init_error_response(json.loads(http_resp.data))
         else:
             self.status = status
             self.reason = reason
