@@ -1,1 +1,1 @@
-python -m pip install -r requirements.txt && python -m pip install -r test-requirements.txt && nosetests --with-xunit && (pylint asposewordscloud/ test/ > lintResults.txt || exit 0); cd ../ && rm -rf $(ls -A)
+python -m pip install -r requirements.txt && python -m pip install -r test-requirements.txt && nosetests --with-xunit && (pylint asposewordscloud/ test/ > lintResults.txt || exit 0); cd ../ && rm -rf $(sudo find $PWD -type d -name *pycache*)
