@@ -27,7 +27,7 @@ tests-3.6:
   script: 
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
-    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.6 bash build.sh
+    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.6 bash scripts/build.sh
     - ls -l
   artifacts:
     paths:       
