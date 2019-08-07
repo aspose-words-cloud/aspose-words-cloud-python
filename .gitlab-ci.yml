@@ -97,7 +97,7 @@ publish to PyPi:
     - git reset --hard
     - docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/publish.sh $PypiLogin $PypiPass
   tags:
-    - awcloud
+    - awcloud-linux
 
 add version tag:
   stage: version_tag
