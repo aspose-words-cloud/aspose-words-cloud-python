@@ -88,6 +88,8 @@ publish to PyPi:
   script:
     - git reset --hard
     - docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/publish.sh $PypiLogin $PypiPass
+  tags:
+    - awcloud
 
 add version tag:
   stage: version_tag
@@ -98,4 +100,6 @@ add version tag:
     - $env:SDK_VERSION += ((Get-Date).AddMonths(1)).tostring("yy.M")
   script: 
     - git tag -a $env:SDK_VERSION -m 'version $env:SDK_VERSION' | exit 0
-    - git push $env:ORIGIN $env:SDK_VERSION    
+    - git push $env:ORIGIN $env:SDK_VERSION
+  tags:
+    - awcloud
