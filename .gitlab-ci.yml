@@ -7,7 +7,9 @@ stages:
   - version_tag
 
 tests-2.7:
-  stage: build&test-2.7  
+  stage: build&test-2.7
+  before_script:
+    - rm -rf $(find $PWD -type d -name *pycache*)
   script: 
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
@@ -23,7 +25,9 @@ tests-2.7:
     - awcloud-linux
 
 tests-3.6:
-  stage: build&test-3.6  
+  stage: build&test-3.
+  before_script:
+    - rm -rf $(find $PWD -type d -name *pycache*)  
   script: 
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
