@@ -99,6 +99,7 @@ publish to PyPi:
     - docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/publish.sh $PypiLogin $PypiPass
   tags:
     - awcloud-linux
+  when: manual
 
 add version tag:
   stage: version_tag
