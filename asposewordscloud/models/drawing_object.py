@@ -116,7 +116,7 @@ class DrawingObject(object):
     def link(self):
         """Gets the link of this DrawingObject.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this DrawingObject.  # noqa: E501
         :rtype: WordsApiLink
@@ -127,7 +127,7 @@ class DrawingObject(object):
     def link(self, link):
         """Sets the link of this DrawingObject.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this DrawingObject.  # noqa: E501
         :type: WordsApiLink
@@ -137,7 +137,7 @@ class DrawingObject(object):
     def node_id(self):
         """Gets the node_id of this DrawingObject.  # noqa: E501
 
-        Node id  # noqa: E501
+        Gets or sets node id.  # noqa: E501
 
         :return: The node_id of this DrawingObject.  # noqa: E501
         :rtype: str
@@ -148,7 +148,7 @@ class DrawingObject(object):
     def node_id(self, node_id):
         """Sets the node_id of this DrawingObject.
 
-        Node id  # noqa: E501
+        Gets or sets node id.  # noqa: E501
 
         :param node_id: The node_id of this DrawingObject.  # noqa: E501
         :type: str
@@ -158,7 +158,7 @@ class DrawingObject(object):
     def height(self):
         """Gets the height of this DrawingObject.  # noqa: E501
 
-        Height of the drawing object in points.  # noqa: E501
+        Gets or sets height of the drawing object in points.  # noqa: E501
 
         :return: The height of this DrawingObject.  # noqa: E501
         :rtype: float
@@ -169,7 +169,7 @@ class DrawingObject(object):
     def height(self, height):
         """Sets the height of this DrawingObject.
 
-        Height of the drawing object in points.  # noqa: E501
+        Gets or sets height of the drawing object in points.  # noqa: E501
 
         :param height: The height of this DrawingObject.  # noqa: E501
         :type: float
@@ -179,7 +179,7 @@ class DrawingObject(object):
     def image_data_link(self):
         """Gets the image_data_link of this DrawingObject.  # noqa: E501
 
-        Link to image data. Can be null if shape does not have an image.  # noqa: E501
+        Gets or sets link to image data. Can be null if shape does not have an image.  # noqa: E501
 
         :return: The image_data_link of this DrawingObject.  # noqa: E501
         :rtype: WordsApiLink
@@ -190,7 +190,7 @@ class DrawingObject(object):
     def image_data_link(self, image_data_link):
         """Sets the image_data_link of this DrawingObject.
 
-        Link to image data. Can be null if shape does not have an image.  # noqa: E501
+        Gets or sets link to image data. Can be null if shape does not have an image.  # noqa: E501
 
         :param image_data_link: The image_data_link of this DrawingObject.  # noqa: E501
         :type: WordsApiLink
@@ -200,7 +200,7 @@ class DrawingObject(object):
     def left(self):
         """Gets the left of this DrawingObject.  # noqa: E501
 
-        Distance in points from the origin to the left side of the image.               # noqa: E501
+        Gets or sets distance in points from the origin to the left side of the image.               # noqa: E501
 
         :return: The left of this DrawingObject.  # noqa: E501
         :rtype: float
@@ -211,7 +211,7 @@ class DrawingObject(object):
     def left(self, left):
         """Sets the left of this DrawingObject.
 
-        Distance in points from the origin to the left side of the image.               # noqa: E501
+        Gets or sets distance in points from the origin to the left side of the image.               # noqa: E501
 
         :param left: The left of this DrawingObject.  # noqa: E501
         :type: float
@@ -221,7 +221,7 @@ class DrawingObject(object):
     def ole_data_link(self):
         """Gets the ole_data_link of this DrawingObject.  # noqa: E501
 
-        Link to ole object. Can be null if shape does not have ole data.  # noqa: E501
+        Gets or sets link to ole object. Can be null if shape does not have ole data.  # noqa: E501
 
         :return: The ole_data_link of this DrawingObject.  # noqa: E501
         :rtype: WordsApiLink
@@ -232,7 +232,7 @@ class DrawingObject(object):
     def ole_data_link(self, ole_data_link):
         """Sets the ole_data_link of this DrawingObject.
 
-        Link to ole object. Can be null if shape does not have ole data.  # noqa: E501
+        Gets or sets link to ole object. Can be null if shape does not have ole data.  # noqa: E501
 
         :param ole_data_link: The ole_data_link of this DrawingObject.  # noqa: E501
         :type: WordsApiLink
@@ -242,7 +242,7 @@ class DrawingObject(object):
     def relative_horizontal_position(self):
         """Gets the relative_horizontal_position of this DrawingObject.  # noqa: E501
 
-        Specifies where the distance to the image is measured from.               # noqa: E501
+        Gets or sets specifies where the distance to the image is measured from.               # noqa: E501
 
         :return: The relative_horizontal_position of this DrawingObject.  # noqa: E501
         :rtype: str
@@ -253,7 +253,7 @@ class DrawingObject(object):
     def relative_horizontal_position(self, relative_horizontal_position):
         """Sets the relative_horizontal_position of this DrawingObject.
 
-        Specifies where the distance to the image is measured from.               # noqa: E501
+        Gets or sets specifies where the distance to the image is measured from.               # noqa: E501
 
         :param relative_horizontal_position: The relative_horizontal_position of this DrawingObject.  # noqa: E501
         :type: str
@@ -271,7 +271,7 @@ class DrawingObject(object):
     def relative_vertical_position(self):
         """Gets the relative_vertical_position of this DrawingObject.  # noqa: E501
 
-        Specifies where the distance to the image measured from.  # noqa: E501
+        Gets or sets specifies where the distance to the image measured from.  # noqa: E501
 
         :return: The relative_vertical_position of this DrawingObject.  # noqa: E501
         :rtype: str
@@ -282,7 +282,7 @@ class DrawingObject(object):
     def relative_vertical_position(self, relative_vertical_position):
         """Sets the relative_vertical_position of this DrawingObject.
 
-        Specifies where the distance to the image measured from.  # noqa: E501
+        Gets or sets specifies where the distance to the image measured from.  # noqa: E501
 
         :param relative_vertical_position: The relative_vertical_position of this DrawingObject.  # noqa: E501
         :type: str
@@ -300,7 +300,7 @@ class DrawingObject(object):
     def render_links(self):
         """Gets the render_links of this DrawingObject.  # noqa: E501
 
-        A list of links that originate from this .  # noqa: E501
+        Gets or sets a list of links that originate from this .  # noqa: E501
 
         :return: The render_links of this DrawingObject.  # noqa: E501
         :rtype: list[WordsApiLink]
@@ -311,7 +311,7 @@ class DrawingObject(object):
     def render_links(self, render_links):
         """Sets the render_links of this DrawingObject.
 
-        A list of links that originate from this .  # noqa: E501
+        Gets or sets a list of links that originate from this .  # noqa: E501
 
         :param render_links: The render_links of this DrawingObject.  # noqa: E501
         :type: list[WordsApiLink]
@@ -321,7 +321,7 @@ class DrawingObject(object):
     def top(self):
         """Gets the top of this DrawingObject.  # noqa: E501
 
-        Distance in points from the origin to the top side of the image.  # noqa: E501
+        Gets or sets distance in points from the origin to the top side of the image.  # noqa: E501
 
         :return: The top of this DrawingObject.  # noqa: E501
         :rtype: float
@@ -332,7 +332,7 @@ class DrawingObject(object):
     def top(self, top):
         """Sets the top of this DrawingObject.
 
-        Distance in points from the origin to the top side of the image.  # noqa: E501
+        Gets or sets distance in points from the origin to the top side of the image.  # noqa: E501
 
         :param top: The top of this DrawingObject.  # noqa: E501
         :type: float
@@ -342,7 +342,7 @@ class DrawingObject(object):
     def width(self):
         """Gets the width of this DrawingObject.  # noqa: E501
 
-        Width of the drawing objects in points.  # noqa: E501
+        Gets or sets width of the drawing objects in points.  # noqa: E501
 
         :return: The width of this DrawingObject.  # noqa: E501
         :rtype: float
@@ -353,7 +353,7 @@ class DrawingObject(object):
     def width(self, width):
         """Sets the width of this DrawingObject.
 
-        Width of the drawing objects in points.  # noqa: E501
+        Gets or sets width of the drawing objects in points.  # noqa: E501
 
         :param width: The width of this DrawingObject.  # noqa: E501
         :type: float
@@ -363,7 +363,7 @@ class DrawingObject(object):
     def wrap_type(self):
         """Gets the wrap_type of this DrawingObject.  # noqa: E501
 
-        Specifies how to wrap text around the image.  # noqa: E501
+        Gets or sets specifies how to wrap text around the image.  # noqa: E501
 
         :return: The wrap_type of this DrawingObject.  # noqa: E501
         :rtype: str
@@ -374,7 +374,7 @@ class DrawingObject(object):
     def wrap_type(self, wrap_type):
         """Sets the wrap_type of this DrawingObject.
 
-        Specifies how to wrap text around the image.  # noqa: E501
+        Gets or sets specifies how to wrap text around the image.  # noqa: E501
 
         :param wrap_type: The wrap_type of this DrawingObject.  # noqa: E501
         :type: str

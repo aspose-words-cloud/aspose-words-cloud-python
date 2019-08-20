@@ -30,7 +30,7 @@ import six
 
 
 class OfficeMathObjectsResponse(object):
-    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/OfficeMathObjects 
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/OfficeMathObjects.
     """
 
     """
@@ -66,7 +66,7 @@ class OfficeMathObjectsResponse(object):
     def request_id(self):
         """Gets the request_id of this OfficeMathObjectsResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this OfficeMathObjectsResponse.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class OfficeMathObjectsResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this OfficeMathObjectsResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this OfficeMathObjectsResponse.  # noqa: E501
         :type: str
@@ -87,7 +87,7 @@ class OfficeMathObjectsResponse(object):
     def office_math_objects(self):
         """Gets the office_math_objects of this OfficeMathObjectsResponse.  # noqa: E501
 
-        Collection of OfficeMath objects.  # noqa: E501
+        Gets or sets collection of OfficeMath objects.  # noqa: E501
 
         :return: The office_math_objects of this OfficeMathObjectsResponse.  # noqa: E501
         :rtype: OfficeMathObjectsCollection
@@ -98,7 +98,7 @@ class OfficeMathObjectsResponse(object):
     def office_math_objects(self, office_math_objects):
         """Sets the office_math_objects of this OfficeMathObjectsResponse.
 
-        Collection of OfficeMath objects.  # noqa: E501
+        Gets or sets collection of OfficeMath objects.  # noqa: E501
 
         :param office_math_objects: The office_math_objects of this OfficeMathObjectsResponse.  # noqa: E501
         :type: OfficeMathObjectsCollection

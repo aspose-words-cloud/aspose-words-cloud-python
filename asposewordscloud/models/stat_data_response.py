@@ -30,7 +30,7 @@ import six
 
 
 class StatDataResponse(object):
-    """Response for the request of the document&#39;s statistical data
+    """Response for the request of the document&#39;s statistical data.
     """
 
     """
@@ -71,7 +71,7 @@ class StatDataResponse(object):
     def request_id(self):
         """Gets the request_id of this StatDataResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this StatDataResponse.  # noqa: E501
         :rtype: str
@@ -82,7 +82,7 @@ class StatDataResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this StatDataResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this StatDataResponse.  # noqa: E501
         :type: str
@@ -92,7 +92,7 @@ class StatDataResponse(object):
     def document_link(self):
         """Gets the document_link of this StatDataResponse.  # noqa: E501
 
-        Link to the document  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The document_link of this StatDataResponse.  # noqa: E501
         :rtype: FileLink
@@ -103,7 +103,7 @@ class StatDataResponse(object):
     def document_link(self, document_link):
         """Sets the document_link of this StatDataResponse.
 
-        Link to the document  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param document_link: The document_link of this StatDataResponse.  # noqa: E501
         :type: FileLink
@@ -113,7 +113,7 @@ class StatDataResponse(object):
     def stat_data(self):
         """Gets the stat_data of this StatDataResponse.  # noqa: E501
 
-        Statistical data of the document  # noqa: E501
+        Gets or sets statistical data of the document.  # noqa: E501
 
         :return: The stat_data of this StatDataResponse.  # noqa: E501
         :rtype: DocumentStatData
@@ -124,7 +124,7 @@ class StatDataResponse(object):
     def stat_data(self, stat_data):
         """Sets the stat_data of this StatDataResponse.
 
-        Statistical data of the document  # noqa: E501
+        Gets or sets statistical data of the document.  # noqa: E501
 
         :param stat_data: The stat_data of this StatDataResponse.  # noqa: E501
         :type: DocumentStatData

@@ -29,7 +29,7 @@ class DeleteCommentRequest(object):
     Request model for delete_comment operation.
     Initializes a new instance.
     :param name The document name.
-    :param comment_index The comment index
+    :param comment_index The comment index.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

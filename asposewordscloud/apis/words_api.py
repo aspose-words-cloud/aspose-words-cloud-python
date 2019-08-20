@@ -49,7 +49,7 @@ class WordsApi(object):
         self.__request_token()
 
     def accept_all_revisions(self, request, **kwargs):  # noqa: E501
-        """Accepts all revisions in document  # noqa: E501
+        """Accepts all revisions in document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -80,7 +80,7 @@ class WordsApi(object):
             return data
         
     def accept_all_revisions_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Accepts all revisions in document  # noqa: E501
+        """Accepts all revisions in document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -157,7 +157,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -302,7 +302,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -402,10 +402,10 @@ class WordsApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+            ['plain/text'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -538,7 +538,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -671,7 +671,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -801,7 +801,7 @@ class WordsApi(object):
             ['multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -925,7 +925,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -1043,7 +1043,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -1062,7 +1062,7 @@ class WordsApi(object):
             collection_formats=collection_formats)
 
     def create_document(self, request, **kwargs):  # noqa: E501
-        """Creates new document. Document is created with format which is recognized from file extensions.  Supported extensions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot;  # noqa: E501
+        """Creates new document. Document is created with format which is recognized from file extensions. Supported extensions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot;.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1090,7 +1090,7 @@ class WordsApi(object):
             return data
         
     def create_document_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Creates new document. Document is created with format which is recognized from file extensions.  Supported extensions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot;  # noqa: E501
+        """Creates new document. Document is created with format which is recognized from file extensions. Supported extensions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot;.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1152,7 +1152,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -1255,7 +1255,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -1406,7 +1406,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -1427,7 +1427,7 @@ class WordsApi(object):
     def delete_border(self, request, **kwargs):  # noqa: E501
         """Resets border properties to default values.               # noqa: E501
 
-        'nodePath' should refer to node with cell or row  # noqa: E501
+        'nodePath' should refer to node with cell or row.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
@@ -1463,7 +1463,7 @@ class WordsApi(object):
     def delete_border_with_http_info(self, request, **kwargs):  # noqa: E501
         """Resets border properties to default values.               # noqa: E501
 
-        'nodePath' should refer to node with cell or row  # noqa: E501
+        'nodePath' should refer to node with cell or row.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
@@ -1559,7 +1559,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -1580,7 +1580,7 @@ class WordsApi(object):
     def delete_borders(self, request, **kwargs):  # noqa: E501
         """Resets borders properties to default values.               # noqa: E501
 
-        'nodePath' should refer to node with cell or row  # noqa: E501
+        'nodePath' should refer to node with cell or row.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
@@ -1615,7 +1615,7 @@ class WordsApi(object):
     def delete_borders_with_http_info(self, request, **kwargs):  # noqa: E501
         """Resets borders properties to default values.               # noqa: E501
 
-        'nodePath' should refer to node with cell or row  # noqa: E501
+        'nodePath' should refer to node with cell or row.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
@@ -1706,7 +1706,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -1732,7 +1732,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param comment_index int : The comment index (required)
+        :param comment_index int : The comment index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -1851,7 +1851,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -1996,7 +1996,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -2022,8 +2022,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains collection of drawing objects. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -2078,22 +2078,22 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_drawing_object`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_drawing_object`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `delete_drawing_object`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `delete_drawing_object`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/drawingObjects/{index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -2147,7 +2147,152 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_drawing_object_without_node_path(self, request, **kwargs):  # noqa: E501
+        """delete_drawing_object_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_drawing_object_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """delete_drawing_object_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteDrawingObjectWithoutNodePathRequest object with parameters
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_drawing_object_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `delete_drawing_object_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `delete_drawing_object_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/drawingObjects/{index}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+        if self.__downcase_first_letter('RevisionAuthor') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
+        else:
+            if request.revision_author is not None:
+                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
+        if self.__downcase_first_letter('RevisionDateTime') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
+        else:
+            if request.revision_date_time is not None:
+                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -2173,8 +2318,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains collection of fields. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -2229,22 +2374,22 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_field`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_field`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `delete_field`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `delete_field`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/fields/{index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -2298,7 +2443,152 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_field_without_node_path(self, request, **kwargs):  # noqa: E501
+        """delete_field_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_field_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """delete_field_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteFieldWithoutNodePathRequest object with parameters
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_field_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `delete_field_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `delete_field_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/fields/{index}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+        if self.__downcase_first_letter('RevisionAuthor') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
+        else:
+            if request.revision_author is not None:
+                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
+        if self.__downcase_first_letter('RevisionDateTime') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
+        else:
+            if request.revision_date_time is not None:
+                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -2443,7 +2733,146 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_fields_without_node_path(self, request, **kwargs):  # noqa: E501
+        """delete_fields_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_fields_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_fields_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_fields_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_fields_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_fields_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """delete_fields_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteFieldsWithoutNodePathRequest object with parameters
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_fields_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `delete_fields_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/fields'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+        if self.__downcase_first_letter('RevisionAuthor') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
+        else:
+            if request.revision_author is not None:
+                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
+        if self.__downcase_first_letter('RevisionDateTime') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
+        else:
+            if request.revision_date_time is not None:
+                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -2552,7 +2981,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -2661,7 +3090,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -2687,8 +3116,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains collection of footnotes. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -2743,22 +3172,22 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_footnote`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_footnote`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `delete_footnote`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `delete_footnote`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/footnotes/{index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -2812,7 +3241,152 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_footnote_without_node_path(self, request, **kwargs):  # noqa: E501
+        """delete_footnote_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_footnote_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """delete_footnote_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteFootnoteWithoutNodePathRequest object with parameters
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_footnote_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `delete_footnote_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `delete_footnote_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/footnotes/{index}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+        if self.__downcase_first_letter('RevisionAuthor') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
+        else:
+            if request.revision_author is not None:
+                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
+        if self.__downcase_first_letter('RevisionDateTime') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
+        else:
+            if request.revision_date_time is not None:
+                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -2838,8 +3412,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node that contains collection of formfields. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -2894,22 +3468,22 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_form_field`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_form_field`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `delete_form_field`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `delete_form_field`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/formfields/{index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -2963,7 +3537,152 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_form_field_without_node_path(self, request, **kwargs):  # noqa: E501
+        """delete_form_field_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_form_field_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """delete_form_field_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteFormFieldWithoutNodePathRequest object with parameters
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_form_field_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `delete_form_field_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `delete_form_field_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/formfields/{index}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+        if self.__downcase_first_letter('RevisionAuthor') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
+        else:
+            if request.revision_author is not None:
+                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
+        if self.__downcase_first_letter('RevisionDateTime') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
+        else:
+            if request.revision_date_time is not None:
+                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -2989,8 +3708,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param index int : Object index. (required)
         :param section_path str : Path to parent section. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -3045,22 +3764,22 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_header_footer`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_header_footer`")  # noqa: E501
         # verify the required parameter 'section_path' is set
         if request.section_path is None:
             raise ValueError("Missing the required parameter `section_path` when calling `delete_header_footer`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `delete_header_footer`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{sectionPath}/headersfooters/{index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.section_path is not None:
             path_params[self.__downcase_first_letter('SectionPath')] = request.section_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -3114,7 +3833,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -3265,7 +3984,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -3404,7 +4123,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -3430,8 +4149,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains collection of OfficeMath objects. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -3486,22 +4205,22 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_office_math_object`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_office_math_object`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `delete_office_math_object`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `delete_office_math_object`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/OfficeMathObjects/{index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -3555,7 +4274,152 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_office_math_object_without_node_path(self, request, **kwargs):  # noqa: E501
+        """delete_office_math_object_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_office_math_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_office_math_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_office_math_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_office_math_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_office_math_object_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """delete_office_math_object_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteOfficeMathObjectWithoutNodePathRequest object with parameters
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_office_math_object_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `delete_office_math_object_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `delete_office_math_object_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/OfficeMathObjects/{index}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+        if self.__downcase_first_letter('RevisionAuthor') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
+        else:
+            if request.revision_author is not None:
+                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
+        if self.__downcase_first_letter('RevisionDateTime') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
+        else:
+            if request.revision_date_time is not None:
+                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -3581,8 +4445,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The file name. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node which contains paragraphs. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -3637,22 +4501,22 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_paragraph`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_paragraph`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `delete_paragraph`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `delete_paragraph`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -3706,7 +4570,152 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_paragraph_without_node_path(self, request, **kwargs):  # noqa: E501
+        """delete_paragraph_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The file name. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_paragraph_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_paragraph_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_paragraph_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_paragraph_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_paragraph_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """delete_paragraph_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteParagraphWithoutNodePathRequest object with parameters
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_paragraph_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `delete_paragraph_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `delete_paragraph_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/paragraphs/{index}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+        if self.__downcase_first_letter('RevisionAuthor') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
+        else:
+            if request.revision_author is not None:
+                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
+        if self.__downcase_first_letter('RevisionDateTime') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
+        else:
+            if request.revision_date_time is not None:
+                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -3857,7 +4866,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -3883,8 +4892,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains tables. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -3939,22 +4948,22 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `delete_table`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_table`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `delete_table`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `delete_table`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/tables/{index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -4008,7 +5017,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -4159,7 +5168,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -4310,7 +5319,152 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_table_without_node_path(self, request, **kwargs):  # noqa: E501
+        """delete_table_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_table_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """delete_table_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteTableWithoutNodePathRequest object with parameters
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_table_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `delete_table_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `delete_table_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/tables/{index}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+        if self.__downcase_first_letter('RevisionAuthor') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
+        else:
+            if request.revision_author is not None:
+                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
+        if self.__downcase_first_letter('RevisionDateTime') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
+        else:
+            if request.revision_date_time is not None:
+                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -4449,7 +5603,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'POST',
@@ -4558,7 +5712,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -4592,7 +5746,7 @@ class WordsApi(object):
         :param with_regions bool : With regions flag.
         :param mail_merge_data_file str : Mail merge data.
         :param cleanup str : Clean up options.
-        :param use_whole_paragraph_as_region bool : Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true.
+        :param use_whole_paragraph_as_region bool : Gets or sets a value indicating whether paragraph with TableStart or             TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.             The default value is true.
         :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name.
         :return: DocumentResponse
                  If the method is called asynchronously,
@@ -4712,7 +5866,7 @@ class WordsApi(object):
             ['multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -4833,7 +5987,7 @@ class WordsApi(object):
             ['multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -4852,7 +6006,7 @@ class WordsApi(object):
             collection_formats=collection_formats)
 
     def get_available_fonts(self, request, **kwargs):  # noqa: E501
-        """Gets the list of fonts, available for document processing  # noqa: E501
+        """Gets the list of fonts, available for document processing.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -4878,7 +6032,7 @@ class WordsApi(object):
             return data
         
     def get_available_fonts_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Gets the list of fonts, available for document processing  # noqa: E501
+        """Gets the list of fonts, available for document processing.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -4930,7 +6084,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -5057,7 +6211,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -5178,7 +6332,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -5199,7 +6353,7 @@ class WordsApi(object):
     def get_border(self, request, **kwargs):  # noqa: E501
         """Returns a border.  # noqa: E501
 
-        'nodePath' should refer to node with cell or row  # noqa: E501
+        'nodePath' should refer to node with cell or row.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
@@ -5232,7 +6386,7 @@ class WordsApi(object):
     def get_border_with_http_info(self, request, **kwargs):  # noqa: E501
         """Returns a border.  # noqa: E501
 
-        'nodePath' should refer to node with cell or row  # noqa: E501
+        'nodePath' should refer to node with cell or row.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
@@ -5313,7 +6467,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -5334,7 +6488,7 @@ class WordsApi(object):
     def get_borders(self, request, **kwargs):  # noqa: E501
         """Returns a collection of borders.  # noqa: E501
 
-        'nodePath' should refer to node with cell or row  # noqa: E501
+        'nodePath' should refer to node with cell or row.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
@@ -5366,7 +6520,7 @@ class WordsApi(object):
     def get_borders_with_http_info(self, request, **kwargs):  # noqa: E501
         """Returns a collection of borders.  # noqa: E501
 
-        'nodePath' should refer to node with cell or row  # noqa: E501
+        'nodePath' should refer to node with cell or row.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
@@ -5442,7 +6596,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -5569,7 +6723,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -5690,7 +6844,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -5811,7 +6965,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -5837,8 +6991,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains collection of drawing objects. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -5890,22 +7044,22 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_drawing_object_by_index`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_by_index`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `get_document_drawing_object_by_index`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_by_index`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/drawingObjects/{index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -5944,7 +7098,134 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DrawingObjectResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_document_drawing_object_by_index_without_node_path(self, request, **kwargs):  # noqa: E501
+        """get_document_drawing_object_by_index_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: DrawingObjectResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_document_drawing_object_by_index_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_drawing_object_by_index_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_drawing_object_by_index_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_drawing_object_by_index_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_document_drawing_object_by_index_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """get_document_drawing_object_by_index_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetDocumentDrawingObjectByIndexWithoutNodePathRequest object with parameters
+        :return: DrawingObjectResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_document_drawing_object_by_index_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_document_drawing_object_by_index_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_by_index_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/drawingObjects/{index}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -5970,8 +7251,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains collection of drawing objects. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -6023,22 +7304,22 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_drawing_object_image_data`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_image_data`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `get_document_drawing_object_image_data`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_image_data`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/drawingObjects/{index}/imageData'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -6077,7 +7358,134 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_document_drawing_object_image_data_without_node_path(self, request, **kwargs):  # noqa: E501
+        """get_document_drawing_object_image_data_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_document_drawing_object_image_data_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_drawing_object_image_data_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_drawing_object_image_data_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_drawing_object_image_data_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_document_drawing_object_image_data_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """get_document_drawing_object_image_data_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetDocumentDrawingObjectImageDataWithoutNodePathRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_document_drawing_object_image_data_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_document_drawing_object_image_data_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_image_data_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/drawingObjects/{index}/imageData'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -6103,8 +7511,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains collection of drawing objects. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -6156,22 +7564,22 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_document_drawing_object_ole_data`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_ole_data`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `get_document_drawing_object_ole_data`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_ole_data`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/drawingObjects/{index}/oleData'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -6210,7 +7618,134 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_document_drawing_object_ole_data_without_node_path(self, request, **kwargs):  # noqa: E501
+        """get_document_drawing_object_ole_data_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_document_drawing_object_ole_data_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_drawing_object_ole_data_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_drawing_object_ole_data_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_drawing_object_ole_data_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_document_drawing_object_ole_data_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """get_document_drawing_object_ole_data_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetDocumentDrawingObjectOleDataWithoutNodePathRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_document_drawing_object_ole_data_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_document_drawing_object_ole_data_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_ole_data_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/drawingObjects/{index}/oleData'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -6337,7 +7872,128 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DrawingObjectsResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_document_drawing_objects_without_node_path(self, request, **kwargs):  # noqa: E501
+        """get_document_drawing_objects_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: DrawingObjectsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_document_drawing_objects_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_drawing_objects_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_drawing_objects_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_document_drawing_objects_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_document_drawing_objects_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """get_document_drawing_objects_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetDocumentDrawingObjectsWithoutNodePathRequest object with parameters
+        :return: DrawingObjectsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_document_drawing_objects_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_document_drawing_objects_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/drawingObjects'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -6464,7 +8120,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -6567,7 +8223,7 @@ class WordsApi(object):
             ['multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -6694,7 +8350,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -6815,7 +8471,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -6936,7 +8592,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -7063,7 +8719,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -7184,7 +8840,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -7216,7 +8872,7 @@ class WordsApi(object):
         :param password str : Password for opening an encrypted document.
         :param include_comments bool : Support including/excluding comments from the WordCount. Default value is \"false\".
         :param include_footnotes bool : Support including/excluding footnotes from the WordCount. Default value is \"false\".
-        :param include_text_in_shapes bool : Support including/excluding shape's text from the WordCount. Default value is \"false\"
+        :param include_text_in_shapes bool : Support including/excluding shape's text from the WordCount. Default value is \"false\".
         :return: StatDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7323,7 +8979,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -7354,7 +9010,7 @@ class WordsApi(object):
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
-        :param out_path str : Path to save the result
+        :param out_path str : Path to save the result.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
                  If the method is called asynchronously,
@@ -7465,7 +9121,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -7491,8 +9147,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains collection of fields. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -7544,22 +9200,22 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_field`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_field`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `get_field`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_field`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/fields/{index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -7598,7 +9254,134 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='FieldResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_field_without_node_path(self, request, **kwargs):  # noqa: E501
+        """get_field_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: FieldResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_field_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """get_field_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetFieldWithoutNodePathRequest object with parameters
+        :return: FieldResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_field_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_field_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_field_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/fields/{index}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -7725,7 +9508,128 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='FieldsResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_fields_without_node_path(self, request, **kwargs):  # noqa: E501
+        """get_fields_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: FieldsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_fields_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_fields_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_fields_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_fields_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_fields_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """get_fields_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetFieldsWithoutNodePathRequest object with parameters
+        :return: FieldsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_fields_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_fields_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/fields'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -7828,7 +9732,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -7854,8 +9758,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains collection of footnotes. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -7907,22 +9811,22 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_footnote`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_footnote`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `get_footnote`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_footnote`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/footnotes/{index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -7961,7 +9865,134 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='FootnoteResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_footnote_without_node_path(self, request, **kwargs):  # noqa: E501
+        """get_footnote_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: FootnoteResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_footnote_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """get_footnote_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetFootnoteWithoutNodePathRequest object with parameters
+        :return: FootnoteResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_footnote_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_footnote_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_footnote_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/footnotes/{index}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -8088,7 +10119,128 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='FootnotesResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_footnotes_without_node_path(self, request, **kwargs):  # noqa: E501
+        """get_footnotes_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: FootnotesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_footnotes_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_footnotes_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_footnotes_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_footnotes_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_footnotes_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """get_footnotes_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetFootnotesWithoutNodePathRequest object with parameters
+        :return: FootnotesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_footnotes_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_footnotes_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/footnotes'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -8114,8 +10266,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node that contains collection of formfields. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -8167,22 +10319,22 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_form_field`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_form_field`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `get_form_field`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_form_field`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/formfields/{index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -8221,7 +10373,134 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='FormFieldResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_form_field_without_node_path(self, request, **kwargs):  # noqa: E501
+        """get_form_field_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: FormFieldResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_form_field_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """get_form_field_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetFormFieldWithoutNodePathRequest object with parameters
+        :return: FormFieldResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_form_field_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_form_field_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_form_field_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/formfields/{index}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -8348,7 +10627,128 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='FormFieldsResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_form_fields_without_node_path(self, request, **kwargs):  # noqa: E501
+        """get_form_fields_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: FormFieldsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_form_fields_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_form_fields_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_form_fields_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_form_fields_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_form_fields_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """get_form_fields_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetFormFieldsWithoutNodePathRequest object with parameters
+        :return: FormFieldsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_form_fields_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_form_fields_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/formfields'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -8481,7 +10881,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -8620,7 +11020,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -8753,7 +11153,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -8779,8 +11179,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains collection of OfficeMath objects. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -8832,22 +11232,22 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_office_math_object`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_office_math_object`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `get_office_math_object`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_office_math_object`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/OfficeMathObjects/{index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -8886,7 +11286,134 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='OfficeMathObjectResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_office_math_object_without_node_path(self, request, **kwargs):  # noqa: E501
+        """get_office_math_object_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: OfficeMathObjectResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_office_math_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_office_math_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_office_math_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_office_math_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_office_math_object_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """get_office_math_object_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetOfficeMathObjectWithoutNodePathRequest object with parameters
+        :return: OfficeMathObjectResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_office_math_object_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_office_math_object_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_office_math_object_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/OfficeMathObjects/{index}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -9013,7 +11540,128 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='OfficeMathObjectsResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_office_math_objects_without_node_path(self, request, **kwargs):  # noqa: E501
+        """get_office_math_objects_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: OfficeMathObjectsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_office_math_objects_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_office_math_objects_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_office_math_objects_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_office_math_objects_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_office_math_objects_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """get_office_math_objects_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetOfficeMathObjectsWithoutNodePathRequest object with parameters
+        :return: OfficeMathObjectsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_office_math_objects_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_office_math_objects_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/OfficeMathObjects'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -9039,8 +11687,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node which contains paragraphs. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -9092,22 +11740,22 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_paragraph`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_paragraph`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `get_paragraph`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_paragraph`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -9146,7 +11794,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -9172,8 +11820,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node which contains paragraphs. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -9225,22 +11873,22 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_paragraph_format`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_paragraph_format`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `get_paragraph_format`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_paragraph_format`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}/format'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -9279,7 +11927,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -9290,6 +11938,260 @@ class WordsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='ParagraphFormatResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_paragraph_format_without_node_path(self, request, **kwargs):  # noqa: E501
+        """get_paragraph_format_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: ParagraphFormatResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_paragraph_format_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_paragraph_format_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_paragraph_format_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_paragraph_format_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_paragraph_format_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """get_paragraph_format_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetParagraphFormatWithoutNodePathRequest object with parameters
+        :return: ParagraphFormatResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_paragraph_format_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_paragraph_format_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_paragraph_format_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/paragraphs/{index}/format'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ParagraphFormatResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_paragraph_without_node_path(self, request, **kwargs):  # noqa: E501
+        """get_paragraph_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: ParagraphResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_paragraph_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_paragraph_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_paragraph_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_paragraph_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_paragraph_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """get_paragraph_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetParagraphWithoutNodePathRequest object with parameters
+        :return: ParagraphResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_paragraph_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_paragraph_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_paragraph_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/paragraphs/{index}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ParagraphResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -9406,7 +12308,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -9417,6 +12319,387 @@ class WordsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='ParagraphLinkCollectionResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_paragraphs_without_node_path(self, request, **kwargs):  # noqa: E501
+        """get_paragraphs_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: ParagraphLinkCollectionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_paragraphs_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_paragraphs_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_paragraphs_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_paragraphs_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_paragraphs_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """get_paragraphs_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetParagraphsWithoutNodePathRequest object with parameters
+        :return: ParagraphLinkCollectionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_paragraphs_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_paragraphs_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/paragraphs'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ParagraphLinkCollectionResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_range_text(self, request, **kwargs):  # noqa: E501
+        """Gets the text from the range.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document. (required)
+        :param range_start_identifier str : The range start identifier. (required)
+        :param range_end_identifier str : The range end identifier. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: RangeTextResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_range_text_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_range_text_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_range_text_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_range_text_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_range_text_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Gets the text from the range.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetRangeTextRequest object with parameters
+        :return: RangeTextResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_range_text" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_range_text`")  # noqa: E501
+        # verify the required parameter 'range_start_identifier' is set
+        if request.range_start_identifier is None:
+            raise ValueError("Missing the required parameter `range_start_identifier` when calling `get_range_text`")  # noqa: E501
+        # verify the required parameter 'range_end_identifier' is set
+        if request.range_end_identifier is None:
+            raise ValueError("Missing the required parameter `range_end_identifier` when calling `get_range_text`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.range_start_identifier is not None:
+            path_params[self.__downcase_first_letter('RangeStartIdentifier')] = request.range_start_identifier  # noqa: E501
+        if request.range_end_identifier is not None:
+            path_params[self.__downcase_first_letter('RangeEndIdentifier')] = request.range_end_identifier  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RangeTextResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_range_text2(self, request, **kwargs):  # noqa: E501
+        """Gets the text from the range.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document. (required)
+        :param range_start_identifier str : The range start identifier. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: RangeTextResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_range_text2_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_range_text2_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_range_text2_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_range_text2_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_range_text2_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Gets the text from the range.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetRangeText2Request object with parameters
+        :return: RangeTextResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_range_text2" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_range_text2`")  # noqa: E501
+        # verify the required parameter 'range_start_identifier' is set
+        if request.range_start_identifier is None:
+            raise ValueError("Missing the required parameter `range_start_identifier` when calling `get_range_text2`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/range/{rangeStartIdentifier}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.range_start_identifier is not None:
+            path_params[self.__downcase_first_letter('RangeStartIdentifier')] = request.range_start_identifier  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='RangeTextResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -9539,7 +12822,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -9672,7 +12955,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -9799,7 +13082,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -9825,7 +13108,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param section_index int : Section index (required)
+        :param section_index int : Section index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -9926,7 +13209,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -9952,7 +13235,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param section_index int : Section index (required)
+        :param section_index int : Section index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -10053,7 +13336,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -10174,7 +13457,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -10200,8 +13483,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains tables. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -10253,22 +13536,22 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_table`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_table`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `get_table`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_table`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/tables/{index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -10307,7 +13590,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -10440,7 +13723,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -10573,7 +13856,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -10599,8 +13882,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains tables. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -10652,22 +13935,22 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `get_table_properties`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_table_properties`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `get_table_properties`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_table_properties`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/tables/{index}/properties'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -10706,7 +13989,134 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TablePropertiesResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_table_properties_without_node_path(self, request, **kwargs):  # noqa: E501
+        """get_table_properties_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: TablePropertiesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_table_properties_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_table_properties_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_table_properties_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_table_properties_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_table_properties_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """get_table_properties_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetTablePropertiesWithoutNodePathRequest object with parameters
+        :return: TablePropertiesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_table_properties_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_table_properties_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_table_properties_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/tables/{index}/properties'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -10839,7 +14249,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -10972,7 +14382,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -10983,6 +14393,133 @@ class WordsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='TableRowFormatResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_table_without_node_path(self, request, **kwargs):  # noqa: E501
+        """get_table_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: TableResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_table_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """get_table_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetTableWithoutNodePathRequest object with parameters
+        :return: TableResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_table_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_table_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_table_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/tables/{index}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TableResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -11099,7 +14636,128 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TableLinkCollectionResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_tables_without_node_path(self, request, **kwargs):  # noqa: E501
+        """get_tables_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: TableLinkCollectionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_tables_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_tables_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_tables_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_tables_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_tables_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """get_tables_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetTablesWithoutNodePathRequest object with parameters
+        :return: TableLinkCollectionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_tables_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_tables_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/tables'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -11244,7 +14902,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'POST',
@@ -11401,7 +15059,158 @@ class WordsApi(object):
             ['multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DrawingObjectResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def insert_drawing_object_without_node_path(self, request, **kwargs):  # noqa: E501
+        """insert_drawing_object_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param drawing_object str : Drawing object parameters (required)
+        :param image_file file : File with image (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: DrawingObjectResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.insert_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.insert_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_drawing_object_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """insert_drawing_object_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertDrawingObjectWithoutNodePathRequest object with parameters
+        :return: DrawingObjectResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_drawing_object_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `insert_drawing_object_without_node_path`")  # noqa: E501
+        # verify the required parameter 'drawing_object' is set
+        if request.drawing_object is None:
+            raise ValueError("Missing the required parameter `drawing_object` when calling `insert_drawing_object_without_node_path`")  # noqa: E501
+        # verify the required parameter 'image_file' is set
+        if request.image_file is None:
+            raise ValueError("Missing the required parameter `image_file` when calling `insert_drawing_object_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/drawingObjects'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+        if self.__downcase_first_letter('RevisionAuthor') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
+        else:
+            if request.revision_author is not None:
+                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
+        if self.__downcase_first_letter('RevisionDateTime') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
+        else:
+            if request.revision_date_time is not None:
+                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+        if request.drawing_object is not None:
+            form_params.append((self.__downcase_first_letter('DrawingObject'), request.drawing_object))  # noqa: E501
+        if request.image_file is not None:
+            local_var_files.append((self.__downcase_first_letter('ImageFile'), request.image_file))  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'POST',
@@ -11558,7 +15367,158 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='FieldResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def insert_field_without_node_path(self, request, **kwargs):  # noqa: E501
+        """insert_field_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param field Field : Field data. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param insert_before_node str : Field will be inserted before node with id=\"nodeId\".
+        :return: FieldResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.insert_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.insert_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_field_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """insert_field_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertFieldWithoutNodePathRequest object with parameters
+        :return: FieldResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_field_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `insert_field_without_node_path`")  # noqa: E501
+        # verify the required parameter 'field' is set
+        if request.field is None:
+            raise ValueError("Missing the required parameter `field` when calling `insert_field_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/fields'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+        if self.__downcase_first_letter('RevisionAuthor') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
+        else:
+            if request.revision_author is not None:
+                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
+        if self.__downcase_first_letter('RevisionDateTime') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
+        else:
+            if request.revision_date_time is not None:
+                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
+        if self.__downcase_first_letter('InsertBeforeNode') in path:
+            path = path.replace('{' + self.__downcase_first_letter('InsertBeforeNode' + '}'), request.insert_before_node if request.insert_before_node is not None else '')
+        else:
+            if request.insert_before_node is not None:
+                query_params.append((self.__downcase_first_letter('InsertBeforeNode'), request.insert_before_node))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        if request.field is not None:
+            body_params = request.field
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'POST',
@@ -11709,7 +15669,152 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='FootnoteResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def insert_footnote_without_node_path(self, request, **kwargs):  # noqa: E501
+        """insert_footnote_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param footnote_dto Footnote : Footnote data. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: FootnoteResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.insert_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.insert_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_footnote_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """insert_footnote_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertFootnoteWithoutNodePathRequest object with parameters
+        :return: FootnoteResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_footnote_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `insert_footnote_without_node_path`")  # noqa: E501
+        # verify the required parameter 'footnote_dto' is set
+        if request.footnote_dto is None:
+            raise ValueError("Missing the required parameter `footnote_dto` when calling `insert_footnote_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/footnotes'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+        if self.__downcase_first_letter('RevisionAuthor') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
+        else:
+            if request.revision_author is not None:
+                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
+        if self.__downcase_first_letter('RevisionDateTime') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
+        else:
+            if request.revision_date_time is not None:
+                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        if request.footnote_dto is not None:
+            body_params = request.footnote_dto
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'POST',
@@ -11866,7 +15971,158 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='FormFieldResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def insert_form_field_without_node_path(self, request, **kwargs):  # noqa: E501
+        """insert_form_field_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param form_field FormField : From field data. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param insert_before_node str : Form field will be inserted before node with index.
+        :return: FormFieldResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.insert_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.insert_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_form_field_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """insert_form_field_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertFormFieldWithoutNodePathRequest object with parameters
+        :return: FormFieldResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_form_field_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `insert_form_field_without_node_path`")  # noqa: E501
+        # verify the required parameter 'form_field' is set
+        if request.form_field is None:
+            raise ValueError("Missing the required parameter `form_field` when calling `insert_form_field_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/formfields'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+        if self.__downcase_first_letter('RevisionAuthor') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
+        else:
+            if request.revision_author is not None:
+                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
+        if self.__downcase_first_letter('RevisionDateTime') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
+        else:
+            if request.revision_date_time is not None:
+                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
+        if self.__downcase_first_letter('InsertBeforeNode') in path:
+            path = path.replace('{' + self.__downcase_first_letter('InsertBeforeNode' + '}'), request.insert_before_node if request.insert_before_node is not None else '')
+        else:
+            if request.insert_before_node is not None:
+                query_params.append((self.__downcase_first_letter('InsertBeforeNode'), request.insert_before_node))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        if request.form_field is not None:
+            body_params = request.form_field
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'POST',
@@ -12014,10 +16270,10 @@ class WordsApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+            ['plain/text'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -12162,7 +16418,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -12319,7 +16575,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'POST',
@@ -12476,7 +16732,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'POST',
@@ -12510,7 +16766,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param table TableInsert : Table parameters/
+        :param table TableInsert : Table parameters/.
         :return: TableResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12624,7 +16880,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'POST',
@@ -12658,7 +16914,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param cell TableCellInsert : Table cell parameters/
+        :param cell TableCellInsert : Table cell parameters/.
         :return: TableCellResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12772,7 +17028,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'POST',
@@ -12806,7 +17062,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param row TableRowInsert : Table row parameters/
+        :param row TableRowInsert : Table row parameters/.
         :return: TableRowResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12920,7 +17176,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'POST',
@@ -12931,6 +17187,148 @@ class WordsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='TableRowResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def insert_table_without_node_path(self, request, **kwargs):  # noqa: E501
+        """insert_table_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param table TableInsert : Table parameters/.
+        :return: TableResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.insert_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.insert_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_table_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """insert_table_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertTableWithoutNodePathRequest object with parameters
+        :return: TableResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_table_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `insert_table_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/tables'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+        if self.__downcase_first_letter('RevisionAuthor') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
+        else:
+            if request.revision_author is not None:
+                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
+        if self.__downcase_first_letter('RevisionDateTime') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
+        else:
+            if request.revision_date_time is not None:
+                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        if request.table is not None:
+            body_params = request.table
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TableResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -13074,7 +17472,7 @@ class WordsApi(object):
             ['multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'POST',
@@ -13219,7 +17617,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'POST',
@@ -13322,7 +17720,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -13446,7 +17844,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -13564,7 +17962,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -13697,7 +18095,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -13716,7 +18114,7 @@ class WordsApi(object):
             collection_formats=collection_formats)
 
     def reject_all_revisions(self, request, **kwargs):  # noqa: E501
-        """Rejects all revisions in document  # noqa: E501
+        """Rejects all revisions in document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -13747,7 +18145,7 @@ class WordsApi(object):
             return data
         
     def reject_all_revisions_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Rejects all revisions in document  # noqa: E501
+        """Rejects all revisions in document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -13824,7 +18222,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -13842,6 +18240,278 @@ class WordsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def remove_range(self, request, **kwargs):  # noqa: E501
+        """Removes the range from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document. (required)
+        :param range_start_identifier str : The range start identifier. (required)
+        :param range_end_identifier str : The range end identifier. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :return: DocumentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.remove_range_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.remove_range_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.remove_range_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.remove_range_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def remove_range_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes the range from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request RemoveRangeRequest object with parameters
+        :return: DocumentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method remove_range" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `remove_range`")  # noqa: E501
+        # verify the required parameter 'range_start_identifier' is set
+        if request.range_start_identifier is None:
+            raise ValueError("Missing the required parameter `range_start_identifier` when calling `remove_range`")  # noqa: E501
+        # verify the required parameter 'range_end_identifier' is set
+        if request.range_end_identifier is None:
+            raise ValueError("Missing the required parameter `range_end_identifier` when calling `remove_range`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.range_start_identifier is not None:
+            path_params[self.__downcase_first_letter('RangeStartIdentifier')] = request.range_start_identifier  # noqa: E501
+        if request.range_end_identifier is not None:
+            path_params[self.__downcase_first_letter('RangeEndIdentifier')] = request.range_end_identifier  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DocumentResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def remove_range2(self, request, **kwargs):  # noqa: E501
+        """Removes the range from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document. (required)
+        :param range_start_identifier str : The range start identifier. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :return: DocumentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.remove_range2_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.remove_range2_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.remove_range2_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.remove_range2_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def remove_range2_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes the range from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request RemoveRange2Request object with parameters
+        :return: DocumentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method remove_range2" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `remove_range2`")  # noqa: E501
+        # verify the required parameter 'range_start_identifier' is set
+        if request.range_start_identifier is None:
+            raise ValueError("Missing the required parameter `range_start_identifier` when calling `remove_range2`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/range/{rangeStartIdentifier}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.range_start_identifier is not None:
+            path_params[self.__downcase_first_letter('RangeStartIdentifier')] = request.range_start_identifier  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DocumentResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def render_drawing_object(self, request, **kwargs):  # noqa: E501
         """Renders drawing object to specified format.  # noqa: E501
 
@@ -13851,8 +18521,8 @@ class WordsApi(object):
         :param is_async bool
         :param name str : The document name. (required)
         :param format str : The destination format. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains drawing objects. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -13908,22 +18578,22 @@ class WordsApi(object):
         # verify the required parameter 'format' is set
         if request.format is None:
             raise ValueError("Missing the required parameter `format` when calling `render_drawing_object`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `render_drawing_object`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `render_drawing_object`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `render_drawing_object`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/drawingObjects/{index}/render'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Format') in path:
@@ -13972,7 +18642,149 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def render_drawing_object_without_node_path(self, request, **kwargs):  # noqa: E501
+        """render_drawing_object_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param format str : The destination format. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param fonts_location str : Folder in filestorage with custom fonts.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.render_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.render_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.render_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.render_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def render_drawing_object_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """render_drawing_object_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request RenderDrawingObjectWithoutNodePathRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method render_drawing_object_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `render_drawing_object_without_node_path`")  # noqa: E501
+        # verify the required parameter 'format' is set
+        if request.format is None:
+            raise ValueError("Missing the required parameter `format` when calling `render_drawing_object_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `render_drawing_object_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/drawingObjects/{index}/render'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Format') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Format' + '}'), request.format if request.format is not None else '')
+        else:
+            if request.format is not None:
+                query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('FontsLocation') in path:
+            path = path.replace('{' + self.__downcase_first_letter('FontsLocation' + '}'), request.fonts_location if request.fonts_location is not None else '')
+        else:
+            if request.fonts_location is not None:
+                query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -13999,8 +18811,8 @@ class WordsApi(object):
         :param is_async bool
         :param name str : The document name. (required)
         :param format str : The destination format. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains office math objects. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -14056,22 +18868,22 @@ class WordsApi(object):
         # verify the required parameter 'format' is set
         if request.format is None:
             raise ValueError("Missing the required parameter `format` when calling `render_math_object`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `render_math_object`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `render_math_object`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `render_math_object`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/OfficeMathObjects/{index}/render'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Format') in path:
@@ -14120,7 +18932,149 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def render_math_object_without_node_path(self, request, **kwargs):  # noqa: E501
+        """render_math_object_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param format str : The destination format. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param fonts_location str : Folder in filestorage with custom fonts.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.render_math_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.render_math_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.render_math_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.render_math_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def render_math_object_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """render_math_object_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request RenderMathObjectWithoutNodePathRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method render_math_object_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `render_math_object_without_node_path`")  # noqa: E501
+        # verify the required parameter 'format' is set
+        if request.format is None:
+            raise ValueError("Missing the required parameter `format` when calling `render_math_object_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `render_math_object_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/OfficeMathObjects/{index}/render'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Format') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Format' + '}'), request.format if request.format is not None else '')
+        else:
+            if request.format is not None:
+                query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('FontsLocation') in path:
+            path = path.replace('{' + self.__downcase_first_letter('FontsLocation' + '}'), request.fonts_location if request.fonts_location is not None else '')
+        else:
+            if request.fonts_location is not None:
+                query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -14146,7 +19100,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param page_index int : Comment index (required)
+        :param page_index int : Comment index. (required)
         :param format str : The destination format. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -14262,7 +19216,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -14289,8 +19243,8 @@ class WordsApi(object):
         :param is_async bool
         :param name str : The document name. (required)
         :param format str : The destination format. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains paragraphs. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -14346,22 +19300,22 @@ class WordsApi(object):
         # verify the required parameter 'format' is set
         if request.format is None:
             raise ValueError("Missing the required parameter `format` when calling `render_paragraph`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `render_paragraph`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `render_paragraph`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `render_paragraph`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}/render'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Format') in path:
@@ -14410,7 +19364,149 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def render_paragraph_without_node_path(self, request, **kwargs):  # noqa: E501
+        """render_paragraph_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param format str : The destination format. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param fonts_location str : Folder in filestorage with custom fonts.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.render_paragraph_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.render_paragraph_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.render_paragraph_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.render_paragraph_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def render_paragraph_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """render_paragraph_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request RenderParagraphWithoutNodePathRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method render_paragraph_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `render_paragraph_without_node_path`")  # noqa: E501
+        # verify the required parameter 'format' is set
+        if request.format is None:
+            raise ValueError("Missing the required parameter `format` when calling `render_paragraph_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `render_paragraph_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/paragraphs/{index}/render'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Format') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Format' + '}'), request.format if request.format is not None else '')
+        else:
+            if request.format is not None:
+                query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('FontsLocation') in path:
+            path = path.replace('{' + self.__downcase_first_letter('FontsLocation' + '}'), request.fonts_location if request.fonts_location is not None else '')
+        else:
+            if request.fonts_location is not None:
+                query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -14437,8 +19533,8 @@ class WordsApi(object):
         :param is_async bool
         :param name str : The document name. (required)
         :param format str : The destination format. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains tables. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -14494,22 +19590,22 @@ class WordsApi(object):
         # verify the required parameter 'format' is set
         if request.format is None:
             raise ValueError("Missing the required parameter `format` when calling `render_table`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `render_table`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `render_table`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `render_table`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/tables/{index}/render'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Format') in path:
@@ -14558,7 +19654,149 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='file',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def render_table_without_node_path(self, request, **kwargs):  # noqa: E501
+        """render_table_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param format str : The destination format. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param fonts_location str : Folder in filestorage with custom fonts.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.render_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.render_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.render_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.render_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def render_table_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """render_table_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request RenderTableWithoutNodePathRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method render_table_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `render_table_without_node_path`")  # noqa: E501
+        # verify the required parameter 'format' is set
+        if request.format is None:
+            raise ValueError("Missing the required parameter `format` when calling `render_table_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `render_table_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/tables/{index}/render'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Format') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Format' + '}'), request.format if request.format is not None else '')
+        else:
+            if request.format is not None:
+                query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('FontsLocation') in path:
+            path = path.replace('{' + self.__downcase_first_letter('FontsLocation' + '}'), request.fonts_location if request.fonts_location is not None else '')
+        else:
+            if request.fonts_location is not None:
+                query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -14703,7 +19941,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -14714,6 +19952,290 @@ class WordsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='ReplaceTextResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def replace_with_text(self, request, **kwargs):  # noqa: E501
+        """Replaces the content in the range.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document. (required)
+        :param range_start_identifier str : The range start identifier. (required)
+        :param range_text ReplaceRange : Model with text for replacement. (required)
+        :param range_end_identifier str : The range end identifier. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :return: DocumentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.replace_with_text_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.replace_with_text_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.replace_with_text_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.replace_with_text_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def replace_with_text_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Replaces the content in the range.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request ReplaceWithTextRequest object with parameters
+        :return: DocumentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method replace_with_text" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `replace_with_text`")  # noqa: E501
+        # verify the required parameter 'range_start_identifier' is set
+        if request.range_start_identifier is None:
+            raise ValueError("Missing the required parameter `range_start_identifier` when calling `replace_with_text`")  # noqa: E501
+        # verify the required parameter 'range_text' is set
+        if request.range_text is None:
+            raise ValueError("Missing the required parameter `range_text` when calling `replace_with_text`")  # noqa: E501
+        # verify the required parameter 'range_end_identifier' is set
+        if request.range_end_identifier is None:
+            raise ValueError("Missing the required parameter `range_end_identifier` when calling `replace_with_text`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.range_start_identifier is not None:
+            path_params[self.__downcase_first_letter('RangeStartIdentifier')] = request.range_start_identifier  # noqa: E501
+        if request.range_end_identifier is not None:
+            path_params[self.__downcase_first_letter('RangeEndIdentifier')] = request.range_end_identifier  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        if request.range_text is not None:
+            body_params = request.range_text
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DocumentResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def replace_with_text2(self, request, **kwargs):  # noqa: E501
+        """Replaces the content in the range.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document. (required)
+        :param range_start_identifier str : The range start identifier. (required)
+        :param range_text ReplaceRange : Model with text for replacement. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :return: DocumentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.replace_with_text2_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.replace_with_text2_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.replace_with_text2_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.replace_with_text2_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def replace_with_text2_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Replaces the content in the range.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request ReplaceWithText2Request object with parameters
+        :return: DocumentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method replace_with_text2" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `replace_with_text2`")  # noqa: E501
+        # verify the required parameter 'range_start_identifier' is set
+        if request.range_start_identifier is None:
+            raise ValueError("Missing the required parameter `range_start_identifier` when calling `replace_with_text2`")  # noqa: E501
+        # verify the required parameter 'range_text' is set
+        if request.range_text is None:
+            raise ValueError("Missing the required parameter `range_text` when calling `replace_with_text2`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/range/{rangeStartIdentifier}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.range_start_identifier is not None:
+            path_params[self.__downcase_first_letter('RangeStartIdentifier')] = request.range_start_identifier  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        if request.range_text is not None:
+            body_params = request.range_text
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DocumentResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -14794,7 +20316,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -14933,7 +20455,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -14944,6 +20466,290 @@ class WordsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='SaveResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def save_as_range(self, request, **kwargs):  # noqa: E501
+        """Saves the selected range as a new document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document. (required)
+        :param range_start_identifier str : The range start identifier. (required)
+        :param document_parameters RangeDocument : Parameters of a new document. (required)
+        :param range_end_identifier str : The range end identifier. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :return: DocumentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.save_as_range_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.save_as_range_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.save_as_range_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.save_as_range_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def save_as_range_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Saves the selected range as a new document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request SaveAsRangeRequest object with parameters
+        :return: DocumentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method save_as_range" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `save_as_range`")  # noqa: E501
+        # verify the required parameter 'range_start_identifier' is set
+        if request.range_start_identifier is None:
+            raise ValueError("Missing the required parameter `range_start_identifier` when calling `save_as_range`")  # noqa: E501
+        # verify the required parameter 'document_parameters' is set
+        if request.document_parameters is None:
+            raise ValueError("Missing the required parameter `document_parameters` when calling `save_as_range`")  # noqa: E501
+        # verify the required parameter 'range_end_identifier' is set
+        if request.range_end_identifier is None:
+            raise ValueError("Missing the required parameter `range_end_identifier` when calling `save_as_range`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.range_start_identifier is not None:
+            path_params[self.__downcase_first_letter('RangeStartIdentifier')] = request.range_start_identifier  # noqa: E501
+        if request.range_end_identifier is not None:
+            path_params[self.__downcase_first_letter('RangeEndIdentifier')] = request.range_end_identifier  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        if request.document_parameters is not None:
+            body_params = request.document_parameters
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DocumentResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def save_as_range2(self, request, **kwargs):  # noqa: E501
+        """Saves the selected range as a new document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document. (required)
+        :param range_start_identifier str : The range start identifier. (required)
+        :param document_parameters RangeDocument : Parameters of a new document. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :return: DocumentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.save_as_range2_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.save_as_range2_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.save_as_range2_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.save_as_range2_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def save_as_range2_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Saves the selected range as a new document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request SaveAsRange2Request object with parameters
+        :return: DocumentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method save_as_range2" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `save_as_range2`")  # noqa: E501
+        # verify the required parameter 'range_start_identifier' is set
+        if request.range_start_identifier is None:
+            raise ValueError("Missing the required parameter `range_start_identifier` when calling `save_as_range2`")  # noqa: E501
+        # verify the required parameter 'document_parameters' is set
+        if request.document_parameters is None:
+            raise ValueError("Missing the required parameter `document_parameters` when calling `save_as_range2`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/range/{rangeStartIdentifier}/SaveAs'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.range_start_identifier is not None:
+            path_params[self.__downcase_first_letter('RangeStartIdentifier')] = request.range_start_identifier  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        if request.document_parameters is not None:
+            body_params = request.document_parameters
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DocumentResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -15180,7 +20986,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -15310,7 +21116,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'GET',
@@ -15467,7 +21273,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -15600,7 +21406,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'DELETE',
@@ -15751,7 +21557,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -15772,13 +21578,13 @@ class WordsApi(object):
     def update_border(self, request, **kwargs):  # noqa: E501
         """Updates border properties.               # noqa: E501
 
-        'nodePath' should refer to node with cell or row  # noqa: E501
+        'nodePath' should refer to node with cell or row.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param border_properties Border : Border properties (required)
+        :param border_properties Border : Border properties. (required)
         :param node_path str : Path to the node with border(node should be cell or row). (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
@@ -15809,7 +21615,7 @@ class WordsApi(object):
     def update_border_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates border properties.               # noqa: E501
 
-        'nodePath' should refer to node with cell or row  # noqa: E501
+        'nodePath' should refer to node with cell or row.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
@@ -15910,7 +21716,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -15936,7 +21742,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param comment_index int : The comment index (required)
+        :param comment_index int : The comment index. (required)
         :param comment Comment : The comment data. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -16061,7 +21867,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -16089,8 +21895,8 @@ class WordsApi(object):
         :param name str : The document name. (required)
         :param drawing_object str : Drawing object parameters (required)
         :param image_file file : File with image (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains collection of drawing objects. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -16151,22 +21957,22 @@ class WordsApi(object):
         # verify the required parameter 'image_file' is set
         if request.image_file is None:
             raise ValueError("Missing the required parameter `image_file` when calling `update_drawing_object`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `update_drawing_object`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `update_drawing_object`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `update_drawing_object`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/drawingObjects/{index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -16224,7 +22030,164 @@ class WordsApi(object):
             ['multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DrawingObjectResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_drawing_object_without_node_path(self, request, **kwargs):  # noqa: E501
+        """update_drawing_object_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param drawing_object str : Drawing object parameters (required)
+        :param image_file file : File with image (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: DrawingObjectResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.update_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.update_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.update_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.update_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_drawing_object_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """update_drawing_object_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateDrawingObjectWithoutNodePathRequest object with parameters
+        :return: DrawingObjectResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_drawing_object_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `update_drawing_object_without_node_path`")  # noqa: E501
+        # verify the required parameter 'drawing_object' is set
+        if request.drawing_object is None:
+            raise ValueError("Missing the required parameter `drawing_object` when calling `update_drawing_object_without_node_path`")  # noqa: E501
+        # verify the required parameter 'image_file' is set
+        if request.image_file is None:
+            raise ValueError("Missing the required parameter `image_file` when calling `update_drawing_object_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `update_drawing_object_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/drawingObjects/{index}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+        if self.__downcase_first_letter('RevisionAuthor') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
+        else:
+            if request.revision_author is not None:
+                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
+        if self.__downcase_first_letter('RevisionDateTime') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
+        else:
+            if request.revision_date_time is not None:
+                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+        if request.drawing_object is not None:
+            form_params.append((self.__downcase_first_letter('DrawingObject'), request.drawing_object))  # noqa: E501
+        if request.image_file is not None:
+            local_var_files.append((self.__downcase_first_letter('ImageFile'), request.image_file))  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -16251,8 +22214,8 @@ class WordsApi(object):
         :param is_async bool
         :param name str : The document name. (required)
         :param field Field : Field data. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains collection of fields. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -16310,22 +22273,22 @@ class WordsApi(object):
         # verify the required parameter 'field' is set
         if request.field is None:
             raise ValueError("Missing the required parameter `field` when calling `update_field`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `update_field`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `update_field`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `update_field`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/fields/{index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -16381,7 +22344,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -16508,7 +22471,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -16535,8 +22498,8 @@ class WordsApi(object):
         :param is_async bool
         :param name str : The document name. (required)
         :param footnote_dto Footnote : Footnote data. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains collection of footnotes. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -16594,22 +22557,22 @@ class WordsApi(object):
         # verify the required parameter 'footnote_dto' is set
         if request.footnote_dto is None:
             raise ValueError("Missing the required parameter `footnote_dto` when calling `update_footnote`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `update_footnote`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `update_footnote`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `update_footnote`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/footnotes/{index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -16665,7 +22628,158 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='FootnoteResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_footnote_without_node_path(self, request, **kwargs):  # noqa: E501
+        """update_footnote_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param footnote_dto Footnote : Footnote data. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: FootnoteResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.update_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.update_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.update_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.update_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_footnote_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """update_footnote_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateFootnoteWithoutNodePathRequest object with parameters
+        :return: FootnoteResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_footnote_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `update_footnote_without_node_path`")  # noqa: E501
+        # verify the required parameter 'footnote_dto' is set
+        if request.footnote_dto is None:
+            raise ValueError("Missing the required parameter `footnote_dto` when calling `update_footnote_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `update_footnote_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/footnotes/{index}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+        if self.__downcase_first_letter('RevisionAuthor') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
+        else:
+            if request.revision_author is not None:
+                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
+        if self.__downcase_first_letter('RevisionDateTime') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
+        else:
+            if request.revision_date_time is not None:
+                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        if request.footnote_dto is not None:
+            body_params = request.footnote_dto
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -16692,8 +22806,8 @@ class WordsApi(object):
         :param is_async bool
         :param name str : The document name. (required)
         :param form_field FormField : From field data. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node that contains collection of formfields. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -16751,22 +22865,22 @@ class WordsApi(object):
         # verify the required parameter 'form_field' is set
         if request.form_field is None:
             raise ValueError("Missing the required parameter `form_field` when calling `update_form_field`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `update_form_field`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `update_form_field`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `update_form_field`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/formfields/{index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -16822,7 +22936,158 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='FormFieldResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_form_field_without_node_path(self, request, **kwargs):  # noqa: E501
+        """update_form_field_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param form_field FormField : From field data. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: FormFieldResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.update_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.update_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.update_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.update_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_form_field_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """update_form_field_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateFormFieldWithoutNodePathRequest object with parameters
+        :return: FormFieldResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_form_field_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `update_form_field_without_node_path`")  # noqa: E501
+        # verify the required parameter 'form_field' is set
+        if request.form_field is None:
+            raise ValueError("Missing the required parameter `form_field` when calling `update_form_field_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `update_form_field_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/formfields/{index}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+        if self.__downcase_first_letter('RevisionAuthor') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
+        else:
+            if request.revision_author is not None:
+                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
+        if self.__downcase_first_letter('RevisionDateTime') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
+        else:
+            if request.revision_date_time is not None:
+                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        if request.form_field is not None:
+            body_params = request.form_field
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -16848,7 +23113,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param dto ParagraphFormat : Paragraph format object (required)
+        :param dto ParagraphFormat : Paragraph format object. (required)
         :param node_path str : Path to the node which contains paragraphs. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
@@ -16979,7 +23244,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -17136,7 +23401,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -17162,7 +23427,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param font_dto Font : Font dto object (required)
+        :param font_dto Font : Font dto object. (required)
         :param paragraph_path str : Path to parent paragraph. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
@@ -17293,7 +23558,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -17319,8 +23584,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param section_index int : Section index (required)
-        :param page_setup PageSetup : Page setup properties dto (required)
+        :param section_index int : Section index. (required)
+        :param page_setup PageSetup : Page setup properties dto. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -17444,7 +23709,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -17598,7 +23863,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -17624,8 +23889,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param index int : Object index. (required)
         :param node_path str : Path to the node, which contains tables. (required)
+        :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -17681,22 +23946,22 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_table_properties`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `update_table_properties`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `update_table_properties`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `update_table_properties`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{nodePath}/tables/{index}/properties'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -17752,7 +24017,155 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TablePropertiesResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_table_properties_without_node_path(self, request, **kwargs):  # noqa: E501
+        """update_table_properties_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param index int : Object index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param properties TableProperties : The properties.
+        :return: TablePropertiesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.update_table_properties_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.update_table_properties_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.update_table_properties_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.update_table_properties_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_table_properties_without_node_path_with_http_info(self, request, **kwargs):  # noqa: E501
+        """update_table_properties_without_node_path  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateTablePropertiesWithoutNodePathRequest object with parameters
+        :return: TablePropertiesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_table_properties_without_node_path" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `update_table_properties_without_node_path`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if request.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `update_table_properties_without_node_path`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/tables/{index}/properties'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.index is not None:
+            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+        if self.__downcase_first_letter('RevisionAuthor') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
+        else:
+            if request.revision_author is not None:
+                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
+        if self.__downcase_first_letter('RevisionDateTime') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
+        else:
+            if request.revision_date_time is not None:
+                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        if request.properties is not None:
+            body_params = request.properties
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -17906,7 +24319,7 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -18015,7 +24428,7 @@ class WordsApi(object):
             ['multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['oauth']  # noqa: E501
+        auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
             path, 'PUT',
@@ -18042,7 +24455,7 @@ class WordsApi(object):
 
     def __request_token(self):
         config = self.api_client.configuration
-        request_url = "connect/token"
+        request_url = "/connect/token"
         form_params = [('grant_type', 'client_credentials'), ('client_id', config.api_key['app_sid']),
                        ('client_secret', config.api_key['api_key'])]
 

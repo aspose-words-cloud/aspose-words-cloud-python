@@ -30,7 +30,7 @@ import six
 
 
 class FormFieldResponse(object):
-    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/paragraphs/{0}/formfields/{1} 
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/paragraphs/{0}/formfields/{1}.
     """
 
     """
@@ -66,7 +66,7 @@ class FormFieldResponse(object):
     def request_id(self):
         """Gets the request_id of this FormFieldResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this FormFieldResponse.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class FormFieldResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this FormFieldResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this FormFieldResponse.  # noqa: E501
         :type: str
@@ -87,7 +87,7 @@ class FormFieldResponse(object):
     def form_field(self):
         """Gets the form_field of this FormFieldResponse.  # noqa: E501
 
-        Field information  # noqa: E501
+        Gets or sets field information.  # noqa: E501
 
         :return: The form_field of this FormFieldResponse.  # noqa: E501
         :rtype: FormField
@@ -98,7 +98,7 @@ class FormFieldResponse(object):
     def form_field(self, form_field):
         """Sets the form_field of this FormFieldResponse.
 
-        Field information  # noqa: E501
+        Gets or sets field information.  # noqa: E501
 
         :param form_field: The form_field of this FormFieldResponse.  # noqa: E501
         :type: FormField

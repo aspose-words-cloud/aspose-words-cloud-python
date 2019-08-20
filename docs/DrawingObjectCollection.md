@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**link** | [**WordsApiLink**](WordsApiLink.md) | Link to the document. | [optional] 
-**list** | [**list[LinkElement]**](LinkElement.md) | Collection of DrawingObjects links  | [optional] 
+**link** | [**WordsApiLink**](WordsApiLink.md) | Gets or sets link to the document. | [optional] 
+**list** | [**list[LinkElement]**](LinkElement.md) | Gets or sets collection of DrawingObjects links. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

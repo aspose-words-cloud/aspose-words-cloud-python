@@ -30,7 +30,7 @@ import six
 
 
 class SectionLinkCollectionResponse(object):
-    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/sections 
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/sections.
     """
 
     """
@@ -66,7 +66,7 @@ class SectionLinkCollectionResponse(object):
     def request_id(self):
         """Gets the request_id of this SectionLinkCollectionResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this SectionLinkCollectionResponse.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class SectionLinkCollectionResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this SectionLinkCollectionResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this SectionLinkCollectionResponse.  # noqa: E501
         :type: str
@@ -87,7 +87,7 @@ class SectionLinkCollectionResponse(object):
     def sections(self):
         """Gets the sections of this SectionLinkCollectionResponse.  # noqa: E501
 
-        Collection of sections  # noqa: E501
+        Gets or sets collection of sections.  # noqa: E501
 
         :return: The sections of this SectionLinkCollectionResponse.  # noqa: E501
         :rtype: SectionLinkCollection
@@ -98,7 +98,7 @@ class SectionLinkCollectionResponse(object):
     def sections(self, sections):
         """Sets the sections of this SectionLinkCollectionResponse.
 
-        Collection of sections  # noqa: E501
+        Gets or sets collection of sections.  # noqa: E501
 
         :param sections: The sections of this SectionLinkCollectionResponse.  # noqa: E501
         :type: SectionLinkCollection

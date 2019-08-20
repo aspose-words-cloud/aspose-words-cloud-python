@@ -30,7 +30,7 @@ import six
 
 
 class FieldResponse(object):
-    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/paragraphs/{0}/fields/{1} 
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/paragraphs/{0}/fields/{1}.
     """
 
     """
@@ -66,7 +66,7 @@ class FieldResponse(object):
     def request_id(self):
         """Gets the request_id of this FieldResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this FieldResponse.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class FieldResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this FieldResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this FieldResponse.  # noqa: E501
         :type: str
@@ -87,7 +87,7 @@ class FieldResponse(object):
     def field(self):
         """Gets the field of this FieldResponse.  # noqa: E501
 
-        Field information  # noqa: E501
+        Gets or sets field information.  # noqa: E501
 
         :return: The field of this FieldResponse.  # noqa: E501
         :rtype: Field
@@ -98,7 +98,7 @@ class FieldResponse(object):
     def field(self, field):
         """Sets the field of this FieldResponse.
 
-        Field information  # noqa: E501
+        Gets or sets field information.  # noqa: E501
 
         :param field: The field of this FieldResponse.  # noqa: E501
         :type: Field

@@ -30,7 +30,7 @@ import six
 
 
 class RunLink(object):
-    """Run link element
+    """Run link element.
     """
 
     """
@@ -71,7 +71,7 @@ class RunLink(object):
     def link(self):
         """Gets the link of this RunLink.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this RunLink.  # noqa: E501
         :rtype: WordsApiLink
@@ -82,7 +82,7 @@ class RunLink(object):
     def link(self, link):
         """Sets the link of this RunLink.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this RunLink.  # noqa: E501
         :type: WordsApiLink
@@ -92,7 +92,7 @@ class RunLink(object):
     def node_id(self):
         """Gets the node_id of this RunLink.  # noqa: E501
 
-        Node id  # noqa: E501
+        Gets or sets node id.  # noqa: E501
 
         :return: The node_id of this RunLink.  # noqa: E501
         :rtype: str
@@ -103,7 +103,7 @@ class RunLink(object):
     def node_id(self, node_id):
         """Sets the node_id of this RunLink.
 
-        Node id  # noqa: E501
+        Gets or sets node id.  # noqa: E501
 
         :param node_id: The node_id of this RunLink.  # noqa: E501
         :type: str
@@ -113,7 +113,7 @@ class RunLink(object):
     def text(self):
         """Gets the text of this RunLink.  # noqa: E501
 
-        Run's text  # noqa: E501
+        Gets or sets run's text.  # noqa: E501
 
         :return: The text of this RunLink.  # noqa: E501
         :rtype: str
@@ -124,7 +124,7 @@ class RunLink(object):
     def text(self, text):
         """Sets the text of this RunLink.
 
-        Run's text  # noqa: E501
+        Gets or sets run's text.  # noqa: E501
 
         :param text: The text of this RunLink.  # noqa: E501
         :type: str

@@ -30,7 +30,7 @@ import six
 
 
 class OutlineOptionsData(object):
-    """container class for outline options
+    """container class for outline options.
     """
 
     """
@@ -86,7 +86,7 @@ class OutlineOptionsData(object):
     def bookmarks_outline_levels(self):
         """Gets the bookmarks_outline_levels of this OutlineOptionsData.  # noqa: E501
 
-        Allows to specify individual bookmarks outline level  # noqa: E501
+        Gets or sets allows to specify individual bookmarks outline level.  # noqa: E501
 
         :return: The bookmarks_outline_levels of this OutlineOptionsData.  # noqa: E501
         :rtype: list[BookmarksOutlineLevelData]
@@ -97,7 +97,7 @@ class OutlineOptionsData(object):
     def bookmarks_outline_levels(self, bookmarks_outline_levels):
         """Sets the bookmarks_outline_levels of this OutlineOptionsData.
 
-        Allows to specify individual bookmarks outline level  # noqa: E501
+        Gets or sets allows to specify individual bookmarks outline level.  # noqa: E501
 
         :param bookmarks_outline_levels: The bookmarks_outline_levels of this OutlineOptionsData.  # noqa: E501
         :type: list[BookmarksOutlineLevelData]
@@ -107,7 +107,7 @@ class OutlineOptionsData(object):
     def default_bookmarks_outline_level(self):
         """Gets the default_bookmarks_outline_level of this OutlineOptionsData.  # noqa: E501
 
-        Specifies the default level in the document outline at which to display Word bookmarks  # noqa: E501
+        Gets or sets specifies the default level in the document outline at which to display Word bookmarks.  # noqa: E501
 
         :return: The default_bookmarks_outline_level of this OutlineOptionsData.  # noqa: E501
         :rtype: int
@@ -118,7 +118,7 @@ class OutlineOptionsData(object):
     def default_bookmarks_outline_level(self, default_bookmarks_outline_level):
         """Sets the default_bookmarks_outline_level of this OutlineOptionsData.
 
-        Specifies the default level in the document outline at which to display Word bookmarks  # noqa: E501
+        Gets or sets specifies the default level in the document outline at which to display Word bookmarks.  # noqa: E501
 
         :param default_bookmarks_outline_level: The default_bookmarks_outline_level of this OutlineOptionsData.  # noqa: E501
         :type: int
@@ -149,7 +149,7 @@ class OutlineOptionsData(object):
     def create_outlines_for_headings_in_tables(self):
         """Gets the create_outlines_for_headings_in_tables of this OutlineOptionsData.  # noqa: E501
 
-        Specifies whether or not to create outlines for headings (paragraphs formatted     with the Heading styles) inside tables.  # noqa: E501
+        Gets or sets specifies whether or not to create outlines for headings (paragraphs formatted     with the Heading styles) inside tables.  # noqa: E501
 
         :return: The create_outlines_for_headings_in_tables of this OutlineOptionsData.  # noqa: E501
         :rtype: bool
@@ -160,7 +160,7 @@ class OutlineOptionsData(object):
     def create_outlines_for_headings_in_tables(self, create_outlines_for_headings_in_tables):
         """Sets the create_outlines_for_headings_in_tables of this OutlineOptionsData.
 
-        Specifies whether or not to create outlines for headings (paragraphs formatted     with the Heading styles) inside tables.  # noqa: E501
+        Gets or sets specifies whether or not to create outlines for headings (paragraphs formatted     with the Heading styles) inside tables.  # noqa: E501
 
         :param create_outlines_for_headings_in_tables: The create_outlines_for_headings_in_tables of this OutlineOptionsData.  # noqa: E501
         :type: bool
@@ -170,7 +170,7 @@ class OutlineOptionsData(object):
     def expanded_outline_levels(self):
         """Gets the expanded_outline_levels of this OutlineOptionsData.  # noqa: E501
 
-        Specifies how many levels in the document outline to show expanded when the file is viewed  # noqa: E501
+        Gets or sets specifies how many levels in the document outline to show expanded when the file is viewed.  # noqa: E501
 
         :return: The expanded_outline_levels of this OutlineOptionsData.  # noqa: E501
         :rtype: int
@@ -181,7 +181,7 @@ class OutlineOptionsData(object):
     def expanded_outline_levels(self, expanded_outline_levels):
         """Sets the expanded_outline_levels of this OutlineOptionsData.
 
-        Specifies how many levels in the document outline to show expanded when the file is viewed  # noqa: E501
+        Gets or sets specifies how many levels in the document outline to show expanded when the file is viewed.  # noqa: E501
 
         :param expanded_outline_levels: The expanded_outline_levels of this OutlineOptionsData.  # noqa: E501
         :type: int
@@ -191,7 +191,7 @@ class OutlineOptionsData(object):
     def headings_outline_levels(self):
         """Gets the headings_outline_levels of this OutlineOptionsData.  # noqa: E501
 
-        Specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the document outline  # noqa: E501
+        Gets or sets specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the document outline.  # noqa: E501
 
         :return: The headings_outline_levels of this OutlineOptionsData.  # noqa: E501
         :rtype: int
@@ -202,7 +202,7 @@ class OutlineOptionsData(object):
     def headings_outline_levels(self, headings_outline_levels):
         """Sets the headings_outline_levels of this OutlineOptionsData.
 
-        Specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the document outline  # noqa: E501
+        Gets or sets specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the document outline.  # noqa: E501
 
         :param headings_outline_levels: The headings_outline_levels of this OutlineOptionsData.  # noqa: E501
         :type: int

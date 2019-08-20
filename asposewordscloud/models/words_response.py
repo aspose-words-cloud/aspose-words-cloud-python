@@ -61,7 +61,7 @@ class WordsResponse(object):
     def request_id(self):
         """Gets the request_id of this WordsResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this WordsResponse.  # noqa: E501
         :rtype: str
@@ -72,7 +72,7 @@ class WordsResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this WordsResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this WordsResponse.  # noqa: E501
         :type: str

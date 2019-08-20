@@ -66,7 +66,7 @@ class DocumentResponse(object):
     def request_id(self):
         """Gets the request_id of this DocumentResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this DocumentResponse.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class DocumentResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this DocumentResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this DocumentResponse.  # noqa: E501
         :type: str
@@ -87,7 +87,7 @@ class DocumentResponse(object):
     def document(self):
         """Gets the document of this DocumentResponse.  # noqa: E501
 
-        Document description.  # noqa: E501
+        Gets or sets document description.  # noqa: E501
 
         :return: The document of this DocumentResponse.  # noqa: E501
         :rtype: Document
@@ -98,7 +98,7 @@ class DocumentResponse(object):
     def document(self, document):
         """Sets the document of this DocumentResponse.
 
-        Document description.  # noqa: E501
+        Gets or sets document description.  # noqa: E501
 
         :param document: The document of this DocumentResponse.  # noqa: E501
         :type: Document

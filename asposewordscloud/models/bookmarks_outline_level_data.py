@@ -30,7 +30,7 @@ import six
 
 
 class BookmarksOutlineLevelData(object):
-    """container class for individual bookmarks outline level
+    """container class for individual bookmarks outline level.
     """
 
     """
@@ -66,7 +66,7 @@ class BookmarksOutlineLevelData(object):
     def name(self):
         """Gets the name of this BookmarksOutlineLevelData.  # noqa: E501
 
-        Specify the bookmark's name  # noqa: E501
+        Gets or sets specify the bookmark's name.  # noqa: E501
 
         :return: The name of this BookmarksOutlineLevelData.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class BookmarksOutlineLevelData(object):
     def name(self, name):
         """Sets the name of this BookmarksOutlineLevelData.
 
-        Specify the bookmark's name  # noqa: E501
+        Gets or sets specify the bookmark's name.  # noqa: E501
 
         :param name: The name of this BookmarksOutlineLevelData.  # noqa: E501
         :type: str
@@ -87,7 +87,7 @@ class BookmarksOutlineLevelData(object):
     def bookmarks_outline_level(self):
         """Gets the bookmarks_outline_level of this BookmarksOutlineLevelData.  # noqa: E501
 
-        Specify the bookmark's level  # noqa: E501
+        Gets or sets specify the bookmark's level.  # noqa: E501
 
         :return: The bookmarks_outline_level of this BookmarksOutlineLevelData.  # noqa: E501
         :rtype: int
@@ -98,7 +98,7 @@ class BookmarksOutlineLevelData(object):
     def bookmarks_outline_level(self, bookmarks_outline_level):
         """Sets the bookmarks_outline_level of this BookmarksOutlineLevelData.
 
-        Specify the bookmark's level  # noqa: E501
+        Gets or sets specify the bookmark's level.  # noqa: E501
 
         :param bookmarks_outline_level: The bookmarks_outline_level of this BookmarksOutlineLevelData.  # noqa: E501
         :type: int

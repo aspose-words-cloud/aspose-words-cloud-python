@@ -30,7 +30,7 @@ import six
 
 
 class ModificationOperationResult(object):
-    """result of the operation which modifies the original document and saves the result
+    """result of the operation which modifies the original document and saves the result.
     """
 
     """
@@ -66,7 +66,7 @@ class ModificationOperationResult(object):
     def source(self):
         """Gets the source of this ModificationOperationResult.  # noqa: E501
 
-        Link to the source document (source for the modification operation)  # noqa: E501
+        Gets or sets link to the source document (source for the modification operation).  # noqa: E501
 
         :return: The source of this ModificationOperationResult.  # noqa: E501
         :rtype: FileLink
@@ -77,7 +77,7 @@ class ModificationOperationResult(object):
     def source(self, source):
         """Sets the source of this ModificationOperationResult.
 
-        Link to the source document (source for the modification operation)  # noqa: E501
+        Gets or sets link to the source document (source for the modification operation).  # noqa: E501
 
         :param source: The source of this ModificationOperationResult.  # noqa: E501
         :type: FileLink
@@ -87,7 +87,7 @@ class ModificationOperationResult(object):
     def dest(self):
         """Gets the dest of this ModificationOperationResult.  # noqa: E501
 
-        Link to the dest document (result of the modification operation)  # noqa: E501
+        Gets or sets link to the dest document (result of the modification operation).  # noqa: E501
 
         :return: The dest of this ModificationOperationResult.  # noqa: E501
         :rtype: FileLink
@@ -98,7 +98,7 @@ class ModificationOperationResult(object):
     def dest(self, dest):
         """Sets the dest of this ModificationOperationResult.
 
-        Link to the dest document (result of the modification operation)  # noqa: E501
+        Gets or sets link to the dest document (result of the modification operation).  # noqa: E501
 
         :param dest: The dest of this ModificationOperationResult.  # noqa: E501
         :type: FileLink

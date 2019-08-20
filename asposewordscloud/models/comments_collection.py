@@ -66,7 +66,7 @@ class CommentsCollection(object):
     def link(self):
         """Gets the link of this CommentsCollection.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this CommentsCollection.  # noqa: E501
         :rtype: WordsApiLink
@@ -77,7 +77,7 @@ class CommentsCollection(object):
     def link(self, link):
         """Sets the link of this CommentsCollection.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this CommentsCollection.  # noqa: E501
         :type: WordsApiLink
@@ -87,7 +87,7 @@ class CommentsCollection(object):
     def comment_list(self):
         """Gets the comment_list of this CommentsCollection.  # noqa: E501
 
-        Collection of comments  # noqa: E501
+        Gets or sets collection of comments.  # noqa: E501
 
         :return: The comment_list of this CommentsCollection.  # noqa: E501
         :rtype: list[Comment]
@@ -98,7 +98,7 @@ class CommentsCollection(object):
     def comment_list(self, comment_list):
         """Sets the comment_list of this CommentsCollection.
 
-        Collection of comments  # noqa: E501
+        Gets or sets collection of comments.  # noqa: E501
 
         :param comment_list: The comment_list of this CommentsCollection.  # noqa: E501
         :type: list[Comment]

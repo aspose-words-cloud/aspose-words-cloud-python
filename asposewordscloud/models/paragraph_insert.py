@@ -30,7 +30,7 @@ import six
 
 
 class ParagraphInsert(object):
-    """Paragraph element
+    """Paragraph element.
     """
 
     """
@@ -61,7 +61,7 @@ class ParagraphInsert(object):
     def text(self):
         """Gets the text of this ParagraphInsert.  # noqa: E501
 
-        Paragraph's text  # noqa: E501
+        Gets or sets paragraph's text.  # noqa: E501
 
         :return: The text of this ParagraphInsert.  # noqa: E501
         :rtype: str
@@ -72,7 +72,7 @@ class ParagraphInsert(object):
     def text(self, text):
         """Sets the text of this ParagraphInsert.
 
-        Paragraph's text  # noqa: E501
+        Gets or sets paragraph's text.  # noqa: E501
 
         :param text: The text of this ParagraphInsert.  # noqa: E501
         :type: str

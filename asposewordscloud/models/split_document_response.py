@@ -66,7 +66,7 @@ class SplitDocumentResponse(object):
     def request_id(self):
         """Gets the request_id of this SplitDocumentResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this SplitDocumentResponse.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class SplitDocumentResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this SplitDocumentResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this SplitDocumentResponse.  # noqa: E501
         :type: str
@@ -87,7 +87,7 @@ class SplitDocumentResponse(object):
     def split_result(self):
         """Gets the split_result of this SplitDocumentResponse.  # noqa: E501
 
-        Resylt of splitting document.  # noqa: E501
+        Gets or sets resylt of splitting document.  # noqa: E501
 
         :return: The split_result of this SplitDocumentResponse.  # noqa: E501
         :rtype: SplitDocumentResult
@@ -98,7 +98,7 @@ class SplitDocumentResponse(object):
     def split_result(self, split_result):
         """Sets the split_result of this SplitDocumentResponse.
 
-        Resylt of splitting document.  # noqa: E501
+        Gets or sets resylt of splitting document.  # noqa: E501
 
         :param split_result: The split_result of this SplitDocumentResponse.  # noqa: E501
         :type: SplitDocumentResult

@@ -30,7 +30,7 @@ import six
 
 
 class TableRowInsert(object):
-    """Table row element
+    """Table row element.
     """
 
     """
@@ -66,7 +66,7 @@ class TableRowInsert(object):
     def insert_after(self):
         """Gets the insert_after of this TableRowInsert.  # noqa: E501
 
-        Table row will be inserted after row with specified 0-based index.  # noqa: E501
+        Gets or sets table row will be inserted after row with specified 0-based index.  # noqa: E501
 
         :return: The insert_after of this TableRowInsert.  # noqa: E501
         :rtype: int
@@ -77,7 +77,7 @@ class TableRowInsert(object):
     def insert_after(self, insert_after):
         """Sets the insert_after of this TableRowInsert.
 
-        Table row will be inserted after row with specified 0-based index.  # noqa: E501
+        Gets or sets table row will be inserted after row with specified 0-based index.  # noqa: E501
 
         :param insert_after: The insert_after of this TableRowInsert.  # noqa: E501
         :type: int
@@ -87,7 +87,7 @@ class TableRowInsert(object):
     def columns_count(self):
         """Gets the columns_count of this TableRowInsert.  # noqa: E501
 
-        Count of columns. Default is 1.  # noqa: E501
+        Gets or sets count of columns. Default is 1.  # noqa: E501
 
         :return: The columns_count of this TableRowInsert.  # noqa: E501
         :rtype: int
@@ -98,7 +98,7 @@ class TableRowInsert(object):
     def columns_count(self, columns_count):
         """Sets the columns_count of this TableRowInsert.
 
-        Count of columns. Default is 1.  # noqa: E501
+        Gets or sets count of columns. Default is 1.  # noqa: E501
 
         :param columns_count: The columns_count of this TableRowInsert.  # noqa: E501
         :type: int

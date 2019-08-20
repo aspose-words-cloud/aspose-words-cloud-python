@@ -30,7 +30,7 @@ import six
 
 
 class XamlFlowSaveOptionsData(object):
-    """container class for xaml flow save options
+    """container class for xaml flow save options.
     """
 
     """
@@ -111,7 +111,7 @@ class XamlFlowSaveOptionsData(object):
     def color_mode(self):
         """Gets the color_mode of this XamlFlowSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}  # noqa: E501
+        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
 
         :return: The color_mode of this XamlFlowSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -122,7 +122,7 @@ class XamlFlowSaveOptionsData(object):
     def color_mode(self, color_mode):
         """Sets the color_mode of this XamlFlowSaveOptionsData.
 
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}  # noqa: E501
+        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
 
         :param color_mode: The color_mode of this XamlFlowSaveOptionsData.  # noqa: E501
         :type: str
@@ -132,7 +132,7 @@ class XamlFlowSaveOptionsData(object):
     def save_format(self):
         """Gets the save_format of this XamlFlowSaveOptionsData.  # noqa: E501
 
-        format of save  # noqa: E501
+        Gets or sets format of save.  # noqa: E501
 
         :return: The save_format of this XamlFlowSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -143,7 +143,7 @@ class XamlFlowSaveOptionsData(object):
     def save_format(self, save_format):
         """Sets the save_format of this XamlFlowSaveOptionsData.
 
-        format of save  # noqa: E501
+        Gets or sets format of save.  # noqa: E501
 
         :param save_format: The save_format of this XamlFlowSaveOptionsData.  # noqa: E501
         :type: str
@@ -153,7 +153,7 @@ class XamlFlowSaveOptionsData(object):
     def file_name(self):
         """Gets the file_name of this XamlFlowSaveOptionsData.  # noqa: E501
 
-        name of destination file  # noqa: E501
+        Gets or sets name of destination file.  # noqa: E501
 
         :return: The file_name of this XamlFlowSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -164,7 +164,7 @@ class XamlFlowSaveOptionsData(object):
     def file_name(self, file_name):
         """Sets the file_name of this XamlFlowSaveOptionsData.
 
-        name of destination file  # noqa: E501
+        Gets or sets name of destination file.  # noqa: E501
 
         :param file_name: The file_name of this XamlFlowSaveOptionsData.  # noqa: E501
         :type: str
@@ -174,7 +174,7 @@ class XamlFlowSaveOptionsData(object):
     def dml_rendering_mode(self):
         """Gets the dml_rendering_mode of this XamlFlowSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }  # noqa: E501
+        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
 
         :return: The dml_rendering_mode of this XamlFlowSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -185,7 +185,7 @@ class XamlFlowSaveOptionsData(object):
     def dml_rendering_mode(self, dml_rendering_mode):
         """Sets the dml_rendering_mode of this XamlFlowSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }  # noqa: E501
+        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
 
         :param dml_rendering_mode: The dml_rendering_mode of this XamlFlowSaveOptionsData.  # noqa: E501
         :type: str
@@ -195,7 +195,7 @@ class XamlFlowSaveOptionsData(object):
     def dml_effects_rendering_mode(self):
         """Gets the dml_effects_rendering_mode of this XamlFlowSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }  # noqa: E501
+        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :return: The dml_effects_rendering_mode of this XamlFlowSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -206,7 +206,7 @@ class XamlFlowSaveOptionsData(object):
     def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
         """Sets the dml_effects_rendering_mode of this XamlFlowSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }  # noqa: E501
+        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this XamlFlowSaveOptionsData.  # noqa: E501
         :type: str
@@ -216,7 +216,7 @@ class XamlFlowSaveOptionsData(object):
     def zip_output(self):
         """Gets the zip_output of this XamlFlowSaveOptionsData.  # noqa: E501
 
-        Controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
 
         :return: The zip_output of this XamlFlowSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -227,7 +227,7 @@ class XamlFlowSaveOptionsData(object):
     def zip_output(self, zip_output):
         """Sets the zip_output of this XamlFlowSaveOptionsData.
 
-        Controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
 
         :param zip_output: The zip_output of this XamlFlowSaveOptionsData.  # noqa: E501
         :type: bool
@@ -279,7 +279,7 @@ class XamlFlowSaveOptionsData(object):
     def update_fields(self):
         """Gets the update_fields of this XamlFlowSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true  # noqa: E501
+        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true  # noqa: E501
 
         :return: The update_fields of this XamlFlowSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -290,7 +290,7 @@ class XamlFlowSaveOptionsData(object):
     def update_fields(self, update_fields):
         """Sets the update_fields of this XamlFlowSaveOptionsData.
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true  # noqa: E501
+        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true  # noqa: E501
 
         :param update_fields: The update_fields of this XamlFlowSaveOptionsData.  # noqa: E501
         :type: bool
@@ -300,7 +300,7 @@ class XamlFlowSaveOptionsData(object):
     def images_folder(self):
         """Gets the images_folder of this XamlFlowSaveOptionsData.  # noqa: E501
 
-        Specifies the physical folder where images are saved when exporting  # noqa: E501
+        Gets or sets specifies the physical folder where images are saved when exporting.  # noqa: E501
 
         :return: The images_folder of this XamlFlowSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -311,7 +311,7 @@ class XamlFlowSaveOptionsData(object):
     def images_folder(self, images_folder):
         """Sets the images_folder of this XamlFlowSaveOptionsData.
 
-        Specifies the physical folder where images are saved when exporting  # noqa: E501
+        Gets or sets specifies the physical folder where images are saved when exporting.  # noqa: E501
 
         :param images_folder: The images_folder of this XamlFlowSaveOptionsData.  # noqa: E501
         :type: str
@@ -321,7 +321,7 @@ class XamlFlowSaveOptionsData(object):
     def images_folder_alias(self):
         """Gets the images_folder_alias of this XamlFlowSaveOptionsData.  # noqa: E501
 
-        Specifies the name of the folder used to construct image URIs  # noqa: E501
+        Gets or sets specifies the name of the folder used to construct image URIs.  # noqa: E501
 
         :return: The images_folder_alias of this XamlFlowSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -332,7 +332,7 @@ class XamlFlowSaveOptionsData(object):
     def images_folder_alias(self, images_folder_alias):
         """Sets the images_folder_alias of this XamlFlowSaveOptionsData.
 
-        Specifies the name of the folder used to construct image URIs  # noqa: E501
+        Gets or sets specifies the name of the folder used to construct image URIs.  # noqa: E501
 
         :param images_folder_alias: The images_folder_alias of this XamlFlowSaveOptionsData.  # noqa: E501
         :type: str

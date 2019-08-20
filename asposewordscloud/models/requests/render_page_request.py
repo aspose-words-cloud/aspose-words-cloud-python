@@ -29,7 +29,7 @@ class RenderPageRequest(object):
     Request model for render_page operation.
     Initializes a new instance.
     :param name The document name.
-    :param page_index Comment index
+    :param page_index Comment index.
     :param format The destination format.
     :param folder Original document folder.
     :param storage Original document storage.

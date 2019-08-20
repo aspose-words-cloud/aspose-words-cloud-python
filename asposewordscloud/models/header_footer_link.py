@@ -30,7 +30,7 @@ import six
 
 
 class HeaderFooterLink(object):
-    """HeaderFooter link element
+    """HeaderFooter link element.
     """
 
     """
@@ -66,7 +66,7 @@ class HeaderFooterLink(object):
     def link(self):
         """Gets the link of this HeaderFooterLink.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this HeaderFooterLink.  # noqa: E501
         :rtype: WordsApiLink
@@ -77,7 +77,7 @@ class HeaderFooterLink(object):
     def link(self, link):
         """Sets the link of this HeaderFooterLink.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this HeaderFooterLink.  # noqa: E501
         :type: WordsApiLink
@@ -87,7 +87,7 @@ class HeaderFooterLink(object):
     def type(self):
         """Gets the type of this HeaderFooterLink.  # noqa: E501
 
-        Paragraph's text  # noqa: E501
+        Gets or sets paragraph's text.  # noqa: E501
 
         :return: The type of this HeaderFooterLink.  # noqa: E501
         :rtype: str
@@ -98,7 +98,7 @@ class HeaderFooterLink(object):
     def type(self, type):
         """Sets the type of this HeaderFooterLink.
 
-        Paragraph's text  # noqa: E501
+        Gets or sets paragraph's text.  # noqa: E501
 
         :param type: The type of this HeaderFooterLink.  # noqa: E501
         :type: str

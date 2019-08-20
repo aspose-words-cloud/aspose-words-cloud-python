@@ -71,7 +71,7 @@ class ReplaceTextResponse(object):
     def request_id(self):
         """Gets the request_id of this ReplaceTextResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this ReplaceTextResponse.  # noqa: E501
         :rtype: str
@@ -82,7 +82,7 @@ class ReplaceTextResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this ReplaceTextResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this ReplaceTextResponse.  # noqa: E501
         :type: str
@@ -92,7 +92,7 @@ class ReplaceTextResponse(object):
     def document_link(self):
         """Gets the document_link of this ReplaceTextResponse.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The document_link of this ReplaceTextResponse.  # noqa: E501
         :rtype: FileLink
@@ -103,7 +103,7 @@ class ReplaceTextResponse(object):
     def document_link(self, document_link):
         """Sets the document_link of this ReplaceTextResponse.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param document_link: The document_link of this ReplaceTextResponse.  # noqa: E501
         :type: FileLink
@@ -113,7 +113,7 @@ class ReplaceTextResponse(object):
     def matches(self):
         """Gets the matches of this ReplaceTextResponse.  # noqa: E501
 
-        Number of occurrences of the captured text in the document.  # noqa: E501
+        Gets or sets number of occurrences of the captured text in the document.  # noqa: E501
 
         :return: The matches of this ReplaceTextResponse.  # noqa: E501
         :rtype: int
@@ -124,7 +124,7 @@ class ReplaceTextResponse(object):
     def matches(self, matches):
         """Sets the matches of this ReplaceTextResponse.
 
-        Number of occurrences of the captured text in the document.  # noqa: E501
+        Gets or sets number of occurrences of the captured text in the document.  # noqa: E501
 
         :param matches: The matches of this ReplaceTextResponse.  # noqa: E501
         :type: int

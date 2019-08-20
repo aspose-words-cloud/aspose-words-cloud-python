@@ -30,7 +30,7 @@ import six
 
 
 class ProtectionDataResponse(object):
-    """Response for the request of data about protection
+    """Response for the request of data about protection.
     """
 
     """
@@ -71,7 +71,7 @@ class ProtectionDataResponse(object):
     def request_id(self):
         """Gets the request_id of this ProtectionDataResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this ProtectionDataResponse.  # noqa: E501
         :rtype: str
@@ -82,7 +82,7 @@ class ProtectionDataResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this ProtectionDataResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this ProtectionDataResponse.  # noqa: E501
         :type: str
@@ -92,7 +92,7 @@ class ProtectionDataResponse(object):
     def document_link(self):
         """Gets the document_link of this ProtectionDataResponse.  # noqa: E501
 
-        Link to the document  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The document_link of this ProtectionDataResponse.  # noqa: E501
         :rtype: FileLink
@@ -103,7 +103,7 @@ class ProtectionDataResponse(object):
     def document_link(self, document_link):
         """Sets the document_link of this ProtectionDataResponse.
 
-        Link to the document  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param document_link: The document_link of this ProtectionDataResponse.  # noqa: E501
         :type: FileLink
@@ -113,7 +113,7 @@ class ProtectionDataResponse(object):
     def protection_data(self):
         """Gets the protection_data of this ProtectionDataResponse.  # noqa: E501
 
-        Protection's data of the document  # noqa: E501
+        Gets or sets protection's data of the document.  # noqa: E501
 
         :return: The protection_data of this ProtectionDataResponse.  # noqa: E501
         :rtype: ProtectionData
@@ -124,7 +124,7 @@ class ProtectionDataResponse(object):
     def protection_data(self, protection_data):
         """Sets the protection_data of this ProtectionDataResponse.
 
-        Protection's data of the document  # noqa: E501
+        Gets or sets protection's data of the document.  # noqa: E501
 
         :param protection_data: The protection_data of this ProtectionDataResponse.  # noqa: E501
         :type: ProtectionData

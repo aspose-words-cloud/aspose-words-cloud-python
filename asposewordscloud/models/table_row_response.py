@@ -30,7 +30,7 @@ import six
 
 
 class TableRowResponse(object):
-    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/tables/{0}
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/tables/{0}.
     """
 
     """
@@ -66,7 +66,7 @@ class TableRowResponse(object):
     def request_id(self):
         """Gets the request_id of this TableRowResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this TableRowResponse.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class TableRowResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this TableRowResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this TableRowResponse.  # noqa: E501
         :type: str
@@ -87,7 +87,7 @@ class TableRowResponse(object):
     def row(self):
         """Gets the row of this TableRowResponse.  # noqa: E501
 
-        Table row.  # noqa: E501
+        Gets or sets table row.  # noqa: E501
 
         :return: The row of this TableRowResponse.  # noqa: E501
         :rtype: TableRow
@@ -98,7 +98,7 @@ class TableRowResponse(object):
     def row(self, row):
         """Sets the row of this TableRowResponse.
 
-        Table row.  # noqa: E501
+        Gets or sets table row.  # noqa: E501
 
         :param row: The row of this TableRowResponse.  # noqa: E501
         :type: TableRow
