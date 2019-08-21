@@ -1,4 +1,4 @@
-# --------------------------------------------------------------------------------
+ --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="DeleteFileRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -37,3 +37,4 @@ class DeleteFileRequest(object):
         self.path = path
         self.storage_name = storage_name
         self.version_id = version_id
+#

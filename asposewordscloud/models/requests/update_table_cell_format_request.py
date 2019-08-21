@@ -1,4 +1,4 @@
-# --------------------------------------------------------------------------------
+ --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="UpdateTableCellFormatRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -53,3 +53,4 @@ class UpdateTableCellFormatRequest(object):
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
         self.format = format
+#

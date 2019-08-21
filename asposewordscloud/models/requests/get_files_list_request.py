@@ -1,4 +1,4 @@
-# --------------------------------------------------------------------------------
+ --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetFilesListRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -35,3 +35,4 @@ class GetFilesListRequest(object):
     def __init__(self, path, storage_name=None):
         self.path = path
         self.storage_name = storage_name
+#

@@ -81,7 +81,7 @@ class ReplaceTextParameters(object):
     def old_value(self):
         """Gets the old_value of this ReplaceTextParameters.  # noqa: E501
 
-        Old text value (or regex pattern ) to replace.  # noqa: E501
+        Gets or sets old text value (or regex pattern ) to replace.  # noqa: E501
 
         :return: The old_value of this ReplaceTextParameters.  # noqa: E501
         :rtype: str
@@ -92,7 +92,7 @@ class ReplaceTextParameters(object):
     def old_value(self, old_value):
         """Sets the old_value of this ReplaceTextParameters.
 
-        Old text value (or regex pattern ) to replace.  # noqa: E501
+        Gets or sets old text value (or regex pattern ) to replace.  # noqa: E501
 
         :param old_value: The old_value of this ReplaceTextParameters.  # noqa: E501
         :type: str
@@ -102,7 +102,7 @@ class ReplaceTextParameters(object):
     def new_value(self):
         """Gets the new_value of this ReplaceTextParameters.  # noqa: E501
 
-        New text value to replace by.  # noqa: E501
+        Gets or sets new text value to replace by.  # noqa: E501
 
         :return: The new_value of this ReplaceTextParameters.  # noqa: E501
         :rtype: str
@@ -113,7 +113,7 @@ class ReplaceTextParameters(object):
     def new_value(self, new_value):
         """Sets the new_value of this ReplaceTextParameters.
 
-        New text value to replace by.  # noqa: E501
+        Gets or sets new text value to replace by.  # noqa: E501
 
         :param new_value: The new_value of this ReplaceTextParameters.  # noqa: E501
         :type: str
@@ -123,7 +123,7 @@ class ReplaceTextParameters(object):
     def is_match_case(self):
         """Gets the is_match_case of this ReplaceTextParameters.  # noqa: E501
 
-        Flag, true means the search is case-sensitive; false means the search is not case-sensitive.  # noqa: E501
+        Gets or sets a value indicating whether flag, true means the search is case-sensitive; false means the search is not case-sensitive.  # noqa: E501
 
         :return: The is_match_case of this ReplaceTextParameters.  # noqa: E501
         :rtype: bool
@@ -134,7 +134,7 @@ class ReplaceTextParameters(object):
     def is_match_case(self, is_match_case):
         """Sets the is_match_case of this ReplaceTextParameters.
 
-        Flag, true means the search is case-sensitive; false means the search is not case-sensitive.  # noqa: E501
+        Gets or sets a value indicating whether flag, true means the search is case-sensitive; false means the search is not case-sensitive.  # noqa: E501
 
         :param is_match_case: The is_match_case of this ReplaceTextParameters.  # noqa: E501
         :type: bool
@@ -146,7 +146,7 @@ class ReplaceTextParameters(object):
     def is_match_whole_word(self):
         """Gets the is_match_whole_word of this ReplaceTextParameters.  # noqa: E501
 
-        Flag, means that only whole word matched are replaced.  # noqa: E501
+        Gets or sets a value indicating whether flag, means that only whole word matched are replaced.  # noqa: E501
 
         :return: The is_match_whole_word of this ReplaceTextParameters.  # noqa: E501
         :rtype: bool
@@ -157,7 +157,7 @@ class ReplaceTextParameters(object):
     def is_match_whole_word(self, is_match_whole_word):
         """Sets the is_match_whole_word of this ReplaceTextParameters.
 
-        Flag, means that only whole word matched are replaced.  # noqa: E501
+        Gets or sets a value indicating whether flag, means that only whole word matched are replaced.  # noqa: E501
 
         :param is_match_whole_word: The is_match_whole_word of this ReplaceTextParameters.  # noqa: E501
         :type: bool
@@ -169,7 +169,7 @@ class ReplaceTextParameters(object):
     def is_old_value_regex(self):
         """Gets the is_old_value_regex of this ReplaceTextParameters.  # noqa: E501
 
-        Flag, means that  contains regex expression.  # noqa: E501
+        Gets or sets a value indicating whether flag, means that  contains regex expression.  # noqa: E501
 
         :return: The is_old_value_regex of this ReplaceTextParameters.  # noqa: E501
         :rtype: bool
@@ -180,7 +180,7 @@ class ReplaceTextParameters(object):
     def is_old_value_regex(self, is_old_value_regex):
         """Sets the is_old_value_regex of this ReplaceTextParameters.
 
-        Flag, means that  contains regex expression.  # noqa: E501
+        Gets or sets a value indicating whether flag, means that  contains regex expression.  # noqa: E501
 
         :param is_old_value_regex: The is_old_value_regex of this ReplaceTextParameters.  # noqa: E501
         :type: bool

@@ -1,4 +1,4 @@
-# --------------------------------------------------------------------------------
+ --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="UpdateSectionPageSetupRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -29,8 +29,8 @@ class UpdateSectionPageSetupRequest(object):
     Request model for update_section_page_setup operation.
     Initializes a new instance.
     :param name The document name.
-    :param section_index Section index
-    :param page_setup Page setup properties dto
+    :param section_index Section index.
+    :param page_setup Page setup properties dto.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -51,3 +51,4 @@ class UpdateSectionPageSetupRequest(object):
         self.dest_file_name = dest_file_name
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
+#

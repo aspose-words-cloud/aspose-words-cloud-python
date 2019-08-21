@@ -1,4 +1,4 @@
-# --------------------------------------------------------------------------------
+ --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="InsertTableRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -37,7 +37,7 @@ class InsertTableRequest(object):
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     :param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     :param revision_date_time The date and time to use for revisions.
-    :param table Table parameters/
+    :param table Table parameters/.
     """
 
     def __init__(self, name, node_path, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None, table=None):
@@ -51,3 +51,4 @@ class InsertTableRequest(object):
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
         self.table = table
+#

@@ -1,4 +1,4 @@
-# --------------------------------------------------------------------------------
+ --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetDocumentFieldNamesOnlineRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -35,3 +35,4 @@ class GetDocumentFieldNamesOnlineRequest(object):
     def __init__(self, template, use_non_merge_fields=None):
         self.template = template
         self.use_non_merge_fields = use_non_merge_fields
+#

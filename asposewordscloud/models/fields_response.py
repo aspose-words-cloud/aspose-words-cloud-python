@@ -30,7 +30,7 @@ import six
 
 
 class FieldsResponse(object):
-    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/{nodePath}/fields
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/{nodePath}/fields.
     """
 
     """
@@ -66,7 +66,7 @@ class FieldsResponse(object):
     def request_id(self):
         """Gets the request_id of this FieldsResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this FieldsResponse.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class FieldsResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this FieldsResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this FieldsResponse.  # noqa: E501
         :type: str
@@ -87,7 +87,7 @@ class FieldsResponse(object):
     def fields(self):
         """Gets the fields of this FieldsResponse.  # noqa: E501
 
-        Collection of fields.  # noqa: E501
+        Gets or sets collection of fields.  # noqa: E501
 
         :return: The fields of this FieldsResponse.  # noqa: E501
         :rtype: FieldCollection
@@ -98,7 +98,7 @@ class FieldsResponse(object):
     def fields(self, fields):
         """Sets the fields of this FieldsResponse.
 
-        Collection of fields.  # noqa: E501
+        Gets or sets collection of fields.  # noqa: E501
 
         :param fields: The fields of this FieldsResponse.  # noqa: E501
         :type: FieldCollection

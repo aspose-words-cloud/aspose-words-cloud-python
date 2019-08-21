@@ -30,7 +30,7 @@ import six
 
 
 class FormFieldsResponse(object):
-    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/{nodePath}/formfields
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/{nodePath}/formfields.
     """
 
     """
@@ -66,7 +66,7 @@ class FormFieldsResponse(object):
     def request_id(self):
         """Gets the request_id of this FormFieldsResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this FormFieldsResponse.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class FormFieldsResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this FormFieldsResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this FormFieldsResponse.  # noqa: E501
         :type: str
@@ -87,7 +87,7 @@ class FormFieldsResponse(object):
     def form_fields(self):
         """Gets the form_fields of this FormFieldsResponse.  # noqa: E501
 
-        Collection of form fields.  # noqa: E501
+        Gets or sets collection of form fields.  # noqa: E501
 
         :return: The form_fields of this FormFieldsResponse.  # noqa: E501
         :rtype: FormFieldCollection
@@ -98,7 +98,7 @@ class FormFieldsResponse(object):
     def form_fields(self, form_fields):
         """Sets the form_fields of this FormFieldsResponse.
 
-        Collection of form fields.  # noqa: E501
+        Gets or sets collection of form fields.  # noqa: E501
 
         :param form_fields: The form_fields of this FormFieldsResponse.  # noqa: E501
         :type: FormFieldCollection

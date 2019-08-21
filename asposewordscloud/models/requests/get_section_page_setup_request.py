@@ -1,4 +1,4 @@
-# --------------------------------------------------------------------------------
+ --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetSectionPageSetupRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -29,7 +29,7 @@ class GetSectionPageSetupRequest(object):
     Request model for get_section_page_setup operation.
     Initializes a new instance.
     :param name The document name.
-    :param section_index Section index
+    :param section_index Section index.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -43,3 +43,4 @@ class GetSectionPageSetupRequest(object):
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
+#

@@ -1,4 +1,4 @@
-# --------------------------------------------------------------------------------
+ --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="UpdateBorderRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -29,7 +29,7 @@ class UpdateBorderRequest(object):
     Request model for update_border operation.
     Initializes a new instance.
     :param name The document name.
-    :param border_properties Border properties
+    :param border_properties Border properties.
     :param node_path Path to the node with border(node should be cell or row).
     :param index Object index.
     :param folder Original document folder.
@@ -53,3 +53,4 @@ class UpdateBorderRequest(object):
         self.dest_file_name = dest_file_name
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
+#

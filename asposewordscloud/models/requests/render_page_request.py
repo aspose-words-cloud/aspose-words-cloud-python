@@ -1,4 +1,4 @@
-# --------------------------------------------------------------------------------
+ --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="RenderPageRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -29,7 +29,7 @@ class RenderPageRequest(object):
     Request model for render_page operation.
     Initializes a new instance.
     :param name The document name.
-    :param page_index Comment index
+    :param page_index Comment index.
     :param format The destination format.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -47,3 +47,4 @@ class RenderPageRequest(object):
         self.load_encoding = load_encoding
         self.password = password
         self.fonts_location = fonts_location
+#

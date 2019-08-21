@@ -30,7 +30,7 @@ import six
 
 
 class ProtectionData(object):
-    """Container for the data about protection of the document
+    """Container for the data about protection of the document.
     """
 
     """
@@ -61,7 +61,7 @@ class ProtectionData(object):
     def protection_type(self):
         """Gets the protection_type of this ProtectionData.  # noqa: E501
 
-        Type of the protection  # noqa: E501
+        Gets or sets type of the protection.  # noqa: E501
 
         :return: The protection_type of this ProtectionData.  # noqa: E501
         :rtype: str
@@ -72,7 +72,7 @@ class ProtectionData(object):
     def protection_type(self, protection_type):
         """Sets the protection_type of this ProtectionData.
 
-        Type of the protection  # noqa: E501
+        Gets or sets type of the protection.  # noqa: E501
 
         :param protection_type: The protection_type of this ProtectionData.  # noqa: E501
         :type: str

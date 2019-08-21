@@ -30,7 +30,7 @@ import six
 
 
 class ParagraphFormat(object):
-    """Paragraph format element             
+    """Paragraph format element.             
     """
 
     """
@@ -186,7 +186,7 @@ class ParagraphFormat(object):
     def link(self):
         """Gets the link of this ParagraphFormat.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this ParagraphFormat.  # noqa: E501
         :rtype: WordsApiLink
@@ -197,7 +197,7 @@ class ParagraphFormat(object):
     def link(self, link):
         """Sets the link of this ParagraphFormat.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this ParagraphFormat.  # noqa: E501
         :type: WordsApiLink
@@ -349,7 +349,7 @@ class ParagraphFormat(object):
     def keep_together(self):
         """Gets the keep_together of this ParagraphFormat.  # noqa: E501
 
-        True if all lines in the paragraph are to remain on the same page.               # noqa: E501
+        Gets or sets true if all lines in the paragraph are to remain on the same page.               # noqa: E501
 
         :return: The keep_together of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -360,7 +360,7 @@ class ParagraphFormat(object):
     def keep_together(self, keep_together):
         """Sets the keep_together of this ParagraphFormat.
 
-        True if all lines in the paragraph are to remain on the same page.               # noqa: E501
+        Gets or sets true if all lines in the paragraph are to remain on the same page.               # noqa: E501
 
         :param keep_together: The keep_together of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -370,7 +370,7 @@ class ParagraphFormat(object):
     def keep_with_next(self):
         """Gets the keep_with_next of this ParagraphFormat.  # noqa: E501
 
-        True if the paragraph is to remains on the same page as the paragraph that follows it.               # noqa: E501
+        Gets or sets true if the paragraph is to remains on the same page as the paragraph that follows it.               # noqa: E501
 
         :return: The keep_with_next of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -381,7 +381,7 @@ class ParagraphFormat(object):
     def keep_with_next(self, keep_with_next):
         """Sets the keep_with_next of this ParagraphFormat.
 
-        True if the paragraph is to remains on the same page as the paragraph that follows it.               # noqa: E501
+        Gets or sets true if the paragraph is to remains on the same page as the paragraph that follows it.               # noqa: E501
 
         :param keep_with_next: The keep_with_next of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -483,7 +483,7 @@ class ParagraphFormat(object):
     def no_space_between_paragraphs_of_same_style(self):
         """Gets the no_space_between_paragraphs_of_same_style of this ParagraphFormat.  # noqa: E501
 
-        When true,  and  will be ignored between the paragraphs of the same style.               # noqa: E501
+        Gets or sets when true,  and  will be ignored between the paragraphs of the same style.               # noqa: E501
 
         :return: The no_space_between_paragraphs_of_same_style of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -494,7 +494,7 @@ class ParagraphFormat(object):
     def no_space_between_paragraphs_of_same_style(self, no_space_between_paragraphs_of_same_style):
         """Sets the no_space_between_paragraphs_of_same_style of this ParagraphFormat.
 
-        When true,  and  will be ignored between the paragraphs of the same style.               # noqa: E501
+        Gets or sets when true,  and  will be ignored between the paragraphs of the same style.               # noqa: E501
 
         :param no_space_between_paragraphs_of_same_style: The no_space_between_paragraphs_of_same_style of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -504,7 +504,7 @@ class ParagraphFormat(object):
     def outline_level(self):
         """Gets the outline_level of this ParagraphFormat.  # noqa: E501
 
-        Specifies the outline level of the paragraph in the document.               # noqa: E501
+        Gets or sets specifies the outline level of the paragraph in the document.               # noqa: E501
 
         :return: The outline_level of this ParagraphFormat.  # noqa: E501
         :rtype: str
@@ -515,7 +515,7 @@ class ParagraphFormat(object):
     def outline_level(self, outline_level):
         """Sets the outline_level of this ParagraphFormat.
 
-        Specifies the outline level of the paragraph in the document.               # noqa: E501
+        Gets or sets specifies the outline level of the paragraph in the document.               # noqa: E501
 
         :param outline_level: The outline_level of this ParagraphFormat.  # noqa: E501
         :type: str
@@ -533,7 +533,7 @@ class ParagraphFormat(object):
     def page_break_before(self):
         """Gets the page_break_before of this ParagraphFormat.  # noqa: E501
 
-        True if a page break is forced before the paragraph.               # noqa: E501
+        Gets or sets true if a page break is forced before the paragraph.               # noqa: E501
 
         :return: The page_break_before of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -544,7 +544,7 @@ class ParagraphFormat(object):
     def page_break_before(self, page_break_before):
         """Sets the page_break_before of this ParagraphFormat.
 
-        True if a page break is forced before the paragraph.               # noqa: E501
+        Gets or sets true if a page break is forced before the paragraph.               # noqa: E501
 
         :param page_break_before: The page_break_before of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -596,7 +596,7 @@ class ParagraphFormat(object):
     def space_after_auto(self):
         """Gets the space_after_auto of this ParagraphFormat.  # noqa: E501
 
-        True if the amount of spacing after the paragraph is set automatically.               # noqa: E501
+        Gets or sets true if the amount of spacing after the paragraph is set automatically.               # noqa: E501
 
         :return: The space_after_auto of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -607,7 +607,7 @@ class ParagraphFormat(object):
     def space_after_auto(self, space_after_auto):
         """Sets the space_after_auto of this ParagraphFormat.
 
-        True if the amount of spacing after the paragraph is set automatically.               # noqa: E501
+        Gets or sets true if the amount of spacing after the paragraph is set automatically.               # noqa: E501
 
         :param space_after_auto: The space_after_auto of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -638,7 +638,7 @@ class ParagraphFormat(object):
     def space_before_auto(self):
         """Gets the space_before_auto of this ParagraphFormat.  # noqa: E501
 
-        True if the amount of spacing before the paragraph is set automatically.               # noqa: E501
+        Gets or sets true if the amount of spacing before the paragraph is set automatically.               # noqa: E501
 
         :return: The space_before_auto of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -649,7 +649,7 @@ class ParagraphFormat(object):
     def space_before_auto(self, space_before_auto):
         """Sets the space_before_auto of this ParagraphFormat.
 
-        True if the amount of spacing before the paragraph is set automatically.               # noqa: E501
+        Gets or sets true if the amount of spacing before the paragraph is set automatically.               # noqa: E501
 
         :param space_before_auto: The space_before_auto of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -709,7 +709,7 @@ class ParagraphFormat(object):
     def suppress_auto_hyphens(self):
         """Gets the suppress_auto_hyphens of this ParagraphFormat.  # noqa: E501
 
-        Specifies whether the current paragraph should be exempted from any hyphenation which is applied in the document settings.               # noqa: E501
+        Gets or sets specifies whether the current paragraph should be exempted from any hyphenation which is applied in the document settings.               # noqa: E501
 
         :return: The suppress_auto_hyphens of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -720,7 +720,7 @@ class ParagraphFormat(object):
     def suppress_auto_hyphens(self, suppress_auto_hyphens):
         """Sets the suppress_auto_hyphens of this ParagraphFormat.
 
-        Specifies whether the current paragraph should be exempted from any hyphenation which is applied in the document settings.               # noqa: E501
+        Gets or sets specifies whether the current paragraph should be exempted from any hyphenation which is applied in the document settings.               # noqa: E501
 
         :param suppress_auto_hyphens: The suppress_auto_hyphens of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -730,7 +730,7 @@ class ParagraphFormat(object):
     def suppress_line_numbers(self):
         """Gets the suppress_line_numbers of this ParagraphFormat.  # noqa: E501
 
-        Specifies whether the current paragraph's lines should be exempted from line numbering which is applied in the parent section.               # noqa: E501
+        Gets or sets specifies whether the current paragraph's lines should be exempted from line numbering which is applied in the parent section.               # noqa: E501
 
         :return: The suppress_line_numbers of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -741,7 +741,7 @@ class ParagraphFormat(object):
     def suppress_line_numbers(self, suppress_line_numbers):
         """Sets the suppress_line_numbers of this ParagraphFormat.
 
-        Specifies whether the current paragraph's lines should be exempted from line numbering which is applied in the parent section.               # noqa: E501
+        Gets or sets specifies whether the current paragraph's lines should be exempted from line numbering which is applied in the parent section.               # noqa: E501
 
         :param suppress_line_numbers: The suppress_line_numbers of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -751,7 +751,7 @@ class ParagraphFormat(object):
     def widow_control(self):
         """Gets the widow_control of this ParagraphFormat.  # noqa: E501
 
-        True if the first and last lines in the paragraph are to remain on the same page as the rest of the paragraph.               # noqa: E501
+        Gets or sets true if the first and last lines in the paragraph are to remain on the same page as the rest of the paragraph.               # noqa: E501
 
         :return: The widow_control of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -762,7 +762,7 @@ class ParagraphFormat(object):
     def widow_control(self, widow_control):
         """Sets the widow_control of this ParagraphFormat.
 
-        True if the first and last lines in the paragraph are to remain on the same page as the rest of the paragraph.               # noqa: E501
+        Gets or sets true if the first and last lines in the paragraph are to remain on the same page as the rest of the paragraph.               # noqa: E501
 
         :param widow_control: The widow_control of this ParagraphFormat.  # noqa: E501
         :type: bool

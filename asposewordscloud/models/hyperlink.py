@@ -71,7 +71,7 @@ class Hyperlink(object):
     def link(self):
         """Gets the link of this Hyperlink.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this Hyperlink.  # noqa: E501
         :rtype: WordsApiLink
@@ -82,7 +82,7 @@ class Hyperlink(object):
     def link(self, link):
         """Sets the link of this Hyperlink.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this Hyperlink.  # noqa: E501
         :type: WordsApiLink
@@ -92,7 +92,7 @@ class Hyperlink(object):
     def display_text(self):
         """Gets the display_text of this Hyperlink.  # noqa: E501
 
-        Hypelink's display text  # noqa: E501
+        Gets or sets hypelink's display text.  # noqa: E501
 
         :return: The display_text of this Hyperlink.  # noqa: E501
         :rtype: str
@@ -103,7 +103,7 @@ class Hyperlink(object):
     def display_text(self, display_text):
         """Sets the display_text of this Hyperlink.
 
-        Hypelink's display text  # noqa: E501
+        Gets or sets hypelink's display text.  # noqa: E501
 
         :param display_text: The display_text of this Hyperlink.  # noqa: E501
         :type: str
@@ -113,7 +113,7 @@ class Hyperlink(object):
     def value(self):
         """Gets the value of this Hyperlink.  # noqa: E501
 
-        Value  # noqa: E501
+        Gets or sets value.  # noqa: E501
 
         :return: The value of this Hyperlink.  # noqa: E501
         :rtype: str
@@ -124,7 +124,7 @@ class Hyperlink(object):
     def value(self, value):
         """Sets the value of this Hyperlink.
 
-        Value  # noqa: E501
+        Gets or sets value.  # noqa: E501
 
         :param value: The value of this Hyperlink.  # noqa: E501
         :type: str

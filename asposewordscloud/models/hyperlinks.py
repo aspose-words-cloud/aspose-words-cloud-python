@@ -66,7 +66,7 @@ class Hyperlinks(object):
     def link(self):
         """Gets the link of this Hyperlinks.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this Hyperlinks.  # noqa: E501
         :rtype: WordsApiLink
@@ -77,7 +77,7 @@ class Hyperlinks(object):
     def link(self, link):
         """Sets the link of this Hyperlinks.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this Hyperlinks.  # noqa: E501
         :type: WordsApiLink
@@ -87,7 +87,7 @@ class Hyperlinks(object):
     def hyperlink_list(self):
         """Gets the hyperlink_list of this Hyperlinks.  # noqa: E501
 
-        Array of .  # noqa: E501
+        Gets or sets array of .  # noqa: E501
 
         :return: The hyperlink_list of this Hyperlinks.  # noqa: E501
         :rtype: list[Hyperlink]
@@ -98,7 +98,7 @@ class Hyperlinks(object):
     def hyperlink_list(self, hyperlink_list):
         """Sets the hyperlink_list of this Hyperlinks.
 
-        Array of .  # noqa: E501
+        Gets or sets array of .  # noqa: E501
 
         :param hyperlink_list: The hyperlink_list of this Hyperlinks.  # noqa: E501
         :type: list[Hyperlink]

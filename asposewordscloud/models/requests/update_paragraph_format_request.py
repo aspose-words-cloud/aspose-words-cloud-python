@@ -1,4 +1,4 @@
-# --------------------------------------------------------------------------------
+ --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="UpdateParagraphFormatRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -29,7 +29,7 @@ class UpdateParagraphFormatRequest(object):
     Request model for update_paragraph_format operation.
     Initializes a new instance.
     :param name The document name.
-    :param dto Paragraph format object
+    :param dto Paragraph format object.
     :param node_path Path to the node which contains paragraphs.
     :param index Object index.
     :param folder Original document folder.
@@ -53,3 +53,4 @@ class UpdateParagraphFormatRequest(object):
         self.dest_file_name = dest_file_name
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
+#

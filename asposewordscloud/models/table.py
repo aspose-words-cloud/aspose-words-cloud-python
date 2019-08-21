@@ -30,7 +30,7 @@ import six
 
 
 class Table(object):
-    """Table element
+    """Table element.
     """
 
     """
@@ -76,7 +76,7 @@ class Table(object):
     def link(self):
         """Gets the link of this Table.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this Table.  # noqa: E501
         :rtype: WordsApiLink
@@ -87,7 +87,7 @@ class Table(object):
     def link(self, link):
         """Sets the link of this Table.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this Table.  # noqa: E501
         :type: WordsApiLink
@@ -97,7 +97,7 @@ class Table(object):
     def node_id(self):
         """Gets the node_id of this Table.  # noqa: E501
 
-        Node id  # noqa: E501
+        Gets or sets node id.  # noqa: E501
 
         :return: The node_id of this Table.  # noqa: E501
         :rtype: str
@@ -108,7 +108,7 @@ class Table(object):
     def node_id(self, node_id):
         """Sets the node_id of this Table.
 
-        Node id  # noqa: E501
+        Gets or sets node id.  # noqa: E501
 
         :param node_id: The node_id of this Table.  # noqa: E501
         :type: str
@@ -118,7 +118,7 @@ class Table(object):
     def table_properties(self):
         """Gets the table_properties of this Table.  # noqa: E501
 
-        Table properties.  # noqa: E501
+        Gets or sets table properties.  # noqa: E501
 
         :return: The table_properties of this Table.  # noqa: E501
         :rtype: TableProperties
@@ -129,7 +129,7 @@ class Table(object):
     def table_properties(self, table_properties):
         """Sets the table_properties of this Table.
 
-        Table properties.  # noqa: E501
+        Gets or sets table properties.  # noqa: E501
 
         :param table_properties: The table_properties of this Table.  # noqa: E501
         :type: TableProperties
@@ -139,7 +139,7 @@ class Table(object):
     def table_row_list(self):
         """Gets the table_row_list of this Table.  # noqa: E501
 
-        Collection of table's rows.  # noqa: E501
+        Gets or sets collection of table's rows.  # noqa: E501
 
         :return: The table_row_list of this Table.  # noqa: E501
         :rtype: list[TableRow]
@@ -150,7 +150,7 @@ class Table(object):
     def table_row_list(self, table_row_list):
         """Sets the table_row_list of this Table.
 
-        Collection of table's rows.  # noqa: E501
+        Gets or sets collection of table's rows.  # noqa: E501
 
         :param table_row_list: The table_row_list of this Table.  # noqa: E501
         :type: list[TableRow]

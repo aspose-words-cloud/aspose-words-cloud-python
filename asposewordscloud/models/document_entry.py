@@ -66,7 +66,7 @@ class DocumentEntry(object):
     def href(self):
         """Gets the href of this DocumentEntry.  # noqa: E501
 
-        Path to document to append at the server.  # noqa: E501
+        Gets or sets path to document to append at the server.  # noqa: E501
 
         :return: The href of this DocumentEntry.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class DocumentEntry(object):
     def href(self, href):
         """Sets the href of this DocumentEntry.
 
-        Path to document to append at the server.  # noqa: E501
+        Gets or sets path to document to append at the server.  # noqa: E501
 
         :param href: The href of this DocumentEntry.  # noqa: E501
         :type: str
@@ -87,7 +87,7 @@ class DocumentEntry(object):
     def import_format_mode(self):
         """Gets the import_format_mode of this DocumentEntry.  # noqa: E501
 
-        Defines which formatting will be used: appended or destination document.Can be KeepSourceFormatting or UseDestinationStyles.  # noqa: E501
+        Gets or sets defines which formatting will be used: appended or destination document.Can be KeepSourceFormatting or UseDestinationStyles.  # noqa: E501
 
         :return: The import_format_mode of this DocumentEntry.  # noqa: E501
         :rtype: str
@@ -98,7 +98,7 @@ class DocumentEntry(object):
     def import_format_mode(self, import_format_mode):
         """Sets the import_format_mode of this DocumentEntry.
 
-        Defines which formatting will be used: appended or destination document.Can be KeepSourceFormatting or UseDestinationStyles.  # noqa: E501
+        Gets or sets defines which formatting will be used: appended or destination document.Can be KeepSourceFormatting or UseDestinationStyles.  # noqa: E501
 
         :param import_format_mode: The import_format_mode of this DocumentEntry.  # noqa: E501
         :type: str

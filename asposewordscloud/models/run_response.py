@@ -30,7 +30,7 @@ import six
 
 
 class RunResponse(object):
-    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/paragraphs/{0}/runs/{1} 
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/paragraphs/{0}/runs/{1}.
     """
 
     """
@@ -66,7 +66,7 @@ class RunResponse(object):
     def request_id(self):
         """Gets the request_id of this RunResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this RunResponse.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class RunResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this RunResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this RunResponse.  # noqa: E501
         :type: str
@@ -87,7 +87,7 @@ class RunResponse(object):
     def run(self):
         """Gets the run of this RunResponse.  # noqa: E501
 
-        Run  # noqa: E501
+        Gets or sets run.  # noqa: E501
 
         :return: The run of this RunResponse.  # noqa: E501
         :rtype: Run
@@ -98,7 +98,7 @@ class RunResponse(object):
     def run(self, run):
         """Sets the run of this RunResponse.
 
-        Run  # noqa: E501
+        Gets or sets run.  # noqa: E501
 
         :param run: The run of this RunResponse.  # noqa: E501
         :type: Run

@@ -86,7 +86,7 @@ class Document(object):
     def links(self):
         """Gets the links of this Document.  # noqa: E501
 
-        A list of links that originate from this document.  # noqa: E501
+        Gets or sets a list of links that originate from this document.  # noqa: E501
 
         :return: The links of this Document.  # noqa: E501
         :rtype: list[Link]
@@ -97,7 +97,7 @@ class Document(object):
     def links(self, links):
         """Sets the links of this Document.
 
-        A list of links that originate from this document.  # noqa: E501
+        Gets or sets a list of links that originate from this document.  # noqa: E501
 
         :param links: The links of this Document.  # noqa: E501
         :type: list[Link]
@@ -107,7 +107,7 @@ class Document(object):
     def file_name(self):
         """Gets the file_name of this Document.  # noqa: E501
 
-        Gets the name of the file.  # noqa: E501
+        Gets or sets the name of the file.  # noqa: E501
 
         :return: The file_name of this Document.  # noqa: E501
         :rtype: str
@@ -118,7 +118,7 @@ class Document(object):
     def file_name(self, file_name):
         """Sets the file_name of this Document.
 
-        Gets the name of the file.  # noqa: E501
+        Gets or sets the name of the file.  # noqa: E501
 
         :param file_name: The file_name of this Document.  # noqa: E501
         :type: str
@@ -128,7 +128,7 @@ class Document(object):
     def source_format(self):
         """Gets the source_format of this Document.  # noqa: E501
 
-        Gets the original format of the document.  # noqa: E501
+        Gets or sets the original format of the document.  # noqa: E501
 
         :return: The source_format of this Document.  # noqa: E501
         :rtype: str
@@ -139,7 +139,7 @@ class Document(object):
     def source_format(self, source_format):
         """Sets the source_format of this Document.
 
-        Gets the original format of the document.  # noqa: E501
+        Gets or sets the original format of the document.  # noqa: E501
 
         :param source_format: The source_format of this Document.  # noqa: E501
         :type: str
@@ -159,7 +159,7 @@ class Document(object):
     def is_encrypted(self):
         """Gets the is_encrypted of this Document.  # noqa: E501
 
-        Returns true if the document is encrypted and requires a password to open.   # noqa: E501
+        Gets or sets a value indicating whether returns true if the document is encrypted and requires a password to open.  # noqa: E501
 
         :return: The is_encrypted of this Document.  # noqa: E501
         :rtype: bool
@@ -170,7 +170,7 @@ class Document(object):
     def is_encrypted(self, is_encrypted):
         """Sets the is_encrypted of this Document.
 
-        Returns true if the document is encrypted and requires a password to open.   # noqa: E501
+        Gets or sets a value indicating whether returns true if the document is encrypted and requires a password to open.  # noqa: E501
 
         :param is_encrypted: The is_encrypted of this Document.  # noqa: E501
         :type: bool
@@ -182,7 +182,7 @@ class Document(object):
     def is_signed(self):
         """Gets the is_signed of this Document.  # noqa: E501
 
-        Returns true if the document contains a digital signature. This property merely informs that a  digital signature is present on a document, but it does not specify whether the signature is valid or not.   # noqa: E501
+        Gets or sets a value indicating whether returns true if the document contains a digital signature. This property merely informs that a digital signature is present on a document, but it does not specify whether the signature is valid or not.  # noqa: E501
 
         :return: The is_signed of this Document.  # noqa: E501
         :rtype: bool
@@ -193,7 +193,7 @@ class Document(object):
     def is_signed(self, is_signed):
         """Sets the is_signed of this Document.
 
-        Returns true if the document contains a digital signature. This property merely informs that a  digital signature is present on a document, but it does not specify whether the signature is valid or not.   # noqa: E501
+        Gets or sets a value indicating whether returns true if the document contains a digital signature. This property merely informs that a digital signature is present on a document, but it does not specify whether the signature is valid or not.  # noqa: E501
 
         :param is_signed: The is_signed of this Document.  # noqa: E501
         :type: bool
@@ -205,7 +205,7 @@ class Document(object):
     def document_properties(self):
         """Gets the document_properties of this Document.  # noqa: E501
 
-        Returns document properties.  # noqa: E501
+        Gets or sets returns document properties.  # noqa: E501
 
         :return: The document_properties of this Document.  # noqa: E501
         :rtype: DocumentProperties
@@ -216,7 +216,7 @@ class Document(object):
     def document_properties(self, document_properties):
         """Sets the document_properties of this Document.
 
-        Returns document properties.  # noqa: E501
+        Gets or sets returns document properties.  # noqa: E501
 
         :param document_properties: The document_properties of this Document.  # noqa: E501
         :type: DocumentProperties

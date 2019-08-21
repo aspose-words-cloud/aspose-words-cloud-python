@@ -30,7 +30,7 @@ import six
 
 
 class Field(object):
-    """Field
+    """Field.
     """
 
     """
@@ -81,7 +81,7 @@ class Field(object):
     def link(self):
         """Gets the link of this Field.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this Field.  # noqa: E501
         :rtype: WordsApiLink
@@ -92,7 +92,7 @@ class Field(object):
     def link(self, link):
         """Sets the link of this Field.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this Field.  # noqa: E501
         :type: WordsApiLink
@@ -102,7 +102,7 @@ class Field(object):
     def node_id(self):
         """Gets the node_id of this Field.  # noqa: E501
 
-        Node id  # noqa: E501
+        Gets or sets node id.  # noqa: E501
 
         :return: The node_id of this Field.  # noqa: E501
         :rtype: str
@@ -113,7 +113,7 @@ class Field(object):
     def node_id(self, node_id):
         """Sets the node_id of this Field.
 
-        Node id  # noqa: E501
+        Gets or sets node id.  # noqa: E501
 
         :param node_id: The node_id of this Field.  # noqa: E501
         :type: str
@@ -123,7 +123,7 @@ class Field(object):
     def field_code(self):
         """Gets the field_code of this Field.  # noqa: E501
 
-        Field code  # noqa: E501
+        Gets or sets field code.  # noqa: E501
 
         :return: The field_code of this Field.  # noqa: E501
         :rtype: str
@@ -134,7 +134,7 @@ class Field(object):
     def field_code(self, field_code):
         """Sets the field_code of this Field.
 
-        Field code  # noqa: E501
+        Gets or sets field code.  # noqa: E501
 
         :param field_code: The field_code of this Field.  # noqa: E501
         :type: str
@@ -165,7 +165,7 @@ class Field(object):
     def result(self):
         """Gets the result of this Field.  # noqa: E501
 
-        Field result  # noqa: E501
+        Gets or sets field result.  # noqa: E501
 
         :return: The result of this Field.  # noqa: E501
         :rtype: str
@@ -176,7 +176,7 @@ class Field(object):
     def result(self, result):
         """Sets the result of this Field.
 
-        Field result  # noqa: E501
+        Gets or sets field result.  # noqa: E501
 
         :param result: The result of this Field.  # noqa: E501
         :type: str

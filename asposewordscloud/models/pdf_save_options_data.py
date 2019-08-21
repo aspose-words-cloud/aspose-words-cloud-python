@@ -30,7 +30,7 @@ import six
 
 
 class PdfSaveOptionsData(object):
-    """container class for pdf save options
+    """container class for pdf save options.
     """
 
     """
@@ -251,7 +251,7 @@ class PdfSaveOptionsData(object):
     def color_mode(self):
         """Gets the color_mode of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}  # noqa: E501
+        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
 
         :return: The color_mode of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -262,7 +262,7 @@ class PdfSaveOptionsData(object):
     def color_mode(self, color_mode):
         """Sets the color_mode of this PdfSaveOptionsData.
 
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}  # noqa: E501
+        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
 
         :param color_mode: The color_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -272,7 +272,7 @@ class PdfSaveOptionsData(object):
     def save_format(self):
         """Gets the save_format of this PdfSaveOptionsData.  # noqa: E501
 
-        format of save  # noqa: E501
+        Gets or sets format of save.  # noqa: E501
 
         :return: The save_format of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -283,7 +283,7 @@ class PdfSaveOptionsData(object):
     def save_format(self, save_format):
         """Sets the save_format of this PdfSaveOptionsData.
 
-        format of save  # noqa: E501
+        Gets or sets format of save.  # noqa: E501
 
         :param save_format: The save_format of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -293,7 +293,7 @@ class PdfSaveOptionsData(object):
     def file_name(self):
         """Gets the file_name of this PdfSaveOptionsData.  # noqa: E501
 
-        name of destination file  # noqa: E501
+        Gets or sets name of destination file.  # noqa: E501
 
         :return: The file_name of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -304,7 +304,7 @@ class PdfSaveOptionsData(object):
     def file_name(self, file_name):
         """Sets the file_name of this PdfSaveOptionsData.
 
-        name of destination file  # noqa: E501
+        Gets or sets name of destination file.  # noqa: E501
 
         :param file_name: The file_name of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -314,7 +314,7 @@ class PdfSaveOptionsData(object):
     def dml_rendering_mode(self):
         """Gets the dml_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }  # noqa: E501
+        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
 
         :return: The dml_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -325,7 +325,7 @@ class PdfSaveOptionsData(object):
     def dml_rendering_mode(self, dml_rendering_mode):
         """Sets the dml_rendering_mode of this PdfSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }  # noqa: E501
+        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
 
         :param dml_rendering_mode: The dml_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -335,7 +335,7 @@ class PdfSaveOptionsData(object):
     def dml_effects_rendering_mode(self):
         """Gets the dml_effects_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }  # noqa: E501
+        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :return: The dml_effects_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -346,7 +346,7 @@ class PdfSaveOptionsData(object):
     def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
         """Sets the dml_effects_rendering_mode of this PdfSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }  # noqa: E501
+        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -356,7 +356,7 @@ class PdfSaveOptionsData(object):
     def zip_output(self):
         """Gets the zip_output of this PdfSaveOptionsData.  # noqa: E501
 
-        Controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
 
         :return: The zip_output of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -367,7 +367,7 @@ class PdfSaveOptionsData(object):
     def zip_output(self, zip_output):
         """Sets the zip_output of this PdfSaveOptionsData.
 
-        Controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
 
         :param zip_output: The zip_output of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -419,7 +419,7 @@ class PdfSaveOptionsData(object):
     def update_fields(self):
         """Gets the update_fields of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true  # noqa: E501
+        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true  # noqa: E501
 
         :return: The update_fields of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -430,7 +430,7 @@ class PdfSaveOptionsData(object):
     def update_fields(self, update_fields):
         """Sets the update_fields of this PdfSaveOptionsData.
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true  # noqa: E501
+        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true  # noqa: E501
 
         :param update_fields: The update_fields of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -440,7 +440,7 @@ class PdfSaveOptionsData(object):
     def jpeg_quality(self):
         """Gets the jpeg_quality of this PdfSaveOptionsData.  # noqa: E501
 
-        Determines the quality of the JPEG images inside PDF document.  # noqa: E501
+        Gets or sets determines the quality of the JPEG images inside PDF document.  # noqa: E501
 
         :return: The jpeg_quality of this PdfSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -451,7 +451,7 @@ class PdfSaveOptionsData(object):
     def jpeg_quality(self, jpeg_quality):
         """Sets the jpeg_quality of this PdfSaveOptionsData.
 
-        Determines the quality of the JPEG images inside PDF document.  # noqa: E501
+        Gets or sets determines the quality of the JPEG images inside PDF document.  # noqa: E501
 
         :param jpeg_quality: The jpeg_quality of this PdfSaveOptionsData.  # noqa: E501
         :type: int
@@ -461,7 +461,7 @@ class PdfSaveOptionsData(object):
     def metafile_rendering_options(self):
         """Gets the metafile_rendering_options of this PdfSaveOptionsData.  # noqa: E501
 
-        Allows to specify metafile rendering options.  # noqa: E501
+        Gets or sets allows to specify metafile rendering options.  # noqa: E501
 
         :return: The metafile_rendering_options of this PdfSaveOptionsData.  # noqa: E501
         :rtype: MetafileRenderingOptionsData
@@ -472,7 +472,7 @@ class PdfSaveOptionsData(object):
     def metafile_rendering_options(self, metafile_rendering_options):
         """Sets the metafile_rendering_options of this PdfSaveOptionsData.
 
-        Allows to specify metafile rendering options.  # noqa: E501
+        Gets or sets allows to specify metafile rendering options.  # noqa: E501
 
         :param metafile_rendering_options: The metafile_rendering_options of this PdfSaveOptionsData.  # noqa: E501
         :type: MetafileRenderingOptionsData
@@ -482,7 +482,7 @@ class PdfSaveOptionsData(object):
     def numeral_format(self):
         """Gets the numeral_format of this PdfSaveOptionsData.  # noqa: E501
 
-        Indicates the symbol set that is used to represent numbers while rendering to fixed page formats  # noqa: E501
+        Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
 
         :return: The numeral_format of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -493,7 +493,7 @@ class PdfSaveOptionsData(object):
     def numeral_format(self, numeral_format):
         """Sets the numeral_format of this PdfSaveOptionsData.
 
-        Indicates the symbol set that is used to represent numbers while rendering to fixed page formats  # noqa: E501
+        Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
 
         :param numeral_format: The numeral_format of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -503,7 +503,7 @@ class PdfSaveOptionsData(object):
     def optimize_output(self):
         """Gets the optimize_output of this PdfSaveOptionsData.  # noqa: E501
 
-        Flag indicates whether it is required to optimize output of XPS.  If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.  Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
+        Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
 
         :return: The optimize_output of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -514,7 +514,7 @@ class PdfSaveOptionsData(object):
     def optimize_output(self, optimize_output):
         """Sets the optimize_output of this PdfSaveOptionsData.
 
-        Flag indicates whether it is required to optimize output of XPS.  If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.  Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
+        Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
 
         :param optimize_output: The optimize_output of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -524,7 +524,7 @@ class PdfSaveOptionsData(object):
     def page_count(self):
         """Gets the page_count of this PdfSaveOptionsData.  # noqa: E501
 
-        Determines number of pages to render  # noqa: E501
+        Gets or sets determines number of pages to render.  # noqa: E501
 
         :return: The page_count of this PdfSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -535,7 +535,7 @@ class PdfSaveOptionsData(object):
     def page_count(self, page_count):
         """Sets the page_count of this PdfSaveOptionsData.
 
-        Determines number of pages to render  # noqa: E501
+        Gets or sets determines number of pages to render.  # noqa: E501
 
         :param page_count: The page_count of this PdfSaveOptionsData.  # noqa: E501
         :type: int
@@ -545,7 +545,7 @@ class PdfSaveOptionsData(object):
     def page_index(self):
         """Gets the page_index of this PdfSaveOptionsData.  # noqa: E501
 
-        Determines 0-based index of the first page to render  # noqa: E501
+        Gets or sets determines 0-based index of the first page to render.  # noqa: E501
 
         :return: The page_index of this PdfSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -556,7 +556,7 @@ class PdfSaveOptionsData(object):
     def page_index(self, page_index):
         """Sets the page_index of this PdfSaveOptionsData.
 
-        Determines 0-based index of the first page to render  # noqa: E501
+        Gets or sets determines 0-based index of the first page to render.  # noqa: E501
 
         :param page_index: The page_index of this PdfSaveOptionsData.  # noqa: E501
         :type: int
@@ -566,7 +566,7 @@ class PdfSaveOptionsData(object):
     def compliance(self):
         """Gets the compliance of this PdfSaveOptionsData.  # noqa: E501
 
-        Specifies the PDF standards compliance level for output documents  # noqa: E501
+        Gets or sets specifies the PDF standards compliance level for output documents.  # noqa: E501
 
         :return: The compliance of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -577,7 +577,7 @@ class PdfSaveOptionsData(object):
     def compliance(self, compliance):
         """Sets the compliance of this PdfSaveOptionsData.
 
-        Specifies the PDF standards compliance level for output documents  # noqa: E501
+        Gets or sets specifies the PDF standards compliance level for output documents.  # noqa: E501
 
         :param compliance: The compliance of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -587,7 +587,7 @@ class PdfSaveOptionsData(object):
     def create_note_hyperlinks(self):
         """Gets the create_note_hyperlinks of this PdfSaveOptionsData.  # noqa: E501
 
-        Specifies whether to convert footnote/endnote references in main text story into active hyperlinks. When clicked the hyperlink will lead to the corresponding footnote/endnote. Default is false.  # noqa: E501
+        Gets or sets specifies whether to convert footnote/endnote references in main text story into active hyperlinks. When clicked the hyperlink will lead to the corresponding footnote/endnote. Default is false.  # noqa: E501
 
         :return: The create_note_hyperlinks of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -598,7 +598,7 @@ class PdfSaveOptionsData(object):
     def create_note_hyperlinks(self, create_note_hyperlinks):
         """Sets the create_note_hyperlinks of this PdfSaveOptionsData.
 
-        Specifies whether to convert footnote/endnote references in main text story into active hyperlinks. When clicked the hyperlink will lead to the corresponding footnote/endnote. Default is false.  # noqa: E501
+        Gets or sets specifies whether to convert footnote/endnote references in main text story into active hyperlinks. When clicked the hyperlink will lead to the corresponding footnote/endnote. Default is false.  # noqa: E501
 
         :param create_note_hyperlinks: The create_note_hyperlinks of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -629,7 +629,7 @@ class PdfSaveOptionsData(object):
     def digital_signature_details(self):
         """Gets the digital_signature_details of this PdfSaveOptionsData.  # noqa: E501
 
-        Specifies the details for signing the output PDF document  # noqa: E501
+        Gets or sets specifies the details for signing the output PDF document.  # noqa: E501
 
         :return: The digital_signature_details of this PdfSaveOptionsData.  # noqa: E501
         :rtype: PdfDigitalSignatureDetailsData
@@ -640,7 +640,7 @@ class PdfSaveOptionsData(object):
     def digital_signature_details(self, digital_signature_details):
         """Sets the digital_signature_details of this PdfSaveOptionsData.
 
-        Specifies the details for signing the output PDF document  # noqa: E501
+        Gets or sets specifies the details for signing the output PDF document.  # noqa: E501
 
         :param digital_signature_details: The digital_signature_details of this PdfSaveOptionsData.  # noqa: E501
         :type: PdfDigitalSignatureDetailsData
@@ -650,7 +650,7 @@ class PdfSaveOptionsData(object):
     def display_doc_title(self):
         """Gets the display_doc_title of this PdfSaveOptionsData.  # noqa: E501
 
-        A flag specifying whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.  # noqa: E501
+        Gets or sets a flag specifying whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.  # noqa: E501
 
         :return: The display_doc_title of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -661,7 +661,7 @@ class PdfSaveOptionsData(object):
     def display_doc_title(self, display_doc_title):
         """Sets the display_doc_title of this PdfSaveOptionsData.
 
-        A flag specifying whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.  # noqa: E501
+        Gets or sets a flag specifying whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.  # noqa: E501
 
         :param display_doc_title: The display_doc_title of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -671,7 +671,7 @@ class PdfSaveOptionsData(object):
     def downsample_options(self):
         """Gets the downsample_options of this PdfSaveOptionsData.  # noqa: E501
 
-        Allows to specify downsample options.  # noqa: E501
+        Gets or sets allows to specify downsample options.  # noqa: E501
 
         :return: The downsample_options of this PdfSaveOptionsData.  # noqa: E501
         :rtype: DownsampleOptionsData
@@ -682,7 +682,7 @@ class PdfSaveOptionsData(object):
     def downsample_options(self, downsample_options):
         """Sets the downsample_options of this PdfSaveOptionsData.
 
-        Allows to specify downsample options.  # noqa: E501
+        Gets or sets allows to specify downsample options.  # noqa: E501
 
         :param downsample_options: The downsample_options of this PdfSaveOptionsData.  # noqa: E501
         :type: DownsampleOptionsData
@@ -692,7 +692,7 @@ class PdfSaveOptionsData(object):
     def embed_full_fonts(self):
         """Gets the embed_full_fonts of this PdfSaveOptionsData.  # noqa: E501
 
-        Controls how fonts are embedded into the resulting PDF documents  # noqa: E501
+        Gets or sets controls how fonts are embedded into the resulting PDF documents.  # noqa: E501
 
         :return: The embed_full_fonts of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -703,7 +703,7 @@ class PdfSaveOptionsData(object):
     def embed_full_fonts(self, embed_full_fonts):
         """Sets the embed_full_fonts of this PdfSaveOptionsData.
 
-        Controls how fonts are embedded into the resulting PDF documents  # noqa: E501
+        Gets or sets controls how fonts are embedded into the resulting PDF documents.  # noqa: E501
 
         :param embed_full_fonts: The embed_full_fonts of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -713,7 +713,7 @@ class PdfSaveOptionsData(object):
     def encryption_details(self):
         """Gets the encryption_details of this PdfSaveOptionsData.  # noqa: E501
 
-        Specifies the details for encrypting the output PDF document  # noqa: E501
+        Gets or sets specifies the details for encrypting the output PDF document.  # noqa: E501
 
         :return: The encryption_details of this PdfSaveOptionsData.  # noqa: E501
         :rtype: PdfEncryptionDetailsData
@@ -724,7 +724,7 @@ class PdfSaveOptionsData(object):
     def encryption_details(self, encryption_details):
         """Sets the encryption_details of this PdfSaveOptionsData.
 
-        Specifies the details for encrypting the output PDF document  # noqa: E501
+        Gets or sets specifies the details for encrypting the output PDF document.  # noqa: E501
 
         :param encryption_details: The encryption_details of this PdfSaveOptionsData.  # noqa: E501
         :type: PdfEncryptionDetailsData
@@ -734,7 +734,7 @@ class PdfSaveOptionsData(object):
     def escape_uri(self):
         """Gets the escape_uri of this PdfSaveOptionsData.  # noqa: E501
 
-        A flag specifying whether URI should be escaped before writing.               # noqa: E501
+        Gets or sets a flag specifying whether URI should be escaped before writing.               # noqa: E501
 
         :return: The escape_uri of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -745,7 +745,7 @@ class PdfSaveOptionsData(object):
     def escape_uri(self, escape_uri):
         """Sets the escape_uri of this PdfSaveOptionsData.
 
-        A flag specifying whether URI should be escaped before writing.               # noqa: E501
+        Gets or sets a flag specifying whether URI should be escaped before writing.               # noqa: E501
 
         :param escape_uri: The escape_uri of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -755,7 +755,7 @@ class PdfSaveOptionsData(object):
     def export_document_structure(self):
         """Gets the export_document_structure of this PdfSaveOptionsData.  # noqa: E501
 
-        Determines whether or not to export document structure  # noqa: E501
+        Gets or sets determines whether or not to export document structure.  # noqa: E501
 
         :return: The export_document_structure of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -766,7 +766,7 @@ class PdfSaveOptionsData(object):
     def export_document_structure(self, export_document_structure):
         """Sets the export_document_structure of this PdfSaveOptionsData.
 
-        Determines whether or not to export document structure  # noqa: E501
+        Gets or sets determines whether or not to export document structure.  # noqa: E501
 
         :param export_document_structure: The export_document_structure of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -776,7 +776,7 @@ class PdfSaveOptionsData(object):
     def font_embedding_mode(self):
         """Gets the font_embedding_mode of this PdfSaveOptionsData.  # noqa: E501
 
-        Specifies the font embedding mode  # noqa: E501
+        Gets or sets specifies the font embedding mode.  # noqa: E501
 
         :return: The font_embedding_mode of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -787,7 +787,7 @@ class PdfSaveOptionsData(object):
     def font_embedding_mode(self, font_embedding_mode):
         """Sets the font_embedding_mode of this PdfSaveOptionsData.
 
-        Specifies the font embedding mode  # noqa: E501
+        Gets or sets specifies the font embedding mode.  # noqa: E501
 
         :param font_embedding_mode: The font_embedding_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -797,7 +797,7 @@ class PdfSaveOptionsData(object):
     def header_footer_bookmarks_export_mode(self):
         """Gets the header_footer_bookmarks_export_mode of this PdfSaveOptionsData.  # noqa: E501
 
-        Determines how bookmarks in headers/footers are exported. The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.  # noqa: E501
+        Gets or sets determines how bookmarks in headers/footers are exported. The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.  # noqa: E501
 
         :return: The header_footer_bookmarks_export_mode of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -808,7 +808,7 @@ class PdfSaveOptionsData(object):
     def header_footer_bookmarks_export_mode(self, header_footer_bookmarks_export_mode):
         """Sets the header_footer_bookmarks_export_mode of this PdfSaveOptionsData.
 
-        Determines how bookmarks in headers/footers are exported. The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.  # noqa: E501
+        Gets or sets determines how bookmarks in headers/footers are exported. The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.  # noqa: E501
 
         :param header_footer_bookmarks_export_mode: The header_footer_bookmarks_export_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -826,7 +826,7 @@ class PdfSaveOptionsData(object):
     def image_color_space_export_mode(self):
         """Gets the image_color_space_export_mode of this PdfSaveOptionsData.  # noqa: E501
 
-        Specifies how the color space will be selected for the images in PDF document.  # noqa: E501
+        Gets or sets specifies how the color space will be selected for the images in PDF document.  # noqa: E501
 
         :return: The image_color_space_export_mode of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -837,7 +837,7 @@ class PdfSaveOptionsData(object):
     def image_color_space_export_mode(self, image_color_space_export_mode):
         """Sets the image_color_space_export_mode of this PdfSaveOptionsData.
 
-        Specifies how the color space will be selected for the images in PDF document.  # noqa: E501
+        Gets or sets specifies how the color space will be selected for the images in PDF document.  # noqa: E501
 
         :param image_color_space_export_mode: The image_color_space_export_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -847,7 +847,7 @@ class PdfSaveOptionsData(object):
     def image_compression(self):
         """Gets the image_compression of this PdfSaveOptionsData.  # noqa: E501
 
-        Specifies compression type to be used for all images in the document  # noqa: E501
+        Gets or sets specifies compression type to be used for all images in the document.  # noqa: E501
 
         :return: The image_compression of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -858,7 +858,7 @@ class PdfSaveOptionsData(object):
     def image_compression(self, image_compression):
         """Sets the image_compression of this PdfSaveOptionsData.
 
-        Specifies compression type to be used for all images in the document  # noqa: E501
+        Gets or sets specifies compression type to be used for all images in the document.  # noqa: E501
 
         :param image_compression: The image_compression of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -868,7 +868,7 @@ class PdfSaveOptionsData(object):
     def open_hyperlinks_in_new_window(self):
         """Gets the open_hyperlinks_in_new_window of this PdfSaveOptionsData.  # noqa: E501
 
-        Determines whether hyperlinks in the output Pdf document are forced to be opened in a new window (or tab) of a browser  # noqa: E501
+        Gets or sets determines whether hyperlinks in the output Pdf document are forced to be opened in a new window (or tab) of a browser.  # noqa: E501
 
         :return: The open_hyperlinks_in_new_window of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -879,7 +879,7 @@ class PdfSaveOptionsData(object):
     def open_hyperlinks_in_new_window(self, open_hyperlinks_in_new_window):
         """Sets the open_hyperlinks_in_new_window of this PdfSaveOptionsData.
 
-        Determines whether hyperlinks in the output Pdf document are forced to be opened in a new window (or tab) of a browser  # noqa: E501
+        Gets or sets determines whether hyperlinks in the output Pdf document are forced to be opened in a new window (or tab) of a browser.  # noqa: E501
 
         :param open_hyperlinks_in_new_window: The open_hyperlinks_in_new_window of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -889,7 +889,7 @@ class PdfSaveOptionsData(object):
     def outline_options(self):
         """Gets the outline_options of this PdfSaveOptionsData.  # noqa: E501
 
-        Allows to specify outline options  # noqa: E501
+        Gets or sets allows to specify outline options.  # noqa: E501
 
         :return: The outline_options of this PdfSaveOptionsData.  # noqa: E501
         :rtype: OutlineOptionsData
@@ -900,7 +900,7 @@ class PdfSaveOptionsData(object):
     def outline_options(self, outline_options):
         """Sets the outline_options of this PdfSaveOptionsData.
 
-        Allows to specify outline options  # noqa: E501
+        Gets or sets allows to specify outline options.  # noqa: E501
 
         :param outline_options: The outline_options of this PdfSaveOptionsData.  # noqa: E501
         :type: OutlineOptionsData
@@ -910,7 +910,7 @@ class PdfSaveOptionsData(object):
     def page_mode(self):
         """Gets the page_mode of this PdfSaveOptionsData.  # noqa: E501
 
-        Specifies how the PDF document should be displayed when opened in the PDF reader  # noqa: E501
+        Gets or sets specifies how the PDF document should be displayed when opened in the PDF reader.  # noqa: E501
 
         :return: The page_mode of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -921,7 +921,7 @@ class PdfSaveOptionsData(object):
     def page_mode(self, page_mode):
         """Sets the page_mode of this PdfSaveOptionsData.
 
-        Specifies how the PDF document should be displayed when opened in the PDF reader  # noqa: E501
+        Gets or sets specifies how the PDF document should be displayed when opened in the PDF reader.  # noqa: E501
 
         :param page_mode: The page_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -952,7 +952,7 @@ class PdfSaveOptionsData(object):
     def preserve_form_fields(self):
         """Gets the preserve_form_fields of this PdfSaveOptionsData.  # noqa: E501
 
-        Specifies whether to preserve Microsoft Word form fields as form fields in PDF or convert them to text  # noqa: E501
+        Gets or sets specifies whether to preserve Microsoft Word form fields as form fields in PDF or convert them to text.  # noqa: E501
 
         :return: The preserve_form_fields of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -963,7 +963,7 @@ class PdfSaveOptionsData(object):
     def preserve_form_fields(self, preserve_form_fields):
         """Sets the preserve_form_fields of this PdfSaveOptionsData.
 
-        Specifies whether to preserve Microsoft Word form fields as form fields in PDF or convert them to text  # noqa: E501
+        Gets or sets specifies whether to preserve Microsoft Word form fields as form fields in PDF or convert them to text.  # noqa: E501
 
         :param preserve_form_fields: The preserve_form_fields of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -973,7 +973,7 @@ class PdfSaveOptionsData(object):
     def text_compression(self):
         """Gets the text_compression of this PdfSaveOptionsData.  # noqa: E501
 
-        Specifies compression type to be used for all textual content in the document  # noqa: E501
+        Gets or sets specifies compression type to be used for all textual content in the document.  # noqa: E501
 
         :return: The text_compression of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -984,7 +984,7 @@ class PdfSaveOptionsData(object):
     def text_compression(self, text_compression):
         """Sets the text_compression of this PdfSaveOptionsData.
 
-        Specifies compression type to be used for all textual content in the document  # noqa: E501
+        Gets or sets specifies compression type to be used for all textual content in the document.  # noqa: E501
 
         :param text_compression: The text_compression of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -994,7 +994,7 @@ class PdfSaveOptionsData(object):
     def use_book_fold_printing_settings(self):
         """Gets the use_book_fold_printing_settings of this PdfSaveOptionsData.  # noqa: E501
 
-        Determines whether the document should be saved using a booklet printing layout  # noqa: E501
+        Gets or sets determines whether the document should be saved using a booklet printing layout.  # noqa: E501
 
         :return: The use_book_fold_printing_settings of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -1005,7 +1005,7 @@ class PdfSaveOptionsData(object):
     def use_book_fold_printing_settings(self, use_book_fold_printing_settings):
         """Sets the use_book_fold_printing_settings of this PdfSaveOptionsData.
 
-        Determines whether the document should be saved using a booklet printing layout  # noqa: E501
+        Gets or sets determines whether the document should be saved using a booklet printing layout.  # noqa: E501
 
         :param use_book_fold_printing_settings: The use_book_fold_printing_settings of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -1015,7 +1015,7 @@ class PdfSaveOptionsData(object):
     def use_core_fonts(self):
         """Gets the use_core_fonts of this PdfSaveOptionsData.  # noqa: E501
 
-        Determines whether or not to substitute TrueType fonts Arial, Times New Roman, Courier New and Symbol with core PDF Type 1 fonts  # noqa: E501
+        Gets or sets determines whether or not to substitute TrueType fonts Arial, Times New Roman, Courier New and Symbol with core PDF Type 1 fonts.  # noqa: E501
 
         :return: The use_core_fonts of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -1026,7 +1026,7 @@ class PdfSaveOptionsData(object):
     def use_core_fonts(self, use_core_fonts):
         """Sets the use_core_fonts of this PdfSaveOptionsData.
 
-        Determines whether or not to substitute TrueType fonts Arial, Times New Roman, Courier New and Symbol with core PDF Type 1 fonts  # noqa: E501
+        Gets or sets determines whether or not to substitute TrueType fonts Arial, Times New Roman, Courier New and Symbol with core PDF Type 1 fonts.  # noqa: E501
 
         :param use_core_fonts: The use_core_fonts of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -1036,7 +1036,7 @@ class PdfSaveOptionsData(object):
     def zoom_behavior(self):
         """Gets the zoom_behavior of this PdfSaveOptionsData.  # noqa: E501
 
-        Determines what type of zoom should be applied when a document is opened with a PDF viewer  # noqa: E501
+        Gets or sets determines what type of zoom should be applied when a document is opened with a PDF viewer.  # noqa: E501
 
         :return: The zoom_behavior of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -1047,7 +1047,7 @@ class PdfSaveOptionsData(object):
     def zoom_behavior(self, zoom_behavior):
         """Sets the zoom_behavior of this PdfSaveOptionsData.
 
-        Determines what type of zoom should be applied when a document is opened with a PDF viewer  # noqa: E501
+        Gets or sets determines what type of zoom should be applied when a document is opened with a PDF viewer.  # noqa: E501
 
         :param zoom_behavior: The zoom_behavior of this PdfSaveOptionsData.  # noqa: E501
         :type: str
@@ -1057,7 +1057,7 @@ class PdfSaveOptionsData(object):
     def zoom_factor(self):
         """Gets the zoom_factor of this PdfSaveOptionsData.  # noqa: E501
 
-        Determines zoom factor (in percentages) for a document  # noqa: E501
+        Gets or sets determines zoom factor (in percentages) for a document.  # noqa: E501
 
         :return: The zoom_factor of this PdfSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -1068,7 +1068,7 @@ class PdfSaveOptionsData(object):
     def zoom_factor(self, zoom_factor):
         """Sets the zoom_factor of this PdfSaveOptionsData.
 
-        Determines zoom factor (in percentages) for a document  # noqa: E501
+        Gets or sets determines zoom factor (in percentages) for a document.  # noqa: E501
 
         :param zoom_factor: The zoom_factor of this PdfSaveOptionsData.  # noqa: E501
         :type: int

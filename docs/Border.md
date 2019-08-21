@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**link** | [**WordsApiLink**](WordsApiLink.md) | Link to the document. | [optional] 
+**link** | [**WordsApiLink**](WordsApiLink.md) | Gets or sets link to the document. | [optional] 
 **border_type** | **str** | Gets or sets the border type.              | [optional] 
 **color** | [**XmlColor**](XmlColor.md) | Gets or sets the border color.              | [optional] 
 **distance_from_text** | **float** | Gets or sets distance of the border from text or from the page edge in points. | [optional] 

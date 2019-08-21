@@ -30,7 +30,7 @@ import six
 
 
 class FootnotesStatData(object):
-    """Container for the footnotes statistical data
+    """Container for the footnotes statistical data.
     """
 
     """
@@ -66,7 +66,7 @@ class FootnotesStatData(object):
     def word_count(self):
         """Gets the word_count of this FootnotesStatData.  # noqa: E501
 
-        Total count of words in footnotes  # noqa: E501
+        Gets or sets total count of words in footnotes.  # noqa: E501
 
         :return: The word_count of this FootnotesStatData.  # noqa: E501
         :rtype: int
@@ -77,7 +77,7 @@ class FootnotesStatData(object):
     def word_count(self, word_count):
         """Sets the word_count of this FootnotesStatData.
 
-        Total count of words in footnotes  # noqa: E501
+        Gets or sets total count of words in footnotes.  # noqa: E501
 
         :param word_count: The word_count of this FootnotesStatData.  # noqa: E501
         :type: int
@@ -89,7 +89,7 @@ class FootnotesStatData(object):
     def paragraph_count(self):
         """Gets the paragraph_count of this FootnotesStatData.  # noqa: E501
 
-        Total count of paragraphs in footnotes  # noqa: E501
+        Gets or sets total count of paragraphs in footnotes.  # noqa: E501
 
         :return: The paragraph_count of this FootnotesStatData.  # noqa: E501
         :rtype: int
@@ -100,7 +100,7 @@ class FootnotesStatData(object):
     def paragraph_count(self, paragraph_count):
         """Sets the paragraph_count of this FootnotesStatData.
 
-        Total count of paragraphs in footnotes  # noqa: E501
+        Gets or sets total count of paragraphs in footnotes.  # noqa: E501
 
         :param paragraph_count: The paragraph_count of this FootnotesStatData.  # noqa: E501
         :type: int

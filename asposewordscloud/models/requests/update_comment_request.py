@@ -1,4 +1,4 @@
-# --------------------------------------------------------------------------------
+ --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="UpdateCommentRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -29,7 +29,7 @@ class UpdateCommentRequest(object):
     Request model for update_comment operation.
     Initializes a new instance.
     :param name The document name.
-    :param comment_index The comment index
+    :param comment_index The comment index.
     :param comment The comment data.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -51,3 +51,4 @@ class UpdateCommentRequest(object):
         self.dest_file_name = dest_file_name
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
+#

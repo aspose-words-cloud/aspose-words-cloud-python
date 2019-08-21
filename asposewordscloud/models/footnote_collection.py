@@ -66,7 +66,7 @@ class FootnoteCollection(object):
     def link(self):
         """Gets the link of this FootnoteCollection.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this FootnoteCollection.  # noqa: E501
         :rtype: WordsApiLink
@@ -77,7 +77,7 @@ class FootnoteCollection(object):
     def link(self, link):
         """Sets the link of this FootnoteCollection.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this FootnoteCollection.  # noqa: E501
         :type: WordsApiLink
@@ -87,7 +87,7 @@ class FootnoteCollection(object):
     def list(self):
         """Gets the list of this FootnoteCollection.  # noqa: E501
 
-        Collection of foonotes links   # noqa: E501
+        Gets or sets collection of foonotes links.  # noqa: E501
 
         :return: The list of this FootnoteCollection.  # noqa: E501
         :rtype: list[Footnote]
@@ -98,7 +98,7 @@ class FootnoteCollection(object):
     def list(self, list):
         """Sets the list of this FootnoteCollection.
 
-        Collection of foonotes links   # noqa: E501
+        Gets or sets collection of foonotes links.  # noqa: E501
 
         :param list: The list of this FootnoteCollection.  # noqa: E501
         :type: list[Footnote]

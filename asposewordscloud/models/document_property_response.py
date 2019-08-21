@@ -66,7 +66,7 @@ class DocumentPropertyResponse(object):
     def request_id(self):
         """Gets the request_id of this DocumentPropertyResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this DocumentPropertyResponse.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class DocumentPropertyResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this DocumentPropertyResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this DocumentPropertyResponse.  # noqa: E501
         :type: str
@@ -87,7 +87,7 @@ class DocumentPropertyResponse(object):
     def document_property(self):
         """Gets the document_property of this DocumentPropertyResponse.  # noqa: E501
 
-        Document property.  # noqa: E501
+        Gets or sets document property.  # noqa: E501
 
         :return: The document_property of this DocumentPropertyResponse.  # noqa: E501
         :rtype: DocumentProperty
@@ -98,7 +98,7 @@ class DocumentPropertyResponse(object):
     def document_property(self, document_property):
         """Sets the document_property of this DocumentPropertyResponse.
 
-        Document property.  # noqa: E501
+        Gets or sets document property.  # noqa: E501
 
         :param document_property: The document_property of this DocumentPropertyResponse.  # noqa: E501
         :type: DocumentProperty

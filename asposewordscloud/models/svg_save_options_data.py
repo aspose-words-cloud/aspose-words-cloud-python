@@ -30,7 +30,7 @@ import six
 
 
 class SvgSaveOptionsData(object):
-    """container class for svg save options
+    """container class for svg save options.
     """
 
     """
@@ -161,7 +161,7 @@ class SvgSaveOptionsData(object):
     def color_mode(self):
         """Gets the color_mode of this SvgSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}  # noqa: E501
+        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
 
         :return: The color_mode of this SvgSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -172,7 +172,7 @@ class SvgSaveOptionsData(object):
     def color_mode(self, color_mode):
         """Sets the color_mode of this SvgSaveOptionsData.
 
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}  # noqa: E501
+        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
 
         :param color_mode: The color_mode of this SvgSaveOptionsData.  # noqa: E501
         :type: str
@@ -182,7 +182,7 @@ class SvgSaveOptionsData(object):
     def save_format(self):
         """Gets the save_format of this SvgSaveOptionsData.  # noqa: E501
 
-        format of save  # noqa: E501
+        Gets or sets format of save.  # noqa: E501
 
         :return: The save_format of this SvgSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -193,7 +193,7 @@ class SvgSaveOptionsData(object):
     def save_format(self, save_format):
         """Sets the save_format of this SvgSaveOptionsData.
 
-        format of save  # noqa: E501
+        Gets or sets format of save.  # noqa: E501
 
         :param save_format: The save_format of this SvgSaveOptionsData.  # noqa: E501
         :type: str
@@ -203,7 +203,7 @@ class SvgSaveOptionsData(object):
     def file_name(self):
         """Gets the file_name of this SvgSaveOptionsData.  # noqa: E501
 
-        name of destination file  # noqa: E501
+        Gets or sets name of destination file.  # noqa: E501
 
         :return: The file_name of this SvgSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -214,7 +214,7 @@ class SvgSaveOptionsData(object):
     def file_name(self, file_name):
         """Sets the file_name of this SvgSaveOptionsData.
 
-        name of destination file  # noqa: E501
+        Gets or sets name of destination file.  # noqa: E501
 
         :param file_name: The file_name of this SvgSaveOptionsData.  # noqa: E501
         :type: str
@@ -224,7 +224,7 @@ class SvgSaveOptionsData(object):
     def dml_rendering_mode(self):
         """Gets the dml_rendering_mode of this SvgSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }  # noqa: E501
+        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
 
         :return: The dml_rendering_mode of this SvgSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -235,7 +235,7 @@ class SvgSaveOptionsData(object):
     def dml_rendering_mode(self, dml_rendering_mode):
         """Sets the dml_rendering_mode of this SvgSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }  # noqa: E501
+        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
 
         :param dml_rendering_mode: The dml_rendering_mode of this SvgSaveOptionsData.  # noqa: E501
         :type: str
@@ -245,7 +245,7 @@ class SvgSaveOptionsData(object):
     def dml_effects_rendering_mode(self):
         """Gets the dml_effects_rendering_mode of this SvgSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }  # noqa: E501
+        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :return: The dml_effects_rendering_mode of this SvgSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -256,7 +256,7 @@ class SvgSaveOptionsData(object):
     def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
         """Sets the dml_effects_rendering_mode of this SvgSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }  # noqa: E501
+        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this SvgSaveOptionsData.  # noqa: E501
         :type: str
@@ -266,7 +266,7 @@ class SvgSaveOptionsData(object):
     def zip_output(self):
         """Gets the zip_output of this SvgSaveOptionsData.  # noqa: E501
 
-        Controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
 
         :return: The zip_output of this SvgSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -277,7 +277,7 @@ class SvgSaveOptionsData(object):
     def zip_output(self, zip_output):
         """Sets the zip_output of this SvgSaveOptionsData.
 
-        Controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
 
         :param zip_output: The zip_output of this SvgSaveOptionsData.  # noqa: E501
         :type: bool
@@ -329,7 +329,7 @@ class SvgSaveOptionsData(object):
     def update_fields(self):
         """Gets the update_fields of this SvgSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true  # noqa: E501
+        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true  # noqa: E501
 
         :return: The update_fields of this SvgSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -340,7 +340,7 @@ class SvgSaveOptionsData(object):
     def update_fields(self, update_fields):
         """Sets the update_fields of this SvgSaveOptionsData.
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true  # noqa: E501
+        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true  # noqa: E501
 
         :param update_fields: The update_fields of this SvgSaveOptionsData.  # noqa: E501
         :type: bool
@@ -350,7 +350,7 @@ class SvgSaveOptionsData(object):
     def jpeg_quality(self):
         """Gets the jpeg_quality of this SvgSaveOptionsData.  # noqa: E501
 
-        Determines the quality of the JPEG images inside PDF document.  # noqa: E501
+        Gets or sets determines the quality of the JPEG images inside PDF document.  # noqa: E501
 
         :return: The jpeg_quality of this SvgSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -361,7 +361,7 @@ class SvgSaveOptionsData(object):
     def jpeg_quality(self, jpeg_quality):
         """Sets the jpeg_quality of this SvgSaveOptionsData.
 
-        Determines the quality of the JPEG images inside PDF document.  # noqa: E501
+        Gets or sets determines the quality of the JPEG images inside PDF document.  # noqa: E501
 
         :param jpeg_quality: The jpeg_quality of this SvgSaveOptionsData.  # noqa: E501
         :type: int
@@ -371,7 +371,7 @@ class SvgSaveOptionsData(object):
     def metafile_rendering_options(self):
         """Gets the metafile_rendering_options of this SvgSaveOptionsData.  # noqa: E501
 
-        Allows to specify metafile rendering options.  # noqa: E501
+        Gets or sets allows to specify metafile rendering options.  # noqa: E501
 
         :return: The metafile_rendering_options of this SvgSaveOptionsData.  # noqa: E501
         :rtype: MetafileRenderingOptionsData
@@ -382,7 +382,7 @@ class SvgSaveOptionsData(object):
     def metafile_rendering_options(self, metafile_rendering_options):
         """Sets the metafile_rendering_options of this SvgSaveOptionsData.
 
-        Allows to specify metafile rendering options.  # noqa: E501
+        Gets or sets allows to specify metafile rendering options.  # noqa: E501
 
         :param metafile_rendering_options: The metafile_rendering_options of this SvgSaveOptionsData.  # noqa: E501
         :type: MetafileRenderingOptionsData
@@ -392,7 +392,7 @@ class SvgSaveOptionsData(object):
     def numeral_format(self):
         """Gets the numeral_format of this SvgSaveOptionsData.  # noqa: E501
 
-        Indicates the symbol set that is used to represent numbers while rendering to fixed page formats  # noqa: E501
+        Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
 
         :return: The numeral_format of this SvgSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -403,7 +403,7 @@ class SvgSaveOptionsData(object):
     def numeral_format(self, numeral_format):
         """Sets the numeral_format of this SvgSaveOptionsData.
 
-        Indicates the symbol set that is used to represent numbers while rendering to fixed page formats  # noqa: E501
+        Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
 
         :param numeral_format: The numeral_format of this SvgSaveOptionsData.  # noqa: E501
         :type: str
@@ -413,7 +413,7 @@ class SvgSaveOptionsData(object):
     def optimize_output(self):
         """Gets the optimize_output of this SvgSaveOptionsData.  # noqa: E501
 
-        Flag indicates whether it is required to optimize output of XPS.  If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.  Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
+        Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
 
         :return: The optimize_output of this SvgSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -424,7 +424,7 @@ class SvgSaveOptionsData(object):
     def optimize_output(self, optimize_output):
         """Sets the optimize_output of this SvgSaveOptionsData.
 
-        Flag indicates whether it is required to optimize output of XPS.  If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.  Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
+        Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
 
         :param optimize_output: The optimize_output of this SvgSaveOptionsData.  # noqa: E501
         :type: bool
@@ -434,7 +434,7 @@ class SvgSaveOptionsData(object):
     def page_count(self):
         """Gets the page_count of this SvgSaveOptionsData.  # noqa: E501
 
-        Determines number of pages to render  # noqa: E501
+        Gets or sets determines number of pages to render.  # noqa: E501
 
         :return: The page_count of this SvgSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -445,7 +445,7 @@ class SvgSaveOptionsData(object):
     def page_count(self, page_count):
         """Sets the page_count of this SvgSaveOptionsData.
 
-        Determines number of pages to render  # noqa: E501
+        Gets or sets determines number of pages to render.  # noqa: E501
 
         :param page_count: The page_count of this SvgSaveOptionsData.  # noqa: E501
         :type: int
@@ -455,7 +455,7 @@ class SvgSaveOptionsData(object):
     def page_index(self):
         """Gets the page_index of this SvgSaveOptionsData.  # noqa: E501
 
-        Determines 0-based index of the first page to render  # noqa: E501
+        Gets or sets determines 0-based index of the first page to render.  # noqa: E501
 
         :return: The page_index of this SvgSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -466,7 +466,7 @@ class SvgSaveOptionsData(object):
     def page_index(self, page_index):
         """Sets the page_index of this SvgSaveOptionsData.
 
-        Determines 0-based index of the first page to render  # noqa: E501
+        Gets or sets determines 0-based index of the first page to render.  # noqa: E501
 
         :param page_index: The page_index of this SvgSaveOptionsData.  # noqa: E501
         :type: int
@@ -476,7 +476,7 @@ class SvgSaveOptionsData(object):
     def export_embedded_images(self):
         """Gets the export_embedded_images of this SvgSaveOptionsData.  # noqa: E501
 
-        Specified whether images should be embedded into SVG document as base64  # noqa: E501
+        Gets or sets specified whether images should be embedded into SVG document as base64.  # noqa: E501
 
         :return: The export_embedded_images of this SvgSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -487,7 +487,7 @@ class SvgSaveOptionsData(object):
     def export_embedded_images(self, export_embedded_images):
         """Sets the export_embedded_images of this SvgSaveOptionsData.
 
-        Specified whether images should be embedded into SVG document as base64  # noqa: E501
+        Gets or sets specified whether images should be embedded into SVG document as base64.  # noqa: E501
 
         :param export_embedded_images: The export_embedded_images of this SvgSaveOptionsData.  # noqa: E501
         :type: bool
@@ -497,7 +497,7 @@ class SvgSaveOptionsData(object):
     def fit_to_view_port(self):
         """Gets the fit_to_view_port of this SvgSaveOptionsData.  # noqa: E501
 
-        Specifies if the output SVG should fill the available viewport area (browser window or container). When set to true width and height of output SVG are set to 100%.  # noqa: E501
+        Gets or sets specifies if the output SVG should fill the available viewport area (browser window or container). When set to true width and height of output SVG are set to 100%.  # noqa: E501
 
         :return: The fit_to_view_port of this SvgSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -508,7 +508,7 @@ class SvgSaveOptionsData(object):
     def fit_to_view_port(self, fit_to_view_port):
         """Sets the fit_to_view_port of this SvgSaveOptionsData.
 
-        Specifies if the output SVG should fill the available viewport area (browser window or container). When set to true width and height of output SVG are set to 100%.  # noqa: E501
+        Gets or sets specifies if the output SVG should fill the available viewport area (browser window or container). When set to true width and height of output SVG are set to 100%.  # noqa: E501
 
         :param fit_to_view_port: The fit_to_view_port of this SvgSaveOptionsData.  # noqa: E501
         :type: bool
@@ -518,7 +518,7 @@ class SvgSaveOptionsData(object):
     def resources_folder(self):
         """Gets the resources_folder of this SvgSaveOptionsData.  # noqa: E501
 
-        Specifies the physical folder where resources (images) are saved when exporting  # noqa: E501
+        Gets or sets specifies the physical folder where resources (images) are saved when exporting.  # noqa: E501
 
         :return: The resources_folder of this SvgSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -529,7 +529,7 @@ class SvgSaveOptionsData(object):
     def resources_folder(self, resources_folder):
         """Sets the resources_folder of this SvgSaveOptionsData.
 
-        Specifies the physical folder where resources (images) are saved when exporting  # noqa: E501
+        Gets or sets specifies the physical folder where resources (images) are saved when exporting.  # noqa: E501
 
         :param resources_folder: The resources_folder of this SvgSaveOptionsData.  # noqa: E501
         :type: str
@@ -539,7 +539,7 @@ class SvgSaveOptionsData(object):
     def resources_folder_alias(self):
         """Gets the resources_folder_alias of this SvgSaveOptionsData.  # noqa: E501
 
-        Specifies the name of the folder used to construct image URIs  # noqa: E501
+        Gets or sets specifies the name of the folder used to construct image URIs.  # noqa: E501
 
         :return: The resources_folder_alias of this SvgSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -550,7 +550,7 @@ class SvgSaveOptionsData(object):
     def resources_folder_alias(self, resources_folder_alias):
         """Sets the resources_folder_alias of this SvgSaveOptionsData.
 
-        Specifies the name of the folder used to construct image URIs  # noqa: E501
+        Gets or sets specifies the name of the folder used to construct image URIs.  # noqa: E501
 
         :param resources_folder_alias: The resources_folder_alias of this SvgSaveOptionsData.  # noqa: E501
         :type: str
@@ -560,7 +560,7 @@ class SvgSaveOptionsData(object):
     def show_page_border(self):
         """Gets the show_page_border of this SvgSaveOptionsData.  # noqa: E501
 
-        Show/hide page stepper  # noqa: E501
+        Gets or sets show/hide page stepper.  # noqa: E501
 
         :return: The show_page_border of this SvgSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -571,7 +571,7 @@ class SvgSaveOptionsData(object):
     def show_page_border(self, show_page_border):
         """Sets the show_page_border of this SvgSaveOptionsData.
 
-        Show/hide page stepper  # noqa: E501
+        Gets or sets show/hide page stepper.  # noqa: E501
 
         :param show_page_border: The show_page_border of this SvgSaveOptionsData.  # noqa: E501
         :type: bool
@@ -581,7 +581,7 @@ class SvgSaveOptionsData(object):
     def text_output_mode(self):
         """Gets the text_output_mode of this SvgSaveOptionsData.  # noqa: E501
 
-        Determines how text should be rendered  # noqa: E501
+        Gets or sets determines how text should be rendered.  # noqa: E501
 
         :return: The text_output_mode of this SvgSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -592,7 +592,7 @@ class SvgSaveOptionsData(object):
     def text_output_mode(self, text_output_mode):
         """Sets the text_output_mode of this SvgSaveOptionsData.
 
-        Determines how text should be rendered  # noqa: E501
+        Gets or sets determines how text should be rendered.  # noqa: E501
 
         :param text_output_mode: The text_output_mode of this SvgSaveOptionsData.  # noqa: E501
         :type: str

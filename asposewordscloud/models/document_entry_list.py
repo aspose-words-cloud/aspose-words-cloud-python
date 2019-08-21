@@ -61,7 +61,7 @@ class DocumentEntryList(object):
     def document_entries(self):
         """Gets the document_entries of this DocumentEntryList.  # noqa: E501
 
-        List of documents.  # noqa: E501
+        Gets or sets list of documents.  # noqa: E501
 
         :return: The document_entries of this DocumentEntryList.  # noqa: E501
         :rtype: list[DocumentEntry]
@@ -72,7 +72,7 @@ class DocumentEntryList(object):
     def document_entries(self, document_entries):
         """Sets the document_entries of this DocumentEntryList.
 
-        List of documents.  # noqa: E501
+        Gets or sets list of documents.  # noqa: E501
 
         :param document_entries: The document_entries of this DocumentEntryList.  # noqa: E501
         :type: list[DocumentEntry]

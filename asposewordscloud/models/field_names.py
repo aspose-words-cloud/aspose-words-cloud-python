@@ -30,7 +30,7 @@ import six
 
 
 class FieldNames(object):
-    """Represents a collection of merge fields within a document. 
+    """Represents a collection of merge fields within a document.
     """
 
     """
@@ -66,7 +66,7 @@ class FieldNames(object):
     def link(self):
         """Gets the link of this FieldNames.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this FieldNames.  # noqa: E501
         :rtype: WordsApiLink
@@ -77,7 +77,7 @@ class FieldNames(object):
     def link(self, link):
         """Sets the link of this FieldNames.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this FieldNames.  # noqa: E501
         :type: WordsApiLink
@@ -87,7 +87,7 @@ class FieldNames(object):
     def names(self):
         """Gets the names of this FieldNames.  # noqa: E501
 
-        Collection of fields names.  # noqa: E501
+        Gets or sets collection of fields names.  # noqa: E501
 
         :return: The names of this FieldNames.  # noqa: E501
         :rtype: list[str]
@@ -98,7 +98,7 @@ class FieldNames(object):
     def names(self, names):
         """Sets the names of this FieldNames.
 
-        Collection of fields names.  # noqa: E501
+        Gets or sets collection of fields names.  # noqa: E501
 
         :param names: The names of this FieldNames.  # noqa: E501
         :type: list[str]

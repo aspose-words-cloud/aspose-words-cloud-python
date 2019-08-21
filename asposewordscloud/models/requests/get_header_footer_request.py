@@ -1,4 +1,4 @@
-# --------------------------------------------------------------------------------
+ --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetHeaderFooterRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -45,3 +45,4 @@ class GetHeaderFooterRequest(object):
         self.load_encoding = load_encoding
         self.password = password
         self.filter_by_type = filter_by_type
+#

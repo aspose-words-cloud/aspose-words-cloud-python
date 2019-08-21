@@ -43,6 +43,8 @@ from asposewordscloud.models.pdf_encryption_details_data import PdfEncryptionDet
 from asposewordscloud.models.preferred_width import PreferredWidth
 from asposewordscloud.models.protection_data import ProtectionData
 from asposewordscloud.models.protection_request import ProtectionRequest
+from asposewordscloud.models.range_document import RangeDocument
+from asposewordscloud.models.replace_range import ReplaceRange
 from asposewordscloud.models.replace_text_parameters import ReplaceTextParameters
 from asposewordscloud.models.save_options_data import SaveOptionsData
 from asposewordscloud.models.save_result import SaveResult
@@ -117,6 +119,7 @@ from asposewordscloud.models.paragraph_link_collection import ParagraphLinkColle
 from asposewordscloud.models.paragraph_link_collection_response import ParagraphLinkCollectionResponse
 from asposewordscloud.models.paragraph_response import ParagraphResponse
 from asposewordscloud.models.protection_data_response import ProtectionDataResponse
+from asposewordscloud.models.range_text_response import RangeTextResponse
 from asposewordscloud.models.replace_text_response import ReplaceTextResponse
 from asposewordscloud.models.revisions_modification_response import RevisionsModificationResponse
 from asposewordscloud.models.rtf_save_options_data import RtfSaveOptionsData

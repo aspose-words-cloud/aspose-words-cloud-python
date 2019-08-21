@@ -30,7 +30,7 @@ import six
 
 
 class Paragraph(object):
-    """Paragraph element
+    """Paragraph element.
     """
 
     """
@@ -71,7 +71,7 @@ class Paragraph(object):
     def link(self):
         """Gets the link of this Paragraph.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this Paragraph.  # noqa: E501
         :rtype: WordsApiLink
@@ -82,7 +82,7 @@ class Paragraph(object):
     def link(self, link):
         """Sets the link of this Paragraph.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this Paragraph.  # noqa: E501
         :type: WordsApiLink
@@ -92,7 +92,7 @@ class Paragraph(object):
     def node_id(self):
         """Gets the node_id of this Paragraph.  # noqa: E501
 
-        Node id  # noqa: E501
+        Gets or sets node id.  # noqa: E501
 
         :return: The node_id of this Paragraph.  # noqa: E501
         :rtype: str
@@ -103,7 +103,7 @@ class Paragraph(object):
     def node_id(self, node_id):
         """Sets the node_id of this Paragraph.
 
-        Node id  # noqa: E501
+        Gets or sets node id.  # noqa: E501
 
         :param node_id: The node_id of this Paragraph.  # noqa: E501
         :type: str
@@ -113,7 +113,7 @@ class Paragraph(object):
     def child_nodes(self):
         """Gets the child_nodes of this Paragraph.  # noqa: E501
 
-        Child nodes  # noqa: E501
+        Gets or sets child nodes.  # noqa: E501
 
         :return: The child_nodes of this Paragraph.  # noqa: E501
         :rtype: list[NodeLink]
@@ -124,7 +124,7 @@ class Paragraph(object):
     def child_nodes(self, child_nodes):
         """Sets the child_nodes of this Paragraph.
 
-        Child nodes  # noqa: E501
+        Gets or sets child nodes.  # noqa: E501
 
         :param child_nodes: The child_nodes of this Paragraph.  # noqa: E501
         :type: list[NodeLink]

@@ -66,7 +66,7 @@ class HyperlinkResponse(object):
     def request_id(self):
         """Gets the request_id of this HyperlinkResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this HyperlinkResponse.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class HyperlinkResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this HyperlinkResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this HyperlinkResponse.  # noqa: E501
         :type: str
@@ -87,7 +87,7 @@ class HyperlinkResponse(object):
     def hyperlink(self):
         """Gets the hyperlink of this HyperlinkResponse.  # noqa: E501
 
-        Hyperlink.  # noqa: E501
+        Gets or sets hyperlink.  # noqa: E501
 
         :return: The hyperlink of this HyperlinkResponse.  # noqa: E501
         :rtype: Hyperlink
@@ -98,7 +98,7 @@ class HyperlinkResponse(object):
     def hyperlink(self, hyperlink):
         """Sets the hyperlink of this HyperlinkResponse.
 
-        Hyperlink.  # noqa: E501
+        Gets or sets hyperlink.  # noqa: E501
 
         :param hyperlink: The hyperlink of this HyperlinkResponse.  # noqa: E501
         :type: Hyperlink

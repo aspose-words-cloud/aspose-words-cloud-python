@@ -1,4 +1,4 @@
-# --------------------------------------------------------------------------------
+ --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="ClassifyDocumentRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -45,3 +45,4 @@ class ClassifyDocumentRequest(object):
         self.password = password
         self.best_classes_count = best_classes_count
         self.taxonomy = taxonomy
+#

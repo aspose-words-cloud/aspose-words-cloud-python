@@ -30,7 +30,7 @@ import six
 
 
 class RtfSaveOptionsData(object):
-    """container class for rtf save options
+    """container class for rtf save options.
     """
 
     """
@@ -116,7 +116,7 @@ class RtfSaveOptionsData(object):
     def color_mode(self):
         """Gets the color_mode of this RtfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}  # noqa: E501
+        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
 
         :return: The color_mode of this RtfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -127,7 +127,7 @@ class RtfSaveOptionsData(object):
     def color_mode(self, color_mode):
         """Sets the color_mode of this RtfSaveOptionsData.
 
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}  # noqa: E501
+        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
 
         :param color_mode: The color_mode of this RtfSaveOptionsData.  # noqa: E501
         :type: str
@@ -137,7 +137,7 @@ class RtfSaveOptionsData(object):
     def save_format(self):
         """Gets the save_format of this RtfSaveOptionsData.  # noqa: E501
 
-        format of save  # noqa: E501
+        Gets or sets format of save.  # noqa: E501
 
         :return: The save_format of this RtfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -148,7 +148,7 @@ class RtfSaveOptionsData(object):
     def save_format(self, save_format):
         """Sets the save_format of this RtfSaveOptionsData.
 
-        format of save  # noqa: E501
+        Gets or sets format of save.  # noqa: E501
 
         :param save_format: The save_format of this RtfSaveOptionsData.  # noqa: E501
         :type: str
@@ -158,7 +158,7 @@ class RtfSaveOptionsData(object):
     def file_name(self):
         """Gets the file_name of this RtfSaveOptionsData.  # noqa: E501
 
-        name of destination file  # noqa: E501
+        Gets or sets name of destination file.  # noqa: E501
 
         :return: The file_name of this RtfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -169,7 +169,7 @@ class RtfSaveOptionsData(object):
     def file_name(self, file_name):
         """Sets the file_name of this RtfSaveOptionsData.
 
-        name of destination file  # noqa: E501
+        Gets or sets name of destination file.  # noqa: E501
 
         :param file_name: The file_name of this RtfSaveOptionsData.  # noqa: E501
         :type: str
@@ -179,7 +179,7 @@ class RtfSaveOptionsData(object):
     def dml_rendering_mode(self):
         """Gets the dml_rendering_mode of this RtfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }  # noqa: E501
+        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
 
         :return: The dml_rendering_mode of this RtfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -190,7 +190,7 @@ class RtfSaveOptionsData(object):
     def dml_rendering_mode(self, dml_rendering_mode):
         """Sets the dml_rendering_mode of this RtfSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }  # noqa: E501
+        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
 
         :param dml_rendering_mode: The dml_rendering_mode of this RtfSaveOptionsData.  # noqa: E501
         :type: str
@@ -200,7 +200,7 @@ class RtfSaveOptionsData(object):
     def dml_effects_rendering_mode(self):
         """Gets the dml_effects_rendering_mode of this RtfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }  # noqa: E501
+        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :return: The dml_effects_rendering_mode of this RtfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -211,7 +211,7 @@ class RtfSaveOptionsData(object):
     def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
         """Sets the dml_effects_rendering_mode of this RtfSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }  # noqa: E501
+        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this RtfSaveOptionsData.  # noqa: E501
         :type: str
@@ -221,7 +221,7 @@ class RtfSaveOptionsData(object):
     def zip_output(self):
         """Gets the zip_output of this RtfSaveOptionsData.  # noqa: E501
 
-        Controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
 
         :return: The zip_output of this RtfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -232,7 +232,7 @@ class RtfSaveOptionsData(object):
     def zip_output(self, zip_output):
         """Sets the zip_output of this RtfSaveOptionsData.
 
-        Controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
 
         :param zip_output: The zip_output of this RtfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -284,7 +284,7 @@ class RtfSaveOptionsData(object):
     def update_fields(self):
         """Gets the update_fields of this RtfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true  # noqa: E501
+        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true  # noqa: E501
 
         :return: The update_fields of this RtfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -295,7 +295,7 @@ class RtfSaveOptionsData(object):
     def update_fields(self, update_fields):
         """Sets the update_fields of this RtfSaveOptionsData.
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true  # noqa: E501
+        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true  # noqa: E501
 
         :param update_fields: The update_fields of this RtfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -305,7 +305,7 @@ class RtfSaveOptionsData(object):
     def export_compact_size(self):
         """Gets the export_compact_size of this RtfSaveOptionsData.  # noqa: E501
 
-        Allows to make output RTF documents smaller in size, but if they contain RTL (right-to-left) text, it will not be displayed correctly  # noqa: E501
+        Gets or sets allows to make output RTF documents smaller in size, but if they contain RTL (right-to-left) text, it will not be displayed correctly.  # noqa: E501
 
         :return: The export_compact_size of this RtfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -316,7 +316,7 @@ class RtfSaveOptionsData(object):
     def export_compact_size(self, export_compact_size):
         """Sets the export_compact_size of this RtfSaveOptionsData.
 
-        Allows to make output RTF documents smaller in size, but if they contain RTL (right-to-left) text, it will not be displayed correctly  # noqa: E501
+        Gets or sets allows to make output RTF documents smaller in size, but if they contain RTL (right-to-left) text, it will not be displayed correctly.  # noqa: E501
 
         :param export_compact_size: The export_compact_size of this RtfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -326,7 +326,7 @@ class RtfSaveOptionsData(object):
     def export_images_for_old_readers(self):
         """Gets the export_images_for_old_readers of this RtfSaveOptionsData.  # noqa: E501
 
-        Specifies whether the keywords for \"old readers\" are written to RTF or not  # noqa: E501
+        Gets or sets specifies whether the keywords for \"old readers\" are written to RTF or not.  # noqa: E501
 
         :return: The export_images_for_old_readers of this RtfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -337,7 +337,7 @@ class RtfSaveOptionsData(object):
     def export_images_for_old_readers(self, export_images_for_old_readers):
         """Sets the export_images_for_old_readers of this RtfSaveOptionsData.
 
-        Specifies whether the keywords for \"old readers\" are written to RTF or not  # noqa: E501
+        Gets or sets specifies whether the keywords for \"old readers\" are written to RTF or not.  # noqa: E501
 
         :param export_images_for_old_readers: The export_images_for_old_readers of this RtfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -347,7 +347,7 @@ class RtfSaveOptionsData(object):
     def pretty_format(self):
         """Gets the pretty_format of this RtfSaveOptionsData.  # noqa: E501
 
-        Specifies whether or not use pretty formats output  # noqa: E501
+        Gets or sets specifies whether or not use pretty formats output.  # noqa: E501
 
         :return: The pretty_format of this RtfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -358,7 +358,7 @@ class RtfSaveOptionsData(object):
     def pretty_format(self, pretty_format):
         """Sets the pretty_format of this RtfSaveOptionsData.
 
-        Specifies whether or not use pretty formats output  # noqa: E501
+        Gets or sets specifies whether or not use pretty formats output.  # noqa: E501
 
         :param pretty_format: The pretty_format of this RtfSaveOptionsData.  # noqa: E501
         :type: bool

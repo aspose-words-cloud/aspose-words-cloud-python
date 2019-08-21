@@ -121,7 +121,7 @@ class TableCellFormat(object):
     def link(self):
         """Gets the link of this TableCellFormat.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this TableCellFormat.  # noqa: E501
         :rtype: WordsApiLink
@@ -132,7 +132,7 @@ class TableCellFormat(object):
     def link(self, link):
         """Sets the link of this TableCellFormat.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this TableCellFormat.  # noqa: E501
         :type: WordsApiLink
@@ -142,7 +142,7 @@ class TableCellFormat(object):
     def bottom_padding(self):
         """Gets the bottom_padding of this TableCellFormat.  # noqa: E501
 
-        Returns or sets the amount of space (in points) to add below the contents of cell.  # noqa: E501
+        Gets or sets returns or sets the amount of space (in points) to add below the contents of cell.  # noqa: E501
 
         :return: The bottom_padding of this TableCellFormat.  # noqa: E501
         :rtype: float
@@ -153,7 +153,7 @@ class TableCellFormat(object):
     def bottom_padding(self, bottom_padding):
         """Sets the bottom_padding of this TableCellFormat.
 
-        Returns or sets the amount of space (in points) to add below the contents of cell.  # noqa: E501
+        Gets or sets returns or sets the amount of space (in points) to add below the contents of cell.  # noqa: E501
 
         :param bottom_padding: The bottom_padding of this TableCellFormat.  # noqa: E501
         :type: float
@@ -163,7 +163,7 @@ class TableCellFormat(object):
     def fit_text(self):
         """Gets the fit_text of this TableCellFormat.  # noqa: E501
 
-        If true, fits text in the cell, compressing each paragraph to the width of the cell.  # noqa: E501
+        Gets or sets if true, fits text in the cell, compressing each paragraph to the width of the cell.  # noqa: E501
 
         :return: The fit_text of this TableCellFormat.  # noqa: E501
         :rtype: bool
@@ -174,7 +174,7 @@ class TableCellFormat(object):
     def fit_text(self, fit_text):
         """Sets the fit_text of this TableCellFormat.
 
-        If true, fits text in the cell, compressing each paragraph to the width of the cell.  # noqa: E501
+        Gets or sets if true, fits text in the cell, compressing each paragraph to the width of the cell.  # noqa: E501
 
         :param fit_text: The fit_text of this TableCellFormat.  # noqa: E501
         :type: bool
@@ -184,7 +184,7 @@ class TableCellFormat(object):
     def horizontal_merge(self):
         """Gets the horizontal_merge of this TableCellFormat.  # noqa: E501
 
-        Specifies how the cell is merged horizontally with other cells in the row.  # noqa: E501
+        Gets or sets specifies how the cell is merged horizontally with other cells in the row.  # noqa: E501
 
         :return: The horizontal_merge of this TableCellFormat.  # noqa: E501
         :rtype: str
@@ -195,7 +195,7 @@ class TableCellFormat(object):
     def horizontal_merge(self, horizontal_merge):
         """Sets the horizontal_merge of this TableCellFormat.
 
-        Specifies how the cell is merged horizontally with other cells in the row.  # noqa: E501
+        Gets or sets specifies how the cell is merged horizontally with other cells in the row.  # noqa: E501
 
         :param horizontal_merge: The horizontal_merge of this TableCellFormat.  # noqa: E501
         :type: str
@@ -213,7 +213,7 @@ class TableCellFormat(object):
     def left_padding(self):
         """Gets the left_padding of this TableCellFormat.  # noqa: E501
 
-        Returns or sets the amount of space (in points) to add to the left of the contents of cell.  # noqa: E501
+        Gets or sets returns or sets the amount of space (in points) to add to the left of the contents of cell.  # noqa: E501
 
         :return: The left_padding of this TableCellFormat.  # noqa: E501
         :rtype: float
@@ -224,7 +224,7 @@ class TableCellFormat(object):
     def left_padding(self, left_padding):
         """Sets the left_padding of this TableCellFormat.
 
-        Returns or sets the amount of space (in points) to add to the left of the contents of cell.  # noqa: E501
+        Gets or sets returns or sets the amount of space (in points) to add to the left of the contents of cell.  # noqa: E501
 
         :param left_padding: The left_padding of this TableCellFormat.  # noqa: E501
         :type: float
@@ -234,7 +234,7 @@ class TableCellFormat(object):
     def orientation(self):
         """Gets the orientation of this TableCellFormat.  # noqa: E501
 
-        Returns or sets the orientation of text in a table cell.  # noqa: E501
+        Gets or sets returns or sets the orientation of text in a table cell.  # noqa: E501
 
         :return: The orientation of this TableCellFormat.  # noqa: E501
         :rtype: str
@@ -245,7 +245,7 @@ class TableCellFormat(object):
     def orientation(self, orientation):
         """Sets the orientation of this TableCellFormat.
 
-        Returns or sets the orientation of text in a table cell.  # noqa: E501
+        Gets or sets returns or sets the orientation of text in a table cell.  # noqa: E501
 
         :param orientation: The orientation of this TableCellFormat.  # noqa: E501
         :type: str
@@ -263,7 +263,7 @@ class TableCellFormat(object):
     def preferred_width(self):
         """Gets the preferred_width of this TableCellFormat.  # noqa: E501
 
-        Returns or sets the preferred width of the cell.  # noqa: E501
+        Gets or sets returns or sets the preferred width of the cell.  # noqa: E501
 
         :return: The preferred_width of this TableCellFormat.  # noqa: E501
         :rtype: PreferredWidth
@@ -274,7 +274,7 @@ class TableCellFormat(object):
     def preferred_width(self, preferred_width):
         """Sets the preferred_width of this TableCellFormat.
 
-        Returns or sets the preferred width of the cell.  # noqa: E501
+        Gets or sets returns or sets the preferred width of the cell.  # noqa: E501
 
         :param preferred_width: The preferred_width of this TableCellFormat.  # noqa: E501
         :type: PreferredWidth
@@ -284,7 +284,7 @@ class TableCellFormat(object):
     def right_padding(self):
         """Gets the right_padding of this TableCellFormat.  # noqa: E501
 
-        Returns or sets the amount of space (in points) to add to the right of the contents of cell.  # noqa: E501
+        Gets or sets returns or sets the amount of space (in points) to add to the right of the contents of cell.  # noqa: E501
 
         :return: The right_padding of this TableCellFormat.  # noqa: E501
         :rtype: float
@@ -295,7 +295,7 @@ class TableCellFormat(object):
     def right_padding(self, right_padding):
         """Sets the right_padding of this TableCellFormat.
 
-        Returns or sets the amount of space (in points) to add to the right of the contents of cell.  # noqa: E501
+        Gets or sets returns or sets the amount of space (in points) to add to the right of the contents of cell.  # noqa: E501
 
         :param right_padding: The right_padding of this TableCellFormat.  # noqa: E501
         :type: float
@@ -305,7 +305,7 @@ class TableCellFormat(object):
     def top_padding(self):
         """Gets the top_padding of this TableCellFormat.  # noqa: E501
 
-        Returns or sets the amount of space (in points) to add above the contents of cell.  # noqa: E501
+        Gets or sets returns or sets the amount of space (in points) to add above the contents of cell.  # noqa: E501
 
         :return: The top_padding of this TableCellFormat.  # noqa: E501
         :rtype: float
@@ -316,7 +316,7 @@ class TableCellFormat(object):
     def top_padding(self, top_padding):
         """Sets the top_padding of this TableCellFormat.
 
-        Returns or sets the amount of space (in points) to add above the contents of cell.  # noqa: E501
+        Gets or sets returns or sets the amount of space (in points) to add above the contents of cell.  # noqa: E501
 
         :param top_padding: The top_padding of this TableCellFormat.  # noqa: E501
         :type: float
@@ -326,7 +326,7 @@ class TableCellFormat(object):
     def vertical_alignment(self):
         """Gets the vertical_alignment of this TableCellFormat.  # noqa: E501
 
-        Returns or sets the vertical alignment of text in the cell.  # noqa: E501
+        Gets or sets returns or sets the vertical alignment of text in the cell.  # noqa: E501
 
         :return: The vertical_alignment of this TableCellFormat.  # noqa: E501
         :rtype: str
@@ -337,7 +337,7 @@ class TableCellFormat(object):
     def vertical_alignment(self, vertical_alignment):
         """Sets the vertical_alignment of this TableCellFormat.
 
-        Returns or sets the vertical alignment of text in the cell.  # noqa: E501
+        Gets or sets returns or sets the vertical alignment of text in the cell.  # noqa: E501
 
         :param vertical_alignment: The vertical_alignment of this TableCellFormat.  # noqa: E501
         :type: str
@@ -355,7 +355,7 @@ class TableCellFormat(object):
     def vertical_merge(self):
         """Gets the vertical_merge of this TableCellFormat.  # noqa: E501
 
-        Specifies how the cell is merged with other cells vertically.  # noqa: E501
+        Gets or sets specifies how the cell is merged with other cells vertically.  # noqa: E501
 
         :return: The vertical_merge of this TableCellFormat.  # noqa: E501
         :rtype: str
@@ -366,7 +366,7 @@ class TableCellFormat(object):
     def vertical_merge(self, vertical_merge):
         """Sets the vertical_merge of this TableCellFormat.
 
-        Specifies how the cell is merged with other cells vertically.  # noqa: E501
+        Gets or sets specifies how the cell is merged with other cells vertically.  # noqa: E501
 
         :param vertical_merge: The vertical_merge of this TableCellFormat.  # noqa: E501
         :type: str
@@ -384,7 +384,7 @@ class TableCellFormat(object):
     def width(self):
         """Gets the width of this TableCellFormat.  # noqa: E501
 
-        Gets the width of the cell in points.  # noqa: E501
+        Gets or sets the width of the cell in points.  # noqa: E501
 
         :return: The width of this TableCellFormat.  # noqa: E501
         :rtype: float
@@ -395,7 +395,7 @@ class TableCellFormat(object):
     def width(self, width):
         """Sets the width of this TableCellFormat.
 
-        Gets the width of the cell in points.  # noqa: E501
+        Gets or sets the width of the cell in points.  # noqa: E501
 
         :param width: The width of this TableCellFormat.  # noqa: E501
         :type: float
@@ -405,7 +405,7 @@ class TableCellFormat(object):
     def wrap_text(self):
         """Gets the wrap_text of this TableCellFormat.  # noqa: E501
 
-        If true, wrap text for the cell.  # noqa: E501
+        Gets or sets if true, wrap text for the cell.  # noqa: E501
 
         :return: The wrap_text of this TableCellFormat.  # noqa: E501
         :rtype: bool
@@ -416,7 +416,7 @@ class TableCellFormat(object):
     def wrap_text(self, wrap_text):
         """Sets the wrap_text of this TableCellFormat.
 
-        If true, wrap text for the cell.  # noqa: E501
+        Gets or sets if true, wrap text for the cell.  # noqa: E501
 
         :param wrap_text: The wrap_text of this TableCellFormat.  # noqa: E501
         :type: bool

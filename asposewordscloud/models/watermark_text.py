@@ -30,7 +30,7 @@ import six
 
 
 class WatermarkText(object):
-    """Class for insert watermark text request building. 
+    """Class for insert watermark text request building.
     """
 
     """
@@ -66,7 +66,7 @@ class WatermarkText(object):
     def text(self):
         """Gets the text of this WatermarkText.  # noqa: E501
 
-        The watermark text.  # noqa: E501
+        Gets or sets the watermark text.  # noqa: E501
 
         :return: The text of this WatermarkText.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class WatermarkText(object):
     def text(self, text):
         """Sets the text of this WatermarkText.
 
-        The watermark text.  # noqa: E501
+        Gets or sets the watermark text.  # noqa: E501
 
         :param text: The text of this WatermarkText.  # noqa: E501
         :type: str
@@ -87,7 +87,7 @@ class WatermarkText(object):
     def rotation_angle(self):
         """Gets the rotation_angle of this WatermarkText.  # noqa: E501
 
-        The watermark rotation angle.  # noqa: E501
+        Gets or sets the watermark rotation angle.  # noqa: E501
 
         :return: The rotation_angle of this WatermarkText.  # noqa: E501
         :rtype: float
@@ -98,7 +98,7 @@ class WatermarkText(object):
     def rotation_angle(self, rotation_angle):
         """Sets the rotation_angle of this WatermarkText.
 
-        The watermark rotation angle.  # noqa: E501
+        Gets or sets the watermark rotation angle.  # noqa: E501
 
         :param rotation_angle: The rotation_angle of this WatermarkText.  # noqa: E501
         :type: float

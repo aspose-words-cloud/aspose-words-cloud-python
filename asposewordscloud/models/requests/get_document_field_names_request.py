@@ -1,4 +1,4 @@
-# --------------------------------------------------------------------------------
+ --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetDocumentFieldNamesRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -43,3 +43,4 @@ class GetDocumentFieldNamesRequest(object):
         self.load_encoding = load_encoding
         self.password = password
         self.use_non_merge_fields = use_non_merge_fields
+#

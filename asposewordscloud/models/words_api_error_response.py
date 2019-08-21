@@ -30,7 +30,7 @@ import six
 
 
 class WordsApiErrorResponse(object):
-    """Response for Api error
+    """Response for Api error.
     """
 
     """
@@ -66,7 +66,7 @@ class WordsApiErrorResponse(object):
     def request_id(self):
         """Gets the request_id of this WordsApiErrorResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this WordsApiErrorResponse.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class WordsApiErrorResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this WordsApiErrorResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this WordsApiErrorResponse.  # noqa: E501
         :type: str
@@ -87,7 +87,7 @@ class WordsApiErrorResponse(object):
     def error(self):
         """Gets the error of this WordsApiErrorResponse.  # noqa: E501
 
-        Error.  # noqa: E501
+        Gets or sets error.  # noqa: E501
 
         :return: The error of this WordsApiErrorResponse.  # noqa: E501
         :rtype: ApiError
@@ -98,7 +98,7 @@ class WordsApiErrorResponse(object):
     def error(self, error):
         """Sets the error of this WordsApiErrorResponse.
 
-        Error.  # noqa: E501
+        Gets or sets error.  # noqa: E501
 
         :param error: The error of this WordsApiErrorResponse.  # noqa: E501
         :type: ApiError

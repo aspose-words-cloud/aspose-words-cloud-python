@@ -30,7 +30,7 @@ import six
 
 
 class TableLink(object):
-    """Table link element
+    """Table link element.
     """
 
     """
@@ -66,7 +66,7 @@ class TableLink(object):
     def link(self):
         """Gets the link of this TableLink.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this TableLink.  # noqa: E501
         :rtype: WordsApiLink
@@ -77,7 +77,7 @@ class TableLink(object):
     def link(self, link):
         """Sets the link of this TableLink.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this TableLink.  # noqa: E501
         :type: WordsApiLink
@@ -87,7 +87,7 @@ class TableLink(object):
     def node_id(self):
         """Gets the node_id of this TableLink.  # noqa: E501
 
-        Node id  # noqa: E501
+        Gets or sets node id.  # noqa: E501
 
         :return: The node_id of this TableLink.  # noqa: E501
         :rtype: str
@@ -98,7 +98,7 @@ class TableLink(object):
     def node_id(self, node_id):
         """Sets the node_id of this TableLink.
 
-        Node id  # noqa: E501
+        Gets or sets node id.  # noqa: E501
 
         :param node_id: The node_id of this TableLink.  # noqa: E501
         :type: str

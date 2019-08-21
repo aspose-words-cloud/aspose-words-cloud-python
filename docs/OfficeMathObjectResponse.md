@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**request_id** | **str** | Request Id. | [optional] 
-**office_math_object** | [**OfficeMathObject**](OfficeMathObject.md) | OfficeMathObject information | [optional] 
+**request_id** | **str** | Gets or sets request Id. | [optional] 
+**office_math_object** | [**OfficeMathObject**](OfficeMathObject.md) | Gets or sets officeMathObject information. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

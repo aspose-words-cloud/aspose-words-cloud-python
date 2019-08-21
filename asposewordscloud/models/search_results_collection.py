@@ -66,7 +66,7 @@ class SearchResultsCollection(object):
     def link(self):
         """Gets the link of this SearchResultsCollection.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this SearchResultsCollection.  # noqa: E501
         :rtype: WordsApiLink
@@ -77,7 +77,7 @@ class SearchResultsCollection(object):
     def link(self, link):
         """Sets the link of this SearchResultsCollection.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this SearchResultsCollection.  # noqa: E501
         :type: WordsApiLink
@@ -87,7 +87,7 @@ class SearchResultsCollection(object):
     def results_list(self):
         """Gets the results_list of this SearchResultsCollection.  # noqa: E501
 
-        Collection of comments  # noqa: E501
+        Gets or sets collection of comments.  # noqa: E501
 
         :return: The results_list of this SearchResultsCollection.  # noqa: E501
         :rtype: list[SearchResult]
@@ -98,7 +98,7 @@ class SearchResultsCollection(object):
     def results_list(self, results_list):
         """Sets the results_list of this SearchResultsCollection.
 
-        Collection of comments  # noqa: E501
+        Gets or sets collection of comments.  # noqa: E501
 
         :param results_list: The results_list of this SearchResultsCollection.  # noqa: E501
         :type: list[SearchResult]

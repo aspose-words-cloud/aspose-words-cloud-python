@@ -81,7 +81,7 @@ class ApiError(object):
     def code(self):
         """Gets the code of this ApiError.  # noqa: E501
 
-        Api error code.  # noqa: E501
+        Gets or sets api error code.  # noqa: E501
 
         :return: The code of this ApiError.  # noqa: E501
         :rtype: str
@@ -92,7 +92,7 @@ class ApiError(object):
     def code(self, code):
         """Sets the code of this ApiError.
 
-        Api error code.  # noqa: E501
+        Gets or sets api error code.  # noqa: E501
 
         :param code: The code of this ApiError.  # noqa: E501
         :type: str
@@ -102,7 +102,7 @@ class ApiError(object):
     def message(self):
         """Gets the message of this ApiError.  # noqa: E501
 
-        Error message.  # noqa: E501
+        Gets or sets error message.  # noqa: E501
 
         :return: The message of this ApiError.  # noqa: E501
         :rtype: str
@@ -113,7 +113,7 @@ class ApiError(object):
     def message(self, message):
         """Sets the message of this ApiError.
 
-        Error message.  # noqa: E501
+        Gets or sets error message.  # noqa: E501
 
         :param message: The message of this ApiError.  # noqa: E501
         :type: str
@@ -123,7 +123,7 @@ class ApiError(object):
     def description(self):
         """Gets the description of this ApiError.  # noqa: E501
 
-        Error description.  # noqa: E501
+        Gets or sets error description.  # noqa: E501
 
         :return: The description of this ApiError.  # noqa: E501
         :rtype: str
@@ -134,7 +134,7 @@ class ApiError(object):
     def description(self, description):
         """Sets the description of this ApiError.
 
-        Error description.  # noqa: E501
+        Gets or sets error description.  # noqa: E501
 
         :param description: The description of this ApiError.  # noqa: E501
         :type: str
@@ -144,7 +144,7 @@ class ApiError(object):
     def date_time(self):
         """Gets the date_time of this ApiError.  # noqa: E501
 
-        Server datetime.  # noqa: E501
+        Gets or sets server datetime.  # noqa: E501
 
         :return: The date_time of this ApiError.  # noqa: E501
         :rtype: datetime
@@ -155,7 +155,7 @@ class ApiError(object):
     def date_time(self, date_time):
         """Sets the date_time of this ApiError.
 
-        Server datetime.  # noqa: E501
+        Gets or sets server datetime.  # noqa: E501
 
         :param date_time: The date_time of this ApiError.  # noqa: E501
         :type: datetime
@@ -165,7 +165,7 @@ class ApiError(object):
     def inner_error(self):
         """Gets the inner_error of this ApiError.  # noqa: E501
 
-        Inner error.  # noqa: E501
+        Gets or sets inner error.  # noqa: E501
 
         :return: The inner_error of this ApiError.  # noqa: E501
         :rtype: ApiError
@@ -176,7 +176,7 @@ class ApiError(object):
     def inner_error(self, inner_error):
         """Sets the inner_error of this ApiError.
 
-        Inner error.  # noqa: E501
+        Gets or sets inner error.  # noqa: E501
 
         :param inner_error: The inner_error of this ApiError.  # noqa: E501
         :type: ApiError

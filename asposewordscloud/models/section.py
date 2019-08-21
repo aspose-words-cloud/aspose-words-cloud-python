@@ -30,7 +30,7 @@ import six
 
 
 class Section(object):
-    """Section element
+    """Section element.
     """
 
     """
@@ -86,7 +86,7 @@ class Section(object):
     def link(self):
         """Gets the link of this Section.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this Section.  # noqa: E501
         :rtype: WordsApiLink
@@ -97,7 +97,7 @@ class Section(object):
     def link(self, link):
         """Sets the link of this Section.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this Section.  # noqa: E501
         :type: WordsApiLink
@@ -107,7 +107,7 @@ class Section(object):
     def child_nodes(self):
         """Gets the child_nodes of this Section.  # noqa: E501
 
-        Child nodes.  # noqa: E501
+        Gets or sets child nodes.  # noqa: E501
 
         :return: The child_nodes of this Section.  # noqa: E501
         :rtype: list[NodeLink]
@@ -118,7 +118,7 @@ class Section(object):
     def child_nodes(self, child_nodes):
         """Sets the child_nodes of this Section.
 
-        Child nodes.  # noqa: E501
+        Gets or sets child nodes.  # noqa: E501
 
         :param child_nodes: The child_nodes of this Section.  # noqa: E501
         :type: list[NodeLink]
@@ -128,7 +128,7 @@ class Section(object):
     def header_footers(self):
         """Gets the header_footers of this Section.  # noqa: E501
 
-        Link to HeaderFooters resource  # noqa: E501
+        Gets or sets link to HeaderFooters resource.  # noqa: E501
 
         :return: The header_footers of this Section.  # noqa: E501
         :rtype: LinkElement
@@ -139,7 +139,7 @@ class Section(object):
     def header_footers(self, header_footers):
         """Sets the header_footers of this Section.
 
-        Link to HeaderFooters resource  # noqa: E501
+        Gets or sets link to HeaderFooters resource.  # noqa: E501
 
         :param header_footers: The header_footers of this Section.  # noqa: E501
         :type: LinkElement
@@ -149,7 +149,7 @@ class Section(object):
     def page_setup(self):
         """Gets the page_setup of this Section.  # noqa: E501
 
-        Link to PageSetup resource  # noqa: E501
+        Gets or sets link to PageSetup resource.  # noqa: E501
 
         :return: The page_setup of this Section.  # noqa: E501
         :rtype: LinkElement
@@ -160,7 +160,7 @@ class Section(object):
     def page_setup(self, page_setup):
         """Sets the page_setup of this Section.
 
-        Link to PageSetup resource  # noqa: E501
+        Gets or sets link to PageSetup resource.  # noqa: E501
 
         :param page_setup: The page_setup of this Section.  # noqa: E501
         :type: LinkElement
@@ -170,7 +170,7 @@ class Section(object):
     def paragraphs(self):
         """Gets the paragraphs of this Section.  # noqa: E501
 
-        Link to Paragraphs resource  # noqa: E501
+        Gets or sets link to Paragraphs resource.  # noqa: E501
 
         :return: The paragraphs of this Section.  # noqa: E501
         :rtype: LinkElement
@@ -181,7 +181,7 @@ class Section(object):
     def paragraphs(self, paragraphs):
         """Sets the paragraphs of this Section.
 
-        Link to Paragraphs resource  # noqa: E501
+        Gets or sets link to Paragraphs resource.  # noqa: E501
 
         :param paragraphs: The paragraphs of this Section.  # noqa: E501
         :type: LinkElement
@@ -191,7 +191,7 @@ class Section(object):
     def tables(self):
         """Gets the tables of this Section.  # noqa: E501
 
-        Link to Tables resource  # noqa: E501
+        Gets or sets link to Tables resource.  # noqa: E501
 
         :return: The tables of this Section.  # noqa: E501
         :rtype: LinkElement
@@ -202,7 +202,7 @@ class Section(object):
     def tables(self, tables):
         """Sets the tables of this Section.
 
-        Link to Tables resource  # noqa: E501
+        Gets or sets link to Tables resource.  # noqa: E501
 
         :param tables: The tables of this Section.  # noqa: E501
         :type: LinkElement

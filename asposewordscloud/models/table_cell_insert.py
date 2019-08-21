@@ -30,7 +30,7 @@ import six
 
 
 class TableCellInsert(object):
-    """Table cell element
+    """Table cell element.
     """
 
     """
@@ -61,7 +61,7 @@ class TableCellInsert(object):
     def insert_after(self):
         """Gets the insert_after of this TableCellInsert.  # noqa: E501
 
-        Table cell will be inserted after cell with specified 0-based index.  # noqa: E501
+        Gets or sets table cell will be inserted after cell with specified 0-based index.  # noqa: E501
 
         :return: The insert_after of this TableCellInsert.  # noqa: E501
         :rtype: int
@@ -72,7 +72,7 @@ class TableCellInsert(object):
     def insert_after(self, insert_after):
         """Sets the insert_after of this TableCellInsert.
 
-        Table cell will be inserted after cell with specified 0-based index.  # noqa: E501
+        Gets or sets table cell will be inserted after cell with specified 0-based index.  # noqa: E501
 
         :param insert_after: The insert_after of this TableCellInsert.  # noqa: E501
         :type: int
