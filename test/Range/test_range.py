@@ -47,19 +47,6 @@ class TestRange(BaseTestContext):
         result = self.words_api.get_range_text(request)
         self.assertEqual(expected_text, result.text)
 
-    def test_get_range_text2(self):
-        range_start = 'id0.0'
-        expected_text = 'This is HEADER '
-
-        local_name = 'RangeGet.doc'
-        remote_name = 'TestGetRangeText2.doc'
-
-        self.upload_file(os.path.join(self.remote_test_folder, remote_name) , os.path.join(self.local_test_folder, self.test_folder, local_name))
-
-        request = asposewordscloud.models.requests.GetRangeText2Request(remote_name, range_start, self.remote_test_folder)
-        result = self.words_api.get_range_text2(request)
-        self.assertEqual(expected_text, result.text)
-
     def test_remove_range(self):
         range_start = 'id0.0'
         range_end = 'id0.1'
