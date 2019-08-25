@@ -1,4 +1,4 @@
- --------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="DownloadFileRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -37,4 +37,3 @@ class DownloadFileRequest(object):
         self.path = path
         self.storage_name = storage_name
         self.version_id = version_id
-#

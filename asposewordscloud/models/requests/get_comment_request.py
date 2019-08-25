@@ -1,4 +1,4 @@
- --------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetCommentRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -43,4 +43,3 @@ class GetCommentRequest(object):
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
-#

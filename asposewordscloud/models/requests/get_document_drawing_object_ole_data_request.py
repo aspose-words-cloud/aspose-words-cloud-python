@@ -1,4 +1,4 @@
- --------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetDocumentDrawingObjectOleDataRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -45,4 +45,3 @@ class GetDocumentDrawingObjectOleDataRequest(object):
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
-#

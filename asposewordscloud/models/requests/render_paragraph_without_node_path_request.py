@@ -1,4 +1,4 @@
- --------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="RenderParagraphWithoutNodePathRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -47,4 +47,3 @@ class RenderParagraphWithoutNodePathRequest(object):
         self.load_encoding = load_encoding
         self.password = password
         self.fonts_location = fonts_location
-#

@@ -1,4 +1,4 @@
- --------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="DeleteFolderRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -37,4 +37,3 @@ class DeleteFolderRequest(object):
         self.path = path
         self.storage_name = storage_name
         self.recursive = recursive
-#

@@ -1,4 +1,4 @@
- --------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="RenderDrawingObjectRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -49,4 +49,3 @@ class RenderDrawingObjectRequest(object):
         self.load_encoding = load_encoding
         self.password = password
         self.fonts_location = fonts_location
-#

@@ -1,4 +1,4 @@
- --------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetParagraphWithoutNodePathRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -43,4 +43,3 @@ class GetParagraphWithoutNodePathRequest(object):
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
-#

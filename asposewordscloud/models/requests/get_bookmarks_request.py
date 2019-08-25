@@ -1,4 +1,4 @@
- --------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetBookmarksRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -41,4 +41,3 @@ class GetBookmarksRequest(object):
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
-#

@@ -1,4 +1,4 @@
- --------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="UpdateFieldsRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -43,4 +43,3 @@ class UpdateFieldsRequest(object):
         self.load_encoding = load_encoding
         self.password = password
         self.dest_file_name = dest_file_name
-#

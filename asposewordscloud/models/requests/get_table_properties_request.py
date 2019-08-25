@@ -1,4 +1,4 @@
- --------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetTablePropertiesRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -45,4 +45,3 @@ class GetTablePropertiesRequest(object):
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
-#

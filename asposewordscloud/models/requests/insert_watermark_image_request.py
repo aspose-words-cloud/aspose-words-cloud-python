@@ -1,4 +1,4 @@
- --------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="InsertWatermarkImageRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -53,4 +53,3 @@ class InsertWatermarkImageRequest(object):
         self.revision_date_time = revision_date_time
         self.rotation_angle = rotation_angle
         self.image = image
-#

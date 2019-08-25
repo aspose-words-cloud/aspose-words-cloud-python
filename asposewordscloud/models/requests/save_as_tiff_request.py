@@ -1,4 +1,4 @@
- --------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="SaveAsTiffRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -83,4 +83,3 @@ class SaveAsTiffRequest(object):
         self.tiff_binarization_method = tiff_binarization_method
         self.zip_output = zip_output
         self.fonts_location = fonts_location
-#

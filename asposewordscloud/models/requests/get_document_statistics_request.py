@@ -1,4 +1,4 @@
- --------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetDocumentStatisticsRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -47,4 +47,3 @@ class GetDocumentStatisticsRequest(object):
         self.include_comments = include_comments
         self.include_footnotes = include_footnotes
         self.include_text_in_shapes = include_text_in_shapes
-#

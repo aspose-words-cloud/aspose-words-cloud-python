@@ -1,4 +1,4 @@
- --------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="ExecuteMailMergeRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -53,4 +53,3 @@ class ExecuteMailMergeRequest(object):
         self.cleanup = cleanup
         self.use_whole_paragraph_as_region = use_whole_paragraph_as_region
         self.dest_file_name = dest_file_name
-#

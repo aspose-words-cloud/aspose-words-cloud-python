@@ -1,4 +1,4 @@
- --------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="MoveFolderRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
@@ -39,4 +39,3 @@ class MoveFolderRequest(object):
         self.src_path = src_path
         self.src_storage_name = src_storage_name
         self.dest_storage_name = dest_storage_name
-#
