@@ -1,3 +1,4 @@
+
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetBookmarkByNameRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud

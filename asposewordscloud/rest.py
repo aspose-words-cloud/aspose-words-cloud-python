@@ -334,7 +334,7 @@ class ApiException(Exception):
 
         
     def init_error_response(self, json_object):
-        self.body = WordsApiErrorResponse(json_object.get("RequestId"), self.init_error(json_object.get("Error")))
+        self.body = WordsApiErrorResponse(json_object["RequestId"], self.init_error(json_object["Error"]))
         
 
     def init_error(self, error_object):

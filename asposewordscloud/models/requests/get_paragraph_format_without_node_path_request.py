@@ -1,3 +1,4 @@
+
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetParagraphFormatWithoutNodePathRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud

@@ -160,9 +160,6 @@ class ApiClient(object):
         else:
             url = (self.configuration.host + resource_path).encode('utf8')
 
-        if url.endswith('token'):
-            url = 'https://api-qa.aspose.cloud/connect/token'
-
         # perform request and return response
         response_data = self.request(
             method, url, query_params=query_params, headers=header_params,
