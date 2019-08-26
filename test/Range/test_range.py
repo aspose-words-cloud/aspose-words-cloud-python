@@ -60,18 +60,6 @@ class TestRange(BaseTestContext):
         result = self.words_api.remove_range(request)
         self.assertIsNotNone(result)
 
-    def test_remove_range2(self):
-        range_start = 'id0.0'
-
-        local_name = 'RangeGet.doc'
-        remote_name = 'TestRemoveRange.doc'
-
-        self.upload_file(os.path.join(self.remote_test_folder, remote_name) , os.path.join(self.local_test_folder, self.test_folder, local_name))
-
-        request = asposewordscloud.models.requests.RemoveRange2Request(remote_name, range_start, self.remote_test_folder)
-        result = self.words_api.remove_range2(request)
-        self.assertIsNotNone(result)
-
     def test_save_as_range(self):
         range_start = 'id0.0'
         range_end = 'id0.1'
@@ -87,20 +75,6 @@ class TestRange(BaseTestContext):
         result = self.words_api.save_as_range(request)
         self.assertIsNotNone(result)
 
-    def test_save_as_range2(self):
-        range_start = 'id0.0'
-        new_doc_name = os.path.join(self.remote_test_folder, 'NewDoc2.docx')
-        range_doc = asposewordscloud.models.RangeDocument(new_doc_name)
-
-        local_name = 'RangeGet.doc'
-        remote_name = 'TestSaveAsRange2.doc'
-
-        self.upload_file(os.path.join(self.remote_test_folder, remote_name) , os.path.join(self.local_test_folder, self.test_folder, local_name))
-
-        request = asposewordscloud.models.requests.SaveAsRange2Request(remote_name, range_start, range_doc, self.remote_test_folder)
-        result = self.words_api.save_as_range2(request)
-        self.assertIsNotNone(result)
-
     def test_replace_with_text(self):
         range_start = 'id0.0'
         range_end = 'id0.1'
@@ -114,18 +88,4 @@ class TestRange(BaseTestContext):
 
         request = asposewordscloud.models.requests.ReplaceWithTextRequest(remote_name, range_start, replacement, range_end, self.remote_test_folder)
         result = self.words_api.replace_with_text(request)
-        self.assertIsNotNone(result)
-
-    def test_replace_with_text2(self):
-        range_start = 'id0.0'
-        new_text = 'Replace header'
-        replacement = asposewordscloud.models.ReplaceRange(new_text)
-
-        local_name = 'RangeGet.doc'
-        remote_name = 'TestReplaceWithText.doc'
-
-        self.upload_file(os.path.join(self.remote_test_folder, remote_name) , os.path.join(self.local_test_folder, self.test_folder, local_name))
-
-        request = asposewordscloud.models.requests.ReplaceWithText2Request(remote_name, range_start, replacement, self.remote_test_folder)
-        result = self.words_api.replace_with_text2(request)
         self.assertIsNotNone(result)
