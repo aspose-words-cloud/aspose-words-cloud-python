@@ -1,3 +1,4 @@
+
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="UpdateDrawingObjectRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud

@@ -48,4 +48,8 @@ class DeleteDrawingObjectWithoutNodePathRequest(object):
         self.password = password
         self.dest_file_name = dest_file_name
         self.revision_author = revision_author
+<<<<<<< HEAD
         self.revision_date_time = revision_date_time
+=======
+        self.revision_date_time = revision_date_time
+>>>>>>> gitlab/WORDSCLOUD-759

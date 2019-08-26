@@ -23932,4 +23932,3 @@ class WordsApi(object):
                                         files={}, _return_http_data_only=True)
         access_token = data['access_token'] if six.PY3 else data['access_token'].encode('utf8')
         self.api_client.configuration.access_token = access_token
-
