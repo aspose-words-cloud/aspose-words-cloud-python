@@ -1,7 +1,3 @@
-default:
-  after_script:
-    - chmod 777 -R .
-
 stages:
   - build&test
   - test-publishing
@@ -11,6 +7,8 @@ stages:
 
 2.7-tests:
   stage: build&test  
+  after_script:
+    - chmod 777 -R .
   script: 
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
@@ -28,6 +26,8 @@ stages:
 
 3.6-tests:
   stage: build&test  
+  after_script:
+    - chmod 777 -R .
   script: 
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
