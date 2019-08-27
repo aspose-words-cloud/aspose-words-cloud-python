@@ -1,3 +1,7 @@
+default:
+  after_script:
+    - chmod 777 -R .
+
 stages:
   - build&test
   - test-publishing
