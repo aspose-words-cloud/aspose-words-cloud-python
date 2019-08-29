@@ -12,7 +12,7 @@ stages:
   script: 
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
-    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/build.sh
+    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/test.sh
     - ls -l
   artifacts:
     paths:       
@@ -31,7 +31,7 @@ stages:
   script: 
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
-    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.6 bash scripts/build.sh
+    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.6 bash scripts/test.sh
     - ls -l
   artifacts:
     paths:       
