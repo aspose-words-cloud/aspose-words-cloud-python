@@ -1,5 +1,6 @@
 stages:
   - build&test
+  - linter
   - test-publishing
   - test-publishing-test
   - publishing
@@ -32,7 +33,6 @@ stages:
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
     - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.6 bash scripts/test.sh
-    - ls -l
   artifacts:
     paths:       
       - 'nosetests.xml'  
@@ -40,6 +40,16 @@ stages:
     reports: 
       junit: 
         - 'nosetests.xml'
+  tags:
+    - awcloud-linux
+
+linter:
+  stage: linter
+  script: 
+    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/linter.sh
+  artifacts:
+    paths:       
+      - 'lintResults.txt'
   tags:
     - awcloud-linux
 
