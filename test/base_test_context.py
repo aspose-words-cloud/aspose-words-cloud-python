@@ -43,7 +43,7 @@ class BaseTestContext(unittest.TestCase):
         self.local_common_folder = os.path.join(self.local_test_folder, 'Common')
         creds_path = os.path.join(root_path, 'Settings', 'servercreds.json')
         if not os.path.exists(creds_path):
-            raise ValueError('Credential file Settings/servercreds.json is not found')
+            raise FileNotFoundError('Credential file Settings/servercreds.json is not found')
 
         with open(os.path.join(root_path, 'Settings', 'servercreds.json')) as f:
             creds = json.loads(f.read())
