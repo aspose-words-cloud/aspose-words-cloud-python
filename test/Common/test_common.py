@@ -40,16 +40,16 @@ class TestCommon(BaseTestContext):
     #
     def test_missing_credentials(self):
         try:
-            super().setUp()
+            super(TestCommon, self).setUp()
             self.fail("Set up must throw an error")
-        except FileNotFoundError as e:
+        except IOError as e:
            self.assertTrue(True)
         finally:
             self.rename_back()
 
     def test_token_expires(self):
         self.rename_back()
-        super().setUp()
+        super(TestCommon, self).setUp()
         self.words_api.api_client.configuration.access_token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE1Njc1ODg2OTksImV4cCI6MTU2NzY3NTA5OSwiaXNzIjoiaHR0cHM6Ly9hcGktcWEuYXNwb3NlLmNsb3VkIiwiYXVkIjpbImh0dHBzOi8vYXBpLXFhLmFzcG9zZS5jbG91ZC9yZXNvdXJjZXMiLCJhcGkucGxhdGZvcm0iLCJhcGkucHJvZHVjdHMiXSwiY2xpZW50X2lkIjoiNzhCNjM3RjYtQjRDQy00MURFLUE2MTktRDhCRDlGQzJCNkI2IiwiY2xpZW50X2lkU3J2SWQiOiIiLCJzY29wZSI6WyJhcGkucGxhdGZvcm0iLCJhcGkucHJvZHVjdHMiXX0.NcsvIWr8zpHIGKTtVQIevRUJchTc2NqwgjNIVg3J9uXowr6lbsLgV6v4KsVlR6yssjkfjZEsRNOExaxdga7Mrv6RvXhgZDs5-_6HrtMdIHUe_1F5kbS5Cz1evyOeQhfdeRnZWHR-BZOAzyB__1gXBo2MObPF3NIt6j6vPWbHU9DSLrjEWPCULVdmLtl6-NDYHvNR4AbiaH-qfU8j1bMLdBfyzK2uX376EpbinSZHeNeFp4dOOhAOpDR-p_kCt4O4z5Tjrcuyw9PrCBmyHWwMSa-8g95Jy-_d89VAZvS1xEFHNX_hZilEPseGPUzDMwg_oOIBfIVcRS3NxqWvEWof7A"
         request = asposewordscloud.models.requests.ClassifyRequest('Try text classification', '3')
         result = self.words_api.classify(request)
