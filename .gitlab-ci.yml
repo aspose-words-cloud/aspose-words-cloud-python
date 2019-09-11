@@ -14,13 +14,6 @@ stages:
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
     - docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/test-unittest.sh
-    - ls -l
-  artifacts:
-    paths:       
-      - 'nosetests.xml'  
-    reports: 
-      junit: 
-        - 'nosetests.xml'
   tags:
     - awcloud-linux
 
@@ -32,12 +25,6 @@ stages:
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
     - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.6 bash scripts/test-unittest.sh
-  artifacts:
-    paths:       
-      - 'nosetests.xml'  
-    reports: 
-      junit: 
-        - 'nosetests.xml'
   tags:
     - awcloud-linux
 
