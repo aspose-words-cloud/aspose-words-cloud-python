@@ -17,14 +17,14 @@ stages:
   tags:
     - awcloud-linux
 
-3.6-tests:
+3.7-tests:
   stage: build&test  
   after_script:
     - sudo chmod 777 -R $(find -name '*__pycache__*')
   script: 
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
-    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.6 bash scripts/test-unittest.sh
+    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.7 bash scripts/test-unittest.sh
   tags:
     - awcloud-linux
 
@@ -33,7 +33,7 @@ linter:
   tags: 
     - awcloud-linux
   script: 
-    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.6 bash scripts/linter.sh
+    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.7 bash scripts/linter.sh
   artifacts:
     paths:
       - 'lintResults.txt'
@@ -68,7 +68,7 @@ publish-test:
 test-package:
   stage: test-publishing-test
   script: 
-    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.6 bash scripts/test-package.sh $WordsAppSid $WordsAppKey $WordsBaseUrl
+    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.7 bash scripts/test-package.sh $WordsAppSid $WordsAppKey $WordsBaseUrl
   tags: 
     - awcloud-linux
   artifacts:
