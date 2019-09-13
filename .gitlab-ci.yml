@@ -94,7 +94,7 @@ add version tag:
     - testPackage
   before_script:
     - $env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-python.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS
-    - $env:SDK_VERSION += ((Get-Date).AddMonths(1)).tostring("yy.M")
+    - '$env:SDK_VERSION = ( ( ConvertFrom-Json -InputObject $jsonString ).info.version | Select-String -Pattern "^\d+\.\d+" ).Matches[0].Value'
   script: 
     - git tag -a $env:SDK_VERSION -m 'version $env:SDK_VERSION' | exit 0
     - git push $env:ORIGIN $env:SDK_VERSION    
