@@ -86,7 +86,7 @@ class OfficeMathObject(object):
     def link(self):
         """Gets the link of this OfficeMathObject.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this OfficeMathObject.  # noqa: E501
         :rtype: WordsApiLink
@@ -97,7 +97,7 @@ class OfficeMathObject(object):
     def link(self, link):
         """Sets the link of this OfficeMathObject.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this OfficeMathObject.  # noqa: E501
         :type: WordsApiLink
@@ -107,7 +107,7 @@ class OfficeMathObject(object):
     def node_id(self):
         """Gets the node_id of this OfficeMathObject.  # noqa: E501
 
-        Node id  # noqa: E501
+        Gets or sets node id.  # noqa: E501
 
         :return: The node_id of this OfficeMathObject.  # noqa: E501
         :rtype: str
@@ -118,7 +118,7 @@ class OfficeMathObject(object):
     def node_id(self, node_id):
         """Sets the node_id of this OfficeMathObject.
 
-        Node id  # noqa: E501
+        Gets or sets node id.  # noqa: E501
 
         :param node_id: The node_id of this OfficeMathObject.  # noqa: E501
         :type: str
@@ -128,7 +128,7 @@ class OfficeMathObject(object):
     def content(self):
         """Gets the content of this OfficeMathObject.  # noqa: E501
 
-        Content of footnote.  # noqa: E501
+        Gets or sets content of footnote.  # noqa: E501
 
         :return: The content of this OfficeMathObject.  # noqa: E501
         :rtype: StoryChildNodes
@@ -139,7 +139,7 @@ class OfficeMathObject(object):
     def content(self, content):
         """Sets the content of this OfficeMathObject.
 
-        Content of footnote.  # noqa: E501
+        Gets or sets content of footnote.  # noqa: E501
 
         :param content: The content of this OfficeMathObject.  # noqa: E501
         :type: StoryChildNodes
@@ -149,7 +149,7 @@ class OfficeMathObject(object):
     def display_type(self):
         """Gets the display_type of this OfficeMathObject.  # noqa: E501
 
-        Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text or displayed on its own line.  # noqa: E501
+        Gets or sets /sets Office Math display format type which represents whether an equation is displayed inline with the text or displayed on its own line.  # noqa: E501
 
         :return: The display_type of this OfficeMathObject.  # noqa: E501
         :rtype: str
@@ -160,7 +160,7 @@ class OfficeMathObject(object):
     def display_type(self, display_type):
         """Sets the display_type of this OfficeMathObject.
 
-        Gets/sets Office Math display format type which represents whether an equation is displayed inline with the text or displayed on its own line.  # noqa: E501
+        Gets or sets /sets Office Math display format type which represents whether an equation is displayed inline with the text or displayed on its own line.  # noqa: E501
 
         :param display_type: The display_type of this OfficeMathObject.  # noqa: E501
         :type: str
@@ -178,7 +178,7 @@ class OfficeMathObject(object):
     def justification(self):
         """Gets the justification of this OfficeMathObject.  # noqa: E501
 
-        Gets/sets Office Math justification.  # noqa: E501
+        Gets or sets /sets Office Math justification.  # noqa: E501
 
         :return: The justification of this OfficeMathObject.  # noqa: E501
         :rtype: str
@@ -189,7 +189,7 @@ class OfficeMathObject(object):
     def justification(self, justification):
         """Sets the justification of this OfficeMathObject.
 
-        Gets/sets Office Math justification.  # noqa: E501
+        Gets or sets /sets Office Math justification.  # noqa: E501
 
         :param justification: The justification of this OfficeMathObject.  # noqa: E501
         :type: str
@@ -207,7 +207,7 @@ class OfficeMathObject(object):
     def math_object_type(self):
         """Gets the math_object_type of this OfficeMathObject.  # noqa: E501
 
-        Gets type Aspose.Words.Math.OfficeMath.MathObjectType of this Office Math object.  # noqa: E501
+        Gets or sets type Aspose.Words.Math.OfficeMath.MathObjectType of this Office Math object.  # noqa: E501
 
         :return: The math_object_type of this OfficeMathObject.  # noqa: E501
         :rtype: str
@@ -218,7 +218,7 @@ class OfficeMathObject(object):
     def math_object_type(self, math_object_type):
         """Sets the math_object_type of this OfficeMathObject.
 
-        Gets type Aspose.Words.Math.OfficeMath.MathObjectType of this Office Math object.  # noqa: E501
+        Gets or sets type Aspose.Words.Math.OfficeMath.MathObjectType of this Office Math object.  # noqa: E501
 
         :param math_object_type: The math_object_type of this OfficeMathObject.  # noqa: E501
         :type: str

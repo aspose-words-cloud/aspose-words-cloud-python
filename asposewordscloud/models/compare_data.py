@@ -30,7 +30,7 @@ import six
 
 
 class CompareData(object):
-    """Container class for compare documents
+    """Container class for compare documents.
     """
 
     """
@@ -71,7 +71,7 @@ class CompareData(object):
     def comparing_with_document(self):
         """Gets the comparing_with_document of this CompareData.  # noqa: E501
 
-        Path to document to compare at the server.  # noqa: E501
+        Gets or sets path to document to compare at the server.  # noqa: E501
 
         :return: The comparing_with_document of this CompareData.  # noqa: E501
         :rtype: str
@@ -82,7 +82,7 @@ class CompareData(object):
     def comparing_with_document(self, comparing_with_document):
         """Sets the comparing_with_document of this CompareData.
 
-        Path to document to compare at the server.  # noqa: E501
+        Gets or sets path to document to compare at the server.  # noqa: E501
 
         :param comparing_with_document: The comparing_with_document of this CompareData.  # noqa: E501
         :type: str
@@ -92,7 +92,7 @@ class CompareData(object):
     def author(self):
         """Gets the author of this CompareData.  # noqa: E501
 
-        Initials of the author to use for revisions.  # noqa: E501
+        Gets or sets initials of the author to use for revisions.  # noqa: E501
 
         :return: The author of this CompareData.  # noqa: E501
         :rtype: str
@@ -103,7 +103,7 @@ class CompareData(object):
     def author(self, author):
         """Sets the author of this CompareData.
 
-        Initials of the author to use for revisions.  # noqa: E501
+        Gets or sets initials of the author to use for revisions.  # noqa: E501
 
         :param author: The author of this CompareData.  # noqa: E501
         :type: str
@@ -113,7 +113,7 @@ class CompareData(object):
     def date_time(self):
         """Gets the date_time of this CompareData.  # noqa: E501
 
-        The date and time to use for revisions.               # noqa: E501
+        Gets or sets the date and time to use for revisions.               # noqa: E501
 
         :return: The date_time of this CompareData.  # noqa: E501
         :rtype: datetime
@@ -124,7 +124,7 @@ class CompareData(object):
     def date_time(self, date_time):
         """Sets the date_time of this CompareData.
 
-        The date and time to use for revisions.               # noqa: E501
+        Gets or sets the date and time to use for revisions.               # noqa: E501
 
         :param date_time: The date_time of this CompareData.  # noqa: E501
         :type: datetime

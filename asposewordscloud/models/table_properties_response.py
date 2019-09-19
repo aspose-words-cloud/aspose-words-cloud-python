@@ -30,7 +30,7 @@ import six
 
 
 class TablePropertiesResponse(object):
-    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/tables/{0}/properties
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/tables/{0}/properties.
     """
 
     """
@@ -66,7 +66,7 @@ class TablePropertiesResponse(object):
     def request_id(self):
         """Gets the request_id of this TablePropertiesResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this TablePropertiesResponse.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class TablePropertiesResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this TablePropertiesResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this TablePropertiesResponse.  # noqa: E501
         :type: str
@@ -87,7 +87,7 @@ class TablePropertiesResponse(object):
     def properties(self):
         """Gets the properties of this TablePropertiesResponse.  # noqa: E501
 
-        Table.  # noqa: E501
+        Gets or sets table.  # noqa: E501
 
         :return: The properties of this TablePropertiesResponse.  # noqa: E501
         :rtype: TableProperties
@@ -98,7 +98,7 @@ class TablePropertiesResponse(object):
     def properties(self, properties):
         """Sets the properties of this TablePropertiesResponse.
 
-        Table.  # noqa: E501
+        Gets or sets table.  # noqa: E501
 
         :param properties: The properties of this TablePropertiesResponse.  # noqa: E501
         :type: TableProperties

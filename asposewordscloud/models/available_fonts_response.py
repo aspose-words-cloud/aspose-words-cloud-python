@@ -30,7 +30,7 @@ import six
 
 
 class AvailableFontsResponse(object):
-    """The list of fonts, available for document processing
+    """The list of fonts, available for document processing.
     """
 
     """
@@ -76,7 +76,7 @@ class AvailableFontsResponse(object):
     def request_id(self):
         """Gets the request_id of this AvailableFontsResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this AvailableFontsResponse.  # noqa: E501
         :rtype: str
@@ -87,7 +87,7 @@ class AvailableFontsResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this AvailableFontsResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this AvailableFontsResponse.  # noqa: E501
         :type: str
@@ -97,7 +97,7 @@ class AvailableFontsResponse(object):
     def additional_fonts(self):
         """Gets the additional_fonts of this AvailableFontsResponse.  # noqa: E501
 
-        The list of addititional fonts, provided by aspose team  # noqa: E501
+        Gets or sets the list of addititional fonts, provided by aspose team.  # noqa: E501
 
         :return: The additional_fonts of this AvailableFontsResponse.  # noqa: E501
         :rtype: list[FontInfo]
@@ -108,7 +108,7 @@ class AvailableFontsResponse(object):
     def additional_fonts(self, additional_fonts):
         """Sets the additional_fonts of this AvailableFontsResponse.
 
-        The list of addititional fonts, provided by aspose team  # noqa: E501
+        Gets or sets the list of addititional fonts, provided by aspose team.  # noqa: E501
 
         :param additional_fonts: The additional_fonts of this AvailableFontsResponse.  # noqa: E501
         :type: list[FontInfo]
@@ -118,7 +118,7 @@ class AvailableFontsResponse(object):
     def custom_fonts(self):
         """Gets the custom_fonts of this AvailableFontsResponse.  # noqa: E501
 
-        Custom user fonts (from user file storage). To use them, you should specify \"fontsLocation\" parameter in any request  # noqa: E501
+        Gets or sets custom user fonts (from user file storage). To use them, you should specify \"fontsLocation\" parameter in any request.  # noqa: E501
 
         :return: The custom_fonts of this AvailableFontsResponse.  # noqa: E501
         :rtype: list[FontInfo]
@@ -129,7 +129,7 @@ class AvailableFontsResponse(object):
     def custom_fonts(self, custom_fonts):
         """Sets the custom_fonts of this AvailableFontsResponse.
 
-        Custom user fonts (from user file storage). To use them, you should specify \"fontsLocation\" parameter in any request  # noqa: E501
+        Gets or sets custom user fonts (from user file storage). To use them, you should specify \"fontsLocation\" parameter in any request.  # noqa: E501
 
         :param custom_fonts: The custom_fonts of this AvailableFontsResponse.  # noqa: E501
         :type: list[FontInfo]
@@ -139,7 +139,7 @@ class AvailableFontsResponse(object):
     def system_fonts(self):
         """Gets the system_fonts of this AvailableFontsResponse.  # noqa: E501
 
-        The list of system fonts, availiable on the server  # noqa: E501
+        Gets or sets the list of system fonts, availiable on the server.  # noqa: E501
 
         :return: The system_fonts of this AvailableFontsResponse.  # noqa: E501
         :rtype: list[FontInfo]
@@ -150,7 +150,7 @@ class AvailableFontsResponse(object):
     def system_fonts(self, system_fonts):
         """Sets the system_fonts of this AvailableFontsResponse.
 
-        The list of system fonts, availiable on the server  # noqa: E501
+        Gets or sets the list of system fonts, availiable on the server.  # noqa: E501
 
         :param system_fonts: The system_fonts of this AvailableFontsResponse.  # noqa: E501
         :type: list[FontInfo]

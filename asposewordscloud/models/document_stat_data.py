@@ -30,7 +30,7 @@ import six
 
 
 class DocumentStatData(object):
-    """Container for the document&#39;s statistical data
+    """Container for the document&#39;s statistical data.
     """
 
     """
@@ -81,7 +81,7 @@ class DocumentStatData(object):
     def word_count(self):
         """Gets the word_count of this DocumentStatData.  # noqa: E501
 
-        Total count of words in the document  # noqa: E501
+        Gets or sets total count of words in the document.  # noqa: E501
 
         :return: The word_count of this DocumentStatData.  # noqa: E501
         :rtype: int
@@ -92,7 +92,7 @@ class DocumentStatData(object):
     def word_count(self, word_count):
         """Sets the word_count of this DocumentStatData.
 
-        Total count of words in the document  # noqa: E501
+        Gets or sets total count of words in the document.  # noqa: E501
 
         :param word_count: The word_count of this DocumentStatData.  # noqa: E501
         :type: int
@@ -104,7 +104,7 @@ class DocumentStatData(object):
     def paragraph_count(self):
         """Gets the paragraph_count of this DocumentStatData.  # noqa: E501
 
-        Total count of paragraphs in the document  # noqa: E501
+        Gets or sets total count of paragraphs in the document.  # noqa: E501
 
         :return: The paragraph_count of this DocumentStatData.  # noqa: E501
         :rtype: int
@@ -115,7 +115,7 @@ class DocumentStatData(object):
     def paragraph_count(self, paragraph_count):
         """Sets the paragraph_count of this DocumentStatData.
 
-        Total count of paragraphs in the document  # noqa: E501
+        Gets or sets total count of paragraphs in the document.  # noqa: E501
 
         :param paragraph_count: The paragraph_count of this DocumentStatData.  # noqa: E501
         :type: int
@@ -127,7 +127,7 @@ class DocumentStatData(object):
     def page_count(self):
         """Gets the page_count of this DocumentStatData.  # noqa: E501
 
-        Total count of pages in the document  # noqa: E501
+        Gets or sets total count of pages in the document.  # noqa: E501
 
         :return: The page_count of this DocumentStatData.  # noqa: E501
         :rtype: int
@@ -138,7 +138,7 @@ class DocumentStatData(object):
     def page_count(self, page_count):
         """Sets the page_count of this DocumentStatData.
 
-        Total count of pages in the document  # noqa: E501
+        Gets or sets total count of pages in the document.  # noqa: E501
 
         :param page_count: The page_count of this DocumentStatData.  # noqa: E501
         :type: int
@@ -150,7 +150,7 @@ class DocumentStatData(object):
     def footnotes_stat_data(self):
         """Gets the footnotes_stat_data of this DocumentStatData.  # noqa: E501
 
-        Detailed statistics of footnotes  # noqa: E501
+        Gets or sets detailed statistics of footnotes.  # noqa: E501
 
         :return: The footnotes_stat_data of this DocumentStatData.  # noqa: E501
         :rtype: FootnotesStatData
@@ -161,7 +161,7 @@ class DocumentStatData(object):
     def footnotes_stat_data(self, footnotes_stat_data):
         """Sets the footnotes_stat_data of this DocumentStatData.
 
-        Detailed statistics of footnotes  # noqa: E501
+        Gets or sets detailed statistics of footnotes.  # noqa: E501
 
         :param footnotes_stat_data: The footnotes_stat_data of this DocumentStatData.  # noqa: E501
         :type: FootnotesStatData
@@ -171,7 +171,7 @@ class DocumentStatData(object):
     def page_stat_data(self):
         """Gets the page_stat_data of this DocumentStatData.  # noqa: E501
 
-        Detailed statistics of all pages  # noqa: E501
+        Gets or sets detailed statistics of all pages.  # noqa: E501
 
         :return: The page_stat_data of this DocumentStatData.  # noqa: E501
         :rtype: list[PageStatData]
@@ -182,7 +182,7 @@ class DocumentStatData(object):
     def page_stat_data(self, page_stat_data):
         """Sets the page_stat_data of this DocumentStatData.
 
-        Detailed statistics of all pages  # noqa: E501
+        Gets or sets detailed statistics of all pages.  # noqa: E501
 
         :param page_stat_data: The page_stat_data of this DocumentStatData.  # noqa: E501
         :type: list[PageStatData]

@@ -30,7 +30,7 @@ import six
 
 
 class SearchResponse(object):
-    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/search 
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/search.
     """
 
     """
@@ -71,7 +71,7 @@ class SearchResponse(object):
     def request_id(self):
         """Gets the request_id of this SearchResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this SearchResponse.  # noqa: E501
         :rtype: str
@@ -82,7 +82,7 @@ class SearchResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this SearchResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this SearchResponse.  # noqa: E501
         :type: str
@@ -92,7 +92,7 @@ class SearchResponse(object):
     def searching_pattern(self):
         """Gets the searching_pattern of this SearchResponse.  # noqa: E501
 
-        A regular expression pattern used to find matches.  # noqa: E501
+        Gets or sets a regular expression pattern used to find matches.  # noqa: E501
 
         :return: The searching_pattern of this SearchResponse.  # noqa: E501
         :rtype: str
@@ -103,7 +103,7 @@ class SearchResponse(object):
     def searching_pattern(self, searching_pattern):
         """Sets the searching_pattern of this SearchResponse.
 
-        A regular expression pattern used to find matches.  # noqa: E501
+        Gets or sets a regular expression pattern used to find matches.  # noqa: E501
 
         :param searching_pattern: The searching_pattern of this SearchResponse.  # noqa: E501
         :type: str
@@ -113,7 +113,7 @@ class SearchResponse(object):
     def search_results(self):
         """Gets the search_results of this SearchResponse.  # noqa: E501
 
-        Collection of search results.  # noqa: E501
+        Gets or sets collection of search results.  # noqa: E501
 
         :return: The search_results of this SearchResponse.  # noqa: E501
         :rtype: SearchResultsCollection
@@ -124,7 +124,7 @@ class SearchResponse(object):
     def search_results(self, search_results):
         """Sets the search_results of this SearchResponse.
 
-        Collection of search results.  # noqa: E501
+        Gets or sets collection of search results.  # noqa: E501
 
         :param search_results: The search_results of this SearchResponse.  # noqa: E501
         :type: SearchResultsCollection

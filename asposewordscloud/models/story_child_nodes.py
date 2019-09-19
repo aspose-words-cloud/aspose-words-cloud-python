@@ -30,7 +30,7 @@ import six
 
 
 class StoryChildNodes(object):
-    """Child nodes of  or 
+    """Child nodes of  or .
     """
 
     """
@@ -61,7 +61,7 @@ class StoryChildNodes(object):
     def child_nodes(self):
         """Gets the child_nodes of this StoryChildNodes.  # noqa: E501
 
-        Child nodes.  # noqa: E501
+        Gets or sets child nodes.  # noqa: E501
 
         :return: The child_nodes of this StoryChildNodes.  # noqa: E501
         :rtype: list[NodeLink]
@@ -72,7 +72,7 @@ class StoryChildNodes(object):
     def child_nodes(self, child_nodes):
         """Sets the child_nodes of this StoryChildNodes.
 
-        Child nodes.  # noqa: E501
+        Gets or sets child nodes.  # noqa: E501
 
         :param child_nodes: The child_nodes of this StoryChildNodes.  # noqa: E501
         :type: list[NodeLink]

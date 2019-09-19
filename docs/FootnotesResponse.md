@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**request_id** | **str** | Request Id. | [optional] 
-**footnotes** | [**FootnoteCollection**](FootnoteCollection.md) | Collection of footnotes. | [optional] 
+**request_id** | **str** | Gets or sets request Id. | [optional] 
+**footnotes** | [**FootnoteCollection**](FootnoteCollection.md) | Gets or sets collection of footnotes. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

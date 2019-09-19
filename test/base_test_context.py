@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="base_test_context.py">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,6 +41,10 @@ class BaseTestContext(unittest.TestCase):
         self.remote_test_folder = os.path.join('Temp', 'SdkTests', 'python')
         self.remote_test_out = os.path.join('Temp', 'SdkTests', 'python', 'TestOut')
         self.local_common_folder = os.path.join(self.local_test_folder, 'Common')
+        creds_path = os.path.join(root_path, 'Settings', 'servercreds.json')
+        if not os.path.exists(creds_path):
+            raise IOError('Credential file Settings/servercreds.json is not found')
+
         with open(os.path.join(root_path, 'Settings', 'servercreds.json')) as f:
             creds = json.loads(f.read())
         api_client = asposewordscloud.ApiClient()

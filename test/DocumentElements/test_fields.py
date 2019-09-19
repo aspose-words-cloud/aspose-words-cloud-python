@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_fields.py">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -40,12 +40,25 @@ class TestFields(BaseTestContext):
         filename = 'GetField.docx'
         remote_name = 'TestGetFields.docx'
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.GetFieldsRequest(remote_name,
+        request = asposewordscloud.models.requests.GetFieldsRequest(remote_name,'sections/0',
                                                                   folder= os.path.join(
                                                                       self.remote_test_folder,
-                                                                      self.test_folder),
-                                                                  node_path='sections/0')
+                                                                      self.test_folder))
         result = self.words_api.get_fields(request)
+        self.assertIsNotNone(result, 'Error has occurred while get fields')
+
+    #
+    #  Test for getting fields from document without node path
+    #
+    def test_get_fields_without_node_path(self):
+        filename = 'GetField.docx'
+        remote_name = 'TestGetFieldsWithoutNodePath.docx'
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.GetFieldsWithoutNodePathRequest(remote_name,
+                                                                  folder= os.path.join(
+                                                                      self.remote_test_folder,
+                                                                      self.test_folder))
+        result = self.words_api.get_fields_without_node_path(request)
         self.assertIsNotNone(result, 'Error has occurred while get fields')
 
     #
@@ -56,12 +69,26 @@ class TestFields(BaseTestContext):
         remote_name = 'TestGetField.docx'
         index = 0
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.GetFieldRequest(remote_name, index,
+        request = asposewordscloud.models.requests.GetFieldRequest(remote_name,'sections/0/paragraphs/0', index,
                                                                  folder= os.path.join(
                                                                      self.remote_test_folder,
-                                                                     self.test_folder),
-                                                                 node_path='sections/0/paragraphs/0')
+                                                                     self.test_folder))
         result = self.words_api.get_field(request)
+        self.assertIsNotNone(result, 'Error has occurred while get field')
+
+    #
+    #  Test for getting field from document
+    #
+    def test_get_field_without_node_path(self):
+        filename = 'GetField.docx'
+        remote_name = 'TestGetFieldWithoutNodePath.docx'
+        index = 0
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.GetFieldWithoutNodePathRequest(remote_name, index,
+                                                                 folder= os.path.join(
+                                                                     self.remote_test_folder,
+                                                                     self.test_folder))
+        result = self.words_api.get_field_without_node_path(request)
         self.assertIsNotNone(result, 'Error has occurred while get field')
 
     #
@@ -74,11 +101,10 @@ class TestFields(BaseTestContext):
         index = 0
         body = asposewordscloud.Field(None, '0.0.3', '{ NUMPAGES }')
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.UpdateFieldRequest(remote_name, body, index,
+        request = asposewordscloud.models.requests.UpdateFieldRequest(remote_name, body,'sections/0/paragraphs/0', index,
                                                                   folder= os.path.join(
                                                                       self.remote_test_folder,
                                                                       self.test_folder),
-                                                                  node_path='sections/0/paragraphs/0',
                                                                   dest_file_name=dest_name)
         result = self.words_api.update_field(request)
         self.assertIsNotNone(result, 'Error has occurred while post field')
@@ -91,12 +117,26 @@ class TestFields(BaseTestContext):
         remote_name = 'TestPutField.docx'
         body = asposewordscloud.Field(None, '0.0.3', '{ NUMPAGES }')
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.InsertFieldRequest(remote_name, body,
+        request = asposewordscloud.models.requests.InsertFieldRequest(remote_name, body,'sections/0/paragraphs/0',
                                                                  folder= os.path.join(
                                                                      self.remote_test_folder,
-                                                                     self.test_folder),
-                                                                 node_path='sections/0/paragraphs/0')
+                                                                     self.test_folder))
         result = self.words_api.insert_field(request)
+        self.assertIsNotNone(result, 'Error has occurred while put field')
+
+    #
+    # Test for inserting document field without node path
+    #
+    def test_insert_field_without_node_path(self):
+        filename = 'GetField.docx'
+        remote_name = 'TestPutFieldWithoutNodePath.docx'
+        body = asposewordscloud.Field(None, '0.0.3', '{ NUMPAGES }')
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.InsertFieldWithoutNodePathRequest(remote_name, body,
+                                                                 folder= os.path.join(
+                                                                     self.remote_test_folder,
+                                                                     self.test_folder))
+        result = self.words_api.insert_field_without_node_path(request)
         self.assertIsNotNone(result, 'Error has occurred while put field')
 
     #
@@ -138,12 +178,26 @@ class TestFields(BaseTestContext):
         remote_name = 'TestDeleteField.docx'
         index = 0
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.DeleteFieldRequest(remote_name, index,
+        request = asposewordscloud.models.requests.DeleteFieldRequest(remote_name, 'sections/0/paragraphs/0', index,
                                                                     folder= os.path.join(
                                                                         self.remote_test_folder,
-                                                                        self.test_folder),
-                                                                    node_path='sections/0/paragraphs/0')
+                                                                        self.test_folder))
         result = self.words_api.delete_field(request)
+        self.assertIsNotNone(result, 'Error has occurred while delete field')
+
+    #
+    # Test for removing field without node path
+    #
+    def test_delete_field_without_node_path(self):
+        filename = 'GetField.docx'
+        remote_name = 'TestDeleteFieldWithoutNodePath.docx'
+        index = 0
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.DeleteFieldWithoutNodePathRequest(remote_name, index,
+                                                                    folder= os.path.join(
+                                                                        self.remote_test_folder,
+                                                                        self.test_folder))
+        result = self.words_api.delete_field_without_node_path(request)
         self.assertIsNotNone(result, 'Error has occurred while delete field')
 
     #
@@ -159,4 +213,18 @@ class TestFields(BaseTestContext):
                                                                          self.remote_test_folder,
                                                                          self.test_folder))
         result = self.words_api.delete_fields(request)
+        self.assertIsNotNone(result, 'Error has occurred while delete fields')
+
+    #
+    # Test for removing field without node path
+    #
+    def test_delete_fields_without_node_path(self):
+        filename = 'test_multi_pages.docx'
+        remote_name = 'TestDeleteFieldsWithoutNodePath.docx'
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        request = asposewordscloud.models.requests.DeleteFieldsWithoutNodePathRequest(remote_name,
+                                                                     os.path.join(
+                                                                         self.remote_test_folder,
+                                                                         self.test_folder))
+        result = self.words_api.delete_fields_without_node_path(request)
         self.assertIsNotNone(result, 'Error has occurred while delete fields')

@@ -66,7 +66,7 @@ class DocumentProperties(object):
     def link(self):
         """Gets the link of this DocumentProperties.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this DocumentProperties.  # noqa: E501
         :rtype: WordsApiLink
@@ -77,7 +77,7 @@ class DocumentProperties(object):
     def link(self, link):
         """Sets the link of this DocumentProperties.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this DocumentProperties.  # noqa: E501
         :type: WordsApiLink
@@ -87,7 +87,7 @@ class DocumentProperties(object):
     def list(self):
         """Gets the list of this DocumentProperties.  # noqa: E501
 
-        Collection of document properties.  # noqa: E501
+        Gets or sets collection of document properties.  # noqa: E501
 
         :return: The list of this DocumentProperties.  # noqa: E501
         :rtype: list[DocumentProperty]
@@ -98,7 +98,7 @@ class DocumentProperties(object):
     def list(self, list):
         """Sets the list of this DocumentProperties.
 
-        Collection of document properties.  # noqa: E501
+        Gets or sets collection of document properties.  # noqa: E501
 
         :param list: The list of this DocumentProperties.  # noqa: E501
         :type: list[DocumentProperty]

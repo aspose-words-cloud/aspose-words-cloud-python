@@ -1,3 +1,4 @@
+
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="DeleteMacrosRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud

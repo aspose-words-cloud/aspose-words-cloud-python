@@ -76,7 +76,7 @@ class PageNumber(object):
     def format(self):
         """Gets the format of this PageNumber.  # noqa: E501
 
-        Page number format, e.g. \"{PAGE} of {NUMPAGES}\".  # noqa: E501
+        Gets or sets page number format, e.g. \"{PAGE} of {NUMPAGES}\".  # noqa: E501
 
         :return: The format of this PageNumber.  # noqa: E501
         :rtype: str
@@ -87,7 +87,7 @@ class PageNumber(object):
     def format(self, format):
         """Sets the format of this PageNumber.
 
-        Page number format, e.g. \"{PAGE} of {NUMPAGES}\".  # noqa: E501
+        Gets or sets page number format, e.g. \"{PAGE} of {NUMPAGES}\".  # noqa: E501
 
         :param format: The format of this PageNumber.  # noqa: E501
         :type: str
@@ -97,7 +97,7 @@ class PageNumber(object):
     def alignment(self):
         """Gets the alignment of this PageNumber.  # noqa: E501
 
-        Text alignment, possible values are left, right, center or justify.  # noqa: E501
+        Gets or sets text alignment, possible values are left, right, center or justify.  # noqa: E501
 
         :return: The alignment of this PageNumber.  # noqa: E501
         :rtype: str
@@ -108,7 +108,7 @@ class PageNumber(object):
     def alignment(self, alignment):
         """Sets the alignment of this PageNumber.
 
-        Text alignment, possible values are left, right, center or justify.  # noqa: E501
+        Gets or sets text alignment, possible values are left, right, center or justify.  # noqa: E501
 
         :param alignment: The alignment of this PageNumber.  # noqa: E501
         :type: str
@@ -118,7 +118,7 @@ class PageNumber(object):
     def is_top(self):
         """Gets the is_top of this PageNumber.  # noqa: E501
 
-        If true the page number is added at the top of the page, else at the bottom.  # noqa: E501
+        Gets or sets a value indicating whether if true the page number is added at the top of the page, else at the bottom.  # noqa: E501
 
         :return: The is_top of this PageNumber.  # noqa: E501
         :rtype: bool
@@ -129,7 +129,7 @@ class PageNumber(object):
     def is_top(self, is_top):
         """Sets the is_top of this PageNumber.
 
-        If true the page number is added at the top of the page, else at the bottom.  # noqa: E501
+        Gets or sets a value indicating whether if true the page number is added at the top of the page, else at the bottom.  # noqa: E501
 
         :param is_top: The is_top of this PageNumber.  # noqa: E501
         :type: bool
@@ -141,7 +141,7 @@ class PageNumber(object):
     def set_page_number_on_first_page(self):
         """Gets the set_page_number_on_first_page of this PageNumber.  # noqa: E501
 
-        If true the page number is added on first page too.  # noqa: E501
+        Gets or sets a value indicating whether if true the page number is added on first page too.  # noqa: E501
 
         :return: The set_page_number_on_first_page of this PageNumber.  # noqa: E501
         :rtype: bool
@@ -152,7 +152,7 @@ class PageNumber(object):
     def set_page_number_on_first_page(self, set_page_number_on_first_page):
         """Sets the set_page_number_on_first_page of this PageNumber.
 
-        If true the page number is added on first page too.  # noqa: E501
+        Gets or sets a value indicating whether if true the page number is added on first page too.  # noqa: E501
 
         :param set_page_number_on_first_page: The set_page_number_on_first_page of this PageNumber.  # noqa: E501
         :type: bool

@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_api_coverage.py">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -43,7 +43,7 @@ class TestApiCoverage(BaseTestContext):
                test.TestExecuteMailMerge, test.TestMathObjects, test.TestPages,
                test.TestParagraphs, test.TestRuns,
                test.TestSections, test.TestTables, test.TestText, test.TestWatermarks, test.TestFont,
-               test.TestClassification, test.TestFile, test.TestFolder]
+               test.TestClassification, test.TestFile, test.TestFolder, test.TestRange]
         test_methods = []
         uncovered_methods = []
         for ar in arr:

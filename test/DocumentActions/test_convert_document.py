@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_convert_document.py">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -53,7 +53,6 @@ class TestConvertDocument(BaseTestContext):
     # Test for saving document with specified format
     #
     def test_post_save_document_as_from_pdf_to_doc(self):
-        self.skipTest("Skipped because of API error")
         filename = '45.pdf'
         remote_name = 'TestPostDocumentSaveAsFromPdfToDoc.docx'
         dest_name = os.path.join(self.remote_test_out, 'TestPostDocumentSaveAs.docx')
@@ -83,7 +82,6 @@ class TestConvertDocument(BaseTestContext):
     # Test for saving document with specified format
     #
     def test_save_as_tiff(self):
-        self.skipTest("Skipped because of API error")
         filename = '45.pdf'
         remote_name = 'TestPutDocumentSaveAsTiff.docx'
         dest_name = os.path.join(self.remote_test_out, 'TestPostDocumentSaveAsTiff.tiff')

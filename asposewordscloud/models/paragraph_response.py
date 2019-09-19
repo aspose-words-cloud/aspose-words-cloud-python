@@ -30,7 +30,7 @@ import six
 
 
 class ParagraphResponse(object):
-    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/paragraphs/{0} 
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/paragraphs/{0}.
     """
 
     """
@@ -66,7 +66,7 @@ class ParagraphResponse(object):
     def request_id(self):
         """Gets the request_id of this ParagraphResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this ParagraphResponse.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class ParagraphResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this ParagraphResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this ParagraphResponse.  # noqa: E501
         :type: str
@@ -87,7 +87,7 @@ class ParagraphResponse(object):
     def paragraph(self):
         """Gets the paragraph of this ParagraphResponse.  # noqa: E501
 
-        Paragraph  # noqa: E501
+        Gets or sets paragraph.  # noqa: E501
 
         :return: The paragraph of this ParagraphResponse.  # noqa: E501
         :rtype: Paragraph
@@ -98,7 +98,7 @@ class ParagraphResponse(object):
     def paragraph(self, paragraph):
         """Sets the paragraph of this ParagraphResponse.
 
-        Paragraph  # noqa: E501
+        Gets or sets paragraph.  # noqa: E501
 
         :param paragraph: The paragraph of this ParagraphResponse.  # noqa: E501
         :type: Paragraph

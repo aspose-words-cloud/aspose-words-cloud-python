@@ -1,3 +1,4 @@
+
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="UpdateRunFontRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
@@ -29,7 +30,7 @@ class UpdateRunFontRequest(object):
     Request model for update_run_font operation.
     Initializes a new instance.
     :param name The document name.
-    :param font_dto Font dto object
+    :param font_dto Font dto object.
     :param paragraph_path Path to parent paragraph.
     :param index Object index.
     :param folder Original document folder.

@@ -66,7 +66,7 @@ class FieldNamesResponse(object):
     def request_id(self):
         """Gets the request_id of this FieldNamesResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this FieldNamesResponse.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class FieldNamesResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this FieldNamesResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this FieldNamesResponse.  # noqa: E501
         :type: str
@@ -87,7 +87,7 @@ class FieldNamesResponse(object):
     def field_names(self):
         """Gets the field_names of this FieldNamesResponse.  # noqa: E501
 
-        Collection of mail merge fields.  # noqa: E501
+        Gets or sets collection of mail merge fields.  # noqa: E501
 
         :return: The field_names of this FieldNamesResponse.  # noqa: E501
         :rtype: FieldNames
@@ -98,7 +98,7 @@ class FieldNamesResponse(object):
     def field_names(self, field_names):
         """Sets the field_names of this FieldNamesResponse.
 
-        Collection of mail merge fields.  # noqa: E501
+        Gets or sets collection of mail merge fields.  # noqa: E501
 
         :param field_names: The field_names of this FieldNamesResponse.  # noqa: E501
         :type: FieldNames

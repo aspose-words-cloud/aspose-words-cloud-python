@@ -30,7 +30,7 @@ import six
 
 
 class FormField(object):
-    """FromField
+    """FromField.
     """
 
     """
@@ -111,7 +111,7 @@ class FormField(object):
     def link(self):
         """Gets the link of this FormField.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this FormField.  # noqa: E501
         :rtype: WordsApiLink
@@ -122,7 +122,7 @@ class FormField(object):
     def link(self, link):
         """Sets the link of this FormField.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this FormField.  # noqa: E501
         :type: WordsApiLink
@@ -132,7 +132,7 @@ class FormField(object):
     def node_id(self):
         """Gets the node_id of this FormField.  # noqa: E501
 
-        Node id  # noqa: E501
+        Gets or sets node id.  # noqa: E501
 
         :return: The node_id of this FormField.  # noqa: E501
         :rtype: str
@@ -143,7 +143,7 @@ class FormField(object):
     def node_id(self, node_id):
         """Sets the node_id of this FormField.
 
-        Node id  # noqa: E501
+        Gets or sets node id.  # noqa: E501
 
         :param node_id: The node_id of this FormField.  # noqa: E501
         :type: str
@@ -153,7 +153,7 @@ class FormField(object):
     def calculate_on_exit(self):
         """Gets the calculate_on_exit of this FormField.  # noqa: E501
 
-        True if references to the specified form field are automatically updated whenever the field is exited.  # noqa: E501
+        Gets or sets true if references to the specified form field are automatically updated whenever the field is exited.  # noqa: E501
 
         :return: The calculate_on_exit of this FormField.  # noqa: E501
         :rtype: bool
@@ -164,7 +164,7 @@ class FormField(object):
     def calculate_on_exit(self, calculate_on_exit):
         """Sets the calculate_on_exit of this FormField.
 
-        True if references to the specified form field are automatically updated whenever the field is exited.  # noqa: E501
+        Gets or sets true if references to the specified form field are automatically updated whenever the field is exited.  # noqa: E501
 
         :param calculate_on_exit: The calculate_on_exit of this FormField.  # noqa: E501
         :type: bool
@@ -174,7 +174,7 @@ class FormField(object):
     def enabled(self):
         """Gets the enabled of this FormField.  # noqa: E501
 
-        True if a form field is enabled.  # noqa: E501
+        Gets or sets true if a form field is enabled.  # noqa: E501
 
         :return: The enabled of this FormField.  # noqa: E501
         :rtype: bool
@@ -185,7 +185,7 @@ class FormField(object):
     def enabled(self, enabled):
         """Sets the enabled of this FormField.
 
-        True if a form field is enabled.  # noqa: E501
+        Gets or sets true if a form field is enabled.  # noqa: E501
 
         :param enabled: The enabled of this FormField.  # noqa: E501
         :type: bool
@@ -195,7 +195,7 @@ class FormField(object):
     def entry_macro(self):
         """Gets the entry_macro of this FormField.  # noqa: E501
 
-        Returns or sets an entry macro name for the form field.  # noqa: E501
+        Gets or sets returns or sets an entry macro name for the form field.  # noqa: E501
 
         :return: The entry_macro of this FormField.  # noqa: E501
         :rtype: str
@@ -206,7 +206,7 @@ class FormField(object):
     def entry_macro(self, entry_macro):
         """Sets the entry_macro of this FormField.
 
-        Returns or sets an entry macro name for the form field.  # noqa: E501
+        Gets or sets returns or sets an entry macro name for the form field.  # noqa: E501
 
         :param entry_macro: The entry_macro of this FormField.  # noqa: E501
         :type: str
@@ -216,7 +216,7 @@ class FormField(object):
     def exit_macro(self):
         """Gets the exit_macro of this FormField.  # noqa: E501
 
-        Returns or sets an exit macro name for the form field.  # noqa: E501
+        Gets or sets returns or sets an exit macro name for the form field.  # noqa: E501
 
         :return: The exit_macro of this FormField.  # noqa: E501
         :rtype: str
@@ -227,7 +227,7 @@ class FormField(object):
     def exit_macro(self, exit_macro):
         """Sets the exit_macro of this FormField.
 
-        Returns or sets an exit macro name for the form field.  # noqa: E501
+        Gets or sets returns or sets an exit macro name for the form field.  # noqa: E501
 
         :param exit_macro: The exit_macro of this FormField.  # noqa: E501
         :type: str
@@ -237,7 +237,7 @@ class FormField(object):
     def help_text(self):
         """Gets the help_text of this FormField.  # noqa: E501
 
-        Returns or sets the text that's displayed in a message box when the form field has the focus and the user presses F1.  # noqa: E501
+        Gets or sets returns or sets the text that's displayed in a message box when the form field has the focus and the user presses F1.  # noqa: E501
 
         :return: The help_text of this FormField.  # noqa: E501
         :rtype: str
@@ -248,7 +248,7 @@ class FormField(object):
     def help_text(self, help_text):
         """Sets the help_text of this FormField.
 
-        Returns or sets the text that's displayed in a message box when the form field has the focus and the user presses F1.  # noqa: E501
+        Gets or sets returns or sets the text that's displayed in a message box when the form field has the focus and the user presses F1.  # noqa: E501
 
         :param help_text: The help_text of this FormField.  # noqa: E501
         :type: str
@@ -279,7 +279,7 @@ class FormField(object):
     def own_help(self):
         """Gets the own_help of this FormField.  # noqa: E501
 
-        Specifies the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.  # noqa: E501
+        Gets or sets specifies the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.  # noqa: E501
 
         :return: The own_help of this FormField.  # noqa: E501
         :rtype: bool
@@ -290,7 +290,7 @@ class FormField(object):
     def own_help(self, own_help):
         """Sets the own_help of this FormField.
 
-        Specifies the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.  # noqa: E501
+        Gets or sets specifies the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.  # noqa: E501
 
         :param own_help: The own_help of this FormField.  # noqa: E501
         :type: bool
@@ -300,7 +300,7 @@ class FormField(object):
     def own_status(self):
         """Gets the own_status of this FormField.  # noqa: E501
 
-        Specifies the source of the text that's displayed in the status bar when a form field has the focus.  # noqa: E501
+        Gets or sets specifies the source of the text that's displayed in the status bar when a form field has the focus.  # noqa: E501
 
         :return: The own_status of this FormField.  # noqa: E501
         :rtype: bool
@@ -311,7 +311,7 @@ class FormField(object):
     def own_status(self, own_status):
         """Sets the own_status of this FormField.
 
-        Specifies the source of the text that's displayed in the status bar when a form field has the focus.  # noqa: E501
+        Gets or sets specifies the source of the text that's displayed in the status bar when a form field has the focus.  # noqa: E501
 
         :param own_status: The own_status of this FormField.  # noqa: E501
         :type: bool
@@ -321,7 +321,7 @@ class FormField(object):
     def status_text(self):
         """Gets the status_text of this FormField.  # noqa: E501
 
-        Returns or sets the text that's displayed in the status bar when a form field has the focus.  # noqa: E501
+        Gets or sets returns or sets the text that's displayed in the status bar when a form field has the focus.  # noqa: E501
 
         :return: The status_text of this FormField.  # noqa: E501
         :rtype: str
@@ -332,7 +332,7 @@ class FormField(object):
     def status_text(self, status_text):
         """Sets the status_text of this FormField.
 
-        Returns or sets the text that's displayed in the status bar when a form field has the focus.  # noqa: E501
+        Gets or sets returns or sets the text that's displayed in the status bar when a form field has the focus.  # noqa: E501
 
         :param status_text: The status_text of this FormField.  # noqa: E501
         :type: str

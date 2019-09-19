@@ -30,7 +30,7 @@ import six
 
 
 class ParagraphLinkCollection(object):
-    """Collection of links to paragraphs
+    """Collection of links to paragraphs.
     """
 
     """
@@ -66,7 +66,7 @@ class ParagraphLinkCollection(object):
     def link(self):
         """Gets the link of this ParagraphLinkCollection.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this ParagraphLinkCollection.  # noqa: E501
         :rtype: WordsApiLink
@@ -77,7 +77,7 @@ class ParagraphLinkCollection(object):
     def link(self, link):
         """Sets the link of this ParagraphLinkCollection.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this ParagraphLinkCollection.  # noqa: E501
         :type: WordsApiLink
@@ -87,7 +87,7 @@ class ParagraphLinkCollection(object):
     def paragraph_link_list(self):
         """Gets the paragraph_link_list of this ParagraphLinkCollection.  # noqa: E501
 
-        Collection of paragraph's links  # noqa: E501
+        Gets or sets collection of paragraph's links.  # noqa: E501
 
         :return: The paragraph_link_list of this ParagraphLinkCollection.  # noqa: E501
         :rtype: list[ParagraphLink]
@@ -98,7 +98,7 @@ class ParagraphLinkCollection(object):
     def paragraph_link_list(self, paragraph_link_list):
         """Sets the paragraph_link_list of this ParagraphLinkCollection.
 
-        Collection of paragraph's links  # noqa: E501
+        Gets or sets collection of paragraph's links.  # noqa: E501
 
         :param paragraph_link_list: The paragraph_link_list of this ParagraphLinkCollection.  # noqa: E501
         :type: list[ParagraphLink]

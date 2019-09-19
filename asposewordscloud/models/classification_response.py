@@ -30,7 +30,7 @@ import six
 
 
 class ClassificationResponse(object):
-    """This response should be returned by the service when handling: PUT http://api.aspose.com/v4.0/words/classify
+    """This response should be returned by the service when handling: PUT http://api.aspose.com/v4.0/words/classify.
     """
 
     """
@@ -76,7 +76,7 @@ class ClassificationResponse(object):
     def request_id(self):
         """Gets the request_id of this ClassificationResponse.  # noqa: E501
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :return: The request_id of this ClassificationResponse.  # noqa: E501
         :rtype: str
@@ -87,7 +87,7 @@ class ClassificationResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this ClassificationResponse.
 
-        Request Id.  # noqa: E501
+        Gets or sets request Id.  # noqa: E501
 
         :param request_id: The request_id of this ClassificationResponse.  # noqa: E501
         :type: str
@@ -97,7 +97,7 @@ class ClassificationResponse(object):
     def best_class_name(self):
         """Gets the best_class_name of this ClassificationResponse.  # noqa: E501
 
-        Best class name.          # noqa: E501
+        Gets or sets best class name.  # noqa: E501
 
         :return: The best_class_name of this ClassificationResponse.  # noqa: E501
         :rtype: str
@@ -108,7 +108,7 @@ class ClassificationResponse(object):
     def best_class_name(self, best_class_name):
         """Sets the best_class_name of this ClassificationResponse.
 
-        Best class name.          # noqa: E501
+        Gets or sets best class name.  # noqa: E501
 
         :param best_class_name: The best_class_name of this ClassificationResponse.  # noqa: E501
         :type: str
@@ -118,7 +118,7 @@ class ClassificationResponse(object):
     def best_class_probability(self):
         """Gets the best_class_probability of this ClassificationResponse.  # noqa: E501
 
-        Best class probability.  # noqa: E501
+        Gets or sets best class probability.  # noqa: E501
 
         :return: The best_class_probability of this ClassificationResponse.  # noqa: E501
         :rtype: float
@@ -129,7 +129,7 @@ class ClassificationResponse(object):
     def best_class_probability(self, best_class_probability):
         """Sets the best_class_probability of this ClassificationResponse.
 
-        Best class probability.  # noqa: E501
+        Gets or sets best class probability.  # noqa: E501
 
         :param best_class_probability: The best_class_probability of this ClassificationResponse.  # noqa: E501
         :type: float
@@ -139,7 +139,7 @@ class ClassificationResponse(object):
     def best_results(self):
         """Gets the best_results of this ClassificationResponse.  # noqa: E501
 
-        Array of best classes results.  # noqa: E501
+        Gets or sets array of best classes results.  # noqa: E501
 
         :return: The best_results of this ClassificationResponse.  # noqa: E501
         :rtype: list[ClassificationResult]
@@ -150,7 +150,7 @@ class ClassificationResponse(object):
     def best_results(self, best_results):
         """Sets the best_results of this ClassificationResponse.
 
-        Array of best classes results.  # noqa: E501
+        Gets or sets array of best classes results.  # noqa: E501
 
         :param best_results: The best_results of this ClassificationResponse.  # noqa: E501
         :type: list[ClassificationResult]

@@ -66,7 +66,7 @@ class SearchResult(object):
     def range_start(self):
         """Gets the range_start of this SearchResult.  # noqa: E501
 
-        Link to result range start node.  # noqa: E501
+        Gets or sets link to result range start node.  # noqa: E501
 
         :return: The range_start of this SearchResult.  # noqa: E501
         :rtype: DocumentPosition
@@ -77,7 +77,7 @@ class SearchResult(object):
     def range_start(self, range_start):
         """Sets the range_start of this SearchResult.
 
-        Link to result range start node.  # noqa: E501
+        Gets or sets link to result range start node.  # noqa: E501
 
         :param range_start: The range_start of this SearchResult.  # noqa: E501
         :type: DocumentPosition
@@ -87,7 +87,7 @@ class SearchResult(object):
     def range_end(self):
         """Gets the range_end of this SearchResult.  # noqa: E501
 
-        Link to result range end node.  # noqa: E501
+        Gets or sets link to result range end node.  # noqa: E501
 
         :return: The range_end of this SearchResult.  # noqa: E501
         :rtype: DocumentPosition
@@ -98,7 +98,7 @@ class SearchResult(object):
     def range_end(self, range_end):
         """Sets the range_end of this SearchResult.
 
-        Link to result range end node.  # noqa: E501
+        Gets or sets link to result range end node.  # noqa: E501
 
         :param range_end: The range_end of this SearchResult.  # noqa: E501
         :type: DocumentPosition

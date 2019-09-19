@@ -66,7 +66,7 @@ class PreferredWidth(object):
     def type(self):
         """Gets the type of this PreferredWidth.  # noqa: E501
 
-        Gets the unit of measure used for this preferred width value.  # noqa: E501
+        Gets or sets the unit of measure used for this preferred width value.  # noqa: E501
 
         :return: The type of this PreferredWidth.  # noqa: E501
         :rtype: str
@@ -77,7 +77,7 @@ class PreferredWidth(object):
     def type(self, type):
         """Sets the type of this PreferredWidth.
 
-        Gets the unit of measure used for this preferred width value.  # noqa: E501
+        Gets or sets the unit of measure used for this preferred width value.  # noqa: E501
 
         :param type: The type of this PreferredWidth.  # noqa: E501
         :type: str

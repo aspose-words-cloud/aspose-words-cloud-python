@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_tables.py">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -42,11 +42,27 @@ class TestTables(BaseTestContext):
         index = 1
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.DeleteTableRequest(remote_name, index, '',
+        request = asposewordscloud.models.requests.DeleteTableRequest(remote_name, '', index,
                                                                     os.path.join(
                                                                         self.remote_test_folder,
                                                                         self.test_folder))
         result = self.words_api.delete_table(request)
+        self.assertIsNotNone(result, 'Error has occurred while delete table')
+
+    #
+    # Test for removing table without node path
+    #
+    def test_delete_table_without_node_path(self):
+        filename = 'TablesGet.docx'
+        remote_name = 'TestDeleteTableWithoutNodePath.docx'
+        index = 1
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.DeleteTableWithoutNodePathRequest(remote_name, index, 
+                                                                    os.path.join(
+                                                                        self.remote_test_folder,
+                                                                        self.test_folder))
+        result = self.words_api.delete_table_without_node_path(request)
         self.assertIsNotNone(result, 'Error has occurred while delete table')
 
     #
@@ -125,11 +141,27 @@ class TestTables(BaseTestContext):
         index = 1
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.GetTableRequest(remote_name, index, '',
+        request = asposewordscloud.models.requests.GetTableRequest(remote_name, '', index,
                                                                  os.path.join(
                                                                      self.remote_test_folder,
                                                                      self.test_folder))
         result = self.words_api.get_table(request)
+        self.assertIsNotNone(result, 'Error has occurred while get table')
+
+    #
+    # Test for getting table without node path
+    #
+    def test_get_table_without_node_path(self):
+        filename = 'TablesGet.docx'
+        remote_name = 'TestGetTableWithoutNodePath.docx'
+        index = 1
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.GetTableWithoutNodePathRequest(remote_name, index,
+                                                                 os.path.join(
+                                                                     self.remote_test_folder,
+                                                                     self.test_folder))
+        result = self.words_api.get_table_without_node_path(request)
         self.assertIsNotNone(result, 'Error has occurred while get table')
 
     #
@@ -216,6 +248,21 @@ class TestTables(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred while get tables')
 
     #
+    # Test for getting tables without node path
+    #
+    def test_get_tables_without_node_path(self):
+        filename = 'TablesGet.docx'
+        remote_name = 'TestGetTablesWithoutNodePath.docx'
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.GetTablesWithoutNodePathRequest(remote_name,
+                                                                  os.path.join(
+                                                                      self.remote_test_folder,
+                                                                      self.test_folder))
+        result = self.words_api.get_tables_without_node_path(request)
+        self.assertIsNotNone(result, 'Error has occurred while get tables')
+
+    #
     # Test for inserting table
     #
     def test_insert_table(self):
@@ -229,6 +276,22 @@ class TestTables(BaseTestContext):
                                                                         self.remote_test_folder,
                                                                         self.test_folder), table=body)
         result = self.words_api.insert_table(request)
+        self.assertIsNotNone(result, 'Error has occurred while insert table')
+
+    #
+    # Test for inserting table without node path
+    #
+    def test_insert_table_without_node_path(self):
+        filename = 'TablesGet.docx'
+        remote_name = 'TestInsertTableWithoutNodePath.docx'
+        body = asposewordscloud.TableInsert(columns_count=3, rows_count=5)
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.InsertTableWithoutNodePathRequest(remote_name,
+                                                                    os.path.join(
+                                                                        self.remote_test_folder,
+                                                                        self.test_folder), table=body)
+        result = self.words_api.insert_table_without_node_path(request)
         self.assertIsNotNone(result, 'Error has occurred while insert table')
 
     #
@@ -275,11 +338,28 @@ class TestTables(BaseTestContext):
         format = 'png'
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.RenderTableRequest(remote_name, format, index, '',
+        request = asposewordscloud.models.requests.RenderTableRequest(remote_name, format, '', index,
                                                                     os.path.join(
                                                                         self.remote_test_folder,
                                                                         self.test_folder))
         result = self.words_api.render_table(request)
+        self.assertTrue(len(result) > 0, 'Error has occurred while render table')
+
+    #
+    # Test for rendering table without node path
+    #
+    def test_render_table_without_node_path(self):
+        filename = 'TablesGet.docx'
+        remote_name = 'TestRenderTableWithoutNodePath.docx'
+        index = 0
+        format = 'png'
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.RenderTableWithoutNodePathRequest(remote_name, format, index,
+                                                                    os.path.join(
+                                                                        self.remote_test_folder,
+                                                                        self.test_folder))
+        result = self.words_api.render_table_without_node_path(request)
         self.assertTrue(len(result) > 0, 'Error has occurred while render table')
 
     #
@@ -309,11 +389,27 @@ class TestTables(BaseTestContext):
         index = 1
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.GetTablePropertiesRequest(remote_name, index, '',
+        request = asposewordscloud.models.requests.GetTablePropertiesRequest(remote_name, '', index, 
                                                                            os.path.join(
                                                                                self.remote_test_folder,
                                                                                self.test_folder))
         result = self.words_api.get_table_properties(request)
+        self.assertIsNotNone(result, 'Error has occurred while get table properties')
+
+    #
+    # Test for getting table properties without node path
+    #
+    def test_get_table_properties_without_node_path(self):
+        filename = 'TablesGet.docx'
+        remote_name = 'TestGetTablePropertiesWithoutNodePath.docx'
+        index = 1
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.GetTablePropertiesWithoutNodePathRequest(remote_name, index,
+                                                                           os.path.join(
+                                                                               self.remote_test_folder,
+                                                                               self.test_folder))
+        result = self.words_api.get_table_properties_without_node_path(request)
         self.assertIsNotNone(result, 'Error has occurred while get table properties')
 
     #
@@ -327,11 +423,29 @@ class TestTables(BaseTestContext):
                                                 style_options='ColumnBands', top_padding=6)
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.UpdateTablePropertiesRequest(remote_name, index, '',
+        request = asposewordscloud.models.requests.UpdateTablePropertiesRequest(remote_name, '', index,
                                                                               os.path.join(
                                                                                   self.remote_test_folder,
                                                                                   self.test_folder), properties=body)
         result = self.words_api.update_table_properties(request)
+        self.assertIsNotNone(result, 'Error has occurred while update table properties')
+
+    #
+    # Test for updating table properties without node path
+    #
+    def test_update_table_properties_without_node_path(self):
+        filename = 'TablesGet.docx'
+        remote_name = 'TestUpdateTablePropertiesWithoutNodePath.docx'
+        index = 1
+        body = asposewordscloud.TableProperties(None, 'Right', False, True, 1, 2, 3, 4, right_padding=5,
+                                              style_options='ColumnBands', top_padding=6)
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.UpdateTablePropertiesWithoutNodePathRequest(remote_name, index,
+                                                                              os.path.join(
+                                                                                  self.remote_test_folder,
+                                                                                  self.test_folder), properties=body)
+        result = self.words_api.update_table_properties_without_node_path(request)
         self.assertIsNotNone(result, 'Error has occurred while update table properties')
 
     #

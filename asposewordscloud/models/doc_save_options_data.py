@@ -30,7 +30,7 @@ import six
 
 
 class DocSaveOptionsData(object):
-    """container class for doc/dot save options
+    """container class for doc/dot save options.
     """
 
     """
@@ -111,7 +111,7 @@ class DocSaveOptionsData(object):
     def color_mode(self):
         """Gets the color_mode of this DocSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}  # noqa: E501
+        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
 
         :return: The color_mode of this DocSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -122,7 +122,7 @@ class DocSaveOptionsData(object):
     def color_mode(self, color_mode):
         """Sets the color_mode of this DocSaveOptionsData.
 
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}  # noqa: E501
+        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
 
         :param color_mode: The color_mode of this DocSaveOptionsData.  # noqa: E501
         :type: str
@@ -132,7 +132,7 @@ class DocSaveOptionsData(object):
     def save_format(self):
         """Gets the save_format of this DocSaveOptionsData.  # noqa: E501
 
-        format of save  # noqa: E501
+        Gets or sets format of save.  # noqa: E501
 
         :return: The save_format of this DocSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -143,7 +143,7 @@ class DocSaveOptionsData(object):
     def save_format(self, save_format):
         """Sets the save_format of this DocSaveOptionsData.
 
-        format of save  # noqa: E501
+        Gets or sets format of save.  # noqa: E501
 
         :param save_format: The save_format of this DocSaveOptionsData.  # noqa: E501
         :type: str
@@ -153,7 +153,7 @@ class DocSaveOptionsData(object):
     def file_name(self):
         """Gets the file_name of this DocSaveOptionsData.  # noqa: E501
 
-        name of destination file  # noqa: E501
+        Gets or sets name of destination file.  # noqa: E501
 
         :return: The file_name of this DocSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -164,7 +164,7 @@ class DocSaveOptionsData(object):
     def file_name(self, file_name):
         """Sets the file_name of this DocSaveOptionsData.
 
-        name of destination file  # noqa: E501
+        Gets or sets name of destination file.  # noqa: E501
 
         :param file_name: The file_name of this DocSaveOptionsData.  # noqa: E501
         :type: str
@@ -174,7 +174,7 @@ class DocSaveOptionsData(object):
     def dml_rendering_mode(self):
         """Gets the dml_rendering_mode of this DocSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }  # noqa: E501
+        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
 
         :return: The dml_rendering_mode of this DocSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -185,7 +185,7 @@ class DocSaveOptionsData(object):
     def dml_rendering_mode(self, dml_rendering_mode):
         """Sets the dml_rendering_mode of this DocSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }  # noqa: E501
+        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
 
         :param dml_rendering_mode: The dml_rendering_mode of this DocSaveOptionsData.  # noqa: E501
         :type: str
@@ -195,7 +195,7 @@ class DocSaveOptionsData(object):
     def dml_effects_rendering_mode(self):
         """Gets the dml_effects_rendering_mode of this DocSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }  # noqa: E501
+        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :return: The dml_effects_rendering_mode of this DocSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -206,7 +206,7 @@ class DocSaveOptionsData(object):
     def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
         """Sets the dml_effects_rendering_mode of this DocSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }  # noqa: E501
+        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this DocSaveOptionsData.  # noqa: E501
         :type: str
@@ -216,7 +216,7 @@ class DocSaveOptionsData(object):
     def zip_output(self):
         """Gets the zip_output of this DocSaveOptionsData.  # noqa: E501
 
-        Controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
 
         :return: The zip_output of this DocSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -227,7 +227,7 @@ class DocSaveOptionsData(object):
     def zip_output(self, zip_output):
         """Sets the zip_output of this DocSaveOptionsData.
 
-        Controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
 
         :param zip_output: The zip_output of this DocSaveOptionsData.  # noqa: E501
         :type: bool
@@ -279,7 +279,7 @@ class DocSaveOptionsData(object):
     def update_fields(self):
         """Gets the update_fields of this DocSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true  # noqa: E501
+        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true  # noqa: E501
 
         :return: The update_fields of this DocSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -290,7 +290,7 @@ class DocSaveOptionsData(object):
     def update_fields(self, update_fields):
         """Sets the update_fields of this DocSaveOptionsData.
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is true  # noqa: E501
+        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true  # noqa: E501
 
         :param update_fields: The update_fields of this DocSaveOptionsData.  # noqa: E501
         :type: bool
@@ -300,7 +300,7 @@ class DocSaveOptionsData(object):
     def password(self):
         """Gets the password of this DocSaveOptionsData.  # noqa: E501
 
-        Password  # noqa: E501
+        Gets or sets password.  # noqa: E501
 
         :return: The password of this DocSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -311,7 +311,7 @@ class DocSaveOptionsData(object):
     def password(self, password):
         """Sets the password of this DocSaveOptionsData.
 
-        Password  # noqa: E501
+        Gets or sets password.  # noqa: E501
 
         :param password: The password of this DocSaveOptionsData.  # noqa: E501
         :type: str
@@ -321,7 +321,7 @@ class DocSaveOptionsData(object):
     def save_routing_slip(self):
         """Gets the save_routing_slip of this DocSaveOptionsData.  # noqa: E501
 
-        Determine whether or not save RoutingSlip data saved to output document  # noqa: E501
+        Gets or sets determine whether or not save RoutingSlip data saved to output document.  # noqa: E501
 
         :return: The save_routing_slip of this DocSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -332,7 +332,7 @@ class DocSaveOptionsData(object):
     def save_routing_slip(self, save_routing_slip):
         """Sets the save_routing_slip of this DocSaveOptionsData.
 
-        Determine whether or not save RoutingSlip data saved to output document  # noqa: E501
+        Gets or sets determine whether or not save RoutingSlip data saved to output document.  # noqa: E501
 
         :param save_routing_slip: The save_routing_slip of this DocSaveOptionsData.  # noqa: E501
         :type: bool

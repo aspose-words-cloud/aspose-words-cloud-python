@@ -4,7 +4,7 @@ All URIs are relative to *https://localhost/v4.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**accept_all_revisions**](WordsApi.md#accept_all_revisions) | **PUT** /words/{name}/revisions/acceptAll | Accepts all revisions in document
+[**accept_all_revisions**](WordsApi.md#accept_all_revisions) | **PUT** /words/{name}/revisions/acceptAll | Accepts all revisions in document.
 [**append_document**](WordsApi.md#append_document) | **PUT** /words/{name}/appendDocument | Appends documents to original document.
 [**classify**](WordsApi.md#classify) | **PUT** /words/classify | Classifies raw text.
 [**classify_document**](WordsApi.md#classify_document) | **GET** /words/{documentName}/classify | Classifies document.
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**convert_document**](WordsApi.md#convert_document) | **PUT** /words/convert | Converts document from the request&#39;s content to the specified format .
 [**copy_file**](WordsApi.md#copy_file) | **PUT** /words/storage/file/copy/{srcPath} | Copy file
 [**copy_folder**](WordsApi.md#copy_folder) | **PUT** /words/storage/folder/copy/{srcPath} | Copy folder
-[**create_document**](WordsApi.md#create_document) | **PUT** /words/create | Creates new document. Document is created with format which is recognized from file extensions.  Supported extensions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot;
+[**create_document**](WordsApi.md#create_document) | **PUT** /words/create | Creates new document. Document is created with format which is recognized from file extensions. Supported extensions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot;.
 [**create_folder**](WordsApi.md#create_folder) | **PUT** /words/storage/folder/{path} | Create the folder
 [**create_or_update_document_property**](WordsApi.md#create_or_update_document_property) | **PUT** /words/{name}/documentProperties/{propertyName} | Adds new or update existing document property.
 [**delete_border**](WordsApi.md#delete_border) | **DELETE** /words/{name}/{nodePath}/borders/{index} | Resets border properties to default values.             
@@ -20,26 +20,34 @@ Method | HTTP request | Description
 [**delete_comment**](WordsApi.md#delete_comment) | **DELETE** /words/{name}/comments/{commentIndex} | Removes comment from document.
 [**delete_document_property**](WordsApi.md#delete_document_property) | **DELETE** /words/{name}/documentProperties/{propertyName} | Deletes document property.
 [**delete_drawing_object**](WordsApi.md#delete_drawing_object) | **DELETE** /words/{name}/{nodePath}/drawingObjects/{index} | Removes drawing object from document.
+[**delete_drawing_object_without_node_path**](WordsApi.md#delete_drawing_object_without_node_path) | **DELETE** /words/{name}/drawingObjects/{index} | Removes drawing object from document.
 [**delete_field**](WordsApi.md#delete_field) | **DELETE** /words/{name}/{nodePath}/fields/{index} | Deletes field from document.
+[**delete_field_without_node_path**](WordsApi.md#delete_field_without_node_path) | **DELETE** /words/{name}/fields/{index} | Deletes field from document.
 [**delete_fields**](WordsApi.md#delete_fields) | **DELETE** /words/{name}/{nodePath}/fields | Removes fields from section paragraph.
+[**delete_fields_without_node_path**](WordsApi.md#delete_fields_without_node_path) | **DELETE** /words/{name}/fields | Removes fields from section paragraph.
 [**delete_file**](WordsApi.md#delete_file) | **DELETE** /words/storage/file/{path} | Delete file
 [**delete_folder**](WordsApi.md#delete_folder) | **DELETE** /words/storage/folder/{path} | Delete folder
 [**delete_footnote**](WordsApi.md#delete_footnote) | **DELETE** /words/{name}/{nodePath}/footnotes/{index} | Removes footnote from document.
+[**delete_footnote_without_node_path**](WordsApi.md#delete_footnote_without_node_path) | **DELETE** /words/{name}/footnotes/{index} | Removes footnote from document.
 [**delete_form_field**](WordsApi.md#delete_form_field) | **DELETE** /words/{name}/{nodePath}/formfields/{index} | Removes form field from document.
+[**delete_form_field_without_node_path**](WordsApi.md#delete_form_field_without_node_path) | **DELETE** /words/{name}/formfields/{index} | Removes form field from document.
 [**delete_header_footer**](WordsApi.md#delete_header_footer) | **DELETE** /words/{name}/{sectionPath}/headersfooters/{index} | Deletes header/footer from document.
 [**delete_headers_footers**](WordsApi.md#delete_headers_footers) | **DELETE** /words/{name}/{sectionPath}/headersfooters | Deletes document headers and footers.
 [**delete_macros**](WordsApi.md#delete_macros) | **DELETE** /words/{name}/macros | Removes macros from document.
 [**delete_office_math_object**](WordsApi.md#delete_office_math_object) | **DELETE** /words/{name}/{nodePath}/OfficeMathObjects/{index} | Removes OfficeMath object from document.
+[**delete_office_math_object_without_node_path**](WordsApi.md#delete_office_math_object_without_node_path) | **DELETE** /words/{name}/OfficeMathObjects/{index} | Removes OfficeMath object from document.
 [**delete_paragraph**](WordsApi.md#delete_paragraph) | **DELETE** /words/{name}/{nodePath}/paragraphs/{index} | Removes paragraph from section.
+[**delete_paragraph_without_node_path**](WordsApi.md#delete_paragraph_without_node_path) | **DELETE** /words/{name}/paragraphs/{index} | Removes paragraph from section.
 [**delete_run**](WordsApi.md#delete_run) | **DELETE** /words/{name}/{paragraphPath}/runs/{index} | Removes run from document.
 [**delete_table**](WordsApi.md#delete_table) | **DELETE** /words/{name}/{nodePath}/tables/{index} | Deletes a table.
 [**delete_table_cell**](WordsApi.md#delete_table_cell) | **DELETE** /words/{name}/{tableRowPath}/cells/{index} | Deletes a table cell.
 [**delete_table_row**](WordsApi.md#delete_table_row) | **DELETE** /words/{name}/{tablePath}/rows/{index} | Deletes a table row.
+[**delete_table_without_node_path**](WordsApi.md#delete_table_without_node_path) | **DELETE** /words/{name}/tables/{index} | Deletes a table.
 [**delete_watermark**](WordsApi.md#delete_watermark) | **POST** /words/{name}/watermarks/deleteLast | Deletes watermark (for deleting last watermark from the document).
 [**download_file**](WordsApi.md#download_file) | **GET** /words/storage/file/{path} | Download file
 [**execute_mail_merge**](WordsApi.md#execute_mail_merge) | **PUT** /words/{name}/MailMerge | Executes document mail merge operation.
 [**execute_mail_merge_online**](WordsApi.md#execute_mail_merge_online) | **PUT** /words/MailMerge | Executes document mail merge online.
-[**get_available_fonts**](WordsApi.md#get_available_fonts) | **GET** /words/fonts/available | Gets the list of fonts, available for document processing
+[**get_available_fonts**](WordsApi.md#get_available_fonts) | **GET** /words/fonts/available | Gets the list of fonts, available for document processing.
 [**get_bookmark_by_name**](WordsApi.md#get_bookmark_by_name) | **GET** /words/{name}/bookmarks/{bookmarkName} | Reads document bookmark data by its name.
 [**get_bookmarks**](WordsApi.md#get_bookmarks) | **GET** /words/{name}/bookmarks | Reads document bookmarks common info.
 [**get_border**](WordsApi.md#get_border) | **GET** /words/{name}/{nodePath}/borders/{index} | Returns a border.
@@ -48,9 +56,13 @@ Method | HTTP request | Description
 [**get_comments**](WordsApi.md#get_comments) | **GET** /words/{name}/comments | Gets comments from document.
 [**get_document**](WordsApi.md#get_document) | **GET** /words/{documentName} | Reads document common info.
 [**get_document_drawing_object_by_index**](WordsApi.md#get_document_drawing_object_by_index) | **GET** /words/{name}/{nodePath}/drawingObjects/{index} | Reads document drawing object common info by its index or convert to format specified.
+[**get_document_drawing_object_by_index_without_node_path**](WordsApi.md#get_document_drawing_object_by_index_without_node_path) | **GET** /words/{name}/drawingObjects/{index} | Reads document drawing object common info by its index or convert to format specified.
 [**get_document_drawing_object_image_data**](WordsApi.md#get_document_drawing_object_image_data) | **GET** /words/{name}/{nodePath}/drawingObjects/{index}/imageData | Reads drawing object image data.
+[**get_document_drawing_object_image_data_without_node_path**](WordsApi.md#get_document_drawing_object_image_data_without_node_path) | **GET** /words/{name}/drawingObjects/{index}/imageData | Reads drawing object image data.
 [**get_document_drawing_object_ole_data**](WordsApi.md#get_document_drawing_object_ole_data) | **GET** /words/{name}/{nodePath}/drawingObjects/{index}/oleData | Gets drawing object OLE data.
+[**get_document_drawing_object_ole_data_without_node_path**](WordsApi.md#get_document_drawing_object_ole_data_without_node_path) | **GET** /words/{name}/drawingObjects/{index}/oleData | Gets drawing object OLE data.
 [**get_document_drawing_objects**](WordsApi.md#get_document_drawing_objects) | **GET** /words/{name}/{nodePath}/drawingObjects | Reads document drawing objects common info.
+[**get_document_drawing_objects_without_node_path**](WordsApi.md#get_document_drawing_objects_without_node_path) | **GET** /words/{name}/drawingObjects | Reads document drawing objects common info.
 [**get_document_field_names**](WordsApi.md#get_document_field_names) | **GET** /words/{name}/mailMerge/FieldNames | Reads document field names.
 [**get_document_field_names_online**](WordsApi.md#get_document_field_names_online) | **PUT** /words/mailMerge/FieldNames | Reads document field names.
 [**get_document_hyperlink_by_index**](WordsApi.md#get_document_hyperlink_by_index) | **GET** /words/{name}/hyperlinks/{hyperlinkIndex} | Reads document hyperlink by its index.
@@ -61,20 +73,32 @@ Method | HTTP request | Description
 [**get_document_statistics**](WordsApi.md#get_document_statistics) | **GET** /words/{name}/statistics | Reads document statistics.
 [**get_document_with_format**](WordsApi.md#get_document_with_format) | **GET** /words/{name} | Exports the document into the specified format.
 [**get_field**](WordsApi.md#get_field) | **GET** /words/{name}/{nodePath}/fields/{index} | Gets field from document.
+[**get_field_without_node_path**](WordsApi.md#get_field_without_node_path) | **GET** /words/{name}/fields/{index} | Gets field from document.
 [**get_fields**](WordsApi.md#get_fields) | **GET** /words/{name}/{nodePath}/fields | Get fields from document.
+[**get_fields_without_node_path**](WordsApi.md#get_fields_without_node_path) | **GET** /words/{name}/fields | Get fields from document.
 [**get_files_list**](WordsApi.md#get_files_list) | **GET** /words/storage/folder/{path} | Get all files and folders within a folder
 [**get_footnote**](WordsApi.md#get_footnote) | **GET** /words/{name}/{nodePath}/footnotes/{index} | Reads footnote by index.
+[**get_footnote_without_node_path**](WordsApi.md#get_footnote_without_node_path) | **GET** /words/{name}/footnotes/{index} | Reads footnote by index.
 [**get_footnotes**](WordsApi.md#get_footnotes) | **GET** /words/{name}/{nodePath}/footnotes | Gets footnotes from document.
+[**get_footnotes_without_node_path**](WordsApi.md#get_footnotes_without_node_path) | **GET** /words/{name}/footnotes | Gets footnotes from document.
 [**get_form_field**](WordsApi.md#get_form_field) | **GET** /words/{name}/{nodePath}/formfields/{index} | Returns representation of an one of the form field.
+[**get_form_field_without_node_path**](WordsApi.md#get_form_field_without_node_path) | **GET** /words/{name}/formfields/{index} | Returns representation of an one of the form field.
 [**get_form_fields**](WordsApi.md#get_form_fields) | **GET** /words/{name}/{nodePath}/formfields | Gets form fields from document.
+[**get_form_fields_without_node_path**](WordsApi.md#get_form_fields_without_node_path) | **GET** /words/{name}/formfields | Gets form fields from document.
 [**get_header_footer**](WordsApi.md#get_header_footer) | **GET** /words/{name}/headersfooters/{headerFooterIndex} | Returns a header/footer from the document by index.
 [**get_header_footer_of_section**](WordsApi.md#get_header_footer_of_section) | **GET** /words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex} | Returns a header/footer from the document section.
 [**get_header_footers**](WordsApi.md#get_header_footers) | **GET** /words/{name}/{sectionPath}/headersfooters | Returns a list of header/footers from the document.
 [**get_office_math_object**](WordsApi.md#get_office_math_object) | **GET** /words/{name}/{nodePath}/OfficeMathObjects/{index} | Reads OfficeMath object by index.
+[**get_office_math_object_without_node_path**](WordsApi.md#get_office_math_object_without_node_path) | **GET** /words/{name}/OfficeMathObjects/{index} | Reads OfficeMath object by index.
 [**get_office_math_objects**](WordsApi.md#get_office_math_objects) | **GET** /words/{name}/{nodePath}/OfficeMathObjects | Gets OfficeMath objects from document.
+[**get_office_math_objects_without_node_path**](WordsApi.md#get_office_math_objects_without_node_path) | **GET** /words/{name}/OfficeMathObjects | Gets OfficeMath objects from document.
 [**get_paragraph**](WordsApi.md#get_paragraph) | **GET** /words/{name}/{nodePath}/paragraphs/{index} | This resource represents one of the paragraphs contained in the document.
 [**get_paragraph_format**](WordsApi.md#get_paragraph_format) | **GET** /words/{name}/{nodePath}/paragraphs/{index}/format | Represents all the formatting for a paragraph.
+[**get_paragraph_format_without_node_path**](WordsApi.md#get_paragraph_format_without_node_path) | **GET** /words/{name}/paragraphs/{index}/format | Represents all the formatting for a paragraph.
+[**get_paragraph_without_node_path**](WordsApi.md#get_paragraph_without_node_path) | **GET** /words/{name}/paragraphs/{index} | This resource represents one of the paragraphs contained in the document.
 [**get_paragraphs**](WordsApi.md#get_paragraphs) | **GET** /words/{name}/{nodePath}/paragraphs | Returns a list of paragraphs that are contained in the document.
+[**get_paragraphs_without_node_path**](WordsApi.md#get_paragraphs_without_node_path) | **GET** /words/{name}/paragraphs | Returns a list of paragraphs that are contained in the document.
+[**get_range_text**](WordsApi.md#get_range_text) | **GET** /words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier} | Gets the text from the range.
 [**get_run**](WordsApi.md#get_run) | **GET** /words/{name}/{paragraphPath}/runs/{index} | This resource represents run of text contained in the document.
 [**get_run_font**](WordsApi.md#get_run_font) | **GET** /words/{name}/{paragraphPath}/runs/{index}/font | This resource represents font of run.
 [**get_runs**](WordsApi.md#get_runs) | **GET** /words/{name}/{paragraphPath}/runs | This resource represents collection of runs in the paragraph.
@@ -85,14 +109,21 @@ Method | HTTP request | Description
 [**get_table_cell**](WordsApi.md#get_table_cell) | **GET** /words/{name}/{tableRowPath}/cells/{index} | Returns a table cell.
 [**get_table_cell_format**](WordsApi.md#get_table_cell_format) | **GET** /words/{name}/{tableRowPath}/cells/{index}/cellformat | Returns a table cell format.
 [**get_table_properties**](WordsApi.md#get_table_properties) | **GET** /words/{name}/{nodePath}/tables/{index}/properties | Returns a table properties.
+[**get_table_properties_without_node_path**](WordsApi.md#get_table_properties_without_node_path) | **GET** /words/{name}/tables/{index}/properties | Returns a table properties.
 [**get_table_row**](WordsApi.md#get_table_row) | **GET** /words/{name}/{tablePath}/rows/{index} | Returns a table row.
 [**get_table_row_format**](WordsApi.md#get_table_row_format) | **GET** /words/{name}/{tablePath}/rows/{index}/rowformat | Returns a table row format.
+[**get_table_without_node_path**](WordsApi.md#get_table_without_node_path) | **GET** /words/{name}/tables/{index} | Returns a table.
 [**get_tables**](WordsApi.md#get_tables) | **GET** /words/{name}/{nodePath}/tables | Returns a list of tables that are contained in the document.
+[**get_tables_without_node_path**](WordsApi.md#get_tables_without_node_path) | **GET** /words/{name}/tables | Returns a list of tables that are contained in the document.
 [**insert_comment**](WordsApi.md#insert_comment) | **POST** /words/{name}/comments | Adds comment to document, returns inserted comment data.
 [**insert_drawing_object**](WordsApi.md#insert_drawing_object) | **POST** /words/{name}/{nodePath}/drawingObjects | Adds drawing object to document, returns added  drawing object&#39;s data.
+[**insert_drawing_object_without_node_path**](WordsApi.md#insert_drawing_object_without_node_path) | **POST** /words/{name}/drawingObjects | Adds drawing object to document, returns added  drawing object&#39;s data.
 [**insert_field**](WordsApi.md#insert_field) | **POST** /words/{name}/{nodePath}/fields | Adds field to document, returns inserted field&#39;s data.
+[**insert_field_without_node_path**](WordsApi.md#insert_field_without_node_path) | **POST** /words/{name}/fields | Adds field to document, returns inserted field&#39;s data.
 [**insert_footnote**](WordsApi.md#insert_footnote) | **POST** /words/{name}/{nodePath}/footnotes | Adds footnote to document, returns added footnote&#39;s data.
+[**insert_footnote_without_node_path**](WordsApi.md#insert_footnote_without_node_path) | **POST** /words/{name}/footnotes | Adds footnote to document, returns added footnote&#39;s data.
 [**insert_form_field**](WordsApi.md#insert_form_field) | **POST** /words/{name}/{nodePath}/formfields | Adds form field to paragraph, returns added form field&#39;s data.
+[**insert_form_field_without_node_path**](WordsApi.md#insert_form_field_without_node_path) | **POST** /words/{name}/formfields | Adds form field to paragraph, returns added form field&#39;s data.
 [**insert_header_footer**](WordsApi.md#insert_header_footer) | **PUT** /words/{name}/{sectionPath}/headersfooters | Inserts to document header or footer.
 [**insert_page_numbers**](WordsApi.md#insert_page_numbers) | **PUT** /words/{name}/PageNumbers | Inserts document page numbers.
 [**insert_paragraph**](WordsApi.md#insert_paragraph) | **POST** /words/{name}/{nodePath}/paragraphs | Adds paragraph to document, returns added paragraph&#39;s data.
@@ -100,21 +131,29 @@ Method | HTTP request | Description
 [**insert_table**](WordsApi.md#insert_table) | **POST** /words/{name}/{nodePath}/tables | Adds table to document, returns added table&#39;s data.             
 [**insert_table_cell**](WordsApi.md#insert_table_cell) | **POST** /words/{name}/{tableRowPath}/cells | Adds table cell to table, returns added cell&#39;s data.             
 [**insert_table_row**](WordsApi.md#insert_table_row) | **POST** /words/{name}/{tablePath}/rows | Adds table row to table, returns added row&#39;s data.             
+[**insert_table_without_node_path**](WordsApi.md#insert_table_without_node_path) | **POST** /words/{name}/tables | Adds table to document, returns added table&#39;s data.             
 [**insert_watermark_image**](WordsApi.md#insert_watermark_image) | **POST** /words/{name}/watermarks/images | Inserts document watermark image.
 [**insert_watermark_text**](WordsApi.md#insert_watermark_text) | **POST** /words/{name}/watermarks/texts | Inserts document watermark text.
 [**load_web_document**](WordsApi.md#load_web_document) | **PUT** /words/loadWebDocument | Loads new document from web into the file with any supported format of data.
 [**move_file**](WordsApi.md#move_file) | **PUT** /words/storage/file/move/{srcPath} | Move file
 [**move_folder**](WordsApi.md#move_folder) | **PUT** /words/storage/folder/move/{srcPath} | Move folder
 [**protect_document**](WordsApi.md#protect_document) | **PUT** /words/{name}/protection | Protects document.
-[**reject_all_revisions**](WordsApi.md#reject_all_revisions) | **PUT** /words/{name}/revisions/rejectAll | Rejects all revisions in document
+[**reject_all_revisions**](WordsApi.md#reject_all_revisions) | **PUT** /words/{name}/revisions/rejectAll | Rejects all revisions in document.
+[**remove_range**](WordsApi.md#remove_range) | **DELETE** /words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier} | Removes the range from the document.
 [**render_drawing_object**](WordsApi.md#render_drawing_object) | **GET** /words/{name}/{nodePath}/drawingObjects/{index}/render | Renders drawing object to specified format.
+[**render_drawing_object_without_node_path**](WordsApi.md#render_drawing_object_without_node_path) | **GET** /words/{name}/drawingObjects/{index}/render | Renders drawing object to specified format.
 [**render_math_object**](WordsApi.md#render_math_object) | **GET** /words/{name}/{nodePath}/OfficeMathObjects/{index}/render | Renders math object to specified format.
+[**render_math_object_without_node_path**](WordsApi.md#render_math_object_without_node_path) | **GET** /words/{name}/OfficeMathObjects/{index}/render | Renders math object to specified format.
 [**render_page**](WordsApi.md#render_page) | **GET** /words/{name}/pages/{pageIndex}/render | Renders page to specified format.
 [**render_paragraph**](WordsApi.md#render_paragraph) | **GET** /words/{name}/{nodePath}/paragraphs/{index}/render | Renders paragraph to specified format.
+[**render_paragraph_without_node_path**](WordsApi.md#render_paragraph_without_node_path) | **GET** /words/{name}/paragraphs/{index}/render | Renders paragraph to specified format.
 [**render_table**](WordsApi.md#render_table) | **GET** /words/{name}/{nodePath}/tables/{index}/render | Renders table to specified format.
+[**render_table_without_node_path**](WordsApi.md#render_table_without_node_path) | **GET** /words/{name}/tables/{index}/render | Renders table to specified format.
 [**replace_text**](WordsApi.md#replace_text) | **PUT** /words/{name}/replaceText | Replaces document text.
+[**replace_with_text**](WordsApi.md#replace_with_text) | **POST** /words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier} | Replaces the content in the range.
 [**reset_cache**](WordsApi.md#reset_cache) | **DELETE** /words/fonts/cache | Resets font&#39;s cache.
 [**save_as**](WordsApi.md#save_as) | **PUT** /words/{name}/saveAs | Converts document to destination format with detailed settings and saves result to storage.
+[**save_as_range**](WordsApi.md#save_as_range) | **POST** /words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs | Saves the selected range as a new document.
 [**save_as_tiff**](WordsApi.md#save_as_tiff) | **PUT** /words/{name}/saveAs/tiff | Converts document to tiff with detailed settings and saves result to storage.
 [**search**](WordsApi.md#search) | **GET** /words/{name}/search | Searches text in document.
 [**split_document**](WordsApi.md#split_document) | **PUT** /words/{name}/split | Splits document.
@@ -123,16 +162,20 @@ Method | HTTP request | Description
 [**update_border**](WordsApi.md#update_border) | **PUT** /words/{name}/{nodePath}/borders/{index} | Updates border properties.             
 [**update_comment**](WordsApi.md#update_comment) | **PUT** /words/{name}/comments/{commentIndex} | Updates the comment, returns updated comment data.
 [**update_drawing_object**](WordsApi.md#update_drawing_object) | **PUT** /words/{name}/{nodePath}/drawingObjects/{index} | Updates drawing object, returns updated  drawing object&#39;s data.
+[**update_drawing_object_without_node_path**](WordsApi.md#update_drawing_object_without_node_path) | **PUT** /words/{name}/drawingObjects/{index} | Updates drawing object, returns updated  drawing object&#39;s data.
 [**update_field**](WordsApi.md#update_field) | **PUT** /words/{name}/{nodePath}/fields/{index} | Updates field&#39;s properties, returns updated field&#39;s data.
 [**update_fields**](WordsApi.md#update_fields) | **PUT** /words/{name}/updateFields | Updates (reevaluate) fields in document.
 [**update_footnote**](WordsApi.md#update_footnote) | **PUT** /words/{name}/{nodePath}/footnotes/{index} | Updates footnote&#39;s properties, returns updated run&#39;s data.
+[**update_footnote_without_node_path**](WordsApi.md#update_footnote_without_node_path) | **PUT** /words/{name}/footnotes/{index} | Updates footnote&#39;s properties, returns updated run&#39;s data.
 [**update_form_field**](WordsApi.md#update_form_field) | **PUT** /words/{name}/{nodePath}/formfields/{index} | Updates properties of form field, returns updated form field.
+[**update_form_field_without_node_path**](WordsApi.md#update_form_field_without_node_path) | **PUT** /words/{name}/formfields/{index} | Updates properties of form field, returns updated form field.
 [**update_paragraph_format**](WordsApi.md#update_paragraph_format) | **PUT** /words/{name}/{nodePath}/paragraphs/{index}/format | Updates paragraph format properties, returns updated format properties.
 [**update_run**](WordsApi.md#update_run) | **PUT** /words/{name}/{paragraphPath}/runs/{index} | Updates run&#39;s properties, returns updated run&#39;s data.
 [**update_run_font**](WordsApi.md#update_run_font) | **PUT** /words/{name}/{paragraphPath}/runs/{index}/font | Updates font properties, returns updated font data.
 [**update_section_page_setup**](WordsApi.md#update_section_page_setup) | **PUT** /words/{name}/sections/{sectionIndex}/pageSetup | Updates page setup of section.
 [**update_table_cell_format**](WordsApi.md#update_table_cell_format) | **PUT** /words/{name}/{tableRowPath}/cells/{index}/cellformat | Updates a table cell format.
 [**update_table_properties**](WordsApi.md#update_table_properties) | **PUT** /words/{name}/{nodePath}/tables/{index}/properties | Updates a table properties.
+[**update_table_properties_without_node_path**](WordsApi.md#update_table_properties_without_node_path) | **PUT** /words/{name}/tables/{index}/properties | Updates a table properties.
 [**update_table_row_format**](WordsApi.md#update_table_row_format) | **PUT** /words/{name}/{tablePath}/rows/{index}/rowformat | Updates a table row format.
 [**upload_file**](WordsApi.md#upload_file) | **PUT** /words/storage/file/{path} | Upload file
 
@@ -140,7 +183,7 @@ Method | HTTP request | Description
 # **accept_all_revisions**
 > RevisionsModificationResponse accept_all_revisions(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
 
-Accepts all revisions in document
+Accepts all revisions in document.
 
 ### Example
 ```python
@@ -164,7 +207,7 @@ password = 'password_example' # str | Password for opening an encrypted document
 dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 
 try:
-    # Accepts all revisions in document
+    # Accepts all revisions in document.
     api_response = api_instance.accept_all_revisions(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
     pprint(api_response)
 except ApiException as e:
@@ -614,7 +657,7 @@ void (empty response body)
 # **create_document**
 > DocumentResponse create_document(storage=storage, file_name=file_name, folder=folder)
 
-Creates new document. Document is created with format which is recognized from file extensions.  Supported extensions: \".doc\", \".docx\", \".docm\", \".dot\", \".dotm\", \".dotx\", \".flatopc\", \".fopc\", \".flatopc_macro\", \".fopc_macro\", \".flatopc_template\", \".fopc_template\", \".flatopc_template_macro\", \".fopc_template_macro\", \".wordml\", \".wml\", \".rtf\"
+Creates new document. Document is created with format which is recognized from file extensions. Supported extensions: \".doc\", \".docx\", \".docm\", \".dot\", \".dotm\", \".dotx\", \".flatopc\", \".fopc\", \".flatopc_macro\", \".fopc_macro\", \".flatopc_template\", \".fopc_template\", \".flatopc_template_macro\", \".fopc_template_macro\", \".wordml\", \".wml\", \".rtf\".
 
 ### Example
 ```python
@@ -635,7 +678,7 @@ file_name = 'file_name_example' # str | The document name. (optional)
 folder = 'folder_example' # str | The document folder. (optional)
 
 try:
-    # Creates new document. Document is created with format which is recognized from file extensions.  Supported extensions: \".doc\", \".docx\", \".docm\", \".dot\", \".dotm\", \".dotx\", \".flatopc\", \".fopc\", \".flatopc_macro\", \".fopc_macro\", \".flatopc_template\", \".fopc_template\", \".flatopc_template_macro\", \".fopc_template_macro\", \".wordml\", \".wml\", \".rtf\"
+    # Creates new document. Document is created with format which is recognized from file extensions. Supported extensions: \".doc\", \".docx\", \".docm\", \".dot\", \".dotm\", \".dotx\", \".flatopc\", \".fopc\", \".flatopc_macro\", \".fopc_macro\", \".flatopc_template\", \".fopc_template\", \".flatopc_template_macro\", \".fopc_template_macro\", \".wordml\", \".wml\", \".rtf\".
     api_response = api_instance.create_document(storage=storage, file_name=file_name, folder=folder)
     pprint(api_response)
 except ApiException as e:
@@ -789,7 +832,7 @@ Name | Type | Description  | Notes
 
 Resets border properties to default values.             
 
-'nodePath' should refer to node with cell or row
+'nodePath' should refer to node with cell or row.
 
 ### Example
 ```python
@@ -859,7 +902,7 @@ Name | Type | Description  | Notes
 
 Resets borders properties to default values.             
 
-'nodePath' should refer to node with cell or row
+'nodePath' should refer to node with cell or row.
 
 ### Example
 ```python
@@ -942,7 +985,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-comment_index = 56 # int | The comment index
+comment_index = 56 # int | The comment index.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -963,7 +1006,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **comment_index** | **int**| The comment index | 
+ **comment_index** | **int**| The comment index. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -1053,7 +1096,74 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_drawing_object**
-> delete_drawing_object(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> delete_drawing_object(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+
+Removes drawing object from document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+node_path = 'node_path_example' # str | Path to the node, which contains collection of drawing objects.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
+revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
+
+try:
+    # Removes drawing object from document.
+    api_instance.delete_drawing_object(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+except ApiException as e:
+    print("Exception when calling WordsApi->delete_drawing_object: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **node_path** | **str**| Path to the node, which contains collection of drawing objects. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+ **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
+ **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_drawing_object_without_node_path**
+> delete_drawing_object_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Removes drawing object from document.
 
@@ -1073,7 +1183,6 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node, which contains collection of drawing objects.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -1084,9 +1193,9 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Removes drawing object from document.
-    api_instance.delete_drawing_object(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_instance.delete_drawing_object_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 except ApiException as e:
-    print("Exception when calling WordsApi->delete_drawing_object: %s\n" % e)
+    print("Exception when calling WordsApi->delete_drawing_object_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -1095,7 +1204,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node, which contains collection of drawing objects. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -1120,7 +1228,74 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_field**
-> delete_field(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> delete_field(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+
+Deletes field from document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+node_path = 'node_path_example' # str | Path to the node, which contains collection of fields.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
+revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
+
+try:
+    # Deletes field from document.
+    api_instance.delete_field(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+except ApiException as e:
+    print("Exception when calling WordsApi->delete_field: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **node_path** | **str**| Path to the node, which contains collection of fields. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+ **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
+ **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_field_without_node_path**
+> delete_field_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Deletes field from document.
 
@@ -1140,7 +1315,6 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node, which contains collection of fields.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -1151,9 +1325,9 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Deletes field from document.
-    api_instance.delete_field(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_instance.delete_field_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 except ApiException as e:
-    print("Exception when calling WordsApi->delete_field: %s\n" % e)
+    print("Exception when calling WordsApi->delete_field_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -1162,7 +1336,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node, which contains collection of fields. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -1228,6 +1401,69 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **node_path** | **str**| Path to the node, which contains collection of fields. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+ **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
+ **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_fields_without_node_path**
+> delete_fields_without_node_path(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+
+Removes fields from section paragraph.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
+revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
+
+try:
+    # Removes fields from section paragraph.
+    api_instance.delete_fields_without_node_path(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+except ApiException as e:
+    print("Exception when calling WordsApi->delete_fields_without_node_path: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -1358,7 +1594,74 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_footnote**
-> delete_footnote(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> delete_footnote(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+
+Removes footnote from document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+node_path = 'node_path_example' # str | Path to the node, which contains collection of footnotes.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
+revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
+
+try:
+    # Removes footnote from document.
+    api_instance.delete_footnote(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+except ApiException as e:
+    print("Exception when calling WordsApi->delete_footnote: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **node_path** | **str**| Path to the node, which contains collection of footnotes. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+ **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
+ **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_footnote_without_node_path**
+> delete_footnote_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Removes footnote from document.
 
@@ -1378,7 +1681,6 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node, which contains collection of footnotes.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -1389,9 +1691,9 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Removes footnote from document.
-    api_instance.delete_footnote(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_instance.delete_footnote_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 except ApiException as e:
-    print("Exception when calling WordsApi->delete_footnote: %s\n" % e)
+    print("Exception when calling WordsApi->delete_footnote_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -1400,7 +1702,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node, which contains collection of footnotes. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -1425,7 +1726,74 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_form_field**
-> delete_form_field(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> delete_form_field(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+
+Removes form field from document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+node_path = 'node_path_example' # str | Path to the node that contains collection of formfields.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
+revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
+
+try:
+    # Removes form field from document.
+    api_instance.delete_form_field(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+except ApiException as e:
+    print("Exception when calling WordsApi->delete_form_field: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **node_path** | **str**| Path to the node that contains collection of formfields. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+ **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
+ **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_form_field_without_node_path**
+> delete_form_field_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Removes form field from document.
 
@@ -1445,7 +1813,6 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node that contains collection of formfields.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -1456,9 +1823,9 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Removes form field from document.
-    api_instance.delete_form_field(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_instance.delete_form_field_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 except ApiException as e:
-    print("Exception when calling WordsApi->delete_form_field: %s\n" % e)
+    print("Exception when calling WordsApi->delete_form_field_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -1467,7 +1834,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node that contains collection of formfields. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -1492,7 +1858,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_header_footer**
-> delete_header_footer(name, index, section_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> delete_header_footer(name, section_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Deletes header/footer from document.
 
@@ -1511,8 +1877,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-index = 56 # int | Object index.
 section_path = 'section_path_example' # str | Path to parent section.
+index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -1523,7 +1889,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Deletes header/footer from document.
-    api_instance.delete_header_footer(name, index, section_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_instance.delete_header_footer(name, section_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 except ApiException as e:
     print("Exception when calling WordsApi->delete_header_footer: %s\n" % e)
 ```
@@ -1533,8 +1899,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **index** | **int**| Object index. | 
  **section_path** | **str**| Path to parent section. | 
+ **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -1689,7 +2055,74 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_office_math_object**
-> delete_office_math_object(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> delete_office_math_object(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+
+Removes OfficeMath object from document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+node_path = 'node_path_example' # str | Path to the node, which contains collection of OfficeMath objects.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
+revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
+
+try:
+    # Removes OfficeMath object from document.
+    api_instance.delete_office_math_object(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+except ApiException as e:
+    print("Exception when calling WordsApi->delete_office_math_object: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **node_path** | **str**| Path to the node, which contains collection of OfficeMath objects. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+ **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
+ **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_office_math_object_without_node_path**
+> delete_office_math_object_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Removes OfficeMath object from document.
 
@@ -1709,7 +2142,6 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node, which contains collection of OfficeMath objects.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -1720,9 +2152,9 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Removes OfficeMath object from document.
-    api_instance.delete_office_math_object(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_instance.delete_office_math_object_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 except ApiException as e:
-    print("Exception when calling WordsApi->delete_office_math_object: %s\n" % e)
+    print("Exception when calling WordsApi->delete_office_math_object_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -1731,7 +2163,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node, which contains collection of OfficeMath objects. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -1756,7 +2187,74 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_paragraph**
-> delete_paragraph(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> delete_paragraph(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+
+Removes paragraph from section.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The file name.
+node_path = 'node_path_example' # str | Path to the node which contains paragraphs.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
+revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
+
+try:
+    # Removes paragraph from section.
+    api_instance.delete_paragraph(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+except ApiException as e:
+    print("Exception when calling WordsApi->delete_paragraph: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The file name. | 
+ **node_path** | **str**| Path to the node which contains paragraphs. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+ **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
+ **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_paragraph_without_node_path**
+> delete_paragraph_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Removes paragraph from section.
 
@@ -1776,7 +2274,6 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The file name.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node which contains paragraphs.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -1787,9 +2284,9 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Removes paragraph from section.
-    api_instance.delete_paragraph(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_instance.delete_paragraph_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 except ApiException as e:
-    print("Exception when calling WordsApi->delete_paragraph: %s\n" % e)
+    print("Exception when calling WordsApi->delete_paragraph_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -1798,7 +2295,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The file name. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node which contains paragraphs. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -1890,7 +2386,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_table**
-> delete_table(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> delete_table(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Deletes a table.
 
@@ -1909,8 +2405,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-index = 56 # int | Object index.
 node_path = 'node_path_example' # str | Path to the node, which contains tables.
+index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -1921,7 +2417,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Deletes a table.
-    api_instance.delete_table(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_instance.delete_table(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 except ApiException as e:
     print("Exception when calling WordsApi->delete_table: %s\n" % e)
 ```
@@ -1931,8 +2427,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **index** | **int**| Object index. | 
  **node_path** | **str**| Path to the node, which contains tables. | 
+ **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -2066,6 +2562,71 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **table_path** | **str**| Path to table. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+ **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
+ **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_table_without_node_path**
+> delete_table_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+
+Deletes a table.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
+revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
+
+try:
+    # Deletes a table.
+    api_instance.delete_table_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+except ApiException as e:
+    print("Exception when calling WordsApi->delete_table_without_node_path: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -2236,7 +2797,7 @@ password = 'password_example' # str | Password for opening an encrypted document
 with_regions = false # bool | With regions flag. (optional) (default to false)
 mail_merge_data_file = 'mail_merge_data_file_example' # str | Mail merge data. (optional)
 cleanup = 'cleanup_example' # str | Clean up options. (optional)
-use_whole_paragraph_as_region = true # bool | Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true. (optional) (default to true)
+use_whole_paragraph_as_region = true # bool | Gets or sets a value indicating whether paragraph with TableStart or             TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.             The default value is true. (optional) (default to true)
 dest_file_name = 'dest_file_name_example' # str | Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name. (optional)
 
 try:
@@ -2260,7 +2821,7 @@ Name | Type | Description  | Notes
  **with_regions** | **bool**| With regions flag. | [optional] [default to false]
  **mail_merge_data_file** | **str**| Mail merge data. | [optional] 
  **cleanup** | **str**| Clean up options. | [optional] 
- **use_whole_paragraph_as_region** | **bool**| Gets or sets a value indicating whether paragraph with TableStart or              TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.              The default value is true. | [optional] [default to true]
+ **use_whole_paragraph_as_region** | **bool**| Gets or sets a value indicating whether paragraph with TableStart or             TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.             The default value is true. | [optional] [default to true]
  **dest_file_name** | **str**| Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name. | [optional] 
 
 ### Return type
@@ -2339,7 +2900,7 @@ Name | Type | Description  | Notes
 # **get_available_fonts**
 > AvailableFontsResponse get_available_fonts(fonts_location=fonts_location)
 
-Gets the list of fonts, available for document processing
+Gets the list of fonts, available for document processing.
 
 ### Example
 ```python
@@ -2358,7 +2919,7 @@ api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuratio
 fonts_location = 'fonts_location_example' # str | Folder in filestorage with custom fonts. (optional)
 
 try:
-    # Gets the list of fonts, available for document processing
+    # Gets the list of fonts, available for document processing.
     api_response = api_instance.get_available_fonts(fonts_location=fonts_location)
     pprint(api_response)
 except ApiException as e:
@@ -2509,7 +3070,7 @@ Name | Type | Description  | Notes
 
 Returns a border.
 
-'nodePath' should refer to node with cell or row
+'nodePath' should refer to node with cell or row.
 
 ### Example
 ```python
@@ -2573,7 +3134,7 @@ Name | Type | Description  | Notes
 
 Returns a collection of borders.
 
-'nodePath' should refer to node with cell or row
+'nodePath' should refer to node with cell or row.
 
 ### Example
 ```python
@@ -2807,7 +3368,69 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_document_drawing_object_by_index**
-> DrawingObjectResponse get_document_drawing_object_by_index(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+> DrawingObjectResponse get_document_drawing_object_by_index(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+
+Reads document drawing object common info by its index or convert to format specified.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+node_path = 'node_path_example' # str | Path to the node, which contains collection of drawing objects.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+
+try:
+    # Reads document drawing object common info by its index or convert to format specified.
+    api_response = api_instance.get_document_drawing_object_by_index(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_document_drawing_object_by_index: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **node_path** | **str**| Path to the node, which contains collection of drawing objects. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+
+### Return type
+
+[**DrawingObjectResponse**](DrawingObjectResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_document_drawing_object_by_index_without_node_path**
+> DrawingObjectResponse get_document_drawing_object_by_index_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
 Reads document drawing object common info by its index or convert to format specified.
 
@@ -2827,7 +3450,6 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node, which contains collection of drawing objects.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -2835,10 +3457,10 @@ password = 'password_example' # str | Password for opening an encrypted document
 
 try:
     # Reads document drawing object common info by its index or convert to format specified.
-    api_response = api_instance.get_document_drawing_object_by_index(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    api_response = api_instance.get_document_drawing_object_by_index_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling WordsApi->get_document_drawing_object_by_index: %s\n" % e)
+    print("Exception when calling WordsApi->get_document_drawing_object_by_index_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -2847,7 +3469,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node, which contains collection of drawing objects. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -2869,7 +3490,69 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_document_drawing_object_image_data**
-> file get_document_drawing_object_image_data(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+> file get_document_drawing_object_image_data(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+
+Reads drawing object image data.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+node_path = 'node_path_example' # str | Path to the node, which contains collection of drawing objects.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+
+try:
+    # Reads drawing object image data.
+    api_response = api_instance.get_document_drawing_object_image_data(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_document_drawing_object_image_data: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **node_path** | **str**| Path to the node, which contains collection of drawing objects. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+
+### Return type
+
+[**file**](file.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_document_drawing_object_image_data_without_node_path**
+> file get_document_drawing_object_image_data_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
 Reads drawing object image data.
 
@@ -2889,7 +3572,6 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node, which contains collection of drawing objects.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -2897,10 +3579,10 @@ password = 'password_example' # str | Password for opening an encrypted document
 
 try:
     # Reads drawing object image data.
-    api_response = api_instance.get_document_drawing_object_image_data(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    api_response = api_instance.get_document_drawing_object_image_data_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling WordsApi->get_document_drawing_object_image_data: %s\n" % e)
+    print("Exception when calling WordsApi->get_document_drawing_object_image_data_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -2909,7 +3591,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node, which contains collection of drawing objects. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -2931,7 +3612,69 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_document_drawing_object_ole_data**
-> file get_document_drawing_object_ole_data(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+> file get_document_drawing_object_ole_data(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+
+Gets drawing object OLE data.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+node_path = 'node_path_example' # str | Path to the node, which contains collection of drawing objects.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+
+try:
+    # Gets drawing object OLE data.
+    api_response = api_instance.get_document_drawing_object_ole_data(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_document_drawing_object_ole_data: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **node_path** | **str**| Path to the node, which contains collection of drawing objects. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+
+### Return type
+
+[**file**](file.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_document_drawing_object_ole_data_without_node_path**
+> file get_document_drawing_object_ole_data_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
 Gets drawing object OLE data.
 
@@ -2951,7 +3694,6 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node, which contains collection of drawing objects.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -2959,10 +3701,10 @@ password = 'password_example' # str | Password for opening an encrypted document
 
 try:
     # Gets drawing object OLE data.
-    api_response = api_instance.get_document_drawing_object_ole_data(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    api_response = api_instance.get_document_drawing_object_ole_data_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling WordsApi->get_document_drawing_object_ole_data: %s\n" % e)
+    print("Exception when calling WordsApi->get_document_drawing_object_ole_data_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -2971,7 +3713,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node, which contains collection of drawing objects. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -3032,6 +3773,64 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **node_path** | **str**| Path to the node, which contains collection of drawing objects. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+
+### Return type
+
+[**DrawingObjectsResponse**](DrawingObjectsResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_document_drawing_objects_without_node_path**
+> DrawingObjectsResponse get_document_drawing_objects_without_node_path(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+
+Reads document drawing objects common info.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+
+try:
+    # Reads document drawing objects common info.
+    api_response = api_instance.get_document_drawing_objects_without_node_path(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_document_drawing_objects_without_node_path: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -3484,7 +4283,7 @@ load_encoding = 'load_encoding_example' # str | Encoding that will be used to lo
 password = 'password_example' # str | Password for opening an encrypted document. (optional)
 include_comments = false # bool | Support including/excluding comments from the WordCount. Default value is \"false\". (optional) (default to false)
 include_footnotes = false # bool | Support including/excluding footnotes from the WordCount. Default value is \"false\". (optional) (default to false)
-include_text_in_shapes = false # bool | Support including/excluding shape's text from the WordCount. Default value is \"false\" (optional) (default to false)
+include_text_in_shapes = false # bool | Support including/excluding shape's text from the WordCount. Default value is \"false\". (optional) (default to false)
 
 try:
     # Reads document statistics.
@@ -3505,7 +4304,7 @@ Name | Type | Description  | Notes
  **password** | **str**| Password for opening an encrypted document. | [optional] 
  **include_comments** | **bool**| Support including/excluding comments from the WordCount. Default value is \&quot;false\&quot;. | [optional] [default to false]
  **include_footnotes** | **bool**| Support including/excluding footnotes from the WordCount. Default value is \&quot;false\&quot;. | [optional] [default to false]
- **include_text_in_shapes** | **bool**| Support including/excluding shape&#39;s text from the WordCount. Default value is \&quot;false\&quot; | [optional] [default to false]
+ **include_text_in_shapes** | **bool**| Support including/excluding shape&#39;s text from the WordCount. Default value is \&quot;false\&quot;. | [optional] [default to false]
 
 ### Return type
 
@@ -3547,7 +4346,7 @@ folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
 password = 'password_example' # str | Password for opening an encrypted document. (optional)
-out_path = 'out_path_example' # str | Path to save the result (optional)
+out_path = 'out_path_example' # str | Path to save the result. (optional)
 fonts_location = 'fonts_location_example' # str | Folder in filestorage with custom fonts. (optional)
 
 try:
@@ -3568,7 +4367,7 @@ Name | Type | Description  | Notes
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
  **password** | **str**| Password for opening an encrypted document. | [optional] 
- **out_path** | **str**| Path to save the result | [optional] 
+ **out_path** | **str**| Path to save the result. | [optional] 
  **fonts_location** | **str**| Folder in filestorage with custom fonts. | [optional] 
 
 ### Return type
@@ -3587,7 +4386,69 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_field**
-> FieldResponse get_field(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+> FieldResponse get_field(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+
+Gets field from document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+node_path = 'node_path_example' # str | Path to the node, which contains collection of fields.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+
+try:
+    # Gets field from document.
+    api_response = api_instance.get_field(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_field: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **node_path** | **str**| Path to the node, which contains collection of fields. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+
+### Return type
+
+[**FieldResponse**](FieldResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_field_without_node_path**
+> FieldResponse get_field_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
 Gets field from document.
 
@@ -3607,7 +4468,6 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node, which contains collection of fields.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -3615,10 +4475,10 @@ password = 'password_example' # str | Password for opening an encrypted document
 
 try:
     # Gets field from document.
-    api_response = api_instance.get_field(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    api_response = api_instance.get_field_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling WordsApi->get_field: %s\n" % e)
+    print("Exception when calling WordsApi->get_field_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -3627,7 +4487,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node, which contains collection of fields. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -3708,6 +4567,64 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_fields_without_node_path**
+> FieldsResponse get_fields_without_node_path(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+
+Get fields from document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+
+try:
+    # Get fields from document.
+    api_response = api_instance.get_fields_without_node_path(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_fields_without_node_path: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+
+### Return type
+
+[**FieldsResponse**](FieldsResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_files_list**
 > FilesList get_files_list(path, storage_name=storage_name)
 
@@ -3761,7 +4678,69 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_footnote**
-> FootnoteResponse get_footnote(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+> FootnoteResponse get_footnote(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+
+Reads footnote by index.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+node_path = 'node_path_example' # str | Path to the node, which contains collection of footnotes.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+
+try:
+    # Reads footnote by index.
+    api_response = api_instance.get_footnote(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_footnote: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **node_path** | **str**| Path to the node, which contains collection of footnotes. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+
+### Return type
+
+[**FootnoteResponse**](FootnoteResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_footnote_without_node_path**
+> FootnoteResponse get_footnote_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
 Reads footnote by index.
 
@@ -3781,7 +4760,6 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node, which contains collection of footnotes.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -3789,10 +4767,10 @@ password = 'password_example' # str | Password for opening an encrypted document
 
 try:
     # Reads footnote by index.
-    api_response = api_instance.get_footnote(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    api_response = api_instance.get_footnote_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling WordsApi->get_footnote: %s\n" % e)
+    print("Exception when calling WordsApi->get_footnote_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -3801,7 +4779,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node, which contains collection of footnotes. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -3882,8 +4859,128 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_footnotes_without_node_path**
+> FootnotesResponse get_footnotes_without_node_path(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+
+Gets footnotes from document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+
+try:
+    # Gets footnotes from document.
+    api_response = api_instance.get_footnotes_without_node_path(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_footnotes_without_node_path: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+
+### Return type
+
+[**FootnotesResponse**](FootnotesResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_form_field**
-> FormFieldResponse get_form_field(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+> FormFieldResponse get_form_field(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+
+Returns representation of an one of the form field.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+node_path = 'node_path_example' # str | Path to the node that contains collection of formfields.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+
+try:
+    # Returns representation of an one of the form field.
+    api_response = api_instance.get_form_field(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_form_field: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **node_path** | **str**| Path to the node that contains collection of formfields. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+
+### Return type
+
+[**FormFieldResponse**](FormFieldResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_form_field_without_node_path**
+> FormFieldResponse get_form_field_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
 Returns representation of an one of the form field.
 
@@ -3903,7 +5000,6 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node that contains collection of formfields.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -3911,10 +5007,10 @@ password = 'password_example' # str | Password for opening an encrypted document
 
 try:
     # Returns representation of an one of the form field.
-    api_response = api_instance.get_form_field(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    api_response = api_instance.get_form_field_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling WordsApi->get_form_field: %s\n" % e)
+    print("Exception when calling WordsApi->get_form_field_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -3923,7 +5019,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node that contains collection of formfields. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -3984,6 +5079,64 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **node_path** | **str**| Path to the node containing collection of form fields. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+
+### Return type
+
+[**FormFieldsResponse**](FormFieldsResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_form_fields_without_node_path**
+> FormFieldsResponse get_form_fields_without_node_path(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+
+Gets form fields from document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+
+try:
+    # Gets form fields from document.
+    api_response = api_instance.get_form_fields_without_node_path(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_form_fields_without_node_path: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -4193,7 +5346,69 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_office_math_object**
-> OfficeMathObjectResponse get_office_math_object(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+> OfficeMathObjectResponse get_office_math_object(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+
+Reads OfficeMath object by index.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+node_path = 'node_path_example' # str | Path to the node, which contains collection of OfficeMath objects.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+
+try:
+    # Reads OfficeMath object by index.
+    api_response = api_instance.get_office_math_object(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_office_math_object: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **node_path** | **str**| Path to the node, which contains collection of OfficeMath objects. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+
+### Return type
+
+[**OfficeMathObjectResponse**](OfficeMathObjectResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_office_math_object_without_node_path**
+> OfficeMathObjectResponse get_office_math_object_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
 Reads OfficeMath object by index.
 
@@ -4213,7 +5428,6 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node, which contains collection of OfficeMath objects.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -4221,10 +5435,10 @@ password = 'password_example' # str | Password for opening an encrypted document
 
 try:
     # Reads OfficeMath object by index.
-    api_response = api_instance.get_office_math_object(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    api_response = api_instance.get_office_math_object_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling WordsApi->get_office_math_object: %s\n" % e)
+    print("Exception when calling WordsApi->get_office_math_object_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -4233,7 +5447,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node, which contains collection of OfficeMath objects. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -4314,8 +5527,66 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_office_math_objects_without_node_path**
+> OfficeMathObjectsResponse get_office_math_objects_without_node_path(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+
+Gets OfficeMath objects from document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+
+try:
+    # Gets OfficeMath objects from document.
+    api_response = api_instance.get_office_math_objects_without_node_path(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_office_math_objects_without_node_path: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+
+### Return type
+
+[**OfficeMathObjectsResponse**](OfficeMathObjectsResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_paragraph**
-> ParagraphResponse get_paragraph(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+> ParagraphResponse get_paragraph(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
 This resource represents one of the paragraphs contained in the document.
 
@@ -4334,8 +5605,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-index = 56 # int | Object index.
 node_path = 'node_path_example' # str | Path to the node which contains paragraphs.
+index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -4343,7 +5614,7 @@ password = 'password_example' # str | Password for opening an encrypted document
 
 try:
     # This resource represents one of the paragraphs contained in the document.
-    api_response = api_instance.get_paragraph(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    api_response = api_instance.get_paragraph(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->get_paragraph: %s\n" % e)
@@ -4354,8 +5625,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **index** | **int**| Object index. | 
  **node_path** | **str**| Path to the node which contains paragraphs. | 
+ **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -4377,7 +5648,69 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_paragraph_format**
-> ParagraphFormatResponse get_paragraph_format(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+> ParagraphFormatResponse get_paragraph_format(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+
+Represents all the formatting for a paragraph.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+node_path = 'node_path_example' # str | Path to the node which contains paragraphs.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+
+try:
+    # Represents all the formatting for a paragraph.
+    api_response = api_instance.get_paragraph_format(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_paragraph_format: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **node_path** | **str**| Path to the node which contains paragraphs. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+
+### Return type
+
+[**ParagraphFormatResponse**](ParagraphFormatResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_paragraph_format_without_node_path**
+> ParagraphFormatResponse get_paragraph_format_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
 Represents all the formatting for a paragraph.
 
@@ -4397,7 +5730,6 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node which contains paragraphs.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -4405,10 +5737,10 @@ password = 'password_example' # str | Password for opening an encrypted document
 
 try:
     # Represents all the formatting for a paragraph.
-    api_response = api_instance.get_paragraph_format(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    api_response = api_instance.get_paragraph_format_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling WordsApi->get_paragraph_format: %s\n" % e)
+    print("Exception when calling WordsApi->get_paragraph_format_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -4417,7 +5749,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node which contains paragraphs. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -4426,6 +5757,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ParagraphFormatResponse**](ParagraphFormatResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_paragraph_without_node_path**
+> ParagraphResponse get_paragraph_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+
+This resource represents one of the paragraphs contained in the document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+
+try:
+    # This resource represents one of the paragraphs contained in the document.
+    api_response = api_instance.get_paragraph_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_paragraph_without_node_path: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+
+### Return type
+
+[**ParagraphResponse**](ParagraphResponse.md)
 
 ### Authorization
 
@@ -4486,6 +5877,126 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ParagraphLinkCollectionResponse**](ParagraphLinkCollectionResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_paragraphs_without_node_path**
+> ParagraphLinkCollectionResponse get_paragraphs_without_node_path(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+
+Returns a list of paragraphs that are contained in the document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+
+try:
+    # Returns a list of paragraphs that are contained in the document.
+    api_response = api_instance.get_paragraphs_without_node_path(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_paragraphs_without_node_path: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+
+### Return type
+
+[**ParagraphLinkCollectionResponse**](ParagraphLinkCollectionResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_range_text**
+> RangeTextResponse get_range_text(name, range_start_identifier, range_end_identifier, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+
+Gets the text from the range.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document.
+range_start_identifier = 'range_start_identifier_example' # str | The range start identifier.
+range_end_identifier = 'range_end_identifier_example' # str | The range end identifier.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+
+try:
+    # Gets the text from the range.
+    api_response = api_instance.get_range_text(name, range_start_identifier, range_end_identifier, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_range_text: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document. | 
+ **range_start_identifier** | **str**| The range start identifier. | 
+ **range_end_identifier** | **str**| The range end identifier. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+
+### Return type
+
+[**RangeTextResponse**](RangeTextResponse.md)
 
 ### Authorization
 
@@ -4702,7 +6213,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-section_index = 56 # int | Section index
+section_index = 56 # int | Section index.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -4721,7 +6232,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **section_index** | **int**| Section index | 
+ **section_index** | **int**| Section index. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -4762,7 +6273,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-section_index = 56 # int | Section index
+section_index = 56 # int | Section index.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -4781,7 +6292,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **section_index** | **int**| Section index | 
+ **section_index** | **int**| Section index. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -4861,7 +6372,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_table**
-> TableResponse get_table(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+> TableResponse get_table(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
 Returns a table.
 
@@ -4880,8 +6391,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-index = 56 # int | Object index.
 node_path = 'node_path_example' # str | Path to the node, which contains tables.
+index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -4889,7 +6400,7 @@ password = 'password_example' # str | Password for opening an encrypted document
 
 try:
     # Returns a table.
-    api_response = api_instance.get_table(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    api_response = api_instance.get_table(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->get_table: %s\n" % e)
@@ -4900,8 +6411,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **index** | **int**| Object index. | 
  **node_path** | **str**| Path to the node, which contains tables. | 
+ **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -5047,7 +6558,69 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_table_properties**
-> TablePropertiesResponse get_table_properties(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+> TablePropertiesResponse get_table_properties(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+
+Returns a table properties.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+node_path = 'node_path_example' # str | Path to the node, which contains tables.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+
+try:
+    # Returns a table properties.
+    api_response = api_instance.get_table_properties(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_table_properties: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **node_path** | **str**| Path to the node, which contains tables. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+
+### Return type
+
+[**TablePropertiesResponse**](TablePropertiesResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_table_properties_without_node_path**
+> TablePropertiesResponse get_table_properties_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
 Returns a table properties.
 
@@ -5067,7 +6640,6 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node, which contains tables.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -5075,10 +6647,10 @@ password = 'password_example' # str | Password for opening an encrypted document
 
 try:
     # Returns a table properties.
-    api_response = api_instance.get_table_properties(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    api_response = api_instance.get_table_properties_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling WordsApi->get_table_properties: %s\n" % e)
+    print("Exception when calling WordsApi->get_table_properties_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -5087,7 +6659,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node, which contains tables. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -5232,6 +6803,66 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_table_without_node_path**
+> TableResponse get_table_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+
+Returns a table.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+
+try:
+    # Returns a table.
+    api_response = api_instance.get_table_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_table_without_node_path: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+
+### Return type
+
+[**TableResponse**](TableResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_tables**
 > TableLinkCollectionResponse get_tables(name, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
@@ -5272,6 +6903,64 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **node_path** | **str**| Path to the node, which contains tables. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+
+### Return type
+
+[**TableLinkCollectionResponse**](TableLinkCollectionResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_tables_without_node_path**
+> TableLinkCollectionResponse get_tables_without_node_path(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+
+Returns a list of tables that are contained in the document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+
+try:
+    # Returns a list of tables that are contained in the document.
+    api_response = api_instance.get_tables_without_node_path(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_tables_without_node_path: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -5428,6 +7117,74 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **insert_drawing_object_without_node_path**
+> DrawingObjectResponse insert_drawing_object_without_node_path(name, drawing_object, image_file, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+
+Adds drawing object to document, returns added  drawing object's data.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+drawing_object = 'drawing_object_example' # str | Drawing object parameters
+image_file = '/path/to/file.txt' # file | File with image
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
+revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
+
+try:
+    # Adds drawing object to document, returns added  drawing object's data.
+    api_response = api_instance.insert_drawing_object_without_node_path(name, drawing_object, image_file, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->insert_drawing_object_without_node_path: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **drawing_object** | **str**| Drawing object parameters | 
+ **image_file** | **file**| File with image | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+ **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
+ **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
+
+### Return type
+
+[**DrawingObjectResponse**](DrawingObjectResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **insert_field**
 > FieldResponse insert_field(name, field, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
 
@@ -5474,6 +7231,74 @@ Name | Type | Description  | Notes
  **name** | **str**| The document name. | 
  **field** | [**Field**](Field.md)| Field data. | 
  **node_path** | **str**| Path to the node, which contains collection of fields. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+ **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
+ **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
+ **insert_before_node** | **str**| Field will be inserted before node with id&#x3D;\&quot;nodeId\&quot;. | [optional] 
+
+### Return type
+
+[**FieldResponse**](FieldResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **insert_field_without_node_path**
+> FieldResponse insert_field_without_node_path(name, field, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
+
+Adds field to document, returns inserted field's data.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+field = asposewordscloud.Field() # Field | Field data.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
+revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
+insert_before_node = 'insert_before_node_example' # str | Field will be inserted before node with id=\"nodeId\". (optional)
+
+try:
+    # Adds field to document, returns inserted field's data.
+    api_response = api_instance.insert_field_without_node_path(name, field, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->insert_field_without_node_path: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **field** | [**Field**](Field.md)| Field data. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -5566,6 +7391,72 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **insert_footnote_without_node_path**
+> FootnoteResponse insert_footnote_without_node_path(name, footnote_dto, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+
+Adds footnote to document, returns added footnote's data.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+footnote_dto = asposewordscloud.Footnote() # Footnote | Footnote data.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
+revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
+
+try:
+    # Adds footnote to document, returns added footnote's data.
+    api_response = api_instance.insert_footnote_without_node_path(name, footnote_dto, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->insert_footnote_without_node_path: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **footnote_dto** | [**Footnote**](Footnote.md)| Footnote data. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+ **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
+ **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
+
+### Return type
+
+[**FootnoteResponse**](FootnoteResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **insert_form_field**
 > FormFieldResponse insert_form_field(name, form_field, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
 
@@ -5612,6 +7503,74 @@ Name | Type | Description  | Notes
  **name** | **str**| The document name. | 
  **form_field** | [**FormField**](FormField.md)| From field data. | 
  **node_path** | **str**| Path to the node that contains collection of formfields. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+ **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
+ **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
+ **insert_before_node** | **str**| Form field will be inserted before node with index. | [optional] 
+
+### Return type
+
+[**FormFieldResponse**](FormFieldResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **insert_form_field_without_node_path**
+> FormFieldResponse insert_form_field_without_node_path(name, form_field, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
+
+Adds form field to paragraph, returns added form field's data.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+form_field = asposewordscloud.FormField() # FormField | From field data.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
+revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
+insert_before_node = 'insert_before_node_example' # str | Form field will be inserted before node with index. (optional)
+
+try:
+    # Adds form field to paragraph, returns added form field's data.
+    api_response = api_instance.insert_form_field_without_node_path(name, form_field, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->insert_form_field_without_node_path: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **form_field** | [**FormField**](FormField.md)| From field data. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -5938,7 +7897,7 @@ password = 'password_example' # str | Password for opening an encrypted document
 dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
-table = asposewordscloud.TableInsert() # TableInsert | Table parameters/ (optional)
+table = asposewordscloud.TableInsert() # TableInsert | Table parameters/. (optional)
 
 try:
     # Adds table to document, returns added table's data.             
@@ -5961,7 +7920,7 @@ Name | Type | Description  | Notes
  **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
  **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
  **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
- **table** | [**TableInsert**](TableInsert.md)| Table parameters/ | [optional] 
+ **table** | [**TableInsert**](TableInsert.md)| Table parameters/. | [optional] 
 
 ### Return type
 
@@ -6006,7 +7965,7 @@ password = 'password_example' # str | Password for opening an encrypted document
 dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
-cell = asposewordscloud.TableCellInsert() # TableCellInsert | Table cell parameters/ (optional)
+cell = asposewordscloud.TableCellInsert() # TableCellInsert | Table cell parameters/. (optional)
 
 try:
     # Adds table cell to table, returns added cell's data.             
@@ -6029,7 +7988,7 @@ Name | Type | Description  | Notes
  **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
  **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
  **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
- **cell** | [**TableCellInsert**](TableCellInsert.md)| Table cell parameters/ | [optional] 
+ **cell** | [**TableCellInsert**](TableCellInsert.md)| Table cell parameters/. | [optional] 
 
 ### Return type
 
@@ -6074,7 +8033,7 @@ password = 'password_example' # str | Password for opening an encrypted document
 dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
-row = asposewordscloud.TableRowInsert() # TableRowInsert | Table row parameters/ (optional)
+row = asposewordscloud.TableRowInsert() # TableRowInsert | Table row parameters/. (optional)
 
 try:
     # Adds table row to table, returns added row's data.             
@@ -6097,11 +8056,77 @@ Name | Type | Description  | Notes
  **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
  **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
  **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
- **row** | [**TableRowInsert**](TableRowInsert.md)| Table row parameters/ | [optional] 
+ **row** | [**TableRowInsert**](TableRowInsert.md)| Table row parameters/. | [optional] 
 
 ### Return type
 
 [**TableRowResponse**](TableRowResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **insert_table_without_node_path**
+> TableResponse insert_table_without_node_path(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, table=table)
+
+Adds table to document, returns added table's data.             
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
+revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
+table = asposewordscloud.TableInsert() # TableInsert | Table parameters/. (optional)
+
+try:
+    # Adds table to document, returns added table's data.             
+    api_response = api_instance.insert_table_without_node_path(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, table=table)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->insert_table_without_node_path: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+ **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
+ **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
+ **table** | [**TableInsert**](TableInsert.md)| Table parameters/. | [optional] 
+
+### Return type
+
+[**TableResponse**](TableResponse.md)
 
 ### Authorization
 
@@ -6479,7 +8504,7 @@ Name | Type | Description  | Notes
 # **reject_all_revisions**
 > RevisionsModificationResponse reject_all_revisions(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
 
-Rejects all revisions in document
+Rejects all revisions in document.
 
 ### Example
 ```python
@@ -6503,7 +8528,7 @@ password = 'password_example' # str | Password for opening an encrypted document
 dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 
 try:
-    # Rejects all revisions in document
+    # Rejects all revisions in document.
     api_response = api_instance.reject_all_revisions(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
     pprint(api_response)
 except ApiException as e:
@@ -6536,8 +8561,138 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **remove_range**
+> DocumentResponse remove_range(name, range_start_identifier, range_end_identifier, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+
+Removes the range from the document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document.
+range_start_identifier = 'range_start_identifier_example' # str | The range start identifier.
+range_end_identifier = 'range_end_identifier_example' # str | The range end identifier.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+
+try:
+    # Removes the range from the document.
+    api_response = api_instance.remove_range(name, range_start_identifier, range_end_identifier, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->remove_range: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document. | 
+ **range_start_identifier** | **str**| The range start identifier. | 
+ **range_end_identifier** | **str**| The range end identifier. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+
+### Return type
+
+[**DocumentResponse**](DocumentResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **render_drawing_object**
-> file render_drawing_object(name, format, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+> file render_drawing_object(name, format, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+
+Renders drawing object to specified format.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+format = 'format_example' # str | The destination format.
+node_path = 'node_path_example' # str | Path to the node, which contains drawing objects.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+fonts_location = 'fonts_location_example' # str | Folder in filestorage with custom fonts. (optional)
+
+try:
+    # Renders drawing object to specified format.
+    api_response = api_instance.render_drawing_object(name, format, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->render_drawing_object: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **format** | **str**| The destination format. | 
+ **node_path** | **str**| Path to the node, which contains drawing objects. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **fonts_location** | **str**| Folder in filestorage with custom fonts. | [optional] 
+
+### Return type
+
+[**file**](file.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **render_drawing_object_without_node_path**
+> file render_drawing_object_without_node_path(name, format, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
 
 Renders drawing object to specified format.
 
@@ -6558,7 +8713,6 @@ api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuratio
 name = 'name_example' # str | The document name.
 format = 'format_example' # str | The destination format.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node, which contains drawing objects.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -6567,10 +8721,10 @@ fonts_location = 'fonts_location_example' # str | Folder in filestorage with cus
 
 try:
     # Renders drawing object to specified format.
-    api_response = api_instance.render_drawing_object(name, format, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+    api_response = api_instance.render_drawing_object_without_node_path(name, format, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling WordsApi->render_drawing_object: %s\n" % e)
+    print("Exception when calling WordsApi->render_drawing_object_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -6580,7 +8734,6 @@ Name | Type | Description  | Notes
  **name** | **str**| The document name. | 
  **format** | **str**| The destination format. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node, which contains drawing objects. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -6603,7 +8756,73 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **render_math_object**
-> file render_math_object(name, format, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+> file render_math_object(name, format, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+
+Renders math object to specified format.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+format = 'format_example' # str | The destination format.
+node_path = 'node_path_example' # str | Path to the node, which contains office math objects.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+fonts_location = 'fonts_location_example' # str | Folder in filestorage with custom fonts. (optional)
+
+try:
+    # Renders math object to specified format.
+    api_response = api_instance.render_math_object(name, format, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->render_math_object: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **format** | **str**| The destination format. | 
+ **node_path** | **str**| Path to the node, which contains office math objects. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **fonts_location** | **str**| Folder in filestorage with custom fonts. | [optional] 
+
+### Return type
+
+[**file**](file.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **render_math_object_without_node_path**
+> file render_math_object_without_node_path(name, format, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
 
 Renders math object to specified format.
 
@@ -6624,7 +8843,6 @@ api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuratio
 name = 'name_example' # str | The document name.
 format = 'format_example' # str | The destination format.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node, which contains office math objects.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -6633,10 +8851,10 @@ fonts_location = 'fonts_location_example' # str | Folder in filestorage with cus
 
 try:
     # Renders math object to specified format.
-    api_response = api_instance.render_math_object(name, format, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+    api_response = api_instance.render_math_object_without_node_path(name, format, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling WordsApi->render_math_object: %s\n" % e)
+    print("Exception when calling WordsApi->render_math_object_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -6646,7 +8864,6 @@ Name | Type | Description  | Notes
  **name** | **str**| The document name. | 
  **format** | **str**| The destination format. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node, which contains office math objects. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -6688,7 +8905,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-page_index = 56 # int | Comment index
+page_index = 56 # int | Comment index.
 format = 'format_example' # str | The destination format.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -6709,7 +8926,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **page_index** | **int**| Comment index | 
+ **page_index** | **int**| Comment index. | 
  **format** | **str**| The destination format. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -6733,7 +8950,73 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **render_paragraph**
-> file render_paragraph(name, format, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+> file render_paragraph(name, format, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+
+Renders paragraph to specified format.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+format = 'format_example' # str | The destination format.
+node_path = 'node_path_example' # str | Path to the node, which contains paragraphs.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+fonts_location = 'fonts_location_example' # str | Folder in filestorage with custom fonts. (optional)
+
+try:
+    # Renders paragraph to specified format.
+    api_response = api_instance.render_paragraph(name, format, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->render_paragraph: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **format** | **str**| The destination format. | 
+ **node_path** | **str**| Path to the node, which contains paragraphs. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **fonts_location** | **str**| Folder in filestorage with custom fonts. | [optional] 
+
+### Return type
+
+[**file**](file.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **render_paragraph_without_node_path**
+> file render_paragraph_without_node_path(name, format, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
 
 Renders paragraph to specified format.
 
@@ -6754,7 +9037,6 @@ api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuratio
 name = 'name_example' # str | The document name.
 format = 'format_example' # str | The destination format.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node, which contains paragraphs.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -6763,10 +9045,10 @@ fonts_location = 'fonts_location_example' # str | Folder in filestorage with cus
 
 try:
     # Renders paragraph to specified format.
-    api_response = api_instance.render_paragraph(name, format, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+    api_response = api_instance.render_paragraph_without_node_path(name, format, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling WordsApi->render_paragraph: %s\n" % e)
+    print("Exception when calling WordsApi->render_paragraph_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -6776,7 +9058,6 @@ Name | Type | Description  | Notes
  **name** | **str**| The document name. | 
  **format** | **str**| The destination format. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node, which contains paragraphs. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -6799,7 +9080,73 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **render_table**
-> file render_table(name, format, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+> file render_table(name, format, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+
+Renders table to specified format.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+format = 'format_example' # str | The destination format.
+node_path = 'node_path_example' # str | Path to the node, which contains tables.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+fonts_location = 'fonts_location_example' # str | Folder in filestorage with custom fonts. (optional)
+
+try:
+    # Renders table to specified format.
+    api_response = api_instance.render_table(name, format, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->render_table: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **format** | **str**| The destination format. | 
+ **node_path** | **str**| Path to the node, which contains tables. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **fonts_location** | **str**| Folder in filestorage with custom fonts. | [optional] 
+
+### Return type
+
+[**file**](file.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **render_table_without_node_path**
+> file render_table_without_node_path(name, format, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
 
 Renders table to specified format.
 
@@ -6820,7 +9167,6 @@ api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuratio
 name = 'name_example' # str | The document name.
 format = 'format_example' # str | The destination format.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node, which contains tables.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -6829,10 +9175,10 @@ fonts_location = 'fonts_location_example' # str | Folder in filestorage with cus
 
 try:
     # Renders table to specified format.
-    api_response = api_instance.render_table(name, format, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+    api_response = api_instance.render_table_without_node_path(name, format, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling WordsApi->render_table: %s\n" % e)
+    print("Exception when calling WordsApi->render_table_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -6842,7 +9188,6 @@ Name | Type | Description  | Notes
  **name** | **str**| The document name. | 
  **format** | **str**| The destination format. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node, which contains tables. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -6918,6 +9263,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ReplaceTextResponse**](ReplaceTextResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **replace_with_text**
+> DocumentResponse replace_with_text(name, range_start_identifier, range_text, range_end_identifier, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+
+Replaces the content in the range.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document.
+range_start_identifier = 'range_start_identifier_example' # str | The range start identifier.
+range_text = asposewordscloud.ReplaceRange() # ReplaceRange | Model with text for replacement.
+range_end_identifier = 'range_end_identifier_example' # str | The range end identifier.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+
+try:
+    # Replaces the content in the range.
+    api_response = api_instance.replace_with_text(name, range_start_identifier, range_text, range_end_identifier, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->replace_with_text: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document. | 
+ **range_start_identifier** | **str**| The range start identifier. | 
+ **range_text** | [**ReplaceRange**](ReplaceRange.md)| Model with text for replacement. | 
+ **range_end_identifier** | **str**| The range end identifier. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+
+### Return type
+
+[**DocumentResponse**](DocumentResponse.md)
 
 ### Authorization
 
@@ -7027,6 +9438,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SaveResponse**](SaveResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **save_as_range**
+> DocumentResponse save_as_range(name, range_start_identifier, document_parameters, range_end_identifier, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+
+Saves the selected range as a new document.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document.
+range_start_identifier = 'range_start_identifier_example' # str | The range start identifier.
+document_parameters = asposewordscloud.RangeDocument() # RangeDocument | Parameters of a new document.
+range_end_identifier = 'range_end_identifier_example' # str | The range end identifier.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+
+try:
+    # Saves the selected range as a new document.
+    api_response = api_instance.save_as_range(name, range_start_identifier, document_parameters, range_end_identifier, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->save_as_range: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document. | 
+ **range_start_identifier** | **str**| The range start identifier. | 
+ **document_parameters** | [**RangeDocument**](RangeDocument.md)| Parameters of a new document. | 
+ **range_end_identifier** | **str**| The range end identifier. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+
+### Return type
+
+[**DocumentResponse**](DocumentResponse.md)
 
 ### Authorization
 
@@ -7404,7 +9881,7 @@ Name | Type | Description  | Notes
 
 Updates border properties.             
 
-'nodePath' should refer to node with cell or row
+'nodePath' should refer to node with cell or row.
 
 ### Example
 ```python
@@ -7421,7 +9898,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-border_properties = asposewordscloud.Border() # Border | Border properties
+border_properties = asposewordscloud.Border() # Border | Border properties.
 node_path = 'node_path_example' # str | Path to the node with border(node should be cell or row).
 index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -7445,7 +9922,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **border_properties** | [**Border**](Border.md)| Border properties | 
+ **border_properties** | [**Border**](Border.md)| Border properties. | 
  **node_path** | **str**| Path to the node with border(node should be cell or row). | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -7491,7 +9968,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-comment_index = 56 # int | The comment index
+comment_index = 56 # int | The comment index.
 comment = asposewordscloud.Comment() # Comment | The comment data.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -7514,7 +9991,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **comment_index** | **int**| The comment index | 
+ **comment_index** | **int**| The comment index. | 
  **comment** | [**Comment**](Comment.md)| The comment data. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -7540,7 +10017,79 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_drawing_object**
-> DrawingObjectResponse update_drawing_object(name, drawing_object, image_file, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> DrawingObjectResponse update_drawing_object(name, drawing_object, image_file, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+
+Updates drawing object, returns updated  drawing object's data.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+drawing_object = 'drawing_object_example' # str | Drawing object parameters
+image_file = '/path/to/file.txt' # file | File with image
+node_path = 'node_path_example' # str | Path to the node, which contains collection of drawing objects.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
+revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
+
+try:
+    # Updates drawing object, returns updated  drawing object's data.
+    api_response = api_instance.update_drawing_object(name, drawing_object, image_file, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->update_drawing_object: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **drawing_object** | **str**| Drawing object parameters | 
+ **image_file** | **file**| File with image | 
+ **node_path** | **str**| Path to the node, which contains collection of drawing objects. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+ **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
+ **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
+
+### Return type
+
+[**DrawingObjectResponse**](DrawingObjectResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_drawing_object_without_node_path**
+> DrawingObjectResponse update_drawing_object_without_node_path(name, drawing_object, image_file, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates drawing object, returns updated  drawing object's data.
 
@@ -7562,7 +10111,6 @@ name = 'name_example' # str | The document name.
 drawing_object = 'drawing_object_example' # str | Drawing object parameters
 image_file = '/path/to/file.txt' # file | File with image
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node, which contains collection of drawing objects.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -7573,10 +10121,10 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates drawing object, returns updated  drawing object's data.
-    api_response = api_instance.update_drawing_object(name, drawing_object, image_file, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_drawing_object_without_node_path(name, drawing_object, image_file, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling WordsApi->update_drawing_object: %s\n" % e)
+    print("Exception when calling WordsApi->update_drawing_object_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -7587,7 +10135,6 @@ Name | Type | Description  | Notes
  **drawing_object** | **str**| Drawing object parameters | 
  **image_file** | **file**| File with image | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node, which contains collection of drawing objects. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -7612,7 +10159,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_field**
-> FieldResponse update_field(name, field, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> FieldResponse update_field(name, field, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates field's properties, returns updated field's data.
 
@@ -7632,8 +10179,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
 field = asposewordscloud.Field() # Field | Field data.
-index = 56 # int | Object index.
 node_path = 'node_path_example' # str | Path to the node, which contains collection of fields.
+index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -7644,7 +10191,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates field's properties, returns updated field's data.
-    api_response = api_instance.update_field(name, field, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_field(name, field, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_field: %s\n" % e)
@@ -7656,8 +10203,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **field** | [**Field**](Field.md)| Field data. | 
- **index** | **int**| Object index. | 
  **node_path** | **str**| Path to the node, which contains collection of fields. | 
+ **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -7742,7 +10289,77 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_footnote**
-> FootnoteResponse update_footnote(name, footnote_dto, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> FootnoteResponse update_footnote(name, footnote_dto, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+
+Updates footnote's properties, returns updated run's data.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+footnote_dto = asposewordscloud.Footnote() # Footnote | Footnote data.
+node_path = 'node_path_example' # str | Path to the node, which contains collection of footnotes.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
+revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
+
+try:
+    # Updates footnote's properties, returns updated run's data.
+    api_response = api_instance.update_footnote(name, footnote_dto, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->update_footnote: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **footnote_dto** | [**Footnote**](Footnote.md)| Footnote data. | 
+ **node_path** | **str**| Path to the node, which contains collection of footnotes. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+ **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
+ **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
+
+### Return type
+
+[**FootnoteResponse**](FootnoteResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_footnote_without_node_path**
+> FootnoteResponse update_footnote_without_node_path(name, footnote_dto, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates footnote's properties, returns updated run's data.
 
@@ -7763,7 +10380,6 @@ api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuratio
 name = 'name_example' # str | The document name.
 footnote_dto = asposewordscloud.Footnote() # Footnote | Footnote data.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node, which contains collection of footnotes.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -7774,10 +10390,10 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates footnote's properties, returns updated run's data.
-    api_response = api_instance.update_footnote(name, footnote_dto, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_footnote_without_node_path(name, footnote_dto, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling WordsApi->update_footnote: %s\n" % e)
+    print("Exception when calling WordsApi->update_footnote_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -7787,7 +10403,6 @@ Name | Type | Description  | Notes
  **name** | **str**| The document name. | 
  **footnote_dto** | [**Footnote**](Footnote.md)| Footnote data. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node, which contains collection of footnotes. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -7812,7 +10427,77 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_form_field**
-> FormFieldResponse update_form_field(name, form_field, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> FormFieldResponse update_form_field(name, form_field, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+
+Updates properties of form field, returns updated form field.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+form_field = asposewordscloud.FormField() # FormField | From field data.
+node_path = 'node_path_example' # str | Path to the node that contains collection of formfields.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
+revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
+
+try:
+    # Updates properties of form field, returns updated form field.
+    api_response = api_instance.update_form_field(name, form_field, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->update_form_field: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **form_field** | [**FormField**](FormField.md)| From field data. | 
+ **node_path** | **str**| Path to the node that contains collection of formfields. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+ **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
+ **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
+
+### Return type
+
+[**FormFieldResponse**](FormFieldResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_form_field_without_node_path**
+> FormFieldResponse update_form_field_without_node_path(name, form_field, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates properties of form field, returns updated form field.
 
@@ -7833,7 +10518,6 @@ api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuratio
 name = 'name_example' # str | The document name.
 form_field = asposewordscloud.FormField() # FormField | From field data.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node that contains collection of formfields.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -7844,10 +10528,10 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates properties of form field, returns updated form field.
-    api_response = api_instance.update_form_field(name, form_field, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_form_field_without_node_path(name, form_field, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling WordsApi->update_form_field: %s\n" % e)
+    print("Exception when calling WordsApi->update_form_field_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -7857,7 +10541,6 @@ Name | Type | Description  | Notes
  **name** | **str**| The document name. | 
  **form_field** | [**FormField**](FormField.md)| From field data. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node that contains collection of formfields. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -7901,7 +10584,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-dto = asposewordscloud.ParagraphFormat() # ParagraphFormat | Paragraph format object
+dto = asposewordscloud.ParagraphFormat() # ParagraphFormat | Paragraph format object.
 node_path = 'node_path_example' # str | Path to the node which contains paragraphs.
 index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -7925,7 +10608,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **dto** | [**ParagraphFormat**](ParagraphFormat.md)| Paragraph format object | 
+ **dto** | [**ParagraphFormat**](ParagraphFormat.md)| Paragraph format object. | 
  **node_path** | **str**| Path to the node which contains paragraphs. | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -8041,7 +10724,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-font_dto = asposewordscloud.Font() # Font | Font dto object
+font_dto = asposewordscloud.Font() # Font | Font dto object.
 paragraph_path = 'paragraph_path_example' # str | Path to parent paragraph.
 index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -8065,7 +10748,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **font_dto** | [**Font**](Font.md)| Font dto object | 
+ **font_dto** | [**Font**](Font.md)| Font dto object. | 
  **paragraph_path** | **str**| Path to parent paragraph. | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -8111,8 +10794,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-section_index = 56 # int | Section index
-page_setup = asposewordscloud.PageSetup() # PageSetup | Page setup properties dto
+section_index = 56 # int | Section index.
+page_setup = asposewordscloud.PageSetup() # PageSetup | Page setup properties dto.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -8134,8 +10817,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **section_index** | **int**| Section index | 
- **page_setup** | [**PageSetup**](PageSetup.md)| Page setup properties dto | 
+ **section_index** | **int**| Section index. | 
+ **page_setup** | [**PageSetup**](PageSetup.md)| Page setup properties dto. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -8230,7 +10913,77 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_table_properties**
-> TablePropertiesResponse update_table_properties(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, properties=properties)
+> TablePropertiesResponse update_table_properties(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, properties=properties)
+
+Updates a table properties.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+node_path = 'node_path_example' # str | Path to the node, which contains tables.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
+revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
+properties = asposewordscloud.TableProperties() # TableProperties | The properties. (optional)
+
+try:
+    # Updates a table properties.
+    api_response = api_instance.update_table_properties(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, properties=properties)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->update_table_properties: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **node_path** | **str**| Path to the node, which contains tables. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+ **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
+ **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
+ **properties** | [**TableProperties**](TableProperties.md)| The properties. | [optional] 
+
+### Return type
+
+[**TablePropertiesResponse**](TablePropertiesResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_table_properties_without_node_path**
+> TablePropertiesResponse update_table_properties_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, properties=properties)
 
 Updates a table properties.
 
@@ -8250,7 +11003,6 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
 index = 56 # int | Object index.
-node_path = 'node_path_example' # str | Path to the node, which contains tables.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -8262,10 +11014,10 @@ properties = asposewordscloud.TableProperties() # TableProperties | The properti
 
 try:
     # Updates a table properties.
-    api_response = api_instance.update_table_properties(name, index, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, properties=properties)
+    api_response = api_instance.update_table_properties_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, properties=properties)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling WordsApi->update_table_properties: %s\n" % e)
+    print("Exception when calling WordsApi->update_table_properties_without_node_path: %s\n" % e)
 ```
 
 ### Parameters
@@ -8274,7 +11026,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **index** | **int**| Object index. | 
- **node_path** | **str**| Path to the node, which contains tables. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 

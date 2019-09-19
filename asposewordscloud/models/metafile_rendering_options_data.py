@@ -30,7 +30,7 @@ import six
 
 
 class MetafileRenderingOptionsData(object):
-    """container class for options of metafile rendering
+    """container class for options of metafile rendering.
     """
 
     """
@@ -76,7 +76,7 @@ class MetafileRenderingOptionsData(object):
     def emf_plus_dual_rendering_mode(self):
         """Gets the emf_plus_dual_rendering_mode of this MetafileRenderingOptionsData.  # noqa: E501
 
-        Determines how EMF+ Dual metafiles should be rendered  # noqa: E501
+        Gets or sets determines how EMF+ Dual metafiles should be rendered.  # noqa: E501
 
         :return: The emf_plus_dual_rendering_mode of this MetafileRenderingOptionsData.  # noqa: E501
         :rtype: str
@@ -87,7 +87,7 @@ class MetafileRenderingOptionsData(object):
     def emf_plus_dual_rendering_mode(self, emf_plus_dual_rendering_mode):
         """Sets the emf_plus_dual_rendering_mode of this MetafileRenderingOptionsData.
 
-        Determines how EMF+ Dual metafiles should be rendered  # noqa: E501
+        Gets or sets determines how EMF+ Dual metafiles should be rendered.  # noqa: E501
 
         :param emf_plus_dual_rendering_mode: The emf_plus_dual_rendering_mode of this MetafileRenderingOptionsData.  # noqa: E501
         :type: str
@@ -118,7 +118,7 @@ class MetafileRenderingOptionsData(object):
     def rendering_mode(self):
         """Gets the rendering_mode of this MetafileRenderingOptionsData.  # noqa: E501
 
-        Determines how metafile images should be rendered  # noqa: E501
+        Gets or sets determines how metafile images should be rendered.  # noqa: E501
 
         :return: The rendering_mode of this MetafileRenderingOptionsData.  # noqa: E501
         :rtype: str
@@ -129,7 +129,7 @@ class MetafileRenderingOptionsData(object):
     def rendering_mode(self, rendering_mode):
         """Sets the rendering_mode of this MetafileRenderingOptionsData.
 
-        Determines how metafile images should be rendered  # noqa: E501
+        Gets or sets determines how metafile images should be rendered.  # noqa: E501
 
         :param rendering_mode: The rendering_mode of this MetafileRenderingOptionsData.  # noqa: E501
         :type: str
@@ -139,7 +139,7 @@ class MetafileRenderingOptionsData(object):
     def use_emf_embedded_to_wmf(self):
         """Gets the use_emf_embedded_to_wmf of this MetafileRenderingOptionsData.  # noqa: E501
 
-        Determines how WMF metafiles with embedded EMF metafiles should be rendered  # noqa: E501
+        Gets or sets determines how WMF metafiles with embedded EMF metafiles should be rendered.  # noqa: E501
 
         :return: The use_emf_embedded_to_wmf of this MetafileRenderingOptionsData.  # noqa: E501
         :rtype: bool
@@ -150,7 +150,7 @@ class MetafileRenderingOptionsData(object):
     def use_emf_embedded_to_wmf(self, use_emf_embedded_to_wmf):
         """Sets the use_emf_embedded_to_wmf of this MetafileRenderingOptionsData.
 
-        Determines how WMF metafiles with embedded EMF metafiles should be rendered  # noqa: E501
+        Gets or sets determines how WMF metafiles with embedded EMF metafiles should be rendered.  # noqa: E501
 
         :param use_emf_embedded_to_wmf: The use_emf_embedded_to_wmf of this MetafileRenderingOptionsData.  # noqa: E501
         :type: bool

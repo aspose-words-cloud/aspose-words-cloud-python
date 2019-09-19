@@ -1,7 +1,7 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_math_objects.py">
-#   Copyright (c) 2018 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -42,11 +42,27 @@ class TestMathObjects(BaseTestContext):
         index = 0
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.DeleteOfficeMathObjectRequest(remote_name, index, '',
+        request = asposewordscloud.models.requests.DeleteOfficeMathObjectRequest(remote_name, '', index,
                                                                                os.path.join(
                                                                                    self.remote_test_folder,
                                                                                    self.test_folder))
         result = self.words_api.delete_office_math_object(request)
+        self.assertIsNotNone(result, 'Error has occurred while delete math object')
+
+    #
+    # Test for removing math object from document wihtout node path
+    #
+    def test_delete_office_math_object_without_node_path(self):
+        filename = 'MathObjects.docx'
+        remote_name = 'TestDeleteOfficeMathObjectWithoutNodePath.docx'
+        index = 0
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.DeleteOfficeMathObjectWithoutNodePathRequest(remote_name, index,
+                                                                               os.path.join(
+                                                                                   self.remote_test_folder,
+                                                                                   self.test_folder))
+        result = self.words_api.delete_office_math_object_without_node_path(request)
         self.assertIsNotNone(result, 'Error has occurred while delete math object')
 
     #
@@ -58,11 +74,27 @@ class TestMathObjects(BaseTestContext):
         index = 0
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.GetOfficeMathObjectRequest(remote_name, index, '', 
+        request = asposewordscloud.models.requests.GetOfficeMathObjectRequest(remote_name, '', index,  
                                                                             os.path.join(
                                                                                 self.remote_test_folder,
                                                                                 self.test_folder))
         result = self.words_api.get_office_math_object(request)
+        self.assertIsNotNone(result, 'Error has occurred while get math object')
+
+    #
+    # Test for getting math object from document without node path
+    #
+    def test_get_office_math_object_without_node_path(self):
+        filename = 'MathObjects.docx'
+        remote_name = 'TestGetOfficeMathObjectWithoutNodePath.docx'
+        index = 0
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.GetOfficeMathObjectWithoutNodePathRequest(remote_name, index,
+                                                                            os.path.join(
+                                                                                self.remote_test_folder,
+                                                                                self.test_folder))
+        result = self.words_api.get_office_math_object_without_node_path(request)
         self.assertIsNotNone(result, 'Error has occurred while get math object')
 
     #
@@ -81,6 +113,21 @@ class TestMathObjects(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred while get math objects')
 
     #
+    # Test for getting math objects from document without node path
+    #
+    def test_get_office_math_objects_without_node_path(self):
+        filename = 'MathObjects.docx'
+        remote_name = 'TestGetOfficeMathObjectsWithoutNodePath.docx'
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.GetOfficeMathObjectsWithoutNodePathRequest(remote_name,
+                                                                             os.path.join(
+                                                                                 self.remote_test_folder,
+                                                                                 self.test_folder))
+        result = self.words_api.get_office_math_objects_without_node_path(request)
+        self.assertIsNotNone(result, 'Error has occurred while get math objects')
+
+    #
     # Test for getting math object from document
     #
     def test_render_math_object(self):
@@ -90,9 +137,26 @@ class TestMathObjects(BaseTestContext):
         format = 'png'
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.RenderMathObjectRequest(remote_name, format, index, '', 
+        request = asposewordscloud.models.requests.RenderMathObjectRequest(remote_name, format, '', index, 
                                                                          os.path.join(
                                                                              self.remote_test_folder,
                                                                              self.test_folder))
         result = self.words_api.render_math_object(request)
+        self.assertIsNotNone(result, 'Error has occurred while render math objects')
+
+    #
+    # Test for getting math object from document without node paht
+    #
+    def test_render_math_object_without_node_path(self):
+        filename = 'MathObjects.docx'
+        remote_name = 'TestRenderMathObjectWithoutNodePath.docx'
+        index = 0
+        format = 'png'
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        request = asposewordscloud.models.requests.RenderMathObjectWithoutNodePathRequest(remote_name, format, index,
+                                                                         os.path.join(
+                                                                             self.remote_test_folder,
+                                                                             self.test_folder))
+        result = self.words_api.render_math_object_without_node_path(request)
         self.assertIsNotNone(result, 'Error has occurred while render math objects')

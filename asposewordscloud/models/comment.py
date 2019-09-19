@@ -96,7 +96,7 @@ class Comment(object):
     def link(self):
         """Gets the link of this Comment.  # noqa: E501
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this Comment.  # noqa: E501
         :rtype: WordsApiLink
@@ -107,7 +107,7 @@ class Comment(object):
     def link(self, link):
         """Sets the link of this Comment.
 
-        Link to the document.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this Comment.  # noqa: E501
         :type: WordsApiLink
@@ -117,7 +117,7 @@ class Comment(object):
     def author(self):
         """Gets the author of this Comment.  # noqa: E501
 
-        Returns or sets the author name for a comment.  # noqa: E501
+        Gets or sets returns or sets the author name for a comment.  # noqa: E501
 
         :return: The author of this Comment.  # noqa: E501
         :rtype: str
@@ -128,7 +128,7 @@ class Comment(object):
     def author(self, author):
         """Sets the author of this Comment.
 
-        Returns or sets the author name for a comment.  # noqa: E501
+        Gets or sets returns or sets the author name for a comment.  # noqa: E501
 
         :param author: The author of this Comment.  # noqa: E501
         :type: str
@@ -138,7 +138,7 @@ class Comment(object):
     def content(self):
         """Gets the content of this Comment.  # noqa: E501
 
-        Content of comment  # noqa: E501
+        Gets or sets content of comment.  # noqa: E501
 
         :return: The content of this Comment.  # noqa: E501
         :rtype: StoryChildNodes
@@ -149,7 +149,7 @@ class Comment(object):
     def content(self, content):
         """Sets the content of this Comment.
 
-        Content of comment  # noqa: E501
+        Gets or sets content of comment.  # noqa: E501
 
         :param content: The content of this Comment.  # noqa: E501
         :type: StoryChildNodes
@@ -159,7 +159,7 @@ class Comment(object):
     def date_time(self):
         """Gets the date_time of this Comment.  # noqa: E501
 
-        Gets the date and time that the comment was made.  # noqa: E501
+        Gets or sets the date and time that the comment was made.  # noqa: E501
 
         :return: The date_time of this Comment.  # noqa: E501
         :rtype: datetime
@@ -170,7 +170,7 @@ class Comment(object):
     def date_time(self, date_time):
         """Sets the date_time of this Comment.
 
-        Gets the date and time that the comment was made.  # noqa: E501
+        Gets or sets the date and time that the comment was made.  # noqa: E501
 
         :param date_time: The date_time of this Comment.  # noqa: E501
         :type: datetime
@@ -180,7 +180,7 @@ class Comment(object):
     def initial(self):
         """Gets the initial of this Comment.  # noqa: E501
 
-        Returns or sets the initials of the user associated with a specific comment.  # noqa: E501
+        Gets or sets returns or sets the initials of the user associated with a specific comment.  # noqa: E501
 
         :return: The initial of this Comment.  # noqa: E501
         :rtype: str
@@ -191,7 +191,7 @@ class Comment(object):
     def initial(self, initial):
         """Sets the initial of this Comment.
 
-        Returns or sets the initials of the user associated with a specific comment.  # noqa: E501
+        Gets or sets returns or sets the initials of the user associated with a specific comment.  # noqa: E501
 
         :param initial: The initial of this Comment.  # noqa: E501
         :type: str
@@ -201,7 +201,7 @@ class Comment(object):
     def range_end(self):
         """Gets the range_end of this Comment.  # noqa: E501
 
-        Link to comment range end node.  # noqa: E501
+        Gets or sets link to comment range end node.  # noqa: E501
 
         :return: The range_end of this Comment.  # noqa: E501
         :rtype: DocumentPosition
@@ -212,7 +212,7 @@ class Comment(object):
     def range_end(self, range_end):
         """Sets the range_end of this Comment.
 
-        Link to comment range end node.  # noqa: E501
+        Gets or sets link to comment range end node.  # noqa: E501
 
         :param range_end: The range_end of this Comment.  # noqa: E501
         :type: DocumentPosition
@@ -222,7 +222,7 @@ class Comment(object):
     def range_start(self):
         """Gets the range_start of this Comment.  # noqa: E501
 
-        Link to comment range start node.  # noqa: E501
+        Gets or sets link to comment range start node.  # noqa: E501
 
         :return: The range_start of this Comment.  # noqa: E501
         :rtype: DocumentPosition
@@ -233,7 +233,7 @@ class Comment(object):
     def range_start(self, range_start):
         """Sets the range_start of this Comment.
 
-        Link to comment range start node.  # noqa: E501
+        Gets or sets link to comment range start node.  # noqa: E501
 
         :param range_start: The range_start of this Comment.  # noqa: E501
         :type: DocumentPosition
@@ -243,7 +243,7 @@ class Comment(object):
     def text(self):
         """Gets the text of this Comment.  # noqa: E501
 
-        This is a convenience property that allows to easily get or set text of the comment.  # noqa: E501
+        Gets or sets this is a convenience property that allows to easily get or set text of the comment.  # noqa: E501
 
         :return: The text of this Comment.  # noqa: E501
         :rtype: str
@@ -254,7 +254,7 @@ class Comment(object):
     def text(self, text):
         """Sets the text of this Comment.
 
-        This is a convenience property that allows to easily get or set text of the comment.  # noqa: E501
+        Gets or sets this is a convenience property that allows to easily get or set text of the comment.  # noqa: E501
 
         :param text: The text of this Comment.  # noqa: E501
         :type: str
