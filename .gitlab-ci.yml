@@ -7,7 +7,9 @@ stages:
   - version_tag
 
 2.7-tests:
-  stage: build&test  
+  stage: build&test
+  before_script:
+    - sudo chmod 777 -R $(find -name '*__pycache__*')  
   after_script:
     - sudo chmod 777 -R $(find -name '*__pycache__*')
   script: 
@@ -18,7 +20,9 @@ stages:
     - awcloud-linux
 
 3.7-tests:
-  stage: build&test  
+  stage: build&test
+  before_script:
+    - sudo chmod 777 -R $(find -name '*__pycache__*')  
   after_script:
     - sudo chmod 777 -R $(find -name '*__pycache__*')
   script: 
@@ -86,6 +90,8 @@ publish to PyPi:
   stage: publishing
   only:
     - testPackage
+  before_script:
+    - sudo chmod 777 -R $(find -name '*__pycache__*')
   script:
     - git reset --hard
     - docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/publish.sh $PypiLogin $PypiPass
