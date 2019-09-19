@@ -9,9 +9,9 @@ stages:
 2.7-tests:
   stage: build&test
   before_script:
-    - sudo chmod 777 -R $(find -name '*__pycache__*') .
+    - sudo chmod 777 -R $(find -name "*.pyc") .
   after_script:
-    - sudo chmod 777 -R $(find -name '*__pycache__*') .
+    - sudo chmod 777 -R $(find -name "*.pyc") .
   script: 
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
@@ -22,9 +22,9 @@ stages:
 3.7-tests:
   stage: build&test
   before_script:
-    - sudo chmod 777 -R $(find -name '*__pycache__*') .
+    - sudo chmod 777 -R $(find -name "*.pyc") .
   after_script:
-    - sudo chmod 777 -R $(find -name '*__pycache__*') .
+    - sudo chmod 777 -R $(find -name "*.pyc") .
   script: 
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
@@ -91,7 +91,7 @@ publish to PyPi:
   only:
     - testPackage
   before_script:
-    - sudo chmod 777 -R $(find -name '*__pycache__*') .
+    - sudo chmod 777 -R $(find -name "*.pyc") .
   script:
     - git reset --hard
     - docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/publish.sh $PypiLogin $PypiPass
