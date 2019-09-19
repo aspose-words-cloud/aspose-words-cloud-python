@@ -67,7 +67,9 @@ publish-test:
 
 test-package:
   stage: test-publishing-test
-  script: 
+  script:
+    - mkdir -p Settings
+    - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json  
     - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.7 bash scripts/test-package.sh $WordsAppSid $WordsAppKey $WordsBaseUrl
   tags: 
     - awcloud-linux
