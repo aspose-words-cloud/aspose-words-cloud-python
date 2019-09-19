@@ -26,9 +26,9 @@ To use Aspose Words for Cloud Ruby SDK you need to register an account with [Asp
 If the python package is hosted on Github, you can install directly from Github
 
 ```sh
-pip install asposewordscloud
+pip install aspose-words-cloud
 ```
-(you may need to run `pip` with root permission: `sudo pip install asposewordscloud`)
+(you may need to run `pip` with root permission: `sudo pip install aspose-words-cloud`)
 
 Then import the package:
 ```python
