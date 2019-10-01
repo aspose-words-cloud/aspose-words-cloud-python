@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **use_gdi_emf_renderer** | **bool** | Gets or sets a value determining whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF. | [optional] 
 **use_high_quality_rendering** | **bool** | Gets or sets determine whether or not to use high quality (i.e. slow) rendering algorithms. | [optional] 
 **vertical_resolution** | **float** | Gets or sets the vertical resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96. | [optional] 
+**threshold_for_floyd_steinberg_dithering** | **int** | Gets or sets the threshold that determines the value of the binarization error in the Floyd-Steinberg method. when ImageBinarizationMethod is ImageBinarizationMethod.FloydSteinbergDithering. Default value is 128. | [optional] 
 **tiff_binarization_method** | **str** | Gets or sets specifies method used while converting images to 1 bpp format. | [optional] 
 **tiff_compression** | **str** | Gets or sets type of compression. | [optional] 
 

@@ -1,4 +1,3 @@
-
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="MoveFileRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud

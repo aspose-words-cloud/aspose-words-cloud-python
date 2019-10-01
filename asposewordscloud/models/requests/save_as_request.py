@@ -1,4 +1,3 @@
-
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="SaveAsRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
@@ -35,16 +34,14 @@ class SaveAsRequest(object):
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
-    :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     :param fonts_location Folder in filestorage with custom fonts.
     """
 
-    def __init__(self, name, save_options_data, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, fonts_location=None):
+    def __init__(self, name, save_options_data, folder=None, storage=None, load_encoding=None, password=None, fonts_location=None):
         self.name = name
         self.save_options_data = save_options_data
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
-        self.dest_file_name = dest_file_name
         self.fonts_location = fonts_location

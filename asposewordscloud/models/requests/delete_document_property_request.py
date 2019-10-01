@@ -1,4 +1,3 @@
-
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="DeleteDocumentPropertyRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **update_fields** | **bool** | Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true | [optional] 
 **add_bidi_marks** | **bool** | Gets or sets specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true. | [optional] 
 **encoding** | **str** | Gets or sets specifies the encoding to use when exporting in plain text format. | [optional] 
-**export_headers_footers_mode** | **int** | Gets or sets specifies whether to output headers and footers when exporting in plain text format. | [optional] 
+**export_headers_footers_mode** | **str** | Gets or sets specifies whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly. | [optional] 
 **force_page_breaks** | **bool** | Gets or sets allows to specify whether the page breaks should be preserved during export. The default value is false. | [optional] 
 **paragraph_break** | **str** | Gets or sets specifies the string to use as a paragraph break when exporting in plain text format. | [optional] 
 **preserve_table_layout** | **bool** | Gets or sets specifies whether the program should attempt to preserve layout of tables when saving in the plain text format. | [optional] 
