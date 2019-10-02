@@ -61,8 +61,7 @@ class TestConvertDocument(BaseTestContext):
 
         request = asposewordscloud.models.requests.SaveAsRequest(remote_name, save_options,
                                                                            os.path.join(self.remote_test_folder,
-                                                                                        self.test_folder),
-                                                                           dest_file_name=dest_name)
+                                                                                        self.test_folder))
         result = self.words_api.save_as(request)
         self.assertTrue(result.save_result is not None, 'Error has occurred while convert document')
 
@@ -90,8 +89,7 @@ class TestConvertDocument(BaseTestContext):
 
         request = asposewordscloud.models.requests.SaveAsTiffRequest(remote_name, save_options,
                                                                               os.path.join(self.remote_test_folder,
-                                                                                           self.test_folder),
-                                                                              dest_file_name=dest_name)
+                                                                                           self.test_folder))
         result = self.words_api.save_as_tiff(request)
         self.assertTrue(result.save_result is not None, 'Error has occurred while convert document')
 

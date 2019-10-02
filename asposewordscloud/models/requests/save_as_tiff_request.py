@@ -1,4 +1,3 @@
-
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="SaveAsTiffRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
@@ -35,8 +34,6 @@ class SaveAsTiffRequest(object):
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
-    :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    :param result_file The resulting file name.
     :param use_anti_aliasing Use antialiasing flag.
     :param use_high_quality_rendering Use high quality flag.
     :param image_brightness Brightness for the generated images.
@@ -57,15 +54,13 @@ class SaveAsTiffRequest(object):
     :param fonts_location Folder in filestorage with custom fonts.
     """
 
-    def __init__(self, name, save_options, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, result_file=None, use_anti_aliasing=None, use_high_quality_rendering=None, image_brightness=None, image_color_mode=None, image_contrast=None, numeral_format=None, page_count=None, page_index=None, paper_color=None, pixel_format=None, resolution=None, scale=None, tiff_compression=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, tiff_binarization_method=None, zip_output=None, fonts_location=None):
+    def __init__(self, name, save_options, folder=None, storage=None, load_encoding=None, password=None, use_anti_aliasing=None, use_high_quality_rendering=None, image_brightness=None, image_color_mode=None, image_contrast=None, numeral_format=None, page_count=None, page_index=None, paper_color=None, pixel_format=None, resolution=None, scale=None, tiff_compression=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, tiff_binarization_method=None, zip_output=None, fonts_location=None):
         self.name = name
         self.save_options = save_options
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
-        self.dest_file_name = dest_file_name
-        self.result_file = result_file
         self.use_anti_aliasing = use_anti_aliasing
         self.use_high_quality_rendering = use_high_quality_rendering
         self.image_brightness = image_brightness

@@ -29,7 +29,7 @@ class ReplaceWithTextRequest(object):
     Request model for replace_with_text operation.
     Initializes a new instance.
     :param name The document.
-    :param range_start_identifier The range start identifier.
+    :param range_start_identifier The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
     :param range_text Model with text for replacement.
     :param range_end_identifier The range end identifier.
     :param folder Original document folder.

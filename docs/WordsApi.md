@@ -5967,7 +5967,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document.
-range_start_identifier = 'range_start_identifier_example' # str | The range start identifier.
+range_start_identifier = 'range_start_identifier_example' # str | The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
 range_end_identifier = 'range_end_identifier_example' # str | The range end identifier.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -5987,7 +5987,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document. | 
- **range_start_identifier** | **str**| The range start identifier. | 
+ **range_start_identifier** | **str**| The range start identifier. Identifier is the value of the \&quot;nodeId\&quot; field, which every document node has, extended with the prefix \&quot;id\&quot;. It looks like \&quot;id0.7\&quot;. Also values like \&quot;image5\&quot; and \&quot;table3\&quot; can be used as an identifier for images and tables, where the number is an index of the image/table. | 
  **range_end_identifier** | **str**| The range end identifier. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -8581,7 +8581,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document.
-range_start_identifier = 'range_start_identifier_example' # str | The range start identifier.
+range_start_identifier = 'range_start_identifier_example' # str | The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
 range_end_identifier = 'range_end_identifier_example' # str | The range end identifier.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -8602,7 +8602,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document. | 
- **range_start_identifier** | **str**| The range start identifier. | 
+ **range_start_identifier** | **str**| The range start identifier. Identifier is the value of the \&quot;nodeId\&quot; field, which every document node has, extended with the prefix \&quot;id\&quot;. It looks like \&quot;id0.7\&quot;. Also values like \&quot;image5\&quot; and \&quot;table3\&quot; can be used as an identifier for images and tables, where the number is an index of the image/table. | 
  **range_end_identifier** | **str**| The range end identifier. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -9295,7 +9295,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document.
-range_start_identifier = 'range_start_identifier_example' # str | The range start identifier.
+range_start_identifier = 'range_start_identifier_example' # str | The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
 range_text = asposewordscloud.ReplaceRange() # ReplaceRange | Model with text for replacement.
 range_end_identifier = 'range_end_identifier_example' # str | The range end identifier.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -9317,7 +9317,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document. | 
- **range_start_identifier** | **str**| The range start identifier. | 
+ **range_start_identifier** | **str**| The range start identifier. Identifier is the value of the \&quot;nodeId\&quot; field, which every document node has, extended with the prefix \&quot;id\&quot;. It looks like \&quot;id0.7\&quot;. Also values like \&quot;image5\&quot; and \&quot;table3\&quot; can be used as an identifier for images and tables, where the number is an index of the image/table. | 
  **range_text** | [**ReplaceRange**](ReplaceRange.md)| Model with text for replacement. | 
  **range_end_identifier** | **str**| The range end identifier. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -9387,7 +9387,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **save_as**
-> SaveResponse save_as(name, save_options_data, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, fonts_location=fonts_location)
+> SaveResponse save_as(name, save_options_data, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
 
 Converts document to destination format with detailed settings and saves result to storage.
 
@@ -9411,12 +9411,11 @@ folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
 password = 'password_example' # str | Password for opening an encrypted document. (optional)
-dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 fonts_location = 'fonts_location_example' # str | Folder in filestorage with custom fonts. (optional)
 
 try:
     # Converts document to destination format with detailed settings and saves result to storage.
-    api_response = api_instance.save_as(name, save_options_data, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, fonts_location=fonts_location)
+    api_response = api_instance.save_as(name, save_options_data, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->save_as: %s\n" % e)
@@ -9432,7 +9431,6 @@ Name | Type | Description  | Notes
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
  **password** | **str**| Password for opening an encrypted document. | [optional] 
- **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
  **fonts_location** | **str**| Folder in filestorage with custom fonts. | [optional] 
 
 ### Return type
@@ -9451,7 +9449,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **save_as_range**
-> DocumentResponse save_as_range(name, range_start_identifier, document_parameters, range_end_identifier, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+> DocumentResponse save_as_range(name, range_start_identifier, document_parameters, range_end_identifier, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
 Saves the selected range as a new document.
 
@@ -9470,18 +9468,17 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document.
-range_start_identifier = 'range_start_identifier_example' # str | The range start identifier.
+range_start_identifier = 'range_start_identifier_example' # str | The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
 document_parameters = asposewordscloud.RangeDocument() # RangeDocument | Parameters of a new document.
 range_end_identifier = 'range_end_identifier_example' # str | The range end identifier.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
 password = 'password_example' # str | Password for opening an encrypted document. (optional)
-dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 
 try:
     # Saves the selected range as a new document.
-    api_response = api_instance.save_as_range(name, range_start_identifier, document_parameters, range_end_identifier, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+    api_response = api_instance.save_as_range(name, range_start_identifier, document_parameters, range_end_identifier, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->save_as_range: %s\n" % e)
@@ -9492,14 +9489,13 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document. | 
- **range_start_identifier** | **str**| The range start identifier. | 
+ **range_start_identifier** | **str**| The range start identifier. Identifier is the value of the \&quot;nodeId\&quot; field, which every document node has, extended with the prefix \&quot;id\&quot;. It looks like \&quot;id0.7\&quot;. Also values like \&quot;image5\&quot; and \&quot;table3\&quot; can be used as an identifier for images and tables, where the number is an index of the image/table. | 
  **document_parameters** | [**RangeDocument**](RangeDocument.md)| Parameters of a new document. | 
  **range_end_identifier** | **str**| The range end identifier. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
  **password** | **str**| Password for opening an encrypted document. | [optional] 
- **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
 
 ### Return type
 
@@ -9517,7 +9513,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **save_as_tiff**
-> SaveResponse save_as_tiff(name, save_options, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, result_file=result_file, use_anti_aliasing=use_anti_aliasing, use_high_quality_rendering=use_high_quality_rendering, image_brightness=image_brightness, image_color_mode=image_color_mode, image_contrast=image_contrast, numeral_format=numeral_format, page_count=page_count, page_index=page_index, paper_color=paper_color, pixel_format=pixel_format, resolution=resolution, scale=scale, tiff_compression=tiff_compression, dml_rendering_mode=dml_rendering_mode, dml_effects_rendering_mode=dml_effects_rendering_mode, tiff_binarization_method=tiff_binarization_method, zip_output=zip_output, fonts_location=fonts_location)
+> SaveResponse save_as_tiff(name, save_options, folder=folder, storage=storage, load_encoding=load_encoding, password=password, use_anti_aliasing=use_anti_aliasing, use_high_quality_rendering=use_high_quality_rendering, image_brightness=image_brightness, image_color_mode=image_color_mode, image_contrast=image_contrast, numeral_format=numeral_format, page_count=page_count, page_index=page_index, paper_color=paper_color, pixel_format=pixel_format, resolution=resolution, scale=scale, tiff_compression=tiff_compression, dml_rendering_mode=dml_rendering_mode, dml_effects_rendering_mode=dml_effects_rendering_mode, tiff_binarization_method=tiff_binarization_method, zip_output=zip_output, fonts_location=fonts_location)
 
 Converts document to tiff with detailed settings and saves result to storage.
 
@@ -9541,8 +9537,6 @@ folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
 password = 'password_example' # str | Password for opening an encrypted document. (optional)
-dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
-result_file = 'result_file_example' # str | The resulting file name. (optional)
 use_anti_aliasing = true # bool | Use antialiasing flag. (optional)
 use_high_quality_rendering = true # bool | Use high quality flag. (optional)
 image_brightness = 1.2 # float | Brightness for the generated images. (optional)
@@ -9564,7 +9558,7 @@ fonts_location = 'fonts_location_example' # str | Folder in filestorage with cus
 
 try:
     # Converts document to tiff with detailed settings and saves result to storage.
-    api_response = api_instance.save_as_tiff(name, save_options, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, result_file=result_file, use_anti_aliasing=use_anti_aliasing, use_high_quality_rendering=use_high_quality_rendering, image_brightness=image_brightness, image_color_mode=image_color_mode, image_contrast=image_contrast, numeral_format=numeral_format, page_count=page_count, page_index=page_index, paper_color=paper_color, pixel_format=pixel_format, resolution=resolution, scale=scale, tiff_compression=tiff_compression, dml_rendering_mode=dml_rendering_mode, dml_effects_rendering_mode=dml_effects_rendering_mode, tiff_binarization_method=tiff_binarization_method, zip_output=zip_output, fonts_location=fonts_location)
+    api_response = api_instance.save_as_tiff(name, save_options, folder=folder, storage=storage, load_encoding=load_encoding, password=password, use_anti_aliasing=use_anti_aliasing, use_high_quality_rendering=use_high_quality_rendering, image_brightness=image_brightness, image_color_mode=image_color_mode, image_contrast=image_contrast, numeral_format=numeral_format, page_count=page_count, page_index=page_index, paper_color=paper_color, pixel_format=pixel_format, resolution=resolution, scale=scale, tiff_compression=tiff_compression, dml_rendering_mode=dml_rendering_mode, dml_effects_rendering_mode=dml_effects_rendering_mode, tiff_binarization_method=tiff_binarization_method, zip_output=zip_output, fonts_location=fonts_location)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->save_as_tiff: %s\n" % e)
@@ -9580,8 +9574,6 @@ Name | Type | Description  | Notes
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
  **password** | **str**| Password for opening an encrypted document. | [optional] 
- **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
- **result_file** | **str**| The resulting file name. | [optional] 
  **use_anti_aliasing** | **bool**| Use antialiasing flag. | [optional] 
  **use_high_quality_rendering** | **bool**| Use high quality flag. | [optional] 
  **image_brightness** | **float**| Brightness for the generated images. | [optional] 

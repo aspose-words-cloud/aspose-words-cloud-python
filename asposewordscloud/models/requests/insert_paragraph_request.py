@@ -1,4 +1,3 @@
-
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="InsertParagraphRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud

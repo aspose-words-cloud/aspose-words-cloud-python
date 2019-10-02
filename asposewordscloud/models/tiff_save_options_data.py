@@ -69,6 +69,7 @@ class TiffSaveOptionsData(object):
         'use_gdi_emf_renderer': 'bool',
         'use_high_quality_rendering': 'bool',
         'vertical_resolution': 'float',
+        'threshold_for_floyd_steinberg_dithering': 'int',
         'tiff_binarization_method': 'str',
         'tiff_compression': 'str'
     }
@@ -102,11 +103,12 @@ class TiffSaveOptionsData(object):
         'use_gdi_emf_renderer': 'UseGdiEmfRenderer',
         'use_high_quality_rendering': 'UseHighQualityRendering',
         'vertical_resolution': 'VerticalResolution',
+        'threshold_for_floyd_steinberg_dithering': 'ThresholdForFloydSteinbergDithering',
         'tiff_binarization_method': 'TiffBinarizationMethod',
         'tiff_compression': 'TiffCompression'
     }
 
-    def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, graphics_quality_options=None, horizontal_resolution=None, image_brightness=None, image_color_mode=None, image_contrast=None, paper_color=None, pixel_format=None, resolution=None, scale=None, use_anti_aliasing=None, use_gdi_emf_renderer=None, use_high_quality_rendering=None, vertical_resolution=None, tiff_binarization_method=None, tiff_compression=None):  # noqa: E501
+    def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, graphics_quality_options=None, horizontal_resolution=None, image_brightness=None, image_color_mode=None, image_contrast=None, paper_color=None, pixel_format=None, resolution=None, scale=None, use_anti_aliasing=None, use_gdi_emf_renderer=None, use_high_quality_rendering=None, vertical_resolution=None, threshold_for_floyd_steinberg_dithering=None, tiff_binarization_method=None, tiff_compression=None):  # noqa: E501
         """TiffSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._color_mode = None
@@ -137,6 +139,7 @@ class TiffSaveOptionsData(object):
         self._use_gdi_emf_renderer = None
         self._use_high_quality_rendering = None
         self._vertical_resolution = None
+        self._threshold_for_floyd_steinberg_dithering = None
         self._tiff_binarization_method = None
         self._tiff_compression = None
         self.discriminator = None
@@ -197,6 +200,8 @@ class TiffSaveOptionsData(object):
             self.use_high_quality_rendering = use_high_quality_rendering
         if vertical_resolution is not None:
             self.vertical_resolution = vertical_resolution
+        if threshold_for_floyd_steinberg_dithering is not None:
+            self.threshold_for_floyd_steinberg_dithering = threshold_for_floyd_steinberg_dithering
         if tiff_binarization_method is not None:
             self.tiff_binarization_method = tiff_binarization_method
         if tiff_compression is not None:
@@ -790,6 +795,27 @@ class TiffSaveOptionsData(object):
         :type: float
         """
         self._vertical_resolution = vertical_resolution
+    @property
+    def threshold_for_floyd_steinberg_dithering(self):
+        """Gets the threshold_for_floyd_steinberg_dithering of this TiffSaveOptionsData.  # noqa: E501
+
+        Gets or sets the threshold that determines the value of the binarization error in the Floyd-Steinberg method. when ImageBinarizationMethod is ImageBinarizationMethod.FloydSteinbergDithering. Default value is 128.  # noqa: E501
+
+        :return: The threshold_for_floyd_steinberg_dithering of this TiffSaveOptionsData.  # noqa: E501
+        :rtype: int
+        """
+        return self._threshold_for_floyd_steinberg_dithering
+
+    @threshold_for_floyd_steinberg_dithering.setter
+    def threshold_for_floyd_steinberg_dithering(self, threshold_for_floyd_steinberg_dithering):
+        """Sets the threshold_for_floyd_steinberg_dithering of this TiffSaveOptionsData.
+
+        Gets or sets the threshold that determines the value of the binarization error in the Floyd-Steinberg method. when ImageBinarizationMethod is ImageBinarizationMethod.FloydSteinbergDithering. Default value is 128.  # noqa: E501
+
+        :param threshold_for_floyd_steinberg_dithering: The threshold_for_floyd_steinberg_dithering of this TiffSaveOptionsData.  # noqa: E501
+        :type: int
+        """
+        self._threshold_for_floyd_steinberg_dithering = threshold_for_floyd_steinberg_dithering
     @property
     def tiff_binarization_method(self):
         """Gets the tiff_binarization_method of this TiffSaveOptionsData.  # noqa: E501

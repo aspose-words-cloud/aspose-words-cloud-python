@@ -51,6 +51,7 @@ class DocSaveOptionsData(object):
         'update_sdt_content': 'bool',
         'update_fields': 'bool',
         'password': 'str',
+        'save_picture_bullet': 'bool',
         'save_routing_slip': 'bool'
     }
 
@@ -65,10 +66,11 @@ class DocSaveOptionsData(object):
         'update_sdt_content': 'UpdateSdtContent',
         'update_fields': 'UpdateFields',
         'password': 'Password',
+        'save_picture_bullet': 'SavePictureBullet',
         'save_routing_slip': 'SaveRoutingSlip'
     }
 
-    def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, password=None, save_routing_slip=None):  # noqa: E501
+    def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, password=None, save_picture_bullet=None, save_routing_slip=None):  # noqa: E501
         """DocSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._color_mode = None
@@ -81,6 +83,7 @@ class DocSaveOptionsData(object):
         self._update_sdt_content = None
         self._update_fields = None
         self._password = None
+        self._save_picture_bullet = None
         self._save_routing_slip = None
         self.discriminator = None
 
@@ -104,6 +107,8 @@ class DocSaveOptionsData(object):
             self.update_fields = update_fields
         if password is not None:
             self.password = password
+        if save_picture_bullet is not None:
+            self.save_picture_bullet = save_picture_bullet
         if save_routing_slip is not None:
             self.save_routing_slip = save_routing_slip
 
@@ -317,6 +322,27 @@ class DocSaveOptionsData(object):
         :type: str
         """
         self._password = password
+    @property
+    def save_picture_bullet(self):
+        """Gets the save_picture_bullet of this DocSaveOptionsData.  # noqa: E501
+
+        Gets or sets When false, PictureBullet data is not saved to output document. Default value is true.  # noqa: E501
+
+        :return: The save_picture_bullet of this DocSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._save_picture_bullet
+
+    @save_picture_bullet.setter
+    def save_picture_bullet(self, save_picture_bullet):
+        """Sets the save_picture_bullet of this DocSaveOptionsData.
+
+        Gets or sets When false, PictureBullet data is not saved to output document. Default value is true.  # noqa: E501
+
+        :param save_picture_bullet: The save_picture_bullet of this DocSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._save_picture_bullet = save_picture_bullet
     @property
     def save_routing_slip(self):
         """Gets the save_routing_slip of this DocSaveOptionsData.  # noqa: E501

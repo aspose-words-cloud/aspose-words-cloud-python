@@ -1,4 +1,3 @@
-
 # --------------------------------------------------------------------------------
 # <copyright company="Aspose" file="GetTableRowFormatRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud

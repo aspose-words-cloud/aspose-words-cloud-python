@@ -87,7 +87,7 @@ class TestComments(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPostComment.docx'
         comment_index = 0
-        node_link = asposewordscloud.NodeLink(None, '0.0.3')
+        node_link = asposewordscloud.NodeLink(None, '0.3.0.3')
         doc_pos = asposewordscloud.DocumentPosition(node_link, 0)
         body = asposewordscloud.Comment(None, 'Yaroslav Ekimov', initial='YE', range_start=doc_pos, range_end=doc_pos,
                                       text='A new comment')
@@ -106,7 +106,7 @@ class TestComments(BaseTestContext):
     def test_insert_comment(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPutComment.docx'
-        node_link = asposewordscloud.NodeLink(None, '0.0.3')
+        node_link = asposewordscloud.NodeLink(None, '0.3.0.3')
         doc_pos = asposewordscloud.DocumentPosition(node_link, 0)
         body = asposewordscloud.Comment(None, 'Yaroslav Ekimov', initial='YE', range_start=doc_pos, range_end=doc_pos,
                                       text='A new comment')

@@ -52,7 +52,7 @@ class TextSaveOptionsData(object):
         'update_fields': 'bool',
         'add_bidi_marks': 'bool',
         'encoding': 'str',
-        'export_headers_footers_mode': 'int',
+        'export_headers_footers_mode': 'str',
         'force_page_breaks': 'bool',
         'paragraph_break': 'str',
         'preserve_table_layout': 'bool',
@@ -367,10 +367,10 @@ class TextSaveOptionsData(object):
     def export_headers_footers_mode(self):
         """Gets the export_headers_footers_mode of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether to output headers and footers when exporting in plain text format.  # noqa: E501
+        Gets or sets specifies whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
 
         :return: The export_headers_footers_mode of this TextSaveOptionsData.  # noqa: E501
-        :rtype: int
+        :rtype: str
         """
         return self._export_headers_footers_mode
 
@@ -378,12 +378,20 @@ class TextSaveOptionsData(object):
     def export_headers_footers_mode(self, export_headers_footers_mode):
         """Sets the export_headers_footers_mode of this TextSaveOptionsData.
 
-        Gets or sets specifies whether to output headers and footers when exporting in plain text format.  # noqa: E501
+        Gets or sets specifies whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
 
         :param export_headers_footers_mode: The export_headers_footers_mode of this TextSaveOptionsData.  # noqa: E501
-        :type: int
+        :type: str
         """
-        self._export_headers_footers_mode = export_headers_footers_mode
+        allowed_values = ["None", "PrimaryOnly", "AllAtEnd"]  # noqa: E501
+        if not export_headers_footers_mode.isdigit():	
+            if export_headers_footers_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `export_headers_footers_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(export_headers_footers_mode, allowed_values))
+            self._export_headers_footers_mode = export_headers_footers_mode
+        else:
+            self._export_headers_footers_mode = allowed_values[int(export_headers_footers_mode) if six.PY3 else long(export_headers_footers_mode)]
     @property
     def force_page_breaks(self):
         """Gets the force_page_breaks of this TextSaveOptionsData.  # noqa: E501

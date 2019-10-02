@@ -12455,7 +12455,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document. (required)
-        :param range_start_identifier str : The range start identifier. (required)
+        :param range_start_identifier str : The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
         :param range_end_identifier str : The range end identifier. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -18121,7 +18121,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document. (required)
-        :param range_start_identifier str : The range start identifier. (required)
+        :param range_start_identifier str : The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
         :param range_end_identifier str : The range end identifier. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -19707,7 +19707,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document. (required)
-        :param range_start_identifier str : The range start identifier. (required)
+        :param range_start_identifier str : The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
         :param range_text ReplaceRange : Model with text for replacement. (required)
         :param range_end_identifier str : The range end identifier. (required)
         :param folder str : Original document folder.
@@ -19948,7 +19948,6 @@ class WordsApi(object):
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
-        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: SaveResponse
                  If the method is called asynchronously,
@@ -20028,11 +20027,6 @@ class WordsApi(object):
         else:
             if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
         if self.__downcase_first_letter('FontsLocation') in path:
             path = path.replace('{' + self.__downcase_first_letter('FontsLocation' + '}'), request.fonts_location if request.fonts_location is not None else '')
         else:
@@ -20082,14 +20076,13 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document. (required)
-        :param range_start_identifier str : The range start identifier. (required)
+        :param range_start_identifier str : The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
         :param document_parameters RangeDocument : Parameters of a new document. (required)
         :param range_end_identifier str : The range end identifier. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
-        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20178,11 +20171,6 @@ class WordsApi(object):
         else:
             if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
 
         header_params = {}
 
@@ -20232,8 +20220,6 @@ class WordsApi(object):
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
-        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param result_file str : The resulting file name.
         :param use_anti_aliasing bool : Use antialiasing flag.
         :param use_high_quality_rendering bool : Use high quality flag.
         :param image_brightness float : Brightness for the generated images.
@@ -20330,16 +20316,6 @@ class WordsApi(object):
         else:
             if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('ResultFile') in path:
-            path = path.replace('{' + self.__downcase_first_letter('ResultFile' + '}'), request.result_file if request.result_file is not None else '')
-        else:
-            if request.result_file is not None:
-                query_params.append((self.__downcase_first_letter('ResultFile'), request.result_file))  # noqa: E501
         if self.__downcase_first_letter('UseAntiAliasing') in path:
             path = path.replace('{' + self.__downcase_first_letter('UseAntiAliasing' + '}'), request.use_anti_aliasing if request.use_anti_aliasing is not None else '')
         else:
@@ -23932,3 +23908,4 @@ class WordsApi(object):
                                         files={}, _return_http_data_only=True)
         access_token = data['access_token'] if six.PY3 else data['access_token'].encode('utf8')
         self.api_client.configuration.access_token = access_token
+
