@@ -5,6 +5,7 @@ stages:
   - test-publishing-test
   - publishing
   - version_tag
+  - release
 
 2.7-tests:
   stage: build&test
@@ -104,9 +105,31 @@ add version tag:
     - testPackage
   before_script:
     - $env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-python.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS
+    - '$jsonString = ( New-Object System.Net.WebClient ).DownloadString("https://api.aspose.cloud/v4.0/words/swagger/spec")'
     - '$env:SDK_VERSION = ( ( ConvertFrom-Json -InputObject $jsonString ).info.version | Select-String -Pattern "^\d+\.\d+" ).Matches[0].Value'
   script: 
-    - git tag -a $env:SDK_VERSION -m 'version $env:SDK_VERSION' | exit 0
-    - git push $env:ORIGIN $env:SDK_VERSION    
+    -  'git remote set-url origin $env:ORIGIN'
+    - git checkout testPackage
+    - git reset --hard origin/testPackage
+    - git tag -a $env:SDK_VERSION -m "version $env:SDK_VERSION"
+    - 'git push $env:ORIGIN $env:SDK_VERSION'
   tags: 
     - awcloud
+
+create_release:
+  stage: release
+  only:
+    - testPackage
+  before_script:
+    - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-python.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
+  script: 
+    - git checkout testPackage
+    - 'git remote set-url origin $env:ORIGIN'
+    - git checkout release
+    - git reset --hard origin/release
+    - git merge --no-ff --allow-unrelated-histories origin/testPackage
+    - git diff --name-status
+    - git push
+  tags:
+    - awcloud
+  when: manual
