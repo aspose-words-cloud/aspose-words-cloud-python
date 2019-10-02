@@ -34,8 +34,8 @@ class TestRange(BaseTestContext):
     test_folder = 'DocumentElements/Range'
 
     def test_get_range_text(self):
-        range_start = 'id0.0'
-        range_end = 'id0.1'
+        range_start = 'id0.0.0'
+        range_end = 'id0.0.1'
         expected_text = 'This is HEADER '
 
         local_name = 'RangeGet.doc'
@@ -48,8 +48,8 @@ class TestRange(BaseTestContext):
         self.assertEqual(expected_text, result.text)
 
     def test_remove_range(self):
-        range_start = 'id0.0'
-        range_end = 'id0.1'
+        range_start = 'id0.0.0'
+        range_end = 'id0.0.1'
 
         local_name = 'RangeGet.doc'
         remote_name = 'TestRemoveRange.doc'
@@ -61,8 +61,8 @@ class TestRange(BaseTestContext):
         self.assertIsNotNone(result)
 
     def test_save_as_range(self):
-        range_start = 'id0.0'
-        range_end = 'id0.1'
+        range_start = 'id0.0.0'
+        range_end = 'id0.0.1'
         new_doc_name = os.path.join(self.remote_test_folder, 'NewDoc.docx')
         range_doc = asposewordscloud.models.RangeDocument(new_doc_name)
 
@@ -76,8 +76,8 @@ class TestRange(BaseTestContext):
         self.assertIsNotNone(result)
 
     def test_replace_with_text(self):
-        range_start = 'id0.0'
-        range_end = 'id0.1'
+        range_start = 'id0.0.0'
+        range_end = 'id0.0.1'
         new_text = 'Replace header'
         replacement = asposewordscloud.models.ReplaceRange(new_text)
 
