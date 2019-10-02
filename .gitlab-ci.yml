@@ -21,8 +21,6 @@ stages:
 
 3.7-tests:
   stage: build&test
-  before_script:
-    - sudo chmod 777 -R $(find -name "*.pyc") .
   after_script:
     - sudo chmod 777 -R $(find -name "*.pyc") .
   script: 
@@ -71,6 +69,8 @@ publish-test:
 
 test-package:
   stage: test-publishing-test
+  after_script:
+    - sudo chmod 777 -R $(find -name "*.pyc") .
   script:
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json  
@@ -109,4 +109,4 @@ add version tag:
     - git tag -a $env:SDK_VERSION -m 'version $env:SDK_VERSION' | exit 0
     - git push $env:ORIGIN $env:SDK_VERSION    
   tags: 
-    - awcloud-linux
+    - awcloud
