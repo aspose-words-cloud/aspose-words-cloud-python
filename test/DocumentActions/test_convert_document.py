@@ -102,8 +102,8 @@ class TestConvertDocument(BaseTestContext):
         _format = 'text'
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetDocumentWithFormatRequest(remote_name, _format,
-                                                                              os.path.join(self.remote_test_folder,
-                                                                                           self.test_folder))
+                                                                                os.path.join(self.remote_test_folder,
+                                                                                             self.test_folder))
         result = self.words_api.get_document_with_format(request)
         self.assertTrue(len(result) > 0, 'Error has occurred while convert document')
 
@@ -117,8 +117,8 @@ class TestConvertDocument(BaseTestContext):
         out_path = os.path.join(self.remote_test_out, remote_name)
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetDocumentWithFormatRequest(remote_name, _format,
-                                                                              os.path.join(self.remote_test_folder,
-                                                                                           self.test_folder),
-                                                                              out_path=out_path)
+                                                                                os.path.join(self.remote_test_folder,
+                                                                                             self.test_folder),
+                                                                                out_path=out_path)
         result = self.words_api.get_document_with_format(request)
         self.assertTrue(len(result) > 0, 'Error has occurred while convert document')

@@ -43,9 +43,9 @@ class TestComments(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.DeleteCommentRequest(remote_name, comment_index,
-                                                                      os.path.join(
-                                                                          self.remote_test_folder,
-                                                                          self.test_folder))
+                                                                        os.path.join(
+                                                                            self.remote_test_folder,
+                                                                            self.test_folder))
         result = self.words_api.delete_comment(request)
         self.assertIsNotNone(result, 'Error has occurred while delete comment')
 
@@ -59,9 +59,9 @@ class TestComments(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetCommentRequest(remote_name, comment_index,
-                                                                   os.path.join(
-                                                                       self.remote_test_folder,
-                                                                       self.test_folder))
+                                                                     os.path.join(
+                                                                         self.remote_test_folder,
+                                                                         self.test_folder))
         result = self.words_api.get_comment(request)
         self.assertIsNotNone(result, 'Error has occurred while get comment')
 
@@ -74,9 +74,9 @@ class TestComments(BaseTestContext):
         
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetCommentsRequest(remote_name,
-                                                                    os.path.join(
-                                                                        self.remote_test_folder,
-                                                                        self.test_folder))
+                                                                      os.path.join(
+                                                                          self.remote_test_folder,
+                                                                          self.test_folder))
         result = self.words_api.get_comments(request)
         self.assertIsNotNone(result, 'Error has occurred while get comments')
 

@@ -44,9 +44,9 @@ class TestRuns(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.DeleteRunRequest(remote_name, paragraph_path, index,
-                                                                  os.path.join(
-                                                                      self.remote_test_folder,
-                                                                      self.test_folder))
+                                                                    os.path.join(
+                                                                        self.remote_test_folder,
+                                                                        self.test_folder))
         result = self.words_api.delete_run(request)
         self.assertIsNotNone(result, 'Error has occurred while delete run')
 

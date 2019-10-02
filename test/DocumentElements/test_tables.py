@@ -76,9 +76,9 @@ class TestTables(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.DeleteTableCellRequest(remote_name, source_path, index,
-                                                                        os.path.join(
-                                                                            self.remote_test_folder,
-                                                                            self.test_folder))
+                                                                          os.path.join(
+                                                                              self.remote_test_folder,
+                                                                              self.test_folder))
         result = self.words_api.delete_table_cell(request)
         self.assertIsNotNone(result, 'Error has occurred while delete table cell')
 
@@ -93,9 +93,9 @@ class TestTables(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.DeleteTableRowRequest(remote_name, source_path, index,
-                                                                       os.path.join(
-                                                                           self.remote_test_folder,
-                                                                           self.test_folder))
+                                                                         os.path.join(
+                                                                             self.remote_test_folder,
+                                                                             self.test_folder))
         result = self.words_api.delete_table_row(request)
         self.assertIsNotNone(result, 'Error has occurred while delete table row')
 
@@ -110,9 +110,9 @@ class TestTables(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.GetBorderRequest(remote_name, source_path, index,
-                                                                  os.path.join(
-                                                                      self.remote_test_folder,
-                                                                      self.test_folder))
+                                                                    os.path.join(
+                                                                        self.remote_test_folder,
+                                                                        self.test_folder))
         result = self.words_api.get_border(request)
         self.assertIsNotNone(result, 'Error has occurred while get border')
 
@@ -126,9 +126,9 @@ class TestTables(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.GetBordersRequest(remote_name, source_path,
-                                                                   os.path.join(
-                                                                       self.remote_test_folder,
-                                                                       self.test_folder))
+                                                                     os.path.join(
+                                                                         self.remote_test_folder,
+                                                                         self.test_folder))
         result = self.words_api.get_borders(request)
         self.assertIsNotNone(result, 'Error has occurred while get borders')
 
@@ -175,9 +175,9 @@ class TestTables(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.GetTableCellRequest(remote_name, source_path, index,
-                                                                     os.path.join(
-                                                                         self.remote_test_folder,
-                                                                         self.test_folder))
+                                                                       os.path.join(
+                                                                           self.remote_test_folder,
+                                                                           self.test_folder))
         result = self.words_api.get_table_cell(request)
         self.assertIsNotNone(result, 'Error has occurred while get table cell')
 
@@ -192,9 +192,9 @@ class TestTables(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.GetTableCellFormatRequest(remote_name, source_path, index,
-                                                                           os.path.join(
-                                                                               self.remote_test_folder,
-                                                                               self.test_folder))
+                                                                             os.path.join(
+                                                                                 self.remote_test_folder,
+                                                                                 self.test_folder))
         result = self.words_api.get_table_cell_format(request)
         self.assertIsNotNone(result, 'Error has occurred while get table cell format')
 
@@ -209,9 +209,9 @@ class TestTables(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.GetTableRowRequest(remote_name, source_path, index,
-                                                                    os.path.join(
-                                                                        self.remote_test_folder,
-                                                                        self.test_folder))
+                                                                      os.path.join(
+                                                                          self.remote_test_folder,
+                                                                          self.test_folder))
         result = self.words_api.get_table_row(request)
         self.assertIsNotNone(result, 'Error has occurred while get table row')
 
@@ -226,9 +226,9 @@ class TestTables(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.GetTableRowFormatRequest(remote_name, source_path, index,
-                                                                          os.path.join(
-                                                                              self.remote_test_folder,
-                                                                              self.test_folder))
+                                                                            os.path.join(
+                                                                                self.remote_test_folder,
+                                                                                self.test_folder))
         result = self.words_api.get_table_row_format(request)
         self.assertIsNotNone(result, 'Error has occurred while get table row format')
 
@@ -305,9 +305,9 @@ class TestTables(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.InsertTableCellRequest(remote_name, source_path,
-                                                                        os.path.join(
-                                                                            self.remote_test_folder,
-                                                                            self.test_folder), cell=body)
+                                                                          os.path.join(
+                                                                              self.remote_test_folder,
+                                                                              self.test_folder), cell=body)
         result = self.words_api.insert_table_cell(request)
         self.assertIsNotNone(result, 'Error has occurred while insert table cell')
 
@@ -322,9 +322,9 @@ class TestTables(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.InsertTableRowRequest(remote_name, source_path,
-                                                                       os.path.join(
-                                                                           self.remote_test_folder,
-                                                                           self.test_folder), row=body)
+                                                                         os.path.join(
+                                                                             self.remote_test_folder,
+                                                                             self.test_folder), row=body)
         result = self.words_api.insert_table_row(request)
         self.assertIsNotNone(result, 'Error has occurred while insert table row')
 
@@ -374,9 +374,9 @@ class TestTables(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.UpdateTableCellFormatRequest(remote_name, source_path, index,
-                                                                              os.path.join(
-                                                                                  self.remote_test_folder,
-                                                                                  self.test_folder), format=body)
+                                                                                os.path.join(
+                                                                                    self.remote_test_folder,
+                                                                                    self.test_folder), format=body)
         result = self.words_api.update_table_cell_format(request)
         self.assertIsNotNone(result, 'Error has occurred while update table cell format')
 
@@ -420,7 +420,7 @@ class TestTables(BaseTestContext):
         remote_name = 'TestUpdateTableProperties.docx'
         index = 1
         body = asposewordscloud.TableProperties(None, 'Right', False, True, 1, 2, 3, 4, right_padding=5,
-                                              style_options='ColumnBands', top_padding=6)
+                                                style_options='ColumnBands', top_padding=6)
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.UpdateTablePropertiesRequest(remote_name, '', index,
@@ -460,9 +460,9 @@ class TestTables(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.UpdateTableRowFormatRequest(remote_name, source_path, index,
-                                                                             os.path.join(
-                                                                                 self.remote_test_folder,
-                                                                                 self.test_folder), format=body)
+                                                                               os.path.join(
+                                                                                   self.remote_test_folder,
+                                                                                   self.test_folder), format=body)
         result = self.words_api.update_table_row_format(request)
         self.assertIsNotNone(result, 'Error has occurred while update table row format')
 
@@ -478,9 +478,9 @@ class TestTables(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.DeleteBorderRequest(remote_name, source_path, index,
-                                                                     os.path.join(
-                                                                         self.remote_test_folder,
-                                                                         self.test_folder), dest_file_name=dest_name)
+                                                                       os.path.join(
+                                                                           self.remote_test_folder,
+                                                                           self.test_folder), dest_file_name=dest_name)
         result = self.words_api.delete_border(request)
         self.assertIsNotNone(result, 'Error has occurred while delete table border')
 
@@ -494,9 +494,9 @@ class TestTables(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.DeleteBordersRequest(remote_name, source_path,
-                                                                      os.path.join(
-                                                                          self.remote_test_folder,
-                                                                          self.test_folder))
+                                                                        os.path.join(
+                                                                            self.remote_test_folder,
+                                                                            self.test_folder))
         result = self.words_api.delete_borders(request)
         self.assertIsNotNone(result, 'Error has occurred while delete table borders')
 
@@ -512,8 +512,8 @@ class TestTables(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
         request = asposewordscloud.models.requests.UpdateBorderRequest(remote_name, body, source_path, index,
-                                                                     os.path.join(
-                                                                         self.remote_test_folder,
-                                                                         self.test_folder))
+                                                                       os.path.join(
+                                                                           self.remote_test_folder,
+                                                                           self.test_folder))
         result = self.words_api.update_border(request)
         self.assertIsNotNone(result, 'Error has occurred while update border')

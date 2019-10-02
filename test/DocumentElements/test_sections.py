@@ -43,9 +43,9 @@ class TestSections(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetSectionRequest(remote_name, index,
-                                                                   os.path.join(
-                                                                       self.remote_test_folder,
-                                                                       self.test_folder))
+                                                                     os.path.join(
+                                                                         self.remote_test_folder,
+                                                                         self.test_folder))
         result = self.words_api.get_section(request)
         self.assertIsNotNone(result, 'Error has occurred while get section')
 
@@ -58,8 +58,8 @@ class TestSections(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetSectionsRequest(remote_name,
-                                                                    os.path.join(
-                                                                        self.remote_test_folder,
-                                                                        self.test_folder))
+                                                                      os.path.join(
+                                                                          self.remote_test_folder,
+                                                                          self.test_folder))
         result = self.words_api.get_sections(request)
         self.assertIsNotNone(result, 'Error has occurred while get sections')

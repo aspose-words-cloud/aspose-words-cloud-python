@@ -14,7 +14,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "aspose-words-cloud"
-VERSION = "19.9.0"
+VERSION = "19.8.0"
 # To install the library, run the following
 #
 # python setup.py install
@@ -42,6 +42,7 @@ setup(
 		'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
 	],
     keywords=["aspose", "python", "aspose cloud", "word"],
     install_requires=REQUIRES,

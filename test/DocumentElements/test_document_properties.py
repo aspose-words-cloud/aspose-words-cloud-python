@@ -44,10 +44,10 @@ class TestDocumentProperties(BaseTestContext):
         
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.CreateOrUpdateDocumentPropertyRequest(remote_name, property_name,
-                                                                                       _prop,
-                                                                                       os.path.join(
-                                                                                           self.remote_test_folder,
-                                                                                           self.test_folder))
+                                                                                         _prop,
+                                                                                         os.path.join(
+                                                                                             self.remote_test_folder,
+                                                                                             self.test_folder))
         result = self.words_api.create_or_update_document_property(request)
         self.assertIsNotNone(result, 'Error has occurred while create or update document property')
 
@@ -62,10 +62,10 @@ class TestDocumentProperties(BaseTestContext):
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.DeleteDocumentPropertyRequest(remote_name, property_name,
-                                                                               os.path.join(
-                                                                                   self.remote_test_folder,
-                                                                                   self.test_folder),
-                                                                               dest_file_name=dest_name)
+                                                                                 os.path.join(
+                                                                                     self.remote_test_folder,
+                                                                                     self.test_folder),
+                                                                                 dest_file_name=dest_name)
         result = self.words_api.delete_document_property(request)
         self.assertIsNotNone(result, 'Error has occurred while delete property')
 
@@ -77,9 +77,9 @@ class TestDocumentProperties(BaseTestContext):
         remote_name = 'TestGetDocumentProperties.docx'
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetDocumentPropertiesRequest(remote_name,
-                                                                              os.path.join(
-                                                                                  self.remote_test_folder,
-                                                                                  self.test_folder))
+                                                                                os.path.join(
+                                                                                    self.remote_test_folder,
+                                                                                    self.test_folder))
         result = self.words_api.get_document_properties(request)
         self.assertIsNotNone(result, 'Error has occurred while get properties')
 
@@ -92,9 +92,9 @@ class TestDocumentProperties(BaseTestContext):
         property_name = 'Author'
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetDocumentPropertyRequest(remote_name, property_name,
-                                                                            os.path.join(
-                                                                                self.remote_test_folder,
-                                                                                self.test_folder))
+                                                                              os.path.join(
+                                                                                  self.remote_test_folder,
+                                                                                  self.test_folder))
         result = self.words_api.get_document_property(request)
         self.assertIsNotNone(result, 'Error has occurred while get property')
 

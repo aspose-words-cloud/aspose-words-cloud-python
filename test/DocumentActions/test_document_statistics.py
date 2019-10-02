@@ -41,7 +41,7 @@ class TestDocumentStatistics(BaseTestContext):
         remote_name = 'TestGetDocumentStatistics.docx'
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
         request = asposewordscloud.models.requests.GetDocumentStatisticsRequest(remote_name,
-                                                                              os.path.join(self.remote_test_folder,
-                                                                                           self.test_folder))
+                                                                                os.path.join(self.remote_test_folder,
+                                                                                             self.test_folder))
         result = self.words_api.get_document_statistics(request)
         self.assertIsNotNone(result, 'Error has occurred while get document statistics')
