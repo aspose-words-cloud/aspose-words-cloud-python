@@ -27,7 +27,7 @@ TEST_REQUIRES = ['asposestoragecloud >=1.0.5']
 
 from os import path
 this_directory = path.abspath(path.dirname(__file__))
-with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+with open(path.join(this_directory, 'README.md'), 'r') as f:
     long_description = f.read()
 
 setup(
@@ -54,5 +54,6 @@ setup(
 	tests_require=TEST_REQUIRES,
     packages=find_packages(),
     include_package_data=True,
-    long_description=long_description
+    long_description=long_description,
+    long_description_content_type="text/markdown"
 )

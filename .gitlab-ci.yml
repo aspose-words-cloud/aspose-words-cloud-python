@@ -8,11 +8,9 @@ stages:
   - release
 
 2.7-tests:
-  stage: build&test
-  before_script:
-    - sudo chmod 777 -R $(find -name "*.pyc") .
+  stage: build&test  
   after_script:
-    - sudo chmod 777 -R $(find -name "*.pyc") .
+    - sudo chmod 777 -R $(find -name '*__pycache__*')
   script: 
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
@@ -20,14 +18,14 @@ stages:
   tags:
     - awcloud-linux
 
-3.7-tests:
-  stage: build&test
+3.6-tests:
+  stage: build&test  
   after_script:
-    - sudo chmod 777 -R $(find -name "*.pyc") .
+    - sudo chmod 777 -R $(find -name '*__pycache__*')
   script: 
     - mkdir -p Settings
     - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json
-    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.7 bash scripts/test-unittest.sh
+    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.6 bash scripts/test-unittest.sh
   tags:
     - awcloud-linux
 
@@ -36,46 +34,28 @@ linter:
   tags: 
     - awcloud-linux
   script: 
-    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.7 bash scripts/linter.sh
+    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.6 bash scripts/linter.sh
   artifacts:
     paths:
       - 'lintResults.txt'
-
-merge-to-testPackage:
-  stage: publishing
-  before_script:
-    - $env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-python.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS
-  script: 
-    - git checkout master
-    - 'git remote set-url origin $env:ORIGIN'
-    - git checkout testPackage
-    - git reset --hard origin/testPackage
-    - git merge --no-ff --allow-unrelated-histories origin/master
-    - git diff --name-status
-    - git push
-  only: 
-    - master
-  tags: 
-    - awcloud
-  when: manual
 
 publish-test:
   stage: test-publishing
   script:
     - docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/test-publish.sh $PypiLogin $PypiPass
   only:
-    - testPackage
+    - master
   tags:
     - awcloud-linux
 
 test-package:
   stage: test-publishing-test
   after_script:
-    - sudo chmod 777 -R $(find -name "*.pyc") .
+    - sudo chmod 777 -R $(find -name '*__pycache__*')
   script:
     - mkdir -p Settings
-    - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json  
-    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.7 bash scripts/test-package.sh $WordsAppSid $WordsAppKey $WordsBaseUrl
+    - echo "{\"AppSid\":\"$WordsAppSid\",\"AppKey\":\"$WordsAppKey\",\"BaseUrl\":\"$WordsBaseUrl\" }" > Settings/servercreds.json 
+    - docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.6 bash scripts/test-unittest.sh $WordsAppSid $WordsAppKey $WordsBaseUrl
   tags: 
     - awcloud-linux
   artifacts:
@@ -85,49 +65,44 @@ test-package:
       junit:
         - nosetests.xml
   only:
-    - testPackage
+    - master
 
 publish to PyPi:
   stage: publishing
+  after_script:
+    - sudo chmod 777 -R $(find -name '*__pycache__*')
   only:
-    - testPackage
-  before_script:
-    - sudo chmod 777 -R $(find -name "*.pyc") .
+    - master
   script:
     - git reset --hard
     - docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/publish.sh $PypiLogin $PypiPass
-  tags: 
+  when: manual
+  tags:
     - awcloud-linux
 
 add version tag:
   stage: version_tag
   only:
-    - testPackage
+    - master
   before_script:
     - $env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-python.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS
-    - '$jsonString = ( New-Object System.Net.WebClient ).DownloadString("https://api.aspose.cloud/v4.0/words/swagger/spec")'
     - '$env:SDK_VERSION = ( ( ConvertFrom-Json -InputObject $jsonString ).info.version | Select-String -Pattern "^\d+\.\d+" ).Matches[0].Value'
   script: 
-    -  'git remote set-url origin $env:ORIGIN'
-    - git checkout testPackage
-    - git reset --hard origin/testPackage
-    - git tag -a $env:SDK_VERSION -m "version $env:SDK_VERSION"
-    - 'git push $env:ORIGIN $env:SDK_VERSION'
-  tags: 
-    - awcloud
+    - git tag -a $env:SDK_VERSION -m 'version $env:SDK_VERSION' | exit 0
+    - git push $env:ORIGIN $env:SDK_VERSION
 
 create_release:
   stage: release
   only:
-    - testPackage
+    - master
   before_script:
     - "$env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-python.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS"
   script: 
-    - git checkout testPackage
+    - git checkout master
     - 'git remote set-url origin $env:ORIGIN'
     - git checkout release
     - git reset --hard origin/release
-    - git merge --no-ff --allow-unrelated-histories origin/testPackage
+    - git merge --no-ff --allow-unrelated-histories origin/master
     - git diff --name-status
     - git push
   tags:
