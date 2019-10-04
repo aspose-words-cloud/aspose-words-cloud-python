@@ -1,5 +1,5 @@
 # Aspose.Words Cloud SDK for Python
-This repository contains Aspose.Words Cloud SDK for Ruby source code. This SDK allows you to work with Aspose.Words Cloud REST APIs in your Ruby applications quickly and easily, with zero initial cost.
+This repository contains Aspose.Words Cloud SDK for Python source code. This SDK allows you to work with Aspose.Words Cloud REST APIs in your Python applications quickly and easily, with zero initial cost.
 
 [Aspose.Words Cloud](https://products.aspose.cloud/words/family "Aspose.Words Cloud")  
 [API Reference](https://apireference.aspose.cloud/words/)  
@@ -18,7 +18,7 @@ The complete source code is available in this repository folder. You can either 
 
 ### Prerequisites
 
-To use Aspose Words for Cloud Ruby SDK you need to register an account with [Aspose Cloud](https://www.aspose.cloud/) and lookup/create App Key and SID at [Cloud Dashboard](https://dashboard.aspose.cloud/#/apps). There is free quota available. For more details, see [Aspose Cloud Pricing](https://purchase.aspose.cloud/pricing).
+To use Aspose Words for Cloud Python SDK you need to register an account with [Aspose Cloud](https://www.aspose.cloud/) and lookup/create App Key and SID at [Cloud Dashboard](https://dashboard.aspose.cloud/#/apps). There is free quota available. For more details, see [Aspose Cloud Pricing](https://purchase.aspose.cloud/pricing).
 
 ## Installation & Usage
 ### pip install
