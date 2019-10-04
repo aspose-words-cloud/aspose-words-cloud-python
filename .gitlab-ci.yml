@@ -90,6 +90,8 @@ add version tag:
   script: 
     - git tag -a $env:SDK_VERSION -m 'version $env:SDK_VERSION' | exit 0
     - git push $env:ORIGIN $env:SDK_VERSION
+  tags:
+    - awcloud
 
 create_release:
   stage: release

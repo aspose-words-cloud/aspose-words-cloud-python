@@ -14,7 +14,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "aspose-words-cloud"
-VERSION = "19.9.0"
+VERSION = "19.9.2"
 # To install the library, run the following
 #
 # python setup.py install
@@ -36,7 +36,7 @@ setup(
     description="Aspose.Words for Cloud API Reference",
     author='Yaroslaw Ekimov',
     author_email="yaroslaw.ekimov@aspose.com",
-    url="https://github.com/aspose-words-cloud",
+    url="https://github.com/aspose-words-cloud/aspose-words-cloud-python",
 	classifiers=[
 		'Development Status :: 5 - Production/Stable',
 		'Intended Audience :: Developers',
