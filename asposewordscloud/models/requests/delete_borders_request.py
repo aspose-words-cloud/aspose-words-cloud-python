@@ -29,7 +29,7 @@ class DeleteBordersRequest(object):
     Request model for delete_borders operation.
     Initializes a new instance.
     :param name The document name.
-    :param node_path Path to the node with borders(node should be cell or row).
+    :param node_path Path to the node with borders(node should be paragraph, cell or row).
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

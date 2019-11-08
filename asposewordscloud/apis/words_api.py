@@ -1427,13 +1427,13 @@ class WordsApi(object):
     def delete_border(self, request, **kwargs):  # noqa: E501
         """Resets border properties to default values.               # noqa: E501
 
-        'nodePath' should refer to node with cell or row.  # noqa: E501
+        'nodePath' should refer to paragraph, cell or row.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param node_path str : Path to the node with border(node should be cell or row). (required)
+        :param node_path str : Path to the node with border(node should be paragraph, cell or row). (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -1463,7 +1463,7 @@ class WordsApi(object):
     def delete_border_with_http_info(self, request, **kwargs):  # noqa: E501
         """Resets border properties to default values.               # noqa: E501
 
-        'nodePath' should refer to node with cell or row.  # noqa: E501
+        'nodePath' should refer to paragraph, cell or row.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
@@ -1580,13 +1580,13 @@ class WordsApi(object):
     def delete_borders(self, request, **kwargs):  # noqa: E501
         """Resets borders properties to default values.               # noqa: E501
 
-        'nodePath' should refer to node with cell or row.  # noqa: E501
+        'nodePath' should refer to paragraph, cell or row.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param node_path str : Path to the node with borders(node should be cell or row). (required)
+        :param node_path str : Path to the node with borders(node should be paragraph, cell or row). (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -1615,7 +1615,7 @@ class WordsApi(object):
     def delete_borders_with_http_info(self, request, **kwargs):  # noqa: E501
         """Resets borders properties to default values.               # noqa: E501
 
-        'nodePath' should refer to node with cell or row.  # noqa: E501
+        'nodePath' should refer to paragraph, cell or row.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
@@ -4884,6 +4884,151 @@ class WordsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def delete_section(self, request, **kwargs):  # noqa: E501
+        """Removes section from document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param section_index int : Section index. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_section_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_section_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_section_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.delete_section_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_section_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes section from document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteSectionRequest object with parameters
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_section" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `delete_section`")  # noqa: E501
+        # verify the required parameter 'section_index' is set
+        if request.section_index is None:
+            raise ValueError("Missing the required parameter `section_index` when calling `delete_section`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/sections/{sectionIndex}'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.section_index is not None:
+            path_params[self.__downcase_first_letter('SectionIndex')] = request.section_index  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+        if self.__downcase_first_letter('RevisionAuthor') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
+        else:
+            if request.revision_author is not None:
+                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
+        if self.__downcase_first_letter('RevisionDateTime') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
+        else:
+            if request.revision_date_time is not None:
+                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def delete_table(self, request, **kwargs):  # noqa: E501
         """Deletes a table.  # noqa: E501
 
@@ -6353,13 +6498,13 @@ class WordsApi(object):
     def get_border(self, request, **kwargs):  # noqa: E501
         """Returns a border.  # noqa: E501
 
-        'nodePath' should refer to node with cell or row.  # noqa: E501
+        'nodePath' should refer to paragraph, cell or row.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param node_path str : Path to the node with border(node should be cell or row). (required)
+        :param node_path str : Path to the node with border(node should be paragraph, cell or row). (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -6386,7 +6531,7 @@ class WordsApi(object):
     def get_border_with_http_info(self, request, **kwargs):  # noqa: E501
         """Returns a border.  # noqa: E501
 
-        'nodePath' should refer to node with cell or row.  # noqa: E501
+        'nodePath' should refer to paragraph, cell or row.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
@@ -6488,13 +6633,13 @@ class WordsApi(object):
     def get_borders(self, request, **kwargs):  # noqa: E501
         """Returns a collection of borders.  # noqa: E501
 
-        'nodePath' should refer to node with cell or row.  # noqa: E501
+        'nodePath' should refer to paragraph, cell or row.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param node_path str : Path to the node with borders (node should be cell or row). (required)
+        :param node_path str : Path to the node with borders (node should be paragraph, cell or row). (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -6520,7 +6665,7 @@ class WordsApi(object):
     def get_borders_with_http_info(self, request, **kwargs):  # noqa: E501
         """Returns a collection of borders.  # noqa: E501
 
-        'nodePath' should refer to node with cell or row.  # noqa: E501
+        'nodePath' should refer to paragraph, cell or row.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
@@ -12455,7 +12600,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document. (required)
-        :param range_start_identifier str : The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
+        :param range_start_identifier str : The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
         :param range_end_identifier str : The range end identifier. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -18121,7 +18266,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document. (required)
-        :param range_start_identifier str : The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
+        :param range_start_identifier str : The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
         :param range_end_identifier str : The range end identifier. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -19707,7 +19852,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document. (required)
-        :param range_start_identifier str : The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
+        :param range_start_identifier str : The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
         :param range_text ReplaceRange : Model with text for replacement. (required)
         :param range_end_identifier str : The range end identifier. (required)
         :param folder str : Original document folder.
@@ -20076,7 +20221,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document. (required)
-        :param range_start_identifier str : The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
+        :param range_start_identifier str : The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
         :param document_parameters RangeDocument : Parameters of a new document. (required)
         :param range_end_identifier str : The range end identifier. (required)
         :param folder str : Original document folder.
@@ -21016,14 +21161,14 @@ class WordsApi(object):
     def update_border(self, request, **kwargs):  # noqa: E501
         """Updates border properties.               # noqa: E501
 
-        'nodePath' should refer to node with cell or row.  # noqa: E501
+        'nodePath' should refer to paragraph, cell or row.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
         :param name str : The document name. (required)
         :param border_properties Border : Border properties. (required)
-        :param node_path str : Path to the node with border(node should be cell or row). (required)
+        :param node_path str : Path to the node with border(node should be paragraph, cell or row). (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -21053,7 +21198,7 @@ class WordsApi(object):
     def update_border_with_http_info(self, request, **kwargs):  # noqa: E501
         """Updates border properties.               # noqa: E501
 
-        'nodePath' should refer to node with cell or row.  # noqa: E501
+        'nodePath' should refer to paragraph, cell or row.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 

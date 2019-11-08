@@ -123,7 +123,6 @@ from asposewordscloud.models.save_response import SaveResponse
 from asposewordscloud.models.search_response import SearchResponse
 from asposewordscloud.models.search_results_collection import SearchResultsCollection
 from asposewordscloud.models.section import Section
-from asposewordscloud.models.section_link import SectionLink
 from asposewordscloud.models.section_link_collection import SectionLinkCollection
 from asposewordscloud.models.section_link_collection_response import SectionLinkCollectionResponse
 from asposewordscloud.models.section_page_setup_response import SectionPageSetupResponse
@@ -163,6 +162,7 @@ from asposewordscloud.models.pcl_save_options_data import PclSaveOptionsData
 from asposewordscloud.models.pdf_save_options_data import PdfSaveOptionsData
 from asposewordscloud.models.ps_save_options_data import PsSaveOptionsData
 from asposewordscloud.models.run_link import RunLink
+from asposewordscloud.models.section_link import SectionLink
 from asposewordscloud.models.svg_save_options_data import SvgSaveOptionsData
 from asposewordscloud.models.table import Table
 from asposewordscloud.models.table_cell import TableCell

@@ -50,6 +50,7 @@ class DocSaveOptionsData(object):
         'update_last_saved_time_property': 'bool',
         'update_sdt_content': 'bool',
         'update_fields': 'bool',
+        'always_compress_metafiles': 'bool',
         'password': 'str',
         'save_picture_bullet': 'bool',
         'save_routing_slip': 'bool'
@@ -65,12 +66,13 @@ class DocSaveOptionsData(object):
         'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
         'update_sdt_content': 'UpdateSdtContent',
         'update_fields': 'UpdateFields',
+        'always_compress_metafiles': 'AlwaysCompressMetafiles',
         'password': 'Password',
         'save_picture_bullet': 'SavePictureBullet',
         'save_routing_slip': 'SaveRoutingSlip'
     }
 
-    def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, password=None, save_picture_bullet=None, save_routing_slip=None):  # noqa: E501
+    def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, always_compress_metafiles=None, password=None, save_picture_bullet=None, save_routing_slip=None):  # noqa: E501
         """DocSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._color_mode = None
@@ -82,6 +84,7 @@ class DocSaveOptionsData(object):
         self._update_last_saved_time_property = None
         self._update_sdt_content = None
         self._update_fields = None
+        self._always_compress_metafiles = None
         self._password = None
         self._save_picture_bullet = None
         self._save_routing_slip = None
@@ -105,6 +108,8 @@ class DocSaveOptionsData(object):
             self.update_sdt_content = update_sdt_content
         if update_fields is not None:
             self.update_fields = update_fields
+        if always_compress_metafiles is not None:
+            self.always_compress_metafiles = always_compress_metafiles
         if password is not None:
             self.password = password
         if save_picture_bullet is not None:
@@ -301,6 +306,27 @@ class DocSaveOptionsData(object):
         :type: bool
         """
         self._update_fields = update_fields
+    @property
+    def always_compress_metafiles(self):
+        """Gets the always_compress_metafiles of this DocSaveOptionsData.  # noqa: E501
+
+        Gets or sets When false, small metafiles are not compressed for performance reason. Default value is true, all metafiles are compressed regardless of its size.  # noqa: E501
+
+        :return: The always_compress_metafiles of this DocSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._always_compress_metafiles
+
+    @always_compress_metafiles.setter
+    def always_compress_metafiles(self, always_compress_metafiles):
+        """Sets the always_compress_metafiles of this DocSaveOptionsData.
+
+        Gets or sets When false, small metafiles are not compressed for performance reason. Default value is true, all metafiles are compressed regardless of its size.  # noqa: E501
+
+        :param always_compress_metafiles: The always_compress_metafiles of this DocSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._always_compress_metafiles = always_compress_metafiles
     @property
     def password(self):
         """Gets the password of this DocSaveOptionsData.  # noqa: E501

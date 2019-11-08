@@ -3,9 +3,9 @@ stages:
   - linter
   - test-publishing
   - test-publishing-test
+  - release
   - publishing
   - version_tag
-  - release
 
 2.7-tests:
   stage: build&test  
@@ -44,7 +44,7 @@ publish-test:
   script:
     - docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/test-publish.sh $PypiLogin $PypiPass
   only:
-    - master
+    - release
   tags:
     - awcloud-linux
 
@@ -65,14 +65,14 @@ test-package:
       junit:
         - nosetests.xml
   only:
-    - master
+    - release
 
 publish to PyPi:
   stage: publishing
   after_script:
     - sudo chmod 777 -R $(find -name '*__pycache__*')
   only:
-    - master
+    - release
   script:
     - git reset --hard
     - docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/publish.sh $PypiLogin $PypiPass
@@ -83,7 +83,7 @@ publish to PyPi:
 add version tag:
   stage: version_tag
   only:
-    - master
+    - release
   before_script:
     - $env:ORIGIN += 'https://{0}:{1}@git.auckland.dynabic.com/words-cloud/words-cloud-python.git' -f $env:GIT_CI_USER, $env:GIT_CI_PASS
     - '$env:SDK_VERSION = ( ( ConvertFrom-Json -InputObject $jsonString ).info.version | Select-String -Pattern "^\d+\.\d+" ).Matches[0].Value'
