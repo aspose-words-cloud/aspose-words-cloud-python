@@ -21,7 +21,7 @@ def runtests(dockerImageVersion)
 				}
             
                 stage('tests'){
-                    sh "scripts/test-unittest.sh"
+                    sh "python -m unittest discover -v -s ."
                 }
             
                 stage('bdd-tests'){
