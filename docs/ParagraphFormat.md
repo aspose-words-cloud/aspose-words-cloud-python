@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **bidi** | **bool** | Gets or sets whether this is a right-to-left paragraph.              | [optional] 
 **drop_cap_position** | **str** | Gets or sets the position for a drop cap text.              | [optional] 
 **first_line_indent** | **float** | Gets or sets the value (in points) for a first line or hanging indent. Use a positive value to set a first-line indent, and use a negative value to set a hanging indent.              | [optional] 
+**is_list_item** | **bool** | Gets or sets True when the paragraph is an item in a bulleted or numbered list. | [optional] 
 **keep_together** | **bool** | Gets or sets true if all lines in the paragraph are to remain on the same page.              | [optional] 
 **keep_with_next** | **bool** | Gets or sets true if the paragraph is to remains on the same page as the paragraph that follows it.              | [optional] 
 **left_indent** | **float** | Gets or sets the value (in points) that represents the left indent for paragraph.              | [optional] 

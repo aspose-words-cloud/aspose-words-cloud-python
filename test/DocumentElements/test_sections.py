@@ -63,3 +63,12 @@ class TestSections(BaseTestContext):
                                                                           self.test_folder))
         result = self.words_api.get_sections(request)
         self.assertIsNotNone(result, 'Error has occurred while get sections')
+
+    def test_delete_section(self):
+        filename = 'test_multi_pages.docx'
+        remote_name = 'TestDeleteSection.docx'
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+
+        request = asposewordscloud.models.requests.DeleteSectionRequest(remote_name, 0, os.path.join(self.remote_test_folder, self.test_folder))
+        result = self.words_api.delete_section(request)
