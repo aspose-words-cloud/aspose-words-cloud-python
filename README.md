@@ -82,17 +82,8 @@ self.assertTrue(result.code == 200, 'Error has occurred while delete document wa
 Please put your credentials into [Configuration](asposewordscloud/configuration.py).
 
 ## Dependencies
-- Python 2.7 and 3.4+
+- Python 2.7(End of Life in 2020) and 3.7
 - referenced packages (see [here](setup.py) for more details)
-
-## Comparison with Old generation SDK
-New SDK has the following advantages over the [previous version](https://github.com/aspose-words/Aspose.Words-for-Cloud):
-+ SDK is fully in sync with the API, all missing methods are added
-+ Classes, methods and properties have comments and are IDE-friendly
-+ Better security
-+ Usage of Request/Response classes to represent long lists of parameters. This allows for cleaner code and easier backwards-compatibility going forward
-
-New SDK is not backwards compatible with previous generation because of the last item. It should be straightforward to convert your code to using Request/Response objects, if you need any help on migration please ask at [Free Support Forums](https://forum.aspose.cloud/c/words).
 
 ## Licensing
  

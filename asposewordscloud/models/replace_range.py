@@ -41,21 +41,26 @@ class ReplaceRange(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'text': 'str'
+        'text': 'str',
+        'text_type': 'str'
     }
 
     attribute_map = {
-        'text': 'Text'
+        'text': 'Text',
+        'text_type': 'TextType'
     }
 
-    def __init__(self, text=None):  # noqa: E501
+    def __init__(self, text=None, text_type=None):  # noqa: E501
         """ReplaceRange - a model defined in Swagger"""  # noqa: E501
 
         self._text = None
+        self._text_type = None
         self.discriminator = None
 
         if text is not None:
             self.text = text
+        if text_type is not None:
+            self.text_type = text_type
 
     @property
     def text(self):
@@ -78,6 +83,35 @@ class ReplaceRange(object):
         :type: str
         """
         self._text = text
+    @property
+    def text_type(self):
+        """Gets the text_type of this ReplaceRange.  # noqa: E501
+
+        Gets or sets range's text type.  # noqa: E501
+
+        :return: The text_type of this ReplaceRange.  # noqa: E501
+        :rtype: str
+        """
+        return self._text_type
+
+    @text_type.setter
+    def text_type(self, text_type):
+        """Sets the text_type of this ReplaceRange.
+
+        Gets or sets range's text type.  # noqa: E501
+
+        :param text_type: The text_type of this ReplaceRange.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["Text", "Html"]  # noqa: E501
+        if not text_type.isdigit():	
+            if text_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `text_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(text_type, allowed_values))
+            self._text_type = text_type
+        else:
+            self._text_type = allowed_values[int(text_type) if six.PY3 else long(text_type)]
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

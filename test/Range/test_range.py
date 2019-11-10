@@ -1,6 +1,6 @@
 #
 # --------------------------------------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="test_math_objects.py">
+# <copyright company="Aspose" file="test_range.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
