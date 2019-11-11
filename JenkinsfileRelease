@@ -2,6 +2,8 @@ parameters {
 		string(name: 'testServerUrl', defaultValue: 'https://api-qa.aspose.cloud', description: 'server url')
 		string(name: 'version', defaultValue: '19.10.0', description: 'version of the package')
 		string(name: 'StartFromStage', defaultValue: '0', description: '0 based index of stage which will be started')
+		string(name: 'pypiLogin', description: 'Login for pypi auth')
+		string(name: 'pypiPass', description: 'Password for pypi auth')
 }
 node('words-linux') {         
     try {		
@@ -43,11 +45,9 @@ def publishToTestPypi()
 				docker.image('python:3.6').inside('-u root'){
 					sh "python -m pip install --upgrade setuptools wheel"
 					sh "python setup.py sdist bdist_wheel"
-					sh "python -m pip install --upgrade twine"
+					sh "python -m pip install --upgrade twine python-dateutil"
 					sh "touch ~/.pypirc"
-					withCredentials([usernamePassword(credentialsId: 'pypi', passwordVariable: 'pypiLogin', usernameVariable: 'pypiPass')]) {
-						sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = $pypiLogin \\n password = '$pypiPass' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = $pypiLogin \\n password = '$pypiPass'' > ~/.pypirc"
-					}
+					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = $pypiLogin \\n password = '$pypiPass' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = $pypiLogin \\n password = '$pypiPass'' > ~/.pypirc"
 					sh "python setup.py sdist && twine upload dist/* -r pypitest"
 				}
 			}
@@ -99,11 +99,9 @@ def publishToPypi()
 				docker.image('python:3.6').inside('-u root'){
 					sh "python -m pip install --upgrade setuptools wheel"
 					sh "python setup.py sdist bdist_wheel"
-					sh "python -m pip install --upgrade twine"
+					sh "python -m pip install --upgrade twine python-dateutil"
 					sh "touch ~/.pypirc"
-					withCredentials([usernamePassword(credentialsId: 'pypi', passwordVariable: 'pypiLogin', usernameVariable: 'pypiPass')]) {
-						sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = $pypiLogin \\n password = '$pypiPass' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = $pypiLogin \\n password = '$pypiPass'' > ~/.pypirc"
-					}
+					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = $pypiLogin \\n password = '$pypiPass' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = $pypiLogin \\n password = '$pypiPass'' > ~/.pypirc"
 					sh "python setup.py sdist && twine upload dist/*"
 				}
 			}
@@ -116,10 +114,10 @@ def publishToPypi()
             		
 				sh "git config user.email \"jenkins.aspose@gmail.com\""
 				sh "git config user.name \"jenkins\""
-				sh "git tag -a ${version} -m 'version ${version}' | exit 0"
+				sh "git tag -a $version -m 'version $version' | exit 0"
 			
 				withCredentials([usernamePassword(credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
-					sh "git push https://$gitUsername:$gitPass@git.auckland.dynabic.com/words-cloud/words-cloud-python.git ${version}"
+					sh "git push https://$gitUsername:$gitPass@git.auckland.dynabic.com/words-cloud/words-cloud-python.git $version"
 				}
 			}
         }  
