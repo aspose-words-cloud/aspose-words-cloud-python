@@ -43,7 +43,6 @@ class HeaderFooter(object):
     swagger_types = {
         'link': 'WordsApiLink',
         'type': 'str',
-        'child_nodes': 'list[NodeLink]',
         'drawing_objects': 'LinkElement',
         'paragraphs': 'LinkElement'
     }
@@ -51,17 +50,15 @@ class HeaderFooter(object):
     attribute_map = {
         'link': 'link',
         'type': 'Type',
-        'child_nodes': 'ChildNodes',
         'drawing_objects': 'DrawingObjects',
         'paragraphs': 'Paragraphs'
     }
 
-    def __init__(self, link=None, type=None, child_nodes=None, drawing_objects=None, paragraphs=None):  # noqa: E501
+    def __init__(self, link=None, type=None, drawing_objects=None, paragraphs=None):  # noqa: E501
         """HeaderFooter - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
         self._type = None
-        self._child_nodes = None
         self._drawing_objects = None
         self._paragraphs = None
         self.discriminator = None
@@ -70,8 +67,6 @@ class HeaderFooter(object):
             self.link = link
         if type is not None:
             self.type = type
-        if child_nodes is not None:
-            self.child_nodes = child_nodes
         if drawing_objects is not None:
             self.drawing_objects = drawing_objects
         if paragraphs is not None:
@@ -127,27 +122,6 @@ class HeaderFooter(object):
             self._type = type
         else:
             self._type = allowed_values[int(type) if six.PY3 else long(type)]
-    @property
-    def child_nodes(self):
-        """Gets the child_nodes of this HeaderFooter.  # noqa: E501
-
-        Gets or sets child nodes.  # noqa: E501
-
-        :return: The child_nodes of this HeaderFooter.  # noqa: E501
-        :rtype: list[NodeLink]
-        """
-        return self._child_nodes
-
-    @child_nodes.setter
-    def child_nodes(self, child_nodes):
-        """Sets the child_nodes of this HeaderFooter.
-
-        Gets or sets child nodes.  # noqa: E501
-
-        :param child_nodes: The child_nodes of this HeaderFooter.  # noqa: E501
-        :type: list[NodeLink]
-        """
-        self._child_nodes = child_nodes
     @property
     def drawing_objects(self):
         """Gets the drawing_objects of this HeaderFooter.  # noqa: E501

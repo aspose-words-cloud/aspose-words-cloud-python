@@ -29,7 +29,7 @@ class GetBorderRequest(object):
     Request model for get_border operation.
     Initializes a new instance.
     :param name The document name.
-    :param node_path Path to the node with border(node should be paragraph, cell or row).
+    :param node_path Path to the node with border(node should be cell or row).
     :param index Object index.
     :param folder Original document folder.
     :param storage Original document storage.

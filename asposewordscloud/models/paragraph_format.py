@@ -48,7 +48,6 @@ class ParagraphFormat(object):
         'bidi': 'bool',
         'drop_cap_position': 'str',
         'first_line_indent': 'float',
-        'is_list_item': 'bool',
         'keep_together': 'bool',
         'keep_with_next': 'bool',
         'left_indent': 'float',
@@ -78,7 +77,6 @@ class ParagraphFormat(object):
         'bidi': 'Bidi',
         'drop_cap_position': 'DropCapPosition',
         'first_line_indent': 'FirstLineIndent',
-        'is_list_item': 'IsListItem',
         'keep_together': 'KeepTogether',
         'keep_with_next': 'KeepWithNext',
         'left_indent': 'LeftIndent',
@@ -100,7 +98,7 @@ class ParagraphFormat(object):
         'widow_control': 'WidowControl'
     }
 
-    def __init__(self, link=None, add_space_between_far_east_and_alpha=None, add_space_between_far_east_and_digit=None, alignment=None, bidi=None, drop_cap_position=None, first_line_indent=None, is_list_item=None, keep_together=None, keep_with_next=None, left_indent=None, line_spacing=None, line_spacing_rule=None, lines_to_drop=None, no_space_between_paragraphs_of_same_style=None, outline_level=None, page_break_before=None, right_indent=None, space_after=None, space_after_auto=None, space_before=None, space_before_auto=None, style_identifier=None, style_name=None, suppress_auto_hyphens=None, suppress_line_numbers=None, widow_control=None):  # noqa: E501
+    def __init__(self, link=None, add_space_between_far_east_and_alpha=None, add_space_between_far_east_and_digit=None, alignment=None, bidi=None, drop_cap_position=None, first_line_indent=None, keep_together=None, keep_with_next=None, left_indent=None, line_spacing=None, line_spacing_rule=None, lines_to_drop=None, no_space_between_paragraphs_of_same_style=None, outline_level=None, page_break_before=None, right_indent=None, space_after=None, space_after_auto=None, space_before=None, space_before_auto=None, style_identifier=None, style_name=None, suppress_auto_hyphens=None, suppress_line_numbers=None, widow_control=None):  # noqa: E501
         """ParagraphFormat - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
@@ -110,7 +108,6 @@ class ParagraphFormat(object):
         self._bidi = None
         self._drop_cap_position = None
         self._first_line_indent = None
-        self._is_list_item = None
         self._keep_together = None
         self._keep_with_next = None
         self._left_indent = None
@@ -146,8 +143,6 @@ class ParagraphFormat(object):
             self.drop_cap_position = drop_cap_position
         if first_line_indent is not None:
             self.first_line_indent = first_line_indent
-        if is_list_item is not None:
-            self.is_list_item = is_list_item
         if keep_together is not None:
             self.keep_together = keep_together
         if keep_with_next is not None:
@@ -350,27 +345,6 @@ class ParagraphFormat(object):
         :type: float
         """
         self._first_line_indent = first_line_indent
-    @property
-    def is_list_item(self):
-        """Gets the is_list_item of this ParagraphFormat.  # noqa: E501
-
-        Gets or sets True when the paragraph is an item in a bulleted or numbered list.  # noqa: E501
-
-        :return: The is_list_item of this ParagraphFormat.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_list_item
-
-    @is_list_item.setter
-    def is_list_item(self, is_list_item):
-        """Sets the is_list_item of this ParagraphFormat.
-
-        Gets or sets True when the paragraph is an item in a bulleted or numbered list.  # noqa: E501
-
-        :param is_list_item: The is_list_item of this ParagraphFormat.  # noqa: E501
-        :type: bool
-        """
-        self._is_list_item = is_list_item
     @property
     def keep_together(self):
         """Gets the keep_together of this ParagraphFormat.  # noqa: E501

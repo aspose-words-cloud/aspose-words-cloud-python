@@ -5,7 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **link** | [**WordsApiLink**](WordsApiLink.md) | Gets or sets link to the document. | [optional] 
 **type** | **str** | Gets or sets paragraph&#39;s text. | [optional] 
-**child_nodes** | [**list[NodeLink]**](NodeLink.md) | Gets or sets child nodes. | [optional] 
 **drawing_objects** | [**LinkElement**](LinkElement.md) | Gets or sets link to DrawingObjects resource. | [optional] 
 **paragraphs** | [**LinkElement**](LinkElement.md) | Gets or sets link to Paragraphs resource. | [optional] 
 
