@@ -29,7 +29,7 @@ class BuildReportRequest(object):
     Request model for build_report operation.
     Initializes a new instance.
     :param template The document name of the template.
-    :param data A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv
+    :param data A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv.
     :param report_engine_settings An object providing settings of report engine.
     :param folder Original document folder.
     :param storage Original document storage.
