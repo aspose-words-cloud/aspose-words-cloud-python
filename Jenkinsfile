@@ -38,22 +38,20 @@ def runtests(dockerImageVersion)
     }
 }
 
-node('words-linux') {
-	if (!params.branch.contains("release")){
-		stage('oldpy'){
-			try {
-				runtests("2.7.15")
-			} finally {
-				cleanWs()
-			}
+node('words-linux') {	
+	stage('oldpy'){
+		try {
+			runtests("2.7.15")
+		} finally {
+			cleanWs()
 		}
-		
-		stage('newpy'){
-			try {
-				runtests("3.7") 
-			} finally {
-				cleanWs()
-			}
+	}
+	
+	stage('newpy'){
+		try {
+			runtests("3.7") 
+		} finally {
+			cleanWs()
 		}
 	}
 }
