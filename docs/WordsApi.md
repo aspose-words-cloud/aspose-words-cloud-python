@@ -11179,7 +11179,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_file**
-> FilesUploadResult upload_file(file_content, path, storage_name=storage_name)
+> FilesUploadResult upload_file(file, path, storage_name=storage_name)
 
 Upload file
 
@@ -11197,13 +11197,13 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-file_content = '/path/to/file.txt' # file | File to upload
+file = '/path/to/file.txt' # file | File to upload
 path = 'path_example' # str | Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext              If the content is multipart and path does not contains the file name it tries to get them from filename parameter              from Content-Disposition header.
 storage_name = 'storage_name_example' # str | Storage name (optional)
 
 try:
     # Upload file
-    api_response = api_instance.upload_file(file_content, path, storage_name=storage_name)
+    api_response = api_instance.upload_file(file, path, storage_name=storage_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->upload_file: %s\n" % e)
@@ -11213,7 +11213,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_content** | **file**| File to upload | 
+ **file** | **file**| File to upload | 
  **path** | **str**| Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext              If the content is multipart and path does not contains the file name it tries to get them from filename parameter              from Content-Disposition header. | 
  **storage_name** | **str**| Storage name | [optional] 
 

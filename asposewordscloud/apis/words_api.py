@@ -23927,7 +23927,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param file_content file : File to upload (required)
+        :param file file : File to upload (required)
         :param path str : Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext              If the content is multipart and path does not contains the file name it tries to get them from filename parameter              from Content-Disposition header. (required)
         :param storage_name str : Storage name
         :return: FilesUploadResult
@@ -23974,9 +23974,9 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'file_content' is set
-        if request.file_content is None:
-            raise ValueError("Missing the required parameter `file_content` when calling `upload_file`")  # noqa: E501
+        # verify the required parameter 'file' is set
+        if request.file is None:
+            raise ValueError("Missing the required parameter `file` when calling `upload_file`")  # noqa: E501
         # verify the required parameter 'path' is set
         if request.path is None:
             raise ValueError("Missing the required parameter `path` when calling `upload_file`")  # noqa: E501
@@ -23998,8 +23998,8 @@ class WordsApi(object):
 
         form_params = []
         local_var_files = []
-        if request.file_content is not None:
-            local_var_files.append((self.__downcase_first_letter('FileContent'), request.file_content))  # noqa: E501
+        if request.file is not None:
+            local_var_files.append((self.__downcase_first_letter('File'), request.file))  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
