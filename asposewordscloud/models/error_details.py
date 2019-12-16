@@ -42,31 +42,31 @@ class ErrorDetails(object):
     """
     swagger_types = {
         'request_id': 'str',
-        'error_date_time': 'datetime'
+        'date': 'datetime'
     }
 
     attribute_map = {
         'request_id': 'RequestId',
-        'error_date_time': 'ErrorDateTime'
+        'date': 'Date'
     }
 
-    def __init__(self, request_id=None, error_date_time=None):  # noqa: E501
+    def __init__(self, request_id=None, date=None):  # noqa: E501
         """ErrorDetails - a model defined in Swagger"""  # noqa: E501
 
         self._request_id = None
-        self._error_date_time = None
+        self._date = None
         self.discriminator = None
 
         if request_id is not None:
             self.request_id = request_id
-        if error_date_time is not None:
-            self.error_date_time = error_date_time
+        if date is not None:
+            self.date = date
 
     @property
     def request_id(self):
         """Gets the request_id of this ErrorDetails.  # noqa: E501
 
-        The request id.  # noqa: E501
+        The request id  # noqa: E501
 
         :return: The request_id of this ErrorDetails.  # noqa: E501
         :rtype: str
@@ -77,35 +77,35 @@ class ErrorDetails(object):
     def request_id(self, request_id):
         """Sets the request_id of this ErrorDetails.
 
-        The request id.  # noqa: E501
+        The request id  # noqa: E501
 
         :param request_id: The request_id of this ErrorDetails.  # noqa: E501
         :type: str
         """
         self._request_id = request_id
     @property
-    def error_date_time(self):
-        """Gets the error_date_time of this ErrorDetails.  # noqa: E501
+    def date(self):
+        """Gets the date of this ErrorDetails.  # noqa: E501
 
-        Error datetime.  # noqa: E501
+        Date  # noqa: E501
 
-        :return: The error_date_time of this ErrorDetails.  # noqa: E501
+        :return: The date of this ErrorDetails.  # noqa: E501
         :rtype: datetime
         """
-        return self._error_date_time
+        return self._date
 
-    @error_date_time.setter
-    def error_date_time(self, error_date_time):
-        """Sets the error_date_time of this ErrorDetails.
+    @date.setter
+    def date(self, date):
+        """Sets the date of this ErrorDetails.
 
-        Error datetime.  # noqa: E501
+        Date  # noqa: E501
 
-        :param error_date_time: The error_date_time of this ErrorDetails.  # noqa: E501
+        :param date: The date of this ErrorDetails.  # noqa: E501
         :type: datetime
         """
-        if error_date_time is None:
-            raise ValueError("Invalid value for `error_date_time`, must not be `None`")  # noqa: E501
-        self._error_date_time = error_date_time
+        if date is None:
+            raise ValueError("Invalid value for `date`, must not be `None`")  # noqa: E501
+        self._date = date
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
