@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**create_document**](WordsApi.md#create_document) | **PUT** /words/create | Creates new document. Document is created with format which is recognized from file extensions. Supported extensions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot;.
 [**create_folder**](WordsApi.md#create_folder) | **PUT** /words/storage/folder/{path} | Create the folder
 [**create_or_update_document_property**](WordsApi.md#create_or_update_document_property) | **PUT** /words/{name}/documentProperties/{propertyName} | Adds new or update existing document property.
-[**delete_border**](WordsApi.md#delete_border) | **DELETE** /words/{name}/{nodePath}/borders/{index} | Resets border properties to default values.             
+[**delete_border**](WordsApi.md#delete_border) | **DELETE** /words/{name}/{nodePath}/borders/{borderType} | Resets border properties to default values.             
 [**delete_borders**](WordsApi.md#delete_borders) | **DELETE** /words/{name}/{nodePath}/borders | Resets borders properties to default values.             
 [**delete_comment**](WordsApi.md#delete_comment) | **DELETE** /words/{name}/comments/{commentIndex} | Removes comment from document.
 [**delete_document_property**](WordsApi.md#delete_document_property) | **DELETE** /words/{name}/documentProperties/{propertyName} | Deletes document property.
@@ -51,7 +51,7 @@ Method | HTTP request | Description
 [**get_available_fonts**](WordsApi.md#get_available_fonts) | **GET** /words/fonts/available | Gets the list of fonts, available for document processing.
 [**get_bookmark_by_name**](WordsApi.md#get_bookmark_by_name) | **GET** /words/{name}/bookmarks/{bookmarkName} | Reads document bookmark data by its name.
 [**get_bookmarks**](WordsApi.md#get_bookmarks) | **GET** /words/{name}/bookmarks | Reads document bookmarks common info.
-[**get_border**](WordsApi.md#get_border) | **GET** /words/{name}/{nodePath}/borders/{index} | Returns a border.
+[**get_border**](WordsApi.md#get_border) | **GET** /words/{name}/{nodePath}/borders/{borderType} | Returns a border.
 [**get_borders**](WordsApi.md#get_borders) | **GET** /words/{name}/{nodePath}/borders | Returns a collection of borders.
 [**get_comment**](WordsApi.md#get_comment) | **GET** /words/{name}/comments/{commentIndex} | Gets comment from document.
 [**get_comments**](WordsApi.md#get_comments) | **GET** /words/{name}/comments | Gets comments from document.
@@ -160,7 +160,7 @@ Method | HTTP request | Description
 [**split_document**](WordsApi.md#split_document) | **PUT** /words/{name}/split | Splits document.
 [**unprotect_document**](WordsApi.md#unprotect_document) | **DELETE** /words/{name}/protection | Unprotects document.
 [**update_bookmark**](WordsApi.md#update_bookmark) | **PUT** /words/{name}/bookmarks/{bookmarkName} | Updates document bookmark.
-[**update_border**](WordsApi.md#update_border) | **PUT** /words/{name}/{nodePath}/borders/{index} | Updates border properties.             
+[**update_border**](WordsApi.md#update_border) | **PUT** /words/{name}/{nodePath}/borders/{borderType} | Updates border properties.             
 [**update_comment**](WordsApi.md#update_comment) | **PUT** /words/{name}/comments/{commentIndex} | Updates the comment, returns updated comment data.
 [**update_drawing_object**](WordsApi.md#update_drawing_object) | **PUT** /words/{name}/{nodePath}/drawingObjects/{index} | Updates drawing object, returns updated  drawing object&#39;s data.
 [**update_drawing_object_without_node_path**](WordsApi.md#update_drawing_object_without_node_path) | **PUT** /words/{name}/drawingObjects/{index} | Updates drawing object, returns updated  drawing object&#39;s data.
@@ -829,7 +829,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_border**
-> BorderResponse delete_border(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> BorderResponse delete_border(name, node_path, border_type, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Resets border properties to default values.             
 
@@ -851,7 +851,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
 node_path = 'node_path_example' # str | Path to the node with border(node should be paragraph, cell or row).
-index = 56 # int | Object index.
+border_type = 'border_type_example' # str | Border type.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -862,7 +862,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Resets border properties to default values.             
-    api_response = api_instance.delete_border(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.delete_border(name, node_path, border_type, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->delete_border: %s\n" % e)
@@ -874,7 +874,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **node_path** | **str**| Path to the node with border(node should be paragraph, cell or row). | 
- **index** | **int**| Object index. | 
+ **border_type** | **str**| Border type. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -3132,7 +3132,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_border**
-> BorderResponse get_border(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+> BorderResponse get_border(name, node_path, border_type, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
 Returns a border.
 
@@ -3154,7 +3154,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
 node_path = 'node_path_example' # str | Path to the node with border(node should be paragraph, cell or row).
-index = 56 # int | Object index.
+border_type = 'border_type_example' # str | Border type.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -3162,7 +3162,7 @@ password = 'password_example' # str | Password for opening an encrypted document
 
 try:
     # Returns a border.
-    api_response = api_instance.get_border(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    api_response = api_instance.get_border(name, node_path, border_type, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->get_border: %s\n" % e)
@@ -3174,7 +3174,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **node_path** | **str**| Path to the node with border(node should be paragraph, cell or row). | 
- **index** | **int**| Object index. | 
+ **border_type** | **str**| Border type. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -9935,7 +9935,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_border**
-> BorderResponse update_border(name, border_properties, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> BorderResponse update_border(name, border_properties, node_path, border_type, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates border properties.             
 
@@ -9958,7 +9958,7 @@ api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuratio
 name = 'name_example' # str | The document name.
 border_properties = asposewordscloud.Border() # Border | Border properties.
 node_path = 'node_path_example' # str | Path to the node with border(node should be paragraph, cell or row).
-index = 56 # int | Object index.
+border_type = 'border_type_example' # str | Border type.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -9969,7 +9969,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates border properties.             
-    api_response = api_instance.update_border(name, border_properties, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_border(name, border_properties, node_path, border_type, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_border: %s\n" % e)
@@ -9982,7 +9982,7 @@ Name | Type | Description  | Notes
  **name** | **str**| The document name. | 
  **border_properties** | [**Border**](Border.md)| Border properties. | 
  **node_path** | **str**| Path to the node with border(node should be paragraph, cell or row). | 
- **index** | **int**| Object index. | 
+ **border_type** | **str**| Border type. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 

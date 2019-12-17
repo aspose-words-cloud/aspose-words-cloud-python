@@ -1434,7 +1434,7 @@ class WordsApi(object):
         :param is_async bool
         :param name str : The document name. (required)
         :param node_path str : Path to the node with border(node should be paragraph, cell or row). (required)
-        :param index int : Object index. (required)
+        :param border_type str : Border type. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -1493,19 +1493,19 @@ class WordsApi(object):
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `delete_border`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_border`")  # noqa: E501
+        # verify the required parameter 'border_type' is set
+        if request.border_type is None:
+            raise ValueError("Missing the required parameter `border_type` when calling `delete_border`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/borders/{index}'
+        path = '/v4.0/words/{name}/{nodePath}/borders/{borderType}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+        if request.border_type is not None:
+            path_params[self.__downcase_first_letter('BorderType')] = request.border_type  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -6505,7 +6505,7 @@ class WordsApi(object):
         :param is_async bool
         :param name str : The document name. (required)
         :param node_path str : Path to the node with border(node should be paragraph, cell or row). (required)
-        :param index int : Object index. (required)
+        :param border_type str : Border type. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -6561,19 +6561,19 @@ class WordsApi(object):
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `get_border`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_border`")  # noqa: E501
+        # verify the required parameter 'border_type' is set
+        if request.border_type is None:
+            raise ValueError("Missing the required parameter `border_type` when calling `get_border`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/borders/{index}'
+        path = '/v4.0/words/{name}/{nodePath}/borders/{borderType}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+        if request.border_type is not None:
+            path_params[self.__downcase_first_letter('BorderType')] = request.border_type  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
@@ -21169,7 +21169,7 @@ class WordsApi(object):
         :param name str : The document name. (required)
         :param border_properties Border : Border properties. (required)
         :param node_path str : Path to the node with border(node should be paragraph, cell or row). (required)
-        :param index int : Object index. (required)
+        :param border_type str : Border type. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -21231,19 +21231,19 @@ class WordsApi(object):
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `update_border`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `update_border`")  # noqa: E501
+        # verify the required parameter 'border_type' is set
+        if request.border_type is None:
+            raise ValueError("Missing the required parameter `border_type` when calling `update_border`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/borders/{index}'
+        path = '/v4.0/words/{name}/{nodePath}/borders/{borderType}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
         if request.node_path is not None:
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
+        if request.border_type is not None:
+            path_params[self.__downcase_first_letter('BorderType')] = request.border_type  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:
