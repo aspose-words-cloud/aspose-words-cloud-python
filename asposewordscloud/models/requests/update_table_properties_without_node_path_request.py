@@ -29,6 +29,7 @@ class UpdateTablePropertiesWithoutNodePathRequest(object):
     Request model for update_table_properties_without_node_path operation.
     Initializes a new instance.
     :param name The document name.
+    :param properties The properties.
     :param index Object index.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -37,11 +38,11 @@ class UpdateTablePropertiesWithoutNodePathRequest(object):
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     :param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     :param revision_date_time The date and time to use for revisions.
-    :param properties The properties.
     """
 
-    def __init__(self, name, index, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None, properties=None):
+    def __init__(self, name, properties, index, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.name = name
+        self.properties = properties
         self.index = index
         self.folder = folder
         self.storage = storage
@@ -50,4 +51,3 @@ class UpdateTablePropertiesWithoutNodePathRequest(object):
         self.dest_file_name = dest_file_name
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
-        self.properties = properties

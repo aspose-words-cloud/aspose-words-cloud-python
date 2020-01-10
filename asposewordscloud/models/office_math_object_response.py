@@ -46,8 +46,8 @@ class OfficeMathObjectResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'office_math_object': 'OfficeMathObject'
+        'request_id': 'requestId',
+        'office_math_object': 'officeMathObject'
     }
 
     def __init__(self, request_id=None, office_math_object=None):  # noqa: E501

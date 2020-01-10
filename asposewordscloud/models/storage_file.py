@@ -49,11 +49,11 @@ class StorageFile(object):
     }
 
     attribute_map = {
-        'name': 'Name',
-        'is_folder': 'IsFolder',
-        'modified_date': 'ModifiedDate',
-        'size': 'Size',
-        'path': 'Path'
+        'name': 'name',
+        'is_folder': 'isFolder',
+        'modified_date': 'modifiedDate',
+        'size': 'size',
+        'path': 'path'
     }
 
     def __init__(self, name=None, is_folder=None, modified_date=None, size=None, path=None):  # noqa: E501
@@ -125,7 +125,7 @@ class StorageFile(object):
     def modified_date(self):
         """Gets the modified_date of this StorageFile.  # noqa: E501
 
-        File or folder last modified .  # noqa: E501
+        File or folder last modified DateTime.  # noqa: E501
 
         :return: The modified_date of this StorageFile.  # noqa: E501
         :rtype: datetime
@@ -136,7 +136,7 @@ class StorageFile(object):
     def modified_date(self, modified_date):
         """Sets the modified_date of this StorageFile.
 
-        File or folder last modified .  # noqa: E501
+        File or folder last modified DateTime.  # noqa: E501
 
         :param modified_date: The modified_date of this StorageFile.  # noqa: E501
         :type: datetime

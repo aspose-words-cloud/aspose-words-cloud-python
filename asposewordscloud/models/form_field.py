@@ -56,16 +56,16 @@ class FormField(object):
 
     attribute_map = {
         'link': 'link',
-        'node_id': 'NodeId',
-        'calculate_on_exit': 'CalculateOnExit',
-        'enabled': 'Enabled',
-        'entry_macro': 'EntryMacro',
-        'exit_macro': 'ExitMacro',
-        'help_text': 'HelpText',
-        'name': 'Name',
-        'own_help': 'OwnHelp',
-        'own_status': 'OwnStatus',
-        'status_text': 'StatusText'
+        'node_id': 'nodeId',
+        'calculate_on_exit': 'calculateOnExit',
+        'enabled': 'enabled',
+        'entry_macro': 'entryMacro',
+        'exit_macro': 'exitMacro',
+        'help_text': 'helpText',
+        'name': 'name',
+        'own_help': 'ownHelp',
+        'own_status': 'ownStatus',
+        'status_text': 'statusText'
     }
 
     def __init__(self, link=None, node_id=None, calculate_on_exit=None, enabled=None, entry_macro=None, exit_macro=None, help_text=None, name=None, own_help=None, own_status=None, status_text=None):  # noqa: E501

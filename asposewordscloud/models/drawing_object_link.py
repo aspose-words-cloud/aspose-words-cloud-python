@@ -47,7 +47,7 @@ class DrawingObjectLink(object):
 
     attribute_map = {
         'link': 'link',
-        'node_id': 'NodeId'
+        'node_id': 'nodeId'
     }
 
     def __init__(self, link=None, node_id=None):  # noqa: E501

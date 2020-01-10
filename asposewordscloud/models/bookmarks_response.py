@@ -46,8 +46,8 @@ class BookmarksResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'bookmarks': 'Bookmarks'
+        'request_id': 'requestId',
+        'bookmarks': 'bookmarks'
     }
 
     def __init__(self, request_id=None, bookmarks=None):  # noqa: E501

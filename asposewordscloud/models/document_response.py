@@ -46,8 +46,8 @@ class DocumentResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'document': 'Document'
+        'request_id': 'requestId',
+        'document': 'document'
     }
 
     def __init__(self, request_id=None, document=None):  # noqa: E501

@@ -46,8 +46,8 @@ class ParagraphLinkCollectionResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'paragraphs': 'Paragraphs'
+        'request_id': 'requestId',
+        'paragraphs': 'paragraphs'
     }
 
     def __init__(self, request_id=None, paragraphs=None):  # noqa: E501

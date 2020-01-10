@@ -48,10 +48,10 @@ class ClassificationResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'best_class_name': 'BestClassName',
-        'best_class_probability': 'BestClassProbability',
-        'best_results': 'BestResults'
+        'request_id': 'requestId',
+        'best_class_name': 'bestClassName',
+        'best_class_probability': 'bestClassProbability',
+        'best_results': 'bestResults'
     }
 
     def __init__(self, request_id=None, best_class_name=None, best_class_probability=None, best_results=None):  # noqa: E501

@@ -51,11 +51,11 @@ class OfficeMathObject(object):
 
     attribute_map = {
         'link': 'link',
-        'node_id': 'NodeId',
-        'content': 'Content',
-        'display_type': 'DisplayType',
-        'justification': 'Justification',
-        'math_object_type': 'MathObjectType'
+        'node_id': 'nodeId',
+        'content': 'content',
+        'display_type': 'displayType',
+        'justification': 'justification',
+        'math_object_type': 'mathObjectType'
     }
 
     def __init__(self, link=None, node_id=None, content=None, display_type=None, justification=None, math_object_type=None):  # noqa: E501

@@ -48,10 +48,10 @@ class AvailableFontsResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'additional_fonts': 'AdditionalFonts',
-        'custom_fonts': 'CustomFonts',
-        'system_fonts': 'SystemFonts'
+        'request_id': 'requestId',
+        'additional_fonts': 'additionalFonts',
+        'custom_fonts': 'customFonts',
+        'system_fonts': 'systemFonts'
     }
 
     def __init__(self, request_id=None, additional_fonts=None, custom_fonts=None, system_fonts=None):  # noqa: E501

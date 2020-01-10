@@ -48,10 +48,10 @@ class PageNumber(object):
     }
 
     attribute_map = {
-        'format': 'Format',
-        'alignment': 'Alignment',
-        'is_top': 'IsTop',
-        'set_page_number_on_first_page': 'SetPageNumberOnFirstPage'
+        'format': 'format',
+        'alignment': 'alignment',
+        'is_top': 'isTop',
+        'set_page_number_on_first_page': 'setPageNumberOnFirstPage'
     }
 
     def __init__(self, format=None, alignment=None, is_top=None, set_page_number_on_first_page=None):  # noqa: E501

@@ -48,10 +48,10 @@ class FontInfo(object):
     }
 
     attribute_map = {
-        'font_family_name': 'FontFamilyName',
-        'full_font_name': 'FullFontName',
-        'version': 'Version',
-        'file_path': 'FilePath'
+        'font_family_name': 'fontFamilyName',
+        'full_font_name': 'fullFontName',
+        'version': 'version',
+        'file_path': 'filePath'
     }
 
     def __init__(self, font_family_name=None, full_font_name=None, version=None, file_path=None):  # noqa: E501

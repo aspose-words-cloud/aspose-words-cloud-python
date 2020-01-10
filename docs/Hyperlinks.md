@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **link** | [**WordsApiLink**](WordsApiLink.md) | Gets or sets link to the document. | [optional] 
-**hyperlink_list** | [**list[Hyperlink]**](Hyperlink.md) | Gets or sets array of . | [optional] 
+**hyperlink_list** | [**list[Hyperlink]**](Hyperlink.md) | Gets or sets array of Hyperlink. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

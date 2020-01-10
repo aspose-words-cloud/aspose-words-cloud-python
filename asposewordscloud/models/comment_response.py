@@ -46,8 +46,8 @@ class CommentResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'comment': 'Comment'
+        'request_id': 'requestId',
+        'comment': 'comment'
     }
 
     def __init__(self, request_id=None, comment=None):  # noqa: E501

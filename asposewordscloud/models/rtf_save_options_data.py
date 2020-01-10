@@ -56,18 +56,18 @@ class RtfSaveOptionsData(object):
     }
 
     attribute_map = {
-        'color_mode': 'ColorMode',
-        'save_format': 'SaveFormat',
-        'file_name': 'FileName',
-        'dml_rendering_mode': 'DmlRenderingMode',
-        'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
-        'zip_output': 'ZipOutput',
-        'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
-        'update_sdt_content': 'UpdateSdtContent',
-        'update_fields': 'UpdateFields',
-        'export_compact_size': 'ExportCompactSize',
-        'export_images_for_old_readers': 'ExportImagesForOldReaders',
-        'pretty_format': 'PrettyFormat'
+        'color_mode': 'colorMode',
+        'save_format': 'saveFormat',
+        'file_name': 'fileName',
+        'dml_rendering_mode': 'dmlRenderingMode',
+        'dml_effects_rendering_mode': 'dmlEffectsRenderingMode',
+        'zip_output': 'zipOutput',
+        'update_last_saved_time_property': 'updateLastSavedTimeProperty',
+        'update_sdt_content': 'updateSdtContent',
+        'update_fields': 'updateFields',
+        'export_compact_size': 'exportCompactSize',
+        'export_images_for_old_readers': 'exportImagesForOldReaders',
+        'pretty_format': 'prettyFormat'
     }
 
     def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, export_compact_size=None, export_images_for_old_readers=None, pretty_format=None):  # noqa: E501
@@ -263,7 +263,7 @@ class RtfSaveOptionsData(object):
     def update_sdt_content(self):
         """Gets the update_sdt_content of this RtfSaveOptionsData.  # noqa: E501
 
-        Gets or sets value determining whether content of  is updated before saving.  # noqa: E501
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :return: The update_sdt_content of this RtfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -274,7 +274,7 @@ class RtfSaveOptionsData(object):
     def update_sdt_content(self, update_sdt_content):
         """Sets the update_sdt_content of this RtfSaveOptionsData.
 
-        Gets or sets value determining whether content of  is updated before saving.  # noqa: E501
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :param update_sdt_content: The update_sdt_content of this RtfSaveOptionsData.  # noqa: E501
         :type: bool

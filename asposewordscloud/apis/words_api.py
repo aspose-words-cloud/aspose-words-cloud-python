@@ -110,7 +110,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `accept_all_revisions`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/revisions/acceptAll'
+        path = '/v4.0/words/{Name}/revisions/acceptAll'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -183,7 +183,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : Original document name. (required)
-        :param document_list DocumentEntryList : with a list of documents to append.             (required)
+        :param document_list DocumentEntryList : DocumentEntryList with a list of documents to append. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -243,7 +243,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `document_list` when calling `append_document`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/appendDocument'
+        path = '/v4.0/words/{Name}/appendDocument'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -486,7 +486,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `document_name` when calling `classify_document`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{documentName}/classify'
+        path = '/v4.0/words/{DocumentName}/classify'
         path_params = {}
         if request.document_name is not None:
             path_params[self.__downcase_first_letter('DocumentName')] = request.document_name  # noqa: E501
@@ -564,7 +564,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : Original document name. (required)
-        :param compare_data CompareData : with a document to compare.             (required)
+        :param compare_data CompareData : CompareData with a document to compare. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -622,7 +622,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `compare_data` when calling `compare_document`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/compareDocument'
+        path = '/v4.0/words/{Name}/compareDocument'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -883,7 +883,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `src_path` when calling `copy_file`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/storage/file/copy/{srcPath}'
+        path = '/v4.0/words/storage/file/copy/{SrcPath}'
         path_params = {}
         if request.src_path is not None:
             path_params[self.__downcase_first_letter('SrcPath')] = request.src_path  # noqa: E501
@@ -1006,7 +1006,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `src_path` when calling `copy_folder`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/storage/folder/copy/{srcPath}'
+        path = '/v4.0/words/storage/folder/copy/{SrcPath}'
         path_params = {}
         if request.src_path is not None:
             path_params[self.__downcase_first_letter('SrcPath')] = request.src_path  # noqa: E501
@@ -1228,7 +1228,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `path` when calling `create_folder`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/storage/folder/{path}'
+        path = '/v4.0/words/storage/folder/{Path}'
         path_params = {}
         if request.path is not None:
             path_params[self.__downcase_first_letter('Path')] = request.path  # noqa: E501
@@ -1345,7 +1345,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `_property` when calling `create_or_update_document_property`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/documentProperties/{propertyName}'
+        path = '/v4.0/words/{Name}/documentProperties/{PropertyName}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -1498,7 +1498,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `border_type` when calling `delete_border`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/borders/{borderType}'
+        path = '/v4.0/words/{Name}/{NodePath}/borders/{BorderType}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -1647,7 +1647,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `node_path` when calling `delete_borders`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/borders'
+        path = '/v4.0/words/{Name}/{NodePath}/borders'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -1792,7 +1792,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `comment_index` when calling `delete_comment`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/comments/{commentIndex}'
+        path = '/v4.0/words/{Name}/comments/{CommentIndex}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -1937,7 +1937,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `property_name` when calling `delete_document_property`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/documentProperties/{propertyName}'
+        path = '/v4.0/words/{Name}/documentProperties/{PropertyName}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -2086,7 +2086,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `delete_drawing_object`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/drawingObjects/{index}'
+        path = '/v4.0/words/{Name}/{NodePath}/drawingObjects/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -2233,7 +2233,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `delete_drawing_object_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/drawingObjects/{index}'
+        path = '/v4.0/words/{Name}/drawingObjects/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -2382,7 +2382,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `delete_field`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/fields/{index}'
+        path = '/v4.0/words/{Name}/{NodePath}/fields/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -2529,7 +2529,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `delete_field_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/fields/{index}'
+        path = '/v4.0/words/{Name}/fields/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -2674,7 +2674,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `node_path` when calling `delete_fields`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/fields'
+        path = '/v4.0/words/{Name}/{NodePath}/fields'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -2815,7 +2815,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `delete_fields_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/fields'
+        path = '/v4.0/words/{Name}/fields'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -2949,7 +2949,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `path` when calling `delete_file`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/storage/file/{path}'
+        path = '/v4.0/words/storage/file/{Path}'
         path_params = {}
         if request.path is not None:
             path_params[self.__downcase_first_letter('Path')] = request.path  # noqa: E501
@@ -3058,7 +3058,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `path` when calling `delete_folder`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/storage/folder/{path}'
+        path = '/v4.0/words/storage/folder/{Path}'
         path_params = {}
         if request.path is not None:
             path_params[self.__downcase_first_letter('Path')] = request.path  # noqa: E501
@@ -3180,7 +3180,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `delete_footnote`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/footnotes/{index}'
+        path = '/v4.0/words/{Name}/{NodePath}/footnotes/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -3327,7 +3327,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `delete_footnote_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/footnotes/{index}'
+        path = '/v4.0/words/{Name}/footnotes/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -3476,7 +3476,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `delete_form_field`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/formfields/{index}'
+        path = '/v4.0/words/{Name}/{NodePath}/formfields/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -3623,7 +3623,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `delete_form_field_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/formfields/{index}'
+        path = '/v4.0/words/{Name}/formfields/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -3772,7 +3772,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `delete_header_footer`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{sectionPath}/headersfooters/{index}'
+        path = '/v4.0/words/{Name}/{SectionPath}/headersfooters/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -3920,7 +3920,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `section_path` when calling `delete_headers_footers`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{sectionPath}/headersfooters'
+        path = '/v4.0/words/{Name}/{SectionPath}/headersfooters'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -4066,7 +4066,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `delete_macros`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/macros'
+        path = '/v4.0/words/{Name}/macros'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -4213,7 +4213,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `delete_office_math_object`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/OfficeMathObjects/{index}'
+        path = '/v4.0/words/{Name}/{NodePath}/OfficeMathObjects/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -4360,7 +4360,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `delete_office_math_object_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/OfficeMathObjects/{index}'
+        path = '/v4.0/words/{Name}/OfficeMathObjects/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -4509,7 +4509,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `delete_paragraph`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}'
+        path = '/v4.0/words/{Name}/{NodePath}/paragraphs/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -4656,7 +4656,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `delete_paragraph_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/paragraphs/{index}'
+        path = '/v4.0/words/{Name}/paragraphs/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -4805,7 +4805,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `delete_run`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{paragraphPath}/runs/{index}'
+        path = '/v4.0/words/{Name}/{ParagraphPath}/runs/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -4952,7 +4952,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `section_index` when calling `delete_section`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/sections/{sectionIndex}'
+        path = '/v4.0/words/{Name}/sections/{SectionIndex}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -5101,7 +5101,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `delete_table`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/tables/{index}'
+        path = '/v4.0/words/{Name}/{NodePath}/tables/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -5252,7 +5252,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `delete_table_cell`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{tableRowPath}/cells/{index}'
+        path = '/v4.0/words/{Name}/{TableRowPath}/cells/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -5403,7 +5403,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `delete_table_row`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{tablePath}/rows/{index}'
+        path = '/v4.0/words/{Name}/{TablePath}/rows/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -5550,7 +5550,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `delete_table_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/tables/{index}'
+        path = '/v4.0/words/{Name}/tables/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -5691,7 +5691,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `delete_watermark`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/watermarks/deleteLast'
+        path = '/v4.0/words/{Name}/watermarks/deleteLast'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -5825,7 +5825,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `path` when calling `download_file`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/storage/file/{path}'
+        path = '/v4.0/words/storage/file/{Path}'
         path_params = {}
         if request.path is not None:
             path_params[self.__downcase_first_letter('Path')] = request.path  # noqa: E501
@@ -5942,7 +5942,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `execute_mail_merge`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/MailMerge'
+        path = '/v4.0/words/{Name}/MailMerge'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -6312,7 +6312,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `bookmark_name` when calling `get_bookmark_by_name`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/bookmarks/{bookmarkName}'
+        path = '/v4.0/words/{Name}/bookmarks/{BookmarkName}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -6435,7 +6435,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `get_bookmarks`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/bookmarks'
+        path = '/v4.0/words/{Name}/bookmarks'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -6566,7 +6566,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `border_type` when calling `get_border`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/borders/{borderType}'
+        path = '/v4.0/words/{Name}/{NodePath}/borders/{BorderType}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -6697,7 +6697,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `node_path` when calling `get_borders`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/borders'
+        path = '/v4.0/words/{Name}/{NodePath}/borders'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -6824,7 +6824,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `comment_index` when calling `get_comment`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/comments/{commentIndex}'
+        path = '/v4.0/words/{Name}/comments/{CommentIndex}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -6947,7 +6947,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `get_comments`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/comments'
+        path = '/v4.0/words/{Name}/comments'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -7068,7 +7068,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `document_name` when calling `get_document`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{documentName}'
+        path = '/v4.0/words/{DocumentName}'
         path_params = {}
         if request.document_name is not None:
             path_params[self.__downcase_first_letter('DocumentName')] = request.document_name  # noqa: E501
@@ -7197,7 +7197,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_by_index`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/drawingObjects/{index}'
+        path = '/v4.0/words/{Name}/{NodePath}/drawingObjects/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -7326,7 +7326,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_by_index_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/drawingObjects/{index}'
+        path = '/v4.0/words/{Name}/drawingObjects/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -7457,7 +7457,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_image_data`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/drawingObjects/{index}/imageData'
+        path = '/v4.0/words/{Name}/{NodePath}/drawingObjects/{Index}/imageData'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -7586,7 +7586,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_image_data_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/drawingObjects/{index}/imageData'
+        path = '/v4.0/words/{Name}/drawingObjects/{Index}/imageData'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -7717,7 +7717,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_ole_data`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/drawingObjects/{index}/oleData'
+        path = '/v4.0/words/{Name}/{NodePath}/drawingObjects/{Index}/oleData'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -7846,7 +7846,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_ole_data_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/drawingObjects/{index}/oleData'
+        path = '/v4.0/words/{Name}/drawingObjects/{Index}/oleData'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -7973,7 +7973,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `node_path` when calling `get_document_drawing_objects`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/drawingObjects'
+        path = '/v4.0/words/{Name}/{NodePath}/drawingObjects'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -8096,7 +8096,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `get_document_drawing_objects_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/drawingObjects'
+        path = '/v4.0/words/{Name}/drawingObjects'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -8218,7 +8218,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `get_document_field_names`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/mailMerge/FieldNames'
+        path = '/v4.0/words/{Name}/mailMerge/FieldNames'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -8451,7 +8451,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `hyperlink_index` when calling `get_document_hyperlink_by_index`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/hyperlinks/{hyperlinkIndex}'
+        path = '/v4.0/words/{Name}/hyperlinks/{HyperlinkIndex}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -8574,7 +8574,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `get_document_hyperlinks`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/hyperlinks'
+        path = '/v4.0/words/{Name}/hyperlinks'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -8695,7 +8695,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `get_document_properties`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/documentProperties'
+        path = '/v4.0/words/{Name}/documentProperties'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -8820,7 +8820,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `property_name` when calling `get_document_property`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/documentProperties/{propertyName}'
+        path = '/v4.0/words/{Name}/documentProperties/{PropertyName}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -8943,7 +8943,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `get_document_protection`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/protection'
+        path = '/v4.0/words/{Name}/protection'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -9067,7 +9067,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `get_document_statistics`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/statistics'
+        path = '/v4.0/words/{Name}/statistics'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -9209,7 +9209,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `format` when calling `get_document_with_format`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}'
+        path = '/v4.0/words/{Name}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -9353,7 +9353,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_field`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/fields/{index}'
+        path = '/v4.0/words/{Name}/{NodePath}/fields/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -9482,7 +9482,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_field_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/fields/{index}'
+        path = '/v4.0/words/{Name}/fields/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -9609,7 +9609,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `node_path` when calling `get_fields`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/fields'
+        path = '/v4.0/words/{Name}/{NodePath}/fields'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -9732,7 +9732,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `get_fields_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/fields'
+        path = '/v4.0/words/{Name}/fields'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -9850,7 +9850,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `path` when calling `get_files_list`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/storage/folder/{path}'
+        path = '/v4.0/words/storage/folder/{Path}'
         path_params = {}
         if request.path is not None:
             path_params[self.__downcase_first_letter('Path')] = request.path  # noqa: E501
@@ -9964,7 +9964,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_footnote`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/footnotes/{index}'
+        path = '/v4.0/words/{Name}/{NodePath}/footnotes/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -10093,7 +10093,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_footnote_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/footnotes/{index}'
+        path = '/v4.0/words/{Name}/footnotes/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -10220,7 +10220,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `node_path` when calling `get_footnotes`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/footnotes'
+        path = '/v4.0/words/{Name}/{NodePath}/footnotes'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -10343,7 +10343,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `get_footnotes_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/footnotes'
+        path = '/v4.0/words/{Name}/footnotes'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -10472,7 +10472,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_form_field`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/formfields/{index}'
+        path = '/v4.0/words/{Name}/{NodePath}/formfields/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -10601,7 +10601,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_form_field_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/formfields/{index}'
+        path = '/v4.0/words/{Name}/formfields/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -10728,7 +10728,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `node_path` when calling `get_form_fields`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/formfields'
+        path = '/v4.0/words/{Name}/{NodePath}/formfields'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -10851,7 +10851,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `get_form_fields_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/formfields'
+        path = '/v4.0/words/{Name}/formfields'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -10977,7 +10977,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `header_footer_index` when calling `get_header_footer`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/headersfooters/{headerFooterIndex}'
+        path = '/v4.0/words/{Name}/headersfooters/{HeaderFooterIndex}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -11114,7 +11114,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `section_index` when calling `get_header_footer_of_section`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex}'
+        path = '/v4.0/words/{Name}/sections/{SectionIndex}/headersfooters/{HeaderFooterIndex}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -11249,7 +11249,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `section_path` when calling `get_header_footers`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{sectionPath}/headersfooters'
+        path = '/v4.0/words/{Name}/{SectionPath}/headersfooters'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -11385,7 +11385,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_office_math_object`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/OfficeMathObjects/{index}'
+        path = '/v4.0/words/{Name}/{NodePath}/OfficeMathObjects/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -11514,7 +11514,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_office_math_object_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/OfficeMathObjects/{index}'
+        path = '/v4.0/words/{Name}/OfficeMathObjects/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -11641,7 +11641,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `node_path` when calling `get_office_math_objects`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/OfficeMathObjects'
+        path = '/v4.0/words/{Name}/{NodePath}/OfficeMathObjects'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -11764,7 +11764,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `get_office_math_objects_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/OfficeMathObjects'
+        path = '/v4.0/words/{Name}/OfficeMathObjects'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -11893,7 +11893,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_paragraph`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}'
+        path = '/v4.0/words/{Name}/{NodePath}/paragraphs/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -12026,7 +12026,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_paragraph_format`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}/format'
+        path = '/v4.0/words/{Name}/{NodePath}/paragraphs/{Index}/format'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -12155,7 +12155,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_paragraph_format_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/paragraphs/{index}/format'
+        path = '/v4.0/words/{Name}/paragraphs/{Index}/format'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -12282,7 +12282,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_paragraph_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/paragraphs/{index}'
+        path = '/v4.0/words/{Name}/paragraphs/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -12409,7 +12409,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `node_path` when calling `get_paragraphs`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs'
+        path = '/v4.0/words/{Name}/{NodePath}/paragraphs'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -12532,7 +12532,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `get_paragraphs_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/paragraphs'
+        path = '/v4.0/words/{Name}/paragraphs'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -12661,7 +12661,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `range_end_identifier` when calling `get_range_text`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
+        path = '/v4.0/words/{Name}/range/{RangeStartIdentifier}/{RangeEndIdentifier}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -12794,7 +12794,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_run`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{paragraphPath}/runs/{index}'
+        path = '/v4.0/words/{Name}/{ParagraphPath}/runs/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -12927,7 +12927,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_run_font`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{paragraphPath}/runs/{index}/font'
+        path = '/v4.0/words/{Name}/{ParagraphPath}/runs/{Index}/font'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -13056,7 +13056,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `paragraph_path` when calling `get_runs`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{paragraphPath}/runs'
+        path = '/v4.0/words/{Name}/{ParagraphPath}/runs'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -13183,7 +13183,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `section_index` when calling `get_section`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/sections/{sectionIndex}'
+        path = '/v4.0/words/{Name}/sections/{SectionIndex}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -13310,7 +13310,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `section_index` when calling `get_section_page_setup`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/sections/{sectionIndex}/pageSetup'
+        path = '/v4.0/words/{Name}/sections/{SectionIndex}/pageSetup'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -13433,7 +13433,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `get_sections`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/sections'
+        path = '/v4.0/words/{Name}/sections'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -13562,7 +13562,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_table`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/tables/{index}'
+        path = '/v4.0/words/{Name}/{NodePath}/tables/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -13695,7 +13695,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_table_cell`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{tableRowPath}/cells/{index}'
+        path = '/v4.0/words/{Name}/{TableRowPath}/cells/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -13828,7 +13828,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_table_cell_format`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{tableRowPath}/cells/{index}/cellformat'
+        path = '/v4.0/words/{Name}/{TableRowPath}/cells/{Index}/cellformat'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -13961,7 +13961,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_table_properties`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/tables/{index}/properties'
+        path = '/v4.0/words/{Name}/{NodePath}/tables/{Index}/properties'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -14090,7 +14090,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_table_properties_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/tables/{index}/properties'
+        path = '/v4.0/words/{Name}/tables/{Index}/properties'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -14221,7 +14221,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_table_row`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{tablePath}/rows/{index}'
+        path = '/v4.0/words/{Name}/{TablePath}/rows/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -14354,7 +14354,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_table_row_format`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{tablePath}/rows/{index}/rowformat'
+        path = '/v4.0/words/{Name}/{TablePath}/rows/{Index}/rowformat'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -14483,7 +14483,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `get_table_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/tables/{index}'
+        path = '/v4.0/words/{Name}/tables/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -14610,7 +14610,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `node_path` when calling `get_tables`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/tables'
+        path = '/v4.0/words/{Name}/{NodePath}/tables'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -14733,7 +14733,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `get_tables_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/tables'
+        path = '/v4.0/words/{Name}/tables'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -14861,7 +14861,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `comment` when calling `insert_comment`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/comments'
+        path = '/v4.0/words/{Name}/comments'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -15014,7 +15014,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `node_path` when calling `insert_drawing_object`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/drawingObjects'
+        path = '/v4.0/words/{Name}/{NodePath}/drawingObjects'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -15167,7 +15167,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `image_file` when calling `insert_drawing_object_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/drawingObjects'
+        path = '/v4.0/words/{Name}/drawingObjects'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -15319,7 +15319,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `node_path` when calling `insert_field`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/fields'
+        path = '/v4.0/words/{Name}/{NodePath}/fields'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -15472,7 +15472,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `field` when calling `insert_field_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/fields'
+        path = '/v4.0/words/{Name}/fields'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -15626,7 +15626,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `node_path` when calling `insert_footnote`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/footnotes'
+        path = '/v4.0/words/{Name}/{NodePath}/footnotes'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -15773,7 +15773,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `footnote_dto` when calling `insert_footnote_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/footnotes'
+        path = '/v4.0/words/{Name}/footnotes'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -15923,7 +15923,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `node_path` when calling `insert_form_field`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/formfields'
+        path = '/v4.0/words/{Name}/{NodePath}/formfields'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -16076,7 +16076,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `form_field` when calling `insert_form_field_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/formfields'
+        path = '/v4.0/words/{Name}/formfields'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -16230,7 +16230,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `section_path` when calling `insert_header_footer`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{sectionPath}/headersfooters'
+        path = '/v4.0/words/{Name}/{SectionPath}/headersfooters'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -16317,7 +16317,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : A document name. (required)
-        :param page_number PageNumber : with the page numbers settings. (required)
+        :param page_number PageNumber : PageNumber with the page numbers settings. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -16377,7 +16377,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `page_number` when calling `insert_page_numbers`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/PageNumbers'
+        path = '/v4.0/words/{Name}/PageNumbers'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -16527,7 +16527,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `node_path` when calling `insert_paragraph`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs'
+        path = '/v4.0/words/{Name}/{NodePath}/paragraphs'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -16684,7 +16684,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `run` when calling `insert_run`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{paragraphPath}/runs'
+        path = '/v4.0/words/{Name}/{ParagraphPath}/runs'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -16776,6 +16776,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
+        :param table TableInsert : Table parameters/. (required)
         :param node_path str : Path to the node, which contains tables. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -16784,7 +16785,6 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param table TableInsert : Table parameters/.
         :return: TableResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16832,12 +16832,15 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_table`")  # noqa: E501
+        # verify the required parameter 'table' is set
+        if request.table is None:
+            raise ValueError("Missing the required parameter `table` when calling `insert_table`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `insert_table`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/tables'
+        path = '/v4.0/words/{Name}/{NodePath}/tables'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -16924,6 +16927,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
+        :param cell TableCellInsert : Table cell parameters/. (required)
         :param table_row_path str : Path to table row. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -16932,7 +16936,6 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param cell TableCellInsert : Table cell parameters/.
         :return: TableCellResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16980,12 +16983,15 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_table_cell`")  # noqa: E501
+        # verify the required parameter 'cell' is set
+        if request.cell is None:
+            raise ValueError("Missing the required parameter `cell` when calling `insert_table_cell`")  # noqa: E501
         # verify the required parameter 'table_row_path' is set
         if request.table_row_path is None:
             raise ValueError("Missing the required parameter `table_row_path` when calling `insert_table_cell`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{tableRowPath}/cells'
+        path = '/v4.0/words/{Name}/{TableRowPath}/cells'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -17072,6 +17078,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
+        :param row TableRowInsert : Table row parameters/. (required)
         :param table_path str : Path to table. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -17080,7 +17087,6 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param row TableRowInsert : Table row parameters/.
         :return: TableRowResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17128,12 +17134,15 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_table_row`")  # noqa: E501
+        # verify the required parameter 'row' is set
+        if request.row is None:
+            raise ValueError("Missing the required parameter `row` when calling `insert_table_row`")  # noqa: E501
         # verify the required parameter 'table_path' is set
         if request.table_path is None:
             raise ValueError("Missing the required parameter `table_path` when calling `insert_table_row`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{tablePath}/rows'
+        path = '/v4.0/words/{Name}/{TablePath}/rows'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -17220,6 +17229,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
+        :param table TableInsert : Table parameters/. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -17227,7 +17237,6 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param table TableInsert : Table parameters/.
         :return: TableResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17275,9 +17284,12 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_table_without_node_path`")  # noqa: E501
+        # verify the required parameter 'table' is set
+        if request.table is None:
+            raise ValueError("Missing the required parameter `table` when calling `insert_table_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/tables'
+        path = '/v4.0/words/{Name}/tables'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -17421,7 +17433,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `insert_watermark_image`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/watermarks/images'
+        path = '/v4.0/words/{Name}/watermarks/images'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -17516,7 +17528,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param watermark_text WatermarkText : with the watermark data.             (required)
+        :param watermark_text WatermarkText : WatermarkText with the watermark data.              (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -17576,7 +17588,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `watermark_text` when calling `insert_watermark_text`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/watermarks/texts'
+        path = '/v4.0/words/{Name}/watermarks/texts'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -17820,7 +17832,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `src_path` when calling `move_file`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/storage/file/move/{srcPath}'
+        path = '/v4.0/words/storage/file/move/{SrcPath}'
         path_params = {}
         if request.src_path is not None:
             path_params[self.__downcase_first_letter('SrcPath')] = request.src_path  # noqa: E501
@@ -17943,7 +17955,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `src_path` when calling `move_folder`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/storage/folder/move/{srcPath}'
+        path = '/v4.0/words/storage/folder/move/{SrcPath}'
         path_params = {}
         if request.src_path is not None:
             path_params[self.__downcase_first_letter('SrcPath')] = request.src_path  # noqa: E501
@@ -18006,7 +18018,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param protection_request ProtectionRequest : with protection settings.             (required)
+        :param protection_request ProtectionRequest : ProtectionRequest with protection settings. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -18064,7 +18076,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `protection_request` when calling `protect_document`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/protection'
+        path = '/v4.0/words/{Name}/protection'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -18193,7 +18205,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `reject_all_revisions`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/revisions/rejectAll'
+        path = '/v4.0/words/{Name}/revisions/rejectAll'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -18328,7 +18340,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `range_end_identifier` when calling `remove_range`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
+        path = '/v4.0/words/{Name}/range/{RangeStartIdentifier}/{RangeEndIdentifier}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -18471,7 +18483,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `render_drawing_object`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/drawingObjects/{index}/render'
+        path = '/v4.0/words/{Name}/{NodePath}/drawingObjects/{Index}/render'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -18615,7 +18627,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `render_drawing_object_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/drawingObjects/{index}/render'
+        path = '/v4.0/words/{Name}/drawingObjects/{Index}/render'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -18761,7 +18773,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `render_math_object`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/OfficeMathObjects/{index}/render'
+        path = '/v4.0/words/{Name}/{NodePath}/OfficeMathObjects/{Index}/render'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -18905,7 +18917,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `render_math_object_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/OfficeMathObjects/{index}/render'
+        path = '/v4.0/words/{Name}/OfficeMathObjects/{Index}/render'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -19047,7 +19059,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `format` when calling `render_page`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/pages/{pageIndex}/render'
+        path = '/v4.0/words/{Name}/pages/{PageIndex}/render'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -19193,7 +19205,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `render_paragraph`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}/render'
+        path = '/v4.0/words/{Name}/{NodePath}/paragraphs/{Index}/render'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -19337,7 +19349,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `render_paragraph_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/paragraphs/{index}/render'
+        path = '/v4.0/words/{Name}/paragraphs/{Index}/render'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -19483,7 +19495,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `render_table`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/tables/{index}/render'
+        path = '/v4.0/words/{Name}/{NodePath}/tables/{Index}/render'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -19627,7 +19639,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `render_table_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/tables/{index}/render'
+        path = '/v4.0/words/{Name}/tables/{Index}/render'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -19707,7 +19719,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param replace_text ReplaceTextParameters : with the replace operation settings.             (required)
+        :param replace_text ReplaceTextParameters : ReplaceTextResponse with the replace operation settings. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -19767,7 +19779,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `replace_text` when calling `replace_text`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/replaceText'
+        path = '/v4.0/words/{Name}/replaceText'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -19918,7 +19930,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `range_end_identifier` when calling `replace_with_text`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
+        path = '/v4.0/words/{Name}/range/{RangeStartIdentifier}/{RangeEndIdentifier}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -20146,7 +20158,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `save_options_data` when calling `save_as`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/saveAs'
+        path = '/v4.0/words/{Name}/saveAs'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -20286,7 +20298,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `range_end_identifier` when calling `save_as_range`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs'
+        path = '/v4.0/words/{Name}/range/{RangeStartIdentifier}/{RangeEndIdentifier}/SaveAs'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -20435,7 +20447,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `save_options` when calling `save_as_tiff`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/saveAs/tiff'
+        path = '/v4.0/words/{Name}/saveAs/tiff'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -20652,7 +20664,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `pattern` when calling `search`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/search'
+        path = '/v4.0/words/{Name}/search'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -20784,7 +20796,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `split_document`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/split'
+        path = '/v4.0/words/{Name}/split'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -20882,7 +20894,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param protection_request ProtectionRequest : with protection settings.             (required)
+        :param protection_request ProtectionRequest : ProtectionRequest with protection settings. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -20940,7 +20952,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `protection_request` when calling `unprotect_document`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/protection'
+        path = '/v4.0/words/{Name}/protection'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -21015,7 +21027,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param bookmark_data BookmarkData : with new bookmark data.             (required)
+        :param bookmark_data BookmarkData : BookmarkData with new bookmark data. (required)
         :param bookmark_name str : The bookmark name. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -21079,7 +21091,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `bookmark_name` when calling `update_bookmark`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/bookmarks/{bookmarkName}'
+        path = '/v4.0/words/{Name}/bookmarks/{BookmarkName}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -21236,7 +21248,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `border_type` when calling `update_border`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/borders/{borderType}'
+        path = '/v4.0/words/{Name}/{NodePath}/borders/{BorderType}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -21389,7 +21401,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `comment` when calling `update_comment`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/comments/{commentIndex}'
+        path = '/v4.0/words/{Name}/comments/{CommentIndex}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -21548,7 +21560,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `update_drawing_object`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/drawingObjects/{index}'
+        path = '/v4.0/words/{Name}/{NodePath}/drawingObjects/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -21707,7 +21719,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `update_drawing_object_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/drawingObjects/{index}'
+        path = '/v4.0/words/{Name}/drawingObjects/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -21864,7 +21876,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `update_field`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/fields/{index}'
+        path = '/v4.0/words/{Name}/{NodePath}/fields/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -22007,7 +22019,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `name` when calling `update_fields`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/updateFields'
+        path = '/v4.0/words/{Name}/updateFields'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -22148,7 +22160,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `update_footnote`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/footnotes/{index}'
+        path = '/v4.0/words/{Name}/{NodePath}/footnotes/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -22301,7 +22313,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `update_footnote_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/footnotes/{index}'
+        path = '/v4.0/words/{Name}/footnotes/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -22456,7 +22468,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `update_form_field`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/formfields/{index}'
+        path = '/v4.0/words/{Name}/{NodePath}/formfields/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -22609,7 +22621,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `update_form_field_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/formfields/{index}'
+        path = '/v4.0/words/{Name}/formfields/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -22764,7 +22776,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `update_paragraph_format`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}/format'
+        path = '/v4.0/words/{Name}/{NodePath}/paragraphs/{Index}/format'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -22921,7 +22933,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `update_run`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{paragraphPath}/runs/{index}'
+        path = '/v4.0/words/{Name}/{ParagraphPath}/runs/{Index}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -23078,7 +23090,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `update_run_font`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{paragraphPath}/runs/{index}/font'
+        path = '/v4.0/words/{Name}/{ParagraphPath}/runs/{Index}/font'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -23231,7 +23243,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `page_setup` when calling `update_section_page_setup`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/sections/{sectionIndex}/pageSetup'
+        path = '/v4.0/words/{Name}/sections/{SectionIndex}/pageSetup'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -23318,6 +23330,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
+        :param format TableCellFormat : The properties. (required)
         :param table_row_path str : Path to table row. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
@@ -23327,7 +23340,6 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param format TableCellFormat : The properties.
         :return: TableCellFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -23375,6 +23387,9 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_table_cell_format`")  # noqa: E501
+        # verify the required parameter 'format' is set
+        if request.format is None:
+            raise ValueError("Missing the required parameter `format` when calling `update_table_cell_format`")  # noqa: E501
         # verify the required parameter 'table_row_path' is set
         if request.table_row_path is None:
             raise ValueError("Missing the required parameter `table_row_path` when calling `update_table_cell_format`")  # noqa: E501
@@ -23383,7 +23398,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `update_table_cell_format`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{tableRowPath}/cells/{index}/cellformat'
+        path = '/v4.0/words/{Name}/{TableRowPath}/cells/{Index}/cellformat'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -23472,6 +23487,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
+        :param properties TableProperties : The properties. (required)
         :param node_path str : Path to the node, which contains tables. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
@@ -23481,7 +23497,6 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param properties TableProperties : The properties.
         :return: TablePropertiesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -23529,6 +23544,9 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_table_properties`")  # noqa: E501
+        # verify the required parameter 'properties' is set
+        if request.properties is None:
+            raise ValueError("Missing the required parameter `properties` when calling `update_table_properties`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `update_table_properties`")  # noqa: E501
@@ -23537,7 +23555,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `update_table_properties`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/tables/{index}/properties'
+        path = '/v4.0/words/{Name}/{NodePath}/tables/{Index}/properties'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -23626,6 +23644,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
+        :param properties TableProperties : The properties. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -23634,7 +23653,6 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param properties TableProperties : The properties.
         :return: TablePropertiesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -23682,12 +23700,15 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_table_properties_without_node_path`")  # noqa: E501
+        # verify the required parameter 'properties' is set
+        if request.properties is None:
+            raise ValueError("Missing the required parameter `properties` when calling `update_table_properties_without_node_path`")  # noqa: E501
         # verify the required parameter 'index' is set
         if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_table_properties_without_node_path`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/tables/{index}/properties'
+        path = '/v4.0/words/{Name}/tables/{Index}/properties'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -23774,6 +23795,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
+        :param format TableRowFormat : Table row format. (required)
         :param table_path str : Path to table. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
@@ -23783,7 +23805,6 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param format TableRowFormat : Table row format.
         :return: TableRowFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -23831,6 +23852,9 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_table_row_format`")  # noqa: E501
+        # verify the required parameter 'format' is set
+        if request.format is None:
+            raise ValueError("Missing the required parameter `format` when calling `update_table_row_format`")  # noqa: E501
         # verify the required parameter 'table_path' is set
         if request.table_path is None:
             raise ValueError("Missing the required parameter `table_path` when calling `update_table_row_format`")  # noqa: E501
@@ -23839,7 +23863,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `index` when calling `update_table_row_format`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/{tablePath}/rows/{index}/rowformat'
+        path = '/v4.0/words/{Name}/{TablePath}/rows/{Index}/rowformat'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
@@ -23982,7 +24006,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `path` when calling `upload_file`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/storage/file/{path}'
+        path = '/v4.0/words/storage/file/{Path}'
         path_params = {}
         if request.path is not None:
             path_params[self.__downcase_first_letter('Path')] = request.path  # noqa: E501

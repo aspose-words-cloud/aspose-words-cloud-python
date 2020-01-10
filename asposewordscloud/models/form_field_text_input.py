@@ -60,20 +60,20 @@ class FormFieldTextInput(object):
 
     attribute_map = {
         'link': 'link',
-        'node_id': 'NodeId',
-        'calculate_on_exit': 'CalculateOnExit',
-        'enabled': 'Enabled',
-        'entry_macro': 'EntryMacro',
-        'exit_macro': 'ExitMacro',
-        'help_text': 'HelpText',
-        'name': 'Name',
-        'own_help': 'OwnHelp',
-        'own_status': 'OwnStatus',
-        'status_text': 'StatusText',
-        'max_length': 'MaxLength',
-        'text_input_default': 'TextInputDefault',
-        'text_input_format': 'TextInputFormat',
-        'text_input_type': 'TextInputType'
+        'node_id': 'nodeId',
+        'calculate_on_exit': 'calculateOnExit',
+        'enabled': 'enabled',
+        'entry_macro': 'entryMacro',
+        'exit_macro': 'exitMacro',
+        'help_text': 'helpText',
+        'name': 'name',
+        'own_help': 'ownHelp',
+        'own_status': 'ownStatus',
+        'status_text': 'statusText',
+        'max_length': 'maxLength',
+        'text_input_default': 'textInputDefault',
+        'text_input_format': 'textInputFormat',
+        'text_input_type': 'textInputType'
     }
 
     def __init__(self, link=None, node_id=None, calculate_on_exit=None, enabled=None, entry_macro=None, exit_macro=None, help_text=None, name=None, own_help=None, own_status=None, status_text=None, max_length=None, text_input_default=None, text_input_format=None, text_input_type=None):  # noqa: E501

@@ -61,23 +61,23 @@ class XamlFixedSaveOptionsData(object):
     }
 
     attribute_map = {
-        'color_mode': 'ColorMode',
-        'save_format': 'SaveFormat',
-        'file_name': 'FileName',
-        'dml_rendering_mode': 'DmlRenderingMode',
-        'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
-        'zip_output': 'ZipOutput',
-        'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
-        'update_sdt_content': 'UpdateSdtContent',
-        'update_fields': 'UpdateFields',
-        'jpeg_quality': 'JpegQuality',
-        'metafile_rendering_options': 'MetafileRenderingOptions',
-        'numeral_format': 'NumeralFormat',
-        'optimize_output': 'OptimizeOutput',
-        'page_count': 'PageCount',
-        'page_index': 'PageIndex',
-        'resources_folder': 'ResourcesFolder',
-        'resources_folder_alias': 'ResourcesFolderAlias'
+        'color_mode': 'colorMode',
+        'save_format': 'saveFormat',
+        'file_name': 'fileName',
+        'dml_rendering_mode': 'dmlRenderingMode',
+        'dml_effects_rendering_mode': 'dmlEffectsRenderingMode',
+        'zip_output': 'zipOutput',
+        'update_last_saved_time_property': 'updateLastSavedTimeProperty',
+        'update_sdt_content': 'updateSdtContent',
+        'update_fields': 'updateFields',
+        'jpeg_quality': 'jpegQuality',
+        'metafile_rendering_options': 'metafileRenderingOptions',
+        'numeral_format': 'numeralFormat',
+        'optimize_output': 'optimizeOutput',
+        'page_count': 'pageCount',
+        'page_index': 'pageIndex',
+        'resources_folder': 'resourcesFolder',
+        'resources_folder_alias': 'resourcesFolderAlias'
     }
 
     def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, resources_folder=None, resources_folder_alias=None):  # noqa: E501
@@ -288,7 +288,7 @@ class XamlFixedSaveOptionsData(object):
     def update_sdt_content(self):
         """Gets the update_sdt_content of this XamlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets value determining whether content of  is updated before saving.  # noqa: E501
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :return: The update_sdt_content of this XamlFixedSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -299,7 +299,7 @@ class XamlFixedSaveOptionsData(object):
     def update_sdt_content(self, update_sdt_content):
         """Sets the update_sdt_content of this XamlFixedSaveOptionsData.
 
-        Gets or sets value determining whether content of  is updated before saving.  # noqa: E501
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :param update_sdt_content: The update_sdt_content of this XamlFixedSaveOptionsData.  # noqa: E501
         :type: bool

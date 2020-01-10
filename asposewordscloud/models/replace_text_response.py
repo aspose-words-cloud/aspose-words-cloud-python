@@ -47,9 +47,9 @@ class ReplaceTextResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'document_link': 'DocumentLink',
-        'matches': 'Matches'
+        'request_id': 'requestId',
+        'document_link': 'documentLink',
+        'matches': 'matches'
     }
 
     def __init__(self, request_id=None, document_link=None, matches=None):  # noqa: E501

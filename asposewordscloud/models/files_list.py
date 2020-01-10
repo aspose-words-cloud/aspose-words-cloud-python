@@ -45,7 +45,7 @@ class FilesList(object):
     }
 
     attribute_map = {
-        'value': 'Value'
+        'value': 'value'
     }
 
     def __init__(self, value=None):  # noqa: E501
@@ -61,7 +61,7 @@ class FilesList(object):
     def value(self):
         """Gets the value of this FilesList.  # noqa: E501
 
-        Files and folders contained by folder .  # noqa: E501
+        Files and folders contained by folder StorageFile.  # noqa: E501
 
         :return: The value of this FilesList.  # noqa: E501
         :rtype: list[StorageFile]
@@ -72,7 +72,7 @@ class FilesList(object):
     def value(self, value):
         """Sets the value of this FilesList.
 
-        Files and folders contained by folder .  # noqa: E501
+        Files and folders contained by folder StorageFile.  # noqa: E501
 
         :param value: The value of this FilesList.  # noqa: E501
         :type: list[StorageFile]

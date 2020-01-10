@@ -46,8 +46,8 @@ class FormFieldsResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'form_fields': 'FormFields'
+        'request_id': 'requestId',
+        'form_fields': 'formFields'
     }
 
     def __init__(self, request_id=None, form_fields=None):  # noqa: E501

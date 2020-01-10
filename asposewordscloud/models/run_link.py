@@ -48,8 +48,8 @@ class RunLink(object):
 
     attribute_map = {
         'link': 'link',
-        'node_id': 'NodeId',
-        'text': 'Text'
+        'node_id': 'nodeId',
+        'text': 'text'
     }
 
     def __init__(self, link=None, node_id=None, text=None):  # noqa: E501

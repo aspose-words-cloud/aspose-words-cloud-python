@@ -46,8 +46,8 @@ class DocumentPropertiesResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'document_properties': 'DocumentProperties'
+        'request_id': 'requestId',
+        'document_properties': 'documentProperties'
     }
 
     def __init__(self, request_id=None, document_properties=None):  # noqa: E501

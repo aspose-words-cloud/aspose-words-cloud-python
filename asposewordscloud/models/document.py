@@ -50,12 +50,12 @@ class Document(object):
     }
 
     attribute_map = {
-        'links': 'Links',
-        'file_name': 'FileName',
-        'source_format': 'SourceFormat',
-        'is_encrypted': 'IsEncrypted',
-        'is_signed': 'IsSigned',
-        'document_properties': 'DocumentProperties'
+        'links': 'links',
+        'file_name': 'fileName',
+        'source_format': 'sourceFormat',
+        'is_encrypted': 'isEncrypted',
+        'is_signed': 'isSigned',
+        'document_properties': 'documentProperties'
     }
 
     def __init__(self, links=None, file_name=None, source_format=None, is_encrypted=None, is_signed=None, document_properties=None):  # noqa: E501

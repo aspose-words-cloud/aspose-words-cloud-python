@@ -46,8 +46,8 @@ class ModificationOperationResult(object):
     }
 
     attribute_map = {
-        'source': 'Source',
-        'dest': 'Dest'
+        'source': 'source',
+        'dest': 'dest'
     }
 
     def __init__(self, source=None, dest=None):  # noqa: E501

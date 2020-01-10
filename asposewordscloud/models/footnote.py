@@ -52,12 +52,12 @@ class Footnote(object):
 
     attribute_map = {
         'link': 'link',
-        'node_id': 'NodeId',
-        'content': 'Content',
-        'footnote_type': 'FootnoteType',
-        'position': 'Position',
-        'reference_mark': 'ReferenceMark',
-        'text': 'Text'
+        'node_id': 'nodeId',
+        'content': 'content',
+        'footnote_type': 'footnoteType',
+        'position': 'position',
+        'reference_mark': 'referenceMark',
+        'text': 'text'
     }
 
     def __init__(self, link=None, node_id=None, content=None, footnote_type=None, position=None, reference_mark=None, text=None):  # noqa: E501
@@ -204,7 +204,7 @@ class Footnote(object):
     def reference_mark(self):
         """Gets the reference_mark of this Footnote.  # noqa: E501
 
-        Gets or sets /sets custom reference mark to be used for this footnote. Default value is , meaning auto-numbered footnotes are used.  # noqa: E501
+        Gets or sets /sets custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.  # noqa: E501
 
         :return: The reference_mark of this Footnote.  # noqa: E501
         :rtype: str
@@ -215,7 +215,7 @@ class Footnote(object):
     def reference_mark(self, reference_mark):
         """Sets the reference_mark of this Footnote.
 
-        Gets or sets /sets custom reference mark to be used for this footnote. Default value is , meaning auto-numbered footnotes are used.  # noqa: E501
+        Gets or sets /sets custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.  # noqa: E501
 
         :param reference_mark: The reference_mark of this Footnote.  # noqa: E501
         :type: str

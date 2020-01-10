@@ -46,8 +46,8 @@ class WordsApiErrorResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'error': 'Error'
+        'request_id': 'requestId',
+        'error': 'error'
     }
 
     def __init__(self, request_id=None, error=None):  # noqa: E501

@@ -46,8 +46,8 @@ class PreferredWidth(object):
     }
 
     attribute_map = {
-        'type': 'Type',
-        'value': 'Value'
+        'type': 'type',
+        'value': 'value'
     }
 
     def __init__(self, type=None, value=None):  # noqa: E501
@@ -97,7 +97,7 @@ class PreferredWidth(object):
     def value(self):
         """Gets the value of this PreferredWidth.  # noqa: E501
 
-        Gets or sets the preferred width value. The unit of measure is specified in the  property.  # noqa: E501
+        Gets or sets the preferred width value. The unit of measure is specified in the Type property.  # noqa: E501
 
         :return: The value of this PreferredWidth.  # noqa: E501
         :rtype: float
@@ -108,7 +108,7 @@ class PreferredWidth(object):
     def value(self, value):
         """Sets the value of this PreferredWidth.
 
-        Gets or sets the preferred width value. The unit of measure is specified in the  property.  # noqa: E501
+        Gets or sets the preferred width value. The unit of measure is specified in the Type property.  # noqa: E501
 
         :param value: The value of this PreferredWidth.  # noqa: E501
         :type: float

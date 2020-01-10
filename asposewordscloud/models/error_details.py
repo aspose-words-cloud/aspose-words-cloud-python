@@ -46,8 +46,8 @@ class ErrorDetails(object):
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'error_date_time': 'ErrorDateTime'
+        'request_id': 'requestId',
+        'error_date_time': 'errorDateTime'
     }
 
     def __init__(self, request_id=None, error_date_time=None):  # noqa: E501

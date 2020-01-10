@@ -47,7 +47,7 @@ class BordersCollection(object):
 
     attribute_map = {
         'link': 'link',
-        'list': 'List'
+        'list': 'list'
     }
 
     def __init__(self, link=None, list=None):  # noqa: E501

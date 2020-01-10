@@ -30,7 +30,7 @@ import six
 
 
 class Hyperlinks(object):
-    """Collection of .
+    """Collection of Hyperlink.
     """
 
     """
@@ -47,7 +47,7 @@ class Hyperlinks(object):
 
     attribute_map = {
         'link': 'link',
-        'hyperlink_list': 'HyperlinkList'
+        'hyperlink_list': 'hyperlinkList'
     }
 
     def __init__(self, link=None, hyperlink_list=None):  # noqa: E501
@@ -87,7 +87,7 @@ class Hyperlinks(object):
     def hyperlink_list(self):
         """Gets the hyperlink_list of this Hyperlinks.  # noqa: E501
 
-        Gets or sets array of .  # noqa: E501
+        Gets or sets array of Hyperlink.  # noqa: E501
 
         :return: The hyperlink_list of this Hyperlinks.  # noqa: E501
         :rtype: list[Hyperlink]
@@ -98,7 +98,7 @@ class Hyperlinks(object):
     def hyperlink_list(self, hyperlink_list):
         """Sets the hyperlink_list of this Hyperlinks.
 
-        Gets or sets array of .  # noqa: E501
+        Gets or sets array of Hyperlink.  # noqa: E501
 
         :param hyperlink_list: The hyperlink_list of this Hyperlinks.  # noqa: E501
         :type: list[Hyperlink]

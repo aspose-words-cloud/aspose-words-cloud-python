@@ -50,10 +50,10 @@ class Field(object):
 
     attribute_map = {
         'link': 'link',
-        'node_id': 'NodeId',
-        'field_code': 'FieldCode',
-        'locale_id': 'LocaleId',
-        'result': 'Result'
+        'node_id': 'nodeId',
+        'field_code': 'fieldCode',
+        'locale_id': 'localeId',
+        'result': 'result'
     }
 
     def __init__(self, link=None, node_id=None, field_code=None, locale_id=None, result=None):  # noqa: E501

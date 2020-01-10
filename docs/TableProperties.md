@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **style_identifier** | **str** | Gets or sets the locale independent style identifier of the table style applied to this table. | [optional] 
 **style_name** | **str** | Gets or sets the name of the table style applied to this table. | [optional] 
 **style_options** | **str** | Gets or sets bit flags that specify how a table style is applied to this table. | [optional] 
-**text_wrapping** | **str** | Gets or sets get or sets TextWrapping  for table. | [optional] 
+**text_wrapping** | **str** | Gets or sets get or sets TextWrapping for table. | [optional] 
 **top_padding** | **float** | Gets or sets the amount of space (in points) to add above the contents of cells. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

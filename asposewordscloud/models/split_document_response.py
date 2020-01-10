@@ -46,8 +46,8 @@ class SplitDocumentResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'split_result': 'SplitResult'
+        'request_id': 'requestId',
+        'split_result': 'splitResult'
     }
 
     def __init__(self, request_id=None, split_result=None):  # noqa: E501

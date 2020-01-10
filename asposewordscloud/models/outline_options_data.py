@@ -50,12 +50,12 @@ class OutlineOptionsData(object):
     }
 
     attribute_map = {
-        'bookmarks_outline_levels': 'BookmarksOutlineLevels',
-        'default_bookmarks_outline_level': 'DefaultBookmarksOutlineLevel',
-        'create_missing_outline_levels': 'CreateMissingOutlineLevels',
-        'create_outlines_for_headings_in_tables': 'CreateOutlinesForHeadingsInTables',
-        'expanded_outline_levels': 'ExpandedOutlineLevels',
-        'headings_outline_levels': 'HeadingsOutlineLevels'
+        'bookmarks_outline_levels': 'bookmarksOutlineLevels',
+        'default_bookmarks_outline_level': 'defaultBookmarksOutlineLevel',
+        'create_missing_outline_levels': 'createMissingOutlineLevels',
+        'create_outlines_for_headings_in_tables': 'createOutlinesForHeadingsInTables',
+        'expanded_outline_levels': 'expandedOutlineLevels',
+        'headings_outline_levels': 'headingsOutlineLevels'
     }
 
     def __init__(self, bookmarks_outline_levels=None, default_bookmarks_outline_level=None, create_missing_outline_levels=None, create_outlines_for_headings_in_tables=None, expanded_outline_levels=None, headings_outline_levels=None):  # noqa: E501

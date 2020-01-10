@@ -46,8 +46,8 @@ class LoadWebDocumentData(object):
     }
 
     attribute_map = {
-        'loading_document_url': 'LoadingDocumentUrl',
-        'save_options': 'SaveOptions'
+        'loading_document_url': 'loadingDocumentUrl',
+        'save_options': 'saveOptions'
     }
 
     def __init__(self, loading_document_url=None, save_options=None):  # noqa: E501

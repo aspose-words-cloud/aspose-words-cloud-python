@@ -50,10 +50,10 @@ class HeaderFooter(object):
 
     attribute_map = {
         'link': 'link',
-        'type': 'Type',
-        'child_nodes': 'ChildNodes',
-        'drawing_objects': 'DrawingObjects',
-        'paragraphs': 'Paragraphs'
+        'type': 'type',
+        'child_nodes': 'childNodes',
+        'drawing_objects': 'drawingObjects',
+        'paragraphs': 'paragraphs'
     }
 
     def __init__(self, link=None, type=None, child_nodes=None, drawing_objects=None, paragraphs=None):  # noqa: E501

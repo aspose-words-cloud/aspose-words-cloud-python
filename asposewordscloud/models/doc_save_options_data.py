@@ -57,19 +57,19 @@ class DocSaveOptionsData(object):
     }
 
     attribute_map = {
-        'color_mode': 'ColorMode',
-        'save_format': 'SaveFormat',
-        'file_name': 'FileName',
-        'dml_rendering_mode': 'DmlRenderingMode',
-        'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
-        'zip_output': 'ZipOutput',
-        'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
-        'update_sdt_content': 'UpdateSdtContent',
-        'update_fields': 'UpdateFields',
-        'always_compress_metafiles': 'AlwaysCompressMetafiles',
-        'password': 'Password',
-        'save_picture_bullet': 'SavePictureBullet',
-        'save_routing_slip': 'SaveRoutingSlip'
+        'color_mode': 'colorMode',
+        'save_format': 'saveFormat',
+        'file_name': 'fileName',
+        'dml_rendering_mode': 'dmlRenderingMode',
+        'dml_effects_rendering_mode': 'dmlEffectsRenderingMode',
+        'zip_output': 'zipOutput',
+        'update_last_saved_time_property': 'updateLastSavedTimeProperty',
+        'update_sdt_content': 'updateSdtContent',
+        'update_fields': 'updateFields',
+        'always_compress_metafiles': 'alwaysCompressMetafiles',
+        'password': 'password',
+        'save_picture_bullet': 'savePictureBullet',
+        'save_routing_slip': 'saveRoutingSlip'
     }
 
     def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, always_compress_metafiles=None, password=None, save_picture_bullet=None, save_routing_slip=None):  # noqa: E501
@@ -268,7 +268,7 @@ class DocSaveOptionsData(object):
     def update_sdt_content(self):
         """Gets the update_sdt_content of this DocSaveOptionsData.  # noqa: E501
 
-        Gets or sets value determining whether content of  is updated before saving.  # noqa: E501
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :return: The update_sdt_content of this DocSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -279,7 +279,7 @@ class DocSaveOptionsData(object):
     def update_sdt_content(self, update_sdt_content):
         """Sets the update_sdt_content of this DocSaveOptionsData.
 
-        Gets or sets value determining whether content of  is updated before saving.  # noqa: E501
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :param update_sdt_content: The update_sdt_content of this DocSaveOptionsData.  # noqa: E501
         :type: bool

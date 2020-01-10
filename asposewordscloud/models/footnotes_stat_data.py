@@ -46,8 +46,8 @@ class FootnotesStatData(object):
     }
 
     attribute_map = {
-        'word_count': 'WordCount',
-        'paragraph_count': 'ParagraphCount'
+        'word_count': 'wordCount',
+        'paragraph_count': 'paragraphCount'
     }
 
     def __init__(self, word_count=None, paragraph_count=None):  # noqa: E501

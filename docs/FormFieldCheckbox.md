@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **own_help** | **bool** | Gets or sets specifies the source of the text that&#39;s displayed in a message box when a form field has the focus and the user presses F1. | [optional] 
 **own_status** | **bool** | Gets or sets specifies the source of the text that&#39;s displayed in the status bar when a form field has the focus. | [optional] 
 **status_text** | **str** | Gets or sets returns or sets the text that&#39;s displayed in the status bar when a form field has the focus. | [optional] 
-**check_box_size** | **float** | Gets or sets the size of the checkbox in points. Has effect only when  is true. | [optional] 
+**check_box_size** | **float** | Gets or sets the size of the checkbox in points. Has effect only when IsCheckBoxExactSize is true. | [optional] 
 **checked** | **bool** | Gets or sets the checked status of the check box form field. | [optional] 
 **is_check_box_exact_size** | **bool** | Gets or sets the boolean value that indicates whether the size of the textbox is automatic or specified explicitly. | [optional] 
 

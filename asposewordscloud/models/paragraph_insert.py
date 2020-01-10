@@ -45,7 +45,7 @@ class ParagraphInsert(object):
     }
 
     attribute_map = {
-        'text': 'Text'
+        'text': 'text'
     }
 
     def __init__(self, text=None):  # noqa: E501

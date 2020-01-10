@@ -4,181 +4,181 @@ All URIs are relative to *https://localhost/v4.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**accept_all_revisions**](WordsApi.md#accept_all_revisions) | **PUT** /words/{name}/revisions/acceptAll | Accepts all revisions in document.
-[**append_document**](WordsApi.md#append_document) | **PUT** /words/{name}/appendDocument | Appends documents to original document.
+[**accept_all_revisions**](WordsApi.md#accept_all_revisions) | **PUT** /words/{Name}/revisions/acceptAll | Accepts all revisions in document.
+[**append_document**](WordsApi.md#append_document) | **PUT** /words/{Name}/appendDocument | Appends documents to original document.
 [**classify**](WordsApi.md#classify) | **PUT** /words/classify | Classifies raw text.
-[**classify_document**](WordsApi.md#classify_document) | **GET** /words/{documentName}/classify | Classifies document.
-[**compare_document**](WordsApi.md#compare_document) | **PUT** /words/{name}/compareDocument | Compares document with original document.
+[**classify_document**](WordsApi.md#classify_document) | **GET** /words/{DocumentName}/classify | Classifies document.
+[**compare_document**](WordsApi.md#compare_document) | **PUT** /words/{Name}/compareDocument | Compares document with original document.
 [**convert_document**](WordsApi.md#convert_document) | **PUT** /words/convert | Converts document from the request&#39;s content to the specified format .
-[**copy_file**](WordsApi.md#copy_file) | **PUT** /words/storage/file/copy/{srcPath} | Copy file
-[**copy_folder**](WordsApi.md#copy_folder) | **PUT** /words/storage/folder/copy/{srcPath} | Copy folder
+[**copy_file**](WordsApi.md#copy_file) | **PUT** /words/storage/file/copy/{SrcPath} | Copy file
+[**copy_folder**](WordsApi.md#copy_folder) | **PUT** /words/storage/folder/copy/{SrcPath} | Copy folder
 [**create_document**](WordsApi.md#create_document) | **PUT** /words/create | Creates new document. Document is created with format which is recognized from file extensions. Supported extensions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot;.
-[**create_folder**](WordsApi.md#create_folder) | **PUT** /words/storage/folder/{path} | Create the folder
-[**create_or_update_document_property**](WordsApi.md#create_or_update_document_property) | **PUT** /words/{name}/documentProperties/{propertyName} | Adds new or update existing document property.
-[**delete_border**](WordsApi.md#delete_border) | **DELETE** /words/{name}/{nodePath}/borders/{borderType} | Resets border properties to default values.             
-[**delete_borders**](WordsApi.md#delete_borders) | **DELETE** /words/{name}/{nodePath}/borders | Resets borders properties to default values.             
-[**delete_comment**](WordsApi.md#delete_comment) | **DELETE** /words/{name}/comments/{commentIndex} | Removes comment from document.
-[**delete_document_property**](WordsApi.md#delete_document_property) | **DELETE** /words/{name}/documentProperties/{propertyName} | Deletes document property.
-[**delete_drawing_object**](WordsApi.md#delete_drawing_object) | **DELETE** /words/{name}/{nodePath}/drawingObjects/{index} | Removes drawing object from document.
-[**delete_drawing_object_without_node_path**](WordsApi.md#delete_drawing_object_without_node_path) | **DELETE** /words/{name}/drawingObjects/{index} | Removes drawing object from document.
-[**delete_field**](WordsApi.md#delete_field) | **DELETE** /words/{name}/{nodePath}/fields/{index} | Deletes field from document.
-[**delete_field_without_node_path**](WordsApi.md#delete_field_without_node_path) | **DELETE** /words/{name}/fields/{index} | Deletes field from document.
-[**delete_fields**](WordsApi.md#delete_fields) | **DELETE** /words/{name}/{nodePath}/fields | Removes fields from section paragraph.
-[**delete_fields_without_node_path**](WordsApi.md#delete_fields_without_node_path) | **DELETE** /words/{name}/fields | Removes fields from section paragraph.
-[**delete_file**](WordsApi.md#delete_file) | **DELETE** /words/storage/file/{path} | Delete file
-[**delete_folder**](WordsApi.md#delete_folder) | **DELETE** /words/storage/folder/{path} | Delete folder
-[**delete_footnote**](WordsApi.md#delete_footnote) | **DELETE** /words/{name}/{nodePath}/footnotes/{index} | Removes footnote from document.
-[**delete_footnote_without_node_path**](WordsApi.md#delete_footnote_without_node_path) | **DELETE** /words/{name}/footnotes/{index} | Removes footnote from document.
-[**delete_form_field**](WordsApi.md#delete_form_field) | **DELETE** /words/{name}/{nodePath}/formfields/{index} | Removes form field from document.
-[**delete_form_field_without_node_path**](WordsApi.md#delete_form_field_without_node_path) | **DELETE** /words/{name}/formfields/{index} | Removes form field from document.
-[**delete_header_footer**](WordsApi.md#delete_header_footer) | **DELETE** /words/{name}/{sectionPath}/headersfooters/{index} | Deletes header/footer from document.
-[**delete_headers_footers**](WordsApi.md#delete_headers_footers) | **DELETE** /words/{name}/{sectionPath}/headersfooters | Deletes document headers and footers.
-[**delete_macros**](WordsApi.md#delete_macros) | **DELETE** /words/{name}/macros | Removes macros from document.
-[**delete_office_math_object**](WordsApi.md#delete_office_math_object) | **DELETE** /words/{name}/{nodePath}/OfficeMathObjects/{index} | Removes OfficeMath object from document.
-[**delete_office_math_object_without_node_path**](WordsApi.md#delete_office_math_object_without_node_path) | **DELETE** /words/{name}/OfficeMathObjects/{index} | Removes OfficeMath object from document.
-[**delete_paragraph**](WordsApi.md#delete_paragraph) | **DELETE** /words/{name}/{nodePath}/paragraphs/{index} | Removes paragraph from section.
-[**delete_paragraph_without_node_path**](WordsApi.md#delete_paragraph_without_node_path) | **DELETE** /words/{name}/paragraphs/{index} | Removes paragraph from section.
-[**delete_run**](WordsApi.md#delete_run) | **DELETE** /words/{name}/{paragraphPath}/runs/{index} | Removes run from document.
-[**delete_section**](WordsApi.md#delete_section) | **DELETE** /words/{name}/sections/{sectionIndex} | Removes section from document.
-[**delete_table**](WordsApi.md#delete_table) | **DELETE** /words/{name}/{nodePath}/tables/{index} | Deletes a table.
-[**delete_table_cell**](WordsApi.md#delete_table_cell) | **DELETE** /words/{name}/{tableRowPath}/cells/{index} | Deletes a table cell.
-[**delete_table_row**](WordsApi.md#delete_table_row) | **DELETE** /words/{name}/{tablePath}/rows/{index} | Deletes a table row.
-[**delete_table_without_node_path**](WordsApi.md#delete_table_without_node_path) | **DELETE** /words/{name}/tables/{index} | Deletes a table.
-[**delete_watermark**](WordsApi.md#delete_watermark) | **POST** /words/{name}/watermarks/deleteLast | Deletes watermark (for deleting last watermark from the document).
-[**download_file**](WordsApi.md#download_file) | **GET** /words/storage/file/{path} | Download file
-[**execute_mail_merge**](WordsApi.md#execute_mail_merge) | **PUT** /words/{name}/MailMerge | Executes document mail merge operation.
+[**create_folder**](WordsApi.md#create_folder) | **PUT** /words/storage/folder/{Path} | Create the folder
+[**create_or_update_document_property**](WordsApi.md#create_or_update_document_property) | **PUT** /words/{Name}/documentProperties/{PropertyName} | Adds new or update existing document property.
+[**delete_border**](WordsApi.md#delete_border) | **DELETE** /words/{Name}/{NodePath}/borders/{BorderType} | Resets border properties to default values.             
+[**delete_borders**](WordsApi.md#delete_borders) | **DELETE** /words/{Name}/{NodePath}/borders | Resets borders properties to default values.             
+[**delete_comment**](WordsApi.md#delete_comment) | **DELETE** /words/{Name}/comments/{CommentIndex} | Removes comment from document.
+[**delete_document_property**](WordsApi.md#delete_document_property) | **DELETE** /words/{Name}/documentProperties/{PropertyName} | Deletes document property.
+[**delete_drawing_object**](WordsApi.md#delete_drawing_object) | **DELETE** /words/{Name}/{NodePath}/drawingObjects/{Index} | Removes drawing object from document.
+[**delete_drawing_object_without_node_path**](WordsApi.md#delete_drawing_object_without_node_path) | **DELETE** /words/{Name}/drawingObjects/{Index} | Removes drawing object from document.
+[**delete_field**](WordsApi.md#delete_field) | **DELETE** /words/{Name}/{NodePath}/fields/{Index} | Deletes field from document.
+[**delete_field_without_node_path**](WordsApi.md#delete_field_without_node_path) | **DELETE** /words/{Name}/fields/{Index} | Deletes field from document.
+[**delete_fields**](WordsApi.md#delete_fields) | **DELETE** /words/{Name}/{NodePath}/fields | Removes fields from section paragraph.
+[**delete_fields_without_node_path**](WordsApi.md#delete_fields_without_node_path) | **DELETE** /words/{Name}/fields | Removes fields from section paragraph.
+[**delete_file**](WordsApi.md#delete_file) | **DELETE** /words/storage/file/{Path} | Delete file
+[**delete_folder**](WordsApi.md#delete_folder) | **DELETE** /words/storage/folder/{Path} | Delete folder
+[**delete_footnote**](WordsApi.md#delete_footnote) | **DELETE** /words/{Name}/{NodePath}/footnotes/{Index} | Removes footnote from document.
+[**delete_footnote_without_node_path**](WordsApi.md#delete_footnote_without_node_path) | **DELETE** /words/{Name}/footnotes/{Index} | Removes footnote from document.
+[**delete_form_field**](WordsApi.md#delete_form_field) | **DELETE** /words/{Name}/{NodePath}/formfields/{Index} | Removes form field from document.
+[**delete_form_field_without_node_path**](WordsApi.md#delete_form_field_without_node_path) | **DELETE** /words/{Name}/formfields/{Index} | Removes form field from document.
+[**delete_header_footer**](WordsApi.md#delete_header_footer) | **DELETE** /words/{Name}/{SectionPath}/headersfooters/{Index} | Deletes header/footer from document.
+[**delete_headers_footers**](WordsApi.md#delete_headers_footers) | **DELETE** /words/{Name}/{SectionPath}/headersfooters | Deletes document headers and footers.
+[**delete_macros**](WordsApi.md#delete_macros) | **DELETE** /words/{Name}/macros | Removes macros from document.
+[**delete_office_math_object**](WordsApi.md#delete_office_math_object) | **DELETE** /words/{Name}/{NodePath}/OfficeMathObjects/{Index} | Removes OfficeMath object from document.
+[**delete_office_math_object_without_node_path**](WordsApi.md#delete_office_math_object_without_node_path) | **DELETE** /words/{Name}/OfficeMathObjects/{Index} | Removes OfficeMath object from document.
+[**delete_paragraph**](WordsApi.md#delete_paragraph) | **DELETE** /words/{Name}/{NodePath}/paragraphs/{Index} | Removes paragraph from section.
+[**delete_paragraph_without_node_path**](WordsApi.md#delete_paragraph_without_node_path) | **DELETE** /words/{Name}/paragraphs/{Index} | Removes paragraph from section.
+[**delete_run**](WordsApi.md#delete_run) | **DELETE** /words/{Name}/{ParagraphPath}/runs/{Index} | Removes run from document.
+[**delete_section**](WordsApi.md#delete_section) | **DELETE** /words/{Name}/sections/{SectionIndex} | Removes section from document.
+[**delete_table**](WordsApi.md#delete_table) | **DELETE** /words/{Name}/{NodePath}/tables/{Index} | Deletes a table.
+[**delete_table_cell**](WordsApi.md#delete_table_cell) | **DELETE** /words/{Name}/{TableRowPath}/cells/{Index} | Deletes a table cell.
+[**delete_table_row**](WordsApi.md#delete_table_row) | **DELETE** /words/{Name}/{TablePath}/rows/{Index} | Deletes a table row.
+[**delete_table_without_node_path**](WordsApi.md#delete_table_without_node_path) | **DELETE** /words/{Name}/tables/{Index} | Deletes a table.
+[**delete_watermark**](WordsApi.md#delete_watermark) | **POST** /words/{Name}/watermarks/deleteLast | Deletes watermark (for deleting last watermark from the document).
+[**download_file**](WordsApi.md#download_file) | **GET** /words/storage/file/{Path} | Download file
+[**execute_mail_merge**](WordsApi.md#execute_mail_merge) | **PUT** /words/{Name}/MailMerge | Executes document mail merge operation.
 [**execute_mail_merge_online**](WordsApi.md#execute_mail_merge_online) | **PUT** /words/MailMerge | Executes document mail merge online.
 [**get_available_fonts**](WordsApi.md#get_available_fonts) | **GET** /words/fonts/available | Gets the list of fonts, available for document processing.
-[**get_bookmark_by_name**](WordsApi.md#get_bookmark_by_name) | **GET** /words/{name}/bookmarks/{bookmarkName} | Reads document bookmark data by its name.
-[**get_bookmarks**](WordsApi.md#get_bookmarks) | **GET** /words/{name}/bookmarks | Reads document bookmarks common info.
-[**get_border**](WordsApi.md#get_border) | **GET** /words/{name}/{nodePath}/borders/{borderType} | Returns a border.
-[**get_borders**](WordsApi.md#get_borders) | **GET** /words/{name}/{nodePath}/borders | Returns a collection of borders.
-[**get_comment**](WordsApi.md#get_comment) | **GET** /words/{name}/comments/{commentIndex} | Gets comment from document.
-[**get_comments**](WordsApi.md#get_comments) | **GET** /words/{name}/comments | Gets comments from document.
-[**get_document**](WordsApi.md#get_document) | **GET** /words/{documentName} | Reads document common info.
-[**get_document_drawing_object_by_index**](WordsApi.md#get_document_drawing_object_by_index) | **GET** /words/{name}/{nodePath}/drawingObjects/{index} | Reads document drawing object common info by its index or convert to format specified.
-[**get_document_drawing_object_by_index_without_node_path**](WordsApi.md#get_document_drawing_object_by_index_without_node_path) | **GET** /words/{name}/drawingObjects/{index} | Reads document drawing object common info by its index or convert to format specified.
-[**get_document_drawing_object_image_data**](WordsApi.md#get_document_drawing_object_image_data) | **GET** /words/{name}/{nodePath}/drawingObjects/{index}/imageData | Reads drawing object image data.
-[**get_document_drawing_object_image_data_without_node_path**](WordsApi.md#get_document_drawing_object_image_data_without_node_path) | **GET** /words/{name}/drawingObjects/{index}/imageData | Reads drawing object image data.
-[**get_document_drawing_object_ole_data**](WordsApi.md#get_document_drawing_object_ole_data) | **GET** /words/{name}/{nodePath}/drawingObjects/{index}/oleData | Gets drawing object OLE data.
-[**get_document_drawing_object_ole_data_without_node_path**](WordsApi.md#get_document_drawing_object_ole_data_without_node_path) | **GET** /words/{name}/drawingObjects/{index}/oleData | Gets drawing object OLE data.
-[**get_document_drawing_objects**](WordsApi.md#get_document_drawing_objects) | **GET** /words/{name}/{nodePath}/drawingObjects | Reads document drawing objects common info.
-[**get_document_drawing_objects_without_node_path**](WordsApi.md#get_document_drawing_objects_without_node_path) | **GET** /words/{name}/drawingObjects | Reads document drawing objects common info.
-[**get_document_field_names**](WordsApi.md#get_document_field_names) | **GET** /words/{name}/mailMerge/FieldNames | Reads document field names.
+[**get_bookmark_by_name**](WordsApi.md#get_bookmark_by_name) | **GET** /words/{Name}/bookmarks/{BookmarkName} | Reads document bookmark data by its name.
+[**get_bookmarks**](WordsApi.md#get_bookmarks) | **GET** /words/{Name}/bookmarks | Reads document bookmarks common info.
+[**get_border**](WordsApi.md#get_border) | **GET** /words/{Name}/{NodePath}/borders/{BorderType} | Returns a border.
+[**get_borders**](WordsApi.md#get_borders) | **GET** /words/{Name}/{NodePath}/borders | Returns a collection of borders.
+[**get_comment**](WordsApi.md#get_comment) | **GET** /words/{Name}/comments/{CommentIndex} | Gets comment from document.
+[**get_comments**](WordsApi.md#get_comments) | **GET** /words/{Name}/comments | Gets comments from document.
+[**get_document**](WordsApi.md#get_document) | **GET** /words/{DocumentName} | Reads document common info.
+[**get_document_drawing_object_by_index**](WordsApi.md#get_document_drawing_object_by_index) | **GET** /words/{Name}/{NodePath}/drawingObjects/{Index} | Reads document drawing object common info by its index or convert to format specified.
+[**get_document_drawing_object_by_index_without_node_path**](WordsApi.md#get_document_drawing_object_by_index_without_node_path) | **GET** /words/{Name}/drawingObjects/{Index} | Reads document drawing object common info by its index or convert to format specified.
+[**get_document_drawing_object_image_data**](WordsApi.md#get_document_drawing_object_image_data) | **GET** /words/{Name}/{NodePath}/drawingObjects/{Index}/imageData | Reads drawing object image data.
+[**get_document_drawing_object_image_data_without_node_path**](WordsApi.md#get_document_drawing_object_image_data_without_node_path) | **GET** /words/{Name}/drawingObjects/{Index}/imageData | Reads drawing object image data.
+[**get_document_drawing_object_ole_data**](WordsApi.md#get_document_drawing_object_ole_data) | **GET** /words/{Name}/{NodePath}/drawingObjects/{Index}/oleData | Gets drawing object OLE data.
+[**get_document_drawing_object_ole_data_without_node_path**](WordsApi.md#get_document_drawing_object_ole_data_without_node_path) | **GET** /words/{Name}/drawingObjects/{Index}/oleData | Gets drawing object OLE data.
+[**get_document_drawing_objects**](WordsApi.md#get_document_drawing_objects) | **GET** /words/{Name}/{NodePath}/drawingObjects | Reads document drawing objects common info.
+[**get_document_drawing_objects_without_node_path**](WordsApi.md#get_document_drawing_objects_without_node_path) | **GET** /words/{Name}/drawingObjects | Reads document drawing objects common info.
+[**get_document_field_names**](WordsApi.md#get_document_field_names) | **GET** /words/{Name}/mailMerge/FieldNames | Reads document field names.
 [**get_document_field_names_online**](WordsApi.md#get_document_field_names_online) | **PUT** /words/mailMerge/FieldNames | Reads document field names.
-[**get_document_hyperlink_by_index**](WordsApi.md#get_document_hyperlink_by_index) | **GET** /words/{name}/hyperlinks/{hyperlinkIndex} | Reads document hyperlink by its index.
-[**get_document_hyperlinks**](WordsApi.md#get_document_hyperlinks) | **GET** /words/{name}/hyperlinks | Reads document hyperlinks common info.
-[**get_document_properties**](WordsApi.md#get_document_properties) | **GET** /words/{name}/documentProperties | Reads document properties info.
-[**get_document_property**](WordsApi.md#get_document_property) | **GET** /words/{name}/documentProperties/{propertyName} | Reads document property info by the property name.
-[**get_document_protection**](WordsApi.md#get_document_protection) | **GET** /words/{name}/protection | Reads document protection common info.
-[**get_document_statistics**](WordsApi.md#get_document_statistics) | **GET** /words/{name}/statistics | Reads document statistics.
-[**get_document_with_format**](WordsApi.md#get_document_with_format) | **GET** /words/{name} | Exports the document into the specified format.
-[**get_field**](WordsApi.md#get_field) | **GET** /words/{name}/{nodePath}/fields/{index} | Gets field from document.
-[**get_field_without_node_path**](WordsApi.md#get_field_without_node_path) | **GET** /words/{name}/fields/{index} | Gets field from document.
-[**get_fields**](WordsApi.md#get_fields) | **GET** /words/{name}/{nodePath}/fields | Get fields from document.
-[**get_fields_without_node_path**](WordsApi.md#get_fields_without_node_path) | **GET** /words/{name}/fields | Get fields from document.
-[**get_files_list**](WordsApi.md#get_files_list) | **GET** /words/storage/folder/{path} | Get all files and folders within a folder
-[**get_footnote**](WordsApi.md#get_footnote) | **GET** /words/{name}/{nodePath}/footnotes/{index} | Reads footnote by index.
-[**get_footnote_without_node_path**](WordsApi.md#get_footnote_without_node_path) | **GET** /words/{name}/footnotes/{index} | Reads footnote by index.
-[**get_footnotes**](WordsApi.md#get_footnotes) | **GET** /words/{name}/{nodePath}/footnotes | Gets footnotes from document.
-[**get_footnotes_without_node_path**](WordsApi.md#get_footnotes_without_node_path) | **GET** /words/{name}/footnotes | Gets footnotes from document.
-[**get_form_field**](WordsApi.md#get_form_field) | **GET** /words/{name}/{nodePath}/formfields/{index} | Returns representation of an one of the form field.
-[**get_form_field_without_node_path**](WordsApi.md#get_form_field_without_node_path) | **GET** /words/{name}/formfields/{index} | Returns representation of an one of the form field.
-[**get_form_fields**](WordsApi.md#get_form_fields) | **GET** /words/{name}/{nodePath}/formfields | Gets form fields from document.
-[**get_form_fields_without_node_path**](WordsApi.md#get_form_fields_without_node_path) | **GET** /words/{name}/formfields | Gets form fields from document.
-[**get_header_footer**](WordsApi.md#get_header_footer) | **GET** /words/{name}/headersfooters/{headerFooterIndex} | Returns a header/footer from the document by index.
-[**get_header_footer_of_section**](WordsApi.md#get_header_footer_of_section) | **GET** /words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex} | Returns a header/footer from the document section.
-[**get_header_footers**](WordsApi.md#get_header_footers) | **GET** /words/{name}/{sectionPath}/headersfooters | Returns a list of header/footers from the document.
-[**get_office_math_object**](WordsApi.md#get_office_math_object) | **GET** /words/{name}/{nodePath}/OfficeMathObjects/{index} | Reads OfficeMath object by index.
-[**get_office_math_object_without_node_path**](WordsApi.md#get_office_math_object_without_node_path) | **GET** /words/{name}/OfficeMathObjects/{index} | Reads OfficeMath object by index.
-[**get_office_math_objects**](WordsApi.md#get_office_math_objects) | **GET** /words/{name}/{nodePath}/OfficeMathObjects | Gets OfficeMath objects from document.
-[**get_office_math_objects_without_node_path**](WordsApi.md#get_office_math_objects_without_node_path) | **GET** /words/{name}/OfficeMathObjects | Gets OfficeMath objects from document.
-[**get_paragraph**](WordsApi.md#get_paragraph) | **GET** /words/{name}/{nodePath}/paragraphs/{index} | This resource represents one of the paragraphs contained in the document.
-[**get_paragraph_format**](WordsApi.md#get_paragraph_format) | **GET** /words/{name}/{nodePath}/paragraphs/{index}/format | Represents all the formatting for a paragraph.
-[**get_paragraph_format_without_node_path**](WordsApi.md#get_paragraph_format_without_node_path) | **GET** /words/{name}/paragraphs/{index}/format | Represents all the formatting for a paragraph.
-[**get_paragraph_without_node_path**](WordsApi.md#get_paragraph_without_node_path) | **GET** /words/{name}/paragraphs/{index} | This resource represents one of the paragraphs contained in the document.
-[**get_paragraphs**](WordsApi.md#get_paragraphs) | **GET** /words/{name}/{nodePath}/paragraphs | Returns a list of paragraphs that are contained in the document.
-[**get_paragraphs_without_node_path**](WordsApi.md#get_paragraphs_without_node_path) | **GET** /words/{name}/paragraphs | Returns a list of paragraphs that are contained in the document.
-[**get_range_text**](WordsApi.md#get_range_text) | **GET** /words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier} | Gets the text from the range.
-[**get_run**](WordsApi.md#get_run) | **GET** /words/{name}/{paragraphPath}/runs/{index} | This resource represents run of text contained in the document.
-[**get_run_font**](WordsApi.md#get_run_font) | **GET** /words/{name}/{paragraphPath}/runs/{index}/font | This resource represents font of run.
-[**get_runs**](WordsApi.md#get_runs) | **GET** /words/{name}/{paragraphPath}/runs | This resource represents collection of runs in the paragraph.
-[**get_section**](WordsApi.md#get_section) | **GET** /words/{name}/sections/{sectionIndex} | Gets document section by index.
-[**get_section_page_setup**](WordsApi.md#get_section_page_setup) | **GET** /words/{name}/sections/{sectionIndex}/pageSetup | Gets page setup of section.
-[**get_sections**](WordsApi.md#get_sections) | **GET** /words/{name}/sections | Returns a list of sections that are contained in the document.
-[**get_table**](WordsApi.md#get_table) | **GET** /words/{name}/{nodePath}/tables/{index} | Returns a table.
-[**get_table_cell**](WordsApi.md#get_table_cell) | **GET** /words/{name}/{tableRowPath}/cells/{index} | Returns a table cell.
-[**get_table_cell_format**](WordsApi.md#get_table_cell_format) | **GET** /words/{name}/{tableRowPath}/cells/{index}/cellformat | Returns a table cell format.
-[**get_table_properties**](WordsApi.md#get_table_properties) | **GET** /words/{name}/{nodePath}/tables/{index}/properties | Returns a table properties.
-[**get_table_properties_without_node_path**](WordsApi.md#get_table_properties_without_node_path) | **GET** /words/{name}/tables/{index}/properties | Returns a table properties.
-[**get_table_row**](WordsApi.md#get_table_row) | **GET** /words/{name}/{tablePath}/rows/{index} | Returns a table row.
-[**get_table_row_format**](WordsApi.md#get_table_row_format) | **GET** /words/{name}/{tablePath}/rows/{index}/rowformat | Returns a table row format.
-[**get_table_without_node_path**](WordsApi.md#get_table_without_node_path) | **GET** /words/{name}/tables/{index} | Returns a table.
-[**get_tables**](WordsApi.md#get_tables) | **GET** /words/{name}/{nodePath}/tables | Returns a list of tables that are contained in the document.
-[**get_tables_without_node_path**](WordsApi.md#get_tables_without_node_path) | **GET** /words/{name}/tables | Returns a list of tables that are contained in the document.
-[**insert_comment**](WordsApi.md#insert_comment) | **POST** /words/{name}/comments | Adds comment to document, returns inserted comment data.
-[**insert_drawing_object**](WordsApi.md#insert_drawing_object) | **POST** /words/{name}/{nodePath}/drawingObjects | Adds drawing object to document, returns added  drawing object&#39;s data.
-[**insert_drawing_object_without_node_path**](WordsApi.md#insert_drawing_object_without_node_path) | **POST** /words/{name}/drawingObjects | Adds drawing object to document, returns added  drawing object&#39;s data.
-[**insert_field**](WordsApi.md#insert_field) | **POST** /words/{name}/{nodePath}/fields | Adds field to document, returns inserted field&#39;s data.
-[**insert_field_without_node_path**](WordsApi.md#insert_field_without_node_path) | **POST** /words/{name}/fields | Adds field to document, returns inserted field&#39;s data.
-[**insert_footnote**](WordsApi.md#insert_footnote) | **POST** /words/{name}/{nodePath}/footnotes | Adds footnote to document, returns added footnote&#39;s data.
-[**insert_footnote_without_node_path**](WordsApi.md#insert_footnote_without_node_path) | **POST** /words/{name}/footnotes | Adds footnote to document, returns added footnote&#39;s data.
-[**insert_form_field**](WordsApi.md#insert_form_field) | **POST** /words/{name}/{nodePath}/formfields | Adds form field to paragraph, returns added form field&#39;s data.
-[**insert_form_field_without_node_path**](WordsApi.md#insert_form_field_without_node_path) | **POST** /words/{name}/formfields | Adds form field to paragraph, returns added form field&#39;s data.
-[**insert_header_footer**](WordsApi.md#insert_header_footer) | **PUT** /words/{name}/{sectionPath}/headersfooters | Inserts to document header or footer.
-[**insert_page_numbers**](WordsApi.md#insert_page_numbers) | **PUT** /words/{name}/PageNumbers | Inserts document page numbers.
-[**insert_paragraph**](WordsApi.md#insert_paragraph) | **POST** /words/{name}/{nodePath}/paragraphs | Adds paragraph to document, returns added paragraph&#39;s data.
-[**insert_run**](WordsApi.md#insert_run) | **POST** /words/{name}/{paragraphPath}/runs | Adds run to document, returns added paragraph&#39;s data.
-[**insert_table**](WordsApi.md#insert_table) | **POST** /words/{name}/{nodePath}/tables | Adds table to document, returns added table&#39;s data.             
-[**insert_table_cell**](WordsApi.md#insert_table_cell) | **POST** /words/{name}/{tableRowPath}/cells | Adds table cell to table, returns added cell&#39;s data.             
-[**insert_table_row**](WordsApi.md#insert_table_row) | **POST** /words/{name}/{tablePath}/rows | Adds table row to table, returns added row&#39;s data.             
-[**insert_table_without_node_path**](WordsApi.md#insert_table_without_node_path) | **POST** /words/{name}/tables | Adds table to document, returns added table&#39;s data.             
-[**insert_watermark_image**](WordsApi.md#insert_watermark_image) | **POST** /words/{name}/watermarks/images | Inserts document watermark image.
-[**insert_watermark_text**](WordsApi.md#insert_watermark_text) | **POST** /words/{name}/watermarks/texts | Inserts document watermark text.
+[**get_document_hyperlink_by_index**](WordsApi.md#get_document_hyperlink_by_index) | **GET** /words/{Name}/hyperlinks/{HyperlinkIndex} | Reads document hyperlink by its index.
+[**get_document_hyperlinks**](WordsApi.md#get_document_hyperlinks) | **GET** /words/{Name}/hyperlinks | Reads document hyperlinks common info.
+[**get_document_properties**](WordsApi.md#get_document_properties) | **GET** /words/{Name}/documentProperties | Reads document properties info.
+[**get_document_property**](WordsApi.md#get_document_property) | **GET** /words/{Name}/documentProperties/{PropertyName} | Reads document property info by the property name.
+[**get_document_protection**](WordsApi.md#get_document_protection) | **GET** /words/{Name}/protection | Reads document protection common info.
+[**get_document_statistics**](WordsApi.md#get_document_statistics) | **GET** /words/{Name}/statistics | Reads document statistics.
+[**get_document_with_format**](WordsApi.md#get_document_with_format) | **GET** /words/{Name} | Exports the document into the specified format.
+[**get_field**](WordsApi.md#get_field) | **GET** /words/{Name}/{NodePath}/fields/{Index} | Gets field from document.
+[**get_field_without_node_path**](WordsApi.md#get_field_without_node_path) | **GET** /words/{Name}/fields/{Index} | Gets field from document.
+[**get_fields**](WordsApi.md#get_fields) | **GET** /words/{Name}/{NodePath}/fields | Get fields from document.
+[**get_fields_without_node_path**](WordsApi.md#get_fields_without_node_path) | **GET** /words/{Name}/fields | Get fields from document.
+[**get_files_list**](WordsApi.md#get_files_list) | **GET** /words/storage/folder/{Path} | Get all files and folders within a folder
+[**get_footnote**](WordsApi.md#get_footnote) | **GET** /words/{Name}/{NodePath}/footnotes/{Index} | Reads footnote by index.
+[**get_footnote_without_node_path**](WordsApi.md#get_footnote_without_node_path) | **GET** /words/{Name}/footnotes/{Index} | Reads footnote by index.
+[**get_footnotes**](WordsApi.md#get_footnotes) | **GET** /words/{Name}/{NodePath}/footnotes | Gets footnotes from document.
+[**get_footnotes_without_node_path**](WordsApi.md#get_footnotes_without_node_path) | **GET** /words/{Name}/footnotes | Gets footnotes from document.
+[**get_form_field**](WordsApi.md#get_form_field) | **GET** /words/{Name}/{NodePath}/formfields/{Index} | Returns representation of an one of the form field.
+[**get_form_field_without_node_path**](WordsApi.md#get_form_field_without_node_path) | **GET** /words/{Name}/formfields/{Index} | Returns representation of an one of the form field.
+[**get_form_fields**](WordsApi.md#get_form_fields) | **GET** /words/{Name}/{NodePath}/formfields | Gets form fields from document.
+[**get_form_fields_without_node_path**](WordsApi.md#get_form_fields_without_node_path) | **GET** /words/{Name}/formfields | Gets form fields from document.
+[**get_header_footer**](WordsApi.md#get_header_footer) | **GET** /words/{Name}/headersfooters/{HeaderFooterIndex} | Returns a header/footer from the document by index.
+[**get_header_footer_of_section**](WordsApi.md#get_header_footer_of_section) | **GET** /words/{Name}/sections/{SectionIndex}/headersfooters/{HeaderFooterIndex} | Returns a header/footer from the document section.
+[**get_header_footers**](WordsApi.md#get_header_footers) | **GET** /words/{Name}/{SectionPath}/headersfooters | Returns a list of header/footers from the document.
+[**get_office_math_object**](WordsApi.md#get_office_math_object) | **GET** /words/{Name}/{NodePath}/OfficeMathObjects/{Index} | Reads OfficeMath object by index.
+[**get_office_math_object_without_node_path**](WordsApi.md#get_office_math_object_without_node_path) | **GET** /words/{Name}/OfficeMathObjects/{Index} | Reads OfficeMath object by index.
+[**get_office_math_objects**](WordsApi.md#get_office_math_objects) | **GET** /words/{Name}/{NodePath}/OfficeMathObjects | Gets OfficeMath objects from document.
+[**get_office_math_objects_without_node_path**](WordsApi.md#get_office_math_objects_without_node_path) | **GET** /words/{Name}/OfficeMathObjects | Gets OfficeMath objects from document.
+[**get_paragraph**](WordsApi.md#get_paragraph) | **GET** /words/{Name}/{NodePath}/paragraphs/{Index} | This resource represents one of the paragraphs contained in the document.
+[**get_paragraph_format**](WordsApi.md#get_paragraph_format) | **GET** /words/{Name}/{NodePath}/paragraphs/{Index}/format | Represents all the formatting for a paragraph.
+[**get_paragraph_format_without_node_path**](WordsApi.md#get_paragraph_format_without_node_path) | **GET** /words/{Name}/paragraphs/{Index}/format | Represents all the formatting for a paragraph.
+[**get_paragraph_without_node_path**](WordsApi.md#get_paragraph_without_node_path) | **GET** /words/{Name}/paragraphs/{Index} | This resource represents one of the paragraphs contained in the document.
+[**get_paragraphs**](WordsApi.md#get_paragraphs) | **GET** /words/{Name}/{NodePath}/paragraphs | Returns a list of paragraphs that are contained in the document.
+[**get_paragraphs_without_node_path**](WordsApi.md#get_paragraphs_without_node_path) | **GET** /words/{Name}/paragraphs | Returns a list of paragraphs that are contained in the document.
+[**get_range_text**](WordsApi.md#get_range_text) | **GET** /words/{Name}/range/{RangeStartIdentifier}/{RangeEndIdentifier} | Gets the text from the range.
+[**get_run**](WordsApi.md#get_run) | **GET** /words/{Name}/{ParagraphPath}/runs/{Index} | This resource represents run of text contained in the document.
+[**get_run_font**](WordsApi.md#get_run_font) | **GET** /words/{Name}/{ParagraphPath}/runs/{Index}/font | This resource represents font of run.
+[**get_runs**](WordsApi.md#get_runs) | **GET** /words/{Name}/{ParagraphPath}/runs | This resource represents collection of runs in the paragraph.
+[**get_section**](WordsApi.md#get_section) | **GET** /words/{Name}/sections/{SectionIndex} | Gets document section by index.
+[**get_section_page_setup**](WordsApi.md#get_section_page_setup) | **GET** /words/{Name}/sections/{SectionIndex}/pageSetup | Gets page setup of section.
+[**get_sections**](WordsApi.md#get_sections) | **GET** /words/{Name}/sections | Returns a list of sections that are contained in the document.
+[**get_table**](WordsApi.md#get_table) | **GET** /words/{Name}/{NodePath}/tables/{Index} | Returns a table.
+[**get_table_cell**](WordsApi.md#get_table_cell) | **GET** /words/{Name}/{TableRowPath}/cells/{Index} | Returns a table cell.
+[**get_table_cell_format**](WordsApi.md#get_table_cell_format) | **GET** /words/{Name}/{TableRowPath}/cells/{Index}/cellformat | Returns a table cell format.
+[**get_table_properties**](WordsApi.md#get_table_properties) | **GET** /words/{Name}/{NodePath}/tables/{Index}/properties | Returns a table properties.
+[**get_table_properties_without_node_path**](WordsApi.md#get_table_properties_without_node_path) | **GET** /words/{Name}/tables/{Index}/properties | Returns a table properties.
+[**get_table_row**](WordsApi.md#get_table_row) | **GET** /words/{Name}/{TablePath}/rows/{Index} | Returns a table row.
+[**get_table_row_format**](WordsApi.md#get_table_row_format) | **GET** /words/{Name}/{TablePath}/rows/{Index}/rowformat | Returns a table row format.
+[**get_table_without_node_path**](WordsApi.md#get_table_without_node_path) | **GET** /words/{Name}/tables/{Index} | Returns a table.
+[**get_tables**](WordsApi.md#get_tables) | **GET** /words/{Name}/{NodePath}/tables | Returns a list of tables that are contained in the document.
+[**get_tables_without_node_path**](WordsApi.md#get_tables_without_node_path) | **GET** /words/{Name}/tables | Returns a list of tables that are contained in the document.
+[**insert_comment**](WordsApi.md#insert_comment) | **POST** /words/{Name}/comments | Adds comment to document, returns inserted comment data.
+[**insert_drawing_object**](WordsApi.md#insert_drawing_object) | **POST** /words/{Name}/{NodePath}/drawingObjects | Adds drawing object to document, returns added  drawing object&#39;s data.
+[**insert_drawing_object_without_node_path**](WordsApi.md#insert_drawing_object_without_node_path) | **POST** /words/{Name}/drawingObjects | Adds drawing object to document, returns added  drawing object&#39;s data.
+[**insert_field**](WordsApi.md#insert_field) | **POST** /words/{Name}/{NodePath}/fields | Adds field to document, returns inserted field&#39;s data.
+[**insert_field_without_node_path**](WordsApi.md#insert_field_without_node_path) | **POST** /words/{Name}/fields | Adds field to document, returns inserted field&#39;s data.
+[**insert_footnote**](WordsApi.md#insert_footnote) | **POST** /words/{Name}/{NodePath}/footnotes | Adds footnote to document, returns added footnote&#39;s data.
+[**insert_footnote_without_node_path**](WordsApi.md#insert_footnote_without_node_path) | **POST** /words/{Name}/footnotes | Adds footnote to document, returns added footnote&#39;s data.
+[**insert_form_field**](WordsApi.md#insert_form_field) | **POST** /words/{Name}/{NodePath}/formfields | Adds form field to paragraph, returns added form field&#39;s data.
+[**insert_form_field_without_node_path**](WordsApi.md#insert_form_field_without_node_path) | **POST** /words/{Name}/formfields | Adds form field to paragraph, returns added form field&#39;s data.
+[**insert_header_footer**](WordsApi.md#insert_header_footer) | **PUT** /words/{Name}/{SectionPath}/headersfooters | Inserts to document header or footer.
+[**insert_page_numbers**](WordsApi.md#insert_page_numbers) | **PUT** /words/{Name}/PageNumbers | Inserts document page numbers.
+[**insert_paragraph**](WordsApi.md#insert_paragraph) | **POST** /words/{Name}/{NodePath}/paragraphs | Adds paragraph to document, returns added paragraph&#39;s data.
+[**insert_run**](WordsApi.md#insert_run) | **POST** /words/{Name}/{ParagraphPath}/runs | Adds run to document, returns added paragraph&#39;s data.
+[**insert_table**](WordsApi.md#insert_table) | **POST** /words/{Name}/{NodePath}/tables | Adds table to document, returns added table&#39;s data.             
+[**insert_table_cell**](WordsApi.md#insert_table_cell) | **POST** /words/{Name}/{TableRowPath}/cells | Adds table cell to table, returns added cell&#39;s data.             
+[**insert_table_row**](WordsApi.md#insert_table_row) | **POST** /words/{Name}/{TablePath}/rows | Adds table row to table, returns added row&#39;s data.             
+[**insert_table_without_node_path**](WordsApi.md#insert_table_without_node_path) | **POST** /words/{Name}/tables | Adds table to document, returns added table&#39;s data.             
+[**insert_watermark_image**](WordsApi.md#insert_watermark_image) | **POST** /words/{Name}/watermarks/images | Inserts document watermark image.
+[**insert_watermark_text**](WordsApi.md#insert_watermark_text) | **POST** /words/{Name}/watermarks/texts | Inserts document watermark text.
 [**load_web_document**](WordsApi.md#load_web_document) | **PUT** /words/loadWebDocument | Loads new document from web into the file with any supported format of data.
-[**move_file**](WordsApi.md#move_file) | **PUT** /words/storage/file/move/{srcPath} | Move file
-[**move_folder**](WordsApi.md#move_folder) | **PUT** /words/storage/folder/move/{srcPath} | Move folder
-[**protect_document**](WordsApi.md#protect_document) | **PUT** /words/{name}/protection | Protects document.
-[**reject_all_revisions**](WordsApi.md#reject_all_revisions) | **PUT** /words/{name}/revisions/rejectAll | Rejects all revisions in document.
-[**remove_range**](WordsApi.md#remove_range) | **DELETE** /words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier} | Removes the range from the document.
-[**render_drawing_object**](WordsApi.md#render_drawing_object) | **GET** /words/{name}/{nodePath}/drawingObjects/{index}/render | Renders drawing object to specified format.
-[**render_drawing_object_without_node_path**](WordsApi.md#render_drawing_object_without_node_path) | **GET** /words/{name}/drawingObjects/{index}/render | Renders drawing object to specified format.
-[**render_math_object**](WordsApi.md#render_math_object) | **GET** /words/{name}/{nodePath}/OfficeMathObjects/{index}/render | Renders math object to specified format.
-[**render_math_object_without_node_path**](WordsApi.md#render_math_object_without_node_path) | **GET** /words/{name}/OfficeMathObjects/{index}/render | Renders math object to specified format.
-[**render_page**](WordsApi.md#render_page) | **GET** /words/{name}/pages/{pageIndex}/render | Renders page to specified format.
-[**render_paragraph**](WordsApi.md#render_paragraph) | **GET** /words/{name}/{nodePath}/paragraphs/{index}/render | Renders paragraph to specified format.
-[**render_paragraph_without_node_path**](WordsApi.md#render_paragraph_without_node_path) | **GET** /words/{name}/paragraphs/{index}/render | Renders paragraph to specified format.
-[**render_table**](WordsApi.md#render_table) | **GET** /words/{name}/{nodePath}/tables/{index}/render | Renders table to specified format.
-[**render_table_without_node_path**](WordsApi.md#render_table_without_node_path) | **GET** /words/{name}/tables/{index}/render | Renders table to specified format.
-[**replace_text**](WordsApi.md#replace_text) | **PUT** /words/{name}/replaceText | Replaces document text.
-[**replace_with_text**](WordsApi.md#replace_with_text) | **POST** /words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier} | Replaces the content in the range.
+[**move_file**](WordsApi.md#move_file) | **PUT** /words/storage/file/move/{SrcPath} | Move file
+[**move_folder**](WordsApi.md#move_folder) | **PUT** /words/storage/folder/move/{SrcPath} | Move folder
+[**protect_document**](WordsApi.md#protect_document) | **PUT** /words/{Name}/protection | Protects document.
+[**reject_all_revisions**](WordsApi.md#reject_all_revisions) | **PUT** /words/{Name}/revisions/rejectAll | Rejects all revisions in document.
+[**remove_range**](WordsApi.md#remove_range) | **DELETE** /words/{Name}/range/{RangeStartIdentifier}/{RangeEndIdentifier} | Removes the range from the document.
+[**render_drawing_object**](WordsApi.md#render_drawing_object) | **GET** /words/{Name}/{NodePath}/drawingObjects/{Index}/render | Renders drawing object to specified format.
+[**render_drawing_object_without_node_path**](WordsApi.md#render_drawing_object_without_node_path) | **GET** /words/{Name}/drawingObjects/{Index}/render | Renders drawing object to specified format.
+[**render_math_object**](WordsApi.md#render_math_object) | **GET** /words/{Name}/{NodePath}/OfficeMathObjects/{Index}/render | Renders math object to specified format.
+[**render_math_object_without_node_path**](WordsApi.md#render_math_object_without_node_path) | **GET** /words/{Name}/OfficeMathObjects/{Index}/render | Renders math object to specified format.
+[**render_page**](WordsApi.md#render_page) | **GET** /words/{Name}/pages/{PageIndex}/render | Renders page to specified format.
+[**render_paragraph**](WordsApi.md#render_paragraph) | **GET** /words/{Name}/{NodePath}/paragraphs/{Index}/render | Renders paragraph to specified format.
+[**render_paragraph_without_node_path**](WordsApi.md#render_paragraph_without_node_path) | **GET** /words/{Name}/paragraphs/{Index}/render | Renders paragraph to specified format.
+[**render_table**](WordsApi.md#render_table) | **GET** /words/{Name}/{NodePath}/tables/{Index}/render | Renders table to specified format.
+[**render_table_without_node_path**](WordsApi.md#render_table_without_node_path) | **GET** /words/{Name}/tables/{Index}/render | Renders table to specified format.
+[**replace_text**](WordsApi.md#replace_text) | **PUT** /words/{Name}/replaceText | Replaces document text.
+[**replace_with_text**](WordsApi.md#replace_with_text) | **POST** /words/{Name}/range/{RangeStartIdentifier}/{RangeEndIdentifier} | Replaces the content in the range.
 [**reset_cache**](WordsApi.md#reset_cache) | **DELETE** /words/fonts/cache | Resets font&#39;s cache.
-[**save_as**](WordsApi.md#save_as) | **PUT** /words/{name}/saveAs | Converts document to destination format with detailed settings and saves result to storage.
-[**save_as_range**](WordsApi.md#save_as_range) | **POST** /words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs | Saves the selected range as a new document.
-[**save_as_tiff**](WordsApi.md#save_as_tiff) | **PUT** /words/{name}/saveAs/tiff | Converts document to tiff with detailed settings and saves result to storage.
-[**search**](WordsApi.md#search) | **GET** /words/{name}/search | Searches text in document.
-[**split_document**](WordsApi.md#split_document) | **PUT** /words/{name}/split | Splits document.
-[**unprotect_document**](WordsApi.md#unprotect_document) | **DELETE** /words/{name}/protection | Unprotects document.
-[**update_bookmark**](WordsApi.md#update_bookmark) | **PUT** /words/{name}/bookmarks/{bookmarkName} | Updates document bookmark.
-[**update_border**](WordsApi.md#update_border) | **PUT** /words/{name}/{nodePath}/borders/{borderType} | Updates border properties.             
-[**update_comment**](WordsApi.md#update_comment) | **PUT** /words/{name}/comments/{commentIndex} | Updates the comment, returns updated comment data.
-[**update_drawing_object**](WordsApi.md#update_drawing_object) | **PUT** /words/{name}/{nodePath}/drawingObjects/{index} | Updates drawing object, returns updated  drawing object&#39;s data.
-[**update_drawing_object_without_node_path**](WordsApi.md#update_drawing_object_without_node_path) | **PUT** /words/{name}/drawingObjects/{index} | Updates drawing object, returns updated  drawing object&#39;s data.
-[**update_field**](WordsApi.md#update_field) | **PUT** /words/{name}/{nodePath}/fields/{index} | Updates field&#39;s properties, returns updated field&#39;s data.
-[**update_fields**](WordsApi.md#update_fields) | **PUT** /words/{name}/updateFields | Updates (reevaluate) fields in document.
-[**update_footnote**](WordsApi.md#update_footnote) | **PUT** /words/{name}/{nodePath}/footnotes/{index} | Updates footnote&#39;s properties, returns updated run&#39;s data.
-[**update_footnote_without_node_path**](WordsApi.md#update_footnote_without_node_path) | **PUT** /words/{name}/footnotes/{index} | Updates footnote&#39;s properties, returns updated run&#39;s data.
-[**update_form_field**](WordsApi.md#update_form_field) | **PUT** /words/{name}/{nodePath}/formfields/{index} | Updates properties of form field, returns updated form field.
-[**update_form_field_without_node_path**](WordsApi.md#update_form_field_without_node_path) | **PUT** /words/{name}/formfields/{index} | Updates properties of form field, returns updated form field.
-[**update_paragraph_format**](WordsApi.md#update_paragraph_format) | **PUT** /words/{name}/{nodePath}/paragraphs/{index}/format | Updates paragraph format properties, returns updated format properties.
-[**update_run**](WordsApi.md#update_run) | **PUT** /words/{name}/{paragraphPath}/runs/{index} | Updates run&#39;s properties, returns updated run&#39;s data.
-[**update_run_font**](WordsApi.md#update_run_font) | **PUT** /words/{name}/{paragraphPath}/runs/{index}/font | Updates font properties, returns updated font data.
-[**update_section_page_setup**](WordsApi.md#update_section_page_setup) | **PUT** /words/{name}/sections/{sectionIndex}/pageSetup | Updates page setup of section.
-[**update_table_cell_format**](WordsApi.md#update_table_cell_format) | **PUT** /words/{name}/{tableRowPath}/cells/{index}/cellformat | Updates a table cell format.
-[**update_table_properties**](WordsApi.md#update_table_properties) | **PUT** /words/{name}/{nodePath}/tables/{index}/properties | Updates a table properties.
-[**update_table_properties_without_node_path**](WordsApi.md#update_table_properties_without_node_path) | **PUT** /words/{name}/tables/{index}/properties | Updates a table properties.
-[**update_table_row_format**](WordsApi.md#update_table_row_format) | **PUT** /words/{name}/{tablePath}/rows/{index}/rowformat | Updates a table row format.
-[**upload_file**](WordsApi.md#upload_file) | **PUT** /words/storage/file/{path} | Upload file
+[**save_as**](WordsApi.md#save_as) | **PUT** /words/{Name}/saveAs | Converts document to destination format with detailed settings and saves result to storage.
+[**save_as_range**](WordsApi.md#save_as_range) | **POST** /words/{Name}/range/{RangeStartIdentifier}/{RangeEndIdentifier}/SaveAs | Saves the selected range as a new document.
+[**save_as_tiff**](WordsApi.md#save_as_tiff) | **PUT** /words/{Name}/saveAs/tiff | Converts document to tiff with detailed settings and saves result to storage.
+[**search**](WordsApi.md#search) | **GET** /words/{Name}/search | Searches text in document.
+[**split_document**](WordsApi.md#split_document) | **PUT** /words/{Name}/split | Splits document.
+[**unprotect_document**](WordsApi.md#unprotect_document) | **DELETE** /words/{Name}/protection | Unprotects document.
+[**update_bookmark**](WordsApi.md#update_bookmark) | **PUT** /words/{Name}/bookmarks/{BookmarkName} | Updates document bookmark.
+[**update_border**](WordsApi.md#update_border) | **PUT** /words/{Name}/{NodePath}/borders/{BorderType} | Updates border properties.             
+[**update_comment**](WordsApi.md#update_comment) | **PUT** /words/{Name}/comments/{CommentIndex} | Updates the comment, returns updated comment data.
+[**update_drawing_object**](WordsApi.md#update_drawing_object) | **PUT** /words/{Name}/{NodePath}/drawingObjects/{Index} | Updates drawing object, returns updated  drawing object&#39;s data.
+[**update_drawing_object_without_node_path**](WordsApi.md#update_drawing_object_without_node_path) | **PUT** /words/{Name}/drawingObjects/{Index} | Updates drawing object, returns updated  drawing object&#39;s data.
+[**update_field**](WordsApi.md#update_field) | **PUT** /words/{Name}/{NodePath}/fields/{Index} | Updates field&#39;s properties, returns updated field&#39;s data.
+[**update_fields**](WordsApi.md#update_fields) | **PUT** /words/{Name}/updateFields | Updates (reevaluate) fields in document.
+[**update_footnote**](WordsApi.md#update_footnote) | **PUT** /words/{Name}/{NodePath}/footnotes/{Index} | Updates footnote&#39;s properties, returns updated run&#39;s data.
+[**update_footnote_without_node_path**](WordsApi.md#update_footnote_without_node_path) | **PUT** /words/{Name}/footnotes/{Index} | Updates footnote&#39;s properties, returns updated run&#39;s data.
+[**update_form_field**](WordsApi.md#update_form_field) | **PUT** /words/{Name}/{NodePath}/formfields/{Index} | Updates properties of form field, returns updated form field.
+[**update_form_field_without_node_path**](WordsApi.md#update_form_field_without_node_path) | **PUT** /words/{Name}/formfields/{Index} | Updates properties of form field, returns updated form field.
+[**update_paragraph_format**](WordsApi.md#update_paragraph_format) | **PUT** /words/{Name}/{NodePath}/paragraphs/{Index}/format | Updates paragraph format properties, returns updated format properties.
+[**update_run**](WordsApi.md#update_run) | **PUT** /words/{Name}/{ParagraphPath}/runs/{Index} | Updates run&#39;s properties, returns updated run&#39;s data.
+[**update_run_font**](WordsApi.md#update_run_font) | **PUT** /words/{Name}/{ParagraphPath}/runs/{Index}/font | Updates font properties, returns updated font data.
+[**update_section_page_setup**](WordsApi.md#update_section_page_setup) | **PUT** /words/{Name}/sections/{SectionIndex}/pageSetup | Updates page setup of section.
+[**update_table_cell_format**](WordsApi.md#update_table_cell_format) | **PUT** /words/{Name}/{TableRowPath}/cells/{Index}/cellformat | Updates a table cell format.
+[**update_table_properties**](WordsApi.md#update_table_properties) | **PUT** /words/{Name}/{NodePath}/tables/{Index}/properties | Updates a table properties.
+[**update_table_properties_without_node_path**](WordsApi.md#update_table_properties_without_node_path) | **PUT** /words/{Name}/tables/{Index}/properties | Updates a table properties.
+[**update_table_row_format**](WordsApi.md#update_table_row_format) | **PUT** /words/{Name}/{TablePath}/rows/{Index}/rowformat | Updates a table row format.
+[**upload_file**](WordsApi.md#upload_file) | **PUT** /words/storage/file/{Path} | Upload file
 
 
 # **accept_all_revisions**
@@ -261,7 +261,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | Original document name.
-document_list = asposewordscloud.DocumentEntryList() # DocumentEntryList | with a list of documents to append.            
+document_list = asposewordscloud.DocumentEntryList() # DocumentEntryList | DocumentEntryList with a list of documents to append.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -283,7 +283,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Original document name. | 
- **document_list** | [**DocumentEntryList**](DocumentEntryList.md)| with a list of documents to append.             | 
+ **document_list** | [**DocumentEntryList**](DocumentEntryList.md)| DocumentEntryList with a list of documents to append. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -441,7 +441,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | Original document name.
-compare_data = asposewordscloud.CompareData() # CompareData | with a document to compare.            
+compare_data = asposewordscloud.CompareData() # CompareData | CompareData with a document to compare.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -461,7 +461,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Original document name. | 
- **compare_data** | [**CompareData**](CompareData.md)| with a document to compare.             | 
+ **compare_data** | [**CompareData**](CompareData.md)| CompareData with a document to compare. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -7749,7 +7749,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | A document name.
-page_number = asposewordscloud.PageNumber() # PageNumber | with the page numbers settings.
+page_number = asposewordscloud.PageNumber() # PageNumber | PageNumber with the page numbers settings.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -7771,7 +7771,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| A document name. | 
- **page_number** | [**PageNumber**](PageNumber.md)| with the page numbers settings. | 
+ **page_number** | [**PageNumber**](PageNumber.md)| PageNumber with the page numbers settings. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -7936,7 +7936,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_table**
-> TableResponse insert_table(name, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, table=table)
+> TableResponse insert_table(name, table, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Adds table to document, returns added table's data.             
 
@@ -7955,6 +7955,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
+table = asposewordscloud.TableInsert() # TableInsert | Table parameters/.
 node_path = 'node_path_example' # str | Path to the node, which contains tables.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -7963,11 +7964,10 @@ password = 'password_example' # str | Password for opening an encrypted document
 dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
-table = asposewordscloud.TableInsert() # TableInsert | Table parameters/. (optional)
 
 try:
     # Adds table to document, returns added table's data.             
-    api_response = api_instance.insert_table(name, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, table=table)
+    api_response = api_instance.insert_table(name, table, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_table: %s\n" % e)
@@ -7978,6 +7978,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
+ **table** | [**TableInsert**](TableInsert.md)| Table parameters/. | 
  **node_path** | **str**| Path to the node, which contains tables. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -7986,7 +7987,6 @@ Name | Type | Description  | Notes
  **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
  **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
  **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
- **table** | [**TableInsert**](TableInsert.md)| Table parameters/. | [optional] 
 
 ### Return type
 
@@ -8004,7 +8004,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_table_cell**
-> TableCellResponse insert_table_cell(name, table_row_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, cell=cell)
+> TableCellResponse insert_table_cell(name, cell, table_row_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Adds table cell to table, returns added cell's data.             
 
@@ -8023,6 +8023,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
+cell = asposewordscloud.TableCellInsert() # TableCellInsert | Table cell parameters/.
 table_row_path = 'table_row_path_example' # str | Path to table row.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -8031,11 +8032,10 @@ password = 'password_example' # str | Password for opening an encrypted document
 dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
-cell = asposewordscloud.TableCellInsert() # TableCellInsert | Table cell parameters/. (optional)
 
 try:
     # Adds table cell to table, returns added cell's data.             
-    api_response = api_instance.insert_table_cell(name, table_row_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, cell=cell)
+    api_response = api_instance.insert_table_cell(name, cell, table_row_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_table_cell: %s\n" % e)
@@ -8046,6 +8046,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
+ **cell** | [**TableCellInsert**](TableCellInsert.md)| Table cell parameters/. | 
  **table_row_path** | **str**| Path to table row. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -8054,7 +8055,6 @@ Name | Type | Description  | Notes
  **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
  **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
  **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
- **cell** | [**TableCellInsert**](TableCellInsert.md)| Table cell parameters/. | [optional] 
 
 ### Return type
 
@@ -8072,7 +8072,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_table_row**
-> TableRowResponse insert_table_row(name, table_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, row=row)
+> TableRowResponse insert_table_row(name, row, table_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Adds table row to table, returns added row's data.             
 
@@ -8091,6 +8091,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
+row = asposewordscloud.TableRowInsert() # TableRowInsert | Table row parameters/.
 table_path = 'table_path_example' # str | Path to table.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -8099,11 +8100,10 @@ password = 'password_example' # str | Password for opening an encrypted document
 dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
-row = asposewordscloud.TableRowInsert() # TableRowInsert | Table row parameters/. (optional)
 
 try:
     # Adds table row to table, returns added row's data.             
-    api_response = api_instance.insert_table_row(name, table_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, row=row)
+    api_response = api_instance.insert_table_row(name, row, table_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_table_row: %s\n" % e)
@@ -8114,6 +8114,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
+ **row** | [**TableRowInsert**](TableRowInsert.md)| Table row parameters/. | 
  **table_path** | **str**| Path to table. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -8122,7 +8123,6 @@ Name | Type | Description  | Notes
  **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
  **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
  **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
- **row** | [**TableRowInsert**](TableRowInsert.md)| Table row parameters/. | [optional] 
 
 ### Return type
 
@@ -8140,7 +8140,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_table_without_node_path**
-> TableResponse insert_table_without_node_path(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, table=table)
+> TableResponse insert_table_without_node_path(name, table, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Adds table to document, returns added table's data.             
 
@@ -8159,6 +8159,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
+table = asposewordscloud.TableInsert() # TableInsert | Table parameters/.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -8166,11 +8167,10 @@ password = 'password_example' # str | Password for opening an encrypted document
 dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
-table = asposewordscloud.TableInsert() # TableInsert | Table parameters/. (optional)
 
 try:
     # Adds table to document, returns added table's data.             
-    api_response = api_instance.insert_table_without_node_path(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, table=table)
+    api_response = api_instance.insert_table_without_node_path(name, table, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_table_without_node_path: %s\n" % e)
@@ -8181,6 +8181,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
+ **table** | [**TableInsert**](TableInsert.md)| Table parameters/. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -8188,7 +8189,6 @@ Name | Type | Description  | Notes
  **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
  **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
  **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
- **table** | [**TableInsert**](TableInsert.md)| Table parameters/. | [optional] 
 
 ### Return type
 
@@ -8295,7 +8295,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-watermark_text = asposewordscloud.WatermarkText() # WatermarkText | with the watermark data.            
+watermark_text = asposewordscloud.WatermarkText() # WatermarkText | WatermarkText with the watermark data.             
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -8317,7 +8317,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **watermark_text** | [**WatermarkText**](WatermarkText.md)| with the watermark data.             | 
+ **watermark_text** | [**WatermarkText**](WatermarkText.md)| WatermarkText with the watermark data.              | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -8525,7 +8525,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-protection_request = asposewordscloud.ProtectionRequest() # ProtectionRequest | with protection settings.            
+protection_request = asposewordscloud.ProtectionRequest() # ProtectionRequest | ProtectionRequest with protection settings.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -8545,7 +8545,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **protection_request** | [**ProtectionRequest**](ProtectionRequest.md)| with protection settings.             | 
+ **protection_request** | [**ProtectionRequest**](ProtectionRequest.md)| ProtectionRequest with protection settings. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -9295,7 +9295,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-replace_text = asposewordscloud.ReplaceTextParameters() # ReplaceTextParameters | with the replace operation settings.            
+replace_text = asposewordscloud.ReplaceTextParameters() # ReplaceTextParameters | ReplaceTextResponse with the replace operation settings.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -9317,7 +9317,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **replace_text** | [**ReplaceTextParameters**](ReplaceTextParameters.md)| with the replace operation settings.             | 
+ **replace_text** | [**ReplaceTextParameters**](ReplaceTextParameters.md)| ReplaceTextResponse with the replace operation settings. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -9824,7 +9824,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-protection_request = asposewordscloud.ProtectionRequest() # ProtectionRequest | with protection settings.            
+protection_request = asposewordscloud.ProtectionRequest() # ProtectionRequest | ProtectionRequest with protection settings.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -9844,7 +9844,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **protection_request** | [**ProtectionRequest**](ProtectionRequest.md)| with protection settings.             | 
+ **protection_request** | [**ProtectionRequest**](ProtectionRequest.md)| ProtectionRequest with protection settings. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -9886,7 +9886,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-bookmark_data = asposewordscloud.BookmarkData() # BookmarkData | with new bookmark data.            
+bookmark_data = asposewordscloud.BookmarkData() # BookmarkData | BookmarkData with new bookmark data.
 bookmark_name = 'bookmark_name_example' # str | The bookmark name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -9909,7 +9909,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **bookmark_data** | [**BookmarkData**](BookmarkData.md)| with new bookmark data.             | 
+ **bookmark_data** | [**BookmarkData**](BookmarkData.md)| BookmarkData with new bookmark data. | 
  **bookmark_name** | **str**| The bookmark name. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -10901,7 +10901,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_table_cell_format**
-> TableCellFormatResponse update_table_cell_format(name, table_row_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, format=format)
+> TableCellFormatResponse update_table_cell_format(name, format, table_row_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates a table cell format.
 
@@ -10920,6 +10920,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
+format = asposewordscloud.TableCellFormat() # TableCellFormat | The properties.
 table_row_path = 'table_row_path_example' # str | Path to table row.
 index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -10929,11 +10930,10 @@ password = 'password_example' # str | Password for opening an encrypted document
 dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
-format = asposewordscloud.TableCellFormat() # TableCellFormat | The properties. (optional)
 
 try:
     # Updates a table cell format.
-    api_response = api_instance.update_table_cell_format(name, table_row_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, format=format)
+    api_response = api_instance.update_table_cell_format(name, format, table_row_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_table_cell_format: %s\n" % e)
@@ -10944,6 +10944,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
+ **format** | [**TableCellFormat**](TableCellFormat.md)| The properties. | 
  **table_row_path** | **str**| Path to table row. | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -10953,7 +10954,6 @@ Name | Type | Description  | Notes
  **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
  **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
  **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
- **format** | [**TableCellFormat**](TableCellFormat.md)| The properties. | [optional] 
 
 ### Return type
 
@@ -10971,7 +10971,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_table_properties**
-> TablePropertiesResponse update_table_properties(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, properties=properties)
+> TablePropertiesResponse update_table_properties(name, properties, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates a table properties.
 
@@ -10990,6 +10990,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
+properties = asposewordscloud.TableProperties() # TableProperties | The properties.
 node_path = 'node_path_example' # str | Path to the node, which contains tables.
 index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -10999,11 +11000,10 @@ password = 'password_example' # str | Password for opening an encrypted document
 dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
-properties = asposewordscloud.TableProperties() # TableProperties | The properties. (optional)
 
 try:
     # Updates a table properties.
-    api_response = api_instance.update_table_properties(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, properties=properties)
+    api_response = api_instance.update_table_properties(name, properties, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_table_properties: %s\n" % e)
@@ -11014,6 +11014,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
+ **properties** | [**TableProperties**](TableProperties.md)| The properties. | 
  **node_path** | **str**| Path to the node, which contains tables. | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -11023,7 +11024,6 @@ Name | Type | Description  | Notes
  **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
  **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
  **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
- **properties** | [**TableProperties**](TableProperties.md)| The properties. | [optional] 
 
 ### Return type
 
@@ -11041,7 +11041,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_table_properties_without_node_path**
-> TablePropertiesResponse update_table_properties_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, properties=properties)
+> TablePropertiesResponse update_table_properties_without_node_path(name, properties, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates a table properties.
 
@@ -11060,6 +11060,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
+properties = asposewordscloud.TableProperties() # TableProperties | The properties.
 index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -11068,11 +11069,10 @@ password = 'password_example' # str | Password for opening an encrypted document
 dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
-properties = asposewordscloud.TableProperties() # TableProperties | The properties. (optional)
 
 try:
     # Updates a table properties.
-    api_response = api_instance.update_table_properties_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, properties=properties)
+    api_response = api_instance.update_table_properties_without_node_path(name, properties, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_table_properties_without_node_path: %s\n" % e)
@@ -11083,6 +11083,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
+ **properties** | [**TableProperties**](TableProperties.md)| The properties. | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -11091,7 +11092,6 @@ Name | Type | Description  | Notes
  **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
  **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
  **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
- **properties** | [**TableProperties**](TableProperties.md)| The properties. | [optional] 
 
 ### Return type
 
@@ -11109,7 +11109,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_table_row_format**
-> TableRowFormatResponse update_table_row_format(name, table_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, format=format)
+> TableRowFormatResponse update_table_row_format(name, format, table_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates a table row format.
 
@@ -11128,6 +11128,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
+format = asposewordscloud.TableRowFormat() # TableRowFormat | Table row format.
 table_path = 'table_path_example' # str | Path to table.
 index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -11137,11 +11138,10 @@ password = 'password_example' # str | Password for opening an encrypted document
 dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
-format = asposewordscloud.TableRowFormat() # TableRowFormat | Table row format. (optional)
 
 try:
     # Updates a table row format.
-    api_response = api_instance.update_table_row_format(name, table_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, format=format)
+    api_response = api_instance.update_table_row_format(name, format, table_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_table_row_format: %s\n" % e)
@@ -11152,6 +11152,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
+ **format** | [**TableRowFormat**](TableRowFormat.md)| Table row format. | 
  **table_path** | **str**| Path to table. | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -11161,7 +11162,6 @@ Name | Type | Description  | Notes
  **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
  **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
  **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
- **format** | [**TableRowFormat**](TableRowFormat.md)| Table row format. | [optional] 
 
 ### Return type
 

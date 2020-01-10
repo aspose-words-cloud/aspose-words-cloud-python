@@ -47,7 +47,7 @@ class TableLinkCollection(object):
 
     attribute_map = {
         'link': 'link',
-        'table_link_list': 'TableLinkList'
+        'table_link_list': 'tableLinkList'
     }
 
     def __init__(self, link=None, table_link_list=None):  # noqa: E501

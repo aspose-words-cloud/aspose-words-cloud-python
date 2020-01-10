@@ -46,8 +46,8 @@ class ReplaceRange(object):
     }
 
     attribute_map = {
-        'text': 'Text',
-        'text_type': 'TextType'
+        'text': 'text',
+        'text_type': 'textType'
     }
 
     def __init__(self, text=None, text_type=None):  # noqa: E501

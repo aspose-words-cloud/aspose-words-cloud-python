@@ -46,8 +46,8 @@ class FilesUploadResult(object):
     }
 
     attribute_map = {
-        'uploaded': 'Uploaded',
-        'errors': 'Errors'
+        'uploaded': 'uploaded',
+        'errors': 'errors'
     }
 
     def __init__(self, uploaded=None, errors=None):  # noqa: E501

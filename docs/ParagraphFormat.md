@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **line_spacing** | **float** | Gets or sets the line spacing (in points) for the paragraph.              | [optional] 
 **line_spacing_rule** | **str** | Gets or sets the line spacing for the paragraph.              | [optional] 
 **lines_to_drop** | **int** | Gets or sets the number of lines of the paragraph text used to calculate the drop cap height.              | [optional] 
-**no_space_between_paragraphs_of_same_style** | **bool** | Gets or sets when true,  and  will be ignored between the paragraphs of the same style.              | [optional] 
+**no_space_between_paragraphs_of_same_style** | **bool** | Gets or sets when true, SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style.              | [optional] 
 **outline_level** | **str** | Gets or sets specifies the outline level of the paragraph in the document.              | [optional] 
 **page_break_before** | **bool** | Gets or sets true if a page break is forced before the paragraph.              | [optional] 
 **right_indent** | **float** | Gets or sets the value (in points) that represents the right indent for paragraph.              | [optional] 

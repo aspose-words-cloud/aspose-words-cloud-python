@@ -46,8 +46,8 @@ class RunsResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'runs': 'Runs'
+        'request_id': 'requestId',
+        'runs': 'runs'
     }
 
     def __init__(self, request_id=None, runs=None):  # noqa: E501

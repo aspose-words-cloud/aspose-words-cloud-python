@@ -93,55 +93,55 @@ class MhtmlSaveOptionsData(object):
     }
 
     attribute_map = {
-        'color_mode': 'ColorMode',
-        'save_format': 'SaveFormat',
-        'file_name': 'FileName',
-        'dml_rendering_mode': 'DmlRenderingMode',
-        'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
-        'zip_output': 'ZipOutput',
-        'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
-        'update_sdt_content': 'UpdateSdtContent',
-        'update_fields': 'UpdateFields',
-        'allow_negative_indent': 'AllowNegativeIndent',
-        'css_class_name_prefix': 'CssClassNamePrefix',
-        'css_style_sheet_file_name': 'CssStyleSheetFileName',
-        'css_style_sheet_type': 'CssStyleSheetType',
-        'document_split_criteria': 'DocumentSplitCriteria',
-        'document_split_heading_level': 'DocumentSplitHeadingLevel',
-        'encoding': 'Encoding',
-        'export_document_properties': 'ExportDocumentProperties',
-        'export_drop_down_form_field_as_text': 'ExportDropDownFormFieldAsText',
-        'export_font_resources': 'ExportFontResources',
-        'export_fonts_as_base64': 'ExportFontsAsBase64',
-        'export_headers_footers_mode': 'ExportHeadersFootersMode',
-        'export_images_as_base64': 'ExportImagesAsBase64',
-        'export_language_information': 'ExportLanguageInformation',
-        'export_list_labels': 'ExportListLabels',
-        'export_original_url_for_linked_images': 'ExportOriginalUrlForLinkedImages',
-        'export_page_margins': 'ExportPageMargins',
-        'export_page_setup': 'ExportPageSetup',
-        'export_relative_font_size': 'ExportRelativeFontSize',
-        'export_roundtrip_information': 'ExportRoundtripInformation',
-        'export_text_box_as_svg': 'ExportTextBoxAsSvg',
-        'export_text_input_form_field_as_text': 'ExportTextInputFormFieldAsText',
-        'export_toc_page_numbers': 'ExportTocPageNumbers',
-        'export_xhtml_transitional': 'ExportXhtmlTransitional',
-        'font_resources_subsetting_size_threshold': 'FontResourcesSubsettingSizeThreshold',
-        'fonts_folder': 'FontsFolder',
-        'fonts_folder_alias': 'FontsFolderAlias',
-        'html_version': 'HtmlVersion',
-        'image_resolution': 'ImageResolution',
-        'images_folder': 'ImagesFolder',
-        'images_folder_alias': 'ImagesFolderAlias',
-        'metafile_format': 'MetafileFormat',
-        'office_math_output_mode': 'OfficeMathOutputMode',
-        'pretty_format': 'PrettyFormat',
-        'resolve_font_names': 'ResolveFontNames',
-        'resource_folder': 'ResourceFolder',
-        'resource_folder_alias': 'ResourceFolderAlias',
-        'scale_image_to_shape_size': 'ScaleImageToShapeSize',
-        'table_width_output_mode': 'TableWidthOutputMode',
-        'export_cid_urls_for_mhtml_resources': 'ExportCidUrlsForMhtmlResources'
+        'color_mode': 'colorMode',
+        'save_format': 'saveFormat',
+        'file_name': 'fileName',
+        'dml_rendering_mode': 'dmlRenderingMode',
+        'dml_effects_rendering_mode': 'dmlEffectsRenderingMode',
+        'zip_output': 'zipOutput',
+        'update_last_saved_time_property': 'updateLastSavedTimeProperty',
+        'update_sdt_content': 'updateSdtContent',
+        'update_fields': 'updateFields',
+        'allow_negative_indent': 'allowNegativeIndent',
+        'css_class_name_prefix': 'cssClassNamePrefix',
+        'css_style_sheet_file_name': 'cssStyleSheetFileName',
+        'css_style_sheet_type': 'cssStyleSheetType',
+        'document_split_criteria': 'documentSplitCriteria',
+        'document_split_heading_level': 'documentSplitHeadingLevel',
+        'encoding': 'encoding',
+        'export_document_properties': 'exportDocumentProperties',
+        'export_drop_down_form_field_as_text': 'exportDropDownFormFieldAsText',
+        'export_font_resources': 'exportFontResources',
+        'export_fonts_as_base64': 'exportFontsAsBase64',
+        'export_headers_footers_mode': 'exportHeadersFootersMode',
+        'export_images_as_base64': 'exportImagesAsBase64',
+        'export_language_information': 'exportLanguageInformation',
+        'export_list_labels': 'exportListLabels',
+        'export_original_url_for_linked_images': 'exportOriginalUrlForLinkedImages',
+        'export_page_margins': 'exportPageMargins',
+        'export_page_setup': 'exportPageSetup',
+        'export_relative_font_size': 'exportRelativeFontSize',
+        'export_roundtrip_information': 'exportRoundtripInformation',
+        'export_text_box_as_svg': 'exportTextBoxAsSvg',
+        'export_text_input_form_field_as_text': 'exportTextInputFormFieldAsText',
+        'export_toc_page_numbers': 'exportTocPageNumbers',
+        'export_xhtml_transitional': 'exportXhtmlTransitional',
+        'font_resources_subsetting_size_threshold': 'fontResourcesSubsettingSizeThreshold',
+        'fonts_folder': 'fontsFolder',
+        'fonts_folder_alias': 'fontsFolderAlias',
+        'html_version': 'htmlVersion',
+        'image_resolution': 'imageResolution',
+        'images_folder': 'imagesFolder',
+        'images_folder_alias': 'imagesFolderAlias',
+        'metafile_format': 'metafileFormat',
+        'office_math_output_mode': 'officeMathOutputMode',
+        'pretty_format': 'prettyFormat',
+        'resolve_font_names': 'resolveFontNames',
+        'resource_folder': 'resourceFolder',
+        'resource_folder_alias': 'resourceFolderAlias',
+        'scale_image_to_shape_size': 'scaleImageToShapeSize',
+        'table_width_output_mode': 'tableWidthOutputMode',
+        'export_cid_urls_for_mhtml_resources': 'exportCidUrlsForMhtmlResources'
     }
 
     def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, allow_negative_indent=None, css_class_name_prefix=None, css_style_sheet_file_name=None, css_style_sheet_type=None, document_split_criteria=None, document_split_heading_level=None, encoding=None, export_document_properties=None, export_drop_down_form_field_as_text=None, export_font_resources=None, export_fonts_as_base64=None, export_headers_footers_mode=None, export_images_as_base64=None, export_language_information=None, export_list_labels=None, export_original_url_for_linked_images=None, export_page_margins=None, export_page_setup=None, export_relative_font_size=None, export_roundtrip_information=None, export_text_box_as_svg=None, export_text_input_form_field_as_text=None, export_toc_page_numbers=None, export_xhtml_transitional=None, font_resources_subsetting_size_threshold=None, fonts_folder=None, fonts_folder_alias=None, html_version=None, image_resolution=None, images_folder=None, images_folder_alias=None, metafile_format=None, office_math_output_mode=None, pretty_format=None, resolve_font_names=None, resource_folder=None, resource_folder_alias=None, scale_image_to_shape_size=None, table_width_output_mode=None, export_cid_urls_for_mhtml_resources=None):  # noqa: E501
@@ -448,7 +448,7 @@ class MhtmlSaveOptionsData(object):
     def update_sdt_content(self):
         """Gets the update_sdt_content of this MhtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets value determining whether content of  is updated before saving.  # noqa: E501
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :return: The update_sdt_content of this MhtmlSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -459,7 +459,7 @@ class MhtmlSaveOptionsData(object):
     def update_sdt_content(self, update_sdt_content):
         """Sets the update_sdt_content of this MhtmlSaveOptionsData.
 
-        Gets or sets value determining whether content of  is updated before saving.  # noqa: E501
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :param update_sdt_content: The update_sdt_content of this MhtmlSaveOptionsData.  # noqa: E501
         :type: bool

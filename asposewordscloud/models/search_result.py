@@ -46,8 +46,8 @@ class SearchResult(object):
     }
 
     attribute_map = {
-        'range_start': 'RangeStart',
-        'range_end': 'RangeEnd'
+        'range_start': 'rangeStart',
+        'range_end': 'rangeEnd'
     }
 
     def __init__(self, range_start=None, range_end=None):  # noqa: E501

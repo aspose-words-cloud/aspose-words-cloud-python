@@ -46,8 +46,8 @@ class ClassificationResult(object):
     }
 
     attribute_map = {
-        'class_name': 'ClassName',
-        'class_probability': 'ClassProbability'
+        'class_name': 'className',
+        'class_probability': 'classProbability'
     }
 
     def __init__(self, class_name=None, class_probability=None):  # noqa: E501

@@ -46,8 +46,8 @@ class FontResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'font': 'Font'
+        'request_id': 'requestId',
+        'font': 'font'
     }
 
     def __init__(self, request_id=None, font=None):  # noqa: E501

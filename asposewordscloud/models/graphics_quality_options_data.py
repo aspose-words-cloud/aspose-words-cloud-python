@@ -50,12 +50,12 @@ class GraphicsQualityOptionsData(object):
     }
 
     attribute_map = {
-        'compositing_mode': 'CompositingMode',
-        'compositing_quality': 'CompositingQuality',
-        'interpolation_mode': 'InterpolationMode',
-        'smoothing_mode': 'SmoothingMode',
-        'string_format': 'StringFormat',
-        'text_rendering_hint': 'TextRenderingHint'
+        'compositing_mode': 'compositingMode',
+        'compositing_quality': 'compositingQuality',
+        'interpolation_mode': 'interpolationMode',
+        'smoothing_mode': 'smoothingMode',
+        'string_format': 'stringFormat',
+        'text_rendering_hint': 'textRenderingHint'
     }
 
     def __init__(self, compositing_mode=None, compositing_quality=None, interpolation_mode=None, smoothing_mode=None, string_format=None, text_rendering_hint=None):  # noqa: E501

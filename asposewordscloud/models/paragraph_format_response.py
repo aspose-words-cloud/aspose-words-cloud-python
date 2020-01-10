@@ -46,8 +46,8 @@ class ParagraphFormatResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'paragraph_format': 'ParagraphFormat'
+        'request_id': 'requestId',
+        'paragraph_format': 'paragraphFormat'
     }
 
     def __init__(self, request_id=None, paragraph_format=None):  # noqa: E501

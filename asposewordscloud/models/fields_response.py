@@ -46,8 +46,8 @@ class FieldsResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'fields': 'Fields'
+        'request_id': 'requestId',
+        'fields': 'fields'
     }
 
     def __init__(self, request_id=None, fields=None):  # noqa: E501

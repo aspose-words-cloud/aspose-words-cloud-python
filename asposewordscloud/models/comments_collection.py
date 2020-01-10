@@ -47,7 +47,7 @@ class CommentsCollection(object):
 
     attribute_map = {
         'link': 'link',
-        'comment_list': 'CommentList'
+        'comment_list': 'commentList'
     }
 
     def __init__(self, link=None, comment_list=None):  # noqa: E501

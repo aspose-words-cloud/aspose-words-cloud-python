@@ -46,8 +46,8 @@ class TablePropertiesResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'properties': 'Properties'
+        'request_id': 'requestId',
+        'properties': 'properties'
     }
 
     def __init__(self, request_id=None, properties=None):  # noqa: E501

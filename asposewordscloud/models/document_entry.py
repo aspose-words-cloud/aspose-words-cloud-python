@@ -46,8 +46,8 @@ class DocumentEntry(object):
     }
 
     attribute_map = {
-        'href': 'Href',
-        'import_format_mode': 'ImportFormatMode'
+        'href': 'href',
+        'import_format_mode': 'importFormatMode'
     }
 
     def __init__(self, href=None, import_format_mode=None):  # noqa: E501

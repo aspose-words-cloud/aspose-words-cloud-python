@@ -48,10 +48,10 @@ class PdfEncryptionDetailsData(object):
     }
 
     attribute_map = {
-        'encryption_algorithm': 'EncryptionAlgorithm',
-        'owner_password': 'OwnerPassword',
-        'permissions': 'Permissions',
-        'user_password': 'UserPassword'
+        'encryption_algorithm': 'encryptionAlgorithm',
+        'owner_password': 'ownerPassword',
+        'permissions': 'permissions',
+        'user_password': 'userPassword'
     }
 
     def __init__(self, encryption_algorithm=None, owner_password=None, permissions=None, user_password=None):  # noqa: E501

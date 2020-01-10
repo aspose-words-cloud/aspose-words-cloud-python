@@ -30,7 +30,7 @@ import six
 
 
 class StoryChildNodes(object):
-    """Child nodes of  or .
+    """Child nodes of Story or InlineStory.
     """
 
     """
@@ -45,7 +45,7 @@ class StoryChildNodes(object):
     }
 
     attribute_map = {
-        'child_nodes': 'ChildNodes'
+        'child_nodes': 'childNodes'
     }
 
     def __init__(self, child_nodes=None):  # noqa: E501

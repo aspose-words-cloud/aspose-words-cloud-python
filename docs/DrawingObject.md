@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **ole_data_link** | [**WordsApiLink**](WordsApiLink.md) | Gets or sets link to ole object. Can be null if shape does not have ole data. | [optional] 
 **relative_horizontal_position** | **str** | Gets or sets specifies where the distance to the image is measured from.              | [optional] 
 **relative_vertical_position** | **str** | Gets or sets specifies where the distance to the image measured from. | [optional] 
-**render_links** | [**list[WordsApiLink]**](WordsApiLink.md) | Gets or sets a list of links that originate from this . | [optional] 
+**render_links** | [**list[WordsApiLink]**](WordsApiLink.md) | Gets or sets a list of links that originate from this DrawingObjectDto. | [optional] 
 **top** | **float** | Gets or sets distance in points from the origin to the top side of the image. | [optional] 
 **width** | **float** | Gets or sets width of the drawing objects in points. | [optional] 
 **wrap_type** | **str** | Gets or sets specifies how to wrap text around the image. | [optional] 

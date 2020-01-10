@@ -83,45 +83,45 @@ class PdfSaveOptionsData(object):
     }
 
     attribute_map = {
-        'color_mode': 'ColorMode',
-        'save_format': 'SaveFormat',
-        'file_name': 'FileName',
-        'dml_rendering_mode': 'DmlRenderingMode',
-        'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
-        'zip_output': 'ZipOutput',
-        'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
-        'update_sdt_content': 'UpdateSdtContent',
-        'update_fields': 'UpdateFields',
-        'jpeg_quality': 'JpegQuality',
-        'metafile_rendering_options': 'MetafileRenderingOptions',
-        'numeral_format': 'NumeralFormat',
-        'optimize_output': 'OptimizeOutput',
-        'page_count': 'PageCount',
-        'page_index': 'PageIndex',
-        'compliance': 'Compliance',
-        'create_note_hyperlinks': 'CreateNoteHyperlinks',
-        'custom_properties_export': 'CustomPropertiesExport',
-        'digital_signature_details': 'DigitalSignatureDetails',
-        'display_doc_title': 'DisplayDocTitle',
-        'downsample_options': 'DownsampleOptions',
-        'embed_full_fonts': 'EmbedFullFonts',
-        'encryption_details': 'EncryptionDetails',
-        'escape_uri': 'EscapeUri',
-        'export_document_structure': 'ExportDocumentStructure',
-        'font_embedding_mode': 'FontEmbeddingMode',
-        'header_footer_bookmarks_export_mode': 'HeaderFooterBookmarksExportMode',
-        'image_color_space_export_mode': 'ImageColorSpaceExportMode',
-        'image_compression': 'ImageCompression',
-        'open_hyperlinks_in_new_window': 'OpenHyperlinksInNewWindow',
-        'outline_options': 'OutlineOptions',
-        'page_mode': 'PageMode',
-        'preblend_images': 'PreblendImages',
-        'preserve_form_fields': 'PreserveFormFields',
-        'text_compression': 'TextCompression',
-        'use_book_fold_printing_settings': 'UseBookFoldPrintingSettings',
-        'use_core_fonts': 'UseCoreFonts',
-        'zoom_behavior': 'ZoomBehavior',
-        'zoom_factor': 'ZoomFactor'
+        'color_mode': 'colorMode',
+        'save_format': 'saveFormat',
+        'file_name': 'fileName',
+        'dml_rendering_mode': 'dmlRenderingMode',
+        'dml_effects_rendering_mode': 'dmlEffectsRenderingMode',
+        'zip_output': 'zipOutput',
+        'update_last_saved_time_property': 'updateLastSavedTimeProperty',
+        'update_sdt_content': 'updateSdtContent',
+        'update_fields': 'updateFields',
+        'jpeg_quality': 'jpegQuality',
+        'metafile_rendering_options': 'metafileRenderingOptions',
+        'numeral_format': 'numeralFormat',
+        'optimize_output': 'optimizeOutput',
+        'page_count': 'pageCount',
+        'page_index': 'pageIndex',
+        'compliance': 'compliance',
+        'create_note_hyperlinks': 'createNoteHyperlinks',
+        'custom_properties_export': 'customPropertiesExport',
+        'digital_signature_details': 'digitalSignatureDetails',
+        'display_doc_title': 'displayDocTitle',
+        'downsample_options': 'downsampleOptions',
+        'embed_full_fonts': 'embedFullFonts',
+        'encryption_details': 'encryptionDetails',
+        'escape_uri': 'escapeUri',
+        'export_document_structure': 'exportDocumentStructure',
+        'font_embedding_mode': 'fontEmbeddingMode',
+        'header_footer_bookmarks_export_mode': 'headerFooterBookmarksExportMode',
+        'image_color_space_export_mode': 'imageColorSpaceExportMode',
+        'image_compression': 'imageCompression',
+        'open_hyperlinks_in_new_window': 'openHyperlinksInNewWindow',
+        'outline_options': 'outlineOptions',
+        'page_mode': 'pageMode',
+        'preblend_images': 'preblendImages',
+        'preserve_form_fields': 'preserveFormFields',
+        'text_compression': 'textCompression',
+        'use_book_fold_printing_settings': 'useBookFoldPrintingSettings',
+        'use_core_fonts': 'useCoreFonts',
+        'zoom_behavior': 'zoomBehavior',
+        'zoom_factor': 'zoomFactor'
     }
 
     def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_full_fonts=None, encryption_details=None, escape_uri=None, export_document_structure=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
@@ -398,7 +398,7 @@ class PdfSaveOptionsData(object):
     def update_sdt_content(self):
         """Gets the update_sdt_content of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets value determining whether content of  is updated before saving.  # noqa: E501
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :return: The update_sdt_content of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -409,7 +409,7 @@ class PdfSaveOptionsData(object):
     def update_sdt_content(self, update_sdt_content):
         """Sets the update_sdt_content of this PdfSaveOptionsData.
 
-        Gets or sets value determining whether content of  is updated before saving.  # noqa: E501
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :param update_sdt_content: The update_sdt_content of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -608,7 +608,7 @@ class PdfSaveOptionsData(object):
     def custom_properties_export(self):
         """Gets the custom_properties_export of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining the way  are exported to PDF file. Default value is .  # noqa: E501
+        Gets or sets a value determining the way CustomDocumentProperties are exported to PDF file. Default value is None.  # noqa: E501
 
         :return: The custom_properties_export of this PdfSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -619,7 +619,7 @@ class PdfSaveOptionsData(object):
     def custom_properties_export(self, custom_properties_export):
         """Sets the custom_properties_export of this PdfSaveOptionsData.
 
-        Gets or sets a value determining the way  are exported to PDF file. Default value is .  # noqa: E501
+        Gets or sets a value determining the way CustomDocumentProperties are exported to PDF file. Default value is None.  # noqa: E501
 
         :param custom_properties_export: The custom_properties_export of this PdfSaveOptionsData.  # noqa: E501
         :type: str

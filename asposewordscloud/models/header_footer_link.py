@@ -47,7 +47,7 @@ class HeaderFooterLink(object):
 
     attribute_map = {
         'link': 'link',
-        'type': 'Type'
+        'type': 'type'
     }
 
     def __init__(self, link=None, type=None):  # noqa: E501

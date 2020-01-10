@@ -49,11 +49,11 @@ class DocumentStatData(object):
     }
 
     attribute_map = {
-        'word_count': 'WordCount',
-        'paragraph_count': 'ParagraphCount',
-        'page_count': 'PageCount',
-        'footnotes_stat_data': 'FootnotesStatData',
-        'page_stat_data': 'PageStatData'
+        'word_count': 'wordCount',
+        'paragraph_count': 'paragraphCount',
+        'page_count': 'pageCount',
+        'footnotes_stat_data': 'footnotesStatData',
+        'page_stat_data': 'pageStatData'
     }
 
     def __init__(self, word_count=None, paragraph_count=None, page_count=None, footnotes_stat_data=None, page_stat_data=None):  # noqa: E501

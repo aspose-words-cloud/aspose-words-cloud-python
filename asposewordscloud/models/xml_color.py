@@ -30,7 +30,7 @@ import six
 
 
 class XmlColor(object):
-    """Utility class for  serialization.
+    """Utility class for Color serialization.
     """
 
     """
@@ -46,8 +46,8 @@ class XmlColor(object):
     }
 
     attribute_map = {
-        'web': 'Web',
-        'alpha': 'Alpha'
+        'web': 'web',
+        'alpha': 'alpha'
     }
 
     def __init__(self, web=None, alpha=None):  # noqa: E501

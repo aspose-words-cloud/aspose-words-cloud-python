@@ -47,9 +47,9 @@ class SearchResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'searching_pattern': 'SearchingPattern',
-        'search_results': 'SearchResults'
+        'request_id': 'requestId',
+        'searching_pattern': 'searchingPattern',
+        'search_results': 'searchResults'
     }
 
     def __init__(self, request_id=None, searching_pattern=None, search_results=None):  # noqa: E501

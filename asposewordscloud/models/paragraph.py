@@ -48,8 +48,8 @@ class Paragraph(object):
 
     attribute_map = {
         'link': 'link',
-        'node_id': 'NodeId',
-        'child_nodes': 'ChildNodes'
+        'node_id': 'nodeId',
+        'child_nodes': 'childNodes'
     }
 
     def __init__(self, link=None, node_id=None, child_nodes=None):  # noqa: E501

@@ -45,7 +45,7 @@ class RangeDocument(object):
     }
 
     attribute_map = {
-        'document_name': 'DocumentName'
+        'document_name': 'documentName'
     }
 
     def __init__(self, document_name=None):  # noqa: E501

@@ -48,10 +48,10 @@ class Link(object):
     }
 
     attribute_map = {
-        'href': 'Href',
-        'rel': 'Rel',
-        'type': 'Type',
-        'title': 'Title'
+        'href': 'href',
+        'rel': 'rel',
+        'type': 'type',
+        'title': 'title'
     }
 
     def __init__(self, href=None, rel=None, type=None, title=None):  # noqa: E501

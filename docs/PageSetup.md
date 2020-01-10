@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **right_margin** | **float** | Gets or sets returns or sets the distance (in points) between the right edge of the page and the right boundary of the body text.              | [optional] 
 **rtl_gutter** | **bool** | Gets or sets whether Microsoft Word uses gutters for the section based on a right-to-left language or a left-to-right language.              | [optional] 
 **section_start** | **str** | Gets or sets returns or sets the type of section break for the specified object.              | [optional] 
-**suppress_endnotes** | **bool** | Gets or sets true if endnotes are printed at the end of the next section that doesn&#39;t suppress endnotes.                 Suppressed endnotes are printed before the endnotes in that section.              | [optional] 
+**suppress_endnotes** | **bool** | Gets or sets true if endnotes are printed at the end of the next section that doesn&#39;t suppress endnotes. Suppressed endnotes are printed before the endnotes in that section.              | [optional] 
 **top_margin** | **float** | Gets or sets returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.              | [optional] 
 **vertical_alignment** | **str** | Gets or sets returns or sets the vertical alignment of text on each page in a document or section.              | [optional] 
 
