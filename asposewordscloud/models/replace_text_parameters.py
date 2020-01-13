@@ -49,11 +49,11 @@ class ReplaceTextParameters(object):
     }
 
     attribute_map = {
-        'old_value': 'oldValue',
-        'new_value': 'newValue',
-        'is_match_case': 'isMatchCase',
-        'is_match_whole_word': 'isMatchWholeWord',
-        'is_old_value_regex': 'isOldValueRegex'
+        'old_value': 'OldValue',
+        'new_value': 'NewValue',
+        'is_match_case': 'IsMatchCase',
+        'is_match_whole_word': 'IsMatchWholeWord',
+        'is_old_value_regex': 'IsOldValueRegex'
     }
 
     def __init__(self, old_value=None, new_value=None, is_match_case=None, is_match_whole_word=None, is_old_value_regex=None):  # noqa: E501

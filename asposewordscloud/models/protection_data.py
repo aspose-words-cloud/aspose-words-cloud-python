@@ -45,7 +45,7 @@ class ProtectionData(object):
     }
 
     attribute_map = {
-        'protection_type': 'protectionType'
+        'protection_type': 'ProtectionType'
     }
 
     def __init__(self, protection_type=None):  # noqa: E501

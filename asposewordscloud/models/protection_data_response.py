@@ -47,9 +47,9 @@ class ProtectionDataResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'requestId',
-        'document_link': 'documentLink',
-        'protection_data': 'protectionData'
+        'request_id': 'RequestId',
+        'document_link': 'DocumentLink',
+        'protection_data': 'ProtectionData'
     }
 
     def __init__(self, request_id=None, document_link=None, protection_data=None):  # noqa: E501

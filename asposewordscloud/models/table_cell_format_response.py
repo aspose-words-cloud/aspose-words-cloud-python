@@ -46,8 +46,8 @@ class TableCellFormatResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'requestId',
-        'cell_format': 'cellFormat'
+        'request_id': 'RequestId',
+        'cell_format': 'CellFormat'
     }
 
     def __init__(self, request_id=None, cell_format=None):  # noqa: E501

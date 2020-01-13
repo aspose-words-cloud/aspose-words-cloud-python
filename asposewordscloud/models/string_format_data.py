@@ -49,11 +49,11 @@ class StringFormatData(object):
     }
 
     attribute_map = {
-        'alignment': 'alignment',
-        'format_flags': 'formatFlags',
-        'hotkey_prefix': 'hotkeyPrefix',
-        'line_alignment': 'lineAlignment',
-        'trimming': 'trimming'
+        'alignment': 'Alignment',
+        'format_flags': 'FormatFlags',
+        'hotkey_prefix': 'HotkeyPrefix',
+        'line_alignment': 'LineAlignment',
+        'trimming': 'Trimming'
     }
 
     def __init__(self, alignment=None, format_flags=None, hotkey_prefix=None, line_alignment=None, trimming=None):  # noqa: E501

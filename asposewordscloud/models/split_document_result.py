@@ -47,9 +47,9 @@ class SplitDocumentResult(object):
     }
 
     attribute_map = {
-        'source_document': 'sourceDocument',
-        'pages': 'pages',
-        'zipped_pages': 'zippedPages'
+        'source_document': 'SourceDocument',
+        'pages': 'Pages',
+        'zipped_pages': 'ZippedPages'
     }
 
     def __init__(self, source_document=None, pages=None, zipped_pages=None):  # noqa: E501

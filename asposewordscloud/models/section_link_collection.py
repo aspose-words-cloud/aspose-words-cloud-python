@@ -47,7 +47,7 @@ class SectionLinkCollection(object):
 
     attribute_map = {
         'link': 'link',
-        'section_link_list': 'sectionLinkList'
+        'section_link_list': 'SectionLinkList'
     }
 
     def __init__(self, link=None, section_link_list=None):  # noqa: E501

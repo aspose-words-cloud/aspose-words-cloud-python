@@ -48,8 +48,8 @@ class Bookmark(object):
 
     attribute_map = {
         'link': 'link',
-        'name': 'name',
-        'text': 'text'
+        'name': 'Name',
+        'text': 'Text'
     }
 
     def __init__(self, link=None, name=None, text=None):  # noqa: E501

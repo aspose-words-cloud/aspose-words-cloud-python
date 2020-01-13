@@ -46,8 +46,8 @@ class XmlColor(object):
     }
 
     attribute_map = {
-        'web': 'web',
-        'alpha': 'alpha'
+        'web': 'Web',
+        'alpha': 'Alpha'
     }
 
     def __init__(self, web=None, alpha=None):  # noqa: E501

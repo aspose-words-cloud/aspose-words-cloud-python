@@ -45,7 +45,7 @@ class DocumentEntryList(object):
     }
 
     attribute_map = {
-        'document_entries': 'documentEntries'
+        'document_entries': 'DocumentEntries'
     }
 
     def __init__(self, document_entries=None):  # noqa: E501

@@ -46,8 +46,8 @@ class BookmarksOutlineLevelData(object):
     }
 
     attribute_map = {
-        'name': 'name',
-        'bookmarks_outline_level': 'bookmarksOutlineLevel'
+        'name': 'Name',
+        'bookmarks_outline_level': 'BookmarksOutlineLevel'
     }
 
     def __init__(self, name=None, bookmarks_outline_level=None):  # noqa: E501

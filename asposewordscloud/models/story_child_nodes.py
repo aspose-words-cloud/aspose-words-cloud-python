@@ -45,7 +45,7 @@ class StoryChildNodes(object):
     }
 
     attribute_map = {
-        'child_nodes': 'childNodes'
+        'child_nodes': 'ChildNodes'
     }
 
     def __init__(self, child_nodes=None):  # noqa: E501

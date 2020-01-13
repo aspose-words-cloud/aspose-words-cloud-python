@@ -46,8 +46,8 @@ class BookmarkData(object):
     }
 
     attribute_map = {
-        'name': 'name',
-        'text': 'text'
+        'name': 'Name',
+        'text': 'Text'
     }
 
     def __init__(self, name=None, text=None):  # noqa: E501

@@ -46,8 +46,8 @@ class PreferredWidth(object):
     }
 
     attribute_map = {
-        'type': 'type',
-        'value': 'value'
+        'type': 'Type',
+        'value': 'Value'
     }
 
     def __init__(self, type=None, value=None):  # noqa: E501

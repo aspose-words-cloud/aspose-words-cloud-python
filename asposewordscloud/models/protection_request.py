@@ -47,9 +47,9 @@ class ProtectionRequest(object):
     }
 
     attribute_map = {
-        'password': 'password',
-        'new_password': 'newPassword',
-        'protection_type': 'protectionType'
+        'password': 'Password',
+        'new_password': 'NewPassword',
+        'protection_type': 'ProtectionType'
     }
 
     def __init__(self, password=None, new_password=None, protection_type=None):  # noqa: E501

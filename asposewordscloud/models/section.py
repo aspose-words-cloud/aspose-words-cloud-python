@@ -51,11 +51,11 @@ class Section(object):
 
     attribute_map = {
         'link': 'link',
-        'child_nodes': 'childNodes',
-        'header_footers': 'headerFooters',
-        'page_setup': 'pageSetup',
-        'paragraphs': 'paragraphs',
-        'tables': 'tables'
+        'child_nodes': 'ChildNodes',
+        'header_footers': 'HeaderFooters',
+        'page_setup': 'PageSetup',
+        'paragraphs': 'Paragraphs',
+        'tables': 'Tables'
     }
 
     def __init__(self, link=None, child_nodes=None, header_footers=None, page_setup=None, paragraphs=None, tables=None):  # noqa: E501

@@ -49,11 +49,11 @@ class PdfDigitalSignatureDetailsData(object):
     }
 
     attribute_map = {
-        'certificate_filename': 'certificateFilename',
-        'hash_algorithm': 'hashAlgorithm',
-        'location': 'location',
-        'reason': 'reason',
-        'signature_date': 'signatureDate'
+        'certificate_filename': 'CertificateFilename',
+        'hash_algorithm': 'HashAlgorithm',
+        'location': 'Location',
+        'reason': 'Reason',
+        'signature_date': 'SignatureDate'
     }
 
     def __init__(self, certificate_filename=None, hash_algorithm=None, location=None, reason=None, signature_date=None):  # noqa: E501

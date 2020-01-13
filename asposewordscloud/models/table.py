@@ -49,9 +49,9 @@ class Table(object):
 
     attribute_map = {
         'link': 'link',
-        'node_id': 'nodeId',
-        'table_properties': 'tableProperties',
-        'table_row_list': 'tableRowList'
+        'node_id': 'NodeId',
+        'table_properties': 'TableProperties',
+        'table_row_list': 'TableRowList'
     }
 
     def __init__(self, link=None, node_id=None, table_properties=None, table_row_list=None):  # noqa: E501

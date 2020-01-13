@@ -49,9 +49,9 @@ class DocumentProperty(object):
 
     attribute_map = {
         'link': 'link',
-        'built_in': 'builtIn',
-        'name': 'name',
-        'value': 'value'
+        'built_in': 'BuiltIn',
+        'name': 'Name',
+        'value': 'Value'
     }
 
     def __init__(self, link=None, built_in=None, name=None, value=None):  # noqa: E501

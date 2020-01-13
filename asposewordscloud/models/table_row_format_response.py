@@ -46,8 +46,8 @@ class TableRowFormatResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'requestId',
-        'row_format': 'rowFormat'
+        'request_id': 'RequestId',
+        'row_format': 'RowFormat'
     }
 
     def __init__(self, request_id=None, row_format=None):  # noqa: E501

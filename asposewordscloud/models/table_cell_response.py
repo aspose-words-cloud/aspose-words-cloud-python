@@ -46,8 +46,8 @@ class TableCellResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'requestId',
-        'cell': 'cell'
+        'request_id': 'RequestId',
+        'cell': 'Cell'
     }
 
     def __init__(self, request_id=None, cell=None):  # noqa: E501

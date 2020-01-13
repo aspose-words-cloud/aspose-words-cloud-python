@@ -46,8 +46,8 @@ class TableRowInsert(object):
     }
 
     attribute_map = {
-        'insert_after': 'insertAfter',
-        'columns_count': 'columnsCount'
+        'insert_after': 'InsertAfter',
+        'columns_count': 'ColumnsCount'
     }
 
     def __init__(self, insert_after=None, columns_count=None):  # noqa: E501

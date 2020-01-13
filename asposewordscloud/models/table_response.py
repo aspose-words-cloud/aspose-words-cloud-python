@@ -46,8 +46,8 @@ class TableResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'requestId',
-        'table': 'table'
+        'request_id': 'RequestId',
+        'table': 'Table'
     }
 
     def __init__(self, request_id=None, table=None):  # noqa: E501

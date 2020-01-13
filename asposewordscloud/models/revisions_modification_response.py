@@ -46,8 +46,8 @@ class RevisionsModificationResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'requestId',
-        'result': 'result'
+        'request_id': 'RequestId',
+        'result': 'Result'
     }
 
     def __init__(self, request_id=None, result=None):  # noqa: E501

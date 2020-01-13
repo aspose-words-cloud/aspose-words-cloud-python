@@ -57,17 +57,17 @@ class DrawingObject(object):
 
     attribute_map = {
         'link': 'link',
-        'node_id': 'nodeId',
-        'height': 'height',
-        'image_data_link': 'imageDataLink',
-        'left': 'left',
-        'ole_data_link': 'oleDataLink',
-        'relative_horizontal_position': 'relativeHorizontalPosition',
-        'relative_vertical_position': 'relativeVerticalPosition',
-        'render_links': 'renderLinks',
-        'top': 'top',
-        'width': 'width',
-        'wrap_type': 'wrapType'
+        'node_id': 'NodeId',
+        'height': 'Height',
+        'image_data_link': 'ImageDataLink',
+        'left': 'Left',
+        'ole_data_link': 'OleDataLink',
+        'relative_horizontal_position': 'RelativeHorizontalPosition',
+        'relative_vertical_position': 'RelativeVerticalPosition',
+        'render_links': 'RenderLinks',
+        'top': 'Top',
+        'width': 'Width',
+        'wrap_type': 'WrapType'
     }
 
     def __init__(self, link=None, node_id=None, height=None, image_data_link=None, left=None, ole_data_link=None, relative_horizontal_position=None, relative_vertical_position=None, render_links=None, top=None, width=None, wrap_type=None):  # noqa: E501

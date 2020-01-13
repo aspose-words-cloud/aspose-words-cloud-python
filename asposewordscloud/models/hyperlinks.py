@@ -47,7 +47,7 @@ class Hyperlinks(object):
 
     attribute_map = {
         'link': 'link',
-        'hyperlink_list': 'hyperlinkList'
+        'hyperlink_list': 'HyperlinkList'
     }
 
     def __init__(self, link=None, hyperlink_list=None):  # noqa: E501

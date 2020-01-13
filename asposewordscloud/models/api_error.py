@@ -49,11 +49,11 @@ class ApiError(object):
     }
 
     attribute_map = {
-        'code': 'code',
-        'message': 'message',
-        'description': 'description',
-        'date_time': 'dateTime',
-        'inner_error': 'innerError'
+        'code': 'Code',
+        'message': 'Message',
+        'description': 'Description',
+        'date_time': 'DateTime',
+        'inner_error': 'InnerError'
     }
 
     def __init__(self, code=None, message=None, description=None, date_time=None, inner_error=None):  # noqa: E501

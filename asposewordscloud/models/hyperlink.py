@@ -48,8 +48,8 @@ class Hyperlink(object):
 
     attribute_map = {
         'link': 'link',
-        'display_text': 'displayText',
-        'value': 'value'
+        'display_text': 'DisplayText',
+        'value': 'Value'
     }
 
     def __init__(self, link=None, display_text=None, value=None):  # noqa: E501

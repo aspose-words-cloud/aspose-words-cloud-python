@@ -47,7 +47,7 @@ class DrawingObjectCollection(object):
 
     attribute_map = {
         'link': 'link',
-        'list': 'list'
+        'list': 'List'
     }
 
     def __init__(self, link=None, list=None):  # noqa: E501

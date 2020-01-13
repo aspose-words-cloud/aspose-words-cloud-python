@@ -48,8 +48,8 @@ class FieldLink(object):
 
     attribute_map = {
         'link': 'link',
-        'node_id': 'nodeId',
-        'field_code': 'fieldCode'
+        'node_id': 'NodeId',
+        'field_code': 'FieldCode'
     }
 
     def __init__(self, link=None, node_id=None, field_code=None):  # noqa: E501

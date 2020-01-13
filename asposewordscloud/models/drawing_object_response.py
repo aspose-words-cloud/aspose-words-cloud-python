@@ -46,8 +46,8 @@ class DrawingObjectResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'requestId',
-        'drawing_object': 'drawingObject'
+        'request_id': 'RequestId',
+        'drawing_object': 'DrawingObject'
     }
 
     def __init__(self, request_id=None, drawing_object=None):  # noqa: E501

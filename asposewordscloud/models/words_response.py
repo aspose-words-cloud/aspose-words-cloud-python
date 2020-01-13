@@ -45,7 +45,7 @@ class WordsResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'requestId'
+        'request_id': 'RequestId'
     }
 
     def __init__(self, request_id=None):  # noqa: E501

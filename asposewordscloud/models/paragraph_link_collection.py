@@ -47,7 +47,7 @@ class ParagraphLinkCollection(object):
 
     attribute_map = {
         'link': 'link',
-        'paragraph_link_list': 'paragraphLinkList'
+        'paragraph_link_list': 'ParagraphLinkList'
     }
 
     def __init__(self, link=None, paragraph_link_list=None):  # noqa: E501

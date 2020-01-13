@@ -58,18 +58,18 @@ class TableCellFormat(object):
 
     attribute_map = {
         'link': 'link',
-        'bottom_padding': 'bottomPadding',
-        'fit_text': 'fitText',
-        'horizontal_merge': 'horizontalMerge',
-        'left_padding': 'leftPadding',
-        'orientation': 'orientation',
-        'preferred_width': 'preferredWidth',
-        'right_padding': 'rightPadding',
-        'top_padding': 'topPadding',
-        'vertical_alignment': 'verticalAlignment',
-        'vertical_merge': 'verticalMerge',
-        'width': 'width',
-        'wrap_text': 'wrapText'
+        'bottom_padding': 'BottomPadding',
+        'fit_text': 'FitText',
+        'horizontal_merge': 'HorizontalMerge',
+        'left_padding': 'LeftPadding',
+        'orientation': 'Orientation',
+        'preferred_width': 'PreferredWidth',
+        'right_padding': 'RightPadding',
+        'top_padding': 'TopPadding',
+        'vertical_alignment': 'VerticalAlignment',
+        'vertical_merge': 'VerticalMerge',
+        'width': 'Width',
+        'wrap_text': 'WrapText'
     }
 
     def __init__(self, link=None, bottom_padding=None, fit_text=None, horizontal_merge=None, left_padding=None, orientation=None, preferred_width=None, right_padding=None, top_padding=None, vertical_alignment=None, vertical_merge=None, width=None, wrap_text=None):  # noqa: E501

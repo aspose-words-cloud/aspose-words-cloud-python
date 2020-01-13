@@ -47,9 +47,9 @@ class CompareData(object):
     }
 
     attribute_map = {
-        'comparing_with_document': 'comparingWithDocument',
-        'author': 'author',
-        'date_time': 'dateTime'
+        'comparing_with_document': 'ComparingWithDocument',
+        'author': 'Author',
+        'date_time': 'DateTime'
     }
 
     def __init__(self, comparing_with_document=None, author=None, date_time=None):  # noqa: E501

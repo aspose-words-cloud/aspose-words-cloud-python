@@ -47,9 +47,9 @@ class TableInsert(object):
     }
 
     attribute_map = {
-        'position': 'position',
-        'columns_count': 'columnsCount',
-        'rows_count': 'rowsCount'
+        'position': 'Position',
+        'columns_count': 'ColumnsCount',
+        'rows_count': 'RowsCount'
     }
 
     def __init__(self, position=None, columns_count=None, rows_count=None):  # noqa: E501

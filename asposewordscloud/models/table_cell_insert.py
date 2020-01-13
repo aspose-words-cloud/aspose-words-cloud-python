@@ -45,7 +45,7 @@ class TableCellInsert(object):
     }
 
     attribute_map = {
-        'insert_after': 'insertAfter'
+        'insert_after': 'InsertAfter'
     }
 
     def __init__(self, insert_after=None):  # noqa: E501

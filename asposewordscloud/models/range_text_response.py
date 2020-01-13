@@ -46,8 +46,8 @@ class RangeTextResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'requestId',
-        'text': 'text'
+        'request_id': 'RequestId',
+        'text': 'Text'
     }
 
     def __init__(self, request_id=None, text=None):  # noqa: E501

@@ -47,9 +47,9 @@ class SaveResult(object):
     }
 
     attribute_map = {
-        'source_document': 'sourceDocument',
-        'dest_document': 'destDocument',
-        'additional_items': 'additionalItems'
+        'source_document': 'SourceDocument',
+        'dest_document': 'DestDocument',
+        'additional_items': 'AdditionalItems'
     }
 
     def __init__(self, source_document=None, dest_document=None, additional_items=None):  # noqa: E501

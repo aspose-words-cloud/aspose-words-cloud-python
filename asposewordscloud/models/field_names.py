@@ -47,7 +47,7 @@ class FieldNames(object):
 
     attribute_map = {
         'link': 'link',
-        'names': 'names'
+        'names': 'Names'
     }
 
     def __init__(self, link=None, names=None):  # noqa: E501

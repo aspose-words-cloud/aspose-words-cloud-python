@@ -46,8 +46,8 @@ class HeaderFootersResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'requestId',
-        'header_footers': 'headerFooters'
+        'request_id': 'RequestId',
+        'header_footers': 'HeaderFooters'
     }
 
     def __init__(self, request_id=None, header_footers=None):  # noqa: E501

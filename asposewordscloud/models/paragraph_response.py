@@ -46,8 +46,8 @@ class ParagraphResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'requestId',
-        'paragraph': 'paragraph'
+        'request_id': 'RequestId',
+        'paragraph': 'Paragraph'
     }
 
     def __init__(self, request_id=None, paragraph=None):  # noqa: E501

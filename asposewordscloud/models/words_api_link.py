@@ -48,10 +48,10 @@ class WordsApiLink(object):
     }
 
     attribute_map = {
-        'href': 'href',
-        'rel': 'rel',
-        'type': 'type',
-        'title': 'title'
+        'href': 'Href',
+        'rel': 'Rel',
+        'type': 'Type',
+        'title': 'Title'
     }
 
     def __init__(self, href=None, rel=None, type=None, title=None):  # noqa: E501

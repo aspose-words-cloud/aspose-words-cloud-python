@@ -46,8 +46,8 @@ class SectionResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'requestId',
-        'section': 'section'
+        'request_id': 'RequestId',
+        'section': 'Section'
     }
 
     def __init__(self, request_id=None, section=None):  # noqa: E501

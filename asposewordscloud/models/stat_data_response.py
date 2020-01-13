@@ -47,9 +47,9 @@ class StatDataResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'requestId',
-        'document_link': 'documentLink',
-        'stat_data': 'statData'
+        'request_id': 'RequestId',
+        'document_link': 'DocumentLink',
+        'stat_data': 'StatData'
     }
 
     def __init__(self, request_id=None, document_link=None, stat_data=None):  # noqa: E501

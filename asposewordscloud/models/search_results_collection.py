@@ -47,7 +47,7 @@ class SearchResultsCollection(object):
 
     attribute_map = {
         'link': 'link',
-        'results_list': 'resultsList'
+        'results_list': 'ResultsList'
     }
 
     def __init__(self, link=None, results_list=None):  # noqa: E501

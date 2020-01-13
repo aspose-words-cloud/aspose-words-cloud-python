@@ -46,8 +46,8 @@ class FootnoteResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'requestId',
-        'footnote': 'footnote'
+        'request_id': 'RequestId',
+        'footnote': 'Footnote'
     }
 
     def __init__(self, request_id=None, footnote=None):  # noqa: E501

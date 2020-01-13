@@ -49,11 +49,11 @@ class MetafileRenderingOptionsData(object):
     }
 
     attribute_map = {
-        'emf_plus_dual_rendering_mode': 'emfPlusDualRenderingMode',
-        'emulate_raster_operations': 'emulateRasterOperations',
-        'rendering_mode': 'renderingMode',
-        'use_emf_embedded_to_wmf': 'useEmfEmbeddedToWmf',
-        'scale_wmf_fonts_to_metafile_size': 'scaleWmfFontsToMetafileSize'
+        'emf_plus_dual_rendering_mode': 'EmfPlusDualRenderingMode',
+        'emulate_raster_operations': 'EmulateRasterOperations',
+        'rendering_mode': 'RenderingMode',
+        'use_emf_embedded_to_wmf': 'UseEmfEmbeddedToWmf',
+        'scale_wmf_fonts_to_metafile_size': 'ScaleWmfFontsToMetafileSize'
     }
 
     def __init__(self, emf_plus_dual_rendering_mode=None, emulate_raster_operations=None, rendering_mode=None, use_emf_embedded_to_wmf=None, scale_wmf_fonts_to_metafile_size=None):  # noqa: E501

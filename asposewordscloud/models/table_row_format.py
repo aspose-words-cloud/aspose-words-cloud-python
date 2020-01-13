@@ -50,10 +50,10 @@ class TableRowFormat(object):
 
     attribute_map = {
         'link': 'link',
-        'allow_break_across_pages': 'allowBreakAcrossPages',
-        'heading_format': 'headingFormat',
-        'height': 'height',
-        'height_rule': 'heightRule'
+        'allow_break_across_pages': 'AllowBreakAcrossPages',
+        'heading_format': 'HeadingFormat',
+        'height': 'Height',
+        'height_rule': 'HeightRule'
     }
 
     def __init__(self, link=None, allow_break_across_pages=None, heading_format=None, height=None, height_rule=None):  # noqa: E501

@@ -53,13 +53,13 @@ class Comment(object):
 
     attribute_map = {
         'link': 'link',
-        'author': 'author',
-        'content': 'content',
-        'date_time': 'dateTime',
-        'initial': 'initial',
-        'range_end': 'rangeEnd',
-        'range_start': 'rangeStart',
-        'text': 'text'
+        'author': 'Author',
+        'content': 'Content',
+        'date_time': 'DateTime',
+        'initial': 'Initial',
+        'range_end': 'RangeEnd',
+        'range_start': 'RangeStart',
+        'text': 'Text'
     }
 
     def __init__(self, link=None, author=None, content=None, date_time=None, initial=None, range_end=None, range_start=None, text=None):  # noqa: E501

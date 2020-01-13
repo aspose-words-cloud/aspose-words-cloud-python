@@ -46,8 +46,8 @@ class SectionLinkCollectionResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'requestId',
-        'sections': 'sections'
+        'request_id': 'RequestId',
+        'sections': 'Sections'
     }
 
     def __init__(self, request_id=None, sections=None):  # noqa: E501

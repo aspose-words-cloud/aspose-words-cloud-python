@@ -48,10 +48,10 @@ class PageStatData(object):
     }
 
     attribute_map = {
-        'page_number': 'pageNumber',
-        'word_count': 'wordCount',
-        'paragraph_count': 'paragraphCount',
-        'footnotes_stat_data': 'footnotesStatData'
+        'page_number': 'PageNumber',
+        'word_count': 'WordCount',
+        'paragraph_count': 'ParagraphCount',
+        'footnotes_stat_data': 'FootnotesStatData'
     }
 
     def __init__(self, page_number=None, word_count=None, paragraph_count=None, footnotes_stat_data=None):  # noqa: E501

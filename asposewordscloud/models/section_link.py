@@ -47,7 +47,7 @@ class SectionLink(object):
 
     attribute_map = {
         'link': 'link',
-        'node_id': 'nodeId'
+        'node_id': 'NodeId'
     }
 
     def __init__(self, link=None, node_id=None):  # noqa: E501

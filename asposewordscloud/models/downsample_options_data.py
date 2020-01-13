@@ -47,9 +47,9 @@ class DownsampleOptionsData(object):
     }
 
     attribute_map = {
-        'downsample_images': 'downsampleImages',
-        'resolution': 'resolution',
-        'resolution_threshold': 'resolutionThreshold'
+        'downsample_images': 'DownsampleImages',
+        'resolution': 'Resolution',
+        'resolution_threshold': 'ResolutionThreshold'
     }
 
     def __init__(self, downsample_images=None, resolution=None, resolution_threshold=None):  # noqa: E501

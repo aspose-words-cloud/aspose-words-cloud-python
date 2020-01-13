@@ -46,8 +46,8 @@ class WatermarkText(object):
     }
 
     attribute_map = {
-        'text': 'text',
-        'rotation_angle': 'rotationAngle'
+        'text': 'Text',
+        'rotation_angle': 'RotationAngle'
     }
 
     def __init__(self, text=None, rotation_angle=None):  # noqa: E501

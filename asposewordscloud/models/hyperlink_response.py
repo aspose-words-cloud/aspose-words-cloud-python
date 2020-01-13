@@ -46,8 +46,8 @@ class HyperlinkResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'requestId',
-        'hyperlink': 'hyperlink'
+        'request_id': 'RequestId',
+        'hyperlink': 'Hyperlink'
     }
 
     def __init__(self, request_id=None, hyperlink=None):  # noqa: E501

@@ -46,8 +46,8 @@ class DocumentPosition(object):
     }
 
     attribute_map = {
-        'node': 'node',
-        'offset': 'offset'
+        'node': 'Node',
+        'offset': 'Offset'
     }
 
     def __init__(self, node=None, offset=None):  # noqa: E501

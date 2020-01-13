@@ -52,12 +52,12 @@ class Footnote(object):
 
     attribute_map = {
         'link': 'link',
-        'node_id': 'nodeId',
-        'content': 'content',
-        'footnote_type': 'footnoteType',
-        'position': 'position',
-        'reference_mark': 'referenceMark',
-        'text': 'text'
+        'node_id': 'NodeId',
+        'content': 'Content',
+        'footnote_type': 'FootnoteType',
+        'position': 'Position',
+        'reference_mark': 'ReferenceMark',
+        'text': 'Text'
     }
 
     def __init__(self, link=None, node_id=None, content=None, footnote_type=None, position=None, reference_mark=None, text=None):  # noqa: E501

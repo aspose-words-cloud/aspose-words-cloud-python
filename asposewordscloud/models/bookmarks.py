@@ -47,7 +47,7 @@ class Bookmarks(object):
 
     attribute_map = {
         'link': 'link',
-        'bookmark_list': 'bookmarkList'
+        'bookmark_list': 'BookmarkList'
     }
 
     def __init__(self, link=None, bookmark_list=None):  # noqa: E501

@@ -60,22 +60,22 @@ class TextSaveOptionsData(object):
     }
 
     attribute_map = {
-        'color_mode': 'colorMode',
-        'save_format': 'saveFormat',
-        'file_name': 'fileName',
-        'dml_rendering_mode': 'dmlRenderingMode',
-        'dml_effects_rendering_mode': 'dmlEffectsRenderingMode',
-        'zip_output': 'zipOutput',
-        'update_last_saved_time_property': 'updateLastSavedTimeProperty',
-        'update_sdt_content': 'updateSdtContent',
-        'update_fields': 'updateFields',
-        'add_bidi_marks': 'addBidiMarks',
-        'encoding': 'encoding',
-        'export_headers_footers_mode': 'exportHeadersFootersMode',
-        'force_page_breaks': 'forcePageBreaks',
-        'paragraph_break': 'paragraphBreak',
-        'preserve_table_layout': 'preserveTableLayout',
-        'simplify_list_labels': 'simplifyListLabels'
+        'color_mode': 'ColorMode',
+        'save_format': 'SaveFormat',
+        'file_name': 'FileName',
+        'dml_rendering_mode': 'DmlRenderingMode',
+        'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
+        'zip_output': 'ZipOutput',
+        'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
+        'update_sdt_content': 'UpdateSdtContent',
+        'update_fields': 'UpdateFields',
+        'add_bidi_marks': 'AddBidiMarks',
+        'encoding': 'Encoding',
+        'export_headers_footers_mode': 'ExportHeadersFootersMode',
+        'force_page_breaks': 'ForcePageBreaks',
+        'paragraph_break': 'ParagraphBreak',
+        'preserve_table_layout': 'PreserveTableLayout',
+        'simplify_list_labels': 'SimplifyListLabels'
     }
 
     def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, add_bidi_marks=None, encoding=None, export_headers_footers_mode=None, force_page_breaks=None, paragraph_break=None, preserve_table_layout=None, simplify_list_labels=None):  # noqa: E501

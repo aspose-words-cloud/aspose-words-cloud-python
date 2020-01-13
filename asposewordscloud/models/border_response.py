@@ -46,8 +46,8 @@ class BorderResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'requestId',
-        'border': 'border'
+        'request_id': 'RequestId',
+        'border': 'Border'
     }
 
     def __init__(self, request_id=None, border=None):  # noqa: E501

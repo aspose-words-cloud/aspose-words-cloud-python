@@ -46,8 +46,8 @@ class TableLinkCollectionResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'requestId',
-        'tables': 'tables'
+        'request_id': 'RequestId',
+        'tables': 'Tables'
     }
 
     def __init__(self, request_id=None, tables=None):  # noqa: E501

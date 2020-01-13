@@ -46,8 +46,8 @@ class SectionPageSetupResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'requestId',
-        'page_setup': 'pageSetup'
+        'request_id': 'RequestId',
+        'page_setup': 'PageSetup'
     }
 
     def __init__(self, request_id=None, page_setup=None):  # noqa: E501

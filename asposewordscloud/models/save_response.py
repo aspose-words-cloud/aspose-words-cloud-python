@@ -46,8 +46,8 @@ class SaveResponse(object):
     }
 
     attribute_map = {
-        'request_id': 'requestId',
-        'save_result': 'saveResult'
+        'request_id': 'RequestId',
+        'save_result': 'SaveResult'
     }
 
     def __init__(self, request_id=None, save_result=None):  # noqa: E501

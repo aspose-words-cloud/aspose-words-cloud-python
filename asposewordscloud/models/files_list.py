@@ -45,7 +45,7 @@ class FilesList(object):
     }
 
     attribute_map = {
-        'value': 'value'
+        'value': 'Value'
     }
 
     def __init__(self, value=None):  # noqa: E501

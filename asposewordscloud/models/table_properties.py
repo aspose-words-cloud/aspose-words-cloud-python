@@ -60,20 +60,20 @@ class TableProperties(object):
 
     attribute_map = {
         'link': 'link',
-        'alignment': 'alignment',
-        'allow_auto_fit': 'allowAutoFit',
-        'bidi': 'bidi',
-        'bottom_padding': 'bottomPadding',
-        'cell_spacing': 'cellSpacing',
-        'left_indent': 'leftIndent',
-        'left_padding': 'leftPadding',
-        'preferred_width': 'preferredWidth',
-        'right_padding': 'rightPadding',
-        'style_identifier': 'styleIdentifier',
-        'style_name': 'styleName',
-        'style_options': 'styleOptions',
-        'text_wrapping': 'textWrapping',
-        'top_padding': 'topPadding'
+        'alignment': 'Alignment',
+        'allow_auto_fit': 'AllowAutoFit',
+        'bidi': 'Bidi',
+        'bottom_padding': 'BottomPadding',
+        'cell_spacing': 'CellSpacing',
+        'left_indent': 'LeftIndent',
+        'left_padding': 'LeftPadding',
+        'preferred_width': 'PreferredWidth',
+        'right_padding': 'RightPadding',
+        'style_identifier': 'StyleIdentifier',
+        'style_name': 'StyleName',
+        'style_options': 'StyleOptions',
+        'text_wrapping': 'TextWrapping',
+        'top_padding': 'TopPadding'
     }
 
     def __init__(self, link=None, alignment=None, allow_auto_fit=None, bidi=None, bottom_padding=None, cell_spacing=None, left_indent=None, left_padding=None, preferred_width=None, right_padding=None, style_identifier=None, style_name=None, style_options=None, text_wrapping=None, top_padding=None):  # noqa: E501
