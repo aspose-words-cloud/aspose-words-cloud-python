@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**color_mode** | **str** | Gets or sets a value determining how colors are rendered. { Normal | Grayscale}. | [optional] 
 **save_format** | **str** | Gets or sets format of save. | [optional] 
 **file_name** | **str** | Gets or sets name of destination file. | [optional] 
 **dml_rendering_mode** | **str** | Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }. | [optional] 
