@@ -41,7 +41,6 @@ class PclSaveOptionsData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'color_mode': 'str',
         'save_format': 'str',
         'file_name': 'str',
         'dml_rendering_mode': 'str',
@@ -50,6 +49,7 @@ class PclSaveOptionsData(object):
         'update_last_saved_time_property': 'bool',
         'update_sdt_content': 'bool',
         'update_fields': 'bool',
+        'color_mode': 'str',
         'jpeg_quality': 'int',
         'metafile_rendering_options': 'MetafileRenderingOptionsData',
         'numeral_format': 'str',
@@ -61,7 +61,6 @@ class PclSaveOptionsData(object):
     }
 
     attribute_map = {
-        'color_mode': 'ColorMode',
         'save_format': 'SaveFormat',
         'file_name': 'FileName',
         'dml_rendering_mode': 'DmlRenderingMode',
@@ -70,6 +69,7 @@ class PclSaveOptionsData(object):
         'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
         'update_sdt_content': 'UpdateSdtContent',
         'update_fields': 'UpdateFields',
+        'color_mode': 'ColorMode',
         'jpeg_quality': 'JpegQuality',
         'metafile_rendering_options': 'MetafileRenderingOptions',
         'numeral_format': 'NumeralFormat',
@@ -80,10 +80,9 @@ class PclSaveOptionsData(object):
         'rasterize_transformed_elements': 'RasterizeTransformedElements'
     }
 
-    def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, falllback_font_name=None, rasterize_transformed_elements=None):  # noqa: E501
+    def __init__(self, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, falllback_font_name=None, rasterize_transformed_elements=None):  # noqa: E501
         """PclSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
-        self._color_mode = None
         self._save_format = None
         self._file_name = None
         self._dml_rendering_mode = None
@@ -92,6 +91,7 @@ class PclSaveOptionsData(object):
         self._update_last_saved_time_property = None
         self._update_sdt_content = None
         self._update_fields = None
+        self._color_mode = None
         self._jpeg_quality = None
         self._metafile_rendering_options = None
         self._numeral_format = None
@@ -102,8 +102,6 @@ class PclSaveOptionsData(object):
         self._rasterize_transformed_elements = None
         self.discriminator = None
 
-        if color_mode is not None:
-            self.color_mode = color_mode
         if save_format is not None:
             self.save_format = save_format
         if file_name is not None:
@@ -120,6 +118,8 @@ class PclSaveOptionsData(object):
             self.update_sdt_content = update_sdt_content
         if update_fields is not None:
             self.update_fields = update_fields
+        if color_mode is not None:
+            self.color_mode = color_mode
         if jpeg_quality is not None:
             self.jpeg_quality = jpeg_quality
         if metafile_rendering_options is not None:
@@ -137,27 +137,6 @@ class PclSaveOptionsData(object):
         if rasterize_transformed_elements is not None:
             self.rasterize_transformed_elements = rasterize_transformed_elements
 
-    @property
-    def color_mode(self):
-        """Gets the color_mode of this PclSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
-
-        :return: The color_mode of this PclSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._color_mode
-
-    @color_mode.setter
-    def color_mode(self, color_mode):
-        """Sets the color_mode of this PclSaveOptionsData.
-
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
-
-        :param color_mode: The color_mode of this PclSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._color_mode = color_mode
     @property
     def save_format(self):
         """Gets the save_format of this PclSaveOptionsData.  # noqa: E501
@@ -326,6 +305,27 @@ class PclSaveOptionsData(object):
         :type: bool
         """
         self._update_fields = update_fields
+    @property
+    def color_mode(self):
+        """Gets the color_mode of this PclSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
+
+        :return: The color_mode of this PclSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._color_mode
+
+    @color_mode.setter
+    def color_mode(self, color_mode):
+        """Sets the color_mode of this PclSaveOptionsData.
+
+        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
+
+        :param color_mode: The color_mode of this PclSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        self._color_mode = color_mode
     @property
     def jpeg_quality(self):
         """Gets the jpeg_quality of this PclSaveOptionsData.  # noqa: E501
