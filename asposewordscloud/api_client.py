@@ -591,8 +591,11 @@ class ApiClient(object):
         :return: datetime.
         """
         try:
-           from dateutil.parser import isoparse
-           return isoparse(string)
+            if string == '0001-01-01T00:00:00':
+                return datetime.datetime.min
+            else:
+                from dateutil.parser import parse
+                return parse(re.search('[0-9]', string).group(0))
         except ImportError:
             return string
         except ValueError:
