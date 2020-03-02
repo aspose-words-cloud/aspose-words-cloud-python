@@ -118,8 +118,6 @@ class StorageFile(object):
         :param is_folder: The is_folder of this StorageFile.  # noqa: E501
         :type: bool
         """
-        if is_folder is None:
-            raise ValueError("Invalid value for `is_folder`, must not be `None`")  # noqa: E501
         self._is_folder = is_folder
     @property
     def modified_date(self):
@@ -162,8 +160,6 @@ class StorageFile(object):
         :param size: The size of this StorageFile.  # noqa: E501
         :type: int
         """
-        if size is None:
-            raise ValueError("Invalid value for `size`, must not be `None`")  # noqa: E501
         self._size = size
     @property
     def path(self):

@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**color_mode** | **str** | Gets or sets a value determining how colors are rendered. { Normal | Grayscale}. | [optional] 
 **save_format** | **str** | Gets or sets format of save. | [optional] 
 **file_name** | **str** | Gets or sets name of destination file. | [optional] 
 **dml_rendering_mode** | **str** | Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }. | [optional] 
@@ -21,5 +20,4 @@ Name | Type | Description | Notes
 **simplify_list_labels** | **bool** | Gets or sets specifies whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

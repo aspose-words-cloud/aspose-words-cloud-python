@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**link** | [**WordsApiLink**](WordsApiLink.md) | Gets or sets link to the document. | [optional] 
+**link** | [**WordsApiLink**](WordsApiLink.md) |  | [optional] 
 **add_space_between_far_east_and_alpha** | **bool** | Gets or sets a flag indicating whether inter-character spacing is automatically adjusted between regions of Latin text and regions of East Asian text in the current paragraph.              | [optional] 
 **add_space_between_far_east_and_digit** | **bool** | Gets or sets a flag indicating whether inter-character spacing is automatically adjusted between regions of numbers and regions of East Asian text in the current paragraph.              | [optional] 
 **alignment** | **str** | Gets or sets text alignment for the paragraph.              | [optional] 
@@ -28,9 +28,8 @@ Name | Type | Description | Notes
 **style_identifier** | **str** | Gets or sets the locale independent style identifier of the paragraph style applied to this formatting.              | [optional] 
 **style_name** | **str** | Gets or sets the name of the paragraph style applied to this formatting.              | [optional] 
 **suppress_auto_hyphens** | **bool** | Gets or sets specifies whether the current paragraph should be exempted from any hyphenation which is applied in the document settings.              | [optional] 
-**suppress_line_numbers** | **bool** | Gets or sets specifies whether the current paragraph&#39;s lines should be exempted from line numbering which is applied in the parent section.              | [optional] 
+**suppress_line_numbers** | **bool** | Gets or sets specifies whether the current paragraph&#x27;s lines should be exempted from line numbering which is applied in the parent section.              | [optional] 
 **widow_control** | **bool** | Gets or sets true if the first and last lines in the paragraph are to remain on the same page as the rest of the paragraph.              | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

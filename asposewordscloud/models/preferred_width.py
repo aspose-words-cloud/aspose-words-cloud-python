@@ -82,8 +82,6 @@ class PreferredWidth(object):
         :param type: The type of this PreferredWidth.  # noqa: E501
         :type: str
         """
-        if type is None:
-            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         allowed_values = ["Auto", "Percent", "Points"]  # noqa: E501
         if not type.isdigit():	
             if type not in allowed_values:

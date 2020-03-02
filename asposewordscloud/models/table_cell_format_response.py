@@ -87,7 +87,7 @@ class TableCellFormatResponse(object):
     def cell_format(self):
         """Gets the cell_format of this TableCellFormatResponse.  # noqa: E501
 
-        Gets or sets table.  # noqa: E501
+        Gets or sets cell_format.  # noqa: E501
 
         :return: The cell_format of this TableCellFormatResponse.  # noqa: E501
         :rtype: TableCellFormat
@@ -98,7 +98,7 @@ class TableCellFormatResponse(object):
     def cell_format(self, cell_format):
         """Sets the cell_format of this TableCellFormatResponse.
 
-        Gets or sets table.  # noqa: E501
+        Gets or sets cell_format.  # noqa: E501
 
         :param cell_format: The cell_format of this TableCellFormatResponse.  # noqa: E501
         :type: TableCellFormat

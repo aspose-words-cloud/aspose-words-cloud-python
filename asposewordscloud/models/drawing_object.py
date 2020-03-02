@@ -116,7 +116,7 @@ class DrawingObject(object):
     def link(self):
         """Gets the link of this DrawingObject.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :return: The link of this DrawingObject.  # noqa: E501
         :rtype: WordsApiLink
@@ -127,7 +127,7 @@ class DrawingObject(object):
     def link(self, link):
         """Sets the link of this DrawingObject.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :param link: The link of this DrawingObject.  # noqa: E501
         :type: WordsApiLink
@@ -179,7 +179,7 @@ class DrawingObject(object):
     def image_data_link(self):
         """Gets the image_data_link of this DrawingObject.  # noqa: E501
 
-        Gets or sets link to image data. Can be null if shape does not have an image.  # noqa: E501
+        Gets or sets image_data_link.  # noqa: E501
 
         :return: The image_data_link of this DrawingObject.  # noqa: E501
         :rtype: WordsApiLink
@@ -190,7 +190,7 @@ class DrawingObject(object):
     def image_data_link(self, image_data_link):
         """Sets the image_data_link of this DrawingObject.
 
-        Gets or sets link to image data. Can be null if shape does not have an image.  # noqa: E501
+        Gets or sets image_data_link.  # noqa: E501
 
         :param image_data_link: The image_data_link of this DrawingObject.  # noqa: E501
         :type: WordsApiLink
@@ -221,7 +221,7 @@ class DrawingObject(object):
     def ole_data_link(self):
         """Gets the ole_data_link of this DrawingObject.  # noqa: E501
 
-        Gets or sets link to ole object. Can be null if shape does not have ole data.  # noqa: E501
+        Gets or sets ole_data_link.  # noqa: E501
 
         :return: The ole_data_link of this DrawingObject.  # noqa: E501
         :rtype: WordsApiLink
@@ -232,7 +232,7 @@ class DrawingObject(object):
     def ole_data_link(self, ole_data_link):
         """Sets the ole_data_link of this DrawingObject.
 
-        Gets or sets link to ole object. Can be null if shape does not have ole data.  # noqa: E501
+        Gets or sets ole_data_link.  # noqa: E501
 
         :param ole_data_link: The ole_data_link of this DrawingObject.  # noqa: E501
         :type: WordsApiLink

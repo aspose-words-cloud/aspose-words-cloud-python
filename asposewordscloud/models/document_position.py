@@ -66,7 +66,7 @@ class DocumentPosition(object):
     def node(self):
         """Gets the node of this DocumentPosition.  # noqa: E501
 
-        Gets or sets link to  node.  # noqa: E501
+        Gets or sets node.  # noqa: E501
 
         :return: The node of this DocumentPosition.  # noqa: E501
         :rtype: NodeLink
@@ -77,7 +77,7 @@ class DocumentPosition(object):
     def node(self, node):
         """Sets the node of this DocumentPosition.
 
-        Gets or sets link to  node.  # noqa: E501
+        Gets or sets node.  # noqa: E501
 
         :param node: The node of this DocumentPosition.  # noqa: E501
         :type: NodeLink

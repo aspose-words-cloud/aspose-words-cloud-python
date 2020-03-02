@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**color_mode** | **str** | Gets or sets a value determining how colors are rendered. { Normal | Grayscale}. | [optional] 
 **save_format** | **str** | Gets or sets format of save. | [optional] 
 **file_name** | **str** | Gets or sets name of destination file. | [optional] 
 **dml_rendering_mode** | **str** | Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }. | [optional] 
@@ -16,5 +15,4 @@ Name | Type | Description | Notes
 **images_folder_alias** | **str** | Gets or sets specifies the name of the folder used to construct image URIs. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

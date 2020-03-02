@@ -41,35 +41,35 @@ class HeaderFooter(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'link': 'WordsApiLink',
         'type': 'str',
+        'link': 'WordsApiLink',
         'child_nodes': 'list[NodeLink]',
         'drawing_objects': 'LinkElement',
         'paragraphs': 'LinkElement'
     }
 
     attribute_map = {
-        'link': 'link',
         'type': 'Type',
+        'link': 'link',
         'child_nodes': 'ChildNodes',
         'drawing_objects': 'DrawingObjects',
         'paragraphs': 'Paragraphs'
     }
 
-    def __init__(self, link=None, type=None, child_nodes=None, drawing_objects=None, paragraphs=None):  # noqa: E501
+    def __init__(self, type=None, link=None, child_nodes=None, drawing_objects=None, paragraphs=None):  # noqa: E501
         """HeaderFooter - a model defined in Swagger"""  # noqa: E501
 
-        self._link = None
         self._type = None
+        self._link = None
         self._child_nodes = None
         self._drawing_objects = None
         self._paragraphs = None
         self.discriminator = None
 
-        if link is not None:
-            self.link = link
         if type is not None:
             self.type = type
+        if link is not None:
+            self.link = link
         if child_nodes is not None:
             self.child_nodes = child_nodes
         if drawing_objects is not None:
@@ -77,27 +77,6 @@ class HeaderFooter(object):
         if paragraphs is not None:
             self.paragraphs = paragraphs
 
-    @property
-    def link(self):
-        """Gets the link of this HeaderFooter.  # noqa: E501
-
-        Gets or sets link to the document.  # noqa: E501
-
-        :return: The link of this HeaderFooter.  # noqa: E501
-        :rtype: WordsApiLink
-        """
-        return self._link
-
-    @link.setter
-    def link(self, link):
-        """Sets the link of this HeaderFooter.
-
-        Gets or sets link to the document.  # noqa: E501
-
-        :param link: The link of this HeaderFooter.  # noqa: E501
-        :type: WordsApiLink
-        """
-        self._link = link
     @property
     def type(self):
         """Gets the type of this HeaderFooter.  # noqa: E501
@@ -128,6 +107,27 @@ class HeaderFooter(object):
         else:
             self._type = allowed_values[int(type) if six.PY3 else long(type)]
     @property
+    def link(self):
+        """Gets the link of this HeaderFooter.  # noqa: E501
+
+        Gets or sets link.  # noqa: E501
+
+        :return: The link of this HeaderFooter.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this HeaderFooter.
+
+        Gets or sets link.  # noqa: E501
+
+        :param link: The link of this HeaderFooter.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
+    @property
     def child_nodes(self):
         """Gets the child_nodes of this HeaderFooter.  # noqa: E501
 
@@ -152,7 +152,7 @@ class HeaderFooter(object):
     def drawing_objects(self):
         """Gets the drawing_objects of this HeaderFooter.  # noqa: E501
 
-        Gets or sets link to DrawingObjects resource.  # noqa: E501
+        Gets or sets drawing_objects.  # noqa: E501
 
         :return: The drawing_objects of this HeaderFooter.  # noqa: E501
         :rtype: LinkElement
@@ -163,7 +163,7 @@ class HeaderFooter(object):
     def drawing_objects(self, drawing_objects):
         """Sets the drawing_objects of this HeaderFooter.
 
-        Gets or sets link to DrawingObjects resource.  # noqa: E501
+        Gets or sets drawing_objects.  # noqa: E501
 
         :param drawing_objects: The drawing_objects of this HeaderFooter.  # noqa: E501
         :type: LinkElement
@@ -173,7 +173,7 @@ class HeaderFooter(object):
     def paragraphs(self):
         """Gets the paragraphs of this HeaderFooter.  # noqa: E501
 
-        Gets or sets link to Paragraphs resource.  # noqa: E501
+        Gets or sets paragraphs.  # noqa: E501
 
         :return: The paragraphs of this HeaderFooter.  # noqa: E501
         :rtype: LinkElement
@@ -184,7 +184,7 @@ class HeaderFooter(object):
     def paragraphs(self, paragraphs):
         """Sets the paragraphs of this HeaderFooter.
 
-        Gets or sets link to Paragraphs resource.  # noqa: E501
+        Gets or sets paragraphs.  # noqa: E501
 
         :param paragraphs: The paragraphs of this HeaderFooter.  # noqa: E501
         :type: LinkElement

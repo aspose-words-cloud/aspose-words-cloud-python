@@ -139,8 +139,6 @@ class ReplaceTextParameters(object):
         :param is_match_case: The is_match_case of this ReplaceTextParameters.  # noqa: E501
         :type: bool
         """
-        if is_match_case is None:
-            raise ValueError("Invalid value for `is_match_case`, must not be `None`")  # noqa: E501
         self._is_match_case = is_match_case
     @property
     def is_match_whole_word(self):
@@ -162,8 +160,6 @@ class ReplaceTextParameters(object):
         :param is_match_whole_word: The is_match_whole_word of this ReplaceTextParameters.  # noqa: E501
         :type: bool
         """
-        if is_match_whole_word is None:
-            raise ValueError("Invalid value for `is_match_whole_word`, must not be `None`")  # noqa: E501
         self._is_match_whole_word = is_match_whole_word
     @property
     def is_old_value_regex(self):
@@ -185,8 +181,6 @@ class ReplaceTextParameters(object):
         :param is_old_value_regex: The is_old_value_regex of this ReplaceTextParameters.  # noqa: E501
         :type: bool
         """
-        if is_old_value_regex is None:
-            raise ValueError("Invalid value for `is_old_value_regex`, must not be `None`")  # noqa: E501
         self._is_old_value_regex = is_old_value_regex
     def to_dict(self):
         """Returns the model properties as a dict"""

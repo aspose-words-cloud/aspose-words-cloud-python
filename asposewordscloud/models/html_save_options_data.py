@@ -41,7 +41,6 @@ class HtmlSaveOptionsData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'color_mode': 'str',
         'save_format': 'str',
         'file_name': 'str',
         'dml_rendering_mode': 'str',
@@ -92,7 +91,6 @@ class HtmlSaveOptionsData(object):
     }
 
     attribute_map = {
-        'color_mode': 'ColorMode',
         'save_format': 'SaveFormat',
         'file_name': 'FileName',
         'dml_rendering_mode': 'DmlRenderingMode',
@@ -142,10 +140,9 @@ class HtmlSaveOptionsData(object):
         'table_width_output_mode': 'TableWidthOutputMode'
     }
 
-    def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, allow_negative_indent=None, css_class_name_prefix=None, css_style_sheet_file_name=None, css_style_sheet_type=None, document_split_criteria=None, document_split_heading_level=None, encoding=None, export_document_properties=None, export_drop_down_form_field_as_text=None, export_font_resources=None, export_fonts_as_base64=None, export_headers_footers_mode=None, export_images_as_base64=None, export_language_information=None, export_list_labels=None, export_original_url_for_linked_images=None, export_page_margins=None, export_page_setup=None, export_relative_font_size=None, export_roundtrip_information=None, export_text_box_as_svg=None, export_text_input_form_field_as_text=None, export_toc_page_numbers=None, export_xhtml_transitional=None, font_resources_subsetting_size_threshold=None, fonts_folder=None, fonts_folder_alias=None, html_version=None, image_resolution=None, images_folder=None, images_folder_alias=None, metafile_format=None, office_math_output_mode=None, pretty_format=None, resolve_font_names=None, resource_folder=None, resource_folder_alias=None, scale_image_to_shape_size=None, table_width_output_mode=None):  # noqa: E501
+    def __init__(self, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, allow_negative_indent=None, css_class_name_prefix=None, css_style_sheet_file_name=None, css_style_sheet_type=None, document_split_criteria=None, document_split_heading_level=None, encoding=None, export_document_properties=None, export_drop_down_form_field_as_text=None, export_font_resources=None, export_fonts_as_base64=None, export_headers_footers_mode=None, export_images_as_base64=None, export_language_information=None, export_list_labels=None, export_original_url_for_linked_images=None, export_page_margins=None, export_page_setup=None, export_relative_font_size=None, export_roundtrip_information=None, export_text_box_as_svg=None, export_text_input_form_field_as_text=None, export_toc_page_numbers=None, export_xhtml_transitional=None, font_resources_subsetting_size_threshold=None, fonts_folder=None, fonts_folder_alias=None, html_version=None, image_resolution=None, images_folder=None, images_folder_alias=None, metafile_format=None, office_math_output_mode=None, pretty_format=None, resolve_font_names=None, resource_folder=None, resource_folder_alias=None, scale_image_to_shape_size=None, table_width_output_mode=None):  # noqa: E501
         """HtmlSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
-        self._color_mode = None
         self._save_format = None
         self._file_name = None
         self._dml_rendering_mode = None
@@ -195,8 +192,6 @@ class HtmlSaveOptionsData(object):
         self._table_width_output_mode = None
         self.discriminator = None
 
-        if color_mode is not None:
-            self.color_mode = color_mode
         if save_format is not None:
             self.save_format = save_format
         if file_name is not None:
@@ -292,27 +287,6 @@ class HtmlSaveOptionsData(object):
         if table_width_output_mode is not None:
             self.table_width_output_mode = table_width_output_mode
 
-    @property
-    def color_mode(self):
-        """Gets the color_mode of this HtmlSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
-
-        :return: The color_mode of this HtmlSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._color_mode
-
-    @color_mode.setter
-    def color_mode(self, color_mode):
-        """Sets the color_mode of this HtmlSaveOptionsData.
-
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
-
-        :param color_mode: The color_mode of this HtmlSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._color_mode = color_mode
     @property
     def save_format(self):
         """Gets the save_format of this HtmlSaveOptionsData.  # noqa: E501

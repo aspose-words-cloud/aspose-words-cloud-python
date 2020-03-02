@@ -87,7 +87,7 @@ class LoadWebDocumentData(object):
     def save_options(self):
         """Gets the save_options of this LoadWebDocumentData.  # noqa: E501
 
-        Gets or sets save options.  # noqa: E501
+        Gets or sets save_options.  # noqa: E501
 
         :return: The save_options of this LoadWebDocumentData.  # noqa: E501
         :rtype: SaveOptionsData
@@ -98,7 +98,7 @@ class LoadWebDocumentData(object):
     def save_options(self, save_options):
         """Sets the save_options of this LoadWebDocumentData.
 
-        Gets or sets save options.  # noqa: E501
+        Gets or sets save_options.  # noqa: E501
 
         :param save_options: The save_options of this LoadWebDocumentData.  # noqa: E501
         :type: SaveOptionsData

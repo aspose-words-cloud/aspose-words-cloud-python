@@ -87,7 +87,7 @@ class FieldsResponse(object):
     def fields(self):
         """Gets the fields of this FieldsResponse.  # noqa: E501
 
-        Gets or sets collection of fields.  # noqa: E501
+        Gets or sets fields.  # noqa: E501
 
         :return: The fields of this FieldsResponse.  # noqa: E501
         :rtype: FieldCollection
@@ -98,7 +98,7 @@ class FieldsResponse(object):
     def fields(self, fields):
         """Sets the fields of this FieldsResponse.
 
-        Gets or sets collection of fields.  # noqa: E501
+        Gets or sets fields.  # noqa: E501
 
         :param fields: The fields of this FieldsResponse.  # noqa: E501
         :type: FieldCollection

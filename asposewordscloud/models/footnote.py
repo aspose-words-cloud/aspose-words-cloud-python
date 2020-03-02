@@ -91,7 +91,7 @@ class Footnote(object):
     def link(self):
         """Gets the link of this Footnote.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :return: The link of this Footnote.  # noqa: E501
         :rtype: WordsApiLink
@@ -102,7 +102,7 @@ class Footnote(object):
     def link(self, link):
         """Sets the link of this Footnote.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :param link: The link of this Footnote.  # noqa: E501
         :type: WordsApiLink
@@ -133,7 +133,7 @@ class Footnote(object):
     def content(self):
         """Gets the content of this Footnote.  # noqa: E501
 
-        Gets or sets content of footnote.  # noqa: E501
+        Gets or sets content.  # noqa: E501
 
         :return: The content of this Footnote.  # noqa: E501
         :rtype: StoryChildNodes
@@ -144,7 +144,7 @@ class Footnote(object):
     def content(self, content):
         """Sets the content of this Footnote.
 
-        Gets or sets content of footnote.  # noqa: E501
+        Gets or sets content.  # noqa: E501
 
         :param content: The content of this Footnote.  # noqa: E501
         :type: StoryChildNodes
@@ -183,7 +183,7 @@ class Footnote(object):
     def position(self):
         """Gets the position of this Footnote.  # noqa: E501
 
-        Gets or sets link to comment range start node.  # noqa: E501
+        Gets or sets position.  # noqa: E501
 
         :return: The position of this Footnote.  # noqa: E501
         :rtype: DocumentPosition
@@ -194,7 +194,7 @@ class Footnote(object):
     def position(self, position):
         """Sets the position of this Footnote.
 
-        Gets or sets link to comment range start node.  # noqa: E501
+        Gets or sets position.  # noqa: E501
 
         :param position: The position of this Footnote.  # noqa: E501
         :type: DocumentPosition

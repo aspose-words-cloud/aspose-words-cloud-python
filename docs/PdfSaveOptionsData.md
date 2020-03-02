@@ -4,6 +4,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **color_mode** | **str** | Gets or sets a value determining how colors are rendered. { Normal | Grayscale}. | [optional] 
+**jpeg_quality** | **int** | Gets or sets determines the quality of the JPEG images inside PDF document. | [optional] 
+**metafile_rendering_options** | [**MetafileRenderingOptionsData**](MetafileRenderingOptionsData.md) |  | [optional] 
+**numeral_format** | **str** | Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats. | [optional] 
+**optimize_output** | **bool** | Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false. | [optional] 
+**page_count** | **int** | Gets or sets determines number of pages to render. | [optional] 
+**page_index** | **int** | Gets or sets determines 0-based index of the first page to render. | [optional] 
 **save_format** | **str** | Gets or sets format of save. | [optional] 
 **file_name** | **str** | Gets or sets name of destination file. | [optional] 
 **dml_rendering_mode** | **str** | Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }. | [optional] 
@@ -12,20 +18,14 @@ Name | Type | Description | Notes
 **update_last_saved_time_property** | **bool** | Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving. | [optional] 
 **update_sdt_content** | **bool** | Gets or sets value determining whether content of StructuredDocumentTag is updated before saving. | [optional] 
 **update_fields** | **bool** | Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true | [optional] 
-**jpeg_quality** | **int** | Gets or sets determines the quality of the JPEG images inside PDF document. | [optional] 
-**metafile_rendering_options** | [**MetafileRenderingOptionsData**](MetafileRenderingOptionsData.md) | Gets or sets allows to specify metafile rendering options. | [optional] 
-**numeral_format** | **str** | Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats. | [optional] 
-**optimize_output** | **bool** | Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false. | [optional] 
-**page_count** | **int** | Gets or sets determines number of pages to render. | [optional] 
-**page_index** | **int** | Gets or sets determines 0-based index of the first page to render. | [optional] 
 **compliance** | **str** | Gets or sets specifies the PDF standards compliance level for output documents. | [optional] 
 **create_note_hyperlinks** | **bool** | Gets or sets specifies whether to convert footnote/endnote references in main text story into active hyperlinks. When clicked the hyperlink will lead to the corresponding footnote/endnote. Default is false. | [optional] 
 **custom_properties_export** | **str** | Gets or sets a value determining the way CustomDocumentProperties are exported to PDF file. Default value is None. | [optional] 
-**digital_signature_details** | [**PdfDigitalSignatureDetailsData**](PdfDigitalSignatureDetailsData.md) | Gets or sets specifies the details for signing the output PDF document. | [optional] 
+**digital_signature_details** | [**PdfDigitalSignatureDetailsData**](PdfDigitalSignatureDetailsData.md) |  | [optional] 
 **display_doc_title** | **bool** | Gets or sets a flag specifying whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary. | [optional] 
-**downsample_options** | [**DownsampleOptionsData**](DownsampleOptionsData.md) | Gets or sets allows to specify downsample options. | [optional] 
+**downsample_options** | [**DownsampleOptionsData**](DownsampleOptionsData.md) |  | [optional] 
 **embed_full_fonts** | **bool** | Gets or sets controls how fonts are embedded into the resulting PDF documents. | [optional] 
-**encryption_details** | [**PdfEncryptionDetailsData**](PdfEncryptionDetailsData.md) | Gets or sets specifies the details for encrypting the output PDF document. | [optional] 
+**encryption_details** | [**PdfEncryptionDetailsData**](PdfEncryptionDetailsData.md) |  | [optional] 
 **escape_uri** | **bool** | Gets or sets a flag specifying whether URI should be escaped before writing.              | [optional] 
 **export_document_structure** | **bool** | Gets or sets determines whether or not to export document structure. | [optional] 
 **font_embedding_mode** | **str** | Gets or sets specifies the font embedding mode. | [optional] 
@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **image_color_space_export_mode** | **str** | Gets or sets specifies how the color space will be selected for the images in PDF document. | [optional] 
 **image_compression** | **str** | Gets or sets specifies compression type to be used for all images in the document. | [optional] 
 **open_hyperlinks_in_new_window** | **bool** | Gets or sets determines whether hyperlinks in the output Pdf document are forced to be opened in a new window (or tab) of a browser. | [optional] 
-**outline_options** | [**OutlineOptionsData**](OutlineOptionsData.md) | Gets or sets allows to specify outline options. | [optional] 
+**outline_options** | [**OutlineOptionsData**](OutlineOptionsData.md) |  | [optional] 
 **page_mode** | **str** | Gets or sets specifies how the PDF document should be displayed when opened in the PDF reader. | [optional] 
 **preblend_images** | **bool** | Gets or sets a value determining whether or not to preblend transparent images with black background color. | [optional] 
 **preserve_form_fields** | **bool** | Gets or sets specifies whether to preserve Microsoft Word form fields as form fields in PDF or convert them to text. | [optional] 
@@ -44,5 +44,4 @@ Name | Type | Description | Notes
 **zoom_factor** | **int** | Gets or sets determines zoom factor (in percentages) for a document. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

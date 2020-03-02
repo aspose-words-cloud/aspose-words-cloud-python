@@ -41,7 +41,6 @@ class DocSaveOptionsData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'color_mode': 'str',
         'save_format': 'str',
         'file_name': 'str',
         'dml_rendering_mode': 'str',
@@ -57,7 +56,6 @@ class DocSaveOptionsData(object):
     }
 
     attribute_map = {
-        'color_mode': 'ColorMode',
         'save_format': 'SaveFormat',
         'file_name': 'FileName',
         'dml_rendering_mode': 'DmlRenderingMode',
@@ -72,10 +70,9 @@ class DocSaveOptionsData(object):
         'save_routing_slip': 'SaveRoutingSlip'
     }
 
-    def __init__(self, color_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, always_compress_metafiles=None, password=None, save_picture_bullet=None, save_routing_slip=None):  # noqa: E501
+    def __init__(self, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, always_compress_metafiles=None, password=None, save_picture_bullet=None, save_routing_slip=None):  # noqa: E501
         """DocSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
-        self._color_mode = None
         self._save_format = None
         self._file_name = None
         self._dml_rendering_mode = None
@@ -90,8 +87,6 @@ class DocSaveOptionsData(object):
         self._save_routing_slip = None
         self.discriminator = None
 
-        if color_mode is not None:
-            self.color_mode = color_mode
         if save_format is not None:
             self.save_format = save_format
         if file_name is not None:
@@ -117,27 +112,6 @@ class DocSaveOptionsData(object):
         if save_routing_slip is not None:
             self.save_routing_slip = save_routing_slip
 
-    @property
-    def color_mode(self):
-        """Gets the color_mode of this DocSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
-
-        :return: The color_mode of this DocSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._color_mode
-
-    @color_mode.setter
-    def color_mode(self, color_mode):
-        """Sets the color_mode of this DocSaveOptionsData.
-
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
-
-        :param color_mode: The color_mode of this DocSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._color_mode = color_mode
     @property
     def save_format(self):
         """Gets the save_format of this DocSaveOptionsData.  # noqa: E501

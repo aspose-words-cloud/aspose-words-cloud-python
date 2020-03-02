@@ -87,7 +87,7 @@ class CommentsResponse(object):
     def comments(self):
         """Gets the comments of this CommentsResponse.  # noqa: E501
 
-        Gets or sets collection of comments.  # noqa: E501
+        Gets or sets comments.  # noqa: E501
 
         :return: The comments of this CommentsResponse.  # noqa: E501
         :rtype: CommentsCollection
@@ -98,7 +98,7 @@ class CommentsResponse(object):
     def comments(self, comments):
         """Sets the comments of this CommentsResponse.
 
-        Gets or sets collection of comments.  # noqa: E501
+        Gets or sets comments.  # noqa: E501
 
         :param comments: The comments of this CommentsResponse.  # noqa: E501
         :type: CommentsCollection

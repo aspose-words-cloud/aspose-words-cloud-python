@@ -3,9 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**source** | [**FileLink**](FileLink.md) | Gets or sets link to the source document (source for the modification operation). | [optional] 
-**dest** | [**FileLink**](FileLink.md) | Gets or sets link to the dest document (result of the modification operation). | [optional] 
+**source** | [**FileLink**](FileLink.md) |  | [optional] 
+**dest** | [**FileLink**](FileLink.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

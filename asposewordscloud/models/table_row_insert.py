@@ -103,8 +103,6 @@ class TableRowInsert(object):
         :param columns_count: The columns_count of this TableRowInsert.  # noqa: E501
         :type: int
         """
-        if columns_count is None:
-            raise ValueError("Invalid value for `columns_count`, must not be `None`")  # noqa: E501
         self._columns_count = columns_count
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -29,7 +29,7 @@ class RemoveRangeRequest(object):
     Request model for remove_range operation.
     Initializes a new instance.
     :param name The document.
-    :param range_start_identifier The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
+    :param range_start_identifier The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
     :param range_end_identifier The range end identifier.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -38,7 +38,7 @@ class RemoveRangeRequest(object):
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     """
 
-    def __init__(self, name, range_start_identifier, range_end_identifier, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None):
+    def __init__(self, name, range_start_identifier, range_end_identifier=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None):
         self.name = name
         self.range_start_identifier = range_start_identifier
         self.range_end_identifier = range_end_identifier

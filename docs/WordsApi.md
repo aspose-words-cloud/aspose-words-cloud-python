@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**classify**](WordsApi.md#classify) | **PUT** /words/classify | Classifies raw text.
 [**classify_document**](WordsApi.md#classify_document) | **GET** /words/{documentName}/classify | Classifies document.
 [**compare_document**](WordsApi.md#compare_document) | **PUT** /words/{name}/compareDocument | Compares document with original document.
-[**convert_document**](WordsApi.md#convert_document) | **PUT** /words/convert | Converts document from the request&#39;s content to the specified format .
+[**convert_document**](WordsApi.md#convert_document) | **PUT** /words/convert | Converts document from the request&#x27;s content to the specified format .
 [**copy_file**](WordsApi.md#copy_file) | **PUT** /words/storage/file/copy/{srcPath} | Copy file
 [**copy_folder**](WordsApi.md#copy_folder) | **PUT** /words/storage/folder/copy/{srcPath} | Copy folder
 [**create_document**](WordsApi.md#create_document) | **PUT** /words/create | Creates new document. Document is created with format which is recognized from file extensions. Supported extensions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot;.
@@ -117,22 +117,22 @@ Method | HTTP request | Description
 [**get_tables**](WordsApi.md#get_tables) | **GET** /words/{name}/{nodePath}/tables | Returns a list of tables that are contained in the document.
 [**get_tables_without_node_path**](WordsApi.md#get_tables_without_node_path) | **GET** /words/{name}/tables | Returns a list of tables that are contained in the document.
 [**insert_comment**](WordsApi.md#insert_comment) | **POST** /words/{name}/comments | Adds comment to document, returns inserted comment data.
-[**insert_drawing_object**](WordsApi.md#insert_drawing_object) | **POST** /words/{name}/{nodePath}/drawingObjects | Adds drawing object to document, returns added  drawing object&#39;s data.
-[**insert_drawing_object_without_node_path**](WordsApi.md#insert_drawing_object_without_node_path) | **POST** /words/{name}/drawingObjects | Adds drawing object to document, returns added  drawing object&#39;s data.
-[**insert_field**](WordsApi.md#insert_field) | **POST** /words/{name}/{nodePath}/fields | Adds field to document, returns inserted field&#39;s data.
-[**insert_field_without_node_path**](WordsApi.md#insert_field_without_node_path) | **POST** /words/{name}/fields | Adds field to document, returns inserted field&#39;s data.
-[**insert_footnote**](WordsApi.md#insert_footnote) | **POST** /words/{name}/{nodePath}/footnotes | Adds footnote to document, returns added footnote&#39;s data.
-[**insert_footnote_without_node_path**](WordsApi.md#insert_footnote_without_node_path) | **POST** /words/{name}/footnotes | Adds footnote to document, returns added footnote&#39;s data.
-[**insert_form_field**](WordsApi.md#insert_form_field) | **POST** /words/{name}/{nodePath}/formfields | Adds form field to paragraph, returns added form field&#39;s data.
-[**insert_form_field_without_node_path**](WordsApi.md#insert_form_field_without_node_path) | **POST** /words/{name}/formfields | Adds form field to paragraph, returns added form field&#39;s data.
+[**insert_drawing_object**](WordsApi.md#insert_drawing_object) | **POST** /words/{name}/{nodePath}/drawingObjects | Adds drawing object to document, returns added  drawing object&#x27;s data.
+[**insert_drawing_object_without_node_path**](WordsApi.md#insert_drawing_object_without_node_path) | **POST** /words/{name}/drawingObjects | Adds drawing object to document, returns added  drawing object&#x27;s data.
+[**insert_field**](WordsApi.md#insert_field) | **POST** /words/{name}/{nodePath}/fields | Adds field to document, returns inserted field&#x27;s data.
+[**insert_field_without_node_path**](WordsApi.md#insert_field_without_node_path) | **POST** /words/{name}/fields | Adds field to document, returns inserted field&#x27;s data.
+[**insert_footnote**](WordsApi.md#insert_footnote) | **POST** /words/{name}/{nodePath}/footnotes | Adds footnote to document, returns added footnote&#x27;s data.
+[**insert_footnote_without_node_path**](WordsApi.md#insert_footnote_without_node_path) | **POST** /words/{name}/footnotes | Adds footnote to document, returns added footnote&#x27;s data.
+[**insert_form_field**](WordsApi.md#insert_form_field) | **POST** /words/{name}/{nodePath}/formfields | Adds form field to paragraph, returns added form field&#x27;s data.
+[**insert_form_field_without_node_path**](WordsApi.md#insert_form_field_without_node_path) | **POST** /words/{name}/formfields | Adds form field to paragraph, returns added form field&#x27;s data.
 [**insert_header_footer**](WordsApi.md#insert_header_footer) | **PUT** /words/{name}/{sectionPath}/headersfooters | Inserts to document header or footer.
 [**insert_page_numbers**](WordsApi.md#insert_page_numbers) | **PUT** /words/{name}/PageNumbers | Inserts document page numbers.
-[**insert_paragraph**](WordsApi.md#insert_paragraph) | **POST** /words/{name}/{nodePath}/paragraphs | Adds paragraph to document, returns added paragraph&#39;s data.
-[**insert_run**](WordsApi.md#insert_run) | **POST** /words/{name}/{paragraphPath}/runs | Adds run to document, returns added paragraph&#39;s data.
-[**insert_table**](WordsApi.md#insert_table) | **POST** /words/{name}/{nodePath}/tables | Adds table to document, returns added table&#39;s data.             
-[**insert_table_cell**](WordsApi.md#insert_table_cell) | **POST** /words/{name}/{tableRowPath}/cells | Adds table cell to table, returns added cell&#39;s data.             
-[**insert_table_row**](WordsApi.md#insert_table_row) | **POST** /words/{name}/{tablePath}/rows | Adds table row to table, returns added row&#39;s data.             
-[**insert_table_without_node_path**](WordsApi.md#insert_table_without_node_path) | **POST** /words/{name}/tables | Adds table to document, returns added table&#39;s data.             
+[**insert_paragraph**](WordsApi.md#insert_paragraph) | **POST** /words/{name}/{nodePath}/paragraphs | Adds paragraph to document, returns added paragraph&#x27;s data.
+[**insert_run**](WordsApi.md#insert_run) | **POST** /words/{name}/{paragraphPath}/runs | Adds run to document, returns added paragraph&#x27;s data.
+[**insert_table**](WordsApi.md#insert_table) | **POST** /words/{name}/{nodePath}/tables | Adds table to document, returns added table&#x27;s data.             
+[**insert_table_cell**](WordsApi.md#insert_table_cell) | **POST** /words/{name}/{tableRowPath}/cells | Adds table cell to table, returns added cell&#x27;s data.             
+[**insert_table_row**](WordsApi.md#insert_table_row) | **POST** /words/{name}/{tablePath}/rows | Adds table row to table, returns added row&#x27;s data.             
+[**insert_table_without_node_path**](WordsApi.md#insert_table_without_node_path) | **POST** /words/{name}/tables | Adds table to document, returns added table&#x27;s data.             
 [**insert_watermark_image**](WordsApi.md#insert_watermark_image) | **POST** /words/{name}/watermarks/images | Inserts document watermark image.
 [**insert_watermark_text**](WordsApi.md#insert_watermark_text) | **POST** /words/{name}/watermarks/texts | Inserts document watermark text.
 [**load_web_document**](WordsApi.md#load_web_document) | **PUT** /words/loadWebDocument | Loads new document from web into the file with any supported format of data.
@@ -152,7 +152,7 @@ Method | HTTP request | Description
 [**render_table_without_node_path**](WordsApi.md#render_table_without_node_path) | **GET** /words/{name}/tables/{index}/render | Renders table to specified format.
 [**replace_text**](WordsApi.md#replace_text) | **PUT** /words/{name}/replaceText | Replaces document text.
 [**replace_with_text**](WordsApi.md#replace_with_text) | **POST** /words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier} | Replaces the content in the range.
-[**reset_cache**](WordsApi.md#reset_cache) | **DELETE** /words/fonts/cache | Resets font&#39;s cache.
+[**reset_cache**](WordsApi.md#reset_cache) | **DELETE** /words/fonts/cache | Resets font&#x27;s cache.
 [**save_as**](WordsApi.md#save_as) | **PUT** /words/{name}/saveAs | Converts document to destination format with detailed settings and saves result to storage.
 [**save_as_range**](WordsApi.md#save_as_range) | **POST** /words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs | Saves the selected range as a new document.
 [**save_as_tiff**](WordsApi.md#save_as_tiff) | **PUT** /words/{name}/saveAs/tiff | Converts document to tiff with detailed settings and saves result to storage.
@@ -162,16 +162,16 @@ Method | HTTP request | Description
 [**update_bookmark**](WordsApi.md#update_bookmark) | **PUT** /words/{name}/bookmarks/{bookmarkName} | Updates document bookmark.
 [**update_border**](WordsApi.md#update_border) | **PUT** /words/{name}/{nodePath}/borders/{borderType} | Updates border properties.             
 [**update_comment**](WordsApi.md#update_comment) | **PUT** /words/{name}/comments/{commentIndex} | Updates the comment, returns updated comment data.
-[**update_drawing_object**](WordsApi.md#update_drawing_object) | **PUT** /words/{name}/{nodePath}/drawingObjects/{index} | Updates drawing object, returns updated  drawing object&#39;s data.
-[**update_drawing_object_without_node_path**](WordsApi.md#update_drawing_object_without_node_path) | **PUT** /words/{name}/drawingObjects/{index} | Updates drawing object, returns updated  drawing object&#39;s data.
-[**update_field**](WordsApi.md#update_field) | **PUT** /words/{name}/{nodePath}/fields/{index} | Updates field&#39;s properties, returns updated field&#39;s data.
+[**update_drawing_object**](WordsApi.md#update_drawing_object) | **PUT** /words/{name}/{nodePath}/drawingObjects/{index} | Updates drawing object, returns updated  drawing object&#x27;s data.
+[**update_drawing_object_without_node_path**](WordsApi.md#update_drawing_object_without_node_path) | **PUT** /words/{name}/drawingObjects/{index} | Updates drawing object, returns updated  drawing object&#x27;s data.
+[**update_field**](WordsApi.md#update_field) | **PUT** /words/{name}/{nodePath}/fields/{index} | Updates field&#x27;s properties, returns updated field&#x27;s data.
 [**update_fields**](WordsApi.md#update_fields) | **PUT** /words/{name}/updateFields | Updates (reevaluate) fields in document.
-[**update_footnote**](WordsApi.md#update_footnote) | **PUT** /words/{name}/{nodePath}/footnotes/{index} | Updates footnote&#39;s properties, returns updated run&#39;s data.
-[**update_footnote_without_node_path**](WordsApi.md#update_footnote_without_node_path) | **PUT** /words/{name}/footnotes/{index} | Updates footnote&#39;s properties, returns updated run&#39;s data.
+[**update_footnote**](WordsApi.md#update_footnote) | **PUT** /words/{name}/{nodePath}/footnotes/{index} | Updates footnote&#x27;s properties, returns updated run&#x27;s data.
+[**update_footnote_without_node_path**](WordsApi.md#update_footnote_without_node_path) | **PUT** /words/{name}/footnotes/{index} | Updates footnote&#x27;s properties, returns updated run&#x27;s data.
 [**update_form_field**](WordsApi.md#update_form_field) | **PUT** /words/{name}/{nodePath}/formfields/{index} | Updates properties of form field, returns updated form field.
 [**update_form_field_without_node_path**](WordsApi.md#update_form_field_without_node_path) | **PUT** /words/{name}/formfields/{index} | Updates properties of form field, returns updated form field.
 [**update_paragraph_format**](WordsApi.md#update_paragraph_format) | **PUT** /words/{name}/{nodePath}/paragraphs/{index}/format | Updates paragraph format properties, returns updated format properties.
-[**update_run**](WordsApi.md#update_run) | **PUT** /words/{name}/{paragraphPath}/runs/{index} | Updates run&#39;s properties, returns updated run&#39;s data.
+[**update_run**](WordsApi.md#update_run) | **PUT** /words/{name}/{paragraphPath}/runs/{index} | Updates run&#x27;s properties, returns updated run&#x27;s data.
 [**update_run_font**](WordsApi.md#update_run_font) | **PUT** /words/{name}/{paragraphPath}/runs/{index}/font | Updates font properties, returns updated font data.
 [**update_section_page_setup**](WordsApi.md#update_section_page_setup) | **PUT** /words/{name}/sections/{sectionIndex}/pageSetup | Updates page setup of section.
 [**update_table_cell_format**](WordsApi.md#update_table_cell_format) | **PUT** /words/{name}/{tableRowPath}/cells/{index}/cellformat | Updates a table cell format.
@@ -179,7 +179,6 @@ Method | HTTP request | Description
 [**update_table_properties_without_node_path**](WordsApi.md#update_table_properties_without_node_path) | **PUT** /words/{name}/tables/{index}/properties | Updates a table properties.
 [**update_table_row_format**](WordsApi.md#update_table_row_format) | **PUT** /words/{name}/{tablePath}/rows/{index}/rowformat | Updates a table row format.
 [**upload_file**](WordsApi.md#upload_file) | **PUT** /words/storage/file/{path} | Upload file
-
 
 # **accept_all_revisions**
 > RevisionsModificationResponse accept_all_revisions(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
@@ -236,13 +235,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **append_document**
-> DocumentResponse append_document(name, document_list, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> DocumentResponse append_document(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Appends documents to original document.
 
@@ -260,8 +259,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.DocumentEntryList() # DocumentEntryList | DocumentEntryList with a list of documents to append.
 name = 'name_example' # str | Original document name.
-document_list = asposewordscloud.DocumentEntryList() # DocumentEntryList | DocumentEntryList with a list of documents to append.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -272,7 +271,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Appends documents to original document.
-    api_response = api_instance.append_document(name, document_list, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.append_document(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->append_document: %s\n" % e)
@@ -282,8 +281,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**DocumentEntryList**](DocumentEntryList.md)| DocumentEntryList with a list of documents to append. | 
  **name** | **str**| Original document name. | 
- **document_list** | [**DocumentEntryList**](DocumentEntryList.md)| DocumentEntryList with a list of documents to append. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -302,13 +301,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **classify**
-> ClassificationResponse classify(text, best_classes_count=best_classes_count)
+> ClassificationResponse classify(body, best_classes_count=best_classes_count)
 
 Classifies raw text.
 
@@ -326,12 +325,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-text = 'text_example' # str | Text to classify.
-best_classes_count = '1' # str | Number of the best classes to return. (optional) (default to 1)
+body = 'body_example' # str | Text to classify.
+best_classes_count = 'best_classes_count_example' # str | Number of the best classes to return. (optional)
 
 try:
     # Classifies raw text.
-    api_response = api_instance.classify(text, best_classes_count=best_classes_count)
+    api_response = api_instance.classify(body, best_classes_count=best_classes_count)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->classify: %s\n" % e)
@@ -341,8 +340,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **text** | **str**| Text to classify. | 
- **best_classes_count** | **str**| Number of the best classes to return. | [optional] [default to 1]
+ **body** | [**str**](str.md)| Text to classify. | 
+ **best_classes_count** | **str**| Number of the best classes to return. | [optional] 
 
 ### Return type
 
@@ -354,8 +353,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -383,8 +382,8 @@ folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
 password = 'password_example' # str | Password for opening an encrypted document. (optional)
-best_classes_count = '1' # str | Count of the best classes to return. (optional) (default to 1)
-taxonomy = 'default' # str | Taxonomy to use for classification return. (optional) (default to default)
+best_classes_count = 'best_classes_count_example' # str | Count of the best classes to return. (optional)
+taxonomy = 'taxonomy_example' # str | Taxonomy to use for classification return. (optional)
 
 try:
     # Classifies document.
@@ -403,8 +402,8 @@ Name | Type | Description  | Notes
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
  **password** | **str**| Password for opening an encrypted document. | [optional] 
- **best_classes_count** | **str**| Count of the best classes to return. | [optional] [default to 1]
- **taxonomy** | **str**| Taxonomy to use for classification return. | [optional] [default to default]
+ **best_classes_count** | **str**| Count of the best classes to return. | [optional] 
+ **taxonomy** | **str**| Taxonomy to use for classification return. | [optional] 
 
 ### Return type
 
@@ -416,13 +415,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **compare_document**
-> DocumentResponse compare_document(name, compare_data, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+> DocumentResponse compare_document(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
 
 Compares document with original document.
 
@@ -440,8 +439,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.CompareData() # CompareData | CompareData with a document to compare.
 name = 'name_example' # str | Original document name.
-compare_data = asposewordscloud.CompareData() # CompareData | CompareData with a document to compare.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -450,7 +449,7 @@ dest_file_name = 'dest_file_name_example' # str | Result path of the document af
 
 try:
     # Compares document with original document.
-    api_response = api_instance.compare_document(name, compare_data, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+    api_response = api_instance.compare_document(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->compare_document: %s\n" % e)
@@ -460,8 +459,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**CompareData**](CompareData.md)| CompareData with a document to compare. | 
  **name** | **str**| Original document name. | 
- **compare_data** | [**CompareData**](CompareData.md)| CompareData with a document to compare. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -478,13 +477,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **convert_document**
-> file convert_document(document, format, storage=storage, out_path=out_path, file_name_field_value=file_name_field_value, fonts_location=fonts_location)
+> str convert_document(format, document=document, storage=storage, out_path=out_path, file_name_field_value=file_name_field_value, fonts_location=fonts_location)
 
 Converts document from the request's content to the specified format .
 
@@ -502,16 +501,16 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-document = '/path/to/file.txt' # file | Converting document
 format = 'format_example' # str | Format to convert.
+document = 'document_example' # str |  (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 out_path = 'out_path_example' # str | Path for saving operation result to the local storage. (optional)
-file_name_field_value = 'sourceFilename' # str | This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \"sourceFilename\" will be used instead.  (optional) (default to sourceFilename)
+file_name_field_value = 'file_name_field_value_example' # str | This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \"sourceFilename\" will be used instead.  (optional)
 fonts_location = 'fonts_location_example' # str | Folder in filestorage with custom fonts. (optional)
 
 try:
     # Converts document from the request's content to the specified format .
-    api_response = api_instance.convert_document(document, format, storage=storage, out_path=out_path, file_name_field_value=file_name_field_value, fonts_location=fonts_location)
+    api_response = api_instance.convert_document(format, document=document, storage=storage, out_path=out_path, file_name_field_value=file_name_field_value, fonts_location=fonts_location)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->convert_document: %s\n" % e)
@@ -521,16 +520,16 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **document** | **file**| Converting document | 
  **format** | **str**| Format to convert. | 
+ **document** | **str**|  | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **out_path** | **str**| Path for saving operation result to the local storage. | [optional] 
- **file_name_field_value** | **str**| This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \&quot;sourceFilename\&quot; will be used instead.  | [optional] [default to sourceFilename]
+ **file_name_field_value** | **str**| This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \&quot;sourceFilename\&quot; will be used instead.  | [optional] 
  **fonts_location** | **str**| Folder in filestorage with custom fonts. | [optional] 
 
 ### Return type
 
-[**file**](file.md)
+**str**
 
 ### Authorization
 
@@ -539,7 +538,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/xml, application/json
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -580,7 +579,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dest_path** | **str**| Destination file path | 
- **src_path** | **str**| Source file&#39;s path e.g. &#39;/Folder 1/file.ext&#39; or &#39;/Bucket/Folder 1/file.ext&#39; | 
+ **src_path** | **str**| Source file&#x27;s path e.g. &#x27;/Folder 1/file.ext&#x27; or &#x27;/Bucket/Folder 1/file.ext&#x27; | 
  **src_storage_name** | **str**| Source storage name | [optional] 
  **dest_storage_name** | **str**| Destination storage name | [optional] 
  **version_id** | **str**| File version ID to copy | [optional] 
@@ -595,8 +594,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -635,7 +634,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dest_path** | **str**| Destination folder path e.g. &#39;/dst&#39; | 
+ **dest_path** | **str**| Destination folder path e.g. &#x27;/dst&#x27; | 
  **src_path** | **str**| Source folder path e.g. /Folder1 | 
  **src_storage_name** | **str**| Source storage name | [optional] 
  **dest_storage_name** | **str**| Destination storage name | [optional] 
@@ -650,8 +649,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -704,8 +703,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -742,7 +741,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **str**| Target folder&#39;s path e.g. Folder1/Folder2/. The folders will be created recursively | 
+ **path** | **str**| Target folder&#x27;s path e.g. Folder1/Folder2/. The folders will be created recursively | 
  **storage_name** | **str**| Storage name | [optional] 
 
 ### Return type
@@ -755,13 +754,13 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_or_update_document_property**
-> DocumentPropertyResponse create_or_update_document_property(name, property_name, _property, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> DocumentPropertyResponse create_or_update_document_property(body, name, property_name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Adds new or update existing document property.
 
@@ -779,9 +778,9 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.DocumentProperty() # DocumentProperty | The property with new value.
 name = 'name_example' # str | The document name.
 property_name = 'property_name_example' # str | The property name.
-_property = asposewordscloud.DocumentProperty() # DocumentProperty | The property with new value.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -792,7 +791,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Adds new or update existing document property.
-    api_response = api_instance.create_or_update_document_property(name, property_name, _property, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.create_or_update_document_property(body, name, property_name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->create_or_update_document_property: %s\n" % e)
@@ -802,9 +801,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**DocumentProperty**](DocumentProperty.md)| The property with new value. | 
  **name** | **str**| The document name. | 
  **property_name** | **str**| The property name. | 
- **_property** | [**DocumentProperty**](DocumentProperty.md)| The property with new value. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -823,8 +822,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -893,8 +892,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -961,8 +960,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1026,8 +1025,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1091,8 +1090,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1158,8 +1157,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1223,8 +1222,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1290,8 +1289,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1355,8 +1354,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1420,8 +1419,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1483,8 +1482,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1536,8 +1535,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1562,7 +1561,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 path = 'path_example' # str | Folder path e.g. /Folder1s
 storage_name = 'storage_name_example' # str | Storage name (optional)
-recursive = false # bool | Enable to delete folders, subfolders and files (optional) (default to false)
+recursive = true # bool | Enable to delete folders, subfolders and files (optional)
 
 try:
     # Delete folder
@@ -1577,7 +1576,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **path** | **str**| Folder path e.g. /Folder1s | 
  **storage_name** | **str**| Storage name | [optional] 
- **recursive** | **bool**| Enable to delete folders, subfolders and files | [optional] [default to false]
+ **recursive** | **bool**| Enable to delete folders, subfolders and files | [optional] 
 
 ### Return type
 
@@ -1589,8 +1588,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1656,8 +1655,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1721,8 +1720,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1788,8 +1787,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1853,8 +1852,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1920,8 +1919,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1987,8 +1986,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2050,8 +2049,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2117,8 +2116,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2182,8 +2181,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2249,8 +2248,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2314,8 +2313,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2381,8 +2380,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2446,8 +2445,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2513,8 +2512,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2580,8 +2579,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2647,8 +2646,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2712,8 +2711,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2776,13 +2775,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **download_file**
-> file download_file(path, storage_name=storage_name, version_id=version_id)
+> str download_file(path, storage_name=storage_name, version_id=version_id)
 
 Download file
 
@@ -2822,7 +2821,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**str**
 
 ### Authorization
 
@@ -2830,8 +2829,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2855,15 +2854,15 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-data = 'data_example' # str | Mail merge data (optional)
+data = 'data_example' # str |  (optional)
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
 password = 'password_example' # str | Password for opening an encrypted document. (optional)
-with_regions = false # bool | With regions flag. (optional) (default to false)
+with_regions = true # bool | With regions flag. (optional)
 mail_merge_data_file = 'mail_merge_data_file_example' # str | Mail merge data. (optional)
 cleanup = 'cleanup_example' # str | Clean up options. (optional)
-use_whole_paragraph_as_region = true # bool | Gets or sets a value indicating whether paragraph with TableStart or             TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.             The default value is true. (optional) (default to true)
+use_whole_paragraph_as_region = true # bool | Gets or sets a value indicating whether paragraph with TableStart or             TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.             The default value is true. (optional)
 dest_file_name = 'dest_file_name_example' # str | Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name. (optional)
 
 try:
@@ -2879,15 +2878,15 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **data** | **str**| Mail merge data | [optional] 
+ **data** | **str**|  | [optional] 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
  **password** | **str**| Password for opening an encrypted document. | [optional] 
- **with_regions** | **bool**| With regions flag. | [optional] [default to false]
+ **with_regions** | **bool**| With regions flag. | [optional] 
  **mail_merge_data_file** | **str**| Mail merge data. | [optional] 
  **cleanup** | **str**| Clean up options. | [optional] 
- **use_whole_paragraph_as_region** | **bool**| Gets or sets a value indicating whether paragraph with TableStart or             TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.             The default value is true. | [optional] [default to true]
+ **use_whole_paragraph_as_region** | **bool**| Gets or sets a value indicating whether paragraph with TableStart or             TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.             The default value is true. | [optional] 
  **dest_file_name** | **str**| Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name. | [optional] 
 
 ### Return type
@@ -2901,12 +2900,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/xml, application/json
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **execute_mail_merge_online**
-> file execute_mail_merge_online(template, data, with_regions=with_regions, cleanup=cleanup, document_file_name=document_file_name)
+> str execute_mail_merge_online(template=template, data=data, with_regions=with_regions, cleanup=cleanup, document_file_name=document_file_name)
 
 Executes document mail merge online.
 
@@ -2924,15 +2923,15 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-template = '/path/to/file.txt' # file | File with template
-data = '/path/to/file.txt' # file | File with mailmerge data
-with_regions = false # bool | With regions flag. (optional) (default to false)
+template = 'template_example' # str |  (optional)
+data = 'data_example' # str |  (optional)
+with_regions = true # bool | With regions flag. (optional)
 cleanup = 'cleanup_example' # str | Clean up options. (optional)
-document_file_name = 'template' # str | This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead.  (optional) (default to template)
+document_file_name = 'document_file_name_example' # str | This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead.  (optional)
 
 try:
     # Executes document mail merge online.
-    api_response = api_instance.execute_mail_merge_online(template, data, with_regions=with_regions, cleanup=cleanup, document_file_name=document_file_name)
+    api_response = api_instance.execute_mail_merge_online(template=template, data=data, with_regions=with_regions, cleanup=cleanup, document_file_name=document_file_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->execute_mail_merge_online: %s\n" % e)
@@ -2942,15 +2941,15 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **template** | **file**| File with template | 
- **data** | **file**| File with mailmerge data | 
- **with_regions** | **bool**| With regions flag. | [optional] [default to false]
+ **template** | **str**|  | [optional] 
+ **data** | **str**|  | [optional] 
+ **with_regions** | **bool**| With regions flag. | [optional] 
  **cleanup** | **str**| Clean up options. | [optional] 
- **document_file_name** | **str**| This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \&quot;template\&quot; will be used instead.  | [optional] [default to template]
+ **document_file_name** | **str**| This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \&quot;template\&quot; will be used instead.  | [optional] 
 
 ### Return type
 
-[**file**](file.md)
+**str**
 
 ### Authorization
 
@@ -2959,7 +2958,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/xml, application/json
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3008,8 +3007,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3068,8 +3067,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3126,8 +3125,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3190,8 +3189,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3252,8 +3251,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3312,8 +3311,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3370,8 +3369,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3428,8 +3427,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3490,8 +3489,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3550,13 +3549,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_document_drawing_object_image_data**
-> file get_document_drawing_object_image_data(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+> str get_document_drawing_object_image_data(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
 Reads drawing object image data.
 
@@ -3604,7 +3603,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**str**
 
 ### Authorization
 
@@ -3612,13 +3611,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_document_drawing_object_image_data_without_node_path**
-> file get_document_drawing_object_image_data_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+> str get_document_drawing_object_image_data_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
 Reads drawing object image data.
 
@@ -3664,7 +3663,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**str**
 
 ### Authorization
 
@@ -3672,13 +3671,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_document_drawing_object_ole_data**
-> file get_document_drawing_object_ole_data(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+> str get_document_drawing_object_ole_data(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
 Gets drawing object OLE data.
 
@@ -3726,7 +3725,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**str**
 
 ### Authorization
 
@@ -3734,13 +3733,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_document_drawing_object_ole_data_without_node_path**
-> file get_document_drawing_object_ole_data_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+> str get_document_drawing_object_ole_data_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
 Gets drawing object OLE data.
 
@@ -3786,7 +3785,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**str**
 
 ### Authorization
 
@@ -3794,8 +3793,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3854,8 +3853,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3912,8 +3911,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3941,7 +3940,7 @@ folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
 password = 'password_example' # str | Password for opening an encrypted document. (optional)
-use_non_merge_fields = false # bool | If true, result includes \"mustache\" field names. (optional) (default to false)
+use_non_merge_fields = true # bool | If true, result includes \"mustache\" field names. (optional)
 
 try:
     # Reads document field names.
@@ -3960,7 +3959,7 @@ Name | Type | Description  | Notes
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
  **password** | **str**| Password for opening an encrypted document. | [optional] 
- **use_non_merge_fields** | **bool**| If true, result includes \&quot;mustache\&quot; field names. | [optional] [default to false]
+ **use_non_merge_fields** | **bool**| If true, result includes \&quot;mustache\&quot; field names. | [optional] 
 
 ### Return type
 
@@ -3972,13 +3971,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_document_field_names_online**
-> FieldNamesResponse get_document_field_names_online(template, use_non_merge_fields=use_non_merge_fields)
+> FieldNamesResponse get_document_field_names_online(template=template, use_non_merge_fields=use_non_merge_fields)
 
 Reads document field names.
 
@@ -3996,12 +3995,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-template = '/path/to/file.txt' # file | File with template
-use_non_merge_fields = false # bool | Use non merge fields or not. (optional) (default to false)
+template = 'template_example' # str |  (optional)
+use_non_merge_fields = true # bool | Use non merge fields or not. (optional)
 
 try:
     # Reads document field names.
-    api_response = api_instance.get_document_field_names_online(template, use_non_merge_fields=use_non_merge_fields)
+    api_response = api_instance.get_document_field_names_online(template=template, use_non_merge_fields=use_non_merge_fields)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->get_document_field_names_online: %s\n" % e)
@@ -4011,8 +4010,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **template** | **file**| File with template | 
- **use_non_merge_fields** | **bool**| Use non merge fields or not. | [optional] [default to false]
+ **template** | **str**|  | [optional] 
+ **use_non_merge_fields** | **bool**| Use non merge fields or not. | [optional] 
 
 ### Return type
 
@@ -4025,7 +4024,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/xml, application/json
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4084,8 +4083,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4142,8 +4141,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4184,7 +4183,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**| The document&#39;s name. | 
+ **name** | **str**| The document&#x27;s name. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -4200,8 +4199,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4260,8 +4259,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4318,8 +4317,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4347,9 +4346,9 @@ folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
 password = 'password_example' # str | Password for opening an encrypted document. (optional)
-include_comments = false # bool | Support including/excluding comments from the WordCount. Default value is \"false\". (optional) (default to false)
-include_footnotes = false # bool | Support including/excluding footnotes from the WordCount. Default value is \"false\". (optional) (default to false)
-include_text_in_shapes = false # bool | Support including/excluding shape's text from the WordCount. Default value is \"false\". (optional) (default to false)
+include_comments = true # bool | Support including/excluding comments from the WordCount. Default value is \"false\". (optional)
+include_footnotes = true # bool | Support including/excluding footnotes from the WordCount. Default value is \"false\". (optional)
+include_text_in_shapes = true # bool | Support including/excluding shape's text from the WordCount. Default value is \"false\". (optional)
 
 try:
     # Reads document statistics.
@@ -4368,9 +4367,9 @@ Name | Type | Description  | Notes
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
  **password** | **str**| Password for opening an encrypted document. | [optional] 
- **include_comments** | **bool**| Support including/excluding comments from the WordCount. Default value is \&quot;false\&quot;. | [optional] [default to false]
- **include_footnotes** | **bool**| Support including/excluding footnotes from the WordCount. Default value is \&quot;false\&quot;. | [optional] [default to false]
- **include_text_in_shapes** | **bool**| Support including/excluding shape&#39;s text from the WordCount. Default value is \&quot;false\&quot;. | [optional] [default to false]
+ **include_comments** | **bool**| Support including/excluding comments from the WordCount. Default value is \&quot;false\&quot;. | [optional] 
+ **include_footnotes** | **bool**| Support including/excluding footnotes from the WordCount. Default value is \&quot;false\&quot;. | [optional] 
+ **include_text_in_shapes** | **bool**| Support including/excluding shape&#x27;s text from the WordCount. Default value is \&quot;false\&quot;. | [optional] 
 
 ### Return type
 
@@ -4382,13 +4381,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_document_with_format**
-> file get_document_with_format(name, format, folder=folder, storage=storage, load_encoding=load_encoding, password=password, out_path=out_path, fonts_location=fonts_location)
+> str get_document_with_format(name, format, folder=folder, storage=storage, load_encoding=load_encoding, password=password, out_path=out_path, fonts_location=fonts_location)
 
 Exports the document into the specified format.
 
@@ -4438,7 +4437,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**str**
 
 ### Authorization
 
@@ -4446,8 +4445,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4508,8 +4507,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4568,8 +4567,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4628,8 +4627,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4686,8 +4685,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4738,8 +4737,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4800,8 +4799,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4860,8 +4859,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4920,8 +4919,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4978,8 +4977,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5040,8 +5039,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5100,8 +5099,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5160,8 +5159,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5218,8 +5217,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5280,8 +5279,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5344,8 +5343,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5406,8 +5405,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5468,8 +5467,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5528,8 +5527,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5588,8 +5587,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5646,8 +5645,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5708,8 +5707,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5770,8 +5769,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5830,8 +5829,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5890,8 +5889,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5950,8 +5949,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6008,8 +6007,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6070,8 +6069,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6132,8 +6131,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6194,8 +6193,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6254,8 +6253,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6314,8 +6313,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6374,8 +6373,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6432,8 +6431,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6494,8 +6493,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6556,8 +6555,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6618,8 +6617,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6680,8 +6679,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6740,8 +6739,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6802,8 +6801,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6864,8 +6863,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6924,8 +6923,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -6984,8 +6983,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -7042,13 +7041,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_comment**
-> CommentResponse insert_comment(name, comment, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> CommentResponse insert_comment(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Adds comment to document, returns inserted comment data.
 
@@ -7066,8 +7065,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.Comment() # Comment | The comment data.
 name = 'name_example' # str | The document name.
-comment = asposewordscloud.Comment() # Comment | The comment data.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -7078,7 +7077,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Adds comment to document, returns inserted comment data.
-    api_response = api_instance.insert_comment(name, comment, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.insert_comment(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_comment: %s\n" % e)
@@ -7088,8 +7087,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Comment**](Comment.md)| The comment data. | 
  **name** | **str**| The document name. | 
- **comment** | [**Comment**](Comment.md)| The comment data. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -7108,13 +7107,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_drawing_object**
-> DrawingObjectResponse insert_drawing_object(name, drawing_object, image_file, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> DrawingObjectResponse insert_drawing_object(name, node_path, drawing_object=drawing_object, image_file=image_file, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Adds drawing object to document, returns added  drawing object's data.
 
@@ -7133,9 +7132,9 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-drawing_object = 'drawing_object_example' # str | Drawing object parameters
-image_file = '/path/to/file.txt' # file | File with image
 node_path = 'node_path_example' # str | Path to the node, which contains collection of drawing objects.
+drawing_object = 'drawing_object_example' # str |  (optional)
+image_file = 'image_file_example' # str |  (optional)
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -7146,7 +7145,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Adds drawing object to document, returns added  drawing object's data.
-    api_response = api_instance.insert_drawing_object(name, drawing_object, image_file, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.insert_drawing_object(name, node_path, drawing_object=drawing_object, image_file=image_file, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_drawing_object: %s\n" % e)
@@ -7157,9 +7156,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **drawing_object** | **str**| Drawing object parameters | 
- **image_file** | **file**| File with image | 
  **node_path** | **str**| Path to the node, which contains collection of drawing objects. | 
+ **drawing_object** | **str**|  | [optional] 
+ **image_file** | **str**|  | [optional] 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -7179,12 +7178,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/xml, application/json
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_drawing_object_without_node_path**
-> DrawingObjectResponse insert_drawing_object_without_node_path(name, drawing_object, image_file, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> DrawingObjectResponse insert_drawing_object_without_node_path(name, drawing_object=drawing_object, image_file=image_file, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Adds drawing object to document, returns added  drawing object's data.
 
@@ -7203,8 +7202,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-drawing_object = 'drawing_object_example' # str | Drawing object parameters
-image_file = '/path/to/file.txt' # file | File with image
+drawing_object = 'drawing_object_example' # str |  (optional)
+image_file = 'image_file_example' # str |  (optional)
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -7215,7 +7214,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Adds drawing object to document, returns added  drawing object's data.
-    api_response = api_instance.insert_drawing_object_without_node_path(name, drawing_object, image_file, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.insert_drawing_object_without_node_path(name, drawing_object=drawing_object, image_file=image_file, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_drawing_object_without_node_path: %s\n" % e)
@@ -7226,8 +7225,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **drawing_object** | **str**| Drawing object parameters | 
- **image_file** | **file**| File with image | 
+ **drawing_object** | **str**|  | [optional] 
+ **image_file** | **str**|  | [optional] 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -7247,12 +7246,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/xml, application/json
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_field**
-> FieldResponse insert_field(name, field, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
+> FieldResponse insert_field(body, name, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
 
 Adds field to document, returns inserted field's data.
 
@@ -7270,8 +7269,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.Field() # Field | Field data.
 name = 'name_example' # str | The document name.
-field = asposewordscloud.Field() # Field | Field data.
 node_path = 'node_path_example' # str | Path to the node, which contains collection of fields.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -7284,7 +7283,7 @@ insert_before_node = 'insert_before_node_example' # str | Field will be inserted
 
 try:
     # Adds field to document, returns inserted field's data.
-    api_response = api_instance.insert_field(name, field, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
+    api_response = api_instance.insert_field(body, name, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_field: %s\n" % e)
@@ -7294,8 +7293,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Field**](Field.md)| Field data. | 
  **name** | **str**| The document name. | 
- **field** | [**Field**](Field.md)| Field data. | 
  **node_path** | **str**| Path to the node, which contains collection of fields. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -7316,13 +7315,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_field_without_node_path**
-> FieldResponse insert_field_without_node_path(name, field, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
+> FieldResponse insert_field_without_node_path(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
 
 Adds field to document, returns inserted field's data.
 
@@ -7340,8 +7339,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.Field() # Field | Field data.
 name = 'name_example' # str | The document name.
-field = asposewordscloud.Field() # Field | Field data.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -7353,7 +7352,7 @@ insert_before_node = 'insert_before_node_example' # str | Field will be inserted
 
 try:
     # Adds field to document, returns inserted field's data.
-    api_response = api_instance.insert_field_without_node_path(name, field, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
+    api_response = api_instance.insert_field_without_node_path(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_field_without_node_path: %s\n" % e)
@@ -7363,8 +7362,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Field**](Field.md)| Field data. | 
  **name** | **str**| The document name. | 
- **field** | [**Field**](Field.md)| Field data. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -7384,13 +7383,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_footnote**
-> FootnoteResponse insert_footnote(name, footnote_dto, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> FootnoteResponse insert_footnote(body, name, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Adds footnote to document, returns added footnote's data.
 
@@ -7408,8 +7407,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.Footnote() # Footnote | Footnote data.
 name = 'name_example' # str | The document name.
-footnote_dto = asposewordscloud.Footnote() # Footnote | Footnote data.
 node_path = 'node_path_example' # str | Path to the node, which contains collection of footnotes.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -7421,7 +7420,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Adds footnote to document, returns added footnote's data.
-    api_response = api_instance.insert_footnote(name, footnote_dto, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.insert_footnote(body, name, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_footnote: %s\n" % e)
@@ -7431,8 +7430,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Footnote**](Footnote.md)| Footnote data. | 
  **name** | **str**| The document name. | 
- **footnote_dto** | [**Footnote**](Footnote.md)| Footnote data. | 
  **node_path** | **str**| Path to the node, which contains collection of footnotes. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -7452,13 +7451,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_footnote_without_node_path**
-> FootnoteResponse insert_footnote_without_node_path(name, footnote_dto, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> FootnoteResponse insert_footnote_without_node_path(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Adds footnote to document, returns added footnote's data.
 
@@ -7476,8 +7475,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.Footnote() # Footnote | Footnote data.
 name = 'name_example' # str | The document name.
-footnote_dto = asposewordscloud.Footnote() # Footnote | Footnote data.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -7488,7 +7487,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Adds footnote to document, returns added footnote's data.
-    api_response = api_instance.insert_footnote_without_node_path(name, footnote_dto, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.insert_footnote_without_node_path(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_footnote_without_node_path: %s\n" % e)
@@ -7498,8 +7497,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Footnote**](Footnote.md)| Footnote data. | 
  **name** | **str**| The document name. | 
- **footnote_dto** | [**Footnote**](Footnote.md)| Footnote data. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -7518,13 +7517,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_form_field**
-> FormFieldResponse insert_form_field(name, form_field, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
+> FormFieldResponse insert_form_field(body, name, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
 
 Adds form field to paragraph, returns added form field's data.
 
@@ -7542,8 +7541,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.FormField() # FormField | From field data.
 name = 'name_example' # str | The document name.
-form_field = asposewordscloud.FormField() # FormField | From field data.
 node_path = 'node_path_example' # str | Path to the node that contains collection of formfields.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -7556,7 +7555,7 @@ insert_before_node = 'insert_before_node_example' # str | Form field will be ins
 
 try:
     # Adds form field to paragraph, returns added form field's data.
-    api_response = api_instance.insert_form_field(name, form_field, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
+    api_response = api_instance.insert_form_field(body, name, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_form_field: %s\n" % e)
@@ -7566,8 +7565,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**FormField**](FormField.md)| From field data. | 
  **name** | **str**| The document name. | 
- **form_field** | [**FormField**](FormField.md)| From field data. | 
  **node_path** | **str**| Path to the node that contains collection of formfields. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -7588,13 +7587,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_form_field_without_node_path**
-> FormFieldResponse insert_form_field_without_node_path(name, form_field, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
+> FormFieldResponse insert_form_field_without_node_path(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
 
 Adds form field to paragraph, returns added form field's data.
 
@@ -7612,8 +7611,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.FormField() # FormField | From field data.
 name = 'name_example' # str | The document name.
-form_field = asposewordscloud.FormField() # FormField | From field data.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -7625,7 +7624,7 @@ insert_before_node = 'insert_before_node_example' # str | Form field will be ins
 
 try:
     # Adds form field to paragraph, returns added form field's data.
-    api_response = api_instance.insert_form_field_without_node_path(name, form_field, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
+    api_response = api_instance.insert_form_field_without_node_path(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_form_field_without_node_path: %s\n" % e)
@@ -7635,8 +7634,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**FormField**](FormField.md)| From field data. | 
  **name** | **str**| The document name. | 
- **form_field** | [**FormField**](FormField.md)| From field data. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -7656,13 +7655,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_header_footer**
-> HeaderFooterResponse insert_header_footer(name, header_footer_type, section_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> HeaderFooterResponse insert_header_footer(body, name, section_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Inserts to document header or footer.
 
@@ -7680,8 +7679,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = 'body_example' # str | Type of header/footer.
 name = 'name_example' # str | The document name.
-header_footer_type = 'header_footer_type_example' # str | Type of header/footer.
 section_path = 'section_path_example' # str | Path to parent section.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -7693,7 +7692,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Inserts to document header or footer.
-    api_response = api_instance.insert_header_footer(name, header_footer_type, section_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.insert_header_footer(body, name, section_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_header_footer: %s\n" % e)
@@ -7703,8 +7702,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**str**](str.md)| Type of header/footer. | 
  **name** | **str**| The document name. | 
- **header_footer_type** | **str**| Type of header/footer. | 
  **section_path** | **str**| Path to parent section. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -7724,13 +7723,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_page_numbers**
-> DocumentResponse insert_page_numbers(name, page_number, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> DocumentResponse insert_page_numbers(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Inserts document page numbers.
 
@@ -7748,8 +7747,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.PageNumber() # PageNumber | PageNumber with the page numbers settings.
 name = 'name_example' # str | A document name.
-page_number = asposewordscloud.PageNumber() # PageNumber | PageNumber with the page numbers settings.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -7760,7 +7759,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Inserts document page numbers.
-    api_response = api_instance.insert_page_numbers(name, page_number, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.insert_page_numbers(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_page_numbers: %s\n" % e)
@@ -7770,8 +7769,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**PageNumber**](PageNumber.md)| PageNumber with the page numbers settings. | 
  **name** | **str**| A document name. | 
- **page_number** | [**PageNumber**](PageNumber.md)| PageNumber with the page numbers settings. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -7790,13 +7789,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_paragraph**
-> ParagraphResponse insert_paragraph(name, paragraph, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
+> ParagraphResponse insert_paragraph(body, name, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
 
 Adds paragraph to document, returns added paragraph's data.
 
@@ -7814,8 +7813,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.ParagraphInsert() # ParagraphInsert | Paragraph data.
 name = 'name_example' # str | The document name.
-paragraph = asposewordscloud.ParagraphInsert() # ParagraphInsert | Paragraph data.
 node_path = 'node_path_example' # str | Path to the node which contains paragraphs.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -7828,7 +7827,7 @@ insert_before_node = 'insert_before_node_example' # str | Paragraph will be inse
 
 try:
     # Adds paragraph to document, returns added paragraph's data.
-    api_response = api_instance.insert_paragraph(name, paragraph, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
+    api_response = api_instance.insert_paragraph(body, name, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_paragraph: %s\n" % e)
@@ -7838,8 +7837,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ParagraphInsert**](ParagraphInsert.md)| Paragraph data. | 
  **name** | **str**| The document name. | 
- **paragraph** | [**ParagraphInsert**](ParagraphInsert.md)| Paragraph data. | 
  **node_path** | **str**| Path to the node which contains paragraphs. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -7860,13 +7859,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_run**
-> RunResponse insert_run(name, paragraph_path, run, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
+> RunResponse insert_run(body, name, paragraph_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
 
 Adds run to document, returns added paragraph's data.
 
@@ -7884,9 +7883,9 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.Run() # Run | Run data.
 name = 'name_example' # str | The document name.
 paragraph_path = 'paragraph_path_example' # str | Path to parent paragraph.
-run = asposewordscloud.Run() # Run | Run data.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -7898,7 +7897,7 @@ insert_before_node = 'insert_before_node_example' # str | Paragraph will be inse
 
 try:
     # Adds run to document, returns added paragraph's data.
-    api_response = api_instance.insert_run(name, paragraph_path, run, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
+    api_response = api_instance.insert_run(body, name, paragraph_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time, insert_before_node=insert_before_node)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_run: %s\n" % e)
@@ -7908,9 +7907,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Run**](Run.md)| Run data. | 
  **name** | **str**| The document name. | 
  **paragraph_path** | **str**| Path to parent paragraph. | 
- **run** | [**Run**](Run.md)| Run data. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -7930,13 +7929,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_table**
-> TableResponse insert_table(name, table, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> TableResponse insert_table(body, name, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Adds table to document, returns added table's data.             
 
@@ -7954,8 +7953,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.TableInsert() # TableInsert | Table parameters/.
 name = 'name_example' # str | The document name.
-table = asposewordscloud.TableInsert() # TableInsert | Table parameters/.
 node_path = 'node_path_example' # str | Path to the node, which contains tables.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -7967,7 +7966,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Adds table to document, returns added table's data.             
-    api_response = api_instance.insert_table(name, table, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.insert_table(body, name, node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_table: %s\n" % e)
@@ -7977,8 +7976,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**TableInsert**](TableInsert.md)| Table parameters/. | 
  **name** | **str**| The document name. | 
- **table** | [**TableInsert**](TableInsert.md)| Table parameters/. | 
  **node_path** | **str**| Path to the node, which contains tables. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -7998,13 +7997,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_table_cell**
-> TableCellResponse insert_table_cell(name, cell, table_row_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> TableCellResponse insert_table_cell(body, name, table_row_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Adds table cell to table, returns added cell's data.             
 
@@ -8022,8 +8021,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.TableCellInsert() # TableCellInsert | Table cell parameters/.
 name = 'name_example' # str | The document name.
-cell = asposewordscloud.TableCellInsert() # TableCellInsert | Table cell parameters/.
 table_row_path = 'table_row_path_example' # str | Path to table row.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -8035,7 +8034,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Adds table cell to table, returns added cell's data.             
-    api_response = api_instance.insert_table_cell(name, cell, table_row_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.insert_table_cell(body, name, table_row_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_table_cell: %s\n" % e)
@@ -8045,8 +8044,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**TableCellInsert**](TableCellInsert.md)| Table cell parameters/. | 
  **name** | **str**| The document name. | 
- **cell** | [**TableCellInsert**](TableCellInsert.md)| Table cell parameters/. | 
  **table_row_path** | **str**| Path to table row. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -8066,13 +8065,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_table_row**
-> TableRowResponse insert_table_row(name, row, table_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> TableRowResponse insert_table_row(body, name, table_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Adds table row to table, returns added row's data.             
 
@@ -8090,8 +8089,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.TableRowInsert() # TableRowInsert | Table row parameters/.
 name = 'name_example' # str | The document name.
-row = asposewordscloud.TableRowInsert() # TableRowInsert | Table row parameters/.
 table_path = 'table_path_example' # str | Path to table.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -8103,7 +8102,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Adds table row to table, returns added row's data.             
-    api_response = api_instance.insert_table_row(name, row, table_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.insert_table_row(body, name, table_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_table_row: %s\n" % e)
@@ -8113,8 +8112,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**TableRowInsert**](TableRowInsert.md)| Table row parameters/. | 
  **name** | **str**| The document name. | 
- **row** | [**TableRowInsert**](TableRowInsert.md)| Table row parameters/. | 
  **table_path** | **str**| Path to table. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -8134,13 +8133,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_table_without_node_path**
-> TableResponse insert_table_without_node_path(name, table, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> TableResponse insert_table_without_node_path(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Adds table to document, returns added table's data.             
 
@@ -8158,8 +8157,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.TableInsert() # TableInsert | Table parameters/.
 name = 'name_example' # str | The document name.
-table = asposewordscloud.TableInsert() # TableInsert | Table parameters/.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -8170,7 +8169,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Adds table to document, returns added table's data.             
-    api_response = api_instance.insert_table_without_node_path(name, table, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.insert_table_without_node_path(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_table_without_node_path: %s\n" % e)
@@ -8180,8 +8179,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**TableInsert**](TableInsert.md)| Table parameters/. | 
  **name** | **str**| The document name. | 
- **table** | [**TableInsert**](TableInsert.md)| Table parameters/. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -8200,8 +8199,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -8225,7 +8224,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-image_file = '/path/to/file.txt' # file | File with image (optional)
+image_file = 'image_file_example' # str |  (optional)
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -8233,7 +8232,7 @@ password = 'password_example' # str | Password for opening an encrypted document
 dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
 revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
-rotation_angle = 0.0 # float | The watermark rotation angle. (optional) (default to 0.0)
+rotation_angle = 1.2 # float | The watermark rotation angle. (optional)
 image = 'image_example' # str | The image file server full name. If the name is empty the image is expected in request content. (optional)
 
 try:
@@ -8249,7 +8248,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **image_file** | **file**| File with image | [optional] 
+ **image_file** | **str**|  | [optional] 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -8257,7 +8256,7 @@ Name | Type | Description  | Notes
  **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
  **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
  **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
- **rotation_angle** | **float**| The watermark rotation angle. | [optional] [default to 0.0]
+ **rotation_angle** | **float**| The watermark rotation angle. | [optional] 
  **image** | **str**| The image file server full name. If the name is empty the image is expected in request content. | [optional] 
 
 ### Return type
@@ -8271,12 +8270,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/xml, application/json
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_watermark_text**
-> DocumentResponse insert_watermark_text(name, watermark_text, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> DocumentResponse insert_watermark_text(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Inserts document watermark text.
 
@@ -8294,8 +8293,9 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.WatermarkText() # WatermarkText | WatermarkText with the watermark data.
+            
 name = 'name_example' # str | The document name.
-watermark_text = asposewordscloud.WatermarkText() # WatermarkText | WatermarkText with the watermark data.             
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -8306,7 +8306,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Inserts document watermark text.
-    api_response = api_instance.insert_watermark_text(name, watermark_text, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.insert_watermark_text(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->insert_watermark_text: %s\n" % e)
@@ -8316,8 +8316,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**WatermarkText**](WatermarkText.md)| WatermarkText with the watermark data.
+             | 
  **name** | **str**| The document name. | 
- **watermark_text** | [**WatermarkText**](WatermarkText.md)| WatermarkText with the watermark data.              | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -8336,13 +8337,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **load_web_document**
-> SaveResponse load_web_document(data, storage=storage)
+> SaveResponse load_web_document(body, storage=storage)
 
 Loads new document from web into the file with any supported format of data.
 
@@ -8360,12 +8361,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-data = asposewordscloud.LoadWebDocumentData() # LoadWebDocumentData | Parameters of loading.
+body = asposewordscloud.LoadWebDocumentData() # LoadWebDocumentData | Parameters of loading.
 storage = 'storage_example' # str | Original document storage. (optional)
 
 try:
     # Loads new document from web into the file with any supported format of data.
-    api_response = api_instance.load_web_document(data, storage=storage)
+    api_response = api_instance.load_web_document(body, storage=storage)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->load_web_document: %s\n" % e)
@@ -8375,7 +8376,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**LoadWebDocumentData**](LoadWebDocumentData.md)| Parameters of loading. | 
+ **body** | [**LoadWebDocumentData**](LoadWebDocumentData.md)| Parameters of loading. | 
  **storage** | **str**| Original document storage. | [optional] 
 
 ### Return type
@@ -8388,8 +8389,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -8429,8 +8430,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dest_path** | **str**| Destination file path e.g. &#39;/dest.ext&#39; | 
- **src_path** | **str**| Source file&#39;s path e.g. &#39;/Folder 1/file.ext&#39; or &#39;/Bucket/Folder 1/file.ext&#39; | 
+ **dest_path** | **str**| Destination file path e.g. &#x27;/dest.ext&#x27; | 
+ **src_path** | **str**| Source file&#x27;s path e.g. &#x27;/Folder 1/file.ext&#x27; or &#x27;/Bucket/Folder 1/file.ext&#x27; | 
  **src_storage_name** | **str**| Source storage name | [optional] 
  **dest_storage_name** | **str**| Destination storage name | [optional] 
  **version_id** | **str**| File version ID to move | [optional] 
@@ -8445,8 +8446,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -8485,7 +8486,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dest_path** | **str**| Destination folder path to move to e.g &#39;/dst&#39; | 
+ **dest_path** | **str**| Destination folder path to move to e.g &#x27;/dst&#x27; | 
  **src_path** | **str**| Source folder path e.g. /Folder1 | 
  **src_storage_name** | **str**| Source storage name | [optional] 
  **dest_storage_name** | **str**| Destination storage name | [optional] 
@@ -8500,13 +8501,13 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **protect_document**
-> ProtectionDataResponse protect_document(name, protection_request, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+> ProtectionDataResponse protect_document(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
 
 Protects document.
 
@@ -8524,8 +8525,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.ProtectionRequest() # ProtectionRequest | ProtectionRequest with protection settings.
 name = 'name_example' # str | The document name.
-protection_request = asposewordscloud.ProtectionRequest() # ProtectionRequest | ProtectionRequest with protection settings.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -8534,7 +8535,7 @@ dest_file_name = 'dest_file_name_example' # str | Result path of the document af
 
 try:
     # Protects document.
-    api_response = api_instance.protect_document(name, protection_request, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+    api_response = api_instance.protect_document(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->protect_document: %s\n" % e)
@@ -8544,8 +8545,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ProtectionRequest**](ProtectionRequest.md)| ProtectionRequest with protection settings. | 
  **name** | **str**| The document name. | 
- **protection_request** | [**ProtectionRequest**](ProtectionRequest.md)| ProtectionRequest with protection settings. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -8562,8 +8563,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -8622,8 +8623,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -8686,13 +8687,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **render_drawing_object**
-> file render_drawing_object(name, format, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+> str render_drawing_object(name, format, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
 
 Renders drawing object to specified format.
 
@@ -8744,7 +8745,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**str**
 
 ### Authorization
 
@@ -8752,13 +8753,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **render_drawing_object_without_node_path**
-> file render_drawing_object_without_node_path(name, format, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+> str render_drawing_object_without_node_path(name, format, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
 
 Renders drawing object to specified format.
 
@@ -8808,7 +8809,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**str**
 
 ### Authorization
 
@@ -8816,13 +8817,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **render_math_object**
-> file render_math_object(name, format, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+> str render_math_object(name, format, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
 
 Renders math object to specified format.
 
@@ -8874,7 +8875,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**str**
 
 ### Authorization
 
@@ -8882,13 +8883,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **render_math_object_without_node_path**
-> file render_math_object_without_node_path(name, format, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+> str render_math_object_without_node_path(name, format, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
 
 Renders math object to specified format.
 
@@ -8938,7 +8939,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**str**
 
 ### Authorization
 
@@ -8946,13 +8947,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **render_page**
-> file render_page(name, page_index, format, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+> str render_page(name, page_index, format, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
 
 Renders page to specified format.
 
@@ -9002,7 +9003,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**str**
 
 ### Authorization
 
@@ -9010,13 +9011,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **render_paragraph**
-> file render_paragraph(name, format, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+> str render_paragraph(name, format, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
 
 Renders paragraph to specified format.
 
@@ -9068,7 +9069,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**str**
 
 ### Authorization
 
@@ -9076,13 +9077,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **render_paragraph_without_node_path**
-> file render_paragraph_without_node_path(name, format, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+> str render_paragraph_without_node_path(name, format, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
 
 Renders paragraph to specified format.
 
@@ -9132,7 +9133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**str**
 
 ### Authorization
 
@@ -9140,13 +9141,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **render_table**
-> file render_table(name, format, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+> str render_table(name, format, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
 
 Renders table to specified format.
 
@@ -9198,7 +9199,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**str**
 
 ### Authorization
 
@@ -9206,13 +9207,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **render_table_without_node_path**
-> file render_table_without_node_path(name, format, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+> str render_table_without_node_path(name, format, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
 
 Renders table to specified format.
 
@@ -9262,7 +9263,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+**str**
 
 ### Authorization
 
@@ -9270,13 +9271,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **replace_text**
-> ReplaceTextResponse replace_text(name, replace_text, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> ReplaceTextResponse replace_text(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Replaces document text.
 
@@ -9294,8 +9295,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.ReplaceTextParameters() # ReplaceTextParameters | ReplaceTextResponse with the replace operation settings.
 name = 'name_example' # str | The document name.
-replace_text = asposewordscloud.ReplaceTextParameters() # ReplaceTextParameters | ReplaceTextResponse with the replace operation settings.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -9306,7 +9307,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Replaces document text.
-    api_response = api_instance.replace_text(name, replace_text, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.replace_text(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->replace_text: %s\n" % e)
@@ -9316,8 +9317,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ReplaceTextParameters**](ReplaceTextParameters.md)| ReplaceTextResponse with the replace operation settings. | 
  **name** | **str**| The document name. | 
- **replace_text** | [**ReplaceTextParameters**](ReplaceTextParameters.md)| ReplaceTextResponse with the replace operation settings. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -9336,13 +9337,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **replace_with_text**
-> DocumentResponse replace_with_text(name, range_start_identifier, range_text, range_end_identifier, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+> DocumentResponse replace_with_text(body, name, range_start_identifier, range_end_identifier, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
 
 Replaces the content in the range.
 
@@ -9360,9 +9361,9 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.ReplaceRange() # ReplaceRange | Model with text for replacement.
 name = 'name_example' # str | The document.
 range_start_identifier = 'range_start_identifier_example' # str | The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
-range_text = asposewordscloud.ReplaceRange() # ReplaceRange | Model with text for replacement.
 range_end_identifier = 'range_end_identifier_example' # str | The range end identifier.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -9372,7 +9373,7 @@ dest_file_name = 'dest_file_name_example' # str | Result path of the document af
 
 try:
     # Replaces the content in the range.
-    api_response = api_instance.replace_with_text(name, range_start_identifier, range_text, range_end_identifier, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+    api_response = api_instance.replace_with_text(body, name, range_start_identifier, range_end_identifier, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->replace_with_text: %s\n" % e)
@@ -9382,9 +9383,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ReplaceRange**](ReplaceRange.md)| Model with text for replacement. | 
  **name** | **str**| The document. | 
  **range_start_identifier** | **str**| The range start identifier. Identifier is the value of the \&quot;nodeId\&quot; field, which every document node has, extended with the prefix \&quot;id\&quot;. It looks like \&quot;id0.0.7\&quot;. Also values like \&quot;image5\&quot; and \&quot;table3\&quot; can be used as an identifier for images and tables, where the number is an index of the image/table. | 
- **range_text** | [**ReplaceRange**](ReplaceRange.md)| Model with text for replacement. | 
  **range_end_identifier** | **str**| The range end identifier. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -9402,8 +9403,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -9447,13 +9448,13 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **save_as**
-> SaveResponse save_as(name, save_options_data, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+> SaveResponse save_as(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
 
 Converts document to destination format with detailed settings and saves result to storage.
 
@@ -9471,8 +9472,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.SaveOptionsData() # SaveOptionsData | Save options.
 name = 'name_example' # str | The document name.
-save_options_data = asposewordscloud.SaveOptionsData() # SaveOptionsData | Save options.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -9481,7 +9482,7 @@ fonts_location = 'fonts_location_example' # str | Folder in filestorage with cus
 
 try:
     # Converts document to destination format with detailed settings and saves result to storage.
-    api_response = api_instance.save_as(name, save_options_data, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
+    api_response = api_instance.save_as(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, fonts_location=fonts_location)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->save_as: %s\n" % e)
@@ -9491,8 +9492,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**SaveOptionsData**](SaveOptionsData.md)| Save options. | 
  **name** | **str**| The document name. | 
- **save_options_data** | [**SaveOptionsData**](SaveOptionsData.md)| Save options. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -9509,13 +9510,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **save_as_range**
-> DocumentResponse save_as_range(name, range_start_identifier, document_parameters, range_end_identifier, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+> DocumentResponse save_as_range(body, name, range_start_identifier, range_end_identifier, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
 Saves the selected range as a new document.
 
@@ -9533,9 +9534,9 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.RangeDocument() # RangeDocument | Parameters of a new document.
 name = 'name_example' # str | The document.
 range_start_identifier = 'range_start_identifier_example' # str | The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table.
-document_parameters = asposewordscloud.RangeDocument() # RangeDocument | Parameters of a new document.
 range_end_identifier = 'range_end_identifier_example' # str | The range end identifier.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -9544,7 +9545,7 @@ password = 'password_example' # str | Password for opening an encrypted document
 
 try:
     # Saves the selected range as a new document.
-    api_response = api_instance.save_as_range(name, range_start_identifier, document_parameters, range_end_identifier, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    api_response = api_instance.save_as_range(body, name, range_start_identifier, range_end_identifier, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->save_as_range: %s\n" % e)
@@ -9554,9 +9555,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**RangeDocument**](RangeDocument.md)| Parameters of a new document. | 
  **name** | **str**| The document. | 
  **range_start_identifier** | **str**| The range start identifier. Identifier is the value of the \&quot;nodeId\&quot; field, which every document node has, extended with the prefix \&quot;id\&quot;. It looks like \&quot;id0.0.7\&quot;. Also values like \&quot;image5\&quot; and \&quot;table3\&quot; can be used as an identifier for images and tables, where the number is an index of the image/table. | 
- **document_parameters** | [**RangeDocument**](RangeDocument.md)| Parameters of a new document. | 
  **range_end_identifier** | **str**| The range end identifier. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -9573,13 +9574,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **save_as_tiff**
-> SaveResponse save_as_tiff(name, save_options, folder=folder, storage=storage, load_encoding=load_encoding, password=password, use_anti_aliasing=use_anti_aliasing, use_high_quality_rendering=use_high_quality_rendering, image_brightness=image_brightness, image_color_mode=image_color_mode, image_contrast=image_contrast, numeral_format=numeral_format, page_count=page_count, page_index=page_index, paper_color=paper_color, pixel_format=pixel_format, resolution=resolution, scale=scale, tiff_compression=tiff_compression, dml_rendering_mode=dml_rendering_mode, dml_effects_rendering_mode=dml_effects_rendering_mode, tiff_binarization_method=tiff_binarization_method, zip_output=zip_output, fonts_location=fonts_location)
+> SaveResponse save_as_tiff(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, use_anti_aliasing=use_anti_aliasing, use_high_quality_rendering=use_high_quality_rendering, image_brightness=image_brightness, image_color_mode=image_color_mode, image_contrast=image_contrast, numeral_format=numeral_format, page_count=page_count, page_index=page_index, paper_color=paper_color, pixel_format=pixel_format, resolution=resolution, scale=scale, tiff_compression=tiff_compression, dml_rendering_mode=dml_rendering_mode, dml_effects_rendering_mode=dml_effects_rendering_mode, tiff_binarization_method=tiff_binarization_method, zip_output=zip_output, fonts_location=fonts_location)
 
 Converts document to tiff with detailed settings and saves result to storage.
 
@@ -9597,8 +9598,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.TiffSaveOptionsData() # TiffSaveOptionsData | Tiff save options.
 name = 'name_example' # str | The document name.
-save_options = asposewordscloud.TiffSaveOptionsData() # TiffSaveOptionsData | Tiff save options.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -9624,7 +9625,7 @@ fonts_location = 'fonts_location_example' # str | Folder in filestorage with cus
 
 try:
     # Converts document to tiff with detailed settings and saves result to storage.
-    api_response = api_instance.save_as_tiff(name, save_options, folder=folder, storage=storage, load_encoding=load_encoding, password=password, use_anti_aliasing=use_anti_aliasing, use_high_quality_rendering=use_high_quality_rendering, image_brightness=image_brightness, image_color_mode=image_color_mode, image_contrast=image_contrast, numeral_format=numeral_format, page_count=page_count, page_index=page_index, paper_color=paper_color, pixel_format=pixel_format, resolution=resolution, scale=scale, tiff_compression=tiff_compression, dml_rendering_mode=dml_rendering_mode, dml_effects_rendering_mode=dml_effects_rendering_mode, tiff_binarization_method=tiff_binarization_method, zip_output=zip_output, fonts_location=fonts_location)
+    api_response = api_instance.save_as_tiff(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, use_anti_aliasing=use_anti_aliasing, use_high_quality_rendering=use_high_quality_rendering, image_brightness=image_brightness, image_color_mode=image_color_mode, image_contrast=image_contrast, numeral_format=numeral_format, page_count=page_count, page_index=page_index, paper_color=paper_color, pixel_format=pixel_format, resolution=resolution, scale=scale, tiff_compression=tiff_compression, dml_rendering_mode=dml_rendering_mode, dml_effects_rendering_mode=dml_effects_rendering_mode, tiff_binarization_method=tiff_binarization_method, zip_output=zip_output, fonts_location=fonts_location)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->save_as_tiff: %s\n" % e)
@@ -9634,8 +9635,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**TiffSaveOptionsData**](TiffSaveOptionsData.md)| Tiff save options. | 
  **name** | **str**| The document name. | 
- **save_options** | [**TiffSaveOptionsData**](TiffSaveOptionsData.md)| Tiff save options. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -9669,8 +9670,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -9729,8 +9730,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -9762,7 +9763,7 @@ dest_file_name = 'dest_file_name_example' # str | Result path of the document af
 format = 'format_example' # str | Format to split. (optional)
 _from = 56 # int | Start page. (optional)
 to = 56 # int | End page. (optional)
-zip_output = false # bool | ZipOutput or not. (optional) (default to false)
+zip_output = true # bool | ZipOutput or not. (optional)
 fonts_location = 'fonts_location_example' # str | Folder in filestorage with custom fonts. (optional)
 
 try:
@@ -9786,7 +9787,7 @@ Name | Type | Description  | Notes
  **format** | **str**| Format to split. | [optional] 
  **_from** | **int**| Start page. | [optional] 
  **to** | **int**| End page. | [optional] 
- **zip_output** | **bool**| ZipOutput or not. | [optional] [default to false]
+ **zip_output** | **bool**| ZipOutput or not. | [optional] 
  **fonts_location** | **str**| Folder in filestorage with custom fonts. | [optional] 
 
 ### Return type
@@ -9799,13 +9800,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unprotect_document**
-> ProtectionDataResponse unprotect_document(name, protection_request, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+> ProtectionDataResponse unprotect_document(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
 
 Unprotects document.
 
@@ -9823,8 +9824,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.ProtectionRequest() # ProtectionRequest | ProtectionRequest with protection settings.
 name = 'name_example' # str | The document name.
-protection_request = asposewordscloud.ProtectionRequest() # ProtectionRequest | ProtectionRequest with protection settings.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -9833,7 +9834,7 @@ dest_file_name = 'dest_file_name_example' # str | Result path of the document af
 
 try:
     # Unprotects document.
-    api_response = api_instance.unprotect_document(name, protection_request, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+    api_response = api_instance.unprotect_document(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->unprotect_document: %s\n" % e)
@@ -9843,8 +9844,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ProtectionRequest**](ProtectionRequest.md)| ProtectionRequest with protection settings. | 
  **name** | **str**| The document name. | 
- **protection_request** | [**ProtectionRequest**](ProtectionRequest.md)| ProtectionRequest with protection settings. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -9861,13 +9862,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_bookmark**
-> BookmarkResponse update_bookmark(name, bookmark_data, bookmark_name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> BookmarkResponse update_bookmark(body, name, bookmark_name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates document bookmark.
 
@@ -9885,8 +9886,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.BookmarkData() # BookmarkData | BookmarkData with new bookmark data.
 name = 'name_example' # str | The document name.
-bookmark_data = asposewordscloud.BookmarkData() # BookmarkData | BookmarkData with new bookmark data.
 bookmark_name = 'bookmark_name_example' # str | The bookmark name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -9898,7 +9899,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates document bookmark.
-    api_response = api_instance.update_bookmark(name, bookmark_data, bookmark_name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_bookmark(body, name, bookmark_name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_bookmark: %s\n" % e)
@@ -9908,8 +9909,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**BookmarkData**](BookmarkData.md)| BookmarkData with new bookmark data. | 
  **name** | **str**| The document name. | 
- **bookmark_data** | [**BookmarkData**](BookmarkData.md)| BookmarkData with new bookmark data. | 
  **bookmark_name** | **str**| The bookmark name. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -9929,13 +9930,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_border**
-> BorderResponse update_border(name, border_properties, node_path, border_type, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> BorderResponse update_border(body, name, node_path, border_type, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates border properties.             
 
@@ -9955,8 +9956,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.Border() # Border | Border properties.
 name = 'name_example' # str | The document name.
-border_properties = asposewordscloud.Border() # Border | Border properties.
 node_path = 'node_path_example' # str | Path to the node with border(node should be paragraph, cell or row).
 border_type = 'border_type_example' # str | Border type.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -9969,7 +9970,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates border properties.             
-    api_response = api_instance.update_border(name, border_properties, node_path, border_type, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_border(body, name, node_path, border_type, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_border: %s\n" % e)
@@ -9979,8 +9980,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Border**](Border.md)| Border properties. | 
  **name** | **str**| The document name. | 
- **border_properties** | [**Border**](Border.md)| Border properties. | 
  **node_path** | **str**| Path to the node with border(node should be paragraph, cell or row). | 
  **border_type** | **str**| Border type. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -10001,13 +10002,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_comment**
-> CommentResponse update_comment(name, comment_index, comment, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> CommentResponse update_comment(body, name, comment_index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates the comment, returns updated comment data.
 
@@ -10025,9 +10026,9 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.Comment() # Comment | The comment data.
 name = 'name_example' # str | The document name.
 comment_index = 56 # int | The comment index.
-comment = asposewordscloud.Comment() # Comment | The comment data.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -10038,7 +10039,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates the comment, returns updated comment data.
-    api_response = api_instance.update_comment(name, comment_index, comment, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_comment(body, name, comment_index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_comment: %s\n" % e)
@@ -10048,9 +10049,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Comment**](Comment.md)| The comment data. | 
  **name** | **str**| The document name. | 
  **comment_index** | **int**| The comment index. | 
- **comment** | [**Comment**](Comment.md)| The comment data. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -10069,13 +10070,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_drawing_object**
-> DrawingObjectResponse update_drawing_object(name, drawing_object, image_file, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> DrawingObjectResponse update_drawing_object(name, node_path, index, drawing_object=drawing_object, image_file=image_file, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates drawing object, returns updated  drawing object's data.
 
@@ -10094,10 +10095,10 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-drawing_object = 'drawing_object_example' # str | Drawing object parameters
-image_file = '/path/to/file.txt' # file | File with image
 node_path = 'node_path_example' # str | Path to the node, which contains collection of drawing objects.
 index = 56 # int | Object index.
+drawing_object = 'drawing_object_example' # str |  (optional)
+image_file = 'image_file_example' # str |  (optional)
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -10108,7 +10109,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates drawing object, returns updated  drawing object's data.
-    api_response = api_instance.update_drawing_object(name, drawing_object, image_file, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_drawing_object(name, node_path, index, drawing_object=drawing_object, image_file=image_file, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_drawing_object: %s\n" % e)
@@ -10119,10 +10120,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **drawing_object** | **str**| Drawing object parameters | 
- **image_file** | **file**| File with image | 
  **node_path** | **str**| Path to the node, which contains collection of drawing objects. | 
  **index** | **int**| Object index. | 
+ **drawing_object** | **str**|  | [optional] 
+ **image_file** | **str**|  | [optional] 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -10142,12 +10143,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/xml, application/json
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_drawing_object_without_node_path**
-> DrawingObjectResponse update_drawing_object_without_node_path(name, drawing_object, image_file, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> DrawingObjectResponse update_drawing_object_without_node_path(name, index, drawing_object=drawing_object, image_file=image_file, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates drawing object, returns updated  drawing object's data.
 
@@ -10166,9 +10167,9 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-drawing_object = 'drawing_object_example' # str | Drawing object parameters
-image_file = '/path/to/file.txt' # file | File with image
 index = 56 # int | Object index.
+drawing_object = 'drawing_object_example' # str |  (optional)
+image_file = 'image_file_example' # str |  (optional)
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -10179,7 +10180,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates drawing object, returns updated  drawing object's data.
-    api_response = api_instance.update_drawing_object_without_node_path(name, drawing_object, image_file, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_drawing_object_without_node_path(name, index, drawing_object=drawing_object, image_file=image_file, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_drawing_object_without_node_path: %s\n" % e)
@@ -10190,9 +10191,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **drawing_object** | **str**| Drawing object parameters | 
- **image_file** | **file**| File with image | 
  **index** | **int**| Object index. | 
+ **drawing_object** | **str**|  | [optional] 
+ **image_file** | **str**|  | [optional] 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -10212,12 +10213,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/xml, application/json
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_field**
-> FieldResponse update_field(name, field, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> FieldResponse update_field(body, name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates field's properties, returns updated field's data.
 
@@ -10235,8 +10236,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.Field() # Field | Field data.
 name = 'name_example' # str | The document name.
-field = asposewordscloud.Field() # Field | Field data.
 node_path = 'node_path_example' # str | Path to the node, which contains collection of fields.
 index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -10249,7 +10250,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates field's properties, returns updated field's data.
-    api_response = api_instance.update_field(name, field, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_field(body, name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_field: %s\n" % e)
@@ -10259,8 +10260,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Field**](Field.md)| Field data. | 
  **name** | **str**| The document name. | 
- **field** | [**Field**](Field.md)| Field data. | 
  **node_path** | **str**| Path to the node, which contains collection of fields. | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -10281,8 +10282,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -10341,13 +10342,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_footnote**
-> FootnoteResponse update_footnote(name, footnote_dto, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> FootnoteResponse update_footnote(body, name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates footnote's properties, returns updated run's data.
 
@@ -10365,8 +10366,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.Footnote() # Footnote | Footnote data.
 name = 'name_example' # str | The document name.
-footnote_dto = asposewordscloud.Footnote() # Footnote | Footnote data.
 node_path = 'node_path_example' # str | Path to the node, which contains collection of footnotes.
 index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -10379,7 +10380,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates footnote's properties, returns updated run's data.
-    api_response = api_instance.update_footnote(name, footnote_dto, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_footnote(body, name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_footnote: %s\n" % e)
@@ -10389,8 +10390,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Footnote**](Footnote.md)| Footnote data. | 
  **name** | **str**| The document name. | 
- **footnote_dto** | [**Footnote**](Footnote.md)| Footnote data. | 
  **node_path** | **str**| Path to the node, which contains collection of footnotes. | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -10411,13 +10412,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_footnote_without_node_path**
-> FootnoteResponse update_footnote_without_node_path(name, footnote_dto, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> FootnoteResponse update_footnote_without_node_path(body, name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates footnote's properties, returns updated run's data.
 
@@ -10435,8 +10436,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.Footnote() # Footnote | Footnote data.
 name = 'name_example' # str | The document name.
-footnote_dto = asposewordscloud.Footnote() # Footnote | Footnote data.
 index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -10448,7 +10449,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates footnote's properties, returns updated run's data.
-    api_response = api_instance.update_footnote_without_node_path(name, footnote_dto, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_footnote_without_node_path(body, name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_footnote_without_node_path: %s\n" % e)
@@ -10458,8 +10459,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Footnote**](Footnote.md)| Footnote data. | 
  **name** | **str**| The document name. | 
- **footnote_dto** | [**Footnote**](Footnote.md)| Footnote data. | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -10479,13 +10480,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_form_field**
-> FormFieldResponse update_form_field(name, form_field, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> FormFieldResponse update_form_field(body, name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates properties of form field, returns updated form field.
 
@@ -10503,8 +10504,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.FormField() # FormField | From field data.
 name = 'name_example' # str | The document name.
-form_field = asposewordscloud.FormField() # FormField | From field data.
 node_path = 'node_path_example' # str | Path to the node that contains collection of formfields.
 index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -10517,7 +10518,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates properties of form field, returns updated form field.
-    api_response = api_instance.update_form_field(name, form_field, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_form_field(body, name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_form_field: %s\n" % e)
@@ -10527,8 +10528,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**FormField**](FormField.md)| From field data. | 
  **name** | **str**| The document name. | 
- **form_field** | [**FormField**](FormField.md)| From field data. | 
  **node_path** | **str**| Path to the node that contains collection of formfields. | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -10549,13 +10550,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_form_field_without_node_path**
-> FormFieldResponse update_form_field_without_node_path(name, form_field, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> FormFieldResponse update_form_field_without_node_path(body, name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates properties of form field, returns updated form field.
 
@@ -10573,8 +10574,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.FormField() # FormField | From field data.
 name = 'name_example' # str | The document name.
-form_field = asposewordscloud.FormField() # FormField | From field data.
 index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -10586,7 +10587,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates properties of form field, returns updated form field.
-    api_response = api_instance.update_form_field_without_node_path(name, form_field, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_form_field_without_node_path(body, name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_form_field_without_node_path: %s\n" % e)
@@ -10596,8 +10597,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**FormField**](FormField.md)| From field data. | 
  **name** | **str**| The document name. | 
- **form_field** | [**FormField**](FormField.md)| From field data. | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -10617,13 +10618,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_paragraph_format**
-> ParagraphFormatResponse update_paragraph_format(name, dto, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> ParagraphFormatResponse update_paragraph_format(body, name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates paragraph format properties, returns updated format properties.
 
@@ -10641,8 +10642,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.ParagraphFormat() # ParagraphFormat | Paragraph format object.
 name = 'name_example' # str | The document name.
-dto = asposewordscloud.ParagraphFormat() # ParagraphFormat | Paragraph format object.
 node_path = 'node_path_example' # str | Path to the node which contains paragraphs.
 index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -10655,7 +10656,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates paragraph format properties, returns updated format properties.
-    api_response = api_instance.update_paragraph_format(name, dto, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_paragraph_format(body, name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_paragraph_format: %s\n" % e)
@@ -10665,8 +10666,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ParagraphFormat**](ParagraphFormat.md)| Paragraph format object. | 
  **name** | **str**| The document name. | 
- **dto** | [**ParagraphFormat**](ParagraphFormat.md)| Paragraph format object. | 
  **node_path** | **str**| Path to the node which contains paragraphs. | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -10687,13 +10688,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_run**
-> RunResponse update_run(name, run, paragraph_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> RunResponse update_run(body, name, paragraph_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates run's properties, returns updated run's data.
 
@@ -10711,8 +10712,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.Run() # Run | Run data.
 name = 'name_example' # str | The document name.
-run = asposewordscloud.Run() # Run | Run data.
 paragraph_path = 'paragraph_path_example' # str | Path to parent paragraph.
 index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -10725,7 +10726,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates run's properties, returns updated run's data.
-    api_response = api_instance.update_run(name, run, paragraph_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_run(body, name, paragraph_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_run: %s\n" % e)
@@ -10735,8 +10736,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Run**](Run.md)| Run data. | 
  **name** | **str**| The document name. | 
- **run** | [**Run**](Run.md)| Run data. | 
  **paragraph_path** | **str**| Path to parent paragraph. | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -10757,13 +10758,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_run_font**
-> FontResponse update_run_font(name, font_dto, paragraph_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> FontResponse update_run_font(body, name, paragraph_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates font properties, returns updated font data.
 
@@ -10781,8 +10782,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.Font() # Font | Font dto object.
 name = 'name_example' # str | The document name.
-font_dto = asposewordscloud.Font() # Font | Font dto object.
 paragraph_path = 'paragraph_path_example' # str | Path to parent paragraph.
 index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -10795,7 +10796,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates font properties, returns updated font data.
-    api_response = api_instance.update_run_font(name, font_dto, paragraph_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_run_font(body, name, paragraph_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_run_font: %s\n" % e)
@@ -10805,8 +10806,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**Font**](Font.md)| Font dto object. | 
  **name** | **str**| The document name. | 
- **font_dto** | [**Font**](Font.md)| Font dto object. | 
  **paragraph_path** | **str**| Path to parent paragraph. | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -10827,13 +10828,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_section_page_setup**
-> SectionPageSetupResponse update_section_page_setup(name, section_index, page_setup, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> SectionPageSetupResponse update_section_page_setup(body, name, section_index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates page setup of section.
 
@@ -10851,9 +10852,9 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.PageSetup() # PageSetup | Page setup properties dto.
 name = 'name_example' # str | The document name.
 section_index = 56 # int | Section index.
-page_setup = asposewordscloud.PageSetup() # PageSetup | Page setup properties dto.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
@@ -10864,7 +10865,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates page setup of section.
-    api_response = api_instance.update_section_page_setup(name, section_index, page_setup, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_section_page_setup(body, name, section_index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_section_page_setup: %s\n" % e)
@@ -10874,9 +10875,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**PageSetup**](PageSetup.md)| Page setup properties dto. | 
  **name** | **str**| The document name. | 
  **section_index** | **int**| Section index. | 
- **page_setup** | [**PageSetup**](PageSetup.md)| Page setup properties dto. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
@@ -10895,13 +10896,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_table_cell_format**
-> TableCellFormatResponse update_table_cell_format(name, format, table_row_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> TableCellFormatResponse update_table_cell_format(body, name, table_row_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates a table cell format.
 
@@ -10919,8 +10920,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.TableCellFormat() # TableCellFormat | The properties.
 name = 'name_example' # str | The document name.
-format = asposewordscloud.TableCellFormat() # TableCellFormat | The properties.
 table_row_path = 'table_row_path_example' # str | Path to table row.
 index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -10933,7 +10934,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates a table cell format.
-    api_response = api_instance.update_table_cell_format(name, format, table_row_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_table_cell_format(body, name, table_row_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_table_cell_format: %s\n" % e)
@@ -10943,8 +10944,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**TableCellFormat**](TableCellFormat.md)| The properties. | 
  **name** | **str**| The document name. | 
- **format** | [**TableCellFormat**](TableCellFormat.md)| The properties. | 
  **table_row_path** | **str**| Path to table row. | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -10965,13 +10966,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_table_properties**
-> TablePropertiesResponse update_table_properties(name, properties, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> TablePropertiesResponse update_table_properties(body, name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates a table properties.
 
@@ -10989,8 +10990,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.TableProperties() # TableProperties | The properties.
 name = 'name_example' # str | The document name.
-properties = asposewordscloud.TableProperties() # TableProperties | The properties.
 node_path = 'node_path_example' # str | Path to the node, which contains tables.
 index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -11003,7 +11004,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates a table properties.
-    api_response = api_instance.update_table_properties(name, properties, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_table_properties(body, name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_table_properties: %s\n" % e)
@@ -11013,8 +11014,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**TableProperties**](TableProperties.md)| The properties. | 
  **name** | **str**| The document name. | 
- **properties** | [**TableProperties**](TableProperties.md)| The properties. | 
  **node_path** | **str**| Path to the node, which contains tables. | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -11035,13 +11036,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_table_properties_without_node_path**
-> TablePropertiesResponse update_table_properties_without_node_path(name, properties, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> TablePropertiesResponse update_table_properties_without_node_path(body, name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates a table properties.
 
@@ -11059,8 +11060,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.TableProperties() # TableProperties | The properties.
 name = 'name_example' # str | The document name.
-properties = asposewordscloud.TableProperties() # TableProperties | The properties.
 index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -11072,7 +11073,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates a table properties.
-    api_response = api_instance.update_table_properties_without_node_path(name, properties, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_table_properties_without_node_path(body, name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_table_properties_without_node_path: %s\n" % e)
@@ -11082,8 +11083,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**TableProperties**](TableProperties.md)| The properties. | 
  **name** | **str**| The document name. | 
- **properties** | [**TableProperties**](TableProperties.md)| The properties. | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -11103,13 +11104,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_table_row_format**
-> TableRowFormatResponse update_table_row_format(name, format, table_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+> TableRowFormatResponse update_table_row_format(body, name, table_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
 Updates a table row format.
 
@@ -11127,8 +11128,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.TableRowFormat() # TableRowFormat | Table row format.
 name = 'name_example' # str | The document name.
-format = asposewordscloud.TableRowFormat() # TableRowFormat | Table row format.
 table_path = 'table_path_example' # str | Path to table.
 index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -11141,7 +11142,7 @@ revision_date_time = 'revision_date_time_example' # str | The date and time to u
 
 try:
     # Updates a table row format.
-    api_response = api_instance.update_table_row_format(name, format, table_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    api_response = api_instance.update_table_row_format(body, name, table_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->update_table_row_format: %s\n" % e)
@@ -11151,8 +11152,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**TableRowFormat**](TableRowFormat.md)| Table row format. | 
  **name** | **str**| The document name. | 
- **format** | [**TableRowFormat**](TableRowFormat.md)| Table row format. | 
  **table_path** | **str**| Path to table. | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -11173,13 +11174,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_file**
-> FilesUploadResult upload_file(file_content, path, storage_name=storage_name)
+> FilesUploadResult upload_file(path, file_content=file_content, storage_name=storage_name)
 
 Upload file
 
@@ -11197,13 +11198,13 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-file_content = '/path/to/file.txt' # file | File to upload
 path = 'path_example' # str | Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext              If the content is multipart and path does not contains the file name it tries to get them from filename parameter              from Content-Disposition header.
+file_content = 'file_content_example' # str |  (optional)
 storage_name = 'storage_name_example' # str | Storage name (optional)
 
 try:
     # Upload file
-    api_response = api_instance.upload_file(file_content, path, storage_name=storage_name)
+    api_response = api_instance.upload_file(path, file_content=file_content, storage_name=storage_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->upload_file: %s\n" % e)
@@ -11213,8 +11214,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_content** | **file**| File to upload | 
  **path** | **str**| Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext              If the content is multipart and path does not contains the file name it tries to get them from filename parameter              from Content-Disposition header. | 
+ **file_content** | **str**|  | [optional] 
  **storage_name** | **str**| Storage name | [optional] 
 
 ### Return type
@@ -11228,7 +11229,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/xml, application/json
+ - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

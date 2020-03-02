@@ -131,7 +131,7 @@ class TableProperties(object):
     def link(self):
         """Gets the link of this TableProperties.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :return: The link of this TableProperties.  # noqa: E501
         :rtype: WordsApiLink
@@ -142,7 +142,7 @@ class TableProperties(object):
     def link(self, link):
         """Sets the link of this TableProperties.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :param link: The link of this TableProperties.  # noqa: E501
         :type: WordsApiLink
@@ -307,7 +307,7 @@ class TableProperties(object):
     def preferred_width(self):
         """Gets the preferred_width of this TableProperties.  # noqa: E501
 
-        Gets or sets the table preferred width. Preferred width can be specified as a percentage, number of points or a special \"auto\" value.  # noqa: E501
+        Gets or sets preferred_width.  # noqa: E501
 
         :return: The preferred_width of this TableProperties.  # noqa: E501
         :rtype: PreferredWidth
@@ -318,7 +318,7 @@ class TableProperties(object):
     def preferred_width(self, preferred_width):
         """Sets the preferred_width of this TableProperties.
 
-        Gets or sets the table preferred width. Preferred width can be specified as a percentage, number of points or a special \"auto\" value.  # noqa: E501
+        Gets or sets preferred_width.  # noqa: E501
 
         :param preferred_width: The preferred_width of this TableProperties.  # noqa: E501
         :type: PreferredWidth

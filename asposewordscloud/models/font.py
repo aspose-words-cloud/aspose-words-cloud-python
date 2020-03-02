@@ -261,7 +261,7 @@ class Font(object):
     def link(self):
         """Gets the link of this Font.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :return: The link of this Font.  # noqa: E501
         :rtype: WordsApiLink
@@ -272,7 +272,7 @@ class Font(object):
     def link(self, link):
         """Sets the link of this Font.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :param link: The link of this Font.  # noqa: E501
         :type: WordsApiLink
@@ -366,7 +366,7 @@ class Font(object):
     def border(self):
         """Gets the border of this Font.  # noqa: E501
 
-        Gets or sets border object that specifies border for the font.  # noqa: E501
+        Gets or sets border.  # noqa: E501
 
         :return: The border of this Font.  # noqa: E501
         :rtype: Border
@@ -377,7 +377,7 @@ class Font(object):
     def border(self, border):
         """Sets the border of this Font.
 
-        Gets or sets border object that specifies border for the font.  # noqa: E501
+        Gets or sets border.  # noqa: E501
 
         :param border: The border of this Font.  # noqa: E501
         :type: Border
@@ -387,7 +387,7 @@ class Font(object):
     def color(self):
         """Gets the color of this Font.  # noqa: E501
 
-        Gets or sets the color of the font.               # noqa: E501
+        Gets or sets color.  # noqa: E501
 
         :return: The color of this Font.  # noqa: E501
         :rtype: XmlColor
@@ -398,7 +398,7 @@ class Font(object):
     def color(self, color):
         """Sets the color of this Font.
 
-        Gets or sets the color of the font.               # noqa: E501
+        Gets or sets color.  # noqa: E501
 
         :param color: The color of this Font.  # noqa: E501
         :type: XmlColor
@@ -513,7 +513,7 @@ class Font(object):
     def highlight_color(self):
         """Gets the highlight_color of this Font.  # noqa: E501
 
-        Gets or sets the highlight (marker) color.               # noqa: E501
+        Gets or sets highlight_color.  # noqa: E501
 
         :return: The highlight_color of this Font.  # noqa: E501
         :rtype: XmlColor
@@ -524,7 +524,7 @@ class Font(object):
     def highlight_color(self, highlight_color):
         """Sets the highlight_color of this Font.
 
-        Gets or sets the highlight (marker) color.               # noqa: E501
+        Gets or sets highlight_color.  # noqa: E501
 
         :param highlight_color: The highlight_color of this Font.  # noqa: E501
         :type: XmlColor
@@ -1125,7 +1125,7 @@ class Font(object):
     def underline_color(self):
         """Gets the underline_color of this Font.  # noqa: E501
 
-        Gets or sets the color of the underline applied to the font.  # noqa: E501
+        Gets or sets underline_color.  # noqa: E501
 
         :return: The underline_color of this Font.  # noqa: E501
         :rtype: XmlColor
@@ -1136,7 +1136,7 @@ class Font(object):
     def underline_color(self, underline_color):
         """Sets the underline_color of this Font.
 
-        Gets or sets the color of the underline applied to the font.  # noqa: E501
+        Gets or sets underline_color.  # noqa: E501
 
         :param underline_color: The underline_color of this Font.  # noqa: E501
         :type: XmlColor
