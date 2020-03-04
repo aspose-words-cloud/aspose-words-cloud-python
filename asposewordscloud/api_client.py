@@ -592,7 +592,7 @@ class ApiClient(object):
         """
         try:
                 from dateutil.parser import isoparse
-                return isoparse(rstring).group(0))
+                return isoparse(string)
         except ImportError:
             return string
         except ValueError:
