@@ -41,7 +41,7 @@ class TestHeaderFooter(BaseTestContext):
         remote_name = 'TestPutHeaderFooter.doc'
         footer_type = "FooterEven"
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.InsertHeaderFooterRequest(remote_name, footer_type, "",
                                                                         os.path.join(
                                                                             self.remote_test_folder,
@@ -57,7 +57,7 @@ class TestHeaderFooter(BaseTestContext):
         remote_name = 'TestGetHeaderFooter.doc'
         index = 0
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetHeaderFooterRequest(remote_name, index,
                                                                           os.path.join(
                                                                               self.remote_test_folder,
@@ -72,7 +72,7 @@ class TestHeaderFooter(BaseTestContext):
         filename = 'HeadersFooters.doc'
         remote_name = 'TestGetHeaderFooters.doc'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetHeaderFootersRequest(remote_name, '',
                                                                          os.path.join(
                                                                              self.remote_test_folder,
@@ -89,7 +89,7 @@ class TestHeaderFooter(BaseTestContext):
         index = 0
         section_index = 0
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetHeaderFooterOfSectionRequest(remote_name, index, section_index,
                                                                                    os.path.join(
                                                                                        self.remote_test_folder,
@@ -104,7 +104,7 @@ class TestHeaderFooter(BaseTestContext):
         filename = 'HeadersFooters.doc'
         remote_name = 'TestDeleteHeaderFooter.doc'
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteHeaderFooterRequest(remote_name, '', index,
                                                                            os.path.join(
                                                                                self.remote_test_folder,
@@ -119,7 +119,7 @@ class TestHeaderFooter(BaseTestContext):
         filename = 'HeadersFooters.doc'
         remote_name = 'TestDeleteHeadersFooters.doc'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteHeadersFootersRequest(remote_name, '',
                                                                              os.path.join(
                                                                                  self.remote_test_folder,

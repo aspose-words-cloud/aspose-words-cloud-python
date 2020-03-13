@@ -39,7 +39,7 @@ class TestDocumentStatistics(BaseTestContext):
     def test_get_document_statistics(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentStatistics.docx'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetDocumentStatisticsRequest(remote_name,
                                                                                 os.path.join(self.remote_test_folder,
                                                                                              self.test_folder))

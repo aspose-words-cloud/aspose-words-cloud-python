@@ -39,7 +39,7 @@ class TestDocumentProtection(BaseTestContext):
     def test_get_document_protection(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentProtection.docx'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
 
         request = asposewordscloud.models.requests.GetDocumentProtectionRequest(remote_name,
                                                                                 os.path.join(self.remote_test_folder,
@@ -54,7 +54,7 @@ class TestDocumentProtection(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPutProtectDocument.docx'
         body = asposewordscloud.ProtectionRequest(new_password='123')
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
 
         request = asposewordscloud.models.requests.ProtectDocumentRequest(remote_name, body,
                                                                            os.path.join(self.remote_test_folder,
@@ -69,7 +69,7 @@ class TestDocumentProtection(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPostChangeDocumentProtection.docx'
         body = asposewordscloud.ProtectionRequest(new_password='')
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
 
         request = asposewordscloud.models.requests.ProtectDocumentRequest(remote_name, body,
                                                                                      os.path.join(
@@ -85,7 +85,7 @@ class TestDocumentProtection(BaseTestContext):
         filename = 'SampleProtectedBlankWordDocument.docx'
         remote_name = 'TestDeleteUnprotectDocument.docx'
         body = asposewordscloud.ProtectionRequest('aspose')
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
 
         request = asposewordscloud.models.requests.UnprotectDocumentRequest(remote_name, body,
                                                                                 os.path.join(

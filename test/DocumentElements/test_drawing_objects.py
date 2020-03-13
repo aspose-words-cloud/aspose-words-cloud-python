@@ -40,7 +40,7 @@ class TestDrawingObjects(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentDrawingObjectByIndex.docx'
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetDocumentDrawingObjectByIndexRequest(remote_name, 'sections/0', index, 
                                                                                         folder= os.path.join(
                                                                                             self.remote_test_folder,
@@ -55,7 +55,7 @@ class TestDrawingObjects(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentDrawingObjectByIndexWithoutNodePath.docx'
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetDocumentDrawingObjectByIndexWithoutNodePathRequest(remote_name, index,
                                                                                         folder= os.path.join(
                                                                                             self.remote_test_folder,
@@ -70,7 +70,7 @@ class TestDrawingObjects(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentDrawingObjectImageData.docx'
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetDocumentDrawingObjectImageDataRequest(remote_name, 'sections/0', index,
                                                                                           folder= os.path.join(
                                                                                               self.remote_test_folder,
@@ -85,7 +85,7 @@ class TestDrawingObjects(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentDrawingObjectImageDataWithoutNodePath.docx'
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetDocumentDrawingObjectImageDataWithoutNodePathRequest(remote_name, index,
                                                                                           folder= os.path.join(
                                                                                               self.remote_test_folder,
@@ -100,9 +100,9 @@ class TestDrawingObjects(BaseTestContext):
         filename = 'sample_EmbeddedOLE.docx'
         remote_name = 'TestGetDocumentDrawingObjectOleData.docx'
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, 
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder,
                                                                                                             self.test_folder,
-                                                                                                            filename))
+                                                                                                            filename), 'rb'))
         request = asposewordscloud.models.requests.GetDocumentDrawingObjectOleDataRequest(remote_name, 'sections/0', index,
                                                                                         folder= os.path.join(
                                                                                             self.remote_test_folder,
@@ -117,9 +117,9 @@ class TestDrawingObjects(BaseTestContext):
         filename = 'sample_EmbeddedOLE.docx'
         remote_name = 'TestGetDocumentDrawingObjectOleDataWithoutNodePath.docx'
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, 
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder,
                                                                                                             self.test_folder,
-                                                                                                            filename))
+                                                                                                            filename), 'rb'))
         request = asposewordscloud.models.requests.GetDocumentDrawingObjectOleDataWithoutNodePathRequest(remote_name, index,
                                                                                         folder= os.path.join(
                                                                                             self.remote_test_folder,
@@ -133,7 +133,7 @@ class TestDrawingObjects(BaseTestContext):
     def test_get_document_drawing_objects(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentDrawingObjects.docx'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetDocumentDrawingObjectsRequest(remote_name,'sections/0',
                                                                                   folder= os.path.join(
                                                                                       self.remote_test_folder,
@@ -147,7 +147,7 @@ class TestDrawingObjects(BaseTestContext):
     def test_get_document_drawing_objects_without_node_path(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentDrawingObjectsWithoutNodePath.docx'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetDocumentDrawingObjectsWithoutNodePathRequest(remote_name,
                                                                                   folder= os.path.join(
                                                                                       self.remote_test_folder,
@@ -161,9 +161,9 @@ class TestDrawingObjects(BaseTestContext):
     def test_update_drawing_object(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPostDrawingObject.docx'
-        data = os.path.join(self.local_common_folder, 'aspose-cloud.png')
+        data = open(os.path.join(self.local_common_folder, 'aspose-cloud.png'), 'rb')
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.UpdateDrawingObjectRequest(remote_name, '{"Left": 0}', data, 'sections/0', index,
                                                                           os.path.join(
                                                                               self.remote_test_folder,
@@ -177,9 +177,9 @@ class TestDrawingObjects(BaseTestContext):
     def test_update_drawing_object_without_node_path(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPostDrawingObjectWithoutNodePath.docx'
-        data = os.path.join(self.local_common_folder, 'aspose-cloud.png')
+        data = open(os.path.join(self.local_common_folder, 'aspose-cloud.png'), 'rb')
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.UpdateDrawingObjectWithoutNodePathRequest(remote_name, '{"Left": 0}', data, index,
                                                                           os.path.join(
                                                                               self.remote_test_folder,
@@ -193,8 +193,8 @@ class TestDrawingObjects(BaseTestContext):
     def test_insert_drawing_object(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPutDrawingObject.docx'
-        data = os.path.join(self.local_common_folder, 'aspose-cloud.png')
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        data = open(os.path.join(self.local_common_folder, 'aspose-cloud.png'), 'rb')
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.InsertDrawingObjectRequest(remote_name, '{"Left": 0}', data, 'sections/0',
                                                                          os.path.join(
                                                                              self.remote_test_folder,
@@ -208,8 +208,8 @@ class TestDrawingObjects(BaseTestContext):
     def test_insert_drawing_object_without_node_path(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPutDrawingObjectWithoutNodePath.docx'
-        data = os.path.join(self.local_common_folder, 'aspose-cloud.png')
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        data = open(os.path.join(self.local_common_folder, 'aspose-cloud.png'), 'rb')
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.InsertDrawingObjectWithoutNodePathRequest(remote_name, '{"Left": 0}', data,
                                                                          os.path.join(
                                                                              self.remote_test_folder,
@@ -225,7 +225,7 @@ class TestDrawingObjects(BaseTestContext):
         remote_name = 'TestRenderDrawingObject.docx'
         _format = 'png'
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.RenderDrawingObjectRequest(remote_name, _format, 'sections/0', index,
                                                                             folder=os.path.join(
                                                                               self.remote_test_folder,
@@ -241,7 +241,7 @@ class TestDrawingObjects(BaseTestContext):
         remote_name = 'TestRenderDrawingObjectWithoutNodePath.docx'
         _format = 'png'
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.RenderDrawingObjectWithoutNodePathRequest(remote_name, _format, index,
                                                                             folder=os.path.join(
                                                                               self.remote_test_folder,
@@ -256,7 +256,7 @@ class TestDrawingObjects(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestDeleteDrawingObject.docx'
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteDrawingObjectRequest(remote_name, 'sections/0', index,
                                                                             os.path.join(
                                                                               self.remote_test_folder,
@@ -271,7 +271,7 @@ class TestDrawingObjects(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestDeleteDrawingObjectWithoutNodePath.docx'
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteDrawingObjectWithoutNodePathRequest(remote_name, index,
                                                                             os.path.join(
                                                                               self.remote_test_folder,

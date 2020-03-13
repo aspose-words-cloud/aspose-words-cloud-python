@@ -43,7 +43,7 @@ class TestSplitDocument(BaseTestContext):
         _format = 'text'
         _from = 1
         _to = 2
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.SplitDocumentRequest(remote_name,
                                                                           os.path.join(
                                                                               self.remote_test_folder,

@@ -41,7 +41,7 @@ class TestParagraphs(BaseTestContext):
         remote_name = 'TestDeleteParagraph.docx'
         index = 0
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteParagraphRequest(remote_name, '', index,
                                                                           os.path.join(
                                                                               self.remote_test_folder,
@@ -57,7 +57,7 @@ class TestParagraphs(BaseTestContext):
         remote_name = 'TestDeleteParagraphWithoutNodePath.docx'
         index = 0
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteParagraphWithoutNodePathRequest(remote_name, index,
                                                                           os.path.join(
                                                                               self.remote_test_folder,
@@ -73,7 +73,7 @@ class TestParagraphs(BaseTestContext):
         remote_name = 'TestGetDocumentParagraph.docx'
         index = 0
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetParagraphRequest(remote_name, '', index,
                                                                                os.path.join(
                                                                                    self.remote_test_folder,
@@ -89,7 +89,7 @@ class TestParagraphs(BaseTestContext):
         remote_name = 'TestGetDocumentParagraphWithoutNodePath.docx'
         index = 0
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetParagraphWithoutNodePathRequest(remote_name, index,
                                                                                os.path.join(
                                                                                    self.remote_test_folder,
@@ -106,7 +106,7 @@ class TestParagraphs(BaseTestContext):
         index = 0
         paragraph_path = 'paragraphs/0'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetRunRequest(remote_name, paragraph_path, index,
                                                                                   os.path.join(
                                                                                       self.remote_test_folder,
@@ -123,7 +123,7 @@ class TestParagraphs(BaseTestContext):
         index = 0
         paragraph_path = 'paragraphs/0'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetRunFontRequest(remote_name, paragraph_path,
                                                                                       index,
                                                                                       os.path.join(
@@ -140,7 +140,7 @@ class TestParagraphs(BaseTestContext):
         remote_name = 'TestGetDocumentParagraphRuns.docx'
         paragraph_path = 'sections/0/paragraphs/0'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetRunsRequest(remote_name, paragraph_path,
                                                                                    os.path.join(
                                                                                        self.remote_test_folder,
@@ -156,7 +156,7 @@ class TestParagraphs(BaseTestContext):
         remote_name = 'TestGetDocumentParagraphs.docx'
         node_path = 'sections/0'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetParagraphsRequest(remote_name,node_path,
                                                                                 folder= os.path.join(
                                                                                     self.remote_test_folder,
@@ -172,7 +172,7 @@ class TestParagraphs(BaseTestContext):
         remote_name = 'TestGetDocumentParagraphsWithoutNodePath.docx'
         node_path = 'sections/0'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetParagraphsWithoutNodePathRequest(remote_name,
                                                                                 folder= os.path.join(
                                                                                     self.remote_test_folder,
@@ -191,7 +191,7 @@ class TestParagraphs(BaseTestContext):
         paragraph_path = 'paragraphs/0'
         body = asposewordscloud.Font(bold=True)
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.UpdateRunFontRequest(remote_name, body,
                                                                                        paragraph_path,
                                                                                        index,
@@ -211,7 +211,7 @@ class TestParagraphs(BaseTestContext):
         node_path = 'sections/0'
         body = asposewordscloud.ParagraphInsert('This is a new paragraph for your document')
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.InsertParagraphRequest(remote_name, body,
                                                                        folder= os.path.join(
                                                                            self.remote_test_folder,
@@ -229,7 +229,7 @@ class TestParagraphs(BaseTestContext):
         index = 0
         format = 'png'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.RenderParagraphRequest(remote_name, format, '', index,
                                                                           os.path.join(
                                                                               self.remote_test_folder,
@@ -246,7 +246,7 @@ class TestParagraphs(BaseTestContext):
         index = 0
         format = 'png'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.RenderParagraphWithoutNodePathRequest(remote_name, format, index,
                                                                           os.path.join(
                                                                               self.remote_test_folder,
@@ -262,7 +262,7 @@ class TestParagraphs(BaseTestContext):
         remote_name = 'GetDocumentParagraphFormat.docx'
         index = 0
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetParagraphFormatRequest(remote_name, '', index,
                                                                                      os.path.join(
                                                                                          self.remote_test_folder,
@@ -278,7 +278,7 @@ class TestParagraphs(BaseTestContext):
         remote_name = 'GetDocumentParagraphFormatWithoutNodePath.docx'
         index = 0
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetParagraphFormatWithoutNodePathRequest(remote_name, index,
                                                                                      os.path.join(
                                                                                          self.remote_test_folder,
@@ -295,7 +295,7 @@ class TestParagraphs(BaseTestContext):
         index = 0
         body = asposewordscloud.ParagraphFormat(alignment='Right')
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.UpdateParagraphFormatRequest(remote_name, body, '', index,
                                                                                       folder=os.path.join(
                                                                                           self.remote_test_folder,

@@ -39,7 +39,7 @@ class TestRevisions(BaseTestContext):
     def test_accept_all_revisions(self):
         filename = 'test_doc.docx'
         remote_name = 'TestAcceptAllRevisions.docx'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.AcceptAllRevisionsRequest(remote_name,
                                                                              os.path.join(
                                                                                  self.remote_test_folder,
@@ -53,7 +53,7 @@ class TestRevisions(BaseTestContext):
     def test_reject_all_revisions(self):
         filename = 'test_doc.docx'
         remote_name = 'TestRejectAllRevisions.docx'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.RejectAllRevisionsRequest(remote_name,
                                                                              os.path.join(
                                                                                  self.remote_test_folder,

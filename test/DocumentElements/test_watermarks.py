@@ -40,7 +40,7 @@ class TestWatermarks(BaseTestContext):
         filename = 'test_doc.docx'
         remote_name = 'TestDeleteDocumentWatermark.docx'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteWatermarkRequest(remote_name,
                                                                                 os.path.join(
                                                                                     self.remote_test_folder,
@@ -56,9 +56,9 @@ class TestWatermarks(BaseTestContext):
         remote_name = 'TestPostInsertDocumentWatermarkImage.docx'
         rotation_angle = 0
         dest_name = os.path.join(self.remote_test_out, remote_name)
-        image = os.path.join(self.local_common_folder, 'aspose-cloud.png')
+        image = open(os.path.join(self.local_common_folder, 'aspose-cloud.png'), 'rb')
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.InsertWatermarkImageRequest(remote_name, image,
                                                                                          os.path.join(
                                                                                              self.remote_test_folder,
@@ -77,7 +77,7 @@ class TestWatermarks(BaseTestContext):
         dest_name = os.path.join(self.remote_test_out, remote_name)
         body = asposewordscloud.WatermarkText('This is the text', 90)
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.InsertWatermarkTextRequest(remote_name, body,
                                                                                         os.path.join(
                                                                                             self.remote_test_folder,

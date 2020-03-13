@@ -42,7 +42,7 @@ class TestPages(BaseTestContext):
         page_number = 1
         format = 'png'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.RenderPageRequest(remote_name, page_number, format,
                                                                      os.path.join(
                                                                          self.remote_test_folder,
@@ -58,7 +58,7 @@ class TestPages(BaseTestContext):
         remote_name = 'TestGetSectionPageSetup.docx'
         index = 0
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetSectionPageSetupRequest(remote_name, index,
                                                                               os.path.join(
                                                                                   self.remote_test_folder,
@@ -75,7 +75,7 @@ class TestPages(BaseTestContext):
         index = 0
         body = asposewordscloud.PageSetup(rtl_gutter=True, left_margin=10, orientation='Landscape', paper_size='A5')
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.UpdateSectionPageSetupRequest(remote_name, index, body,
                                                                                  os.path.join(
                                                                                      self.remote_test_folder,

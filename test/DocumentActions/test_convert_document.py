@@ -41,7 +41,7 @@ class TestConvertDocument(BaseTestContext):
         remote_name = 'TestPostDocumentSaveAs.docx'
         dest_name = os.path.join(self.remote_test_out, 'TestPostDocumentSaveAs.pdf')
         save_options = asposewordscloud.SaveOptionsData(save_format='pdf', file_name=dest_name)
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
 
         request = asposewordscloud.models.requests.SaveAsRequest(remote_name, save_options,
                                                                            os.path.join(self.remote_test_folder,
@@ -57,7 +57,7 @@ class TestConvertDocument(BaseTestContext):
         remote_name = 'TestPostDocumentSaveAsFromPdfToDoc.docx'
         dest_name = os.path.join(self.remote_test_out, 'TestPostDocumentSaveAs.docx')
         save_options = asposewordscloud.SaveOptionsData(save_format='docx', file_name=dest_name)
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
 
         request = asposewordscloud.models.requests.SaveAsRequest(remote_name, save_options,
                                                                            os.path.join(self.remote_test_folder,
@@ -71,8 +71,8 @@ class TestConvertDocument(BaseTestContext):
     def test_convert_document(self):
         _format = 'pdf'
         filename = 'test_multi_pages.docx'
-        request = asposewordscloud.models.requests.ConvertDocumentRequest(os.path.join(self.local_common_folder,
-                                                                                        filename),
+        request = asposewordscloud.models.requests.ConvertDocumentRequest(open(os.path.join(self.local_common_folder,
+                                                                                        filename), 'rb'),
                                                                            _format)
         result = self.words_api.convert_document(request)
         self.assertTrue(len(result) > 0, 'Error has occurred while convert document')
@@ -85,7 +85,7 @@ class TestConvertDocument(BaseTestContext):
         remote_name = 'TestPutDocumentSaveAsTiff.docx'
         dest_name = os.path.join(self.remote_test_out, 'TestPostDocumentSaveAsTiff.tiff')
         save_options = asposewordscloud.SaveOptionsData(save_format='tiff', file_name=dest_name)
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
 
         request = asposewordscloud.models.requests.SaveAsTiffRequest(remote_name, save_options,
                                                                               os.path.join(self.remote_test_folder,
@@ -100,7 +100,7 @@ class TestConvertDocument(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentWithFormat.docx'
         _format = 'text'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetDocumentWithFormatRequest(remote_name, _format,
                                                                                 os.path.join(self.remote_test_folder,
                                                                                              self.test_folder))
@@ -115,7 +115,7 @@ class TestConvertDocument(BaseTestContext):
         remote_name = 'TestGetDocumentWithFormat.docx'
         _format = 'text'
         out_path = os.path.join(self.remote_test_out, remote_name)
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetDocumentWithFormatRequest(remote_name, _format,
                                                                                 os.path.join(self.remote_test_folder,
                                                                                              self.test_folder),
