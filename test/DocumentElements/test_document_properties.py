@@ -42,7 +42,7 @@ class TestDocumentProperties(BaseTestContext):
         property_name = 'AsposeAuthor'
         _prop = asposewordscloud.DocumentProperty(name=property_name, value='Yaroslav Ekimov')
         
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.CreateOrUpdateDocumentPropertyRequest(remote_name, property_name,
                                                                                          _prop,
                                                                                          os.path.join(
@@ -60,7 +60,7 @@ class TestDocumentProperties(BaseTestContext):
         dest_name = os.path.join(self.remote_test_out, remote_name)
         property_name = 'testProp'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteDocumentPropertyRequest(remote_name, property_name,
                                                                                  os.path.join(
                                                                                      self.remote_test_folder,
@@ -75,7 +75,7 @@ class TestDocumentProperties(BaseTestContext):
     def test_get_document_properties(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentProperties.docx'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetDocumentPropertiesRequest(remote_name,
                                                                                 os.path.join(
                                                                                     self.remote_test_folder,
@@ -90,7 +90,7 @@ class TestDocumentProperties(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentProperty.docx'
         property_name = 'Author'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetDocumentPropertyRequest(remote_name, property_name,
                                                                               os.path.join(
                                                                                   self.remote_test_folder,

@@ -39,7 +39,7 @@ class TestFields(BaseTestContext):
     def test_get_fields(self):
         filename = 'GetField.docx'
         remote_name = 'TestGetFields.docx'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetFieldsRequest(remote_name,'sections/0',
                                                                   folder= os.path.join(
                                                                       self.remote_test_folder,
@@ -53,7 +53,7 @@ class TestFields(BaseTestContext):
     def test_get_fields_without_node_path(self):
         filename = 'GetField.docx'
         remote_name = 'TestGetFieldsWithoutNodePath.docx'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetFieldsWithoutNodePathRequest(remote_name,
                                                                   folder= os.path.join(
                                                                       self.remote_test_folder,
@@ -68,7 +68,7 @@ class TestFields(BaseTestContext):
         filename = 'GetField.docx'
         remote_name = 'TestGetField.docx'
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetFieldRequest(remote_name,'sections/0/paragraphs/0', index,
                                                                  folder= os.path.join(
                                                                      self.remote_test_folder,
@@ -83,7 +83,7 @@ class TestFields(BaseTestContext):
         filename = 'GetField.docx'
         remote_name = 'TestGetFieldWithoutNodePath.docx'
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetFieldWithoutNodePathRequest(remote_name, index,
                                                                  folder= os.path.join(
                                                                      self.remote_test_folder,
@@ -100,7 +100,7 @@ class TestFields(BaseTestContext):
         dest_name = os.path.join(self.remote_test_out, remote_name)
         index = 0
         body = asposewordscloud.Field(None, '0.0.3', '{ NUMPAGES }')
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.UpdateFieldRequest(remote_name, body,'sections/0/paragraphs/0', index,
                                                                   folder= os.path.join(
                                                                       self.remote_test_folder,
@@ -116,7 +116,7 @@ class TestFields(BaseTestContext):
         filename = 'GetField.docx'
         remote_name = 'TestPutField.docx'
         body = asposewordscloud.Field(None, '0.0.3', '{ NUMPAGES }')
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.InsertFieldRequest(remote_name, body,'sections/0/paragraphs/0',
                                                                  folder= os.path.join(
                                                                      self.remote_test_folder,
@@ -131,7 +131,7 @@ class TestFields(BaseTestContext):
         filename = 'GetField.docx'
         remote_name = 'TestPutFieldWithoutNodePath.docx'
         body = asposewordscloud.Field(None, '0.0.3', '{ NUMPAGES }')
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.InsertFieldWithoutNodePathRequest(remote_name, body,
                                                                  folder= os.path.join(
                                                                      self.remote_test_folder,
@@ -145,7 +145,7 @@ class TestFields(BaseTestContext):
     def test_update_fields(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPostUpdateDocumentFields.docx'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.UpdateFieldsRequest(remote_name,
                                                                                  os.path.join(
                                                                                      self.remote_test_folder,
@@ -161,7 +161,7 @@ class TestFields(BaseTestContext):
         remote_name = 'TestPostInsertPageNumbers.docx'
         dest_name = os.path.join(self.remote_test_out, remote_name)
         body = asposewordscloud.models.PageNumber('{PAGE} of { NUMPAGES }', 'center', False, True)
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.InsertPageNumbersRequest(remote_name, body,
                                                                               os.path.join(
                                                                                   self.remote_test_folder,
@@ -177,7 +177,7 @@ class TestFields(BaseTestContext):
         filename = 'GetField.docx'
         remote_name = 'TestDeleteField.docx'
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteFieldRequest(remote_name, 'sections/0/paragraphs/0', index,
                                                                     folder= os.path.join(
                                                                         self.remote_test_folder,
@@ -192,7 +192,7 @@ class TestFields(BaseTestContext):
         filename = 'GetField.docx'
         remote_name = 'TestDeleteFieldWithoutNodePath.docx'
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteFieldWithoutNodePathRequest(remote_name, index,
                                                                     folder= os.path.join(
                                                                         self.remote_test_folder,
@@ -206,7 +206,7 @@ class TestFields(BaseTestContext):
     def test_delete_fields(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestDeleteFields.docx'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteFieldsRequest(remote_name,
                                                                     'sections/0',
                                                                      os.path.join(
@@ -221,7 +221,7 @@ class TestFields(BaseTestContext):
     def test_delete_fields_without_node_path(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestDeleteFieldsWithoutNodePath.docx'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteFieldsWithoutNodePathRequest(remote_name,
                                                                      os.path.join(
                                                                          self.remote_test_folder,

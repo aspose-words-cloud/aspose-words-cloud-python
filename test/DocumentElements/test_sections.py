@@ -41,7 +41,7 @@ class TestSections(BaseTestContext):
         remote_name = 'TestGetSection.docx'
         index = 0
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetSectionRequest(remote_name, index,
                                                                      os.path.join(
                                                                          self.remote_test_folder,
@@ -56,7 +56,7 @@ class TestSections(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetSections.docx'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetSectionsRequest(remote_name,
                                                                       os.path.join(
                                                                           self.remote_test_folder,
@@ -68,7 +68,7 @@ class TestSections(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestDeleteSection.docx'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
 
         request = asposewordscloud.models.requests.DeleteSectionRequest(remote_name, 0, os.path.join(self.remote_test_folder, self.test_folder))
         result = self.words_api.delete_section(request)

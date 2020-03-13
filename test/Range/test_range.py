@@ -41,7 +41,7 @@ class TestRange(BaseTestContext):
         local_name = 'RangeGet.doc'
         remote_name = 'TestGetRangeText.doc'
 
-        self.upload_file(os.path.join(self.remote_test_folder, remote_name) , os.path.join(self.local_test_folder, self.test_folder, local_name))
+        self.upload_file(os.path.join(self.remote_test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, local_name), 'rb'))
 
         request = asposewordscloud.models.requests.GetRangeTextRequest(remote_name, range_start, range_end, self.remote_test_folder)
         result = self.words_api.get_range_text(request)
@@ -54,7 +54,7 @@ class TestRange(BaseTestContext):
         local_name = 'RangeGet.doc'
         remote_name = 'TestRemoveRange.doc'
 
-        self.upload_file(os.path.join(self.remote_test_folder, remote_name) , os.path.join(self.local_test_folder, self.test_folder, local_name))
+        self.upload_file(os.path.join(self.remote_test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, local_name), 'rb'))
 
         request = asposewordscloud.models.requests.RemoveRangeRequest(remote_name, range_start, range_end, self.remote_test_folder)
         result = self.words_api.remove_range(request)
@@ -69,7 +69,7 @@ class TestRange(BaseTestContext):
         local_name = 'RangeGet.doc'
         remote_name = 'TestSaveAsRange.doc'
 
-        self.upload_file(os.path.join(self.remote_test_folder, remote_name) , os.path.join(self.local_test_folder, self.test_folder, local_name))
+        self.upload_file(os.path.join(self.remote_test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, local_name), 'rb'))
 
         request = asposewordscloud.models.requests.SaveAsRangeRequest(remote_name, range_start, range_doc, range_end, self.remote_test_folder)
         result = self.words_api.save_as_range(request)
@@ -84,7 +84,7 @@ class TestRange(BaseTestContext):
         local_name = 'RangeGet.doc'
         remote_name = 'TestReplaceWithText.doc'
 
-        self.upload_file(os.path.join(self.remote_test_folder, remote_name) , os.path.join(self.local_test_folder, self.test_folder, local_name))
+        self.upload_file(os.path.join(self.remote_test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, local_name), 'rb'))
 
         request = asposewordscloud.models.requests.ReplaceWithTextRequest(remote_name, range_start, replacement, range_end, self.remote_test_folder)
         result = self.words_api.replace_with_text(request)

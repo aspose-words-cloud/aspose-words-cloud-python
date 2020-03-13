@@ -39,7 +39,7 @@ class TestMailMergeFields(BaseTestContext):
     def test_get_document_field_names(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentFieldNames.docx'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetDocumentFieldNamesRequest(remote_name,
                                                                                 os.path.join(
                                                                                     self.remote_test_folder,
@@ -51,7 +51,7 @@ class TestMailMergeFields(BaseTestContext):
     # Test for getting document field names
     #
     def test_get_document_field_names_online(self):
-        file=os.path.join(self.local_test_folder, self.test_folder, "SampleExecuteTemplate.docx")
+        file = open(os.path.join(self.local_test_folder, self.test_folder, "SampleExecuteTemplate.docx"), 'rb')
         request = asposewordscloud.models.requests.GetDocumentFieldNamesOnlineRequest(file, True)
         result = self.words_api.get_document_field_names_online(request)
         self.assertIsNotNone(result, 'Error has occurred while get document field names')

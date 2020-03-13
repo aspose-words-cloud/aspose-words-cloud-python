@@ -47,7 +47,7 @@ class TestClassification(BaseTestContext):
     def test_classify_document(self):
         filename = "test_multi_pages.docx"
         remote_name = "Source.docx"
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.ClassifyDocumentRequest(remote_name,
                                                                            os.path.join(self.remote_test_folder,
                                                                                         self.test_folder))
@@ -61,7 +61,7 @@ class TestClassification(BaseTestContext):
         filename = "test_multi_pages.docx"
         remote_name = "Source.docx"
         taxonomy = "documents"
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.ClassifyDocumentRequest(remote_name,
                                                                            os.path.join(self.remote_test_folder,
                                                                                         self.test_folder),

@@ -41,7 +41,7 @@ class TestHyperlinks(BaseTestContext):
         remote_name = 'TestGetDocumentHyperlinkByIndex.docx'
         index = 0
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetDocumentHyperlinkByIndexRequest(remote_name, index,
                                                                                       os.path.join(
                                                                                           self.remote_test_folder,
@@ -56,7 +56,7 @@ class TestHyperlinks(BaseTestContext):
         filename = 'test_doc.docx'
         remote_name = 'TestGetDocumentHyperlinks.docx'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetDocumentHyperlinksRequest(remote_name,
                                                                                 os.path.join(
                                                                                     self.remote_test_folder,

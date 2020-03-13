@@ -41,7 +41,7 @@ class TestMathObjects(BaseTestContext):
         remote_name = 'TestDeleteOfficeMathObject.docx'
         index = 0
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteOfficeMathObjectRequest(remote_name, '', index,
                                                                                os.path.join(
                                                                                    self.remote_test_folder,
@@ -57,7 +57,7 @@ class TestMathObjects(BaseTestContext):
         remote_name = 'TestDeleteOfficeMathObjectWithoutNodePath.docx'
         index = 0
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteOfficeMathObjectWithoutNodePathRequest(remote_name, index,
                                                                                os.path.join(
                                                                                    self.remote_test_folder,
@@ -73,7 +73,7 @@ class TestMathObjects(BaseTestContext):
         remote_name = 'TestGetOfficeMathObject.docx'
         index = 0
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetOfficeMathObjectRequest(remote_name, '', index,  
                                                                             os.path.join(
                                                                                 self.remote_test_folder,
@@ -89,7 +89,7 @@ class TestMathObjects(BaseTestContext):
         remote_name = 'TestGetOfficeMathObjectWithoutNodePath.docx'
         index = 0
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetOfficeMathObjectWithoutNodePathRequest(remote_name, index,
                                                                             os.path.join(
                                                                                 self.remote_test_folder,
@@ -104,7 +104,7 @@ class TestMathObjects(BaseTestContext):
         filename = 'MathObjects.docx'
         remote_name = 'TestGetOfficeMathObjects.docx'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetOfficeMathObjectsRequest(remote_name, '',
                                                                              os.path.join(
                                                                                  self.remote_test_folder,
@@ -119,7 +119,7 @@ class TestMathObjects(BaseTestContext):
         filename = 'MathObjects.docx'
         remote_name = 'TestGetOfficeMathObjectsWithoutNodePath.docx'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetOfficeMathObjectsWithoutNodePathRequest(remote_name,
                                                                              os.path.join(
                                                                                  self.remote_test_folder,
@@ -136,7 +136,7 @@ class TestMathObjects(BaseTestContext):
         index = 0
         format = 'png'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.RenderMathObjectRequest(remote_name, format, '', index, 
                                                                          os.path.join(
                                                                              self.remote_test_folder,
@@ -153,7 +153,7 @@ class TestMathObjects(BaseTestContext):
         index = 0
         format = 'png'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.RenderMathObjectWithoutNodePathRequest(remote_name, format, index,
                                                                          os.path.join(
                                                                              self.remote_test_folder,

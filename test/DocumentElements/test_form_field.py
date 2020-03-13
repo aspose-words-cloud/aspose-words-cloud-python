@@ -43,7 +43,7 @@ class TestFormField(BaseTestContext):
         index = 0
         body = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='',
                                                  text_input_type='Regular', text_input_default='')
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.UpdateFormFieldRequest(remote_name, body, 'sections/0', index,
                                                                       folder= os.path.join(
                                                                           self.remote_test_folder,
@@ -62,7 +62,7 @@ class TestFormField(BaseTestContext):
         index = 0
         body = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='',
                                                  text_input_type='Regular', text_input_default='')
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.UpdateFormFieldWithoutNodePathRequest(remote_name, body, index,
                                                                       folder= os.path.join(
                                                                           self.remote_test_folder,
@@ -81,7 +81,7 @@ class TestFormField(BaseTestContext):
         body = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='',
                                                  text_input_type='Regular', text_input_default='123',
                                                  text_input_format='UPPERCASE')
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.InsertFormFieldRequest(remote_name, body, 'sections/0',
                                                                      folder= os.path.join(
                                                                          self.remote_test_folder,
@@ -100,7 +100,7 @@ class TestFormField(BaseTestContext):
         body = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='',
                                                  text_input_type='Regular', text_input_default='123',
                                                  text_input_format='UPPERCASE')
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.InsertFormFieldWithoutNodePathRequest(remote_name, body,
                                                                      folder= os.path.join(
                                                                          self.remote_test_folder,
@@ -116,7 +116,7 @@ class TestFormField(BaseTestContext):
         filename = 'FormFilled.docx'
         remote_name = 'TestDeleteFormField.docx'
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteFormFieldRequest(remote_name,'sections/0', index,
                                                                         folder = os.path.join(
                                                                             self.remote_test_folder,
@@ -131,7 +131,7 @@ class TestFormField(BaseTestContext):
         filename = 'FormFilled.docx'
         remote_name = 'TestDeleteFormFieldWithoutNodePath.docx'
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteFormFieldWithoutNodePathRequest(remote_name, index,
                                                                         folder = os.path.join(
                                                                             self.remote_test_folder,
@@ -146,7 +146,7 @@ class TestFormField(BaseTestContext):
         filename = 'FormFilled.docx'
         remote_name = 'TestGetFormField.docx'
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetFormFieldRequest(remote_name, 'sections/0', index,
                                                                      folder= os.path.join(
                                                                          self.remote_test_folder,
@@ -161,7 +161,7 @@ class TestFormField(BaseTestContext):
         filename = 'FormFilled.docx'
         remote_name = 'TestGetFormFieldWithoutNodePath.docx'
         index = 0
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetFormFieldWithoutNodePathRequest(remote_name, index,
                                                                      folder= os.path.join(
                                                                          self.remote_test_folder,
@@ -175,7 +175,7 @@ class TestFormField(BaseTestContext):
     def test_get_form_fields(self):
         filename = 'FormFilled.docx'
         remote_name = 'TestGetFormFields.docx'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetFormFieldsRequest(remote_name, 'sections/0',
                                                                       folder= os.path.join(
                                                                           self.remote_test_folder,
@@ -189,7 +189,7 @@ class TestFormField(BaseTestContext):
     def test_get_form_fields_without_node_path(self):
         filename = 'FormFilled.docx'
         remote_name = 'TestGetFormFieldsWithoutNodePath.docx'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetFormFieldsWithoutNodePathRequest(remote_name,
                                                                       folder= os.path.join(
                                                                           self.remote_test_folder,
