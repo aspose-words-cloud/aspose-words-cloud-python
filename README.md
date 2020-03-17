@@ -56,11 +56,7 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```python
 import asposewordscloud
 import asposewordscloud.models.requests
-api_client = asposewordscloud.ApiClient()
-api_client.configuration.host = 'https://api.aspose.cloud'
-api_client.configuration.api_key['api_key'] = '' # Put your appKey here
-api_client.configuration.api_key['app_sid'] = '' # Put your appSid here
-words_api = asposewordscloud.WordsApi(api_client)
+words_api = asposewordscloud.WordsApi(AppSid, AppKey, Host)
 remote_name = 'TestDeleteWatermark.docx'
 
 upload_request = asposewordscloud.models.requests.UploadFileRequest(file, remote_name)
@@ -77,7 +73,7 @@ self.assertTrue(result.code == 200, 'Error has occurred while deleting document 
 Please put your credentials into [Configuration](asposewordscloud/configuration.py).
 
 ## Dependencies
-- Python 2.7(End of Life in 2020) and 3.7
+- Python 3.7
 - referenced packages (see [here](setup.py) for more details)
 
 ## Licensing
