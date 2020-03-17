@@ -41,7 +41,7 @@ class TestComments(BaseTestContext):
         remote_name = 'TestDeleteComment.docx'
         comment_index = 0
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteCommentRequest(remote_name, comment_index,
                                                                         os.path.join(
                                                                             self.remote_test_folder,
@@ -57,7 +57,7 @@ class TestComments(BaseTestContext):
         remote_name = 'TestGetComment.docx'
         comment_index = 0
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetCommentRequest(remote_name, comment_index,
                                                                      os.path.join(
                                                                          self.remote_test_folder,
@@ -72,7 +72,7 @@ class TestComments(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetComments.docx'
         
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetCommentsRequest(remote_name,
                                                                       os.path.join(
                                                                           self.remote_test_folder,
@@ -92,7 +92,7 @@ class TestComments(BaseTestContext):
         body = asposewordscloud.Comment(None, 'Yaroslav Ekimov', initial='YE', range_start=doc_pos, range_end=doc_pos,
                                       text='A new comment')
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.UpdateCommentRequest(remote_name, comment_index, body,
                                                                     os.path.join(
                                                                         self.remote_test_folder,
@@ -111,7 +111,7 @@ class TestComments(BaseTestContext):
         body = asposewordscloud.Comment(None, 'Yaroslav Ekimov', initial='YE', range_start=doc_pos, range_end=doc_pos,
                                       text='A new comment')
         
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.InsertCommentRequest(remote_name, body,
                                                                    os.path.join(
                                                                        self.remote_test_folder,

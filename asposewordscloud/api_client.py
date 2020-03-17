@@ -77,12 +77,12 @@ class ApiClient(object):
 
         self.pool = ThreadPool()
         self.rest_client = rest.RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '19.12'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '20.3'}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'python sdk 19.12'
+        self.user_agent = 'python sdk 20.3'
 
     def __del__(self):
         self.pool.close()
@@ -450,13 +450,12 @@ class ApiClient(object):
                     continue
                 file_names = v if type(v) is list else [v]
                 for n in file_names:
-                    with open(n, 'rb') as f:
-                        filename = os.path.basename(f.name)
-                        filedata = f.read()
-                        mimetype = (mimetypes.guess_type(filename)[0] or
-                                    'application/octet-stream')
-                        params.append(
-                            tuple([k, tuple([filename, filedata, mimetype])]))
+                    filename = os.path.basename(n.name)
+                    filedata = n.read()
+                    mimetype = (mimetypes.guess_type(filename)[0] or
+                                'application/octet-stream')
+                    params.append(
+                        tuple([k, tuple([filename, filedata, mimetype])]))
 
         return params
 
@@ -591,11 +590,8 @@ class ApiClient(object):
         :return: datetime.
         """
         try:
-            if string == '0001-01-01T00:00:00':
-                return datetime.datetime.min
-            else:
-                from dateutil.parser import parse
-                return parse(re.search('[0-9]', string).group(0))
+                from dateutil.parser import isoparse
+                return isoparse(string)
         except ImportError:
             return string
         except ValueError:

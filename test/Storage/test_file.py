@@ -11,7 +11,7 @@ class TestFile(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestUploadFile.docx'
 
-        request = asposewordscloud.models.requests.UploadFileRequest(os.path.join(self.local_common_folder, filename), os.path.join(self.test_folder, remote_name))
+        request = asposewordscloud.models.requests.UploadFileRequest(open(os.path.join(self.local_common_folder, filename), 'rb'), os.path.join(self.test_folder, remote_name))
         result = self.words_api.upload_file(request)
         self.assertTrue(len(result._uploaded) == 1 , 'Error has occurred while delete document macros')
 
@@ -22,7 +22,7 @@ class TestFile(BaseTestContext):
         remote_path_src = os.path.join(self.remote_test_folder, self.test_folder, remote_name)
         remote_path_dst = os.path.join(self.remote_test_folder, self.test_folder, remote_name_dst)
        
-        request = asposewordscloud.models.requests.UploadFileRequest(os.path.join(self.local_common_folder, filename), remote_path_src)
+        request = asposewordscloud.models.requests.UploadFileRequest(open(os.path.join(self.local_common_folder, filename), 'rb'), remote_path_src)
         self.words_api.upload_file(request)
 
         request = asposewordscloud.models.requests.CopyFileRequest(remote_path_dst, remote_path_src)
@@ -37,7 +37,7 @@ class TestFile(BaseTestContext):
         remote_path_src = os.path.join(self.remote_test_folder, self.test_folder, remote_name)
         remote_path_dst = os.path.join(self.remote_test_folder, self.test_folder, remote_name_dst)
 
-        request = asposewordscloud.models.requests.UploadFileRequest(os.path.join(self.local_common_folder, filename), remote_path_src)
+        request = asposewordscloud.models.requests.UploadFileRequest(open(os.path.join(self.local_common_folder, filename), 'rb'), remote_path_src)
         result = self.words_api.upload_file(request)
 
         request = asposewordscloud.models.requests.MoveFileRequest(remote_path_dst, remote_path_src)
@@ -55,7 +55,7 @@ class TestFile(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestDeleteFile.docx'
         path = os.path.join(self.local_common_folder, filename)
-        request = asposewordscloud.models.requests.UploadFileRequest(os.path.join(self.local_common_folder, filename), os.path.join(self.remote_test_folder, self.test_folder, remote_name))
+        request = asposewordscloud.models.requests.UploadFileRequest(open(os.path.join(self.local_common_folder, filename), 'rb'), os.path.join(self.remote_test_folder, self.test_folder, remote_name))
         self.words_api.upload_file(request)
 
         result = self.words_api.delete_file(asposewordscloud.models.requests.DeleteFileRequest(path))
@@ -66,7 +66,7 @@ class TestFile(BaseTestContext):
         remote_name = 'TestDownloadFile.docx'
         remote_path = os.path.join(self.remote_test_folder, self.test_folder, remote_name)
         path = os.path.join(self.local_common_folder, filename)
-        self.upload_file(remote_path, os.path.join(self.local_common_folder, filename))
+        self.upload_file(remote_path, open(os.path.join(self.local_common_folder, filename), 'rb'))
 
         request = asposewordscloud.models.requests.DownloadFileRequest(remote_path)
         response = self.words_api.download_file(request)

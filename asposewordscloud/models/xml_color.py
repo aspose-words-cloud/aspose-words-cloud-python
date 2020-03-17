@@ -103,8 +103,6 @@ class XmlColor(object):
         :param alpha: The alpha of this XmlColor.  # noqa: E501
         :type: int
         """
-        if alpha is None:
-            raise ValueError("Invalid value for `alpha`, must not be `None`")  # noqa: E501
         self._alpha = alpha
     def to_dict(self):
         """Returns the model properties as a dict"""

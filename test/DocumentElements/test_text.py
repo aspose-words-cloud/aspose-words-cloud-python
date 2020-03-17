@@ -42,7 +42,7 @@ class TestText(BaseTestContext):
         dest_name = os.path.join(self.remote_test_out, remote_name)
         body = asposewordscloud.ReplaceTextParameters('aspose', 'aspose new')
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.ReplaceTextRequest(remote_name, body,
                                                                         os.path.join(
                                                                             self.remote_test_folder,
@@ -59,7 +59,7 @@ class TestText(BaseTestContext):
         remote_name = 'TestSearch.docx'
         pattern = 'aspose'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.SearchRequest(remote_name, pattern,
                                                                  os.path.join(
                                                                      self.remote_test_folder,

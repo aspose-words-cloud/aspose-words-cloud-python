@@ -42,10 +42,11 @@ class WordsApi(object):
 
     :param api_client: an api client to perfom http requests
     """
-    def __init__(self, api_client=None):
-        if api_client is None:
-            api_client = ApiClient()
-        self.api_client = api_client
+    def __init__(self, app_sid, app_key, base_url):
+        self.api_client = ApiClient()
+        self.api_client.configuration.host = base_url
+        self.api_client.configuration.api_key['api_key'] = app_key
+        self.api_client.configuration.api_key['app_sid'] = app_sid
         self.__request_token()
 
     def accept_all_revisions(self, request, **kwargs):  # noqa: E501

@@ -56,25 +56,16 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```python
 import asposewordscloud
 import asposewordscloud.models.requests
-api_client = asposewordscloud.ApiClient()
-api_client.configuration.host = 'https://api.aspose.cloud'
-api_client.configuration.api_key['api_key'] = '' # Put your appKey here
-api_client.configuration.api_key['app_sid'] = '' # Put your appSid here
-storage_api = asposestoragecloud.StorageApi(asposestoragecloud.ApiClient('', '')) # Same credentials for storage
-storage_api.api_client.configuration.base_url = 'https://api.aspose.cloud/v1.1'
-words_api = asposewordscloud.WordsApi(api_client)
-filename = 'test_doc.docx'
-remote_name = 'TestDeleteDocumentWatermark.docx'
+words_api = asposewordscloud.WordsApi(AppSid, AppKey, Host)
+remote_name = 'TestDeleteWatermark.docx'
 
-with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-    file = f.read()
-self.storage_api.put_create(os.path.join(self.remote_test_folder, self.test_folder, remote_name), file)
-request = asposewordscloud.models.requests.DeleteDocumentWatermarkRequest(remote_name,
-                                                                           os.path.join(
-                                                                                 self.remote_test_folder,
-                                                                                 self.test_folder))
-result = words_api.delete_document_watermark(request)
-self.assertTrue(result.code == 200, 'Error has occurred while delete document watermark')
+upload_request = asposewordscloud.models.requests.UploadFileRequest(file, remote_name)
+upload_result = self.words_api.upload_file(request)
+self.assertTrue(upload_result.code == 200, 'Error has occurred while uploading document')
+
+request = asposewordscloud.models.requests.DeleteWatermarkRequest(remote_name)
+result = words_api.delete_watermark(request)
+self.assertTrue(result.code == 200, 'Error has occurred while deleting document watermark')
 
 ```
 
@@ -82,7 +73,7 @@ self.assertTrue(result.code == 200, 'Error has occurred while delete document wa
 Please put your credentials into [Configuration](asposewordscloud/configuration.py).
 
 ## Dependencies
-- Python 2.7(End of Life in 2020) and 3.7
+- Python 3.7
 - referenced packages (see [here](setup.py) for more details)
 
 ## Licensing
