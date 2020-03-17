@@ -14,7 +14,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "aspose-words-cloud"
-VERSION = "20.1.0"
+VERSION = "20.3.0"
 # To install the library, run the following
 #
 # python setup.py install
@@ -23,7 +23,6 @@ VERSION = "20.1.0"
 # http://pypi.python.org/pypi/setuptools
 
 REQUIRES = ["urllib3 >= 1.16", "six >= 1.10", "certifi", "python-dateutil"]
-TEST_REQUIRES = ['asposestoragecloud >=1.0.5']
 
 from os import path
 this_directory = path.abspath(path.dirname(__file__))
@@ -51,7 +50,6 @@ setup(
 	],
     keywords=["aspose", "python", "aspose cloud", "word"],
     install_requires=REQUIRES,
-	tests_require=TEST_REQUIRES,
     packages=find_packages(),
     include_package_data=True,
     long_description=long_description,
