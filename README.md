@@ -59,7 +59,7 @@ import asposewordscloud.models.requests
 words_api = asposewordscloud.WordsApi(AppSid, AppKey, Host)
 remote_name = 'TestDeleteWatermark.docx'
 
-upload_request = asposewordscloud.models.requests.UploadFileRequest(file, remote_name)
+upload_request = UploadFileRequest(open(filename, 'rb'), remote_name)
 upload_result = self.words_api.upload_file(request)
 self.assertTrue(upload_result.code == 200, 'Error has occurred while uploading document')
 
@@ -70,7 +70,6 @@ self.assertTrue(result.code == 200, 'Error has occurred while deleting document 
 ```
 
 [Test](test/) contain various examples of using the SDK.
-Please put your credentials into [Configuration](asposewordscloud/configuration.py).
 
 ## Dependencies
 - Python 3.7
