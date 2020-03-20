@@ -28,10 +28,10 @@ class LoadWebDocumentRequest(object):
     """
     Request model for load_web_document operation.
     Initializes a new instance.
-    :param data Parameters of loading.
-    :param storage Original document storage.
+    :param  Parameters of loading.
+    :param  Original document storage.
     """
 
-    def __init__(self, data, storage=None):
-        self.data = data
-        self.storage = storage
+    def __init__(self, =None):
+        self. = 
+        self. = 
