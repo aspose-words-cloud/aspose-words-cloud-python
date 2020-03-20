@@ -41,21 +41,31 @@ class Run(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'text': 'str'
+        'text': 'str',
+        'link': 'WordsApiLink',
+        'node_id': 'str'
     }
 
     attribute_map = {
-        'text': 'Text'
+        'text': 'Text',
+        'link': 'link',
+        'node_id': 'NodeId'
     }
 
-    def __init__(self, text=None):  # noqa: E501
+    def __init__(self, text=None, link=None, node_id=None):  # noqa: E501
         """Run - a model defined in Swagger"""  # noqa: E501
 
         self._text = None
+        self._link = None
+        self._node_id = None
         self.discriminator = None
 
         if text is not None:
             self.text = text
+        if link is not None:
+            self.link = link
+        if node_id is not None:
+            self.node_id = node_id
 
     @property
     def text(self):
@@ -78,6 +88,48 @@ class Run(object):
         :type: str
         """
         self._text = text
+    @property
+    def link(self):
+        """Gets the link of this Run.  # noqa: E501
+
+        Gets or sets link.  # noqa: E501
+
+        :return: The link of this Run.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this Run.
+
+        Gets or sets link.  # noqa: E501
+
+        :param link: The link of this Run.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
+    @property
+    def node_id(self):
+        """Gets the node_id of this Run.  # noqa: E501
+
+        Gets or sets node id.  # noqa: E501
+
+        :return: The node_id of this Run.  # noqa: E501
+        :rtype: str
+        """
+        return self._node_id
+
+    @node_id.setter
+    def node_id(self, node_id):
+        """Sets the node_id of this Run.
+
+        Gets or sets node id.  # noqa: E501
+
+        :param node_id: The node_id of this Run.  # noqa: E501
+        :type: str
+        """
+        self._node_id = node_id
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

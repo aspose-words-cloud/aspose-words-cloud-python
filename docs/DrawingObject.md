@@ -3,6 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**link** | [**WordsApiLink**](WordsApiLink.md) |  | [optional] 
+**node_id** | **str** | Gets or sets node id. | [optional] 
 **height** | **float** | Gets or sets height of the drawing object in points. | [optional] 
 **image_data_link** | [**WordsApiLink**](WordsApiLink.md) |  | [optional] 
 **left** | **float** | Gets or sets distance in points from the origin to the left side of the image.              | [optional] 

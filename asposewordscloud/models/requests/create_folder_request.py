@@ -28,10 +28,10 @@ class CreateFolderRequest(object):
     """
     Request model for create_folder operation.
     Initializes a new instance.
-    :param  Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively
-    :param  Storage name
+    :param path Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively
+    :param storage_name Storage name
     """
 
-    def __init__(self, =None):
-        self. = 
-        self. = 
+    def __init__(self, path, storage_name=None):
+        self.path = path
+        self.storage_name = storage_name

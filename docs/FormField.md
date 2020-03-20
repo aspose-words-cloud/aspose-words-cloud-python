@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **node_id** | **str** | Gets or sets node id. | [optional] 
+**link** | [**WordsApiLink**](WordsApiLink.md) |  | [optional] 
 **calculate_on_exit** | **bool** | Gets or sets true if references to the specified form field are automatically updated whenever the field is exited. | [optional] 
 **enabled** | **bool** | Gets or sets true if a form field is enabled. | [optional] 
 **entry_macro** | **str** | Gets or sets returns or sets an entry macro name for the form field. | [optional] 

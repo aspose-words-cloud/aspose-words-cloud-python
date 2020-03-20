@@ -42,23 +42,28 @@ class FieldLink(object):
     """
     swagger_types = {
         'node_id': 'str',
+        'link': 'WordsApiLink',
         'field_code': 'str'
     }
 
     attribute_map = {
         'node_id': 'NodeId',
+        'link': 'link',
         'field_code': 'FieldCode'
     }
 
-    def __init__(self, node_id=None, field_code=None):  # noqa: E501
+    def __init__(self, node_id=None, link=None, field_code=None):  # noqa: E501
         """FieldLink - a model defined in Swagger"""  # noqa: E501
 
         self._node_id = None
+        self._link = None
         self._field_code = None
         self.discriminator = None
 
         if node_id is not None:
             self.node_id = node_id
+        if link is not None:
+            self.link = link
         if field_code is not None:
             self.field_code = field_code
 
@@ -83,6 +88,27 @@ class FieldLink(object):
         :type: str
         """
         self._node_id = node_id
+    @property
+    def link(self):
+        """Gets the link of this FieldLink.  # noqa: E501
+
+        Gets or sets link.  # noqa: E501
+
+        :return: The link of this FieldLink.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this FieldLink.
+
+        Gets or sets link.  # noqa: E501
+
+        :param link: The link of this FieldLink.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def field_code(self):
         """Gets the field_code of this FieldLink.  # noqa: E501

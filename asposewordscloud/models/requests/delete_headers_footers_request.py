@@ -28,26 +28,26 @@ class DeleteHeadersFootersRequest(object):
     """
     Request model for delete_headers_footers operation.
     Initializes a new instance.
-    :param  The document name.
-    :param  Path to parent section.
-    :param  Original document folder.
-    :param  Original document storage.
-    :param  Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    :param  Password for opening an encrypted document.
-    :param  Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    :param  Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    :param  The date and time to use for revisions.
-    :param  List of types of headers and footers.
+    :param name The document name.
+    :param section_path Path to parent section.
+    :param folder Original document folder.
+    :param storage Original document storage.
+    :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+    :param password Password for opening an encrypted document.
+    :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+    :param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+    :param revision_date_time The date and time to use for revisions.
+    :param headers_footers_types List of types of headers and footers.
     """
 
-    def __init__(self, =None=None=None=None=None=None=None=None):
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
+    def __init__(self, name, section_path, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None, headers_footers_types=None):
+        self.name = name
+        self.section_path = section_path
+        self.folder = folder
+        self.storage = storage
+        self.load_encoding = load_encoding
+        self.password = password
+        self.dest_file_name = dest_file_name
+        self.revision_author = revision_author
+        self.revision_date_time = revision_date_time
+        self.headers_footers_types = headers_footers_types

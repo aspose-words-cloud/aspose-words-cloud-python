@@ -28,12 +28,12 @@ class DeleteFileRequest(object):
     """
     Request model for delete_file operation.
     Initializes a new instance.
-    :param  Path of the file including file name and extension e.g. /Folder1/file.ext
-    :param  Storage name
-    :param  File version ID to delete
+    :param path Path of the file including file name and extension e.g. /Folder1/file.ext
+    :param storage_name Storage name
+    :param version_id File version ID to delete
     """
 
-    def __init__(self, =None=None):
-        self. = 
-        self. = 
-        self. = 
+    def __init__(self, path, storage_name=None, version_id=None):
+        self.path = path
+        self.storage_name = storage_name
+        self.version_id = version_id

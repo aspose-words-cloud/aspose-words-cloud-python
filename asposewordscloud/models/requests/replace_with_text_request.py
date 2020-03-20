@@ -28,24 +28,24 @@ class ReplaceWithTextRequest(object):
     """
     Request model for replace_with_text operation.
     Initializes a new instance.
-    :param  The document.
-    :param  The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
-    :param  Model with text for replacement.
-    :param  The range end identifier.
-    :param  Original document folder.
-    :param  Original document storage.
-    :param  Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    :param  Password for opening an encrypted document.
-    :param  Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+    :param name The document.
+    :param range_start_identifier The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
+    :param range_text Model with text for replacement.
+    :param range_end_identifier The range end identifier.
+    :param folder Original document folder.
+    :param storage Original document storage.
+    :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+    :param password Password for opening an encrypted document.
+    :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     """
 
-    def __init__(self, =None=None=None=None=None=None):
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
+    def __init__(self, name, range_start_identifier, range_text, range_end_identifier=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None):
+        self.name = name
+        self.range_start_identifier = range_start_identifier
+        self.range_text = range_text
+        self.range_end_identifier = range_end_identifier
+        self.folder = folder
+        self.storage = storage
+        self.load_encoding = load_encoding
+        self.password = password
+        self.dest_file_name = dest_file_name

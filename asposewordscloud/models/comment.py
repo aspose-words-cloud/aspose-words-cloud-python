@@ -41,6 +41,7 @@ class Comment(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'author': 'str',
         'content': 'StoryChildNodes',
         'date_time': 'datetime',
@@ -51,6 +52,7 @@ class Comment(object):
     }
 
     attribute_map = {
+        'link': 'link',
         'author': 'Author',
         'content': 'Content',
         'date_time': 'DateTime',
@@ -60,9 +62,10 @@ class Comment(object):
         'text': 'Text'
     }
 
-    def __init__(self, author=None, content=None, date_time=None, initial=None, range_end=None, range_start=None, text=None):  # noqa: E501
+    def __init__(self, link=None, author=None, content=None, date_time=None, initial=None, range_end=None, range_start=None, text=None):  # noqa: E501
         """Comment - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._author = None
         self._content = None
         self._date_time = None
@@ -72,6 +75,8 @@ class Comment(object):
         self._text = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if author is not None:
             self.author = author
         if content is not None:
@@ -87,6 +92,27 @@ class Comment(object):
         if text is not None:
             self.text = text
 
+    @property
+    def link(self):
+        """Gets the link of this Comment.  # noqa: E501
+
+        Gets or sets link.  # noqa: E501
+
+        :return: The link of this Comment.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this Comment.
+
+        Gets or sets link.  # noqa: E501
+
+        :param link: The link of this Comment.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def author(self):
         """Gets the author of this Comment.  # noqa: E501

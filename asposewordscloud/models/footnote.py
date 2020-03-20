@@ -41,6 +41,8 @@ class Footnote(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
+        'node_id': 'str',
         'content': 'StoryChildNodes',
         'footnote_type': 'str',
         'position': 'DocumentPosition',
@@ -49,6 +51,8 @@ class Footnote(object):
     }
 
     attribute_map = {
+        'link': 'link',
+        'node_id': 'NodeId',
         'content': 'Content',
         'footnote_type': 'FootnoteType',
         'position': 'Position',
@@ -56,9 +60,11 @@ class Footnote(object):
         'text': 'Text'
     }
 
-    def __init__(self, content=None, footnote_type=None, position=None, reference_mark=None, text=None):  # noqa: E501
+    def __init__(self, link=None, node_id=None, content=None, footnote_type=None, position=None, reference_mark=None, text=None):  # noqa: E501
         """Footnote - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
+        self._node_id = None
         self._content = None
         self._footnote_type = None
         self._position = None
@@ -66,6 +72,10 @@ class Footnote(object):
         self._text = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
+        if node_id is not None:
+            self.node_id = node_id
         if content is not None:
             self.content = content
         if footnote_type is not None:
@@ -77,6 +87,48 @@ class Footnote(object):
         if text is not None:
             self.text = text
 
+    @property
+    def link(self):
+        """Gets the link of this Footnote.  # noqa: E501
+
+        Gets or sets link.  # noqa: E501
+
+        :return: The link of this Footnote.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this Footnote.
+
+        Gets or sets link.  # noqa: E501
+
+        :param link: The link of this Footnote.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
+    @property
+    def node_id(self):
+        """Gets the node_id of this Footnote.  # noqa: E501
+
+        Gets or sets node id.  # noqa: E501
+
+        :return: The node_id of this Footnote.  # noqa: E501
+        :rtype: str
+        """
+        return self._node_id
+
+    @node_id.setter
+    def node_id(self, node_id):
+        """Sets the node_id of this Footnote.
+
+        Gets or sets node id.  # noqa: E501
+
+        :param node_id: The node_id of this Footnote.  # noqa: E501
+        :type: str
+        """
+        self._node_id = node_id
     @property
     def content(self):
         """Gets the content of this Footnote.  # noqa: E501

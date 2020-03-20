@@ -28,18 +28,18 @@ class GetCommentRequest(object):
     """
     Request model for get_comment operation.
     Initializes a new instance.
-    :param  The document name.
-    :param  The comment index.
-    :param  Original document folder.
-    :param  Original document storage.
-    :param  Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    :param  Password for opening an encrypted document.
+    :param name The document name.
+    :param comment_index The comment index.
+    :param folder Original document folder.
+    :param storage Original document storage.
+    :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+    :param password Password for opening an encrypted document.
     """
 
-    def __init__(self, =None=None=None=None):
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
+    def __init__(self, name, comment_index, folder=None, storage=None, load_encoding=None, password=None):
+        self.name = name
+        self.comment_index = comment_index
+        self.folder = folder
+        self.storage = storage
+        self.load_encoding = load_encoding
+        self.password = password

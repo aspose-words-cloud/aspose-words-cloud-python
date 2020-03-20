@@ -28,20 +28,20 @@ class GetHeaderFooterRequest(object):
     """
     Request model for get_header_footer operation.
     Initializes a new instance.
-    :param  The document name.
-    :param  Header/footer index.
-    :param  Original document folder.
-    :param  Original document storage.
-    :param  Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    :param  Password for opening an encrypted document.
-    :param  List of types of headers and footers.
+    :param name The document name.
+    :param header_footer_index Header/footer index.
+    :param folder Original document folder.
+    :param storage Original document storage.
+    :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+    :param password Password for opening an encrypted document.
+    :param filter_by_type List of types of headers and footers.
     """
 
-    def __init__(self, =None=None=None=None=None):
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
+    def __init__(self, name, header_footer_index, folder=None, storage=None, load_encoding=None, password=None, filter_by_type=None):
+        self.name = name
+        self.header_footer_index = header_footer_index
+        self.folder = folder
+        self.storage = storage
+        self.load_encoding = load_encoding
+        self.password = password
+        self.filter_by_type = filter_by_type

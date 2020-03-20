@@ -28,20 +28,20 @@ class UnprotectDocumentRequest(object):
     """
     Request model for unprotect_document operation.
     Initializes a new instance.
-    :param  The document name.
-    :param  ProtectionRequest with protection settings.
-    :param  Original document folder.
-    :param  Original document storage.
-    :param  Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    :param  Password for opening an encrypted document.
-    :param  Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+    :param name The document name.
+    :param protection_request ProtectionRequest with protection settings.
+    :param folder Original document folder.
+    :param storage Original document storage.
+    :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+    :param password Password for opening an encrypted document.
+    :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     """
 
-    def __init__(self, =None=None=None=None=None):
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
+    def __init__(self, name, protection_request, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None):
+        self.name = name
+        self.protection_request = protection_request
+        self.folder = folder
+        self.storage = storage
+        self.load_encoding = load_encoding
+        self.password = password
+        self.dest_file_name = dest_file_name

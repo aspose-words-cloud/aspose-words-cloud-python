@@ -42,6 +42,14 @@ Name | Type | Description | Notes
 **resource_folder_alias** | **str** | Gets or sets specifies the name of the folder used to construct URIs of all resources written into an HTML document.  Default is an empty string. | [optional] 
 **scale_image_to_shape_size** | **bool** | Gets or sets specifies whether images are scaled by Aspose.Words to the bounding shape size when exporting. | [optional] 
 **table_width_output_mode** | **str** | Gets or sets controls how table, row and cell widths are exported. | [optional] 
+**save_format** | **str** | Gets or sets format of save. | [optional] 
+**file_name** | **str** | Gets or sets name of destination file. | [optional] 
+**dml_rendering_mode** | **str** | Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }. | [optional] 
+**dml_effects_rendering_mode** | **str** | Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }. | [optional] 
+**zip_output** | **bool** | Gets or sets controls zip output or not. Default value is false. | [optional] 
+**update_last_saved_time_property** | **bool** | Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving. | [optional] 
+**update_sdt_content** | **bool** | Gets or sets value determining whether content of StructuredDocumentTag is updated before saving. | [optional] 
+**update_fields** | **bool** | Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true | [optional] 
 **epub_navigation_map_level** | **int** | Gets or sets specifies the maximum level of headings populated to the navigation map when exporting. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

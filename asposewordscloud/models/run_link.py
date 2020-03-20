@@ -42,23 +42,28 @@ class RunLink(object):
     """
     swagger_types = {
         'node_id': 'str',
+        'link': 'WordsApiLink',
         'text': 'str'
     }
 
     attribute_map = {
         'node_id': 'NodeId',
+        'link': 'link',
         'text': 'Text'
     }
 
-    def __init__(self, node_id=None, text=None):  # noqa: E501
+    def __init__(self, node_id=None, link=None, text=None):  # noqa: E501
         """RunLink - a model defined in Swagger"""  # noqa: E501
 
         self._node_id = None
+        self._link = None
         self._text = None
         self.discriminator = None
 
         if node_id is not None:
             self.node_id = node_id
+        if link is not None:
+            self.link = link
         if text is not None:
             self.text = text
 
@@ -83,6 +88,27 @@ class RunLink(object):
         :type: str
         """
         self._node_id = node_id
+    @property
+    def link(self):
+        """Gets the link of this RunLink.  # noqa: E501
+
+        Gets or sets link.  # noqa: E501
+
+        :return: The link of this RunLink.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this RunLink.
+
+        Gets or sets link.  # noqa: E501
+
+        :param link: The link of this RunLink.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def text(self):
         """Gets the text of this RunLink.  # noqa: E501

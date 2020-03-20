@@ -28,20 +28,20 @@ class GetFormFieldRequest(object):
     """
     Request model for get_form_field operation.
     Initializes a new instance.
-    :param  The document name.
-    :param  Path to the node that contains collection of formfields.
-    :param  Object index.
-    :param  Original document folder.
-    :param  Original document storage.
-    :param  Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    :param  Password for opening an encrypted document.
+    :param name The document name.
+    :param node_path Path to the node that contains collection of formfields.
+    :param index Object index.
+    :param folder Original document folder.
+    :param storage Original document storage.
+    :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+    :param password Password for opening an encrypted document.
     """
 
-    def __init__(self, =None=None=None=None):
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
+    def __init__(self, name, node_path, index, folder=None, storage=None, load_encoding=None, password=None):
+        self.name = name
+        self.node_path = node_path
+        self.index = index
+        self.folder = folder
+        self.storage = storage
+        self.load_encoding = load_encoding
+        self.password = password

@@ -42,26 +42,31 @@ class Table(object):
     """
     swagger_types = {
         'node_id': 'str',
+        'link': 'WordsApiLink',
         'table_properties': 'TableProperties',
         'table_row_list': 'list[TableRow]'
     }
 
     attribute_map = {
         'node_id': 'NodeId',
+        'link': 'link',
         'table_properties': 'TableProperties',
         'table_row_list': 'TableRowList'
     }
 
-    def __init__(self, node_id=None, table_properties=None, table_row_list=None):  # noqa: E501
+    def __init__(self, node_id=None, link=None, table_properties=None, table_row_list=None):  # noqa: E501
         """Table - a model defined in Swagger"""  # noqa: E501
 
         self._node_id = None
+        self._link = None
         self._table_properties = None
         self._table_row_list = None
         self.discriminator = None
 
         if node_id is not None:
             self.node_id = node_id
+        if link is not None:
+            self.link = link
         if table_properties is not None:
             self.table_properties = table_properties
         if table_row_list is not None:
@@ -88,6 +93,27 @@ class Table(object):
         :type: str
         """
         self._node_id = node_id
+    @property
+    def link(self):
+        """Gets the link of this Table.  # noqa: E501
+
+        Gets or sets link.  # noqa: E501
+
+        :return: The link of this Table.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this Table.
+
+        Gets or sets link.  # noqa: E501
+
+        :param link: The link of this Table.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def table_properties(self):
         """Gets the table_properties of this Table.  # noqa: E501

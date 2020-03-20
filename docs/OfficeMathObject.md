@@ -3,6 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**link** | [**WordsApiLink**](WordsApiLink.md) |  | [optional] 
+**node_id** | **str** | Gets or sets node id. | [optional] 
 **content** | [**StoryChildNodes**](StoryChildNodes.md) |  | [optional] 
 **display_type** | **str** | Gets or sets /sets Office Math display format type which represents whether an equation is displayed inline with the text or displayed on its own line. | [optional] 
 **justification** | **str** | Gets or sets /sets Office Math justification. | [optional] 

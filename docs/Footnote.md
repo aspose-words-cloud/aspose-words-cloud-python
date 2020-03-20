@@ -3,6 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**link** | [**WordsApiLink**](WordsApiLink.md) |  | [optional] 
+**node_id** | **str** | Gets or sets node id. | [optional] 
 **content** | [**StoryChildNodes**](StoryChildNodes.md) |  | [optional] 
 **footnote_type** | **str** | Gets or sets returns a value that specifies whether this is a footnote or endnote. | [optional] 
 **position** | [**DocumentPosition**](DocumentPosition.md) |  | [optional] 

@@ -28,16 +28,16 @@ class ExecuteMailMergeOnlineRequest(object):
     """
     Request model for execute_mail_merge_online operation.
     Initializes a new instance.
-    :param  File with template
-    :param  File with mailmerge data
-    :param  With regions flag.
-    :param  Clean up options.
-    :param  This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, "template" will be used instead. 
+    :param template File with template
+    :param data File with mailmerge data
+    :param with_regions With regions flag.
+    :param cleanup Clean up options.
+    :param document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, "template" will be used instead. 
     """
 
-    def __init__(self, =None=None=None):
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
+    def __init__(self, template, data, with_regions=None, cleanup=None, document_file_name=None):
+        self.template = template
+        self.data = data
+        self.with_regions = with_regions
+        self.cleanup = cleanup
+        self.document_file_name = document_file_name

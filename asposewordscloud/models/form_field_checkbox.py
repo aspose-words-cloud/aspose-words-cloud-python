@@ -50,6 +50,8 @@ class FormFieldCheckbox(object):
         'own_help': 'bool',
         'own_status': 'bool',
         'status_text': 'str',
+        'link': 'WordsApiLink',
+        'node_id': 'str',
         'check_box_size': 'float',
         'checked': 'bool',
         'is_check_box_exact_size': 'bool'
@@ -65,12 +67,14 @@ class FormFieldCheckbox(object):
         'own_help': 'OwnHelp',
         'own_status': 'OwnStatus',
         'status_text': 'StatusText',
+        'link': 'link',
+        'node_id': 'NodeId',
         'check_box_size': 'CheckBoxSize',
         'checked': 'Checked',
         'is_check_box_exact_size': 'IsCheckBoxExactSize'
     }
 
-    def __init__(self, calculate_on_exit=None, enabled=None, entry_macro=None, exit_macro=None, help_text=None, name=None, own_help=None, own_status=None, status_text=None, check_box_size=None, checked=None, is_check_box_exact_size=None):  # noqa: E501
+    def __init__(self, calculate_on_exit=None, enabled=None, entry_macro=None, exit_macro=None, help_text=None, name=None, own_help=None, own_status=None, status_text=None, link=None, node_id=None, check_box_size=None, checked=None, is_check_box_exact_size=None):  # noqa: E501
         """FormFieldCheckbox - a model defined in Swagger"""  # noqa: E501
 
         self._calculate_on_exit = None
@@ -82,6 +86,8 @@ class FormFieldCheckbox(object):
         self._own_help = None
         self._own_status = None
         self._status_text = None
+        self._link = None
+        self._node_id = None
         self._check_box_size = None
         self._checked = None
         self._is_check_box_exact_size = None
@@ -105,6 +111,10 @@ class FormFieldCheckbox(object):
             self.own_status = own_status
         if status_text is not None:
             self.status_text = status_text
+        if link is not None:
+            self.link = link
+        if node_id is not None:
+            self.node_id = node_id
         if check_box_size is not None:
             self.check_box_size = check_box_size
         if checked is not None:
@@ -301,6 +311,48 @@ class FormFieldCheckbox(object):
         :type: str
         """
         self._status_text = status_text
+    @property
+    def link(self):
+        """Gets the link of this FormFieldCheckbox.  # noqa: E501
+
+        Gets or sets link.  # noqa: E501
+
+        :return: The link of this FormFieldCheckbox.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this FormFieldCheckbox.
+
+        Gets or sets link.  # noqa: E501
+
+        :param link: The link of this FormFieldCheckbox.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
+    @property
+    def node_id(self):
+        """Gets the node_id of this FormFieldCheckbox.  # noqa: E501
+
+        Gets or sets node id.  # noqa: E501
+
+        :return: The node_id of this FormFieldCheckbox.  # noqa: E501
+        :rtype: str
+        """
+        return self._node_id
+
+    @node_id.setter
+    def node_id(self, node_id):
+        """Sets the node_id of this FormFieldCheckbox.
+
+        Gets or sets node id.  # noqa: E501
+
+        :param node_id: The node_id of this FormFieldCheckbox.  # noqa: E501
+        :type: str
+        """
+        self._node_id = node_id
     @property
     def check_box_size(self):
         """Gets the check_box_size of this FormFieldCheckbox.  # noqa: E501

@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **own_help** | **bool** | Gets or sets specifies the source of the text that&#x27;s displayed in a message box when a form field has the focus and the user presses F1. | [optional] 
 **own_status** | **bool** | Gets or sets specifies the source of the text that&#x27;s displayed in the status bar when a form field has the focus. | [optional] 
 **status_text** | **str** | Gets or sets returns or sets the text that&#x27;s displayed in the status bar when a form field has the focus. | [optional] 
+**link** | [**WordsApiLink**](WordsApiLink.md) |  | [optional] 
+**node_id** | **str** | Gets or sets node id. | [optional] 
 **drop_down_items** | **list[str]** | Gets or sets provides access to the items of a dropdown form field. | [optional] 
 **drop_down_selected_index** | **int** | Gets or sets the index specifying the currently selected item in a dropdown form field. | [optional] 
 

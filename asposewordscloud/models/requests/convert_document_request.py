@@ -28,18 +28,18 @@ class ConvertDocumentRequest(object):
     """
     Request model for convert_document operation.
     Initializes a new instance.
-    :param  Converting document
-    :param  Format to convert.
-    :param  Original document storage.
-    :param  Path for saving operation result to the local storage.
-    :param  This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead. 
-    :param  Folder in filestorage with custom fonts.
+    :param document Converting document
+    :param format Format to convert.
+    :param storage Original document storage.
+    :param out_path Path for saving operation result to the local storage.
+    :param file_name_field_value This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead. 
+    :param fonts_location Folder in filestorage with custom fonts.
     """
 
-    def __init__(self, =None=None=None=None):
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
-        self. = 
+    def __init__(self, document, format, storage=None, out_path=None, file_name_field_value=None, fonts_location=None):
+        self.document = document
+        self.format = format
+        self.storage = storage
+        self.out_path = out_path
+        self.file_name_field_value = file_name_field_value
+        self.fonts_location = fonts_location

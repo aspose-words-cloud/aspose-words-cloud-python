@@ -41,21 +41,26 @@ class OfficeMathLink(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'node_id': 'str'
+        'node_id': 'str',
+        'link': 'WordsApiLink'
     }
 
     attribute_map = {
-        'node_id': 'NodeId'
+        'node_id': 'NodeId',
+        'link': 'link'
     }
 
-    def __init__(self, node_id=None):  # noqa: E501
+    def __init__(self, node_id=None, link=None):  # noqa: E501
         """OfficeMathLink - a model defined in Swagger"""  # noqa: E501
 
         self._node_id = None
+        self._link = None
         self.discriminator = None
 
         if node_id is not None:
             self.node_id = node_id
+        if link is not None:
+            self.link = link
 
     @property
     def node_id(self):
@@ -78,6 +83,27 @@ class OfficeMathLink(object):
         :type: str
         """
         self._node_id = node_id
+    @property
+    def link(self):
+        """Gets the link of this OfficeMathLink.  # noqa: E501
+
+        Gets or sets link.  # noqa: E501
+
+        :return: The link of this OfficeMathLink.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this OfficeMathLink.
+
+        Gets or sets link.  # noqa: E501
+
+        :param link: The link of this OfficeMathLink.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

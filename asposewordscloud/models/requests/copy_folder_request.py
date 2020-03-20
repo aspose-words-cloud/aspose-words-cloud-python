@@ -28,14 +28,14 @@ class CopyFolderRequest(object):
     """
     Request model for copy_folder operation.
     Initializes a new instance.
-    :param  Destination folder path e.g. '/dst'
-    :param  Source folder path e.g. /Folder1
-    :param  Source storage name
-    :param  Destination storage name
+    :param dest_path Destination folder path e.g. '/dst'
+    :param src_path Source folder path e.g. /Folder1
+    :param src_storage_name Source storage name
+    :param dest_storage_name Destination storage name
     """
 
-    def __init__(self, =None=None):
-        self. = 
-        self. = 
-        self. = 
-        self. = 
+    def __init__(self, dest_path, src_path, src_storage_name=None, dest_storage_name=None):
+        self.dest_path = dest_path
+        self.src_path = src_path
+        self.src_storage_name = src_storage_name
+        self.dest_storage_name = dest_storage_name

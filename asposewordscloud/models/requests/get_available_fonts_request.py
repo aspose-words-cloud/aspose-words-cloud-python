@@ -28,8 +28,8 @@ class GetAvailableFontsRequest(object):
     """
     Request model for get_available_fonts operation.
     Initializes a new instance.
-    :param  Folder in filestorage with custom fonts.
+    :param fonts_location Folder in filestorage with custom fonts.
     """
 
-    def __init__(self, =None):
-        self. = 
+    def __init__(self, fonts_location=None):
+        self.fonts_location = fonts_location

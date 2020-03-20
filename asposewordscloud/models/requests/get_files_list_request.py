@@ -28,10 +28,10 @@ class GetFilesListRequest(object):
     """
     Request model for get_files_list operation.
     Initializes a new instance.
-    :param  Folder path e.g. /Folder1
-    :param  Storage name
+    :param path Folder path e.g. /Folder1
+    :param storage_name Storage name
     """
 
-    def __init__(self, =None):
-        self. = 
-        self. = 
+    def __init__(self, path, storage_name=None):
+        self.path = path
+        self.storage_name = storage_name
