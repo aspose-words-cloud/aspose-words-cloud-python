@@ -21,14 +21,7 @@ def publishToTestPypi()
 		
 		stage('1: upload to testPyPi') {
 			if (params.StartFromStage.toInteger() < 2) {
-				docker.image('python:3.6').inside('-u root'){
-					sh "python -m pip install --upgrade setuptools wheel"
-					sh "python setup.py sdist bdist_wheel"
-					sh "python -m pip install --upgrade twine python-dateutil"
-					sh "touch ~/.pypirc"
-					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = $pypiLogin \\n password = '$pypiPass' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = $pypiLogin \\n password = '$pypiPass'' > ~/.pypirc"
-					sh "python setup.py sdist && twine upload dist/* -r pypitest"
-				}
+				sh 'docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/test-publish.sh $pypiLogin $pypiPass'
 			}
 		}
 		
@@ -44,13 +37,9 @@ def publishToTestPypi()
 		
 		stage('3:package test'){
 			if (params.StartFromStage.toInteger() < 4) {
-				docker.image('python:3.6').inside('-u root') {
-					sh "python -m pip install --upgrade setuptools wheel"
-					sh "pip install urllib3"
-					sh "pip install --index-url https://test.pypi.org/simple/ asposewordscloud"
-					sh "python -m pip install -r requirements.txt && python -m pip install -r test-requirements.txt"
-					sh "py -m unittest discover -v -s ."
-		
+			    withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
+					sh 'mkdir -p Settings'
+					sh 'docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.6 bash scripts/test-unittest.sh $AppSid $AppKey $testServerUrl'
 					sh "rm -rf %s"
 				}
 			}
@@ -75,14 +64,7 @@ def publishToPypi()
 		
 		stage('5: upload to PyPi') {
 			if (params.StartFromStage.toInteger() < 6) {
-				docker.image('python:3.6').inside('-u root'){
-					sh "python -m pip install --upgrade setuptools wheel"
-					sh "python setup.py sdist bdist_wheel"
-					sh "python -m pip install --upgrade twine python-dateutil"
-					sh "touch ~/.pypirc"
-					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = $pypiLogin \\n password = '$pypiPass' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = $pypiLogin \\n password = '$pypiPass'' > ~/.pypirc"
-					sh "python setup.py sdist && twine upload dist/*"
-				}
+				sh 'docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/publish.sh $pypiLogin $pypiPass'
 			}
 		}
 		
