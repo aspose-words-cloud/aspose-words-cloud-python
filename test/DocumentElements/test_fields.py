@@ -99,7 +99,7 @@ class TestFields(BaseTestContext):
         remote_name = 'TestPostField.docx'
         dest_name = os.path.join(self.remote_test_out, remote_name)
         index = 0
-        body = asposewordscloud.Field(None, '0.0.3', '{ NUMPAGES }')
+        body = asposewordscloud.Field(node_id = '0.0.3', field_code = '{ NUMPAGES }')
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.UpdateFieldRequest(remote_name, body,'sections/0/paragraphs/0', index,
                                                                   folder= os.path.join(
@@ -115,7 +115,7 @@ class TestFields(BaseTestContext):
     def test_insert_field(self):
         filename = 'GetField.docx'
         remote_name = 'TestPutField.docx'
-        body = asposewordscloud.Field(None, '0.0.3', '{ NUMPAGES }')
+        body = asposewordscloud.Field(node_id = '0.0.3', field_code = '{ NUMPAGES }')
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.InsertFieldRequest(remote_name, body,'sections/0/paragraphs/0',
                                                                  folder= os.path.join(
@@ -130,7 +130,7 @@ class TestFields(BaseTestContext):
     def test_insert_field_without_node_path(self):
         filename = 'GetField.docx'
         remote_name = 'TestPutFieldWithoutNodePath.docx'
-        body = asposewordscloud.Field(None, '0.0.3', '{ NUMPAGES }')
+        body = asposewordscloud.Field(node_id = '0.0.3', field_code = '{ NUMPAGES }')
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.InsertFieldWithoutNodePathRequest(remote_name, body,
                                                                  folder= os.path.join(
