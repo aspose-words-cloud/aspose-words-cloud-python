@@ -9,7 +9,7 @@ node('words-linux') {
     try {		
 	    stage('0:Merge release to testPackage'){
 			if (params.StartFromStage.toInteger() < 1) {
-				checkout([$class: 'GitSCM', branches: [[name: '*/testPakcage']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-python.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-python.git']]])
 				sh "git checkout --merge testPackage"
 				sh "git reset --hard origin/testPackage"
 				sh "git merge --no-ff --allow-unrelated-histories origin/release"
