@@ -42,7 +42,7 @@ class TestRuns(BaseTestContext):
         index = 0
         paragraph_path = 'paragraphs/1'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteRunRequest(remote_name, paragraph_path, index,
                                                                     os.path.join(
                                                                         self.remote_test_folder,
@@ -60,7 +60,7 @@ class TestRuns(BaseTestContext):
         paragraph_path = 'paragraphs/1'
         body = asposewordscloud.Run(text='Run with text')
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.UpdateRunRequest(remote_name, body, paragraph_path, index,
                                                                 os.path.join(
                                                                     self.remote_test_folder,
@@ -77,7 +77,7 @@ class TestRuns(BaseTestContext):
         paragraph_path = 'paragraphs/1'
         body = asposewordscloud.Run(text='Run with text')
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.InsertRunRequest(remote_name, paragraph_path, body,
                                                                os.path.join(
                                                                    self.remote_test_folder,

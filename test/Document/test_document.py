@@ -39,7 +39,7 @@ class TestDocument(BaseTestContext):
     def test_get_document(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocument.docx'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
 
         request = asposewordscloud.models.requests.GetDocumentRequest(remote_name, os.path.join(self.remote_test_folder,
                                                                                               self.test_folder))
@@ -52,7 +52,7 @@ class TestDocument(BaseTestContext):
     def test_create_document(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPutCreateDocument.docx'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.CreateDocumentRequest(None, remote_name,
                                                                           os.path.join(self.remote_test_folder,
                                                                                        self.test_folder))

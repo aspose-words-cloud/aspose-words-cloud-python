@@ -41,7 +41,7 @@ class TestTables(BaseTestContext):
         remote_name = 'TestDeleteTable.docx'
         index = 1
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteTableRequest(remote_name, '', index,
                                                                     os.path.join(
                                                                         self.remote_test_folder,
@@ -57,7 +57,7 @@ class TestTables(BaseTestContext):
         remote_name = 'TestDeleteTableWithoutNodePath.docx'
         index = 1
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteTableWithoutNodePathRequest(remote_name, index, 
                                                                     os.path.join(
                                                                         self.remote_test_folder,
@@ -74,7 +74,7 @@ class TestTables(BaseTestContext):
         index = 0
         source_path = 'sections/0/tables/2/rows/0'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteTableCellRequest(remote_name, source_path, index,
                                                                           os.path.join(
                                                                               self.remote_test_folder,
@@ -91,7 +91,7 @@ class TestTables(BaseTestContext):
         index = 0
         source_path = 'tables/1'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteTableRowRequest(remote_name, source_path, index,
                                                                          os.path.join(
                                                                              self.remote_test_folder,
@@ -108,7 +108,7 @@ class TestTables(BaseTestContext):
         index = 0
         source_path = 'sections/0/tables/2/rows/0'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetBorderRequest(remote_name, source_path, index,
                                                                     os.path.join(
                                                                         self.remote_test_folder,
@@ -124,7 +124,7 @@ class TestTables(BaseTestContext):
         remote_name = 'TestGetBorders.docx'
         source_path = 'sections/0/tables/2/rows/0'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetBordersRequest(remote_name, source_path,
                                                                      os.path.join(
                                                                          self.remote_test_folder,
@@ -140,7 +140,7 @@ class TestTables(BaseTestContext):
         remote_name = 'TestGetTable.docx'
         index = 1
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetTableRequest(remote_name, '', index,
                                                                  os.path.join(
                                                                      self.remote_test_folder,
@@ -156,7 +156,7 @@ class TestTables(BaseTestContext):
         remote_name = 'TestGetTableWithoutNodePath.docx'
         index = 1
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetTableWithoutNodePathRequest(remote_name, index,
                                                                  os.path.join(
                                                                      self.remote_test_folder,
@@ -173,7 +173,7 @@ class TestTables(BaseTestContext):
         index = 0
         source_path = 'sections/0/tables/2/rows/0'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetTableCellRequest(remote_name, source_path, index,
                                                                        os.path.join(
                                                                            self.remote_test_folder,
@@ -190,7 +190,7 @@ class TestTables(BaseTestContext):
         index = 0
         source_path = 'sections/0/tables/2/rows/0'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetTableCellFormatRequest(remote_name, source_path, index,
                                                                              os.path.join(
                                                                                  self.remote_test_folder,
@@ -207,7 +207,7 @@ class TestTables(BaseTestContext):
         index = 0
         source_path = 'tables/1'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetTableRowRequest(remote_name, source_path, index,
                                                                       os.path.join(
                                                                           self.remote_test_folder,
@@ -224,7 +224,7 @@ class TestTables(BaseTestContext):
         index = 0
         source_path = 'sections/0/tables/2'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetTableRowFormatRequest(remote_name, source_path, index,
                                                                             os.path.join(
                                                                                 self.remote_test_folder,
@@ -239,7 +239,7 @@ class TestTables(BaseTestContext):
         filename = 'TablesGet.docx'
         remote_name = 'TestGetTables.docx'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetTablesRequest(remote_name, '',
                                                                   os.path.join(
                                                                       self.remote_test_folder,
@@ -254,7 +254,7 @@ class TestTables(BaseTestContext):
         filename = 'TablesGet.docx'
         remote_name = 'TestGetTablesWithoutNodePath.docx'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetTablesWithoutNodePathRequest(remote_name,
                                                                   os.path.join(
                                                                       self.remote_test_folder,
@@ -270,11 +270,11 @@ class TestTables(BaseTestContext):
         remote_name = 'TestInsertTable.docx'
         body = asposewordscloud.TableInsert(columns_count=3, rows_count=5)
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.InsertTableRequest(remote_name, body, '',
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
+        request = asposewordscloud.models.requests.InsertTableRequest(remote_name, '',
                                                                     os.path.join(
                                                                         self.remote_test_folder,
-                                                                        self.test_folder))
+                                                                        self.test_folder), table=body)
         result = self.words_api.insert_table(request)
         self.assertIsNotNone(result, 'Error has occurred while insert table')
 
@@ -286,11 +286,11 @@ class TestTables(BaseTestContext):
         remote_name = 'TestInsertTableWithoutNodePath.docx'
         body = asposewordscloud.TableInsert(columns_count=3, rows_count=5)
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.InsertTableWithoutNodePathRequest(remote_name, body,
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
+        request = asposewordscloud.models.requests.InsertTableWithoutNodePathRequest(remote_name,
                                                                     os.path.join(
                                                                         self.remote_test_folder,
-                                                                        self.test_folder))
+                                                                        self.test_folder), table=body)
         result = self.words_api.insert_table_without_node_path(request)
         self.assertIsNotNone(result, 'Error has occurred while insert table')
 
@@ -303,11 +303,11 @@ class TestTables(BaseTestContext):
         body = asposewordscloud.TableCellInsert()
         source_path = 'sections/0/tables/2/rows/0'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.InsertTableCellRequest(remote_name, body, source_path,
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
+        request = asposewordscloud.models.requests.InsertTableCellRequest(remote_name, source_path,
                                                                           os.path.join(
                                                                               self.remote_test_folder,
-                                                                              self.test_folder))
+                                                                              self.test_folder), cell=body)
         result = self.words_api.insert_table_cell(request)
         self.assertIsNotNone(result, 'Error has occurred while insert table cell')
 
@@ -320,11 +320,11 @@ class TestTables(BaseTestContext):
         body = asposewordscloud.TableRowInsert(columns_count=5)
         source_path = 'sections/0/tables/2'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.InsertTableRowRequest(remote_name, body, source_path,
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
+        request = asposewordscloud.models.requests.InsertTableRowRequest(remote_name, source_path,
                                                                          os.path.join(
                                                                              self.remote_test_folder,
-                                                                             self.test_folder))
+                                                                             self.test_folder), row=body)
         result = self.words_api.insert_table_row(request)
         self.assertIsNotNone(result, 'Error has occurred while insert table row')
 
@@ -337,7 +337,7 @@ class TestTables(BaseTestContext):
         index = 0
         format = 'png'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.RenderTableRequest(remote_name, format, '', index,
                                                                     os.path.join(
                                                                         self.remote_test_folder,
@@ -354,7 +354,7 @@ class TestTables(BaseTestContext):
         index = 0
         format = 'png'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.RenderTableWithoutNodePathRequest(remote_name, format, index,
                                                                     os.path.join(
                                                                         self.remote_test_folder,
@@ -372,11 +372,11 @@ class TestTables(BaseTestContext):
         body = asposewordscloud.TableCellFormat(None, 5, True, 'First', wrap_text=True)
         source_path = 'sections/0/tables/2/rows/0'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.UpdateTableCellFormatRequest(remote_name, body, source_path, index,
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
+        request = asposewordscloud.models.requests.UpdateTableCellFormatRequest(remote_name, source_path, index,
                                                                                 os.path.join(
                                                                                     self.remote_test_folder,
-                                                                                    self.test_folder))
+                                                                                    self.test_folder), format=body)
         result = self.words_api.update_table_cell_format(request)
         self.assertIsNotNone(result, 'Error has occurred while update table cell format')
 
@@ -388,7 +388,7 @@ class TestTables(BaseTestContext):
         remote_name = 'TestGetTableProperties.docx'
         index = 1
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetTablePropertiesRequest(remote_name, '', index, 
                                                                            os.path.join(
                                                                                self.remote_test_folder,
@@ -404,7 +404,7 @@ class TestTables(BaseTestContext):
         remote_name = 'TestGetTablePropertiesWithoutNodePath.docx'
         index = 1
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetTablePropertiesWithoutNodePathRequest(remote_name, index,
                                                                            os.path.join(
                                                                                self.remote_test_folder,
@@ -422,11 +422,11 @@ class TestTables(BaseTestContext):
         body = asposewordscloud.TableProperties(None, 'Right', False, True, 1, 2, 3, 4, right_padding=5,
                                                 style_options='ColumnBands', top_padding=6)
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.UpdateTablePropertiesRequest(remote_name, body, '', index,
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
+        request = asposewordscloud.models.requests.UpdateTablePropertiesRequest(remote_name, '', index,
                                                                               os.path.join(
                                                                                   self.remote_test_folder,
-                                                                                  self.test_folder))
+                                                                                  self.test_folder), properties=body)
         result = self.words_api.update_table_properties(request)
         self.assertIsNotNone(result, 'Error has occurred while update table properties')
 
@@ -440,11 +440,11 @@ class TestTables(BaseTestContext):
         body = asposewordscloud.TableProperties(None, 'Right', False, True, 1, 2, 3, 4, right_padding=5,
                                               style_options='ColumnBands', top_padding=6)
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.UpdateTablePropertiesWithoutNodePathRequest(remote_name, body, index,
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
+        request = asposewordscloud.models.requests.UpdateTablePropertiesWithoutNodePathRequest(remote_name, index,
                                                                               os.path.join(
                                                                                   self.remote_test_folder,
-                                                                                  self.test_folder))
+                                                                                  self.test_folder), properties=body)
         result = self.words_api.update_table_properties_without_node_path(request)
         self.assertIsNotNone(result, 'Error has occurred while update table properties')
 
@@ -458,11 +458,11 @@ class TestTables(BaseTestContext):
         body = asposewordscloud.TableRowFormat(None, True, True, 10, 'Auto')
         source_path = 'sections/0/tables/2'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
-        request = asposewordscloud.models.requests.UpdateTableRowFormatRequest(remote_name, body, source_path, index,
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
+        request = asposewordscloud.models.requests.UpdateTableRowFormatRequest(remote_name, source_path, index,
                                                                                os.path.join(
                                                                                    self.remote_test_folder,
-                                                                                   self.test_folder))
+                                                                                   self.test_folder), format=body)
         result = self.words_api.update_table_row_format(request)
         self.assertIsNotNone(result, 'Error has occurred while update table row format')
 
@@ -476,7 +476,7 @@ class TestTables(BaseTestContext):
         index = 0
         source_path = 'tables/1/rows/0/cells/0/'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteBorderRequest(remote_name, source_path, index,
                                                                        os.path.join(
                                                                            self.remote_test_folder,
@@ -492,7 +492,7 @@ class TestTables(BaseTestContext):
         remote_name = 'TestDeleteTableBorders.docx'
         source_path = 'tables/1/rows/0/cells/0/'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.DeleteBordersRequest(remote_name, source_path,
                                                                         os.path.join(
                                                                             self.remote_test_folder,
@@ -510,7 +510,7 @@ class TestTables(BaseTestContext):
         body = asposewordscloud.Border(None, 'Left', asposewordscloud.XmlColor(None, 2), 6, 'DashDotStroker', 2, True)
         source_path = 'tables/1/rows/0/cells/0/'
 
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.test_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.UpdateBorderRequest(remote_name, body, source_path, index,
                                                                        os.path.join(
                                                                            self.remote_test_folder,

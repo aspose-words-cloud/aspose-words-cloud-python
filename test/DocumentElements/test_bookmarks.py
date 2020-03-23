@@ -40,7 +40,7 @@ class TestBookmarks(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentBookmarkByName.docx'
         bookmark_name = 'aspose'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetBookmarkByNameRequest(remote_name, bookmark_name,
                                                                                   os.path.join(
                                                                                       self.remote_test_folder,
@@ -54,7 +54,7 @@ class TestBookmarks(BaseTestContext):
     def test_get_bookmarks(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentBookmarks.docx'
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetBookmarksRequest(remote_name,
                                                                              os.path.join(
                                                                                  self.remote_test_folder,
@@ -71,7 +71,7 @@ class TestBookmarks(BaseTestContext):
         bookmark_name = 'aspose'
         dest_name = os.path.join(self.remote_test_out, remote_name)
         body = asposewordscloud.BookmarkData(bookmark_name, 'This will be the text for Aspose')
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), os.path.join(self.local_test_folder, self.local_common_folder, filename))
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.UpdateBookmarkRequest(remote_name, body, bookmark_name,
                                                                                    os.path.join(
                                                                                        self.remote_test_folder,
