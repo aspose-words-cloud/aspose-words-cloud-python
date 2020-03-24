@@ -43,10 +43,10 @@ class WordsApi(object):
     :param api_client: an api client to perfom http requests
     """
     def __init__(self, app_sid, app_key, base_url):
-        if len(app_sid) == 0
+        if len(app_sid) == 0:
             raise ValueError("app_sid could not be an empty string.")
         
-        if len(app_sid) == 0
+        if len(app_sid) == 0:
             raise ValueError("app_sid could not be an empty string.")
         
         self.api_client = ApiClient()
