@@ -30,7 +30,7 @@ import six
 
 
 class HeaderFootersResponse(object):
-    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/headersfooters.
+    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/headersfooters.
     """
 
     """

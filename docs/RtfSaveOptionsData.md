@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **export_compact_size** | **bool** | Gets or sets allows to make output RTF documents smaller in size, but if they contain RTL (right-to-left) text, it will not be displayed correctly. | [optional] 
 **export_images_for_old_readers** | **bool** | Gets or sets specifies whether the keywords for \&quot;old readers\&quot; are written to RTF or not. | [optional] 
 **pretty_format** | **bool** | Gets or sets specifies whether or not use pretty formats output. | [optional] 
+**save_images_as_wmf** | **bool** | Gets or sets a value indicating whether when true all images will be saved as WMF. This option might help to avoid WordPad warning messages. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
