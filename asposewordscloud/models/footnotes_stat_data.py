@@ -82,8 +82,6 @@ class FootnotesStatData(object):
         :param word_count: The word_count of this FootnotesStatData.  # noqa: E501
         :type: int
         """
-        if word_count is None:
-            raise ValueError("Invalid value for `word_count`, must not be `None`")  # noqa: E501
         self._word_count = word_count
     @property
     def paragraph_count(self):
@@ -105,8 +103,6 @@ class FootnotesStatData(object):
         :param paragraph_count: The paragraph_count of this FootnotesStatData.  # noqa: E501
         :type: int
         """
-        if paragraph_count is None:
-            raise ValueError("Invalid value for `paragraph_count`, must not be `None`")  # noqa: E501
         self._paragraph_count = paragraph_count
     def to_dict(self):
         """Returns the model properties as a dict"""

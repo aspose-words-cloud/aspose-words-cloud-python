@@ -87,7 +87,7 @@ class BookmarksResponse(object):
     def bookmarks(self):
         """Gets the bookmarks of this BookmarksResponse.  # noqa: E501
 
-        Gets or sets bookmarks which are contained in document.  # noqa: E501
+        Gets or sets bookmarks.  # noqa: E501
 
         :return: The bookmarks of this BookmarksResponse.  # noqa: E501
         :rtype: Bookmarks
@@ -98,7 +98,7 @@ class BookmarksResponse(object):
     def bookmarks(self, bookmarks):
         """Sets the bookmarks of this BookmarksResponse.
 
-        Gets or sets bookmarks which are contained in document.  # noqa: E501
+        Gets or sets bookmarks.  # noqa: E501
 
         :param bookmarks: The bookmarks of this BookmarksResponse.  # noqa: E501
         :type: Bookmarks

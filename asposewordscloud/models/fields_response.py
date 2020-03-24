@@ -30,7 +30,7 @@ import six
 
 
 class FieldsResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/{nodePath}/fields.
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/{nodePath}/fields.
     """
 
     """
@@ -87,7 +87,7 @@ class FieldsResponse(object):
     def fields(self):
         """Gets the fields of this FieldsResponse.  # noqa: E501
 
-        Gets or sets collection of fields.  # noqa: E501
+        Gets or sets fields.  # noqa: E501
 
         :return: The fields of this FieldsResponse.  # noqa: E501
         :rtype: FieldCollection
@@ -98,7 +98,7 @@ class FieldsResponse(object):
     def fields(self, fields):
         """Sets the fields of this FieldsResponse.
 
-        Gets or sets collection of fields.  # noqa: E501
+        Gets or sets fields.  # noqa: E501
 
         :param fields: The fields of this FieldsResponse.  # noqa: E501
         :type: FieldCollection

@@ -71,7 +71,7 @@ class TableInsert(object):
     def position(self):
         """Gets the position of this TableInsert.  # noqa: E501
 
-        Gets or sets table will be inserted before specified position.  # noqa: E501
+        Gets or sets position.  # noqa: E501
 
         :return: The position of this TableInsert.  # noqa: E501
         :rtype: DocumentPosition
@@ -82,7 +82,7 @@ class TableInsert(object):
     def position(self, position):
         """Sets the position of this TableInsert.
 
-        Gets or sets table will be inserted before specified position.  # noqa: E501
+        Gets or sets position.  # noqa: E501
 
         :param position: The position of this TableInsert.  # noqa: E501
         :type: DocumentPosition
@@ -108,8 +108,6 @@ class TableInsert(object):
         :param columns_count: The columns_count of this TableInsert.  # noqa: E501
         :type: int
         """
-        if columns_count is None:
-            raise ValueError("Invalid value for `columns_count`, must not be `None`")  # noqa: E501
         self._columns_count = columns_count
     @property
     def rows_count(self):
@@ -131,8 +129,6 @@ class TableInsert(object):
         :param rows_count: The rows_count of this TableInsert.  # noqa: E501
         :type: int
         """
-        if rows_count is None:
-            raise ValueError("Invalid value for `rows_count`, must not be `None`")  # noqa: E501
         self._rows_count = rows_count
     def to_dict(self):
         """Returns the model properties as a dict"""

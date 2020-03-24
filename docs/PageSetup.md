@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**link** | [**WordsApiLink**](WordsApiLink.md) | Gets or sets link to the document. | [optional] 
+**link** | [**WordsApiLink**](WordsApiLink.md) |  | [optional] 
 **bidi** | **bool** | Gets or sets specifies that this section contains bidirectional (complex scripts) text.              | [optional] 
 **border_always_in_front** | **bool** | Gets or sets specifies where the page border is positioned relative to intersecting texts and objects.              | [optional] 
 **border_applies_to** | **str** | Gets or sets specifies which pages the page border is printed on.              | [optional] 
@@ -30,10 +30,9 @@ Name | Type | Description | Notes
 **right_margin** | **float** | Gets or sets returns or sets the distance (in points) between the right edge of the page and the right boundary of the body text.              | [optional] 
 **rtl_gutter** | **bool** | Gets or sets whether Microsoft Word uses gutters for the section based on a right-to-left language or a left-to-right language.              | [optional] 
 **section_start** | **str** | Gets or sets returns or sets the type of section break for the specified object.              | [optional] 
-**suppress_endnotes** | **bool** | Gets or sets true if endnotes are printed at the end of the next section that doesn&#39;t suppress endnotes.                 Suppressed endnotes are printed before the endnotes in that section.              | [optional] 
+**suppress_endnotes** | **bool** | Gets or sets true if endnotes are printed at the end of the next section that doesn&#x27;t suppress endnotes. Suppressed endnotes are printed before the endnotes in that section.              | [optional] 
 **top_margin** | **float** | Gets or sets returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.              | [optional] 
 **vertical_alignment** | **str** | Gets or sets returns or sets the vertical alignment of text on each page in a document or section.              | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

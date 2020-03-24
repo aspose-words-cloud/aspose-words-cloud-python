@@ -121,7 +121,7 @@ class TableCellFormat(object):
     def link(self):
         """Gets the link of this TableCellFormat.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :return: The link of this TableCellFormat.  # noqa: E501
         :rtype: WordsApiLink
@@ -132,7 +132,7 @@ class TableCellFormat(object):
     def link(self, link):
         """Sets the link of this TableCellFormat.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :param link: The link of this TableCellFormat.  # noqa: E501
         :type: WordsApiLink
@@ -263,7 +263,7 @@ class TableCellFormat(object):
     def preferred_width(self):
         """Gets the preferred_width of this TableCellFormat.  # noqa: E501
 
-        Gets or sets returns or sets the preferred width of the cell.  # noqa: E501
+        Gets or sets preferred_width.  # noqa: E501
 
         :return: The preferred_width of this TableCellFormat.  # noqa: E501
         :rtype: PreferredWidth
@@ -274,7 +274,7 @@ class TableCellFormat(object):
     def preferred_width(self, preferred_width):
         """Sets the preferred_width of this TableCellFormat.
 
-        Gets or sets returns or sets the preferred width of the cell.  # noqa: E501
+        Gets or sets preferred_width.  # noqa: E501
 
         :param preferred_width: The preferred_width of this TableCellFormat.  # noqa: E501
         :type: PreferredWidth

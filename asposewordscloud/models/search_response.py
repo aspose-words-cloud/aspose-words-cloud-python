@@ -30,7 +30,7 @@ import six
 
 
 class SearchResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/search.
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/search.
     """
 
     """
@@ -113,7 +113,7 @@ class SearchResponse(object):
     def search_results(self):
         """Gets the search_results of this SearchResponse.  # noqa: E501
 
-        Gets or sets collection of search results.  # noqa: E501
+        Gets or sets search_results.  # noqa: E501
 
         :return: The search_results of this SearchResponse.  # noqa: E501
         :rtype: SearchResultsCollection
@@ -124,7 +124,7 @@ class SearchResponse(object):
     def search_results(self, search_results):
         """Sets the search_results of this SearchResponse.
 
-        Gets or sets collection of search results.  # noqa: E501
+        Gets or sets search_results.  # noqa: E501
 
         :param search_results: The search_results of this SearchResponse.  # noqa: E501
         :type: SearchResultsCollection

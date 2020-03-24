@@ -82,8 +82,6 @@ class PreferredWidth(object):
         :param type: The type of this PreferredWidth.  # noqa: E501
         :type: str
         """
-        if type is None:
-            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         allowed_values = ["Auto", "Percent", "Points"]  # noqa: E501
         if not type.isdigit():	
             if type not in allowed_values:
@@ -97,7 +95,7 @@ class PreferredWidth(object):
     def value(self):
         """Gets the value of this PreferredWidth.  # noqa: E501
 
-        Gets or sets the preferred width value. The unit of measure is specified in the  property.  # noqa: E501
+        Gets or sets the preferred width value. The unit of measure is specified in the Type property.  # noqa: E501
 
         :return: The value of this PreferredWidth.  # noqa: E501
         :rtype: float
@@ -108,7 +106,7 @@ class PreferredWidth(object):
     def value(self, value):
         """Sets the value of this PreferredWidth.
 
-        Gets or sets the preferred width value. The unit of measure is specified in the  property.  # noqa: E501
+        Gets or sets the preferred width value. The unit of measure is specified in the Type property.  # noqa: E501
 
         :param value: The value of this PreferredWidth.  # noqa: E501
         :type: float

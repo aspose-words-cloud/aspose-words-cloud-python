@@ -30,7 +30,7 @@ import six
 
 
 class TableRowFormatResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/tables/{0}/rows/{1}/rowformat.
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/tables/{0}/rows/{1}/rowformat.
     """
 
     """
@@ -87,7 +87,7 @@ class TableRowFormatResponse(object):
     def row_format(self):
         """Gets the row_format of this TableRowFormatResponse.  # noqa: E501
 
-        Gets or sets table.  # noqa: E501
+        Gets or sets row_format.  # noqa: E501
 
         :return: The row_format of this TableRowFormatResponse.  # noqa: E501
         :rtype: TableRowFormat
@@ -98,7 +98,7 @@ class TableRowFormatResponse(object):
     def row_format(self, row_format):
         """Sets the row_format of this TableRowFormatResponse.
 
-        Gets or sets table.  # noqa: E501
+        Gets or sets row_format.  # noqa: E501
 
         :param row_format: The row_format of this TableRowFormatResponse.  # noqa: E501
         :type: TableRowFormat

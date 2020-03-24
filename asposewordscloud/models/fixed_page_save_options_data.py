@@ -257,7 +257,7 @@ class FixedPageSaveOptionsData(object):
     def update_sdt_content(self):
         """Gets the update_sdt_content of this FixedPageSaveOptionsData.  # noqa: E501
 
-        Gets or sets value determining whether content of  is updated before saving.  # noqa: E501
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :return: The update_sdt_content of this FixedPageSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -268,7 +268,7 @@ class FixedPageSaveOptionsData(object):
     def update_sdt_content(self, update_sdt_content):
         """Sets the update_sdt_content of this FixedPageSaveOptionsData.
 
-        Gets or sets value determining whether content of  is updated before saving.  # noqa: E501
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :param update_sdt_content: The update_sdt_content of this FixedPageSaveOptionsData.  # noqa: E501
         :type: bool
@@ -341,7 +341,7 @@ class FixedPageSaveOptionsData(object):
     def metafile_rendering_options(self):
         """Gets the metafile_rendering_options of this FixedPageSaveOptionsData.  # noqa: E501
 
-        Gets or sets allows to specify metafile rendering options.  # noqa: E501
+        Gets or sets metafile_rendering_options.  # noqa: E501
 
         :return: The metafile_rendering_options of this FixedPageSaveOptionsData.  # noqa: E501
         :rtype: MetafileRenderingOptionsData
@@ -352,7 +352,7 @@ class FixedPageSaveOptionsData(object):
     def metafile_rendering_options(self, metafile_rendering_options):
         """Sets the metafile_rendering_options of this FixedPageSaveOptionsData.
 
-        Gets or sets allows to specify metafile rendering options.  # noqa: E501
+        Gets or sets metafile_rendering_options.  # noqa: E501
 
         :param metafile_rendering_options: The metafile_rendering_options of this FixedPageSaveOptionsData.  # noqa: E501
         :type: MetafileRenderingOptionsData

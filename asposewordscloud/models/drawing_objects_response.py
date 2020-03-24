@@ -87,7 +87,7 @@ class DrawingObjectsResponse(object):
     def drawing_objects(self):
         """Gets the drawing_objects of this DrawingObjectsResponse.  # noqa: E501
 
-        Gets or sets collection of drawing objects.  # noqa: E501
+        Gets or sets drawing_objects.  # noqa: E501
 
         :return: The drawing_objects of this DrawingObjectsResponse.  # noqa: E501
         :rtype: DrawingObjectCollection
@@ -98,7 +98,7 @@ class DrawingObjectsResponse(object):
     def drawing_objects(self, drawing_objects):
         """Sets the drawing_objects of this DrawingObjectsResponse.
 
-        Gets or sets collection of drawing objects.  # noqa: E501
+        Gets or sets drawing_objects.  # noqa: E501
 
         :param drawing_objects: The drawing_objects of this DrawingObjectsResponse.  # noqa: E501
         :type: DrawingObjectCollection

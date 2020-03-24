@@ -87,7 +87,7 @@ class BorderResponse(object):
     def border(self):
         """Gets the border of this BorderResponse.  # noqa: E501
 
-        Gets or sets table.  # noqa: E501
+        Gets or sets border.  # noqa: E501
 
         :return: The border of this BorderResponse.  # noqa: E501
         :rtype: Border
@@ -98,7 +98,7 @@ class BorderResponse(object):
     def border(self, border):
         """Sets the border of this BorderResponse.
 
-        Gets or sets table.  # noqa: E501
+        Gets or sets border.  # noqa: E501
 
         :param border: The border of this BorderResponse.  # noqa: E501
         :type: Border

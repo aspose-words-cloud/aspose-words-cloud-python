@@ -87,7 +87,7 @@ class RevisionsModificationResponse(object):
     def result(self):
         """Gets the result of this RevisionsModificationResponse.  # noqa: E501
 
-        Gets or sets result of the modification operations for the revisions collection.  # noqa: E501
+        Gets or sets result.  # noqa: E501
 
         :return: The result of this RevisionsModificationResponse.  # noqa: E501
         :rtype: ModificationOperationResult
@@ -98,7 +98,7 @@ class RevisionsModificationResponse(object):
     def result(self, result):
         """Sets the result of this RevisionsModificationResponse.
 
-        Gets or sets result of the modification operations for the revisions collection.  # noqa: E501
+        Gets or sets result.  # noqa: E501
 
         :param result: The result of this RevisionsModificationResponse.  # noqa: E501
         :type: ModificationOperationResult

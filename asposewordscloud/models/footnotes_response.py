@@ -30,7 +30,7 @@ import six
 
 
 class FootnotesResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/footnotes.
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/footnotes.
     """
 
     """
@@ -87,7 +87,7 @@ class FootnotesResponse(object):
     def footnotes(self):
         """Gets the footnotes of this FootnotesResponse.  # noqa: E501
 
-        Gets or sets collection of footnotes.  # noqa: E501
+        Gets or sets footnotes.  # noqa: E501
 
         :return: The footnotes of this FootnotesResponse.  # noqa: E501
         :rtype: FootnoteCollection
@@ -98,7 +98,7 @@ class FootnotesResponse(object):
     def footnotes(self, footnotes):
         """Sets the footnotes of this FootnotesResponse.
 
-        Gets or sets collection of footnotes.  # noqa: E501
+        Gets or sets footnotes.  # noqa: E501
 
         :param footnotes: The footnotes of this FootnotesResponse.  # noqa: E501
         :type: FootnoteCollection

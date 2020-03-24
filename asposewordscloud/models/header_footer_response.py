@@ -30,7 +30,7 @@ import six
 
 
 class HeaderFooterResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/headersfooters/{0}.
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/headersfooters/{0}.
     """
 
     """
@@ -87,7 +87,7 @@ class HeaderFooterResponse(object):
     def header_footer(self):
         """Gets the header_footer of this HeaderFooterResponse.  # noqa: E501
 
-        Gets or sets headerFooter.  # noqa: E501
+        Gets or sets header_footer.  # noqa: E501
 
         :return: The header_footer of this HeaderFooterResponse.  # noqa: E501
         :rtype: HeaderFooter
@@ -98,7 +98,7 @@ class HeaderFooterResponse(object):
     def header_footer(self, header_footer):
         """Sets the header_footer of this HeaderFooterResponse.
 
-        Gets or sets headerFooter.  # noqa: E501
+        Gets or sets header_footer.  # noqa: E501
 
         :param header_footer: The header_footer of this HeaderFooterResponse.  # noqa: E501
         :type: HeaderFooter

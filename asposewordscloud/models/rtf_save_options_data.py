@@ -51,8 +51,7 @@ class RtfSaveOptionsData(object):
         'update_fields': 'bool',
         'export_compact_size': 'bool',
         'export_images_for_old_readers': 'bool',
-        'pretty_format': 'bool',
-        'save_images_as_wmf': 'bool'
+        'pretty_format': 'bool'
     }
 
     attribute_map = {
@@ -66,11 +65,10 @@ class RtfSaveOptionsData(object):
         'update_fields': 'UpdateFields',
         'export_compact_size': 'ExportCompactSize',
         'export_images_for_old_readers': 'ExportImagesForOldReaders',
-        'pretty_format': 'PrettyFormat',
-        'save_images_as_wmf': 'SaveImagesAsWmf'
+        'pretty_format': 'PrettyFormat'
     }
 
-    def __init__(self, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, export_compact_size=None, export_images_for_old_readers=None, pretty_format=None, save_images_as_wmf=None):  # noqa: E501
+    def __init__(self, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, export_compact_size=None, export_images_for_old_readers=None, pretty_format=None):  # noqa: E501
         """RtfSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._save_format = None
@@ -84,7 +82,6 @@ class RtfSaveOptionsData(object):
         self._export_compact_size = None
         self._export_images_for_old_readers = None
         self._pretty_format = None
-        self._save_images_as_wmf = None
         self.discriminator = None
 
         if save_format is not None:
@@ -109,8 +106,6 @@ class RtfSaveOptionsData(object):
             self.export_images_for_old_readers = export_images_for_old_readers
         if pretty_format is not None:
             self.pretty_format = pretty_format
-        if save_images_as_wmf is not None:
-            self.save_images_as_wmf = save_images_as_wmf
 
     @property
     def save_format(self):
@@ -242,7 +237,7 @@ class RtfSaveOptionsData(object):
     def update_sdt_content(self):
         """Gets the update_sdt_content of this RtfSaveOptionsData.  # noqa: E501
 
-        Gets or sets value determining whether content of  is updated before saving.  # noqa: E501
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :return: The update_sdt_content of this RtfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -253,7 +248,7 @@ class RtfSaveOptionsData(object):
     def update_sdt_content(self, update_sdt_content):
         """Sets the update_sdt_content of this RtfSaveOptionsData.
 
-        Gets or sets value determining whether content of  is updated before saving.  # noqa: E501
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :param update_sdt_content: The update_sdt_content of this RtfSaveOptionsData.  # noqa: E501
         :type: bool
@@ -343,27 +338,6 @@ class RtfSaveOptionsData(object):
         :type: bool
         """
         self._pretty_format = pretty_format
-    @property
-    def save_images_as_wmf(self):
-        """Gets the save_images_as_wmf of this RtfSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value indicating whether when true all images will be saved as WMF. This option might help to avoid WordPad warning messages.  # noqa: E501
-
-        :return: The save_images_as_wmf of this RtfSaveOptionsData.  # noqa: E501
-        :rtype: bool
-        """
-        return self._save_images_as_wmf
-
-    @save_images_as_wmf.setter
-    def save_images_as_wmf(self, save_images_as_wmf):
-        """Sets the save_images_as_wmf of this RtfSaveOptionsData.
-
-        Gets or sets a value indicating whether when true all images will be saved as WMF. This option might help to avoid WordPad warning messages.  # noqa: E501
-
-        :param save_images_as_wmf: The save_images_as_wmf of this RtfSaveOptionsData.  # noqa: E501
-        :type: bool
-        """
-        self._save_images_as_wmf = save_images_as_wmf
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

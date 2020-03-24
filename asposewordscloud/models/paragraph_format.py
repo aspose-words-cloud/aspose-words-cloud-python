@@ -191,7 +191,7 @@ class ParagraphFormat(object):
     def link(self):
         """Gets the link of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :return: The link of this ParagraphFormat.  # noqa: E501
         :rtype: WordsApiLink
@@ -202,7 +202,7 @@ class ParagraphFormat(object):
     def link(self, link):
         """Sets the link of this ParagraphFormat.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :param link: The link of this ParagraphFormat.  # noqa: E501
         :type: WordsApiLink
@@ -509,7 +509,7 @@ class ParagraphFormat(object):
     def no_space_between_paragraphs_of_same_style(self):
         """Gets the no_space_between_paragraphs_of_same_style of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets when true,  and  will be ignored between the paragraphs of the same style.               # noqa: E501
+        Gets or sets when true, SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style.               # noqa: E501
 
         :return: The no_space_between_paragraphs_of_same_style of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -520,7 +520,7 @@ class ParagraphFormat(object):
     def no_space_between_paragraphs_of_same_style(self, no_space_between_paragraphs_of_same_style):
         """Sets the no_space_between_paragraphs_of_same_style of this ParagraphFormat.
 
-        Gets or sets when true,  and  will be ignored between the paragraphs of the same style.               # noqa: E501
+        Gets or sets when true, SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style.               # noqa: E501
 
         :param no_space_between_paragraphs_of_same_style: The no_space_between_paragraphs_of_same_style of this ParagraphFormat.  # noqa: E501
         :type: bool

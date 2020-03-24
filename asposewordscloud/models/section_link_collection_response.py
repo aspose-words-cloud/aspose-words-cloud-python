@@ -30,7 +30,7 @@ import six
 
 
 class SectionLinkCollectionResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/sections.
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/sections.
     """
 
     """
@@ -87,7 +87,7 @@ class SectionLinkCollectionResponse(object):
     def sections(self):
         """Gets the sections of this SectionLinkCollectionResponse.  # noqa: E501
 
-        Gets or sets collection of sections.  # noqa: E501
+        Gets or sets sections.  # noqa: E501
 
         :return: The sections of this SectionLinkCollectionResponse.  # noqa: E501
         :rtype: SectionLinkCollection
@@ -98,7 +98,7 @@ class SectionLinkCollectionResponse(object):
     def sections(self, sections):
         """Sets the sections of this SectionLinkCollectionResponse.
 
-        Gets or sets collection of sections.  # noqa: E501
+        Gets or sets sections.  # noqa: E501
 
         :param sections: The sections of this SectionLinkCollectionResponse.  # noqa: E501
         :type: SectionLinkCollection

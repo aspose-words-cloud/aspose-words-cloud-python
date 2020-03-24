@@ -30,7 +30,7 @@ import six
 
 
 class SectionPageSetupResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/sections/{0}/PageSetup.
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/sections/{0}/PageSetup.
     """
 
     """
@@ -87,7 +87,7 @@ class SectionPageSetupResponse(object):
     def page_setup(self):
         """Gets the page_setup of this SectionPageSetupResponse.  # noqa: E501
 
-        Gets or sets section.  # noqa: E501
+        Gets or sets page_setup.  # noqa: E501
 
         :return: The page_setup of this SectionPageSetupResponse.  # noqa: E501
         :rtype: PageSetup
@@ -98,7 +98,7 @@ class SectionPageSetupResponse(object):
     def page_setup(self, page_setup):
         """Sets the page_setup of this SectionPageSetupResponse.
 
-        Gets or sets section.  # noqa: E501
+        Gets or sets page_setup.  # noqa: E501
 
         :param page_setup: The page_setup of this SectionPageSetupResponse.  # noqa: E501
         :type: PageSetup

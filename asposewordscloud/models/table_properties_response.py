@@ -30,7 +30,7 @@ import six
 
 
 class TablePropertiesResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/tables/{0}/properties.
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/tables/{0}/properties.
     """
 
     """
@@ -87,7 +87,7 @@ class TablePropertiesResponse(object):
     def properties(self):
         """Gets the properties of this TablePropertiesResponse.  # noqa: E501
 
-        Gets or sets table.  # noqa: E501
+        Gets or sets properties.  # noqa: E501
 
         :return: The properties of this TablePropertiesResponse.  # noqa: E501
         :rtype: TableProperties
@@ -98,7 +98,7 @@ class TablePropertiesResponse(object):
     def properties(self, properties):
         """Sets the properties of this TablePropertiesResponse.
 
-        Gets or sets table.  # noqa: E501
+        Gets or sets properties.  # noqa: E501
 
         :param properties: The properties of this TablePropertiesResponse.  # noqa: E501
         :type: TableProperties

@@ -144,8 +144,6 @@ class Document(object):
         :param source_format: The source_format of this Document.  # noqa: E501
         :type: str
         """
-        if source_format is None:
-            raise ValueError("Invalid value for `source_format`, must not be `None`")  # noqa: E501
         allowed_values = ["Unknown", "Doc", "Dot", "DocPreWord60", "Docx", "Docm", "Dotx", "Dotm", "FlatOpc", "Rtf", "WordML", "Html", "Mhtml", "Epub", "Text", "Odt", "Ott", "Pdf", "Xps", "Tiff", "Svg"]  # noqa: E501
         if not source_format.isdigit():	
             if source_format not in allowed_values:
@@ -175,8 +173,6 @@ class Document(object):
         :param is_encrypted: The is_encrypted of this Document.  # noqa: E501
         :type: bool
         """
-        if is_encrypted is None:
-            raise ValueError("Invalid value for `is_encrypted`, must not be `None`")  # noqa: E501
         self._is_encrypted = is_encrypted
     @property
     def is_signed(self):
@@ -198,14 +194,12 @@ class Document(object):
         :param is_signed: The is_signed of this Document.  # noqa: E501
         :type: bool
         """
-        if is_signed is None:
-            raise ValueError("Invalid value for `is_signed`, must not be `None`")  # noqa: E501
         self._is_signed = is_signed
     @property
     def document_properties(self):
         """Gets the document_properties of this Document.  # noqa: E501
 
-        Gets or sets returns document properties.  # noqa: E501
+        Gets or sets document_properties.  # noqa: E501
 
         :return: The document_properties of this Document.  # noqa: E501
         :rtype: DocumentProperties
@@ -216,7 +210,7 @@ class Document(object):
     def document_properties(self, document_properties):
         """Sets the document_properties of this Document.
 
-        Gets or sets returns document properties.  # noqa: E501
+        Gets or sets document_properties.  # noqa: E501
 
         :param document_properties: The document_properties of this Document.  # noqa: E501
         :type: DocumentProperties

@@ -30,7 +30,7 @@ import six
 
 
 class TableCellResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/tables/{0}.
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/tables/{0}.
     """
 
     """
@@ -87,7 +87,7 @@ class TableCellResponse(object):
     def cell(self):
         """Gets the cell of this TableCellResponse.  # noqa: E501
 
-        Gets or sets table cell.  # noqa: E501
+        Gets or sets cell.  # noqa: E501
 
         :return: The cell of this TableCellResponse.  # noqa: E501
         :rtype: TableCell
@@ -98,7 +98,7 @@ class TableCellResponse(object):
     def cell(self, cell):
         """Sets the cell of this TableCellResponse.
 
-        Gets or sets table cell.  # noqa: E501
+        Gets or sets cell.  # noqa: E501
 
         :param cell: The cell of this TableCellResponse.  # noqa: E501
         :type: TableCell

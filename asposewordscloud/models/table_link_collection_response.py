@@ -30,7 +30,7 @@ import six
 
 
 class TableLinkCollectionResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/tables.
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/tables.
     """
 
     """
@@ -87,7 +87,7 @@ class TableLinkCollectionResponse(object):
     def tables(self):
         """Gets the tables of this TableLinkCollectionResponse.  # noqa: E501
 
-        Gets or sets collection of tables.  # noqa: E501
+        Gets or sets tables.  # noqa: E501
 
         :return: The tables of this TableLinkCollectionResponse.  # noqa: E501
         :rtype: TableLinkCollection
@@ -98,7 +98,7 @@ class TableLinkCollectionResponse(object):
     def tables(self, tables):
         """Sets the tables of this TableLinkCollectionResponse.
 
-        Gets or sets collection of tables.  # noqa: E501
+        Gets or sets tables.  # noqa: E501
 
         :param tables: The tables of this TableLinkCollectionResponse.  # noqa: E501
         :type: TableLinkCollection

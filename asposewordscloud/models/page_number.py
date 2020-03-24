@@ -134,8 +134,6 @@ class PageNumber(object):
         :param is_top: The is_top of this PageNumber.  # noqa: E501
         :type: bool
         """
-        if is_top is None:
-            raise ValueError("Invalid value for `is_top`, must not be `None`")  # noqa: E501
         self._is_top = is_top
     @property
     def set_page_number_on_first_page(self):
@@ -157,8 +155,6 @@ class PageNumber(object):
         :param set_page_number_on_first_page: The set_page_number_on_first_page of this PageNumber.  # noqa: E501
         :type: bool
         """
-        if set_page_number_on_first_page is None:
-            raise ValueError("Invalid value for `set_page_number_on_first_page`, must not be `None`")  # noqa: E501
         self._set_page_number_on_first_page = set_page_number_on_first_page
     def to_dict(self):
         """Returns the model properties as a dict"""

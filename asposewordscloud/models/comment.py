@@ -96,7 +96,7 @@ class Comment(object):
     def link(self):
         """Gets the link of this Comment.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :return: The link of this Comment.  # noqa: E501
         :rtype: WordsApiLink
@@ -107,7 +107,7 @@ class Comment(object):
     def link(self, link):
         """Sets the link of this Comment.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :param link: The link of this Comment.  # noqa: E501
         :type: WordsApiLink
@@ -138,7 +138,7 @@ class Comment(object):
     def content(self):
         """Gets the content of this Comment.  # noqa: E501
 
-        Gets or sets content of comment.  # noqa: E501
+        Gets or sets content.  # noqa: E501
 
         :return: The content of this Comment.  # noqa: E501
         :rtype: StoryChildNodes
@@ -149,7 +149,7 @@ class Comment(object):
     def content(self, content):
         """Sets the content of this Comment.
 
-        Gets or sets content of comment.  # noqa: E501
+        Gets or sets content.  # noqa: E501
 
         :param content: The content of this Comment.  # noqa: E501
         :type: StoryChildNodes
@@ -201,7 +201,7 @@ class Comment(object):
     def range_end(self):
         """Gets the range_end of this Comment.  # noqa: E501
 
-        Gets or sets link to comment range end node.  # noqa: E501
+        Gets or sets range_end.  # noqa: E501
 
         :return: The range_end of this Comment.  # noqa: E501
         :rtype: DocumentPosition
@@ -212,7 +212,7 @@ class Comment(object):
     def range_end(self, range_end):
         """Sets the range_end of this Comment.
 
-        Gets or sets link to comment range end node.  # noqa: E501
+        Gets or sets range_end.  # noqa: E501
 
         :param range_end: The range_end of this Comment.  # noqa: E501
         :type: DocumentPosition
@@ -222,7 +222,7 @@ class Comment(object):
     def range_start(self):
         """Gets the range_start of this Comment.  # noqa: E501
 
-        Gets or sets link to comment range start node.  # noqa: E501
+        Gets or sets range_start.  # noqa: E501
 
         :return: The range_start of this Comment.  # noqa: E501
         :rtype: DocumentPosition
@@ -233,7 +233,7 @@ class Comment(object):
     def range_start(self, range_start):
         """Sets the range_start of this Comment.
 
-        Gets or sets link to comment range start node.  # noqa: E501
+        Gets or sets range_start.  # noqa: E501
 
         :param range_start: The range_start of this Comment.  # noqa: E501
         :type: DocumentPosition

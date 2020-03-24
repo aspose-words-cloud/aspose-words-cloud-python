@@ -30,7 +30,7 @@ import six
 
 
 class CommentsResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/comments.
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/comments.
     """
 
     """
@@ -87,7 +87,7 @@ class CommentsResponse(object):
     def comments(self):
         """Gets the comments of this CommentsResponse.  # noqa: E501
 
-        Gets or sets collection of comments.  # noqa: E501
+        Gets or sets comments.  # noqa: E501
 
         :return: The comments of this CommentsResponse.  # noqa: E501
         :rtype: CommentsCollection
@@ -98,7 +98,7 @@ class CommentsResponse(object):
     def comments(self, comments):
         """Sets the comments of this CommentsResponse.
 
-        Gets or sets collection of comments.  # noqa: E501
+        Gets or sets comments.  # noqa: E501
 
         :param comments: The comments of this CommentsResponse.  # noqa: E501
         :type: CommentsCollection

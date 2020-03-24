@@ -87,7 +87,7 @@ class SaveResponse(object):
     def save_result(self):
         """Gets the save_result of this SaveResponse.  # noqa: E501
 
-        Gets or sets save result.  # noqa: E501
+        Gets or sets save_result.  # noqa: E501
 
         :return: The save_result of this SaveResponse.  # noqa: E501
         :rtype: SaveResult
@@ -98,7 +98,7 @@ class SaveResponse(object):
     def save_result(self, save_result):
         """Sets the save_result of this SaveResponse.
 
-        Gets or sets save result.  # noqa: E501
+        Gets or sets save_result.  # noqa: E501
 
         :param save_result: The save_result of this SaveResponse.  # noqa: E501
         :type: SaveResult

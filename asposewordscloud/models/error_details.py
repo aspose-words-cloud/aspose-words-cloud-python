@@ -103,8 +103,6 @@ class ErrorDetails(object):
         :param error_date_time: The error_date_time of this ErrorDetails.  # noqa: E501
         :type: datetime
         """
-        if error_date_time is None:
-            raise ValueError("Invalid value for `error_date_time`, must not be `None`")  # noqa: E501
         self._error_date_time = error_date_time
     def to_dict(self):
         """Returns the model properties as a dict"""

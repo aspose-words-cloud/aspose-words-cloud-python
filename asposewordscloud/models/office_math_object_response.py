@@ -30,7 +30,7 @@ import six
 
 
 class OfficeMathObjectResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/officeMathObjects/0.
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/officeMathObjects/0.
     """
 
     """
@@ -87,7 +87,7 @@ class OfficeMathObjectResponse(object):
     def office_math_object(self):
         """Gets the office_math_object of this OfficeMathObjectResponse.  # noqa: E501
 
-        Gets or sets officeMathObject information.  # noqa: E501
+        Gets or sets office_math_object.  # noqa: E501
 
         :return: The office_math_object of this OfficeMathObjectResponse.  # noqa: E501
         :rtype: OfficeMathObject
@@ -98,7 +98,7 @@ class OfficeMathObjectResponse(object):
     def office_math_object(self, office_math_object):
         """Sets the office_math_object of this OfficeMathObjectResponse.
 
-        Gets or sets officeMathObject information.  # noqa: E501
+        Gets or sets office_math_object.  # noqa: E501
 
         :param office_math_object: The office_math_object of this OfficeMathObjectResponse.  # noqa: E501
         :type: OfficeMathObject

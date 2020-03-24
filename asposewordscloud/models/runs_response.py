@@ -30,7 +30,7 @@ import six
 
 
 class RunsResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/{paragraphPath}/runs.
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/{paragraphPath}/runs.
     """
 
     """
@@ -87,7 +87,7 @@ class RunsResponse(object):
     def runs(self):
         """Gets the runs of this RunsResponse.  # noqa: E501
 
-        Gets or sets collection of runs.  # noqa: E501
+        Gets or sets runs.  # noqa: E501
 
         :return: The runs of this RunsResponse.  # noqa: E501
         :rtype: Runs
@@ -98,7 +98,7 @@ class RunsResponse(object):
     def runs(self, runs):
         """Sets the runs of this RunsResponse.
 
-        Gets or sets collection of runs.  # noqa: E501
+        Gets or sets runs.  # noqa: E501
 
         :param runs: The runs of this RunsResponse.  # noqa: E501
         :type: Runs

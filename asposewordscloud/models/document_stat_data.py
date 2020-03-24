@@ -97,8 +97,6 @@ class DocumentStatData(object):
         :param word_count: The word_count of this DocumentStatData.  # noqa: E501
         :type: int
         """
-        if word_count is None:
-            raise ValueError("Invalid value for `word_count`, must not be `None`")  # noqa: E501
         self._word_count = word_count
     @property
     def paragraph_count(self):
@@ -120,8 +118,6 @@ class DocumentStatData(object):
         :param paragraph_count: The paragraph_count of this DocumentStatData.  # noqa: E501
         :type: int
         """
-        if paragraph_count is None:
-            raise ValueError("Invalid value for `paragraph_count`, must not be `None`")  # noqa: E501
         self._paragraph_count = paragraph_count
     @property
     def page_count(self):
@@ -143,14 +139,12 @@ class DocumentStatData(object):
         :param page_count: The page_count of this DocumentStatData.  # noqa: E501
         :type: int
         """
-        if page_count is None:
-            raise ValueError("Invalid value for `page_count`, must not be `None`")  # noqa: E501
         self._page_count = page_count
     @property
     def footnotes_stat_data(self):
         """Gets the footnotes_stat_data of this DocumentStatData.  # noqa: E501
 
-        Gets or sets detailed statistics of footnotes.  # noqa: E501
+        Gets or sets footnotes_stat_data.  # noqa: E501
 
         :return: The footnotes_stat_data of this DocumentStatData.  # noqa: E501
         :rtype: FootnotesStatData
@@ -161,7 +155,7 @@ class DocumentStatData(object):
     def footnotes_stat_data(self, footnotes_stat_data):
         """Sets the footnotes_stat_data of this DocumentStatData.
 
-        Gets or sets detailed statistics of footnotes.  # noqa: E501
+        Gets or sets footnotes_stat_data.  # noqa: E501
 
         :param footnotes_stat_data: The footnotes_stat_data of this DocumentStatData.  # noqa: E501
         :type: FootnotesStatData

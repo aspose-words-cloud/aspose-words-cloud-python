@@ -30,7 +30,7 @@ import six
 
 
 class FormFieldsResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/{nodePath}/formfields.
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/{nodePath}/formfields.
     """
 
     """
@@ -87,7 +87,7 @@ class FormFieldsResponse(object):
     def form_fields(self):
         """Gets the form_fields of this FormFieldsResponse.  # noqa: E501
 
-        Gets or sets collection of form fields.  # noqa: E501
+        Gets or sets form_fields.  # noqa: E501
 
         :return: The form_fields of this FormFieldsResponse.  # noqa: E501
         :rtype: FormFieldCollection
@@ -98,7 +98,7 @@ class FormFieldsResponse(object):
     def form_fields(self, form_fields):
         """Sets the form_fields of this FormFieldsResponse.
 
-        Gets or sets collection of form fields.  # noqa: E501
+        Gets or sets form_fields.  # noqa: E501
 
         :param form_fields: The form_fields of this FormFieldsResponse.  # noqa: E501
         :type: FormFieldCollection

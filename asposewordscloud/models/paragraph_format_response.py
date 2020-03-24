@@ -30,7 +30,7 @@ import six
 
 
 class ParagraphFormatResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/format.
+    """This response should be returned by the service when handling: GET http://api.aspose.com/v4.0/words/Test.doc/paragraphs/{0}/format.
     """
 
     """
@@ -87,7 +87,7 @@ class ParagraphFormatResponse(object):
     def paragraph_format(self):
         """Gets the paragraph_format of this ParagraphFormatResponse.  # noqa: E501
 
-        Gets or sets represents all the formatting for a paragraph.  # noqa: E501
+        Gets or sets paragraph_format.  # noqa: E501
 
         :return: The paragraph_format of this ParagraphFormatResponse.  # noqa: E501
         :rtype: ParagraphFormat
@@ -98,7 +98,7 @@ class ParagraphFormatResponse(object):
     def paragraph_format(self, paragraph_format):
         """Sets the paragraph_format of this ParagraphFormatResponse.
 
-        Gets or sets represents all the formatting for a paragraph.  # noqa: E501
+        Gets or sets paragraph_format.  # noqa: E501
 
         :param paragraph_format: The paragraph_format of this ParagraphFormatResponse.  # noqa: E501
         :type: ParagraphFormat

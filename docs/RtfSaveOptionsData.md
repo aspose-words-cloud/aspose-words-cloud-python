@@ -9,13 +9,11 @@ Name | Type | Description | Notes
 **dml_effects_rendering_mode** | **str** | Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }. | [optional] 
 **zip_output** | **bool** | Gets or sets controls zip output or not. Default value is false. | [optional] 
 **update_last_saved_time_property** | **bool** | Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving. | [optional] 
-**update_sdt_content** | **bool** | Gets or sets value determining whether content of  is updated before saving. | [optional] 
+**update_sdt_content** | **bool** | Gets or sets value determining whether content of StructuredDocumentTag is updated before saving. | [optional] 
 **update_fields** | **bool** | Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true | [optional] 
 **export_compact_size** | **bool** | Gets or sets allows to make output RTF documents smaller in size, but if they contain RTL (right-to-left) text, it will not be displayed correctly. | [optional] 
 **export_images_for_old_readers** | **bool** | Gets or sets specifies whether the keywords for \&quot;old readers\&quot; are written to RTF or not. | [optional] 
 **pretty_format** | **bool** | Gets or sets specifies whether or not use pretty formats output. | [optional] 
-**save_images_as_wmf** | **bool** | Gets or sets a value indicating whether when true all images will be saved as WMF. This option might help to avoid WordPad warning messages. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

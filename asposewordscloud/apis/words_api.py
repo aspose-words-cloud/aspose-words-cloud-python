@@ -25,7 +25,6 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
-
 from __future__ import absolute_import
 
 import re  # noqa: F401
@@ -190,7 +189,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : Original document name. (required)
-        :param document_list DocumentEntryList : with a list of documents to append.             (required)
+        :param document_list DocumentEntryList : DocumentEntryList with a list of documents to append. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -571,7 +570,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : Original document name. (required)
-        :param compare_data CompareData : with a document to compare.             (required)
+        :param compare_data CompareData : CompareData with a document to compare. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -707,7 +706,7 @@ class WordsApi(object):
         :param format str : Format to convert. (required)
         :param storage str : Original document storage.
         :param out_path str : Path for saving operation result to the local storage.
-        :param file_name_field_value str : This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \"sourceFilename\" will be used instead. 
+        :param file_name_field_value str : This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead. 
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
                  If the method is called asynchronously,
@@ -6047,7 +6046,7 @@ class WordsApi(object):
         :param data file : File with mailmerge data (required)
         :param with_regions bool : With regions flag.
         :param cleanup str : Clean up options.
-        :param document_file_name str : This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead. 
+        :param document_file_name str : This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, "template" will be used instead. 
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8175,7 +8174,7 @@ class WordsApi(object):
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
-        :param use_non_merge_fields bool : If true, result includes \"mustache\" field names.
+        :param use_non_merge_fields bool : If true, result includes "mustache" field names.
         :return: FieldNamesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9022,9 +9021,9 @@ class WordsApi(object):
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
-        :param include_comments bool : Support including/excluding comments from the WordCount. Default value is \"false\".
-        :param include_footnotes bool : Support including/excluding footnotes from the WordCount. Default value is \"false\".
-        :param include_text_in_shapes bool : Support including/excluding shape's text from the WordCount. Default value is \"false\".
+        :param include_comments bool : Support including/excluding comments from the WordCount. Default value is "false".
+        :param include_footnotes bool : Support including/excluding footnotes from the WordCount. Default value is "false".
+        :param include_text_in_shapes bool : Support including/excluding shape's text from the WordCount. Default value is "false".
         :return: StatDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12607,8 +12606,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document. (required)
-        :param range_start_identifier str : The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
-        :param range_end_identifier str : The range end identifier. (required)
+        :param range_start_identifier str : The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
+        :param range_end_identifier str : The range end identifier.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -12663,9 +12662,6 @@ class WordsApi(object):
         # verify the required parameter 'range_start_identifier' is set
         if request.range_start_identifier is None:
             raise ValueError("Missing the required parameter `range_start_identifier` when calling `get_range_text`")  # noqa: E501
-        # verify the required parameter 'range_end_identifier' is set
-        if request.range_end_identifier is None:
-            raise ValueError("Missing the required parameter `range_end_identifier` when calling `get_range_text`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
@@ -15270,7 +15266,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param insert_before_node str : Field will be inserted before node with id=\"nodeId\".
+        :param insert_before_node str : Field will be inserted before node with id="nodeId".
         :return: FieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15426,7 +15422,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param insert_before_node str : Field will be inserted before node with id=\"nodeId\".
+        :param insert_before_node str : Field will be inserted before node with id="nodeId".
         :return: FieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16324,7 +16320,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : A document name. (required)
-        :param page_number PageNumber : with the page numbers settings. (required)
+        :param page_number PageNumber : PageNumber with the page numbers settings. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -16783,6 +16779,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
+        :param table TableInsert : Table parameters/. (required)
         :param node_path str : Path to the node, which contains tables. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -16791,7 +16788,6 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param table TableInsert : Table parameters/.
         :return: TableResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16839,6 +16835,9 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_table`")  # noqa: E501
+        # verify the required parameter 'table' is set
+        if request.table is None:
+            raise ValueError("Missing the required parameter `table` when calling `insert_table`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `insert_table`")  # noqa: E501
@@ -16931,6 +16930,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
+        :param cell TableCellInsert : Table cell parameters/. (required)
         :param table_row_path str : Path to table row. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -16939,7 +16939,6 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param cell TableCellInsert : Table cell parameters/.
         :return: TableCellResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16987,6 +16986,9 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_table_cell`")  # noqa: E501
+        # verify the required parameter 'cell' is set
+        if request.cell is None:
+            raise ValueError("Missing the required parameter `cell` when calling `insert_table_cell`")  # noqa: E501
         # verify the required parameter 'table_row_path' is set
         if request.table_row_path is None:
             raise ValueError("Missing the required parameter `table_row_path` when calling `insert_table_cell`")  # noqa: E501
@@ -17079,6 +17081,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
+        :param row TableRowInsert : Table row parameters/. (required)
         :param table_path str : Path to table. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -17087,7 +17090,6 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param row TableRowInsert : Table row parameters/.
         :return: TableRowResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17135,6 +17137,9 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_table_row`")  # noqa: E501
+        # verify the required parameter 'row' is set
+        if request.row is None:
+            raise ValueError("Missing the required parameter `row` when calling `insert_table_row`")  # noqa: E501
         # verify the required parameter 'table_path' is set
         if request.table_path is None:
             raise ValueError("Missing the required parameter `table_path` when calling `insert_table_row`")  # noqa: E501
@@ -17227,6 +17232,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
+        :param table TableInsert : Table parameters/. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -17234,7 +17240,6 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param table TableInsert : Table parameters/.
         :return: TableResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17282,6 +17287,9 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_table_without_node_path`")  # noqa: E501
+        # verify the required parameter 'table' is set
+        if request.table is None:
+            raise ValueError("Missing the required parameter `table` when calling `insert_table_without_node_path`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/tables'
@@ -17523,7 +17531,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param watermark_text WatermarkText : with the watermark data.             (required)
+        :param watermark_text WatermarkText : WatermarkText with the watermark data.              (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -18013,7 +18021,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param protection_request ProtectionRequest : with protection settings.             (required)
+        :param protection_request ProtectionRequest : ProtectionRequest with protection settings. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -18273,8 +18281,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document. (required)
-        :param range_start_identifier str : The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
-        :param range_end_identifier str : The range end identifier. (required)
+        :param range_start_identifier str : The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
+        :param range_end_identifier str : The range end identifier.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -18330,9 +18338,6 @@ class WordsApi(object):
         # verify the required parameter 'range_start_identifier' is set
         if request.range_start_identifier is None:
             raise ValueError("Missing the required parameter `range_start_identifier` when calling `remove_range`")  # noqa: E501
-        # verify the required parameter 'range_end_identifier' is set
-        if request.range_end_identifier is None:
-            raise ValueError("Missing the required parameter `range_end_identifier` when calling `remove_range`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
@@ -19714,7 +19719,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param replace_text ReplaceTextParameters : with the replace operation settings.             (required)
+        :param replace_text ReplaceTextParameters : ReplaceTextResponse with the replace operation settings. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -19859,9 +19864,9 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document. (required)
-        :param range_start_identifier str : The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
+        :param range_start_identifier str : The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
         :param range_text ReplaceRange : Model with text for replacement. (required)
-        :param range_end_identifier str : The range end identifier. (required)
+        :param range_end_identifier str : The range end identifier.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -19920,9 +19925,6 @@ class WordsApi(object):
         # verify the required parameter 'range_text' is set
         if request.range_text is None:
             raise ValueError("Missing the required parameter `range_text` when calling `replace_with_text`")  # noqa: E501
-        # verify the required parameter 'range_end_identifier' is set
-        if request.range_end_identifier is None:
-            raise ValueError("Missing the required parameter `range_end_identifier` when calling `replace_with_text`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
@@ -20228,9 +20230,9 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document. (required)
-        :param range_start_identifier str : The range start identifier. Identifier is the value of the \"nodeId\" field, which every document node has, extended with the prefix \"id\". It looks like \"id0.0.7\". Also values like \"image5\" and \"table3\" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
+        :param range_start_identifier str : The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
         :param document_parameters RangeDocument : Parameters of a new document. (required)
-        :param range_end_identifier str : The range end identifier. (required)
+        :param range_end_identifier str : The range end identifier.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -20288,9 +20290,6 @@ class WordsApi(object):
         # verify the required parameter 'document_parameters' is set
         if request.document_parameters is None:
             raise ValueError("Missing the required parameter `document_parameters` when calling `save_as_range`")  # noqa: E501
-        # verify the required parameter 'range_end_identifier' is set
-        if request.range_end_identifier is None:
-            raise ValueError("Missing the required parameter `range_end_identifier` when calling `save_as_range`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs'
@@ -20889,7 +20888,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param protection_request ProtectionRequest : with protection settings.             (required)
+        :param protection_request ProtectionRequest : ProtectionRequest with protection settings. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -21022,7 +21021,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param bookmark_data BookmarkData : with new bookmark data.             (required)
+        :param bookmark_data BookmarkData : BookmarkData with new bookmark data. (required)
         :param bookmark_name str : The bookmark name. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -23325,6 +23324,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
+        :param format TableCellFormat : The properties. (required)
         :param table_row_path str : Path to table row. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
@@ -23334,7 +23334,6 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param format TableCellFormat : The properties.
         :return: TableCellFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -23382,6 +23381,9 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_table_cell_format`")  # noqa: E501
+        # verify the required parameter 'format' is set
+        if request.format is None:
+            raise ValueError("Missing the required parameter `format` when calling `update_table_cell_format`")  # noqa: E501
         # verify the required parameter 'table_row_path' is set
         if request.table_row_path is None:
             raise ValueError("Missing the required parameter `table_row_path` when calling `update_table_cell_format`")  # noqa: E501
@@ -23479,6 +23481,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
+        :param properties TableProperties : The properties. (required)
         :param node_path str : Path to the node, which contains tables. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
@@ -23488,7 +23491,6 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param properties TableProperties : The properties.
         :return: TablePropertiesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -23536,6 +23538,9 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_table_properties`")  # noqa: E501
+        # verify the required parameter 'properties' is set
+        if request.properties is None:
+            raise ValueError("Missing the required parameter `properties` when calling `update_table_properties`")  # noqa: E501
         # verify the required parameter 'node_path' is set
         if request.node_path is None:
             raise ValueError("Missing the required parameter `node_path` when calling `update_table_properties`")  # noqa: E501
@@ -23633,6 +23638,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
+        :param properties TableProperties : The properties. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -23641,7 +23647,6 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param properties TableProperties : The properties.
         :return: TablePropertiesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -23689,6 +23694,9 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_table_properties_without_node_path`")  # noqa: E501
+        # verify the required parameter 'properties' is set
+        if request.properties is None:
+            raise ValueError("Missing the required parameter `properties` when calling `update_table_properties_without_node_path`")  # noqa: E501
         # verify the required parameter 'index' is set
         if request.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_table_properties_without_node_path`")  # noqa: E501
@@ -23781,6 +23789,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
+        :param format TableRowFormat : Table row format. (required)
         :param table_path str : Path to table. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
@@ -23790,7 +23799,6 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param format TableRowFormat : Table row format.
         :return: TableRowFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -23838,6 +23846,9 @@ class WordsApi(object):
         # verify the required parameter 'name' is set
         if request.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_table_row_format`")  # noqa: E501
+        # verify the required parameter 'format' is set
+        if request.format is None:
+            raise ValueError("Missing the required parameter `format` when calling `update_table_row_format`")  # noqa: E501
         # verify the required parameter 'table_path' is set
         if request.table_path is None:
             raise ValueError("Missing the required parameter `table_path` when calling `update_table_row_format`")  # noqa: E501
@@ -23935,7 +23946,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param file_content file : File to upload (required)
-        :param path str : Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext              If the content is multipart and path does not contains the file name it tries to get them from filename parameter              from Content-Disposition header. (required)
+        :param path str : Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header. (required)
         :param storage_name str : Storage name
         :return: FilesUploadResult
                  If the method is called asynchronously,

@@ -87,7 +87,7 @@ class DocumentResponse(object):
     def document(self):
         """Gets the document of this DocumentResponse.  # noqa: E501
 
-        Gets or sets document description.  # noqa: E501
+        Gets or sets document.  # noqa: E501
 
         :return: The document of this DocumentResponse.  # noqa: E501
         :rtype: Document
@@ -98,7 +98,7 @@ class DocumentResponse(object):
     def document(self, document):
         """Sets the document of this DocumentResponse.
 
-        Gets or sets document description.  # noqa: E501
+        Gets or sets document.  # noqa: E501
 
         :param document: The document of this DocumentResponse.  # noqa: E501
         :type: Document

@@ -92,7 +92,7 @@ class ReplaceTextResponse(object):
     def document_link(self):
         """Gets the document_link of this ReplaceTextResponse.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets document_link.  # noqa: E501
 
         :return: The document_link of this ReplaceTextResponse.  # noqa: E501
         :rtype: FileLink
@@ -103,7 +103,7 @@ class ReplaceTextResponse(object):
     def document_link(self, document_link):
         """Sets the document_link of this ReplaceTextResponse.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets document_link.  # noqa: E501
 
         :param document_link: The document_link of this ReplaceTextResponse.  # noqa: E501
         :type: FileLink

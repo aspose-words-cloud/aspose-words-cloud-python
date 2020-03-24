@@ -32,7 +32,7 @@ class ConvertDocumentRequest(object):
     :param format Format to convert.
     :param storage Original document storage.
     :param out_path Path for saving operation result to the local storage.
-    :param file_name_field_value This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \"sourceFilename\" will be used instead. 
+    :param file_name_field_value This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead. 
     :param fonts_location Folder in filestorage with custom fonts.
     """
 

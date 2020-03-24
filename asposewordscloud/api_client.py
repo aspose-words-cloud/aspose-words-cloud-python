@@ -590,8 +590,8 @@ class ApiClient(object):
         :return: datetime.
         """
         try:
-                from dateutil.parser import isoparse
-                return isoparse(string)
+            from dateutil.parser import isoparse
+            return isoparse(string)
         except ImportError:
             return string
         except ValueError:
