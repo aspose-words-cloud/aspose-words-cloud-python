@@ -42,6 +42,12 @@ class WordsApi(object):
     :param api_client: an api client to perfom http requests
     """
     def __init__(self, app_sid, app_key, base_url):
+        if len(app_sid) == 0:
+            raise ValueError("app_sid could not be an empty string.")
+        
+        if len(app_sid) == 0:
+            raise ValueError("app_sid could not be an empty string.")
+        
         self.api_client = ApiClient()
         self.api_client.configuration.host = base_url
         self.api_client.configuration.api_key['api_key'] = app_key
