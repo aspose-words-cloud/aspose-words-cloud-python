@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data_source_type** | **str** | Gets or sets type of datasource. | [optional] 
-**report_build_options** | **str** | Gets or sets type of options to build report. | [optional] 
+**report_build_options** | [**list[ReportBuildOptions]**](ReportBuildOptions.md) | Gets or sets type of options to build report. | [optional] 
 **data_source_name** | **str** | Gets or sets a name to reference the data source object in the template. | [optional] 
 **csv_data_load_options** | [**CsvDataLoadOptions**](CsvDataLoadOptions.md) |  | [optional] 
 

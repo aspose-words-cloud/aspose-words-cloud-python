@@ -42,7 +42,7 @@ class ReportEngineSettings(object):
     """
     swagger_types = {
         'data_source_type': 'str',
-        'report_build_options': 'str',
+        'report_build_options': 'list[ReportBuildOptions]',
         'data_source_name': 'str',
         'csv_data_load_options': 'CsvDataLoadOptions'
     }
@@ -108,7 +108,7 @@ class ReportEngineSettings(object):
         Gets or sets type of options to build report.  # noqa: E501
 
         :return: The report_build_options of this ReportEngineSettings.  # noqa: E501
-        :rtype: str
+        :rtype: list[ReportBuildOptions]
         """
         return self._report_build_options
 
@@ -119,17 +119,9 @@ class ReportEngineSettings(object):
         Gets or sets type of options to build report.  # noqa: E501
 
         :param report_build_options: The report_build_options of this ReportEngineSettings.  # noqa: E501
-        :type: str
+        :type: list[ReportBuildOptions]
         """
-        allowed_values = ["None", "AllowMissingMembers", "RemoveEmptyParagraphs", "InlineErrorMessages"]  # noqa: E501
-        if not report_build_options.isdigit():	
-            if report_build_options not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `report_build_options` ({0}), must be one of {1}"  # noqa: E501
-                    .format(report_build_options, allowed_values))
-            self._report_build_options = report_build_options
-        else:
-            self._report_build_options = allowed_values[int(report_build_options) if six.PY3 else long(report_build_options)]
+        self._report_build_options = report_build_options
     @property
     def data_source_name(self):
         """Gets the data_source_name of this ReportEngineSettings.  # noqa: E501
