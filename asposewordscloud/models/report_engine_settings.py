@@ -92,8 +92,6 @@ class ReportEngineSettings(object):
         :param data_source_type: The data_source_type of this ReportEngineSettings.  # noqa: E501
         :type: str
         """
-        if data_source_type is None:
-            raise ValueError("Invalid value for `data_source_type`, must not be `None`")  # noqa: E501
         allowed_values = ["Xml", "Json", "Csv"]  # noqa: E501
         if not data_source_type.isdigit():	
             if data_source_type not in allowed_values:
@@ -123,8 +121,6 @@ class ReportEngineSettings(object):
         :param report_build_options: The report_build_options of this ReportEngineSettings.  # noqa: E501
         :type: str
         """
-        if report_build_options is None:
-            raise ValueError("Invalid value for `report_build_options`, must not be `None`")  # noqa: E501
         allowed_values = ["None", "AllowMissingMembers", "RemoveEmptyParagraphs", "InlineErrorMessages"]  # noqa: E501
         if not report_build_options.isdigit():	
             if report_build_options not in allowed_values:
@@ -159,7 +155,7 @@ class ReportEngineSettings(object):
     def csv_data_load_options(self):
         """Gets the csv_data_load_options of this ReportEngineSettings.  # noqa: E501
 
-        Gets or sets options for parsing CSV data.  # noqa: E501
+        Gets or sets csv_data_load_options.  # noqa: E501
 
         :return: The csv_data_load_options of this ReportEngineSettings.  # noqa: E501
         :rtype: CsvDataLoadOptions
@@ -170,7 +166,7 @@ class ReportEngineSettings(object):
     def csv_data_load_options(self, csv_data_load_options):
         """Sets the csv_data_load_options of this ReportEngineSettings.
 
-        Gets or sets options for parsing CSV data.  # noqa: E501
+        Gets or sets csv_data_load_options.  # noqa: E501
 
         :param csv_data_load_options: The csv_data_load_options of this ReportEngineSettings.  # noqa: E501
         :type: CsvDataLoadOptions

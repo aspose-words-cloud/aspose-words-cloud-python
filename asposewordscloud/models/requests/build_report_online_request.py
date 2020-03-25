@@ -29,9 +29,9 @@ class BuildReportOnlineRequest(object):
     Request model for build_report_online operation.
     Initializes a new instance.
     :param template File with template
-    :param data A string providing data to populate the specified template. The string must be of one of the following types: xml, json, csv
-    :param report_engine_settings An object providing settings of report engine.
-    :param document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \"template\" will be used instead. 
+    :param data A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv
+    :param report_engine_settings An object providing a settings of report engine.
+    :param document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead. 
     """
 
     def __init__(self, template, data, report_engine_settings, document_file_name=None):
