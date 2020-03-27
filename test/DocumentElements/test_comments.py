@@ -89,8 +89,7 @@ class TestComments(BaseTestContext):
         comment_index = 0
         node_link = asposewordscloud.NodeLink(None, '0.3.0.3')
         doc_pos = asposewordscloud.DocumentPosition(node_link, 0)
-        body = asposewordscloud.CommentUpdate(None, 'Yaroslav Ekimov', initial='YE', range_start=doc_pos, range_end=doc_pos,
-                                      text='A new comment')
+        body = asposewordscloud.CommentUpdate(range_start=doc_pos, range_end=doc_pos, author='Yaroslav Ekimov', initial='YE', date_time=None, text='A new comment')
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.UpdateCommentRequest(remote_name, comment_index, body,
@@ -108,8 +107,7 @@ class TestComments(BaseTestContext):
         remote_name = 'TestPutComment.docx'
         node_link = asposewordscloud.NodeLink(None, '0.3.0.3')
         doc_pos = asposewordscloud.DocumentPosition(node_link, 0)
-        body = asposewordscloud.CommentInsert(None, 'Yaroslav Ekimov', initial='YE', range_start=doc_pos, range_end=doc_pos,
-                                      text='A new comment')
+        body = asposewordscloud.CommentInsert(range_start=doc_pos, range_end=doc_pos, author='Yaroslav Ekimov', initial='YE', date_time=None, text='A new comment')
         
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.InsertCommentRequest(remote_name, body,
