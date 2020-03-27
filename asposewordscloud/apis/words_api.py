@@ -1288,7 +1288,7 @@ class WordsApi(object):
         :param is_async bool
         :param name str : The document name. (required)
         :param property_name str : The property name. (required)
-        :param _property DocumentProperty : The property with new value. (required)
+        :param _property DocumentPropertyCreateOrUpdate : The property with new value. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -14804,7 +14804,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param comment Comment : The comment data. (required)
+        :param comment CommentInsert : The comment data. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -15257,7 +15257,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param field Field : Field data. (required)
+        :param field FieldInsert : Field data. (required)
         :param node_path str : Path to the node, which contains collection of fields. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -15414,7 +15414,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param field Field : Field data. (required)
+        :param field FieldInsert : Field data. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -15565,7 +15565,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param footnote_dto Footnote : Footnote data. (required)
+        :param footnote_dto FootnoteInsert : Footnote data. (required)
         :param node_path str : Path to the node, which contains collection of footnotes. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -15716,7 +15716,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param footnote_dto Footnote : Footnote data. (required)
+        :param footnote_dto FootnoteInsert : Footnote data. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -16623,7 +16623,7 @@ class WordsApi(object):
         :param is_async bool
         :param name str : The document name. (required)
         :param paragraph_path str : Path to parent paragraph. (required)
-        :param run Run : Run data. (required)
+        :param run RunInsert : Run data. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -21332,7 +21332,7 @@ class WordsApi(object):
         :param is_async bool
         :param name str : The document name. (required)
         :param comment_index int : The comment index. (required)
-        :param comment Comment : The comment data. (required)
+        :param comment CommentUpdate : The comment data. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -21802,7 +21802,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param field Field : Field data. (required)
+        :param field FieldUpdate : Field data. (required)
         :param node_path str : Path to the node, which contains collection of fields. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
@@ -22086,7 +22086,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param footnote_dto Footnote : Footnote data. (required)
+        :param footnote_dto FootnoteUpdate : Footnote data. (required)
         :param node_path str : Path to the node, which contains collection of footnotes. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
@@ -22243,7 +22243,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param footnote_dto Footnote : Footnote data. (required)
+        :param footnote_dto FootnoteUpdate : Footnote data. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -22859,7 +22859,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param run Run : Run data. (required)
+        :param run RunUpdate : Run data. (required)
         :param paragraph_path str : Path to parent paragraph. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
