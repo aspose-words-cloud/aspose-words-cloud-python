@@ -128,7 +128,7 @@ class TestFootnote(BaseTestContext):
         filename = 'Footnote.doc'
         remote_name = 'TestPostFootnote.docx'
         index = 0
-        footnote = asposewordscloud.Footnote(text='new text is here')
+        footnote = asposewordscloud.FootnoteUpdate(text='new text is here')
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.UpdateFootnoteRequest(remote_name, footnote, 'sections/0', index, 
                                                                      os.path.join(
@@ -144,7 +144,7 @@ class TestFootnote(BaseTestContext):
         filename = 'Footnote.doc'
         remote_name = 'TestPostFootnoteWithoutNodePath.docx'
         index = 0
-        footnote = asposewordscloud.Footnote(text='new text is here')
+        footnote = asposewordscloud.FootnoteUpdate(text='new text is here')
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.UpdateFootnoteWithoutNodePathRequest(remote_name, footnote, index,
                                                                      os.path.join(
@@ -159,7 +159,7 @@ class TestFootnote(BaseTestContext):
     def test_insert_footnote(self):
         filename = 'Footnote.doc'
         remote_name = 'TestPutFootnote.docx'
-        footnote = asposewordscloud.Footnote(text='new text is here', footnote_type='Endnote')
+        footnote = asposewordscloud.FootnoteInsert(text='new text is here', footnote_type='Endnote')
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.InsertFootnoteRequest(remote_name, footnote, "",
                                                                     os.path.join(
@@ -174,7 +174,7 @@ class TestFootnote(BaseTestContext):
     def test_insert_footnote_without_node_path(self):
         filename = 'Footnote.doc'
         remote_name = 'TestPutFootnoteWithoutNodePath.docx'
-        footnote = asposewordscloud.Footnote(text='new text is here', footnote_type='Endnote')
+        footnote = asposewordscloud.FootnoteInsert(text='new text is here', footnote_type='Endnote')
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.InsertFootnoteWithoutNodePathRequest(remote_name, footnote,
                                                                     os.path.join(
