@@ -35,6 +35,7 @@ from asposewordscloud.models.comment_response import CommentResponse
 from asposewordscloud.models.comments_collection import CommentsCollection
 from asposewordscloud.models.comments_response import CommentsResponse
 from asposewordscloud.models.compare_data import CompareData
+from asposewordscloud.models.compare_options import CompareOptions
 from asposewordscloud.models.doc_save_options_data import DocSaveOptionsData
 from asposewordscloud.models.document import Document
 from asposewordscloud.models.document_entry import DocumentEntry
