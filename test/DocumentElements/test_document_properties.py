@@ -40,7 +40,7 @@ class TestDocumentProperties(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPutUpdateDocumentProperty.docx'
         property_name = 'AsposeAuthor'
-        _prop = asposewordscloud.DocumentProperty(name=property_name, value='Yaroslav Ekimov')
+        _prop = asposewordscloud.DocumentPropertyCreateOrUpdate(value='Yaroslav Ekimov')
         
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.CreateOrUpdateDocumentPropertyRequest(remote_name, property_name,

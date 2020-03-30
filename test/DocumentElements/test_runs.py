@@ -58,7 +58,7 @@ class TestRuns(BaseTestContext):
         remote_name = 'TestPostRun.docx'
         index = 0
         paragraph_path = 'paragraphs/1'
-        body = asposewordscloud.Run(text='Run with text')
+        body = asposewordscloud.RunUpdate(text='Run with text')
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.UpdateRunRequest(remote_name, body, paragraph_path, index,
@@ -75,7 +75,7 @@ class TestRuns(BaseTestContext):
         filename = 'Run.doc'
         remote_name = 'TestPutRun.docx'
         paragraph_path = 'paragraphs/1'
-        body = asposewordscloud.Run(text='Run with text')
+        body = asposewordscloud.RunInsert(text='Run with text')
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.InsertRunRequest(remote_name, paragraph_path, body,

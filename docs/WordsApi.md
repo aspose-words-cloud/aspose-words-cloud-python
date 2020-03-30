@@ -778,7 +778,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-body = asposewordscloud.DocumentProperty() # DocumentProperty | The property with new value.
+body = asposewordscloud.DocumentPropertyCreateOrUpdate() # DocumentPropertyCreateOrUpdate | The property with new value.
 name = 'name_example' # str | The document name.
 property_name = 'property_name_example' # str | The property name.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -801,7 +801,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DocumentProperty**](DocumentProperty.md)| The property with new value. | 
+ **body** | [**DocumentPropertyCreateOrUpdate**](DocumentPropertyCreateOrUpdate.md)| The property with new value. | 
  **name** | **str**| The document name. | 
  **property_name** | **str**| The property name. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -7065,7 +7065,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-body = asposewordscloud.Comment() # Comment | The comment data.
+body = asposewordscloud.CommentInsert() # CommentInsert | The comment data.
 name = 'name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -7087,7 +7087,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Comment**](Comment.md)| The comment data. | 
+ **body** | [**CommentInsert**](CommentInsert.md)| The comment data. | 
  **name** | **str**| The document name. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -7269,7 +7269,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-body = asposewordscloud.Field() # Field | Field data.
+body = asposewordscloud.FieldInsert() # FieldInsert | Field data.
 name = 'name_example' # str | The document name.
 node_path = 'node_path_example' # str | Path to the node, which contains collection of fields.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -7293,7 +7293,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Field**](Field.md)| Field data. | 
+ **body** | [**FieldInsert**](FieldInsert.md)| Field data. | 
  **name** | **str**| The document name. | 
  **node_path** | **str**| Path to the node, which contains collection of fields. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -7339,7 +7339,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-body = asposewordscloud.Field() # Field | Field data.
+body = asposewordscloud.FieldInsert() # FieldInsert | Field data.
 name = 'name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -7362,7 +7362,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Field**](Field.md)| Field data. | 
+ **body** | [**FieldInsert**](FieldInsert.md)| Field data. | 
  **name** | **str**| The document name. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -7407,7 +7407,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-body = asposewordscloud.Footnote() # Footnote | Footnote data.
+body = asposewordscloud.FootnoteInsert() # FootnoteInsert | Footnote data.
 name = 'name_example' # str | The document name.
 node_path = 'node_path_example' # str | Path to the node, which contains collection of footnotes.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -7430,7 +7430,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Footnote**](Footnote.md)| Footnote data. | 
+ **body** | [**FootnoteInsert**](FootnoteInsert.md)| Footnote data. | 
  **name** | **str**| The document name. | 
  **node_path** | **str**| Path to the node, which contains collection of footnotes. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -7475,7 +7475,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-body = asposewordscloud.Footnote() # Footnote | Footnote data.
+body = asposewordscloud.FootnoteInsert() # FootnoteInsert | Footnote data.
 name = 'name_example' # str | The document name.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -7497,7 +7497,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Footnote**](Footnote.md)| Footnote data. | 
+ **body** | [**FootnoteInsert**](FootnoteInsert.md)| Footnote data. | 
  **name** | **str**| The document name. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -7883,7 +7883,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-body = asposewordscloud.Run() # Run | Run data.
+body = asposewordscloud.RunInsert() # RunInsert | Run data.
 name = 'name_example' # str | The document name.
 paragraph_path = 'paragraph_path_example' # str | Path to parent paragraph.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -7907,7 +7907,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Run**](Run.md)| Run data. | 
+ **body** | [**RunInsert**](RunInsert.md)| Run data. | 
  **name** | **str**| The document name. | 
  **paragraph_path** | **str**| Path to parent paragraph. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -10026,7 +10026,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-body = asposewordscloud.Comment() # Comment | The comment data.
+body = asposewordscloud.CommentUpdate() # CommentUpdate | The comment data.
 name = 'name_example' # str | The document name.
 comment_index = 56 # int | The comment index.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -10049,7 +10049,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Comment**](Comment.md)| The comment data. | 
+ **body** | [**CommentUpdate**](CommentUpdate.md)| The comment data. | 
  **name** | **str**| The document name. | 
  **comment_index** | **int**| The comment index. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -10236,7 +10236,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-body = asposewordscloud.Field() # Field | Field data.
+body = asposewordscloud.FieldUpdate() # FieldUpdate | Field data.
 name = 'name_example' # str | The document name.
 node_path = 'node_path_example' # str | Path to the node, which contains collection of fields.
 index = 56 # int | Object index.
@@ -10260,7 +10260,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Field**](Field.md)| Field data. | 
+ **body** | [**FieldUpdate**](FieldUpdate.md)| Field data. | 
  **name** | **str**| The document name. | 
  **node_path** | **str**| Path to the node, which contains collection of fields. | 
  **index** | **int**| Object index. | 
@@ -10366,7 +10366,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-body = asposewordscloud.Footnote() # Footnote | Footnote data.
+body = asposewordscloud.FootnoteUpdate() # FootnoteUpdate | Footnote data.
 name = 'name_example' # str | The document name.
 node_path = 'node_path_example' # str | Path to the node, which contains collection of footnotes.
 index = 56 # int | Object index.
@@ -10390,7 +10390,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Footnote**](Footnote.md)| Footnote data. | 
+ **body** | [**FootnoteUpdate**](FootnoteUpdate.md)| Footnote data. | 
  **name** | **str**| The document name. | 
  **node_path** | **str**| Path to the node, which contains collection of footnotes. | 
  **index** | **int**| Object index. | 
@@ -10436,7 +10436,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-body = asposewordscloud.Footnote() # Footnote | Footnote data.
+body = asposewordscloud.FootnoteUpdate() # FootnoteUpdate | Footnote data.
 name = 'name_example' # str | The document name.
 index = 56 # int | Object index.
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -10459,7 +10459,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Footnote**](Footnote.md)| Footnote data. | 
+ **body** | [**FootnoteUpdate**](FootnoteUpdate.md)| Footnote data. | 
  **name** | **str**| The document name. | 
  **index** | **int**| Object index. | 
  **folder** | **str**| Original document folder. | [optional] 
@@ -10712,7 +10712,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-body = asposewordscloud.Run() # Run | Run data.
+body = asposewordscloud.RunUpdate() # RunUpdate | Run data.
 name = 'name_example' # str | The document name.
 paragraph_path = 'paragraph_path_example' # str | Path to parent paragraph.
 index = 56 # int | Object index.
@@ -10736,7 +10736,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Run**](Run.md)| Run data. | 
+ **body** | [**RunUpdate**](RunUpdate.md)| Run data. | 
  **name** | **str**| The document name. | 
  **paragraph_path** | **str**| Path to parent paragraph. | 
  **index** | **int**| Object index. | 
