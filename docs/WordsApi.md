@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**classify**](WordsApi.md#classify) | **PUT** /words/classify | Classifies raw text.
 [**classify_document**](WordsApi.md#classify_document) | **GET** /words/{documentName}/classify | Classifies document.
 [**compare_document**](WordsApi.md#compare_document) | **PUT** /words/{name}/compareDocument | Compares document with original document.
-[**convert_document**](WordsApi.md#convert_document) | **PUT** /words/convert | Converts document from the request&#x27;s content to the specified format .
+[**convert_document**](WordsApi.md#convert_document) | **PUT** /words/convert | Converts document from the request&#x27;s content to the specified format.
 [**copy_file**](WordsApi.md#copy_file) | **PUT** /words/storage/file/copy/{srcPath} | Copy file
 [**copy_folder**](WordsApi.md#copy_folder) | **PUT** /words/storage/folder/copy/{srcPath} | Copy folder
 [**create_document**](WordsApi.md#create_document) | **PUT** /words/create | Creates new document. Document is created with format which is recognized from file extensions. Supported extensions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot;.
@@ -485,7 +485,7 @@ Name | Type | Description  | Notes
 # **convert_document**
 > str convert_document(format, document=document, storage=storage, out_path=out_path, file_name_field_value=file_name_field_value, fonts_location=fonts_location)
 
-Converts document from the request's content to the specified format .
+Converts document from the request's content to the specified format.
 
 ### Example
 ```python
@@ -505,11 +505,11 @@ format = 'format_example' # str | Format to convert.
 document = 'document_example' # str |  (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 out_path = 'out_path_example' # str | Path for saving operation result to the local storage. (optional)
-file_name_field_value = 'file_name_field_value_example' # str | This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \"sourceFilename\" will be used instead.  (optional)
+file_name_field_value = 'file_name_field_value_example' # str | This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \"sourceFilename\" will be used instead. (optional)
 fonts_location = 'fonts_location_example' # str | Folder in filestorage with custom fonts. (optional)
 
 try:
-    # Converts document from the request's content to the specified format .
+    # Converts document from the request's content to the specified format.
     api_response = api_instance.convert_document(format, document=document, storage=storage, out_path=out_path, file_name_field_value=file_name_field_value, fonts_location=fonts_location)
     pprint(api_response)
 except ApiException as e:
@@ -524,7 +524,7 @@ Name | Type | Description  | Notes
  **document** | **str**|  | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **out_path** | **str**| Path for saving operation result to the local storage. | [optional] 
- **file_name_field_value** | **str**| This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \&quot;sourceFilename\&quot; will be used instead.  | [optional] 
+ **file_name_field_value** | **str**| This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, \&quot;sourceFilename\&quot; will be used instead. | [optional] 
  **fonts_location** | **str**| Folder in filestorage with custom fonts. | [optional] 
 
 ### Return type
@@ -2862,7 +2862,7 @@ password = 'password_example' # str | Password for opening an encrypted document
 with_regions = true # bool | With regions flag. (optional)
 mail_merge_data_file = 'mail_merge_data_file_example' # str | Mail merge data. (optional)
 cleanup = 'cleanup_example' # str | Clean up options. (optional)
-use_whole_paragraph_as_region = true # bool | Gets or sets a value indicating whether paragraph with TableStart or             TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.             The default value is true. (optional)
+use_whole_paragraph_as_region = true # bool | Gets or sets a value indicating whether paragraph with TableStart or.             TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.             The default value is true. (optional)
 dest_file_name = 'dest_file_name_example' # str | Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name. (optional)
 
 try:
@@ -2886,7 +2886,7 @@ Name | Type | Description  | Notes
  **with_regions** | **bool**| With regions flag. | [optional] 
  **mail_merge_data_file** | **str**| Mail merge data. | [optional] 
  **cleanup** | **str**| Clean up options. | [optional] 
- **use_whole_paragraph_as_region** | **bool**| Gets or sets a value indicating whether paragraph with TableStart or             TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.             The default value is true. | [optional] 
+ **use_whole_paragraph_as_region** | **bool**| Gets or sets a value indicating whether paragraph with TableStart or.             TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields.             The default value is true. | [optional] 
  **dest_file_name** | **str**| Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name. | [optional] 
 
 ### Return type
@@ -2927,7 +2927,7 @@ template = 'template_example' # str |  (optional)
 data = 'data_example' # str |  (optional)
 with_regions = true # bool | With regions flag. (optional)
 cleanup = 'cleanup_example' # str | Clean up options. (optional)
-document_file_name = 'document_file_name_example' # str | This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead.  (optional)
+document_file_name = 'document_file_name_example' # str | This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \"template\" will be used instead. (optional)
 
 try:
     # Executes document mail merge online.
@@ -2945,7 +2945,7 @@ Name | Type | Description  | Notes
  **data** | **str**|  | [optional] 
  **with_regions** | **bool**| With regions flag. | [optional] 
  **cleanup** | **str**| Clean up options. | [optional] 
- **document_file_name** | **str**| This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \&quot;template\&quot; will be used instead.  | [optional] 
+ **document_file_name** | **str**| This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, \&quot;template\&quot; will be used instead. | [optional] 
 
 ### Return type
 
@@ -9736,7 +9736,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **split_document**
-> SplitDocumentResponse split_document(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, format=format, _from=_from, to=to, zip_output=zip_output, fonts_location=fonts_location)
+> SplitDocumentResponse split_document(name, format, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, _from=_from, to=to, zip_output=zip_output, fonts_location=fonts_location)
 
 Splits document.
 
@@ -9755,12 +9755,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | Original document name.
+format = 'format_example' # str | Format to split.
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
 load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
 password = 'password_example' # str | Password for opening an encrypted document. (optional)
 dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
-format = 'format_example' # str | Format to split. (optional)
 _from = 56 # int | Start page. (optional)
 to = 56 # int | End page. (optional)
 zip_output = true # bool | ZipOutput or not. (optional)
@@ -9768,7 +9768,7 @@ fonts_location = 'fonts_location_example' # str | Folder in filestorage with cus
 
 try:
     # Splits document.
-    api_response = api_instance.split_document(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, format=format, _from=_from, to=to, zip_output=zip_output, fonts_location=fonts_location)
+    api_response = api_instance.split_document(name, format, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, _from=_from, to=to, zip_output=zip_output, fonts_location=fonts_location)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WordsApi->split_document: %s\n" % e)
@@ -9779,12 +9779,12 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Original document name. | 
+ **format** | **str**| Format to split. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
  **password** | **str**| Password for opening an encrypted document. | [optional] 
  **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
- **format** | **str**| Format to split. | [optional] 
  **_from** | **int**| Start page. | [optional] 
  **to** | **int**| End page. | [optional] 
  **zip_output** | **bool**| ZipOutput or not. | [optional] 

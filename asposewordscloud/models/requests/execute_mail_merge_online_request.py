@@ -32,7 +32,7 @@ class ExecuteMailMergeOnlineRequest(object):
     :param data File with mailmerge data
     :param with_regions With regions flag.
     :param cleanup Clean up options.
-    :param document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, "template" will be used instead. 
+    :param document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not setted, "template" will be used instead.
     """
 
     def __init__(self, template, data, with_regions=None, cleanup=None, document_file_name=None):
