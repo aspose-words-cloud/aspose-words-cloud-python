@@ -44,11 +44,11 @@ class TestSplitDocument(BaseTestContext):
         _from = 1
         _to = 2
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
-        request = asposewordscloud.models.requests.SplitDocumentRequest(remote_name,
+        request = asposewordscloud.models.requests.SplitDocumentRequest(remote_name, _format,
                                                                           os.path.join(
                                                                               self.remote_test_folder,
                                                                               self.test_folder),
-                                                                          format=_format, _from=_from, to=_to,
+                                                                          _from=_from, to=_to,
                                                                           dest_file_name=dest_name)
         result = self.words_api.split_document(request)
         self.assertIsNotNone(result, 'Error has occurred while split document')
