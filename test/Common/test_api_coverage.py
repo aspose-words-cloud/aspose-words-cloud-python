@@ -43,7 +43,7 @@ class TestApiCoverage(BaseTestContext):
                test.TestExecuteMailMerge, test.TestMathObjects, test.TestPages,
                test.TestParagraphs, test.TestRuns,
                test.TestSections, test.TestTables, test.TestText, test.TestWatermarks, test.TestFont,
-               test.TestClassification, test.TestFile, test.TestFolder, test.TestRange]
+               test.TestClassification, test.TestFile, test.TestFolder, test.TestRange, test.TestReporting]
         test_methods = []
         uncovered_methods = []
         for ar in arr:
