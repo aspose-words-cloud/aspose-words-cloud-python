@@ -9,6 +9,8 @@ from asposewordscloud.models.available_fonts_response import AvailableFontsRespo
 from asposewordscloud.models.bmp_save_options_data import BmpSaveOptionsData
 from asposewordscloud.models.body import Body
 from asposewordscloud.models.body1 import Body1
+from asposewordscloud.models.body10 import Body10
+from asposewordscloud.models.body11 import Body11
 from asposewordscloud.models.body2 import Body2
 from asposewordscloud.models.body3 import Body3
 from asposewordscloud.models.body4 import Body4
@@ -39,6 +41,7 @@ from asposewordscloud.models.comments_collection import CommentsCollection
 from asposewordscloud.models.comments_response import CommentsResponse
 from asposewordscloud.models.compare_data import CompareData
 from asposewordscloud.models.compare_options import CompareOptions
+from asposewordscloud.models.csv_data_load_options import CsvDataLoadOptions
 from asposewordscloud.models.doc_save_options_data import DocSaveOptionsData
 from asposewordscloud.models.document import Document
 from asposewordscloud.models.document_entry import DocumentEntry
@@ -151,6 +154,8 @@ from asposewordscloud.models.range_text_response import RangeTextResponse
 from asposewordscloud.models.replace_range import ReplaceRange
 from asposewordscloud.models.replace_text_parameters import ReplaceTextParameters
 from asposewordscloud.models.replace_text_response import ReplaceTextResponse
+from asposewordscloud.models.report_build_options import ReportBuildOptions
+from asposewordscloud.models.report_engine_settings import ReportEngineSettings
 from asposewordscloud.models.revisions_modification_response import RevisionsModificationResponse
 from asposewordscloud.models.rtf_save_options_data import RtfSaveOptionsData
 from asposewordscloud.models.run import Run

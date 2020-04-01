@@ -41,50 +41,22 @@ class Body9(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'drawing_object': 'str',
         'image_file': 'str'
     }
 
     attribute_map = {
-        'drawing_object': 'drawingObject',
         'image_file': 'imageFile'
     }
 
-    def __init__(self, drawing_object=None, image_file=None):  # noqa: E501
+    def __init__(self, image_file=None):  # noqa: E501
         """Body9 - a model defined in Swagger"""  # noqa: E501
 
-        self._drawing_object = None
         self._image_file = None
         self.discriminator = None
 
-        if drawing_object is not None:
-            self.drawing_object = drawing_object
         if image_file is not None:
             self.image_file = image_file
 
-    @property
-    def drawing_object(self):
-        """Gets the drawing_object of this Body9.  # noqa: E501
-
-        Drawing object parameters  # noqa: E501
-
-        :return: The drawing_object of this Body9.  # noqa: E501
-        :rtype: str
-        """
-        return self._drawing_object
-
-    @drawing_object.setter
-    def drawing_object(self, drawing_object):
-        """Sets the drawing_object of this Body9.
-
-        Drawing object parameters  # noqa: E501
-
-        :param drawing_object: The drawing_object of this Body9.  # noqa: E501
-        :type: str
-        """
-        if drawing_object is None:
-            raise ValueError("Invalid value for `drawing_object`, must not be `None`")  # noqa: E501
-        self._drawing_object = drawing_object
     @property
     def image_file(self):
         """Gets the image_file of this Body9.  # noqa: E501
@@ -105,8 +77,6 @@ class Body9(object):
         :param image_file: The image_file of this Body9.  # noqa: E501
         :type: str
         """
-        if image_file is None:
-            raise ValueError("Invalid value for `image_file`, must not be `None`")  # noqa: E501
         self._image_file = image_file
     def to_dict(self):
         """Returns the model properties as a dict"""
