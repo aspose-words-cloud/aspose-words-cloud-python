@@ -151,7 +151,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -172,7 +171,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='RevisionsModificationResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -294,7 +292,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.document_list is not None:
@@ -317,7 +314,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DocumentResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -431,11 +427,10 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
         if request.data is not None:
-            form_params.append((self.__downcase_first_letter('Data'), request.data))  # noqa: E501
+            form_params.append([self.__downcase_first_letter('Data'), request.data, 'string'])  # noqa: E501
         if request.report_engine_settings is not None:
-            form_params.append((self.__downcase_first_letter('ReportEngineSettings'), request.report_engine_settings))  # noqa: E501
+            form_params.append([self.__downcase_first_letter('ReportEngineSettings'), request.report_engine_settings, 'string'])  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -456,7 +451,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DocumentResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -544,13 +538,12 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
         if request.template is not None:
-            local_var_files.append((self.__downcase_first_letter('Template'), request.template))  # noqa: E501
+            form_params.append([self.__downcase_first_letter('Template'), request.template, 'file'])  # noqa: E501
         if request.data is not None:
-            form_params.append((self.__downcase_first_letter('Data'), request.data))  # noqa: E501
+            form_params.append([self.__downcase_first_letter('Data'), request.data, 'string'])  # noqa: E501
         if request.report_engine_settings is not None:
-            form_params.append((self.__downcase_first_letter('ReportEngineSettings'), request.report_engine_settings))  # noqa: E501
+            form_params.append([self.__downcase_first_letter('ReportEngineSettings'), request.report_engine_settings, 'string'])  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -571,7 +564,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -651,7 +643,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.text is not None:
@@ -674,7 +665,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='ClassificationResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -786,7 +776,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -807,7 +796,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='ClassificationResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -917,7 +905,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.compare_data is not None:
@@ -940,7 +927,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DocumentResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -1047,9 +1033,8 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
         if request.document is not None:
-            local_var_files.append((self.__downcase_first_letter('Document'), request.document))  # noqa: E501
+            form_params.append([self.__downcase_first_letter('Document'), request.document, 'file'])  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -1070,7 +1055,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -1173,7 +1157,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -1194,7 +1177,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -1291,7 +1273,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -1312,7 +1293,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -1400,7 +1380,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -1421,7 +1400,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DocumentResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -1503,7 +1481,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -1524,7 +1501,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -1652,7 +1628,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request._property is not None:
@@ -1675,7 +1650,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DocumentPropertyResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -1807,7 +1781,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -1828,7 +1801,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='BorderResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -1954,7 +1926,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -1975,7 +1946,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='BordersResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -2099,7 +2069,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -2120,7 +2089,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -2244,7 +2212,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -2265,7 +2232,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -2395,7 +2361,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -2416,7 +2381,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -2540,7 +2504,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -2561,7 +2524,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -2691,7 +2653,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -2712,7 +2673,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -2836,7 +2796,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -2857,7 +2816,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -2981,7 +2939,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -3002,7 +2959,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -3120,7 +3076,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -3141,7 +3096,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -3229,7 +3183,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -3250,7 +3203,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -3338,7 +3290,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -3359,7 +3310,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -3489,7 +3439,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -3510,7 +3459,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -3634,7 +3582,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -3655,7 +3602,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -3785,7 +3731,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -3806,7 +3751,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -3930,7 +3874,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -3951,7 +3894,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -4081,7 +4023,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -4102,7 +4043,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -4232,7 +4172,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -4253,7 +4192,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -4371,7 +4309,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -4392,7 +4329,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -4522,7 +4458,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -4543,7 +4478,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -4667,7 +4601,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -4688,7 +4621,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -4818,7 +4750,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -4839,7 +4770,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -4963,7 +4893,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -4984,7 +4913,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -5114,7 +5042,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -5135,7 +5062,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -5259,7 +5185,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -5280,7 +5205,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -5410,7 +5334,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -5431,7 +5354,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -5561,7 +5483,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -5582,7 +5503,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -5712,7 +5632,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -5733,7 +5652,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -5857,7 +5775,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -5878,7 +5795,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -5996,7 +5912,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -6017,7 +5932,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DocumentResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -6105,7 +6019,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -6126,7 +6039,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -6257,9 +6169,8 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
         if request.data is not None:
-            form_params.append((self.__downcase_first_letter('Data'), request.data))  # noqa: E501
+            form_params.append([self.__downcase_first_letter('Data'), request.data, 'string'])  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -6280,7 +6191,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DocumentResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -6376,11 +6286,10 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
         if request.template is not None:
-            local_var_files.append((self.__downcase_first_letter('Template'), request.template))  # noqa: E501
+            form_params.append([self.__downcase_first_letter('Template'), request.template, 'file'])  # noqa: E501
         if request.data is not None:
-            local_var_files.append((self.__downcase_first_letter('Data'), request.data))  # noqa: E501
+            form_params.append([self.__downcase_first_letter('Data'), request.data, 'file'])  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -6401,7 +6310,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -6477,7 +6385,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -6498,7 +6405,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='AvailableFontsResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -6604,7 +6510,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -6625,7 +6530,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='BookmarkResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -6725,7 +6629,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -6746,7 +6649,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='BookmarksResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -6860,7 +6762,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -6881,7 +6782,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='BorderResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -6989,7 +6889,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -7010,7 +6909,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='BordersResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -7116,7 +7014,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -7137,7 +7034,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='CommentResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -7237,7 +7133,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -7258,7 +7153,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='CommentsResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -7358,7 +7252,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -7379,7 +7272,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DocumentResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -7491,7 +7383,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -7512,7 +7403,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DrawingObjectResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -7618,7 +7508,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -7639,7 +7528,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DrawingObjectResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -7751,7 +7639,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -7772,7 +7659,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -7878,7 +7764,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -7899,7 +7784,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -8011,7 +7895,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -8032,7 +7915,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -8138,7 +8020,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -8159,7 +8040,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -8265,7 +8145,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -8286,7 +8165,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DrawingObjectsResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -8386,7 +8264,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -8407,7 +8284,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DrawingObjectsResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -8513,7 +8389,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -8534,7 +8409,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FieldNamesResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -8614,9 +8488,8 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
         if request.template is not None:
-            local_var_files.append((self.__downcase_first_letter('Template'), request.template))  # noqa: E501
+            form_params.append([self.__downcase_first_letter('Template'), request.template, 'file'])  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -8637,7 +8510,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FieldNamesResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -8743,7 +8615,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -8764,7 +8635,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='HyperlinkResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -8864,7 +8734,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -8885,7 +8754,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='HyperlinksResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -8985,7 +8853,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -9006,7 +8873,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DocumentPropertiesResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -9112,7 +8978,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -9133,7 +8998,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DocumentPropertyResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -9233,7 +9097,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -9254,7 +9117,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='ProtectionDataResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -9372,7 +9234,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -9393,7 +9254,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='StatDataResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -9514,7 +9374,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -9535,7 +9394,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -9647,7 +9505,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -9668,7 +9525,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FieldResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -9774,7 +9630,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -9795,7 +9650,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FieldResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -9901,7 +9755,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -9922,7 +9775,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FieldsResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -10022,7 +9874,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -10043,7 +9894,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FieldsResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -10125,7 +9975,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -10146,7 +9995,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FilesList',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -10258,7 +10106,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -10279,7 +10126,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FootnoteResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -10385,7 +10231,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -10406,7 +10251,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FootnoteResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -10512,7 +10356,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -10533,7 +10376,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FootnotesResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -10633,7 +10475,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -10654,7 +10495,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FootnotesResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -10766,7 +10606,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -10787,7 +10626,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FormFieldResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -10893,7 +10731,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -10914,7 +10751,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FormFieldResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -11020,7 +10856,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -11041,7 +10876,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FormFieldsResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -11141,7 +10975,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -11162,7 +10995,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FormFieldsResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -11274,7 +11106,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -11295,7 +11126,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='HeaderFooterResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -11413,7 +11243,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -11434,7 +11263,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='HeaderFooterResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -11546,7 +11374,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -11567,7 +11394,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='HeaderFootersResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -11679,7 +11505,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -11700,7 +11525,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='OfficeMathObjectResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -11806,7 +11630,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -11827,7 +11650,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='OfficeMathObjectResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -11933,7 +11755,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -11954,7 +11775,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='OfficeMathObjectsResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -12054,7 +11874,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -12075,7 +11894,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='OfficeMathObjectsResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -12187,7 +12005,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -12208,7 +12025,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='ParagraphResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -12320,7 +12136,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -12341,7 +12156,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='ParagraphFormatResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -12447,7 +12261,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -12468,7 +12281,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='ParagraphFormatResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -12574,7 +12386,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -12595,7 +12406,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='ParagraphResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -12701,7 +12511,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -12722,7 +12531,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='ParagraphLinkCollectionResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -12822,7 +12630,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -12843,7 +12650,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='ParagraphLinkCollectionResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -12952,7 +12758,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -12973,7 +12778,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='RangeTextResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -13085,7 +12889,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -13106,7 +12909,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='RunResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -13218,7 +13020,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -13239,7 +13040,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FontResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -13345,7 +13145,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -13366,7 +13165,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='RunsResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -13472,7 +13270,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -13493,7 +13290,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='SectionResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -13599,7 +13395,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -13620,7 +13415,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='SectionPageSetupResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -13720,7 +13514,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -13741,7 +13534,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='SectionLinkCollectionResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -13853,7 +13645,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -13874,7 +13665,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='TableResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -13986,7 +13776,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -14007,7 +13796,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='TableCellResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -14119,7 +13907,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -14140,7 +13927,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='TableCellFormatResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -14252,7 +14038,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -14273,7 +14058,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='TablePropertiesResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -14379,7 +14163,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -14400,7 +14183,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='TablePropertiesResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -14512,7 +14294,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -14533,7 +14314,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='TableRowResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -14645,7 +14425,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -14666,7 +14445,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='TableRowFormatResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -14772,7 +14550,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -14793,7 +14570,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='TableResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -14899,7 +14675,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -14920,7 +14695,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='TableLinkCollectionResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -15020,7 +14794,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -15041,7 +14814,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='TableLinkCollectionResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -15163,7 +14935,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.comment is not None:
@@ -15186,7 +14957,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='CommentResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -15318,11 +15088,10 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
         if request.drawing_object is not None:
-            form_params.append((self.__downcase_first_letter('DrawingObject'), request.drawing_object))  # noqa: E501
+            form_params.append([self.__downcase_first_letter('DrawingObject'), request.drawing_object, 'string'])  # noqa: E501
         if request.image_file is not None:
-            local_var_files.append((self.__downcase_first_letter('ImageFile'), request.image_file))  # noqa: E501
+            form_params.append([self.__downcase_first_letter('ImageFile'), request.image_file, 'file'])  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -15343,7 +15112,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DrawingObjectResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -15469,11 +15237,10 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
         if request.drawing_object is not None:
-            form_params.append((self.__downcase_first_letter('DrawingObject'), request.drawing_object))  # noqa: E501
+            form_params.append([self.__downcase_first_letter('DrawingObject'), request.drawing_object, 'string'])  # noqa: E501
         if request.image_file is not None:
-            local_var_files.append((self.__downcase_first_letter('ImageFile'), request.image_file))  # noqa: E501
+            form_params.append([self.__downcase_first_letter('ImageFile'), request.image_file, 'file'])  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -15494,7 +15261,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DrawingObjectResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -15628,7 +15394,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.field is not None:
@@ -15651,7 +15416,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FieldResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -15779,7 +15543,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.field is not None:
@@ -15802,7 +15565,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FieldResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -15930,7 +15692,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.footnote_dto is not None:
@@ -15953,7 +15714,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FootnoteResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -16075,7 +15835,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.footnote_dto is not None:
@@ -16098,7 +15857,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FootnoteResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -16232,7 +15990,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.form_field is not None:
@@ -16255,7 +16012,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FormFieldResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -16383,7 +16139,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.form_field is not None:
@@ -16406,7 +16161,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FormFieldResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -16534,7 +16288,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.header_footer_type is not None:
@@ -16557,7 +16310,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='HeaderFooterResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -16679,7 +16431,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.page_number is not None:
@@ -16702,7 +16453,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DocumentResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -16836,7 +16586,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.paragraph is not None:
@@ -16859,7 +16608,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='ParagraphResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -16993,7 +16741,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.run is not None:
@@ -17016,7 +16763,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='RunResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -17144,7 +16890,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.table is not None:
@@ -17167,7 +16912,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='TableResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -17295,7 +17039,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.cell is not None:
@@ -17318,7 +17061,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='TableCellResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -17446,7 +17188,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.row is not None:
@@ -17469,7 +17210,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='TableRowResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -17591,7 +17331,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.table is not None:
@@ -17614,7 +17353,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='TableResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -17745,9 +17483,8 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
         if request.image_file is not None:
-            local_var_files.append((self.__downcase_first_letter('ImageFile'), request.image_file))  # noqa: E501
+            form_params.append([self.__downcase_first_letter('ImageFile'), request.image_file, 'file'])  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -17768,7 +17505,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DocumentResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -17890,7 +17626,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.watermark_text is not None:
@@ -17913,7 +17648,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DocumentResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -17993,7 +17727,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.data is not None:
@@ -18016,7 +17749,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='SaveResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -18119,7 +17851,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -18140,7 +17871,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -18237,7 +17967,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -18258,7 +17987,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -18368,7 +18096,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.protection_request is not None:
@@ -18391,7 +18118,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='ProtectionDataResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -18497,7 +18223,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -18518,7 +18243,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='RevisionsModificationResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -18633,7 +18357,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -18654,7 +18377,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DocumentResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -18781,7 +18503,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -18802,7 +18523,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -18923,7 +18643,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -18944,7 +18663,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -19071,7 +18789,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -19092,7 +18809,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -19213,7 +18929,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -19234,7 +18949,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -19355,7 +19069,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -19376,7 +19089,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -19503,7 +19215,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -19524,7 +19235,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -19645,7 +19355,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -19666,7 +19375,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -19793,7 +19501,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -19814,7 +19521,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -19935,7 +19641,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -19956,7 +19661,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -20078,7 +19782,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.replace_text is not None:
@@ -20101,7 +19804,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='ReplaceTextResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -20220,7 +19922,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.range_text is not None:
@@ -20243,7 +19944,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DocumentResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -20313,7 +20013,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -20334,7 +20033,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -20444,7 +20142,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.save_options_data is not None:
@@ -20467,7 +20164,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='SaveResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -20580,7 +20276,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.document_parameters is not None:
@@ -20603,7 +20298,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DocumentResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -20815,7 +20509,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.save_options is not None:
@@ -20838,7 +20531,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='SaveResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -20947,7 +20639,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -20968,7 +20659,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='SearchResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -21107,7 +20797,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -21128,7 +20817,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='SplitDocumentResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -21238,7 +20926,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.protection_request is not None:
@@ -21261,7 +20948,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='ProtectionDataResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -21389,7 +21075,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.bookmark_data is not None:
@@ -21412,7 +21097,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='BookmarkResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -21548,7 +21232,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.border_properties is not None:
@@ -21571,7 +21254,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='BorderResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -21699,7 +21381,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.comment is not None:
@@ -21722,7 +21403,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='CommentResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -21860,11 +21540,10 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
         if request.drawing_object is not None:
-            form_params.append((self.__downcase_first_letter('DrawingObject'), request.drawing_object))  # noqa: E501
+            form_params.append([self.__downcase_first_letter('DrawingObject'), request.drawing_object, 'string'])  # noqa: E501
         if request.image_file is not None:
-            local_var_files.append((self.__downcase_first_letter('ImageFile'), request.image_file))  # noqa: E501
+            form_params.append([self.__downcase_first_letter('ImageFile'), request.image_file, 'file'])  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -21885,7 +21564,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DrawingObjectResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -22017,11 +21695,10 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
         if request.drawing_object is not None:
-            form_params.append((self.__downcase_first_letter('DrawingObject'), request.drawing_object))  # noqa: E501
+            form_params.append([self.__downcase_first_letter('DrawingObject'), request.drawing_object, 'string'])  # noqa: E501
         if request.image_file is not None:
-            local_var_files.append((self.__downcase_first_letter('ImageFile'), request.image_file))  # noqa: E501
+            form_params.append([self.__downcase_first_letter('ImageFile'), request.image_file, 'file'])  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -22042,7 +21719,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DrawingObjectResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -22176,7 +21852,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.field is not None:
@@ -22199,7 +21874,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FieldResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -22305,7 +21979,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         # HTTP header `Accept`
@@ -22326,7 +21999,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='DocumentResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -22460,7 +22132,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.footnote_dto is not None:
@@ -22483,7 +22154,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FootnoteResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -22611,7 +22281,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.footnote_dto is not None:
@@ -22634,7 +22303,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FootnoteResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -22768,7 +22436,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.form_field is not None:
@@ -22791,7 +22458,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FormFieldResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -22919,7 +22585,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.form_field is not None:
@@ -22942,7 +22607,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FormFieldResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -23076,7 +22740,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.dto is not None:
@@ -23099,7 +22762,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='ParagraphFormatResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -23233,7 +22895,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.run is not None:
@@ -23256,7 +22917,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='RunResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -23390,7 +23050,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.font_dto is not None:
@@ -23413,7 +23072,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FontResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -23541,7 +23199,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.page_setup is not None:
@@ -23564,7 +23221,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='SectionPageSetupResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -23698,7 +23354,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.format is not None:
@@ -23721,7 +23376,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='TableCellFormatResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -23855,7 +23509,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.properties is not None:
@@ -23878,7 +23531,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='TablePropertiesResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -24006,7 +23658,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.properties is not None:
@@ -24029,7 +23680,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='TablePropertiesResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -24163,7 +23813,6 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
 
         body_params = None
         if request.format is not None:
@@ -24186,7 +23835,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='TableRowFormatResponse',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -24272,9 +23920,8 @@ class WordsApi(object):
         header_params = {}
 
         form_params = []
-        local_var_files = []
         if request.file_content is not None:
-            local_var_files.append((self.__downcase_first_letter('FileContent'), request.file_content))  # noqa: E501
+            form_params.append([self.__downcase_first_letter('FileContent'), request.file_content, 'file'])  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -24295,7 +23942,6 @@ class WordsApi(object):
             header_params,
             body=body_params,
             post_params=form_params,
-            files=local_var_files,
             response_type='FilesUploadResult',  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
@@ -24314,18 +23960,18 @@ class WordsApi(object):
     def __request_token(self):
         config = self.api_client.configuration
         request_url = "/connect/token"
-        form_params = [('grant_type', 'client_credentials'), ('client_id', config.api_key['app_sid']),
-                       ('client_secret', config.api_key['api_key'])]
+        form_params = [['grant_type', 'client_credentials', 'string'], ['client_id', config.api_key['app_sid'], 'string'],
+                       ['client_secret', config.api_key['api_key'], 'string']]
 
         header_params = {'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded'}
 
         data = self.api_client.call_api(request_url, 'POST',
-                                        {},
-                                        [],
-                                        header_params,
+                                        path_params={},
+                                        query_params=[],
+                                        header_params=header_params,
                                         post_params=form_params,
                                         response_type='object',
-                                        files={}, _return_http_data_only=True)
+                                        _return_http_data_only=True)
         access_token = data['access_token'] if six.PY3 else data['access_token'].encode('utf8')
         self.api_client.configuration.access_token = access_token
 
