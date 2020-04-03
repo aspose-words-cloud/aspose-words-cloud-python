@@ -40,7 +40,7 @@ class TestReporting(BaseTestContext):
         template = open(os.path.join(self.local_test_folder, self.test_folder, 'ReportTemplate.docx'), 'rb')
         with open(os.path.join(self.local_test_folder, self.test_folder, 'ReportData.json')) as fp:
             dataJson = fp.read()
-            settings = '{DataSourceType: "Json"}'
+            settings = '{DataSourceType: "Json", DataSourceName: "persons"}'
             request = asposewordscloud.models.requests.BuildReportOnlineRequest(template, dataJson, settings)
             result = self.words_api.build_report_online(request)
             self.assertTrue(len(result) > 0)
