@@ -69,12 +69,9 @@ filename = 'test_doc.docx'
 remote_name = 'TestDeleteDocumentWatermark.docx'
 remote_folder = 'FolderWhereFileLocates'
 
-with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-    file = f.read()
-
-upload_request = asposewordscloud.models.requests.UploadFileRequest(file, os.path.join(remote_folder, remote_name))
-request = asposewordscloud.models.requests.DeleteDocumentWatermarkRequest(remote_name, remote_folder)
-result = words_api.delete_document_watermark(request)
+upload_request = asposewordscloud.models.requests.UploadFileRequest(os.path.join(self.local_common_folder, filename), 'rb'), os.path.join(remote_folder, remote_name))
+request = asposewordscloud.models.requests.DeleteWatermarkRequest(remote_name, remote_folder)
+result = words_api.delete_watermark(request)
 self.assertTrue(result.code == 200, 'Error has occurred while delete document watermark')
 ```
 
