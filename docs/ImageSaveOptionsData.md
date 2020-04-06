@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 **update_last_saved_time_property** | **bool** | Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving. | [optional] 
 **update_sdt_content** | **bool** | Gets or sets value determining whether content of StructuredDocumentTag is updated before saving. | [optional] 
 **update_fields** | **bool** | Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true | [optional] 
+**dml3_d_effects_rendering_mode** | **str** | Gets or sets a value determining how 3D effects are rendered. | [optional] 
+**update_last_printed_property** | **bool** | Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving. | [optional] 
 **graphics_quality_options** | [**GraphicsQualityOptionsData**](GraphicsQualityOptionsData.md) |  | [optional] 
 **horizontal_resolution** | **float** | Gets or sets the horizontal resolution for the generated images, in dots per inch.  This property has effect only when saving to raster image formats. The default value is 96. | [optional] 
 **image_brightness** | **float** | Gets or sets brightness of image. | [optional] 
