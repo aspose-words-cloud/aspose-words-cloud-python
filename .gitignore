@@ -65,3 +65,7 @@ target/
 .ipynb_checkpoints
 
 Settings/servercreds.json
+
+# VS Code files
+.vscode
+.vs
