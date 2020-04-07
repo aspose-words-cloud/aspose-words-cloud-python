@@ -133,6 +133,9 @@ class ApiClient(object):
                     quote(str(v), safe=config.safe_chars_for_path_param)
                 )
 
+        # remove optional path parameters
+        resource_path = resource_path.replace('//', '/')
+
         # query parameters
         if query_params:
             query_params = self.sanitize_for_serialization(query_params)
@@ -590,8 +593,8 @@ class ApiClient(object):
         :return: datetime.
         """
         try:
-            from dateutil.parser import isoparse
-            return isoparse(string)
+            from dateutil.parser import parse
+            return parse(string)
         except ImportError:
             return string
         except ValueError:
