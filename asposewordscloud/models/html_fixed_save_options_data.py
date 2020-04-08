@@ -56,8 +56,6 @@ class HtmlFixedSaveOptionsData(object):
         'update_last_saved_time_property': 'bool',
         'update_sdt_content': 'bool',
         'update_fields': 'bool',
-        'dml3_d_effects_rendering_mode': 'str',
-        'update_last_printed_property': 'bool',
         'css_class_names_prefix': 'str',
         'encoding': 'str',
         'export_embedded_css': 'bool',
@@ -70,8 +68,7 @@ class HtmlFixedSaveOptionsData(object):
         'resources_folder': 'str',
         'resources_folder_alias': 'str',
         'save_font_face_css_separately': 'bool',
-        'show_page_border': 'bool',
-        'use_target_machine_fonts': 'bool'
+        'show_page_border': 'bool'
     }
 
     attribute_map = {
@@ -90,8 +87,6 @@ class HtmlFixedSaveOptionsData(object):
         'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
         'update_sdt_content': 'UpdateSdtContent',
         'update_fields': 'UpdateFields',
-        'dml3_d_effects_rendering_mode': 'Dml3DEffectsRenderingMode',
-        'update_last_printed_property': 'UpdateLastPrintedProperty',
         'css_class_names_prefix': 'CssClassNamesPrefix',
         'encoding': 'Encoding',
         'export_embedded_css': 'ExportEmbeddedCss',
@@ -104,11 +99,10 @@ class HtmlFixedSaveOptionsData(object):
         'resources_folder': 'ResourcesFolder',
         'resources_folder_alias': 'ResourcesFolderAlias',
         'save_font_face_css_separately': 'SaveFontFaceCssSeparately',
-        'show_page_border': 'ShowPageBorder',
-        'use_target_machine_fonts': 'UseTargetMachineFonts'
+        'show_page_border': 'ShowPageBorder'
     }
 
-    def __init__(self, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, dml3_d_effects_rendering_mode=None, update_last_printed_property=None, css_class_names_prefix=None, encoding=None, export_embedded_css=None, export_embedded_fonts=None, export_embedded_images=None, export_form_fields=None, font_format=None, page_horizontal_alignment=None, page_margins=None, resources_folder=None, resources_folder_alias=None, save_font_face_css_separately=None, show_page_border=None, use_target_machine_fonts=None):  # noqa: E501
+    def __init__(self, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, css_class_names_prefix=None, encoding=None, export_embedded_css=None, export_embedded_fonts=None, export_embedded_images=None, export_form_fields=None, font_format=None, page_horizontal_alignment=None, page_margins=None, resources_folder=None, resources_folder_alias=None, save_font_face_css_separately=None, show_page_border=None):  # noqa: E501
         """HtmlFixedSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._color_mode = None
@@ -126,8 +120,6 @@ class HtmlFixedSaveOptionsData(object):
         self._update_last_saved_time_property = None
         self._update_sdt_content = None
         self._update_fields = None
-        self._dml3_d_effects_rendering_mode = None
-        self._update_last_printed_property = None
         self._css_class_names_prefix = None
         self._encoding = None
         self._export_embedded_css = None
@@ -141,7 +133,6 @@ class HtmlFixedSaveOptionsData(object):
         self._resources_folder_alias = None
         self._save_font_face_css_separately = None
         self._show_page_border = None
-        self._use_target_machine_fonts = None
         self.discriminator = None
 
         if color_mode is not None:
@@ -174,10 +165,6 @@ class HtmlFixedSaveOptionsData(object):
             self.update_sdt_content = update_sdt_content
         if update_fields is not None:
             self.update_fields = update_fields
-        if dml3_d_effects_rendering_mode is not None:
-            self.dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
-        if update_last_printed_property is not None:
-            self.update_last_printed_property = update_last_printed_property
         if css_class_names_prefix is not None:
             self.css_class_names_prefix = css_class_names_prefix
         if encoding is not None:
@@ -204,8 +191,6 @@ class HtmlFixedSaveOptionsData(object):
             self.save_font_face_css_separately = save_font_face_css_separately
         if show_page_border is not None:
             self.show_page_border = show_page_border
-        if use_target_machine_fonts is not None:
-            self.use_target_machine_fonts = use_target_machine_fonts
 
     @property
     def color_mode(self):
@@ -523,56 +508,6 @@ class HtmlFixedSaveOptionsData(object):
         """
         self._update_fields = update_fields
     @property
-    def dml3_d_effects_rendering_mode(self):
-        """Gets the dml3_d_effects_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
-
-        :return: The dml3_d_effects_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._dml3_d_effects_rendering_mode
-
-    @dml3_d_effects_rendering_mode.setter
-    def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
-        """Sets the dml3_d_effects_rendering_mode of this HtmlFixedSaveOptionsData.
-
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
-
-        :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["Basic", "Advanced"]  # noqa: E501
-        if not dml3_d_effects_rendering_mode.isdigit():	
-            if dml3_d_effects_rendering_mode not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `dml3_d_effects_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
-                    .format(dml3_d_effects_rendering_mode, allowed_values))
-            self._dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
-        else:
-            self._dml3_d_effects_rendering_mode = allowed_values[int(dml3_d_effects_rendering_mode) if six.PY3 else long(dml3_d_effects_rendering_mode)]
-    @property
-    def update_last_printed_property(self):
-        """Gets the update_last_printed_property of this HtmlFixedSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
-
-        :return: The update_last_printed_property of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :rtype: bool
-        """
-        return self._update_last_printed_property
-
-    @update_last_printed_property.setter
-    def update_last_printed_property(self, update_last_printed_property):
-        """Sets the update_last_printed_property of this HtmlFixedSaveOptionsData.
-
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
-
-        :param update_last_printed_property: The update_last_printed_property of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :type: bool
-        """
-        self._update_last_printed_property = update_last_printed_property
-    @property
     def css_class_names_prefix(self):
         """Gets the css_class_names_prefix of this HtmlFixedSaveOptionsData.  # noqa: E501
 
@@ -845,27 +780,6 @@ class HtmlFixedSaveOptionsData(object):
         :type: bool
         """
         self._show_page_border = show_page_border
-    @property
-    def use_target_machine_fonts(self):
-        """Gets the use_target_machine_fonts of this HtmlFixedSaveOptionsData.  # noqa: E501
-
-        Gets or sets flag indicates whether fonts from target machine must be used to display the document. If this flag is set to true, Aspose.Words.Saving.HtmlFixedSaveOptions.FontFormat and Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedFonts properties do not have effect, also Aspose.Words.Saving.HtmlFixedSaveOptions.ResourceSavingCallback is not fired for fonts. Default is false.  # noqa: E501
-
-        :return: The use_target_machine_fonts of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :rtype: bool
-        """
-        return self._use_target_machine_fonts
-
-    @use_target_machine_fonts.setter
-    def use_target_machine_fonts(self, use_target_machine_fonts):
-        """Sets the use_target_machine_fonts of this HtmlFixedSaveOptionsData.
-
-        Gets or sets flag indicates whether fonts from target machine must be used to display the document. If this flag is set to true, Aspose.Words.Saving.HtmlFixedSaveOptions.FontFormat and Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedFonts properties do not have effect, also Aspose.Words.Saving.HtmlFixedSaveOptions.ResourceSavingCallback is not fired for fonts. Default is false.  # noqa: E501
-
-        :param use_target_machine_fonts: The use_target_machine_fonts of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :type: bool
-        """
-        self._use_target_machine_fonts = use_target_machine_fonts
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

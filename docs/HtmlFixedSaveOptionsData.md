@@ -18,8 +18,6 @@ Name | Type | Description | Notes
 **update_last_saved_time_property** | **bool** | Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving. | [optional] 
 **update_sdt_content** | **bool** | Gets or sets value determining whether content of StructuredDocumentTag is updated before saving. | [optional] 
 **update_fields** | **bool** | Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true | [optional] 
-**dml3_d_effects_rendering_mode** | **str** | Gets or sets a value determining how 3D effects are rendered. | [optional] 
-**update_last_printed_property** | **bool** | Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving. | [optional] 
 **css_class_names_prefix** | **str** | Gets or sets specifies prefix which is added to all class names in style.css file. Default value is \&quot;aw\&quot;. | [optional] 
 **encoding** | **str** | Gets or sets encoding. | [optional] 
 **export_embedded_css** | **bool** | Gets or sets specifies whether the CSS (Cascading Style Sheet) should be embedded into Html document. | [optional] 
@@ -33,7 +31,6 @@ Name | Type | Description | Notes
 **resources_folder_alias** | **str** | Gets or sets specifies the name of the folder used to construct resource URIs. | [optional] 
 **save_font_face_css_separately** | **bool** | Gets or sets flag indicates whether \&quot;@font-face\&quot; CSS rules should be placed into a separate file \&quot;fontFaces.css\&quot; when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file \&quot;styles.css\&quot;. | [optional] 
 **show_page_border** | **bool** | Gets or sets specifies whether border around pages should be shown. | [optional] 
-**use_target_machine_fonts** | **bool** | Gets or sets flag indicates whether fonts from target machine must be used to display the document. If this flag is set to true, Aspose.Words.Saving.HtmlFixedSaveOptions.FontFormat and Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedFonts properties do not have effect, also Aspose.Words.Saving.HtmlFixedSaveOptions.ResourceSavingCallback is not fired for fonts. Default is false. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

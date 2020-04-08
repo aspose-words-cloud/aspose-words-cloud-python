@@ -49,8 +49,6 @@ class OoxmlSaveOptionsData(object):
         'update_last_saved_time_property': 'bool',
         'update_sdt_content': 'bool',
         'update_fields': 'bool',
-        'dml3_d_effects_rendering_mode': 'str',
-        'update_last_printed_property': 'bool',
         'compliance': 'str',
         'password': 'str',
         'pretty_format': 'bool'
@@ -65,14 +63,12 @@ class OoxmlSaveOptionsData(object):
         'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
         'update_sdt_content': 'UpdateSdtContent',
         'update_fields': 'UpdateFields',
-        'dml3_d_effects_rendering_mode': 'Dml3DEffectsRenderingMode',
-        'update_last_printed_property': 'UpdateLastPrintedProperty',
         'compliance': 'Compliance',
         'password': 'Password',
         'pretty_format': 'PrettyFormat'
     }
 
-    def __init__(self, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, dml3_d_effects_rendering_mode=None, update_last_printed_property=None, compliance=None, password=None, pretty_format=None):  # noqa: E501
+    def __init__(self, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, compliance=None, password=None, pretty_format=None):  # noqa: E501
         """OoxmlSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._save_format = None
@@ -83,8 +79,6 @@ class OoxmlSaveOptionsData(object):
         self._update_last_saved_time_property = None
         self._update_sdt_content = None
         self._update_fields = None
-        self._dml3_d_effects_rendering_mode = None
-        self._update_last_printed_property = None
         self._compliance = None
         self._password = None
         self._pretty_format = None
@@ -106,10 +100,6 @@ class OoxmlSaveOptionsData(object):
             self.update_sdt_content = update_sdt_content
         if update_fields is not None:
             self.update_fields = update_fields
-        if dml3_d_effects_rendering_mode is not None:
-            self.dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
-        if update_last_printed_property is not None:
-            self.update_last_printed_property = update_last_printed_property
         if compliance is not None:
             self.compliance = compliance
         if password is not None:
@@ -285,56 +275,6 @@ class OoxmlSaveOptionsData(object):
         :type: bool
         """
         self._update_fields = update_fields
-    @property
-    def dml3_d_effects_rendering_mode(self):
-        """Gets the dml3_d_effects_rendering_mode of this OoxmlSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
-
-        :return: The dml3_d_effects_rendering_mode of this OoxmlSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._dml3_d_effects_rendering_mode
-
-    @dml3_d_effects_rendering_mode.setter
-    def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
-        """Sets the dml3_d_effects_rendering_mode of this OoxmlSaveOptionsData.
-
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
-
-        :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this OoxmlSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["Basic", "Advanced"]  # noqa: E501
-        if not dml3_d_effects_rendering_mode.isdigit():	
-            if dml3_d_effects_rendering_mode not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `dml3_d_effects_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
-                    .format(dml3_d_effects_rendering_mode, allowed_values))
-            self._dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
-        else:
-            self._dml3_d_effects_rendering_mode = allowed_values[int(dml3_d_effects_rendering_mode) if six.PY3 else long(dml3_d_effects_rendering_mode)]
-    @property
-    def update_last_printed_property(self):
-        """Gets the update_last_printed_property of this OoxmlSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
-
-        :return: The update_last_printed_property of this OoxmlSaveOptionsData.  # noqa: E501
-        :rtype: bool
-        """
-        return self._update_last_printed_property
-
-    @update_last_printed_property.setter
-    def update_last_printed_property(self, update_last_printed_property):
-        """Sets the update_last_printed_property of this OoxmlSaveOptionsData.
-
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
-
-        :param update_last_printed_property: The update_last_printed_property of this OoxmlSaveOptionsData.  # noqa: E501
-        :type: bool
-        """
-        self._update_last_printed_property = update_last_printed_property
     @property
     def compliance(self):
         """Gets the compliance of this OoxmlSaveOptionsData.  # noqa: E501

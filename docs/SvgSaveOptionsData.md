@@ -18,8 +18,6 @@ Name | Type | Description | Notes
 **update_last_saved_time_property** | **bool** | Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving. | [optional] 
 **update_sdt_content** | **bool** | Gets or sets value determining whether content of StructuredDocumentTag is updated before saving. | [optional] 
 **update_fields** | **bool** | Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true | [optional] 
-**dml3_d_effects_rendering_mode** | **str** | Gets or sets a value determining how 3D effects are rendered. | [optional] 
-**update_last_printed_property** | **bool** | Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving. | [optional] 
 **export_embedded_images** | **bool** | Gets or sets specified whether images should be embedded into SVG document as base64. | [optional] 
 **fit_to_view_port** | **bool** | Gets or sets specifies if the output SVG should fill the available viewport area (browser window or container). When set to true width and height of output SVG are set to 100%. | [optional] 
 **resources_folder** | **str** | Gets or sets specifies the physical folder where resources (images) are saved when exporting. | [optional] 
