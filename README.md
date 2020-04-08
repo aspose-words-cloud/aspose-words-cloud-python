@@ -1,6 +1,6 @@
 Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate Microsoft Word® file generation, manipulation, conversion & inspection features into your own python applications.
 
-[Aspose.Words Cloud SDK for Python](https://products.aspose.cloud/slides/python) allows to work with Word document headers, footers, page numbering, tables, sections, document comments, drawing objects, FormFields, fonts, hyperlinks, ranges, paragraphs, math objects, watermarks, revisions and document protection. It also assists in appending documents, splitting documents as well as converting document to other supported file formats. Please feel free to explore the [Developer's Guide](https://docs.aspose.cloud/display/wordscloud/Developer+Guide) for all possible usage scenarios. 
+[Aspose.Words Cloud SDK for Python](https://products.aspose.cloud/words/python) allows to work with Word document headers, footers, page numbering, tables, sections, document comments, drawing objects, FormFields, fonts, hyperlinks, ranges, paragraphs, math objects, watermarks, revisions and document protection. It also assists in appending documents, splitting documents as well as converting document to other supported file formats. Please feel free to explore the [Developer's Guide](https://docs.aspose.cloud/display/wordscloud/Developer+Guide) for all possible usage scenarios. 
 
 ## Document Processing Features
 
@@ -69,12 +69,9 @@ filename = 'test_doc.docx'
 remote_name = 'TestDeleteDocumentWatermark.docx'
 remote_folder = 'FolderWhereFileLocates'
 
-with open(os.path.join(self.local_common_folder, filename), 'rb') as f:
-    file = f.read()
-
-upload_request = asposewordscloud.models.requests.UploadFileRequest(file, os.path.join(remote_folder, remote_name))
-request = asposewordscloud.models.requests.DeleteDocumentWatermarkRequest(remote_name, remote_folder)
-result = words_api.delete_document_watermark(request)
+upload_request = asposewordscloud.models.requests.UploadFileRequest(os.path.join(self.local_common_folder, filename), 'rb'), os.path.join(remote_folder, remote_name))
+request = asposewordscloud.models.requests.DeleteWatermarkRequest(remote_name, remote_folder)
+result = words_api.delete_watermark(request)
 self.assertTrue(result.code == 200, 'Error has occurred while delete document watermark')
 ```
 

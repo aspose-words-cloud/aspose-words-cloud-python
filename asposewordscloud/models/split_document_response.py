@@ -87,7 +87,7 @@ class SplitDocumentResponse(object):
     def split_result(self):
         """Gets the split_result of this SplitDocumentResponse.  # noqa: E501
 
-        Gets or sets resylt of splitting document.  # noqa: E501
+        Gets or sets split_result.  # noqa: E501
 
         :return: The split_result of this SplitDocumentResponse.  # noqa: E501
         :rtype: SplitDocumentResult
@@ -98,7 +98,7 @@ class SplitDocumentResponse(object):
     def split_result(self, split_result):
         """Sets the split_result of this SplitDocumentResponse.
 
-        Gets or sets resylt of splitting document.  # noqa: E501
+        Gets or sets split_result.  # noqa: E501
 
         :param split_result: The split_result of this SplitDocumentResponse.  # noqa: E501
         :type: SplitDocumentResult

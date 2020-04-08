@@ -81,7 +81,7 @@ class ReplaceTextParameters(object):
     def old_value(self):
         """Gets the old_value of this ReplaceTextParameters.  # noqa: E501
 
-        Gets or sets old text value (or regex pattern ) to replace.  # noqa: E501
+        Gets or sets old text value (or regex pattern IsOldValueRegex) to replace.  # noqa: E501
 
         :return: The old_value of this ReplaceTextParameters.  # noqa: E501
         :rtype: str
@@ -92,7 +92,7 @@ class ReplaceTextParameters(object):
     def old_value(self, old_value):
         """Sets the old_value of this ReplaceTextParameters.
 
-        Gets or sets old text value (or regex pattern ) to replace.  # noqa: E501
+        Gets or sets old text value (or regex pattern IsOldValueRegex) to replace.  # noqa: E501
 
         :param old_value: The old_value of this ReplaceTextParameters.  # noqa: E501
         :type: str
@@ -139,8 +139,6 @@ class ReplaceTextParameters(object):
         :param is_match_case: The is_match_case of this ReplaceTextParameters.  # noqa: E501
         :type: bool
         """
-        if is_match_case is None:
-            raise ValueError("Invalid value for `is_match_case`, must not be `None`")  # noqa: E501
         self._is_match_case = is_match_case
     @property
     def is_match_whole_word(self):
@@ -162,14 +160,12 @@ class ReplaceTextParameters(object):
         :param is_match_whole_word: The is_match_whole_word of this ReplaceTextParameters.  # noqa: E501
         :type: bool
         """
-        if is_match_whole_word is None:
-            raise ValueError("Invalid value for `is_match_whole_word`, must not be `None`")  # noqa: E501
         self._is_match_whole_word = is_match_whole_word
     @property
     def is_old_value_regex(self):
         """Gets the is_old_value_regex of this ReplaceTextParameters.  # noqa: E501
 
-        Gets or sets a value indicating whether flag, means that  contains regex expression.  # noqa: E501
+        Gets or sets a value indicating whether flag, means that OldValue contains regex expression.  # noqa: E501
 
         :return: The is_old_value_regex of this ReplaceTextParameters.  # noqa: E501
         :rtype: bool
@@ -180,13 +176,11 @@ class ReplaceTextParameters(object):
     def is_old_value_regex(self, is_old_value_regex):
         """Sets the is_old_value_regex of this ReplaceTextParameters.
 
-        Gets or sets a value indicating whether flag, means that  contains regex expression.  # noqa: E501
+        Gets or sets a value indicating whether flag, means that OldValue contains regex expression.  # noqa: E501
 
         :param is_old_value_regex: The is_old_value_regex of this ReplaceTextParameters.  # noqa: E501
         :type: bool
         """
-        if is_old_value_regex is None:
-            raise ValueError("Invalid value for `is_old_value_regex`, must not be `None`")  # noqa: E501
         self._is_old_value_regex = is_old_value_regex
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -33,7 +33,7 @@ class GetDocumentFieldNamesRequest(object):
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
-    :param use_non_merge_fields If true, result includes \"mustache\" field names.
+    :param use_non_merge_fields If true, result includes "mustache" field names.
     """
 
     def __init__(self, name, folder=None, storage=None, load_encoding=None, password=None, use_non_merge_fields=None):

@@ -103,8 +103,6 @@ class WatermarkText(object):
         :param rotation_angle: The rotation_angle of this WatermarkText.  # noqa: E501
         :type: float
         """
-        if rotation_angle is None:
-            raise ValueError("Invalid value for `rotation_angle`, must not be `None`")  # noqa: E501
         self._rotation_angle = rotation_angle
     def to_dict(self):
         """Returns the model properties as a dict"""

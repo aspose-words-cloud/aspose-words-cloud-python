@@ -4,8 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **request_id** | **str** | Gets or sets request Id. | [optional] 
-**footnote** | [**Footnote**](Footnote.md) | Gets or sets footnote information. | [optional] 
+**footnote** | [**Footnote**](Footnote.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

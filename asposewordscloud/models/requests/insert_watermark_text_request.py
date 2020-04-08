@@ -29,7 +29,7 @@ class InsertWatermarkTextRequest(object):
     Request model for insert_watermark_text operation.
     Initializes a new instance.
     :param name The document name.
-    :param watermark_text with the watermark data.            
+    :param watermark_text WatermarkText with the watermark data.             
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

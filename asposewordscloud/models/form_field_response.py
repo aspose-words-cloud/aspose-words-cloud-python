@@ -87,7 +87,7 @@ class FormFieldResponse(object):
     def form_field(self):
         """Gets the form_field of this FormFieldResponse.  # noqa: E501
 
-        Gets or sets field information.  # noqa: E501
+        Gets or sets form_field.  # noqa: E501
 
         :return: The form_field of this FormFieldResponse.  # noqa: E501
         :rtype: FormField
@@ -98,7 +98,7 @@ class FormFieldResponse(object):
     def form_field(self, form_field):
         """Sets the form_field of this FormFieldResponse.
 
-        Gets or sets field information.  # noqa: E501
+        Gets or sets form_field.  # noqa: E501
 
         :param form_field: The form_field of this FormFieldResponse.  # noqa: E501
         :type: FormField

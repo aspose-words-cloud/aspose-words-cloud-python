@@ -139,7 +139,7 @@ class Error(object):
     def inner_error(self):
         """Gets the inner_error of this Error.  # noqa: E501
 
-        Inner Error               # noqa: E501
+        Gets or sets inner_error.  # noqa: E501
 
         :return: The inner_error of this Error.  # noqa: E501
         :rtype: ErrorDetails
@@ -150,7 +150,7 @@ class Error(object):
     def inner_error(self, inner_error):
         """Sets the inner_error of this Error.
 
-        Inner Error               # noqa: E501
+        Gets or sets inner_error.  # noqa: E501
 
         :param inner_error: The inner_error of this Error.  # noqa: E501
         :type: ErrorDetails

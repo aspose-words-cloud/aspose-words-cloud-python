@@ -92,7 +92,7 @@ class StatDataResponse(object):
     def document_link(self):
         """Gets the document_link of this StatDataResponse.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets document_link.  # noqa: E501
 
         :return: The document_link of this StatDataResponse.  # noqa: E501
         :rtype: FileLink
@@ -103,7 +103,7 @@ class StatDataResponse(object):
     def document_link(self, document_link):
         """Sets the document_link of this StatDataResponse.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets document_link.  # noqa: E501
 
         :param document_link: The document_link of this StatDataResponse.  # noqa: E501
         :type: FileLink
@@ -113,7 +113,7 @@ class StatDataResponse(object):
     def stat_data(self):
         """Gets the stat_data of this StatDataResponse.  # noqa: E501
 
-        Gets or sets statistical data of the document.  # noqa: E501
+        Gets or sets stat_data.  # noqa: E501
 
         :return: The stat_data of this StatDataResponse.  # noqa: E501
         :rtype: DocumentStatData
@@ -124,7 +124,7 @@ class StatDataResponse(object):
     def stat_data(self, stat_data):
         """Sets the stat_data of this StatDataResponse.
 
-        Gets or sets statistical data of the document.  # noqa: E501
+        Gets or sets stat_data.  # noqa: E501
 
         :param stat_data: The stat_data of this StatDataResponse.  # noqa: E501
         :type: DocumentStatData

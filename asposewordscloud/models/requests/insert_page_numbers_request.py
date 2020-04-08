@@ -29,7 +29,7 @@ class InsertPageNumbersRequest(object):
     Request model for insert_page_numbers operation.
     Initializes a new instance.
     :param name A document name.
-    :param page_number with the page numbers settings.
+    :param page_number PageNumber with the page numbers settings.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

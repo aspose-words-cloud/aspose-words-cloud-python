@@ -87,7 +87,7 @@ class FootnotesResponse(object):
     def footnotes(self):
         """Gets the footnotes of this FootnotesResponse.  # noqa: E501
 
-        Gets or sets collection of footnotes.  # noqa: E501
+        Gets or sets footnotes.  # noqa: E501
 
         :return: The footnotes of this FootnotesResponse.  # noqa: E501
         :rtype: FootnoteCollection
@@ -98,7 +98,7 @@ class FootnotesResponse(object):
     def footnotes(self, footnotes):
         """Sets the footnotes of this FootnotesResponse.
 
-        Gets or sets collection of footnotes.  # noqa: E501
+        Gets or sets footnotes.  # noqa: E501
 
         :param footnotes: The footnotes of this FootnotesResponse.  # noqa: E501
         :type: FootnoteCollection

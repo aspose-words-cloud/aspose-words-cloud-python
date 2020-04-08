@@ -103,8 +103,6 @@ class BookmarksOutlineLevelData(object):
         :param bookmarks_outline_level: The bookmarks_outline_level of this BookmarksOutlineLevelData.  # noqa: E501
         :type: int
         """
-        if bookmarks_outline_level is None:
-            raise ValueError("Invalid value for `bookmarks_outline_level`, must not be `None`")  # noqa: E501
         self._bookmarks_outline_level = bookmarks_outline_level
     def to_dict(self):
         """Returns the model properties as a dict"""

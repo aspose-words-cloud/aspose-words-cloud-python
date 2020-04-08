@@ -3,9 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | Gets or sets specify the bookmark&#39;s name. | [optional] 
-**bookmarks_outline_level** | **int** | Gets or sets specify the bookmark&#39;s level. | 
+**name** | **str** | Gets or sets specify the bookmark&#x27;s name. | [optional] 
+**bookmarks_outline_level** | **int** | Gets or sets specify the bookmark&#x27;s level. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

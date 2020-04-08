@@ -3,27 +3,27 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**color_mode** | **str** | Gets or sets a value determining how colors are rendered. { Normal | Grayscale}. | [optional] 
+**jpeg_quality** | **int** | Gets or sets determines the quality of the JPEG images inside PDF document. | [optional] 
+**metafile_rendering_options** | [**MetafileRenderingOptionsData**](MetafileRenderingOptionsData.md) |  | [optional] 
+**numeral_format** | **str** | Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats. | [optional] 
+**optimize_output** | **bool** | Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false. | [optional] 
+**page_count** | **int** | Gets or sets determines number of pages to render. | [optional] 
+**page_index** | **int** | Gets or sets determines 0-based index of the first page to render. | [optional] 
 **save_format** | **str** | Gets or sets format of save. | [optional] 
 **file_name** | **str** | Gets or sets name of destination file. | [optional] 
 **dml_rendering_mode** | **str** | Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }. | [optional] 
 **dml_effects_rendering_mode** | **str** | Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }. | [optional] 
 **zip_output** | **bool** | Gets or sets controls zip output or not. Default value is false. | [optional] 
 **update_last_saved_time_property** | **bool** | Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving. | [optional] 
-**update_sdt_content** | **bool** | Gets or sets value determining whether content of  is updated before saving. | [optional] 
+**update_sdt_content** | **bool** | Gets or sets value determining whether content of StructuredDocumentTag is updated before saving. | [optional] 
 **update_fields** | **bool** | Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true | [optional] 
-**color_mode** | **str** | Gets or sets a value determining how colors are rendered. { Normal | Grayscale}. | [optional] 
-**jpeg_quality** | **int** | Gets or sets determines the quality of the JPEG images inside PDF document. | [optional] 
-**metafile_rendering_options** | [**MetafileRenderingOptionsData**](MetafileRenderingOptionsData.md) | Gets or sets allows to specify metafile rendering options. | [optional] 
-**numeral_format** | **str** | Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats. | [optional] 
-**optimize_output** | **bool** | Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false. | [optional] 
-**page_count** | **int** | Gets or sets determines number of pages to render. | [optional] 
-**page_index** | **int** | Gets or sets determines 0-based index of the first page to render. | [optional] 
 **css_class_names_prefix** | **str** | Gets or sets specifies prefix which is added to all class names in style.css file. Default value is \&quot;aw\&quot;. | [optional] 
 **encoding** | **str** | Gets or sets encoding. | [optional] 
 **export_embedded_css** | **bool** | Gets or sets specifies whether the CSS (Cascading Style Sheet) should be embedded into Html document. | [optional] 
 **export_embedded_fonts** | **bool** | Gets or sets specifies whether fonts should be embedded into Html document in Base64 format. | [optional] 
 **export_embedded_images** | **bool** | Gets or sets specifies whether images should be embedded into Html document in Base64 format. | [optional] 
-**export_form_fields** | **bool** | Gets or sets indication of whether form fields are exported as interactive items (as &#39;input&#39; tag) rather than converted to text or graphics. | [optional] 
+**export_form_fields** | **bool** | Gets or sets indication of whether form fields are exported as interactive items (as &#x27;input&#x27; tag) rather than converted to text or graphics. | [optional] 
 **font_format** | **str** | Gets or sets specifies export format of fonts. | [optional] 
 **page_horizontal_alignment** | **str** | Gets or sets specifies the horizontal alignment of pages in an HTML document. Default value is HtmlFixedHorizontalPageAlignment.Center. | [optional] 
 **page_margins** | **float** | Gets or sets specifies the margins around pages in an HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points. | [optional] 
@@ -33,5 +33,4 @@ Name | Type | Description | Notes
 **show_page_border** | **bool** | Gets or sets specifies whether border around pages should be shown. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

@@ -87,7 +87,7 @@ class OfficeMathObjectsResponse(object):
     def office_math_objects(self):
         """Gets the office_math_objects of this OfficeMathObjectsResponse.  # noqa: E501
 
-        Gets or sets collection of OfficeMath objects.  # noqa: E501
+        Gets or sets office_math_objects.  # noqa: E501
 
         :return: The office_math_objects of this OfficeMathObjectsResponse.  # noqa: E501
         :rtype: OfficeMathObjectsCollection
@@ -98,7 +98,7 @@ class OfficeMathObjectsResponse(object):
     def office_math_objects(self, office_math_objects):
         """Sets the office_math_objects of this OfficeMathObjectsResponse.
 
-        Gets or sets collection of OfficeMath objects.  # noqa: E501
+        Gets or sets office_math_objects.  # noqa: E501
 
         :param office_math_objects: The office_math_objects of this OfficeMathObjectsResponse.  # noqa: E501
         :type: OfficeMathObjectsCollection

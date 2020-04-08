@@ -3,19 +3,19 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**link** | [**WordsApiLink**](WordsApiLink.md) | Gets or sets link to the document. | [optional] 
+**link** | [**WordsApiLink**](WordsApiLink.md) |  | [optional] 
 **all_caps** | **bool** | Gets or sets true if the font is formatted as all capital letters.              | [optional] 
 **bidi** | **bool** | Gets or sets specifies whether the contents of this run shall have right-to-left characteristics.              | [optional] 
 **bold** | **bool** | Gets or sets true if the font is formatted as bold.              | [optional] 
 **bold_bi** | **bool** | Gets or sets true if the right-to-left text is formatted as bold.              | [optional] 
-**border** | [**Border**](Border.md) | Gets or sets border object that specifies border for the font. | [optional] 
-**color** | [**XmlColor**](XmlColor.md) | Gets or sets the color of the font.              | [optional] 
+**border** | [**Border**](Border.md) |  | [optional] 
+**color** | [**XmlColor**](XmlColor.md) |  | [optional] 
 **complex_script** | **bool** | Gets or sets specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.              | [optional] 
 **double_strike_through** | **bool** | Gets or sets true if the font is formatted as double strikethrough text.              | [optional] 
 **emboss** | **bool** | Gets or sets true if the font is formatted as embossed.              | [optional] 
 **engrave** | **bool** | Gets or sets true if the font is formatted as engraved.              | [optional] 
 **hidden** | **bool** | Gets or sets true if the font is formatted as hidden text.              | [optional] 
-**highlight_color** | [**XmlColor**](XmlColor.md) | Gets or sets the highlight (marker) color.              | [optional] 
+**highlight_color** | [**XmlColor**](XmlColor.md) |  | [optional] 
 **italic** | **bool** | Gets or sets true if the font is formatted as italic.              | [optional] 
 **italic_bi** | **bool** | Gets or sets true if the right-to-left text is formatted as italic.              | [optional] 
 **kerning** | **float** | Gets or sets the font size at which kerning starts.              | [optional] 
@@ -43,8 +43,7 @@ Name | Type | Description | Notes
 **superscript** | **bool** | Gets or sets true if the font is formatted as superscript.              | [optional] 
 **text_effect** | **str** | Gets or sets the font animation effect. | [optional] 
 **underline** | **str** | Gets or sets the type of underline applied to the font. | [optional] 
-**underline_color** | [**XmlColor**](XmlColor.md) | Gets or sets the color of the underline applied to the font. | [optional] 
+**underline_color** | [**XmlColor**](XmlColor.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

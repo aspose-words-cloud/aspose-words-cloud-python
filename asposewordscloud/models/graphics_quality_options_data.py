@@ -202,7 +202,7 @@ class GraphicsQualityOptionsData(object):
     def string_format(self):
         """Gets the string_format of this GraphicsQualityOptionsData.  # noqa: E501
 
-        Gets or sets text layout information (such as alignment, orientation and tab stops) display manipulations (such as ellipsis insertion and national digit substitution) and OpenType features.  # noqa: E501
+        Gets or sets string_format.  # noqa: E501
 
         :return: The string_format of this GraphicsQualityOptionsData.  # noqa: E501
         :rtype: StringFormatData
@@ -213,7 +213,7 @@ class GraphicsQualityOptionsData(object):
     def string_format(self, string_format):
         """Sets the string_format of this GraphicsQualityOptionsData.
 
-        Gets or sets text layout information (such as alignment, orientation and tab stops) display manipulations (such as ellipsis insertion and national digit substitution) and OpenType features.  # noqa: E501
+        Gets or sets string_format.  # noqa: E501
 
         :param string_format: The string_format of this GraphicsQualityOptionsData.  # noqa: E501
         :type: StringFormatData

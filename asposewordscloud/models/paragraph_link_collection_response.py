@@ -87,7 +87,7 @@ class ParagraphLinkCollectionResponse(object):
     def paragraphs(self):
         """Gets the paragraphs of this ParagraphLinkCollectionResponse.  # noqa: E501
 
-        Gets or sets collection of paragraphs.  # noqa: E501
+        Gets or sets paragraphs.  # noqa: E501
 
         :return: The paragraphs of this ParagraphLinkCollectionResponse.  # noqa: E501
         :rtype: ParagraphLinkCollection
@@ -98,7 +98,7 @@ class ParagraphLinkCollectionResponse(object):
     def paragraphs(self, paragraphs):
         """Sets the paragraphs of this ParagraphLinkCollectionResponse.
 
-        Gets or sets collection of paragraphs.  # noqa: E501
+        Gets or sets paragraphs.  # noqa: E501
 
         :param paragraphs: The paragraphs of this ParagraphLinkCollectionResponse.  # noqa: E501
         :type: ParagraphLinkCollection

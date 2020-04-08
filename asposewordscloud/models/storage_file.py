@@ -118,14 +118,12 @@ class StorageFile(object):
         :param is_folder: The is_folder of this StorageFile.  # noqa: E501
         :type: bool
         """
-        if is_folder is None:
-            raise ValueError("Invalid value for `is_folder`, must not be `None`")  # noqa: E501
         self._is_folder = is_folder
     @property
     def modified_date(self):
         """Gets the modified_date of this StorageFile.  # noqa: E501
 
-        File or folder last modified .  # noqa: E501
+        File or folder last modified DateTime.  # noqa: E501
 
         :return: The modified_date of this StorageFile.  # noqa: E501
         :rtype: datetime
@@ -136,7 +134,7 @@ class StorageFile(object):
     def modified_date(self, modified_date):
         """Sets the modified_date of this StorageFile.
 
-        File or folder last modified .  # noqa: E501
+        File or folder last modified DateTime.  # noqa: E501
 
         :param modified_date: The modified_date of this StorageFile.  # noqa: E501
         :type: datetime
@@ -162,8 +160,6 @@ class StorageFile(object):
         :param size: The size of this StorageFile.  # noqa: E501
         :type: int
         """
-        if size is None:
-            raise ValueError("Invalid value for `size`, must not be `None`")  # noqa: E501
         self._size = size
     @property
     def path(self):

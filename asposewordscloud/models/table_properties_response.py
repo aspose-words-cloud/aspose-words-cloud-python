@@ -87,7 +87,7 @@ class TablePropertiesResponse(object):
     def properties(self):
         """Gets the properties of this TablePropertiesResponse.  # noqa: E501
 
-        Gets or sets table.  # noqa: E501
+        Gets or sets properties.  # noqa: E501
 
         :return: The properties of this TablePropertiesResponse.  # noqa: E501
         :rtype: TableProperties
@@ -98,7 +98,7 @@ class TablePropertiesResponse(object):
     def properties(self, properties):
         """Sets the properties of this TablePropertiesResponse.
 
-        Gets or sets table.  # noqa: E501
+        Gets or sets properties.  # noqa: E501
 
         :param properties: The properties of this TablePropertiesResponse.  # noqa: E501
         :type: TableProperties

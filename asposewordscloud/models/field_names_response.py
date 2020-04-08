@@ -87,7 +87,7 @@ class FieldNamesResponse(object):
     def field_names(self):
         """Gets the field_names of this FieldNamesResponse.  # noqa: E501
 
-        Gets or sets collection of mail merge fields.  # noqa: E501
+        Gets or sets field_names.  # noqa: E501
 
         :return: The field_names of this FieldNamesResponse.  # noqa: E501
         :rtype: FieldNames
@@ -98,7 +98,7 @@ class FieldNamesResponse(object):
     def field_names(self, field_names):
         """Sets the field_names of this FieldNamesResponse.
 
-        Gets or sets collection of mail merge fields.  # noqa: E501
+        Gets or sets field_names.  # noqa: E501
 
         :param field_names: The field_names of this FieldNamesResponse.  # noqa: E501
         :type: FieldNames

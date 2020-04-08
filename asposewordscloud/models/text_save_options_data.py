@@ -257,7 +257,7 @@ class TextSaveOptionsData(object):
     def update_sdt_content(self):
         """Gets the update_sdt_content of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets value determining whether content of  is updated before saving.  # noqa: E501
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :return: The update_sdt_content of this TextSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -268,7 +268,7 @@ class TextSaveOptionsData(object):
     def update_sdt_content(self, update_sdt_content):
         """Sets the update_sdt_content of this TextSaveOptionsData.
 
-        Gets or sets value determining whether content of  is updated before saving.  # noqa: E501
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :param update_sdt_content: The update_sdt_content of this TextSaveOptionsData.  # noqa: E501
         :type: bool

@@ -41,8 +41,8 @@ class FormField(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'link': 'WordsApiLink',
         'node_id': 'str',
+        'link': 'WordsApiLink',
         'calculate_on_exit': 'bool',
         'enabled': 'bool',
         'entry_macro': 'str',
@@ -55,8 +55,8 @@ class FormField(object):
     }
 
     attribute_map = {
-        'link': 'link',
         'node_id': 'NodeId',
+        'link': 'link',
         'calculate_on_exit': 'CalculateOnExit',
         'enabled': 'Enabled',
         'entry_macro': 'EntryMacro',
@@ -68,11 +68,11 @@ class FormField(object):
         'status_text': 'StatusText'
     }
 
-    def __init__(self, link=None, node_id=None, calculate_on_exit=None, enabled=None, entry_macro=None, exit_macro=None, help_text=None, name=None, own_help=None, own_status=None, status_text=None):  # noqa: E501
+    def __init__(self, node_id=None, link=None, calculate_on_exit=None, enabled=None, entry_macro=None, exit_macro=None, help_text=None, name=None, own_help=None, own_status=None, status_text=None):  # noqa: E501
         """FormField - a model defined in Swagger"""  # noqa: E501
 
-        self._link = None
         self._node_id = None
+        self._link = None
         self._calculate_on_exit = None
         self._enabled = None
         self._entry_macro = None
@@ -84,10 +84,10 @@ class FormField(object):
         self._status_text = None
         self.discriminator = None
 
-        if link is not None:
-            self.link = link
         if node_id is not None:
             self.node_id = node_id
+        if link is not None:
+            self.link = link
         if calculate_on_exit is not None:
             self.calculate_on_exit = calculate_on_exit
         if enabled is not None:
@@ -107,27 +107,6 @@ class FormField(object):
         if status_text is not None:
             self.status_text = status_text
 
-    @property
-    def link(self):
-        """Gets the link of this FormField.  # noqa: E501
-
-        Gets or sets link to the document.  # noqa: E501
-
-        :return: The link of this FormField.  # noqa: E501
-        :rtype: WordsApiLink
-        """
-        return self._link
-
-    @link.setter
-    def link(self, link):
-        """Sets the link of this FormField.
-
-        Gets or sets link to the document.  # noqa: E501
-
-        :param link: The link of this FormField.  # noqa: E501
-        :type: WordsApiLink
-        """
-        self._link = link
     @property
     def node_id(self):
         """Gets the node_id of this FormField.  # noqa: E501
@@ -149,6 +128,27 @@ class FormField(object):
         :type: str
         """
         self._node_id = node_id
+    @property
+    def link(self):
+        """Gets the link of this FormField.  # noqa: E501
+
+        Gets or sets link.  # noqa: E501
+
+        :return: The link of this FormField.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this FormField.
+
+        Gets or sets link.  # noqa: E501
+
+        :param link: The link of this FormField.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def calculate_on_exit(self):
         """Gets the calculate_on_exit of this FormField.  # noqa: E501

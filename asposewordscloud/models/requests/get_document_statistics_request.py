@@ -33,9 +33,9 @@ class GetDocumentStatisticsRequest(object):
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
-    :param include_comments Support including/excluding comments from the WordCount. Default value is \"false\".
-    :param include_footnotes Support including/excluding footnotes from the WordCount. Default value is \"false\".
-    :param include_text_in_shapes Support including/excluding shape's text from the WordCount. Default value is \"false\".
+    :param include_comments Support including/excluding comments from the WordCount. Default value is "false".
+    :param include_footnotes Support including/excluding footnotes from the WordCount. Default value is "false".
+    :param include_text_in_shapes Support including/excluding shape's text from the WordCount. Default value is "false".
     """
 
     def __init__(self, name, folder=None, storage=None, load_encoding=None, password=None, include_comments=None, include_footnotes=None, include_text_in_shapes=None):

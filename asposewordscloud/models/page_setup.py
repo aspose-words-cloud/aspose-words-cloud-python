@@ -206,7 +206,7 @@ class PageSetup(object):
     def link(self):
         """Gets the link of this PageSetup.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :return: The link of this PageSetup.  # noqa: E501
         :rtype: WordsApiLink
@@ -217,7 +217,7 @@ class PageSetup(object):
     def link(self, link):
         """Sets the link of this PageSetup.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :param link: The link of this PageSetup.  # noqa: E501
         :type: WordsApiLink
@@ -829,7 +829,7 @@ class PageSetup(object):
     def suppress_endnotes(self):
         """Gets the suppress_endnotes of this PageSetup.  # noqa: E501
 
-        Gets or sets true if endnotes are printed at the end of the next section that doesn't suppress endnotes.                 Suppressed endnotes are printed before the endnotes in that section.               # noqa: E501
+        Gets or sets true if endnotes are printed at the end of the next section that doesn't suppress endnotes. Suppressed endnotes are printed before the endnotes in that section.               # noqa: E501
 
         :return: The suppress_endnotes of this PageSetup.  # noqa: E501
         :rtype: bool
@@ -840,7 +840,7 @@ class PageSetup(object):
     def suppress_endnotes(self, suppress_endnotes):
         """Sets the suppress_endnotes of this PageSetup.
 
-        Gets or sets true if endnotes are printed at the end of the next section that doesn't suppress endnotes.                 Suppressed endnotes are printed before the endnotes in that section.               # noqa: E501
+        Gets or sets true if endnotes are printed at the end of the next section that doesn't suppress endnotes. Suppressed endnotes are printed before the endnotes in that section.               # noqa: E501
 
         :param suppress_endnotes: The suppress_endnotes of this PageSetup.  # noqa: E501
         :type: bool

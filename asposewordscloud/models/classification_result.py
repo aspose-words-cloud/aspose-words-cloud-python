@@ -103,8 +103,6 @@ class ClassificationResult(object):
         :param class_probability: The class_probability of this ClassificationResult.  # noqa: E501
         :type: float
         """
-        if class_probability is None:
-            raise ValueError("Invalid value for `class_probability`, must not be `None`")  # noqa: E501
         self._class_probability = class_probability
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -87,7 +87,7 @@ class FieldResponse(object):
     def field(self):
         """Gets the field of this FieldResponse.  # noqa: E501
 
-        Gets or sets field information.  # noqa: E501
+        Gets or sets field.  # noqa: E501
 
         :return: The field of this FieldResponse.  # noqa: E501
         :rtype: Field
@@ -98,7 +98,7 @@ class FieldResponse(object):
     def field(self, field):
         """Sets the field of this FieldResponse.
 
-        Gets or sets field information.  # noqa: E501
+        Gets or sets field.  # noqa: E501
 
         :param field: The field of this FieldResponse.  # noqa: E501
         :type: Field

@@ -87,7 +87,7 @@ class HeaderFooterResponse(object):
     def header_footer(self):
         """Gets the header_footer of this HeaderFooterResponse.  # noqa: E501
 
-        Gets or sets headerFooter.  # noqa: E501
+        Gets or sets header_footer.  # noqa: E501
 
         :return: The header_footer of this HeaderFooterResponse.  # noqa: E501
         :rtype: HeaderFooter
@@ -98,7 +98,7 @@ class HeaderFooterResponse(object):
     def header_footer(self, header_footer):
         """Sets the header_footer of this HeaderFooterResponse.
 
-        Gets or sets headerFooter.  # noqa: E501
+        Gets or sets header_footer.  # noqa: E501
 
         :param header_footer: The header_footer of this HeaderFooterResponse.  # noqa: E501
         :type: HeaderFooter

@@ -87,7 +87,7 @@ class DocumentPropertiesResponse(object):
     def document_properties(self):
         """Gets the document_properties of this DocumentPropertiesResponse.  # noqa: E501
 
-        Gets or sets collection of document properties.  # noqa: E501
+        Gets or sets document_properties.  # noqa: E501
 
         :return: The document_properties of this DocumentPropertiesResponse.  # noqa: E501
         :rtype: DocumentProperties
@@ -98,7 +98,7 @@ class DocumentPropertiesResponse(object):
     def document_properties(self, document_properties):
         """Sets the document_properties of this DocumentPropertiesResponse.
 
-        Gets or sets collection of document properties.  # noqa: E501
+        Gets or sets document_properties.  # noqa: E501
 
         :param document_properties: The document_properties of this DocumentPropertiesResponse.  # noqa: E501
         :type: DocumentProperties

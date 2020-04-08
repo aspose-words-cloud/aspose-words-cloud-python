@@ -87,7 +87,7 @@ class CommentResponse(object):
     def comment(self):
         """Gets the comment of this CommentResponse.  # noqa: E501
 
-        Gets or sets comment information.  # noqa: E501
+        Gets or sets comment.  # noqa: E501
 
         :return: The comment of this CommentResponse.  # noqa: E501
         :rtype: Comment
@@ -98,7 +98,7 @@ class CommentResponse(object):
     def comment(self, comment):
         """Sets the comment of this CommentResponse.
 
-        Gets or sets comment information.  # noqa: E501
+        Gets or sets comment.  # noqa: E501
 
         :param comment: The comment of this CommentResponse.  # noqa: E501
         :type: Comment

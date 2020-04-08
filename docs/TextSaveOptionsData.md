@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **dml_effects_rendering_mode** | **str** | Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }. | [optional] 
 **zip_output** | **bool** | Gets or sets controls zip output or not. Default value is false. | [optional] 
 **update_last_saved_time_property** | **bool** | Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving. | [optional] 
-**update_sdt_content** | **bool** | Gets or sets value determining whether content of  is updated before saving. | [optional] 
+**update_sdt_content** | **bool** | Gets or sets value determining whether content of StructuredDocumentTag is updated before saving. | [optional] 
 **update_fields** | **bool** | Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true | [optional] 
 **add_bidi_marks** | **bool** | Gets or sets specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true. | [optional] 
 **encoding** | **str** | Gets or sets specifies the encoding to use when exporting in plain text format. | [optional] 
@@ -20,5 +20,4 @@ Name | Type | Description | Notes
 **simplify_list_labels** | **bool** | Gets or sets specifies whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

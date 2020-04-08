@@ -30,7 +30,7 @@ import six
 
 
 class XmlColor(object):
-    """Utility class for  serialization.
+    """Utility class for Color serialization.
     """
 
     """

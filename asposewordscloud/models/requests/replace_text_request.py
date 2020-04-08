@@ -29,7 +29,7 @@ class ReplaceTextRequest(object):
     Request model for replace_text operation.
     Initializes a new instance.
     :param name The document name.
-    :param replace_text with the replace operation settings.            
+    :param replace_text ReplaceTextResponse with the replace operation settings.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

@@ -41,58 +41,37 @@ class TableRow(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'link': 'WordsApiLink',
         'node_id': 'str',
+        'link': 'WordsApiLink',
         'row_format': 'TableRowFormat',
         'table_cell_list': 'list[TableCell]'
     }
 
     attribute_map = {
-        'link': 'link',
         'node_id': 'NodeId',
+        'link': 'link',
         'row_format': 'RowFormat',
         'table_cell_list': 'TableCellList'
     }
 
-    def __init__(self, link=None, node_id=None, row_format=None, table_cell_list=None):  # noqa: E501
+    def __init__(self, node_id=None, link=None, row_format=None, table_cell_list=None):  # noqa: E501
         """TableRow - a model defined in Swagger"""  # noqa: E501
 
-        self._link = None
         self._node_id = None
+        self._link = None
         self._row_format = None
         self._table_cell_list = None
         self.discriminator = None
 
-        if link is not None:
-            self.link = link
         if node_id is not None:
             self.node_id = node_id
+        if link is not None:
+            self.link = link
         if row_format is not None:
             self.row_format = row_format
         if table_cell_list is not None:
             self.table_cell_list = table_cell_list
 
-    @property
-    def link(self):
-        """Gets the link of this TableRow.  # noqa: E501
-
-        Gets or sets link to the document.  # noqa: E501
-
-        :return: The link of this TableRow.  # noqa: E501
-        :rtype: WordsApiLink
-        """
-        return self._link
-
-    @link.setter
-    def link(self, link):
-        """Sets the link of this TableRow.
-
-        Gets or sets link to the document.  # noqa: E501
-
-        :param link: The link of this TableRow.  # noqa: E501
-        :type: WordsApiLink
-        """
-        self._link = link
     @property
     def node_id(self):
         """Gets the node_id of this TableRow.  # noqa: E501
@@ -115,10 +94,31 @@ class TableRow(object):
         """
         self._node_id = node_id
     @property
+    def link(self):
+        """Gets the link of this TableRow.  # noqa: E501
+
+        Gets or sets link.  # noqa: E501
+
+        :return: The link of this TableRow.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this TableRow.
+
+        Gets or sets link.  # noqa: E501
+
+        :param link: The link of this TableRow.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
+    @property
     def row_format(self):
         """Gets the row_format of this TableRow.  # noqa: E501
 
-        Gets or sets provides access to the formatting properties of the row.  # noqa: E501
+        Gets or sets row_format.  # noqa: E501
 
         :return: The row_format of this TableRow.  # noqa: E501
         :rtype: TableRowFormat
@@ -129,7 +129,7 @@ class TableRow(object):
     def row_format(self, row_format):
         """Sets the row_format of this TableRow.
 
-        Gets or sets provides access to the formatting properties of the row.  # noqa: E501
+        Gets or sets row_format.  # noqa: E501
 
         :param row_format: The row_format of this TableRow.  # noqa: E501
         :type: TableRowFormat

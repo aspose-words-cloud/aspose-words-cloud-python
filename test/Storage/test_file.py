@@ -38,15 +38,15 @@ class TestFile(BaseTestContext):
         remote_path_dst = os.path.join(self.remote_test_folder, self.test_folder, remote_name_dst)
 
         request = asposewordscloud.models.requests.UploadFileRequest(open(os.path.join(self.local_common_folder, filename), 'rb'), remote_path_src)
-        result = self.words_api.upload_file(request)
+        _result = self.words_api.upload_file(request)
 
         request = asposewordscloud.models.requests.MoveFileRequest(remote_path_dst, remote_path_src)
-        result = self.words_api.move_file(request)
+        _result = self.words_api.move_file(request)
         download_dst = self.words_api.download_file(asposewordscloud.models.requests.DownloadFileRequest(request.dest_path))
         self.assertTrue(len(download_dst) > 0)
 
         try:
-            download_src = self.words_api.download_file(asposewordscloud.models.requests.DownloadFileRequest(remote_path_src))
+            _download_src = self.words_api.download_file(asposewordscloud.models.requests.DownloadFileRequest(remote_path_src))
             self.assertRaises(ApiException)
         except ApiException as e:
             self.assertEqual(404, e.status, "Status has to be 404")
@@ -65,7 +65,7 @@ class TestFile(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestDownloadFile.docx'
         remote_path = os.path.join(self.remote_test_folder, self.test_folder, remote_name)
-        path = os.path.join(self.local_common_folder, filename)
+        _path = os.path.join(self.local_common_folder, filename)
         self.upload_file(remote_path, open(os.path.join(self.local_common_folder, filename), 'rb'))
 
         request = asposewordscloud.models.requests.DownloadFileRequest(remote_path)

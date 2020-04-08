@@ -86,7 +86,7 @@ class OfficeMathObject(object):
     def link(self):
         """Gets the link of this OfficeMathObject.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :return: The link of this OfficeMathObject.  # noqa: E501
         :rtype: WordsApiLink
@@ -97,7 +97,7 @@ class OfficeMathObject(object):
     def link(self, link):
         """Sets the link of this OfficeMathObject.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :param link: The link of this OfficeMathObject.  # noqa: E501
         :type: WordsApiLink
@@ -128,7 +128,7 @@ class OfficeMathObject(object):
     def content(self):
         """Gets the content of this OfficeMathObject.  # noqa: E501
 
-        Gets or sets content of footnote.  # noqa: E501
+        Gets or sets content.  # noqa: E501
 
         :return: The content of this OfficeMathObject.  # noqa: E501
         :rtype: StoryChildNodes
@@ -139,7 +139,7 @@ class OfficeMathObject(object):
     def content(self, content):
         """Sets the content of this OfficeMathObject.
 
-        Gets or sets content of footnote.  # noqa: E501
+        Gets or sets content.  # noqa: E501
 
         :param content: The content of this OfficeMathObject.  # noqa: E501
         :type: StoryChildNodes

@@ -30,7 +30,7 @@ import six
 
 
 class StoryChildNodes(object):
-    """Child nodes of  or .
+    """Child nodes of Story or InlineStory.
     """
 
     """

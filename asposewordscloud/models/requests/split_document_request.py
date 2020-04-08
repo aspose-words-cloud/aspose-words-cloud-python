@@ -29,26 +29,26 @@ class SplitDocumentRequest(object):
     Request model for split_document operation.
     Initializes a new instance.
     :param name Original document name.
+    :param format Format to split.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    :param format Format to split.
     :param _from Start page.
     :param to End page.
     :param zip_output ZipOutput or not.
     :param fonts_location Folder in filestorage with custom fonts.
     """
 
-    def __init__(self, name, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, format=None, _from=None, to=None, zip_output=None, fonts_location=None):
+    def __init__(self, name, format, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, _from=None, to=None, zip_output=None, fonts_location=None):
         self.name = name
+        self.format = format
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
         self.dest_file_name = dest_file_name
-        self.format = format
         self._from = _from
         self.to = to
         self.zip_output = zip_output

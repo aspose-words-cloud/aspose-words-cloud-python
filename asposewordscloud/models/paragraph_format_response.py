@@ -87,7 +87,7 @@ class ParagraphFormatResponse(object):
     def paragraph_format(self):
         """Gets the paragraph_format of this ParagraphFormatResponse.  # noqa: E501
 
-        Gets or sets represents all the formatting for a paragraph.  # noqa: E501
+        Gets or sets paragraph_format.  # noqa: E501
 
         :return: The paragraph_format of this ParagraphFormatResponse.  # noqa: E501
         :rtype: ParagraphFormat
@@ -98,7 +98,7 @@ class ParagraphFormatResponse(object):
     def paragraph_format(self, paragraph_format):
         """Sets the paragraph_format of this ParagraphFormatResponse.
 
-        Gets or sets represents all the formatting for a paragraph.  # noqa: E501
+        Gets or sets paragraph_format.  # noqa: E501
 
         :param paragraph_format: The paragraph_format of this ParagraphFormatResponse.  # noqa: E501
         :type: ParagraphFormat

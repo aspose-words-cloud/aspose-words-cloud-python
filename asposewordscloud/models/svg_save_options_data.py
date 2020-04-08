@@ -41,6 +41,13 @@ class SvgSaveOptionsData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'color_mode': 'str',
+        'jpeg_quality': 'int',
+        'metafile_rendering_options': 'MetafileRenderingOptionsData',
+        'numeral_format': 'str',
+        'optimize_output': 'bool',
+        'page_count': 'int',
+        'page_index': 'int',
         'save_format': 'str',
         'file_name': 'str',
         'dml_rendering_mode': 'str',
@@ -49,13 +56,6 @@ class SvgSaveOptionsData(object):
         'update_last_saved_time_property': 'bool',
         'update_sdt_content': 'bool',
         'update_fields': 'bool',
-        'color_mode': 'str',
-        'jpeg_quality': 'int',
-        'metafile_rendering_options': 'MetafileRenderingOptionsData',
-        'numeral_format': 'str',
-        'optimize_output': 'bool',
-        'page_count': 'int',
-        'page_index': 'int',
         'export_embedded_images': 'bool',
         'fit_to_view_port': 'bool',
         'resources_folder': 'str',
@@ -65,6 +65,13 @@ class SvgSaveOptionsData(object):
     }
 
     attribute_map = {
+        'color_mode': 'ColorMode',
+        'jpeg_quality': 'JpegQuality',
+        'metafile_rendering_options': 'MetafileRenderingOptions',
+        'numeral_format': 'NumeralFormat',
+        'optimize_output': 'OptimizeOutput',
+        'page_count': 'PageCount',
+        'page_index': 'PageIndex',
         'save_format': 'SaveFormat',
         'file_name': 'FileName',
         'dml_rendering_mode': 'DmlRenderingMode',
@@ -73,13 +80,6 @@ class SvgSaveOptionsData(object):
         'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
         'update_sdt_content': 'UpdateSdtContent',
         'update_fields': 'UpdateFields',
-        'color_mode': 'ColorMode',
-        'jpeg_quality': 'JpegQuality',
-        'metafile_rendering_options': 'MetafileRenderingOptions',
-        'numeral_format': 'NumeralFormat',
-        'optimize_output': 'OptimizeOutput',
-        'page_count': 'PageCount',
-        'page_index': 'PageIndex',
         'export_embedded_images': 'ExportEmbeddedImages',
         'fit_to_view_port': 'FitToViewPort',
         'resources_folder': 'ResourcesFolder',
@@ -88,9 +88,16 @@ class SvgSaveOptionsData(object):
         'text_output_mode': 'TextOutputMode'
     }
 
-    def __init__(self, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, export_embedded_images=None, fit_to_view_port=None, resources_folder=None, resources_folder_alias=None, show_page_border=None, text_output_mode=None):  # noqa: E501
+    def __init__(self, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, export_embedded_images=None, fit_to_view_port=None, resources_folder=None, resources_folder_alias=None, show_page_border=None, text_output_mode=None):  # noqa: E501
         """SvgSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
+        self._color_mode = None
+        self._jpeg_quality = None
+        self._metafile_rendering_options = None
+        self._numeral_format = None
+        self._optimize_output = None
+        self._page_count = None
+        self._page_index = None
         self._save_format = None
         self._file_name = None
         self._dml_rendering_mode = None
@@ -99,13 +106,6 @@ class SvgSaveOptionsData(object):
         self._update_last_saved_time_property = None
         self._update_sdt_content = None
         self._update_fields = None
-        self._color_mode = None
-        self._jpeg_quality = None
-        self._metafile_rendering_options = None
-        self._numeral_format = None
-        self._optimize_output = None
-        self._page_count = None
-        self._page_index = None
         self._export_embedded_images = None
         self._fit_to_view_port = None
         self._resources_folder = None
@@ -114,6 +114,20 @@ class SvgSaveOptionsData(object):
         self._text_output_mode = None
         self.discriminator = None
 
+        if color_mode is not None:
+            self.color_mode = color_mode
+        if jpeg_quality is not None:
+            self.jpeg_quality = jpeg_quality
+        if metafile_rendering_options is not None:
+            self.metafile_rendering_options = metafile_rendering_options
+        if numeral_format is not None:
+            self.numeral_format = numeral_format
+        if optimize_output is not None:
+            self.optimize_output = optimize_output
+        if page_count is not None:
+            self.page_count = page_count
+        if page_index is not None:
+            self.page_index = page_index
         if save_format is not None:
             self.save_format = save_format
         if file_name is not None:
@@ -130,20 +144,6 @@ class SvgSaveOptionsData(object):
             self.update_sdt_content = update_sdt_content
         if update_fields is not None:
             self.update_fields = update_fields
-        if color_mode is not None:
-            self.color_mode = color_mode
-        if jpeg_quality is not None:
-            self.jpeg_quality = jpeg_quality
-        if metafile_rendering_options is not None:
-            self.metafile_rendering_options = metafile_rendering_options
-        if numeral_format is not None:
-            self.numeral_format = numeral_format
-        if optimize_output is not None:
-            self.optimize_output = optimize_output
-        if page_count is not None:
-            self.page_count = page_count
-        if page_index is not None:
-            self.page_index = page_index
         if export_embedded_images is not None:
             self.export_embedded_images = export_embedded_images
         if fit_to_view_port is not None:
@@ -157,6 +157,153 @@ class SvgSaveOptionsData(object):
         if text_output_mode is not None:
             self.text_output_mode = text_output_mode
 
+    @property
+    def color_mode(self):
+        """Gets the color_mode of this SvgSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
+
+        :return: The color_mode of this SvgSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._color_mode
+
+    @color_mode.setter
+    def color_mode(self, color_mode):
+        """Sets the color_mode of this SvgSaveOptionsData.
+
+        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
+
+        :param color_mode: The color_mode of this SvgSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        self._color_mode = color_mode
+    @property
+    def jpeg_quality(self):
+        """Gets the jpeg_quality of this SvgSaveOptionsData.  # noqa: E501
+
+        Gets or sets determines the quality of the JPEG images inside PDF document.  # noqa: E501
+
+        :return: The jpeg_quality of this SvgSaveOptionsData.  # noqa: E501
+        :rtype: int
+        """
+        return self._jpeg_quality
+
+    @jpeg_quality.setter
+    def jpeg_quality(self, jpeg_quality):
+        """Sets the jpeg_quality of this SvgSaveOptionsData.
+
+        Gets or sets determines the quality of the JPEG images inside PDF document.  # noqa: E501
+
+        :param jpeg_quality: The jpeg_quality of this SvgSaveOptionsData.  # noqa: E501
+        :type: int
+        """
+        self._jpeg_quality = jpeg_quality
+    @property
+    def metafile_rendering_options(self):
+        """Gets the metafile_rendering_options of this SvgSaveOptionsData.  # noqa: E501
+
+        Gets or sets metafile_rendering_options.  # noqa: E501
+
+        :return: The metafile_rendering_options of this SvgSaveOptionsData.  # noqa: E501
+        :rtype: MetafileRenderingOptionsData
+        """
+        return self._metafile_rendering_options
+
+    @metafile_rendering_options.setter
+    def metafile_rendering_options(self, metafile_rendering_options):
+        """Sets the metafile_rendering_options of this SvgSaveOptionsData.
+
+        Gets or sets metafile_rendering_options.  # noqa: E501
+
+        :param metafile_rendering_options: The metafile_rendering_options of this SvgSaveOptionsData.  # noqa: E501
+        :type: MetafileRenderingOptionsData
+        """
+        self._metafile_rendering_options = metafile_rendering_options
+    @property
+    def numeral_format(self):
+        """Gets the numeral_format of this SvgSaveOptionsData.  # noqa: E501
+
+        Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
+
+        :return: The numeral_format of this SvgSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._numeral_format
+
+    @numeral_format.setter
+    def numeral_format(self, numeral_format):
+        """Sets the numeral_format of this SvgSaveOptionsData.
+
+        Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
+
+        :param numeral_format: The numeral_format of this SvgSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        self._numeral_format = numeral_format
+    @property
+    def optimize_output(self):
+        """Gets the optimize_output of this SvgSaveOptionsData.  # noqa: E501
+
+        Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
+
+        :return: The optimize_output of this SvgSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._optimize_output
+
+    @optimize_output.setter
+    def optimize_output(self, optimize_output):
+        """Sets the optimize_output of this SvgSaveOptionsData.
+
+        Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
+
+        :param optimize_output: The optimize_output of this SvgSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._optimize_output = optimize_output
+    @property
+    def page_count(self):
+        """Gets the page_count of this SvgSaveOptionsData.  # noqa: E501
+
+        Gets or sets determines number of pages to render.  # noqa: E501
+
+        :return: The page_count of this SvgSaveOptionsData.  # noqa: E501
+        :rtype: int
+        """
+        return self._page_count
+
+    @page_count.setter
+    def page_count(self, page_count):
+        """Sets the page_count of this SvgSaveOptionsData.
+
+        Gets or sets determines number of pages to render.  # noqa: E501
+
+        :param page_count: The page_count of this SvgSaveOptionsData.  # noqa: E501
+        :type: int
+        """
+        self._page_count = page_count
+    @property
+    def page_index(self):
+        """Gets the page_index of this SvgSaveOptionsData.  # noqa: E501
+
+        Gets or sets determines 0-based index of the first page to render.  # noqa: E501
+
+        :return: The page_index of this SvgSaveOptionsData.  # noqa: E501
+        :rtype: int
+        """
+        return self._page_index
+
+    @page_index.setter
+    def page_index(self, page_index):
+        """Sets the page_index of this SvgSaveOptionsData.
+
+        Gets or sets determines 0-based index of the first page to render.  # noqa: E501
+
+        :param page_index: The page_index of this SvgSaveOptionsData.  # noqa: E501
+        :type: int
+        """
+        self._page_index = page_index
     @property
     def save_format(self):
         """Gets the save_format of this SvgSaveOptionsData.  # noqa: E501
@@ -287,7 +434,7 @@ class SvgSaveOptionsData(object):
     def update_sdt_content(self):
         """Gets the update_sdt_content of this SvgSaveOptionsData.  # noqa: E501
 
-        Gets or sets value determining whether content of  is updated before saving.  # noqa: E501
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :return: The update_sdt_content of this SvgSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -298,7 +445,7 @@ class SvgSaveOptionsData(object):
     def update_sdt_content(self, update_sdt_content):
         """Sets the update_sdt_content of this SvgSaveOptionsData.
 
-        Gets or sets value determining whether content of  is updated before saving.  # noqa: E501
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :param update_sdt_content: The update_sdt_content of this SvgSaveOptionsData.  # noqa: E501
         :type: bool
@@ -325,153 +472,6 @@ class SvgSaveOptionsData(object):
         :type: bool
         """
         self._update_fields = update_fields
-    @property
-    def color_mode(self):
-        """Gets the color_mode of this SvgSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
-
-        :return: The color_mode of this SvgSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._color_mode
-
-    @color_mode.setter
-    def color_mode(self, color_mode):
-        """Sets the color_mode of this SvgSaveOptionsData.
-
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
-
-        :param color_mode: The color_mode of this SvgSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._color_mode = color_mode
-    @property
-    def jpeg_quality(self):
-        """Gets the jpeg_quality of this SvgSaveOptionsData.  # noqa: E501
-
-        Gets or sets determines the quality of the JPEG images inside PDF document.  # noqa: E501
-
-        :return: The jpeg_quality of this SvgSaveOptionsData.  # noqa: E501
-        :rtype: int
-        """
-        return self._jpeg_quality
-
-    @jpeg_quality.setter
-    def jpeg_quality(self, jpeg_quality):
-        """Sets the jpeg_quality of this SvgSaveOptionsData.
-
-        Gets or sets determines the quality of the JPEG images inside PDF document.  # noqa: E501
-
-        :param jpeg_quality: The jpeg_quality of this SvgSaveOptionsData.  # noqa: E501
-        :type: int
-        """
-        self._jpeg_quality = jpeg_quality
-    @property
-    def metafile_rendering_options(self):
-        """Gets the metafile_rendering_options of this SvgSaveOptionsData.  # noqa: E501
-
-        Gets or sets allows to specify metafile rendering options.  # noqa: E501
-
-        :return: The metafile_rendering_options of this SvgSaveOptionsData.  # noqa: E501
-        :rtype: MetafileRenderingOptionsData
-        """
-        return self._metafile_rendering_options
-
-    @metafile_rendering_options.setter
-    def metafile_rendering_options(self, metafile_rendering_options):
-        """Sets the metafile_rendering_options of this SvgSaveOptionsData.
-
-        Gets or sets allows to specify metafile rendering options.  # noqa: E501
-
-        :param metafile_rendering_options: The metafile_rendering_options of this SvgSaveOptionsData.  # noqa: E501
-        :type: MetafileRenderingOptionsData
-        """
-        self._metafile_rendering_options = metafile_rendering_options
-    @property
-    def numeral_format(self):
-        """Gets the numeral_format of this SvgSaveOptionsData.  # noqa: E501
-
-        Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
-
-        :return: The numeral_format of this SvgSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._numeral_format
-
-    @numeral_format.setter
-    def numeral_format(self, numeral_format):
-        """Sets the numeral_format of this SvgSaveOptionsData.
-
-        Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
-
-        :param numeral_format: The numeral_format of this SvgSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._numeral_format = numeral_format
-    @property
-    def optimize_output(self):
-        """Gets the optimize_output of this SvgSaveOptionsData.  # noqa: E501
-
-        Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
-
-        :return: The optimize_output of this SvgSaveOptionsData.  # noqa: E501
-        :rtype: bool
-        """
-        return self._optimize_output
-
-    @optimize_output.setter
-    def optimize_output(self, optimize_output):
-        """Sets the optimize_output of this SvgSaveOptionsData.
-
-        Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
-
-        :param optimize_output: The optimize_output of this SvgSaveOptionsData.  # noqa: E501
-        :type: bool
-        """
-        self._optimize_output = optimize_output
-    @property
-    def page_count(self):
-        """Gets the page_count of this SvgSaveOptionsData.  # noqa: E501
-
-        Gets or sets determines number of pages to render.  # noqa: E501
-
-        :return: The page_count of this SvgSaveOptionsData.  # noqa: E501
-        :rtype: int
-        """
-        return self._page_count
-
-    @page_count.setter
-    def page_count(self, page_count):
-        """Sets the page_count of this SvgSaveOptionsData.
-
-        Gets or sets determines number of pages to render.  # noqa: E501
-
-        :param page_count: The page_count of this SvgSaveOptionsData.  # noqa: E501
-        :type: int
-        """
-        self._page_count = page_count
-    @property
-    def page_index(self):
-        """Gets the page_index of this SvgSaveOptionsData.  # noqa: E501
-
-        Gets or sets determines 0-based index of the first page to render.  # noqa: E501
-
-        :return: The page_index of this SvgSaveOptionsData.  # noqa: E501
-        :rtype: int
-        """
-        return self._page_index
-
-    @page_index.setter
-    def page_index(self, page_index):
-        """Sets the page_index of this SvgSaveOptionsData.
-
-        Gets or sets determines 0-based index of the first page to render.  # noqa: E501
-
-        :param page_index: The page_index of this SvgSaveOptionsData.  # noqa: E501
-        :type: int
-        """
-        self._page_index = page_index
     @property
     def export_embedded_images(self):
         """Gets the export_embedded_images of this SvgSaveOptionsData.  # noqa: E501

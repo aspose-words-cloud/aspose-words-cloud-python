@@ -87,7 +87,7 @@ class HyperlinksResponse(object):
     def hyperlinks(self):
         """Gets the hyperlinks of this HyperlinksResponse.  # noqa: E501
 
-        Gets or sets collection of hyperlinks.  # noqa: E501
+        Gets or sets hyperlinks.  # noqa: E501
 
         :return: The hyperlinks of this HyperlinksResponse.  # noqa: E501
         :rtype: Hyperlinks
@@ -98,7 +98,7 @@ class HyperlinksResponse(object):
     def hyperlinks(self, hyperlinks):
         """Sets the hyperlinks of this HyperlinksResponse.
 
-        Gets or sets collection of hyperlinks.  # noqa: E501
+        Gets or sets hyperlinks.  # noqa: E501
 
         :param hyperlinks: The hyperlinks of this HyperlinksResponse.  # noqa: E501
         :type: Hyperlinks

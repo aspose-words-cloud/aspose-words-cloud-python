@@ -43,21 +43,24 @@ class CompareData(object):
     swagger_types = {
         'comparing_with_document': 'str',
         'author': 'str',
-        'date_time': 'datetime'
+        'date_time': 'datetime',
+        'compare_options': 'CompareOptions'
     }
 
     attribute_map = {
         'comparing_with_document': 'ComparingWithDocument',
         'author': 'Author',
-        'date_time': 'DateTime'
+        'date_time': 'DateTime',
+        'compare_options': 'CompareOptions'
     }
 
-    def __init__(self, comparing_with_document=None, author=None, date_time=None):  # noqa: E501
+    def __init__(self, comparing_with_document=None, author=None, date_time=None, compare_options=None):  # noqa: E501
         """CompareData - a model defined in Swagger"""  # noqa: E501
 
         self._comparing_with_document = None
         self._author = None
         self._date_time = None
+        self._compare_options = None
         self.discriminator = None
 
         if comparing_with_document is not None:
@@ -66,6 +69,8 @@ class CompareData(object):
             self.author = author
         if date_time is not None:
             self.date_time = date_time
+        if compare_options is not None:
+            self.compare_options = compare_options
 
     @property
     def comparing_with_document(self):
@@ -130,6 +135,27 @@ class CompareData(object):
         :type: datetime
         """
         self._date_time = date_time
+    @property
+    def compare_options(self):
+        """Gets the compare_options of this CompareData.  # noqa: E501
+
+        Gets or sets compare_options.  # noqa: E501
+
+        :return: The compare_options of this CompareData.  # noqa: E501
+        :rtype: CompareOptions
+        """
+        return self._compare_options
+
+    @compare_options.setter
+    def compare_options(self, compare_options):
+        """Sets the compare_options of this CompareData.
+
+        Gets or sets compare_options.  # noqa: E501
+
+        :param compare_options: The compare_options of this CompareData.  # noqa: E501
+        :type: CompareOptions
+        """
+        self._compare_options = compare_options
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
