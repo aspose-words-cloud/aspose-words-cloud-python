@@ -16,6 +16,20 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 - [Convert a document to desired file format](https://docs.aspose.cloud/display/wordscloud/Convert+Document+to+Destination+Format+with+Detailed+Settings+and+Save+Result+to+Storage) along with detailed settings.
 - Convert an encrypted PDF document into Word document format.
 
+## Enhancements in Version 20.4.0
+- Added CompareOptions property to CompareData class
+- Added Password property to OdtSaveOptions class
+- Added Dml3DEffectsRenderingMode property to SaveOptions class
+- Added UpdateLastPrintedProperty property to SaveOptions class
+- Added InterpolateImages property to PdfSaveOptions class
+- Added UseTargetMachineFonts property to HtmlFixedSaveOptions class
+- Added some request data classes:
+  - RunUpdate and RunInsert
+  - FootnoteUpdate and FootnoteInsert
+  - FieldUpdate and FieldInsert
+  - CommentUpdate and CommentInsert
+  - DocumentPropertyCreateOrUpdate
+
 ## Enhancements in Version 20.3.1
 - Added RtfSaveOptionsData.SaveImagesAsWmf property
 - WordsApi class now has credentials parameters
