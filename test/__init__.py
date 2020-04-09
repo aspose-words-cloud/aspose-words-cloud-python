@@ -33,3 +33,4 @@ from test.DocumentElements.test_watermarks import TestWatermarks
 from test.Storage.test_file import TestFile
 from test.Storage.test_folder import TestFolder
 from test.Range.test_range import TestRange
+from test.Lists.test_lists import TestLists
