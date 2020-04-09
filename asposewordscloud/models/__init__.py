@@ -112,6 +112,14 @@ from asposewordscloud.models.image_save_options_data import ImageSaveOptionsData
 from asposewordscloud.models.jpeg_save_options_data import JpegSaveOptionsData
 from asposewordscloud.models.link import Link
 from asposewordscloud.models.link_element import LinkElement
+from asposewordscloud.models.list_info import ListInfo
+from asposewordscloud.models.list_insert import ListInsert
+from asposewordscloud.models.list_level import ListLevel
+from asposewordscloud.models.list_level_update import ListLevelUpdate
+from asposewordscloud.models.list_response import ListResponse
+from asposewordscloud.models.list_update import ListUpdate
+from asposewordscloud.models.lists import Lists
+from asposewordscloud.models.lists_response import ListsResponse
 from asposewordscloud.models.load_web_document_data import LoadWebDocumentData
 from asposewordscloud.models.metafile_rendering_options_data import MetafileRenderingOptionsData
 from asposewordscloud.models.mhtml_save_options_data import MhtmlSaveOptionsData
@@ -179,6 +187,7 @@ from asposewordscloud.models.stat_data_response import StatDataResponse
 from asposewordscloud.models.storage_file import StorageFile
 from asposewordscloud.models.story_child_nodes import StoryChildNodes
 from asposewordscloud.models.string_format_data import StringFormatData
+from asposewordscloud.models.style import Style
 from asposewordscloud.models.svg_save_options_data import SvgSaveOptionsData
 from asposewordscloud.models.table import Table
 from asposewordscloud.models.table_cell import TableCell
