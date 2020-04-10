@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Body9.py">
+# <copyright company="Aspose" file="Body10.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -29,8 +29,8 @@ import re  # noqa: F401
 import six
 
 
-class Body9(object):
-    """Body9
+class Body10(object):
+    """Body10
     """
 
     """
@@ -41,42 +41,72 @@ class Body9(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'drawing_object': 'str',
         'image_file': 'str'
     }
 
     attribute_map = {
+        'drawing_object': 'drawingObject',
         'image_file': 'imageFile'
     }
 
-    def __init__(self, image_file=None):  # noqa: E501
-        """Body9 - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, drawing_object=None, image_file=None):  # noqa: E501
+        """Body10 - a model defined in Swagger"""  # noqa: E501
 
+        self._drawing_object = None
         self._image_file = None
         self.discriminator = None
 
+        if drawing_object is not None:
+            self.drawing_object = drawing_object
         if image_file is not None:
             self.image_file = image_file
 
     @property
+    def drawing_object(self):
+        """Gets the drawing_object of this Body10.  # noqa: E501
+
+        Drawing object parameters  # noqa: E501
+
+        :return: The drawing_object of this Body10.  # noqa: E501
+        :rtype: str
+        """
+        return self._drawing_object
+
+    @drawing_object.setter
+    def drawing_object(self, drawing_object):
+        """Sets the drawing_object of this Body10.
+
+        Drawing object parameters  # noqa: E501
+
+        :param drawing_object: The drawing_object of this Body10.  # noqa: E501
+        :type: str
+        """
+        if drawing_object is None:
+            raise ValueError("Invalid value for `drawing_object`, must not be `None`")  # noqa: E501
+        self._drawing_object = drawing_object
+    @property
     def image_file(self):
-        """Gets the image_file of this Body9.  # noqa: E501
+        """Gets the image_file of this Body10.  # noqa: E501
 
         File with image  # noqa: E501
 
-        :return: The image_file of this Body9.  # noqa: E501
+        :return: The image_file of this Body10.  # noqa: E501
         :rtype: str
         """
         return self._image_file
 
     @image_file.setter
     def image_file(self, image_file):
-        """Sets the image_file of this Body9.
+        """Sets the image_file of this Body10.
 
         File with image  # noqa: E501
 
-        :param image_file: The image_file of this Body9.  # noqa: E501
+        :param image_file: The image_file of this Body10.  # noqa: E501
         :type: str
         """
+        if image_file is None:
+            raise ValueError("Invalid value for `image_file`, must not be `None`")  # noqa: E501
         self._image_file = image_file
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -112,7 +142,7 @@ class Body9(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, Body9):
+        if not isinstance(other, Body10):
             return False
 
         return self.__dict__ == other.__dict__

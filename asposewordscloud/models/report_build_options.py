@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Body9.py">
+# <copyright company="Aspose" file="ReportBuildOptions.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -29,9 +29,18 @@ import re  # noqa: F401
 import six
 
 
-class Body9(object):
-    """Body9
+class ReportBuildOptions(object):
+    """Specifies options controlling behavior of ReportingEngine while building a report.
     """
+
+    """
+    allowed enum values
+    """
+    NONE = "None"
+    ALLOWMISSINGMEMBERS = "AllowMissingMembers"
+    REMOVEEMPTYPARAGRAPHS = "RemoveEmptyParagraphs"
+    INLINEERRORMESSAGES = "InlineErrorMessages"
+
 
     """
     Attributes:
@@ -41,43 +50,17 @@ class Body9(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'image_file': 'str'
     }
 
     attribute_map = {
-        'image_file': 'imageFile'
     }
 
-    def __init__(self, image_file=None):  # noqa: E501
-        """Body9 - a model defined in Swagger"""  # noqa: E501
+    def __init__(self):  # noqa: E501
+        """ReportBuildOptions - a model defined in Swagger"""  # noqa: E501
 
-        self._image_file = None
         self.discriminator = None
 
-        if image_file is not None:
-            self.image_file = image_file
 
-    @property
-    def image_file(self):
-        """Gets the image_file of this Body9.  # noqa: E501
-
-        File with image  # noqa: E501
-
-        :return: The image_file of this Body9.  # noqa: E501
-        :rtype: str
-        """
-        return self._image_file
-
-    @image_file.setter
-    def image_file(self, image_file):
-        """Sets the image_file of this Body9.
-
-        File with image  # noqa: E501
-
-        :param image_file: The image_file of this Body9.  # noqa: E501
-        :type: str
-        """
-        self._image_file = image_file
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
@@ -112,7 +95,7 @@ class Body9(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, Body9):
+        if not isinstance(other, ReportBuildOptions):
             return False
 
         return self.__dict__ == other.__dict__

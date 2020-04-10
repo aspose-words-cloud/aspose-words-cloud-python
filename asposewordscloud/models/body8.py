@@ -41,73 +41,101 @@ class Body8(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'drawing_object': 'str',
-        'image_file': 'str'
+        'template': 'str',
+        'data': 'str',
+        'report_engine_settings': 'ReportEngineSettings'
     }
 
     attribute_map = {
-        'drawing_object': 'drawingObject',
-        'image_file': 'imageFile'
+        'template': 'template',
+        'data': 'data',
+        'report_engine_settings': 'reportEngineSettings'
     }
 
-    def __init__(self, drawing_object=None, image_file=None):  # noqa: E501
+    def __init__(self, template=None, data=None, report_engine_settings=None):  # noqa: E501
         """Body8 - a model defined in Swagger"""  # noqa: E501
 
-        self._drawing_object = None
-        self._image_file = None
+        self._template = None
+        self._data = None
+        self._report_engine_settings = None
         self.discriminator = None
 
-        if drawing_object is not None:
-            self.drawing_object = drawing_object
-        if image_file is not None:
-            self.image_file = image_file
+        if template is not None:
+            self.template = template
+        if data is not None:
+            self.data = data
+        if report_engine_settings is not None:
+            self.report_engine_settings = report_engine_settings
 
     @property
-    def drawing_object(self):
-        """Gets the drawing_object of this Body8.  # noqa: E501
+    def template(self):
+        """Gets the template of this Body8.  # noqa: E501
 
-        Drawing object parameters  # noqa: E501
+        File with template  # noqa: E501
 
-        :return: The drawing_object of this Body8.  # noqa: E501
+        :return: The template of this Body8.  # noqa: E501
         :rtype: str
         """
-        return self._drawing_object
+        return self._template
 
-    @drawing_object.setter
-    def drawing_object(self, drawing_object):
-        """Sets the drawing_object of this Body8.
+    @template.setter
+    def template(self, template):
+        """Sets the template of this Body8.
 
-        Drawing object parameters  # noqa: E501
+        File with template  # noqa: E501
 
-        :param drawing_object: The drawing_object of this Body8.  # noqa: E501
+        :param template: The template of this Body8.  # noqa: E501
         :type: str
         """
-        if drawing_object is None:
-            raise ValueError("Invalid value for `drawing_object`, must not be `None`")  # noqa: E501
-        self._drawing_object = drawing_object
+        if template is None:
+            raise ValueError("Invalid value for `template`, must not be `None`")  # noqa: E501
+        self._template = template
     @property
-    def image_file(self):
-        """Gets the image_file of this Body8.  # noqa: E501
+    def data(self):
+        """Gets the data of this Body8.  # noqa: E501
 
-        File with image  # noqa: E501
+        A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv  # noqa: E501
 
-        :return: The image_file of this Body8.  # noqa: E501
+        :return: The data of this Body8.  # noqa: E501
         :rtype: str
         """
-        return self._image_file
+        return self._data
 
-    @image_file.setter
-    def image_file(self, image_file):
-        """Sets the image_file of this Body8.
+    @data.setter
+    def data(self, data):
+        """Sets the data of this Body8.
 
-        File with image  # noqa: E501
+        A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv  # noqa: E501
 
-        :param image_file: The image_file of this Body8.  # noqa: E501
+        :param data: The data of this Body8.  # noqa: E501
         :type: str
         """
-        if image_file is None:
-            raise ValueError("Invalid value for `image_file`, must not be `None`")  # noqa: E501
-        self._image_file = image_file
+        if data is None:
+            raise ValueError("Invalid value for `data`, must not be `None`")  # noqa: E501
+        self._data = data
+    @property
+    def report_engine_settings(self):
+        """Gets the report_engine_settings of this Body8.  # noqa: E501
+
+        Gets or sets report_engine_settings.  # noqa: E501
+
+        :return: The report_engine_settings of this Body8.  # noqa: E501
+        :rtype: ReportEngineSettings
+        """
+        return self._report_engine_settings
+
+    @report_engine_settings.setter
+    def report_engine_settings(self, report_engine_settings):
+        """Sets the report_engine_settings of this Body8.
+
+        Gets or sets report_engine_settings.  # noqa: E501
+
+        :param report_engine_settings: The report_engine_settings of this Body8.  # noqa: E501
+        :type: ReportEngineSettings
+        """
+        if report_engine_settings is None:
+            raise ValueError("Invalid value for `report_engine_settings`, must not be `None`")  # noqa: E501
+        self._report_engine_settings = report_engine_settings
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

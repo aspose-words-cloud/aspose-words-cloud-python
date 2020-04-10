@@ -171,5 +171,7 @@ from asposewordscloud.models.requests.convert_document_request import ConvertDoc
 from asposewordscloud.models.requests.compare_document_request import CompareDocumentRequest
 from asposewordscloud.models.requests.classify_document_request import ClassifyDocumentRequest
 from asposewordscloud.models.requests.classify_request import ClassifyRequest
+from asposewordscloud.models.requests.build_report_online_request import BuildReportOnlineRequest
+from asposewordscloud.models.requests.build_report_request import BuildReportRequest
 from asposewordscloud.models.requests.append_document_request import AppendDocumentRequest
 from asposewordscloud.models.requests.accept_all_revisions_request import AcceptAllRevisionsRequest

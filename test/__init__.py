@@ -5,6 +5,7 @@ from test.DocumentActions.test_append_document import TestAppendDocument
 from test.DocumentActions.test_classification import TestClassification
 from test.DocumentActions.test_compare_document import TestCompareDocument
 from test.DocumentActions.test_convert_document import TestConvertDocument
+from test.DocumentActions.test_reporting import TestReporting
 from test.DocumentActions.test_document_protection import TestDocumentProtection
 from test.DocumentActions.test_document_statistics import TestDocumentStatistics
 from test.DocumentActions.test_execute_mail_merge import TestExecuteMailMerge

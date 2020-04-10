@@ -1,5 +1,5 @@
 # --------------------------------------------------------------------------------
-# <copyright company="Aspose" file="ExecuteMailMergeOnlineRequest.py">
+# <copyright company="Aspose" file="BuildReportOnlineRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -24,20 +24,18 @@
 # --------------------------------------------------------------------------------
 
 
-class ExecuteMailMergeOnlineRequest(object):
+class BuildReportOnlineRequest(object):
     """
-    Request model for execute_mail_merge_online operation.
+    Request model for build_report_online operation.
     Initializes a new instance.
     :param template File with template
-    :param data File with mailmerge data
-    :param with_regions With regions flag.
-    :param cleanup Clean up options.
-    :param document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+    :param data A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv
+    :param report_engine_settings An object providing a settings of report engine.
+    :param document_file_name This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead. 
     """
 
-    def __init__(self, template, data, with_regions=None, cleanup=None, document_file_name=None):
+    def __init__(self, template, data, report_engine_settings, document_file_name=None):
         self.template = template
         self.data = data
-        self.with_regions = with_regions
-        self.cleanup = cleanup
+        self.report_engine_settings = report_engine_settings
         self.document_file_name = document_file_name
