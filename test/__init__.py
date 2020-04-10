@@ -31,6 +31,7 @@ from test.DocumentElements.test_sections import TestSections
 from test.DocumentElements.test_tables import TestTables
 from test.DocumentElements.test_text import TestText
 from test.DocumentElements.test_watermarks import TestWatermarks
+from test.DocumentElements.test_lists import TestLists
 from test.Storage.test_file import TestFile
 from test.Storage.test_folder import TestFolder
 from test.Range.test_range import TestRange
