@@ -77,12 +77,12 @@ class ApiClient(object):
 
         self.pool = ThreadPool()
         self.rest_client = rest.RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '20.3'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '20.4'}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'python sdk 20.3'
+        self.user_agent = 'python sdk 20.4'
 
     def __del__(self):
         self.pool.close()
@@ -132,6 +132,9 @@ class ApiClient(object):
                     '{%s}' % k,
                     quote(str(v), safe=config.safe_chars_for_path_param)
                 )
+				
+        # remove optional path parameters
+        resource_path = resource_path.replace('//', '/')
 
         # query parameters
         if query_params:
@@ -591,8 +594,8 @@ class ApiClient(object):
         :return: datetime.
         """
         try:
-            from dateutil.parser import isoparse
-            return isoparse(string)
+            from dateutil.parser import parse
+            return parse(string)
         except ImportError:
             return string
         except ValueError:

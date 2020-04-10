@@ -170,7 +170,6 @@ class TestParagraphs(BaseTestContext):
     def test_get_paragraphs_without_node_path(self):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestGetDocumentParagraphsWithoutNodePath.docx'
-        node_path = 'sections/0'
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetParagraphsWithoutNodePathRequest(remote_name,

@@ -88,6 +88,8 @@ class EpubSaveOptionsData(object):
         'update_last_saved_time_property': 'bool',
         'update_sdt_content': 'bool',
         'update_fields': 'bool',
+        'dml3_d_effects_rendering_mode': 'str',
+        'update_last_printed_property': 'bool',
         'epub_navigation_map_level': 'int'
     }
 
@@ -139,10 +141,12 @@ class EpubSaveOptionsData(object):
         'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
         'update_sdt_content': 'UpdateSdtContent',
         'update_fields': 'UpdateFields',
+        'dml3_d_effects_rendering_mode': 'Dml3DEffectsRenderingMode',
+        'update_last_printed_property': 'UpdateLastPrintedProperty',
         'epub_navigation_map_level': 'EpubNavigationMapLevel'
     }
 
-    def __init__(self, allow_negative_indent=None, css_class_name_prefix=None, css_style_sheet_file_name=None, css_style_sheet_type=None, document_split_criteria=None, document_split_heading_level=None, encoding=None, export_document_properties=None, export_drop_down_form_field_as_text=None, export_font_resources=None, export_fonts_as_base64=None, export_headers_footers_mode=None, export_images_as_base64=None, export_language_information=None, export_list_labels=None, export_original_url_for_linked_images=None, export_page_margins=None, export_page_setup=None, export_relative_font_size=None, export_roundtrip_information=None, export_text_box_as_svg=None, export_text_input_form_field_as_text=None, export_toc_page_numbers=None, export_xhtml_transitional=None, font_resources_subsetting_size_threshold=None, fonts_folder=None, fonts_folder_alias=None, html_version=None, image_resolution=None, images_folder=None, images_folder_alias=None, metafile_format=None, office_math_output_mode=None, pretty_format=None, resolve_font_names=None, resource_folder=None, resource_folder_alias=None, scale_image_to_shape_size=None, table_width_output_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, epub_navigation_map_level=None):  # noqa: E501
+    def __init__(self, allow_negative_indent=None, css_class_name_prefix=None, css_style_sheet_file_name=None, css_style_sheet_type=None, document_split_criteria=None, document_split_heading_level=None, encoding=None, export_document_properties=None, export_drop_down_form_field_as_text=None, export_font_resources=None, export_fonts_as_base64=None, export_headers_footers_mode=None, export_images_as_base64=None, export_language_information=None, export_list_labels=None, export_original_url_for_linked_images=None, export_page_margins=None, export_page_setup=None, export_relative_font_size=None, export_roundtrip_information=None, export_text_box_as_svg=None, export_text_input_form_field_as_text=None, export_toc_page_numbers=None, export_xhtml_transitional=None, font_resources_subsetting_size_threshold=None, fonts_folder=None, fonts_folder_alias=None, html_version=None, image_resolution=None, images_folder=None, images_folder_alias=None, metafile_format=None, office_math_output_mode=None, pretty_format=None, resolve_font_names=None, resource_folder=None, resource_folder_alias=None, scale_image_to_shape_size=None, table_width_output_mode=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, dml3_d_effects_rendering_mode=None, update_last_printed_property=None, epub_navigation_map_level=None):  # noqa: E501
         """EpubSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_negative_indent = None
@@ -192,6 +196,8 @@ class EpubSaveOptionsData(object):
         self._update_last_saved_time_property = None
         self._update_sdt_content = None
         self._update_fields = None
+        self._dml3_d_effects_rendering_mode = None
+        self._update_last_printed_property = None
         self._epub_navigation_map_level = None
         self.discriminator = None
 
@@ -289,6 +295,10 @@ class EpubSaveOptionsData(object):
             self.update_sdt_content = update_sdt_content
         if update_fields is not None:
             self.update_fields = update_fields
+        if dml3_d_effects_rendering_mode is not None:
+            self.dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
+        if update_last_printed_property is not None:
+            self.update_last_printed_property = update_last_printed_property
         if epub_navigation_map_level is not None:
             self.epub_navigation_map_level = epub_navigation_map_level
 
@@ -1303,6 +1313,56 @@ class EpubSaveOptionsData(object):
         :type: bool
         """
         self._update_fields = update_fields
+    @property
+    def dml3_d_effects_rendering_mode(self):
+        """Gets the dml3_d_effects_rendering_mode of this EpubSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
+
+        :return: The dml3_d_effects_rendering_mode of this EpubSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._dml3_d_effects_rendering_mode
+
+    @dml3_d_effects_rendering_mode.setter
+    def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
+        """Sets the dml3_d_effects_rendering_mode of this EpubSaveOptionsData.
+
+        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
+
+        :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this EpubSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["Basic", "Advanced"]  # noqa: E501
+        if not dml3_d_effects_rendering_mode.isdigit():	
+            if dml3_d_effects_rendering_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `dml3_d_effects_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(dml3_d_effects_rendering_mode, allowed_values))
+            self._dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
+        else:
+            self._dml3_d_effects_rendering_mode = allowed_values[int(dml3_d_effects_rendering_mode) if six.PY3 else long(dml3_d_effects_rendering_mode)]
+    @property
+    def update_last_printed_property(self):
+        """Gets the update_last_printed_property of this EpubSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
+
+        :return: The update_last_printed_property of this EpubSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._update_last_printed_property
+
+    @update_last_printed_property.setter
+    def update_last_printed_property(self, update_last_printed_property):
+        """Sets the update_last_printed_property of this EpubSaveOptionsData.
+
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
+
+        :param update_last_printed_property: The update_last_printed_property of this EpubSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._update_last_printed_property = update_last_printed_property
     @property
     def epub_navigation_map_level(self):
         """Gets the epub_navigation_map_level of this EpubSaveOptionsData.  # noqa: E501
