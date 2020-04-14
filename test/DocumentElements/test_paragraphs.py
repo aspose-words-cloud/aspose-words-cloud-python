@@ -32,6 +32,7 @@ from test.base_test_context import BaseTestContext
 
 class TestParagraphs(BaseTestContext):
     test_folder = 'DocumentElements/Paragraphs'
+    test_list_folder = 'DocumentElements/ParagraphListFormat'
 
     #
     # Test for removing paragraph
@@ -301,3 +302,54 @@ class TestParagraphs(BaseTestContext):
                                                                                           self.test_folder))
         result = self.words_api.update_paragraph_format(request)
         self.assertIsNotNone(result, 'Error has occurred while update section page setup')
+
+    #
+    # Test for getting paragraph list format
+    #
+    def test_get_paragraph_list_format(self):
+        filename = 'ParagraphGetListFormat.doc'
+        index = 0
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_list_folder, filename), open(os.path.join(self.local_test_folder, self.test_list_folder, filename), 'rb'))
+        request = asposewordscloud.models.requests.GetParagraphListFormatRequest(filename, '', index, os.path.join(self.remote_test_folder,self.test_list_folder))
+        result = self.words_api.get_paragraph_list_format(request)
+        self.assertIsNotNone(result, 'Error has occurred while get document paragraph')
+
+    #
+    # Test for getting paragraph list format without node path
+    #
+    def test_get_paragraph_list_format(self):
+        filename = 'ParagraphGetListFormat.doc'
+        index = 0
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_list_folder, filename), open(os.path.join(self.local_test_folder, self.test_list_folder, filename), 'rb'))
+        request = asposewordscloud.models.requests.GetParagraphListFormatWithoutNodePathRequest(filename, index, os.path.join(self.remote_test_folder,self.test_list_folder))
+        result = self.words_api.get_paragraph_list_format_without_node_path(request)
+        self.assertIsNotNone(result, 'Error has occurred while get document paragraph')
+
+    #
+    # Test for updating paragraph list format
+    #
+    def test_update_paragraph_list_format(self):
+        filename = 'ParagraphUpdateListFormat.doc'
+        index = 0
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_list_folder, filename), open(os.path.join(self.local_test_folder, self.test_list_folder, filename), 'rb'))
+        dto = asposewordscloud.models.ListFormatUpdate();
+        dto.list_id = 2;
+
+        request = asposewordscloud.models.requests.UpdateParagraphListFormatRequest(filename, dto, '', index, os.path.join(self.remote_test_folder,self.test_list_folder))
+        result = self.words_api.update_paragraph_list_format(request)
+        self.assertIsNotNone(result, 'Error has occurred while get document paragraph')
+
+    #
+    # Test for deleting paragraph list format
+    #
+    def test_delete_paragraph_list_format(self):
+        filename = 'ParagraphDeleteListFormat.doc'
+        index = 0
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_list_folder, filename), open(os.path.join(self.local_test_folder, self.test_list_folder, filename), 'rb'))
+        request = asposewordscloud.models.requests.DeleteParagraphListFormatRequest(filename, '', index, os.path.join(self.remote_test_folder,self.test_list_folder))
+        result = self.words_api.delete_paragraph_list_format(request)
+        self.assertIsNotNone(result, 'Error has occurred while get document paragraph')

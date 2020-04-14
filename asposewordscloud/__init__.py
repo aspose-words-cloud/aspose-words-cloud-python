@@ -121,6 +121,8 @@ from asposewordscloud.models.image_save_options_data import ImageSaveOptionsData
 from asposewordscloud.models.jpeg_save_options_data import JpegSaveOptionsData
 from asposewordscloud.models.link import Link
 from asposewordscloud.models.link_element import LinkElement
+from asposewordscloud.models.list_format import ListFormat
+from asposewordscloud.models.list_format_update import ListFormatUpdate
 from asposewordscloud.models.list_info import ListInfo
 from asposewordscloud.models.list_insert import ListInsert
 from asposewordscloud.models.list_level import ListLevel
@@ -153,6 +155,7 @@ from asposewordscloud.models.paragraph_insert import ParagraphInsert
 from asposewordscloud.models.paragraph_link import ParagraphLink
 from asposewordscloud.models.paragraph_link_collection import ParagraphLinkCollection
 from asposewordscloud.models.paragraph_link_collection_response import ParagraphLinkCollectionResponse
+from asposewordscloud.models.paragraph_list_format_response import ParagraphListFormatResponse
 from asposewordscloud.models.paragraph_response import ParagraphResponse
 from asposewordscloud.models.pcl_save_options_data import PclSaveOptionsData
 from asposewordscloud.models.pdf_digital_signature_details_data import PdfDigitalSignatureDetailsData
