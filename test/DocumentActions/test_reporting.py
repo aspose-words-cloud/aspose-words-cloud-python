@@ -49,11 +49,11 @@ class TestReporting(BaseTestContext):
     # Test for saving document with specified format
     #
     def test_build_report(self):
-        remote_name = 'TestBuildReport.docx';
+        remote_name = 'TestBuildReport.docx'
         dataJson = open(os.path.join(self.local_test_folder, self.test_folder, 'ReportData.json'), 'r').read()
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, 'ReportTemplate.docx'), 'rb'))
 
         settings = '{DataSourceType: "Json", ReportBuildOptions: ["AllowMissingMembers", "RemoveEmptyParagraphs"]}'
-        request = asposewordscloud.models.requests.BuildReportRequest(remote_name, dataJson, settings)
+        request = asposewordscloud.models.requests.BuildReportRequest(remote_name, dataJson, settings, os.path.join(self.remote_test_folder, self.test_folder))
         self.words_api.build_report(request)
