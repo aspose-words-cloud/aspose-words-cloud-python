@@ -318,7 +318,7 @@ class TestParagraphs(BaseTestContext):
     #
     # Test for getting paragraph list format without node path
     #
-    def test_get_paragraph_list_format(self):
+    def test_get_paragraph_list_format_without_node_path(self):
         filename = 'ParagraphGetListFormat.doc'
         index = 0
 
