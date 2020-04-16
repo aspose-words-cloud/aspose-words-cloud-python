@@ -22,7 +22,7 @@ def runtests(dockerImageVersion)
             
                 stage('tests'){
                     try {
-                        sh "python -m xmlrunner discover -v -s ."
+                        sh "python -m xmlrunner discover -v -s --output-file testReport.xml ."
                     } 
 					finally {
                         junit '**\\testReport.xml'
