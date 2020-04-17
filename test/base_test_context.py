@@ -31,6 +31,7 @@ import unittest
 import warnings
 import asposewordscloud
 import six
+import xmlrunner
 
 
 class BaseTestContext(unittest.TestCase):
@@ -55,3 +56,9 @@ class BaseTestContext(unittest.TestCase):
         request = asposewordscloud.models.requests.UploadFileRequest(file, path)
         result = self.words_api.upload_file(request)
 
+
+if __name__ == '__main__':
+    with open('testReport.xml', 'wb') as output:
+        unittest.main(
+            testRunner=xmlrunner.XMLTestRunner(output=output),
+            failfast=False, buffer=False, catchbreak=False)

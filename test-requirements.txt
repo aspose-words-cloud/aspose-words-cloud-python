@@ -1,2 +1,3 @@
 pylint_junit
 nose
+unittest-xml-reporting
