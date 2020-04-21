@@ -35,3 +35,4 @@ from test.DocumentElements.test_lists import TestLists
 from test.Storage.test_file import TestFile
 from test.Storage.test_folder import TestFolder
 from test.Range.test_range import TestRange
+from test.DocumentElements.test_styles import TestStyles
