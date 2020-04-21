@@ -32,7 +32,7 @@ from test.base_test_context import BaseTestContext
 
 class TestStyles(BaseTestContext):
     test_folder = 'DocumentElements/Styles'
-    local_name = 'GetStyle.docx'
+    local_name = 'GetStyles.docx'
 
     def test_get_styles(self):
         remote_name = 'TestGetStyles.docx'
