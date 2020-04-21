@@ -30,7 +30,7 @@ import six
 
 
 class Style(object):
-    """Represents a single document list.
+    """Represents a single document style.
     """
 
     """
@@ -41,93 +41,140 @@ class Style(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'font': 'Font',
-        'built_in': 'bool',
-        'next_paragraph_style_name': 'str',
+        'link': 'WordsApiLink',
+        'aliases': 'list[str]',
         'base_style_name': 'str',
+        'built_in': 'bool',
+        'font': 'Font',
+        'is_heading': 'bool',
         'is_quick_style': 'bool',
         'linked_style_name': 'str',
-        'type': 'str',
-        'is_heading': 'bool',
-        'aliases': 'list[str]',
+        'name': 'str',
+        'next_paragraph_style_name': 'str',
         'style_identifier': 'str',
-        'name': 'str'
+        'type': 'str'
     }
 
     attribute_map = {
-        'font': 'Font',
-        'built_in': 'BuiltIn',
-        'next_paragraph_style_name': 'NextParagraphStyleName',
+        'link': 'link',
+        'aliases': 'Aliases',
         'base_style_name': 'BaseStyleName',
+        'built_in': 'BuiltIn',
+        'font': 'Font',
+        'is_heading': 'IsHeading',
         'is_quick_style': 'IsQuickStyle',
         'linked_style_name': 'LinkedStyleName',
-        'type': 'Type',
-        'is_heading': 'IsHeading',
-        'aliases': 'Aliases',
+        'name': 'Name',
+        'next_paragraph_style_name': 'NextParagraphStyleName',
         'style_identifier': 'StyleIdentifier',
-        'name': 'Name'
+        'type': 'Type'
     }
 
-    def __init__(self, font=None, built_in=None, next_paragraph_style_name=None, base_style_name=None, is_quick_style=None, linked_style_name=None, type=None, is_heading=None, aliases=None, style_identifier=None, name=None):  # noqa: E501
+    def __init__(self, link=None, aliases=None, base_style_name=None, built_in=None, font=None, is_heading=None, is_quick_style=None, linked_style_name=None, name=None, next_paragraph_style_name=None, style_identifier=None, type=None):  # noqa: E501
         """Style - a model defined in Swagger"""  # noqa: E501
 
-        self._font = None
-        self._built_in = None
-        self._next_paragraph_style_name = None
+        self._link = None
+        self._aliases = None
         self._base_style_name = None
+        self._built_in = None
+        self._font = None
+        self._is_heading = None
         self._is_quick_style = None
         self._linked_style_name = None
-        self._type = None
-        self._is_heading = None
-        self._aliases = None
-        self._style_identifier = None
         self._name = None
+        self._next_paragraph_style_name = None
+        self._style_identifier = None
+        self._type = None
         self.discriminator = None
 
-        if font is not None:
-            self.font = font
-        if built_in is not None:
-            self.built_in = built_in
-        if next_paragraph_style_name is not None:
-            self.next_paragraph_style_name = next_paragraph_style_name
+        if link is not None:
+            self.link = link
+        if aliases is not None:
+            self.aliases = aliases
         if base_style_name is not None:
             self.base_style_name = base_style_name
+        if built_in is not None:
+            self.built_in = built_in
+        if font is not None:
+            self.font = font
+        if is_heading is not None:
+            self.is_heading = is_heading
         if is_quick_style is not None:
             self.is_quick_style = is_quick_style
         if linked_style_name is not None:
             self.linked_style_name = linked_style_name
-        if type is not None:
-            self.type = type
-        if is_heading is not None:
-            self.is_heading = is_heading
-        if aliases is not None:
-            self.aliases = aliases
-        if style_identifier is not None:
-            self.style_identifier = style_identifier
         if name is not None:
             self.name = name
+        if next_paragraph_style_name is not None:
+            self.next_paragraph_style_name = next_paragraph_style_name
+        if style_identifier is not None:
+            self.style_identifier = style_identifier
+        if type is not None:
+            self.type = type
 
     @property
-    def font(self):
-        """Gets the font of this Style.  # noqa: E501
+    def link(self):
+        """Gets the link of this Style.  # noqa: E501
 
-        Gets or sets font.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
-        :return: The font of this Style.  # noqa: E501
-        :rtype: Font
+        :return: The link of this Style.  # noqa: E501
+        :rtype: WordsApiLink
         """
-        return self._font
+        return self._link
 
-    @font.setter
-    def font(self, font):
-        """Sets the font of this Style.
+    @link.setter
+    def link(self, link):
+        """Sets the link of this Style.
 
-        Gets or sets font.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
-        :param font: The font of this Style.  # noqa: E501
-        :type: Font
+        :param link: The link of this Style.  # noqa: E501
+        :type: WordsApiLink
         """
-        self._font = font
+        self._link = link
+    @property
+    def aliases(self):
+        """Gets the aliases of this Style.  # noqa: E501
+
+        Gets or sets all aliases of this style. If style has no aliases then empty array of string is returned.  # noqa: E501
+
+        :return: The aliases of this Style.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._aliases
+
+    @aliases.setter
+    def aliases(self, aliases):
+        """Sets the aliases of this Style.
+
+        Gets or sets all aliases of this style. If style has no aliases then empty array of string is returned.  # noqa: E501
+
+        :param aliases: The aliases of this Style.  # noqa: E501
+        :type: list[str]
+        """
+        self._aliases = aliases
+    @property
+    def base_style_name(self):
+        """Gets the base_style_name of this Style.  # noqa: E501
+
+        Gets or sets /sets the name of the style this style is based on.  # noqa: E501
+
+        :return: The base_style_name of this Style.  # noqa: E501
+        :rtype: str
+        """
+        return self._base_style_name
+
+    @base_style_name.setter
+    def base_style_name(self, base_style_name):
+        """Sets the base_style_name of this Style.
+
+        Gets or sets /sets the name of the style this style is based on.  # noqa: E501
+
+        :param base_style_name: The base_style_name of this Style.  # noqa: E501
+        :type: str
+        """
+        self._base_style_name = base_style_name
     @property
     def built_in(self):
         """Gets the built_in of this Style.  # noqa: E501
@@ -150,47 +197,47 @@ class Style(object):
         """
         self._built_in = built_in
     @property
-    def next_paragraph_style_name(self):
-        """Gets the next_paragraph_style_name of this Style.  # noqa: E501
+    def font(self):
+        """Gets the font of this Style.  # noqa: E501
 
-        Gets or sets /sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.  # noqa: E501
+        Gets or sets font.  # noqa: E501
 
-        :return: The next_paragraph_style_name of this Style.  # noqa: E501
-        :rtype: str
+        :return: The font of this Style.  # noqa: E501
+        :rtype: Font
         """
-        return self._next_paragraph_style_name
+        return self._font
 
-    @next_paragraph_style_name.setter
-    def next_paragraph_style_name(self, next_paragraph_style_name):
-        """Sets the next_paragraph_style_name of this Style.
+    @font.setter
+    def font(self, font):
+        """Sets the font of this Style.
 
-        Gets or sets /sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.  # noqa: E501
+        Gets or sets font.  # noqa: E501
 
-        :param next_paragraph_style_name: The next_paragraph_style_name of this Style.  # noqa: E501
-        :type: str
+        :param font: The font of this Style.  # noqa: E501
+        :type: Font
         """
-        self._next_paragraph_style_name = next_paragraph_style_name
+        self._font = font
     @property
-    def base_style_name(self):
-        """Gets the base_style_name of this Style.  # noqa: E501
+    def is_heading(self):
+        """Gets the is_heading of this Style.  # noqa: E501
 
-        Gets or sets /sets the name of the style this style is based on.  # noqa: E501
+        Gets or sets a value indicating whether true when the style is one of the built-in Heading styles.  # noqa: E501
 
-        :return: The base_style_name of this Style.  # noqa: E501
-        :rtype: str
+        :return: The is_heading of this Style.  # noqa: E501
+        :rtype: bool
         """
-        return self._base_style_name
+        return self._is_heading
 
-    @base_style_name.setter
-    def base_style_name(self, base_style_name):
-        """Sets the base_style_name of this Style.
+    @is_heading.setter
+    def is_heading(self, is_heading):
+        """Sets the is_heading of this Style.
 
-        Gets or sets /sets the name of the style this style is based on.  # noqa: E501
+        Gets or sets a value indicating whether true when the style is one of the built-in Heading styles.  # noqa: E501
 
-        :param base_style_name: The base_style_name of this Style.  # noqa: E501
-        :type: str
+        :param is_heading: The is_heading of this Style.  # noqa: E501
+        :type: bool
         """
-        self._base_style_name = base_style_name
+        self._is_heading = is_heading
     @property
     def is_quick_style(self):
         """Gets the is_quick_style of this Style.  # noqa: E501
@@ -234,76 +281,47 @@ class Style(object):
         """
         self._linked_style_name = linked_style_name
     @property
-    def type(self):
-        """Gets the type of this Style.  # noqa: E501
+    def name(self):
+        """Gets the name of this Style.  # noqa: E501
 
-        Gets or sets the style type (paragraph or character).  # noqa: E501
+        Gets or sets the name of the style.  # noqa: E501
 
-        :return: The type of this Style.  # noqa: E501
+        :return: The name of this Style.  # noqa: E501
         :rtype: str
         """
-        return self._type
+        return self._name
 
-    @type.setter
-    def type(self, type):
-        """Sets the type of this Style.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this Style.
 
-        Gets or sets the style type (paragraph or character).  # noqa: E501
+        Gets or sets the name of the style.  # noqa: E501
 
-        :param type: The type of this Style.  # noqa: E501
+        :param name: The name of this Style.  # noqa: E501
         :type: str
         """
-        allowed_values = ["Paragraph", "Character", "Table", "List"]  # noqa: E501
-        if not type.isdigit():	
-            if type not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
-                    .format(type, allowed_values))
-            self._type = type
-        else:
-            self._type = allowed_values[int(type) if six.PY3 else long(type)]
+        self._name = name
     @property
-    def is_heading(self):
-        """Gets the is_heading of this Style.  # noqa: E501
+    def next_paragraph_style_name(self):
+        """Gets the next_paragraph_style_name of this Style.  # noqa: E501
 
-        Gets or sets a value indicating whether true when the style is one of the built-in Heading styles.  # noqa: E501
+        Gets or sets /sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.  # noqa: E501
 
-        :return: The is_heading of this Style.  # noqa: E501
-        :rtype: bool
+        :return: The next_paragraph_style_name of this Style.  # noqa: E501
+        :rtype: str
         """
-        return self._is_heading
+        return self._next_paragraph_style_name
 
-    @is_heading.setter
-    def is_heading(self, is_heading):
-        """Sets the is_heading of this Style.
+    @next_paragraph_style_name.setter
+    def next_paragraph_style_name(self, next_paragraph_style_name):
+        """Sets the next_paragraph_style_name of this Style.
 
-        Gets or sets a value indicating whether true when the style is one of the built-in Heading styles.  # noqa: E501
+        Gets or sets /sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.  # noqa: E501
 
-        :param is_heading: The is_heading of this Style.  # noqa: E501
-        :type: bool
+        :param next_paragraph_style_name: The next_paragraph_style_name of this Style.  # noqa: E501
+        :type: str
         """
-        self._is_heading = is_heading
-    @property
-    def aliases(self):
-        """Gets the aliases of this Style.  # noqa: E501
-
-        Gets or sets all aliases of this style. If style has no aliases then empty array of string is returned.  # noqa: E501
-
-        :return: The aliases of this Style.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._aliases
-
-    @aliases.setter
-    def aliases(self, aliases):
-        """Sets the aliases of this Style.
-
-        Gets or sets all aliases of this style. If style has no aliases then empty array of string is returned.  # noqa: E501
-
-        :param aliases: The aliases of this Style.  # noqa: E501
-        :type: list[str]
-        """
-        self._aliases = aliases
+        self._next_paragraph_style_name = next_paragraph_style_name
     @property
     def style_identifier(self):
         """Gets the style_identifier of this Style.  # noqa: E501
@@ -334,26 +352,34 @@ class Style(object):
         else:
             self._style_identifier = allowed_values[int(style_identifier) if six.PY3 else long(style_identifier)]
     @property
-    def name(self):
-        """Gets the name of this Style.  # noqa: E501
+    def type(self):
+        """Gets the type of this Style.  # noqa: E501
 
-        Gets or sets the name of the style.  # noqa: E501
+        Gets or sets the style type (paragraph or character).  # noqa: E501
 
-        :return: The name of this Style.  # noqa: E501
+        :return: The type of this Style.  # noqa: E501
         :rtype: str
         """
-        return self._name
+        return self._type
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this Style.
+    @type.setter
+    def type(self, type):
+        """Sets the type of this Style.
 
-        Gets or sets the name of the style.  # noqa: E501
+        Gets or sets the style type (paragraph or character).  # noqa: E501
 
-        :param name: The name of this Style.  # noqa: E501
+        :param type: The type of this Style.  # noqa: E501
         :type: str
         """
-        self._name = name
+        allowed_values = ["Paragraph", "Character", "Table", "List"]  # noqa: E501
+        if not type.isdigit():	
+            if type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(type, allowed_values))
+            self._type = type
+        else:
+            self._type = allowed_values[int(type) if six.PY3 else long(type)]
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

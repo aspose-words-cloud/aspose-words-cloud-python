@@ -203,6 +203,12 @@ from asposewordscloud.models.storage_file import StorageFile
 from asposewordscloud.models.story_child_nodes import StoryChildNodes
 from asposewordscloud.models.string_format_data import StringFormatData
 from asposewordscloud.models.style import Style
+from asposewordscloud.models.style_copy import StyleCopy
+from asposewordscloud.models.style_insert import StyleInsert
+from asposewordscloud.models.style_response import StyleResponse
+from asposewordscloud.models.style_update import StyleUpdate
+from asposewordscloud.models.styles import Styles
+from asposewordscloud.models.styles_response import StylesResponse
 from asposewordscloud.models.svg_save_options_data import SvgSaveOptionsData
 from asposewordscloud.models.table import Table
 from asposewordscloud.models.table_cell import TableCell
