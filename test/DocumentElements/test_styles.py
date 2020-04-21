@@ -66,4 +66,4 @@ class TestStyles(BaseTestContext):
         self.upload_file(os.path.join(self.remote_test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, self.local_name), 'rb'))
         data = asposewordscloud.models.StyleCopy("Heading 1")
         request = asposewordscloud.models.requests.CopyStyleRequest(remote_name, data, self.remote_test_folder)
-        _ = self.words_api.insert_style(request)
+        _ = self.words_api.copy_style(request)
