@@ -41,22 +41,48 @@ class Lists(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'link': 'WordsApiLink',
         'list_info': 'list[ListInfo]'
     }
 
     attribute_map = {
+        'link': 'link',
         'list_info': 'ListInfo'
     }
 
-    def __init__(self, list_info=None):  # noqa: E501
+    def __init__(self, link=None, list_info=None):  # noqa: E501
         """Lists - a model defined in Swagger"""  # noqa: E501
 
+        self._link = None
         self._list_info = None
         self.discriminator = None
 
+        if link is not None:
+            self.link = link
         if list_info is not None:
             self.list_info = list_info
 
+    @property
+    def link(self):
+        """Gets the link of this Lists.  # noqa: E501
+
+        Gets or sets link.  # noqa: E501
+
+        :return: The link of this Lists.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this Lists.
+
+        Gets or sets link.  # noqa: E501
+
+        :param link: The link of this Lists.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def list_info(self):
         """Gets the list_info of this Lists.  # noqa: E501

@@ -183,7 +183,7 @@ Method | HTTP request | Description
 [**update_form_field**](WordsApi.md#update_form_field) | **PUT** /words/{name}/{nodePath}/formfields/{index} | Updates properties of form field, returns updated form field.
 [**update_form_field_without_node_path**](WordsApi.md#update_form_field_without_node_path) | **PUT** /words/{name}/formfields/{index} | Updates properties of form field, returns updated form field.
 [**update_list**](WordsApi.md#update_list) | **PUT** /words/{name}/lists/{listId} | Updates list properties, returns updated list.
-[**update_list_level**](WordsApi.md#update_list_level) | **PUT** /words/{name}/lists/{listId}/{listLevel} | Updates list level in document list, returns updated list.
+[**update_list_level**](WordsApi.md#update_list_level) | **PUT** /words/{name}/lists/{listId}/listLevels/{listLevel} | Updates list level in document list, returns updated list.
 [**update_paragraph_format**](WordsApi.md#update_paragraph_format) | **PUT** /words/{name}/{nodePath}/paragraphs/{index}/format | Updates paragraph format properties, returns updated format properties.
 [**update_paragraph_list_format**](WordsApi.md#update_paragraph_list_format) | **PUT** /words/{name}/{nodePath}/paragraphs/{index}/listFormat | Updates paragraph list format properties, returns updated list format properties.
 [**update_run**](WordsApi.md#update_run) | **PUT** /words/{name}/{paragraphPath}/runs/{index} | Updates run&#x27;s properties, returns updated run&#x27;s data.

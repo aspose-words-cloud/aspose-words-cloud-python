@@ -41,148 +41,103 @@ class ListLevel(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'start_at': 'int',
-        'number_style': 'str',
-        'number_format': 'str',
+        'link': 'WordsApiLink',
         'alignment': 'str',
-        'is_legal': 'bool',
-        'restart_after_level': 'int',
-        'trailing_character': 'str',
         'font': 'Font',
-        'tab_position': 'float',
+        'is_legal': 'bool',
+        'linked_style': 'Style',
+        'number_format': 'str',
         'number_position': 'float',
+        'number_style': 'str',
+        'restart_after_level': 'int',
+        'start_at': 'int',
+        'tab_position': 'float',
         'text_position': 'float',
-        'linked_style': 'Style'
+        'trailing_character': 'str'
     }
 
     attribute_map = {
-        'start_at': 'StartAt',
-        'number_style': 'NumberStyle',
-        'number_format': 'NumberFormat',
+        'link': 'link',
         'alignment': 'Alignment',
-        'is_legal': 'IsLegal',
-        'restart_after_level': 'RestartAfterLevel',
-        'trailing_character': 'TrailingCharacter',
         'font': 'Font',
-        'tab_position': 'TabPosition',
+        'is_legal': 'IsLegal',
+        'linked_style': 'LinkedStyle',
+        'number_format': 'NumberFormat',
         'number_position': 'NumberPosition',
+        'number_style': 'NumberStyle',
+        'restart_after_level': 'RestartAfterLevel',
+        'start_at': 'StartAt',
+        'tab_position': 'TabPosition',
         'text_position': 'TextPosition',
-        'linked_style': 'LinkedStyle'
+        'trailing_character': 'TrailingCharacter'
     }
 
-    def __init__(self, start_at=None, number_style=None, number_format=None, alignment=None, is_legal=None, restart_after_level=None, trailing_character=None, font=None, tab_position=None, number_position=None, text_position=None, linked_style=None):  # noqa: E501
+    def __init__(self, link=None, alignment=None, font=None, is_legal=None, linked_style=None, number_format=None, number_position=None, number_style=None, restart_after_level=None, start_at=None, tab_position=None, text_position=None, trailing_character=None):  # noqa: E501
         """ListLevel - a model defined in Swagger"""  # noqa: E501
 
-        self._start_at = None
-        self._number_style = None
-        self._number_format = None
+        self._link = None
         self._alignment = None
-        self._is_legal = None
-        self._restart_after_level = None
-        self._trailing_character = None
         self._font = None
-        self._tab_position = None
-        self._number_position = None
-        self._text_position = None
+        self._is_legal = None
         self._linked_style = None
+        self._number_format = None
+        self._number_position = None
+        self._number_style = None
+        self._restart_after_level = None
+        self._start_at = None
+        self._tab_position = None
+        self._text_position = None
+        self._trailing_character = None
         self.discriminator = None
 
-        if start_at is not None:
-            self.start_at = start_at
-        if number_style is not None:
-            self.number_style = number_style
-        if number_format is not None:
-            self.number_format = number_format
+        if link is not None:
+            self.link = link
         if alignment is not None:
             self.alignment = alignment
-        if is_legal is not None:
-            self.is_legal = is_legal
-        if restart_after_level is not None:
-            self.restart_after_level = restart_after_level
-        if trailing_character is not None:
-            self.trailing_character = trailing_character
         if font is not None:
             self.font = font
-        if tab_position is not None:
-            self.tab_position = tab_position
-        if number_position is not None:
-            self.number_position = number_position
-        if text_position is not None:
-            self.text_position = text_position
+        if is_legal is not None:
+            self.is_legal = is_legal
         if linked_style is not None:
             self.linked_style = linked_style
+        if number_format is not None:
+            self.number_format = number_format
+        if number_position is not None:
+            self.number_position = number_position
+        if number_style is not None:
+            self.number_style = number_style
+        if restart_after_level is not None:
+            self.restart_after_level = restart_after_level
+        if start_at is not None:
+            self.start_at = start_at
+        if tab_position is not None:
+            self.tab_position = tab_position
+        if text_position is not None:
+            self.text_position = text_position
+        if trailing_character is not None:
+            self.trailing_character = trailing_character
 
     @property
-    def start_at(self):
-        """Gets the start_at of this ListLevel.  # noqa: E501
+    def link(self):
+        """Gets the link of this ListLevel.  # noqa: E501
 
-        Gets or sets returns or sets the starting number for this list level.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
-        :return: The start_at of this ListLevel.  # noqa: E501
-        :rtype: int
+        :return: The link of this ListLevel.  # noqa: E501
+        :rtype: WordsApiLink
         """
-        return self._start_at
+        return self._link
 
-    @start_at.setter
-    def start_at(self, start_at):
-        """Sets the start_at of this ListLevel.
+    @link.setter
+    def link(self, link):
+        """Sets the link of this ListLevel.
 
-        Gets or sets returns or sets the starting number for this list level.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
-        :param start_at: The start_at of this ListLevel.  # noqa: E501
-        :type: int
+        :param link: The link of this ListLevel.  # noqa: E501
+        :type: WordsApiLink
         """
-        self._start_at = start_at
-    @property
-    def number_style(self):
-        """Gets the number_style of this ListLevel.  # noqa: E501
-
-        Gets or sets returns or sets the number style for this list level.  # noqa: E501
-
-        :return: The number_style of this ListLevel.  # noqa: E501
-        :rtype: str
-        """
-        return self._number_style
-
-    @number_style.setter
-    def number_style(self, number_style):
-        """Sets the number_style of this ListLevel.
-
-        Gets or sets returns or sets the number style for this list level.  # noqa: E501
-
-        :param number_style: The number_style of this ListLevel.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["Arabic", "UppercaseRoman", "LowercaseRoman", "UppercaseLetter", "LowercaseLetter", "Ordinal", "Number", "OrdinalText", "Hex", "ChicagoManual", "Kanji", "KanjiDigit", "AiueoHalfWidth", "IrohaHalfWidth", "ArabicFullWidth", "ArabicHalfWidth", "KanjiTraditional", "KanjiTraditional2", "NumberInCircle", "DecimalFullWidth", "Aiueo", "Iroha", "LeadingZero", "Bullet", "Ganada", "Chosung", "GB1", "GB2", "GB3", "GB4", "Zodiac1", "Zodiac2", "Zodiac3", "TradChinNum1", "TradChinNum2", "TradChinNum3", "TradChinNum4", "SimpChinNum1", "SimpChinNum2", "SimpChinNum3", "SimpChinNum4", "HanjaRead", "HanjaReadDigit", "Hangul", "Hanja", "Hebrew1", "Arabic1", "Hebrew2", "Arabic2", "HindiLetter1", "HindiLetter2", "HindiArabic", "HindiCardinalText", "ThaiLetter", "ThaiArabic", "ThaiCardinalText", "VietCardinalText", "NumberInDash", "LowercaseRussian", "UppercaseRussian", "None", "Custom"]  # noqa: E501
-        if not number_style.isdigit():	
-            if number_style not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `number_style` ({0}), must be one of {1}"  # noqa: E501
-                    .format(number_style, allowed_values))
-            self._number_style = number_style
-        else:
-            self._number_style = allowed_values[int(number_style) if six.PY3 else long(number_style)]
-    @property
-    def number_format(self):
-        """Gets the number_format of this ListLevel.  # noqa: E501
-
-        Gets or sets returns or sets the number format for the list level.  # noqa: E501
-
-        :return: The number_format of this ListLevel.  # noqa: E501
-        :rtype: str
-        """
-        return self._number_format
-
-    @number_format.setter
-    def number_format(self, number_format):
-        """Sets the number_format of this ListLevel.
-
-        Gets or sets returns or sets the number format for the list level.  # noqa: E501
-
-        :param number_format: The number_format of this ListLevel.  # noqa: E501
-        :type: str
-        """
-        self._number_format = number_format
+        self._link = link
     @property
     def alignment(self):
         """Gets the alignment of this ListLevel.  # noqa: E501
@@ -213,6 +168,27 @@ class ListLevel(object):
         else:
             self._alignment = allowed_values[int(alignment) if six.PY3 else long(alignment)]
     @property
+    def font(self):
+        """Gets the font of this ListLevel.  # noqa: E501
+
+        Gets or sets font.  # noqa: E501
+
+        :return: The font of this ListLevel.  # noqa: E501
+        :rtype: Font
+        """
+        return self._font
+
+    @font.setter
+    def font(self, font):
+        """Sets the font of this ListLevel.
+
+        Gets or sets font.  # noqa: E501
+
+        :param font: The font of this ListLevel.  # noqa: E501
+        :type: Font
+        """
+        self._font = font
+    @property
     def is_legal(self):
         """Gets the is_legal of this ListLevel.  # noqa: E501
 
@@ -234,6 +210,98 @@ class ListLevel(object):
         """
         self._is_legal = is_legal
     @property
+    def linked_style(self):
+        """Gets the linked_style of this ListLevel.  # noqa: E501
+
+        Gets or sets linked_style.  # noqa: E501
+
+        :return: The linked_style of this ListLevel.  # noqa: E501
+        :rtype: Style
+        """
+        return self._linked_style
+
+    @linked_style.setter
+    def linked_style(self, linked_style):
+        """Sets the linked_style of this ListLevel.
+
+        Gets or sets linked_style.  # noqa: E501
+
+        :param linked_style: The linked_style of this ListLevel.  # noqa: E501
+        :type: Style
+        """
+        self._linked_style = linked_style
+    @property
+    def number_format(self):
+        """Gets the number_format of this ListLevel.  # noqa: E501
+
+        Gets or sets returns or sets the number format for the list level.  # noqa: E501
+
+        :return: The number_format of this ListLevel.  # noqa: E501
+        :rtype: str
+        """
+        return self._number_format
+
+    @number_format.setter
+    def number_format(self, number_format):
+        """Sets the number_format of this ListLevel.
+
+        Gets or sets returns or sets the number format for the list level.  # noqa: E501
+
+        :param number_format: The number_format of this ListLevel.  # noqa: E501
+        :type: str
+        """
+        self._number_format = number_format
+    @property
+    def number_position(self):
+        """Gets the number_position of this ListLevel.  # noqa: E501
+
+        Gets or sets returns or sets the position (in points) of the number or bullet for the list level.  # noqa: E501
+
+        :return: The number_position of this ListLevel.  # noqa: E501
+        :rtype: float
+        """
+        return self._number_position
+
+    @number_position.setter
+    def number_position(self, number_position):
+        """Sets the number_position of this ListLevel.
+
+        Gets or sets returns or sets the position (in points) of the number or bullet for the list level.  # noqa: E501
+
+        :param number_position: The number_position of this ListLevel.  # noqa: E501
+        :type: float
+        """
+        self._number_position = number_position
+    @property
+    def number_style(self):
+        """Gets the number_style of this ListLevel.  # noqa: E501
+
+        Gets or sets returns or sets the number style for this list level.  # noqa: E501
+
+        :return: The number_style of this ListLevel.  # noqa: E501
+        :rtype: str
+        """
+        return self._number_style
+
+    @number_style.setter
+    def number_style(self, number_style):
+        """Sets the number_style of this ListLevel.
+
+        Gets or sets returns or sets the number style for this list level.  # noqa: E501
+
+        :param number_style: The number_style of this ListLevel.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["Arabic", "UppercaseRoman", "LowercaseRoman", "UppercaseLetter", "LowercaseLetter", "Ordinal", "Number", "OrdinalText", "Hex", "ChicagoManual", "Kanji", "KanjiDigit", "AiueoHalfWidth", "IrohaHalfWidth", "ArabicFullWidth", "ArabicHalfWidth", "KanjiTraditional", "KanjiTraditional2", "NumberInCircle", "DecimalFullWidth", "Aiueo", "Iroha", "LeadingZero", "Bullet", "Ganada", "Chosung", "GB1", "GB2", "GB3", "GB4", "Zodiac1", "Zodiac2", "Zodiac3", "TradChinNum1", "TradChinNum2", "TradChinNum3", "TradChinNum4", "SimpChinNum1", "SimpChinNum2", "SimpChinNum3", "SimpChinNum4", "HanjaRead", "HanjaReadDigit", "Hangul", "Hanja", "Hebrew1", "Arabic1", "Hebrew2", "Arabic2", "HindiLetter1", "HindiLetter2", "HindiArabic", "HindiCardinalText", "ThaiLetter", "ThaiArabic", "ThaiCardinalText", "VietCardinalText", "NumberInDash", "LowercaseRussian", "UppercaseRussian", "None", "Custom"]  # noqa: E501
+        if not number_style.isdigit():	
+            if number_style not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `number_style` ({0}), must be one of {1}"  # noqa: E501
+                    .format(number_style, allowed_values))
+            self._number_style = number_style
+        else:
+            self._number_style = allowed_values[int(number_style) if six.PY3 else long(number_style)]
+    @property
     def restart_after_level(self):
         """Gets the restart_after_level of this ListLevel.  # noqa: E501
 
@@ -254,6 +322,69 @@ class ListLevel(object):
         :type: int
         """
         self._restart_after_level = restart_after_level
+    @property
+    def start_at(self):
+        """Gets the start_at of this ListLevel.  # noqa: E501
+
+        Gets or sets returns or sets the starting number for this list level.  # noqa: E501
+
+        :return: The start_at of this ListLevel.  # noqa: E501
+        :rtype: int
+        """
+        return self._start_at
+
+    @start_at.setter
+    def start_at(self, start_at):
+        """Sets the start_at of this ListLevel.
+
+        Gets or sets returns or sets the starting number for this list level.  # noqa: E501
+
+        :param start_at: The start_at of this ListLevel.  # noqa: E501
+        :type: int
+        """
+        self._start_at = start_at
+    @property
+    def tab_position(self):
+        """Gets the tab_position of this ListLevel.  # noqa: E501
+
+        Gets or sets returns or sets the tab position (in points) for the list level.  # noqa: E501
+
+        :return: The tab_position of this ListLevel.  # noqa: E501
+        :rtype: float
+        """
+        return self._tab_position
+
+    @tab_position.setter
+    def tab_position(self, tab_position):
+        """Sets the tab_position of this ListLevel.
+
+        Gets or sets returns or sets the tab position (in points) for the list level.  # noqa: E501
+
+        :param tab_position: The tab_position of this ListLevel.  # noqa: E501
+        :type: float
+        """
+        self._tab_position = tab_position
+    @property
+    def text_position(self):
+        """Gets the text_position of this ListLevel.  # noqa: E501
+
+        Gets or sets returns or sets the position (in points) for the second line of wrapping text for the list level.  # noqa: E501
+
+        :return: The text_position of this ListLevel.  # noqa: E501
+        :rtype: float
+        """
+        return self._text_position
+
+    @text_position.setter
+    def text_position(self, text_position):
+        """Sets the text_position of this ListLevel.
+
+        Gets or sets returns or sets the position (in points) for the second line of wrapping text for the list level.  # noqa: E501
+
+        :param text_position: The text_position of this ListLevel.  # noqa: E501
+        :type: float
+        """
+        self._text_position = text_position
     @property
     def trailing_character(self):
         """Gets the trailing_character of this ListLevel.  # noqa: E501
@@ -283,111 +414,6 @@ class ListLevel(object):
             self._trailing_character = trailing_character
         else:
             self._trailing_character = allowed_values[int(trailing_character) if six.PY3 else long(trailing_character)]
-    @property
-    def font(self):
-        """Gets the font of this ListLevel.  # noqa: E501
-
-        Gets or sets font.  # noqa: E501
-
-        :return: The font of this ListLevel.  # noqa: E501
-        :rtype: Font
-        """
-        return self._font
-
-    @font.setter
-    def font(self, font):
-        """Sets the font of this ListLevel.
-
-        Gets or sets font.  # noqa: E501
-
-        :param font: The font of this ListLevel.  # noqa: E501
-        :type: Font
-        """
-        self._font = font
-    @property
-    def tab_position(self):
-        """Gets the tab_position of this ListLevel.  # noqa: E501
-
-        Gets or sets returns or sets the tab position (in points) for the list level.  # noqa: E501
-
-        :return: The tab_position of this ListLevel.  # noqa: E501
-        :rtype: float
-        """
-        return self._tab_position
-
-    @tab_position.setter
-    def tab_position(self, tab_position):
-        """Sets the tab_position of this ListLevel.
-
-        Gets or sets returns or sets the tab position (in points) for the list level.  # noqa: E501
-
-        :param tab_position: The tab_position of this ListLevel.  # noqa: E501
-        :type: float
-        """
-        self._tab_position = tab_position
-    @property
-    def number_position(self):
-        """Gets the number_position of this ListLevel.  # noqa: E501
-
-        Gets or sets returns or sets the position (in points) of the number or bullet for the list level.  # noqa: E501
-
-        :return: The number_position of this ListLevel.  # noqa: E501
-        :rtype: float
-        """
-        return self._number_position
-
-    @number_position.setter
-    def number_position(self, number_position):
-        """Sets the number_position of this ListLevel.
-
-        Gets or sets returns or sets the position (in points) of the number or bullet for the list level.  # noqa: E501
-
-        :param number_position: The number_position of this ListLevel.  # noqa: E501
-        :type: float
-        """
-        self._number_position = number_position
-    @property
-    def text_position(self):
-        """Gets the text_position of this ListLevel.  # noqa: E501
-
-        Gets or sets returns or sets the position (in points) for the second line of wrapping text for the list level.  # noqa: E501
-
-        :return: The text_position of this ListLevel.  # noqa: E501
-        :rtype: float
-        """
-        return self._text_position
-
-    @text_position.setter
-    def text_position(self, text_position):
-        """Sets the text_position of this ListLevel.
-
-        Gets or sets returns or sets the position (in points) for the second line of wrapping text for the list level.  # noqa: E501
-
-        :param text_position: The text_position of this ListLevel.  # noqa: E501
-        :type: float
-        """
-        self._text_position = text_position
-    @property
-    def linked_style(self):
-        """Gets the linked_style of this ListLevel.  # noqa: E501
-
-        Gets or sets linked_style.  # noqa: E501
-
-        :return: The linked_style of this ListLevel.  # noqa: E501
-        :rtype: Style
-        """
-        return self._linked_style
-
-    @linked_style.setter
-    def linked_style(self, linked_style):
-        """Sets the linked_style of this ListLevel.
-
-        Gets or sets linked_style.  # noqa: E501
-
-        :param linked_style: The linked_style of this ListLevel.  # noqa: E501
-        :type: Style
-        """
-        self._linked_style = linked_style
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

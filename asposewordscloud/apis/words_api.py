@@ -24162,7 +24162,7 @@ class WordsApi(object):
             raise ValueError("Missing the required parameter `list_level` when calling `update_list_level`")  # noqa: E501
 
         collection_formats = {}
-        path = '/v4.0/words/{name}/lists/{listId}/{listLevel}'
+        path = '/v4.0/words/{name}/lists/{listId}/listLevels/{listLevel}'
         path_params = {}
         if request.name is not None:
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501

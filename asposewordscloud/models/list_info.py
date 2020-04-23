@@ -41,115 +41,78 @@ class ListInfo(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'list_id': 'int',
-        'is_multi_level': 'bool',
-        'is_restart_at_each_section': 'bool',
+        'link': 'WordsApiLink',
         'is_list_style_definition': 'bool',
         'is_list_style_reference': 'bool',
-        'style': 'Style',
-        'list_levels': 'ListLevels'
+        'is_multi_level': 'bool',
+        'is_restart_at_each_section': 'bool',
+        'list_id': 'int',
+        'list_levels': 'ListLevels',
+        'style': 'Style'
     }
 
     attribute_map = {
-        'list_id': 'ListId',
-        'is_multi_level': 'IsMultiLevel',
-        'is_restart_at_each_section': 'IsRestartAtEachSection',
+        'link': 'link',
         'is_list_style_definition': 'IsListStyleDefinition',
         'is_list_style_reference': 'IsListStyleReference',
-        'style': 'Style',
-        'list_levels': 'ListLevels'
+        'is_multi_level': 'IsMultiLevel',
+        'is_restart_at_each_section': 'IsRestartAtEachSection',
+        'list_id': 'ListId',
+        'list_levels': 'ListLevels',
+        'style': 'Style'
     }
 
-    def __init__(self, list_id=None, is_multi_level=None, is_restart_at_each_section=None, is_list_style_definition=None, is_list_style_reference=None, style=None, list_levels=None):  # noqa: E501
+    def __init__(self, link=None, is_list_style_definition=None, is_list_style_reference=None, is_multi_level=None, is_restart_at_each_section=None, list_id=None, list_levels=None, style=None):  # noqa: E501
         """ListInfo - a model defined in Swagger"""  # noqa: E501
 
-        self._list_id = None
-        self._is_multi_level = None
-        self._is_restart_at_each_section = None
+        self._link = None
         self._is_list_style_definition = None
         self._is_list_style_reference = None
-        self._style = None
+        self._is_multi_level = None
+        self._is_restart_at_each_section = None
+        self._list_id = None
         self._list_levels = None
+        self._style = None
         self.discriminator = None
 
-        if list_id is not None:
-            self.list_id = list_id
-        if is_multi_level is not None:
-            self.is_multi_level = is_multi_level
-        if is_restart_at_each_section is not None:
-            self.is_restart_at_each_section = is_restart_at_each_section
+        if link is not None:
+            self.link = link
         if is_list_style_definition is not None:
             self.is_list_style_definition = is_list_style_definition
         if is_list_style_reference is not None:
             self.is_list_style_reference = is_list_style_reference
-        if style is not None:
-            self.style = style
+        if is_multi_level is not None:
+            self.is_multi_level = is_multi_level
+        if is_restart_at_each_section is not None:
+            self.is_restart_at_each_section = is_restart_at_each_section
+        if list_id is not None:
+            self.list_id = list_id
         if list_levels is not None:
             self.list_levels = list_levels
+        if style is not None:
+            self.style = style
 
     @property
-    def list_id(self):
-        """Gets the list_id of this ListInfo.  # noqa: E501
+    def link(self):
+        """Gets the link of this ListInfo.  # noqa: E501
 
-        Gets or sets the unique identifier of the list.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
-        :return: The list_id of this ListInfo.  # noqa: E501
-        :rtype: int
+        :return: The link of this ListInfo.  # noqa: E501
+        :rtype: WordsApiLink
         """
-        return self._list_id
+        return self._link
 
-    @list_id.setter
-    def list_id(self, list_id):
-        """Sets the list_id of this ListInfo.
+    @link.setter
+    def link(self, link):
+        """Sets the link of this ListInfo.
 
-        Gets or sets the unique identifier of the list.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
-        :param list_id: The list_id of this ListInfo.  # noqa: E501
-        :type: int
+        :param link: The link of this ListInfo.  # noqa: E501
+        :type: WordsApiLink
         """
-        self._list_id = list_id
-    @property
-    def is_multi_level(self):
-        """Gets the is_multi_level of this ListInfo.  # noqa: E501
-
-        Gets or sets a value indicating whether returns true when the list contains 9 levels; false when 1 level.  # noqa: E501
-
-        :return: The is_multi_level of this ListInfo.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_multi_level
-
-    @is_multi_level.setter
-    def is_multi_level(self, is_multi_level):
-        """Sets the is_multi_level of this ListInfo.
-
-        Gets or sets a value indicating whether returns true when the list contains 9 levels; false when 1 level.  # noqa: E501
-
-        :param is_multi_level: The is_multi_level of this ListInfo.  # noqa: E501
-        :type: bool
-        """
-        self._is_multi_level = is_multi_level
-    @property
-    def is_restart_at_each_section(self):
-        """Gets the is_restart_at_each_section of this ListInfo.  # noqa: E501
-
-        Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.  # noqa: E501
-
-        :return: The is_restart_at_each_section of this ListInfo.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_restart_at_each_section
-
-    @is_restart_at_each_section.setter
-    def is_restart_at_each_section(self, is_restart_at_each_section):
-        """Sets the is_restart_at_each_section of this ListInfo.
-
-        Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.  # noqa: E501
-
-        :param is_restart_at_each_section: The is_restart_at_each_section of this ListInfo.  # noqa: E501
-        :type: bool
-        """
-        self._is_restart_at_each_section = is_restart_at_each_section
+        self._link = link
     @property
     def is_list_style_definition(self):
         """Gets the is_list_style_definition of this ListInfo.  # noqa: E501
@@ -193,26 +156,68 @@ class ListInfo(object):
         """
         self._is_list_style_reference = is_list_style_reference
     @property
-    def style(self):
-        """Gets the style of this ListInfo.  # noqa: E501
+    def is_multi_level(self):
+        """Gets the is_multi_level of this ListInfo.  # noqa: E501
 
-        Gets or sets style.  # noqa: E501
+        Gets or sets a value indicating whether returns true when the list contains 9 levels; false when 1 level.  # noqa: E501
 
-        :return: The style of this ListInfo.  # noqa: E501
-        :rtype: Style
+        :return: The is_multi_level of this ListInfo.  # noqa: E501
+        :rtype: bool
         """
-        return self._style
+        return self._is_multi_level
 
-    @style.setter
-    def style(self, style):
-        """Sets the style of this ListInfo.
+    @is_multi_level.setter
+    def is_multi_level(self, is_multi_level):
+        """Sets the is_multi_level of this ListInfo.
 
-        Gets or sets style.  # noqa: E501
+        Gets or sets a value indicating whether returns true when the list contains 9 levels; false when 1 level.  # noqa: E501
 
-        :param style: The style of this ListInfo.  # noqa: E501
-        :type: Style
+        :param is_multi_level: The is_multi_level of this ListInfo.  # noqa: E501
+        :type: bool
         """
-        self._style = style
+        self._is_multi_level = is_multi_level
+    @property
+    def is_restart_at_each_section(self):
+        """Gets the is_restart_at_each_section of this ListInfo.  # noqa: E501
+
+        Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.  # noqa: E501
+
+        :return: The is_restart_at_each_section of this ListInfo.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_restart_at_each_section
+
+    @is_restart_at_each_section.setter
+    def is_restart_at_each_section(self, is_restart_at_each_section):
+        """Sets the is_restart_at_each_section of this ListInfo.
+
+        Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.  # noqa: E501
+
+        :param is_restart_at_each_section: The is_restart_at_each_section of this ListInfo.  # noqa: E501
+        :type: bool
+        """
+        self._is_restart_at_each_section = is_restart_at_each_section
+    @property
+    def list_id(self):
+        """Gets the list_id of this ListInfo.  # noqa: E501
+
+        Gets or sets the unique identifier of the list.  # noqa: E501
+
+        :return: The list_id of this ListInfo.  # noqa: E501
+        :rtype: int
+        """
+        return self._list_id
+
+    @list_id.setter
+    def list_id(self, list_id):
+        """Sets the list_id of this ListInfo.
+
+        Gets or sets the unique identifier of the list.  # noqa: E501
+
+        :param list_id: The list_id of this ListInfo.  # noqa: E501
+        :type: int
+        """
+        self._list_id = list_id
     @property
     def list_levels(self):
         """Gets the list_levels of this ListInfo.  # noqa: E501
@@ -234,6 +239,27 @@ class ListInfo(object):
         :type: ListLevels
         """
         self._list_levels = list_levels
+    @property
+    def style(self):
+        """Gets the style of this ListInfo.  # noqa: E501
+
+        Gets or sets style.  # noqa: E501
+
+        :return: The style of this ListInfo.  # noqa: E501
+        :rtype: Style
+        """
+        return self._style
+
+    @style.setter
+    def style(self, style):
+        """Sets the style of this ListInfo.
+
+        Gets or sets style.  # noqa: E501
+
+        :param style: The style of this ListInfo.  # noqa: E501
+        :type: Style
+        """
+        self._style = style
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
