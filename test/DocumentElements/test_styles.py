@@ -78,6 +78,6 @@ class TestStyles(BaseTestContext):
         remote_name = 'TestApplyStyleToDocumentElement.docx'
         self.upload_file(os.path.join(self.remote_test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, self.local_name), 'rb'))
         data = asposewordscloud.models.StyleApply("Heading 1")
-        request = asposewordscloud.models.requests.ApplyStyleToDocmentElementRequest(remote_name, data, "paragraphs/1/paragraphFormat", self.remote_test_folder)
-        _ = self.words_api.apply_style_to_docment_element(request)
+        request = asposewordscloud.models.requests.ApplyStyleToDocumentElementRequest(remote_name, data, "paragraphs/1/paragraphFormat", self.remote_test_folder)
+        _ = self.words_api.apply_style_to_document_element(request)
 

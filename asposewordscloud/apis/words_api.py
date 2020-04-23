@@ -322,7 +322,7 @@ class WordsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def apply_style_to_docment_element(self, request, **kwargs):  # noqa: E501
+    def apply_style_to_document_element(self, request, **kwargs):  # noqa: E501
         """Apply style to document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -346,25 +346,25 @@ class WordsApi(object):
         kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
-                return self.apply_style_to_docment_element_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.apply_style_to_docment_element_with_http_info(request, **kwargs)  # noqa: E501
+                return self.apply_style_to_document_element_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.apply_style_to_document_element_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.__request_token()
                 if kwargs.get('is_async'):
-                    return self.apply_style_to_docment_element_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.apply_style_to_docment_element_with_http_info(request, **kwargs)  # noqa: E501
+                    return self.apply_style_to_document_element_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.apply_style_to_document_element_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
-    def apply_style_to_docment_element_with_http_info(self, request, **kwargs):  # noqa: E501
+    def apply_style_to_document_element_with_http_info(self, request, **kwargs):  # noqa: E501
         """Apply style to document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param request ApplyStyleToDocmentElementRequest object with parameters
+        :param request ApplyStyleToDocumentElementRequest object with parameters
         :return: WordsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -379,19 +379,19 @@ class WordsApi(object):
             if key not in params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method apply_style_to_docment_element" % key
+                    " to method apply_style_to_document_element" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `apply_style_to_docment_element`")  # noqa: E501
+            raise ValueError("Missing the required parameter `name` when calling `apply_style_to_document_element`")  # noqa: E501
         # verify the required parameter 'style_apply' is set
         if request.style_apply is None:
-            raise ValueError("Missing the required parameter `style_apply` when calling `apply_style_to_docment_element`")  # noqa: E501
+            raise ValueError("Missing the required parameter `style_apply` when calling `apply_style_to_document_element`")  # noqa: E501
         # verify the required parameter 'styled_node_path' is set
         if request.styled_node_path is None:
-            raise ValueError("Missing the required parameter `styled_node_path` when calling `apply_style_to_docment_element`")  # noqa: E501
+            raise ValueError("Missing the required parameter `styled_node_path` when calling `apply_style_to_document_element`")  # noqa: E501
 
         collection_formats = {}
         path = '/v4.0/words/{name}/{styledNodePath}/style'

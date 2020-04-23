@@ -1,5 +1,5 @@
 # --------------------------------------------------------------------------------
-# <copyright company="Aspose" file="ApplyStyleToDocmentElementRequest.py">
+# <copyright company="Aspose" file="ApplyStyleToDocumentElementRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -24,9 +24,9 @@
 # --------------------------------------------------------------------------------
 
 
-class ApplyStyleToDocmentElementRequest(object):
+class ApplyStyleToDocumentElementRequest(object):
     """
-    Request model for apply_style_to_docment_element operation.
+    Request model for apply_style_to_document_element operation.
     Initializes a new instance.
     :param name The document name.
     :param style_apply Style to apply.
