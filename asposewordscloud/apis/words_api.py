@@ -322,6 +322,155 @@ class WordsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def apply_style_to_document_element(self, request, **kwargs):  # noqa: E501
+        """Apply style to document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param style_apply StyleApply : Style to apply. (required)
+        :param styled_node_path str : Path to the node of IStyledDocumentElement. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: WordsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.apply_style_to_document_element_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.apply_style_to_document_element_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.apply_style_to_document_element_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.apply_style_to_document_element_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def apply_style_to_document_element_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Apply style to document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request ApplyStyleToDocumentElementRequest object with parameters
+        :return: WordsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method apply_style_to_document_element" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `apply_style_to_document_element`")  # noqa: E501
+        # verify the required parameter 'style_apply' is set
+        if request.style_apply is None:
+            raise ValueError("Missing the required parameter `style_apply` when calling `apply_style_to_document_element`")  # noqa: E501
+        # verify the required parameter 'styled_node_path' is set
+        if request.styled_node_path is None:
+            raise ValueError("Missing the required parameter `styled_node_path` when calling `apply_style_to_document_element`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/{styledNodePath}/style'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.styled_node_path is not None:
+            path_params[self.__downcase_first_letter('StyledNodePath')] = request.styled_node_path  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+        if self.__downcase_first_letter('DestFileName') in path:
+            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
+        else:
+            if request.dest_file_name is not None:
+                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
+        if self.__downcase_first_letter('RevisionAuthor') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
+        else:
+            if request.revision_author is not None:
+                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
+        if self.__downcase_first_letter('RevisionDateTime') in path:
+            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
+        else:
+            if request.revision_date_time is not None:
+                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+
+        body_params = None
+        if request.style_apply is not None:
+            body_params = request.style_apply
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            response_type='WordsResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def build_report(self, request, **kwargs):  # noqa: E501
         """Executes document \&quot;build report\&quot; operation.  # noqa: E501
 
@@ -14405,6 +14554,131 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
         if request.style_name is not None:
             path_params[self.__downcase_first_letter('StyleName')] = request.style_name  # noqa: E501
+
+        query_params = []
+        if self.__downcase_first_letter('Folder') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
+        else:
+            if request.folder is not None:
+                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
+        if self.__downcase_first_letter('Storage') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
+        else:
+            if request.storage is not None:
+                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
+        if self.__downcase_first_letter('LoadEncoding') in path:
+            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
+        else:
+            if request.load_encoding is not None:
+                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
+        if self.__downcase_first_letter('Password') in path:
+            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
+        else:
+            if request.password is not None:
+                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return self.api_client.call_api(
+            path, 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            response_type='StyleResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_style_from_document_element(self, request, **kwargs):  # noqa: E501
+        """Gets style from document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The document name. (required)
+        :param styled_node_path str : Path to the node of IStyledDocumentElement. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: StyleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        try:
+            if kwargs.get('is_async'):
+                return self.get_style_from_document_element_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_style_from_document_element_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.__request_token()
+                if kwargs.get('is_async'):
+                    return self.get_style_from_document_element_with_http_info(request, **kwargs)  # noqa: E501
+            (data) = self.get_style_from_document_element_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_style_from_document_element_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Gets style from document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetStyleFromDocumentElementRequest object with parameters
+        :return: StyleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_return_http_data_only'] = False
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_style_from_document_element" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if request.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_style_from_document_element`")  # noqa: E501
+        # verify the required parameter 'styled_node_path' is set
+        if request.styled_node_path is None:
+            raise ValueError("Missing the required parameter `styled_node_path` when calling `get_style_from_document_element`")  # noqa: E501
+
+        collection_formats = {}
+        path = '/v4.0/words/{name}/{styledNodePath}/style'
+        path_params = {}
+        if request.name is not None:
+            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
+        if request.styled_node_path is not None:
+            path_params[self.__downcase_first_letter('StyledNodePath')] = request.styled_node_path  # noqa: E501
 
         query_params = []
         if self.__downcase_first_letter('Folder') in path:

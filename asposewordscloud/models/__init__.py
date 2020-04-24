@@ -197,6 +197,7 @@ from asposewordscloud.models.storage_file import StorageFile
 from asposewordscloud.models.story_child_nodes import StoryChildNodes
 from asposewordscloud.models.string_format_data import StringFormatData
 from asposewordscloud.models.style import Style
+from asposewordscloud.models.style_apply import StyleApply
 from asposewordscloud.models.style_copy import StyleCopy
 from asposewordscloud.models.style_insert import StyleInsert
 from asposewordscloud.models.style_response import StyleResponse

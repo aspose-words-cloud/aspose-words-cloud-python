@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**accept_all_revisions**](WordsApi.md#accept_all_revisions) | **PUT** /words/{name}/revisions/acceptAll | Accepts all revisions in document.
 [**append_document**](WordsApi.md#append_document) | **PUT** /words/{name}/appendDocument | Appends documents to original document.
+[**apply_style_to_document_element**](WordsApi.md#apply_style_to_document_element) | **PUT** /words/{name}/{styledNodePath}/style | Apply style to document node.
 [**build_report**](WordsApi.md#build_report) | **PUT** /words/{name}/buildReport | Executes document \&quot;build report\&quot; operation.
 [**build_report_online**](WordsApi.md#build_report_online) | **PUT** /words/buildReport | Executes document \&quot;build report\&quot; online operation.
 [**classify**](WordsApi.md#classify) | **PUT** /words/classify | Classifies raw text.
@@ -115,6 +116,7 @@ Method | HTTP request | Description
 [**get_section_page_setup**](WordsApi.md#get_section_page_setup) | **GET** /words/{name}/sections/{sectionIndex}/pageSetup | Gets page setup of section.
 [**get_sections**](WordsApi.md#get_sections) | **GET** /words/{name}/sections | Returns a list of sections that are contained in the document.
 [**get_style**](WordsApi.md#get_style) | **GET** /words/{name}/styles/{styleName} | This resource represents one of the styles contained in the document.
+[**get_style_from_document_element**](WordsApi.md#get_style_from_document_element) | **GET** /words/{name}/{styledNodePath}/style | Gets style from document node.
 [**get_styles**](WordsApi.md#get_styles) | **GET** /words/{name}/styles | Returns a list of styles that are contained in the document.
 [**get_table**](WordsApi.md#get_table) | **GET** /words/{name}/{nodePath}/tables/{index} | Returns a table.
 [**get_table_cell**](WordsApi.md#get_table_cell) | **GET** /words/{name}/{tableRowPath}/cells/{index} | Returns a table cell.
@@ -310,6 +312,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DocumentResponse**](DocumentResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apply_style_to_document_element**
+> WordsResponse apply_style_to_document_element(body, name, styled_node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+
+Apply style to document node.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+body = asposewordscloud.StyleApply() # StyleApply | Style to apply.
+name = 'name_example' # str | The document name.
+styled_node_path = 'styled_node_path_example' # str | Path to the node of IStyledDocumentElement.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+revision_author = 'revision_author_example' # str | Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. (optional)
+revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
+
+try:
+    # Apply style to document node.
+    api_response = api_instance.apply_style_to_document_element(body, name, styled_node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->apply_style_to_document_element: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**StyleApply**](StyleApply.md)| Style to apply. | 
+ **name** | **str**| The document name. | 
+ **styled_node_path** | **str**| Path to the node of IStyledDocumentElement. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+ **revision_author** | **str**| Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions. | [optional] 
+ **revision_date_time** | **str**| The date and time to use for revisions. | [optional] 
+
+### Return type
+
+[**WordsResponse**](WordsResponse.md)
 
 ### Authorization
 
@@ -6986,6 +7056,66 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **style_name** | **str**| Style name. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+
+### Return type
+
+[**StyleResponse**](StyleResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_style_from_document_element**
+> StyleResponse get_style_from_document_element(name, styled_node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+
+Gets style from document node.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+styled_node_path = 'styled_node_path_example' # str | Path to the node of IStyledDocumentElement.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+
+try:
+    # Gets style from document node.
+    api_response = api_instance.get_style_from_document_element(name, styled_node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->get_style_from_document_element: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **styled_node_path** | **str**| Path to the node of IStyledDocumentElement. | 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
  **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
