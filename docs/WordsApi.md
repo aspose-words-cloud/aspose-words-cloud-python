@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**accept_all_revisions**](WordsApi.md#accept_all_revisions) | **PUT** /words/{name}/revisions/acceptAll | Accepts all revisions in document.
 [**append_document**](WordsApi.md#append_document) | **PUT** /words/{name}/appendDocument | Appends documents to original document.
-[**apply_style_to_document_element**](WordsApi.md#apply_style_to_document_element) | **PUT** /words/{name}/{styledNodePath}/style | Apply a style to the document node.
+[**apply_style_to_document_element**](WordsApi.md#apply_style_to_document_element) | **PUT** /words/{name}/{styledNodePath}/style | Apply a style to the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
 [**build_report**](WordsApi.md#build_report) | **PUT** /words/{name}/buildReport | Executes document \&quot;build report\&quot; operation.
 [**build_report_online**](WordsApi.md#build_report_online) | **PUT** /words/buildReport | Executes document \&quot;build report\&quot; online operation.
 [**classify**](WordsApi.md#classify) | **PUT** /words/classify | Classifies raw text.
@@ -116,7 +116,7 @@ Method | HTTP request | Description
 [**get_section_page_setup**](WordsApi.md#get_section_page_setup) | **GET** /words/{name}/sections/{sectionIndex}/pageSetup | Gets page setup of section.
 [**get_sections**](WordsApi.md#get_sections) | **GET** /words/{name}/sections | Returns a list of sections that are contained in the document.
 [**get_style**](WordsApi.md#get_style) | **GET** /words/{name}/styles/{styleName} | This resource represents one of the styles contained in the document.
-[**get_style_from_document_element**](WordsApi.md#get_style_from_document_element) | **GET** /words/{name}/{styledNodePath}/style | Gets a style from the document node.
+[**get_style_from_document_element**](WordsApi.md#get_style_from_document_element) | **GET** /words/{name}/{styledNodePath}/style | Gets a style from the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
 [**get_styles**](WordsApi.md#get_styles) | **GET** /words/{name}/styles | Returns a list of styles contained in the document.
 [**get_table**](WordsApi.md#get_table) | **GET** /words/{name}/{nodePath}/tables/{index} | Returns a table.
 [**get_table_cell**](WordsApi.md#get_table_cell) | **GET** /words/{name}/{tableRowPath}/cells/{index} | Returns a table cell.
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 # **apply_style_to_document_element**
 > WordsResponse apply_style_to_document_element(body, name, styled_node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
-Apply a style to the document node.
+Apply a style to the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
 
 ### Example
 ```python
@@ -355,7 +355,7 @@ revision_author = 'revision_author_example' # str | Initials of the author to us
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
 
 try:
-    # Apply a style to the document node.
+    # Apply a style to the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
     api_response = api_instance.apply_style_to_document_element(body, name, styled_node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
@@ -411,7 +411,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-name = 'name_example' # str | The document name.
+name = 'name_example' # str | The template name.
 data = 'data_example' # str |  (optional)
 report_engine_settings = asposewordscloud.ReportEngineSettings() # ReportEngineSettings |  (optional)
 folder = 'folder_example' # str | Original document folder. (optional)
@@ -432,7 +432,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**| The document name. | 
+ **name** | **str**| The template name. | 
  **data** | **str**|  | [optional] 
  **report_engine_settings** | [**ReportEngineSettings**](.md)|  | [optional] 
  **folder** | **str**| Original document folder. | [optional] 
@@ -7079,7 +7079,7 @@ Name | Type | Description  | Notes
 # **get_style_from_document_element**
 > StyleResponse get_style_from_document_element(name, styled_node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
-Gets a style from the document node.
+Gets a style from the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
 
 ### Example
 ```python
@@ -7103,7 +7103,7 @@ load_encoding = 'load_encoding_example' # str | Encoding that will be used to lo
 password = 'password_example' # str | Password for opening an encrypted document. (optional)
 
 try:
-    # Gets a style from the document node.
+    # Gets a style from the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.
     api_response = api_instance.get_style_from_document_element(name, styled_node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
     pprint(api_response)
 except ApiException as e:

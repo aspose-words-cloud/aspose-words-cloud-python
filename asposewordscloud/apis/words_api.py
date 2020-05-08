@@ -323,7 +323,7 @@ class WordsApi(object):
             collection_formats=collection_formats)
 
     def apply_style_to_document_element(self, request, **kwargs):  # noqa: E501
-        """Apply a style to the document node.  # noqa: E501
+        """Apply a style to the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -358,7 +358,7 @@ class WordsApi(object):
             return data
         
     def apply_style_to_document_element_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Apply a style to the document node.  # noqa: E501
+        """Apply a style to the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -478,7 +478,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The template name. (required)
         :param data str : A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv (required)
         :param report_engine_settings ReportEngineSettings : An object providing a settings of report engine. (required)
         :param folder str : Original document folder.
@@ -14609,7 +14609,7 @@ class WordsApi(object):
             collection_formats=collection_formats)
 
     def get_style_from_document_element(self, request, **kwargs):  # noqa: E501
-        """Gets a style from the document node.  # noqa: E501
+        """Gets a style from the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -14640,7 +14640,7 @@ class WordsApi(object):
             return data
         
     def get_style_from_document_element_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Gets a style from the document node.  # noqa: E501
+        """Gets a style from the document node. Supported node types: ParagraphFormat, List, ListLevel, Table.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
