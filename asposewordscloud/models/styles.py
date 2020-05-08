@@ -42,25 +42,25 @@ class Styles(object):
     """
     swagger_types = {
         'link': 'WordsApiLink',
-        'style': 'list[Style]'
+        'style_list': 'list[Style]'
     }
 
     attribute_map = {
         'link': 'link',
-        'style': 'Style'
+        'style_list': 'StyleList'
     }
 
-    def __init__(self, link=None, style=None):  # noqa: E501
+    def __init__(self, link=None, style_list=None):  # noqa: E501
         """Styles - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
-        self._style = None
+        self._style_list = None
         self.discriminator = None
 
         if link is not None:
             self.link = link
-        if style is not None:
-            self.style = style
+        if style_list is not None:
+            self.style_list = style_list
 
     @property
     def link(self):
@@ -84,26 +84,26 @@ class Styles(object):
         """
         self._link = link
     @property
-    def style(self):
-        """Gets the style of this Styles.  # noqa: E501
+    def style_list(self):
+        """Gets the style_list of this Styles.  # noqa: E501
 
         Gets or sets array of document styles.  # noqa: E501
 
-        :return: The style of this Styles.  # noqa: E501
+        :return: The style_list of this Styles.  # noqa: E501
         :rtype: list[Style]
         """
-        return self._style
+        return self._style_list
 
-    @style.setter
-    def style(self, style):
-        """Sets the style of this Styles.
+    @style_list.setter
+    def style_list(self, style_list):
+        """Sets the style_list of this Styles.
 
         Gets or sets array of document styles.  # noqa: E501
 
-        :param style: The style of this Styles.  # noqa: E501
+        :param style_list: The style_list of this Styles.  # noqa: E501
         :type: list[Style]
         """
-        self._style = style
+        self._style_list = style_list
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

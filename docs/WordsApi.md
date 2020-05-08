@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**accept_all_revisions**](WordsApi.md#accept_all_revisions) | **PUT** /words/{name}/revisions/acceptAll | Accepts all revisions in document.
 [**append_document**](WordsApi.md#append_document) | **PUT** /words/{name}/appendDocument | Appends documents to original document.
-[**apply_style_to_document_element**](WordsApi.md#apply_style_to_document_element) | **PUT** /words/{name}/{styledNodePath}/style | Apply style to document node.
+[**apply_style_to_document_element**](WordsApi.md#apply_style_to_document_element) | **PUT** /words/{name}/{styledNodePath}/style | Apply a style to the document node.
 [**build_report**](WordsApi.md#build_report) | **PUT** /words/{name}/buildReport | Executes document \&quot;build report\&quot; operation.
 [**build_report_online**](WordsApi.md#build_report_online) | **PUT** /words/buildReport | Executes document \&quot;build report\&quot; online operation.
 [**classify**](WordsApi.md#classify) | **PUT** /words/classify | Classifies raw text.
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**convert_document**](WordsApi.md#convert_document) | **PUT** /words/convert | Converts document from the request&#x27;s content to the specified format.
 [**copy_file**](WordsApi.md#copy_file) | **PUT** /words/storage/file/copy/{srcPath} | Copy file
 [**copy_folder**](WordsApi.md#copy_folder) | **PUT** /words/storage/folder/copy/{srcPath} | Copy folder
-[**copy_style**](WordsApi.md#copy_style) | **POST** /words/{name}/styles/copy | Copy and insert new style to document, returns copied style.
+[**copy_style**](WordsApi.md#copy_style) | **POST** /words/{name}/styles/copy | Copy and insert a new style to the document, returns an copied style.
 [**create_document**](WordsApi.md#create_document) | **PUT** /words/create | Creates new document. Document is created with format which is recognized from file extensions. Supported extensions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot;.
 [**create_folder**](WordsApi.md#create_folder) | **PUT** /words/storage/folder/{path} | Create the folder
 [**create_or_update_document_property**](WordsApi.md#create_or_update_document_property) | **PUT** /words/{name}/documentProperties/{propertyName} | Adds new or update existing document property.
@@ -116,8 +116,8 @@ Method | HTTP request | Description
 [**get_section_page_setup**](WordsApi.md#get_section_page_setup) | **GET** /words/{name}/sections/{sectionIndex}/pageSetup | Gets page setup of section.
 [**get_sections**](WordsApi.md#get_sections) | **GET** /words/{name}/sections | Returns a list of sections that are contained in the document.
 [**get_style**](WordsApi.md#get_style) | **GET** /words/{name}/styles/{styleName} | This resource represents one of the styles contained in the document.
-[**get_style_from_document_element**](WordsApi.md#get_style_from_document_element) | **GET** /words/{name}/{styledNodePath}/style | Gets style from document node.
-[**get_styles**](WordsApi.md#get_styles) | **GET** /words/{name}/styles | Returns a list of styles that are contained in the document.
+[**get_style_from_document_element**](WordsApi.md#get_style_from_document_element) | **GET** /words/{name}/{styledNodePath}/style | Gets a style from the document node.
+[**get_styles**](WordsApi.md#get_styles) | **GET** /words/{name}/styles | Returns a list of styles contained in the document.
 [**get_table**](WordsApi.md#get_table) | **GET** /words/{name}/{nodePath}/tables/{index} | Returns a table.
 [**get_table_cell**](WordsApi.md#get_table_cell) | **GET** /words/{name}/{tableRowPath}/cells/{index} | Returns a table cell.
 [**get_table_cell_format**](WordsApi.md#get_table_cell_format) | **GET** /words/{name}/{tableRowPath}/cells/{index}/cellformat | Returns a table cell format.
@@ -142,7 +142,7 @@ Method | HTTP request | Description
 [**insert_page_numbers**](WordsApi.md#insert_page_numbers) | **PUT** /words/{name}/PageNumbers | Inserts document page numbers.
 [**insert_paragraph**](WordsApi.md#insert_paragraph) | **POST** /words/{name}/{nodePath}/paragraphs | Adds paragraph to document, returns added paragraph&#x27;s data.
 [**insert_run**](WordsApi.md#insert_run) | **POST** /words/{name}/{paragraphPath}/runs | Adds run to document, returns added paragraph&#x27;s data.
-[**insert_style**](WordsApi.md#insert_style) | **POST** /words/{name}/styles/insert | Adds style to document, returns added style.
+[**insert_style**](WordsApi.md#insert_style) | **POST** /words/{name}/styles/insert | Adds a style to the document, returns an added style.
 [**insert_table**](WordsApi.md#insert_table) | **POST** /words/{name}/{nodePath}/tables | Adds table to document, returns added table&#x27;s data.             
 [**insert_table_cell**](WordsApi.md#insert_table_cell) | **POST** /words/{name}/{tableRowPath}/cells | Adds table cell to table, returns added cell&#x27;s data.             
 [**insert_table_row**](WordsApi.md#insert_table_row) | **POST** /words/{name}/{tablePath}/rows | Adds table row to table, returns added row&#x27;s data.             
@@ -191,7 +191,7 @@ Method | HTTP request | Description
 [**update_run**](WordsApi.md#update_run) | **PUT** /words/{name}/{paragraphPath}/runs/{index} | Updates run&#x27;s properties, returns updated run&#x27;s data.
 [**update_run_font**](WordsApi.md#update_run_font) | **PUT** /words/{name}/{paragraphPath}/runs/{index}/font | Updates font properties, returns updated font data.
 [**update_section_page_setup**](WordsApi.md#update_section_page_setup) | **PUT** /words/{name}/sections/{sectionIndex}/pageSetup | Updates page setup of section.
-[**update_style**](WordsApi.md#update_style) | **PUT** /words/{name}/styles/{styleName}/update | Updates style properties, returns updated style.
+[**update_style**](WordsApi.md#update_style) | **PUT** /words/{name}/styles/{styleName}/update | Updates a style properties, returns an updated style.
 [**update_table_cell_format**](WordsApi.md#update_table_cell_format) | **PUT** /words/{name}/{tableRowPath}/cells/{index}/cellformat | Updates a table cell format.
 [**update_table_properties**](WordsApi.md#update_table_properties) | **PUT** /words/{name}/{nodePath}/tables/{index}/properties | Updates a table properties.
 [**update_table_properties_without_node_path**](WordsApi.md#update_table_properties_without_node_path) | **PUT** /words/{name}/tables/{index}/properties | Updates a table properties.
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 # **apply_style_to_document_element**
 > WordsResponse apply_style_to_document_element(body, name, styled_node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
-Apply style to document node.
+Apply a style to the document node.
 
 ### Example
 ```python
@@ -355,7 +355,7 @@ revision_author = 'revision_author_example' # str | Initials of the author to us
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
 
 try:
-    # Apply style to document node.
+    # Apply a style to the document node.
     api_response = api_instance.apply_style_to_document_element(body, name, styled_node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
@@ -863,7 +863,7 @@ void (empty response body)
 # **copy_style**
 > StyleResponse copy_style(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
-Copy and insert new style to document, returns copied style.
+Copy and insert a new style to the document, returns an copied style.
 
 ### Example
 ```python
@@ -890,7 +890,7 @@ revision_author = 'revision_author_example' # str | Initials of the author to us
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
 
 try:
-    # Copy and insert new style to document, returns copied style.
+    # Copy and insert a new style to the document, returns an copied style.
     api_response = api_instance.copy_style(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
@@ -7079,7 +7079,7 @@ Name | Type | Description  | Notes
 # **get_style_from_document_element**
 > StyleResponse get_style_from_document_element(name, styled_node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
-Gets style from document node.
+Gets a style from the document node.
 
 ### Example
 ```python
@@ -7103,7 +7103,7 @@ load_encoding = 'load_encoding_example' # str | Encoding that will be used to lo
 password = 'password_example' # str | Password for opening an encrypted document. (optional)
 
 try:
-    # Gets style from document node.
+    # Gets a style from the document node.
     api_response = api_instance.get_style_from_document_element(name, styled_node_path, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
     pprint(api_response)
 except ApiException as e:
@@ -7139,7 +7139,7 @@ Name | Type | Description  | Notes
 # **get_styles**
 > StylesResponse get_styles(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
 
-Returns a list of styles that are contained in the document.
+Returns a list of styles contained in the document.
 
 ### Example
 ```python
@@ -7162,7 +7162,7 @@ load_encoding = 'load_encoding_example' # str | Encoding that will be used to lo
 password = 'password_example' # str | Password for opening an encrypted document. (optional)
 
 try:
-    # Returns a list of styles that are contained in the document.
+    # Returns a list of styles contained in the document.
     api_response = api_instance.get_styles(name, folder=folder, storage=storage, load_encoding=load_encoding, password=password)
     pprint(api_response)
 except ApiException as e:
@@ -8761,7 +8761,7 @@ Name | Type | Description  | Notes
 # **insert_style**
 > StyleResponse insert_style(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
-Adds style to document, returns added style.
+Adds a style to the document, returns an added style.
 
 ### Example
 ```python
@@ -8788,7 +8788,7 @@ revision_author = 'revision_author_example' # str | Initials of the author to us
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
 
 try:
-    # Adds style to document, returns added style.
+    # Adds a style to the document, returns an added style.
     api_response = api_instance.insert_style(body, name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
@@ -12002,7 +12002,7 @@ Name | Type | Description  | Notes
 # **update_style**
 > StyleResponse update_style(body, name, style_name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
-Updates style properties, returns updated style.
+Updates a style properties, returns an updated style.
 
 ### Example
 ```python
@@ -12030,7 +12030,7 @@ revision_author = 'revision_author_example' # str | Initials of the author to us
 revision_date_time = 'revision_date_time_example' # str | The date and time to use for revisions. (optional)
 
 try:
-    # Updates style properties, returns updated style.
+    # Updates a style properties, returns an updated style.
     api_response = api_instance.update_style(body, name, style_name, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
     pprint(api_response)
 except ApiException as e:
