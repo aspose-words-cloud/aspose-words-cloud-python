@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**create_document**](WordsApi.md#create_document) | **PUT** /words/create | Creates new document. Document is created with format which is recognized from file extensions. Supported extensions: \&quot;.doc\&quot;, \&quot;.docx\&quot;, \&quot;.docm\&quot;, \&quot;.dot\&quot;, \&quot;.dotm\&quot;, \&quot;.dotx\&quot;, \&quot;.flatopc\&quot;, \&quot;.fopc\&quot;, \&quot;.flatopc_macro\&quot;, \&quot;.fopc_macro\&quot;, \&quot;.flatopc_template\&quot;, \&quot;.fopc_template\&quot;, \&quot;.flatopc_template_macro\&quot;, \&quot;.fopc_template_macro\&quot;, \&quot;.wordml\&quot;, \&quot;.wml\&quot;, \&quot;.rtf\&quot;.
 [**create_folder**](WordsApi.md#create_folder) | **PUT** /words/storage/folder/{path} | Create the folder
 [**create_or_update_document_property**](WordsApi.md#create_or_update_document_property) | **PUT** /words/{name}/documentProperties/{propertyName} | Adds new or update existing document property.
+[**delete_all_paragraph_tab_stops**](WordsApi.md#delete_all_paragraph_tab_stops) | **DELETE** /words/{name}/{nodePath}/paragraphs/{index}/tabstops | Remove all tab stops.
 [**delete_border**](WordsApi.md#delete_border) | **DELETE** /words/{name}/{nodePath}/borders/{borderType} | Resets border properties to default values.             
 [**delete_borders**](WordsApi.md#delete_borders) | **DELETE** /words/{name}/{nodePath}/borders | Resets borders properties to default values.             
 [**delete_comment**](WordsApi.md#delete_comment) | **DELETE** /words/{name}/comments/{commentIndex} | Removes comment from document.
@@ -42,11 +43,10 @@ Method | HTTP request | Description
 [**delete_office_math_object_without_node_path**](WordsApi.md#delete_office_math_object_without_node_path) | **DELETE** /words/{name}/OfficeMathObjects/{index} | Removes OfficeMath object from document.
 [**delete_paragraph**](WordsApi.md#delete_paragraph) | **DELETE** /words/{name}/{nodePath}/paragraphs/{index} | Removes paragraph from section.
 [**delete_paragraph_list_format**](WordsApi.md#delete_paragraph_list_format) | **DELETE** /words/{name}/{nodePath}/paragraphs/{index}/listFormat | Delete paragraph list format, returns updated list format properties.
+[**delete_paragraph_tab_stop**](WordsApi.md#delete_paragraph_tab_stop) | **DELETE** /words/{name}/{nodePath}/paragraphs/{index}/tabstop | Remove the i-th tab stop.
 [**delete_paragraph_without_node_path**](WordsApi.md#delete_paragraph_without_node_path) | **DELETE** /words/{name}/paragraphs/{index} | Removes paragraph from section.
 [**delete_run**](WordsApi.md#delete_run) | **DELETE** /words/{name}/{paragraphPath}/runs/{index} | Removes run from document.
 [**delete_section**](WordsApi.md#delete_section) | **DELETE** /words/{name}/sections/{sectionIndex} | Removes section from document.
-[**delete_tab_stop**](WordsApi.md#delete_tab_stop) | **DELETE** /words/{name}/{nodePath}/paragraphs/{index}/tabstop | Remove the i-th tab stop.
-[**delete_tab_stops**](WordsApi.md#delete_tab_stops) | **DELETE** /words/{name}/{nodePath}/paragraphs/{index}/tabstops | Remove all tab stops.
 [**delete_table**](WordsApi.md#delete_table) | **DELETE** /words/{name}/{nodePath}/tables/{index} | Deletes a table.
 [**delete_table_cell**](WordsApi.md#delete_table_cell) | **DELETE** /words/{name}/{tableRowPath}/cells/{index} | Deletes a table cell.
 [**delete_table_row**](WordsApi.md#delete_table_row) | **DELETE** /words/{name}/{tablePath}/rows/{index} | Deletes a table row.
@@ -142,7 +142,7 @@ Method | HTTP request | Description
 [**insert_form_field_without_node_path**](WordsApi.md#insert_form_field_without_node_path) | **POST** /words/{name}/formfields | Adds form field to paragraph, returns added form field&#x27;s data.
 [**insert_header_footer**](WordsApi.md#insert_header_footer) | **PUT** /words/{name}/{sectionPath}/headersfooters | Inserts to document header or footer.
 [**insert_list**](WordsApi.md#insert_list) | **POST** /words/{name}/lists | Adds list to document, returns added list&#x27;s data.
-[**insert_or_update_tab_stop**](WordsApi.md#insert_or_update_tab_stop) | **POST** /words/{name}/{nodePath}/paragraphs/{index}/tabstops | Insert or resplace tab stop if a tab stop with the position exists.
+[**insert_or_update_paragraph_tab_stop**](WordsApi.md#insert_or_update_paragraph_tab_stop) | **POST** /words/{name}/{nodePath}/paragraphs/{index}/tabstops | Insert or resplace tab stop if a tab stop with the position exists.
 [**insert_page_numbers**](WordsApi.md#insert_page_numbers) | **PUT** /words/{name}/PageNumbers | Inserts document page numbers.
 [**insert_paragraph**](WordsApi.md#insert_paragraph) | **POST** /words/{name}/{nodePath}/paragraphs | Adds paragraph to document, returns added paragraph&#x27;s data.
 [**insert_run**](WordsApi.md#insert_run) | **POST** /words/{name}/{paragraphPath}/runs | Adds run to document, returns added paragraph&#x27;s data.
@@ -1099,6 +1099,70 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_all_paragraph_tab_stops**
+> TabStopsResponse delete_all_paragraph_tab_stops(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+
+Remove all tab stops.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+node_path = 'node_path_example' # str | Path to the node which contains paragraph.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+
+try:
+    # Remove all tab stops.
+    api_response = api_instance.delete_all_paragraph_tab_stops(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->delete_all_paragraph_tab_stops: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **node_path** | **str**| Path to the node which contains paragraph. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+
+### Return type
+
+[**TabStopsResponse**](TabStopsResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2597,6 +2661,72 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **delete_paragraph_tab_stop**
+> TabStopsResponse delete_paragraph_tab_stop(name, node_path, position, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+
+Remove the i-th tab stop.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import asposewordscloud
+from asposewordscloud.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: JWT
+configuration = asposewordscloud.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
+name = 'name_example' # str | The document name.
+node_path = 'node_path_example' # str | Path to the node which contains paragraph.
+position = 1.2 # float | a tab stop position to remove.
+index = 56 # int | Object index.
+folder = 'folder_example' # str | Original document folder. (optional)
+storage = 'storage_example' # str | Original document storage. (optional)
+load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
+password = 'password_example' # str | Password for opening an encrypted document. (optional)
+dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
+
+try:
+    # Remove the i-th tab stop.
+    api_response = api_instance.delete_paragraph_tab_stop(name, node_path, position, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WordsApi->delete_paragraph_tab_stop: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| The document name. | 
+ **node_path** | **str**| Path to the node which contains paragraph. | 
+ **position** | **float**| a tab stop position to remove. | 
+ **index** | **int**| Object index. | 
+ **folder** | **str**| Original document folder. | [optional] 
+ **storage** | **str**| Original document storage. | [optional] 
+ **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
+ **password** | **str**| Password for opening an encrypted document. | [optional] 
+ **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
+
+### Return type
+
+[**TabStopsResponse**](TabStopsResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete_paragraph_without_node_path**
 > delete_paragraph_without_node_path(name, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name, revision_author=revision_author, revision_date_time=revision_date_time)
 
@@ -2791,136 +2921,6 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **delete_tab_stop**
-> TabStopsResponse delete_tab_stop(name, node_path, position, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
-
-Remove the i-th tab stop.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import asposewordscloud
-from asposewordscloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposewordscloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-name = 'name_example' # str | The document name.
-node_path = 'node_path_example' # str | Path to the node which contains paragraph.
-position = 1.2 # float | a tab stop position to remove.
-index = 56 # int | Object index.
-folder = 'folder_example' # str | Original document folder. (optional)
-storage = 'storage_example' # str | Original document storage. (optional)
-load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
-password = 'password_example' # str | Password for opening an encrypted document. (optional)
-dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
-
-try:
-    # Remove the i-th tab stop.
-    api_response = api_instance.delete_tab_stop(name, node_path, position, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling WordsApi->delete_tab_stop: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **str**| The document name. | 
- **node_path** | **str**| Path to the node which contains paragraph. | 
- **position** | **float**| a tab stop position to remove. | 
- **index** | **int**| Object index. | 
- **folder** | **str**| Original document folder. | [optional] 
- **storage** | **str**| Original document storage. | [optional] 
- **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
- **password** | **str**| Password for opening an encrypted document. | [optional] 
- **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
-
-### Return type
-
-[**TabStopsResponse**](TabStopsResponse.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **delete_tab_stops**
-> TabStopsResponse delete_tab_stops(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
-
-Remove all tab stops.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import asposewordscloud
-from asposewordscloud.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: JWT
-configuration = asposewordscloud.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
-name = 'name_example' # str | The document name.
-node_path = 'node_path_example' # str | Path to the node which contains paragraph.
-index = 56 # int | Object index.
-folder = 'folder_example' # str | Original document folder. (optional)
-storage = 'storage_example' # str | Original document storage. (optional)
-load_encoding = 'load_encoding_example' # str | Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. (optional)
-password = 'password_example' # str | Password for opening an encrypted document. (optional)
-dest_file_name = 'dest_file_name_example' # str | Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. (optional)
-
-try:
-    # Remove all tab stops.
-    api_response = api_instance.delete_tab_stops(name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling WordsApi->delete_tab_stops: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **str**| The document name. | 
- **node_path** | **str**| Path to the node which contains paragraph. | 
- **index** | **int**| Object index. | 
- **folder** | **str**| Original document folder. | [optional] 
- **storage** | **str**| Original document storage. | [optional] 
- **load_encoding** | **str**| Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML. | [optional] 
- **password** | **str**| Password for opening an encrypted document. | [optional] 
- **dest_file_name** | **str**| Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document. | [optional] 
-
-### Return type
-
-[**TabStopsResponse**](TabStopsResponse.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -8748,8 +8748,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **insert_or_update_tab_stop**
-> TabStopsResponse insert_or_update_tab_stop(body, name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+# **insert_or_update_paragraph_tab_stop**
+> TabStopsResponse insert_or_update_paragraph_tab_stop(body, name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
 
 Insert or resplace tab stop if a tab stop with the position exists.
 
@@ -8779,10 +8779,10 @@ dest_file_name = 'dest_file_name_example' # str | Result path of the document af
 
 try:
     # Insert or resplace tab stop if a tab stop with the position exists.
-    api_response = api_instance.insert_or_update_tab_stop(body, name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
+    api_response = api_instance.insert_or_update_paragraph_tab_stop(body, name, node_path, index, folder=folder, storage=storage, load_encoding=load_encoding, password=password, dest_file_name=dest_file_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling WordsApi->insert_or_update_tab_stop: %s\n" % e)
+    print("Exception when calling WordsApi->insert_or_update_paragraph_tab_stop: %s\n" % e)
 ```
 
 ### Parameters

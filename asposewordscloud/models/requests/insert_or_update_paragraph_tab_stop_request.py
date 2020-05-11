@@ -1,5 +1,5 @@
 # --------------------------------------------------------------------------------
-# <copyright company="Aspose" file="DeleteTabStopRequest.py">
+# <copyright company="Aspose" file="InsertOrUpdateParagraphTabStopRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -24,13 +24,13 @@
 # --------------------------------------------------------------------------------
 
 
-class DeleteTabStopRequest(object):
+class InsertOrUpdateParagraphTabStopRequest(object):
     """
-    Request model for delete_tab_stop operation.
+    Request model for insert_or_update_paragraph_tab_stop operation.
     Initializes a new instance.
     :param name The document name.
     :param node_path Path to the node which contains paragraph.
-    :param position a tab stop position to remove.
+    :param dto Paragraph tab stop.
     :param index Object index.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -39,10 +39,10 @@ class DeleteTabStopRequest(object):
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     """
 
-    def __init__(self, name, node_path, position, index, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None):
+    def __init__(self, name, node_path, dto, index, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None):
         self.name = name
         self.node_path = node_path
-        self.position = position
+        self.dto = dto
         self.index = index
         self.folder = folder
         self.storage = storage

@@ -1,5 +1,5 @@
 # --------------------------------------------------------------------------------
-# <copyright company="Aspose" file="DeleteTabStopsRequest.py">
+# <copyright company="Aspose" file="DeleteAllParagraphTabStopsRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -24,9 +24,9 @@
 # --------------------------------------------------------------------------------
 
 
-class DeleteTabStopsRequest(object):
+class DeleteAllParagraphTabStopsRequest(object):
     """
-    Request model for delete_tab_stops operation.
+    Request model for delete_all_paragraph_tab_stops operation.
     Initializes a new instance.
     :param name The document name.
     :param node_path Path to the node which contains paragraph.
