@@ -196,6 +196,7 @@ from asposewordscloud.models.section_link_collection import SectionLinkCollectio
 from asposewordscloud.models.section_link_collection_response import SectionLinkCollectionResponse
 from asposewordscloud.models.section_page_setup_response import SectionPageSetupResponse
 from asposewordscloud.models.section_response import SectionResponse
+from asposewordscloud.models.shading import Shading
 from asposewordscloud.models.split_document_response import SplitDocumentResponse
 from asposewordscloud.models.split_document_result import SplitDocumentResult
 from asposewordscloud.models.stat_data_response import StatDataResponse
@@ -211,6 +212,10 @@ from asposewordscloud.models.style_update import StyleUpdate
 from asposewordscloud.models.styles import Styles
 from asposewordscloud.models.styles_response import StylesResponse
 from asposewordscloud.models.svg_save_options_data import SvgSaveOptionsData
+from asposewordscloud.models.tab_stop import TabStop
+from asposewordscloud.models.tab_stop_base import TabStopBase
+from asposewordscloud.models.tab_stop_insert import TabStopInsert
+from asposewordscloud.models.tab_stops_response import TabStopsResponse
 from asposewordscloud.models.table import Table
 from asposewordscloud.models.table_cell import TableCell
 from asposewordscloud.models.table_cell_format import TableCellFormat

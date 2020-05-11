@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **outline_level** | **str** | Gets or sets specifies the outline level of the paragraph in the document.              | [optional] 
 **page_break_before** | **bool** | Gets or sets true if a page break is forced before the paragraph.              | [optional] 
 **right_indent** | **float** | Gets or sets the value (in points) that represents the right indent for paragraph.              | [optional] 
+**shading** | [**Shading**](Shading.md) |  | [optional] 
 **space_after** | **float** | Gets or sets the amount of spacing (in points) after the paragraph.              | [optional] 
 **space_after_auto** | **bool** | Gets or sets true if the amount of spacing after the paragraph is set automatically.              | [optional] 
 **space_before** | **float** | Gets or sets the amount of spacing (in points) before the paragraph.              | [optional] 
