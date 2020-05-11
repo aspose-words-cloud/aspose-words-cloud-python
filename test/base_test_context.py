@@ -54,7 +54,7 @@ class BaseTestContext(unittest.TestCase):
 
     def upload_file(self, path, file):
         request = asposewordscloud.models.requests.UploadFileRequest(file, path)
-        result = self.words_api.upload_file(request)
+        _result = self.words_api.upload_file(request)
 
 
 if __name__ == '__main__':

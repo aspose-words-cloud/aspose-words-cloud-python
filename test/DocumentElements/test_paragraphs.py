@@ -33,6 +33,7 @@ from test.base_test_context import BaseTestContext
 class TestParagraphs(BaseTestContext):
     test_folder = 'DocumentElements/Paragraphs'
     test_list_folder = 'DocumentElements/ParagraphListFormat'
+    test_tab_stop_folder = 'DocumentElements/Paragraphs'
 
     #
     # Test for removing paragraph
@@ -335,8 +336,8 @@ class TestParagraphs(BaseTestContext):
         index = 0
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_list_folder, filename), open(os.path.join(self.local_test_folder, self.test_list_folder, filename), 'rb'))
-        dto = asposewordscloud.models.ListFormatUpdate();
-        dto.list_id = 2;
+        dto = asposewordscloud.models.ListFormatUpdate()
+        dto.list_id = 2
 
         request = asposewordscloud.models.requests.UpdateParagraphListFormatRequest(filename, dto, '', index, os.path.join(self.remote_test_folder,self.test_list_folder))
         result = self.words_api.update_paragraph_list_format(request)
@@ -353,3 +354,52 @@ class TestParagraphs(BaseTestContext):
         request = asposewordscloud.models.requests.DeleteParagraphListFormatRequest(filename, '', index, os.path.join(self.remote_test_folder,self.test_list_folder))
         result = self.words_api.delete_paragraph_list_format(request)
         self.assertIsNotNone(result, 'Error has occurred while get document paragraph')
+
+    #
+    # Test for getting paragraph tab stops
+    #
+    def test_get_paragraph_tab_stops(self):
+        filename = 'ParagraphTabStops.docx'
+        index = 0
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_tab_stop_folder, filename), open(os.path.join(self.local_test_folder, self.test_tab_stop_folder, filename), 'rb'))
+        request = asposewordscloud.models.requests.GetParagraphTabStopsRequest(filename, '', index, os.path.join(self.remote_test_folder,self.test_tab_stop_folder))
+        result = self.words_api.get_paragraph_tab_stops(request)
+        self.assertIsNotNone(result, 'Error has occurred while getting document paragraph tab stops')
+
+    #
+    # Test for inserting paragraph tab stops
+    #
+    def test_insert_or_update_paragraph_tab_stop(self):
+        filename = 'ParagraphTabStops.docx'
+        index = 0
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_tab_stop_folder, filename), open(os.path.join(self.local_test_folder, self.test_tab_stop_folder, filename), 'rb'))
+        dto = asposewordscloud.models.TabStopInsert("Left", "None", 72)
+        request = asposewordscloud.models.requests.InsertOrUpdateParagraphTabStopRequest(filename, '', dto, index, os.path.join(self.remote_test_folder,self.test_tab_stop_folder))
+        result = self.words_api.insert_or_update_paragraph_tab_stop(request)
+        self.assertIsNotNone(result, 'Error has occurred while updating document paragraph tab stops')
+
+    #
+    # Test for deleting all paragraph tab stops
+    #
+    def test_delete_all_paragraph_tab_stops(self):
+        filename = 'ParagraphTabStops.docx'
+        index = 0
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_tab_stop_folder, filename), open(os.path.join(self.local_test_folder, self.test_tab_stop_folder, filename), 'rb'))
+        request = asposewordscloud.models.requests.DeleteAllParagraphTabStopsRequest(filename, '', index, os.path.join(self.remote_test_folder,self.test_tab_stop_folder))
+        result = self.words_api.delete_all_paragraph_tab_stops(request)
+        self.assertIsNotNone(result, 'Error has occurred while deleting document paragraph tab stops')       
+
+    #
+    # Test for deleting a paragraph tab stop
+    #
+    def test_delete_paragraph_tab_stop(self):
+        filename = 'ParagraphTabStops.docx'
+        index = 0
+
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_tab_stop_folder, filename), open(os.path.join(self.local_test_folder, self.test_tab_stop_folder, filename), 'rb'))
+        request = asposewordscloud.models.requests.DeleteParagraphTabStopRequest(filename, '', 72, index, os.path.join(self.remote_test_folder,self.test_tab_stop_folder))
+        result = self.words_api.delete_paragraph_tab_stop(request)
+        self.assertIsNotNone(result, 'Error has occurred while deleting document paragraph tab stops') 
