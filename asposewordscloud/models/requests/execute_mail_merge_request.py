@@ -28,7 +28,7 @@ class ExecuteMailMergeRequest(object):
     """
     Request model for execute_mail_merge operation.
     Initializes a new instance.
-    :param name The document name.
+    :param name The template name.
     :param data Mail merge data
     :param folder Original document folder.
     :param storage Original document storage.

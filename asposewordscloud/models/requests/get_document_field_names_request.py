@@ -28,7 +28,7 @@ class GetDocumentFieldNamesRequest(object):
     """
     Request model for get_document_field_names operation.
     Initializes a new instance.
-    :param name The document name.
+    :param name The template name.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

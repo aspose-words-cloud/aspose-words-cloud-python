@@ -6778,7 +6778,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The template name. (required)
         :param data str : Mail merge data
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -9023,7 +9023,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The template name. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
