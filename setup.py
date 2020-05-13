@@ -14,7 +14,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "aspose-words-cloud"
-VERSION = "20.4.0"
+VERSION = "20.5.0"
 # To install the library, run the following
 #
 # python setup.py install
@@ -32,7 +32,7 @@ with open(path.join(this_directory, 'README.md'), 'r') as f:
 setup(
     name=NAME,
     version=VERSION,
-    description="Aspose.Words for Cloud API Reference",
+    description="Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate Microsoft Word® file generation, manipulation, conversion & inspection features into your own python applications.",
     author='Yaroslaw Ekimov',
     author_email="yaroslaw.ekimov@aspose.com",
     url="https://github.com/aspose-words-cloud/aspose-words-cloud-python",
@@ -48,7 +48,9 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
 	],
-    keywords=["aspose", "python", "aspose cloud", "word"],
+    keywords=["office", "convert", "word", "pdf", "docx", "html", "rtf", "png", "jpg", "split", "merge", "edit", "word to pdf",
+    "pdf to word", "docx to pdf", "pdf to docx", "word to html", "html to word", "reporting", "mailmerge", "statistics",
+    "watermark", "fields", "generate", "create", "report", "table", "paragraph", "images", "text", "generator", "creator", "maker"],
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,
