@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="StylesResponse.py">
+# <copyright company="Aspose" file="Styles.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -29,8 +29,8 @@ import re  # noqa: F401
 import six
 
 
-class StylesResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/styles.
+class Styles(object):
+    """Represents an array of styles list.
     """
 
     """
@@ -41,69 +41,69 @@ class StylesResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'request_id': 'str',
-        'styles': 'Styles'
+        'link': 'WordsApiLink',
+        'style_list': 'list[Style]'
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'styles': 'Styles'
+        'link': 'link',
+        'style_list': 'StyleList'
     }
 
-    def __init__(self, request_id=None, styles=None):  # noqa: E501
-        """StylesResponse - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, link=None, style_list=None):  # noqa: E501
+        """Styles - a model defined in Swagger"""  # noqa: E501
 
-        self._request_id = None
-        self._styles = None
+        self._link = None
+        self._style_list = None
         self.discriminator = None
 
-        if request_id is not None:
-            self.request_id = request_id
-        if styles is not None:
-            self.styles = styles
+        if link is not None:
+            self.link = link
+        if style_list is not None:
+            self.style_list = style_list
 
     @property
-    def request_id(self):
-        """Gets the request_id of this StylesResponse.  # noqa: E501
+    def link(self):
+        """Gets the link of this Styles.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
-        :return: The request_id of this StylesResponse.  # noqa: E501
-        :rtype: str
+        :return: The link of this Styles.  # noqa: E501
+        :rtype: WordsApiLink
         """
-        return self._request_id
+        return self._link
 
-    @request_id.setter
-    def request_id(self, request_id):
-        """Sets the request_id of this StylesResponse.
+    @link.setter
+    def link(self, link):
+        """Sets the link of this Styles.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
-        :param request_id: The request_id of this StylesResponse.  # noqa: E501
-        :type: str
+        :param link: The link of this Styles.  # noqa: E501
+        :type: WordsApiLink
         """
-        self._request_id = request_id
+        self._link = link
     @property
-    def styles(self):
-        """Gets the styles of this StylesResponse.  # noqa: E501
+    def style_list(self):
+        """Gets the style_list of this Styles.  # noqa: E501
 
-        Gets or sets styles.  # noqa: E501
+        Gets or sets array of document styles.  # noqa: E501
 
-        :return: The styles of this StylesResponse.  # noqa: E501
-        :rtype: Styles
+        :return: The style_list of this Styles.  # noqa: E501
+        :rtype: list[Style]
         """
-        return self._styles
+        return self._style_list
 
-    @styles.setter
-    def styles(self, styles):
-        """Sets the styles of this StylesResponse.
+    @style_list.setter
+    def style_list(self, style_list):
+        """Sets the style_list of this Styles.
 
-        Gets or sets styles.  # noqa: E501
+        Gets or sets array of document styles.  # noqa: E501
 
-        :param styles: The styles of this StylesResponse.  # noqa: E501
-        :type: Styles
+        :param style_list: The style_list of this Styles.  # noqa: E501
+        :type: list[Style]
         """
-        self._styles = styles
+        self._style_list = style_list
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
@@ -138,7 +138,7 @@ class StylesResponse(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, StylesResponse):
+        if not isinstance(other, Styles):
             return False
 
         return self.__dict__ == other.__dict__

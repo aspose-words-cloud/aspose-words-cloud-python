@@ -203,6 +203,7 @@ from asposewordscloud.models.style_copy import StyleCopy
 from asposewordscloud.models.style_insert import StyleInsert
 from asposewordscloud.models.style_response import StyleResponse
 from asposewordscloud.models.style_update import StyleUpdate
+from asposewordscloud.models.styles import Styles
 from asposewordscloud.models.styles_response import StylesResponse
 from asposewordscloud.models.svg_save_options_data import SvgSaveOptionsData
 from asposewordscloud.models.tab_stop import TabStop
