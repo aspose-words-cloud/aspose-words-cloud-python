@@ -21,7 +21,12 @@ def runtests(dockerImageVersion)
 				}
             
                 stage('tests'){
-                    sh "python -m unittest discover -v -s ."
+                    try {
+                        sh "python -m xmlrunner discover -v -s --output-file testReport.xml ."
+                    } 
+					finally {
+                        junit '**\\testReport.xml'
+					}
                 }
             
                 stage('bdd-tests'){

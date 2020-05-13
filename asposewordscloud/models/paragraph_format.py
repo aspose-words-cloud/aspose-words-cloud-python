@@ -59,6 +59,7 @@ class ParagraphFormat(object):
         'outline_level': 'str',
         'page_break_before': 'bool',
         'right_indent': 'float',
+        'shading': 'Shading',
         'space_after': 'float',
         'space_after_auto': 'bool',
         'space_before': 'float',
@@ -89,6 +90,7 @@ class ParagraphFormat(object):
         'outline_level': 'OutlineLevel',
         'page_break_before': 'PageBreakBefore',
         'right_indent': 'RightIndent',
+        'shading': 'Shading',
         'space_after': 'SpaceAfter',
         'space_after_auto': 'SpaceAfterAuto',
         'space_before': 'SpaceBefore',
@@ -100,7 +102,7 @@ class ParagraphFormat(object):
         'widow_control': 'WidowControl'
     }
 
-    def __init__(self, link=None, add_space_between_far_east_and_alpha=None, add_space_between_far_east_and_digit=None, alignment=None, bidi=None, drop_cap_position=None, first_line_indent=None, is_list_item=None, keep_together=None, keep_with_next=None, left_indent=None, line_spacing=None, line_spacing_rule=None, lines_to_drop=None, no_space_between_paragraphs_of_same_style=None, outline_level=None, page_break_before=None, right_indent=None, space_after=None, space_after_auto=None, space_before=None, space_before_auto=None, style_identifier=None, style_name=None, suppress_auto_hyphens=None, suppress_line_numbers=None, widow_control=None):  # noqa: E501
+    def __init__(self, link=None, add_space_between_far_east_and_alpha=None, add_space_between_far_east_and_digit=None, alignment=None, bidi=None, drop_cap_position=None, first_line_indent=None, is_list_item=None, keep_together=None, keep_with_next=None, left_indent=None, line_spacing=None, line_spacing_rule=None, lines_to_drop=None, no_space_between_paragraphs_of_same_style=None, outline_level=None, page_break_before=None, right_indent=None, shading=None, space_after=None, space_after_auto=None, space_before=None, space_before_auto=None, style_identifier=None, style_name=None, suppress_auto_hyphens=None, suppress_line_numbers=None, widow_control=None):  # noqa: E501
         """ParagraphFormat - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
@@ -121,6 +123,7 @@ class ParagraphFormat(object):
         self._outline_level = None
         self._page_break_before = None
         self._right_indent = None
+        self._shading = None
         self._space_after = None
         self._space_after_auto = None
         self._space_before = None
@@ -168,6 +171,8 @@ class ParagraphFormat(object):
             self.page_break_before = page_break_before
         if right_indent is not None:
             self.right_indent = right_indent
+        if shading is not None:
+            self.shading = shading
         if space_after is not None:
             self.space_after = space_after
         if space_after_auto is not None:
@@ -597,6 +602,27 @@ class ParagraphFormat(object):
         :type: float
         """
         self._right_indent = right_indent
+    @property
+    def shading(self):
+        """Gets the shading of this ParagraphFormat.  # noqa: E501
+
+        Gets or sets shading.  # noqa: E501
+
+        :return: The shading of this ParagraphFormat.  # noqa: E501
+        :rtype: Shading
+        """
+        return self._shading
+
+    @shading.setter
+    def shading(self, shading):
+        """Sets the shading of this ParagraphFormat.
+
+        Gets or sets shading.  # noqa: E501
+
+        :param shading: The shading of this ParagraphFormat.  # noqa: E501
+        :type: Shading
+        """
+        self._shading = shading
     @property
     def space_after(self):
         """Gets the space_after of this ParagraphFormat.  # noqa: E501

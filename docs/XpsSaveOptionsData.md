@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 **update_last_saved_time_property** | **bool** | Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving. | [optional] 
 **update_sdt_content** | **bool** | Gets or sets value determining whether content of StructuredDocumentTag is updated before saving. | [optional] 
 **update_fields** | **bool** | Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true | [optional] 
+**dml3_d_effects_rendering_mode** | **str** | Gets or sets a value determining how 3D effects are rendered. | [optional] 
+**update_last_printed_property** | **bool** | Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving. | [optional] 
 **bookmarks_outline_level** | **int** | Gets or sets specifies the level in the XPS document outline at which to display Word bookmarks. | [optional] 
 **headings_outline_levels** | **int** | Gets or sets specifies how many levels of headings (paragraphs formatted with the Heading styles) to include in the XPS document outline. | [optional] 
 **outline_options** | [**OutlineOptionsData**](OutlineOptionsData.md) |  | [optional] 

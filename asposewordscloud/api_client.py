@@ -77,12 +77,12 @@ class ApiClient(object):
 
         self.pool = ThreadPool()
         self.rest_client = rest.RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '20.4'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '20.5'}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'python sdk 20.4'
+        self.user_agent = 'python sdk 20.5'
 
     def __del__(self):
         self.pool.close()
@@ -104,7 +104,7 @@ class ApiClient(object):
     def __call_api(
             self, resource_path, method, path_params=None,
             query_params=None, header_params=None, body=None, post_params=None,
-            files=None, response_type=None, auth_settings=None,
+            response_type=None, auth_settings=None,
             _return_http_data_only=None, collection_formats=None,
             _preload_content=True, _request_timeout=None):
         """Call api method"""
@@ -143,8 +143,8 @@ class ApiClient(object):
                                                      collection_formats)
 
         # post parameters
-        if post_params or files:
-            post_params = self.prepare_post_parameters(post_params, files)
+        if post_params:
+            post_params = self.prepare_post_parameters(post_params)
             post_params = self.sanitize_for_serialization(post_params)
             post_params = self.parameters_to_tuples(post_params,
                                                     collection_formats)
@@ -286,7 +286,7 @@ class ApiClient(object):
 
     def call_api(self, resource_path, method,
                  path_params=None, query_params=None, header_params=None,
-                 body=None, post_params=None, files=None,
+                 body=None, post_params=None,
                  response_type=None, auth_settings=None, is_async=None,
                  _return_http_data_only=None, collection_formats=None,
                  _preload_content=True, _request_timeout=None):
@@ -329,7 +329,7 @@ class ApiClient(object):
         if not is_async:
             return self.__call_api(resource_path, method,
                                    path_params, query_params, header_params,
-                                   body, post_params, files,
+                                   body, post_params,
                                    response_type, auth_settings,
                                    _return_http_data_only, collection_formats,
                                    _preload_content, _request_timeout)
@@ -337,7 +337,7 @@ class ApiClient(object):
             thread = self.pool.apply_async(self.__call_api, (resource_path,
                                                              method, path_params, query_params,
                                                              header_params, body,
-                                                             post_params, files,
+                                                             post_params,
                                                              response_type, auth_settings,
                                                              _return_http_data_only,
                                                              collection_formats,
@@ -435,7 +435,7 @@ class ApiClient(object):
                 new_params.append((k, v))
         return new_params
 
-    def prepare_post_parameters(self, post_params=None, files=None):
+    def prepare_post_parameters(self, post_params=None):
         """Builds form parameters.
 
         :param post_params: Normal form parameters.
@@ -445,20 +445,21 @@ class ApiClient(object):
         params = []
 
         if post_params:
-            params = post_params
+            for k, v, t in post_params:
+                if t == 'string':
+                    params.append(tuple([k, v]))
 
-        if files:
-            for k, v in files:
-                if not v:
-                    continue
-                file_names = v if type(v) is list else [v]
-                for n in file_names:
-                    filename = os.path.basename(n.name)
-                    filedata = n.read()
-                    mimetype = (mimetypes.guess_type(filename)[0] or
-                                'application/octet-stream')
-                    params.append(
-                        tuple([k, tuple([filename, filedata, mimetype])]))
+                if t == 'file':
+                    if not v:
+                        continue
+                    file_names = v if type(v) is list else [v]
+                    for n in file_names:
+                        filename = os.path.basename(n.name)
+                        filedata = n.read()
+                        mimetype = (mimetypes.guess_type(filename)[0] or
+                                    'application/octet-stream')
+                        params.append(
+                            tuple([k, tuple([filename, filedata, mimetype])]))
 
         return params
 
