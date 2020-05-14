@@ -30,7 +30,7 @@ class ApplyStyleToDocumentElementRequest(object):
     Initializes a new instance.
     :param name The document name.
     :param style_apply Style to apply.
-    :param styled_node_path Path to the node of IStyledDocumentElement.
+    :param styled_node_path The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
