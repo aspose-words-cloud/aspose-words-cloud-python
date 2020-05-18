@@ -42,7 +42,7 @@ class StylesResponse(object):
     """
     swagger_types = {
         'request_id': 'str',
-        'styles': 'Styles'
+        'styles': 'list[Style]'
     }
 
     attribute_map = {
@@ -87,10 +87,10 @@ class StylesResponse(object):
     def styles(self):
         """Gets the styles of this StylesResponse.  # noqa: E501
 
-        Gets or sets styles.  # noqa: E501
+        Gets or sets styles which are contained in document.  # noqa: E501
 
         :return: The styles of this StylesResponse.  # noqa: E501
-        :rtype: Styles
+        :rtype: list[Style]
         """
         return self._styles
 
@@ -98,10 +98,10 @@ class StylesResponse(object):
     def styles(self, styles):
         """Sets the styles of this StylesResponse.
 
-        Gets or sets styles.  # noqa: E501
+        Gets or sets styles which are contained in document.  # noqa: E501
 
         :param styles: The styles of this StylesResponse.  # noqa: E501
-        :type: Styles
+        :type: list[Style]
         """
         self._styles = styles
     def to_dict(self):
