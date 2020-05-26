@@ -8087,7 +8087,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
 node_path = 'node_path_example' # str | Path to the node, which contains collection of drawing objects.
-drawing_object = 'drawing_object_example' # str |  (optional)
+drawing_object = asposewordscloud.DrawingObjectInsert() # DrawingObjectInsert |  (optional)
 image_file = 'image_file_example' # str |  (optional)
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -8111,7 +8111,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **node_path** | **str**| Path to the node, which contains collection of drawing objects. | 
- **drawing_object** | **str**|  | [optional] 
+ **drawing_object** | [**DrawingObjectInsert**](.md)|  | [optional] 
  **image_file** | **str**|  | [optional] 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -8156,7 +8156,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
-drawing_object = 'drawing_object_example' # str |  (optional)
+drawing_object = asposewordscloud.DrawingObjectInsert() # DrawingObjectInsert |  (optional)
 image_file = 'image_file_example' # str |  (optional)
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -8179,7 +8179,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
- **drawing_object** | **str**|  | [optional] 
+ **drawing_object** | [**DrawingObjectInsert**](.md)|  | [optional] 
  **image_file** | **str**|  | [optional] 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -11249,7 +11249,7 @@ api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuratio
 name = 'name_example' # str | The document name.
 node_path = 'node_path_example' # str | Path to the node, which contains collection of drawing objects.
 index = 56 # int | Object index.
-drawing_object = 'drawing_object_example' # str |  (optional)
+drawing_object = asposewordscloud.DrawingObjectUpdate() # DrawingObjectUpdate |  (optional)
 image_file = 'image_file_example' # str |  (optional)
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -11274,7 +11274,7 @@ Name | Type | Description  | Notes
  **name** | **str**| The document name. | 
  **node_path** | **str**| Path to the node, which contains collection of drawing objects. | 
  **index** | **int**| Object index. | 
- **drawing_object** | **str**|  | [optional] 
+ **drawing_object** | [**DrawingObjectUpdate**](.md)|  | [optional] 
  **image_file** | **str**|  | [optional] 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 
@@ -11320,7 +11320,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = asposewordscloud.WordsApi(asposewordscloud.ApiClient(configuration))
 name = 'name_example' # str | The document name.
 index = 56 # int | Object index.
-drawing_object = 'drawing_object_example' # str |  (optional)
+drawing_object = asposewordscloud.DrawingObjectUpdate() # DrawingObjectUpdate |  (optional)
 image_file = 'image_file_example' # str |  (optional)
 folder = 'folder_example' # str | Original document folder. (optional)
 storage = 'storage_example' # str | Original document storage. (optional)
@@ -11344,7 +11344,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The document name. | 
  **index** | **int**| Object index. | 
- **drawing_object** | **str**|  | [optional] 
+ **drawing_object** | [**DrawingObjectUpdate**](.md)|  | [optional] 
  **image_file** | **str**|  | [optional] 
  **folder** | **str**| Original document folder. | [optional] 
  **storage** | **str**| Original document storage. | [optional] 

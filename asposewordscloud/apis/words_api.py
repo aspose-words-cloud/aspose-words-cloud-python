@@ -16697,7 +16697,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param drawing_object str : Drawing object parameters (required)
+        :param drawing_object DrawingObjectInsert : Drawing object parameters. (required)
         :param image_file file : File with image (required)
         :param node_path str : Path to the node, which contains collection of drawing objects. (required)
         :param folder str : Original document folder.
@@ -16852,7 +16852,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param drawing_object str : Drawing object parameters (required)
+        :param drawing_object DrawingObjectInsert : Drawing object parameters. (required)
         :param image_file file : File with image (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -23572,7 +23572,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param drawing_object str : Drawing object parameters (required)
+        :param drawing_object DrawingObjectUpdate : Drawing object parameters (required)
         :param image_file file : File with image (required)
         :param node_path str : Path to the node, which contains collection of drawing objects. (required)
         :param index int : Object index. (required)
@@ -23733,7 +23733,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The document name. (required)
-        :param drawing_object str : Drawing object parameters (required)
+        :param drawing_object DrawingObjectUpdate : Drawing object parameters (required)
         :param image_file file : File with image (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.

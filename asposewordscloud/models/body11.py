@@ -41,7 +41,7 @@ class Body11(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'drawing_object': 'str',
+        'drawing_object': 'DrawingObjectUpdate',
         'image_file': 'str'
     }
 
@@ -66,10 +66,10 @@ class Body11(object):
     def drawing_object(self):
         """Gets the drawing_object of this Body11.  # noqa: E501
 
-        Drawing object parameters  # noqa: E501
+        Gets or sets drawing_object.  # noqa: E501
 
         :return: The drawing_object of this Body11.  # noqa: E501
-        :rtype: str
+        :rtype: DrawingObjectUpdate
         """
         return self._drawing_object
 
@@ -77,10 +77,10 @@ class Body11(object):
     def drawing_object(self, drawing_object):
         """Sets the drawing_object of this Body11.
 
-        Drawing object parameters  # noqa: E501
+        Gets or sets drawing_object.  # noqa: E501
 
         :param drawing_object: The drawing_object of this Body11.  # noqa: E501
-        :type: str
+        :type: DrawingObjectUpdate
         """
         if drawing_object is None:
             raise ValueError("Invalid value for `drawing_object`, must not be `None`")  # noqa: E501

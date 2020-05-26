@@ -29,7 +29,7 @@ class InsertDrawingObjectRequest(object):
     Request model for insert_drawing_object operation.
     Initializes a new instance.
     :param name The document name.
-    :param drawing_object Drawing object parameters
+    :param drawing_object Drawing object parameters.
     :param image_file File with image
     :param node_path Path to the node, which contains collection of drawing objects.
     :param folder Original document folder.
