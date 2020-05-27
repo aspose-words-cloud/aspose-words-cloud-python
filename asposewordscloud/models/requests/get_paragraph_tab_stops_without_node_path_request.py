@@ -1,5 +1,5 @@
 # --------------------------------------------------------------------------------
-# <copyright company="Aspose" file="DeleteParagraphTabStopRequest.py">
+# <copyright company="Aspose" file="GetParagraphTabStopsWithoutNodePathRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -24,28 +24,22 @@
 # --------------------------------------------------------------------------------
 
 
-class DeleteParagraphTabStopRequest(object):
+class GetParagraphTabStopsWithoutNodePathRequest(object):
     """
-    Request model for delete_paragraph_tab_stop operation.
+    Request model for get_paragraph_tab_stops_without_node_path operation.
     Initializes a new instance.
     :param name The document name.
-    :param position a tab stop position to remove.
-    :param node_path Path to the node which contains paragraph.
     :param index Object index.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
-    :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     """
 
-    def __init__(self, name, position, node_path, index, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None):
+    def __init__(self, name, index, folder=None, storage=None, load_encoding=None, password=None):
         self.name = name
-        self.position = position
-        self.node_path = node_path
         self.index = index
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
-        self.dest_file_name = dest_file_name
