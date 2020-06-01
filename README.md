@@ -104,18 +104,17 @@ The complete source code is available at [GitHub Repository](https://github.com/
 ## Delete Watermarks from Word Document via Python
 
 ```python
-import asposewordscloud
-import asposewordscloud.models.requests
+        # Start README example
 
-words_api = asposewordscloud.WordsApi('appSid', 'appKey', 'https://api.aspose.cloud')
-filename = 'test_doc.docx'
-remote_name = 'TestDeleteDocumentWatermark.docx'
-remote_folder = 'FolderWhereFileLocates'
+        words_api = asposewordscloud.WordsApi(apiSid, apiKey, baseUrl)
 
-upload_request = asposewordscloud.models.requests.UploadFileRequest(os.path.join(self.local_common_folder, filename), 'rb'), os.path.join(remote_folder, remote_name))
-request = asposewordscloud.models.requests.DeleteWatermarkRequest(remote_name, remote_folder)
-result = words_api.delete_watermark(request)
-self.assertTrue(result.code == 200, 'Error has occurred while delete document watermark')
+        upload_request = asposewordscloud.models.requests.UploadFileRequest(open(os.path.join(local_folder, filename), 'rb'), os.path.join(remote_folder, remote_name))
+        #_result = self.words_api.upload_file(upload_request)
+
+        request = asposewordscloud.models.requests.DeleteWatermarkRequest(remote_name, remote_folder)
+        #_result = words_api.delete_watermark(request)
+
+        # End README example
 ```
 
 [Product Page](https://products.aspose.cloud/words/python) | [Documentation](https://docs.aspose.cloud/display/wordscloud/Home) | [API Reference](https://apireference.aspose.cloud/words/) | [Code Samples](https://github.com/aspose-words-cloud/aspose-words-cloud-python) | [Blog](https://blog.aspose.cloud/category/words/) | [Free Support](https://forum.aspose.cloud/c/words) | [Free Trial](https://dashboard.aspose.cloud/#/apps)

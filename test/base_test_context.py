@@ -36,18 +36,28 @@ import xmlrunner
 
 class BaseTestContext(unittest.TestCase):
 
+    def read_config(self):
+        root_path = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/..")        
+        creds_path = os.path.join(root_path, 'Settings', 'servercreds.json')
+        if not os.path.exists(creds_path):
+            raise IOError('Credential file Settings/servercreds.json is not found')
+        with open(os.path.join(root_path, 'Settings', 'servercreds.json')) as f:
+            creds = json.loads(f.read())
+        return creds
+
     def setUp(self):
         root_path = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/..")
         self.local_test_folder = os.path.join(root_path, 'TestData')
         self.remote_test_folder = os.path.join('Temp', 'SdkTests', 'python')
         self.remote_test_out = os.path.join('Temp', 'SdkTests', 'python', 'TestOut')
         self.local_common_folder = os.path.join(self.local_test_folder, 'Common')
-        creds_path = os.path.join(root_path, 'Settings', 'servercreds.json')
-        if not os.path.exists(creds_path):
-            raise IOError('Credential file Settings/servercreds.json is not found')
+        # creds_path = os.path.join(root_path, 'Settings', 'servercreds.json')
+        # if not os.path.exists(creds_path):
+        #    raise IOError('Credential file Settings/servercreds.json is not found')
 
-        with open(os.path.join(root_path, 'Settings', 'servercreds.json')) as f:
-            creds = json.loads(f.read())
+        # with open(os.path.join(root_path, 'Settings', 'servercreds.json')) as f:
+        #    creds = json.loads(f.read())
+        creds = self.read_config()
         self.words_api = asposewordscloud.WordsApi(creds['AppSid'], creds['AppKey'], creds['BaseUrl'])
         if six.PY3:
             warnings.simplefilter("ignore", ResourceWarning)
@@ -55,7 +65,6 @@ class BaseTestContext(unittest.TestCase):
     def upload_file(self, path, file):
         request = asposewordscloud.models.requests.UploadFileRequest(file, path)
         _result = self.words_api.upload_file(request)
-
 
 if __name__ == '__main__':
     with open('testReport.xml', 'wb') as output:
