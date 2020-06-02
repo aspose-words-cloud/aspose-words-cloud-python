@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="StylesResponse.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="styles_response.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,6 +83,7 @@ class StylesResponse(object):
         :type: str
         """
         self._request_id = request_id
+
     @property
     def styles(self):
         """Gets the styles of this StylesResponse.  # noqa: E501
@@ -104,6 +105,8 @@ class StylesResponse(object):
         :type: list[Style]
         """
         self._styles = styles
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

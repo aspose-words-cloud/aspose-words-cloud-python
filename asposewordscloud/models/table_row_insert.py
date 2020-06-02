@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="TableRowInsert.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="table_row_insert.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,26 +41,48 @@ class TableRowInsert(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'insert_after': 'int',
-        'columns_count': 'int'
+        'columns_count': 'int',
+        'insert_after': 'int'
     }
 
     attribute_map = {
-        'insert_after': 'InsertAfter',
-        'columns_count': 'ColumnsCount'
+        'columns_count': 'ColumnsCount',
+        'insert_after': 'InsertAfter'
     }
 
-    def __init__(self, insert_after=None, columns_count=None):  # noqa: E501
+    def __init__(self, columns_count=None, insert_after=None):  # noqa: E501
         """TableRowInsert - a model defined in Swagger"""  # noqa: E501
 
-        self._insert_after = None
         self._columns_count = None
+        self._insert_after = None
         self.discriminator = None
 
-        if insert_after is not None:
-            self.insert_after = insert_after
         if columns_count is not None:
             self.columns_count = columns_count
+        if insert_after is not None:
+            self.insert_after = insert_after
+
+    @property
+    def columns_count(self):
+        """Gets the columns_count of this TableRowInsert.  # noqa: E501
+
+        Gets or sets count of columns. Default is 1.  # noqa: E501
+
+        :return: The columns_count of this TableRowInsert.  # noqa: E501
+        :rtype: int
+        """
+        return self._columns_count
+
+    @columns_count.setter
+    def columns_count(self, columns_count):
+        """Sets the columns_count of this TableRowInsert.
+
+        Gets or sets count of columns. Default is 1.  # noqa: E501
+
+        :param columns_count: The columns_count of this TableRowInsert.  # noqa: E501
+        :type: int
+        """
+        self._columns_count = columns_count
 
     @property
     def insert_after(self):
@@ -83,27 +105,8 @@ class TableRowInsert(object):
         :type: int
         """
         self._insert_after = insert_after
-    @property
-    def columns_count(self):
-        """Gets the columns_count of this TableRowInsert.  # noqa: E501
 
-        Gets or sets count of columns. Default is 1.  # noqa: E501
 
-        :return: The columns_count of this TableRowInsert.  # noqa: E501
-        :rtype: int
-        """
-        return self._columns_count
-
-    @columns_count.setter
-    def columns_count(self, columns_count):
-        """Sets the columns_count of this TableRowInsert.
-
-        Gets or sets count of columns. Default is 1.  # noqa: E501
-
-        :param columns_count: The columns_count of this TableRowInsert.  # noqa: E501
-        :type: int
-        """
-        self._columns_count = columns_count
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

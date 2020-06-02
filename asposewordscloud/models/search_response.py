@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="SearchResponse.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="search_response.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -88,6 +88,7 @@ class SearchResponse(object):
         :type: str
         """
         self._request_id = request_id
+
     @property
     def searching_pattern(self):
         """Gets the searching_pattern of this SearchResponse.  # noqa: E501
@@ -109,11 +110,12 @@ class SearchResponse(object):
         :type: str
         """
         self._searching_pattern = searching_pattern
+
     @property
     def search_results(self):
         """Gets the search_results of this SearchResponse.  # noqa: E501
 
-        Gets or sets search_results.  # noqa: E501
+        Gets or sets collection of search results.  # noqa: E501
 
         :return: The search_results of this SearchResponse.  # noqa: E501
         :rtype: SearchResultsCollection
@@ -124,12 +126,14 @@ class SearchResponse(object):
     def search_results(self, search_results):
         """Sets the search_results of this SearchResponse.
 
-        Gets or sets search_results.  # noqa: E501
+        Gets or sets collection of search results.  # noqa: E501
 
         :param search_results: The search_results of this SearchResponse.  # noqa: E501
         :type: SearchResultsCollection
         """
         self._search_results = search_results
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

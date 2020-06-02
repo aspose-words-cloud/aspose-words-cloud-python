@@ -1,6 +1,7 @@
-# --------------------------------------------------------------------------------
-# <copyright company="Aspose" file="InsertOrUpdateParagraphTabStopRequest.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# coding: utf-8
+# -----------------------------------------------------------------------------------
+# <copyright company="Aspose" file="insert_or_update_paragraph_tab_stop_request.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -9,10 +10,10 @@
 #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 #  copies of the Software, and to permit persons to whom the Software is
 #  furnished to do so, subject to the following conditions:
-# 
+#
 #  The above copyright notice and this permission notice shall be included in all
 #  copies or substantial portions of the Software.
-# 
+#
 #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -21,16 +22,15 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 # </summary>
-# --------------------------------------------------------------------------------
-
+# -----------------------------------------------------------------------------------
 
 class InsertOrUpdateParagraphTabStopRequest(object):
     """
     Request model for insert_or_update_paragraph_tab_stop operation.
     Initializes a new instance.
     :param name The document name.
-    :param dto Paragraph tab stop.
     :param node_path Path to the node which contains paragraph.
+    :param dto Paragraph tab stop.
     :param index Object index.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -39,10 +39,10 @@ class InsertOrUpdateParagraphTabStopRequest(object):
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     """
 
-    def __init__(self, name, dto, node_path, index, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None):
+    def __init__(self, name, node_path, dto, index, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None):
         self.name = name
-        self.dto = dto
         self.node_path = node_path
+        self.dto = dto
         self.index = index
         self.folder = folder
         self.storage = storage

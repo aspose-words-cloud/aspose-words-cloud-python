@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="ReportEngineSettings.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="report_engine_settings.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,36 +41,80 @@ class ReportEngineSettings(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'data_source_type': 'str',
-        'report_build_options': 'list[ReportBuildOptions]',
+        'csv_data_load_options': 'CsvDataLoadOptions',
         'data_source_name': 'str',
-        'csv_data_load_options': 'CsvDataLoadOptions'
+        'data_source_type': 'str',
+        'report_build_options': 'list[str]'
     }
 
     attribute_map = {
-        'data_source_type': 'DataSourceType',
-        'report_build_options': 'ReportBuildOptions',
+        'csv_data_load_options': 'CsvDataLoadOptions',
         'data_source_name': 'DataSourceName',
-        'csv_data_load_options': 'CsvDataLoadOptions'
+        'data_source_type': 'DataSourceType',
+        'report_build_options': 'ReportBuildOptions'
     }
 
-    def __init__(self, data_source_type=None, report_build_options=None, data_source_name=None, csv_data_load_options=None):  # noqa: E501
+    def __init__(self, csv_data_load_options=None, data_source_name=None, data_source_type=None, report_build_options=None):  # noqa: E501
         """ReportEngineSettings - a model defined in Swagger"""  # noqa: E501
 
+        self._csv_data_load_options = None
+        self._data_source_name = None
         self._data_source_type = None
         self._report_build_options = None
-        self._data_source_name = None
-        self._csv_data_load_options = None
         self.discriminator = None
 
+        if csv_data_load_options is not None:
+            self.csv_data_load_options = csv_data_load_options
+        if data_source_name is not None:
+            self.data_source_name = data_source_name
         if data_source_type is not None:
             self.data_source_type = data_source_type
         if report_build_options is not None:
             self.report_build_options = report_build_options
-        if data_source_name is not None:
-            self.data_source_name = data_source_name
-        if csv_data_load_options is not None:
-            self.csv_data_load_options = csv_data_load_options
+
+    @property
+    def csv_data_load_options(self):
+        """Gets the csv_data_load_options of this ReportEngineSettings.  # noqa: E501
+
+        Gets or sets options for parsing CSV data.  # noqa: E501
+
+        :return: The csv_data_load_options of this ReportEngineSettings.  # noqa: E501
+        :rtype: CsvDataLoadOptions
+        """
+        return self._csv_data_load_options
+
+    @csv_data_load_options.setter
+    def csv_data_load_options(self, csv_data_load_options):
+        """Sets the csv_data_load_options of this ReportEngineSettings.
+
+        Gets or sets options for parsing CSV data.  # noqa: E501
+
+        :param csv_data_load_options: The csv_data_load_options of this ReportEngineSettings.  # noqa: E501
+        :type: CsvDataLoadOptions
+        """
+        self._csv_data_load_options = csv_data_load_options
+
+    @property
+    def data_source_name(self):
+        """Gets the data_source_name of this ReportEngineSettings.  # noqa: E501
+
+        Gets or sets a name to reference the data source object in the template.  # noqa: E501
+
+        :return: The data_source_name of this ReportEngineSettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._data_source_name
+
+    @data_source_name.setter
+    def data_source_name(self, data_source_name):
+        """Sets the data_source_name of this ReportEngineSettings.
+
+        Gets or sets a name to reference the data source object in the template.  # noqa: E501
+
+        :param data_source_name: The data_source_name of this ReportEngineSettings.  # noqa: E501
+        :type: str
+        """
+        self._data_source_name = data_source_name
 
     @property
     def data_source_type(self):
@@ -93,7 +137,7 @@ class ReportEngineSettings(object):
         :type: str
         """
         allowed_values = ["Xml", "Json", "Csv"]  # noqa: E501
-        if not data_source_type.isdigit():	
+        if not data_source_type.isdigit():
             if data_source_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `data_source_type` ({0}), must be one of {1}"  # noqa: E501
@@ -101,6 +145,7 @@ class ReportEngineSettings(object):
             self._data_source_type = data_source_type
         else:
             self._data_source_type = allowed_values[int(data_source_type) if six.PY3 else long(data_source_type)]
+
     @property
     def report_build_options(self):
         """Gets the report_build_options of this ReportEngineSettings.  # noqa: E501
@@ -108,7 +153,7 @@ class ReportEngineSettings(object):
         Gets or sets type of options to build report.  # noqa: E501
 
         :return: The report_build_options of this ReportEngineSettings.  # noqa: E501
-        :rtype: list[ReportBuildOptions]
+        :rtype: list[str]
         """
         return self._report_build_options
 
@@ -119,51 +164,11 @@ class ReportEngineSettings(object):
         Gets or sets type of options to build report.  # noqa: E501
 
         :param report_build_options: The report_build_options of this ReportEngineSettings.  # noqa: E501
-        :type: list[ReportBuildOptions]
+        :type: list[str]
         """
         self._report_build_options = report_build_options
-    @property
-    def data_source_name(self):
-        """Gets the data_source_name of this ReportEngineSettings.  # noqa: E501
 
-        Gets or sets a name to reference the data source object in the template.  # noqa: E501
 
-        :return: The data_source_name of this ReportEngineSettings.  # noqa: E501
-        :rtype: str
-        """
-        return self._data_source_name
-
-    @data_source_name.setter
-    def data_source_name(self, data_source_name):
-        """Sets the data_source_name of this ReportEngineSettings.
-
-        Gets or sets a name to reference the data source object in the template.  # noqa: E501
-
-        :param data_source_name: The data_source_name of this ReportEngineSettings.  # noqa: E501
-        :type: str
-        """
-        self._data_source_name = data_source_name
-    @property
-    def csv_data_load_options(self):
-        """Gets the csv_data_load_options of this ReportEngineSettings.  # noqa: E501
-
-        Gets or sets csv_data_load_options.  # noqa: E501
-
-        :return: The csv_data_load_options of this ReportEngineSettings.  # noqa: E501
-        :rtype: CsvDataLoadOptions
-        """
-        return self._csv_data_load_options
-
-    @csv_data_load_options.setter
-    def csv_data_load_options(self, csv_data_load_options):
-        """Sets the csv_data_load_options of this ReportEngineSettings.
-
-        Gets or sets csv_data_load_options.  # noqa: E501
-
-        :param csv_data_load_options: The csv_data_load_options of this ReportEngineSettings.  # noqa: E501
-        :type: CsvDataLoadOptions
-        """
-        self._csv_data_load_options = csv_data_load_options
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

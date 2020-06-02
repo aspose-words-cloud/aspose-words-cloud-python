@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="SearchResult.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="search_result.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,53 +41,32 @@ class SearchResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'range_start': 'DocumentPosition',
-        'range_end': 'DocumentPosition'
+        'range_end': 'DocumentPosition',
+        'range_start': 'DocumentPosition'
     }
 
     attribute_map = {
-        'range_start': 'RangeStart',
-        'range_end': 'RangeEnd'
+        'range_end': 'RangeEnd',
+        'range_start': 'RangeStart'
     }
 
-    def __init__(self, range_start=None, range_end=None):  # noqa: E501
+    def __init__(self, range_end=None, range_start=None):  # noqa: E501
         """SearchResult - a model defined in Swagger"""  # noqa: E501
 
-        self._range_start = None
         self._range_end = None
+        self._range_start = None
         self.discriminator = None
 
-        if range_start is not None:
-            self.range_start = range_start
         if range_end is not None:
             self.range_end = range_end
+        if range_start is not None:
+            self.range_start = range_start
 
-    @property
-    def range_start(self):
-        """Gets the range_start of this SearchResult.  # noqa: E501
-
-        Gets or sets range_start.  # noqa: E501
-
-        :return: The range_start of this SearchResult.  # noqa: E501
-        :rtype: DocumentPosition
-        """
-        return self._range_start
-
-    @range_start.setter
-    def range_start(self, range_start):
-        """Sets the range_start of this SearchResult.
-
-        Gets or sets range_start.  # noqa: E501
-
-        :param range_start: The range_start of this SearchResult.  # noqa: E501
-        :type: DocumentPosition
-        """
-        self._range_start = range_start
     @property
     def range_end(self):
         """Gets the range_end of this SearchResult.  # noqa: E501
 
-        Gets or sets range_end.  # noqa: E501
+        Gets or sets link to result range end node.  # noqa: E501
 
         :return: The range_end of this SearchResult.  # noqa: E501
         :rtype: DocumentPosition
@@ -98,12 +77,36 @@ class SearchResult(object):
     def range_end(self, range_end):
         """Sets the range_end of this SearchResult.
 
-        Gets or sets range_end.  # noqa: E501
+        Gets or sets link to result range end node.  # noqa: E501
 
         :param range_end: The range_end of this SearchResult.  # noqa: E501
         :type: DocumentPosition
         """
         self._range_end = range_end
+
+    @property
+    def range_start(self):
+        """Gets the range_start of this SearchResult.  # noqa: E501
+
+        Gets or sets link to result range start node.  # noqa: E501
+
+        :return: The range_start of this SearchResult.  # noqa: E501
+        :rtype: DocumentPosition
+        """
+        return self._range_start
+
+    @range_start.setter
+    def range_start(self, range_start):
+        """Sets the range_start of this SearchResult.
+
+        Gets or sets link to result range start node.  # noqa: E501
+
+        :param range_start: The range_start of this SearchResult.  # noqa: E501
+        :type: DocumentPosition
+        """
+        self._range_start = range_start
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

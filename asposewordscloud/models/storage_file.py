@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="StorageFile.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="storage_file.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,7 +30,7 @@ import six
 
 
 class StorageFile(object):
-    """File or folder information
+    """File or folder information.
     """
 
     """
@@ -41,41 +41,85 @@ class StorageFile(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
         'is_folder': 'bool',
         'modified_date': 'datetime',
-        'size': 'int',
-        'path': 'str'
+        'name': 'str',
+        'path': 'str',
+        'size': 'int'
     }
 
     attribute_map = {
-        'name': 'Name',
         'is_folder': 'IsFolder',
         'modified_date': 'ModifiedDate',
-        'size': 'Size',
-        'path': 'Path'
+        'name': 'Name',
+        'path': 'Path',
+        'size': 'Size'
     }
 
-    def __init__(self, name=None, is_folder=None, modified_date=None, size=None, path=None):  # noqa: E501
+    def __init__(self, is_folder=None, modified_date=None, name=None, path=None, size=None):  # noqa: E501
         """StorageFile - a model defined in Swagger"""  # noqa: E501
 
-        self._name = None
         self._is_folder = None
         self._modified_date = None
-        self._size = None
+        self._name = None
         self._path = None
+        self._size = None
         self.discriminator = None
 
-        if name is not None:
-            self.name = name
         if is_folder is not None:
             self.is_folder = is_folder
         if modified_date is not None:
             self.modified_date = modified_date
-        if size is not None:
-            self.size = size
+        if name is not None:
+            self.name = name
         if path is not None:
             self.path = path
+        if size is not None:
+            self.size = size
+
+    @property
+    def is_folder(self):
+        """Gets the is_folder of this StorageFile.  # noqa: E501
+
+        True if it is a folder.  # noqa: E501
+
+        :return: The is_folder of this StorageFile.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_folder
+
+    @is_folder.setter
+    def is_folder(self, is_folder):
+        """Sets the is_folder of this StorageFile.
+
+        True if it is a folder.  # noqa: E501
+
+        :param is_folder: The is_folder of this StorageFile.  # noqa: E501
+        :type: bool
+        """
+        self._is_folder = is_folder
+
+    @property
+    def modified_date(self):
+        """Gets the modified_date of this StorageFile.  # noqa: E501
+
+        File or folder last modified DateTime.  # noqa: E501
+
+        :return: The modified_date of this StorageFile.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._modified_date
+
+    @modified_date.setter
+    def modified_date(self, modified_date):
+        """Sets the modified_date of this StorageFile.
+
+        File or folder last modified DateTime.  # noqa: E501
+
+        :param modified_date: The modified_date of this StorageFile.  # noqa: E501
+        :type: datetime
+        """
+        self._modified_date = modified_date
 
     @property
     def name(self):
@@ -98,69 +142,7 @@ class StorageFile(object):
         :type: str
         """
         self._name = name
-    @property
-    def is_folder(self):
-        """Gets the is_folder of this StorageFile.  # noqa: E501
 
-        True if it is a folder.  # noqa: E501
-
-        :return: The is_folder of this StorageFile.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_folder
-
-    @is_folder.setter
-    def is_folder(self, is_folder):
-        """Sets the is_folder of this StorageFile.
-
-        True if it is a folder.  # noqa: E501
-
-        :param is_folder: The is_folder of this StorageFile.  # noqa: E501
-        :type: bool
-        """
-        self._is_folder = is_folder
-    @property
-    def modified_date(self):
-        """Gets the modified_date of this StorageFile.  # noqa: E501
-
-        File or folder last modified DateTime.  # noqa: E501
-
-        :return: The modified_date of this StorageFile.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._modified_date
-
-    @modified_date.setter
-    def modified_date(self, modified_date):
-        """Sets the modified_date of this StorageFile.
-
-        File or folder last modified DateTime.  # noqa: E501
-
-        :param modified_date: The modified_date of this StorageFile.  # noqa: E501
-        :type: datetime
-        """
-        self._modified_date = modified_date
-    @property
-    def size(self):
-        """Gets the size of this StorageFile.  # noqa: E501
-
-        File or folder size.  # noqa: E501
-
-        :return: The size of this StorageFile.  # noqa: E501
-        :rtype: int
-        """
-        return self._size
-
-    @size.setter
-    def size(self, size):
-        """Sets the size of this StorageFile.
-
-        File or folder size.  # noqa: E501
-
-        :param size: The size of this StorageFile.  # noqa: E501
-        :type: int
-        """
-        self._size = size
     @property
     def path(self):
         """Gets the path of this StorageFile.  # noqa: E501
@@ -182,6 +164,30 @@ class StorageFile(object):
         :type: str
         """
         self._path = path
+
+    @property
+    def size(self):
+        """Gets the size of this StorageFile.  # noqa: E501
+
+        File or folder size.  # noqa: E501
+
+        :return: The size of this StorageFile.  # noqa: E501
+        :rtype: int
+        """
+        return self._size
+
+    @size.setter
+    def size(self, size):
+        """Sets the size of this StorageFile.
+
+        File or folder size.  # noqa: E501
+
+        :param size: The size of this StorageFile.  # noqa: E501
+        :type: int
+        """
+        self._size = size
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

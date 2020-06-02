@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="TableRowResponse.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="table_row_response.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,11 +83,12 @@ class TableRowResponse(object):
         :type: str
         """
         self._request_id = request_id
+
     @property
     def row(self):
         """Gets the row of this TableRowResponse.  # noqa: E501
 
-        Gets or sets row.  # noqa: E501
+        Gets or sets table row.  # noqa: E501
 
         :return: The row of this TableRowResponse.  # noqa: E501
         :rtype: TableRow
@@ -98,12 +99,14 @@ class TableRowResponse(object):
     def row(self, row):
         """Sets the row of this TableRowResponse.
 
-        Gets or sets row.  # noqa: E501
+        Gets or sets table row.  # noqa: E501
 
         :param row: The row of this TableRowResponse.  # noqa: E501
         :type: TableRow
         """
         self._row = row
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

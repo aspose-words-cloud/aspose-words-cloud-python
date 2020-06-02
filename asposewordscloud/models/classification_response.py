@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="ClassificationResponse.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="classification_response.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -93,6 +93,7 @@ class ClassificationResponse(object):
         :type: str
         """
         self._request_id = request_id
+
     @property
     def best_class_name(self):
         """Gets the best_class_name of this ClassificationResponse.  # noqa: E501
@@ -114,6 +115,7 @@ class ClassificationResponse(object):
         :type: str
         """
         self._best_class_name = best_class_name
+
     @property
     def best_class_probability(self):
         """Gets the best_class_probability of this ClassificationResponse.  # noqa: E501
@@ -135,6 +137,7 @@ class ClassificationResponse(object):
         :type: float
         """
         self._best_class_probability = best_class_probability
+
     @property
     def best_results(self):
         """Gets the best_results of this ClassificationResponse.  # noqa: E501
@@ -156,6 +159,8 @@ class ClassificationResponse(object):
         :type: list[ClassificationResult]
         """
         self._best_results = best_results
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

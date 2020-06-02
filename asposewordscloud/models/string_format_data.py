@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="StringFormatData.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="string_format_data.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -98,7 +98,7 @@ class StringFormatData(object):
         :type: str
         """
         allowed_values = ["Near", "Center", "Far"]  # noqa: E501
-        if not alignment.isdigit():	
+        if not alignment.isdigit():
             if alignment not in allowed_values:
                 raise ValueError(
                     "Invalid value for `alignment` ({0}), must be one of {1}"  # noqa: E501
@@ -106,6 +106,7 @@ class StringFormatData(object):
             self._alignment = alignment
         else:
             self._alignment = allowed_values[int(alignment) if six.PY3 else long(alignment)]
+
     @property
     def format_flags(self):
         """Gets the format_flags of this StringFormatData.  # noqa: E501
@@ -127,7 +128,7 @@ class StringFormatData(object):
         :type: str
         """
         allowed_values = ["DirectionRightToLeft", "DirectionVertical", "FitBlackBox", "DisplayFormatControl", "NoFontFallback", "MeasureTrailingSpaces", "NoWrap", "LineLimit", "NoClip"]  # noqa: E501
-        if not format_flags.isdigit():	
+        if not format_flags.isdigit():
             if format_flags not in allowed_values:
                 raise ValueError(
                     "Invalid value for `format_flags` ({0}), must be one of {1}"  # noqa: E501
@@ -135,6 +136,7 @@ class StringFormatData(object):
             self._format_flags = format_flags
         else:
             self._format_flags = allowed_values[int(format_flags) if six.PY3 else long(format_flags)]
+
     @property
     def hotkey_prefix(self):
         """Gets the hotkey_prefix of this StringFormatData.  # noqa: E501
@@ -156,7 +158,7 @@ class StringFormatData(object):
         :type: str
         """
         allowed_values = ["None", "Show", "Hide"]  # noqa: E501
-        if not hotkey_prefix.isdigit():	
+        if not hotkey_prefix.isdigit():
             if hotkey_prefix not in allowed_values:
                 raise ValueError(
                     "Invalid value for `hotkey_prefix` ({0}), must be one of {1}"  # noqa: E501
@@ -164,6 +166,7 @@ class StringFormatData(object):
             self._hotkey_prefix = hotkey_prefix
         else:
             self._hotkey_prefix = allowed_values[int(hotkey_prefix) if six.PY3 else long(hotkey_prefix)]
+
     @property
     def line_alignment(self):
         """Gets the line_alignment of this StringFormatData.  # noqa: E501
@@ -185,7 +188,7 @@ class StringFormatData(object):
         :type: str
         """
         allowed_values = ["Near", "Center", "Far"]  # noqa: E501
-        if not line_alignment.isdigit():	
+        if not line_alignment.isdigit():
             if line_alignment not in allowed_values:
                 raise ValueError(
                     "Invalid value for `line_alignment` ({0}), must be one of {1}"  # noqa: E501
@@ -193,6 +196,7 @@ class StringFormatData(object):
             self._line_alignment = line_alignment
         else:
             self._line_alignment = allowed_values[int(line_alignment) if six.PY3 else long(line_alignment)]
+
     @property
     def trimming(self):
         """Gets the trimming of this StringFormatData.  # noqa: E501
@@ -214,7 +218,7 @@ class StringFormatData(object):
         :type: str
         """
         allowed_values = ["None", "Character", "Word", "EllipsisCharacter", "EllipsisWord", "EllipsisPath"]  # noqa: E501
-        if not trimming.isdigit():	
+        if not trimming.isdigit():
             if trimming not in allowed_values:
                 raise ValueError(
                     "Invalid value for `trimming` ({0}), must be one of {1}"  # noqa: E501
@@ -222,6 +226,8 @@ class StringFormatData(object):
             self._trimming = trimming
         else:
             self._trimming = allowed_values[int(trimming) if six.PY3 else long(trimming)]
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

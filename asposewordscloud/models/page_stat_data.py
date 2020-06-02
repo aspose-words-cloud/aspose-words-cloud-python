@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="PageStatData.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="page_stat_data.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,7 +30,7 @@ import six
 
 
 class PageStatData(object):
-    """Container for the page&#39;s statistical data.
+    """Container for the page's statistical data.
     """
 
     """
@@ -41,36 +41,58 @@ class PageStatData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'footnotes_stat_data': 'FootnotesStatData',
         'page_number': 'int',
-        'word_count': 'int',
         'paragraph_count': 'int',
-        'footnotes_stat_data': 'FootnotesStatData'
+        'word_count': 'int'
     }
 
     attribute_map = {
+        'footnotes_stat_data': 'FootnotesStatData',
         'page_number': 'PageNumber',
-        'word_count': 'WordCount',
         'paragraph_count': 'ParagraphCount',
-        'footnotes_stat_data': 'FootnotesStatData'
+        'word_count': 'WordCount'
     }
 
-    def __init__(self, page_number=None, word_count=None, paragraph_count=None, footnotes_stat_data=None):  # noqa: E501
+    def __init__(self, footnotes_stat_data=None, page_number=None, paragraph_count=None, word_count=None):  # noqa: E501
         """PageStatData - a model defined in Swagger"""  # noqa: E501
 
-        self._page_number = None
-        self._word_count = None
-        self._paragraph_count = None
         self._footnotes_stat_data = None
+        self._page_number = None
+        self._paragraph_count = None
+        self._word_count = None
         self.discriminator = None
 
-        if page_number is not None:
-            self.page_number = page_number
-        if word_count is not None:
-            self.word_count = word_count
-        if paragraph_count is not None:
-            self.paragraph_count = paragraph_count
         if footnotes_stat_data is not None:
             self.footnotes_stat_data = footnotes_stat_data
+        if page_number is not None:
+            self.page_number = page_number
+        if paragraph_count is not None:
+            self.paragraph_count = paragraph_count
+        if word_count is not None:
+            self.word_count = word_count
+
+    @property
+    def footnotes_stat_data(self):
+        """Gets the footnotes_stat_data of this PageStatData.  # noqa: E501
+
+        Gets or sets detailed statistics of footnotes.  # noqa: E501
+
+        :return: The footnotes_stat_data of this PageStatData.  # noqa: E501
+        :rtype: FootnotesStatData
+        """
+        return self._footnotes_stat_data
+
+    @footnotes_stat_data.setter
+    def footnotes_stat_data(self, footnotes_stat_data):
+        """Sets the footnotes_stat_data of this PageStatData.
+
+        Gets or sets detailed statistics of footnotes.  # noqa: E501
+
+        :param footnotes_stat_data: The footnotes_stat_data of this PageStatData.  # noqa: E501
+        :type: FootnotesStatData
+        """
+        self._footnotes_stat_data = footnotes_stat_data
 
     @property
     def page_number(self):
@@ -93,27 +115,7 @@ class PageStatData(object):
         :type: int
         """
         self._page_number = page_number
-    @property
-    def word_count(self):
-        """Gets the word_count of this PageStatData.  # noqa: E501
 
-        Gets or sets total count of words in the page.  # noqa: E501
-
-        :return: The word_count of this PageStatData.  # noqa: E501
-        :rtype: int
-        """
-        return self._word_count
-
-    @word_count.setter
-    def word_count(self, word_count):
-        """Sets the word_count of this PageStatData.
-
-        Gets or sets total count of words in the page.  # noqa: E501
-
-        :param word_count: The word_count of this PageStatData.  # noqa: E501
-        :type: int
-        """
-        self._word_count = word_count
     @property
     def paragraph_count(self):
         """Gets the paragraph_count of this PageStatData.  # noqa: E501
@@ -135,27 +137,30 @@ class PageStatData(object):
         :type: int
         """
         self._paragraph_count = paragraph_count
+
     @property
-    def footnotes_stat_data(self):
-        """Gets the footnotes_stat_data of this PageStatData.  # noqa: E501
+    def word_count(self):
+        """Gets the word_count of this PageStatData.  # noqa: E501
 
-        Gets or sets footnotes_stat_data.  # noqa: E501
+        Gets or sets total count of words in the page.  # noqa: E501
 
-        :return: The footnotes_stat_data of this PageStatData.  # noqa: E501
-        :rtype: FootnotesStatData
+        :return: The word_count of this PageStatData.  # noqa: E501
+        :rtype: int
         """
-        return self._footnotes_stat_data
+        return self._word_count
 
-    @footnotes_stat_data.setter
-    def footnotes_stat_data(self, footnotes_stat_data):
-        """Sets the footnotes_stat_data of this PageStatData.
+    @word_count.setter
+    def word_count(self, word_count):
+        """Sets the word_count of this PageStatData.
 
-        Gets or sets footnotes_stat_data.  # noqa: E501
+        Gets or sets total count of words in the page.  # noqa: E501
 
-        :param footnotes_stat_data: The footnotes_stat_data of this PageStatData.  # noqa: E501
-        :type: FootnotesStatData
+        :param word_count: The word_count of this PageStatData.  # noqa: E501
+        :type: int
         """
-        self._footnotes_stat_data = footnotes_stat_data
+        self._word_count = word_count
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

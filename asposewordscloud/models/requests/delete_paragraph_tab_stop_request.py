@@ -1,6 +1,7 @@
-# --------------------------------------------------------------------------------
-# <copyright company="Aspose" file="DeleteParagraphTabStopRequest.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# coding: utf-8
+# -----------------------------------------------------------------------------------
+# <copyright company="Aspose" file="delete_paragraph_tab_stop_request.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -9,10 +10,10 @@
 #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 #  copies of the Software, and to permit persons to whom the Software is
 #  furnished to do so, subject to the following conditions:
-# 
+#
 #  The above copyright notice and this permission notice shall be included in all
 #  copies or substantial portions of the Software.
-# 
+#
 #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -21,16 +22,15 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 # </summary>
-# --------------------------------------------------------------------------------
-
+# -----------------------------------------------------------------------------------
 
 class DeleteParagraphTabStopRequest(object):
     """
     Request model for delete_paragraph_tab_stop operation.
     Initializes a new instance.
     :param name The document name.
-    :param position a tab stop position to remove.
     :param node_path Path to the node which contains paragraph.
+    :param position a tab stop position to remove.
     :param index Object index.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -39,10 +39,10 @@ class DeleteParagraphTabStopRequest(object):
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     """
 
-    def __init__(self, name, position, node_path, index, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None):
+    def __init__(self, name, node_path, position, index, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None):
         self.name = name
-        self.position = position
         self.node_path = node_path
+        self.position = position
         self.index = index
         self.folder = folder
         self.storage = storage

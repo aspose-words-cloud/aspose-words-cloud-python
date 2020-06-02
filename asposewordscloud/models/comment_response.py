@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="CommentResponse.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="comment_response.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,11 +83,12 @@ class CommentResponse(object):
         :type: str
         """
         self._request_id = request_id
+
     @property
     def comment(self):
         """Gets the comment of this CommentResponse.  # noqa: E501
 
-        Gets or sets comment.  # noqa: E501
+        Gets or sets comment information.  # noqa: E501
 
         :return: The comment of this CommentResponse.  # noqa: E501
         :rtype: Comment
@@ -98,12 +99,14 @@ class CommentResponse(object):
     def comment(self, comment):
         """Sets the comment of this CommentResponse.
 
-        Gets or sets comment.  # noqa: E501
+        Gets or sets comment information.  # noqa: E501
 
         :param comment: The comment of this CommentResponse.  # noqa: E501
         :type: Comment
         """
         self._comment = comment
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

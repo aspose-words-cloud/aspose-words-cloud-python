@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="PageNumber.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="page_number.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,58 +41,37 @@ class PageNumber(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'format': 'str',
         'alignment': 'str',
+        'format': 'str',
         'is_top': 'bool',
         'set_page_number_on_first_page': 'bool'
     }
 
     attribute_map = {
-        'format': 'Format',
         'alignment': 'Alignment',
+        'format': 'Format',
         'is_top': 'IsTop',
         'set_page_number_on_first_page': 'SetPageNumberOnFirstPage'
     }
 
-    def __init__(self, format=None, alignment=None, is_top=None, set_page_number_on_first_page=None):  # noqa: E501
+    def __init__(self, alignment=None, format=None, is_top=None, set_page_number_on_first_page=None):  # noqa: E501
         """PageNumber - a model defined in Swagger"""  # noqa: E501
 
-        self._format = None
         self._alignment = None
+        self._format = None
         self._is_top = None
         self._set_page_number_on_first_page = None
         self.discriminator = None
 
-        if format is not None:
-            self.format = format
         if alignment is not None:
             self.alignment = alignment
+        if format is not None:
+            self.format = format
         if is_top is not None:
             self.is_top = is_top
         if set_page_number_on_first_page is not None:
             self.set_page_number_on_first_page = set_page_number_on_first_page
 
-    @property
-    def format(self):
-        """Gets the format of this PageNumber.  # noqa: E501
-
-        Gets or sets page number format, e.g. \"{PAGE} of {NUMPAGES}\".  # noqa: E501
-
-        :return: The format of this PageNumber.  # noqa: E501
-        :rtype: str
-        """
-        return self._format
-
-    @format.setter
-    def format(self, format):
-        """Sets the format of this PageNumber.
-
-        Gets or sets page number format, e.g. \"{PAGE} of {NUMPAGES}\".  # noqa: E501
-
-        :param format: The format of this PageNumber.  # noqa: E501
-        :type: str
-        """
-        self._format = format
     @property
     def alignment(self):
         """Gets the alignment of this PageNumber.  # noqa: E501
@@ -114,6 +93,29 @@ class PageNumber(object):
         :type: str
         """
         self._alignment = alignment
+
+    @property
+    def format(self):
+        """Gets the format of this PageNumber.  # noqa: E501
+
+        Gets or sets page number format, e.g. "{PAGE} of {NUMPAGES}".  # noqa: E501
+
+        :return: The format of this PageNumber.  # noqa: E501
+        :rtype: str
+        """
+        return self._format
+
+    @format.setter
+    def format(self, format):
+        """Sets the format of this PageNumber.
+
+        Gets or sets page number format, e.g. "{PAGE} of {NUMPAGES}".  # noqa: E501
+
+        :param format: The format of this PageNumber.  # noqa: E501
+        :type: str
+        """
+        self._format = format
+
     @property
     def is_top(self):
         """Gets the is_top of this PageNumber.  # noqa: E501
@@ -135,6 +137,7 @@ class PageNumber(object):
         :type: bool
         """
         self._is_top = is_top
+
     @property
     def set_page_number_on_first_page(self):
         """Gets the set_page_number_on_first_page of this PageNumber.  # noqa: E501
@@ -156,6 +159,8 @@ class PageNumber(object):
         :type: bool
         """
         self._set_page_number_on_first_page = set_page_number_on_first_page
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

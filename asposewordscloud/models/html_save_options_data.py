@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="HtmlSaveOptionsData.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="html_save_options_data.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,16 +41,16 @@ class HtmlSaveOptionsData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'save_format': 'str',
-        'file_name': 'str',
-        'dml_rendering_mode': 'str',
+        'dml3_d_effects_rendering_mode': 'str',
         'dml_effects_rendering_mode': 'str',
-        'zip_output': 'bool',
+        'dml_rendering_mode': 'str',
+        'file_name': 'str',
+        'save_format': 'str',
+        'update_fields': 'bool',
+        'update_last_printed_property': 'bool',
         'update_last_saved_time_property': 'bool',
         'update_sdt_content': 'bool',
-        'update_fields': 'bool',
-        'dml3_d_effects_rendering_mode': 'str',
-        'update_last_printed_property': 'bool',
+        'zip_output': 'bool',
         'allow_negative_indent': 'bool',
         'css_class_name_prefix': 'str',
         'css_style_sheet_file_name': 'str',
@@ -93,16 +93,16 @@ class HtmlSaveOptionsData(object):
     }
 
     attribute_map = {
-        'save_format': 'SaveFormat',
-        'file_name': 'FileName',
-        'dml_rendering_mode': 'DmlRenderingMode',
+        'dml3_d_effects_rendering_mode': 'Dml3DEffectsRenderingMode',
         'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
-        'zip_output': 'ZipOutput',
+        'dml_rendering_mode': 'DmlRenderingMode',
+        'file_name': 'FileName',
+        'save_format': 'SaveFormat',
+        'update_fields': 'UpdateFields',
+        'update_last_printed_property': 'UpdateLastPrintedProperty',
         'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
         'update_sdt_content': 'UpdateSdtContent',
-        'update_fields': 'UpdateFields',
-        'dml3_d_effects_rendering_mode': 'Dml3DEffectsRenderingMode',
-        'update_last_printed_property': 'UpdateLastPrintedProperty',
+        'zip_output': 'ZipOutput',
         'allow_negative_indent': 'AllowNegativeIndent',
         'css_class_name_prefix': 'CssClassNamePrefix',
         'css_style_sheet_file_name': 'CssStyleSheetFileName',
@@ -144,19 +144,19 @@ class HtmlSaveOptionsData(object):
         'table_width_output_mode': 'TableWidthOutputMode'
     }
 
-    def __init__(self, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, dml3_d_effects_rendering_mode=None, update_last_printed_property=None, allow_negative_indent=None, css_class_name_prefix=None, css_style_sheet_file_name=None, css_style_sheet_type=None, document_split_criteria=None, document_split_heading_level=None, encoding=None, export_document_properties=None, export_drop_down_form_field_as_text=None, export_font_resources=None, export_fonts_as_base64=None, export_headers_footers_mode=None, export_images_as_base64=None, export_language_information=None, export_list_labels=None, export_original_url_for_linked_images=None, export_page_margins=None, export_page_setup=None, export_relative_font_size=None, export_roundtrip_information=None, export_text_box_as_svg=None, export_text_input_form_field_as_text=None, export_toc_page_numbers=None, export_xhtml_transitional=None, font_resources_subsetting_size_threshold=None, fonts_folder=None, fonts_folder_alias=None, html_version=None, image_resolution=None, images_folder=None, images_folder_alias=None, metafile_format=None, office_math_output_mode=None, pretty_format=None, resolve_font_names=None, resource_folder=None, resource_folder_alias=None, scale_image_to_shape_size=None, table_width_output_mode=None):  # noqa: E501
+    def __init__(self, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, allow_negative_indent=None, css_class_name_prefix=None, css_style_sheet_file_name=None, css_style_sheet_type=None, document_split_criteria=None, document_split_heading_level=None, encoding=None, export_document_properties=None, export_drop_down_form_field_as_text=None, export_font_resources=None, export_fonts_as_base64=None, export_headers_footers_mode=None, export_images_as_base64=None, export_language_information=None, export_list_labels=None, export_original_url_for_linked_images=None, export_page_margins=None, export_page_setup=None, export_relative_font_size=None, export_roundtrip_information=None, export_text_box_as_svg=None, export_text_input_form_field_as_text=None, export_toc_page_numbers=None, export_xhtml_transitional=None, font_resources_subsetting_size_threshold=None, fonts_folder=None, fonts_folder_alias=None, html_version=None, image_resolution=None, images_folder=None, images_folder_alias=None, metafile_format=None, office_math_output_mode=None, pretty_format=None, resolve_font_names=None, resource_folder=None, resource_folder_alias=None, scale_image_to_shape_size=None, table_width_output_mode=None):  # noqa: E501
         """HtmlSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
-        self._save_format = None
-        self._file_name = None
-        self._dml_rendering_mode = None
+        self._dml3_d_effects_rendering_mode = None
         self._dml_effects_rendering_mode = None
-        self._zip_output = None
+        self._dml_rendering_mode = None
+        self._file_name = None
+        self._save_format = None
+        self._update_fields = None
+        self._update_last_printed_property = None
         self._update_last_saved_time_property = None
         self._update_sdt_content = None
-        self._update_fields = None
-        self._dml3_d_effects_rendering_mode = None
-        self._update_last_printed_property = None
+        self._zip_output = None
         self._allow_negative_indent = None
         self._css_class_name_prefix = None
         self._css_style_sheet_file_name = None
@@ -198,26 +198,26 @@ class HtmlSaveOptionsData(object):
         self._table_width_output_mode = None
         self.discriminator = None
 
-        if save_format is not None:
-            self.save_format = save_format
-        if file_name is not None:
-            self.file_name = file_name
-        if dml_rendering_mode is not None:
-            self.dml_rendering_mode = dml_rendering_mode
+        if dml3_d_effects_rendering_mode is not None:
+            self.dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
         if dml_effects_rendering_mode is not None:
             self.dml_effects_rendering_mode = dml_effects_rendering_mode
-        if zip_output is not None:
-            self.zip_output = zip_output
+        if dml_rendering_mode is not None:
+            self.dml_rendering_mode = dml_rendering_mode
+        if file_name is not None:
+            self.file_name = file_name
+        if save_format is not None:
+            self.save_format = save_format
+        if update_fields is not None:
+            self.update_fields = update_fields
+        if update_last_printed_property is not None:
+            self.update_last_printed_property = update_last_printed_property
         if update_last_saved_time_property is not None:
             self.update_last_saved_time_property = update_last_saved_time_property
         if update_sdt_content is not None:
             self.update_sdt_content = update_sdt_content
-        if update_fields is not None:
-            self.update_fields = update_fields
-        if dml3_d_effects_rendering_mode is not None:
-            self.dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
-        if update_last_printed_property is not None:
-            self.update_last_printed_property = update_last_printed_property
+        if zip_output is not None:
+            self.zip_output = zip_output
         if allow_negative_indent is not None:
             self.allow_negative_indent = allow_negative_indent
         if css_class_name_prefix is not None:
@@ -298,68 +298,35 @@ class HtmlSaveOptionsData(object):
             self.table_width_output_mode = table_width_output_mode
 
     @property
-    def save_format(self):
-        """Gets the save_format of this HtmlSaveOptionsData.  # noqa: E501
+    def dml3_d_effects_rendering_mode(self):
+        """Gets the dml3_d_effects_rendering_mode of this HtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets format of save.  # noqa: E501
+        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
 
-        :return: The save_format of this HtmlSaveOptionsData.  # noqa: E501
+        :return: The dml3_d_effects_rendering_mode of this HtmlSaveOptionsData.  # noqa: E501
         :rtype: str
         """
-        return self._save_format
+        return self._dml3_d_effects_rendering_mode
 
-    @save_format.setter
-    def save_format(self, save_format):
-        """Sets the save_format of this HtmlSaveOptionsData.
+    @dml3_d_effects_rendering_mode.setter
+    def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
+        """Sets the dml3_d_effects_rendering_mode of this HtmlSaveOptionsData.
 
-        Gets or sets format of save.  # noqa: E501
+        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
 
-        :param save_format: The save_format of this HtmlSaveOptionsData.  # noqa: E501
+        :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this HtmlSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._save_format = save_format
-    @property
-    def file_name(self):
-        """Gets the file_name of this HtmlSaveOptionsData.  # noqa: E501
+        allowed_values = ["Basic", "Advanced"]  # noqa: E501
+        if not dml3_d_effects_rendering_mode.isdigit():
+            if dml3_d_effects_rendering_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `dml3_d_effects_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(dml3_d_effects_rendering_mode, allowed_values))
+            self._dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
+        else:
+            self._dml3_d_effects_rendering_mode = allowed_values[int(dml3_d_effects_rendering_mode) if six.PY3 else long(dml3_d_effects_rendering_mode)]
 
-        Gets or sets name of destination file.  # noqa: E501
-
-        :return: The file_name of this HtmlSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._file_name
-
-    @file_name.setter
-    def file_name(self, file_name):
-        """Sets the file_name of this HtmlSaveOptionsData.
-
-        Gets or sets name of destination file.  # noqa: E501
-
-        :param file_name: The file_name of this HtmlSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._file_name = file_name
-    @property
-    def dml_rendering_mode(self):
-        """Gets the dml_rendering_mode of this HtmlSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
-
-        :return: The dml_rendering_mode of this HtmlSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._dml_rendering_mode
-
-    @dml_rendering_mode.setter
-    def dml_rendering_mode(self, dml_rendering_mode):
-        """Sets the dml_rendering_mode of this HtmlSaveOptionsData.
-
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
-
-        :param dml_rendering_mode: The dml_rendering_mode of this HtmlSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._dml_rendering_mode = dml_rendering_mode
     @property
     def dml_effects_rendering_mode(self):
         """Gets the dml_effects_rendering_mode of this HtmlSaveOptionsData.  # noqa: E501
@@ -381,74 +348,78 @@ class HtmlSaveOptionsData(object):
         :type: str
         """
         self._dml_effects_rendering_mode = dml_effects_rendering_mode
+
     @property
-    def zip_output(self):
-        """Gets the zip_output of this HtmlSaveOptionsData.  # noqa: E501
+    def dml_rendering_mode(self):
+        """Gets the dml_rendering_mode of this HtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
 
-        :return: The zip_output of this HtmlSaveOptionsData.  # noqa: E501
-        :rtype: bool
+        :return: The dml_rendering_mode of this HtmlSaveOptionsData.  # noqa: E501
+        :rtype: str
         """
-        return self._zip_output
+        return self._dml_rendering_mode
 
-    @zip_output.setter
-    def zip_output(self, zip_output):
-        """Sets the zip_output of this HtmlSaveOptionsData.
+    @dml_rendering_mode.setter
+    def dml_rendering_mode(self, dml_rendering_mode):
+        """Sets the dml_rendering_mode of this HtmlSaveOptionsData.
 
-        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
 
-        :param zip_output: The zip_output of this HtmlSaveOptionsData.  # noqa: E501
-        :type: bool
+        :param dml_rendering_mode: The dml_rendering_mode of this HtmlSaveOptionsData.  # noqa: E501
+        :type: str
         """
-        self._zip_output = zip_output
+        self._dml_rendering_mode = dml_rendering_mode
+
     @property
-    def update_last_saved_time_property(self):
-        """Gets the update_last_saved_time_property of this HtmlSaveOptionsData.  # noqa: E501
+    def file_name(self):
+        """Gets the file_name of this HtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets name of destination file.  # noqa: E501
 
-        :return: The update_last_saved_time_property of this HtmlSaveOptionsData.  # noqa: E501
-        :rtype: bool
+        :return: The file_name of this HtmlSaveOptionsData.  # noqa: E501
+        :rtype: str
         """
-        return self._update_last_saved_time_property
+        return self._file_name
 
-    @update_last_saved_time_property.setter
-    def update_last_saved_time_property(self, update_last_saved_time_property):
-        """Sets the update_last_saved_time_property of this HtmlSaveOptionsData.
+    @file_name.setter
+    def file_name(self, file_name):
+        """Sets the file_name of this HtmlSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets name of destination file.  # noqa: E501
 
-        :param update_last_saved_time_property: The update_last_saved_time_property of this HtmlSaveOptionsData.  # noqa: E501
-        :type: bool
+        :param file_name: The file_name of this HtmlSaveOptionsData.  # noqa: E501
+        :type: str
         """
-        self._update_last_saved_time_property = update_last_saved_time_property
+        self._file_name = file_name
+
     @property
-    def update_sdt_content(self):
-        """Gets the update_sdt_content of this HtmlSaveOptionsData.  # noqa: E501
+    def save_format(self):
+        """Gets the save_format of this HtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+        Gets or sets format of save.  # noqa: E501
 
-        :return: The update_sdt_content of this HtmlSaveOptionsData.  # noqa: E501
-        :rtype: bool
+        :return: The save_format of this HtmlSaveOptionsData.  # noqa: E501
+        :rtype: str
         """
-        return self._update_sdt_content
+        return self._save_format
 
-    @update_sdt_content.setter
-    def update_sdt_content(self, update_sdt_content):
-        """Sets the update_sdt_content of this HtmlSaveOptionsData.
+    @save_format.setter
+    def save_format(self, save_format):
+        """Sets the save_format of this HtmlSaveOptionsData.
 
-        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+        Gets or sets format of save.  # noqa: E501
 
-        :param update_sdt_content: The update_sdt_content of this HtmlSaveOptionsData.  # noqa: E501
-        :type: bool
+        :param save_format: The save_format of this HtmlSaveOptionsData.  # noqa: E501
+        :type: str
         """
-        self._update_sdt_content = update_sdt_content
+        self._save_format = save_format
+
     @property
     def update_fields(self):
         """Gets the update_fields of this HtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true  # noqa: E501
+        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.  # noqa: E501
 
         :return: The update_fields of this HtmlSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -459,41 +430,13 @@ class HtmlSaveOptionsData(object):
     def update_fields(self, update_fields):
         """Sets the update_fields of this HtmlSaveOptionsData.
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true  # noqa: E501
+        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.  # noqa: E501
 
         :param update_fields: The update_fields of this HtmlSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._update_fields = update_fields
-    @property
-    def dml3_d_effects_rendering_mode(self):
-        """Gets the dml3_d_effects_rendering_mode of this HtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
-
-        :return: The dml3_d_effects_rendering_mode of this HtmlSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._dml3_d_effects_rendering_mode
-
-    @dml3_d_effects_rendering_mode.setter
-    def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
-        """Sets the dml3_d_effects_rendering_mode of this HtmlSaveOptionsData.
-
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
-
-        :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this HtmlSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["Basic", "Advanced"]  # noqa: E501
-        if not dml3_d_effects_rendering_mode.isdigit():	
-            if dml3_d_effects_rendering_mode not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `dml3_d_effects_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
-                    .format(dml3_d_effects_rendering_mode, allowed_values))
-            self._dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
-        else:
-            self._dml3_d_effects_rendering_mode = allowed_values[int(dml3_d_effects_rendering_mode) if six.PY3 else long(dml3_d_effects_rendering_mode)]
     @property
     def update_last_printed_property(self):
         """Gets the update_last_printed_property of this HtmlSaveOptionsData.  # noqa: E501
@@ -515,6 +458,73 @@ class HtmlSaveOptionsData(object):
         :type: bool
         """
         self._update_last_printed_property = update_last_printed_property
+
+    @property
+    def update_last_saved_time_property(self):
+        """Gets the update_last_saved_time_property of this HtmlSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+
+        :return: The update_last_saved_time_property of this HtmlSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._update_last_saved_time_property
+
+    @update_last_saved_time_property.setter
+    def update_last_saved_time_property(self, update_last_saved_time_property):
+        """Sets the update_last_saved_time_property of this HtmlSaveOptionsData.
+
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+
+        :param update_last_saved_time_property: The update_last_saved_time_property of this HtmlSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._update_last_saved_time_property = update_last_saved_time_property
+
+    @property
+    def update_sdt_content(self):
+        """Gets the update_sdt_content of this HtmlSaveOptionsData.  # noqa: E501
+
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+
+        :return: The update_sdt_content of this HtmlSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._update_sdt_content
+
+    @update_sdt_content.setter
+    def update_sdt_content(self, update_sdt_content):
+        """Sets the update_sdt_content of this HtmlSaveOptionsData.
+
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+
+        :param update_sdt_content: The update_sdt_content of this HtmlSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._update_sdt_content = update_sdt_content
+
+    @property
+    def zip_output(self):
+        """Gets the zip_output of this HtmlSaveOptionsData.  # noqa: E501
+
+        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+
+        :return: The zip_output of this HtmlSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._zip_output
+
+    @zip_output.setter
+    def zip_output(self, zip_output):
+        """Sets the zip_output of this HtmlSaveOptionsData.
+
+        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+
+        :param zip_output: The zip_output of this HtmlSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._zip_output = zip_output
+
     @property
     def allow_negative_indent(self):
         """Gets the allow_negative_indent of this HtmlSaveOptionsData.  # noqa: E501
@@ -536,11 +546,12 @@ class HtmlSaveOptionsData(object):
         :type: bool
         """
         self._allow_negative_indent = allow_negative_indent
+
     @property
     def css_class_name_prefix(self):
         """Gets the css_class_name_prefix of this HtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies a prefix which is added to all CSS class names. Default value is an empty string and generated CSS class names have no common prefix.  If this value is not empty, all CSS classes generated by Aspose.Words will start with the specified prefix.This might be useful, for example, if you add custom CSS to generated documents and want to prevent class name conflicts. If the value is not null or empty, it must be a valid CSS identifier.  # noqa: E501
+        Gets or sets specifies a prefix which is added to all CSS class names. Default value is an empty string and generated CSS class names have no common prefix. If this value is not empty, all CSS classes generated by Aspose.Words will start with the specified prefix.This might be useful, for example, if you add custom CSS to generated documents and want to prevent class name conflicts. If the value is not null or empty, it must be a valid CSS identifier.  # noqa: E501
 
         :return: The css_class_name_prefix of this HtmlSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -551,12 +562,13 @@ class HtmlSaveOptionsData(object):
     def css_class_name_prefix(self, css_class_name_prefix):
         """Sets the css_class_name_prefix of this HtmlSaveOptionsData.
 
-        Gets or sets specifies a prefix which is added to all CSS class names. Default value is an empty string and generated CSS class names have no common prefix.  If this value is not empty, all CSS classes generated by Aspose.Words will start with the specified prefix.This might be useful, for example, if you add custom CSS to generated documents and want to prevent class name conflicts. If the value is not null or empty, it must be a valid CSS identifier.  # noqa: E501
+        Gets or sets specifies a prefix which is added to all CSS class names. Default value is an empty string and generated CSS class names have no common prefix. If this value is not empty, all CSS classes generated by Aspose.Words will start with the specified prefix.This might be useful, for example, if you add custom CSS to generated documents and want to prevent class name conflicts. If the value is not null or empty, it must be a valid CSS identifier.  # noqa: E501
 
         :param css_class_name_prefix: The css_class_name_prefix of this HtmlSaveOptionsData.  # noqa: E501
         :type: str
         """
         self._css_class_name_prefix = css_class_name_prefix
+
     @property
     def css_style_sheet_file_name(self):
         """Gets the css_style_sheet_file_name of this HtmlSaveOptionsData.  # noqa: E501
@@ -578,6 +590,7 @@ class HtmlSaveOptionsData(object):
         :type: str
         """
         self._css_style_sheet_file_name = css_style_sheet_file_name
+
     @property
     def css_style_sheet_type(self):
         """Gets the css_style_sheet_type of this HtmlSaveOptionsData.  # noqa: E501
@@ -599,6 +612,7 @@ class HtmlSaveOptionsData(object):
         :type: str
         """
         self._css_style_sheet_type = css_style_sheet_type
+
     @property
     def document_split_criteria(self):
         """Gets the document_split_criteria of this HtmlSaveOptionsData.  # noqa: E501
@@ -620,6 +634,7 @@ class HtmlSaveOptionsData(object):
         :type: str
         """
         self._document_split_criteria = document_split_criteria
+
     @property
     def document_split_heading_level(self):
         """Gets the document_split_heading_level of this HtmlSaveOptionsData.  # noqa: E501
@@ -641,6 +656,7 @@ class HtmlSaveOptionsData(object):
         :type: int
         """
         self._document_split_heading_level = document_split_heading_level
+
     @property
     def encoding(self):
         """Gets the encoding of this HtmlSaveOptionsData.  # noqa: E501
@@ -662,6 +678,7 @@ class HtmlSaveOptionsData(object):
         :type: str
         """
         self._encoding = encoding
+
     @property
     def export_document_properties(self):
         """Gets the export_document_properties of this HtmlSaveOptionsData.  # noqa: E501
@@ -683,6 +700,7 @@ class HtmlSaveOptionsData(object):
         :type: bool
         """
         self._export_document_properties = export_document_properties
+
     @property
     def export_drop_down_form_field_as_text(self):
         """Gets the export_drop_down_form_field_as_text of this HtmlSaveOptionsData.  # noqa: E501
@@ -704,6 +722,7 @@ class HtmlSaveOptionsData(object):
         :type: bool
         """
         self._export_drop_down_form_field_as_text = export_drop_down_form_field_as_text
+
     @property
     def export_font_resources(self):
         """Gets the export_font_resources of this HtmlSaveOptionsData.  # noqa: E501
@@ -725,6 +744,7 @@ class HtmlSaveOptionsData(object):
         :type: bool
         """
         self._export_font_resources = export_font_resources
+
     @property
     def export_fonts_as_base64(self):
         """Gets the export_fonts_as_base64 of this HtmlSaveOptionsData.  # noqa: E501
@@ -746,6 +766,7 @@ class HtmlSaveOptionsData(object):
         :type: bool
         """
         self._export_fonts_as_base64 = export_fonts_as_base64
+
     @property
     def export_headers_footers_mode(self):
         """Gets the export_headers_footers_mode of this HtmlSaveOptionsData.  # noqa: E501
@@ -767,6 +788,7 @@ class HtmlSaveOptionsData(object):
         :type: str
         """
         self._export_headers_footers_mode = export_headers_footers_mode
+
     @property
     def export_images_as_base64(self):
         """Gets the export_images_as_base64 of this HtmlSaveOptionsData.  # noqa: E501
@@ -788,6 +810,7 @@ class HtmlSaveOptionsData(object):
         :type: bool
         """
         self._export_images_as_base64 = export_images_as_base64
+
     @property
     def export_language_information(self):
         """Gets the export_language_information of this HtmlSaveOptionsData.  # noqa: E501
@@ -809,6 +832,7 @@ class HtmlSaveOptionsData(object):
         :type: bool
         """
         self._export_language_information = export_language_information
+
     @property
     def export_list_labels(self):
         """Gets the export_list_labels of this HtmlSaveOptionsData.  # noqa: E501
@@ -830,6 +854,7 @@ class HtmlSaveOptionsData(object):
         :type: str
         """
         self._export_list_labels = export_list_labels
+
     @property
     def export_original_url_for_linked_images(self):
         """Gets the export_original_url_for_linked_images of this HtmlSaveOptionsData.  # noqa: E501
@@ -851,6 +876,7 @@ class HtmlSaveOptionsData(object):
         :type: bool
         """
         self._export_original_url_for_linked_images = export_original_url_for_linked_images
+
     @property
     def export_page_margins(self):
         """Gets the export_page_margins of this HtmlSaveOptionsData.  # noqa: E501
@@ -872,6 +898,7 @@ class HtmlSaveOptionsData(object):
         :type: bool
         """
         self._export_page_margins = export_page_margins
+
     @property
     def export_page_setup(self):
         """Gets the export_page_setup of this HtmlSaveOptionsData.  # noqa: E501
@@ -893,6 +920,7 @@ class HtmlSaveOptionsData(object):
         :type: bool
         """
         self._export_page_setup = export_page_setup
+
     @property
     def export_relative_font_size(self):
         """Gets the export_relative_font_size of this HtmlSaveOptionsData.  # noqa: E501
@@ -914,6 +942,7 @@ class HtmlSaveOptionsData(object):
         :type: bool
         """
         self._export_relative_font_size = export_relative_font_size
+
     @property
     def export_roundtrip_information(self):
         """Gets the export_roundtrip_information of this HtmlSaveOptionsData.  # noqa: E501
@@ -935,11 +964,12 @@ class HtmlSaveOptionsData(object):
         :type: bool
         """
         self._export_roundtrip_information = export_roundtrip_information
+
     @property
     def export_text_box_as_svg(self):
         """Gets the export_text_box_as_svg of this HtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets controls how textboxes represented by Aspose.Words.Drawing.Shape are saved to HTML, MHTML or EPUB. Default value is false.    When set to true, exports textboxes as inline \"svg\" elements. When false, exports as \"image\" elements.  # noqa: E501
+        Gets or sets controls how textboxes represented by Aspose.Words.Drawing.Shape are saved to HTML, MHTML or EPUB. Default value is false. When set to true, exports textboxes as inline "svg" elements. When false, exports as "image" elements.  # noqa: E501
 
         :return: The export_text_box_as_svg of this HtmlSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -950,12 +980,13 @@ class HtmlSaveOptionsData(object):
     def export_text_box_as_svg(self, export_text_box_as_svg):
         """Sets the export_text_box_as_svg of this HtmlSaveOptionsData.
 
-        Gets or sets controls how textboxes represented by Aspose.Words.Drawing.Shape are saved to HTML, MHTML or EPUB. Default value is false.    When set to true, exports textboxes as inline \"svg\" elements. When false, exports as \"image\" elements.  # noqa: E501
+        Gets or sets controls how textboxes represented by Aspose.Words.Drawing.Shape are saved to HTML, MHTML or EPUB. Default value is false. When set to true, exports textboxes as inline "svg" elements. When false, exports as "image" elements.  # noqa: E501
 
         :param export_text_box_as_svg: The export_text_box_as_svg of this HtmlSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._export_text_box_as_svg = export_text_box_as_svg
+
     @property
     def export_text_input_form_field_as_text(self):
         """Gets the export_text_input_form_field_as_text of this HtmlSaveOptionsData.  # noqa: E501
@@ -977,6 +1008,7 @@ class HtmlSaveOptionsData(object):
         :type: bool
         """
         self._export_text_input_form_field_as_text = export_text_input_form_field_as_text
+
     @property
     def export_toc_page_numbers(self):
         """Gets the export_toc_page_numbers of this HtmlSaveOptionsData.  # noqa: E501
@@ -998,6 +1030,7 @@ class HtmlSaveOptionsData(object):
         :type: bool
         """
         self._export_toc_page_numbers = export_toc_page_numbers
+
     @property
     def export_xhtml_transitional(self):
         """Gets the export_xhtml_transitional of this HtmlSaveOptionsData.  # noqa: E501
@@ -1019,6 +1052,7 @@ class HtmlSaveOptionsData(object):
         :type: bool
         """
         self._export_xhtml_transitional = export_xhtml_transitional
+
     @property
     def font_resources_subsetting_size_threshold(self):
         """Gets the font_resources_subsetting_size_threshold of this HtmlSaveOptionsData.  # noqa: E501
@@ -1040,6 +1074,7 @@ class HtmlSaveOptionsData(object):
         :type: int
         """
         self._font_resources_subsetting_size_threshold = font_resources_subsetting_size_threshold
+
     @property
     def fonts_folder(self):
         """Gets the fonts_folder of this HtmlSaveOptionsData.  # noqa: E501
@@ -1061,6 +1096,7 @@ class HtmlSaveOptionsData(object):
         :type: str
         """
         self._fonts_folder = fonts_folder
+
     @property
     def fonts_folder_alias(self):
         """Gets the fonts_folder_alias of this HtmlSaveOptionsData.  # noqa: E501
@@ -1082,6 +1118,7 @@ class HtmlSaveOptionsData(object):
         :type: str
         """
         self._fonts_folder_alias = fonts_folder_alias
+
     @property
     def html_version(self):
         """Gets the html_version of this HtmlSaveOptionsData.  # noqa: E501
@@ -1103,7 +1140,7 @@ class HtmlSaveOptionsData(object):
         :type: str
         """
         allowed_values = ["Xhtml", "Html5"]  # noqa: E501
-        if not html_version.isdigit():	
+        if not html_version.isdigit():
             if html_version not in allowed_values:
                 raise ValueError(
                     "Invalid value for `html_version` ({0}), must be one of {1}"  # noqa: E501
@@ -1111,6 +1148,7 @@ class HtmlSaveOptionsData(object):
             self._html_version = html_version
         else:
             self._html_version = allowed_values[int(html_version) if six.PY3 else long(html_version)]
+
     @property
     def image_resolution(self):
         """Gets the image_resolution of this HtmlSaveOptionsData.  # noqa: E501
@@ -1132,6 +1170,7 @@ class HtmlSaveOptionsData(object):
         :type: int
         """
         self._image_resolution = image_resolution
+
     @property
     def images_folder(self):
         """Gets the images_folder of this HtmlSaveOptionsData.  # noqa: E501
@@ -1153,6 +1192,7 @@ class HtmlSaveOptionsData(object):
         :type: str
         """
         self._images_folder = images_folder
+
     @property
     def images_folder_alias(self):
         """Gets the images_folder_alias of this HtmlSaveOptionsData.  # noqa: E501
@@ -1174,11 +1214,12 @@ class HtmlSaveOptionsData(object):
         :type: str
         """
         self._images_folder_alias = images_folder_alias
+
     @property
     def metafile_format(self):
         """Gets the metafile_format of this HtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB. Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images.  Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.  # noqa: E501
+        Gets or sets specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB. Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images. Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.  # noqa: E501
 
         :return: The metafile_format of this HtmlSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -1189,13 +1230,13 @@ class HtmlSaveOptionsData(object):
     def metafile_format(self, metafile_format):
         """Sets the metafile_format of this HtmlSaveOptionsData.
 
-        Gets or sets specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB. Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images.  Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.  # noqa: E501
+        Gets or sets specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB. Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images. Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.  # noqa: E501
 
         :param metafile_format: The metafile_format of this HtmlSaveOptionsData.  # noqa: E501
         :type: str
         """
         allowed_values = ["Png", "Svg", "EmfOrWmf"]  # noqa: E501
-        if not metafile_format.isdigit():	
+        if not metafile_format.isdigit():
             if metafile_format not in allowed_values:
                 raise ValueError(
                     "Invalid value for `metafile_format` ({0}), must be one of {1}"  # noqa: E501
@@ -1203,6 +1244,7 @@ class HtmlSaveOptionsData(object):
             self._metafile_format = metafile_format
         else:
             self._metafile_format = allowed_values[int(metafile_format) if six.PY3 else long(metafile_format)]
+
     @property
     def office_math_output_mode(self):
         """Gets the office_math_output_mode of this HtmlSaveOptionsData.  # noqa: E501
@@ -1224,7 +1266,7 @@ class HtmlSaveOptionsData(object):
         :type: str
         """
         allowed_values = ["Image", "MathML", "Text"]  # noqa: E501
-        if not office_math_output_mode.isdigit():	
+        if not office_math_output_mode.isdigit():
             if office_math_output_mode not in allowed_values:
                 raise ValueError(
                     "Invalid value for `office_math_output_mode` ({0}), must be one of {1}"  # noqa: E501
@@ -1232,6 +1274,7 @@ class HtmlSaveOptionsData(object):
             self._office_math_output_mode = office_math_output_mode
         else:
             self._office_math_output_mode = allowed_values[int(office_math_output_mode) if six.PY3 else long(office_math_output_mode)]
+
     @property
     def pretty_format(self):
         """Gets the pretty_format of this HtmlSaveOptionsData.  # noqa: E501
@@ -1253,6 +1296,7 @@ class HtmlSaveOptionsData(object):
         :type: bool
         """
         self._pretty_format = pretty_format
+
     @property
     def resolve_font_names(self):
         """Gets the resolve_font_names of this HtmlSaveOptionsData.  # noqa: E501
@@ -1274,6 +1318,7 @@ class HtmlSaveOptionsData(object):
         :type: bool
         """
         self._resolve_font_names = resolve_font_names
+
     @property
     def resource_folder(self):
         """Gets the resource_folder of this HtmlSaveOptionsData.  # noqa: E501
@@ -1295,6 +1340,7 @@ class HtmlSaveOptionsData(object):
         :type: str
         """
         self._resource_folder = resource_folder
+
     @property
     def resource_folder_alias(self):
         """Gets the resource_folder_alias of this HtmlSaveOptionsData.  # noqa: E501
@@ -1316,6 +1362,7 @@ class HtmlSaveOptionsData(object):
         :type: str
         """
         self._resource_folder_alias = resource_folder_alias
+
     @property
     def scale_image_to_shape_size(self):
         """Gets the scale_image_to_shape_size of this HtmlSaveOptionsData.  # noqa: E501
@@ -1337,6 +1384,7 @@ class HtmlSaveOptionsData(object):
         :type: bool
         """
         self._scale_image_to_shape_size = scale_image_to_shape_size
+
     @property
     def table_width_output_mode(self):
         """Gets the table_width_output_mode of this HtmlSaveOptionsData.  # noqa: E501
@@ -1358,6 +1406,8 @@ class HtmlSaveOptionsData(object):
         :type: str
         """
         self._table_width_output_mode = table_width_output_mode
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

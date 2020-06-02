@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="BookmarkData.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="bookmark_data.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,6 +83,7 @@ class BookmarkData(object):
         :type: str
         """
         self._name = name
+
     @property
     def text(self):
         """Gets the text of this BookmarkData.  # noqa: E501
@@ -104,6 +105,8 @@ class BookmarkData(object):
         :type: str
         """
         self._text = text
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

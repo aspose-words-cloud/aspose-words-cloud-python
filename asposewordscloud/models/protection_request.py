@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="ProtectionRequest.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="protection_request.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,31 +41,53 @@ class ProtectionRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'password': 'str',
         'new_password': 'str',
+        'password': 'str',
         'protection_type': 'str'
     }
 
     attribute_map = {
-        'password': 'Password',
         'new_password': 'NewPassword',
+        'password': 'Password',
         'protection_type': 'ProtectionType'
     }
 
-    def __init__(self, password=None, new_password=None, protection_type=None):  # noqa: E501
+    def __init__(self, new_password=None, password=None, protection_type=None):  # noqa: E501
         """ProtectionRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._password = None
         self._new_password = None
+        self._password = None
         self._protection_type = None
         self.discriminator = None
 
-        if password is not None:
-            self.password = password
         if new_password is not None:
             self.new_password = new_password
+        if password is not None:
+            self.password = password
         if protection_type is not None:
             self.protection_type = protection_type
+
+    @property
+    def new_password(self):
+        """Gets the new_password of this ProtectionRequest.  # noqa: E501
+
+        Gets or sets new password.  # noqa: E501
+
+        :return: The new_password of this ProtectionRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._new_password
+
+    @new_password.setter
+    def new_password(self, new_password):
+        """Sets the new_password of this ProtectionRequest.
+
+        Gets or sets new password.  # noqa: E501
+
+        :param new_password: The new_password of this ProtectionRequest.  # noqa: E501
+        :type: str
+        """
+        self._new_password = new_password
 
     @property
     def password(self):
@@ -88,27 +110,7 @@ class ProtectionRequest(object):
         :type: str
         """
         self._password = password
-    @property
-    def new_password(self):
-        """Gets the new_password of this ProtectionRequest.  # noqa: E501
 
-        Gets or sets new password.  # noqa: E501
-
-        :return: The new_password of this ProtectionRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._new_password
-
-    @new_password.setter
-    def new_password(self, new_password):
-        """Sets the new_password of this ProtectionRequest.
-
-        Gets or sets new password.  # noqa: E501
-
-        :param new_password: The new_password of this ProtectionRequest.  # noqa: E501
-        :type: str
-        """
-        self._new_password = new_password
     @property
     def protection_type(self):
         """Gets the protection_type of this ProtectionRequest.  # noqa: E501
@@ -130,6 +132,8 @@ class ProtectionRequest(object):
         :type: str
         """
         self._protection_type = protection_type
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
