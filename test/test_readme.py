@@ -29,6 +29,7 @@ import os
 import asposewordscloud.models.requests
 import re
 from test.base_test_context import BaseTestContext
+from pathlib import Path
 
 class TestReadme(BaseTestContext):
 
@@ -66,7 +67,7 @@ class TestReadme(BaseTestContext):
 
         # set paths
         sourcePath = __file__
-        readnePath =  __file__ + "/../../README.md"
+        readmePath =  os.path.dirname(__file__) + "/../README.md"
 
         # read code from the file
         with open(sourcePath) as f:
@@ -86,7 +87,7 @@ class TestReadme(BaseTestContext):
         self.assertGreater(len(readmeCode), 2)
 
         # read readme file
-        with open(readnePath) as f:
+        with open(readmePath) as f:
             readmeLines = f.readlines()
 
         # replace code
@@ -107,6 +108,6 @@ class TestReadme(BaseTestContext):
                 newReadmeLines.append(line)
 
         # write to readm
-        with open(readnePath, 'w') as f:
+        with open(readmePath, 'w') as f:
             for line in newReadmeLines:
                 f.write(line)
