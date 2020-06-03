@@ -43,8 +43,8 @@ class TestCompareDocument(BaseTestContext):
         remote_name1 = "TestPostCompareDocument1.doc"
         remote_name2 = "TestPostCompareDocument2.doc"
         dest_name = os.path.join(self.remote_test_out, 'TestCompareOut.doc')
-        compare_data = asposewordscloud.CompareData(os.path.join(self.remote_test_folder, self.test_folder, remote_name2),
-                                                  'author', datetime.datetime.now())
+        compare_data = asposewordscloud.CompareData(comparing_with_document=os.path.join(self.remote_test_folder, self.test_folder, remote_name2),
+                                                  author='author', date_time=datetime.datetime.now())
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name1), open(os.path.join(self.local_test_folder, self.test_folder, local_name1), 'rb'))
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name2), open(os.path.join(self.local_test_folder, self.test_folder, local_name2), 'rb'))
 

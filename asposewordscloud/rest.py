@@ -339,5 +339,5 @@ class ApiException(Exception):
         
 
     def init_error(self, error_object):
-        return ApiError(error_object.get("Code", None), error_object.get("Message", None), error_object.get("Description", None), error_object.get("DateTime", None), 
-        self.init_error(error_object["InnerError"]) if "InnerError" in error_object else None)
+        return ApiError(code=error_object.get("Code", None), message=error_object.get("Message", None), description=error_object.get("Description", None), date_time=error_object.get("DateTime", None),
+        inner_error=self.init_error(error_object["InnerError"]) if "InnerError" in error_object else None)

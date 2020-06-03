@@ -84,7 +84,7 @@ class TestDocumentProtection(BaseTestContext):
     def test_unprotect_document(self):
         filename = 'SampleProtectedBlankWordDocument.docx'
         remote_name = 'TestDeleteUnprotectDocument.docx'
-        body = asposewordscloud.ProtectionRequest('aspose')
+        body = asposewordscloud.ProtectionRequest(password='aspose')
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.test_folder, filename), 'rb'))
 
         request = asposewordscloud.models.requests.UnprotectDocumentRequest(remote_name, body,
