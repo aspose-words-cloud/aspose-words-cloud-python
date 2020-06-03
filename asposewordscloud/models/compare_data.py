@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="compare_data.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="CompareData.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,80 +41,36 @@ class CompareData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'author': 'str',
-        'compare_options': 'CompareOptions',
         'comparing_with_document': 'str',
-        'date_time': 'datetime'
+        'author': 'str',
+        'date_time': 'datetime',
+        'compare_options': 'CompareOptions'
     }
 
     attribute_map = {
-        'author': 'Author',
-        'compare_options': 'CompareOptions',
         'comparing_with_document': 'ComparingWithDocument',
-        'date_time': 'DateTime'
+        'author': 'Author',
+        'date_time': 'DateTime',
+        'compare_options': 'CompareOptions'
     }
 
-    def __init__(self, author=None, compare_options=None, comparing_with_document=None, date_time=None):  # noqa: E501
+    def __init__(self, comparing_with_document=None, author=None, date_time=None, compare_options=None):  # noqa: E501
         """CompareData - a model defined in Swagger"""  # noqa: E501
 
-        self._author = None
-        self._compare_options = None
         self._comparing_with_document = None
+        self._author = None
         self._date_time = None
+        self._compare_options = None
         self.discriminator = None
 
-        if author is not None:
-            self.author = author
-        if compare_options is not None:
-            self.compare_options = compare_options
         if comparing_with_document is not None:
             self.comparing_with_document = comparing_with_document
+        if author is not None:
+            self.author = author
         if date_time is not None:
             self.date_time = date_time
-
-    @property
-    def author(self):
-        """Gets the author of this CompareData.  # noqa: E501
-
-        Gets or sets initials of the author to use for revisions.  # noqa: E501
-
-        :return: The author of this CompareData.  # noqa: E501
-        :rtype: str
-        """
-        return self._author
-
-    @author.setter
-    def author(self, author):
-        """Sets the author of this CompareData.
-
-        Gets or sets initials of the author to use for revisions.  # noqa: E501
-
-        :param author: The author of this CompareData.  # noqa: E501
-        :type: str
-        """
-        self._author = author
-
-    @property
-    def compare_options(self):
-        """Gets the compare_options of this CompareData.  # noqa: E501
-
-        Gets or sets the compare options.  # noqa: E501
-
-        :return: The compare_options of this CompareData.  # noqa: E501
-        :rtype: CompareOptions
-        """
-        return self._compare_options
-
-    @compare_options.setter
-    def compare_options(self, compare_options):
-        """Sets the compare_options of this CompareData.
-
-        Gets or sets the compare options.  # noqa: E501
-
-        :param compare_options: The compare_options of this CompareData.  # noqa: E501
-        :type: CompareOptions
-        """
-        self._compare_options = compare_options
+        if compare_options is not None:
+            self.compare_options = compare_options
 
     @property
     def comparing_with_document(self):
@@ -137,12 +93,32 @@ class CompareData(object):
         :type: str
         """
         self._comparing_with_document = comparing_with_document
+    @property
+    def author(self):
+        """Gets the author of this CompareData.  # noqa: E501
 
+        Gets or sets initials of the author to use for revisions.  # noqa: E501
+
+        :return: The author of this CompareData.  # noqa: E501
+        :rtype: str
+        """
+        return self._author
+
+    @author.setter
+    def author(self, author):
+        """Sets the author of this CompareData.
+
+        Gets or sets initials of the author to use for revisions.  # noqa: E501
+
+        :param author: The author of this CompareData.  # noqa: E501
+        :type: str
+        """
+        self._author = author
     @property
     def date_time(self):
         """Gets the date_time of this CompareData.  # noqa: E501
 
-        Gets or sets the date and time to use for revisions.  # noqa: E501
+        Gets or sets the date and time to use for revisions.               # noqa: E501
 
         :return: The date_time of this CompareData.  # noqa: E501
         :rtype: datetime
@@ -153,14 +129,33 @@ class CompareData(object):
     def date_time(self, date_time):
         """Sets the date_time of this CompareData.
 
-        Gets or sets the date and time to use for revisions.  # noqa: E501
+        Gets or sets the date and time to use for revisions.               # noqa: E501
 
         :param date_time: The date_time of this CompareData.  # noqa: E501
         :type: datetime
         """
         self._date_time = date_time
+    @property
+    def compare_options(self):
+        """Gets the compare_options of this CompareData.  # noqa: E501
 
+        Gets or sets compare_options.  # noqa: E501
 
+        :return: The compare_options of this CompareData.  # noqa: E501
+        :rtype: CompareOptions
+        """
+        return self._compare_options
+
+    @compare_options.setter
+    def compare_options(self, compare_options):
+        """Sets the compare_options of this CompareData.
+
+        Gets or sets compare_options.  # noqa: E501
+
+        :param compare_options: The compare_options of this CompareData.  # noqa: E501
+        :type: CompareOptions
+        """
+        self._compare_options = compare_options
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

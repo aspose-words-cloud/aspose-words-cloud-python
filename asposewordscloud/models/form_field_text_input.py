@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="form_field_text_input.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="FormFieldTextInput.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,8 +41,6 @@ class FormFieldTextInput(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'link': 'WordsApiLink',
-        'node_id': 'str',
         'calculate_on_exit': 'bool',
         'enabled': 'bool',
         'entry_macro': 'str',
@@ -52,6 +50,8 @@ class FormFieldTextInput(object):
         'own_help': 'bool',
         'own_status': 'bool',
         'status_text': 'str',
+        'link': 'WordsApiLink',
+        'node_id': 'str',
         'max_length': 'int',
         'text_input_default': 'str',
         'text_input_format': 'str',
@@ -59,8 +59,6 @@ class FormFieldTextInput(object):
     }
 
     attribute_map = {
-        'link': 'Link',
-        'node_id': 'NodeId',
         'calculate_on_exit': 'CalculateOnExit',
         'enabled': 'Enabled',
         'entry_macro': 'EntryMacro',
@@ -70,17 +68,17 @@ class FormFieldTextInput(object):
         'own_help': 'OwnHelp',
         'own_status': 'OwnStatus',
         'status_text': 'StatusText',
+        'link': 'link',
+        'node_id': 'NodeId',
         'max_length': 'MaxLength',
         'text_input_default': 'TextInputDefault',
         'text_input_format': 'TextInputFormat',
         'text_input_type': 'TextInputType'
     }
 
-    def __init__(self, link=None, node_id=None, calculate_on_exit=None, enabled=None, entry_macro=None, exit_macro=None, help_text=None, name=None, own_help=None, own_status=None, status_text=None, max_length=None, text_input_default=None, text_input_format=None, text_input_type=None):  # noqa: E501
+    def __init__(self, calculate_on_exit=None, enabled=None, entry_macro=None, exit_macro=None, help_text=None, name=None, own_help=None, own_status=None, status_text=None, link=None, node_id=None, max_length=None, text_input_default=None, text_input_format=None, text_input_type=None):  # noqa: E501
         """FormFieldTextInput - a model defined in Swagger"""  # noqa: E501
 
-        self._link = None
-        self._node_id = None
         self._calculate_on_exit = None
         self._enabled = None
         self._entry_macro = None
@@ -90,16 +88,14 @@ class FormFieldTextInput(object):
         self._own_help = None
         self._own_status = None
         self._status_text = None
+        self._link = None
+        self._node_id = None
         self._max_length = None
         self._text_input_default = None
         self._text_input_format = None
         self._text_input_type = None
         self.discriminator = None
 
-        if link is not None:
-            self.link = link
-        if node_id is not None:
-            self.node_id = node_id
         if calculate_on_exit is not None:
             self.calculate_on_exit = calculate_on_exit
         if enabled is not None:
@@ -118,6 +114,10 @@ class FormFieldTextInput(object):
             self.own_status = own_status
         if status_text is not None:
             self.status_text = status_text
+        if link is not None:
+            self.link = link
+        if node_id is not None:
+            self.node_id = node_id
         if max_length is not None:
             self.max_length = max_length
         if text_input_default is not None:
@@ -126,50 +126,6 @@ class FormFieldTextInput(object):
             self.text_input_format = text_input_format
         if text_input_type is not None:
             self.text_input_type = text_input_type
-
-    @property
-    def link(self):
-        """Gets the link of this FormFieldTextInput.  # noqa: E501
-
-        Gets or sets link to the document.  # noqa: E501
-
-        :return: The link of this FormFieldTextInput.  # noqa: E501
-        :rtype: WordsApiLink
-        """
-        return self._link
-
-    @link.setter
-    def link(self, link):
-        """Sets the link of this FormFieldTextInput.
-
-        Gets or sets link to the document.  # noqa: E501
-
-        :param link: The link of this FormFieldTextInput.  # noqa: E501
-        :type: WordsApiLink
-        """
-        self._link = link
-
-    @property
-    def node_id(self):
-        """Gets the node_id of this FormFieldTextInput.  # noqa: E501
-
-        Gets or sets node id.  # noqa: E501
-
-        :return: The node_id of this FormFieldTextInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._node_id
-
-    @node_id.setter
-    def node_id(self, node_id):
-        """Sets the node_id of this FormFieldTextInput.
-
-        Gets or sets node id.  # noqa: E501
-
-        :param node_id: The node_id of this FormFieldTextInput.  # noqa: E501
-        :type: str
-        """
-        self._node_id = node_id
 
     @property
     def calculate_on_exit(self):
@@ -192,7 +148,6 @@ class FormFieldTextInput(object):
         :type: bool
         """
         self._calculate_on_exit = calculate_on_exit
-
     @property
     def enabled(self):
         """Gets the enabled of this FormFieldTextInput.  # noqa: E501
@@ -214,7 +169,6 @@ class FormFieldTextInput(object):
         :type: bool
         """
         self._enabled = enabled
-
     @property
     def entry_macro(self):
         """Gets the entry_macro of this FormFieldTextInput.  # noqa: E501
@@ -236,7 +190,6 @@ class FormFieldTextInput(object):
         :type: str
         """
         self._entry_macro = entry_macro
-
     @property
     def exit_macro(self):
         """Gets the exit_macro of this FormFieldTextInput.  # noqa: E501
@@ -258,7 +211,6 @@ class FormFieldTextInput(object):
         :type: str
         """
         self._exit_macro = exit_macro
-
     @property
     def help_text(self):
         """Gets the help_text of this FormFieldTextInput.  # noqa: E501
@@ -280,7 +232,6 @@ class FormFieldTextInput(object):
         :type: str
         """
         self._help_text = help_text
-
     @property
     def name(self):
         """Gets the name of this FormFieldTextInput.  # noqa: E501
@@ -302,7 +253,6 @@ class FormFieldTextInput(object):
         :type: str
         """
         self._name = name
-
     @property
     def own_help(self):
         """Gets the own_help of this FormFieldTextInput.  # noqa: E501
@@ -324,7 +274,6 @@ class FormFieldTextInput(object):
         :type: bool
         """
         self._own_help = own_help
-
     @property
     def own_status(self):
         """Gets the own_status of this FormFieldTextInput.  # noqa: E501
@@ -346,7 +295,6 @@ class FormFieldTextInput(object):
         :type: bool
         """
         self._own_status = own_status
-
     @property
     def status_text(self):
         """Gets the status_text of this FormFieldTextInput.  # noqa: E501
@@ -368,7 +316,48 @@ class FormFieldTextInput(object):
         :type: str
         """
         self._status_text = status_text
+    @property
+    def link(self):
+        """Gets the link of this FormFieldTextInput.  # noqa: E501
 
+        Gets or sets link.  # noqa: E501
+
+        :return: The link of this FormFieldTextInput.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this FormFieldTextInput.
+
+        Gets or sets link.  # noqa: E501
+
+        :param link: The link of this FormFieldTextInput.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
+    @property
+    def node_id(self):
+        """Gets the node_id of this FormFieldTextInput.  # noqa: E501
+
+        Gets or sets node id.  # noqa: E501
+
+        :return: The node_id of this FormFieldTextInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._node_id
+
+    @node_id.setter
+    def node_id(self, node_id):
+        """Sets the node_id of this FormFieldTextInput.
+
+        Gets or sets node id.  # noqa: E501
+
+        :param node_id: The node_id of this FormFieldTextInput.  # noqa: E501
+        :type: str
+        """
+        self._node_id = node_id
     @property
     def max_length(self):
         """Gets the max_length of this FormFieldTextInput.  # noqa: E501
@@ -390,7 +379,6 @@ class FormFieldTextInput(object):
         :type: int
         """
         self._max_length = max_length
-
     @property
     def text_input_default(self):
         """Gets the text_input_default of this FormFieldTextInput.  # noqa: E501
@@ -412,7 +400,6 @@ class FormFieldTextInput(object):
         :type: str
         """
         self._text_input_default = text_input_default
-
     @property
     def text_input_format(self):
         """Gets the text_input_format of this FormFieldTextInput.  # noqa: E501
@@ -434,7 +421,6 @@ class FormFieldTextInput(object):
         :type: str
         """
         self._text_input_format = text_input_format
-
     @property
     def text_input_type(self):
         """Gets the text_input_type of this FormFieldTextInput.  # noqa: E501
@@ -456,7 +442,7 @@ class FormFieldTextInput(object):
         :type: str
         """
         allowed_values = ["Regular", "Number", "Date", "CurrentDate", "CurrentTime", "Calculated"]  # noqa: E501
-        if not text_input_type.isdigit():
+        if not text_input_type.isdigit():	
             if text_input_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `text_input_type` ({0}), must be one of {1}"  # noqa: E501
@@ -464,8 +450,6 @@ class FormFieldTextInput(object):
             self._text_input_type = text_input_type
         else:
             self._text_input_type = allowed_values[int(text_input_type) if six.PY3 else long(text_input_type)]
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

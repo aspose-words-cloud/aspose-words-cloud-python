@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="shading.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="Shading.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,7 +30,7 @@ import six
 
 
 class Shading(object):
-    """Paragraph format shading element.
+    """Paragraph format shading element.             
     """
 
     """
@@ -71,7 +71,7 @@ class Shading(object):
     def background_pattern_color(self):
         """Gets the background_pattern_color of this Shading.  # noqa: E501
 
-        Gets or sets the color that's applied to the background of the Shading object.  # noqa: E501
+        Gets or sets background_pattern_color.  # noqa: E501
 
         :return: The background_pattern_color of this Shading.  # noqa: E501
         :rtype: XmlColor
@@ -82,18 +82,17 @@ class Shading(object):
     def background_pattern_color(self, background_pattern_color):
         """Sets the background_pattern_color of this Shading.
 
-        Gets or sets the color that's applied to the background of the Shading object.  # noqa: E501
+        Gets or sets background_pattern_color.  # noqa: E501
 
         :param background_pattern_color: The background_pattern_color of this Shading.  # noqa: E501
         :type: XmlColor
         """
         self._background_pattern_color = background_pattern_color
-
     @property
     def foreground_pattern_color(self):
         """Gets the foreground_pattern_color of this Shading.  # noqa: E501
 
-        Gets or sets the color that's applied to the foreground of the Shading object.  # noqa: E501
+        Gets or sets foreground_pattern_color.  # noqa: E501
 
         :return: The foreground_pattern_color of this Shading.  # noqa: E501
         :rtype: XmlColor
@@ -104,13 +103,12 @@ class Shading(object):
     def foreground_pattern_color(self, foreground_pattern_color):
         """Sets the foreground_pattern_color of this Shading.
 
-        Gets or sets the color that's applied to the foreground of the Shading object.  # noqa: E501
+        Gets or sets foreground_pattern_color.  # noqa: E501
 
         :param foreground_pattern_color: The foreground_pattern_color of this Shading.  # noqa: E501
         :type: XmlColor
         """
         self._foreground_pattern_color = foreground_pattern_color
-
     @property
     def texture(self):
         """Gets the texture of this Shading.  # noqa: E501
@@ -132,7 +130,7 @@ class Shading(object):
         :type: str
         """
         allowed_values = ["TextureNone", "TextureSolid", "Texture5Percent", "Texture10Percent", "Texture20Percent", "Texture25Percent", "Texture30Percent", "Texture40Percent", "Texture50Percent", "Texture60Percent", "Texture70Percent", "Texture75Percent", "Texture80Percent", "Texture90Percent", "TextureDarkHorizontal", "TextureDarkVertical", "TextureDarkDiagonalDown", "TextureDarkDiagonalUp", "TextureDarkCross", "TextureDarkDiagonalCross", "TextureHorizontal", "TextureVertical", "TextureDiagonalDown", "TextureDiagonalUp", "TextureCross", "TextureDiagonalCross", "Texture2Pt5Percent", "Texture7Pt5Percent", "Texture12Pt5Percent", "Texture15Percent", "Texture17Pt5Percent", "Texture22Pt5Percent", "Texture27Pt5Percent", "Texture32Pt5Percent", "Texture35Percent", "Texture37Pt5Percent", "Texture42Pt5Percent", "Texture45Percent", "Texture47Pt5Percent", "Texture52Pt5Percent", "Texture55Percent", "Texture57Pt5Percent", "Texture62Pt5Percent", "Texture65Percent", "Texture67Pt5Percent", "Texture72Pt5Percent", "Texture77Pt5Percent", "Texture82Pt5Percent", "Texture85Percent", "Texture87Pt5Percent", "Texture92Pt5Percent", "Texture95Percent", "Texture97Pt5Percent", "TextureNil"]  # noqa: E501
-        if not texture.isdigit():
+        if not texture.isdigit():	
             if texture not in allowed_values:
                 raise ValueError(
                     "Invalid value for `texture` ({0}), must be one of {1}"  # noqa: E501
@@ -140,8 +138,6 @@ class Shading(object):
             self._texture = texture
         else:
             self._texture = allowed_values[int(texture) if six.PY3 else long(texture)]
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

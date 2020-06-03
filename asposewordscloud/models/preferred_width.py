@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="preferred_width.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="PreferredWidth.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,7 +83,7 @@ class PreferredWidth(object):
         :type: str
         """
         allowed_values = ["Auto", "Percent", "Points"]  # noqa: E501
-        if not type.isdigit():
+        if not type.isdigit():	
             if type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
@@ -91,7 +91,6 @@ class PreferredWidth(object):
             self._type = type
         else:
             self._type = allowed_values[int(type) if six.PY3 else long(type)]
-
     @property
     def value(self):
         """Gets the value of this PreferredWidth.  # noqa: E501
@@ -113,8 +112,6 @@ class PreferredWidth(object):
         :type: float
         """
         self._value = value
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

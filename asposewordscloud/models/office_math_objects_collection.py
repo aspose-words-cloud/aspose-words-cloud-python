@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="office_math_objects_collection.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="OfficeMathObjectsCollection.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,7 +46,7 @@ class OfficeMathObjectsCollection(object):
     }
 
     attribute_map = {
-        'link': 'Link',
+        'link': 'link',
         'list': 'List'
     }
 
@@ -66,7 +66,7 @@ class OfficeMathObjectsCollection(object):
     def link(self):
         """Gets the link of this OfficeMathObjectsCollection.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :return: The link of this OfficeMathObjectsCollection.  # noqa: E501
         :rtype: WordsApiLink
@@ -77,13 +77,12 @@ class OfficeMathObjectsCollection(object):
     def link(self, link):
         """Sets the link of this OfficeMathObjectsCollection.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :param link: The link of this OfficeMathObjectsCollection.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
-
     @property
     def list(self):
         """Gets the list of this OfficeMathObjectsCollection.  # noqa: E501
@@ -105,8 +104,6 @@ class OfficeMathObjectsCollection(object):
         :type: list[OfficeMathObject]
         """
         self._list = list
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

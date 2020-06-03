@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="document_entry_list.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="DocumentEntryList.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -78,8 +78,6 @@ class DocumentEntryList(object):
         :type: list[DocumentEntry]
         """
         self._document_entries = document_entries
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

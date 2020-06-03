@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="document_stat_data.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="DocumentStatData.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,7 +30,7 @@ import six
 
 
 class DocumentStatData(object):
-    """Container for the document's statistical data.
+    """Container for the document&#39;s statistical data.
     """
 
     """
@@ -41,129 +41,41 @@ class DocumentStatData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'footnotes_stat_data': 'FootnotesStatData',
-        'page_count': 'int',
-        'page_stat_data': 'list[PageStatData]',
+        'word_count': 'int',
         'paragraph_count': 'int',
-        'word_count': 'int'
+        'page_count': 'int',
+        'footnotes_stat_data': 'FootnotesStatData',
+        'page_stat_data': 'list[PageStatData]'
     }
 
     attribute_map = {
-        'footnotes_stat_data': 'FootnotesStatData',
-        'page_count': 'PageCount',
-        'page_stat_data': 'PageStatData',
+        'word_count': 'WordCount',
         'paragraph_count': 'ParagraphCount',
-        'word_count': 'WordCount'
+        'page_count': 'PageCount',
+        'footnotes_stat_data': 'FootnotesStatData',
+        'page_stat_data': 'PageStatData'
     }
 
-    def __init__(self, footnotes_stat_data=None, page_count=None, page_stat_data=None, paragraph_count=None, word_count=None):  # noqa: E501
+    def __init__(self, word_count=None, paragraph_count=None, page_count=None, footnotes_stat_data=None, page_stat_data=None):  # noqa: E501
         """DocumentStatData - a model defined in Swagger"""  # noqa: E501
 
-        self._footnotes_stat_data = None
-        self._page_count = None
-        self._page_stat_data = None
-        self._paragraph_count = None
         self._word_count = None
+        self._paragraph_count = None
+        self._page_count = None
+        self._footnotes_stat_data = None
+        self._page_stat_data = None
         self.discriminator = None
 
-        if footnotes_stat_data is not None:
-            self.footnotes_stat_data = footnotes_stat_data
-        if page_count is not None:
-            self.page_count = page_count
-        if page_stat_data is not None:
-            self.page_stat_data = page_stat_data
-        if paragraph_count is not None:
-            self.paragraph_count = paragraph_count
         if word_count is not None:
             self.word_count = word_count
-
-    @property
-    def footnotes_stat_data(self):
-        """Gets the footnotes_stat_data of this DocumentStatData.  # noqa: E501
-
-        Gets or sets detailed statistics of footnotes.  # noqa: E501
-
-        :return: The footnotes_stat_data of this DocumentStatData.  # noqa: E501
-        :rtype: FootnotesStatData
-        """
-        return self._footnotes_stat_data
-
-    @footnotes_stat_data.setter
-    def footnotes_stat_data(self, footnotes_stat_data):
-        """Sets the footnotes_stat_data of this DocumentStatData.
-
-        Gets or sets detailed statistics of footnotes.  # noqa: E501
-
-        :param footnotes_stat_data: The footnotes_stat_data of this DocumentStatData.  # noqa: E501
-        :type: FootnotesStatData
-        """
-        self._footnotes_stat_data = footnotes_stat_data
-
-    @property
-    def page_count(self):
-        """Gets the page_count of this DocumentStatData.  # noqa: E501
-
-        Gets or sets total count of pages in the document.  # noqa: E501
-
-        :return: The page_count of this DocumentStatData.  # noqa: E501
-        :rtype: int
-        """
-        return self._page_count
-
-    @page_count.setter
-    def page_count(self, page_count):
-        """Sets the page_count of this DocumentStatData.
-
-        Gets or sets total count of pages in the document.  # noqa: E501
-
-        :param page_count: The page_count of this DocumentStatData.  # noqa: E501
-        :type: int
-        """
-        self._page_count = page_count
-
-    @property
-    def page_stat_data(self):
-        """Gets the page_stat_data of this DocumentStatData.  # noqa: E501
-
-        Gets or sets detailed statistics of all pages.  # noqa: E501
-
-        :return: The page_stat_data of this DocumentStatData.  # noqa: E501
-        :rtype: list[PageStatData]
-        """
-        return self._page_stat_data
-
-    @page_stat_data.setter
-    def page_stat_data(self, page_stat_data):
-        """Sets the page_stat_data of this DocumentStatData.
-
-        Gets or sets detailed statistics of all pages.  # noqa: E501
-
-        :param page_stat_data: The page_stat_data of this DocumentStatData.  # noqa: E501
-        :type: list[PageStatData]
-        """
-        self._page_stat_data = page_stat_data
-
-    @property
-    def paragraph_count(self):
-        """Gets the paragraph_count of this DocumentStatData.  # noqa: E501
-
-        Gets or sets total count of paragraphs in the document.  # noqa: E501
-
-        :return: The paragraph_count of this DocumentStatData.  # noqa: E501
-        :rtype: int
-        """
-        return self._paragraph_count
-
-    @paragraph_count.setter
-    def paragraph_count(self, paragraph_count):
-        """Sets the paragraph_count of this DocumentStatData.
-
-        Gets or sets total count of paragraphs in the document.  # noqa: E501
-
-        :param paragraph_count: The paragraph_count of this DocumentStatData.  # noqa: E501
-        :type: int
-        """
-        self._paragraph_count = paragraph_count
+        if paragraph_count is not None:
+            self.paragraph_count = paragraph_count
+        if page_count is not None:
+            self.page_count = page_count
+        if footnotes_stat_data is not None:
+            self.footnotes_stat_data = footnotes_stat_data
+        if page_stat_data is not None:
+            self.page_stat_data = page_stat_data
 
     @property
     def word_count(self):
@@ -186,8 +98,90 @@ class DocumentStatData(object):
         :type: int
         """
         self._word_count = word_count
+    @property
+    def paragraph_count(self):
+        """Gets the paragraph_count of this DocumentStatData.  # noqa: E501
 
+        Gets or sets total count of paragraphs in the document.  # noqa: E501
 
+        :return: The paragraph_count of this DocumentStatData.  # noqa: E501
+        :rtype: int
+        """
+        return self._paragraph_count
+
+    @paragraph_count.setter
+    def paragraph_count(self, paragraph_count):
+        """Sets the paragraph_count of this DocumentStatData.
+
+        Gets or sets total count of paragraphs in the document.  # noqa: E501
+
+        :param paragraph_count: The paragraph_count of this DocumentStatData.  # noqa: E501
+        :type: int
+        """
+        self._paragraph_count = paragraph_count
+    @property
+    def page_count(self):
+        """Gets the page_count of this DocumentStatData.  # noqa: E501
+
+        Gets or sets total count of pages in the document.  # noqa: E501
+
+        :return: The page_count of this DocumentStatData.  # noqa: E501
+        :rtype: int
+        """
+        return self._page_count
+
+    @page_count.setter
+    def page_count(self, page_count):
+        """Sets the page_count of this DocumentStatData.
+
+        Gets or sets total count of pages in the document.  # noqa: E501
+
+        :param page_count: The page_count of this DocumentStatData.  # noqa: E501
+        :type: int
+        """
+        self._page_count = page_count
+    @property
+    def footnotes_stat_data(self):
+        """Gets the footnotes_stat_data of this DocumentStatData.  # noqa: E501
+
+        Gets or sets footnotes_stat_data.  # noqa: E501
+
+        :return: The footnotes_stat_data of this DocumentStatData.  # noqa: E501
+        :rtype: FootnotesStatData
+        """
+        return self._footnotes_stat_data
+
+    @footnotes_stat_data.setter
+    def footnotes_stat_data(self, footnotes_stat_data):
+        """Sets the footnotes_stat_data of this DocumentStatData.
+
+        Gets or sets footnotes_stat_data.  # noqa: E501
+
+        :param footnotes_stat_data: The footnotes_stat_data of this DocumentStatData.  # noqa: E501
+        :type: FootnotesStatData
+        """
+        self._footnotes_stat_data = footnotes_stat_data
+    @property
+    def page_stat_data(self):
+        """Gets the page_stat_data of this DocumentStatData.  # noqa: E501
+
+        Gets or sets detailed statistics of all pages.  # noqa: E501
+
+        :return: The page_stat_data of this DocumentStatData.  # noqa: E501
+        :rtype: list[PageStatData]
+        """
+        return self._page_stat_data
+
+    @page_stat_data.setter
+    def page_stat_data(self, page_stat_data):
+        """Sets the page_stat_data of this DocumentStatData.
+
+        Gets or sets detailed statistics of all pages.  # noqa: E501
+
+        :param page_stat_data: The page_stat_data of this DocumentStatData.  # noqa: E501
+        :type: list[PageStatData]
+        """
+        self._page_stat_data = page_stat_data
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="api_client.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -77,12 +77,12 @@ class ApiClient(object):
 
         self.pool = ThreadPool()
         self.rest_client = rest.RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '20.6'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '20.5'}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'python sdk 20.6'
+        self.user_agent = 'python sdk 20.5'
 
     def __del__(self):
         self.pool.close()
@@ -132,7 +132,7 @@ class ApiClient(object):
                     '{%s}' % k,
                     quote(str(v), safe=config.safe_chars_for_path_param)
                 )
-
+				
         # remove optional path parameters
         resource_path = resource_path.replace('//', '/')
 
@@ -616,7 +616,7 @@ class ApiClient(object):
         """
         if klass is None: 
             return data
-
+            
         if not klass.swagger_types and not hasattr(klass,
                                                    'get_real_child_model'):
             return data

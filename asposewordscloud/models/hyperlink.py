@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="hyperlink.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="Hyperlink.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -47,7 +47,7 @@ class Hyperlink(object):
     }
 
     attribute_map = {
-        'link': 'Link',
+        'link': 'link',
         'display_text': 'DisplayText',
         'value': 'Value'
     }
@@ -71,7 +71,7 @@ class Hyperlink(object):
     def link(self):
         """Gets the link of this Hyperlink.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :return: The link of this Hyperlink.  # noqa: E501
         :rtype: WordsApiLink
@@ -82,13 +82,12 @@ class Hyperlink(object):
     def link(self, link):
         """Sets the link of this Hyperlink.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :param link: The link of this Hyperlink.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
-
     @property
     def display_text(self):
         """Gets the display_text of this Hyperlink.  # noqa: E501
@@ -110,7 +109,6 @@ class Hyperlink(object):
         :type: str
         """
         self._display_text = display_text
-
     @property
     def value(self):
         """Gets the value of this Hyperlink.  # noqa: E501
@@ -132,8 +130,6 @@ class Hyperlink(object):
         :type: str
         """
         self._value = value
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

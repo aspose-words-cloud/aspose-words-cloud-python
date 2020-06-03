@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="document_property_create_or_update.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="DocumentPropertyCreateOrUpdate.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -78,8 +78,6 @@ class DocumentPropertyCreateOrUpdate(object):
         :type: str
         """
         self._value = value
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

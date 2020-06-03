@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="list_format_update.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="ListFormatUpdate.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,7 +30,7 @@ import six
 
 
 class ListFormatUpdate(object):
-    """Paragraph list format element for update.
+    """Paragraph list format element for update.             
     """
 
     """
@@ -41,48 +41,26 @@ class ListFormatUpdate(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'list_id': 'int',
-        'list_level_number': 'int'
+        'list_level_number': 'int',
+        'list_id': 'int'
     }
 
     attribute_map = {
-        'list_id': 'ListId',
-        'list_level_number': 'ListLevelNumber'
+        'list_level_number': 'ListLevelNumber',
+        'list_id': 'ListId'
     }
 
-    def __init__(self, list_id=None, list_level_number=None):  # noqa: E501
+    def __init__(self, list_level_number=None, list_id=None):  # noqa: E501
         """ListFormatUpdate - a model defined in Swagger"""  # noqa: E501
 
-        self._list_id = None
         self._list_level_number = None
+        self._list_id = None
         self.discriminator = None
 
-        if list_id is not None:
-            self.list_id = list_id
         if list_level_number is not None:
             self.list_level_number = list_level_number
-
-    @property
-    def list_id(self):
-        """Gets the list_id of this ListFormatUpdate.  # noqa: E501
-
-        Gets or sets the list id of this paragraph.  # noqa: E501
-
-        :return: The list_id of this ListFormatUpdate.  # noqa: E501
-        :rtype: int
-        """
-        return self._list_id
-
-    @list_id.setter
-    def list_id(self, list_id):
-        """Sets the list_id of this ListFormatUpdate.
-
-        Gets or sets the list id of this paragraph.  # noqa: E501
-
-        :param list_id: The list_id of this ListFormatUpdate.  # noqa: E501
-        :type: int
-        """
-        self._list_id = list_id
+        if list_id is not None:
+            self.list_id = list_id
 
     @property
     def list_level_number(self):
@@ -105,8 +83,27 @@ class ListFormatUpdate(object):
         :type: int
         """
         self._list_level_number = list_level_number
+    @property
+    def list_id(self):
+        """Gets the list_id of this ListFormatUpdate.  # noqa: E501
 
+        Gets or sets the list id of this paragraph.  # noqa: E501
 
+        :return: The list_id of this ListFormatUpdate.  # noqa: E501
+        :rtype: int
+        """
+        return self._list_id
+
+    @list_id.setter
+    def list_id(self, list_id):
+        """Sets the list_id of this ListFormatUpdate.
+
+        Gets or sets the list id of this paragraph.  # noqa: E501
+
+        :param list_id: The list_id of this ListFormatUpdate.  # noqa: E501
+        :type: int
+        """
+        self._list_id = list_id
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

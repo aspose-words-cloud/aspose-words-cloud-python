@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="footnotes_stat_data.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="FootnotesStatData.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,48 +41,26 @@ class FootnotesStatData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'paragraph_count': 'int',
-        'word_count': 'int'
+        'word_count': 'int',
+        'paragraph_count': 'int'
     }
 
     attribute_map = {
-        'paragraph_count': 'ParagraphCount',
-        'word_count': 'WordCount'
+        'word_count': 'WordCount',
+        'paragraph_count': 'ParagraphCount'
     }
 
-    def __init__(self, paragraph_count=None, word_count=None):  # noqa: E501
+    def __init__(self, word_count=None, paragraph_count=None):  # noqa: E501
         """FootnotesStatData - a model defined in Swagger"""  # noqa: E501
 
-        self._paragraph_count = None
         self._word_count = None
+        self._paragraph_count = None
         self.discriminator = None
 
-        if paragraph_count is not None:
-            self.paragraph_count = paragraph_count
         if word_count is not None:
             self.word_count = word_count
-
-    @property
-    def paragraph_count(self):
-        """Gets the paragraph_count of this FootnotesStatData.  # noqa: E501
-
-        Gets or sets total count of paragraphs in footnotes.  # noqa: E501
-
-        :return: The paragraph_count of this FootnotesStatData.  # noqa: E501
-        :rtype: int
-        """
-        return self._paragraph_count
-
-    @paragraph_count.setter
-    def paragraph_count(self, paragraph_count):
-        """Sets the paragraph_count of this FootnotesStatData.
-
-        Gets or sets total count of paragraphs in footnotes.  # noqa: E501
-
-        :param paragraph_count: The paragraph_count of this FootnotesStatData.  # noqa: E501
-        :type: int
-        """
-        self._paragraph_count = paragraph_count
+        if paragraph_count is not None:
+            self.paragraph_count = paragraph_count
 
     @property
     def word_count(self):
@@ -105,8 +83,27 @@ class FootnotesStatData(object):
         :type: int
         """
         self._word_count = word_count
+    @property
+    def paragraph_count(self):
+        """Gets the paragraph_count of this FootnotesStatData.  # noqa: E501
 
+        Gets or sets total count of paragraphs in footnotes.  # noqa: E501
 
+        :return: The paragraph_count of this FootnotesStatData.  # noqa: E501
+        :rtype: int
+        """
+        return self._paragraph_count
+
+    @paragraph_count.setter
+    def paragraph_count(self, paragraph_count):
+        """Sets the paragraph_count of this FootnotesStatData.
+
+        Gets or sets total count of paragraphs in footnotes.  # noqa: E501
+
+        :param paragraph_count: The paragraph_count of this FootnotesStatData.  # noqa: E501
+        :type: int
+        """
+        self._paragraph_count = paragraph_count
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

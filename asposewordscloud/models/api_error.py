@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="api_error.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="ApiError.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -42,40 +42,40 @@ class ApiError(object):
     """
     swagger_types = {
         'code': 'str',
-        'date_time': 'datetime',
+        'message': 'str',
         'description': 'str',
-        'inner_error': 'ApiError',
-        'message': 'str'
+        'date_time': 'datetime',
+        'inner_error': 'ApiError'
     }
 
     attribute_map = {
         'code': 'Code',
-        'date_time': 'DateTime',
+        'message': 'Message',
         'description': 'Description',
-        'inner_error': 'InnerError',
-        'message': 'Message'
+        'date_time': 'DateTime',
+        'inner_error': 'InnerError'
     }
 
-    def __init__(self, code=None, date_time=None, description=None, inner_error=None, message=None):  # noqa: E501
+    def __init__(self, code=None, message=None, description=None, date_time=None, inner_error=None):  # noqa: E501
         """ApiError - a model defined in Swagger"""  # noqa: E501
 
         self._code = None
-        self._date_time = None
-        self._description = None
-        self._inner_error = None
         self._message = None
+        self._description = None
+        self._date_time = None
+        self._inner_error = None
         self.discriminator = None
 
         if code is not None:
             self.code = code
-        if date_time is not None:
-            self.date_time = date_time
-        if description is not None:
-            self.description = description
-        if inner_error is not None:
-            self.inner_error = inner_error
         if message is not None:
             self.message = message
+        if description is not None:
+            self.description = description
+        if date_time is not None:
+            self.date_time = date_time
+        if inner_error is not None:
+            self.inner_error = inner_error
 
     @property
     def code(self):
@@ -98,73 +98,6 @@ class ApiError(object):
         :type: str
         """
         self._code = code
-
-    @property
-    def date_time(self):
-        """Gets the date_time of this ApiError.  # noqa: E501
-
-        Gets or sets server datetime.  # noqa: E501
-
-        :return: The date_time of this ApiError.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._date_time
-
-    @date_time.setter
-    def date_time(self, date_time):
-        """Sets the date_time of this ApiError.
-
-        Gets or sets server datetime.  # noqa: E501
-
-        :param date_time: The date_time of this ApiError.  # noqa: E501
-        :type: datetime
-        """
-        self._date_time = date_time
-
-    @property
-    def description(self):
-        """Gets the description of this ApiError.  # noqa: E501
-
-        Gets or sets error description.  # noqa: E501
-
-        :return: The description of this ApiError.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this ApiError.
-
-        Gets or sets error description.  # noqa: E501
-
-        :param description: The description of this ApiError.  # noqa: E501
-        :type: str
-        """
-        self._description = description
-
-    @property
-    def inner_error(self):
-        """Gets the inner_error of this ApiError.  # noqa: E501
-
-        Gets or sets inner error.  # noqa: E501
-
-        :return: The inner_error of this ApiError.  # noqa: E501
-        :rtype: ApiError
-        """
-        return self._inner_error
-
-    @inner_error.setter
-    def inner_error(self, inner_error):
-        """Sets the inner_error of this ApiError.
-
-        Gets or sets inner error.  # noqa: E501
-
-        :param inner_error: The inner_error of this ApiError.  # noqa: E501
-        :type: ApiError
-        """
-        self._inner_error = inner_error
-
     @property
     def message(self):
         """Gets the message of this ApiError.  # noqa: E501
@@ -186,8 +119,69 @@ class ApiError(object):
         :type: str
         """
         self._message = message
+    @property
+    def description(self):
+        """Gets the description of this ApiError.  # noqa: E501
 
+        Gets or sets error description.  # noqa: E501
 
+        :return: The description of this ApiError.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this ApiError.
+
+        Gets or sets error description.  # noqa: E501
+
+        :param description: The description of this ApiError.  # noqa: E501
+        :type: str
+        """
+        self._description = description
+    @property
+    def date_time(self):
+        """Gets the date_time of this ApiError.  # noqa: E501
+
+        Gets or sets server datetime.  # noqa: E501
+
+        :return: The date_time of this ApiError.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._date_time
+
+    @date_time.setter
+    def date_time(self, date_time):
+        """Sets the date_time of this ApiError.
+
+        Gets or sets server datetime.  # noqa: E501
+
+        :param date_time: The date_time of this ApiError.  # noqa: E501
+        :type: datetime
+        """
+        self._date_time = date_time
+    @property
+    def inner_error(self):
+        """Gets the inner_error of this ApiError.  # noqa: E501
+
+        Gets or sets inner_error.  # noqa: E501
+
+        :return: The inner_error of this ApiError.  # noqa: E501
+        :rtype: ApiError
+        """
+        return self._inner_error
+
+    @inner_error.setter
+    def inner_error(self, inner_error):
+        """Sets the inner_error of this ApiError.
+
+        Gets or sets inner_error.  # noqa: E501
+
+        :param inner_error: The inner_error of this ApiError.  # noqa: E501
+        :type: ApiError
+        """
+        self._inner_error = inner_error
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

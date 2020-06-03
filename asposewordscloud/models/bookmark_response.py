@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="bookmark_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="BookmarkResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,7 +83,6 @@ class BookmarkResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def bookmark(self):
         """Gets the bookmark of this BookmarkResponse.  # noqa: E501
@@ -105,8 +104,6 @@ class BookmarkResponse(object):
         :type: Bookmark
         """
         self._bookmark = bookmark
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

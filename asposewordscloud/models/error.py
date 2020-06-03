@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="error.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="Error.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,7 +30,7 @@ import six
 
 
 class Error(object):
-    """Error.
+    """Error
     """
 
     """
@@ -42,41 +42,41 @@ class Error(object):
     """
     swagger_types = {
         'code': 'str',
+        'message': 'str',
         'description': 'str',
-        'inner_error': 'ErrorDetails',
-        'message': 'str'
+        'inner_error': 'ErrorDetails'
     }
 
     attribute_map = {
         'code': 'Code',
+        'message': 'Message',
         'description': 'Description',
-        'inner_error': 'InnerError',
-        'message': 'Message'
+        'inner_error': 'InnerError'
     }
 
-    def __init__(self, code=None, description=None, inner_error=None, message=None):  # noqa: E501
+    def __init__(self, code=None, message=None, description=None, inner_error=None):  # noqa: E501
         """Error - a model defined in Swagger"""  # noqa: E501
 
         self._code = None
+        self._message = None
         self._description = None
         self._inner_error = None
-        self._message = None
         self.discriminator = None
 
         if code is not None:
             self.code = code
+        if message is not None:
+            self.message = message
         if description is not None:
             self.description = description
         if inner_error is not None:
             self.inner_error = inner_error
-        if message is not None:
-            self.message = message
 
     @property
     def code(self):
         """Gets the code of this Error.  # noqa: E501
 
-        Code.  # noqa: E501
+        Code               # noqa: E501
 
         :return: The code of this Error.  # noqa: E501
         :rtype: str
@@ -87,62 +87,17 @@ class Error(object):
     def code(self, code):
         """Sets the code of this Error.
 
-        Code.  # noqa: E501
+        Code               # noqa: E501
 
         :param code: The code of this Error.  # noqa: E501
         :type: str
         """
         self._code = code
-
-    @property
-    def description(self):
-        """Gets the description of this Error.  # noqa: E501
-
-        Description.  # noqa: E501
-
-        :return: The description of this Error.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this Error.
-
-        Description.  # noqa: E501
-
-        :param description: The description of this Error.  # noqa: E501
-        :type: str
-        """
-        self._description = description
-
-    @property
-    def inner_error(self):
-        """Gets the inner_error of this Error.  # noqa: E501
-
-        Inner Error.  # noqa: E501
-
-        :return: The inner_error of this Error.  # noqa: E501
-        :rtype: ErrorDetails
-        """
-        return self._inner_error
-
-    @inner_error.setter
-    def inner_error(self, inner_error):
-        """Sets the inner_error of this Error.
-
-        Inner Error.  # noqa: E501
-
-        :param inner_error: The inner_error of this Error.  # noqa: E501
-        :type: ErrorDetails
-        """
-        self._inner_error = inner_error
-
     @property
     def message(self):
         """Gets the message of this Error.  # noqa: E501
 
-        Message.  # noqa: E501
+        Message               # noqa: E501
 
         :return: The message of this Error.  # noqa: E501
         :rtype: str
@@ -153,14 +108,54 @@ class Error(object):
     def message(self, message):
         """Sets the message of this Error.
 
-        Message.  # noqa: E501
+        Message               # noqa: E501
 
         :param message: The message of this Error.  # noqa: E501
         :type: str
         """
         self._message = message
+    @property
+    def description(self):
+        """Gets the description of this Error.  # noqa: E501
 
+        Description               # noqa: E501
 
+        :return: The description of this Error.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this Error.
+
+        Description               # noqa: E501
+
+        :param description: The description of this Error.  # noqa: E501
+        :type: str
+        """
+        self._description = description
+    @property
+    def inner_error(self):
+        """Gets the inner_error of this Error.  # noqa: E501
+
+        Gets or sets inner_error.  # noqa: E501
+
+        :return: The inner_error of this Error.  # noqa: E501
+        :rtype: ErrorDetails
+        """
+        return self._inner_error
+
+    @inner_error.setter
+    def inner_error(self, inner_error):
+        """Sets the inner_error of this Error.
+
+        Gets or sets inner_error.  # noqa: E501
+
+        :param inner_error: The inner_error of this Error.  # noqa: E501
+        :type: ErrorDetails
+        """
+        self._inner_error = inner_error
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

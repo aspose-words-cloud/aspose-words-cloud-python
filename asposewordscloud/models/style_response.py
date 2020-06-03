@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="style_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="StyleResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,12 +83,11 @@ class StyleResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def style(self):
         """Gets the style of this StyleResponse.  # noqa: E501
 
-        Gets or sets style which are contained in document.  # noqa: E501
+        Gets or sets style.  # noqa: E501
 
         :return: The style of this StyleResponse.  # noqa: E501
         :rtype: Style
@@ -99,14 +98,12 @@ class StyleResponse(object):
     def style(self, style):
         """Sets the style of this StyleResponse.
 
-        Gets or sets style which are contained in document.  # noqa: E501
+        Gets or sets style.  # noqa: E501
 
         :param style: The style of this StyleResponse.  # noqa: E501
         :type: Style
         """
         self._style = style
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

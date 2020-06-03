@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="table_row_format_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="TableRowFormatResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,12 +83,11 @@ class TableRowFormatResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def row_format(self):
         """Gets the row_format of this TableRowFormatResponse.  # noqa: E501
 
-        Gets or sets table.  # noqa: E501
+        Gets or sets row_format.  # noqa: E501
 
         :return: The row_format of this TableRowFormatResponse.  # noqa: E501
         :rtype: TableRowFormat
@@ -99,14 +98,12 @@ class TableRowFormatResponse(object):
     def row_format(self, row_format):
         """Sets the row_format of this TableRowFormatResponse.
 
-        Gets or sets table.  # noqa: E501
+        Gets or sets row_format.  # noqa: E501
 
         :param row_format: The row_format of this TableRowFormatResponse.  # noqa: E501
         :type: TableRowFormat
         """
         self._row_format = row_format
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

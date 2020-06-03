@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="words_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="WordsResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -78,8 +78,6 @@ class WordsResponse(object):
         :type: str
         """
         self._request_id = request_id
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

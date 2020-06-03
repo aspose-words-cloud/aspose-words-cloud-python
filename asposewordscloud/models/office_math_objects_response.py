@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="office_math_objects_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="OfficeMathObjectsResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,12 +83,11 @@ class OfficeMathObjectsResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def office_math_objects(self):
         """Gets the office_math_objects of this OfficeMathObjectsResponse.  # noqa: E501
 
-        Gets or sets collection of OfficeMath objects.  # noqa: E501
+        Gets or sets office_math_objects.  # noqa: E501
 
         :return: The office_math_objects of this OfficeMathObjectsResponse.  # noqa: E501
         :rtype: OfficeMathObjectsCollection
@@ -99,14 +98,12 @@ class OfficeMathObjectsResponse(object):
     def office_math_objects(self, office_math_objects):
         """Sets the office_math_objects of this OfficeMathObjectsResponse.
 
-        Gets or sets collection of OfficeMath objects.  # noqa: E501
+        Gets or sets office_math_objects.  # noqa: E501
 
         :param office_math_objects: The office_math_objects of this OfficeMathObjectsResponse.  # noqa: E501
         :type: OfficeMathObjectsCollection
         """
         self._office_math_objects = office_math_objects
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

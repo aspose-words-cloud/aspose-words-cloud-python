@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="paragraph_link_collection.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="ParagraphLinkCollection.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,7 +46,7 @@ class ParagraphLinkCollection(object):
     }
 
     attribute_map = {
-        'link': 'Link',
+        'link': 'link',
         'paragraph_link_list': 'ParagraphLinkList'
     }
 
@@ -66,7 +66,7 @@ class ParagraphLinkCollection(object):
     def link(self):
         """Gets the link of this ParagraphLinkCollection.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :return: The link of this ParagraphLinkCollection.  # noqa: E501
         :rtype: WordsApiLink
@@ -77,13 +77,12 @@ class ParagraphLinkCollection(object):
     def link(self, link):
         """Sets the link of this ParagraphLinkCollection.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :param link: The link of this ParagraphLinkCollection.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
-
     @property
     def paragraph_link_list(self):
         """Gets the paragraph_link_list of this ParagraphLinkCollection.  # noqa: E501
@@ -105,8 +104,6 @@ class ParagraphLinkCollection(object):
         :type: list[ParagraphLink]
         """
         self._paragraph_link_list = paragraph_link_list
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

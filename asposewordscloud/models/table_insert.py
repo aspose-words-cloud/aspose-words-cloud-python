@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="table_insert.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="TableInsert.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,32 +41,53 @@ class TableInsert(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'columns_count': 'int',
         'position': 'DocumentPosition',
+        'columns_count': 'int',
         'rows_count': 'int'
     }
 
     attribute_map = {
-        'columns_count': 'ColumnsCount',
         'position': 'Position',
+        'columns_count': 'ColumnsCount',
         'rows_count': 'RowsCount'
     }
 
-    def __init__(self, columns_count=None, position=None, rows_count=None):  # noqa: E501
+    def __init__(self, position=None, columns_count=None, rows_count=None):  # noqa: E501
         """TableInsert - a model defined in Swagger"""  # noqa: E501
 
-        self._columns_count = None
         self._position = None
+        self._columns_count = None
         self._rows_count = None
         self.discriminator = None
 
-        if columns_count is not None:
-            self.columns_count = columns_count
         if position is not None:
             self.position = position
+        if columns_count is not None:
+            self.columns_count = columns_count
         if rows_count is not None:
             self.rows_count = rows_count
 
+    @property
+    def position(self):
+        """Gets the position of this TableInsert.  # noqa: E501
+
+        Gets or sets position.  # noqa: E501
+
+        :return: The position of this TableInsert.  # noqa: E501
+        :rtype: DocumentPosition
+        """
+        return self._position
+
+    @position.setter
+    def position(self, position):
+        """Sets the position of this TableInsert.
+
+        Gets or sets position.  # noqa: E501
+
+        :param position: The position of this TableInsert.  # noqa: E501
+        :type: DocumentPosition
+        """
+        self._position = position
     @property
     def columns_count(self):
         """Gets the columns_count of this TableInsert.  # noqa: E501
@@ -88,29 +109,6 @@ class TableInsert(object):
         :type: int
         """
         self._columns_count = columns_count
-
-    @property
-    def position(self):
-        """Gets the position of this TableInsert.  # noqa: E501
-
-        Gets or sets table will be inserted before specified position.  # noqa: E501
-
-        :return: The position of this TableInsert.  # noqa: E501
-        :rtype: DocumentPosition
-        """
-        return self._position
-
-    @position.setter
-    def position(self, position):
-        """Sets the position of this TableInsert.
-
-        Gets or sets table will be inserted before specified position.  # noqa: E501
-
-        :param position: The position of this TableInsert.  # noqa: E501
-        :type: DocumentPosition
-        """
-        self._position = position
-
     @property
     def rows_count(self):
         """Gets the rows_count of this TableInsert.  # noqa: E501
@@ -132,8 +130,6 @@ class TableInsert(object):
         :type: int
         """
         self._rows_count = rows_count
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

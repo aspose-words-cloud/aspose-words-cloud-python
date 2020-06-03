@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="search_results_collection.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="SearchResultsCollection.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,7 +46,7 @@ class SearchResultsCollection(object):
     }
 
     attribute_map = {
-        'link': 'Link',
+        'link': 'link',
         'results_list': 'ResultsList'
     }
 
@@ -66,7 +66,7 @@ class SearchResultsCollection(object):
     def link(self):
         """Gets the link of this SearchResultsCollection.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :return: The link of this SearchResultsCollection.  # noqa: E501
         :rtype: WordsApiLink
@@ -77,13 +77,12 @@ class SearchResultsCollection(object):
     def link(self, link):
         """Sets the link of this SearchResultsCollection.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :param link: The link of this SearchResultsCollection.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
-
     @property
     def results_list(self):
         """Gets the results_list of this SearchResultsCollection.  # noqa: E501
@@ -105,8 +104,6 @@ class SearchResultsCollection(object):
         :type: list[SearchResult]
         """
         self._results_list = results_list
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

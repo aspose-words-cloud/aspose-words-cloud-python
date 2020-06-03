@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="csv_data_load_options.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="CsvDataLoadOptions.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,80 +41,36 @@ class CsvDataLoadOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'comment_char': 'str',
-        'delimiter': 'str',
         'has_headers': 'bool',
-        'quote_char': 'str'
+        'delimiter': 'str',
+        'quote_char': 'str',
+        'comment_char': 'str'
     }
 
     attribute_map = {
-        'comment_char': 'CommentChar',
-        'delimiter': 'Delimiter',
         'has_headers': 'HasHeaders',
-        'quote_char': 'QuoteChar'
+        'delimiter': 'Delimiter',
+        'quote_char': 'QuoteChar',
+        'comment_char': 'CommentChar'
     }
 
-    def __init__(self, comment_char=None, delimiter=None, has_headers=None, quote_char=None):  # noqa: E501
+    def __init__(self, has_headers=None, delimiter=None, quote_char=None, comment_char=None):  # noqa: E501
         """CsvDataLoadOptions - a model defined in Swagger"""  # noqa: E501
 
-        self._comment_char = None
-        self._delimiter = None
         self._has_headers = None
+        self._delimiter = None
         self._quote_char = None
+        self._comment_char = None
         self.discriminator = None
 
-        if comment_char is not None:
-            self.comment_char = comment_char
-        if delimiter is not None:
-            self.delimiter = delimiter
         if has_headers is not None:
             self.has_headers = has_headers
+        if delimiter is not None:
+            self.delimiter = delimiter
         if quote_char is not None:
             self.quote_char = quote_char
-
-    @property
-    def comment_char(self):
-        """Gets the comment_char of this CsvDataLoadOptions.  # noqa: E501
-
-        Gets or sets the character that is used to comment lines of CSV data.  # noqa: E501
-
-        :return: The comment_char of this CsvDataLoadOptions.  # noqa: E501
-        :rtype: str
-        """
-        return self._comment_char
-
-    @comment_char.setter
-    def comment_char(self, comment_char):
-        """Sets the comment_char of this CsvDataLoadOptions.
-
-        Gets or sets the character that is used to comment lines of CSV data.  # noqa: E501
-
-        :param comment_char: The comment_char of this CsvDataLoadOptions.  # noqa: E501
-        :type: str
-        """
-        self._comment_char = comment_char
-
-    @property
-    def delimiter(self):
-        """Gets the delimiter of this CsvDataLoadOptions.  # noqa: E501
-
-        Gets or sets the character to be used as a column delimiter.  # noqa: E501
-
-        :return: The delimiter of this CsvDataLoadOptions.  # noqa: E501
-        :rtype: str
-        """
-        return self._delimiter
-
-    @delimiter.setter
-    def delimiter(self, delimiter):
-        """Sets the delimiter of this CsvDataLoadOptions.
-
-        Gets or sets the character to be used as a column delimiter.  # noqa: E501
-
-        :param delimiter: The delimiter of this CsvDataLoadOptions.  # noqa: E501
-        :type: str
-        """
-        self._delimiter = delimiter
+        if comment_char is not None:
+            self.comment_char = comment_char
 
     @property
     def has_headers(self):
@@ -137,7 +93,27 @@ class CsvDataLoadOptions(object):
         :type: bool
         """
         self._has_headers = has_headers
+    @property
+    def delimiter(self):
+        """Gets the delimiter of this CsvDataLoadOptions.  # noqa: E501
 
+        Gets or sets the character to be used as a column delimiter.  # noqa: E501
+
+        :return: The delimiter of this CsvDataLoadOptions.  # noqa: E501
+        :rtype: str
+        """
+        return self._delimiter
+
+    @delimiter.setter
+    def delimiter(self, delimiter):
+        """Sets the delimiter of this CsvDataLoadOptions.
+
+        Gets or sets the character to be used as a column delimiter.  # noqa: E501
+
+        :param delimiter: The delimiter of this CsvDataLoadOptions.  # noqa: E501
+        :type: str
+        """
+        self._delimiter = delimiter
     @property
     def quote_char(self):
         """Gets the quote_char of this CsvDataLoadOptions.  # noqa: E501
@@ -159,8 +135,27 @@ class CsvDataLoadOptions(object):
         :type: str
         """
         self._quote_char = quote_char
+    @property
+    def comment_char(self):
+        """Gets the comment_char of this CsvDataLoadOptions.  # noqa: E501
 
+        Gets or sets the character that is used to comment lines of CSV data.  # noqa: E501
 
+        :return: The comment_char of this CsvDataLoadOptions.  # noqa: E501
+        :rtype: str
+        """
+        return self._comment_char
+
+    @comment_char.setter
+    def comment_char(self, comment_char):
+        """Sets the comment_char of this CsvDataLoadOptions.
+
+        Gets or sets the character that is used to comment lines of CSV data.  # noqa: E501
+
+        :param comment_char: The comment_char of this CsvDataLoadOptions.  # noqa: E501
+        :type: str
+        """
+        self._comment_char = comment_char
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

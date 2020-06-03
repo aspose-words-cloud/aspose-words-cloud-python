@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="table_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="TableResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,7 +83,6 @@ class TableResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def table(self):
         """Gets the table of this TableResponse.  # noqa: E501
@@ -105,8 +104,6 @@ class TableResponse(object):
         :type: Table
         """
         self._table = table
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

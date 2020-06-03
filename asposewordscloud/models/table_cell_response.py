@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="table_cell_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="TableCellResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,12 +83,11 @@ class TableCellResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def cell(self):
         """Gets the cell of this TableCellResponse.  # noqa: E501
 
-        Gets or sets table cell.  # noqa: E501
+        Gets or sets cell.  # noqa: E501
 
         :return: The cell of this TableCellResponse.  # noqa: E501
         :rtype: TableCell
@@ -99,14 +98,12 @@ class TableCellResponse(object):
     def cell(self, cell):
         """Sets the cell of this TableCellResponse.
 
-        Gets or sets table cell.  # noqa: E501
+        Gets or sets cell.  # noqa: E501
 
         :param cell: The cell of this TableCellResponse.  # noqa: E501
         :type: TableCell
         """
         self._cell = cell
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

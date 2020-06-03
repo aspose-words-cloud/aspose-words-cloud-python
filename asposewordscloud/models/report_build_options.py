@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="report_build_options.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="ReportBuildOptions.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,6 +41,7 @@ class ReportBuildOptions(object):
     REMOVEEMPTYPARAGRAPHS = "RemoveEmptyParagraphs"
     INLINEERRORMESSAGES = "InlineErrorMessages"
 
+
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -58,7 +59,6 @@ class ReportBuildOptions(object):
         """ReportBuildOptions - a model defined in Swagger"""  # noqa: E501
 
         self.discriminator = None
-
 
 
     def to_dict(self):

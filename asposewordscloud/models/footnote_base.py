@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="footnote_base.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="FootnoteBase.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,37 +41,58 @@ class FootnoteBase(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'footnote_type': 'str',
         'position': 'DocumentPosition',
+        'footnote_type': 'str',
         'reference_mark': 'str',
         'text': 'str'
     }
 
     attribute_map = {
-        'footnote_type': 'FootnoteType',
         'position': 'Position',
+        'footnote_type': 'FootnoteType',
         'reference_mark': 'ReferenceMark',
         'text': 'Text'
     }
 
-    def __init__(self, footnote_type=None, position=None, reference_mark=None, text=None):  # noqa: E501
+    def __init__(self, position=None, footnote_type=None, reference_mark=None, text=None):  # noqa: E501
         """FootnoteBase - a model defined in Swagger"""  # noqa: E501
 
-        self._footnote_type = None
         self._position = None
+        self._footnote_type = None
         self._reference_mark = None
         self._text = None
         self.discriminator = None
 
-        if footnote_type is not None:
-            self.footnote_type = footnote_type
         if position is not None:
             self.position = position
+        if footnote_type is not None:
+            self.footnote_type = footnote_type
         if reference_mark is not None:
             self.reference_mark = reference_mark
         if text is not None:
             self.text = text
 
+    @property
+    def position(self):
+        """Gets the position of this FootnoteBase.  # noqa: E501
+
+        Gets or sets position.  # noqa: E501
+
+        :return: The position of this FootnoteBase.  # noqa: E501
+        :rtype: DocumentPosition
+        """
+        return self._position
+
+    @position.setter
+    def position(self, position):
+        """Sets the position of this FootnoteBase.
+
+        Gets or sets position.  # noqa: E501
+
+        :param position: The position of this FootnoteBase.  # noqa: E501
+        :type: DocumentPosition
+        """
+        self._position = position
     @property
     def footnote_type(self):
         """Gets the footnote_type of this FootnoteBase.  # noqa: E501
@@ -93,7 +114,7 @@ class FootnoteBase(object):
         :type: str
         """
         allowed_values = ["Footnote", "Endnote"]  # noqa: E501
-        if not footnote_type.isdigit():
+        if not footnote_type.isdigit():	
             if footnote_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `footnote_type` ({0}), must be one of {1}"  # noqa: E501
@@ -101,29 +122,6 @@ class FootnoteBase(object):
             self._footnote_type = footnote_type
         else:
             self._footnote_type = allowed_values[int(footnote_type) if six.PY3 else long(footnote_type)]
-
-    @property
-    def position(self):
-        """Gets the position of this FootnoteBase.  # noqa: E501
-
-        Gets or sets link to comment range start node.  # noqa: E501
-
-        :return: The position of this FootnoteBase.  # noqa: E501
-        :rtype: DocumentPosition
-        """
-        return self._position
-
-    @position.setter
-    def position(self, position):
-        """Sets the position of this FootnoteBase.
-
-        Gets or sets link to comment range start node.  # noqa: E501
-
-        :param position: The position of this FootnoteBase.  # noqa: E501
-        :type: DocumentPosition
-        """
-        self._position = position
-
     @property
     def reference_mark(self):
         """Gets the reference_mark of this FootnoteBase.  # noqa: E501
@@ -145,7 +143,6 @@ class FootnoteBase(object):
         :type: str
         """
         self._reference_mark = reference_mark
-
     @property
     def text(self):
         """Gets the text of this FootnoteBase.  # noqa: E501
@@ -167,8 +164,6 @@ class FootnoteBase(object):
         :type: str
         """
         self._text = text
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

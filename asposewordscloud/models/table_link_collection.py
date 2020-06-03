@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="table_link_collection.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="TableLinkCollection.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,7 +46,7 @@ class TableLinkCollection(object):
     }
 
     attribute_map = {
-        'link': 'Link',
+        'link': 'link',
         'table_link_list': 'TableLinkList'
     }
 
@@ -66,7 +66,7 @@ class TableLinkCollection(object):
     def link(self):
         """Gets the link of this TableLinkCollection.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :return: The link of this TableLinkCollection.  # noqa: E501
         :rtype: WordsApiLink
@@ -77,13 +77,12 @@ class TableLinkCollection(object):
     def link(self, link):
         """Sets the link of this TableLinkCollection.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :param link: The link of this TableLinkCollection.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
-
     @property
     def table_link_list(self):
         """Gets the table_link_list of this TableLinkCollection.  # noqa: E501
@@ -105,8 +104,6 @@ class TableLinkCollection(object):
         :type: list[TableLink]
         """
         self._table_link_list = table_link_list
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

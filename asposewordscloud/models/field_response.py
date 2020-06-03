@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="field_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="FieldResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,12 +83,11 @@ class FieldResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def field(self):
         """Gets the field of this FieldResponse.  # noqa: E501
 
-        Gets or sets field information.  # noqa: E501
+        Gets or sets field.  # noqa: E501
 
         :return: The field of this FieldResponse.  # noqa: E501
         :rtype: Field
@@ -99,14 +98,12 @@ class FieldResponse(object):
     def field(self, field):
         """Sets the field of this FieldResponse.
 
-        Gets or sets field information.  # noqa: E501
+        Gets or sets field.  # noqa: E501
 
         :param field: The field of this FieldResponse.  # noqa: E501
         :type: Field
         """
         self._field = field
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="list_level.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="ListLevel.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -57,7 +57,7 @@ class ListLevel(object):
     }
 
     attribute_map = {
-        'link': 'Link',
+        'link': 'link',
         'alignment': 'Alignment',
         'font': 'Font',
         'is_legal': 'IsLegal',
@@ -121,7 +121,7 @@ class ListLevel(object):
     def link(self):
         """Gets the link of this ListLevel.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :return: The link of this ListLevel.  # noqa: E501
         :rtype: WordsApiLink
@@ -132,13 +132,12 @@ class ListLevel(object):
     def link(self, link):
         """Sets the link of this ListLevel.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :param link: The link of this ListLevel.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
-
     @property
     def alignment(self):
         """Gets the alignment of this ListLevel.  # noqa: E501
@@ -160,7 +159,7 @@ class ListLevel(object):
         :type: str
         """
         allowed_values = ["Left", "Center", "Right"]  # noqa: E501
-        if not alignment.isdigit():
+        if not alignment.isdigit():	
             if alignment not in allowed_values:
                 raise ValueError(
                     "Invalid value for `alignment` ({0}), must be one of {1}"  # noqa: E501
@@ -168,12 +167,11 @@ class ListLevel(object):
             self._alignment = alignment
         else:
             self._alignment = allowed_values[int(alignment) if six.PY3 else long(alignment)]
-
     @property
     def font(self):
         """Gets the font of this ListLevel.  # noqa: E501
 
-        Gets or sets specifies character formatting used for the list label.  # noqa: E501
+        Gets or sets font.  # noqa: E501
 
         :return: The font of this ListLevel.  # noqa: E501
         :rtype: Font
@@ -184,13 +182,12 @@ class ListLevel(object):
     def font(self, font):
         """Sets the font of this ListLevel.
 
-        Gets or sets specifies character formatting used for the list label.  # noqa: E501
+        Gets or sets font.  # noqa: E501
 
         :param font: The font of this ListLevel.  # noqa: E501
         :type: Font
         """
         self._font = font
-
     @property
     def is_legal(self):
         """Gets the is_legal of this ListLevel.  # noqa: E501
@@ -212,12 +209,11 @@ class ListLevel(object):
         :type: bool
         """
         self._is_legal = is_legal
-
     @property
     def linked_style(self):
         """Gets the linked_style of this ListLevel.  # noqa: E501
 
-        Gets or sets the paragraph style that is linked to this list level.  # noqa: E501
+        Gets or sets linked_style.  # noqa: E501
 
         :return: The linked_style of this ListLevel.  # noqa: E501
         :rtype: Style
@@ -228,13 +224,12 @@ class ListLevel(object):
     def linked_style(self, linked_style):
         """Sets the linked_style of this ListLevel.
 
-        Gets or sets the paragraph style that is linked to this list level.  # noqa: E501
+        Gets or sets linked_style.  # noqa: E501
 
         :param linked_style: The linked_style of this ListLevel.  # noqa: E501
         :type: Style
         """
         self._linked_style = linked_style
-
     @property
     def number_format(self):
         """Gets the number_format of this ListLevel.  # noqa: E501
@@ -256,7 +251,6 @@ class ListLevel(object):
         :type: str
         """
         self._number_format = number_format
-
     @property
     def number_position(self):
         """Gets the number_position of this ListLevel.  # noqa: E501
@@ -278,7 +272,6 @@ class ListLevel(object):
         :type: float
         """
         self._number_position = number_position
-
     @property
     def number_style(self):
         """Gets the number_style of this ListLevel.  # noqa: E501
@@ -300,7 +293,7 @@ class ListLevel(object):
         :type: str
         """
         allowed_values = ["Arabic", "UppercaseRoman", "LowercaseRoman", "UppercaseLetter", "LowercaseLetter", "Ordinal", "Number", "OrdinalText", "Hex", "ChicagoManual", "Kanji", "KanjiDigit", "AiueoHalfWidth", "IrohaHalfWidth", "ArabicFullWidth", "ArabicHalfWidth", "KanjiTraditional", "KanjiTraditional2", "NumberInCircle", "DecimalFullWidth", "Aiueo", "Iroha", "LeadingZero", "Bullet", "Ganada", "Chosung", "GB1", "GB2", "GB3", "GB4", "Zodiac1", "Zodiac2", "Zodiac3", "TradChinNum1", "TradChinNum2", "TradChinNum3", "TradChinNum4", "SimpChinNum1", "SimpChinNum2", "SimpChinNum3", "SimpChinNum4", "HanjaRead", "HanjaReadDigit", "Hangul", "Hanja", "Hebrew1", "Arabic1", "Hebrew2", "Arabic2", "HindiLetter1", "HindiLetter2", "HindiArabic", "HindiCardinalText", "ThaiLetter", "ThaiArabic", "ThaiCardinalText", "VietCardinalText", "NumberInDash", "LowercaseRussian", "UppercaseRussian", "None", "Custom"]  # noqa: E501
-        if not number_style.isdigit():
+        if not number_style.isdigit():	
             if number_style not in allowed_values:
                 raise ValueError(
                     "Invalid value for `number_style` ({0}), must be one of {1}"  # noqa: E501
@@ -308,7 +301,6 @@ class ListLevel(object):
             self._number_style = number_style
         else:
             self._number_style = allowed_values[int(number_style) if six.PY3 else long(number_style)]
-
     @property
     def restart_after_level(self):
         """Gets the restart_after_level of this ListLevel.  # noqa: E501
@@ -330,7 +322,6 @@ class ListLevel(object):
         :type: int
         """
         self._restart_after_level = restart_after_level
-
     @property
     def start_at(self):
         """Gets the start_at of this ListLevel.  # noqa: E501
@@ -352,7 +343,6 @@ class ListLevel(object):
         :type: int
         """
         self._start_at = start_at
-
     @property
     def tab_position(self):
         """Gets the tab_position of this ListLevel.  # noqa: E501
@@ -374,7 +364,6 @@ class ListLevel(object):
         :type: float
         """
         self._tab_position = tab_position
-
     @property
     def text_position(self):
         """Gets the text_position of this ListLevel.  # noqa: E501
@@ -396,7 +385,6 @@ class ListLevel(object):
         :type: float
         """
         self._text_position = text_position
-
     @property
     def trailing_character(self):
         """Gets the trailing_character of this ListLevel.  # noqa: E501
@@ -418,7 +406,7 @@ class ListLevel(object):
         :type: str
         """
         allowed_values = ["Tab", "Space", "Nothing"]  # noqa: E501
-        if not trailing_character.isdigit():
+        if not trailing_character.isdigit():	
             if trailing_character not in allowed_values:
                 raise ValueError(
                     "Invalid value for `trailing_character` ({0}), must be one of {1}"  # noqa: E501
@@ -426,8 +414,6 @@ class ListLevel(object):
             self._trailing_character = trailing_character
         else:
             self._trailing_character = allowed_values[int(trailing_character) if six.PY3 else long(trailing_character)]
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

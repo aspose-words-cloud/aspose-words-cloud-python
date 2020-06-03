@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="form_field_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="FormFieldResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,12 +83,11 @@ class FormFieldResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def form_field(self):
         """Gets the form_field of this FormFieldResponse.  # noqa: E501
 
-        Gets or sets field information.  # noqa: E501
+        Gets or sets form_field.  # noqa: E501
 
         :return: The form_field of this FormFieldResponse.  # noqa: E501
         :rtype: FormField
@@ -99,14 +98,12 @@ class FormFieldResponse(object):
     def form_field(self, form_field):
         """Sets the form_field of this FormFieldResponse.
 
-        Gets or sets field information.  # noqa: E501
+        Gets or sets form_field.  # noqa: E501
 
         :param form_field: The form_field of this FormFieldResponse.  # noqa: E501
         :type: FormField
         """
         self._form_field = form_field
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

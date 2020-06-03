@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="pdf_encryption_details_data.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="PdfEncryptionDetailsData.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -93,7 +93,6 @@ class PdfEncryptionDetailsData(object):
         :type: str
         """
         self._encryption_algorithm = encryption_algorithm
-
     @property
     def owner_password(self):
         """Gets the owner_password of this PdfEncryptionDetailsData.  # noqa: E501
@@ -115,7 +114,6 @@ class PdfEncryptionDetailsData(object):
         :type: str
         """
         self._owner_password = owner_password
-
     @property
     def permissions(self):
         """Gets the permissions of this PdfEncryptionDetailsData.  # noqa: E501
@@ -137,7 +135,6 @@ class PdfEncryptionDetailsData(object):
         :type: str
         """
         self._permissions = permissions
-
     @property
     def user_password(self):
         """Gets the user_password of this PdfEncryptionDetailsData.  # noqa: E501
@@ -159,8 +156,6 @@ class PdfEncryptionDetailsData(object):
         :type: str
         """
         self._user_password = user_password
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

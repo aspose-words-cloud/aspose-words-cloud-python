@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="section_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="SectionResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,7 +83,6 @@ class SectionResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def section(self):
         """Gets the section of this SectionResponse.  # noqa: E501
@@ -105,8 +104,6 @@ class SectionResponse(object):
         :type: Section
         """
         self._section = section
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

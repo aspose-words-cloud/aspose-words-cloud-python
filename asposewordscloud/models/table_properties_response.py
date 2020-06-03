@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="table_properties_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="TablePropertiesResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,12 +83,11 @@ class TablePropertiesResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def properties(self):
         """Gets the properties of this TablePropertiesResponse.  # noqa: E501
 
-        Gets or sets table.  # noqa: E501
+        Gets or sets properties.  # noqa: E501
 
         :return: The properties of this TablePropertiesResponse.  # noqa: E501
         :rtype: TableProperties
@@ -99,14 +98,12 @@ class TablePropertiesResponse(object):
     def properties(self, properties):
         """Sets the properties of this TablePropertiesResponse.
 
-        Gets or sets table.  # noqa: E501
+        Gets or sets properties.  # noqa: E501
 
         :param properties: The properties of this TablePropertiesResponse.  # noqa: E501
         :type: TableProperties
         """
         self._properties = properties
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

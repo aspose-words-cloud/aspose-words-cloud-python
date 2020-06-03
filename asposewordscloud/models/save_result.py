@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="save_result.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="SaveResult.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,32 +41,74 @@ class SaveResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'additional_items': 'list[FileLink]',
+        'source_document': 'FileLink',
         'dest_document': 'FileLink',
-        'source_document': 'FileLink'
+        'additional_items': 'list[FileLink]'
     }
 
     attribute_map = {
-        'additional_items': 'AdditionalItems',
+        'source_document': 'SourceDocument',
         'dest_document': 'DestDocument',
-        'source_document': 'SourceDocument'
+        'additional_items': 'AdditionalItems'
     }
 
-    def __init__(self, additional_items=None, dest_document=None, source_document=None):  # noqa: E501
+    def __init__(self, source_document=None, dest_document=None, additional_items=None):  # noqa: E501
         """SaveResult - a model defined in Swagger"""  # noqa: E501
 
-        self._additional_items = None
-        self._dest_document = None
         self._source_document = None
+        self._dest_document = None
+        self._additional_items = None
         self.discriminator = None
 
-        if additional_items is not None:
-            self.additional_items = additional_items
-        if dest_document is not None:
-            self.dest_document = dest_document
         if source_document is not None:
             self.source_document = source_document
+        if dest_document is not None:
+            self.dest_document = dest_document
+        if additional_items is not None:
+            self.additional_items = additional_items
 
+    @property
+    def source_document(self):
+        """Gets the source_document of this SaveResult.  # noqa: E501
+
+        Gets or sets source_document.  # noqa: E501
+
+        :return: The source_document of this SaveResult.  # noqa: E501
+        :rtype: FileLink
+        """
+        return self._source_document
+
+    @source_document.setter
+    def source_document(self, source_document):
+        """Sets the source_document of this SaveResult.
+
+        Gets or sets source_document.  # noqa: E501
+
+        :param source_document: The source_document of this SaveResult.  # noqa: E501
+        :type: FileLink
+        """
+        self._source_document = source_document
+    @property
+    def dest_document(self):
+        """Gets the dest_document of this SaveResult.  # noqa: E501
+
+        Gets or sets dest_document.  # noqa: E501
+
+        :return: The dest_document of this SaveResult.  # noqa: E501
+        :rtype: FileLink
+        """
+        return self._dest_document
+
+    @dest_document.setter
+    def dest_document(self, dest_document):
+        """Sets the dest_document of this SaveResult.
+
+        Gets or sets dest_document.  # noqa: E501
+
+        :param dest_document: The dest_document of this SaveResult.  # noqa: E501
+        :type: FileLink
+        """
+        self._dest_document = dest_document
     @property
     def additional_items(self):
         """Gets the additional_items of this SaveResult.  # noqa: E501
@@ -88,52 +130,6 @@ class SaveResult(object):
         :type: list[FileLink]
         """
         self._additional_items = additional_items
-
-    @property
-    def dest_document(self):
-        """Gets the dest_document of this SaveResult.  # noqa: E501
-
-        Gets or sets link to destination document.  # noqa: E501
-
-        :return: The dest_document of this SaveResult.  # noqa: E501
-        :rtype: FileLink
-        """
-        return self._dest_document
-
-    @dest_document.setter
-    def dest_document(self, dest_document):
-        """Sets the dest_document of this SaveResult.
-
-        Gets or sets link to destination document.  # noqa: E501
-
-        :param dest_document: The dest_document of this SaveResult.  # noqa: E501
-        :type: FileLink
-        """
-        self._dest_document = dest_document
-
-    @property
-    def source_document(self):
-        """Gets the source_document of this SaveResult.  # noqa: E501
-
-        Gets or sets link to source document.  # noqa: E501
-
-        :return: The source_document of this SaveResult.  # noqa: E501
-        :rtype: FileLink
-        """
-        return self._source_document
-
-    @source_document.setter
-    def source_document(self, source_document):
-        """Sets the source_document of this SaveResult.
-
-        Gets or sets link to source document.  # noqa: E501
-
-        :param source_document: The source_document of this SaveResult.  # noqa: E501
-        :type: FileLink
-        """
-        self._source_document = source_document
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

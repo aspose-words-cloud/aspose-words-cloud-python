@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="list_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="ListResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,12 +83,11 @@ class ListResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def list(self):
         """Gets the list of this ListResponse.  # noqa: E501
 
-        Gets or sets list which are contained in document.  # noqa: E501
+        Gets or sets list.  # noqa: E501
 
         :return: The list of this ListResponse.  # noqa: E501
         :rtype: ListInfo
@@ -99,14 +98,12 @@ class ListResponse(object):
     def list(self, list):
         """Sets the list of this ListResponse.
 
-        Gets or sets list which are contained in document.  # noqa: E501
+        Gets or sets list.  # noqa: E501
 
         :param list: The list of this ListResponse.  # noqa: E501
         :type: ListInfo
         """
         self._list = list
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

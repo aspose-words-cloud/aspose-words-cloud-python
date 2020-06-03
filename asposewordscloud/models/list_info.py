@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="list_info.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="ListInfo.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -52,7 +52,7 @@ class ListInfo(object):
     }
 
     attribute_map = {
-        'link': 'Link',
+        'link': 'link',
         'is_list_style_definition': 'IsListStyleDefinition',
         'is_list_style_reference': 'IsListStyleReference',
         'is_multi_level': 'IsMultiLevel',
@@ -96,7 +96,7 @@ class ListInfo(object):
     def link(self):
         """Gets the link of this ListInfo.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :return: The link of this ListInfo.  # noqa: E501
         :rtype: WordsApiLink
@@ -107,13 +107,12 @@ class ListInfo(object):
     def link(self, link):
         """Sets the link of this ListInfo.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :param link: The link of this ListInfo.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
-
     @property
     def is_list_style_definition(self):
         """Gets the is_list_style_definition of this ListInfo.  # noqa: E501
@@ -135,7 +134,6 @@ class ListInfo(object):
         :type: bool
         """
         self._is_list_style_definition = is_list_style_definition
-
     @property
     def is_list_style_reference(self):
         """Gets the is_list_style_reference of this ListInfo.  # noqa: E501
@@ -157,7 +155,6 @@ class ListInfo(object):
         :type: bool
         """
         self._is_list_style_reference = is_list_style_reference
-
     @property
     def is_multi_level(self):
         """Gets the is_multi_level of this ListInfo.  # noqa: E501
@@ -179,7 +176,6 @@ class ListInfo(object):
         :type: bool
         """
         self._is_multi_level = is_multi_level
-
     @property
     def is_restart_at_each_section(self):
         """Gets the is_restart_at_each_section of this ListInfo.  # noqa: E501
@@ -201,7 +197,6 @@ class ListInfo(object):
         :type: bool
         """
         self._is_restart_at_each_section = is_restart_at_each_section
-
     @property
     def list_id(self):
         """Gets the list_id of this ListInfo.  # noqa: E501
@@ -223,12 +218,11 @@ class ListInfo(object):
         :type: int
         """
         self._list_id = list_id
-
     @property
     def list_levels(self):
         """Gets the list_levels of this ListInfo.  # noqa: E501
 
-        Gets or sets the collection of list levels for this list.  # noqa: E501
+        Gets or sets list_levels.  # noqa: E501
 
         :return: The list_levels of this ListInfo.  # noqa: E501
         :rtype: ListLevels
@@ -239,18 +233,17 @@ class ListInfo(object):
     def list_levels(self, list_levels):
         """Sets the list_levels of this ListInfo.
 
-        Gets or sets the collection of list levels for this list.  # noqa: E501
+        Gets or sets list_levels.  # noqa: E501
 
         :param list_levels: The list_levels of this ListInfo.  # noqa: E501
         :type: ListLevels
         """
         self._list_levels = list_levels
-
     @property
     def style(self):
         """Gets the style of this ListInfo.  # noqa: E501
 
-        Gets or sets the list style that this list references or defines.  # noqa: E501
+        Gets or sets style.  # noqa: E501
 
         :return: The style of this ListInfo.  # noqa: E501
         :rtype: Style
@@ -261,14 +254,12 @@ class ListInfo(object):
     def style(self, style):
         """Sets the style of this ListInfo.
 
-        Gets or sets the list style that this list references or defines.  # noqa: E501
+        Gets or sets style.  # noqa: E501
 
         :param style: The style of this ListInfo.  # noqa: E501
         :type: Style
         """
         self._style = style
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

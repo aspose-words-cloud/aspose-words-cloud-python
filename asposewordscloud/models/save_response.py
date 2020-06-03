@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="save_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="SaveResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,12 +83,11 @@ class SaveResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def save_result(self):
         """Gets the save_result of this SaveResponse.  # noqa: E501
 
-        Gets or sets save result.  # noqa: E501
+        Gets or sets save_result.  # noqa: E501
 
         :return: The save_result of this SaveResponse.  # noqa: E501
         :rtype: SaveResult
@@ -99,14 +98,12 @@ class SaveResponse(object):
     def save_result(self, save_result):
         """Sets the save_result of this SaveResponse.
 
-        Gets or sets save result.  # noqa: E501
+        Gets or sets save_result.  # noqa: E501
 
         :param save_result: The save_result of this SaveResponse.  # noqa: E501
         :type: SaveResult
         """
         self._save_result = save_result
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

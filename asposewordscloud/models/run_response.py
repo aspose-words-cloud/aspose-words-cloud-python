@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="run_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="RunResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,7 +83,6 @@ class RunResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def run(self):
         """Gets the run of this RunResponse.  # noqa: E501
@@ -105,8 +104,6 @@ class RunResponse(object):
         :type: Run
         """
         self._run = run
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

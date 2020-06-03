@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="border.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="Border.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -51,7 +51,7 @@ class Border(object):
     }
 
     attribute_map = {
-        'link': 'Link',
+        'link': 'link',
         'border_type': 'BorderType',
         'color': 'Color',
         'distance_from_text': 'DistanceFromText',
@@ -91,7 +91,7 @@ class Border(object):
     def link(self):
         """Gets the link of this Border.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :return: The link of this Border.  # noqa: E501
         :rtype: WordsApiLink
@@ -102,18 +102,17 @@ class Border(object):
     def link(self, link):
         """Sets the link of this Border.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :param link: The link of this Border.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
-
     @property
     def border_type(self):
         """Gets the border_type of this Border.  # noqa: E501
 
-        Gets or sets the border type.  # noqa: E501
+        Gets or sets the border type.               # noqa: E501
 
         :return: The border_type of this Border.  # noqa: E501
         :rtype: str
@@ -124,13 +123,13 @@ class Border(object):
     def border_type(self, border_type):
         """Sets the border_type of this Border.
 
-        Gets or sets the border type.  # noqa: E501
+        Gets or sets the border type.               # noqa: E501
 
         :param border_type: The border_type of this Border.  # noqa: E501
         :type: str
         """
         allowed_values = ["Bottom", "Left", "Right", "Top", "Horizontal", "Vertical", "DiagonalDown", "DiagonalUp", "None"]  # noqa: E501
-        if not border_type.isdigit():
+        if not border_type.isdigit():	
             if border_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `border_type` ({0}), must be one of {1}"  # noqa: E501
@@ -138,12 +137,11 @@ class Border(object):
             self._border_type = border_type
         else:
             self._border_type = allowed_values[int(border_type) if six.PY3 else long(border_type)]
-
     @property
     def color(self):
         """Gets the color of this Border.  # noqa: E501
 
-        Gets or sets the border color.  # noqa: E501
+        Gets or sets color.  # noqa: E501
 
         :return: The color of this Border.  # noqa: E501
         :rtype: XmlColor
@@ -154,13 +152,12 @@ class Border(object):
     def color(self, color):
         """Sets the color of this Border.
 
-        Gets or sets the border color.  # noqa: E501
+        Gets or sets color.  # noqa: E501
 
         :param color: The color of this Border.  # noqa: E501
         :type: XmlColor
         """
         self._color = color
-
     @property
     def distance_from_text(self):
         """Gets the distance_from_text of this Border.  # noqa: E501
@@ -182,7 +179,6 @@ class Border(object):
         :type: float
         """
         self._distance_from_text = distance_from_text
-
     @property
     def line_style(self):
         """Gets the line_style of this Border.  # noqa: E501
@@ -204,7 +200,7 @@ class Border(object):
         :type: str
         """
         allowed_values = ["None", "Single", "Thick", "Double", "Hairline", "Dot", "DashLargeGap", "DotDash", "DotDotDash", "Triple", "ThinThickSmallGap", "ThickThinSmallGap", "ThinThickThinSmallGap", "ThinThickMediumGap", "ThickThinMediumGap", "ThinThickThinMediumGap", "ThinThickLargeGap", "ThickThinLargeGap", "ThinThickThinLargeGap", "Wave", "DoubleWave", "DashSmallGap", "DashDotStroker", "Emboss3D", "Engrave3D", "Outset", "Inset"]  # noqa: E501
-        if not line_style.isdigit():
+        if not line_style.isdigit():	
             if line_style not in allowed_values:
                 raise ValueError(
                     "Invalid value for `line_style` ({0}), must be one of {1}"  # noqa: E501
@@ -212,7 +208,6 @@ class Border(object):
             self._line_style = line_style
         else:
             self._line_style = allowed_values[int(line_style) if six.PY3 else long(line_style)]
-
     @property
     def line_width(self):
         """Gets the line_width of this Border.  # noqa: E501
@@ -234,7 +229,6 @@ class Border(object):
         :type: float
         """
         self._line_width = line_width
-
     @property
     def shadow(self):
         """Gets the shadow of this Border.  # noqa: E501
@@ -256,8 +250,6 @@ class Border(object):
         :type: bool
         """
         self._shadow = shadow
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

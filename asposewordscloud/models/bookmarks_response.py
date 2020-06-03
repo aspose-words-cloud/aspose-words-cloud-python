@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="bookmarks_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="BookmarksResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,12 +83,11 @@ class BookmarksResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def bookmarks(self):
         """Gets the bookmarks of this BookmarksResponse.  # noqa: E501
 
-        Gets or sets bookmarks which are contained in document.  # noqa: E501
+        Gets or sets bookmarks.  # noqa: E501
 
         :return: The bookmarks of this BookmarksResponse.  # noqa: E501
         :rtype: Bookmarks
@@ -99,14 +98,12 @@ class BookmarksResponse(object):
     def bookmarks(self, bookmarks):
         """Sets the bookmarks of this BookmarksResponse.
 
-        Gets or sets bookmarks which are contained in document.  # noqa: E501
+        Gets or sets bookmarks.  # noqa: E501
 
         :param bookmarks: The bookmarks of this BookmarksResponse.  # noqa: E501
         :type: Bookmarks
         """
         self._bookmarks = bookmarks
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

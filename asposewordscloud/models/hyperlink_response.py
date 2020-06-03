@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="hyperlink_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="HyperlinkResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,7 +83,6 @@ class HyperlinkResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def hyperlink(self):
         """Gets the hyperlink of this HyperlinkResponse.  # noqa: E501
@@ -105,8 +104,6 @@ class HyperlinkResponse(object):
         :type: Hyperlink
         """
         self._hyperlink = hyperlink
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

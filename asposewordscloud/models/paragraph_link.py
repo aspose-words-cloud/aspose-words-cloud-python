@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="paragraph_link.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="ParagraphLink.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,53 +41,31 @@ class ParagraphLink(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'link': 'WordsApiLink',
         'node_id': 'str',
+        'link': 'WordsApiLink',
         'text': 'str'
     }
 
     attribute_map = {
-        'link': 'Link',
         'node_id': 'NodeId',
+        'link': 'link',
         'text': 'Text'
     }
 
-    def __init__(self, link=None, node_id=None, text=None):  # noqa: E501
+    def __init__(self, node_id=None, link=None, text=None):  # noqa: E501
         """ParagraphLink - a model defined in Swagger"""  # noqa: E501
 
-        self._link = None
         self._node_id = None
+        self._link = None
         self._text = None
         self.discriminator = None
 
-        if link is not None:
-            self.link = link
         if node_id is not None:
             self.node_id = node_id
+        if link is not None:
+            self.link = link
         if text is not None:
             self.text = text
-
-    @property
-    def link(self):
-        """Gets the link of this ParagraphLink.  # noqa: E501
-
-        Gets or sets link to the document.  # noqa: E501
-
-        :return: The link of this ParagraphLink.  # noqa: E501
-        :rtype: WordsApiLink
-        """
-        return self._link
-
-    @link.setter
-    def link(self, link):
-        """Sets the link of this ParagraphLink.
-
-        Gets or sets link to the document.  # noqa: E501
-
-        :param link: The link of this ParagraphLink.  # noqa: E501
-        :type: WordsApiLink
-        """
-        self._link = link
 
     @property
     def node_id(self):
@@ -110,7 +88,27 @@ class ParagraphLink(object):
         :type: str
         """
         self._node_id = node_id
+    @property
+    def link(self):
+        """Gets the link of this ParagraphLink.  # noqa: E501
 
+        Gets or sets link.  # noqa: E501
+
+        :return: The link of this ParagraphLink.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this ParagraphLink.
+
+        Gets or sets link.  # noqa: E501
+
+        :param link: The link of this ParagraphLink.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
     @property
     def text(self):
         """Gets the text of this ParagraphLink.  # noqa: E501
@@ -132,8 +130,6 @@ class ParagraphLink(object):
         :type: str
         """
         self._text = text
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

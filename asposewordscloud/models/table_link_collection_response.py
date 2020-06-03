@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="table_link_collection_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="TableLinkCollectionResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,12 +83,11 @@ class TableLinkCollectionResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def tables(self):
         """Gets the tables of this TableLinkCollectionResponse.  # noqa: E501
 
-        Gets or sets collection of tables.  # noqa: E501
+        Gets or sets tables.  # noqa: E501
 
         :return: The tables of this TableLinkCollectionResponse.  # noqa: E501
         :rtype: TableLinkCollection
@@ -99,14 +98,12 @@ class TableLinkCollectionResponse(object):
     def tables(self, tables):
         """Sets the tables of this TableLinkCollectionResponse.
 
-        Gets or sets collection of tables.  # noqa: E501
+        Gets or sets tables.  # noqa: E501
 
         :param tables: The tables of this TableLinkCollectionResponse.  # noqa: E501
         :type: TableLinkCollection
         """
         self._tables = tables
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

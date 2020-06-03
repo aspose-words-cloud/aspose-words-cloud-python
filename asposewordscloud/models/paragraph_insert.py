@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="paragraph_insert.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="ParagraphInsert.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -78,8 +78,6 @@ class ParagraphInsert(object):
         :type: str
         """
         self._text = text
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

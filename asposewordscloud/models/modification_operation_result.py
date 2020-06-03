@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="modification_operation_result.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="ModificationOperationResult.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,54 +41,32 @@ class ModificationOperationResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'dest': 'FileLink',
-        'source': 'FileLink'
+        'source': 'FileLink',
+        'dest': 'FileLink'
     }
 
     attribute_map = {
-        'dest': 'Dest',
-        'source': 'Source'
+        'source': 'Source',
+        'dest': 'Dest'
     }
 
-    def __init__(self, dest=None, source=None):  # noqa: E501
+    def __init__(self, source=None, dest=None):  # noqa: E501
         """ModificationOperationResult - a model defined in Swagger"""  # noqa: E501
 
-        self._dest = None
         self._source = None
+        self._dest = None
         self.discriminator = None
 
-        if dest is not None:
-            self.dest = dest
         if source is not None:
             self.source = source
-
-    @property
-    def dest(self):
-        """Gets the dest of this ModificationOperationResult.  # noqa: E501
-
-        Gets or sets link to the dest document (result of the modification operation).  # noqa: E501
-
-        :return: The dest of this ModificationOperationResult.  # noqa: E501
-        :rtype: FileLink
-        """
-        return self._dest
-
-    @dest.setter
-    def dest(self, dest):
-        """Sets the dest of this ModificationOperationResult.
-
-        Gets or sets link to the dest document (result of the modification operation).  # noqa: E501
-
-        :param dest: The dest of this ModificationOperationResult.  # noqa: E501
-        :type: FileLink
-        """
-        self._dest = dest
+        if dest is not None:
+            self.dest = dest
 
     @property
     def source(self):
         """Gets the source of this ModificationOperationResult.  # noqa: E501
 
-        Gets or sets link to the source document (source for the modification operation).  # noqa: E501
+        Gets or sets source.  # noqa: E501
 
         :return: The source of this ModificationOperationResult.  # noqa: E501
         :rtype: FileLink
@@ -99,14 +77,33 @@ class ModificationOperationResult(object):
     def source(self, source):
         """Sets the source of this ModificationOperationResult.
 
-        Gets or sets link to the source document (source for the modification operation).  # noqa: E501
+        Gets or sets source.  # noqa: E501
 
         :param source: The source of this ModificationOperationResult.  # noqa: E501
         :type: FileLink
         """
         self._source = source
+    @property
+    def dest(self):
+        """Gets the dest of this ModificationOperationResult.  # noqa: E501
 
+        Gets or sets dest.  # noqa: E501
 
+        :return: The dest of this ModificationOperationResult.  # noqa: E501
+        :rtype: FileLink
+        """
+        return self._dest
+
+    @dest.setter
+    def dest(self, dest):
+        """Sets the dest of this ModificationOperationResult.
+
+        Gets or sets dest.  # noqa: E501
+
+        :param dest: The dest of this ModificationOperationResult.  # noqa: E501
+        :type: FileLink
+        """
+        self._dest = dest
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

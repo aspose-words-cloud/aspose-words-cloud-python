@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="watermark_text.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="WatermarkText.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,48 +41,26 @@ class WatermarkText(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'rotation_angle': 'float',
-        'text': 'str'
+        'text': 'str',
+        'rotation_angle': 'float'
     }
 
     attribute_map = {
-        'rotation_angle': 'RotationAngle',
-        'text': 'Text'
+        'text': 'Text',
+        'rotation_angle': 'RotationAngle'
     }
 
-    def __init__(self, rotation_angle=None, text=None):  # noqa: E501
+    def __init__(self, text=None, rotation_angle=None):  # noqa: E501
         """WatermarkText - a model defined in Swagger"""  # noqa: E501
 
-        self._rotation_angle = None
         self._text = None
+        self._rotation_angle = None
         self.discriminator = None
 
-        if rotation_angle is not None:
-            self.rotation_angle = rotation_angle
         if text is not None:
             self.text = text
-
-    @property
-    def rotation_angle(self):
-        """Gets the rotation_angle of this WatermarkText.  # noqa: E501
-
-        Gets or sets the watermark rotation angle.  # noqa: E501
-
-        :return: The rotation_angle of this WatermarkText.  # noqa: E501
-        :rtype: float
-        """
-        return self._rotation_angle
-
-    @rotation_angle.setter
-    def rotation_angle(self, rotation_angle):
-        """Sets the rotation_angle of this WatermarkText.
-
-        Gets or sets the watermark rotation angle.  # noqa: E501
-
-        :param rotation_angle: The rotation_angle of this WatermarkText.  # noqa: E501
-        :type: float
-        """
-        self._rotation_angle = rotation_angle
+        if rotation_angle is not None:
+            self.rotation_angle = rotation_angle
 
     @property
     def text(self):
@@ -105,8 +83,27 @@ class WatermarkText(object):
         :type: str
         """
         self._text = text
+    @property
+    def rotation_angle(self):
+        """Gets the rotation_angle of this WatermarkText.  # noqa: E501
 
+        Gets or sets the watermark rotation angle.  # noqa: E501
 
+        :return: The rotation_angle of this WatermarkText.  # noqa: E501
+        :rtype: float
+        """
+        return self._rotation_angle
+
+    @rotation_angle.setter
+    def rotation_angle(self, rotation_angle):
+        """Sets the rotation_angle of this WatermarkText.
+
+        Gets or sets the watermark rotation angle.  # noqa: E501
+
+        :param rotation_angle: The rotation_angle of this WatermarkText.  # noqa: E501
+        :type: float
+        """
+        self._rotation_angle = rotation_angle
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

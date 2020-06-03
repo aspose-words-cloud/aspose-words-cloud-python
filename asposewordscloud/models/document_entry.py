@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="document_entry.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="DocumentEntry.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,7 +83,6 @@ class DocumentEntry(object):
         :type: str
         """
         self._href = href
-
     @property
     def import_format_mode(self):
         """Gets the import_format_mode of this DocumentEntry.  # noqa: E501
@@ -105,8 +104,6 @@ class DocumentEntry(object):
         :type: str
         """
         self._import_format_mode = import_format_mode
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

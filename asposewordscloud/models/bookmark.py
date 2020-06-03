@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="bookmark.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="Bookmark.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -47,7 +47,7 @@ class Bookmark(object):
     }
 
     attribute_map = {
-        'link': 'Link',
+        'link': 'link',
         'name': 'Name',
         'text': 'Text'
     }
@@ -71,7 +71,7 @@ class Bookmark(object):
     def link(self):
         """Gets the link of this Bookmark.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :return: The link of this Bookmark.  # noqa: E501
         :rtype: WordsApiLink
@@ -82,13 +82,12 @@ class Bookmark(object):
     def link(self, link):
         """Sets the link of this Bookmark.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :param link: The link of this Bookmark.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
-
     @property
     def name(self):
         """Gets the name of this Bookmark.  # noqa: E501
@@ -110,7 +109,6 @@ class Bookmark(object):
         :type: str
         """
         self._name = name
-
     @property
     def text(self):
         """Gets the text of this Bookmark.  # noqa: E501
@@ -132,8 +130,6 @@ class Bookmark(object):
         :type: str
         """
         self._text = text
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

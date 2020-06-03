@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="bookmarks_outline_level_data.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="BookmarksOutlineLevelData.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,48 +41,26 @@ class BookmarksOutlineLevelData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'bookmarks_outline_level': 'int',
-        'name': 'str'
+        'name': 'str',
+        'bookmarks_outline_level': 'int'
     }
 
     attribute_map = {
-        'bookmarks_outline_level': 'BookmarksOutlineLevel',
-        'name': 'Name'
+        'name': 'Name',
+        'bookmarks_outline_level': 'BookmarksOutlineLevel'
     }
 
-    def __init__(self, bookmarks_outline_level=None, name=None):  # noqa: E501
+    def __init__(self, name=None, bookmarks_outline_level=None):  # noqa: E501
         """BookmarksOutlineLevelData - a model defined in Swagger"""  # noqa: E501
 
-        self._bookmarks_outline_level = None
         self._name = None
+        self._bookmarks_outline_level = None
         self.discriminator = None
 
-        if bookmarks_outline_level is not None:
-            self.bookmarks_outline_level = bookmarks_outline_level
         if name is not None:
             self.name = name
-
-    @property
-    def bookmarks_outline_level(self):
-        """Gets the bookmarks_outline_level of this BookmarksOutlineLevelData.  # noqa: E501
-
-        Gets or sets specify the bookmark's level.  # noqa: E501
-
-        :return: The bookmarks_outline_level of this BookmarksOutlineLevelData.  # noqa: E501
-        :rtype: int
-        """
-        return self._bookmarks_outline_level
-
-    @bookmarks_outline_level.setter
-    def bookmarks_outline_level(self, bookmarks_outline_level):
-        """Sets the bookmarks_outline_level of this BookmarksOutlineLevelData.
-
-        Gets or sets specify the bookmark's level.  # noqa: E501
-
-        :param bookmarks_outline_level: The bookmarks_outline_level of this BookmarksOutlineLevelData.  # noqa: E501
-        :type: int
-        """
-        self._bookmarks_outline_level = bookmarks_outline_level
+        if bookmarks_outline_level is not None:
+            self.bookmarks_outline_level = bookmarks_outline_level
 
     @property
     def name(self):
@@ -105,8 +83,27 @@ class BookmarksOutlineLevelData(object):
         :type: str
         """
         self._name = name
+    @property
+    def bookmarks_outline_level(self):
+        """Gets the bookmarks_outline_level of this BookmarksOutlineLevelData.  # noqa: E501
 
+        Gets or sets specify the bookmark's level.  # noqa: E501
 
+        :return: The bookmarks_outline_level of this BookmarksOutlineLevelData.  # noqa: E501
+        :rtype: int
+        """
+        return self._bookmarks_outline_level
+
+    @bookmarks_outline_level.setter
+    def bookmarks_outline_level(self, bookmarks_outline_level):
+        """Sets the bookmarks_outline_level of this BookmarksOutlineLevelData.
+
+        Gets or sets specify the bookmark's level.  # noqa: E501
+
+        :param bookmarks_outline_level: The bookmarks_outline_level of this BookmarksOutlineLevelData.  # noqa: E501
+        :type: int
+        """
+        self._bookmarks_outline_level = bookmarks_outline_level
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

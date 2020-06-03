@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="drawing_objects_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="DrawingObjectsResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,12 +83,11 @@ class DrawingObjectsResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def drawing_objects(self):
         """Gets the drawing_objects of this DrawingObjectsResponse.  # noqa: E501
 
-        Gets or sets collection of drawing objects.  # noqa: E501
+        Gets or sets drawing_objects.  # noqa: E501
 
         :return: The drawing_objects of this DrawingObjectsResponse.  # noqa: E501
         :rtype: DrawingObjectCollection
@@ -99,14 +98,12 @@ class DrawingObjectsResponse(object):
     def drawing_objects(self, drawing_objects):
         """Sets the drawing_objects of this DrawingObjectsResponse.
 
-        Gets or sets collection of drawing objects.  # noqa: E501
+        Gets or sets drawing_objects.  # noqa: E501
 
         :param drawing_objects: The drawing_objects of this DrawingObjectsResponse.  # noqa: E501
         :type: DrawingObjectCollection
         """
         self._drawing_objects = drawing_objects
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

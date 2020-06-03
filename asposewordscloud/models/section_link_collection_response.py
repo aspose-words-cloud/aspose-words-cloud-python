@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="section_link_collection_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="SectionLinkCollectionResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,12 +83,11 @@ class SectionLinkCollectionResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def sections(self):
         """Gets the sections of this SectionLinkCollectionResponse.  # noqa: E501
 
-        Gets or sets collection of sections.  # noqa: E501
+        Gets or sets sections.  # noqa: E501
 
         :return: The sections of this SectionLinkCollectionResponse.  # noqa: E501
         :rtype: SectionLinkCollection
@@ -99,14 +98,12 @@ class SectionLinkCollectionResponse(object):
     def sections(self, sections):
         """Sets the sections of this SectionLinkCollectionResponse.
 
-        Gets or sets collection of sections.  # noqa: E501
+        Gets or sets sections.  # noqa: E501
 
         :param sections: The sections of this SectionLinkCollectionResponse.  # noqa: E501
         :type: SectionLinkCollection
         """
         self._sections = sections
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

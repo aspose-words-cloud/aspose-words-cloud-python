@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="fields_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="FieldsResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,12 +83,11 @@ class FieldsResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def fields(self):
         """Gets the fields of this FieldsResponse.  # noqa: E501
 
-        Gets or sets collection of fields.  # noqa: E501
+        Gets or sets fields.  # noqa: E501
 
         :return: The fields of this FieldsResponse.  # noqa: E501
         :rtype: FieldCollection
@@ -99,14 +98,12 @@ class FieldsResponse(object):
     def fields(self, fields):
         """Sets the fields of this FieldsResponse.
 
-        Gets or sets collection of fields.  # noqa: E501
+        Gets or sets fields.  # noqa: E501
 
         :param fields: The fields of this FieldsResponse.  # noqa: E501
         :type: FieldCollection
         """
         self._fields = fields
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

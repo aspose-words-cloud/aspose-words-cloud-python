@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="replace_range.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="ReplaceRange.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,7 +83,6 @@ class ReplaceRange(object):
         :type: str
         """
         self._text = text
-
     @property
     def text_type(self):
         """Gets the text_type of this ReplaceRange.  # noqa: E501
@@ -105,7 +104,7 @@ class ReplaceRange(object):
         :type: str
         """
         allowed_values = ["Text", "Html"]  # noqa: E501
-        if not text_type.isdigit():
+        if not text_type.isdigit():	
             if text_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `text_type` ({0}), must be one of {1}"  # noqa: E501
@@ -113,8 +112,6 @@ class ReplaceRange(object):
             self._text_type = text_type
         else:
             self._text_type = allowed_values[int(text_type) if six.PY3 else long(text_type)]
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

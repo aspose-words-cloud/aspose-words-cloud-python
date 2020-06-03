@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="document_properties.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="DocumentProperties.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,7 +46,7 @@ class DocumentProperties(object):
     }
 
     attribute_map = {
-        'link': 'Link',
+        'link': 'link',
         'list': 'List'
     }
 
@@ -66,7 +66,7 @@ class DocumentProperties(object):
     def link(self):
         """Gets the link of this DocumentProperties.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :return: The link of this DocumentProperties.  # noqa: E501
         :rtype: WordsApiLink
@@ -77,13 +77,12 @@ class DocumentProperties(object):
     def link(self, link):
         """Sets the link of this DocumentProperties.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :param link: The link of this DocumentProperties.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
-
     @property
     def list(self):
         """Gets the list of this DocumentProperties.  # noqa: E501
@@ -105,8 +104,6 @@ class DocumentProperties(object):
         :type: list[DocumentProperty]
         """
         self._list = list
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

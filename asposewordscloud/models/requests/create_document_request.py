@@ -1,7 +1,6 @@
-# coding: utf-8
-# -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="create_document_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# --------------------------------------------------------------------------------
+# <copyright company="Aspose" file="CreateDocumentRequest.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -10,10 +9,10 @@
 #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 #  copies of the Software, and to permit persons to whom the Software is
 #  furnished to do so, subject to the following conditions:
-#
+# 
 #  The above copyright notice and this permission notice shall be included in all
 #  copies or substantial portions of the Software.
-#
+# 
 #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -22,18 +21,13 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 # </summary>
-# -----------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
+
 
 class CreateDocumentRequest(object):
     """
     Request model for create_document operation.
     Initializes a new instance.
-    :param storage Original document storage.
-    :param file_name The document name.
-    :param folder The document folder.
     """
 
-    def __init__(self, storage=None, file_name=None, folder=None):
-        self.storage = storage
-        self.file_name = file_name
-        self.folder = folder
+    def __init__(self, ):

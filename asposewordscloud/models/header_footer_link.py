@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="header_footer_link.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="HeaderFooterLink.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,7 +46,7 @@ class HeaderFooterLink(object):
     }
 
     attribute_map = {
-        'link': 'Link',
+        'link': 'link',
         'type': 'Type'
     }
 
@@ -66,7 +66,7 @@ class HeaderFooterLink(object):
     def link(self):
         """Gets the link of this HeaderFooterLink.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :return: The link of this HeaderFooterLink.  # noqa: E501
         :rtype: WordsApiLink
@@ -77,13 +77,12 @@ class HeaderFooterLink(object):
     def link(self, link):
         """Sets the link of this HeaderFooterLink.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets link.  # noqa: E501
 
         :param link: The link of this HeaderFooterLink.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
-
     @property
     def type(self):
         """Gets the type of this HeaderFooterLink.  # noqa: E501
@@ -105,7 +104,7 @@ class HeaderFooterLink(object):
         :type: str
         """
         allowed_values = ["HeaderEven", "HeaderPrimary", "FooterEven", "FooterPrimary", "HeaderFirst", "FooterFirst"]  # noqa: E501
-        if not type.isdigit():
+        if not type.isdigit():	
             if type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
@@ -113,8 +112,6 @@ class HeaderFooterLink(object):
             self._type = type
         else:
             self._type = allowed_values[int(type) if six.PY3 else long(type)]
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

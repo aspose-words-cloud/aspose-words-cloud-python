@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="range_text_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="RangeTextResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,7 +83,6 @@ class RangeTextResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def text(self):
         """Gets the text of this RangeTextResponse.  # noqa: E501
@@ -105,8 +104,6 @@ class RangeTextResponse(object):
         :type: str
         """
         self._text = text
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

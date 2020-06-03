@@ -1,7 +1,8 @@
 # coding: utf-8
+
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="configuration.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -258,6 +259,6 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         return "Python SDK Debug Report:\n"\
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
-               "Version of the API: 20.6\n"\
-               "SDK Package Version: 20.6".\
+               "Version of the API: 20.6.0\n"\
+               "SDK Package Version: 18.9.0".\
                format(env=sys.platform, pyversion=sys.version)

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="font_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="FontResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,7 +83,6 @@ class FontResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def font(self):
         """Gets the font of this FontResponse.  # noqa: E501
@@ -105,8 +104,6 @@ class FontResponse(object):
         :type: Font
         """
         self._font = font
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

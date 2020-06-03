@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="section_page_setup_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+# <copyright company="Aspose" file="SectionPageSetupResponse.py">
+#   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,12 +83,11 @@ class SectionPageSetupResponse(object):
         :type: str
         """
         self._request_id = request_id
-
     @property
     def page_setup(self):
         """Gets the page_setup of this SectionPageSetupResponse.  # noqa: E501
 
-        Gets or sets section.  # noqa: E501
+        Gets or sets page_setup.  # noqa: E501
 
         :return: The page_setup of this SectionPageSetupResponse.  # noqa: E501
         :rtype: PageSetup
@@ -99,14 +98,12 @@ class SectionPageSetupResponse(object):
     def page_setup(self, page_setup):
         """Sets the page_setup of this SectionPageSetupResponse.
 
-        Gets or sets section.  # noqa: E501
+        Gets or sets page_setup.  # noqa: E501
 
         :param page_setup: The page_setup of this SectionPageSetupResponse.  # noqa: E501
         :type: PageSetup
         """
         self._page_setup = page_setup
-
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
