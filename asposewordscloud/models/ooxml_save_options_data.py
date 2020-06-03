@@ -52,6 +52,7 @@ class OoxmlSaveOptionsData(object):
         'update_sdt_content': 'bool',
         'zip_output': 'bool',
         'compliance': 'str',
+        'compression_level': 'str',
         'password': 'str',
         'pretty_format': 'bool'
     }
@@ -68,11 +69,12 @@ class OoxmlSaveOptionsData(object):
         'update_sdt_content': 'UpdateSdtContent',
         'zip_output': 'ZipOutput',
         'compliance': 'Compliance',
+        'compression_level': 'CompressionLevel',
         'password': 'Password',
         'pretty_format': 'PrettyFormat'
     }
 
-    def __init__(self, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, compliance=None, password=None, pretty_format=None):  # noqa: E501
+    def __init__(self, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, compliance=None, compression_level=None, password=None, pretty_format=None):  # noqa: E501
         """OoxmlSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._dml3_d_effects_rendering_mode = None
@@ -86,6 +88,7 @@ class OoxmlSaveOptionsData(object):
         self._update_sdt_content = None
         self._zip_output = None
         self._compliance = None
+        self._compression_level = None
         self._password = None
         self._pretty_format = None
         self.discriminator = None
@@ -112,6 +115,8 @@ class OoxmlSaveOptionsData(object):
             self.zip_output = zip_output
         if compliance is not None:
             self.compliance = compliance
+        if compression_level is not None:
+            self.compression_level = compression_level
         if password is not None:
             self.password = password
         if pretty_format is not None:
@@ -366,6 +371,36 @@ class OoxmlSaveOptionsData(object):
         :type: str
         """
         self._compliance = compliance
+
+    @property
+    def compression_level(self):
+        """Gets the compression_level of this OoxmlSaveOptionsData.  # noqa: E501
+
+        Gets or sets compression level.  # noqa: E501
+
+        :return: The compression_level of this OoxmlSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._compression_level
+
+    @compression_level.setter
+    def compression_level(self, compression_level):
+        """Sets the compression_level of this OoxmlSaveOptionsData.
+
+        Gets or sets compression level.  # noqa: E501
+
+        :param compression_level: The compression_level of this OoxmlSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["Normal", "Maximum", "Fast", "SuperFast"]  # noqa: E501
+        if not compression_level.isdigit():
+            if compression_level not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `compression_level` ({0}), must be one of {1}"  # noqa: E501
+                    .format(compression_level, allowed_values))
+            self._compression_level = compression_level
+        else:
+            self._compression_level = allowed_values[int(compression_level) if six.PY3 else long(compression_level)]
 
     @property
     def password(self):
