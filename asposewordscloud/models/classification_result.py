@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="ClassificationResult.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="classification_result.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,6 +83,7 @@ class ClassificationResult(object):
         :type: str
         """
         self._class_name = class_name
+
     @property
     def class_probability(self):
         """Gets the class_probability of this ClassificationResult.  # noqa: E501
@@ -104,6 +105,8 @@ class ClassificationResult(object):
         :type: float
         """
         self._class_probability = class_probability
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="FilesList.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="files_list.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,7 +30,7 @@ import six
 
 
 class FilesList(object):
-    """Files list
+    """Files list.
     """
 
     """
@@ -78,6 +78,8 @@ class FilesList(object):
         :type: list[StorageFile]
         """
         self._value = value
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

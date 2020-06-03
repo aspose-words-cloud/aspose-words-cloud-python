@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="ParagraphFormatResponse.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="paragraph_format_response.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,11 +83,12 @@ class ParagraphFormatResponse(object):
         :type: str
         """
         self._request_id = request_id
+
     @property
     def paragraph_format(self):
         """Gets the paragraph_format of this ParagraphFormatResponse.  # noqa: E501
 
-        Gets or sets paragraph_format.  # noqa: E501
+        Gets or sets represents all the formatting for a paragraph.  # noqa: E501
 
         :return: The paragraph_format of this ParagraphFormatResponse.  # noqa: E501
         :rtype: ParagraphFormat
@@ -98,12 +99,14 @@ class ParagraphFormatResponse(object):
     def paragraph_format(self, paragraph_format):
         """Sets the paragraph_format of this ParagraphFormatResponse.
 
-        Gets or sets paragraph_format.  # noqa: E501
+        Gets or sets represents all the formatting for a paragraph.  # noqa: E501
 
         :param paragraph_format: The paragraph_format of this ParagraphFormatResponse.  # noqa: E501
         :type: ParagraphFormat
         """
         self._paragraph_format = paragraph_format
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

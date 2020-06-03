@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="FieldNamesResponse.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="field_names_response.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,11 +83,12 @@ class FieldNamesResponse(object):
         :type: str
         """
         self._request_id = request_id
+
     @property
     def field_names(self):
         """Gets the field_names of this FieldNamesResponse.  # noqa: E501
 
-        Gets or sets field_names.  # noqa: E501
+        Gets or sets collection of mail merge fields.  # noqa: E501
 
         :return: The field_names of this FieldNamesResponse.  # noqa: E501
         :rtype: FieldNames
@@ -98,12 +99,14 @@ class FieldNamesResponse(object):
     def field_names(self, field_names):
         """Sets the field_names of this FieldNamesResponse.
 
-        Gets or sets field_names.  # noqa: E501
+        Gets or sets collection of mail merge fields.  # noqa: E501
 
         :param field_names: The field_names of this FieldNamesResponse.  # noqa: E501
         :type: FieldNames
         """
         self._field_names = field_names
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

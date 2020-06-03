@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="ProtectionData.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="protection_data.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -78,6 +78,8 @@ class ProtectionData(object):
         :type: str
         """
         self._protection_type = protection_type
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

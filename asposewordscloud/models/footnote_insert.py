@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="FootnoteInsert.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="footnote_insert.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,58 +41,37 @@ class FootnoteInsert(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'position': 'DocumentPosition',
         'footnote_type': 'str',
+        'position': 'DocumentPosition',
         'reference_mark': 'str',
         'text': 'str'
     }
 
     attribute_map = {
-        'position': 'Position',
         'footnote_type': 'FootnoteType',
+        'position': 'Position',
         'reference_mark': 'ReferenceMark',
         'text': 'Text'
     }
 
-    def __init__(self, position=None, footnote_type=None, reference_mark=None, text=None):  # noqa: E501
+    def __init__(self, footnote_type=None, position=None, reference_mark=None, text=None):  # noqa: E501
         """FootnoteInsert - a model defined in Swagger"""  # noqa: E501
 
-        self._position = None
         self._footnote_type = None
+        self._position = None
         self._reference_mark = None
         self._text = None
         self.discriminator = None
 
-        if position is not None:
-            self.position = position
         if footnote_type is not None:
             self.footnote_type = footnote_type
+        if position is not None:
+            self.position = position
         if reference_mark is not None:
             self.reference_mark = reference_mark
         if text is not None:
             self.text = text
 
-    @property
-    def position(self):
-        """Gets the position of this FootnoteInsert.  # noqa: E501
-
-        Gets or sets position.  # noqa: E501
-
-        :return: The position of this FootnoteInsert.  # noqa: E501
-        :rtype: DocumentPosition
-        """
-        return self._position
-
-    @position.setter
-    def position(self, position):
-        """Sets the position of this FootnoteInsert.
-
-        Gets or sets position.  # noqa: E501
-
-        :param position: The position of this FootnoteInsert.  # noqa: E501
-        :type: DocumentPosition
-        """
-        self._position = position
     @property
     def footnote_type(self):
         """Gets the footnote_type of this FootnoteInsert.  # noqa: E501
@@ -114,7 +93,7 @@ class FootnoteInsert(object):
         :type: str
         """
         allowed_values = ["Footnote", "Endnote"]  # noqa: E501
-        if not footnote_type.isdigit():	
+        if not footnote_type.isdigit():
             if footnote_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `footnote_type` ({0}), must be one of {1}"  # noqa: E501
@@ -122,6 +101,29 @@ class FootnoteInsert(object):
             self._footnote_type = footnote_type
         else:
             self._footnote_type = allowed_values[int(footnote_type) if six.PY3 else long(footnote_type)]
+
+    @property
+    def position(self):
+        """Gets the position of this FootnoteInsert.  # noqa: E501
+
+        Gets or sets link to comment range start node.  # noqa: E501
+
+        :return: The position of this FootnoteInsert.  # noqa: E501
+        :rtype: DocumentPosition
+        """
+        return self._position
+
+    @position.setter
+    def position(self, position):
+        """Sets the position of this FootnoteInsert.
+
+        Gets or sets link to comment range start node.  # noqa: E501
+
+        :param position: The position of this FootnoteInsert.  # noqa: E501
+        :type: DocumentPosition
+        """
+        self._position = position
+
     @property
     def reference_mark(self):
         """Gets the reference_mark of this FootnoteInsert.  # noqa: E501
@@ -143,6 +145,7 @@ class FootnoteInsert(object):
         :type: str
         """
         self._reference_mark = reference_mark
+
     @property
     def text(self):
         """Gets the text of this FootnoteInsert.  # noqa: E501
@@ -164,6 +167,8 @@ class FootnoteInsert(object):
         :type: str
         """
         self._text = text
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

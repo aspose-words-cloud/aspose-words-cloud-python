@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="ParagraphLinkCollectionResponse.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="paragraph_link_collection_response.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,11 +83,12 @@ class ParagraphLinkCollectionResponse(object):
         :type: str
         """
         self._request_id = request_id
+
     @property
     def paragraphs(self):
         """Gets the paragraphs of this ParagraphLinkCollectionResponse.  # noqa: E501
 
-        Gets or sets paragraphs.  # noqa: E501
+        Gets or sets collection of paragraphs.  # noqa: E501
 
         :return: The paragraphs of this ParagraphLinkCollectionResponse.  # noqa: E501
         :rtype: ParagraphLinkCollection
@@ -98,12 +99,14 @@ class ParagraphLinkCollectionResponse(object):
     def paragraphs(self, paragraphs):
         """Sets the paragraphs of this ParagraphLinkCollectionResponse.
 
-        Gets or sets paragraphs.  # noqa: E501
+        Gets or sets collection of paragraphs.  # noqa: E501
 
         :param paragraphs: The paragraphs of this ParagraphLinkCollectionResponse.  # noqa: E501
         :type: ParagraphLinkCollection
         """
         self._paragraphs = paragraphs
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

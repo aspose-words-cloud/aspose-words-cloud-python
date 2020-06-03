@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="FieldInsert.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="field_insert.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,6 +83,7 @@ class FieldInsert(object):
         :type: str
         """
         self._field_code = field_code
+
     @property
     def locale_id(self):
         """Gets the locale_id of this FieldInsert.  # noqa: E501
@@ -104,6 +105,8 @@ class FieldInsert(object):
         :type: str
         """
         self._locale_id = locale_id
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="BorderResponse.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="border_response.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,11 +83,12 @@ class BorderResponse(object):
         :type: str
         """
         self._request_id = request_id
+
     @property
     def border(self):
         """Gets the border of this BorderResponse.  # noqa: E501
 
-        Gets or sets border.  # noqa: E501
+        Gets or sets table.  # noqa: E501
 
         :return: The border of this BorderResponse.  # noqa: E501
         :rtype: Border
@@ -98,12 +99,14 @@ class BorderResponse(object):
     def border(self, border):
         """Sets the border of this BorderResponse.
 
-        Gets or sets border.  # noqa: E501
+        Gets or sets table.  # noqa: E501
 
         :param border: The border of this BorderResponse.  # noqa: E501
         :type: Border
         """
         self._border = border
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="PdfDigitalSignatureDetailsData.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="pdf_digital_signature_details_data.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -98,6 +98,7 @@ class PdfDigitalSignatureDetailsData(object):
         :type: str
         """
         self._certificate_filename = certificate_filename
+
     @property
     def hash_algorithm(self):
         """Gets the hash_algorithm of this PdfDigitalSignatureDetailsData.  # noqa: E501
@@ -119,6 +120,7 @@ class PdfDigitalSignatureDetailsData(object):
         :type: str
         """
         self._hash_algorithm = hash_algorithm
+
     @property
     def location(self):
         """Gets the location of this PdfDigitalSignatureDetailsData.  # noqa: E501
@@ -140,6 +142,7 @@ class PdfDigitalSignatureDetailsData(object):
         :type: str
         """
         self._location = location
+
     @property
     def reason(self):
         """Gets the reason of this PdfDigitalSignatureDetailsData.  # noqa: E501
@@ -161,6 +164,7 @@ class PdfDigitalSignatureDetailsData(object):
         :type: str
         """
         self._reason = reason
+
     @property
     def signature_date(self):
         """Gets the signature_date of this PdfDigitalSignatureDetailsData.  # noqa: E501
@@ -182,6 +186,8 @@ class PdfDigitalSignatureDetailsData(object):
         :type: datetime
         """
         self._signature_date = signature_date
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="DocumentPropertyResponse.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="document_property_response.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,11 +83,12 @@ class DocumentPropertyResponse(object):
         :type: str
         """
         self._request_id = request_id
+
     @property
     def document_property(self):
         """Gets the document_property of this DocumentPropertyResponse.  # noqa: E501
 
-        Gets or sets document_property.  # noqa: E501
+        Gets or sets document property.  # noqa: E501
 
         :return: The document_property of this DocumentPropertyResponse.  # noqa: E501
         :rtype: DocumentProperty
@@ -98,12 +99,14 @@ class DocumentPropertyResponse(object):
     def document_property(self, document_property):
         """Sets the document_property of this DocumentPropertyResponse.
 
-        Gets or sets document_property.  # noqa: E501
+        Gets or sets document property.  # noqa: E501
 
         :param document_property: The document_property of this DocumentPropertyResponse.  # noqa: E501
         :type: DocumentProperty
         """
         self._document_property = document_property
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

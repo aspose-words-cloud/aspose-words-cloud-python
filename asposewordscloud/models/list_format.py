@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="ListFormat.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="list_format.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,7 +30,7 @@ import six
 
 
 class ListFormat(object):
-    """Paragraph list format element.             
+    """Paragraph list format element.
     """
 
     """
@@ -48,7 +48,7 @@ class ListFormat(object):
     }
 
     attribute_map = {
-        'link': 'link',
+        'link': 'Link',
         'is_list_item': 'IsListItem',
         'list_id': 'ListId',
         'list_level_number': 'ListLevelNumber'
@@ -76,7 +76,7 @@ class ListFormat(object):
     def link(self):
         """Gets the link of this ListFormat.  # noqa: E501
 
-        Gets or sets link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this ListFormat.  # noqa: E501
         :rtype: WordsApiLink
@@ -87,12 +87,13 @@ class ListFormat(object):
     def link(self, link):
         """Sets the link of this ListFormat.
 
-        Gets or sets link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this ListFormat.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
+
     @property
     def is_list_item(self):
         """Gets the is_list_item of this ListFormat.  # noqa: E501
@@ -114,6 +115,7 @@ class ListFormat(object):
         :type: bool
         """
         self._is_list_item = is_list_item
+
     @property
     def list_id(self):
         """Gets the list_id of this ListFormat.  # noqa: E501
@@ -135,6 +137,7 @@ class ListFormat(object):
         :type: int
         """
         self._list_id = list_id
+
     @property
     def list_level_number(self):
         """Gets the list_level_number of this ListFormat.  # noqa: E501
@@ -156,6 +159,8 @@ class ListFormat(object):
         :type: int
         """
         self._list_level_number = list_level_number
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="ProtectionDataResponse.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="protection_data_response.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -88,11 +88,12 @@ class ProtectionDataResponse(object):
         :type: str
         """
         self._request_id = request_id
+
     @property
     def document_link(self):
         """Gets the document_link of this ProtectionDataResponse.  # noqa: E501
 
-        Gets or sets document_link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The document_link of this ProtectionDataResponse.  # noqa: E501
         :rtype: FileLink
@@ -103,17 +104,18 @@ class ProtectionDataResponse(object):
     def document_link(self, document_link):
         """Sets the document_link of this ProtectionDataResponse.
 
-        Gets or sets document_link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param document_link: The document_link of this ProtectionDataResponse.  # noqa: E501
         :type: FileLink
         """
         self._document_link = document_link
+
     @property
     def protection_data(self):
         """Gets the protection_data of this ProtectionDataResponse.  # noqa: E501
 
-        Gets or sets protection_data.  # noqa: E501
+        Gets or sets protection's data of the document.  # noqa: E501
 
         :return: The protection_data of this ProtectionDataResponse.  # noqa: E501
         :rtype: ProtectionData
@@ -124,12 +126,14 @@ class ProtectionDataResponse(object):
     def protection_data(self, protection_data):
         """Sets the protection_data of this ProtectionDataResponse.
 
-        Gets or sets protection_data.  # noqa: E501
+        Gets or sets protection's data of the document.  # noqa: E501
 
         :param protection_data: The protection_data of this ProtectionDataResponse.  # noqa: E501
         :type: ProtectionData
         """
         self._protection_data = protection_data
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

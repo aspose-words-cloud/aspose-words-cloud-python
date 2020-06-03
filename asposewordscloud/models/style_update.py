@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="StyleUpdate.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="style_update.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,36 +41,102 @@ class StyleUpdate(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'next_paragraph_style_name': 'str',
         'base_style_name': 'str',
         'is_quick_style': 'bool',
-        'name': 'str'
+        'name': 'str',
+        'next_paragraph_style_name': 'str'
     }
 
     attribute_map = {
-        'next_paragraph_style_name': 'NextParagraphStyleName',
         'base_style_name': 'BaseStyleName',
         'is_quick_style': 'IsQuickStyle',
-        'name': 'Name'
+        'name': 'Name',
+        'next_paragraph_style_name': 'NextParagraphStyleName'
     }
 
-    def __init__(self, next_paragraph_style_name=None, base_style_name=None, is_quick_style=None, name=None):  # noqa: E501
+    def __init__(self, base_style_name=None, is_quick_style=None, name=None, next_paragraph_style_name=None):  # noqa: E501
         """StyleUpdate - a model defined in Swagger"""  # noqa: E501
 
-        self._next_paragraph_style_name = None
         self._base_style_name = None
         self._is_quick_style = None
         self._name = None
+        self._next_paragraph_style_name = None
         self.discriminator = None
 
-        if next_paragraph_style_name is not None:
-            self.next_paragraph_style_name = next_paragraph_style_name
         if base_style_name is not None:
             self.base_style_name = base_style_name
         if is_quick_style is not None:
             self.is_quick_style = is_quick_style
         if name is not None:
             self.name = name
+        if next_paragraph_style_name is not None:
+            self.next_paragraph_style_name = next_paragraph_style_name
+
+    @property
+    def base_style_name(self):
+        """Gets the base_style_name of this StyleUpdate.  # noqa: E501
+
+        Gets or sets /sets the name of the style this style is based on.  # noqa: E501
+
+        :return: The base_style_name of this StyleUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._base_style_name
+
+    @base_style_name.setter
+    def base_style_name(self, base_style_name):
+        """Sets the base_style_name of this StyleUpdate.
+
+        Gets or sets /sets the name of the style this style is based on.  # noqa: E501
+
+        :param base_style_name: The base_style_name of this StyleUpdate.  # noqa: E501
+        :type: str
+        """
+        self._base_style_name = base_style_name
+
+    @property
+    def is_quick_style(self):
+        """Gets the is_quick_style of this StyleUpdate.  # noqa: E501
+
+        Gets or sets a value indicating whether specifies whether this style is shown in the Quick Style gallery inside MS Word UI.  # noqa: E501
+
+        :return: The is_quick_style of this StyleUpdate.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_quick_style
+
+    @is_quick_style.setter
+    def is_quick_style(self, is_quick_style):
+        """Sets the is_quick_style of this StyleUpdate.
+
+        Gets or sets a value indicating whether specifies whether this style is shown in the Quick Style gallery inside MS Word UI.  # noqa: E501
+
+        :param is_quick_style: The is_quick_style of this StyleUpdate.  # noqa: E501
+        :type: bool
+        """
+        self._is_quick_style = is_quick_style
+
+    @property
+    def name(self):
+        """Gets the name of this StyleUpdate.  # noqa: E501
+
+        Gets or sets the name of the style.  # noqa: E501
+
+        :return: The name of this StyleUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this StyleUpdate.
+
+        Gets or sets the name of the style.  # noqa: E501
+
+        :param name: The name of this StyleUpdate.  # noqa: E501
+        :type: str
+        """
+        self._name = name
 
     @property
     def next_paragraph_style_name(self):
@@ -93,69 +159,8 @@ class StyleUpdate(object):
         :type: str
         """
         self._next_paragraph_style_name = next_paragraph_style_name
-    @property
-    def base_style_name(self):
-        """Gets the base_style_name of this StyleUpdate.  # noqa: E501
 
-        Gets or sets /sets the name of the style this style is based on.  # noqa: E501
 
-        :return: The base_style_name of this StyleUpdate.  # noqa: E501
-        :rtype: str
-        """
-        return self._base_style_name
-
-    @base_style_name.setter
-    def base_style_name(self, base_style_name):
-        """Sets the base_style_name of this StyleUpdate.
-
-        Gets or sets /sets the name of the style this style is based on.  # noqa: E501
-
-        :param base_style_name: The base_style_name of this StyleUpdate.  # noqa: E501
-        :type: str
-        """
-        self._base_style_name = base_style_name
-    @property
-    def is_quick_style(self):
-        """Gets the is_quick_style of this StyleUpdate.  # noqa: E501
-
-        Gets or sets a value indicating whether specifies whether this style is shown in the Quick Style gallery inside MS Word UI.  # noqa: E501
-
-        :return: The is_quick_style of this StyleUpdate.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_quick_style
-
-    @is_quick_style.setter
-    def is_quick_style(self, is_quick_style):
-        """Sets the is_quick_style of this StyleUpdate.
-
-        Gets or sets a value indicating whether specifies whether this style is shown in the Quick Style gallery inside MS Word UI.  # noqa: E501
-
-        :param is_quick_style: The is_quick_style of this StyleUpdate.  # noqa: E501
-        :type: bool
-        """
-        self._is_quick_style = is_quick_style
-    @property
-    def name(self):
-        """Gets the name of this StyleUpdate.  # noqa: E501
-
-        Gets or sets the name of the style.  # noqa: E501
-
-        :return: The name of this StyleUpdate.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this StyleUpdate.
-
-        Gets or sets the name of the style.  # noqa: E501
-
-        :param name: The name of this StyleUpdate.  # noqa: E501
-        :type: str
-        """
-        self._name = name
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

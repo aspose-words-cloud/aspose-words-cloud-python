@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="ReplaceTextResponse.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="replace_text_response.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,7 +30,7 @@ import six
 
 
 class ReplaceTextResponse(object):
-    """Response for \&quot;Replace text\&quot; action.
+    """Response for "Replace text" action.
     """
 
     """
@@ -88,11 +88,12 @@ class ReplaceTextResponse(object):
         :type: str
         """
         self._request_id = request_id
+
     @property
     def document_link(self):
         """Gets the document_link of this ReplaceTextResponse.  # noqa: E501
 
-        Gets or sets document_link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The document_link of this ReplaceTextResponse.  # noqa: E501
         :rtype: FileLink
@@ -103,12 +104,13 @@ class ReplaceTextResponse(object):
     def document_link(self, document_link):
         """Sets the document_link of this ReplaceTextResponse.
 
-        Gets or sets document_link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param document_link: The document_link of this ReplaceTextResponse.  # noqa: E501
         :type: FileLink
         """
         self._document_link = document_link
+
     @property
     def matches(self):
         """Gets the matches of this ReplaceTextResponse.  # noqa: E501
@@ -130,6 +132,8 @@ class ReplaceTextResponse(object):
         :type: int
         """
         self._matches = matches
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

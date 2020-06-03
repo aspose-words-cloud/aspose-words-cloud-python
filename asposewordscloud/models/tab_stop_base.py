@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="TabStopBase.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="tab_stop_base.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -88,7 +88,7 @@ class TabStopBase(object):
         :type: str
         """
         allowed_values = ["Left", "Center", "Right", "Decimal", "Bar", "List", "Clear"]  # noqa: E501
-        if not alignment.isdigit():	
+        if not alignment.isdigit():
             if alignment not in allowed_values:
                 raise ValueError(
                     "Invalid value for `alignment` ({0}), must be one of {1}"  # noqa: E501
@@ -96,6 +96,7 @@ class TabStopBase(object):
             self._alignment = alignment
         else:
             self._alignment = allowed_values[int(alignment) if six.PY3 else long(alignment)]
+
     @property
     def leader(self):
         """Gets the leader of this TabStopBase.  # noqa: E501
@@ -117,7 +118,7 @@ class TabStopBase(object):
         :type: str
         """
         allowed_values = ["None", "Dots", "Dashes", "Line", "Heavy", "MiddleDot"]  # noqa: E501
-        if not leader.isdigit():	
+        if not leader.isdigit():
             if leader not in allowed_values:
                 raise ValueError(
                     "Invalid value for `leader` ({0}), must be one of {1}"  # noqa: E501
@@ -125,6 +126,7 @@ class TabStopBase(object):
             self._leader = leader
         else:
             self._leader = allowed_values[int(leader) if six.PY3 else long(leader)]
+
     @property
     def position(self):
         """Gets the position of this TabStopBase.  # noqa: E501
@@ -146,6 +148,8 @@ class TabStopBase(object):
         :type: float
         """
         self._position = position
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

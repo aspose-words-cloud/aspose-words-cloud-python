@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="FootnotesResponse.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="footnotes_response.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,11 +83,12 @@ class FootnotesResponse(object):
         :type: str
         """
         self._request_id = request_id
+
     @property
     def footnotes(self):
         """Gets the footnotes of this FootnotesResponse.  # noqa: E501
 
-        Gets or sets footnotes.  # noqa: E501
+        Gets or sets collection of footnotes.  # noqa: E501
 
         :return: The footnotes of this FootnotesResponse.  # noqa: E501
         :rtype: FootnoteCollection
@@ -98,12 +99,14 @@ class FootnotesResponse(object):
     def footnotes(self, footnotes):
         """Sets the footnotes of this FootnotesResponse.
 
-        Gets or sets footnotes.  # noqa: E501
+        Gets or sets collection of footnotes.  # noqa: E501
 
         :param footnotes: The footnotes of this FootnotesResponse.  # noqa: E501
         :type: FootnoteCollection
         """
         self._footnotes = footnotes
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
