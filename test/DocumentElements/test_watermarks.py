@@ -75,7 +75,7 @@ class TestWatermarks(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPostInsertDocumentWatermarkText.docx'
         dest_name = os.path.join(self.remote_test_out, remote_name)
-        body = asposewordscloud.WatermarkText('This is the text', 90)
+        body = asposewordscloud.WatermarkText(text='This is the text', rotation_angle=90)
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.InsertWatermarkTextRequest(remote_name, body,

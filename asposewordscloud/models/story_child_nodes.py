@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="StoryChildNodes.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="story_child_nodes.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -78,6 +78,8 @@ class StoryChildNodes(object):
         :type: list[NodeLink]
         """
         self._child_nodes = child_nodes
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

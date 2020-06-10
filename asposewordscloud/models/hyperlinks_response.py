@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="HyperlinksResponse.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="hyperlinks_response.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,11 +83,12 @@ class HyperlinksResponse(object):
         :type: str
         """
         self._request_id = request_id
+
     @property
     def hyperlinks(self):
         """Gets the hyperlinks of this HyperlinksResponse.  # noqa: E501
 
-        Gets or sets hyperlinks.  # noqa: E501
+        Gets or sets collection of hyperlinks.  # noqa: E501
 
         :return: The hyperlinks of this HyperlinksResponse.  # noqa: E501
         :rtype: Hyperlinks
@@ -98,12 +99,14 @@ class HyperlinksResponse(object):
     def hyperlinks(self, hyperlinks):
         """Sets the hyperlinks of this HyperlinksResponse.
 
-        Gets or sets hyperlinks.  # noqa: E501
+        Gets or sets collection of hyperlinks.  # noqa: E501
 
         :param hyperlinks: The hyperlinks of this HyperlinksResponse.  # noqa: E501
         :type: Hyperlinks
         """
         self._hyperlinks = hyperlinks
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="FormField.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="form_field.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,8 +41,8 @@ class FormField(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'node_id': 'str',
         'link': 'WordsApiLink',
+        'node_id': 'str',
         'calculate_on_exit': 'bool',
         'enabled': 'bool',
         'entry_macro': 'str',
@@ -55,8 +55,8 @@ class FormField(object):
     }
 
     attribute_map = {
+        'link': 'Link',
         'node_id': 'NodeId',
-        'link': 'link',
         'calculate_on_exit': 'CalculateOnExit',
         'enabled': 'Enabled',
         'entry_macro': 'EntryMacro',
@@ -68,11 +68,11 @@ class FormField(object):
         'status_text': 'StatusText'
     }
 
-    def __init__(self, node_id=None, link=None, calculate_on_exit=None, enabled=None, entry_macro=None, exit_macro=None, help_text=None, name=None, own_help=None, own_status=None, status_text=None):  # noqa: E501
+    def __init__(self, link=None, node_id=None, calculate_on_exit=None, enabled=None, entry_macro=None, exit_macro=None, help_text=None, name=None, own_help=None, own_status=None, status_text=None):  # noqa: E501
         """FormField - a model defined in Swagger"""  # noqa: E501
 
-        self._node_id = None
         self._link = None
+        self._node_id = None
         self._calculate_on_exit = None
         self._enabled = None
         self._entry_macro = None
@@ -84,10 +84,10 @@ class FormField(object):
         self._status_text = None
         self.discriminator = None
 
-        if node_id is not None:
-            self.node_id = node_id
         if link is not None:
             self.link = link
+        if node_id is not None:
+            self.node_id = node_id
         if calculate_on_exit is not None:
             self.calculate_on_exit = calculate_on_exit
         if enabled is not None:
@@ -106,6 +106,28 @@ class FormField(object):
             self.own_status = own_status
         if status_text is not None:
             self.status_text = status_text
+
+    @property
+    def link(self):
+        """Gets the link of this FormField.  # noqa: E501
+
+        Gets or sets link to the document.  # noqa: E501
+
+        :return: The link of this FormField.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this FormField.
+
+        Gets or sets link to the document.  # noqa: E501
+
+        :param link: The link of this FormField.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._link = link
 
     @property
     def node_id(self):
@@ -128,27 +150,7 @@ class FormField(object):
         :type: str
         """
         self._node_id = node_id
-    @property
-    def link(self):
-        """Gets the link of this FormField.  # noqa: E501
 
-        Gets or sets link.  # noqa: E501
-
-        :return: The link of this FormField.  # noqa: E501
-        :rtype: WordsApiLink
-        """
-        return self._link
-
-    @link.setter
-    def link(self, link):
-        """Sets the link of this FormField.
-
-        Gets or sets link.  # noqa: E501
-
-        :param link: The link of this FormField.  # noqa: E501
-        :type: WordsApiLink
-        """
-        self._link = link
     @property
     def calculate_on_exit(self):
         """Gets the calculate_on_exit of this FormField.  # noqa: E501
@@ -170,6 +172,7 @@ class FormField(object):
         :type: bool
         """
         self._calculate_on_exit = calculate_on_exit
+
     @property
     def enabled(self):
         """Gets the enabled of this FormField.  # noqa: E501
@@ -191,6 +194,7 @@ class FormField(object):
         :type: bool
         """
         self._enabled = enabled
+
     @property
     def entry_macro(self):
         """Gets the entry_macro of this FormField.  # noqa: E501
@@ -212,6 +216,7 @@ class FormField(object):
         :type: str
         """
         self._entry_macro = entry_macro
+
     @property
     def exit_macro(self):
         """Gets the exit_macro of this FormField.  # noqa: E501
@@ -233,6 +238,7 @@ class FormField(object):
         :type: str
         """
         self._exit_macro = exit_macro
+
     @property
     def help_text(self):
         """Gets the help_text of this FormField.  # noqa: E501
@@ -254,6 +260,7 @@ class FormField(object):
         :type: str
         """
         self._help_text = help_text
+
     @property
     def name(self):
         """Gets the name of this FormField.  # noqa: E501
@@ -275,6 +282,7 @@ class FormField(object):
         :type: str
         """
         self._name = name
+
     @property
     def own_help(self):
         """Gets the own_help of this FormField.  # noqa: E501
@@ -296,6 +304,7 @@ class FormField(object):
         :type: bool
         """
         self._own_help = own_help
+
     @property
     def own_status(self):
         """Gets the own_status of this FormField.  # noqa: E501
@@ -317,6 +326,7 @@ class FormField(object):
         :type: bool
         """
         self._own_status = own_status
+
     @property
     def status_text(self):
         """Gets the status_text of this FormField.  # noqa: E501
@@ -338,6 +348,8 @@ class FormField(object):
         :type: str
         """
         self._status_text = status_text
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="StyleInsert.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="style_insert.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,6 +83,7 @@ class StyleInsert(object):
         :type: str
         """
         self._style_name = style_name
+
     @property
     def style_type(self):
         """Gets the style_type of this StyleInsert.  # noqa: E501
@@ -104,7 +105,7 @@ class StyleInsert(object):
         :type: str
         """
         allowed_values = ["Paragraph", "Character", "Table", "List"]  # noqa: E501
-        if not style_type.isdigit():	
+        if not style_type.isdigit():
             if style_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `style_type` ({0}), must be one of {1}"  # noqa: E501
@@ -112,6 +113,8 @@ class StyleInsert(object):
             self._style_type = style_type
         else:
             self._style_type = allowed_values[int(style_type) if six.PY3 else long(style_type)]
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

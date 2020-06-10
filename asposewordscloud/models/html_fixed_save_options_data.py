@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="HtmlFixedSaveOptionsData.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="html_fixed_save_options_data.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,6 +41,16 @@ class HtmlFixedSaveOptionsData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'dml3_d_effects_rendering_mode': 'str',
+        'dml_effects_rendering_mode': 'str',
+        'dml_rendering_mode': 'str',
+        'file_name': 'str',
+        'save_format': 'str',
+        'update_fields': 'bool',
+        'update_last_printed_property': 'bool',
+        'update_last_saved_time_property': 'bool',
+        'update_sdt_content': 'bool',
+        'zip_output': 'bool',
         'color_mode': 'str',
         'jpeg_quality': 'int',
         'metafile_rendering_options': 'MetafileRenderingOptionsData',
@@ -48,16 +58,6 @@ class HtmlFixedSaveOptionsData(object):
         'optimize_output': 'bool',
         'page_count': 'int',
         'page_index': 'int',
-        'save_format': 'str',
-        'file_name': 'str',
-        'dml_rendering_mode': 'str',
-        'dml_effects_rendering_mode': 'str',
-        'zip_output': 'bool',
-        'update_last_saved_time_property': 'bool',
-        'update_sdt_content': 'bool',
-        'update_fields': 'bool',
-        'dml3_d_effects_rendering_mode': 'str',
-        'update_last_printed_property': 'bool',
         'css_class_names_prefix': 'str',
         'encoding': 'str',
         'export_embedded_css': 'bool',
@@ -75,6 +75,16 @@ class HtmlFixedSaveOptionsData(object):
     }
 
     attribute_map = {
+        'dml3_d_effects_rendering_mode': 'Dml3DEffectsRenderingMode',
+        'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
+        'dml_rendering_mode': 'DmlRenderingMode',
+        'file_name': 'FileName',
+        'save_format': 'SaveFormat',
+        'update_fields': 'UpdateFields',
+        'update_last_printed_property': 'UpdateLastPrintedProperty',
+        'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
+        'update_sdt_content': 'UpdateSdtContent',
+        'zip_output': 'ZipOutput',
         'color_mode': 'ColorMode',
         'jpeg_quality': 'JpegQuality',
         'metafile_rendering_options': 'MetafileRenderingOptions',
@@ -82,16 +92,6 @@ class HtmlFixedSaveOptionsData(object):
         'optimize_output': 'OptimizeOutput',
         'page_count': 'PageCount',
         'page_index': 'PageIndex',
-        'save_format': 'SaveFormat',
-        'file_name': 'FileName',
-        'dml_rendering_mode': 'DmlRenderingMode',
-        'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
-        'zip_output': 'ZipOutput',
-        'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
-        'update_sdt_content': 'UpdateSdtContent',
-        'update_fields': 'UpdateFields',
-        'dml3_d_effects_rendering_mode': 'Dml3DEffectsRenderingMode',
-        'update_last_printed_property': 'UpdateLastPrintedProperty',
         'css_class_names_prefix': 'CssClassNamesPrefix',
         'encoding': 'Encoding',
         'export_embedded_css': 'ExportEmbeddedCss',
@@ -108,9 +108,19 @@ class HtmlFixedSaveOptionsData(object):
         'use_target_machine_fonts': 'UseTargetMachineFonts'
     }
 
-    def __init__(self, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, dml3_d_effects_rendering_mode=None, update_last_printed_property=None, css_class_names_prefix=None, encoding=None, export_embedded_css=None, export_embedded_fonts=None, export_embedded_images=None, export_form_fields=None, font_format=None, page_horizontal_alignment=None, page_margins=None, resources_folder=None, resources_folder_alias=None, save_font_face_css_separately=None, show_page_border=None, use_target_machine_fonts=None):  # noqa: E501
+    def __init__(self, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, css_class_names_prefix=None, encoding=None, export_embedded_css=None, export_embedded_fonts=None, export_embedded_images=None, export_form_fields=None, font_format=None, page_horizontal_alignment=None, page_margins=None, resources_folder=None, resources_folder_alias=None, save_font_face_css_separately=None, show_page_border=None, use_target_machine_fonts=None):  # noqa: E501
         """HtmlFixedSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
+        self._dml3_d_effects_rendering_mode = None
+        self._dml_effects_rendering_mode = None
+        self._dml_rendering_mode = None
+        self._file_name = None
+        self._save_format = None
+        self._update_fields = None
+        self._update_last_printed_property = None
+        self._update_last_saved_time_property = None
+        self._update_sdt_content = None
+        self._zip_output = None
         self._color_mode = None
         self._jpeg_quality = None
         self._metafile_rendering_options = None
@@ -118,16 +128,6 @@ class HtmlFixedSaveOptionsData(object):
         self._optimize_output = None
         self._page_count = None
         self._page_index = None
-        self._save_format = None
-        self._file_name = None
-        self._dml_rendering_mode = None
-        self._dml_effects_rendering_mode = None
-        self._zip_output = None
-        self._update_last_saved_time_property = None
-        self._update_sdt_content = None
-        self._update_fields = None
-        self._dml3_d_effects_rendering_mode = None
-        self._update_last_printed_property = None
         self._css_class_names_prefix = None
         self._encoding = None
         self._export_embedded_css = None
@@ -144,6 +144,26 @@ class HtmlFixedSaveOptionsData(object):
         self._use_target_machine_fonts = None
         self.discriminator = None
 
+        if dml3_d_effects_rendering_mode is not None:
+            self.dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
+        if dml_effects_rendering_mode is not None:
+            self.dml_effects_rendering_mode = dml_effects_rendering_mode
+        if dml_rendering_mode is not None:
+            self.dml_rendering_mode = dml_rendering_mode
+        if file_name is not None:
+            self.file_name = file_name
+        if save_format is not None:
+            self.save_format = save_format
+        if update_fields is not None:
+            self.update_fields = update_fields
+        if update_last_printed_property is not None:
+            self.update_last_printed_property = update_last_printed_property
+        if update_last_saved_time_property is not None:
+            self.update_last_saved_time_property = update_last_saved_time_property
+        if update_sdt_content is not None:
+            self.update_sdt_content = update_sdt_content
+        if zip_output is not None:
+            self.zip_output = zip_output
         if color_mode is not None:
             self.color_mode = color_mode
         if jpeg_quality is not None:
@@ -158,26 +178,6 @@ class HtmlFixedSaveOptionsData(object):
             self.page_count = page_count
         if page_index is not None:
             self.page_index = page_index
-        if save_format is not None:
-            self.save_format = save_format
-        if file_name is not None:
-            self.file_name = file_name
-        if dml_rendering_mode is not None:
-            self.dml_rendering_mode = dml_rendering_mode
-        if dml_effects_rendering_mode is not None:
-            self.dml_effects_rendering_mode = dml_effects_rendering_mode
-        if zip_output is not None:
-            self.zip_output = zip_output
-        if update_last_saved_time_property is not None:
-            self.update_last_saved_time_property = update_last_saved_time_property
-        if update_sdt_content is not None:
-            self.update_sdt_content = update_sdt_content
-        if update_fields is not None:
-            self.update_fields = update_fields
-        if dml3_d_effects_rendering_mode is not None:
-            self.dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
-        if update_last_printed_property is not None:
-            self.update_last_printed_property = update_last_printed_property
         if css_class_names_prefix is not None:
             self.css_class_names_prefix = css_class_names_prefix
         if encoding is not None:
@@ -208,215 +208,35 @@ class HtmlFixedSaveOptionsData(object):
             self.use_target_machine_fonts = use_target_machine_fonts
 
     @property
-    def color_mode(self):
-        """Gets the color_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
+    def dml3_d_effects_rendering_mode(self):
+        """Gets the dml3_d_effects_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
+        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
 
-        :return: The color_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :return: The dml3_d_effects_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
         """
-        return self._color_mode
+        return self._dml3_d_effects_rendering_mode
 
-    @color_mode.setter
-    def color_mode(self, color_mode):
-        """Sets the color_mode of this HtmlFixedSaveOptionsData.
+    @dml3_d_effects_rendering_mode.setter
+    def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
+        """Sets the dml3_d_effects_rendering_mode of this HtmlFixedSaveOptionsData.
 
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
+        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
 
-        :param color_mode: The color_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._color_mode = color_mode
-    @property
-    def jpeg_quality(self):
-        """Gets the jpeg_quality of this HtmlFixedSaveOptionsData.  # noqa: E501
+        allowed_values = ["Basic", "Advanced"]  # noqa: E501
+        if not dml3_d_effects_rendering_mode.isdigit():
+            if dml3_d_effects_rendering_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `dml3_d_effects_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(dml3_d_effects_rendering_mode, allowed_values))
+            self._dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
+        else:
+            self._dml3_d_effects_rendering_mode = allowed_values[int(dml3_d_effects_rendering_mode) if six.PY3 else long(dml3_d_effects_rendering_mode)]
 
-        Gets or sets determines the quality of the JPEG images inside PDF document.  # noqa: E501
-
-        :return: The jpeg_quality of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :rtype: int
-        """
-        return self._jpeg_quality
-
-    @jpeg_quality.setter
-    def jpeg_quality(self, jpeg_quality):
-        """Sets the jpeg_quality of this HtmlFixedSaveOptionsData.
-
-        Gets or sets determines the quality of the JPEG images inside PDF document.  # noqa: E501
-
-        :param jpeg_quality: The jpeg_quality of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :type: int
-        """
-        self._jpeg_quality = jpeg_quality
-    @property
-    def metafile_rendering_options(self):
-        """Gets the metafile_rendering_options of this HtmlFixedSaveOptionsData.  # noqa: E501
-
-        Gets or sets metafile_rendering_options.  # noqa: E501
-
-        :return: The metafile_rendering_options of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :rtype: MetafileRenderingOptionsData
-        """
-        return self._metafile_rendering_options
-
-    @metafile_rendering_options.setter
-    def metafile_rendering_options(self, metafile_rendering_options):
-        """Sets the metafile_rendering_options of this HtmlFixedSaveOptionsData.
-
-        Gets or sets metafile_rendering_options.  # noqa: E501
-
-        :param metafile_rendering_options: The metafile_rendering_options of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :type: MetafileRenderingOptionsData
-        """
-        self._metafile_rendering_options = metafile_rendering_options
-    @property
-    def numeral_format(self):
-        """Gets the numeral_format of this HtmlFixedSaveOptionsData.  # noqa: E501
-
-        Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
-
-        :return: The numeral_format of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._numeral_format
-
-    @numeral_format.setter
-    def numeral_format(self, numeral_format):
-        """Sets the numeral_format of this HtmlFixedSaveOptionsData.
-
-        Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
-
-        :param numeral_format: The numeral_format of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._numeral_format = numeral_format
-    @property
-    def optimize_output(self):
-        """Gets the optimize_output of this HtmlFixedSaveOptionsData.  # noqa: E501
-
-        Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
-
-        :return: The optimize_output of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :rtype: bool
-        """
-        return self._optimize_output
-
-    @optimize_output.setter
-    def optimize_output(self, optimize_output):
-        """Sets the optimize_output of this HtmlFixedSaveOptionsData.
-
-        Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
-
-        :param optimize_output: The optimize_output of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :type: bool
-        """
-        self._optimize_output = optimize_output
-    @property
-    def page_count(self):
-        """Gets the page_count of this HtmlFixedSaveOptionsData.  # noqa: E501
-
-        Gets or sets determines number of pages to render.  # noqa: E501
-
-        :return: The page_count of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :rtype: int
-        """
-        return self._page_count
-
-    @page_count.setter
-    def page_count(self, page_count):
-        """Sets the page_count of this HtmlFixedSaveOptionsData.
-
-        Gets or sets determines number of pages to render.  # noqa: E501
-
-        :param page_count: The page_count of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :type: int
-        """
-        self._page_count = page_count
-    @property
-    def page_index(self):
-        """Gets the page_index of this HtmlFixedSaveOptionsData.  # noqa: E501
-
-        Gets or sets determines 0-based index of the first page to render.  # noqa: E501
-
-        :return: The page_index of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :rtype: int
-        """
-        return self._page_index
-
-    @page_index.setter
-    def page_index(self, page_index):
-        """Sets the page_index of this HtmlFixedSaveOptionsData.
-
-        Gets or sets determines 0-based index of the first page to render.  # noqa: E501
-
-        :param page_index: The page_index of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :type: int
-        """
-        self._page_index = page_index
-    @property
-    def save_format(self):
-        """Gets the save_format of this HtmlFixedSaveOptionsData.  # noqa: E501
-
-        Gets or sets format of save.  # noqa: E501
-
-        :return: The save_format of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._save_format
-
-    @save_format.setter
-    def save_format(self, save_format):
-        """Sets the save_format of this HtmlFixedSaveOptionsData.
-
-        Gets or sets format of save.  # noqa: E501
-
-        :param save_format: The save_format of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._save_format = save_format
-    @property
-    def file_name(self):
-        """Gets the file_name of this HtmlFixedSaveOptionsData.  # noqa: E501
-
-        Gets or sets name of destination file.  # noqa: E501
-
-        :return: The file_name of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._file_name
-
-    @file_name.setter
-    def file_name(self, file_name):
-        """Sets the file_name of this HtmlFixedSaveOptionsData.
-
-        Gets or sets name of destination file.  # noqa: E501
-
-        :param file_name: The file_name of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._file_name = file_name
-    @property
-    def dml_rendering_mode(self):
-        """Gets the dml_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
-
-        :return: The dml_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._dml_rendering_mode
-
-    @dml_rendering_mode.setter
-    def dml_rendering_mode(self, dml_rendering_mode):
-        """Sets the dml_rendering_mode of this HtmlFixedSaveOptionsData.
-
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
-
-        :param dml_rendering_mode: The dml_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._dml_rendering_mode = dml_rendering_mode
     @property
     def dml_effects_rendering_mode(self):
         """Gets the dml_effects_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
@@ -438,74 +258,78 @@ class HtmlFixedSaveOptionsData(object):
         :type: str
         """
         self._dml_effects_rendering_mode = dml_effects_rendering_mode
+
     @property
-    def zip_output(self):
-        """Gets the zip_output of this HtmlFixedSaveOptionsData.  # noqa: E501
+    def dml_rendering_mode(self):
+        """Gets the dml_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
 
-        :return: The zip_output of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :rtype: bool
+        :return: The dml_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :rtype: str
         """
-        return self._zip_output
+        return self._dml_rendering_mode
 
-    @zip_output.setter
-    def zip_output(self, zip_output):
-        """Sets the zip_output of this HtmlFixedSaveOptionsData.
+    @dml_rendering_mode.setter
+    def dml_rendering_mode(self, dml_rendering_mode):
+        """Sets the dml_rendering_mode of this HtmlFixedSaveOptionsData.
 
-        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
 
-        :param zip_output: The zip_output of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :type: bool
+        :param dml_rendering_mode: The dml_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :type: str
         """
-        self._zip_output = zip_output
+        self._dml_rendering_mode = dml_rendering_mode
+
     @property
-    def update_last_saved_time_property(self):
-        """Gets the update_last_saved_time_property of this HtmlFixedSaveOptionsData.  # noqa: E501
+    def file_name(self):
+        """Gets the file_name of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets name of destination file.  # noqa: E501
 
-        :return: The update_last_saved_time_property of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :rtype: bool
+        :return: The file_name of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :rtype: str
         """
-        return self._update_last_saved_time_property
+        return self._file_name
 
-    @update_last_saved_time_property.setter
-    def update_last_saved_time_property(self, update_last_saved_time_property):
-        """Sets the update_last_saved_time_property of this HtmlFixedSaveOptionsData.
+    @file_name.setter
+    def file_name(self, file_name):
+        """Sets the file_name of this HtmlFixedSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets name of destination file.  # noqa: E501
 
-        :param update_last_saved_time_property: The update_last_saved_time_property of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :type: bool
+        :param file_name: The file_name of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :type: str
         """
-        self._update_last_saved_time_property = update_last_saved_time_property
+        self._file_name = file_name
+
     @property
-    def update_sdt_content(self):
-        """Gets the update_sdt_content of this HtmlFixedSaveOptionsData.  # noqa: E501
+    def save_format(self):
+        """Gets the save_format of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+        Gets or sets format of save.  # noqa: E501
 
-        :return: The update_sdt_content of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :rtype: bool
+        :return: The save_format of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :rtype: str
         """
-        return self._update_sdt_content
+        return self._save_format
 
-    @update_sdt_content.setter
-    def update_sdt_content(self, update_sdt_content):
-        """Sets the update_sdt_content of this HtmlFixedSaveOptionsData.
+    @save_format.setter
+    def save_format(self, save_format):
+        """Sets the save_format of this HtmlFixedSaveOptionsData.
 
-        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+        Gets or sets format of save.  # noqa: E501
 
-        :param update_sdt_content: The update_sdt_content of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :type: bool
+        :param save_format: The save_format of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :type: str
         """
-        self._update_sdt_content = update_sdt_content
+        self._save_format = save_format
+
     @property
     def update_fields(self):
         """Gets the update_fields of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true  # noqa: E501
+        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.  # noqa: E501
 
         :return: The update_fields of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -516,41 +340,13 @@ class HtmlFixedSaveOptionsData(object):
     def update_fields(self, update_fields):
         """Sets the update_fields of this HtmlFixedSaveOptionsData.
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true  # noqa: E501
+        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.  # noqa: E501
 
         :param update_fields: The update_fields of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._update_fields = update_fields
-    @property
-    def dml3_d_effects_rendering_mode(self):
-        """Gets the dml3_d_effects_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
-
-        :return: The dml3_d_effects_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._dml3_d_effects_rendering_mode
-
-    @dml3_d_effects_rendering_mode.setter
-    def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
-        """Sets the dml3_d_effects_rendering_mode of this HtmlFixedSaveOptionsData.
-
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
-
-        :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["Basic", "Advanced"]  # noqa: E501
-        if not dml3_d_effects_rendering_mode.isdigit():	
-            if dml3_d_effects_rendering_mode not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `dml3_d_effects_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
-                    .format(dml3_d_effects_rendering_mode, allowed_values))
-            self._dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
-        else:
-            self._dml3_d_effects_rendering_mode = allowed_values[int(dml3_d_effects_rendering_mode) if six.PY3 else long(dml3_d_effects_rendering_mode)]
     @property
     def update_last_printed_property(self):
         """Gets the update_last_printed_property of this HtmlFixedSaveOptionsData.  # noqa: E501
@@ -572,11 +368,232 @@ class HtmlFixedSaveOptionsData(object):
         :type: bool
         """
         self._update_last_printed_property = update_last_printed_property
+
+    @property
+    def update_last_saved_time_property(self):
+        """Gets the update_last_saved_time_property of this HtmlFixedSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+
+        :return: The update_last_saved_time_property of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._update_last_saved_time_property
+
+    @update_last_saved_time_property.setter
+    def update_last_saved_time_property(self, update_last_saved_time_property):
+        """Sets the update_last_saved_time_property of this HtmlFixedSaveOptionsData.
+
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+
+        :param update_last_saved_time_property: The update_last_saved_time_property of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._update_last_saved_time_property = update_last_saved_time_property
+
+    @property
+    def update_sdt_content(self):
+        """Gets the update_sdt_content of this HtmlFixedSaveOptionsData.  # noqa: E501
+
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+
+        :return: The update_sdt_content of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._update_sdt_content
+
+    @update_sdt_content.setter
+    def update_sdt_content(self, update_sdt_content):
+        """Sets the update_sdt_content of this HtmlFixedSaveOptionsData.
+
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+
+        :param update_sdt_content: The update_sdt_content of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._update_sdt_content = update_sdt_content
+
+    @property
+    def zip_output(self):
+        """Gets the zip_output of this HtmlFixedSaveOptionsData.  # noqa: E501
+
+        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+
+        :return: The zip_output of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._zip_output
+
+    @zip_output.setter
+    def zip_output(self, zip_output):
+        """Sets the zip_output of this HtmlFixedSaveOptionsData.
+
+        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+
+        :param zip_output: The zip_output of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._zip_output = zip_output
+
+    @property
+    def color_mode(self):
+        """Gets the color_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
+
+        :return: The color_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._color_mode
+
+    @color_mode.setter
+    def color_mode(self, color_mode):
+        """Sets the color_mode of this HtmlFixedSaveOptionsData.
+
+        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
+
+        :param color_mode: The color_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        self._color_mode = color_mode
+
+    @property
+    def jpeg_quality(self):
+        """Gets the jpeg_quality of this HtmlFixedSaveOptionsData.  # noqa: E501
+
+        Gets or sets determines the quality of the JPEG images inside PDF document.  # noqa: E501
+
+        :return: The jpeg_quality of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :rtype: int
+        """
+        return self._jpeg_quality
+
+    @jpeg_quality.setter
+    def jpeg_quality(self, jpeg_quality):
+        """Sets the jpeg_quality of this HtmlFixedSaveOptionsData.
+
+        Gets or sets determines the quality of the JPEG images inside PDF document.  # noqa: E501
+
+        :param jpeg_quality: The jpeg_quality of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :type: int
+        """
+        self._jpeg_quality = jpeg_quality
+
+    @property
+    def metafile_rendering_options(self):
+        """Gets the metafile_rendering_options of this HtmlFixedSaveOptionsData.  # noqa: E501
+
+        Gets or sets allows to specify metafile rendering options.  # noqa: E501
+
+        :return: The metafile_rendering_options of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :rtype: MetafileRenderingOptionsData
+        """
+        return self._metafile_rendering_options
+
+    @metafile_rendering_options.setter
+    def metafile_rendering_options(self, metafile_rendering_options):
+        """Sets the metafile_rendering_options of this HtmlFixedSaveOptionsData.
+
+        Gets or sets allows to specify metafile rendering options.  # noqa: E501
+
+        :param metafile_rendering_options: The metafile_rendering_options of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :type: MetafileRenderingOptionsData
+        """
+        self._metafile_rendering_options = metafile_rendering_options
+
+    @property
+    def numeral_format(self):
+        """Gets the numeral_format of this HtmlFixedSaveOptionsData.  # noqa: E501
+
+        Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
+
+        :return: The numeral_format of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._numeral_format
+
+    @numeral_format.setter
+    def numeral_format(self, numeral_format):
+        """Sets the numeral_format of this HtmlFixedSaveOptionsData.
+
+        Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
+
+        :param numeral_format: The numeral_format of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        self._numeral_format = numeral_format
+
+    @property
+    def optimize_output(self):
+        """Gets the optimize_output of this HtmlFixedSaveOptionsData.  # noqa: E501
+
+        Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
+
+        :return: The optimize_output of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._optimize_output
+
+    @optimize_output.setter
+    def optimize_output(self, optimize_output):
+        """Sets the optimize_output of this HtmlFixedSaveOptionsData.
+
+        Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
+
+        :param optimize_output: The optimize_output of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._optimize_output = optimize_output
+
+    @property
+    def page_count(self):
+        """Gets the page_count of this HtmlFixedSaveOptionsData.  # noqa: E501
+
+        Gets or sets determines number of pages to render.  # noqa: E501
+
+        :return: The page_count of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :rtype: int
+        """
+        return self._page_count
+
+    @page_count.setter
+    def page_count(self, page_count):
+        """Sets the page_count of this HtmlFixedSaveOptionsData.
+
+        Gets or sets determines number of pages to render.  # noqa: E501
+
+        :param page_count: The page_count of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :type: int
+        """
+        self._page_count = page_count
+
+    @property
+    def page_index(self):
+        """Gets the page_index of this HtmlFixedSaveOptionsData.  # noqa: E501
+
+        Gets or sets determines 0-based index of the first page to render.  # noqa: E501
+
+        :return: The page_index of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :rtype: int
+        """
+        return self._page_index
+
+    @page_index.setter
+    def page_index(self, page_index):
+        """Sets the page_index of this HtmlFixedSaveOptionsData.
+
+        Gets or sets determines 0-based index of the first page to render.  # noqa: E501
+
+        :param page_index: The page_index of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :type: int
+        """
+        self._page_index = page_index
+
     @property
     def css_class_names_prefix(self):
         """Gets the css_class_names_prefix of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies prefix which is added to all class names in style.css file. Default value is \"aw\".  # noqa: E501
+        Gets or sets specifies prefix which is added to all class names in style.css file. Default value is "aw".  # noqa: E501
 
         :return: The css_class_names_prefix of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -587,12 +604,13 @@ class HtmlFixedSaveOptionsData(object):
     def css_class_names_prefix(self, css_class_names_prefix):
         """Sets the css_class_names_prefix of this HtmlFixedSaveOptionsData.
 
-        Gets or sets specifies prefix which is added to all class names in style.css file. Default value is \"aw\".  # noqa: E501
+        Gets or sets specifies prefix which is added to all class names in style.css file. Default value is "aw".  # noqa: E501
 
         :param css_class_names_prefix: The css_class_names_prefix of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: str
         """
         self._css_class_names_prefix = css_class_names_prefix
+
     @property
     def encoding(self):
         """Gets the encoding of this HtmlFixedSaveOptionsData.  # noqa: E501
@@ -614,6 +632,7 @@ class HtmlFixedSaveOptionsData(object):
         :type: str
         """
         self._encoding = encoding
+
     @property
     def export_embedded_css(self):
         """Gets the export_embedded_css of this HtmlFixedSaveOptionsData.  # noqa: E501
@@ -635,6 +654,7 @@ class HtmlFixedSaveOptionsData(object):
         :type: bool
         """
         self._export_embedded_css = export_embedded_css
+
     @property
     def export_embedded_fonts(self):
         """Gets the export_embedded_fonts of this HtmlFixedSaveOptionsData.  # noqa: E501
@@ -656,6 +676,7 @@ class HtmlFixedSaveOptionsData(object):
         :type: bool
         """
         self._export_embedded_fonts = export_embedded_fonts
+
     @property
     def export_embedded_images(self):
         """Gets the export_embedded_images of this HtmlFixedSaveOptionsData.  # noqa: E501
@@ -677,6 +698,7 @@ class HtmlFixedSaveOptionsData(object):
         :type: bool
         """
         self._export_embedded_images = export_embedded_images
+
     @property
     def export_form_fields(self):
         """Gets the export_form_fields of this HtmlFixedSaveOptionsData.  # noqa: E501
@@ -698,6 +720,7 @@ class HtmlFixedSaveOptionsData(object):
         :type: bool
         """
         self._export_form_fields = export_form_fields
+
     @property
     def font_format(self):
         """Gets the font_format of this HtmlFixedSaveOptionsData.  # noqa: E501
@@ -719,6 +742,7 @@ class HtmlFixedSaveOptionsData(object):
         :type: str
         """
         self._font_format = font_format
+
     @property
     def page_horizontal_alignment(self):
         """Gets the page_horizontal_alignment of this HtmlFixedSaveOptionsData.  # noqa: E501
@@ -740,6 +764,7 @@ class HtmlFixedSaveOptionsData(object):
         :type: str
         """
         self._page_horizontal_alignment = page_horizontal_alignment
+
     @property
     def page_margins(self):
         """Gets the page_margins of this HtmlFixedSaveOptionsData.  # noqa: E501
@@ -761,6 +786,7 @@ class HtmlFixedSaveOptionsData(object):
         :type: float
         """
         self._page_margins = page_margins
+
     @property
     def resources_folder(self):
         """Gets the resources_folder of this HtmlFixedSaveOptionsData.  # noqa: E501
@@ -782,6 +808,7 @@ class HtmlFixedSaveOptionsData(object):
         :type: str
         """
         self._resources_folder = resources_folder
+
     @property
     def resources_folder_alias(self):
         """Gets the resources_folder_alias of this HtmlFixedSaveOptionsData.  # noqa: E501
@@ -803,11 +830,12 @@ class HtmlFixedSaveOptionsData(object):
         :type: str
         """
         self._resources_folder_alias = resources_folder_alias
+
     @property
     def save_font_face_css_separately(self):
         """Gets the save_font_face_css_separately of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets flag indicates whether \"@font-face\" CSS rules should be placed into a separate file \"fontFaces.css\" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file \"styles.css\".  # noqa: E501
+        Gets or sets flag indicates whether "@font-face" CSS rules should be placed into a separate file "fontFaces.css" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file "styles.css".  # noqa: E501
 
         :return: The save_font_face_css_separately of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -818,12 +846,13 @@ class HtmlFixedSaveOptionsData(object):
     def save_font_face_css_separately(self, save_font_face_css_separately):
         """Sets the save_font_face_css_separately of this HtmlFixedSaveOptionsData.
 
-        Gets or sets flag indicates whether \"@font-face\" CSS rules should be placed into a separate file \"fontFaces.css\" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file \"styles.css\".  # noqa: E501
+        Gets or sets flag indicates whether "@font-face" CSS rules should be placed into a separate file "fontFaces.css" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file "styles.css".  # noqa: E501
 
         :param save_font_face_css_separately: The save_font_face_css_separately of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._save_font_face_css_separately = save_font_face_css_separately
+
     @property
     def show_page_border(self):
         """Gets the show_page_border of this HtmlFixedSaveOptionsData.  # noqa: E501
@@ -845,6 +874,7 @@ class HtmlFixedSaveOptionsData(object):
         :type: bool
         """
         self._show_page_border = show_page_border
+
     @property
     def use_target_machine_fonts(self):
         """Gets the use_target_machine_fonts of this HtmlFixedSaveOptionsData.  # noqa: E501
@@ -866,6 +896,8 @@ class HtmlFixedSaveOptionsData(object):
         :type: bool
         """
         self._use_target_machine_fonts = use_target_machine_fonts
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Lists.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="lists.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,7 +46,7 @@ class Lists(object):
     }
 
     attribute_map = {
-        'link': 'link',
+        'link': 'Link',
         'list_info': 'ListInfo'
     }
 
@@ -66,7 +66,7 @@ class Lists(object):
     def link(self):
         """Gets the link of this Lists.  # noqa: E501
 
-        Gets or sets link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this Lists.  # noqa: E501
         :rtype: WordsApiLink
@@ -77,12 +77,13 @@ class Lists(object):
     def link(self, link):
         """Sets the link of this Lists.
 
-        Gets or sets link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this Lists.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
+
     @property
     def list_info(self):
         """Gets the list_info of this Lists.  # noqa: E501
@@ -104,6 +105,8 @@ class Lists(object):
         :type: list[ListInfo]
         """
         self._list_info = list_info
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="DocumentProperty.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="document_property.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,7 +48,7 @@ class DocumentProperty(object):
     }
 
     attribute_map = {
-        'link': 'link',
+        'link': 'Link',
         'built_in': 'BuiltIn',
         'name': 'Name',
         'value': 'Value'
@@ -76,7 +76,7 @@ class DocumentProperty(object):
     def link(self):
         """Gets the link of this DocumentProperty.  # noqa: E501
 
-        Gets or sets link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this DocumentProperty.  # noqa: E501
         :rtype: WordsApiLink
@@ -87,12 +87,13 @@ class DocumentProperty(object):
     def link(self, link):
         """Sets the link of this DocumentProperty.
 
-        Gets or sets link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this DocumentProperty.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
+
     @property
     def built_in(self):
         """Gets the built_in of this DocumentProperty.  # noqa: E501
@@ -114,6 +115,7 @@ class DocumentProperty(object):
         :type: bool
         """
         self._built_in = built_in
+
     @property
     def name(self):
         """Gets the name of this DocumentProperty.  # noqa: E501
@@ -135,6 +137,7 @@ class DocumentProperty(object):
         :type: str
         """
         self._name = name
+
     @property
     def value(self):
         """Gets the value of this DocumentProperty.  # noqa: E501
@@ -156,6 +159,8 @@ class DocumentProperty(object):
         :type: str
         """
         self._value = value
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

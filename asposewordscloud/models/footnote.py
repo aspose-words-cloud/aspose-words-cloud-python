@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Footnote.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="footnote.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -51,7 +51,7 @@ class Footnote(object):
     }
 
     attribute_map = {
-        'link': 'link',
+        'link': 'Link',
         'node_id': 'NodeId',
         'content': 'Content',
         'footnote_type': 'FootnoteType',
@@ -91,7 +91,7 @@ class Footnote(object):
     def link(self):
         """Gets the link of this Footnote.  # noqa: E501
 
-        Gets or sets link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this Footnote.  # noqa: E501
         :rtype: WordsApiLink
@@ -102,12 +102,13 @@ class Footnote(object):
     def link(self, link):
         """Sets the link of this Footnote.
 
-        Gets or sets link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this Footnote.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
+
     @property
     def node_id(self):
         """Gets the node_id of this Footnote.  # noqa: E501
@@ -129,11 +130,12 @@ class Footnote(object):
         :type: str
         """
         self._node_id = node_id
+
     @property
     def content(self):
         """Gets the content of this Footnote.  # noqa: E501
 
-        Gets or sets content.  # noqa: E501
+        Gets or sets content of footnote.  # noqa: E501
 
         :return: The content of this Footnote.  # noqa: E501
         :rtype: StoryChildNodes
@@ -144,12 +146,13 @@ class Footnote(object):
     def content(self, content):
         """Sets the content of this Footnote.
 
-        Gets or sets content.  # noqa: E501
+        Gets or sets content of footnote.  # noqa: E501
 
         :param content: The content of this Footnote.  # noqa: E501
         :type: StoryChildNodes
         """
         self._content = content
+
     @property
     def footnote_type(self):
         """Gets the footnote_type of this Footnote.  # noqa: E501
@@ -171,7 +174,7 @@ class Footnote(object):
         :type: str
         """
         allowed_values = ["Footnote", "Endnote"]  # noqa: E501
-        if not footnote_type.isdigit():	
+        if not footnote_type.isdigit():
             if footnote_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `footnote_type` ({0}), must be one of {1}"  # noqa: E501
@@ -179,11 +182,12 @@ class Footnote(object):
             self._footnote_type = footnote_type
         else:
             self._footnote_type = allowed_values[int(footnote_type) if six.PY3 else long(footnote_type)]
+
     @property
     def position(self):
         """Gets the position of this Footnote.  # noqa: E501
 
-        Gets or sets position.  # noqa: E501
+        Gets or sets link to comment range start node.  # noqa: E501
 
         :return: The position of this Footnote.  # noqa: E501
         :rtype: DocumentPosition
@@ -194,12 +198,13 @@ class Footnote(object):
     def position(self, position):
         """Sets the position of this Footnote.
 
-        Gets or sets position.  # noqa: E501
+        Gets or sets link to comment range start node.  # noqa: E501
 
         :param position: The position of this Footnote.  # noqa: E501
         :type: DocumentPosition
         """
         self._position = position
+
     @property
     def reference_mark(self):
         """Gets the reference_mark of this Footnote.  # noqa: E501
@@ -221,6 +226,7 @@ class Footnote(object):
         :type: str
         """
         self._reference_mark = reference_mark
+
     @property
     def text(self):
         """Gets the text of this Footnote.  # noqa: E501
@@ -242,6 +248,8 @@ class Footnote(object):
         :type: str
         """
         self._text = text
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

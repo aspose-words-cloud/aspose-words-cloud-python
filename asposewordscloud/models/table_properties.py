@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="TableProperties.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="table_properties.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,7 +30,7 @@ import six
 
 
 class TableProperties(object):
-    """Represents the table properties.             
+    """Represents the table properties.
     """
 
     """
@@ -59,7 +59,7 @@ class TableProperties(object):
     }
 
     attribute_map = {
-        'link': 'link',
+        'link': 'Link',
         'alignment': 'Alignment',
         'allow_auto_fit': 'AllowAutoFit',
         'bidi': 'Bidi',
@@ -131,7 +131,7 @@ class TableProperties(object):
     def link(self):
         """Gets the link of this TableProperties.  # noqa: E501
 
-        Gets or sets link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this TableProperties.  # noqa: E501
         :rtype: WordsApiLink
@@ -142,12 +142,13 @@ class TableProperties(object):
     def link(self, link):
         """Sets the link of this TableProperties.
 
-        Gets or sets link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this TableProperties.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
+
     @property
     def alignment(self):
         """Gets the alignment of this TableProperties.  # noqa: E501
@@ -169,7 +170,7 @@ class TableProperties(object):
         :type: str
         """
         allowed_values = ["Left", "Center", "Right"]  # noqa: E501
-        if not alignment.isdigit():	
+        if not alignment.isdigit():
             if alignment not in allowed_values:
                 raise ValueError(
                     "Invalid value for `alignment` ({0}), must be one of {1}"  # noqa: E501
@@ -177,6 +178,7 @@ class TableProperties(object):
             self._alignment = alignment
         else:
             self._alignment = allowed_values[int(alignment) if six.PY3 else long(alignment)]
+
     @property
     def allow_auto_fit(self):
         """Gets the allow_auto_fit of this TableProperties.  # noqa: E501
@@ -198,6 +200,7 @@ class TableProperties(object):
         :type: bool
         """
         self._allow_auto_fit = allow_auto_fit
+
     @property
     def bidi(self):
         """Gets the bidi of this TableProperties.  # noqa: E501
@@ -219,6 +222,7 @@ class TableProperties(object):
         :type: bool
         """
         self._bidi = bidi
+
     @property
     def bottom_padding(self):
         """Gets the bottom_padding of this TableProperties.  # noqa: E501
@@ -240,6 +244,7 @@ class TableProperties(object):
         :type: float
         """
         self._bottom_padding = bottom_padding
+
     @property
     def cell_spacing(self):
         """Gets the cell_spacing of this TableProperties.  # noqa: E501
@@ -261,6 +266,7 @@ class TableProperties(object):
         :type: float
         """
         self._cell_spacing = cell_spacing
+
     @property
     def left_indent(self):
         """Gets the left_indent of this TableProperties.  # noqa: E501
@@ -282,6 +288,7 @@ class TableProperties(object):
         :type: float
         """
         self._left_indent = left_indent
+
     @property
     def left_padding(self):
         """Gets the left_padding of this TableProperties.  # noqa: E501
@@ -303,11 +310,12 @@ class TableProperties(object):
         :type: float
         """
         self._left_padding = left_padding
+
     @property
     def preferred_width(self):
         """Gets the preferred_width of this TableProperties.  # noqa: E501
 
-        Gets or sets preferred_width.  # noqa: E501
+        Gets or sets the table preferred width. Preferred width can be specified as a percentage, number of points or a special "auto" value.  # noqa: E501
 
         :return: The preferred_width of this TableProperties.  # noqa: E501
         :rtype: PreferredWidth
@@ -318,12 +326,13 @@ class TableProperties(object):
     def preferred_width(self, preferred_width):
         """Sets the preferred_width of this TableProperties.
 
-        Gets or sets preferred_width.  # noqa: E501
+        Gets or sets the table preferred width. Preferred width can be specified as a percentage, number of points or a special "auto" value.  # noqa: E501
 
         :param preferred_width: The preferred_width of this TableProperties.  # noqa: E501
         :type: PreferredWidth
         """
         self._preferred_width = preferred_width
+
     @property
     def right_padding(self):
         """Gets the right_padding of this TableProperties.  # noqa: E501
@@ -345,6 +354,7 @@ class TableProperties(object):
         :type: float
         """
         self._right_padding = right_padding
+
     @property
     def style_identifier(self):
         """Gets the style_identifier of this TableProperties.  # noqa: E501
@@ -366,7 +376,7 @@ class TableProperties(object):
         :type: str
         """
         allowed_values = ["Normal", "Heading1", "Heading2", "Heading3", "Heading4", "Heading5", "Heading6", "Heading7", "Heading8", "Heading9", "Index1", "Index2", "Index3", "Index4", "Index5", "Index6", "Index7", "Index8", "Index9", "Toc1", "Toc2", "Toc3", "Toc4", "Toc5", "Toc6", "Toc7", "Toc8", "Toc9", "NormalIndent", "FootnoteText", "CommentText", "Header", "Footer", "IndexHeading", "Caption", "TableOfFigures", "EnvelopeAddress", "EnvelopeReturn", "FootnoteReference", "CommentReference", "LineNumber", "PageNumber", "EndnoteReference", "EndnoteText", "TableOfAuthorities", "Macro", "ToaHeading", "List", "ListBullet", "ListNumber", "List2", "List3", "List4", "List5", "ListBullet2", "ListBullet3", "ListBullet4", "ListBullet5", "ListNumber2", "ListNumber3", "ListNumber4", "ListNumber5", "Title", "Closing", "Signature", "DefaultParagraphFont", "BodyText", "BodyTextInd", "ListContinue", "ListContinue2", "ListContinue3", "ListContinue4", "ListContinue5", "MessageHeader", "Subtitle", "Salutation", "Date", "BodyText1I", "BodyText1I2", "NoteHeading", "BodyText2", "BodyText3", "BodyTextInd2", "BodyTextInd3", "BlockText", "Hyperlink", "FollowedHyperlink", "Strong", "Emphasis", "DocumentMap", "PlainText", "EmailSignature", "HtmlTopOfForm", "HtmlBottomOfForm", "NormalWeb", "HtmlAcronym", "HtmlAddress", "HtmlCite", "HtmlCode", "HtmlDefinition", "HtmlKeyboard", "HtmlPreformatted", "HtmlSample", "HtmlTypewriter", "HtmlVariable", "TableNormal", "CommentSubject", "NoList", "OutlineList1", "OutlineList2", "OutlineList3", "TableSimple1", "TableSimple2", "TableSimple3", "TableClassic1", "TableClassic2", "TableClassic3", "TableClassic4", "TableColorful1", "TableColorful2", "TableColorful3", "TableColumns1", "TableColumns2", "TableColumns3", "TableColumns4", "TableColumns5", "TableGrid1", "TableGrid2", "TableGrid3", "TableGrid4", "TableGrid5", "TableGrid6", "TableGrid7", "TableGrid8", "TableList1", "TableList2", "TableList3", "TableList4", "TableList5", "TableList6", "TableList7", "TableList8", "Table3DEffects1", "Table3DEffects2", "Table3DEffects3", "TableContemporary", "TableElegant", "TableProfessional", "TableSubtle1", "TableSubtle2", "TableWeb1", "TableWeb2", "TableWeb3", "BalloonText", "TableGrid", "TableTheme", "PlaceholderText", "NoSpacing", "LightShading", "LightList", "LightGrid", "MediumShading1", "MediumShading2", "MediumList1", "MediumList2", "MediumGrid1", "MediumGrid2", "MediumGrid3", "DarkList", "ColorfulShading", "ColorfulList", "ColorfulGrid", "LightShadingAccent1", "LightListAccent1", "LightGridAccent1", "MediumShading1Accent1", "MediumShading2Accent1", "MediumList1Accent1", "Revision", "ListParagraph", "Quote", "IntenseQuote", "MediumList2Accent1", "MediumGrid1Accent1", "MediumGrid2Accent1", "MediumGrid3Accent1", "DarkListAccent1", "ColorfulShadingAccent1", "ColorfulListAccent1", "ColorfulGridAccent1", "LightShadingAccent2", "LightListAccent2", "LightGridAccent2", "MediumShading1Accent2", "MediumShading2Accent2", "MediumList1Accent2", "MediumList2Accent2", "MediumGrid1Accent2", "MediumGrid2Accent2", "MediumGrid3Accent2", "DarkListAccent2", "ColorfulShadingAccent2", "ColorfulListAccent2", "ColorfulGridAccent2", "LightShadingAccent3", "LightListAccent3", "LightGridAccent3", "MediumShading1Accent3", "MediumShading2Accent3", "MediumList1Accent3", "MediumList2Accent3", "MediumGrid1Accent3", "MediumGrid2Accent3", "MediumGrid3Accent3", "DarkListAccent3", "ColorfulShadingAccent3", "ColorfulListAccent3", "ColorfulGridAccent3", "LightShadingAccent4", "LightListAccent4", "LightGridAccent4", "MediumShading1Accent4", "MediumShading2Accent4", "MediumList1Accent4", "MediumList2Accent4", "MediumGrid1Accent4", "MediumGrid2Accent4", "MediumGrid3Accent4", "DarkListAccent4", "ColorfulShadingAccent4", "ColorfulListAccent4", "ColorfulGridAccent4", "LightShadingAccent5", "LightListAccent5", "LightGridAccent5", "MediumShading1Accent5", "MediumShading2Accent5", "MediumList1Accent5", "MediumList2Accent5", "MediumGrid1Accent5", "MediumGrid2Accent5", "MediumGrid3Accent5", "DarkListAccent5", "ColorfulShadingAccent5", "ColorfulListAccent5", "ColorfulGridAccent5", "LightShadingAccent6", "LightListAccent6", "LightGridAccent6", "MediumShading1Accent6", "MediumShading2Accent6", "MediumList1Accent6", "MediumList2Accent6", "MediumGrid1Accent6", "MediumGrid2Accent6", "MediumGrid3Accent6", "DarkListAccent6", "ColorfulShadingAccent6", "ColorfulListAccent6", "ColorfulGridAccent6", "SubtleEmphasis", "IntenseEmphasis", "SubtleReference", "IntenseReference", "BookTitle", "Bibliography", "TocHeading", "PlainTable1", "PlainTable2", "PlainTable3", "PlainTable4", "PlainTable5", "TableGridLight", "GridTable1Light", "GridTable2", "GridTable3", "GridTable4", "GridTable5Dark", "GridTable6Colorful", "GridTable7Colorful", "GridTable1LightAccent1", "GridTable2Accent1", "GridTable3Accent1", "GridTable4Accent1", "GridTable5DarkAccent1", "GridTable6ColorfulAccent1", "GridTable7ColorfulAccent1", "GridTable1LightAccent2", "GridTable2Accent2", "GridTable3Accent2", "GridTable4Accent2", "GridTable5DarkAccent2", "GridTable6ColorfulAccent2", "GridTable7ColorfulAccent2", "GridTable1LightAccent3", "GridTable2Accent3", "GridTable3Accent3", "GridTable4Accent3", "GridTable5DarkAccent3", "GridTable6ColorfulAccent3", "GridTable7ColorfulAccent3", "GridTable1LightAccent4", "GridTable2Accent4", "GridTable3Accent4", "GridTable4Accent4", "GridTable5DarkAccent4", "GridTable6ColorfulAccent4", "GridTable7ColorfulAccent4", "GridTable1LightAccent5", "GridTable2Accent5", "GridTable3Accent5", "GridTable4Accent5", "GridTable5DarkAccent5", "GridTable6ColorfulAccent5", "GridTable7ColorfulAccent5", "GridTable1LightAccent6", "GridTable2Accent6", "GridTable3Accent6", "GridTable4Accent6", "GridTable5DarkAccent6", "GridTable6ColorfulAccent6", "GridTable7ColorfulAccent6", "ListTable1Light", "ListTable2", "ListTable3", "ListTable4", "ListTable5Dark", "ListTable6Colorful", "ListTable7Colorful", "ListTable1LightAccent1", "ListTable2Accent1", "ListTable3Accent1", "ListTable4Accent1", "ListTable5DarkAccent1", "ListTable6ColorfulAccent1", "ListTable7ColorfulAccent1", "ListTable1LightAccent2", "ListTable2Accent2", "ListTable3Accent2", "ListTable4Accent2", "ListTable5DarkAccent2", "ListTable6ColorfulAccent2", "ListTable7ColorfulAccent2", "ListTable1LightAccent3", "ListTable2Accent3", "ListTable3Accent3", "ListTable4Accent3", "ListTable5DarkAccent3", "ListTable6ColorfulAccent3", "ListTable7ColorfulAccent3", "ListTable1LightAccent4", "ListTable2Accent4", "ListTable3Accent4", "ListTable4Accent4", "ListTable5DarkAccent4", "ListTable6ColorfulAccent4", "ListTable7ColorfulAccent4", "ListTable1LightAccent5", "ListTable2Accent5", "ListTable3Accent5", "ListTable4Accent5", "ListTable5DarkAccent5", "ListTable6ColorfulAccent5", "ListTable7ColorfulAccent5", "ListTable1LightAccent6", "ListTable2Accent6", "ListTable3Accent6", "ListTable4Accent6", "ListTable5DarkAccent6", "ListTable6ColorfulAccent6", "ListTable7ColorfulAccent6", "User", "Nil"]  # noqa: E501
-        if not style_identifier.isdigit():	
+        if not style_identifier.isdigit():
             if style_identifier not in allowed_values:
                 raise ValueError(
                     "Invalid value for `style_identifier` ({0}), must be one of {1}"  # noqa: E501
@@ -374,6 +384,7 @@ class TableProperties(object):
             self._style_identifier = style_identifier
         else:
             self._style_identifier = allowed_values[int(style_identifier) if six.PY3 else long(style_identifier)]
+
     @property
     def style_name(self):
         """Gets the style_name of this TableProperties.  # noqa: E501
@@ -395,6 +406,7 @@ class TableProperties(object):
         :type: str
         """
         self._style_name = style_name
+
     @property
     def style_options(self):
         """Gets the style_options of this TableProperties.  # noqa: E501
@@ -416,7 +428,7 @@ class TableProperties(object):
         :type: str
         """
         allowed_values = ["None", "FirstRow", "LastRow", "FirstColumn", "LastColumn", "RowBands", "Default", "ColumnBands", "Default2003"]  # noqa: E501
-        if not style_options.isdigit():	
+        if not style_options.isdigit():
             if style_options not in allowed_values:
                 raise ValueError(
                     "Invalid value for `style_options` ({0}), must be one of {1}"  # noqa: E501
@@ -424,6 +436,7 @@ class TableProperties(object):
             self._style_options = style_options
         else:
             self._style_options = allowed_values[int(style_options) if six.PY3 else long(style_options)]
+
     @property
     def text_wrapping(self):
         """Gets the text_wrapping of this TableProperties.  # noqa: E501
@@ -445,7 +458,7 @@ class TableProperties(object):
         :type: str
         """
         allowed_values = ["Default", "None", "Around"]  # noqa: E501
-        if not text_wrapping.isdigit():	
+        if not text_wrapping.isdigit():
             if text_wrapping not in allowed_values:
                 raise ValueError(
                     "Invalid value for `text_wrapping` ({0}), must be one of {1}"  # noqa: E501
@@ -453,6 +466,7 @@ class TableProperties(object):
             self._text_wrapping = text_wrapping
         else:
             self._text_wrapping = allowed_values[int(text_wrapping) if six.PY3 else long(text_wrapping)]
+
     @property
     def top_padding(self):
         """Gets the top_padding of this TableProperties.  # noqa: E501
@@ -474,6 +488,8 @@ class TableProperties(object):
         :type: float
         """
         self._top_padding = top_padding
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

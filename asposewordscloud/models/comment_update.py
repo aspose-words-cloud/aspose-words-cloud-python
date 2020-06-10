@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="CommentUpdate.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="comment_update.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,89 +41,47 @@ class CommentUpdate(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'range_start': 'DocumentPosition',
-        'range_end': 'DocumentPosition',
         'author': 'str',
-        'initial': 'str',
         'date_time': 'datetime',
+        'initial': 'str',
+        'range_end': 'DocumentPosition',
+        'range_start': 'DocumentPosition',
         'text': 'str'
     }
 
     attribute_map = {
-        'range_start': 'RangeStart',
-        'range_end': 'RangeEnd',
         'author': 'Author',
-        'initial': 'Initial',
         'date_time': 'DateTime',
+        'initial': 'Initial',
+        'range_end': 'RangeEnd',
+        'range_start': 'RangeStart',
         'text': 'Text'
     }
 
-    def __init__(self, range_start=None, range_end=None, author=None, initial=None, date_time=None, text=None):  # noqa: E501
+    def __init__(self, author=None, date_time=None, initial=None, range_end=None, range_start=None, text=None):  # noqa: E501
         """CommentUpdate - a model defined in Swagger"""  # noqa: E501
 
-        self._range_start = None
-        self._range_end = None
         self._author = None
-        self._initial = None
         self._date_time = None
+        self._initial = None
+        self._range_end = None
+        self._range_start = None
         self._text = None
         self.discriminator = None
 
-        if range_start is not None:
-            self.range_start = range_start
-        if range_end is not None:
-            self.range_end = range_end
         if author is not None:
             self.author = author
-        if initial is not None:
-            self.initial = initial
         if date_time is not None:
             self.date_time = date_time
+        if initial is not None:
+            self.initial = initial
+        if range_end is not None:
+            self.range_end = range_end
+        if range_start is not None:
+            self.range_start = range_start
         if text is not None:
             self.text = text
 
-    @property
-    def range_start(self):
-        """Gets the range_start of this CommentUpdate.  # noqa: E501
-
-        Gets or sets range_start.  # noqa: E501
-
-        :return: The range_start of this CommentUpdate.  # noqa: E501
-        :rtype: DocumentPosition
-        """
-        return self._range_start
-
-    @range_start.setter
-    def range_start(self, range_start):
-        """Sets the range_start of this CommentUpdate.
-
-        Gets or sets range_start.  # noqa: E501
-
-        :param range_start: The range_start of this CommentUpdate.  # noqa: E501
-        :type: DocumentPosition
-        """
-        self._range_start = range_start
-    @property
-    def range_end(self):
-        """Gets the range_end of this CommentUpdate.  # noqa: E501
-
-        Gets or sets range_end.  # noqa: E501
-
-        :return: The range_end of this CommentUpdate.  # noqa: E501
-        :rtype: DocumentPosition
-        """
-        return self._range_end
-
-    @range_end.setter
-    def range_end(self, range_end):
-        """Sets the range_end of this CommentUpdate.
-
-        Gets or sets range_end.  # noqa: E501
-
-        :param range_end: The range_end of this CommentUpdate.  # noqa: E501
-        :type: DocumentPosition
-        """
-        self._range_end = range_end
     @property
     def author(self):
         """Gets the author of this CommentUpdate.  # noqa: E501
@@ -145,27 +103,7 @@ class CommentUpdate(object):
         :type: str
         """
         self._author = author
-    @property
-    def initial(self):
-        """Gets the initial of this CommentUpdate.  # noqa: E501
 
-        Gets or sets returns or sets the initials of the user associated with a specific comment.  # noqa: E501
-
-        :return: The initial of this CommentUpdate.  # noqa: E501
-        :rtype: str
-        """
-        return self._initial
-
-    @initial.setter
-    def initial(self, initial):
-        """Sets the initial of this CommentUpdate.
-
-        Gets or sets returns or sets the initials of the user associated with a specific comment.  # noqa: E501
-
-        :param initial: The initial of this CommentUpdate.  # noqa: E501
-        :type: str
-        """
-        self._initial = initial
     @property
     def date_time(self):
         """Gets the date_time of this CommentUpdate.  # noqa: E501
@@ -187,6 +125,73 @@ class CommentUpdate(object):
         :type: datetime
         """
         self._date_time = date_time
+
+    @property
+    def initial(self):
+        """Gets the initial of this CommentUpdate.  # noqa: E501
+
+        Gets or sets returns or sets the initials of the user associated with a specific comment.  # noqa: E501
+
+        :return: The initial of this CommentUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._initial
+
+    @initial.setter
+    def initial(self, initial):
+        """Sets the initial of this CommentUpdate.
+
+        Gets or sets returns or sets the initials of the user associated with a specific comment.  # noqa: E501
+
+        :param initial: The initial of this CommentUpdate.  # noqa: E501
+        :type: str
+        """
+        self._initial = initial
+
+    @property
+    def range_end(self):
+        """Gets the range_end of this CommentUpdate.  # noqa: E501
+
+        Gets or sets link to comment range end node.  # noqa: E501
+
+        :return: The range_end of this CommentUpdate.  # noqa: E501
+        :rtype: DocumentPosition
+        """
+        return self._range_end
+
+    @range_end.setter
+    def range_end(self, range_end):
+        """Sets the range_end of this CommentUpdate.
+
+        Gets or sets link to comment range end node.  # noqa: E501
+
+        :param range_end: The range_end of this CommentUpdate.  # noqa: E501
+        :type: DocumentPosition
+        """
+        self._range_end = range_end
+
+    @property
+    def range_start(self):
+        """Gets the range_start of this CommentUpdate.  # noqa: E501
+
+        Gets or sets link to comment range start node.  # noqa: E501
+
+        :return: The range_start of this CommentUpdate.  # noqa: E501
+        :rtype: DocumentPosition
+        """
+        return self._range_start
+
+    @range_start.setter
+    def range_start(self, range_start):
+        """Sets the range_start of this CommentUpdate.
+
+        Gets or sets link to comment range start node.  # noqa: E501
+
+        :param range_start: The range_start of this CommentUpdate.  # noqa: E501
+        :type: DocumentPosition
+        """
+        self._range_start = range_start
+
     @property
     def text(self):
         """Gets the text of this CommentUpdate.  # noqa: E501
@@ -208,6 +213,8 @@ class CommentUpdate(object):
         :type: str
         """
         self._text = text
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

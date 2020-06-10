@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="RunsResponse.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="runs_response.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,11 +83,12 @@ class RunsResponse(object):
         :type: str
         """
         self._request_id = request_id
+
     @property
     def runs(self):
         """Gets the runs of this RunsResponse.  # noqa: E501
 
-        Gets or sets runs.  # noqa: E501
+        Gets or sets collection of runs.  # noqa: E501
 
         :return: The runs of this RunsResponse.  # noqa: E501
         :rtype: Runs
@@ -98,12 +99,14 @@ class RunsResponse(object):
     def runs(self, runs):
         """Sets the runs of this RunsResponse.
 
-        Gets or sets runs.  # noqa: E501
+        Gets or sets collection of runs.  # noqa: E501
 
         :param runs: The runs of this RunsResponse.  # noqa: E501
         :type: Runs
         """
         self._runs = runs
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

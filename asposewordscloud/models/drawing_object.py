@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="DrawingObject.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="drawing_object.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -56,7 +56,7 @@ class DrawingObject(object):
     }
 
     attribute_map = {
-        'link': 'link',
+        'link': 'Link',
         'node_id': 'NodeId',
         'height': 'Height',
         'image_data_link': 'ImageDataLink',
@@ -116,7 +116,7 @@ class DrawingObject(object):
     def link(self):
         """Gets the link of this DrawingObject.  # noqa: E501
 
-        Gets or sets link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this DrawingObject.  # noqa: E501
         :rtype: WordsApiLink
@@ -127,12 +127,13 @@ class DrawingObject(object):
     def link(self, link):
         """Sets the link of this DrawingObject.
 
-        Gets or sets link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this DrawingObject.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
+
     @property
     def node_id(self):
         """Gets the node_id of this DrawingObject.  # noqa: E501
@@ -154,6 +155,7 @@ class DrawingObject(object):
         :type: str
         """
         self._node_id = node_id
+
     @property
     def height(self):
         """Gets the height of this DrawingObject.  # noqa: E501
@@ -175,11 +177,12 @@ class DrawingObject(object):
         :type: float
         """
         self._height = height
+
     @property
     def image_data_link(self):
         """Gets the image_data_link of this DrawingObject.  # noqa: E501
 
-        Gets or sets image_data_link.  # noqa: E501
+        Gets or sets link to image data. Can be null if shape does not have an image.  # noqa: E501
 
         :return: The image_data_link of this DrawingObject.  # noqa: E501
         :rtype: WordsApiLink
@@ -190,17 +193,18 @@ class DrawingObject(object):
     def image_data_link(self, image_data_link):
         """Sets the image_data_link of this DrawingObject.
 
-        Gets or sets image_data_link.  # noqa: E501
+        Gets or sets link to image data. Can be null if shape does not have an image.  # noqa: E501
 
         :param image_data_link: The image_data_link of this DrawingObject.  # noqa: E501
         :type: WordsApiLink
         """
         self._image_data_link = image_data_link
+
     @property
     def left(self):
         """Gets the left of this DrawingObject.  # noqa: E501
 
-        Gets or sets distance in points from the origin to the left side of the image.               # noqa: E501
+        Gets or sets distance in points from the origin to the left side of the image.  # noqa: E501
 
         :return: The left of this DrawingObject.  # noqa: E501
         :rtype: float
@@ -211,17 +215,18 @@ class DrawingObject(object):
     def left(self, left):
         """Sets the left of this DrawingObject.
 
-        Gets or sets distance in points from the origin to the left side of the image.               # noqa: E501
+        Gets or sets distance in points from the origin to the left side of the image.  # noqa: E501
 
         :param left: The left of this DrawingObject.  # noqa: E501
         :type: float
         """
         self._left = left
+
     @property
     def ole_data_link(self):
         """Gets the ole_data_link of this DrawingObject.  # noqa: E501
 
-        Gets or sets ole_data_link.  # noqa: E501
+        Gets or sets link to ole object. Can be null if shape does not have ole data.  # noqa: E501
 
         :return: The ole_data_link of this DrawingObject.  # noqa: E501
         :rtype: WordsApiLink
@@ -232,17 +237,18 @@ class DrawingObject(object):
     def ole_data_link(self, ole_data_link):
         """Sets the ole_data_link of this DrawingObject.
 
-        Gets or sets ole_data_link.  # noqa: E501
+        Gets or sets link to ole object. Can be null if shape does not have ole data.  # noqa: E501
 
         :param ole_data_link: The ole_data_link of this DrawingObject.  # noqa: E501
         :type: WordsApiLink
         """
         self._ole_data_link = ole_data_link
+
     @property
     def relative_horizontal_position(self):
         """Gets the relative_horizontal_position of this DrawingObject.  # noqa: E501
 
-        Gets or sets specifies where the distance to the image is measured from.               # noqa: E501
+        Gets or sets specifies where the distance to the image is measured from.  # noqa: E501
 
         :return: The relative_horizontal_position of this DrawingObject.  # noqa: E501
         :rtype: str
@@ -253,13 +259,13 @@ class DrawingObject(object):
     def relative_horizontal_position(self, relative_horizontal_position):
         """Sets the relative_horizontal_position of this DrawingObject.
 
-        Gets or sets specifies where the distance to the image is measured from.               # noqa: E501
+        Gets or sets specifies where the distance to the image is measured from.  # noqa: E501
 
         :param relative_horizontal_position: The relative_horizontal_position of this DrawingObject.  # noqa: E501
         :type: str
         """
         allowed_values = ["Margin", "Page", "Column", "Default", "Character", "LeftMargin", "RightMargin", "InsideMargin", "OutsideMargin"]  # noqa: E501
-        if not relative_horizontal_position.isdigit():	
+        if not relative_horizontal_position.isdigit():
             if relative_horizontal_position not in allowed_values:
                 raise ValueError(
                     "Invalid value for `relative_horizontal_position` ({0}), must be one of {1}"  # noqa: E501
@@ -267,6 +273,7 @@ class DrawingObject(object):
             self._relative_horizontal_position = relative_horizontal_position
         else:
             self._relative_horizontal_position = allowed_values[int(relative_horizontal_position) if six.PY3 else long(relative_horizontal_position)]
+
     @property
     def relative_vertical_position(self):
         """Gets the relative_vertical_position of this DrawingObject.  # noqa: E501
@@ -288,7 +295,7 @@ class DrawingObject(object):
         :type: str
         """
         allowed_values = ["Margin", "TableDefault", "Page", "Paragraph", "TextFrameDefault", "Line", "TopMargin", "BottomMargin", "InsideMargin", "OutsideMargin"]  # noqa: E501
-        if not relative_vertical_position.isdigit():	
+        if not relative_vertical_position.isdigit():
             if relative_vertical_position not in allowed_values:
                 raise ValueError(
                     "Invalid value for `relative_vertical_position` ({0}), must be one of {1}"  # noqa: E501
@@ -296,6 +303,7 @@ class DrawingObject(object):
             self._relative_vertical_position = relative_vertical_position
         else:
             self._relative_vertical_position = allowed_values[int(relative_vertical_position) if six.PY3 else long(relative_vertical_position)]
+
     @property
     def render_links(self):
         """Gets the render_links of this DrawingObject.  # noqa: E501
@@ -317,6 +325,7 @@ class DrawingObject(object):
         :type: list[WordsApiLink]
         """
         self._render_links = render_links
+
     @property
     def top(self):
         """Gets the top of this DrawingObject.  # noqa: E501
@@ -338,6 +347,7 @@ class DrawingObject(object):
         :type: float
         """
         self._top = top
+
     @property
     def width(self):
         """Gets the width of this DrawingObject.  # noqa: E501
@@ -359,6 +369,7 @@ class DrawingObject(object):
         :type: float
         """
         self._width = width
+
     @property
     def wrap_type(self):
         """Gets the wrap_type of this DrawingObject.  # noqa: E501
@@ -380,7 +391,7 @@ class DrawingObject(object):
         :type: str
         """
         allowed_values = ["Inline", "TopBottom", "Square", "None", "Tight", "Through"]  # noqa: E501
-        if not wrap_type.isdigit():	
+        if not wrap_type.isdigit():
             if wrap_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `wrap_type` ({0}), must be one of {1}"  # noqa: E501
@@ -388,6 +399,8 @@ class DrawingObject(object):
             self._wrap_type = wrap_type
         else:
             self._wrap_type = allowed_values[int(wrap_type) if six.PY3 else long(wrap_type)]
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

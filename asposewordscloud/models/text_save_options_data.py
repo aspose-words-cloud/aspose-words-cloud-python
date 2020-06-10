@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="TextSaveOptionsData.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="text_save_options_data.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,16 +41,16 @@ class TextSaveOptionsData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'save_format': 'str',
-        'file_name': 'str',
-        'dml_rendering_mode': 'str',
+        'dml3_d_effects_rendering_mode': 'str',
         'dml_effects_rendering_mode': 'str',
-        'zip_output': 'bool',
+        'dml_rendering_mode': 'str',
+        'file_name': 'str',
+        'save_format': 'str',
+        'update_fields': 'bool',
+        'update_last_printed_property': 'bool',
         'update_last_saved_time_property': 'bool',
         'update_sdt_content': 'bool',
-        'update_fields': 'bool',
-        'dml3_d_effects_rendering_mode': 'str',
-        'update_last_printed_property': 'bool',
+        'zip_output': 'bool',
         'add_bidi_marks': 'bool',
         'encoding': 'str',
         'export_headers_footers_mode': 'str',
@@ -61,16 +61,16 @@ class TextSaveOptionsData(object):
     }
 
     attribute_map = {
-        'save_format': 'SaveFormat',
-        'file_name': 'FileName',
-        'dml_rendering_mode': 'DmlRenderingMode',
+        'dml3_d_effects_rendering_mode': 'Dml3DEffectsRenderingMode',
         'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
-        'zip_output': 'ZipOutput',
+        'dml_rendering_mode': 'DmlRenderingMode',
+        'file_name': 'FileName',
+        'save_format': 'SaveFormat',
+        'update_fields': 'UpdateFields',
+        'update_last_printed_property': 'UpdateLastPrintedProperty',
         'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
         'update_sdt_content': 'UpdateSdtContent',
-        'update_fields': 'UpdateFields',
-        'dml3_d_effects_rendering_mode': 'Dml3DEffectsRenderingMode',
-        'update_last_printed_property': 'UpdateLastPrintedProperty',
+        'zip_output': 'ZipOutput',
         'add_bidi_marks': 'AddBidiMarks',
         'encoding': 'Encoding',
         'export_headers_footers_mode': 'ExportHeadersFootersMode',
@@ -80,19 +80,19 @@ class TextSaveOptionsData(object):
         'simplify_list_labels': 'SimplifyListLabels'
     }
 
-    def __init__(self, save_format=None, file_name=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, zip_output=None, update_last_saved_time_property=None, update_sdt_content=None, update_fields=None, dml3_d_effects_rendering_mode=None, update_last_printed_property=None, add_bidi_marks=None, encoding=None, export_headers_footers_mode=None, force_page_breaks=None, paragraph_break=None, preserve_table_layout=None, simplify_list_labels=None):  # noqa: E501
+    def __init__(self, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, add_bidi_marks=None, encoding=None, export_headers_footers_mode=None, force_page_breaks=None, paragraph_break=None, preserve_table_layout=None, simplify_list_labels=None):  # noqa: E501
         """TextSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
-        self._save_format = None
-        self._file_name = None
-        self._dml_rendering_mode = None
+        self._dml3_d_effects_rendering_mode = None
         self._dml_effects_rendering_mode = None
-        self._zip_output = None
+        self._dml_rendering_mode = None
+        self._file_name = None
+        self._save_format = None
+        self._update_fields = None
+        self._update_last_printed_property = None
         self._update_last_saved_time_property = None
         self._update_sdt_content = None
-        self._update_fields = None
-        self._dml3_d_effects_rendering_mode = None
-        self._update_last_printed_property = None
+        self._zip_output = None
         self._add_bidi_marks = None
         self._encoding = None
         self._export_headers_footers_mode = None
@@ -102,26 +102,26 @@ class TextSaveOptionsData(object):
         self._simplify_list_labels = None
         self.discriminator = None
 
-        if save_format is not None:
-            self.save_format = save_format
-        if file_name is not None:
-            self.file_name = file_name
-        if dml_rendering_mode is not None:
-            self.dml_rendering_mode = dml_rendering_mode
+        if dml3_d_effects_rendering_mode is not None:
+            self.dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
         if dml_effects_rendering_mode is not None:
             self.dml_effects_rendering_mode = dml_effects_rendering_mode
-        if zip_output is not None:
-            self.zip_output = zip_output
+        if dml_rendering_mode is not None:
+            self.dml_rendering_mode = dml_rendering_mode
+        if file_name is not None:
+            self.file_name = file_name
+        if save_format is not None:
+            self.save_format = save_format
+        if update_fields is not None:
+            self.update_fields = update_fields
+        if update_last_printed_property is not None:
+            self.update_last_printed_property = update_last_printed_property
         if update_last_saved_time_property is not None:
             self.update_last_saved_time_property = update_last_saved_time_property
         if update_sdt_content is not None:
             self.update_sdt_content = update_sdt_content
-        if update_fields is not None:
-            self.update_fields = update_fields
-        if dml3_d_effects_rendering_mode is not None:
-            self.dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
-        if update_last_printed_property is not None:
-            self.update_last_printed_property = update_last_printed_property
+        if zip_output is not None:
+            self.zip_output = zip_output
         if add_bidi_marks is not None:
             self.add_bidi_marks = add_bidi_marks
         if encoding is not None:
@@ -136,6 +136,102 @@ class TextSaveOptionsData(object):
             self.preserve_table_layout = preserve_table_layout
         if simplify_list_labels is not None:
             self.simplify_list_labels = simplify_list_labels
+
+    @property
+    def dml3_d_effects_rendering_mode(self):
+        """Gets the dml3_d_effects_rendering_mode of this TextSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
+
+        :return: The dml3_d_effects_rendering_mode of this TextSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._dml3_d_effects_rendering_mode
+
+    @dml3_d_effects_rendering_mode.setter
+    def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
+        """Sets the dml3_d_effects_rendering_mode of this TextSaveOptionsData.
+
+        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
+
+        :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this TextSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["Basic", "Advanced"]  # noqa: E501
+        if not dml3_d_effects_rendering_mode.isdigit():
+            if dml3_d_effects_rendering_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `dml3_d_effects_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(dml3_d_effects_rendering_mode, allowed_values))
+            self._dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
+        else:
+            self._dml3_d_effects_rendering_mode = allowed_values[int(dml3_d_effects_rendering_mode) if six.PY3 else long(dml3_d_effects_rendering_mode)]
+
+    @property
+    def dml_effects_rendering_mode(self):
+        """Gets the dml_effects_rendering_mode of this TextSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+
+        :return: The dml_effects_rendering_mode of this TextSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._dml_effects_rendering_mode
+
+    @dml_effects_rendering_mode.setter
+    def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
+        """Sets the dml_effects_rendering_mode of this TextSaveOptionsData.
+
+        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+
+        :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this TextSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        self._dml_effects_rendering_mode = dml_effects_rendering_mode
+
+    @property
+    def dml_rendering_mode(self):
+        """Gets the dml_rendering_mode of this TextSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
+
+        :return: The dml_rendering_mode of this TextSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._dml_rendering_mode
+
+    @dml_rendering_mode.setter
+    def dml_rendering_mode(self, dml_rendering_mode):
+        """Sets the dml_rendering_mode of this TextSaveOptionsData.
+
+        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
+
+        :param dml_rendering_mode: The dml_rendering_mode of this TextSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        self._dml_rendering_mode = dml_rendering_mode
+
+    @property
+    def file_name(self):
+        """Gets the file_name of this TextSaveOptionsData.  # noqa: E501
+
+        Gets or sets name of destination file.  # noqa: E501
+
+        :return: The file_name of this TextSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._file_name
+
+    @file_name.setter
+    def file_name(self, file_name):
+        """Sets the file_name of this TextSaveOptionsData.
+
+        Gets or sets name of destination file.  # noqa: E501
+
+        :param file_name: The file_name of this TextSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        self._file_name = file_name
 
     @property
     def save_format(self):
@@ -158,137 +254,12 @@ class TextSaveOptionsData(object):
         :type: str
         """
         self._save_format = save_format
-    @property
-    def file_name(self):
-        """Gets the file_name of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets name of destination file.  # noqa: E501
-
-        :return: The file_name of this TextSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._file_name
-
-    @file_name.setter
-    def file_name(self, file_name):
-        """Sets the file_name of this TextSaveOptionsData.
-
-        Gets or sets name of destination file.  # noqa: E501
-
-        :param file_name: The file_name of this TextSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._file_name = file_name
-    @property
-    def dml_rendering_mode(self):
-        """Gets the dml_rendering_mode of this TextSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
-
-        :return: The dml_rendering_mode of this TextSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._dml_rendering_mode
-
-    @dml_rendering_mode.setter
-    def dml_rendering_mode(self, dml_rendering_mode):
-        """Sets the dml_rendering_mode of this TextSaveOptionsData.
-
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
-
-        :param dml_rendering_mode: The dml_rendering_mode of this TextSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._dml_rendering_mode = dml_rendering_mode
-    @property
-    def dml_effects_rendering_mode(self):
-        """Gets the dml_effects_rendering_mode of this TextSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
-
-        :return: The dml_effects_rendering_mode of this TextSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._dml_effects_rendering_mode
-
-    @dml_effects_rendering_mode.setter
-    def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
-        """Sets the dml_effects_rendering_mode of this TextSaveOptionsData.
-
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
-
-        :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this TextSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._dml_effects_rendering_mode = dml_effects_rendering_mode
-    @property
-    def zip_output(self):
-        """Gets the zip_output of this TextSaveOptionsData.  # noqa: E501
-
-        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
-
-        :return: The zip_output of this TextSaveOptionsData.  # noqa: E501
-        :rtype: bool
-        """
-        return self._zip_output
-
-    @zip_output.setter
-    def zip_output(self, zip_output):
-        """Sets the zip_output of this TextSaveOptionsData.
-
-        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
-
-        :param zip_output: The zip_output of this TextSaveOptionsData.  # noqa: E501
-        :type: bool
-        """
-        self._zip_output = zip_output
-    @property
-    def update_last_saved_time_property(self):
-        """Gets the update_last_saved_time_property of this TextSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
-
-        :return: The update_last_saved_time_property of this TextSaveOptionsData.  # noqa: E501
-        :rtype: bool
-        """
-        return self._update_last_saved_time_property
-
-    @update_last_saved_time_property.setter
-    def update_last_saved_time_property(self, update_last_saved_time_property):
-        """Sets the update_last_saved_time_property of this TextSaveOptionsData.
-
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
-
-        :param update_last_saved_time_property: The update_last_saved_time_property of this TextSaveOptionsData.  # noqa: E501
-        :type: bool
-        """
-        self._update_last_saved_time_property = update_last_saved_time_property
-    @property
-    def update_sdt_content(self):
-        """Gets the update_sdt_content of this TextSaveOptionsData.  # noqa: E501
-
-        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
-
-        :return: The update_sdt_content of this TextSaveOptionsData.  # noqa: E501
-        :rtype: bool
-        """
-        return self._update_sdt_content
-
-    @update_sdt_content.setter
-    def update_sdt_content(self, update_sdt_content):
-        """Sets the update_sdt_content of this TextSaveOptionsData.
-
-        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
-
-        :param update_sdt_content: The update_sdt_content of this TextSaveOptionsData.  # noqa: E501
-        :type: bool
-        """
-        self._update_sdt_content = update_sdt_content
     @property
     def update_fields(self):
         """Gets the update_fields of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true  # noqa: E501
+        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.  # noqa: E501
 
         :return: The update_fields of this TextSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -299,41 +270,13 @@ class TextSaveOptionsData(object):
     def update_fields(self, update_fields):
         """Sets the update_fields of this TextSaveOptionsData.
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true  # noqa: E501
+        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.  # noqa: E501
 
         :param update_fields: The update_fields of this TextSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._update_fields = update_fields
-    @property
-    def dml3_d_effects_rendering_mode(self):
-        """Gets the dml3_d_effects_rendering_mode of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
-
-        :return: The dml3_d_effects_rendering_mode of this TextSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._dml3_d_effects_rendering_mode
-
-    @dml3_d_effects_rendering_mode.setter
-    def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
-        """Sets the dml3_d_effects_rendering_mode of this TextSaveOptionsData.
-
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
-
-        :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this TextSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["Basic", "Advanced"]  # noqa: E501
-        if not dml3_d_effects_rendering_mode.isdigit():	
-            if dml3_d_effects_rendering_mode not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `dml3_d_effects_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
-                    .format(dml3_d_effects_rendering_mode, allowed_values))
-            self._dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
-        else:
-            self._dml3_d_effects_rendering_mode = allowed_values[int(dml3_d_effects_rendering_mode) if six.PY3 else long(dml3_d_effects_rendering_mode)]
     @property
     def update_last_printed_property(self):
         """Gets the update_last_printed_property of this TextSaveOptionsData.  # noqa: E501
@@ -355,6 +298,73 @@ class TextSaveOptionsData(object):
         :type: bool
         """
         self._update_last_printed_property = update_last_printed_property
+
+    @property
+    def update_last_saved_time_property(self):
+        """Gets the update_last_saved_time_property of this TextSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+
+        :return: The update_last_saved_time_property of this TextSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._update_last_saved_time_property
+
+    @update_last_saved_time_property.setter
+    def update_last_saved_time_property(self, update_last_saved_time_property):
+        """Sets the update_last_saved_time_property of this TextSaveOptionsData.
+
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+
+        :param update_last_saved_time_property: The update_last_saved_time_property of this TextSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._update_last_saved_time_property = update_last_saved_time_property
+
+    @property
+    def update_sdt_content(self):
+        """Gets the update_sdt_content of this TextSaveOptionsData.  # noqa: E501
+
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+
+        :return: The update_sdt_content of this TextSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._update_sdt_content
+
+    @update_sdt_content.setter
+    def update_sdt_content(self, update_sdt_content):
+        """Sets the update_sdt_content of this TextSaveOptionsData.
+
+        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+
+        :param update_sdt_content: The update_sdt_content of this TextSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._update_sdt_content = update_sdt_content
+
+    @property
+    def zip_output(self):
+        """Gets the zip_output of this TextSaveOptionsData.  # noqa: E501
+
+        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+
+        :return: The zip_output of this TextSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._zip_output
+
+    @zip_output.setter
+    def zip_output(self, zip_output):
+        """Sets the zip_output of this TextSaveOptionsData.
+
+        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+
+        :param zip_output: The zip_output of this TextSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._zip_output = zip_output
+
     @property
     def add_bidi_marks(self):
         """Gets the add_bidi_marks of this TextSaveOptionsData.  # noqa: E501
@@ -376,6 +386,7 @@ class TextSaveOptionsData(object):
         :type: bool
         """
         self._add_bidi_marks = add_bidi_marks
+
     @property
     def encoding(self):
         """Gets the encoding of this TextSaveOptionsData.  # noqa: E501
@@ -397,6 +408,7 @@ class TextSaveOptionsData(object):
         :type: str
         """
         self._encoding = encoding
+
     @property
     def export_headers_footers_mode(self):
         """Gets the export_headers_footers_mode of this TextSaveOptionsData.  # noqa: E501
@@ -418,7 +430,7 @@ class TextSaveOptionsData(object):
         :type: str
         """
         allowed_values = ["None", "PrimaryOnly", "AllAtEnd"]  # noqa: E501
-        if not export_headers_footers_mode.isdigit():	
+        if not export_headers_footers_mode.isdigit():
             if export_headers_footers_mode not in allowed_values:
                 raise ValueError(
                     "Invalid value for `export_headers_footers_mode` ({0}), must be one of {1}"  # noqa: E501
@@ -426,6 +438,7 @@ class TextSaveOptionsData(object):
             self._export_headers_footers_mode = export_headers_footers_mode
         else:
             self._export_headers_footers_mode = allowed_values[int(export_headers_footers_mode) if six.PY3 else long(export_headers_footers_mode)]
+
     @property
     def force_page_breaks(self):
         """Gets the force_page_breaks of this TextSaveOptionsData.  # noqa: E501
@@ -447,6 +460,7 @@ class TextSaveOptionsData(object):
         :type: bool
         """
         self._force_page_breaks = force_page_breaks
+
     @property
     def paragraph_break(self):
         """Gets the paragraph_break of this TextSaveOptionsData.  # noqa: E501
@@ -468,6 +482,7 @@ class TextSaveOptionsData(object):
         :type: str
         """
         self._paragraph_break = paragraph_break
+
     @property
     def preserve_table_layout(self):
         """Gets the preserve_table_layout of this TextSaveOptionsData.  # noqa: E501
@@ -489,6 +504,7 @@ class TextSaveOptionsData(object):
         :type: bool
         """
         self._preserve_table_layout = preserve_table_layout
+
     @property
     def simplify_list_labels(self):
         """Gets the simplify_list_labels of this TextSaveOptionsData.  # noqa: E501
@@ -510,6 +526,8 @@ class TextSaveOptionsData(object):
         :type: bool
         """
         self._simplify_list_labels = simplify_list_labels
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

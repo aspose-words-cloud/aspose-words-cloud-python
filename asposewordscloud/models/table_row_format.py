@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="TableRowFormat.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="table_row_format.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -49,7 +49,7 @@ class TableRowFormat(object):
     }
 
     attribute_map = {
-        'link': 'link',
+        'link': 'Link',
         'allow_break_across_pages': 'AllowBreakAcrossPages',
         'heading_format': 'HeadingFormat',
         'height': 'Height',
@@ -81,7 +81,7 @@ class TableRowFormat(object):
     def link(self):
         """Gets the link of this TableRowFormat.  # noqa: E501
 
-        Gets or sets link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this TableRowFormat.  # noqa: E501
         :rtype: WordsApiLink
@@ -92,12 +92,13 @@ class TableRowFormat(object):
     def link(self, link):
         """Sets the link of this TableRowFormat.
 
-        Gets or sets link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this TableRowFormat.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
+
     @property
     def allow_break_across_pages(self):
         """Gets the allow_break_across_pages of this TableRowFormat.  # noqa: E501
@@ -119,6 +120,7 @@ class TableRowFormat(object):
         :type: bool
         """
         self._allow_break_across_pages = allow_break_across_pages
+
     @property
     def heading_format(self):
         """Gets the heading_format of this TableRowFormat.  # noqa: E501
@@ -140,6 +142,7 @@ class TableRowFormat(object):
         :type: bool
         """
         self._heading_format = heading_format
+
     @property
     def height(self):
         """Gets the height of this TableRowFormat.  # noqa: E501
@@ -161,6 +164,7 @@ class TableRowFormat(object):
         :type: float
         """
         self._height = height
+
     @property
     def height_rule(self):
         """Gets the height_rule of this TableRowFormat.  # noqa: E501
@@ -182,7 +186,7 @@ class TableRowFormat(object):
         :type: str
         """
         allowed_values = ["AtLeast", "Exactly", "Auto"]  # noqa: E501
-        if not height_rule.isdigit():	
+        if not height_rule.isdigit():
             if height_rule not in allowed_values:
                 raise ValueError(
                     "Invalid value for `height_rule` ({0}), must be one of {1}"  # noqa: E501
@@ -190,6 +194,8 @@ class TableRowFormat(object):
             self._height_rule = height_rule
         else:
             self._height_rule = allowed_values[int(height_rule) if six.PY3 else long(height_rule)]
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="FontInfo.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="font_info.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,36 +41,58 @@ class FontInfo(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'file_path': 'str',
         'font_family_name': 'str',
         'full_font_name': 'str',
-        'version': 'str',
-        'file_path': 'str'
+        'version': 'str'
     }
 
     attribute_map = {
+        'file_path': 'FilePath',
         'font_family_name': 'FontFamilyName',
         'full_font_name': 'FullFontName',
-        'version': 'Version',
-        'file_path': 'FilePath'
+        'version': 'Version'
     }
 
-    def __init__(self, font_family_name=None, full_font_name=None, version=None, file_path=None):  # noqa: E501
+    def __init__(self, file_path=None, font_family_name=None, full_font_name=None, version=None):  # noqa: E501
         """FontInfo - a model defined in Swagger"""  # noqa: E501
 
+        self._file_path = None
         self._font_family_name = None
         self._full_font_name = None
         self._version = None
-        self._file_path = None
         self.discriminator = None
 
+        if file_path is not None:
+            self.file_path = file_path
         if font_family_name is not None:
             self.font_family_name = font_family_name
         if full_font_name is not None:
             self.full_font_name = full_font_name
         if version is not None:
             self.version = version
-        if file_path is not None:
-            self.file_path = file_path
+
+    @property
+    def file_path(self):
+        """Gets the file_path of this FontInfo.  # noqa: E501
+
+        Gets or sets path to the font file if any.  # noqa: E501
+
+        :return: The file_path of this FontInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._file_path
+
+    @file_path.setter
+    def file_path(self, file_path):
+        """Sets the file_path of this FontInfo.
+
+        Gets or sets path to the font file if any.  # noqa: E501
+
+        :param file_path: The file_path of this FontInfo.  # noqa: E501
+        :type: str
+        """
+        self._file_path = file_path
 
     @property
     def font_family_name(self):
@@ -93,6 +115,7 @@ class FontInfo(object):
         :type: str
         """
         self._font_family_name = font_family_name
+
     @property
     def full_font_name(self):
         """Gets the full_font_name of this FontInfo.  # noqa: E501
@@ -114,6 +137,7 @@ class FontInfo(object):
         :type: str
         """
         self._full_font_name = full_font_name
+
     @property
     def version(self):
         """Gets the version of this FontInfo.  # noqa: E501
@@ -135,27 +159,8 @@ class FontInfo(object):
         :type: str
         """
         self._version = version
-    @property
-    def file_path(self):
-        """Gets the file_path of this FontInfo.  # noqa: E501
 
-        Gets or sets path to the font file if any.  # noqa: E501
 
-        :return: The file_path of this FontInfo.  # noqa: E501
-        :rtype: str
-        """
-        return self._file_path
-
-    @file_path.setter
-    def file_path(self, file_path):
-        """Sets the file_path of this FontInfo.
-
-        Gets or sets path to the font file if any.  # noqa: E501
-
-        :param file_path: The file_path of this FontInfo.  # noqa: E501
-        :type: str
-        """
-        self._file_path = file_path
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

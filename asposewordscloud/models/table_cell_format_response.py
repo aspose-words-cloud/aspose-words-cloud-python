@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="TableCellFormatResponse.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="table_cell_format_response.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,11 +83,12 @@ class TableCellFormatResponse(object):
         :type: str
         """
         self._request_id = request_id
+
     @property
     def cell_format(self):
         """Gets the cell_format of this TableCellFormatResponse.  # noqa: E501
 
-        Gets or sets cell_format.  # noqa: E501
+        Gets or sets table.  # noqa: E501
 
         :return: The cell_format of this TableCellFormatResponse.  # noqa: E501
         :rtype: TableCellFormat
@@ -98,12 +99,14 @@ class TableCellFormatResponse(object):
     def cell_format(self, cell_format):
         """Sets the cell_format of this TableCellFormatResponse.
 
-        Gets or sets cell_format.  # noqa: E501
+        Gets or sets table.  # noqa: E501
 
         :param cell_format: The cell_format of this TableCellFormatResponse.  # noqa: E501
         :type: TableCellFormat
         """
         self._cell_format = cell_format
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

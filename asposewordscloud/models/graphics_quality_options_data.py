@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="GraphicsQualityOptionsData.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="graphics_quality_options_data.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -103,7 +103,7 @@ class GraphicsQualityOptionsData(object):
         :type: str
         """
         allowed_values = ["SourceOver", "SourceCopy"]  # noqa: E501
-        if not compositing_mode.isdigit():	
+        if not compositing_mode.isdigit():
             if compositing_mode not in allowed_values:
                 raise ValueError(
                     "Invalid value for `compositing_mode` ({0}), must be one of {1}"  # noqa: E501
@@ -111,6 +111,7 @@ class GraphicsQualityOptionsData(object):
             self._compositing_mode = compositing_mode
         else:
             self._compositing_mode = allowed_values[int(compositing_mode) if six.PY3 else long(compositing_mode)]
+
     @property
     def compositing_quality(self):
         """Gets the compositing_quality of this GraphicsQualityOptionsData.  # noqa: E501
@@ -132,7 +133,7 @@ class GraphicsQualityOptionsData(object):
         :type: str
         """
         allowed_values = ["Default", "HighSpeed", "HighQuality", "GammaCorrected", "AssumeLinear", "Invalid"]  # noqa: E501
-        if not compositing_quality.isdigit():	
+        if not compositing_quality.isdigit():
             if compositing_quality not in allowed_values:
                 raise ValueError(
                     "Invalid value for `compositing_quality` ({0}), must be one of {1}"  # noqa: E501
@@ -140,6 +141,7 @@ class GraphicsQualityOptionsData(object):
             self._compositing_quality = compositing_quality
         else:
             self._compositing_quality = allowed_values[int(compositing_quality) if six.PY3 else long(compositing_quality)]
+
     @property
     def interpolation_mode(self):
         """Gets the interpolation_mode of this GraphicsQualityOptionsData.  # noqa: E501
@@ -161,7 +163,7 @@ class GraphicsQualityOptionsData(object):
         :type: str
         """
         allowed_values = ["Default", "Low", "High", "Bilinear", "Bicubic", "NearestNeighbor", "HighQualityBilinear", "HighQualityBicubic", "Invalid"]  # noqa: E501
-        if not interpolation_mode.isdigit():	
+        if not interpolation_mode.isdigit():
             if interpolation_mode not in allowed_values:
                 raise ValueError(
                     "Invalid value for `interpolation_mode` ({0}), must be one of {1}"  # noqa: E501
@@ -169,6 +171,7 @@ class GraphicsQualityOptionsData(object):
             self._interpolation_mode = interpolation_mode
         else:
             self._interpolation_mode = allowed_values[int(interpolation_mode) if six.PY3 else long(interpolation_mode)]
+
     @property
     def smoothing_mode(self):
         """Gets the smoothing_mode of this GraphicsQualityOptionsData.  # noqa: E501
@@ -190,7 +193,7 @@ class GraphicsQualityOptionsData(object):
         :type: str
         """
         allowed_values = ["Default", "HighSpeed", "HighQuality", "None", "AntiAlias", "Invalid"]  # noqa: E501
-        if not smoothing_mode.isdigit():	
+        if not smoothing_mode.isdigit():
             if smoothing_mode not in allowed_values:
                 raise ValueError(
                     "Invalid value for `smoothing_mode` ({0}), must be one of {1}"  # noqa: E501
@@ -198,11 +201,12 @@ class GraphicsQualityOptionsData(object):
             self._smoothing_mode = smoothing_mode
         else:
             self._smoothing_mode = allowed_values[int(smoothing_mode) if six.PY3 else long(smoothing_mode)]
+
     @property
     def string_format(self):
         """Gets the string_format of this GraphicsQualityOptionsData.  # noqa: E501
 
-        Gets or sets string_format.  # noqa: E501
+        Gets or sets text layout information (such as alignment, orientation and tab stops) display manipulations (such as ellipsis insertion and national digit substitution) and OpenType features.  # noqa: E501
 
         :return: The string_format of this GraphicsQualityOptionsData.  # noqa: E501
         :rtype: StringFormatData
@@ -213,12 +217,13 @@ class GraphicsQualityOptionsData(object):
     def string_format(self, string_format):
         """Sets the string_format of this GraphicsQualityOptionsData.
 
-        Gets or sets string_format.  # noqa: E501
+        Gets or sets text layout information (such as alignment, orientation and tab stops) display manipulations (such as ellipsis insertion and national digit substitution) and OpenType features.  # noqa: E501
 
         :param string_format: The string_format of this GraphicsQualityOptionsData.  # noqa: E501
         :type: StringFormatData
         """
         self._string_format = string_format
+
     @property
     def text_rendering_hint(self):
         """Gets the text_rendering_hint of this GraphicsQualityOptionsData.  # noqa: E501
@@ -240,7 +245,7 @@ class GraphicsQualityOptionsData(object):
         :type: str
         """
         allowed_values = ["SystemDefault", "SingleBitPerPixelGridFit", "SingleBitPerPixel", "AntiAliasGridFit", "AntiAlias", "ClearTypeGridFit"]  # noqa: E501
-        if not text_rendering_hint.isdigit():	
+        if not text_rendering_hint.isdigit():
             if text_rendering_hint not in allowed_values:
                 raise ValueError(
                     "Invalid value for `text_rendering_hint` ({0}), must be one of {1}"  # noqa: E501
@@ -248,6 +253,8 @@ class GraphicsQualityOptionsData(object):
             self._text_rendering_hint = text_rendering_hint
         else:
             self._text_rendering_hint = allowed_values[int(text_rendering_hint) if six.PY3 else long(text_rendering_hint)]
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

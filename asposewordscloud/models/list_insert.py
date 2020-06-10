@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="ListInsert.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="list_insert.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -78,7 +78,7 @@ class ListInsert(object):
         :type: str
         """
         allowed_values = ["BulletDefault", "BulletDisk", "BulletCircle", "BulletSquare", "BulletDiamonds", "BulletArrowHead", "BulletTick", "NumberDefault", "NumberArabicDot", "NumberArabicParenthesis", "NumberUppercaseRomanDot", "NumberUppercaseLetterDot", "NumberLowercaseLetterParenthesis", "NumberLowercaseLetterDot", "NumberLowercaseRomanDot", "OutlineNumbers", "OutlineLegal", "OutlineBullets", "OutlineHeadingsArticleSection", "OutlineHeadingsLegal", "OutlineHeadingsNumbers", "OutlineHeadingsChapter"]  # noqa: E501
-        if not template.isdigit():	
+        if not template.isdigit():
             if template not in allowed_values:
                 raise ValueError(
                     "Invalid value for `template` ({0}), must be one of {1}"  # noqa: E501
@@ -86,6 +86,8 @@ class ListInsert(object):
             self._template = template
         else:
             self._template = allowed_values[int(template) if six.PY3 else long(template)]
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="OfficeMathObject.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="office_math_object.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -50,7 +50,7 @@ class OfficeMathObject(object):
     }
 
     attribute_map = {
-        'link': 'link',
+        'link': 'Link',
         'node_id': 'NodeId',
         'content': 'Content',
         'display_type': 'DisplayType',
@@ -86,7 +86,7 @@ class OfficeMathObject(object):
     def link(self):
         """Gets the link of this OfficeMathObject.  # noqa: E501
 
-        Gets or sets link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this OfficeMathObject.  # noqa: E501
         :rtype: WordsApiLink
@@ -97,12 +97,13 @@ class OfficeMathObject(object):
     def link(self, link):
         """Sets the link of this OfficeMathObject.
 
-        Gets or sets link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this OfficeMathObject.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
+
     @property
     def node_id(self):
         """Gets the node_id of this OfficeMathObject.  # noqa: E501
@@ -124,11 +125,12 @@ class OfficeMathObject(object):
         :type: str
         """
         self._node_id = node_id
+
     @property
     def content(self):
         """Gets the content of this OfficeMathObject.  # noqa: E501
 
-        Gets or sets content.  # noqa: E501
+        Gets or sets content of footnote.  # noqa: E501
 
         :return: The content of this OfficeMathObject.  # noqa: E501
         :rtype: StoryChildNodes
@@ -139,12 +141,13 @@ class OfficeMathObject(object):
     def content(self, content):
         """Sets the content of this OfficeMathObject.
 
-        Gets or sets content.  # noqa: E501
+        Gets or sets content of footnote.  # noqa: E501
 
         :param content: The content of this OfficeMathObject.  # noqa: E501
         :type: StoryChildNodes
         """
         self._content = content
+
     @property
     def display_type(self):
         """Gets the display_type of this OfficeMathObject.  # noqa: E501
@@ -166,7 +169,7 @@ class OfficeMathObject(object):
         :type: str
         """
         allowed_values = ["Display", "Inline"]  # noqa: E501
-        if not display_type.isdigit():	
+        if not display_type.isdigit():
             if display_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `display_type` ({0}), must be one of {1}"  # noqa: E501
@@ -174,6 +177,7 @@ class OfficeMathObject(object):
             self._display_type = display_type
         else:
             self._display_type = allowed_values[int(display_type) if six.PY3 else long(display_type)]
+
     @property
     def justification(self):
         """Gets the justification of this OfficeMathObject.  # noqa: E501
@@ -195,7 +199,7 @@ class OfficeMathObject(object):
         :type: str
         """
         allowed_values = ["CenterGroup", "Default", "Center", "Left", "Right", "Inline"]  # noqa: E501
-        if not justification.isdigit():	
+        if not justification.isdigit():
             if justification not in allowed_values:
                 raise ValueError(
                     "Invalid value for `justification` ({0}), must be one of {1}"  # noqa: E501
@@ -203,6 +207,7 @@ class OfficeMathObject(object):
             self._justification = justification
         else:
             self._justification = allowed_values[int(justification) if six.PY3 else long(justification)]
+
     @property
     def math_object_type(self):
         """Gets the math_object_type of this OfficeMathObject.  # noqa: E501
@@ -224,7 +229,7 @@ class OfficeMathObject(object):
         :type: str
         """
         allowed_values = ["OMath", "OMathPara", "Accent", "Bar", "BorderBox", "Box", "Delimiter", "Degree", "Argument", "Array", "Fraction", "Denominator", "Numerator", "Function", "FunctionName", "GroupCharacter", "Limit", "LowerLimit", "UpperLimit", "Matrix", "MatrixRow", "NAry", "Phantom", "Radical", "SubscriptPart", "SuperscriptPart", "PreSubSuperscript", "Subscript", "SubSuperscript", "Supercript"]  # noqa: E501
-        if not math_object_type.isdigit():	
+        if not math_object_type.isdigit():
             if math_object_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `math_object_type` ({0}), must be one of {1}"  # noqa: E501
@@ -232,6 +237,8 @@ class OfficeMathObject(object):
             self._math_object_type = math_object_type
         else:
             self._math_object_type = allowed_values[int(math_object_type) if six.PY3 else long(math_object_type)]
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
