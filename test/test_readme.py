@@ -26,19 +26,20 @@
 #
 
 import os
-import asposewordscloud.models.requests
 import re
+
+import asposewordscloud.models.requests
 from test.base_test_context import BaseTestContext
-from pathlib import Path
+
 
 class TestReadme(BaseTestContext):
 
     def test_readme_code(self):
         creds = self.read_config()
 
-        apiKey = creds["AppKey"]
-        apiSid = creds["AppSid"]
-        baseUrl = creds["BaseUrl"]
+        api_key = creds["AppKey"]
+        api_sid = creds["AppSid"]
+        base_url = creds["BaseUrl"]
 
         local_folder = self.local_common_folder
         filename = "test_multi_pages.docx"
@@ -48,9 +49,11 @@ class TestReadme(BaseTestContext):
 
         # Start README example
 
-        words_api = asposewordscloud.WordsApi(apiSid, apiKey, baseUrl)
+        words_api = asposewordscloud.WordsApi(api_sid, api_key)
+        self.words_api.api_client.configuration.host = base_url
 
-        upload_request = asposewordscloud.models.requests.UploadFileRequest(open(os.path.join(local_folder, filename), 'rb'), os.path.join(remote_folder, remote_name))
+        upload_request = asposewordscloud.models.requests.UploadFileRequest(
+            open(os.path.join(local_folder, filename), 'rb'), os.path.join(remote_folder, remote_name))
         self.words_api.upload_file(upload_request)
 
         request = asposewordscloud.models.requests.DeleteWatermarkRequest(remote_name, remote_folder)
@@ -62,52 +65,52 @@ class TestReadme(BaseTestContext):
 
     def write_to_readme(self):
         # set regex patterns
-        startPatern = r"^\s*# Start README example\s*$"
-        endPattern = r"^\s*# End README example\s*$"
+        start_pattern = r"^\s*# Start README example\s*$"
+        end_pattern = r"^\s*# End README example\s*$"
 
         # set paths
-        sourcePath = __file__
-        readmePath =  os.path.dirname(__file__) + "/../README.md"
+        source_path = __file__
+        readme_path = os.path.dirname(__file__) + "/../README.md"
 
         # read code from the file
-        with open(sourcePath) as f:
-            codeLines = f.readlines()
+        with open(source_path) as f:
+            code_lines = f.readlines()
 
         # extract readme code
-        readmeCode = list()
-        skipMode = True
-        for line in codeLines:
-            if skipMode:
-        	    skipMode = (re.match(startPatern, line) is None)
+        readme_code = list()
+        skip_mode = True
+        for line in code_lines:
+            if skip_mode:
+                skip_mode = (re.match(start_pattern, line) is None)
 
-            if  not skipMode:
-                readmeCode.append(line)
-                skipMode = not (re.match(endPattern, line) is None)
+            if not skip_mode:
+                readme_code.append(line)
+                skip_mode = not (re.match(end_pattern, line) is None)
 
-        self.assertGreater(len(readmeCode), 2)
+        self.assertGreater(len(readme_code), 2)
 
         # read readme file
-        with open(readmePath) as f:
-            readmeLines = f.readlines()
+        with open(readme_path) as f:
+            readme_lines = f.readlines()
 
         # replace code
-        newReadmeLines = list()
-        codeMode = False
-        for line in readmeLines:
-            if not codeMode:
-    	        codeMode = not (re.match(startPatern, line) is None)
+        new_readme_lines = list()
+        code_mode = False
+        for line in readme_lines:
+            if not code_mode:
+                code_mode = not (re.match(start_pattern, line) is None)
 
-    	        if codeMode:
-    	            newReadmeLines.extend(readmeCode)
+                if code_mode:
+                    new_readme_lines.extend(readme_code)
 
-            if codeMode:
-                codeMode = re.match(endPattern, line) is None
+            if code_mode:
+                code_mode = re.match(end_pattern, line) is None
                 continue
 
-            if not codeMode:
-                newReadmeLines.append(line)
+            if not code_mode:
+                new_readme_lines.append(line)
 
         # write to readm
-        with open(readmePath, 'w') as f:
-            for line in newReadmeLines:
+        with open(readme_path, 'w') as f:
+            for line in new_readme_lines:
                 f.write(line)
