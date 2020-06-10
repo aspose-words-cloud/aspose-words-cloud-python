@@ -39,9 +39,10 @@ class WordsApi(object):
     """
     Aspose.Words for Cloud API
 
-    :param api_client: an api client to perfom http requests
+    :param app_sid: app sid of client.
+    :param app_key: app key of client.
     """
-    def __init__(self, app_sid, app_key, base_url):
+    def __init__(self, app_sid, app_key):
         if len(app_sid) == 0:
             raise ValueError("app_sid could not be an empty string.")
         
@@ -49,10 +50,8 @@ class WordsApi(object):
             raise ValueError("app_sid could not be an empty string.")
         
         self.api_client = ApiClient()
-        self.api_client.configuration.host = base_url
         self.api_client.configuration.api_key['api_key'] = app_key
         self.api_client.configuration.api_key['app_sid'] = app_sid
-        self.__request_token()
 
     def accept_all_revisions(self, request, **kwargs):  # noqa: E501
         """Accepts all revisions in document.  # noqa: E501
@@ -79,7 +78,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.accept_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.accept_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
@@ -207,7 +206,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.append_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.append_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -351,7 +350,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.apply_style_to_document_element_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.apply_style_to_document_element_with_http_info(request, **kwargs)  # noqa: E501
@@ -498,7 +497,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.build_report_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.build_report_with_http_info(request, **kwargs)  # noqa: E501
@@ -631,7 +630,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.build_report_online_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.build_report_online_with_http_info(request, **kwargs)  # noqa: E501
@@ -742,7 +741,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.classify_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.classify_with_http_info(request, **kwargs)  # noqa: E501
@@ -848,7 +847,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.classify_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.classify_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -979,7 +978,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.compare_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.compare_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -1109,7 +1108,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.convert_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.convert_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -1236,7 +1235,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.copy_file_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.copy_file_with_http_info(request, **kwargs)  # noqa: E501
@@ -1357,7 +1356,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.copy_folder_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.copy_folder_with_http_info(request, **kwargs)  # noqa: E501
@@ -1478,7 +1477,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.copy_style_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.copy_style_with_http_info(request, **kwargs)  # noqa: E501
@@ -1615,7 +1614,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.create_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.create_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -1721,7 +1720,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.create_folder_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.create_folder_with_http_info(request, **kwargs)  # noqa: E501
@@ -1830,7 +1829,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.create_or_update_document_property_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.create_or_update_document_property_with_http_info(request, **kwargs)  # noqa: E501
@@ -1977,7 +1976,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_all_paragraph_tab_stops_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_all_paragraph_tab_stops_with_http_info(request, **kwargs)  # noqa: E501
@@ -2113,7 +2112,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_all_paragraph_tab_stops_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_all_paragraph_tab_stops_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -2247,7 +2246,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_border_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_border_with_http_info(request, **kwargs)  # noqa: E501
@@ -2395,7 +2394,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_borders_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_borders_with_http_info(request, **kwargs)  # noqa: E501
@@ -2538,7 +2537,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_comment_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_comment_with_http_info(request, **kwargs)  # noqa: E501
@@ -2681,7 +2680,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_document_property_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_document_property_with_http_info(request, **kwargs)  # noqa: E501
@@ -2825,7 +2824,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
@@ -2973,7 +2972,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -3117,7 +3116,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_field_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_field_with_http_info(request, **kwargs)  # noqa: E501
@@ -3265,7 +3264,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_fields_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_fields_with_http_info(request, **kwargs)  # noqa: E501
@@ -3407,7 +3406,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_fields_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_fields_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -3545,7 +3544,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -3682,7 +3681,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_file_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_file_with_http_info(request, **kwargs)  # noqa: E501
@@ -3789,7 +3788,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_folder_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_folder_with_http_info(request, **kwargs)  # noqa: E501
@@ -3903,7 +3902,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_footnote_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_footnote_with_http_info(request, **kwargs)  # noqa: E501
@@ -4051,7 +4050,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -4195,7 +4194,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_form_field_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_form_field_with_http_info(request, **kwargs)  # noqa: E501
@@ -4343,7 +4342,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -4487,7 +4486,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_header_footer_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_header_footer_with_http_info(request, **kwargs)  # noqa: E501
@@ -4636,7 +4635,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_headers_footers_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_headers_footers_with_http_info(request, **kwargs)  # noqa: E501
@@ -4783,7 +4782,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_macros_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_macros_with_http_info(request, **kwargs)  # noqa: E501
@@ -4922,7 +4921,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
@@ -5070,7 +5069,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_office_math_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_office_math_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -5214,7 +5213,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_paragraph_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_paragraph_with_http_info(request, **kwargs)  # noqa: E501
@@ -5363,7 +5362,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
@@ -5511,7 +5510,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_paragraph_list_format_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_paragraph_list_format_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -5654,7 +5653,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_paragraph_tab_stop_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_paragraph_tab_stop_with_http_info(request, **kwargs)  # noqa: E501
@@ -5799,7 +5798,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_paragraph_tab_stop_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_paragraph_tab_stop_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -5940,7 +5939,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_paragraph_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_paragraph_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -6084,7 +6083,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_run_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_run_with_http_info(request, **kwargs)  # noqa: E501
@@ -6232,7 +6231,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_section_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_section_with_http_info(request, **kwargs)  # noqa: E501
@@ -6376,7 +6375,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_table_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_table_with_http_info(request, **kwargs)  # noqa: E501
@@ -6525,7 +6524,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_table_cell_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_table_cell_with_http_info(request, **kwargs)  # noqa: E501
@@ -6674,7 +6673,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_table_row_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_table_row_with_http_info(request, **kwargs)  # noqa: E501
@@ -6822,7 +6821,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -6964,7 +6963,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.delete_watermark_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_watermark_with_http_info(request, **kwargs)  # noqa: E501
@@ -7096,7 +7095,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.download_file_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.download_file_with_http_info(request, **kwargs)  # noqa: E501
@@ -7211,7 +7210,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.execute_mail_merge_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.execute_mail_merge_with_http_info(request, **kwargs)  # noqa: E501
@@ -7357,7 +7356,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.execute_mail_merge_online_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.execute_mail_merge_online_with_http_info(request, **kwargs)  # noqa: E501
@@ -7472,7 +7471,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_available_fonts_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_available_fonts_with_http_info(request, **kwargs)  # noqa: E501
@@ -7572,7 +7571,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_bookmark_by_name_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_bookmark_by_name_with_http_info(request, **kwargs)  # noqa: E501
@@ -7696,7 +7695,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_bookmarks_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_bookmarks_with_http_info(request, **kwargs)  # noqa: E501
@@ -7817,7 +7816,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_border_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_border_with_http_info(request, **kwargs)  # noqa: E501
@@ -7947,7 +7946,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_borders_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_borders_with_http_info(request, **kwargs)  # noqa: E501
@@ -8072,7 +8071,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_comment_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_comment_with_http_info(request, **kwargs)  # noqa: E501
@@ -8196,7 +8195,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_comments_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_comments_with_http_info(request, **kwargs)  # noqa: E501
@@ -8315,7 +8314,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -8436,7 +8435,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_drawing_object_by_index_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_drawing_object_by_index_with_http_info(request, **kwargs)  # noqa: E501
@@ -8566,7 +8565,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_drawing_object_by_index_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_drawing_object_by_index_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -8692,7 +8691,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_drawing_object_image_data_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_drawing_object_image_data_with_http_info(request, **kwargs)  # noqa: E501
@@ -8822,7 +8821,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_drawing_object_image_data_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_drawing_object_image_data_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -8948,7 +8947,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_drawing_object_ole_data_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_drawing_object_ole_data_with_http_info(request, **kwargs)  # noqa: E501
@@ -9078,7 +9077,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_drawing_object_ole_data_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_drawing_object_ole_data_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -9203,7 +9202,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_drawing_objects_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_drawing_objects_with_http_info(request, **kwargs)  # noqa: E501
@@ -9327,7 +9326,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_drawing_objects_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_drawing_objects_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -9447,7 +9446,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_field_names_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_field_names_with_http_info(request, **kwargs)  # noqa: E501
@@ -9568,7 +9567,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_field_names_online_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_field_names_online_with_http_info(request, **kwargs)  # noqa: E501
@@ -9673,7 +9672,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_hyperlink_by_index_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_hyperlink_by_index_with_http_info(request, **kwargs)  # noqa: E501
@@ -9797,7 +9796,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_hyperlinks_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_hyperlinks_with_http_info(request, **kwargs)  # noqa: E501
@@ -9916,7 +9915,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_properties_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_properties_with_http_info(request, **kwargs)  # noqa: E501
@@ -10036,7 +10035,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_property_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_property_with_http_info(request, **kwargs)  # noqa: E501
@@ -10160,7 +10159,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_protection_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_protection_with_http_info(request, **kwargs)  # noqa: E501
@@ -10282,7 +10281,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_statistics_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_statistics_with_http_info(request, **kwargs)  # noqa: E501
@@ -10419,7 +10418,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_with_format_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_with_format_with_http_info(request, **kwargs)  # noqa: E501
@@ -10558,7 +10557,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_field_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_field_with_http_info(request, **kwargs)  # noqa: E501
@@ -10688,7 +10687,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_fields_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_fields_with_http_info(request, **kwargs)  # noqa: E501
@@ -10812,7 +10811,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_fields_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_fields_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -10932,7 +10931,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -11053,7 +11052,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_files_list_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_files_list_with_http_info(request, **kwargs)  # noqa: E501
@@ -11159,7 +11158,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_footnote_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_footnote_with_http_info(request, **kwargs)  # noqa: E501
@@ -11289,7 +11288,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_footnotes_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_footnotes_with_http_info(request, **kwargs)  # noqa: E501
@@ -11413,7 +11412,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_footnotes_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_footnotes_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -11533,7 +11532,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -11659,7 +11658,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_form_field_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_form_field_with_http_info(request, **kwargs)  # noqa: E501
@@ -11789,7 +11788,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_form_fields_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_form_fields_with_http_info(request, **kwargs)  # noqa: E501
@@ -11913,7 +11912,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_form_fields_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_form_fields_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -12033,7 +12032,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -12159,7 +12158,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_header_footer_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_header_footer_with_http_info(request, **kwargs)  # noqa: E501
@@ -12291,7 +12290,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_header_footer_of_section_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_header_footer_of_section_with_http_info(request, **kwargs)  # noqa: E501
@@ -12427,7 +12426,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_header_footers_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_header_footers_with_http_info(request, **kwargs)  # noqa: E501
@@ -12557,7 +12556,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_list_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_list_with_http_info(request, **kwargs)  # noqa: E501
@@ -12681,7 +12680,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_lists_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_lists_with_http_info(request, **kwargs)  # noqa: E501
@@ -12802,7 +12801,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
@@ -12932,7 +12931,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_office_math_objects_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_office_math_objects_with_http_info(request, **kwargs)  # noqa: E501
@@ -13056,7 +13055,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_office_math_objects_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_office_math_objects_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -13176,7 +13175,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_office_math_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_office_math_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -13302,7 +13301,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_paragraph_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_paragraph_with_http_info(request, **kwargs)  # noqa: E501
@@ -13433,7 +13432,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
@@ -13563,7 +13562,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_paragraph_format_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_paragraph_format_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -13689,7 +13688,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
@@ -13819,7 +13818,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_paragraph_list_format_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_paragraph_list_format_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -13944,7 +13943,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_paragraphs_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_paragraphs_with_http_info(request, **kwargs)  # noqa: E501
@@ -14068,7 +14067,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_paragraphs_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_paragraphs_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -14189,7 +14188,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_paragraph_tab_stops_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_paragraph_tab_stops_with_http_info(request, **kwargs)  # noqa: E501
@@ -14319,7 +14318,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_paragraph_tab_stops_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_paragraph_tab_stops_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -14444,7 +14443,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_paragraph_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_paragraph_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -14570,7 +14569,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_range_text_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_range_text_with_http_info(request, **kwargs)  # noqa: E501
@@ -14698,7 +14697,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_run_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_run_with_http_info(request, **kwargs)  # noqa: E501
@@ -14829,7 +14828,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_run_font_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_run_font_with_http_info(request, **kwargs)  # noqa: E501
@@ -14959,7 +14958,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_runs_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_runs_with_http_info(request, **kwargs)  # noqa: E501
@@ -15084,7 +15083,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_section_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_section_with_http_info(request, **kwargs)  # noqa: E501
@@ -15209,7 +15208,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
@@ -15333,7 +15332,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_sections_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_sections_with_http_info(request, **kwargs)  # noqa: E501
@@ -15453,7 +15452,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_style_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_style_with_http_info(request, **kwargs)  # noqa: E501
@@ -15578,7 +15577,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_style_from_document_element_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_style_from_document_element_with_http_info(request, **kwargs)  # noqa: E501
@@ -15702,7 +15701,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_styles_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_styles_with_http_info(request, **kwargs)  # noqa: E501
@@ -15823,7 +15822,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_table_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_table_with_http_info(request, **kwargs)  # noqa: E501
@@ -15954,7 +15953,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_table_cell_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_table_cell_with_http_info(request, **kwargs)  # noqa: E501
@@ -16085,7 +16084,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
@@ -16216,7 +16215,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_table_properties_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_table_properties_with_http_info(request, **kwargs)  # noqa: E501
@@ -16346,7 +16345,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_table_properties_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_table_properties_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -16472,7 +16471,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_table_row_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_table_row_with_http_info(request, **kwargs)  # noqa: E501
@@ -16603,7 +16602,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
@@ -16733,7 +16732,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_tables_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_tables_with_http_info(request, **kwargs)  # noqa: E501
@@ -16857,7 +16856,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_tables_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_tables_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -16977,7 +16976,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.get_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -17105,7 +17104,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_comment_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_comment_with_http_info(request, **kwargs)  # noqa: E501
@@ -17250,7 +17249,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
@@ -17404,7 +17403,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -17554,7 +17553,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_field_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_field_with_http_info(request, **kwargs)  # noqa: E501
@@ -17708,7 +17707,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -17857,7 +17856,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_footnote_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_footnote_with_http_info(request, **kwargs)  # noqa: E501
@@ -18005,7 +18004,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -18150,7 +18149,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_form_field_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_form_field_with_http_info(request, **kwargs)  # noqa: E501
@@ -18304,7 +18303,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -18453,7 +18452,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_header_footer_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_header_footer_with_http_info(request, **kwargs)  # noqa: E501
@@ -18601,7 +18600,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_list_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_list_with_http_info(request, **kwargs)  # noqa: E501
@@ -18744,7 +18743,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_or_update_paragraph_tab_stop_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_or_update_paragraph_tab_stop_with_http_info(request, **kwargs)  # noqa: E501
@@ -18886,7 +18885,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_or_update_paragraph_tab_stop_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_or_update_paragraph_tab_stop_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -19024,7 +19023,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_page_numbers_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_page_numbers_with_http_info(request, **kwargs)  # noqa: E501
@@ -19169,7 +19168,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_paragraph_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_paragraph_with_http_info(request, **kwargs)  # noqa: E501
@@ -19323,7 +19322,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_paragraph_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_paragraph_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -19473,7 +19472,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_run_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_run_with_http_info(request, **kwargs)  # noqa: E501
@@ -19626,7 +19625,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_style_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_style_with_http_info(request, **kwargs)  # noqa: E501
@@ -19770,7 +19769,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_table_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_table_with_http_info(request, **kwargs)  # noqa: E501
@@ -19919,7 +19918,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_table_cell_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_table_cell_with_http_info(request, **kwargs)  # noqa: E501
@@ -20068,7 +20067,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_table_row_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_table_row_with_http_info(request, **kwargs)  # noqa: E501
@@ -20216,7 +20215,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -20361,7 +20360,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_watermark_image_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_watermark_image_with_http_info(request, **kwargs)  # noqa: E501
@@ -20511,7 +20510,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.insert_watermark_text_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_watermark_text_with_http_info(request, **kwargs)  # noqa: E501
@@ -20647,7 +20646,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.load_web_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.load_web_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -20751,7 +20750,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.move_file_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.move_file_with_http_info(request, **kwargs)  # noqa: E501
@@ -20872,7 +20871,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.move_folder_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.move_folder_with_http_info(request, **kwargs)  # noqa: E501
@@ -20991,7 +20990,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.protect_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.protect_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -21121,7 +21120,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.reject_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.reject_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
@@ -21248,7 +21247,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.remove_range_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.remove_range_with_http_info(request, **kwargs)  # noqa: E501
@@ -21383,7 +21382,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.render_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.render_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
@@ -21528,7 +21527,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.render_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.render_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -21669,7 +21668,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.render_math_object_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.render_math_object_with_http_info(request, **kwargs)  # noqa: E501
@@ -21814,7 +21813,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.render_math_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.render_math_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -21954,7 +21953,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.render_page_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.render_page_with_http_info(request, **kwargs)  # noqa: E501
@@ -22095,7 +22094,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.render_paragraph_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.render_paragraph_with_http_info(request, **kwargs)  # noqa: E501
@@ -22240,7 +22239,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.render_paragraph_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.render_paragraph_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -22381,7 +22380,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.render_table_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.render_table_with_http_info(request, **kwargs)  # noqa: E501
@@ -22526,7 +22525,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.render_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.render_table_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -22667,7 +22666,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.replace_text_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.replace_text_with_http_info(request, **kwargs)  # noqa: E501
@@ -22810,7 +22809,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.replace_with_text_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.replace_with_text_with_http_info(request, **kwargs)  # noqa: E501
@@ -22941,7 +22940,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.reset_cache_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.reset_cache_with_http_info(request, **kwargs)  # noqa: E501
@@ -23037,7 +23036,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.save_as_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.save_as_with_http_info(request, **kwargs)  # noqa: E501
@@ -23169,7 +23168,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.save_as_range_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.save_as_range_with_http_info(request, **kwargs)  # noqa: E501
@@ -23319,7 +23318,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.save_as_tiff_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.save_as_tiff_with_http_info(request, **kwargs)  # noqa: E501
@@ -23534,7 +23533,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.search_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.search_with_http_info(request, **kwargs)  # noqa: E501
@@ -23667,7 +23666,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.split_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.split_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -23821,7 +23820,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.unprotect_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.unprotect_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -23955,7 +23954,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_bookmark_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_bookmark_with_http_info(request, **kwargs)  # noqa: E501
@@ -24105,7 +24104,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_border_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_border_with_http_info(request, **kwargs)  # noqa: E501
@@ -24259,7 +24258,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_comment_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_comment_with_http_info(request, **kwargs)  # noqa: E501
@@ -24410,7 +24409,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
@@ -24570,7 +24569,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_drawing_object_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -24725,7 +24724,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_field_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_field_with_http_info(request, **kwargs)  # noqa: E501
@@ -24875,7 +24874,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_fields_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_fields_with_http_info(request, **kwargs)  # noqa: E501
@@ -25005,7 +25004,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_footnote_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_footnote_with_http_info(request, **kwargs)  # noqa: E501
@@ -25159,7 +25158,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_footnote_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -25309,7 +25308,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_form_field_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_form_field_with_http_info(request, **kwargs)  # noqa: E501
@@ -25463,7 +25462,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_form_field_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -25612,7 +25611,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_list_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_list_with_http_info(request, **kwargs)  # noqa: E501
@@ -25762,7 +25761,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_list_level_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_list_level_with_http_info(request, **kwargs)  # noqa: E501
@@ -25917,7 +25916,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
@@ -26071,7 +26070,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_paragraph_format_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_paragraph_format_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -26221,7 +26220,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
@@ -26375,7 +26374,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_paragraph_list_format_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_paragraph_list_format_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -26525,7 +26524,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_run_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_run_with_http_info(request, **kwargs)  # noqa: E501
@@ -26680,7 +26679,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_run_font_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_run_font_with_http_info(request, **kwargs)  # noqa: E501
@@ -26834,7 +26833,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
@@ -26983,7 +26982,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_style_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_style_with_http_info(request, **kwargs)  # noqa: E501
@@ -27133,7 +27132,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
@@ -27288,7 +27287,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_table_properties_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_table_properties_with_http_info(request, **kwargs)  # noqa: E501
@@ -27442,7 +27441,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_table_properties_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_table_properties_without_node_path_with_http_info(request, **kwargs)  # noqa: E501
@@ -27592,7 +27591,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.update_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
@@ -27739,7 +27738,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.__request_token()
+                self.api_client.__request_token()
                 if kwargs.get('is_async'):
                     return self.upload_file_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.upload_file_with_http_info(request, **kwargs)  # noqa: E501
@@ -27830,22 +27829,3 @@ class WordsApi(object):
             return s
         else:
             return s[0].lower() + s[1:]
-
-    def __request_token(self):
-        config = self.api_client.configuration
-        request_url = "/connect/token"
-        form_params = [['grant_type', 'client_credentials', 'string'], ['client_id', config.api_key['app_sid'], 'string'],
-                       ['client_secret', config.api_key['api_key'], 'string']]
-
-        header_params = {'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded'}
-
-        data = self.api_client.call_api(request_url, 'POST',
-                                        path_params={},
-                                        query_params=[],
-                                        header_params=header_params,
-                                        post_params=form_params,
-                                        response_type='object',
-                                        _return_http_data_only=True)
-        access_token = data['access_token'] if six.PY3 else data['access_token'].encode('utf8')
-        self.api_client.configuration.access_token = access_token
-

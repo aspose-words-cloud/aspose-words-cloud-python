@@ -101,6 +101,50 @@ class ApiClient(object):
         """Setting default header"""
         self.default_headers[header_name] = header_value
 
+    def request_token(self):
+        config = self.configuration
+        request_url = "/connect/token"
+        form_params = [['grant_type', 'client_credentials', 'string'],
+                       ['client_id', config.api_key['app_sid'], 'string'],
+                       ['client_secret', config.api_key['api_key'], 'string']]
+
+        header_params = {'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded'}
+
+        if self.cookie:
+            header_params['Cookie'] = self.cookie
+        if header_params:
+            header_params = self.sanitize_for_serialization(header_params)
+            header_params = dict(self.parameters_to_tuples(header_params,
+                                                           {}))
+
+        # remove optional path parameters
+        resource_path = request_url.replace('//', '/')
+
+        # post parameters
+        if form_params:
+            form_params = self.prepare_post_parameters(form_params)
+            form_params = self.sanitize_for_serialization(form_params)
+            form_params = self.parameters_to_tuples(form_params,
+                                                    {})
+
+        # request url
+        url = ''
+        if six.PY3:
+            url = self.configuration.host + resource_path
+        else:
+            url = (self.configuration.host + resource_path).encode('utf8')
+
+        # perform request and return response
+        response_data = self.request(
+            'POST', url, query_params=[], headers=header_params,
+            post_params=form_params, body=None,
+            _preload_content=True,
+            _request_timeout=None)
+
+        return_data = self.deserialize(response_data, 'object')
+        access_token = return_data['access_token'] if six.PY3 else return_data['access_token'].encode('utf8')
+        self.configuration.access_token = access_token
+
     def __call_api(
             self, resource_path, method, path_params=None,
             query_params=None, header_params=None, body=None, post_params=None,
@@ -109,6 +153,9 @@ class ApiClient(object):
             _preload_content=True, _request_timeout=None):
         """Call api method"""
         config = self.configuration
+
+        if config.access_token is None or config.access_token == "":
+            self.request_token()
 
         # header parameters
         header_params = header_params or {}
