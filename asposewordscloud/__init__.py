@@ -64,8 +64,10 @@ from asposewordscloud.models.document_stat_data import DocumentStatData
 from asposewordscloud.models.downsample_options_data import DownsampleOptionsData
 from asposewordscloud.models.drawing_object import DrawingObject
 from asposewordscloud.models.drawing_object_collection import DrawingObjectCollection
+from asposewordscloud.models.drawing_object_insert import DrawingObjectInsert
 from asposewordscloud.models.drawing_object_link import DrawingObjectLink
 from asposewordscloud.models.drawing_object_response import DrawingObjectResponse
+from asposewordscloud.models.drawing_object_update import DrawingObjectUpdate
 from asposewordscloud.models.drawing_objects_response import DrawingObjectsResponse
 from asposewordscloud.models.emf_save_options_data import EmfSaveOptionsData
 from asposewordscloud.models.epub_save_options_data import EpubSaveOptionsData
@@ -209,7 +211,6 @@ from asposewordscloud.models.style_copy import StyleCopy
 from asposewordscloud.models.style_insert import StyleInsert
 from asposewordscloud.models.style_response import StyleResponse
 from asposewordscloud.models.style_update import StyleUpdate
-from asposewordscloud.models.styles import Styles
 from asposewordscloud.models.styles_response import StylesResponse
 from asposewordscloud.models.svg_save_options_data import SvgSaveOptionsData
 from asposewordscloud.models.tab_stop import TabStop

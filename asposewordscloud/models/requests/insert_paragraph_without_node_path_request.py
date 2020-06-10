@@ -1,5 +1,5 @@
 # --------------------------------------------------------------------------------
-# <copyright company="Aspose" file="GetStyleFromDocumentElementRequest.py">
+# <copyright company="Aspose" file="InsertParagraphWithoutNodePathRequest.py">
 #   Copyright (c) 2019 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -24,22 +24,30 @@
 # --------------------------------------------------------------------------------
 
 
-class GetStyleFromDocumentElementRequest(object):
+class InsertParagraphWithoutNodePathRequest(object):
     """
-    Request model for get_style_from_document_element operation.
+    Request model for insert_paragraph_without_node_path operation.
     Initializes a new instance.
     :param name The document name.
-    :param styled_node_path The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
+    :param paragraph Paragraph data.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
+    :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+    :param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+    :param revision_date_time The date and time to use for revisions.
+    :param insert_before_node Paragraph will be inserted before node with index.
     """
 
-    def __init__(self, name, styled_node_path, folder=None, storage=None, load_encoding=None, password=None):
+    def __init__(self, name, paragraph, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None, insert_before_node=None):
         self.name = name
-        self.styled_node_path = styled_node_path
+        self.paragraph = paragraph
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
+        self.dest_file_name = dest_file_name
+        self.revision_author = revision_author
+        self.revision_date_time = revision_date_time
+        self.insert_before_node = insert_before_node

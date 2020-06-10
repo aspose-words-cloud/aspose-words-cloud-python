@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **dml3_d_effects_rendering_mode** | **str** | Gets or sets a value determining how 3D effects are rendered. | [optional] 
 **update_last_printed_property** | **bool** | Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving. | [optional] 
 **compliance** | **str** | Gets or sets specifies the OOXML version for the output document. | [optional] 
+**compression_level** | **str** | Gets or sets compression level. | [optional] 
 **password** | **str** | Gets or sets specifies a password to encrypt document using ECMA376 Standard encryption algorithm. | [optional] 
 **pretty_format** | **bool** | Gets or sets specifies whether or not use pretty formats output. | [optional] 
 

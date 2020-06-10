@@ -29,8 +29,8 @@ class InsertOrUpdateParagraphTabStopRequest(object):
     Request model for insert_or_update_paragraph_tab_stop operation.
     Initializes a new instance.
     :param name The document name.
-    :param node_path Path to the node which contains paragraph.
     :param dto Paragraph tab stop.
+    :param node_path Path to the node which contains paragraph.
     :param index Object index.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -39,10 +39,10 @@ class InsertOrUpdateParagraphTabStopRequest(object):
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     """
 
-    def __init__(self, name, node_path, dto, index, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None):
+    def __init__(self, name, dto, node_path, index, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None):
         self.name = name
-        self.node_path = node_path
         self.dto = dto
+        self.node_path = node_path
         self.index = index
         self.folder = folder
         self.storage = storage

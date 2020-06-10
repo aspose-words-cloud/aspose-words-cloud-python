@@ -29,7 +29,7 @@ class InsertDrawingObjectWithoutNodePathRequest(object):
     Request model for insert_drawing_object_without_node_path operation.
     Initializes a new instance.
     :param name The document name.
-    :param drawing_object Drawing object parameters
+    :param drawing_object Drawing object parameters.
     :param image_file File with image
     :param folder Original document folder.
     :param storage Original document storage.
