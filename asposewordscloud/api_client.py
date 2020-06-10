@@ -60,7 +60,7 @@ class ApiClient(object):
     PRIMITIVE_TYPES = (float, bool, bytes, six.text_type) + six.integer_types
     NATIVE_TYPES_MAPPING = {
         'int': int,
-        'long': int if six.PY3 else long,  # pylint: disable=undefined-variable
+        'long': int if six.PY3 else long,  #pylint: disable=undefined-variable
         'float': float,
         'str': str,
         'bool': bool,
@@ -100,8 +100,8 @@ class ApiClient(object):
     def set_default_header(self, header_name, header_value):
         """Setting default header"""
         self.default_headers[header_name] = header_value
-
-    def request_token(self):
+    
+        def request_token(self):
         config = self.configuration
         request_url = "/connect/token"
         form_params = [['grant_type', 'client_credentials', 'string'],
@@ -145,6 +145,7 @@ class ApiClient(object):
         access_token = return_data['access_token'] if six.PY3 else return_data['access_token'].encode('utf8')
         self.configuration.access_token = access_token
 
+
     def __call_api(
             self, resource_path, method, path_params=None,
             query_params=None, header_params=None, body=None, post_params=None,
@@ -153,7 +154,7 @@ class ApiClient(object):
             _preload_content=True, _request_timeout=None):
         """Call api method"""
         config = self.configuration
-
+        
         if config.access_token is None or config.access_token == "":
             self.request_token()
 
@@ -179,7 +180,7 @@ class ApiClient(object):
                     '{%s}' % k,
                     quote(str(v), safe=config.safe_chars_for_path_param)
                 )
-
+				
         # remove optional path parameters
         resource_path = resource_path.replace('//', '/')
 
@@ -650,7 +651,7 @@ class ApiClient(object):
                 status=0,
                 reason=(
                     "Failed to parse `{0}` as datetime object"
-                        .format(string)
+                    .format(string)
                 )
             )
 
@@ -661,9 +662,9 @@ class ApiClient(object):
         :param klass: class literal.
         :return: model object.
         """
-        if klass is None:
+        if klass is None: 
             return data
-
+            
         if not klass.swagger_types and not hasattr(klass,
                                                    'get_real_child_model'):
             return data
