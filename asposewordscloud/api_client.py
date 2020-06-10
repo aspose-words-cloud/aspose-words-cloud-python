@@ -101,7 +101,7 @@ class ApiClient(object):
         """Setting default header"""
         self.default_headers[header_name] = header_value
     
-        def request_token(self):
+    def request_token(self):
         config = self.configuration
         request_url = "/connect/token"
         form_params = [['grant_type', 'client_credentials', 'string'],
