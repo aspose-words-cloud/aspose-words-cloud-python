@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="XmlColor.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="xml_color.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,26 +41,48 @@ class XmlColor(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'web': 'str',
-        'alpha': 'int'
+        'alpha': 'int',
+        'web': 'str'
     }
 
     attribute_map = {
-        'web': 'Web',
-        'alpha': 'Alpha'
+        'alpha': 'Alpha',
+        'web': 'Web'
     }
 
-    def __init__(self, web=None, alpha=None):  # noqa: E501
+    def __init__(self, alpha=None, web=None):  # noqa: E501
         """XmlColor - a model defined in Swagger"""  # noqa: E501
 
-        self._web = None
         self._alpha = None
+        self._web = None
         self.discriminator = None
 
-        if web is not None:
-            self.web = web
         if alpha is not None:
             self.alpha = alpha
+        if web is not None:
+            self.web = web
+
+    @property
+    def alpha(self):
+        """Gets the alpha of this XmlColor.  # noqa: E501
+
+        Gets or sets alpha component of color structure.  # noqa: E501
+
+        :return: The alpha of this XmlColor.  # noqa: E501
+        :rtype: int
+        """
+        return self._alpha
+
+    @alpha.setter
+    def alpha(self, alpha):
+        """Sets the alpha of this XmlColor.
+
+        Gets or sets alpha component of color structure.  # noqa: E501
+
+        :param alpha: The alpha of this XmlColor.  # noqa: E501
+        :type: int
+        """
+        self._alpha = alpha
 
     @property
     def web(self):
@@ -83,27 +105,8 @@ class XmlColor(object):
         :type: str
         """
         self._web = web
-    @property
-    def alpha(self):
-        """Gets the alpha of this XmlColor.  # noqa: E501
 
-        Gets or sets alpha component of color structure.  # noqa: E501
 
-        :return: The alpha of this XmlColor.  # noqa: E501
-        :rtype: int
-        """
-        return self._alpha
-
-    @alpha.setter
-    def alpha(self, alpha):
-        """Sets the alpha of this XmlColor.
-
-        Gets or sets alpha component of color structure.  # noqa: E501
-
-        :param alpha: The alpha of this XmlColor.  # noqa: E501
-        :type: int
-        """
-        self._alpha = alpha
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

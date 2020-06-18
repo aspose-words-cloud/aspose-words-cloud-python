@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="doc_save_options_data.py">
+# <copyright company="Aspose" file="txt_save_options_base_data.py">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -29,8 +29,8 @@ import re  # noqa: F401
 import six
 
 
-class DocSaveOptionsData(object):
-    """container class for doc/dot save options.
+class TxtSaveOptionsBaseData(object):
+    """Base class for save options of text formats.
     """
 
     """
@@ -51,10 +51,10 @@ class DocSaveOptionsData(object):
         'update_last_saved_time_property': 'bool',
         'update_sdt_content': 'bool',
         'zip_output': 'bool',
-        'always_compress_metafiles': 'bool',
-        'password': 'str',
-        'save_picture_bullet': 'bool',
-        'save_routing_slip': 'bool'
+        'encoding': 'str',
+        'export_headers_footers_mode': 'str',
+        'force_page_breaks': 'bool',
+        'paragraph_break': 'str'
     }
 
     attribute_map = {
@@ -68,14 +68,14 @@ class DocSaveOptionsData(object):
         'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
         'update_sdt_content': 'UpdateSdtContent',
         'zip_output': 'ZipOutput',
-        'always_compress_metafiles': 'AlwaysCompressMetafiles',
-        'password': 'Password',
-        'save_picture_bullet': 'SavePictureBullet',
-        'save_routing_slip': 'SaveRoutingSlip'
+        'encoding': 'Encoding',
+        'export_headers_footers_mode': 'ExportHeadersFootersMode',
+        'force_page_breaks': 'ForcePageBreaks',
+        'paragraph_break': 'ParagraphBreak'
     }
 
-    def __init__(self, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, always_compress_metafiles=None, password=None, save_picture_bullet=None, save_routing_slip=None):  # noqa: E501
-        """DocSaveOptionsData - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, encoding=None, export_headers_footers_mode=None, force_page_breaks=None, paragraph_break=None):  # noqa: E501
+        """TxtSaveOptionsBaseData - a model defined in Swagger"""  # noqa: E501
 
         self._dml3_d_effects_rendering_mode = None
         self._dml_effects_rendering_mode = None
@@ -87,10 +87,10 @@ class DocSaveOptionsData(object):
         self._update_last_saved_time_property = None
         self._update_sdt_content = None
         self._zip_output = None
-        self._always_compress_metafiles = None
-        self._password = None
-        self._save_picture_bullet = None
-        self._save_routing_slip = None
+        self._encoding = None
+        self._export_headers_footers_mode = None
+        self._force_page_breaks = None
+        self._paragraph_break = None
         self.discriminator = None
 
         if dml3_d_effects_rendering_mode is not None:
@@ -113,33 +113,33 @@ class DocSaveOptionsData(object):
             self.update_sdt_content = update_sdt_content
         if zip_output is not None:
             self.zip_output = zip_output
-        if always_compress_metafiles is not None:
-            self.always_compress_metafiles = always_compress_metafiles
-        if password is not None:
-            self.password = password
-        if save_picture_bullet is not None:
-            self.save_picture_bullet = save_picture_bullet
-        if save_routing_slip is not None:
-            self.save_routing_slip = save_routing_slip
+        if encoding is not None:
+            self.encoding = encoding
+        if export_headers_footers_mode is not None:
+            self.export_headers_footers_mode = export_headers_footers_mode
+        if force_page_breaks is not None:
+            self.force_page_breaks = force_page_breaks
+        if paragraph_break is not None:
+            self.paragraph_break = paragraph_break
 
     @property
     def dml3_d_effects_rendering_mode(self):
-        """Gets the dml3_d_effects_rendering_mode of this DocSaveOptionsData.  # noqa: E501
+        """Gets the dml3_d_effects_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
 
         Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
 
-        :return: The dml3_d_effects_rendering_mode of this DocSaveOptionsData.  # noqa: E501
+        :return: The dml3_d_effects_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
         :rtype: str
         """
         return self._dml3_d_effects_rendering_mode
 
     @dml3_d_effects_rendering_mode.setter
     def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
-        """Sets the dml3_d_effects_rendering_mode of this DocSaveOptionsData.
+        """Sets the dml3_d_effects_rendering_mode of this TxtSaveOptionsBaseData.
 
         Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
 
-        :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this DocSaveOptionsData.  # noqa: E501
+        :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
         :type: str
         """
         allowed_values = ["Basic", "Advanced"]  # noqa: E501
@@ -154,289 +154,297 @@ class DocSaveOptionsData(object):
 
     @property
     def dml_effects_rendering_mode(self):
-        """Gets the dml_effects_rendering_mode of this DocSaveOptionsData.  # noqa: E501
+        """Gets the dml_effects_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
 
         Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
-        :return: The dml_effects_rendering_mode of this DocSaveOptionsData.  # noqa: E501
+        :return: The dml_effects_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
         :rtype: str
         """
         return self._dml_effects_rendering_mode
 
     @dml_effects_rendering_mode.setter
     def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
-        """Sets the dml_effects_rendering_mode of this DocSaveOptionsData.
+        """Sets the dml_effects_rendering_mode of this TxtSaveOptionsBaseData.
 
         Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
-        :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this DocSaveOptionsData.  # noqa: E501
+        :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
         :type: str
         """
         self._dml_effects_rendering_mode = dml_effects_rendering_mode
 
     @property
     def dml_rendering_mode(self):
-        """Gets the dml_rendering_mode of this DocSaveOptionsData.  # noqa: E501
+        """Gets the dml_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
 
         Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
 
-        :return: The dml_rendering_mode of this DocSaveOptionsData.  # noqa: E501
+        :return: The dml_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
         :rtype: str
         """
         return self._dml_rendering_mode
 
     @dml_rendering_mode.setter
     def dml_rendering_mode(self, dml_rendering_mode):
-        """Sets the dml_rendering_mode of this DocSaveOptionsData.
+        """Sets the dml_rendering_mode of this TxtSaveOptionsBaseData.
 
         Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
 
-        :param dml_rendering_mode: The dml_rendering_mode of this DocSaveOptionsData.  # noqa: E501
+        :param dml_rendering_mode: The dml_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
         :type: str
         """
         self._dml_rendering_mode = dml_rendering_mode
 
     @property
     def file_name(self):
-        """Gets the file_name of this DocSaveOptionsData.  # noqa: E501
+        """Gets the file_name of this TxtSaveOptionsBaseData.  # noqa: E501
 
         Gets or sets name of destination file.  # noqa: E501
 
-        :return: The file_name of this DocSaveOptionsData.  # noqa: E501
+        :return: The file_name of this TxtSaveOptionsBaseData.  # noqa: E501
         :rtype: str
         """
         return self._file_name
 
     @file_name.setter
     def file_name(self, file_name):
-        """Sets the file_name of this DocSaveOptionsData.
+        """Sets the file_name of this TxtSaveOptionsBaseData.
 
         Gets or sets name of destination file.  # noqa: E501
 
-        :param file_name: The file_name of this DocSaveOptionsData.  # noqa: E501
+        :param file_name: The file_name of this TxtSaveOptionsBaseData.  # noqa: E501
         :type: str
         """
         self._file_name = file_name
 
     @property
     def save_format(self):
-        """Gets the save_format of this DocSaveOptionsData.  # noqa: E501
+        """Gets the save_format of this TxtSaveOptionsBaseData.  # noqa: E501
 
         Gets or sets format of save.  # noqa: E501
 
-        :return: The save_format of this DocSaveOptionsData.  # noqa: E501
+        :return: The save_format of this TxtSaveOptionsBaseData.  # noqa: E501
         :rtype: str
         """
         return self._save_format
 
     @save_format.setter
     def save_format(self, save_format):
-        """Sets the save_format of this DocSaveOptionsData.
+        """Sets the save_format of this TxtSaveOptionsBaseData.
 
         Gets or sets format of save.  # noqa: E501
 
-        :param save_format: The save_format of this DocSaveOptionsData.  # noqa: E501
+        :param save_format: The save_format of this TxtSaveOptionsBaseData.  # noqa: E501
         :type: str
         """
         self._save_format = save_format
 
     @property
     def update_fields(self):
-        """Gets the update_fields of this DocSaveOptionsData.  # noqa: E501
+        """Gets the update_fields of this TxtSaveOptionsBaseData.  # noqa: E501
 
         Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.  # noqa: E501
 
-        :return: The update_fields of this DocSaveOptionsData.  # noqa: E501
+        :return: The update_fields of this TxtSaveOptionsBaseData.  # noqa: E501
         :rtype: bool
         """
         return self._update_fields
 
     @update_fields.setter
     def update_fields(self, update_fields):
-        """Sets the update_fields of this DocSaveOptionsData.
+        """Sets the update_fields of this TxtSaveOptionsBaseData.
 
         Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.  # noqa: E501
 
-        :param update_fields: The update_fields of this DocSaveOptionsData.  # noqa: E501
+        :param update_fields: The update_fields of this TxtSaveOptionsBaseData.  # noqa: E501
         :type: bool
         """
         self._update_fields = update_fields
 
     @property
     def update_last_printed_property(self):
-        """Gets the update_last_printed_property of this DocSaveOptionsData.  # noqa: E501
+        """Gets the update_last_printed_property of this TxtSaveOptionsBaseData.  # noqa: E501
 
         Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
 
-        :return: The update_last_printed_property of this DocSaveOptionsData.  # noqa: E501
+        :return: The update_last_printed_property of this TxtSaveOptionsBaseData.  # noqa: E501
         :rtype: bool
         """
         return self._update_last_printed_property
 
     @update_last_printed_property.setter
     def update_last_printed_property(self, update_last_printed_property):
-        """Sets the update_last_printed_property of this DocSaveOptionsData.
+        """Sets the update_last_printed_property of this TxtSaveOptionsBaseData.
 
         Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
 
-        :param update_last_printed_property: The update_last_printed_property of this DocSaveOptionsData.  # noqa: E501
+        :param update_last_printed_property: The update_last_printed_property of this TxtSaveOptionsBaseData.  # noqa: E501
         :type: bool
         """
         self._update_last_printed_property = update_last_printed_property
 
     @property
     def update_last_saved_time_property(self):
-        """Gets the update_last_saved_time_property of this DocSaveOptionsData.  # noqa: E501
+        """Gets the update_last_saved_time_property of this TxtSaveOptionsBaseData.  # noqa: E501
 
         Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
 
-        :return: The update_last_saved_time_property of this DocSaveOptionsData.  # noqa: E501
+        :return: The update_last_saved_time_property of this TxtSaveOptionsBaseData.  # noqa: E501
         :rtype: bool
         """
         return self._update_last_saved_time_property
 
     @update_last_saved_time_property.setter
     def update_last_saved_time_property(self, update_last_saved_time_property):
-        """Sets the update_last_saved_time_property of this DocSaveOptionsData.
+        """Sets the update_last_saved_time_property of this TxtSaveOptionsBaseData.
 
         Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
 
-        :param update_last_saved_time_property: The update_last_saved_time_property of this DocSaveOptionsData.  # noqa: E501
+        :param update_last_saved_time_property: The update_last_saved_time_property of this TxtSaveOptionsBaseData.  # noqa: E501
         :type: bool
         """
         self._update_last_saved_time_property = update_last_saved_time_property
 
     @property
     def update_sdt_content(self):
-        """Gets the update_sdt_content of this DocSaveOptionsData.  # noqa: E501
+        """Gets the update_sdt_content of this TxtSaveOptionsBaseData.  # noqa: E501
 
         Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
-        :return: The update_sdt_content of this DocSaveOptionsData.  # noqa: E501
+        :return: The update_sdt_content of this TxtSaveOptionsBaseData.  # noqa: E501
         :rtype: bool
         """
         return self._update_sdt_content
 
     @update_sdt_content.setter
     def update_sdt_content(self, update_sdt_content):
-        """Sets the update_sdt_content of this DocSaveOptionsData.
+        """Sets the update_sdt_content of this TxtSaveOptionsBaseData.
 
         Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
-        :param update_sdt_content: The update_sdt_content of this DocSaveOptionsData.  # noqa: E501
+        :param update_sdt_content: The update_sdt_content of this TxtSaveOptionsBaseData.  # noqa: E501
         :type: bool
         """
         self._update_sdt_content = update_sdt_content
 
     @property
     def zip_output(self):
-        """Gets the zip_output of this DocSaveOptionsData.  # noqa: E501
+        """Gets the zip_output of this TxtSaveOptionsBaseData.  # noqa: E501
 
         Gets or sets controls zip output or not. Default value is false.  # noqa: E501
 
-        :return: The zip_output of this DocSaveOptionsData.  # noqa: E501
+        :return: The zip_output of this TxtSaveOptionsBaseData.  # noqa: E501
         :rtype: bool
         """
         return self._zip_output
 
     @zip_output.setter
     def zip_output(self, zip_output):
-        """Sets the zip_output of this DocSaveOptionsData.
+        """Sets the zip_output of this TxtSaveOptionsBaseData.
 
         Gets or sets controls zip output or not. Default value is false.  # noqa: E501
 
-        :param zip_output: The zip_output of this DocSaveOptionsData.  # noqa: E501
+        :param zip_output: The zip_output of this TxtSaveOptionsBaseData.  # noqa: E501
         :type: bool
         """
         self._zip_output = zip_output
 
     @property
-    def always_compress_metafiles(self):
-        """Gets the always_compress_metafiles of this DocSaveOptionsData.  # noqa: E501
+    def encoding(self):
+        """Gets the encoding of this TxtSaveOptionsBaseData.  # noqa: E501
 
-        Gets or sets When false, small metafiles are not compressed for performance reason. Default value is true, all metafiles are compressed regardless of its size.  # noqa: E501
+        Gets or sets specifies the encoding to use when exporting in plain text format.  # noqa: E501
 
-        :return: The always_compress_metafiles of this DocSaveOptionsData.  # noqa: E501
-        :rtype: bool
-        """
-        return self._always_compress_metafiles
-
-    @always_compress_metafiles.setter
-    def always_compress_metafiles(self, always_compress_metafiles):
-        """Sets the always_compress_metafiles of this DocSaveOptionsData.
-
-        Gets or sets When false, small metafiles are not compressed for performance reason. Default value is true, all metafiles are compressed regardless of its size.  # noqa: E501
-
-        :param always_compress_metafiles: The always_compress_metafiles of this DocSaveOptionsData.  # noqa: E501
-        :type: bool
-        """
-        self._always_compress_metafiles = always_compress_metafiles
-
-    @property
-    def password(self):
-        """Gets the password of this DocSaveOptionsData.  # noqa: E501
-
-        Gets or sets password.  # noqa: E501
-
-        :return: The password of this DocSaveOptionsData.  # noqa: E501
+        :return: The encoding of this TxtSaveOptionsBaseData.  # noqa: E501
         :rtype: str
         """
-        return self._password
+        return self._encoding
 
-    @password.setter
-    def password(self, password):
-        """Sets the password of this DocSaveOptionsData.
+    @encoding.setter
+    def encoding(self, encoding):
+        """Sets the encoding of this TxtSaveOptionsBaseData.
 
-        Gets or sets password.  # noqa: E501
+        Gets or sets specifies the encoding to use when exporting in plain text format.  # noqa: E501
 
-        :param password: The password of this DocSaveOptionsData.  # noqa: E501
+        :param encoding: The encoding of this TxtSaveOptionsBaseData.  # noqa: E501
         :type: str
         """
-        self._password = password
+        self._encoding = encoding
 
     @property
-    def save_picture_bullet(self):
-        """Gets the save_picture_bullet of this DocSaveOptionsData.  # noqa: E501
+    def export_headers_footers_mode(self):
+        """Gets the export_headers_footers_mode of this TxtSaveOptionsBaseData.  # noqa: E501
 
-        Gets or sets When false, PictureBullet data is not saved to output document. Default value is true.  # noqa: E501
+        Gets or sets specifies whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
 
-        :return: The save_picture_bullet of this DocSaveOptionsData.  # noqa: E501
-        :rtype: bool
+        :return: The export_headers_footers_mode of this TxtSaveOptionsBaseData.  # noqa: E501
+        :rtype: str
         """
-        return self._save_picture_bullet
+        return self._export_headers_footers_mode
 
-    @save_picture_bullet.setter
-    def save_picture_bullet(self, save_picture_bullet):
-        """Sets the save_picture_bullet of this DocSaveOptionsData.
+    @export_headers_footers_mode.setter
+    def export_headers_footers_mode(self, export_headers_footers_mode):
+        """Sets the export_headers_footers_mode of this TxtSaveOptionsBaseData.
 
-        Gets or sets When false, PictureBullet data is not saved to output document. Default value is true.  # noqa: E501
+        Gets or sets specifies whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
 
-        :param save_picture_bullet: The save_picture_bullet of this DocSaveOptionsData.  # noqa: E501
-        :type: bool
+        :param export_headers_footers_mode: The export_headers_footers_mode of this TxtSaveOptionsBaseData.  # noqa: E501
+        :type: str
         """
-        self._save_picture_bullet = save_picture_bullet
+        allowed_values = ["None", "PrimaryOnly", "AllAtEnd"]  # noqa: E501
+        if not export_headers_footers_mode.isdigit():
+            if export_headers_footers_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `export_headers_footers_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(export_headers_footers_mode, allowed_values))
+            self._export_headers_footers_mode = export_headers_footers_mode
+        else:
+            self._export_headers_footers_mode = allowed_values[int(export_headers_footers_mode) if six.PY3 else long(export_headers_footers_mode)]
 
     @property
-    def save_routing_slip(self):
-        """Gets the save_routing_slip of this DocSaveOptionsData.  # noqa: E501
+    def force_page_breaks(self):
+        """Gets the force_page_breaks of this TxtSaveOptionsBaseData.  # noqa: E501
 
-        Gets or sets determine whether or not save RoutingSlip data saved to output document.  # noqa: E501
+        Gets or sets allows to specify whether the page breaks should be preserved during export. The default value is false.  # noqa: E501
 
-        :return: The save_routing_slip of this DocSaveOptionsData.  # noqa: E501
+        :return: The force_page_breaks of this TxtSaveOptionsBaseData.  # noqa: E501
         :rtype: bool
         """
-        return self._save_routing_slip
+        return self._force_page_breaks
 
-    @save_routing_slip.setter
-    def save_routing_slip(self, save_routing_slip):
-        """Sets the save_routing_slip of this DocSaveOptionsData.
+    @force_page_breaks.setter
+    def force_page_breaks(self, force_page_breaks):
+        """Sets the force_page_breaks of this TxtSaveOptionsBaseData.
 
-        Gets or sets determine whether or not save RoutingSlip data saved to output document.  # noqa: E501
+        Gets or sets allows to specify whether the page breaks should be preserved during export. The default value is false.  # noqa: E501
 
-        :param save_routing_slip: The save_routing_slip of this DocSaveOptionsData.  # noqa: E501
+        :param force_page_breaks: The force_page_breaks of this TxtSaveOptionsBaseData.  # noqa: E501
         :type: bool
         """
-        self._save_routing_slip = save_routing_slip
+        self._force_page_breaks = force_page_breaks
+
+    @property
+    def paragraph_break(self):
+        """Gets the paragraph_break of this TxtSaveOptionsBaseData.  # noqa: E501
+
+        Gets or sets specifies the string to use as a paragraph break when exporting in plain text format.  # noqa: E501
+
+        :return: The paragraph_break of this TxtSaveOptionsBaseData.  # noqa: E501
+        :rtype: str
+        """
+        return self._paragraph_break
+
+    @paragraph_break.setter
+    def paragraph_break(self, paragraph_break):
+        """Sets the paragraph_break of this TxtSaveOptionsBaseData.
+
+        Gets or sets specifies the string to use as a paragraph break when exporting in plain text format.  # noqa: E501
+
+        :param paragraph_break: The paragraph_break of this TxtSaveOptionsBaseData.  # noqa: E501
+        :type: str
+        """
+        self._paragraph_break = paragraph_break
 
 
     def to_dict(self):
@@ -473,7 +481,7 @@ class DocSaveOptionsData(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, DocSaveOptionsData):
+        if not isinstance(other, TxtSaveOptionsBaseData):
             return False
 
         return self.__dict__ == other.__dict__

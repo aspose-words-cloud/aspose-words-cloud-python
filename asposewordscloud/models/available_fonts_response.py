@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="AvailableFontsResponse.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="available_fonts_response.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -93,6 +93,7 @@ class AvailableFontsResponse(object):
         :type: str
         """
         self._request_id = request_id
+
     @property
     def additional_fonts(self):
         """Gets the additional_fonts of this AvailableFontsResponse.  # noqa: E501
@@ -114,11 +115,12 @@ class AvailableFontsResponse(object):
         :type: list[FontInfo]
         """
         self._additional_fonts = additional_fonts
+
     @property
     def custom_fonts(self):
         """Gets the custom_fonts of this AvailableFontsResponse.  # noqa: E501
 
-        Gets or sets custom user fonts (from user file storage). To use them, you should specify \"fontsLocation\" parameter in any request.  # noqa: E501
+        Gets or sets custom user fonts (from user file storage). To use them, you should specify "fontsLocation" parameter in any request.  # noqa: E501
 
         :return: The custom_fonts of this AvailableFontsResponse.  # noqa: E501
         :rtype: list[FontInfo]
@@ -129,12 +131,13 @@ class AvailableFontsResponse(object):
     def custom_fonts(self, custom_fonts):
         """Sets the custom_fonts of this AvailableFontsResponse.
 
-        Gets or sets custom user fonts (from user file storage). To use them, you should specify \"fontsLocation\" parameter in any request.  # noqa: E501
+        Gets or sets custom user fonts (from user file storage). To use them, you should specify "fontsLocation" parameter in any request.  # noqa: E501
 
         :param custom_fonts: The custom_fonts of this AvailableFontsResponse.  # noqa: E501
         :type: list[FontInfo]
         """
         self._custom_fonts = custom_fonts
+
     @property
     def system_fonts(self):
         """Gets the system_fonts of this AvailableFontsResponse.  # noqa: E501
@@ -156,6 +159,8 @@ class AvailableFontsResponse(object):
         :type: list[FontInfo]
         """
         self._system_fonts = system_fonts
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

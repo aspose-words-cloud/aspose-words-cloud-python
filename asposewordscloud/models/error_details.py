@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="ErrorDetails.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="error_details.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,7 +30,7 @@ import six
 
 
 class ErrorDetails(object):
-    """The error details
+    """The error details.
     """
 
     """
@@ -41,26 +41,48 @@ class ErrorDetails(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'request_id': 'str',
-        'error_date_time': 'datetime'
+        'error_date_time': 'datetime',
+        'request_id': 'str'
     }
 
     attribute_map = {
-        'request_id': 'RequestId',
-        'error_date_time': 'ErrorDateTime'
+        'error_date_time': 'ErrorDateTime',
+        'request_id': 'RequestId'
     }
 
-    def __init__(self, request_id=None, error_date_time=None):  # noqa: E501
+    def __init__(self, error_date_time=None, request_id=None):  # noqa: E501
         """ErrorDetails - a model defined in Swagger"""  # noqa: E501
 
-        self._request_id = None
         self._error_date_time = None
+        self._request_id = None
         self.discriminator = None
 
-        if request_id is not None:
-            self.request_id = request_id
         if error_date_time is not None:
             self.error_date_time = error_date_time
+        if request_id is not None:
+            self.request_id = request_id
+
+    @property
+    def error_date_time(self):
+        """Gets the error_date_time of this ErrorDetails.  # noqa: E501
+
+        Error datetime.  # noqa: E501
+
+        :return: The error_date_time of this ErrorDetails.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._error_date_time
+
+    @error_date_time.setter
+    def error_date_time(self, error_date_time):
+        """Sets the error_date_time of this ErrorDetails.
+
+        Error datetime.  # noqa: E501
+
+        :param error_date_time: The error_date_time of this ErrorDetails.  # noqa: E501
+        :type: datetime
+        """
+        self._error_date_time = error_date_time
 
     @property
     def request_id(self):
@@ -83,27 +105,8 @@ class ErrorDetails(object):
         :type: str
         """
         self._request_id = request_id
-    @property
-    def error_date_time(self):
-        """Gets the error_date_time of this ErrorDetails.  # noqa: E501
 
-        Error datetime.  # noqa: E501
 
-        :return: The error_date_time of this ErrorDetails.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._error_date_time
-
-    @error_date_time.setter
-    def error_date_time(self, error_date_time):
-        """Sets the error_date_time of this ErrorDetails.
-
-        Error datetime.  # noqa: E501
-
-        :param error_date_time: The error_date_time of this ErrorDetails.  # noqa: E501
-        :type: datetime
-        """
-        self._error_date_time = error_date_time
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

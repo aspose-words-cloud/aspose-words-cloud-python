@@ -1,6 +1,7 @@
-# --------------------------------------------------------------------------------
-# <copyright company="Aspose" file="CreateFolderRequest.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# coding: utf-8
+# -----------------------------------------------------------------------------------
+# <copyright company="Aspose" file="create_folder_request.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -9,10 +10,10 @@
 #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 #  copies of the Software, and to permit persons to whom the Software is
 #  furnished to do so, subject to the following conditions:
-# 
+#
 #  The above copyright notice and this permission notice shall be included in all
 #  copies or substantial portions of the Software.
-# 
+#
 #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -21,15 +22,14 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 # </summary>
-# --------------------------------------------------------------------------------
-
+# -----------------------------------------------------------------------------------
 
 class CreateFolderRequest(object):
     """
     Request model for create_folder operation.
     Initializes a new instance.
-    :param path Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively
-    :param storage_name Storage name
+    :param path Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively.
+    :param storage_name Storage name.
     """
 
     def __init__(self, path, storage_name=None):

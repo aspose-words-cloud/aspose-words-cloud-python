@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="Hyperlinks.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="hyperlinks.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,7 +46,7 @@ class Hyperlinks(object):
     }
 
     attribute_map = {
-        'link': 'link',
+        'link': 'Link',
         'hyperlink_list': 'HyperlinkList'
     }
 
@@ -66,7 +66,7 @@ class Hyperlinks(object):
     def link(self):
         """Gets the link of this Hyperlinks.  # noqa: E501
 
-        Gets or sets link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this Hyperlinks.  # noqa: E501
         :rtype: WordsApiLink
@@ -77,12 +77,13 @@ class Hyperlinks(object):
     def link(self, link):
         """Sets the link of this Hyperlinks.
 
-        Gets or sets link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this Hyperlinks.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
+
     @property
     def hyperlink_list(self):
         """Gets the hyperlink_list of this Hyperlinks.  # noqa: E501
@@ -104,6 +105,8 @@ class Hyperlinks(object):
         :type: list[Hyperlink]
         """
         self._hyperlink_list = hyperlink_list
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

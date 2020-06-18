@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="ReplaceTextParameters.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="replace_text_parameters.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,41 +41,129 @@ class ReplaceTextParameters(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'old_value': 'str',
-        'new_value': 'str',
         'is_match_case': 'bool',
         'is_match_whole_word': 'bool',
-        'is_old_value_regex': 'bool'
+        'is_old_value_regex': 'bool',
+        'new_value': 'str',
+        'old_value': 'str'
     }
 
     attribute_map = {
-        'old_value': 'OldValue',
-        'new_value': 'NewValue',
         'is_match_case': 'IsMatchCase',
         'is_match_whole_word': 'IsMatchWholeWord',
-        'is_old_value_regex': 'IsOldValueRegex'
+        'is_old_value_regex': 'IsOldValueRegex',
+        'new_value': 'NewValue',
+        'old_value': 'OldValue'
     }
 
-    def __init__(self, old_value=None, new_value=None, is_match_case=None, is_match_whole_word=None, is_old_value_regex=None):  # noqa: E501
+    def __init__(self, is_match_case=None, is_match_whole_word=None, is_old_value_regex=None, new_value=None, old_value=None):  # noqa: E501
         """ReplaceTextParameters - a model defined in Swagger"""  # noqa: E501
 
-        self._old_value = None
-        self._new_value = None
         self._is_match_case = None
         self._is_match_whole_word = None
         self._is_old_value_regex = None
+        self._new_value = None
+        self._old_value = None
         self.discriminator = None
 
-        if old_value is not None:
-            self.old_value = old_value
-        if new_value is not None:
-            self.new_value = new_value
         if is_match_case is not None:
             self.is_match_case = is_match_case
         if is_match_whole_word is not None:
             self.is_match_whole_word = is_match_whole_word
         if is_old_value_regex is not None:
             self.is_old_value_regex = is_old_value_regex
+        if new_value is not None:
+            self.new_value = new_value
+        if old_value is not None:
+            self.old_value = old_value
+
+    @property
+    def is_match_case(self):
+        """Gets the is_match_case of this ReplaceTextParameters.  # noqa: E501
+
+        Gets or sets a value indicating whether flag, true means the search is case-sensitive; false means the search is not case-sensitive.  # noqa: E501
+
+        :return: The is_match_case of this ReplaceTextParameters.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_match_case
+
+    @is_match_case.setter
+    def is_match_case(self, is_match_case):
+        """Sets the is_match_case of this ReplaceTextParameters.
+
+        Gets or sets a value indicating whether flag, true means the search is case-sensitive; false means the search is not case-sensitive.  # noqa: E501
+
+        :param is_match_case: The is_match_case of this ReplaceTextParameters.  # noqa: E501
+        :type: bool
+        """
+        self._is_match_case = is_match_case
+
+    @property
+    def is_match_whole_word(self):
+        """Gets the is_match_whole_word of this ReplaceTextParameters.  # noqa: E501
+
+        Gets or sets a value indicating whether flag, means that only whole word matched are replaced.  # noqa: E501
+
+        :return: The is_match_whole_word of this ReplaceTextParameters.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_match_whole_word
+
+    @is_match_whole_word.setter
+    def is_match_whole_word(self, is_match_whole_word):
+        """Sets the is_match_whole_word of this ReplaceTextParameters.
+
+        Gets or sets a value indicating whether flag, means that only whole word matched are replaced.  # noqa: E501
+
+        :param is_match_whole_word: The is_match_whole_word of this ReplaceTextParameters.  # noqa: E501
+        :type: bool
+        """
+        self._is_match_whole_word = is_match_whole_word
+
+    @property
+    def is_old_value_regex(self):
+        """Gets the is_old_value_regex of this ReplaceTextParameters.  # noqa: E501
+
+        Gets or sets a value indicating whether flag, means that OldValue contains regex expression.  # noqa: E501
+
+        :return: The is_old_value_regex of this ReplaceTextParameters.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_old_value_regex
+
+    @is_old_value_regex.setter
+    def is_old_value_regex(self, is_old_value_regex):
+        """Sets the is_old_value_regex of this ReplaceTextParameters.
+
+        Gets or sets a value indicating whether flag, means that OldValue contains regex expression.  # noqa: E501
+
+        :param is_old_value_regex: The is_old_value_regex of this ReplaceTextParameters.  # noqa: E501
+        :type: bool
+        """
+        self._is_old_value_regex = is_old_value_regex
+
+    @property
+    def new_value(self):
+        """Gets the new_value of this ReplaceTextParameters.  # noqa: E501
+
+        Gets or sets new text value to replace by.  # noqa: E501
+
+        :return: The new_value of this ReplaceTextParameters.  # noqa: E501
+        :rtype: str
+        """
+        return self._new_value
+
+    @new_value.setter
+    def new_value(self, new_value):
+        """Sets the new_value of this ReplaceTextParameters.
+
+        Gets or sets new text value to replace by.  # noqa: E501
+
+        :param new_value: The new_value of this ReplaceTextParameters.  # noqa: E501
+        :type: str
+        """
+        self._new_value = new_value
 
     @property
     def old_value(self):
@@ -98,90 +186,8 @@ class ReplaceTextParameters(object):
         :type: str
         """
         self._old_value = old_value
-    @property
-    def new_value(self):
-        """Gets the new_value of this ReplaceTextParameters.  # noqa: E501
 
-        Gets or sets new text value to replace by.  # noqa: E501
 
-        :return: The new_value of this ReplaceTextParameters.  # noqa: E501
-        :rtype: str
-        """
-        return self._new_value
-
-    @new_value.setter
-    def new_value(self, new_value):
-        """Sets the new_value of this ReplaceTextParameters.
-
-        Gets or sets new text value to replace by.  # noqa: E501
-
-        :param new_value: The new_value of this ReplaceTextParameters.  # noqa: E501
-        :type: str
-        """
-        self._new_value = new_value
-    @property
-    def is_match_case(self):
-        """Gets the is_match_case of this ReplaceTextParameters.  # noqa: E501
-
-        Gets or sets a value indicating whether flag, true means the search is case-sensitive; false means the search is not case-sensitive.  # noqa: E501
-
-        :return: The is_match_case of this ReplaceTextParameters.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_match_case
-
-    @is_match_case.setter
-    def is_match_case(self, is_match_case):
-        """Sets the is_match_case of this ReplaceTextParameters.
-
-        Gets or sets a value indicating whether flag, true means the search is case-sensitive; false means the search is not case-sensitive.  # noqa: E501
-
-        :param is_match_case: The is_match_case of this ReplaceTextParameters.  # noqa: E501
-        :type: bool
-        """
-        self._is_match_case = is_match_case
-    @property
-    def is_match_whole_word(self):
-        """Gets the is_match_whole_word of this ReplaceTextParameters.  # noqa: E501
-
-        Gets or sets a value indicating whether flag, means that only whole word matched are replaced.  # noqa: E501
-
-        :return: The is_match_whole_word of this ReplaceTextParameters.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_match_whole_word
-
-    @is_match_whole_word.setter
-    def is_match_whole_word(self, is_match_whole_word):
-        """Sets the is_match_whole_word of this ReplaceTextParameters.
-
-        Gets or sets a value indicating whether flag, means that only whole word matched are replaced.  # noqa: E501
-
-        :param is_match_whole_word: The is_match_whole_word of this ReplaceTextParameters.  # noqa: E501
-        :type: bool
-        """
-        self._is_match_whole_word = is_match_whole_word
-    @property
-    def is_old_value_regex(self):
-        """Gets the is_old_value_regex of this ReplaceTextParameters.  # noqa: E501
-
-        Gets or sets a value indicating whether flag, means that OldValue contains regex expression.  # noqa: E501
-
-        :return: The is_old_value_regex of this ReplaceTextParameters.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_old_value_regex
-
-    @is_old_value_regex.setter
-    def is_old_value_regex(self, is_old_value_regex):
-        """Sets the is_old_value_regex of this ReplaceTextParameters.
-
-        Gets or sets a value indicating whether flag, means that OldValue contains regex expression.  # noqa: E501
-
-        :param is_old_value_regex: The is_old_value_regex of this ReplaceTextParameters.  # noqa: E501
-        :type: bool
-        """
-        self._is_old_value_regex = is_old_value_regex
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

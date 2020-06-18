@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="TableCellInsert.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="table_cell_insert.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -78,6 +78,8 @@ class TableCellInsert(object):
         :type: int
         """
         self._insert_after = insert_after
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

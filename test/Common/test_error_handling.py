@@ -37,11 +37,11 @@ class TestErrorHandling(BaseTestContext):
     #
     def test_handle_server_errors(self):
         remote_name = 'noFileWithThisName.docx'
-        request = asposewordscloud.models.requests.GetSectionRequest(remote_name, '')
+        request = asposewordscloud.models.requests.GetSectionRequest(name=remote_name, section_index='')
         try:
             self.words_api.get_section(request)
             self.assertRaises(ApiException)
         except ApiException as e:
             self.assertTrue(e.status == 404, 'Error while testing handle server error')
-            self.assertTrue(e.body.error.message.startswith("Error while loading file 'noFileWithThisName.docx' from storage:"), "Current message: " + e.body.error.message)
+            self.assertTrue(e.body.error.message.startswith("Error while loading file"), "Current message: " + e.body.error.message)
             self.assertNotEqual(e.body.error.inner_error, None, "Inner Error must be set")

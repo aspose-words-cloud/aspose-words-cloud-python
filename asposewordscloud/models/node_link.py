@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="NodeLink.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="node_link.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,7 +46,7 @@ class NodeLink(object):
     }
 
     attribute_map = {
-        'link': 'link',
+        'link': 'Link',
         'node_id': 'NodeId'
     }
 
@@ -66,7 +66,7 @@ class NodeLink(object):
     def link(self):
         """Gets the link of this NodeLink.  # noqa: E501
 
-        Gets or sets link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :return: The link of this NodeLink.  # noqa: E501
         :rtype: WordsApiLink
@@ -77,12 +77,13 @@ class NodeLink(object):
     def link(self, link):
         """Sets the link of this NodeLink.
 
-        Gets or sets link.  # noqa: E501
+        Gets or sets link to the document.  # noqa: E501
 
         :param link: The link of this NodeLink.  # noqa: E501
         :type: WordsApiLink
         """
         self._link = link
+
     @property
     def node_id(self):
         """Gets the node_id of this NodeLink.  # noqa: E501
@@ -104,6 +105,8 @@ class NodeLink(object):
         :type: str
         """
         self._node_id = node_id
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

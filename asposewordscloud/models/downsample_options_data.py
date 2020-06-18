@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="DownsampleOptionsData.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="downsample_options_data.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -88,6 +88,7 @@ class DownsampleOptionsData(object):
         :type: bool
         """
         self._downsample_images = downsample_images
+
     @property
     def resolution(self):
         """Gets the resolution of this DownsampleOptionsData.  # noqa: E501
@@ -109,6 +110,7 @@ class DownsampleOptionsData(object):
         :type: int
         """
         self._resolution = resolution
+
     @property
     def resolution_threshold(self):
         """Gets the resolution_threshold of this DownsampleOptionsData.  # noqa: E501
@@ -130,6 +132,8 @@ class DownsampleOptionsData(object):
         :type: int
         """
         self._resolution_threshold = resolution_threshold
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

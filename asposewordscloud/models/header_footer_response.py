@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="HeaderFooterResponse.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="header_footer_response.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,11 +83,12 @@ class HeaderFooterResponse(object):
         :type: str
         """
         self._request_id = request_id
+
     @property
     def header_footer(self):
         """Gets the header_footer of this HeaderFooterResponse.  # noqa: E501
 
-        Gets or sets header_footer.  # noqa: E501
+        Gets or sets headerFooter.  # noqa: E501
 
         :return: The header_footer of this HeaderFooterResponse.  # noqa: E501
         :rtype: HeaderFooter
@@ -98,12 +99,14 @@ class HeaderFooterResponse(object):
     def header_footer(self, header_footer):
         """Sets the header_footer of this HeaderFooterResponse.
 
-        Gets or sets header_footer.  # noqa: E501
+        Gets or sets headerFooter.  # noqa: E501
 
         :param header_footer: The header_footer of this HeaderFooterResponse.  # noqa: E501
         :type: HeaderFooter
         """
         self._header_footer = header_footer
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

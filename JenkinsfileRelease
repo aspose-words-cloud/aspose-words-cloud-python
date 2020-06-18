@@ -5,45 +5,23 @@ parameters {
 		string(name: 'pypiLogin', description: 'Login for pypi auth')
 		string(name: 'pypiPass', description: 'Password for pypi auth')
 }
-
-def publishToTestPypi()
-{
-	try {	
-        stage('0:checkout again'){
+node('words-linux') {         
+    try {		
+	    stage('0:Merge master to release'){
 			if (params.StartFromStage.toInteger() < 1) {
-				checkout([$class: 'GitSCM', branches: [[name: '*/release']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-python.git']]])
-				withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
-					sh 'mkdir -p Settings'
-				sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"$testServerUrl\\"}" > Settings/servercreds.json'
-				}	
+                checkout([$class: 'GitSCM', branches: [[name: '*/release']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-python.git']]])
+                sh "git config user.email 'jenkins.aspose@gmail.com'"
+                sh "git config user.name 'jenkins'"
+                sh "git checkout --merge release"
+                sh "git reset --hard origin/release"
+                sh "git merge --no-ff --allow-unrelated-histories origin/master"
+                sh "git diff --name-status"			
+                sh 'git commit -am "Merged master branch to release" || exit 0'
+                withCredentials([usernamePassword(credentialsId: '361885ba-9425-4230-950e-0af201d90547', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
+                    sh "git push https://$gitUsername:$gitPass@git.auckland.dynabic.com/words-cloud/words-cloud-python.git release"
+                }
 			}
-		}			
-		
-		stage('1: upload to testPyPi') {
-			if (params.StartFromStage.toInteger() < 2) {
-				sh 'docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/test-publish.sh $pypiLogin $pypiPass'
-			}
-		}
-		
-		stage('2:checkout again'){
-			if (params.StartFromStage.toInteger() < 3) {
-				checkout([$class: 'GitSCM', branches: [[name: '*/release']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-python.git']]])
-				withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
-					sh 'mkdir -p Settings'
-				sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"$testServerUrl\\"}" > Settings/servercreds.json'
-				}	
-			}
-		}		
-		
-		stage('3:package test'){
-			if (params.StartFromStage.toInteger() < 4) {
-			    withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
-					sh 'mkdir -p Settings'
-					sh 'docker run --rm -v $PWD:/opt/project -w=/opt/project python:3.6 bash scripts/test-unittest.sh $AppSid $AppKey $testServerUrl'
-					sh "rm -rf %s"
-				}
-			}
-		}   
+	    }	    
     } finally {                       
         cleanWs()
     }
@@ -52,32 +30,39 @@ def publishToTestPypi()
 def publishToPypi()
 {
 	try {	
-		stage('4:checkout again'){
-			if (params.StartFromStage.toInteger() < 5) {
+		stage('6:checkout again'){
+			if (params.StartFromStage.toInteger() < 7) {
 				checkout([$class: 'GitSCM', branches: [[name: '*/release']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-python.git']]])
 				withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
 					sh 'mkdir -p Settings'
-				sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"$testServerUrl\\"}" > Settings/servercreds.json'
+                    sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"$testServerUrl\\"}" > Settings/servercreds.json'
 				}	
 			}
 		}			
 		
-		stage('5: upload to PyPi') {
-			if (params.StartFromStage.toInteger() < 6) {
-				sh 'docker run --rm -v $PWD:/opt/project -w=/opt/project python:2.7.15 bash scripts/publish.sh $pypiLogin $pypiPass'
+		stage('7: upload to PyPi') {
+			if (params.StartFromStage.toInteger() < 8) {
+				docker.image('python:3.6').inside('-u root'){
+					sh "python -m pip install --upgrade setuptools wheel"
+					sh "python setup.py sdist bdist_wheel"
+					sh "python -m pip install --upgrade twine python-dateutil"
+					sh "touch ~/.pypirc"
+					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = $pypiLogin \\n password = '$pypiPass' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = $pypiLogin \\n password = '$pypiPass'' > ~/.pypirc"
+					sh "python setup.py sdist && twine upload dist/*"
+				}
 			}
 		}
 		
 		
-		stage('6:add version tag'){
-			if (params.StartFromStage.toInteger() < 7) {
+		stage('8:add version tag'){
+			if (params.StartFromStage.toInteger() < 9) {
 				checkout([$class: 'GitSCM', branches: [[name: '*/release']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-python.git']]])
             		
 				sh "git config user.email \"jenkins.aspose@gmail.com\""
 				sh "git config user.name \"jenkins\""
 				sh "git tag -a $version -m 'version $version' | exit 0"
 			
-				withCredentials([usernamePassword(credentialsId: '361885ba-9425-4230-950e-0af201d90547', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
+				withCredentials([usernamePassword(credentialsId: '9d6c4dfa-042c-4ed1-81c7-9175179dddda', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
 					sh "git push https://$gitUsername:$gitPass@git.auckland.dynabic.com/words-cloud/words-cloud-python.git $version"
 				}
 			}
@@ -88,12 +73,6 @@ def publishToPypi()
 }
 
 node('words-linux') {
-	try {
-		publishToTestPypi()
-	} finally {
-		cleanWs()
-	}
-	
 	try {
 		publishToPypi()
 	} finally {

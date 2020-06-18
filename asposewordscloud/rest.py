@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="rest.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,6 +23,7 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+
 from __future__ import absolute_import
 
 import io
@@ -333,11 +334,10 @@ class ApiException(Exception):
 
         return error_message
 
-        
+
     def init_error_response(self, json_object):
         self.body = WordsApiErrorResponse(json_object["RequestId"], self.init_error(json_object["Error"]))
-        
 
     def init_error(self, error_object):
-        return ApiError(error_object.get("Code", None), error_object.get("Message", None), error_object.get("Description", None), error_object.get("DateTime", None), 
-        self.init_error(error_object["InnerError"]) if "InnerError" in error_object else None)
+        return ApiError(code=error_object.get("Code", None), message=error_object.get("Message", None), description=error_object.get("Description", None), date_time=error_object.get("DateTime", None), 
+        inner_error=self.init_error(error_object["InnerError"]) if "InnerError" in error_object else None)

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="DrawingObjectUpdate.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="drawing_object_update.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,173 +41,52 @@ class DrawingObjectUpdate(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'relative_horizontal_position': 'str',
+        'height': 'float',
         'left': 'float',
+        'relative_horizontal_position': 'str',
         'relative_vertical_position': 'str',
         'top': 'float',
         'width': 'float',
-        'height': 'float',
         'wrap_type': 'str'
     }
 
     attribute_map = {
-        'relative_horizontal_position': 'RelativeHorizontalPosition',
+        'height': 'Height',
         'left': 'Left',
+        'relative_horizontal_position': 'RelativeHorizontalPosition',
         'relative_vertical_position': 'RelativeVerticalPosition',
         'top': 'Top',
         'width': 'Width',
-        'height': 'Height',
         'wrap_type': 'WrapType'
     }
 
-    def __init__(self, relative_horizontal_position=None, left=None, relative_vertical_position=None, top=None, width=None, height=None, wrap_type=None):  # noqa: E501
+    def __init__(self, height=None, left=None, relative_horizontal_position=None, relative_vertical_position=None, top=None, width=None, wrap_type=None):  # noqa: E501
         """DrawingObjectUpdate - a model defined in Swagger"""  # noqa: E501
 
-        self._relative_horizontal_position = None
+        self._height = None
         self._left = None
+        self._relative_horizontal_position = None
         self._relative_vertical_position = None
         self._top = None
         self._width = None
-        self._height = None
         self._wrap_type = None
         self.discriminator = None
 
-        if relative_horizontal_position is not None:
-            self.relative_horizontal_position = relative_horizontal_position
+        if height is not None:
+            self.height = height
         if left is not None:
             self.left = left
+        if relative_horizontal_position is not None:
+            self.relative_horizontal_position = relative_horizontal_position
         if relative_vertical_position is not None:
             self.relative_vertical_position = relative_vertical_position
         if top is not None:
             self.top = top
         if width is not None:
             self.width = width
-        if height is not None:
-            self.height = height
         if wrap_type is not None:
             self.wrap_type = wrap_type
 
-    @property
-    def relative_horizontal_position(self):
-        """Gets the relative_horizontal_position of this DrawingObjectUpdate.  # noqa: E501
-
-        Gets or sets specifies where the distance to the image is measured from.               # noqa: E501
-
-        :return: The relative_horizontal_position of this DrawingObjectUpdate.  # noqa: E501
-        :rtype: str
-        """
-        return self._relative_horizontal_position
-
-    @relative_horizontal_position.setter
-    def relative_horizontal_position(self, relative_horizontal_position):
-        """Sets the relative_horizontal_position of this DrawingObjectUpdate.
-
-        Gets or sets specifies where the distance to the image is measured from.               # noqa: E501
-
-        :param relative_horizontal_position: The relative_horizontal_position of this DrawingObjectUpdate.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["Margin", "Page", "Column", "Default", "Character", "LeftMargin", "RightMargin", "InsideMargin", "OutsideMargin"]  # noqa: E501
-        if not relative_horizontal_position.isdigit():	
-            if relative_horizontal_position not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `relative_horizontal_position` ({0}), must be one of {1}"  # noqa: E501
-                    .format(relative_horizontal_position, allowed_values))
-            self._relative_horizontal_position = relative_horizontal_position
-        else:
-            self._relative_horizontal_position = allowed_values[int(relative_horizontal_position) if six.PY3 else long(relative_horizontal_position)]
-    @property
-    def left(self):
-        """Gets the left of this DrawingObjectUpdate.  # noqa: E501
-
-        Gets or sets distance in points from the origin to the left side of the image.               # noqa: E501
-
-        :return: The left of this DrawingObjectUpdate.  # noqa: E501
-        :rtype: float
-        """
-        return self._left
-
-    @left.setter
-    def left(self, left):
-        """Sets the left of this DrawingObjectUpdate.
-
-        Gets or sets distance in points from the origin to the left side of the image.               # noqa: E501
-
-        :param left: The left of this DrawingObjectUpdate.  # noqa: E501
-        :type: float
-        """
-        self._left = left
-    @property
-    def relative_vertical_position(self):
-        """Gets the relative_vertical_position of this DrawingObjectUpdate.  # noqa: E501
-
-        Gets or sets specifies where the distance to the image measured from.  # noqa: E501
-
-        :return: The relative_vertical_position of this DrawingObjectUpdate.  # noqa: E501
-        :rtype: str
-        """
-        return self._relative_vertical_position
-
-    @relative_vertical_position.setter
-    def relative_vertical_position(self, relative_vertical_position):
-        """Sets the relative_vertical_position of this DrawingObjectUpdate.
-
-        Gets or sets specifies where the distance to the image measured from.  # noqa: E501
-
-        :param relative_vertical_position: The relative_vertical_position of this DrawingObjectUpdate.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["Margin", "TableDefault", "Page", "Paragraph", "TextFrameDefault", "Line", "TopMargin", "BottomMargin", "InsideMargin", "OutsideMargin"]  # noqa: E501
-        if not relative_vertical_position.isdigit():	
-            if relative_vertical_position not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `relative_vertical_position` ({0}), must be one of {1}"  # noqa: E501
-                    .format(relative_vertical_position, allowed_values))
-            self._relative_vertical_position = relative_vertical_position
-        else:
-            self._relative_vertical_position = allowed_values[int(relative_vertical_position) if six.PY3 else long(relative_vertical_position)]
-    @property
-    def top(self):
-        """Gets the top of this DrawingObjectUpdate.  # noqa: E501
-
-        Gets or sets distance in points from the origin to the top side of the image.  # noqa: E501
-
-        :return: The top of this DrawingObjectUpdate.  # noqa: E501
-        :rtype: float
-        """
-        return self._top
-
-    @top.setter
-    def top(self, top):
-        """Sets the top of this DrawingObjectUpdate.
-
-        Gets or sets distance in points from the origin to the top side of the image.  # noqa: E501
-
-        :param top: The top of this DrawingObjectUpdate.  # noqa: E501
-        :type: float
-        """
-        self._top = top
-    @property
-    def width(self):
-        """Gets the width of this DrawingObjectUpdate.  # noqa: E501
-
-        Gets or sets width of the drawing objects in points.  # noqa: E501
-
-        :return: The width of this DrawingObjectUpdate.  # noqa: E501
-        :rtype: float
-        """
-        return self._width
-
-    @width.setter
-    def width(self, width):
-        """Sets the width of this DrawingObjectUpdate.
-
-        Gets or sets width of the drawing objects in points.  # noqa: E501
-
-        :param width: The width of this DrawingObjectUpdate.  # noqa: E501
-        :type: float
-        """
-        self._width = width
     @property
     def height(self):
         """Gets the height of this DrawingObjectUpdate.  # noqa: E501
@@ -229,6 +108,133 @@ class DrawingObjectUpdate(object):
         :type: float
         """
         self._height = height
+
+    @property
+    def left(self):
+        """Gets the left of this DrawingObjectUpdate.  # noqa: E501
+
+        Gets or sets distance in points from the origin to the left side of the image.  # noqa: E501
+
+        :return: The left of this DrawingObjectUpdate.  # noqa: E501
+        :rtype: float
+        """
+        return self._left
+
+    @left.setter
+    def left(self, left):
+        """Sets the left of this DrawingObjectUpdate.
+
+        Gets or sets distance in points from the origin to the left side of the image.  # noqa: E501
+
+        :param left: The left of this DrawingObjectUpdate.  # noqa: E501
+        :type: float
+        """
+        self._left = left
+
+    @property
+    def relative_horizontal_position(self):
+        """Gets the relative_horizontal_position of this DrawingObjectUpdate.  # noqa: E501
+
+        Gets or sets specifies where the distance to the image is measured from.  # noqa: E501
+
+        :return: The relative_horizontal_position of this DrawingObjectUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._relative_horizontal_position
+
+    @relative_horizontal_position.setter
+    def relative_horizontal_position(self, relative_horizontal_position):
+        """Sets the relative_horizontal_position of this DrawingObjectUpdate.
+
+        Gets or sets specifies where the distance to the image is measured from.  # noqa: E501
+
+        :param relative_horizontal_position: The relative_horizontal_position of this DrawingObjectUpdate.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["Margin", "Page", "Column", "Default", "Character", "LeftMargin", "RightMargin", "InsideMargin", "OutsideMargin"]  # noqa: E501
+        if not relative_horizontal_position.isdigit():
+            if relative_horizontal_position not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `relative_horizontal_position` ({0}), must be one of {1}"  # noqa: E501
+                    .format(relative_horizontal_position, allowed_values))
+            self._relative_horizontal_position = relative_horizontal_position
+        else:
+            self._relative_horizontal_position = allowed_values[int(relative_horizontal_position) if six.PY3 else long(relative_horizontal_position)]
+
+    @property
+    def relative_vertical_position(self):
+        """Gets the relative_vertical_position of this DrawingObjectUpdate.  # noqa: E501
+
+        Gets or sets specifies where the distance to the image measured from.  # noqa: E501
+
+        :return: The relative_vertical_position of this DrawingObjectUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._relative_vertical_position
+
+    @relative_vertical_position.setter
+    def relative_vertical_position(self, relative_vertical_position):
+        """Sets the relative_vertical_position of this DrawingObjectUpdate.
+
+        Gets or sets specifies where the distance to the image measured from.  # noqa: E501
+
+        :param relative_vertical_position: The relative_vertical_position of this DrawingObjectUpdate.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["Margin", "TableDefault", "Page", "Paragraph", "TextFrameDefault", "Line", "TopMargin", "BottomMargin", "InsideMargin", "OutsideMargin"]  # noqa: E501
+        if not relative_vertical_position.isdigit():
+            if relative_vertical_position not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `relative_vertical_position` ({0}), must be one of {1}"  # noqa: E501
+                    .format(relative_vertical_position, allowed_values))
+            self._relative_vertical_position = relative_vertical_position
+        else:
+            self._relative_vertical_position = allowed_values[int(relative_vertical_position) if six.PY3 else long(relative_vertical_position)]
+
+    @property
+    def top(self):
+        """Gets the top of this DrawingObjectUpdate.  # noqa: E501
+
+        Gets or sets distance in points from the origin to the top side of the image.  # noqa: E501
+
+        :return: The top of this DrawingObjectUpdate.  # noqa: E501
+        :rtype: float
+        """
+        return self._top
+
+    @top.setter
+    def top(self, top):
+        """Sets the top of this DrawingObjectUpdate.
+
+        Gets or sets distance in points from the origin to the top side of the image.  # noqa: E501
+
+        :param top: The top of this DrawingObjectUpdate.  # noqa: E501
+        :type: float
+        """
+        self._top = top
+
+    @property
+    def width(self):
+        """Gets the width of this DrawingObjectUpdate.  # noqa: E501
+
+        Gets or sets width of the drawing objects in points.  # noqa: E501
+
+        :return: The width of this DrawingObjectUpdate.  # noqa: E501
+        :rtype: float
+        """
+        return self._width
+
+    @width.setter
+    def width(self, width):
+        """Sets the width of this DrawingObjectUpdate.
+
+        Gets or sets width of the drawing objects in points.  # noqa: E501
+
+        :param width: The width of this DrawingObjectUpdate.  # noqa: E501
+        :type: float
+        """
+        self._width = width
+
     @property
     def wrap_type(self):
         """Gets the wrap_type of this DrawingObjectUpdate.  # noqa: E501
@@ -250,7 +256,7 @@ class DrawingObjectUpdate(object):
         :type: str
         """
         allowed_values = ["Inline", "TopBottom", "Square", "None", "Tight", "Through"]  # noqa: E501
-        if not wrap_type.isdigit():	
+        if not wrap_type.isdigit():
             if wrap_type not in allowed_values:
                 raise ValueError(
                     "Invalid value for `wrap_type` ({0}), must be one of {1}"  # noqa: E501
@@ -258,6 +264,8 @@ class DrawingObjectUpdate(object):
             self._wrap_type = wrap_type
         else:
             self._wrap_type = allowed_values[int(wrap_type) if six.PY3 else long(wrap_type)]
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

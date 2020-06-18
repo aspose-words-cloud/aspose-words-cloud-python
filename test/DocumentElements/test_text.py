@@ -40,7 +40,7 @@ class TestText(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'TestPostReplaceText.docx'
         dest_name = os.path.join(self.remote_test_out, remote_name)
-        body = asposewordscloud.ReplaceTextParameters('aspose', 'aspose new')
+        body = asposewordscloud.ReplaceTextParameters(old_value='aspose', new_value='aspose new')
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.ReplaceTextRequest(remote_name, body,

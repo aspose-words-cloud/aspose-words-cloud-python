@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="FilesUploadResult.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="files_upload_result.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,7 +30,7 @@ import six
 
 
 class FilesUploadResult(object):
-    """File upload result
+    """File upload result.
     """
 
     """
@@ -41,48 +41,27 @@ class FilesUploadResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'uploaded': 'list[str]',
-        'errors': 'list[Error]'
+        'errors': 'list[Error]',
+        'uploaded': 'list[str]'
     }
 
     attribute_map = {
-        'uploaded': 'Uploaded',
-        'errors': 'Errors'
+        'errors': 'Errors',
+        'uploaded': 'Uploaded'
     }
 
-    def __init__(self, uploaded=None, errors=None):  # noqa: E501
+    def __init__(self, errors=None, uploaded=None):  # noqa: E501
         """FilesUploadResult - a model defined in Swagger"""  # noqa: E501
 
-        self._uploaded = None
         self._errors = None
+        self._uploaded = None
         self.discriminator = None
 
-        if uploaded is not None:
-            self.uploaded = uploaded
         if errors is not None:
             self.errors = errors
+        if uploaded is not None:
+            self.uploaded = uploaded
 
-    @property
-    def uploaded(self):
-        """Gets the uploaded of this FilesUploadResult.  # noqa: E501
-
-        List of uploaded file names  # noqa: E501
-
-        :return: The uploaded of this FilesUploadResult.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._uploaded
-
-    @uploaded.setter
-    def uploaded(self, uploaded):
-        """Sets the uploaded of this FilesUploadResult.
-
-        List of uploaded file names  # noqa: E501
-
-        :param uploaded: The uploaded of this FilesUploadResult.  # noqa: E501
-        :type: list[str]
-        """
-        self._uploaded = uploaded
     @property
     def errors(self):
         """Gets the errors of this FilesUploadResult.  # noqa: E501
@@ -104,6 +83,30 @@ class FilesUploadResult(object):
         :type: list[Error]
         """
         self._errors = errors
+
+    @property
+    def uploaded(self):
+        """Gets the uploaded of this FilesUploadResult.  # noqa: E501
+
+        List of uploaded file names.  # noqa: E501
+
+        :return: The uploaded of this FilesUploadResult.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._uploaded
+
+    @uploaded.setter
+    def uploaded(self, uploaded):
+        """Sets the uploaded of this FilesUploadResult.
+
+        List of uploaded file names.  # noqa: E501
+
+        :param uploaded: The uploaded of this FilesUploadResult.  # noqa: E501
+        :type: list[str]
+        """
+        self._uploaded = uploaded
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

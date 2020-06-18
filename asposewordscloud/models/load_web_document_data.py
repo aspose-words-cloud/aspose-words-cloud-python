@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="LoadWebDocumentData.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="load_web_document_data.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,11 +83,12 @@ class LoadWebDocumentData(object):
         :type: str
         """
         self._loading_document_url = loading_document_url
+
     @property
     def save_options(self):
         """Gets the save_options of this LoadWebDocumentData.  # noqa: E501
 
-        Gets or sets save_options.  # noqa: E501
+        Gets or sets save options.  # noqa: E501
 
         :return: The save_options of this LoadWebDocumentData.  # noqa: E501
         :rtype: SaveOptionsData
@@ -98,12 +99,14 @@ class LoadWebDocumentData(object):
     def save_options(self, save_options):
         """Sets the save_options of this LoadWebDocumentData.
 
-        Gets or sets save_options.  # noqa: E501
+        Gets or sets save options.  # noqa: E501
 
         :param save_options: The save_options of this LoadWebDocumentData.  # noqa: E501
         :type: SaveOptionsData
         """
         self._save_options = save_options
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

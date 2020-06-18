@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="SplitDocumentResult.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="split_document_result.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,53 +41,32 @@ class SplitDocumentResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'source_document': 'FileLink',
         'pages': 'list[FileLink]',
+        'source_document': 'FileLink',
         'zipped_pages': 'FileLink'
     }
 
     attribute_map = {
-        'source_document': 'SourceDocument',
         'pages': 'Pages',
+        'source_document': 'SourceDocument',
         'zipped_pages': 'ZippedPages'
     }
 
-    def __init__(self, source_document=None, pages=None, zipped_pages=None):  # noqa: E501
+    def __init__(self, pages=None, source_document=None, zipped_pages=None):  # noqa: E501
         """SplitDocumentResult - a model defined in Swagger"""  # noqa: E501
 
-        self._source_document = None
         self._pages = None
+        self._source_document = None
         self._zipped_pages = None
         self.discriminator = None
 
-        if source_document is not None:
-            self.source_document = source_document
         if pages is not None:
             self.pages = pages
+        if source_document is not None:
+            self.source_document = source_document
         if zipped_pages is not None:
             self.zipped_pages = zipped_pages
 
-    @property
-    def source_document(self):
-        """Gets the source_document of this SplitDocumentResult.  # noqa: E501
-
-        Gets or sets source_document.  # noqa: E501
-
-        :return: The source_document of this SplitDocumentResult.  # noqa: E501
-        :rtype: FileLink
-        """
-        return self._source_document
-
-    @source_document.setter
-    def source_document(self, source_document):
-        """Sets the source_document of this SplitDocumentResult.
-
-        Gets or sets source_document.  # noqa: E501
-
-        :param source_document: The source_document of this SplitDocumentResult.  # noqa: E501
-        :type: FileLink
-        """
-        self._source_document = source_document
     @property
     def pages(self):
         """Gets the pages of this SplitDocumentResult.  # noqa: E501
@@ -109,11 +88,34 @@ class SplitDocumentResult(object):
         :type: list[FileLink]
         """
         self._pages = pages
+
+    @property
+    def source_document(self):
+        """Gets the source_document of this SplitDocumentResult.  # noqa: E501
+
+        Gets or sets linkt to the source document.  # noqa: E501
+
+        :return: The source_document of this SplitDocumentResult.  # noqa: E501
+        :rtype: FileLink
+        """
+        return self._source_document
+
+    @source_document.setter
+    def source_document(self, source_document):
+        """Sets the source_document of this SplitDocumentResult.
+
+        Gets or sets linkt to the source document.  # noqa: E501
+
+        :param source_document: The source_document of this SplitDocumentResult.  # noqa: E501
+        :type: FileLink
+        """
+        self._source_document = source_document
+
     @property
     def zipped_pages(self):
         """Gets the zipped_pages of this SplitDocumentResult.  # noqa: E501
 
-        Gets or sets zipped_pages.  # noqa: E501
+        Gets or sets link to the file archive with pages.  # noqa: E501
 
         :return: The zipped_pages of this SplitDocumentResult.  # noqa: E501
         :rtype: FileLink
@@ -124,12 +126,14 @@ class SplitDocumentResult(object):
     def zipped_pages(self, zipped_pages):
         """Sets the zipped_pages of this SplitDocumentResult.
 
-        Gets or sets zipped_pages.  # noqa: E501
+        Gets or sets link to the file archive with pages.  # noqa: E501
 
         :param zipped_pages: The zipped_pages of this SplitDocumentResult.  # noqa: E501
         :type: FileLink
         """
         self._zipped_pages = zipped_pages
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="SplitDocumentResponse.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="split_document_response.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,11 +83,12 @@ class SplitDocumentResponse(object):
         :type: str
         """
         self._request_id = request_id
+
     @property
     def split_result(self):
         """Gets the split_result of this SplitDocumentResponse.  # noqa: E501
 
-        Gets or sets split_result.  # noqa: E501
+        Gets or sets resylt of splitting document.  # noqa: E501
 
         :return: The split_result of this SplitDocumentResponse.  # noqa: E501
         :rtype: SplitDocumentResult
@@ -98,12 +99,14 @@ class SplitDocumentResponse(object):
     def split_result(self, split_result):
         """Sets the split_result of this SplitDocumentResponse.
 
-        Gets or sets split_result.  # noqa: E501
+        Gets or sets resylt of splitting document.  # noqa: E501
 
         :param split_result: The split_result of this SplitDocumentResponse.  # noqa: E501
         :type: SplitDocumentResult
         """
         self._split_result = split_result
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="DocumentPosition.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# <copyright company="Aspose" file="document_position.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -66,7 +66,7 @@ class DocumentPosition(object):
     def node(self):
         """Gets the node of this DocumentPosition.  # noqa: E501
 
-        Gets or sets node.  # noqa: E501
+        Gets or sets link to  node.  # noqa: E501
 
         :return: The node of this DocumentPosition.  # noqa: E501
         :rtype: NodeLink
@@ -77,12 +77,13 @@ class DocumentPosition(object):
     def node(self, node):
         """Sets the node of this DocumentPosition.
 
-        Gets or sets node.  # noqa: E501
+        Gets or sets link to  node.  # noqa: E501
 
         :param node: The node of this DocumentPosition.  # noqa: E501
         :type: NodeLink
         """
         self._node = node
+
     @property
     def offset(self):
         """Gets the offset of this DocumentPosition.  # noqa: E501
@@ -104,6 +105,8 @@ class DocumentPosition(object):
         :type: int
         """
         self._offset = offset
+
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
