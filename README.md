@@ -16,6 +16,19 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 - [Convert a document to desired file format](https://docs.aspose.cloud/display/wordscloud/Convert+Document+to+Destination+Format+with+Detailed+Settings+and+Save+Result+to+Storage) along with detailed settings.
 - Convert an encrypted PDF document into Word document format.
 
+## Enhancements in Version 20.6.0
+- Added OoxmlSaveOption CompressionLevel property
+- Added group of methods without nodePath property
+  - DeleteAllParagraphTabStops
+  - DeleteParagraphListFormat
+  - DeleteParagraphTabStop
+  - GetParagraphTabStops
+  - InsertOrUpdateParagraphTabStop
+  - InsertParagraph
+  - UpdateParagraphFormat
+  - UpdateParagraphListFormat
+- In methods InsertOrUpdateParagraphTabStop, DeleteParagraphTabStop order of parameters has changed NodePath was moved to one position next, like if it was second before, now it's third.
+
 ## Enhancements in Version 20.5.0
 - Added methods to work with Word document lists
   - GetLists
