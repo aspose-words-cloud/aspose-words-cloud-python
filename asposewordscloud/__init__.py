@@ -123,6 +123,7 @@ from asposewordscloud.models.lists import Lists
 from asposewordscloud.models.lists_response import ListsResponse
 from asposewordscloud.models.list_update import ListUpdate
 from asposewordscloud.models.load_web_document_data import LoadWebDocumentData
+from asposewordscloud.models.markdown_save_options_data import MarkdownSaveOptionsData
 from asposewordscloud.models.metafile_rendering_options_data import MetafileRenderingOptionsData
 from asposewordscloud.models.mhtml_save_options_data import MhtmlSaveOptionsData
 from asposewordscloud.models.modification_operation_result import ModificationOperationResult
@@ -225,6 +226,7 @@ from asposewordscloud.models.tab_stop_insert import TabStopInsert
 from asposewordscloud.models.tab_stops_response import TabStopsResponse
 from asposewordscloud.models.text_save_options_data import TextSaveOptionsData
 from asposewordscloud.models.tiff_save_options_data import TiffSaveOptionsData
+from asposewordscloud.models.txt_save_options_base_data import TxtSaveOptionsBaseData
 from asposewordscloud.models.watermark_text import WatermarkText
 from asposewordscloud.models.word_ml_save_options_data import WordMLSaveOptionsData
 from asposewordscloud.models.words_api_error_response import WordsApiErrorResponse
