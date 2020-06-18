@@ -7,75 +7,23 @@ parameters {
 }
 node('words-linux') {         
     try {		
-	    stage('0:Merge release to testPackage'){
+	    stage('0:Merge master to release'){
 			if (params.StartFromStage.toInteger() < 1) {
-				checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-python.git']]])
-				sh "git checkout --merge testPackage"
-				sh "git reset --hard origin/testPackage"
-				sh "git merge --no-ff --allow-unrelated-histories origin/release"
-				sh "git diff --name-status"			
-				sh 'git commit -am "Merged release branch to testPackage" || exit 0'
-	    	
-				withCredentials([usernamePassword(credentialsId: '361885ba-9425-4230-950e-0af201d90547', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
-					sh "git push https://$gitUsername:$gitPass@git.auckland.dynabic.com/words-cloud/words-cloud-python.git testPackage"
-				}
+                if (params.branch.contains("master")) {
+						checkout([$class: 'GitSCM', branches: [[name: '*/release']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-python.git']]])
+						sh "git config user.email 'jenkins.aspose@gmail.com'"
+						sh "git config user.name 'jenkins'"
+						sh "git checkout --merge release"
+						sh "git reset --hard origin/release"
+						sh "git merge --no-ff --allow-unrelated-histories origin/master"
+						sh "git diff --name-status"			
+						sh 'git commit -am "Merged master branch to release" || exit 0'
+						withCredentials([usernamePassword(credentialsId: '361885ba-9425-4230-950e-0af201d90547', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
+							sh "git push https://$gitUsername:$gitPass@git.auckland.dynabic.com/words-cloud/words-cloud-python.git release"
+					}
+				}  
 			}
-	    }	   
-		    			                
-    } finally {                       
-        cleanWs()
-    }
-}
-
-def publishToTestPypi()
-{
-	try {	
-        stage('2:checkout again'){
-			if (params.StartFromStage.toInteger() < 3) {
-				checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-python.git']]])
-				withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
-					sh 'mkdir -p Settings'
-				sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"$testServerUrl\\"}" > Settings/servercreds.json'
-				}	
-			}
-		}			
-		
-		stage('3: upload to testPyPi') {
-			if (params.StartFromStage.toInteger() < 4) {
-				docker.image('python:3.6').inside('-u root'){
-					sh "python -m pip install --upgrade setuptools wheel"
-					sh "python setup.py sdist bdist_wheel"
-					sh "python -m pip install --upgrade twine python-dateutil"
-					sh "touch ~/.pypirc"
-					sh "echo '[distutils] \\n index-servers= \\n\\t pypi \\n\\t pypitest\\n [pypi] \\n username = $pypiLogin \\n password = '$pypiPass' \\n [pypitest]\\n repository = https://test.pypi.org/legacy/ \\n username = $pypiLogin \\n password = '$pypiPass'' > ~/.pypirc"
-					sh "python setup.py sdist && twine upload dist/* -r pypitest"
-				}
-			}
-		}
-		
-		stage('4:checkout again'){
-			if (params.StartFromStage.toInteger() < 5) {
-				checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-python.git']]])
-				withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
-					sh 'mkdir -p Settings'
-				sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"$testServerUrl\\"}" > Settings/servercreds.json'
-				}	
-			}
-		}		
-		
-		stage('5:package test'){
-			if (params.StartFromStage.toInteger() < 6) {
-				docker.image('python:3.6').inside('-u root') {
-					sh "python -m pip install --upgrade setuptools wheel"
-					sh "pip install urllib3"
-					sh "pip install --index-url https://test.pypi.org/simple/ asposewordscloud"
-					sh "python -m pip install -r requirements.txt && python -m pip install -r test-requirements.txt"
-					sh "py -m unittest discover -v -s ."
-		
-					sh "rm -rf %s"
-				}
-			}
-		}   
+	    }	    
     } finally {                       
         cleanWs()
     }
@@ -86,10 +34,10 @@ def publishToPypi()
 	try {	
 		stage('6:checkout again'){
 			if (params.StartFromStage.toInteger() < 7) {
-				checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-python.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: '*/release']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-python.git']]])
 				withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'AppKey', usernameVariable: 'AppSid')]) {
 					sh 'mkdir -p Settings'
-				sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"$testServerUrl\\"}" > Settings/servercreds.json'
+                    sh 'echo "{\\"AppSid\\": \\"$AppSid\\",\\"AppKey\\": \\"$AppKey\\", \\"BaseUrl\\": \\"$testServerUrl\\"}" > Settings/servercreds.json'
 				}	
 			}
 		}			
@@ -127,12 +75,6 @@ def publishToPypi()
 }
 
 node('words-linux') {
-	try {
-		publishToTestPypi()
-	} finally {
-		cleanWs()
-	}
-	
 	try {
 		publishToPypi()
 	} finally {
