@@ -294,7 +294,7 @@ class TestParagraphs(BaseTestContext):
         filename = 'test_multi_pages.docx'
         remote_name = 'PostDocumentParagraphFormat.docx'
         index = 0
-        body = asposewordscloud.ParagraphFormat(alignment='Right')
+        body = asposewordscloud.ParagraphFormatUpdate(alignment='Right')
 
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.UpdateParagraphFormatRequest(remote_name, body, '', index,
@@ -480,23 +480,6 @@ class TestParagraphs(BaseTestContext):
                                                                            self.test_folder))
         result = self.words_api.insert_paragraph_without_node_path(request)
         self.assertIsNotNone(result, 'Error has occurred while put document paragraph')
-
-    #
-    # Test for updating paragraph format
-    #
-    def test_update_paragraph_format_without_node_path(self):
-        filename = 'test_multi_pages.docx'
-        remote_name = 'PostDocumentParagraphFormat.docx'
-        index = 0
-        body = asposewordscloud.ParagraphFormat(alignment='Right')
-
-        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
-        request = asposewordscloud.models.requests.UpdateParagraphFormatWithoutNodePathRequest(remote_name, body, index,
-                                                                                      folder=os.path.join(
-                                                                                          self.remote_test_folder,
-                                                                                          self.test_folder))
-        result = self.words_api.update_paragraph_format_without_node_path(request)
-        self.assertIsNotNone(result, 'Error has occurred while update section page setup')
 
     #
     # Test for updating paragraph list format
