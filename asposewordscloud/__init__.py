@@ -141,7 +141,9 @@ from asposewordscloud.models.page_setup import PageSetup
 from asposewordscloud.models.page_stat_data import PageStatData
 from asposewordscloud.models.paragraph import Paragraph
 from asposewordscloud.models.paragraph_format import ParagraphFormat
+from asposewordscloud.models.paragraph_format_base import ParagraphFormatBase
 from asposewordscloud.models.paragraph_format_response import ParagraphFormatResponse
+from asposewordscloud.models.paragraph_format_update import ParagraphFormatUpdate
 from asposewordscloud.models.paragraph_insert import ParagraphInsert
 from asposewordscloud.models.paragraph_link import ParagraphLink
 from asposewordscloud.models.paragraph_link_collection import ParagraphLinkCollection
