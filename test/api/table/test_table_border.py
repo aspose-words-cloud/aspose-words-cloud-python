@@ -103,7 +103,7 @@ class TestTableBorder(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
         requestBorderPropertiesColor = asposewordscloud.XmlColor(alpha=2)
-        requestBorderProperties = asposewordscloud.Border(border_type='Left', color=requestBorderPropertiesColor, distance_from_text=6, line_style='DashDotStroker', line_width=2, shadow=true)
+        requestBorderProperties = asposewordscloud.Border(border_type='Left', color=requestBorderPropertiesColor, distance_from_text=6, line_style='DashDotStroker', line_width=2, shadow=True)
         request = asposewordscloud.models.requests.UpdateBorderRequest(name=remoteFileName, border_properties=requestBorderProperties, node_path='tables/1/rows/0/cells/0', border_type='left', folder=remoteDataFolder)
 
         result = self.words_api.update_border(request)

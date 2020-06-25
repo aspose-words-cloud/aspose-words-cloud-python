@@ -72,7 +72,7 @@ class TestLists(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestListUpdate = asposewordscloud.ListUpdate(is_restart_at_each_section=true)
+        requestListUpdate = asposewordscloud.ListUpdate(is_restart_at_each_section=True)
         request = asposewordscloud.models.requests.UpdateListRequest(name=remoteFileName, list_update=requestListUpdate, list_id=1, folder=remoteDataFolder)
 
         result = self.words_api.update_list(request)

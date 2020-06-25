@@ -147,7 +147,7 @@ class TestParagraph(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestFontDto = asposewordscloud.Font(bold=true)
+        requestFontDto = asposewordscloud.Font(bold=True)
         request = asposewordscloud.models.requests.UpdateRunFontRequest(name=remoteFileName, font_dto=requestFontDto, paragraph_path='paragraphs/0', index=0, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
 
         result = self.words_api.update_run_font(request)

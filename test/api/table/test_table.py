@@ -194,7 +194,7 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestProperties = asposewordscloud.TableProperties(alignment='Right', allow_auto_fit=false, bidi=true, bottom_padding=1, cell_spacing=2, style_options='ColumnBands')
+        requestProperties = asposewordscloud.TableProperties(alignment='Right', allow_auto_fit=False, bidi=True, bottom_padding=1, cell_spacing=2, style_options='ColumnBands')
         request = asposewordscloud.models.requests.UpdateTablePropertiesRequest(name=remoteFileName, properties=requestProperties, node_path='', index=1, folder=remoteDataFolder)
 
         result = self.words_api.update_table_properties(request)
@@ -210,7 +210,7 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestProperties = asposewordscloud.TableProperties(alignment='Right', allow_auto_fit=false, bidi=true, bottom_padding=1, cell_spacing=2, style_options='ColumnBands')
+        requestProperties = asposewordscloud.TableProperties(alignment='Right', allow_auto_fit=False, bidi=True, bottom_padding=1, cell_spacing=2, style_options='ColumnBands')
         request = asposewordscloud.models.requests.UpdateTablePropertiesWithoutNodePathRequest(name=remoteFileName, properties=requestProperties, index=1, folder=remoteDataFolder)
 
         result = self.words_api.update_table_properties_without_node_path(request)
@@ -287,7 +287,7 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestFormat = asposewordscloud.TableRowFormat(allow_break_across_pages=true, heading_format=true, height=10, height_rule='Auto')
+        requestFormat = asposewordscloud.TableRowFormat(allow_break_across_pages=True, heading_format=True, height=10, height_rule='Auto')
         request = asposewordscloud.models.requests.UpdateTableRowFormatRequest(name=remoteFileName, format=requestFormat, table_path='sections/0/tables/2', index=0, folder=remoteDataFolder)
 
         result = self.words_api.update_table_row_format(request)
@@ -364,7 +364,7 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestFormat = asposewordscloud.TableCellFormat(bottom_padding=5, fit_text=true, horizontal_merge='First', wrap_text=true)
+        requestFormat = asposewordscloud.TableCellFormat(bottom_padding=5, fit_text=True, horizontal_merge='First', wrap_text=True)
         request = asposewordscloud.models.requests.UpdateTableCellFormatRequest(name=remoteFileName, format=requestFormat, table_row_path='sections/0/tables/2/rows/0', index=0, folder=remoteDataFolder)
 
         result = self.words_api.update_table_cell_format(request)

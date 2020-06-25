@@ -31,6 +31,7 @@ import re  # noqa: F401
 
 # python 2 and python 3 compatibility library
 import six
+import json
 from asposewordscloud.rest import ApiException
 from asposewordscloud.api_client import ApiClient
 
@@ -578,7 +579,7 @@ class WordsApi(object):
         if request.data is not None:
             form_params.append([self.__downcase_first_letter('Data'), request.data, 'string'])  # noqa: E501
         if request.report_engine_settings is not None:
-            form_params.append([self.__downcase_first_letter('ReportEngineSettings'), request.report_engine_settings, 'string'])  # noqa: E501
+            form_params.append([self.__downcase_first_letter('ReportEngineSettings'), json.dumps(request.report_engine_settings.to_dict()), 'string'])  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -691,7 +692,7 @@ class WordsApi(object):
         if request.data is not None:
             form_params.append([self.__downcase_first_letter('Data'), request.data, 'string'])  # noqa: E501
         if request.report_engine_settings is not None:
-            form_params.append([self.__downcase_first_letter('ReportEngineSettings'), request.report_engine_settings, 'string'])  # noqa: E501
+            form_params.append([self.__downcase_first_letter('ReportEngineSettings'), json.dumps(request.report_engine_settings.to_dict()), 'string'])  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -17343,7 +17344,7 @@ class WordsApi(object):
 
         form_params = []
         if request.drawing_object is not None:
-            form_params.append([self.__downcase_first_letter('DrawingObject'), request.drawing_object, 'string'])  # noqa: E501
+            form_params.append([self.__downcase_first_letter('DrawingObject'), json.dumps(request.drawing_object.to_dict()), 'string'])  # noqa: E501
         if request.image_file is not None:
             form_params.append([self.__downcase_first_letter('ImageFile'), request.image_file, 'file'])  # noqa: E501
 
@@ -17492,7 +17493,7 @@ class WordsApi(object):
 
         form_params = []
         if request.drawing_object is not None:
-            form_params.append([self.__downcase_first_letter('DrawingObject'), request.drawing_object, 'string'])  # noqa: E501
+            form_params.append([self.__downcase_first_letter('DrawingObject'), json.dumps(request.drawing_object.to_dict()), 'string'])  # noqa: E501
         if request.image_file is not None:
             form_params.append([self.__downcase_first_letter('ImageFile'), request.image_file, 'file'])  # noqa: E501
 
@@ -24508,7 +24509,7 @@ class WordsApi(object):
 
         form_params = []
         if request.drawing_object is not None:
-            form_params.append([self.__downcase_first_letter('DrawingObject'), request.drawing_object, 'string'])  # noqa: E501
+            form_params.append([self.__downcase_first_letter('DrawingObject'), json.dumps(request.drawing_object.to_dict()), 'string'])  # noqa: E501
         if request.image_file is not None:
             form_params.append([self.__downcase_first_letter('ImageFile'), request.image_file, 'file'])  # noqa: E501
 
@@ -24663,7 +24664,7 @@ class WordsApi(object):
 
         form_params = []
         if request.drawing_object is not None:
-            form_params.append([self.__downcase_first_letter('DrawingObject'), request.drawing_object, 'string'])  # noqa: E501
+            form_params.append([self.__downcase_first_letter('DrawingObject'), json.dumps(request.drawing_object.to_dict()), 'string'])  # noqa: E501
         if request.image_file is not None:
             form_params.append([self.__downcase_first_letter('ImageFile'), request.image_file, 'file'])  # noqa: E501
 

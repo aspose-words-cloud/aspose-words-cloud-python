@@ -57,7 +57,7 @@ class TestPageSetup(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestPageSetup = asposewordscloud.PageSetup(rtl_gutter=true, left_margin=10, orientation='Landscape', paper_size='A5')
+        requestPageSetup = asposewordscloud.PageSetup(rtl_gutter=True, left_margin=10, orientation='Landscape', paper_size='A5')
         request = asposewordscloud.models.requests.UpdateSectionPageSetupRequest(name=remoteFileName, section_index=0, page_setup=requestPageSetup, folder=remoteDataFolder)
 
         result = self.words_api.update_section_page_setup(request)

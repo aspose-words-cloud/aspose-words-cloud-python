@@ -42,7 +42,7 @@ class TestFormField(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, fieldFolder + '/FormFilled.docx'), 'rb'))
 
-        requestFormField = asposewordscloud.FormFieldTextInput(name='FullName', enabled=true, calculate_on_exit=true, status_text='', text_input_type='Regular', text_input_default='No name')
+        requestFormField = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='', text_input_type='Regular', text_input_default='No name')
         request = asposewordscloud.models.requests.UpdateFormFieldRequest(name=remoteFileName, form_field=requestFormField, node_path='sections/0', index=0, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
 
         result = self.words_api.update_form_field(request)
@@ -58,7 +58,7 @@ class TestFormField(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, fieldFolder + '/FormFilled.docx'), 'rb'))
 
-        requestFormField = asposewordscloud.FormFieldTextInput(name='FullName', enabled=true, calculate_on_exit=true, status_text='', text_input_type='Regular', text_input_default='No name')
+        requestFormField = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='', text_input_type='Regular', text_input_default='No name')
         request = asposewordscloud.models.requests.UpdateFormFieldWithoutNodePathRequest(name=remoteFileName, form_field=requestFormField, index=0, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
 
         result = self.words_api.update_form_field_without_node_path(request)
@@ -133,7 +133,7 @@ class TestFormField(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, 'Common/test_multi_pages.docx'), 'rb'))
 
-        requestFormField = asposewordscloud.FormFieldTextInput(name='FullName', enabled=true, calculate_on_exit=true, status_text='', text_input_type='Regular', text_input_default='123', text_input_format='UPPERCASE')
+        requestFormField = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='', text_input_type='Regular', text_input_default='123', text_input_format='UPPERCASE')
         request = asposewordscloud.models.requests.InsertFormFieldRequest(name=remoteFileName, form_field=requestFormField, node_path='sections/0/paragraphs/0', folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
 
         result = self.words_api.insert_form_field(request)
@@ -148,7 +148,7 @@ class TestFormField(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, 'Common/test_multi_pages.docx'), 'rb'))
 
-        requestFormField = asposewordscloud.FormFieldTextInput(name='FullName', enabled=true, calculate_on_exit=true, status_text='', text_input_type='Regular', text_input_default='123', text_input_format='UPPERCASE')
+        requestFormField = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='', text_input_type='Regular', text_input_default='123', text_input_format='UPPERCASE')
         request = asposewordscloud.models.requests.InsertFormFieldWithoutNodePathRequest(name=remoteFileName, form_field=requestFormField, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
 
         result = self.words_api.insert_form_field_without_node_path(request)
