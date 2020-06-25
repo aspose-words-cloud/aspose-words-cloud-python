@@ -192,7 +192,7 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestDrawingObject = asposewordscloud.DrawingObjectInsert(height=0, left=0, top=0, width=0)
+        requestDrawingObject = asposewordscloud.DrawingObjectInsert(height=0, left=0, top=0, width=0, relative_horizontal_position='Margin', relative_vertical_position='Margin', wrap_type='Inline')
         request = asposewordscloud.models.requests.InsertDrawingObjectRequest(name=remoteFileName, drawing_object=requestDrawingObject, image_file=open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), node_path='', folder=remoteDataFolder)
 
         result = self.words_api.insert_drawing_object(request)
@@ -208,7 +208,7 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestDrawingObject = asposewordscloud.DrawingObjectInsert(height=0, left=0, top=0, width=0)
+        requestDrawingObject = asposewordscloud.DrawingObjectInsert(height=0, left=0, top=0, width=0, relative_horizontal_position='Margin', relative_vertical_position='Margin', wrap_type='Inline')
         request = asposewordscloud.models.requests.InsertDrawingObjectWithoutNodePathRequest(name=remoteFileName, drawing_object=requestDrawingObject, image_file=open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), folder=remoteDataFolder)
 
         result = self.words_api.insert_drawing_object_without_node_path(request)
