@@ -24,7 +24,7 @@
 # -----------------------------------------------------------------------------------
 
 import os
-import datetime
+import dateutil.parser
 import asposewordscloud.models.requests
 from test.base_test_context import BaseTestContext
 
@@ -46,7 +46,7 @@ class TestCompareDocument(BaseTestContext):
         self.upload_file(remoteFolder + '/' + remoteName1, open(os.path.join(self.local_test_folder, localFolder + '/' + localName1), 'rb'))
         self.upload_file(remoteFolder + '/' + remoteName2, open(os.path.join(self.local_test_folder, localFolder + '/' + localName2), 'rb'))
 
-        requestCompareData = asposewordscloud.CompareData(author='author', comparing_with_document=remoteFolder + '/' + remoteName2, date_time=datetime.datetime.fromisoformat('2015-10-26T00:00:00.0000000Z'))
+        requestCompareData = asposewordscloud.CompareData(author='author', comparing_with_document=remoteFolder + '/' + remoteName2, date_time=dateutil.parser.isoparse('2015-10-26T00:00:00.0000000Z'))
         request = asposewordscloud.models.requests.CompareDocumentRequest(name=remoteName1, compare_data=requestCompareData, folder=remoteFolder, dest_file_name=self.remote_test_out + '/TestCompareDocumentOut.doc')
 
         result = self.words_api.compare_document(request)
