@@ -1,7 +1,7 @@
-#
-# --------------------------------------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="test_lists.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+# coding: utf-8
+# -----------------------------------------------------------------------------------
+# <copyright company="Aspose" file="test_readme.py">
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,8 +22,7 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 # </summary>
-# --------------------------------------------------------------------------------------------------------------------
-#
+# -----------------------------------------------------------------------------------
 
 import os
 import re

@@ -27,6 +27,7 @@ import pprint
 import re  # noqa: F401
 
 import six
+import json
 
 
 class Paragraph(object):
@@ -157,6 +158,30 @@ class Paragraph(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """Returns the model properties as a dict"""
+        result = {}
+
+        for attr, _ in six.iteritems(self.swagger_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[self.attribute_map[attr]] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
+            elif hasattr(value, "to_dict"):
+                result[self.attribute_map[attr]] = value.to_dict()
+            elif isinstance(value, dict):
+                result[self.attribute_map[attr]] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
+            else:
+                result[self.attribute_map[attr]] = value
+
+        return json.dumps(result)
 
     def to_str(self):
         """Returns the string representation of the model"""

@@ -121,30 +121,15 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
 
         header_params = {}
@@ -252,40 +237,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -401,40 +365,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('StyledNodePath')] = request.styled_node_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -546,30 +489,15 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
 
         header_params = {}
@@ -578,7 +506,7 @@ class WordsApi(object):
         if request.data is not None:
             form_params.append([self.__downcase_first_letter('Data'), request.data, 'string'])  # noqa: E501
         if request.report_engine_settings is not None:
-            form_params.append([self.__downcase_first_letter('ReportEngineSettings'), request.report_engine_settings, 'string'])  # noqa: E501
+            form_params.append([self.__downcase_first_letter('ReportEngineSettings'), request.report_engine_settings.to_json(), 'string'])  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -677,10 +605,7 @@ class WordsApi(object):
         path_params = {}
 
         query_params = []
-        if self.__downcase_first_letter('DocumentFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DocumentFileName' + '}'), request.document_file_name if request.document_file_name is not None else '')
-        else:
-            if request.document_file_name is not None:
+        if request.document_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DocumentFileName'), request.document_file_name))  # noqa: E501
 
         header_params = {}
@@ -691,7 +616,7 @@ class WordsApi(object):
         if request.data is not None:
             form_params.append([self.__downcase_first_letter('Data'), request.data, 'string'])  # noqa: E501
         if request.report_engine_settings is not None:
-            form_params.append([self.__downcase_first_letter('ReportEngineSettings'), request.report_engine_settings, 'string'])  # noqa: E501
+            form_params.append([self.__downcase_first_letter('ReportEngineSettings'), request.report_engine_settings.to_json(), 'string'])  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -782,10 +707,7 @@ class WordsApi(object):
         path_params = {}
 
         query_params = []
-        if self.__downcase_first_letter('BestClassesCount') in path:
-            path = path.replace('{' + self.__downcase_first_letter('BestClassesCount' + '}'), request.best_classes_count if request.best_classes_count is not None else '')
-        else:
-            if request.best_classes_count is not None:
+        if request.best_classes_count is not None:
                 query_params.append((self.__downcase_first_letter('BestClassesCount'), request.best_classes_count))  # noqa: E501
 
         header_params = {}
@@ -890,35 +812,17 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('DocumentName')] = request.document_name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('BestClassesCount') in path:
-            path = path.replace('{' + self.__downcase_first_letter('BestClassesCount' + '}'), request.best_classes_count if request.best_classes_count is not None else '')
-        else:
-            if request.best_classes_count is not None:
+        if request.best_classes_count is not None:
                 query_params.append((self.__downcase_first_letter('BestClassesCount'), request.best_classes_count))  # noqa: E501
-        if self.__downcase_first_letter('Taxonomy') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Taxonomy' + '}'), request.taxonomy if request.taxonomy is not None else '')
-        else:
-            if request.taxonomy is not None:
+        if request.taxonomy is not None:
                 query_params.append((self.__downcase_first_letter('Taxonomy'), request.taxonomy))  # noqa: E501
 
         header_params = {}
@@ -1024,30 +928,15 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
 
         header_params = {}
@@ -1152,30 +1041,15 @@ class WordsApi(object):
         path_params = {}
 
         query_params = []
-        if self.__downcase_first_letter('Format') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Format' + '}'), request.format if request.format is not None else '')
-        else:
-            if request.format is not None:
+        if request.format is not None:
                 query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('OutPath') in path:
-            path = path.replace('{' + self.__downcase_first_letter('OutPath' + '}'), request.out_path if request.out_path is not None else '')
-        else:
-            if request.out_path is not None:
+        if request.out_path is not None:
                 query_params.append((self.__downcase_first_letter('OutPath'), request.out_path))  # noqa: E501
-        if self.__downcase_first_letter('FileNameFieldValue') in path:
-            path = path.replace('{' + self.__downcase_first_letter('FileNameFieldValue' + '}'), request.file_name_field_value if request.file_name_field_value is not None else '')
-        else:
-            if request.file_name_field_value is not None:
+        if request.file_name_field_value is not None:
                 query_params.append((self.__downcase_first_letter('FileNameFieldValue'), request.file_name_field_value))  # noqa: E501
-        if self.__downcase_first_letter('FontsLocation') in path:
-            path = path.replace('{' + self.__downcase_first_letter('FontsLocation' + '}'), request.fonts_location if request.fonts_location is not None else '')
-        else:
-            if request.fonts_location is not None:
+        if request.fonts_location is not None:
                 query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
 
         header_params = {}
@@ -1281,25 +1155,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('SrcPath')] = request.src_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('DestPath') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestPath' + '}'), request.dest_path if request.dest_path is not None else '')
-        else:
-            if request.dest_path is not None:
+        if request.dest_path is not None:
                 query_params.append((self.__downcase_first_letter('DestPath'), request.dest_path))  # noqa: E501
-        if self.__downcase_first_letter('SrcStorageName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('SrcStorageName' + '}'), request.src_storage_name if request.src_storage_name is not None else '')
-        else:
-            if request.src_storage_name is not None:
+        if request.src_storage_name is not None:
                 query_params.append((self.__downcase_first_letter('SrcStorageName'), request.src_storage_name))  # noqa: E501
-        if self.__downcase_first_letter('DestStorageName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestStorageName' + '}'), request.dest_storage_name if request.dest_storage_name is not None else '')
-        else:
-            if request.dest_storage_name is not None:
+        if request.dest_storage_name is not None:
                 query_params.append((self.__downcase_first_letter('DestStorageName'), request.dest_storage_name))  # noqa: E501
-        if self.__downcase_first_letter('VersionId') in path:
-            path = path.replace('{' + self.__downcase_first_letter('VersionId' + '}'), request.version_id if request.version_id is not None else '')
-        else:
-            if request.version_id is not None:
+        if request.version_id is not None:
                 query_params.append((self.__downcase_first_letter('VersionId'), request.version_id))  # noqa: E501
 
         header_params = {}
@@ -1402,20 +1264,11 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('SrcPath')] = request.src_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('DestPath') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestPath' + '}'), request.dest_path if request.dest_path is not None else '')
-        else:
-            if request.dest_path is not None:
+        if request.dest_path is not None:
                 query_params.append((self.__downcase_first_letter('DestPath'), request.dest_path))  # noqa: E501
-        if self.__downcase_first_letter('SrcStorageName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('SrcStorageName' + '}'), request.src_storage_name if request.src_storage_name is not None else '')
-        else:
-            if request.src_storage_name is not None:
+        if request.src_storage_name is not None:
                 query_params.append((self.__downcase_first_letter('SrcStorageName'), request.src_storage_name))  # noqa: E501
-        if self.__downcase_first_letter('DestStorageName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestStorageName' + '}'), request.dest_storage_name if request.dest_storage_name is not None else '')
-        else:
-            if request.dest_storage_name is not None:
+        if request.dest_storage_name is not None:
                 query_params.append((self.__downcase_first_letter('DestStorageName'), request.dest_storage_name))  # noqa: E501
 
         header_params = {}
@@ -1523,40 +1376,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -1652,20 +1484,11 @@ class WordsApi(object):
         path_params = {}
 
         query_params = []
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('FileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('FileName' + '}'), request.file_name if request.file_name is not None else '')
-        else:
-            if request.file_name is not None:
+        if request.file_name is not None:
                 query_params.append((self.__downcase_first_letter('FileName'), request.file_name))  # noqa: E501
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
 
         header_params = {}
@@ -1763,10 +1586,7 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Path')] = request.path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('StorageName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('StorageName' + '}'), request.storage_name if request.storage_name is not None else '')
-        else:
-            if request.storage_name is not None:
+        if request.storage_name is not None:
                 query_params.append((self.__downcase_first_letter('StorageName'), request.storage_name))  # noqa: E501
 
         header_params = {}
@@ -1880,40 +1700,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('PropertyName')] = request.property_name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -2029,30 +1828,15 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
 
         header_params = {}
@@ -2160,30 +1944,15 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
 
         header_params = {}
@@ -2299,40 +2068,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('BorderType')] = request.border_type  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -2442,40 +2190,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -2585,40 +2312,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('CommentIndex')] = request.comment_index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -2728,40 +2434,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('PropertyName')] = request.property_name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -2877,40 +2562,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -3020,40 +2684,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -3169,40 +2812,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -3312,40 +2934,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -3449,40 +3050,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -3592,40 +3172,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -3724,15 +3283,9 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Path')] = request.path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('StorageName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('StorageName' + '}'), request.storage_name if request.storage_name is not None else '')
-        else:
-            if request.storage_name is not None:
+        if request.storage_name is not None:
                 query_params.append((self.__downcase_first_letter('StorageName'), request.storage_name))  # noqa: E501
-        if self.__downcase_first_letter('VersionId') in path:
-            path = path.replace('{' + self.__downcase_first_letter('VersionId' + '}'), request.version_id if request.version_id is not None else '')
-        else:
-            if request.version_id is not None:
+        if request.version_id is not None:
                 query_params.append((self.__downcase_first_letter('VersionId'), request.version_id))  # noqa: E501
 
         header_params = {}
@@ -3831,15 +3384,9 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Path')] = request.path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('StorageName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('StorageName' + '}'), request.storage_name if request.storage_name is not None else '')
-        else:
-            if request.storage_name is not None:
+        if request.storage_name is not None:
                 query_params.append((self.__downcase_first_letter('StorageName'), request.storage_name))  # noqa: E501
-        if self.__downcase_first_letter('Recursive') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Recursive' + '}'), request.recursive if request.recursive is not None else '')
-        else:
-            if request.recursive is not None:
+        if request.recursive is not None:
                 query_params.append((self.__downcase_first_letter('Recursive'), request.recursive))  # noqa: E501
 
         header_params = {}
@@ -3955,40 +3502,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -4098,40 +3624,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -4247,40 +3752,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -4390,40 +3874,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -4539,40 +4002,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -4683,45 +4125,21 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('SectionPath')] = request.section_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-        if self.__downcase_first_letter('HeadersFootersTypes') in path:
-            path = path.replace('{' + self.__downcase_first_letter('HeadersFootersTypes' + '}'), request.headers_footers_types if request.headers_footers_types is not None else '')
-        else:
-            if request.headers_footers_types is not None:
+        if request.headers_footers_types is not None:
                 query_params.append((self.__downcase_first_letter('HeadersFootersTypes'), request.headers_footers_types))  # noqa: E501
 
         header_params = {}
@@ -4825,40 +4243,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -4974,40 +4371,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -5117,40 +4493,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -5266,40 +4621,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -5415,40 +4749,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -5558,40 +4871,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -5709,35 +5001,17 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Position') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Position' + '}'), request.position if request.position is not None else '')
-        else:
-            if request.position is not None:
+        if request.position is not None:
                 query_params.append((self.__downcase_first_letter('Position'), request.position))  # noqa: E501
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
 
         header_params = {}
@@ -5849,35 +5123,17 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Position') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Position' + '}'), request.position if request.position is not None else '')
-        else:
-            if request.position is not None:
+        if request.position is not None:
                 query_params.append((self.__downcase_first_letter('Position'), request.position))  # noqa: E501
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
 
         header_params = {}
@@ -5987,40 +5243,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -6136,40 +5371,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -6279,40 +5493,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('SectionIndex')] = request.section_index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -6428,40 +5621,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -6577,40 +5749,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -6726,40 +5877,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -6869,40 +5999,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -7006,40 +6115,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -7138,15 +6226,9 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Path')] = request.path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('StorageName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('StorageName' + '}'), request.storage_name if request.storage_name is not None else '')
-        else:
-            if request.storage_name is not None:
+        if request.storage_name is not None:
                 query_params.append((self.__downcase_first_letter('StorageName'), request.storage_name))  # noqa: E501
-        if self.__downcase_first_letter('VersionId') in path:
-            path = path.replace('{' + self.__downcase_first_letter('VersionId' + '}'), request.version_id if request.version_id is not None else '')
-        else:
-            if request.version_id is not None:
+        if request.version_id is not None:
                 query_params.append((self.__downcase_first_letter('VersionId'), request.version_id))  # noqa: E501
 
         header_params = {}
@@ -7253,50 +6335,23 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('WithRegions') in path:
-            path = path.replace('{' + self.__downcase_first_letter('WithRegions' + '}'), request.with_regions if request.with_regions is not None else '')
-        else:
-            if request.with_regions is not None:
+        if request.with_regions is not None:
                 query_params.append((self.__downcase_first_letter('WithRegions'), request.with_regions))  # noqa: E501
-        if self.__downcase_first_letter('MailMergeDataFile') in path:
-            path = path.replace('{' + self.__downcase_first_letter('MailMergeDataFile' + '}'), request.mail_merge_data_file if request.mail_merge_data_file is not None else '')
-        else:
-            if request.mail_merge_data_file is not None:
+        if request.mail_merge_data_file is not None:
                 query_params.append((self.__downcase_first_letter('MailMergeDataFile'), request.mail_merge_data_file))  # noqa: E501
-        if self.__downcase_first_letter('Cleanup') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Cleanup' + '}'), request.cleanup if request.cleanup is not None else '')
-        else:
-            if request.cleanup is not None:
+        if request.cleanup is not None:
                 query_params.append((self.__downcase_first_letter('Cleanup'), request.cleanup))  # noqa: E501
-        if self.__downcase_first_letter('UseWholeParagraphAsRegion') in path:
-            path = path.replace('{' + self.__downcase_first_letter('UseWholeParagraphAsRegion' + '}'), request.use_whole_paragraph_as_region if request.use_whole_paragraph_as_region is not None else '')
-        else:
-            if request.use_whole_paragraph_as_region is not None:
+        if request.use_whole_paragraph_as_region is not None:
                 query_params.append((self.__downcase_first_letter('UseWholeParagraphAsRegion'), request.use_whole_paragraph_as_region))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
 
         header_params = {}
@@ -7400,20 +6455,11 @@ class WordsApi(object):
         path_params = {}
 
         query_params = []
-        if self.__downcase_first_letter('WithRegions') in path:
-            path = path.replace('{' + self.__downcase_first_letter('WithRegions' + '}'), request.with_regions if request.with_regions is not None else '')
-        else:
-            if request.with_regions is not None:
+        if request.with_regions is not None:
                 query_params.append((self.__downcase_first_letter('WithRegions'), request.with_regions))  # noqa: E501
-        if self.__downcase_first_letter('Cleanup') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Cleanup' + '}'), request.cleanup if request.cleanup is not None else '')
-        else:
-            if request.cleanup is not None:
+        if request.cleanup is not None:
                 query_params.append((self.__downcase_first_letter('Cleanup'), request.cleanup))  # noqa: E501
-        if self.__downcase_first_letter('DocumentFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DocumentFileName' + '}'), request.document_file_name if request.document_file_name is not None else '')
-        else:
-            if request.document_file_name is not None:
+        if request.document_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DocumentFileName'), request.document_file_name))  # noqa: E501
 
         header_params = {}
@@ -7509,10 +6555,7 @@ class WordsApi(object):
         path_params = {}
 
         query_params = []
-        if self.__downcase_first_letter('FontsLocation') in path:
-            path = path.replace('{' + self.__downcase_first_letter('FontsLocation' + '}'), request.fonts_location if request.fonts_location is not None else '')
-        else:
-            if request.fonts_location is not None:
+        if request.fonts_location is not None:
                 query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
 
         header_params = {}
@@ -7619,25 +6662,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('BookmarkName')] = request.bookmark_name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -7738,25 +6769,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -7869,25 +6888,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('BorderType')] = request.border_type  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -7994,25 +7001,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -8119,25 +7114,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('CommentIndex')] = request.comment_index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -8238,25 +7221,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -8357,25 +7328,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('DocumentName')] = request.document_name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -8488,25 +7447,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -8613,25 +7560,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -8744,25 +7679,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -8869,25 +7792,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -9000,25 +7911,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -9125,25 +8024,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -9250,25 +8137,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -9369,25 +8244,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -9489,30 +8352,15 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('UseNonMergeFields') in path:
-            path = path.replace('{' + self.__downcase_first_letter('UseNonMergeFields' + '}'), request.use_non_merge_fields if request.use_non_merge_fields is not None else '')
-        else:
-            if request.use_non_merge_fields is not None:
+        if request.use_non_merge_fields is not None:
                 query_params.append((self.__downcase_first_letter('UseNonMergeFields'), request.use_non_merge_fields))  # noqa: E501
 
         header_params = {}
@@ -9608,10 +8456,7 @@ class WordsApi(object):
         path_params = {}
 
         query_params = []
-        if self.__downcase_first_letter('UseNonMergeFields') in path:
-            path = path.replace('{' + self.__downcase_first_letter('UseNonMergeFields' + '}'), request.use_non_merge_fields if request.use_non_merge_fields is not None else '')
-        else:
-            if request.use_non_merge_fields is not None:
+        if request.use_non_merge_fields is not None:
                 query_params.append((self.__downcase_first_letter('UseNonMergeFields'), request.use_non_merge_fields))  # noqa: E501
 
         header_params = {}
@@ -9720,25 +8565,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('HyperlinkIndex')] = request.hyperlink_index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -9839,25 +8672,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -9958,25 +8779,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -10083,25 +8892,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('PropertyName')] = request.property_name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -10202,25 +8999,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -10324,40 +9109,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('IncludeComments') in path:
-            path = path.replace('{' + self.__downcase_first_letter('IncludeComments' + '}'), request.include_comments if request.include_comments is not None else '')
-        else:
-            if request.include_comments is not None:
+        if request.include_comments is not None:
                 query_params.append((self.__downcase_first_letter('IncludeComments'), request.include_comments))  # noqa: E501
-        if self.__downcase_first_letter('IncludeFootnotes') in path:
-            path = path.replace('{' + self.__downcase_first_letter('IncludeFootnotes' + '}'), request.include_footnotes if request.include_footnotes is not None else '')
-        else:
-            if request.include_footnotes is not None:
+        if request.include_footnotes is not None:
                 query_params.append((self.__downcase_first_letter('IncludeFootnotes'), request.include_footnotes))  # noqa: E501
-        if self.__downcase_first_letter('IncludeTextInShapes') in path:
-            path = path.replace('{' + self.__downcase_first_letter('IncludeTextInShapes' + '}'), request.include_text_in_shapes if request.include_text_in_shapes is not None else '')
-        else:
-            if request.include_text_in_shapes is not None:
+        if request.include_text_in_shapes is not None:
                 query_params.append((self.__downcase_first_letter('IncludeTextInShapes'), request.include_text_in_shapes))  # noqa: E501
 
         header_params = {}
@@ -10464,40 +9228,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Format') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Format' + '}'), request.format if request.format is not None else '')
-        else:
-            if request.format is not None:
+        if request.format is not None:
                 query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('OutPath') in path:
-            path = path.replace('{' + self.__downcase_first_letter('OutPath' + '}'), request.out_path if request.out_path is not None else '')
-        else:
-            if request.out_path is not None:
+        if request.out_path is not None:
                 query_params.append((self.__downcase_first_letter('OutPath'), request.out_path))  # noqa: E501
-        if self.__downcase_first_letter('FontsLocation') in path:
-            path = path.replace('{' + self.__downcase_first_letter('FontsLocation' + '}'), request.fonts_location if request.fonts_location is not None else '')
-        else:
-            if request.fonts_location is not None:
+        if request.fonts_location is not None:
                 query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
 
         header_params = {}
@@ -10610,25 +9353,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -10735,25 +9466,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -10854,25 +9573,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -10979,25 +9686,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -11095,10 +9790,7 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Path')] = request.path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('StorageName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('StorageName' + '}'), request.storage_name if request.storage_name is not None else '')
-        else:
-            if request.storage_name is not None:
+        if request.storage_name is not None:
                 query_params.append((self.__downcase_first_letter('StorageName'), request.storage_name))  # noqa: E501
 
         header_params = {}
@@ -11211,25 +9903,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -11336,25 +10016,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -11455,25 +10123,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -11580,25 +10236,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -11711,25 +10355,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -11836,25 +10468,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -11955,25 +10575,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -12080,25 +10688,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -12206,30 +10802,15 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('HeaderFooterIndex')] = request.header_footer_index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('FilterByType') in path:
-            path = path.replace('{' + self.__downcase_first_letter('FilterByType' + '}'), request.filter_by_type if request.filter_by_type is not None else '')
-        else:
-            if request.filter_by_type is not None:
+        if request.filter_by_type is not None:
                 query_params.append((self.__downcase_first_letter('FilterByType'), request.filter_by_type))  # noqa: E501
 
         header_params = {}
@@ -12343,30 +10924,15 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('SectionIndex')] = request.section_index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('FilterByType') in path:
-            path = path.replace('{' + self.__downcase_first_letter('FilterByType' + '}'), request.filter_by_type if request.filter_by_type is not None else '')
-        else:
-            if request.filter_by_type is not None:
+        if request.filter_by_type is not None:
                 query_params.append((self.__downcase_first_letter('FilterByType'), request.filter_by_type))  # noqa: E501
 
         header_params = {}
@@ -12474,30 +11040,15 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('SectionPath')] = request.section_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('FilterByType') in path:
-            path = path.replace('{' + self.__downcase_first_letter('FilterByType' + '}'), request.filter_by_type if request.filter_by_type is not None else '')
-        else:
-            if request.filter_by_type is not None:
+        if request.filter_by_type is not None:
                 query_params.append((self.__downcase_first_letter('FilterByType'), request.filter_by_type))  # noqa: E501
 
         header_params = {}
@@ -12604,25 +11155,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('ListId')] = request.list_id  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -12723,25 +11262,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -12854,25 +11381,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -12979,25 +11494,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -13098,25 +11601,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -13223,25 +11714,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -13354,25 +11833,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -13485,25 +11952,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -13610,25 +12065,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -13741,25 +12184,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -13866,25 +12297,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -13991,25 +12410,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -14110,25 +12517,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -14241,25 +12636,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -14366,25 +12749,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -14491,25 +12862,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -14619,25 +12978,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('RangeEndIdentifier')] = request.range_end_identifier  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -14750,25 +13097,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -14881,25 +13216,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -15006,25 +13329,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('ParagraphPath')] = request.paragraph_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -15131,25 +13442,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('SectionIndex')] = request.section_index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -15256,25 +13555,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('SectionIndex')] = request.section_index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -15375,25 +13662,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -15500,25 +13775,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('StyleName')] = request.style_name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -15625,25 +13888,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('StyledNodePath')] = request.styled_node_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -15744,25 +13995,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -15875,25 +14114,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -16006,25 +14233,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -16137,25 +14352,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -16268,25 +14471,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -16393,25 +14584,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -16524,25 +14703,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -16655,25 +14822,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -16780,25 +14935,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -16899,25 +15042,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -17024,25 +15155,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -17150,40 +15269,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -17303,47 +15401,26 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
 
         form_params = []
         if request.drawing_object is not None:
-            form_params.append([self.__downcase_first_letter('DrawingObject'), request.drawing_object, 'string'])  # noqa: E501
+            form_params.append([self.__downcase_first_letter('DrawingObject'), request.drawing_object.to_json(), 'string'])  # noqa: E501
         if request.image_file is not None:
             form_params.append([self.__downcase_first_letter('ImageFile'), request.image_file, 'file'])  # noqa: E501
 
@@ -17452,47 +15529,26 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
 
         form_params = []
         if request.drawing_object is not None:
-            form_params.append([self.__downcase_first_letter('DrawingObject'), request.drawing_object, 'string'])  # noqa: E501
+            form_params.append([self.__downcase_first_letter('DrawingObject'), request.drawing_object.to_json(), 'string'])  # noqa: E501
         if request.image_file is not None:
             form_params.append([self.__downcase_first_letter('ImageFile'), request.image_file, 'file'])  # noqa: E501
 
@@ -17604,45 +15660,21 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-        if self.__downcase_first_letter('InsertBeforeNode') in path:
-            path = path.replace('{' + self.__downcase_first_letter('InsertBeforeNode' + '}'), request.insert_before_node if request.insert_before_node is not None else '')
-        else:
-            if request.insert_before_node is not None:
+        if request.insert_before_node is not None:
                 query_params.append((self.__downcase_first_letter('InsertBeforeNode'), request.insert_before_node))  # noqa: E501
 
         header_params = {}
@@ -17753,45 +15785,21 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-        if self.__downcase_first_letter('InsertBeforeNode') in path:
-            path = path.replace('{' + self.__downcase_first_letter('InsertBeforeNode' + '}'), request.insert_before_node if request.insert_before_node is not None else '')
-        else:
-            if request.insert_before_node is not None:
+        if request.insert_before_node is not None:
                 query_params.append((self.__downcase_first_letter('InsertBeforeNode'), request.insert_before_node))  # noqa: E501
 
         header_params = {}
@@ -17907,40 +15915,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -18050,40 +16037,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -18200,45 +16166,21 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-        if self.__downcase_first_letter('InsertBeforeNode') in path:
-            path = path.replace('{' + self.__downcase_first_letter('InsertBeforeNode' + '}'), request.insert_before_node if request.insert_before_node is not None else '')
-        else:
-            if request.insert_before_node is not None:
+        if request.insert_before_node is not None:
                 query_params.append((self.__downcase_first_letter('InsertBeforeNode'), request.insert_before_node))  # noqa: E501
 
         header_params = {}
@@ -18349,45 +16291,21 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-        if self.__downcase_first_letter('InsertBeforeNode') in path:
-            path = path.replace('{' + self.__downcase_first_letter('InsertBeforeNode' + '}'), request.insert_before_node if request.insert_before_node is not None else '')
-        else:
-            if request.insert_before_node is not None:
+        if request.insert_before_node is not None:
                 query_params.append((self.__downcase_first_letter('InsertBeforeNode'), request.insert_before_node))  # noqa: E501
 
         header_params = {}
@@ -18503,40 +16421,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('SectionPath')] = request.section_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -18646,40 +16543,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -18799,30 +16675,15 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
 
         header_params = {}
@@ -18936,30 +16797,15 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
 
         header_params = {}
@@ -19069,40 +16915,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -19219,45 +17044,21 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-        if self.__downcase_first_letter('InsertBeforeNode') in path:
-            path = path.replace('{' + self.__downcase_first_letter('InsertBeforeNode' + '}'), request.insert_before_node if request.insert_before_node is not None else '')
-        else:
-            if request.insert_before_node is not None:
+        if request.insert_before_node is not None:
                 query_params.append((self.__downcase_first_letter('InsertBeforeNode'), request.insert_before_node))  # noqa: E501
 
         header_params = {}
@@ -19368,45 +17169,21 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-        if self.__downcase_first_letter('InsertBeforeNode') in path:
-            path = path.replace('{' + self.__downcase_first_letter('InsertBeforeNode' + '}'), request.insert_before_node if request.insert_before_node is not None else '')
-        else:
-            if request.insert_before_node is not None:
+        if request.insert_before_node is not None:
                 query_params.append((self.__downcase_first_letter('InsertBeforeNode'), request.insert_before_node))  # noqa: E501
 
         header_params = {}
@@ -19523,45 +17300,21 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('ParagraphPath')] = request.paragraph_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-        if self.__downcase_first_letter('InsertBeforeNode') in path:
-            path = path.replace('{' + self.__downcase_first_letter('InsertBeforeNode' + '}'), request.insert_before_node if request.insert_before_node is not None else '')
-        else:
-            if request.insert_before_node is not None:
+        if request.insert_before_node is not None:
                 query_params.append((self.__downcase_first_letter('InsertBeforeNode'), request.insert_before_node))  # noqa: E501
 
         header_params = {}
@@ -19671,40 +17424,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -19820,40 +17552,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -19969,40 +17680,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('TableRowPath')] = request.table_row_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -20118,40 +17808,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('TablePath')] = request.table_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -20261,40 +17930,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -20403,50 +18051,23 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-        if self.__downcase_first_letter('RotationAngle') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RotationAngle' + '}'), request.rotation_angle if request.rotation_angle is not None else '')
-        else:
-            if request.rotation_angle is not None:
+        if request.rotation_angle is not None:
                 query_params.append((self.__downcase_first_letter('RotationAngle'), request.rotation_angle))  # noqa: E501
-        if self.__downcase_first_letter('Image') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Image' + '}'), request.image if request.image is not None else '')
-        else:
-            if request.image is not None:
+        if request.image is not None:
                 query_params.append((self.__downcase_first_letter('Image'), request.image))  # noqa: E501
 
         header_params = {}
@@ -20556,40 +18177,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -20687,10 +18287,7 @@ class WordsApi(object):
         path_params = {}
 
         query_params = []
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
 
         header_params = {}
@@ -20796,25 +18393,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('SrcPath')] = request.src_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('DestPath') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestPath' + '}'), request.dest_path if request.dest_path is not None else '')
-        else:
-            if request.dest_path is not None:
+        if request.dest_path is not None:
                 query_params.append((self.__downcase_first_letter('DestPath'), request.dest_path))  # noqa: E501
-        if self.__downcase_first_letter('SrcStorageName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('SrcStorageName' + '}'), request.src_storage_name if request.src_storage_name is not None else '')
-        else:
-            if request.src_storage_name is not None:
+        if request.src_storage_name is not None:
                 query_params.append((self.__downcase_first_letter('SrcStorageName'), request.src_storage_name))  # noqa: E501
-        if self.__downcase_first_letter('DestStorageName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestStorageName' + '}'), request.dest_storage_name if request.dest_storage_name is not None else '')
-        else:
-            if request.dest_storage_name is not None:
+        if request.dest_storage_name is not None:
                 query_params.append((self.__downcase_first_letter('DestStorageName'), request.dest_storage_name))  # noqa: E501
-        if self.__downcase_first_letter('VersionId') in path:
-            path = path.replace('{' + self.__downcase_first_letter('VersionId' + '}'), request.version_id if request.version_id is not None else '')
-        else:
-            if request.version_id is not None:
+        if request.version_id is not None:
                 query_params.append((self.__downcase_first_letter('VersionId'), request.version_id))  # noqa: E501
 
         header_params = {}
@@ -20917,20 +18502,11 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('SrcPath')] = request.src_path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('DestPath') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestPath' + '}'), request.dest_path if request.dest_path is not None else '')
-        else:
-            if request.dest_path is not None:
+        if request.dest_path is not None:
                 query_params.append((self.__downcase_first_letter('DestPath'), request.dest_path))  # noqa: E501
-        if self.__downcase_first_letter('SrcStorageName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('SrcStorageName' + '}'), request.src_storage_name if request.src_storage_name is not None else '')
-        else:
-            if request.src_storage_name is not None:
+        if request.src_storage_name is not None:
                 query_params.append((self.__downcase_first_letter('SrcStorageName'), request.src_storage_name))  # noqa: E501
-        if self.__downcase_first_letter('DestStorageName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestStorageName' + '}'), request.dest_storage_name if request.dest_storage_name is not None else '')
-        else:
-            if request.dest_storage_name is not None:
+        if request.dest_storage_name is not None:
                 query_params.append((self.__downcase_first_letter('DestStorageName'), request.dest_storage_name))  # noqa: E501
 
         header_params = {}
@@ -21036,30 +18612,15 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
 
         header_params = {}
@@ -21163,30 +18724,15 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
 
         header_params = {}
@@ -21297,30 +18843,15 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('RangeEndIdentifier')] = request.range_end_identifier  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
 
         header_params = {}
@@ -21438,35 +18969,17 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Format') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Format' + '}'), request.format if request.format is not None else '')
-        else:
-            if request.format is not None:
+        if request.format is not None:
                 query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('FontsLocation') in path:
-            path = path.replace('{' + self.__downcase_first_letter('FontsLocation' + '}'), request.fonts_location if request.fonts_location is not None else '')
-        else:
-            if request.fonts_location is not None:
+        if request.fonts_location is not None:
                 query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
 
         header_params = {}
@@ -21578,35 +19091,17 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Format') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Format' + '}'), request.format if request.format is not None else '')
-        else:
-            if request.format is not None:
+        if request.format is not None:
                 query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('FontsLocation') in path:
-            path = path.replace('{' + self.__downcase_first_letter('FontsLocation' + '}'), request.fonts_location if request.fonts_location is not None else '')
-        else:
-            if request.fonts_location is not None:
+        if request.fonts_location is not None:
                 query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
 
         header_params = {}
@@ -21724,35 +19219,17 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Format') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Format' + '}'), request.format if request.format is not None else '')
-        else:
-            if request.format is not None:
+        if request.format is not None:
                 query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('FontsLocation') in path:
-            path = path.replace('{' + self.__downcase_first_letter('FontsLocation' + '}'), request.fonts_location if request.fonts_location is not None else '')
-        else:
-            if request.fonts_location is not None:
+        if request.fonts_location is not None:
                 query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
 
         header_params = {}
@@ -21864,35 +19341,17 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Format') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Format' + '}'), request.format if request.format is not None else '')
-        else:
-            if request.format is not None:
+        if request.format is not None:
                 query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('FontsLocation') in path:
-            path = path.replace('{' + self.__downcase_first_letter('FontsLocation' + '}'), request.fonts_location if request.fonts_location is not None else '')
-        else:
-            if request.fonts_location is not None:
+        if request.fonts_location is not None:
                 query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
 
         header_params = {}
@@ -22004,35 +19463,17 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('PageIndex')] = request.page_index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Format') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Format' + '}'), request.format if request.format is not None else '')
-        else:
-            if request.format is not None:
+        if request.format is not None:
                 query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('FontsLocation') in path:
-            path = path.replace('{' + self.__downcase_first_letter('FontsLocation' + '}'), request.fonts_location if request.fonts_location is not None else '')
-        else:
-            if request.fonts_location is not None:
+        if request.fonts_location is not None:
                 query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
 
         header_params = {}
@@ -22150,35 +19591,17 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Format') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Format' + '}'), request.format if request.format is not None else '')
-        else:
-            if request.format is not None:
+        if request.format is not None:
                 query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('FontsLocation') in path:
-            path = path.replace('{' + self.__downcase_first_letter('FontsLocation' + '}'), request.fonts_location if request.fonts_location is not None else '')
-        else:
-            if request.fonts_location is not None:
+        if request.fonts_location is not None:
                 query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
 
         header_params = {}
@@ -22290,35 +19713,17 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Format') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Format' + '}'), request.format if request.format is not None else '')
-        else:
-            if request.format is not None:
+        if request.format is not None:
                 query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('FontsLocation') in path:
-            path = path.replace('{' + self.__downcase_first_letter('FontsLocation' + '}'), request.fonts_location if request.fonts_location is not None else '')
-        else:
-            if request.fonts_location is not None:
+        if request.fonts_location is not None:
                 query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
 
         header_params = {}
@@ -22436,35 +19841,17 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Format') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Format' + '}'), request.format if request.format is not None else '')
-        else:
-            if request.format is not None:
+        if request.format is not None:
                 query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('FontsLocation') in path:
-            path = path.replace('{' + self.__downcase_first_letter('FontsLocation' + '}'), request.fonts_location if request.fonts_location is not None else '')
-        else:
-            if request.fonts_location is not None:
+        if request.fonts_location is not None:
                 query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
 
         header_params = {}
@@ -22576,35 +19963,17 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Format') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Format' + '}'), request.format if request.format is not None else '')
-        else:
-            if request.format is not None:
+        if request.format is not None:
                 query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('FontsLocation') in path:
-            path = path.replace('{' + self.__downcase_first_letter('FontsLocation' + '}'), request.fonts_location if request.fonts_location is not None else '')
-        else:
-            if request.fonts_location is not None:
+        if request.fonts_location is not None:
                 query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
 
         header_params = {}
@@ -22712,40 +20081,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -22862,30 +20210,15 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('RangeEndIdentifier')] = request.range_end_identifier  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
 
         header_params = {}
@@ -23082,30 +20415,15 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('FontsLocation') in path:
-            path = path.replace('{' + self.__downcase_first_letter('FontsLocation' + '}'), request.fonts_location if request.fonts_location is not None else '')
-        else:
-            if request.fonts_location is not None:
+        if request.fonts_location is not None:
                 query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
 
         header_params = {}
@@ -23221,25 +20539,13 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('RangeEndIdentifier')] = request.range_end_identifier  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -23364,115 +20670,49 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('UseAntiAliasing') in path:
-            path = path.replace('{' + self.__downcase_first_letter('UseAntiAliasing' + '}'), request.use_anti_aliasing if request.use_anti_aliasing is not None else '')
-        else:
-            if request.use_anti_aliasing is not None:
+        if request.use_anti_aliasing is not None:
                 query_params.append((self.__downcase_first_letter('UseAntiAliasing'), request.use_anti_aliasing))  # noqa: E501
-        if self.__downcase_first_letter('UseHighQualityRendering') in path:
-            path = path.replace('{' + self.__downcase_first_letter('UseHighQualityRendering' + '}'), request.use_high_quality_rendering if request.use_high_quality_rendering is not None else '')
-        else:
-            if request.use_high_quality_rendering is not None:
+        if request.use_high_quality_rendering is not None:
                 query_params.append((self.__downcase_first_letter('UseHighQualityRendering'), request.use_high_quality_rendering))  # noqa: E501
-        if self.__downcase_first_letter('ImageBrightness') in path:
-            path = path.replace('{' + self.__downcase_first_letter('ImageBrightness' + '}'), request.image_brightness if request.image_brightness is not None else '')
-        else:
-            if request.image_brightness is not None:
+        if request.image_brightness is not None:
                 query_params.append((self.__downcase_first_letter('ImageBrightness'), request.image_brightness))  # noqa: E501
-        if self.__downcase_first_letter('ImageColorMode') in path:
-            path = path.replace('{' + self.__downcase_first_letter('ImageColorMode' + '}'), request.image_color_mode if request.image_color_mode is not None else '')
-        else:
-            if request.image_color_mode is not None:
+        if request.image_color_mode is not None:
                 query_params.append((self.__downcase_first_letter('ImageColorMode'), request.image_color_mode))  # noqa: E501
-        if self.__downcase_first_letter('ImageContrast') in path:
-            path = path.replace('{' + self.__downcase_first_letter('ImageContrast' + '}'), request.image_contrast if request.image_contrast is not None else '')
-        else:
-            if request.image_contrast is not None:
+        if request.image_contrast is not None:
                 query_params.append((self.__downcase_first_letter('ImageContrast'), request.image_contrast))  # noqa: E501
-        if self.__downcase_first_letter('NumeralFormat') in path:
-            path = path.replace('{' + self.__downcase_first_letter('NumeralFormat' + '}'), request.numeral_format if request.numeral_format is not None else '')
-        else:
-            if request.numeral_format is not None:
+        if request.numeral_format is not None:
                 query_params.append((self.__downcase_first_letter('NumeralFormat'), request.numeral_format))  # noqa: E501
-        if self.__downcase_first_letter('PageCount') in path:
-            path = path.replace('{' + self.__downcase_first_letter('PageCount' + '}'), request.page_count if request.page_count is not None else '')
-        else:
-            if request.page_count is not None:
+        if request.page_count is not None:
                 query_params.append((self.__downcase_first_letter('PageCount'), request.page_count))  # noqa: E501
-        if self.__downcase_first_letter('PageIndex') in path:
-            path = path.replace('{' + self.__downcase_first_letter('PageIndex' + '}'), request.page_index if request.page_index is not None else '')
-        else:
-            if request.page_index is not None:
+        if request.page_index is not None:
                 query_params.append((self.__downcase_first_letter('PageIndex'), request.page_index))  # noqa: E501
-        if self.__downcase_first_letter('PaperColor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('PaperColor' + '}'), request.paper_color if request.paper_color is not None else '')
-        else:
-            if request.paper_color is not None:
+        if request.paper_color is not None:
                 query_params.append((self.__downcase_first_letter('PaperColor'), request.paper_color))  # noqa: E501
-        if self.__downcase_first_letter('PixelFormat') in path:
-            path = path.replace('{' + self.__downcase_first_letter('PixelFormat' + '}'), request.pixel_format if request.pixel_format is not None else '')
-        else:
-            if request.pixel_format is not None:
+        if request.pixel_format is not None:
                 query_params.append((self.__downcase_first_letter('PixelFormat'), request.pixel_format))  # noqa: E501
-        if self.__downcase_first_letter('Resolution') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Resolution' + '}'), request.resolution if request.resolution is not None else '')
-        else:
-            if request.resolution is not None:
+        if request.resolution is not None:
                 query_params.append((self.__downcase_first_letter('Resolution'), request.resolution))  # noqa: E501
-        if self.__downcase_first_letter('Scale') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Scale' + '}'), request.scale if request.scale is not None else '')
-        else:
-            if request.scale is not None:
+        if request.scale is not None:
                 query_params.append((self.__downcase_first_letter('Scale'), request.scale))  # noqa: E501
-        if self.__downcase_first_letter('TiffCompression') in path:
-            path = path.replace('{' + self.__downcase_first_letter('TiffCompression' + '}'), request.tiff_compression if request.tiff_compression is not None else '')
-        else:
-            if request.tiff_compression is not None:
+        if request.tiff_compression is not None:
                 query_params.append((self.__downcase_first_letter('TiffCompression'), request.tiff_compression))  # noqa: E501
-        if self.__downcase_first_letter('DmlRenderingMode') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DmlRenderingMode' + '}'), request.dml_rendering_mode if request.dml_rendering_mode is not None else '')
-        else:
-            if request.dml_rendering_mode is not None:
+        if request.dml_rendering_mode is not None:
                 query_params.append((self.__downcase_first_letter('DmlRenderingMode'), request.dml_rendering_mode))  # noqa: E501
-        if self.__downcase_first_letter('DmlEffectsRenderingMode') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DmlEffectsRenderingMode' + '}'), request.dml_effects_rendering_mode if request.dml_effects_rendering_mode is not None else '')
-        else:
-            if request.dml_effects_rendering_mode is not None:
+        if request.dml_effects_rendering_mode is not None:
                 query_params.append((self.__downcase_first_letter('DmlEffectsRenderingMode'), request.dml_effects_rendering_mode))  # noqa: E501
-        if self.__downcase_first_letter('TiffBinarizationMethod') in path:
-            path = path.replace('{' + self.__downcase_first_letter('TiffBinarizationMethod' + '}'), request.tiff_binarization_method if request.tiff_binarization_method is not None else '')
-        else:
-            if request.tiff_binarization_method is not None:
+        if request.tiff_binarization_method is not None:
                 query_params.append((self.__downcase_first_letter('TiffBinarizationMethod'), request.tiff_binarization_method))  # noqa: E501
-        if self.__downcase_first_letter('ZipOutput') in path:
-            path = path.replace('{' + self.__downcase_first_letter('ZipOutput' + '}'), request.zip_output if request.zip_output is not None else '')
-        else:
-            if request.zip_output is not None:
+        if request.zip_output is not None:
                 query_params.append((self.__downcase_first_letter('ZipOutput'), request.zip_output))  # noqa: E501
-        if self.__downcase_first_letter('FontsLocation') in path:
-            path = path.replace('{' + self.__downcase_first_letter('FontsLocation' + '}'), request.fonts_location if request.fonts_location is not None else '')
-        else:
-            if request.fonts_location is not None:
+        if request.fonts_location is not None:
                 query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
 
         header_params = {}
@@ -23579,30 +20819,15 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Pattern') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Pattern' + '}'), request.pattern if request.pattern is not None else '')
-        else:
-            if request.pattern is not None:
+        if request.pattern is not None:
                 query_params.append((self.__downcase_first_letter('Pattern'), request.pattern))  # noqa: E501
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
 
         header_params = {}
@@ -23712,55 +20937,25 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Format') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Format' + '}'), request.format if request.format is not None else '')
-        else:
-            if request.format is not None:
+        if request.format is not None:
                 query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('From') in path:
-            path = path.replace('{' + self.__downcase_first_letter('From' + '}'), request._from if request._from is not None else '')
-        else:
-            if request._from is not None:
+        if request._from is not None:
                 query_params.append((self.__downcase_first_letter('From'), request._from))  # noqa: E501
-        if self.__downcase_first_letter('To') in path:
-            path = path.replace('{' + self.__downcase_first_letter('To' + '}'), request.to if request.to is not None else '')
-        else:
-            if request.to is not None:
+        if request.to is not None:
                 query_params.append((self.__downcase_first_letter('To'), request.to))  # noqa: E501
-        if self.__downcase_first_letter('ZipOutput') in path:
-            path = path.replace('{' + self.__downcase_first_letter('ZipOutput' + '}'), request.zip_output if request.zip_output is not None else '')
-        else:
-            if request.zip_output is not None:
+        if request.zip_output is not None:
                 query_params.append((self.__downcase_first_letter('ZipOutput'), request.zip_output))  # noqa: E501
-        if self.__downcase_first_letter('FontsLocation') in path:
-            path = path.replace('{' + self.__downcase_first_letter('FontsLocation' + '}'), request.fonts_location if request.fonts_location is not None else '')
-        else:
-            if request.fonts_location is not None:
+        if request.fonts_location is not None:
                 query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
 
         header_params = {}
@@ -23866,30 +21061,15 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
 
         header_params = {}
@@ -24005,40 +21185,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('BookmarkName')] = request.bookmark_name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -24160,40 +21319,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('BorderType')] = request.border_type  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -24309,40 +21447,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('CommentIndex')] = request.comment_index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -24468,47 +21585,26 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
 
         form_params = []
         if request.drawing_object is not None:
-            form_params.append([self.__downcase_first_letter('DrawingObject'), request.drawing_object, 'string'])  # noqa: E501
+            form_params.append([self.__downcase_first_letter('DrawingObject'), request.drawing_object.to_json(), 'string'])  # noqa: E501
         if request.image_file is not None:
             form_params.append([self.__downcase_first_letter('ImageFile'), request.image_file, 'file'])  # noqa: E501
 
@@ -24623,47 +21719,26 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
 
         form_params = []
         if request.drawing_object is not None:
-            form_params.append([self.__downcase_first_letter('DrawingObject'), request.drawing_object, 'string'])  # noqa: E501
+            form_params.append([self.__downcase_first_letter('DrawingObject'), request.drawing_object.to_json(), 'string'])  # noqa: E501
         if request.image_file is not None:
             form_params.append([self.__downcase_first_letter('ImageFile'), request.image_file, 'file'])  # noqa: E501
 
@@ -24780,40 +21855,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -24917,30 +21971,15 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
 
         header_params = {}
@@ -25060,40 +22099,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -25209,40 +22227,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -25364,40 +22361,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -25513,40 +22489,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -25662,40 +22617,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('ListId')] = request.list_id  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -25817,40 +22751,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('ListLevel')] = request.list_level  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -25972,40 +22885,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -26127,40 +23019,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -26276,40 +23147,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -26431,40 +23281,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -26586,40 +23415,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -26735,40 +23543,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('SectionIndex')] = request.section_index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -26884,40 +23671,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('StyleName')] = request.style_name  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -27039,40 +23805,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -27194,40 +23939,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -27343,40 +24067,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -27498,40 +24201,19 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('Folder') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Folder' + '}'), request.folder if request.folder is not None else '')
-        else:
-            if request.folder is not None:
+        if request.folder is not None:
                 query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if self.__downcase_first_letter('Storage') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Storage' + '}'), request.storage if request.storage is not None else '')
-        else:
-            if request.storage is not None:
+        if request.storage is not None:
                 query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if self.__downcase_first_letter('LoadEncoding') in path:
-            path = path.replace('{' + self.__downcase_first_letter('LoadEncoding' + '}'), request.load_encoding if request.load_encoding is not None else '')
-        else:
-            if request.load_encoding is not None:
+        if request.load_encoding is not None:
                 query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if self.__downcase_first_letter('Password') in path:
-            path = path.replace('{' + self.__downcase_first_letter('Password' + '}'), request.password if request.password is not None else '')
-        else:
-            if request.password is not None:
+        if request.password is not None:
                 query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if self.__downcase_first_letter('DestFileName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('DestFileName' + '}'), request.dest_file_name if request.dest_file_name is not None else '')
-        else:
-            if request.dest_file_name is not None:
+        if request.dest_file_name is not None:
                 query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if self.__downcase_first_letter('RevisionAuthor') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionAuthor' + '}'), request.revision_author if request.revision_author is not None else '')
-        else:
-            if request.revision_author is not None:
+        if request.revision_author is not None:
                 query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if self.__downcase_first_letter('RevisionDateTime') in path:
-            path = path.replace('{' + self.__downcase_first_letter('RevisionDateTime' + '}'), request.revision_date_time if request.revision_date_time is not None else '')
-        else:
-            if request.revision_date_time is not None:
+        if request.revision_date_time is not None:
                 query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
 
         header_params = {}
@@ -27635,10 +24317,7 @@ class WordsApi(object):
             path_params[self.__downcase_first_letter('Path')] = request.path  # noqa: E501
 
         query_params = []
-        if self.__downcase_first_letter('StorageName') in path:
-            path = path.replace('{' + self.__downcase_first_letter('StorageName' + '}'), request.storage_name if request.storage_name is not None else '')
-        else:
-            if request.storage_name is not None:
+        if request.storage_name is not None:
                 query_params.append((self.__downcase_first_letter('StorageName'), request.storage_name))  # noqa: E501
 
         header_params = {}
