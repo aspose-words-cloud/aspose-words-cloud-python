@@ -47,26 +47,11 @@ class TestClassification(BaseTestContext):
     def test_classify_document(self):
         remoteDataFolder = self.remote_test_folder + '/Common'
         localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'Source.docx'
+        remoteFileName = 'TestClassifyDocument.docx'
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
         request = asposewordscloud.models.requests.ClassifyDocumentRequest(document_name=remoteFileName, folder=remoteDataFolder, best_classes_count='3')
-
-        result = self.words_api.classify_document(request)
-        self.assertIsNotNone(result, 'Error has occurred.')
-
-    #
-    # Test for document classification with taxonomy documents.
-    #
-    def test_classify_taxonomy_documents(self):
-        remoteDataFolder = self.remote_test_folder + '/Common'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'Source.docx'
-
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
-
-        request = asposewordscloud.models.requests.ClassifyDocumentRequest(document_name=remoteFileName, folder=remoteDataFolder, best_classes_count='3', taxonomy='documents')
 
         result = self.words_api.classify_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')

@@ -57,7 +57,7 @@ class TestExecuteMailMerge(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, mailMergeFolder + '/' + localDocumentFile), 'rb'))
 
-        request = asposewordscloud.models.requests.ExecuteMailMergeRequest(name=remoteFileName, data=localDataFile, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName, with_regions=False)
+        request = asposewordscloud.models.requests.ExecuteMailMergeRequest(name=remoteFileName, data=localDataFile, folder=remoteDataFolder, with_regions=False, dest_file_name=self.remote_test_out + '/' + remoteFileName)
 
         result = self.words_api.execute_mail_merge(request)
         self.assertIsNotNone(result, 'Error has occurred.')

@@ -35,21 +35,6 @@ class TestWatermark(BaseTestContext):
     #
     # Test for adding watermark image.
     #
-    def test_insert_document_watermark_image(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentActions/Watermark'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'TestInsertWatermarkImage.docx'
-
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
-
-        request = asposewordscloud.models.requests.InsertWatermarkImageRequest(name=remoteFileName, image_file=open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
-
-        result = self.words_api.insert_watermark_image(request)
-        self.assertIsNotNone(result, 'Error has occurred.')
-
-    #
-    # Test for adding watermark image.
-    #
     def test_insert_watermark_image(self):
         remoteDataFolder = self.remote_test_folder + '/DocumentActions/Watermark'
         localFile = 'Common/test_multi_pages.docx'
@@ -59,7 +44,7 @@ class TestWatermark(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
         self.upload_file(remoteImagePath, open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'))
 
-        request = asposewordscloud.models.requests.InsertWatermarkImageRequest(name=remoteFileName, folder=remoteDataFolder, image=remoteImagePath, dest_file_name=self.remote_test_out + '/' + remoteFileName)
+        request = asposewordscloud.models.requests.InsertWatermarkImageRequest(name=remoteFileName, image_file=Null, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName, image=remoteImagePath)
 
         result = self.words_api.insert_watermark_image(request)
         self.assertIsNotNone(result, 'Error has occurred.')
