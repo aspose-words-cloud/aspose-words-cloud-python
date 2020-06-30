@@ -44,7 +44,7 @@ class TestWatermark(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
         self.upload_file(remoteImagePath, open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'))
 
-        request = asposewordscloud.models.requests.InsertWatermarkImageRequest(name=remoteFileName, image_file=Null, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName, image=remoteImagePath)
+        request = asposewordscloud.models.requests.InsertWatermarkImageRequest(name=remoteFileName, image_file=None, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName, image=remoteImagePath)
 
         result = self.words_api.insert_watermark_image(request)
         self.assertIsNotNone(result, 'Error has occurred.')
