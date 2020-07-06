@@ -27,6 +27,7 @@ import pprint
 import re  # noqa: F401
 
 import six
+import json
 
 
 class ParagraphFormat(object):
@@ -48,7 +49,6 @@ class ParagraphFormat(object):
         'bidi': 'bool',
         'drop_cap_position': 'str',
         'first_line_indent': 'float',
-        'is_list_item': 'bool',
         'keep_together': 'bool',
         'keep_with_next': 'bool',
         'left_indent': 'float',
@@ -68,7 +68,9 @@ class ParagraphFormat(object):
         'style_name': 'str',
         'suppress_auto_hyphens': 'bool',
         'suppress_line_numbers': 'bool',
-        'widow_control': 'bool'
+        'widow_control': 'bool',
+        'is_heading': 'bool',
+        'is_list_item': 'bool'
     }
 
     attribute_map = {
@@ -79,7 +81,6 @@ class ParagraphFormat(object):
         'bidi': 'Bidi',
         'drop_cap_position': 'DropCapPosition',
         'first_line_indent': 'FirstLineIndent',
-        'is_list_item': 'IsListItem',
         'keep_together': 'KeepTogether',
         'keep_with_next': 'KeepWithNext',
         'left_indent': 'LeftIndent',
@@ -99,10 +100,12 @@ class ParagraphFormat(object):
         'style_name': 'StyleName',
         'suppress_auto_hyphens': 'SuppressAutoHyphens',
         'suppress_line_numbers': 'SuppressLineNumbers',
-        'widow_control': 'WidowControl'
+        'widow_control': 'WidowControl',
+        'is_heading': 'IsHeading',
+        'is_list_item': 'IsListItem'
     }
 
-    def __init__(self, link=None, add_space_between_far_east_and_alpha=None, add_space_between_far_east_and_digit=None, alignment=None, bidi=None, drop_cap_position=None, first_line_indent=None, is_list_item=None, keep_together=None, keep_with_next=None, left_indent=None, line_spacing=None, line_spacing_rule=None, lines_to_drop=None, no_space_between_paragraphs_of_same_style=None, outline_level=None, page_break_before=None, right_indent=None, shading=None, space_after=None, space_after_auto=None, space_before=None, space_before_auto=None, style_identifier=None, style_name=None, suppress_auto_hyphens=None, suppress_line_numbers=None, widow_control=None):  # noqa: E501
+    def __init__(self, link=None, add_space_between_far_east_and_alpha=None, add_space_between_far_east_and_digit=None, alignment=None, bidi=None, drop_cap_position=None, first_line_indent=None, keep_together=None, keep_with_next=None, left_indent=None, line_spacing=None, line_spacing_rule=None, lines_to_drop=None, no_space_between_paragraphs_of_same_style=None, outline_level=None, page_break_before=None, right_indent=None, shading=None, space_after=None, space_after_auto=None, space_before=None, space_before_auto=None, style_identifier=None, style_name=None, suppress_auto_hyphens=None, suppress_line_numbers=None, widow_control=None, is_heading=None, is_list_item=None):  # noqa: E501
         """ParagraphFormat - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
@@ -112,7 +115,6 @@ class ParagraphFormat(object):
         self._bidi = None
         self._drop_cap_position = None
         self._first_line_indent = None
-        self._is_list_item = None
         self._keep_together = None
         self._keep_with_next = None
         self._left_indent = None
@@ -133,6 +135,8 @@ class ParagraphFormat(object):
         self._suppress_auto_hyphens = None
         self._suppress_line_numbers = None
         self._widow_control = None
+        self._is_heading = None
+        self._is_list_item = None
         self.discriminator = None
 
         if link is not None:
@@ -149,8 +153,6 @@ class ParagraphFormat(object):
             self.drop_cap_position = drop_cap_position
         if first_line_indent is not None:
             self.first_line_indent = first_line_indent
-        if is_list_item is not None:
-            self.is_list_item = is_list_item
         if keep_together is not None:
             self.keep_together = keep_together
         if keep_with_next is not None:
@@ -191,6 +193,10 @@ class ParagraphFormat(object):
             self.suppress_line_numbers = suppress_line_numbers
         if widow_control is not None:
             self.widow_control = widow_control
+        if is_heading is not None:
+            self.is_heading = is_heading
+        if is_list_item is not None:
+            self.is_list_item = is_list_item
 
     @property
     def link(self):
@@ -361,28 +367,6 @@ class ParagraphFormat(object):
         :type: float
         """
         self._first_line_indent = first_line_indent
-
-    @property
-    def is_list_item(self):
-        """Gets the is_list_item of this ParagraphFormat.  # noqa: E501
-
-        Gets or sets True when the paragraph is an item in a bulleted or numbered list.  # noqa: E501
-
-        :return: The is_list_item of this ParagraphFormat.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_list_item
-
-    @is_list_item.setter
-    def is_list_item(self, is_list_item):
-        """Sets the is_list_item of this ParagraphFormat.
-
-        Gets or sets True when the paragraph is an item in a bulleted or numbered list.  # noqa: E501
-
-        :param is_list_item: The is_list_item of this ParagraphFormat.  # noqa: E501
-        :type: bool
-        """
-        self._is_list_item = is_list_item
 
     @property
     def keep_together(self):
@@ -848,6 +832,50 @@ class ParagraphFormat(object):
         """
         self._widow_control = widow_control
 
+    @property
+    def is_heading(self):
+        """Gets the is_heading of this ParagraphFormat.  # noqa: E501
+
+        Gets or sets True when the paragraph style is one of the built-in Heading styles.  # noqa: E501
+
+        :return: The is_heading of this ParagraphFormat.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_heading
+
+    @is_heading.setter
+    def is_heading(self, is_heading):
+        """Sets the is_heading of this ParagraphFormat.
+
+        Gets or sets True when the paragraph style is one of the built-in Heading styles.  # noqa: E501
+
+        :param is_heading: The is_heading of this ParagraphFormat.  # noqa: E501
+        :type: bool
+        """
+        self._is_heading = is_heading
+
+    @property
+    def is_list_item(self):
+        """Gets the is_list_item of this ParagraphFormat.  # noqa: E501
+
+        Gets or sets True when the paragraph is an item in a bulleted or numbered list.  # noqa: E501
+
+        :return: The is_list_item of this ParagraphFormat.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_list_item
+
+    @is_list_item.setter
+    def is_list_item(self, is_list_item):
+        """Sets the is_list_item of this ParagraphFormat.
+
+        Gets or sets True when the paragraph is an item in a bulleted or numbered list.  # noqa: E501
+
+        :param is_list_item: The is_list_item of this ParagraphFormat.  # noqa: E501
+        :type: bool
+        """
+        self._is_list_item = is_list_item
+
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -872,6 +900,30 @@ class ParagraphFormat(object):
                 result[attr] = value
 
         return result
+
+    def to_json(self):
+        """Returns the model properties as a dict"""
+        result = {}
+
+        for attr, _ in six.iteritems(self.swagger_types):
+            value = getattr(self, attr)
+            if isinstance(value, list):
+                result[self.attribute_map[attr]] = list(map(
+                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
+                    value
+                ))
+            elif hasattr(value, "to_dict"):
+                result[self.attribute_map[attr]] = value.to_dict()
+            elif isinstance(value, dict):
+                result[self.attribute_map[attr]] = dict(map(
+                    lambda item: (item[0], item[1].to_dict())
+                    if hasattr(item[1], "to_dict") else item,
+                    value.items()
+                ))
+            else:
+                result[self.attribute_map[attr]] = value
+
+        return json.dumps(result)
 
     def to_str(self):
         """Returns the string representation of the model"""

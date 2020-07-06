@@ -1,7 +1,7 @@
-#
-# --------------------------------------------------------------------------------------------------------------------
+# coding: utf-8
+# -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="base_test_context.py">
-#   Copyright (c) 2019 Aspose.Words for Cloud
+#   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,8 +22,7 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 # </summary>
-# --------------------------------------------------------------------------------------------------------------------
-#
+# -----------------------------------------------------------------------------------
 
 import os
 import json
@@ -37,7 +36,7 @@ import xmlrunner
 class BaseTestContext(unittest.TestCase):
 
     def read_config(self):
-        root_path = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/..")        
+        root_path = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/..")
         creds_path = os.path.join(root_path, 'Settings', 'servercreds.json')
         if not os.path.exists(creds_path):
             raise IOError('Credential file Settings/servercreds.json is not found')
