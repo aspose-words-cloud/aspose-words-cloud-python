@@ -90,11 +90,10 @@ class TestFolder(BaseTestContext):
     def test_move_folder(self):
         remoteDataFolder = self.remote_test_folder + '/Storage'
         localFile = 'Common/test_multi_pages.docx'
-        folderToMove = remoteDataFolder + '/TestMoveFolder'
 
-        self.upload_file(folderToMove + 'Src/TestMoveFolderSrc.docx', open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remoteDataFolder + '/TestMoveFolderSrc/TestMoveFolderSrc.docx', open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.MoveFolderRequest(dest_path=folderToMove + 'Dest', src_path=folderToMove + 'Src')
+        request = asposewordscloud.models.requests.MoveFolderRequest(dest_path=self.remote_test_out + '/TestMoveFolderDest', src_path=remoteDataFolder + '/TestMoveFolderSrc')
 
         self.words_api.move_folder(request)
 
