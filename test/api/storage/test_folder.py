@@ -93,7 +93,7 @@ class TestFolder(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/TestMoveFolderSrc/TestMoveFolderSrc.docx', open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.MoveFolderRequest(dest_path=self.remote_test_out + '/TestMoveFolderDest', src_path=remoteDataFolder + '/TestMoveFolderSrc')
+        request = asposewordscloud.models.requests.MoveFolderRequest(dest_path=self.remote_test_out + '/TestMoveFolderDest_' + self.create_random_guid(), src_path=remoteDataFolder + '/TestMoveFolderSrc')
 
         self.words_api.move_folder(request)
 

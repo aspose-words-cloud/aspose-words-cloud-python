@@ -26,6 +26,7 @@
 
 import os
 import json
+import uuid
 import unittest
 import warnings
 import asposewordscloud
@@ -65,6 +66,9 @@ class BaseTestContext(unittest.TestCase):
     def upload_file(self, path, file):
         request = asposewordscloud.models.requests.UploadFileRequest(file, path)
         _result = self.words_api.upload_file(request)
+
+    def create_random_guid(self):
+        return str(uuid.uuid4())
 
 if __name__ == '__main__':
     with open('testReport.xml', 'wb') as output:
