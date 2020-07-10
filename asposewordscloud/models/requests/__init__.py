@@ -156,6 +156,7 @@ from asposewordscloud.models.requests.insert_watermark_text_request import Inser
 from asposewordscloud.models.requests.load_web_document_request import LoadWebDocumentRequest
 from asposewordscloud.models.requests.move_file_request import MoveFileRequest
 from asposewordscloud.models.requests.move_folder_request import MoveFolderRequest
+from asposewordscloud.models.requests.optimize_document_request import OptimizeDocumentRequest
 from asposewordscloud.models.requests.protect_document_request import ProtectDocumentRequest
 from asposewordscloud.models.requests.reject_all_revisions_request import RejectAllRevisionsRequest
 from asposewordscloud.models.requests.remove_range_request import RemoveRangeRequest

@@ -130,6 +130,7 @@ from asposewordscloud.models.office_math_object_response import OfficeMathObject
 from asposewordscloud.models.office_math_objects_collection import OfficeMathObjectsCollection
 from asposewordscloud.models.office_math_objects_response import OfficeMathObjectsResponse
 from asposewordscloud.models.ooxml_save_options_data import OoxmlSaveOptionsData
+from asposewordscloud.models.optimization_options import OptimizationOptions
 from asposewordscloud.models.outline_options_data import OutlineOptionsData
 from asposewordscloud.models.page_number import PageNumber
 from asposewordscloud.models.page_setup import PageSetup
