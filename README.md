@@ -16,20 +16,30 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 - [Convert a document to desired file format](https://docs.aspose.cloud/display/wordscloud/Convert+Document+to+Destination+Format+with+Detailed+Settings+and+Save+Result+to+Storage) along with detailed settings.
 - Convert an encrypted PDF document into Word document format.
 
-## Enhancements in Version 20.6.0
-- Added OoxmlSaveOption CompressionLevel property
-- Added group of methods without nodePath property
-  - DeleteAllParagraphTabStops
-  - DeleteParagraphListFormat
-  - DeleteParagraphTabStop
-  - GetParagraphTabStops
-  - InsertOrUpdateParagraphTabStop
-  - InsertParagraph
-  - UpdateParagraphFormat
-  - UpdateParagraphListFormat
-- In methods InsertOrUpdateParagraphTabStop, DeleteParagraphTabStop order of parameters has changed NodePath was moved to one position next, like if it was second before, now it's third.
+## Enhancements in Version 20.7
 
-## Enhancements in Version 20.5.0
+- Added 'Markdown' save format
+- Added endpoint to update paragraph format without node path (PUT '/words/{name}/paragraphs/{index}/format')
+
+
+## Enhancements in Version 20.6
+
+- Added new methods:
+  - DeleteAllParagraphTabStopsWithoutNodePath
+  - DeleteParagraphTabStopWithoutNodePath
+  - GetParagraphTabStopsWithoutNodePath
+  - InsertOrUpdateParagraphTabStopWithoutNodePath
+  - InsertParagraphWithoutNodePath
+  - UpdateParagraphFormatWithoutNodePath
+  - UpdateParagraphListFormatWithoutNodePath
+  - DeleteParagraphListFormatWithoutNodePath
+- DrawingObject related methods have been changed body content. Special request classes are introduced instead of strings.
+- InsertOrUpdateParagraphTabStop, DeleteParagraphTabStop methods have been changed parameter order
+- OoxmlSaveOptionsData.CompressionLevel property has been added
+
+
+## Enhancements in Version 20.5
+
 - Added methods to work with Word document lists
   - GetLists
   - GetList
@@ -58,32 +68,6 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
   - BuildReportOnline
 - Added Shading property to ParagraphFormat
 
-## Enhancements in Version 20.4.0
-- Added CompareOptions property to CompareData class
-- Added Password property to OdtSaveOptions class
-- Added Dml3DEffectsRenderingMode property to SaveOptions class
-- Added UpdateLastPrintedProperty property to SaveOptions class
-- Added InterpolateImages property to PdfSaveOptions class
-- Added UseTargetMachineFonts property to HtmlFixedSaveOptions class
-- Added some request data classes:
-  - RunUpdate and RunInsert
-  - FootnoteUpdate and FootnoteInsert
-  - FieldUpdate and FieldInsert
-  - CommentUpdate and CommentInsert
-  - DocumentPropertyCreateOrUpdate
-
-## Enhancements in Version 20.3.1
-- Added RtfSaveOptionsData.SaveImagesAsWmf property
-- WordsApi class now has credentials parameters
-- All methods which are used files, now operate with bytes array
-
-## Enhancements in Version 20.1.0
-
-- Moved property `ColorMode` from `SaveOptionsData` to `FixedPageSaveOptionsData`.
-- Replaced `MemoryStream` and `byte[]` with `SixLabors.ImageSharp.IImage` in image processing.
-- Included support of `ICC` profiles and implement `ICCBased` color space.
-
-For the detailed notes, please visit [Aspose.Words Cloud 20.1 Release Notes](https://docs.aspose.cloud/display/wordscloud/Aspose.Words+Cloud+20.1+Release+Notes).
 
 ## Read & Write Document Formats
 

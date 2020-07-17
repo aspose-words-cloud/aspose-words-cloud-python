@@ -42,21 +42,48 @@ class DocumentEntryList(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'apply_base_document_headers_and_footers_to_appending_documents': 'bool',
         'document_entries': 'list[DocumentEntry]'
     }
 
     attribute_map = {
+        'apply_base_document_headers_and_footers_to_appending_documents': 'ApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
         'document_entries': 'DocumentEntries'
     }
 
-    def __init__(self, document_entries=None):  # noqa: E501
+    def __init__(self, apply_base_document_headers_and_footers_to_appending_documents=None, document_entries=None):  # noqa: E501
         """DocumentEntryList - a model defined in Swagger"""  # noqa: E501
 
+        self._apply_base_document_headers_and_footers_to_appending_documents = None
         self._document_entries = None
         self.discriminator = None
 
+        if apply_base_document_headers_and_footers_to_appending_documents is not None:
+            self.apply_base_document_headers_and_footers_to_appending_documents = apply_base_document_headers_and_footers_to_appending_documents
         if document_entries is not None:
             self.document_entries = document_entries
+
+    @property
+    def apply_base_document_headers_and_footers_to_appending_documents(self):
+        """Gets the apply_base_document_headers_and_footers_to_appending_documents of this DocumentEntryList.  # noqa: E501
+
+        Gets or sets parameter that indicates to apply headers and footers from base document to appending documents. Default is true.  # noqa: E501
+
+        :return: The apply_base_document_headers_and_footers_to_appending_documents of this DocumentEntryList.  # noqa: E501
+        :rtype: bool
+        """
+        return self._apply_base_document_headers_and_footers_to_appending_documents
+
+    @apply_base_document_headers_and_footers_to_appending_documents.setter
+    def apply_base_document_headers_and_footers_to_appending_documents(self, apply_base_document_headers_and_footers_to_appending_documents):
+        """Sets the apply_base_document_headers_and_footers_to_appending_documents of this DocumentEntryList.
+
+        Gets or sets parameter that indicates to apply headers and footers from base document to appending documents. Default is true.  # noqa: E501
+
+        :param apply_base_document_headers_and_footers_to_appending_documents: The apply_base_document_headers_and_footers_to_appending_documents of this DocumentEntryList.  # noqa: E501
+        :type: bool
+        """
+        self._apply_base_document_headers_and_footers_to_appending_documents = apply_base_document_headers_and_footers_to_appending_documents
 
     @property
     def document_entries(self):
