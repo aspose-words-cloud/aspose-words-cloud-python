@@ -57,9 +57,9 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetDocumentDrawingObjectsWithoutNodePathRequest(name=remoteFileName, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetDocumentDrawingObjectsRequest(name=remoteFileName, folder=remoteDataFolder)
 
-        result = self.words_api.get_document_drawing_objects_without_node_path(request)
+        result = self.words_api.get_document_drawing_objects(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -72,7 +72,7 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetDocumentDrawingObjectByIndexRequest(name=remoteFileName, node_path='sections/0', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetDocumentDrawingObjectByIndexRequest(name=remoteFileName, index=0, node_path='sections/0', folder=remoteDataFolder)
 
         result = self.words_api.get_document_drawing_object_by_index(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -87,9 +87,9 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetDocumentDrawingObjectByIndexWithoutNodePathRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetDocumentDrawingObjectByIndexRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
 
-        result = self.words_api.get_document_drawing_object_by_index_without_node_path(request)
+        result = self.words_api.get_document_drawing_object_by_index(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -102,7 +102,7 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.RenderDrawingObjectRequest(name=remoteFileName, format='png', node_path='sections/0', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.RenderDrawingObjectRequest(name=remoteFileName, format='png', index=0, node_path='sections/0', folder=remoteDataFolder)
 
         result = self.words_api.render_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -117,9 +117,9 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.RenderDrawingObjectWithoutNodePathRequest(name=remoteFileName, format='png', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.RenderDrawingObjectRequest(name=remoteFileName, format='png', index=0, folder=remoteDataFolder)
 
-        result = self.words_api.render_drawing_object_without_node_path(request)
+        result = self.words_api.render_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -132,7 +132,7 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetDocumentDrawingObjectImageDataRequest(name=remoteFileName, node_path='sections/0', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetDocumentDrawingObjectImageDataRequest(name=remoteFileName, index=0, node_path='sections/0', folder=remoteDataFolder)
 
         result = self.words_api.get_document_drawing_object_image_data(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -147,9 +147,9 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetDocumentDrawingObjectImageDataWithoutNodePathRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetDocumentDrawingObjectImageDataRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
 
-        result = self.words_api.get_document_drawing_object_image_data_without_node_path(request)
+        result = self.words_api.get_document_drawing_object_image_data(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -162,7 +162,7 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localDrawingFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetDocumentDrawingObjectOleDataRequest(name=remoteFileName, node_path='sections/0', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetDocumentDrawingObjectOleDataRequest(name=remoteFileName, index=0, node_path='sections/0', folder=remoteDataFolder)
 
         result = self.words_api.get_document_drawing_object_ole_data(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -177,9 +177,9 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localDrawingFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetDocumentDrawingObjectOleDataWithoutNodePathRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetDocumentDrawingObjectOleDataRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
 
-        result = self.words_api.get_document_drawing_object_ole_data_without_node_path(request)
+        result = self.words_api.get_document_drawing_object_ole_data(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -209,9 +209,9 @@ class TestDrawingObjects(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
         requestDrawingObject = asposewordscloud.DrawingObjectInsert(height=0, left=0, top=0, width=0, relative_horizontal_position='Margin', relative_vertical_position='Margin', wrap_type='Inline')
-        request = asposewordscloud.models.requests.InsertDrawingObjectWithoutNodePathRequest(name=remoteFileName, drawing_object=requestDrawingObject, image_file=open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.InsertDrawingObjectRequest(name=remoteFileName, drawing_object=requestDrawingObject, image_file=open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), folder=remoteDataFolder)
 
-        result = self.words_api.insert_drawing_object_without_node_path(request)
+        result = self.words_api.insert_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -224,7 +224,7 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteDrawingObjectRequest(name=remoteFileName, node_path='', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.DeleteDrawingObjectRequest(name=remoteFileName, index=0, node_path='', folder=remoteDataFolder)
 
         self.words_api.delete_drawing_object(request)
 
@@ -239,9 +239,9 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteDrawingObjectWithoutNodePathRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.DeleteDrawingObjectRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
 
-        self.words_api.delete_drawing_object_without_node_path(request)
+        self.words_api.delete_drawing_object(request)
 
 
     #
@@ -255,7 +255,7 @@ class TestDrawingObjects(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
         requestDrawingObject = asposewordscloud.DrawingObjectUpdate(left=0)
-        request = asposewordscloud.models.requests.UpdateDrawingObjectRequest(name=remoteFileName, drawing_object=requestDrawingObject, image_file=open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), node_path='', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.UpdateDrawingObjectRequest(name=remoteFileName, drawing_object=requestDrawingObject, image_file=open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), index=0, node_path='', folder=remoteDataFolder)
 
         result = self.words_api.update_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -271,7 +271,7 @@ class TestDrawingObjects(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
         requestDrawingObject = asposewordscloud.DrawingObjectUpdate(left=0)
-        request = asposewordscloud.models.requests.UpdateDrawingObjectWithoutNodePathRequest(name=remoteFileName, drawing_object=requestDrawingObject, image_file=open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.UpdateDrawingObjectRequest(name=remoteFileName, drawing_object=requestDrawingObject, image_file=open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), index=0, folder=remoteDataFolder)
 
-        result = self.words_api.update_drawing_object_without_node_path(request)
+        result = self.words_api.update_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')

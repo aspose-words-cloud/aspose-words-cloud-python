@@ -40,7 +40,7 @@ class InsertTableRequest(object):
     :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, name, table, node_path, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
+    def __init__(self, name, table, node_path=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.name = name
         self.table = table
         self.node_path = node_path
