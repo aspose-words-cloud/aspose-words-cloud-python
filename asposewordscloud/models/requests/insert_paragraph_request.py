@@ -29,8 +29,8 @@ class InsertParagraphRequest(object):
     Request model for insert_paragraph operation.
     Initializes a new instance.
     :param name The document name.
-    :param paragraph Paragraph data.
     :param node_path Path to the node which contains paragraphs.
+    :param paragraph Paragraph data.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -41,10 +41,10 @@ class InsertParagraphRequest(object):
     :param insert_before_node Paragraph will be inserted before node with index.
     """
 
-    def __init__(self, name, paragraph, node_path=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None, insert_before_node=None):
+    def __init__(self, name, node_path, paragraph, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None, insert_before_node=None):
         self.name = name
-        self.paragraph = paragraph
         self.node_path = node_path
+        self.paragraph = paragraph
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding

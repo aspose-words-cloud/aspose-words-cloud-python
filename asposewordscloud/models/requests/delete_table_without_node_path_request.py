@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="optimize_document_request.py">
+# <copyright company="Aspose" file="delete_table_without_node_path_request.py">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -24,12 +24,12 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
-class OptimizeDocumentRequest(object):
+class DeleteTableWithoutNodePathRequest(object):
     """
-    Request model for optimize_document operation.
+    Request model for delete_table_without_node_path operation.
     Initializes a new instance.
     :param name The document name.
-    :param options The document optimization options.
+    :param index Object index.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -39,9 +39,9 @@ class OptimizeDocumentRequest(object):
     :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, name, options, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
+    def __init__(self, name, index, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.name = name
-        self.options = options
+        self.index = index
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding

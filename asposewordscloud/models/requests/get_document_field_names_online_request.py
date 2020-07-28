@@ -28,10 +28,10 @@ class GetDocumentFieldNamesOnlineRequest(object):
     """
     Request model for get_document_field_names_online operation.
     Initializes a new instance.
-    :param template File with template.
-    :param use_non_merge_fields Use non merge fields or not.
+    :param document The document.
+    :param use_non_merge_fields If true, result includes "mustache" field names.
     """
 
-    def __init__(self, template, use_non_merge_fields=None):
-        self.template = template
+    def __init__(self, document, use_non_merge_fields=None):
+        self.document = document
         self.use_non_merge_fields = use_non_merge_fields
