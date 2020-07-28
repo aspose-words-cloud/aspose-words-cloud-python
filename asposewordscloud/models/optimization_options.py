@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="range_document.py">
+# <copyright company="Aspose" file="optimization_options.py">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -30,8 +30,8 @@ import six
 import json
 
 
-class RangeDocument(object):
-    """Range element.
+class OptimizationOptions(object):
+    """Container class for the document optimization options.
     """
 
     """
@@ -42,43 +42,51 @@ class RangeDocument(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'document_name': 'str'
+        'ms_word_version': 'str'
     }
 
     attribute_map = {
-        'document_name': 'DocumentName'
+        'ms_word_version': 'MsWordVersion'
     }
 
-    def __init__(self, document_name=None):  # noqa: E501
-        """RangeDocument - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, ms_word_version=None):  # noqa: E501
+        """OptimizationOptions - a model defined in Swagger"""  # noqa: E501
 
-        self._document_name = None
+        self._ms_word_version = None
         self.discriminator = None
 
-        if document_name is not None:
-            self.document_name = document_name
+        if ms_word_version is not None:
+            self.ms_word_version = ms_word_version
 
     @property
-    def document_name(self):
-        """Gets the document_name of this RangeDocument.  # noqa: E501
+    def ms_word_version(self):
+        """Gets the ms_word_version of this OptimizationOptions.  # noqa: E501
 
-        Gets or sets name for new document.  # noqa: E501
+        Gets or sets specific MSWord version.  # noqa: E501
 
-        :return: The document_name of this RangeDocument.  # noqa: E501
+        :return: The ms_word_version of this OptimizationOptions.  # noqa: E501
         :rtype: str
         """
-        return self._document_name
+        return self._ms_word_version
 
-    @document_name.setter
-    def document_name(self, document_name):
-        """Sets the document_name of this RangeDocument.
+    @ms_word_version.setter
+    def ms_word_version(self, ms_word_version):
+        """Sets the ms_word_version of this OptimizationOptions.
 
-        Gets or sets name for new document.  # noqa: E501
+        Gets or sets specific MSWord version.  # noqa: E501
 
-        :param document_name: The document_name of this RangeDocument.  # noqa: E501
+        :param ms_word_version: The ms_word_version of this OptimizationOptions.  # noqa: E501
         :type: str
         """
-        self._document_name = document_name
+        allowed_values = ["Word2000", "Word2002", "Word2003", "Word2007", "Word2010", "Word2013", "Word2016", "Word2019"]  # noqa: E501
+        if not ms_word_version.isdigit():
+            if ms_word_version not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `ms_word_version` ({0}), must be one of {1}"  # noqa: E501
+                    .format(ms_word_version, allowed_values))
+            self._ms_word_version = ms_word_version
+        else:
+            self._ms_word_version = allowed_values[int(ms_word_version) if six.PY3 else long(ms_word_version)]
 
 
     def to_dict(self):
@@ -139,7 +147,7 @@ class RangeDocument(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, RangeDocument):
+        if not isinstance(other, OptimizationOptions):
             return False
 
         return self.__dict__ == other.__dict__

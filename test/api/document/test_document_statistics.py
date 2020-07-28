@@ -46,3 +46,14 @@ class TestDocumentStatistics(BaseTestContext):
 
         result = self.words_api.get_document_statistics(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
+    #
+    # Test for document classification online.
+    #
+    def test_get_document_statistics_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.GetDocumentStatisticsOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'))
+
+        result = self.words_api.get_document_statistics_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')

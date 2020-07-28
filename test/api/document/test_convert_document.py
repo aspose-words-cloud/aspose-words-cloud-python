@@ -49,6 +49,18 @@ class TestConvertDocument(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
+    # Test for converting document online to one of the available formats.
+    #
+    def test_save_as_online(self):
+        localName = 'test_multi_pages.docx'
+
+        requestSaveOptionsData = asposewordscloud.SaveOptionsData(save_format='pdf', file_name=self.remote_test_out + '/TestSaveAs.pdf')
+        request = asposewordscloud.models.requests.SaveAsOnlineRequest(document=open(os.path.join(self.local_test_folder, 'Common/' + localName), 'rb'), save_options_data=requestSaveOptionsData)
+
+        result = self.words_api.save_as_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+    #
     # Test for converting document to one of the available formats.
     #
     def test_save_as_docx(self):
