@@ -41,7 +41,7 @@ class InsertFormFieldRequest(object):
     :param insert_before_node Form field will be inserted before node with index.
     """
 
-    def __init__(self, name, form_field, node_path, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None, insert_before_node=None):
+    def __init__(self, name, form_field, node_path=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None, insert_before_node=None):
         self.name = name
         self.form_field = form_field
         self.node_path = node_path

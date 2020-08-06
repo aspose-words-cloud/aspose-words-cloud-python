@@ -30,8 +30,8 @@ class RenderTableRequest(object):
     Initializes a new instance.
     :param name The document name.
     :param format The destination format.
-    :param node_path Path to the node, which contains tables.
     :param index Object index.
+    :param node_path Path to the node, which contains tables.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -39,11 +39,11 @@ class RenderTableRequest(object):
     :param fonts_location Folder in filestorage with custom fonts.
     """
 
-    def __init__(self, name, format, node_path, index, folder=None, storage=None, load_encoding=None, password=None, fonts_location=None):
+    def __init__(self, name, format, index, node_path=None, folder=None, storage=None, load_encoding=None, password=None, fonts_location=None):
         self.name = name
         self.format = format
-        self.node_path = node_path
         self.index = index
+        self.node_path = node_path
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding

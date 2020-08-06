@@ -41,7 +41,7 @@ class InsertParagraphRequest(object):
     :param insert_before_node Paragraph will be inserted before node with index.
     """
 
-    def __init__(self, name, paragraph, node_path, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None, insert_before_node=None):
+    def __init__(self, name, paragraph, node_path=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None, insert_before_node=None):
         self.name = name
         self.paragraph = paragraph
         self.node_path = node_path

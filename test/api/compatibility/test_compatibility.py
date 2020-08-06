@@ -1,6 +1,5 @@
-# coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="get_paragraphs_without_node_path_request.py">
+# <copyright company="Aspose" file="test_compatibility.py">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -24,20 +23,27 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
-class GetParagraphsWithoutNodePathRequest(object):
-    """
-    Request model for get_paragraphs_without_node_path operation.
-    Initializes a new instance.
-    :param name The document name.
-    :param folder Original document folder.
-    :param storage Original document storage.
-    :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    :param password Password for opening an encrypted document.
-    """
+import os
+import dateutil.parser
+import asposewordscloud.models.requests
+from test.base_test_context import BaseTestContext
 
-    def __init__(self, name, folder=None, storage=None, load_encoding=None, password=None):
-        self.name = name
-        self.folder = folder
-        self.storage = storage
-        self.load_encoding = load_encoding
-        self.password = password
+#
+# Example of how to work with compatibility options.
+#
+class TestCompatibility(BaseTestContext):
+    #
+    # Test for optimize document to specific MS Word version.
+    #
+    def test_optimize_document(self):
+        remoteDataFolder = self.remote_test_folder + '/Compatibility'
+        localFile = 'Common/test_multi_pages.docx'
+        remoteFileName = 'TestOptimizeDocument.docx'
+
+        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+
+        requestOptions = asposewordscloud.OptimizationOptions(ms_word_version='Word2002')
+        request = asposewordscloud.models.requests.OptimizeDocumentRequest(name=remoteFileName, options=requestOptions, folder=remoteDataFolder)
+
+        self.words_api.optimize_document(request)
+

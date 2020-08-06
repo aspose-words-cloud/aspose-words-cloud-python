@@ -42,7 +42,7 @@ class TestParagraph(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetParagraphRequest(name=remoteFileName, node_path='sections/0', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetParagraphRequest(name=remoteFileName, index=0, node_path='sections/0', folder=remoteDataFolder)
 
         result = self.words_api.get_paragraph(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -57,9 +57,9 @@ class TestParagraph(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetParagraphWithoutNodePathRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetParagraphRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
 
-        result = self.words_api.get_paragraph_without_node_path(request)
+        result = self.words_api.get_paragraph(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -87,9 +87,9 @@ class TestParagraph(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetParagraphsWithoutNodePathRequest(name=remoteFileName, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetParagraphsRequest(name=remoteFileName, folder=remoteDataFolder)
 
-        result = self.words_api.get_paragraphs_without_node_path(request)
+        result = self.words_api.get_paragraphs(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -180,9 +180,9 @@ class TestParagraph(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
         requestParagraph = asposewordscloud.ParagraphInsert(text='This is a new paragraph for your document')
-        request = asposewordscloud.models.requests.InsertParagraphWithoutNodePathRequest(name=remoteFileName, paragraph=requestParagraph, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.InsertParagraphRequest(name=remoteFileName, paragraph=requestParagraph, folder=remoteDataFolder)
 
-        result = self.words_api.insert_paragraph_without_node_path(request)
+        result = self.words_api.insert_paragraph(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -195,7 +195,7 @@ class TestParagraph(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.RenderParagraphRequest(name=remoteFileName, format='png', node_path='', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.RenderParagraphRequest(name=remoteFileName, format='png', index=0, node_path='', folder=remoteDataFolder)
 
         result = self.words_api.render_paragraph(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -210,9 +210,9 @@ class TestParagraph(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.RenderParagraphWithoutNodePathRequest(name=remoteFileName, format='png', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.RenderParagraphRequest(name=remoteFileName, format='png', index=0, folder=remoteDataFolder)
 
-        result = self.words_api.render_paragraph_without_node_path(request)
+        result = self.words_api.render_paragraph(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -225,7 +225,7 @@ class TestParagraph(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetParagraphFormatRequest(name=remoteFileName, node_path='', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetParagraphFormatRequest(name=remoteFileName, index=0, node_path='', folder=remoteDataFolder)
 
         result = self.words_api.get_paragraph_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -240,9 +240,9 @@ class TestParagraph(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetParagraphFormatWithoutNodePathRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetParagraphFormatRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
 
-        result = self.words_api.get_paragraph_format_without_node_path(request)
+        result = self.words_api.get_paragraph_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -256,7 +256,7 @@ class TestParagraph(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
         requestDto = asposewordscloud.ParagraphFormatUpdate(alignment='Right')
-        request = asposewordscloud.models.requests.UpdateParagraphFormatRequest(name=remoteFileName, dto=requestDto, node_path='', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.UpdateParagraphFormatRequest(name=remoteFileName, dto=requestDto, index=0, node_path='', folder=remoteDataFolder)
 
         result = self.words_api.update_paragraph_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -271,7 +271,7 @@ class TestParagraph(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteParagraphRequest(name=remoteFileName, node_path='', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.DeleteParagraphRequest(name=remoteFileName, index=0, node_path='', folder=remoteDataFolder)
 
         self.words_api.delete_paragraph(request)
 
@@ -286,9 +286,9 @@ class TestParagraph(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteParagraphWithoutNodePathRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.DeleteParagraphRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
 
-        self.words_api.delete_paragraph_without_node_path(request)
+        self.words_api.delete_paragraph(request)
 
 
     #
@@ -301,7 +301,7 @@ class TestParagraph(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, listFolder + '/ParagraphGetListFormat.doc'), 'rb'))
 
-        request = asposewordscloud.models.requests.GetParagraphListFormatRequest(name=remoteFileName, node_path='', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetParagraphListFormatRequest(name=remoteFileName, index=0, node_path='', folder=remoteDataFolder)
 
         result = self.words_api.get_paragraph_list_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -316,9 +316,9 @@ class TestParagraph(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, listFolder + '/ParagraphGetListFormat.doc'), 'rb'))
 
-        request = asposewordscloud.models.requests.GetParagraphListFormatWithoutNodePathRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetParagraphListFormatRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
 
-        result = self.words_api.get_paragraph_list_format_without_node_path(request)
+        result = self.words_api.get_paragraph_list_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -332,7 +332,7 @@ class TestParagraph(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, listFolder + '/ParagraphUpdateListFormat.doc'), 'rb'))
 
         requestDto = asposewordscloud.ListFormatUpdate(list_id=2)
-        request = asposewordscloud.models.requests.UpdateParagraphListFormatRequest(name=remoteFileName, dto=requestDto, node_path='', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.UpdateParagraphListFormatRequest(name=remoteFileName, dto=requestDto, index=0, node_path='', folder=remoteDataFolder)
 
         result = self.words_api.update_paragraph_list_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -348,9 +348,9 @@ class TestParagraph(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, listFolder + '/ParagraphUpdateListFormat.doc'), 'rb'))
 
         requestDto = asposewordscloud.ListFormatUpdate(list_id=2)
-        request = asposewordscloud.models.requests.UpdateParagraphListFormatWithoutNodePathRequest(name=remoteFileName, dto=requestDto, index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.UpdateParagraphListFormatRequest(name=remoteFileName, dto=requestDto, index=0, folder=remoteDataFolder)
 
-        result = self.words_api.update_paragraph_list_format_without_node_path(request)
+        result = self.words_api.update_paragraph_list_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -363,7 +363,7 @@ class TestParagraph(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, listFolder + '/ParagraphDeleteListFormat.doc'), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteParagraphListFormatRequest(name=remoteFileName, node_path='', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.DeleteParagraphListFormatRequest(name=remoteFileName, index=0, node_path='', folder=remoteDataFolder)
 
         result = self.words_api.delete_paragraph_list_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -378,9 +378,9 @@ class TestParagraph(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, listFolder + '/ParagraphDeleteListFormat.doc'), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteParagraphListFormatWithoutNodePathRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.DeleteParagraphListFormatRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
 
-        result = self.words_api.delete_paragraph_list_format_without_node_path(request)
+        result = self.words_api.delete_paragraph_list_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -393,7 +393,7 @@ class TestParagraph(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, tabStopFolder + '/ParagraphTabStops.docx'), 'rb'))
 
-        request = asposewordscloud.models.requests.GetParagraphTabStopsRequest(name=remoteFileName, node_path='', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetParagraphTabStopsRequest(name=remoteFileName, index=0, node_path='', folder=remoteDataFolder)
 
         result = self.words_api.get_paragraph_tab_stops(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -408,9 +408,9 @@ class TestParagraph(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, tabStopFolder + '/ParagraphTabStops.docx'), 'rb'))
 
-        request = asposewordscloud.models.requests.GetParagraphTabStopsWithoutNodePathRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetParagraphTabStopsRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
 
-        result = self.words_api.get_paragraph_tab_stops_without_node_path(request)
+        result = self.words_api.get_paragraph_tab_stops(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -424,7 +424,7 @@ class TestParagraph(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, tabStopFolder + '/ParagraphTabStops.docx'), 'rb'))
 
         requestDto = asposewordscloud.TabStopInsert(alignment='Left', leader='None', position=72)
-        request = asposewordscloud.models.requests.InsertOrUpdateParagraphTabStopRequest(name=remoteFileName, dto=requestDto, node_path='', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.InsertOrUpdateParagraphTabStopRequest(name=remoteFileName, dto=requestDto, index=0, node_path='', folder=remoteDataFolder)
 
         result = self.words_api.insert_or_update_paragraph_tab_stop(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -440,9 +440,9 @@ class TestParagraph(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, tabStopFolder + '/ParagraphTabStops.docx'), 'rb'))
 
         requestDto = asposewordscloud.TabStopInsert(alignment='Left', leader='None', position=72)
-        request = asposewordscloud.models.requests.InsertOrUpdateParagraphTabStopWithoutNodePathRequest(name=remoteFileName, dto=requestDto, index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.InsertOrUpdateParagraphTabStopRequest(name=remoteFileName, dto=requestDto, index=0, folder=remoteDataFolder)
 
-        result = self.words_api.insert_or_update_paragraph_tab_stop_without_node_path(request)
+        result = self.words_api.insert_or_update_paragraph_tab_stop(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -455,7 +455,7 @@ class TestParagraph(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, tabStopFolder + '/ParagraphTabStops.docx'), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteAllParagraphTabStopsRequest(name=remoteFileName, node_path='', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.DeleteAllParagraphTabStopsRequest(name=remoteFileName, index=0, node_path='', folder=remoteDataFolder)
 
         result = self.words_api.delete_all_paragraph_tab_stops(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -470,9 +470,9 @@ class TestParagraph(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, tabStopFolder + '/ParagraphTabStops.docx'), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteAllParagraphTabStopsWithoutNodePathRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.DeleteAllParagraphTabStopsRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
 
-        result = self.words_api.delete_all_paragraph_tab_stops_without_node_path(request)
+        result = self.words_api.delete_all_paragraph_tab_stops(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -485,7 +485,7 @@ class TestParagraph(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, tabStopFolder + '/ParagraphTabStops.docx'), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteParagraphTabStopRequest(name=remoteFileName, position=72, node_path='', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.DeleteParagraphTabStopRequest(name=remoteFileName, position=72, index=0, node_path='', folder=remoteDataFolder)
 
         result = self.words_api.delete_paragraph_tab_stop(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -500,7 +500,7 @@ class TestParagraph(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, tabStopFolder + '/ParagraphTabStops.docx'), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteParagraphTabStopWithoutNodePathRequest(name=remoteFileName, position=72, index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.DeleteParagraphTabStopRequest(name=remoteFileName, position=72, index=0, folder=remoteDataFolder)
 
-        result = self.words_api.delete_paragraph_tab_stop_without_node_path(request)
+        result = self.words_api.delete_paragraph_tab_stop(request)
         self.assertIsNotNone(result, 'Error has occurred.')

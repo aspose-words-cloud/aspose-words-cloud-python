@@ -1,4 +1,5 @@
 from test.api.bookmark.test_bookmark import TestBookmark
+from test.api.compatibility.test_compatibility import TestCompatibility
 from test.api.document.test_append_document import TestAppendDocument
 from test.api.document.test_classification import TestClassification
 from test.api.document.test_comment import TestComment

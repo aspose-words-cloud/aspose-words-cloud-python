@@ -43,7 +43,7 @@ class TestFormField(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, fieldFolder + '/FormFilled.docx'), 'rb'))
 
         requestFormField = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='', text_input_type='Regular', text_input_default='No name')
-        request = asposewordscloud.models.requests.UpdateFormFieldRequest(name=remoteFileName, form_field=requestFormField, node_path='sections/0', index=0, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
+        request = asposewordscloud.models.requests.UpdateFormFieldRequest(name=remoteFileName, form_field=requestFormField, index=0, node_path='sections/0', folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
 
         result = self.words_api.update_form_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -59,9 +59,9 @@ class TestFormField(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, fieldFolder + '/FormFilled.docx'), 'rb'))
 
         requestFormField = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='', text_input_type='Regular', text_input_default='No name')
-        request = asposewordscloud.models.requests.UpdateFormFieldWithoutNodePathRequest(name=remoteFileName, form_field=requestFormField, index=0, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
+        request = asposewordscloud.models.requests.UpdateFormFieldRequest(name=remoteFileName, form_field=requestFormField, index=0, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
 
-        result = self.words_api.update_form_field_without_node_path(request)
+        result = self.words_api.update_form_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -74,7 +74,7 @@ class TestFormField(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, fieldFolder + '/FormFilled.docx'), 'rb'))
 
-        request = asposewordscloud.models.requests.GetFormFieldRequest(name=remoteFileName, node_path='sections/0', index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetFormFieldRequest(name=remoteFileName, index=0, node_path='sections/0', folder=remoteDataFolder)
 
         result = self.words_api.get_form_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -89,9 +89,9 @@ class TestFormField(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, fieldFolder + '/FormFilled.docx'), 'rb'))
 
-        request = asposewordscloud.models.requests.GetFormFieldWithoutNodePathRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetFormFieldRequest(name=remoteFileName, index=0, folder=remoteDataFolder)
 
-        result = self.words_api.get_form_field_without_node_path(request)
+        result = self.words_api.get_form_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -119,9 +119,9 @@ class TestFormField(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, fieldFolder + '/FormFilled.docx'), 'rb'))
 
-        request = asposewordscloud.models.requests.GetFormFieldsWithoutNodePathRequest(name=remoteFileName, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetFormFieldsRequest(name=remoteFileName, folder=remoteDataFolder)
 
-        result = self.words_api.get_form_fields_without_node_path(request)
+        result = self.words_api.get_form_fields(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -149,9 +149,9 @@ class TestFormField(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, 'Common/test_multi_pages.docx'), 'rb'))
 
         requestFormField = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='', text_input_type='Regular', text_input_default='123', text_input_format='UPPERCASE')
-        request = asposewordscloud.models.requests.InsertFormFieldWithoutNodePathRequest(name=remoteFileName, form_field=requestFormField, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
+        request = asposewordscloud.models.requests.InsertFormFieldRequest(name=remoteFileName, form_field=requestFormField, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
 
-        result = self.words_api.insert_form_field_without_node_path(request)
+        result = self.words_api.insert_form_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
     #
@@ -164,7 +164,7 @@ class TestFormField(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, fieldFolder + '/FormFilled.docx'), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteFormFieldRequest(name=remoteFileName, node_path='sections/0', index=0, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
+        request = asposewordscloud.models.requests.DeleteFormFieldRequest(name=remoteFileName, index=0, node_path='sections/0', folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
 
         self.words_api.delete_form_field(request)
 
@@ -179,7 +179,7 @@ class TestFormField(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, fieldFolder + '/FormFilled.docx'), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteFormFieldWithoutNodePathRequest(name=remoteFileName, index=0, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
+        request = asposewordscloud.models.requests.DeleteFormFieldRequest(name=remoteFileName, index=0, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
 
-        self.words_api.delete_form_field_without_node_path(request)
+        self.words_api.delete_form_field(request)
 

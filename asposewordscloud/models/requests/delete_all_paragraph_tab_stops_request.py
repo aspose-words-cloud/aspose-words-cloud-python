@@ -29,8 +29,8 @@ class DeleteAllParagraphTabStopsRequest(object):
     Request model for delete_all_paragraph_tab_stops operation.
     Initializes a new instance.
     :param name The document name.
-    :param node_path Path to the node which contains paragraph.
     :param index Object index.
+    :param node_path Path to the node which contains paragraph.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -38,10 +38,10 @@ class DeleteAllParagraphTabStopsRequest(object):
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     """
 
-    def __init__(self, name, node_path, index, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None):
+    def __init__(self, name, index, node_path=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None):
         self.name = name
-        self.node_path = node_path
         self.index = index
+        self.node_path = node_path
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding

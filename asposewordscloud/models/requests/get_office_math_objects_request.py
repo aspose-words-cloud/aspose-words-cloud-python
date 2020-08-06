@@ -36,7 +36,7 @@ class GetOfficeMathObjectsRequest(object):
     :param password Password for opening an encrypted document.
     """
 
-    def __init__(self, name, node_path, folder=None, storage=None, load_encoding=None, password=None):
+    def __init__(self, name, node_path=None, folder=None, storage=None, load_encoding=None, password=None):
         self.name = name
         self.node_path = node_path
         self.folder = folder

@@ -31,8 +31,8 @@ class UpdateDrawingObjectRequest(object):
     :param name The document name.
     :param drawing_object Drawing object parameters.
     :param image_file File with image.
-    :param node_path Path to the node, which contains collection of drawing objects.
     :param index Object index.
+    :param node_path Path to the node, which contains collection of drawing objects.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -42,12 +42,12 @@ class UpdateDrawingObjectRequest(object):
     :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, name, drawing_object, image_file, node_path, index, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
+    def __init__(self, name, drawing_object, image_file, index, node_path=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.name = name
         self.drawing_object = drawing_object
         self.image_file = image_file
-        self.node_path = node_path
         self.index = index
+        self.node_path = node_path
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding

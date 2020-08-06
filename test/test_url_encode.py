@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="get_tables_without_node_path_request.py">
+# <copyright company="Aspose" file="test_url_encode.py">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -24,20 +24,26 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
-class GetTablesWithoutNodePathRequest(object):
-    """
-    Request model for get_tables_without_node_path operation.
-    Initializes a new instance.
-    :param name The document name.
-    :param folder Original document folder.
-    :param storage Original document storage.
-    :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    :param password Password for opening an encrypted document.
-    """
+import os
+import asposewordscloud.models.requests
+from test.base_test_context import BaseTestContext
 
-    def __init__(self, name, folder=None, storage=None, load_encoding=None, password=None):
-        self.name = name
-        self.folder = folder
-        self.storage = storage
-        self.load_encoding = load_encoding
-        self.password = password
+
+class TestUrlEncode(BaseTestContext):
+
+    test_folder = 'DocumentElements/Bookmarks'
+
+    #
+    # Test for url encoding of document name
+    #
+    def test_url_encode(self):
+        filename = 'test_multi_pages.docx'
+        remote_name = '[“Test_Two,_Inc.”]-_83(b)Election([“Bill_Gates”]).docx'
+        bookmark_name = 'aspose'
+        self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
+        request = asposewordscloud.models.requests.GetBookmarkByNameRequest(remote_name, bookmark_name,
+                                                                                  os.path.join(
+                                                                                      self.remote_test_folder,
+                                                                                      self.test_folder))
+        result = self.words_api.get_bookmark_by_name(request)
+        self.assertIsNotNone(result, 'Error has occurred while get document bookmark by name')

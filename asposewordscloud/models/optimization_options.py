@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="document_entry_list.py">
+# <copyright company="Aspose" file="optimization_options.py">
 #   Copyright (c) 2020 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -30,8 +30,8 @@ import six
 import json
 
 
-class DocumentEntryList(object):
-    """Represents a list of documents which will be appended to the original resource document.
+class OptimizationOptions(object):
+    """Container class for the document optimization options.
     """
 
     """
@@ -42,70 +42,51 @@ class DocumentEntryList(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'apply_base_document_headers_and_footers_to_appending_documents': 'bool',
-        'document_entries': 'list[DocumentEntry]'
+        'ms_word_version': 'str'
     }
 
     attribute_map = {
-        'apply_base_document_headers_and_footers_to_appending_documents': 'ApplyBaseDocumentHeadersAndFootersToAppendingDocuments',
-        'document_entries': 'DocumentEntries'
+        'ms_word_version': 'MsWordVersion'
     }
 
-    def __init__(self, apply_base_document_headers_and_footers_to_appending_documents=None, document_entries=None):  # noqa: E501
-        """DocumentEntryList - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, ms_word_version=None):  # noqa: E501
+        """OptimizationOptions - a model defined in Swagger"""  # noqa: E501
 
-        self._apply_base_document_headers_and_footers_to_appending_documents = None
-        self._document_entries = None
+        self._ms_word_version = None
         self.discriminator = None
 
-        if apply_base_document_headers_and_footers_to_appending_documents is not None:
-            self.apply_base_document_headers_and_footers_to_appending_documents = apply_base_document_headers_and_footers_to_appending_documents
-        if document_entries is not None:
-            self.document_entries = document_entries
+        if ms_word_version is not None:
+            self.ms_word_version = ms_word_version
 
     @property
-    def apply_base_document_headers_and_footers_to_appending_documents(self):
-        """Gets the apply_base_document_headers_and_footers_to_appending_documents of this DocumentEntryList.  # noqa: E501
+    def ms_word_version(self):
+        """Gets the ms_word_version of this OptimizationOptions.  # noqa: E501
 
-        Gets or sets parameter that indicates to apply headers and footers from base document to appending documents. Default is true.  # noqa: E501
+        Gets or sets specific MSWord version.  # noqa: E501
 
-        :return: The apply_base_document_headers_and_footers_to_appending_documents of this DocumentEntryList.  # noqa: E501
-        :rtype: bool
+        :return: The ms_word_version of this OptimizationOptions.  # noqa: E501
+        :rtype: str
         """
-        return self._apply_base_document_headers_and_footers_to_appending_documents
+        return self._ms_word_version
 
-    @apply_base_document_headers_and_footers_to_appending_documents.setter
-    def apply_base_document_headers_and_footers_to_appending_documents(self, apply_base_document_headers_and_footers_to_appending_documents):
-        """Sets the apply_base_document_headers_and_footers_to_appending_documents of this DocumentEntryList.
+    @ms_word_version.setter
+    def ms_word_version(self, ms_word_version):
+        """Sets the ms_word_version of this OptimizationOptions.
 
-        Gets or sets parameter that indicates to apply headers and footers from base document to appending documents. Default is true.  # noqa: E501
+        Gets or sets specific MSWord version.  # noqa: E501
 
-        :param apply_base_document_headers_and_footers_to_appending_documents: The apply_base_document_headers_and_footers_to_appending_documents of this DocumentEntryList.  # noqa: E501
-        :type: bool
+        :param ms_word_version: The ms_word_version of this OptimizationOptions.  # noqa: E501
+        :type: str
         """
-        self._apply_base_document_headers_and_footers_to_appending_documents = apply_base_document_headers_and_footers_to_appending_documents
-
-    @property
-    def document_entries(self):
-        """Gets the document_entries of this DocumentEntryList.  # noqa: E501
-
-        Gets or sets list of documents.  # noqa: E501
-
-        :return: The document_entries of this DocumentEntryList.  # noqa: E501
-        :rtype: list[DocumentEntry]
-        """
-        return self._document_entries
-
-    @document_entries.setter
-    def document_entries(self, document_entries):
-        """Sets the document_entries of this DocumentEntryList.
-
-        Gets or sets list of documents.  # noqa: E501
-
-        :param document_entries: The document_entries of this DocumentEntryList.  # noqa: E501
-        :type: list[DocumentEntry]
-        """
-        self._document_entries = document_entries
+        allowed_values = ["Word2000", "Word2002", "Word2003", "Word2007", "Word2010", "Word2013", "Word2016", "Word2019"]  # noqa: E501
+        if not ms_word_version.isdigit():
+            if ms_word_version not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `ms_word_version` ({0}), must be one of {1}"  # noqa: E501
+                    .format(ms_word_version, allowed_values))
+            self._ms_word_version = ms_word_version
+        else:
+            self._ms_word_version = allowed_values[int(ms_word_version) if six.PY3 else long(ms_word_version)]
 
 
     def to_dict(self):
@@ -166,7 +147,7 @@ class DocumentEntryList(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, DocumentEntryList):
+        if not isinstance(other, OptimizationOptions):
             return False
 
         return self.__dict__ == other.__dict__
