@@ -47,6 +47,7 @@ class TestComment(BaseTestContext):
         result = self.words_api.get_comment(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting all comments from document.
     #
@@ -61,6 +62,7 @@ class TestComment(BaseTestContext):
 
         result = self.words_api.get_comments(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for adding comment.
@@ -82,6 +84,7 @@ class TestComment(BaseTestContext):
         result = self.words_api.insert_comment(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for updating comment.
     #
@@ -101,6 +104,7 @@ class TestComment(BaseTestContext):
 
         result = self.words_api.update_comment(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # A test for DeleteComment.

@@ -48,6 +48,7 @@ class TestConvertDocument(BaseTestContext):
         result = self.words_api.save_as(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for converting document to one of the available formats.
     #
@@ -65,6 +66,7 @@ class TestConvertDocument(BaseTestContext):
         result = self.words_api.save_as(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for converting document to one of the available formats.
     #
@@ -81,6 +83,7 @@ class TestConvertDocument(BaseTestContext):
         result = self.words_api.save_as_tiff(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # A test for ConvertDocument.
     #
@@ -91,3 +94,4 @@ class TestConvertDocument(BaseTestContext):
 
         result = self.words_api.convert_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

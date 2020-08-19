@@ -46,3 +46,4 @@ class TestDocumentStatistics(BaseTestContext):
 
         result = self.words_api.get_document_statistics(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

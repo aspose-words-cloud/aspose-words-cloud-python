@@ -47,6 +47,7 @@ class TestDocumentWithFormat(BaseTestContext):
         result = self.words_api.get_document_with_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting document with specified format.
     #
@@ -61,3 +62,4 @@ class TestDocumentWithFormat(BaseTestContext):
 
         result = self.words_api.get_document_with_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

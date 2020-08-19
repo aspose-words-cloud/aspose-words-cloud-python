@@ -47,6 +47,7 @@ class TestSection(BaseTestContext):
         result = self.words_api.get_section(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting sections.
     #
@@ -61,6 +62,7 @@ class TestSection(BaseTestContext):
 
         result = self.words_api.get_sections(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for delete a section.

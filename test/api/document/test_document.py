@@ -47,6 +47,7 @@ class TestDocument(BaseTestContext):
         result = self.words_api.get_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for creating word document.
     #
@@ -58,3 +59,4 @@ class TestDocument(BaseTestContext):
 
         result = self.words_api.create_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

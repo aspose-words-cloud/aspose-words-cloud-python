@@ -47,6 +47,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.get_paragraph(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting paragraph without node path.
     #
@@ -61,6 +62,7 @@ class TestParagraph(BaseTestContext):
 
         result = self.words_api.get_paragraph(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for getting all paragraphs.
@@ -77,6 +79,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.get_paragraphs(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting all paragraphs without node path.
     #
@@ -91,6 +94,7 @@ class TestParagraph(BaseTestContext):
 
         result = self.words_api.get_paragraphs(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for getting paragraph run.
@@ -107,6 +111,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.get_run(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting paragraph run font.
     #
@@ -122,6 +127,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.get_run_font(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting paragraph runs.
     #
@@ -136,6 +142,7 @@ class TestParagraph(BaseTestContext):
 
         result = self.words_api.get_runs(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for updating paragraph run font.
@@ -153,6 +160,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.update_run_font(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for adding paragraph.
     #
@@ -168,6 +176,7 @@ class TestParagraph(BaseTestContext):
 
         result = self.words_api.insert_paragraph(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for adding paragraph without node path.
@@ -185,6 +194,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.insert_paragraph(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for paragraph rendering.
     #
@@ -199,6 +209,7 @@ class TestParagraph(BaseTestContext):
 
         result = self.words_api.render_paragraph(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for paragraph rendering without node path.
@@ -215,6 +226,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.render_paragraph(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting paragraph format settings.
     #
@@ -229,6 +241,7 @@ class TestParagraph(BaseTestContext):
 
         result = self.words_api.get_paragraph_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for getting paragraph format settings without node path.
@@ -245,6 +258,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.get_paragraph_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for updating  paragraph format settings.
     #
@@ -260,6 +274,7 @@ class TestParagraph(BaseTestContext):
 
         result = self.words_api.update_paragraph_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for deleting  a paragraph.
@@ -306,6 +321,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.get_paragraph_list_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting paragraph list format without node path.
     #
@@ -320,6 +336,7 @@ class TestParagraph(BaseTestContext):
 
         result = self.words_api.get_paragraph_list_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for updating paragraph list format.
@@ -337,6 +354,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.update_paragraph_list_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for updating paragraph list format without node path.
     #
@@ -353,6 +371,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.update_paragraph_list_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for deleting paragraph list format.
     #
@@ -367,6 +386,7 @@ class TestParagraph(BaseTestContext):
 
         result = self.words_api.delete_paragraph_list_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for deleting paragraph list format without node path.
@@ -383,6 +403,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.delete_paragraph_list_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting paragraph tab stops.
     #
@@ -398,6 +419,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.get_paragraph_tab_stops(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting paragraph tab stops without node path.
     #
@@ -412,6 +434,7 @@ class TestParagraph(BaseTestContext):
 
         result = self.words_api.get_paragraph_tab_stops(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for inserting paragraph tab stop.
@@ -429,6 +452,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.insert_or_update_paragraph_tab_stop(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for inserting paragraph tab stop without node path.
     #
@@ -445,6 +469,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.insert_or_update_paragraph_tab_stop(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for deleting all paragraph tab stops.
     #
@@ -459,6 +484,7 @@ class TestParagraph(BaseTestContext):
 
         result = self.words_api.delete_all_paragraph_tab_stops(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for deleting all paragraph tab stops without node path.
@@ -475,6 +501,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.delete_all_paragraph_tab_stops(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for deleting a tab stops.
     #
@@ -490,6 +517,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.delete_paragraph_tab_stop(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for deleting a tab stops without node path.
     #
@@ -504,3 +532,4 @@ class TestParagraph(BaseTestContext):
 
         result = self.words_api.delete_paragraph_tab_stop(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

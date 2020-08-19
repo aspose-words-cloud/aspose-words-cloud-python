@@ -47,6 +47,7 @@ class TestRange(BaseTestContext):
         result = self.words_api.get_range_text(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for removing the text for range.
     #
@@ -61,6 +62,7 @@ class TestRange(BaseTestContext):
 
         result = self.words_api.remove_range(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for saving a range as a new document.
@@ -78,6 +80,7 @@ class TestRange(BaseTestContext):
         result = self.words_api.save_as_range(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for replacing text in range.
     #
@@ -93,3 +96,4 @@ class TestRange(BaseTestContext):
 
         result = self.words_api.replace_with_text(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

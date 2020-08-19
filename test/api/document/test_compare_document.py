@@ -51,3 +51,4 @@ class TestCompareDocument(BaseTestContext):
 
         result = self.words_api.compare_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

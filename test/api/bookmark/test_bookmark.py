@@ -46,6 +46,9 @@ class TestBookmark(BaseTestContext):
 
         result = self.words_api.get_bookmarks(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+       self.assertIsNotNone(result.bookmarks(), 'Validate GetBookmarks response');
+       self.assertEqual(3, len(result.bookmarks().bookmark_list()));
+       self.assertEqual('aspose', result.bookmarks().bookmark_list()[1].name());
 
     #
     # Test for getting bookmark by specified name.
@@ -61,6 +64,7 @@ class TestBookmark(BaseTestContext):
 
         result = self.words_api.get_bookmark_by_name(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for updating existed bookmark.
@@ -78,3 +82,4 @@ class TestBookmark(BaseTestContext):
 
         result = self.words_api.update_bookmark(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

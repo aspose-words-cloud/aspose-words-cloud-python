@@ -47,6 +47,7 @@ class TestTable(BaseTestContext):
         result = self.words_api.get_tables(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting tables without node path.
     #
@@ -61,6 +62,7 @@ class TestTable(BaseTestContext):
 
         result = self.words_api.get_tables(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for getting table.
@@ -77,6 +79,7 @@ class TestTable(BaseTestContext):
         result = self.words_api.get_table(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting table without node path.
     #
@@ -91,6 +94,7 @@ class TestTable(BaseTestContext):
 
         result = self.words_api.get_table(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for deleting table.
@@ -138,6 +142,7 @@ class TestTable(BaseTestContext):
         result = self.words_api.insert_table(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for adding table without node path.
     #
@@ -154,6 +159,7 @@ class TestTable(BaseTestContext):
         result = self.words_api.insert_table(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting document properties.
     #
@@ -169,6 +175,7 @@ class TestTable(BaseTestContext):
         result = self.words_api.get_table_properties(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting document properties without node path.
     #
@@ -183,6 +190,7 @@ class TestTable(BaseTestContext):
 
         result = self.words_api.get_table_properties(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for updating table properties.
@@ -200,6 +208,7 @@ class TestTable(BaseTestContext):
         result = self.words_api.update_table_properties(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for updating table properties without node path.
     #
@@ -216,6 +225,7 @@ class TestTable(BaseTestContext):
         result = self.words_api.update_table_properties(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting table row.
     #
@@ -230,6 +240,7 @@ class TestTable(BaseTestContext):
 
         result = self.words_api.get_table_row(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for deleting table row.
@@ -262,6 +273,7 @@ class TestTable(BaseTestContext):
         result = self.words_api.insert_table_row(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting row format.
     #
@@ -276,6 +288,7 @@ class TestTable(BaseTestContext):
 
         result = self.words_api.get_table_row_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test updating row format.
@@ -293,6 +306,7 @@ class TestTable(BaseTestContext):
         result = self.words_api.update_table_row_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting table cell.
     #
@@ -307,6 +321,7 @@ class TestTable(BaseTestContext):
 
         result = self.words_api.get_table_cell(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for deleting cell.
@@ -339,6 +354,7 @@ class TestTable(BaseTestContext):
         result = self.words_api.insert_table_cell(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting cell format.
     #
@@ -353,6 +369,7 @@ class TestTable(BaseTestContext):
 
         result = self.words_api.get_table_cell_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for updating cell format.
@@ -370,6 +387,7 @@ class TestTable(BaseTestContext):
         result = self.words_api.update_table_cell_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for table rendering.
     #
@@ -385,6 +403,7 @@ class TestTable(BaseTestContext):
         result = self.words_api.render_table(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for table rendering without node path.
     #
@@ -399,3 +418,4 @@ class TestTable(BaseTestContext):
 
         result = self.words_api.render_table(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

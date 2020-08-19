@@ -47,6 +47,7 @@ class TestHeaderFooter(BaseTestContext):
         result = self.words_api.get_header_footers(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting headerfooter.
     #
@@ -62,6 +63,7 @@ class TestHeaderFooter(BaseTestContext):
         result = self.words_api.get_header_footer(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting headerfooter of section.
     #
@@ -76,6 +78,7 @@ class TestHeaderFooter(BaseTestContext):
 
         result = self.words_api.get_header_footer_of_section(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for deleting headerfooter.
@@ -121,3 +124,4 @@ class TestHeaderFooter(BaseTestContext):
 
         result = self.words_api.insert_header_footer(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

@@ -47,6 +47,7 @@ class TestTableBorder(BaseTestContext):
         result = self.words_api.get_borders(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting border.
     #
@@ -61,6 +62,7 @@ class TestTableBorder(BaseTestContext):
 
         result = self.words_api.get_border(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for deleting borders.
@@ -77,6 +79,7 @@ class TestTableBorder(BaseTestContext):
         result = self.words_api.delete_borders(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for deleting border.
     #
@@ -91,6 +94,7 @@ class TestTableBorder(BaseTestContext):
 
         result = self.words_api.delete_border(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for updating border.
@@ -108,3 +112,4 @@ class TestTableBorder(BaseTestContext):
 
         result = self.words_api.update_border(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

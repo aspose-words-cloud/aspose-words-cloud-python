@@ -46,6 +46,7 @@ class TestBuildReport(BaseTestContext):
         result = self.words_api.build_report_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for build report.
     #
@@ -64,3 +65,4 @@ class TestBuildReport(BaseTestContext):
 
         result = self.words_api.build_report(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
