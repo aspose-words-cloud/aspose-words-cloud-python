@@ -41,6 +41,7 @@ class TestClassification(BaseTestContext):
         result = self.words_api.classify(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for document classification.
     #
@@ -55,3 +56,4 @@ class TestClassification(BaseTestContext):
 
         result = self.words_api.classify_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

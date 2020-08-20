@@ -47,6 +47,7 @@ class TestRevisions(BaseTestContext):
         result = self.words_api.accept_all_revisions(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for rejecting revisions in document.
     #
@@ -61,3 +62,4 @@ class TestRevisions(BaseTestContext):
 
         result = self.words_api.reject_all_revisions(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

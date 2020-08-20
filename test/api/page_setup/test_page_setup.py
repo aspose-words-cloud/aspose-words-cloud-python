@@ -47,6 +47,7 @@ class TestPageSetup(BaseTestContext):
         result = self.words_api.get_section_page_setup(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for updating page settings.
     #
@@ -63,6 +64,7 @@ class TestPageSetup(BaseTestContext):
         result = self.words_api.update_section_page_setup(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for page rendering.
     #
@@ -77,3 +79,4 @@ class TestPageSetup(BaseTestContext):
 
         result = self.words_api.render_page(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

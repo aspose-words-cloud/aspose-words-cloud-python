@@ -46,6 +46,9 @@ class TestBookmark(BaseTestContext):
 
         result = self.words_api.get_bookmarks(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.bookmarks, 'Validate GetBookmarks response')
+        self.assertEqual(3, len(result.bookmarks.bookmark_list))
+        self.assertEqual('aspose', result.bookmarks.bookmark_list[1].name)
 
     #
     # Test for getting bookmark by specified name.
@@ -54,13 +57,16 @@ class TestBookmark(BaseTestContext):
         remoteDataFolder = self.remote_test_folder + '/DocumentElements/Bookmarks'
         localFile = 'Common/test_multi_pages.docx'
         remoteFileName = 'TestGetDocumentBookmarkByName.docx'
+        bookmarkName = 'aspose'
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetBookmarkByNameRequest(name=remoteFileName, bookmark_name='aspose', folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetBookmarkByNameRequest(name=remoteFileName, bookmark_name=bookmarkName, folder=remoteDataFolder)
 
         result = self.words_api.get_bookmark_by_name(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.bookmark, 'Validate GetBookmarkByName response')
+        self.assertEqual(bookmarkName, result.bookmark.name)
 
     #
     # Test for updating existed bookmark.
@@ -70,11 +76,15 @@ class TestBookmark(BaseTestContext):
         localFile = 'Common/test_multi_pages.docx'
         remoteFileName = 'TestUpdateDocumentBookmark.docx'
         bookmarkName = 'aspose'
+        bookmarkText = 'This will be the text for Aspose'
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestBookmarkData = asposewordscloud.BookmarkData(name=bookmarkName, text='This will be the text for Aspose')
+        requestBookmarkData = asposewordscloud.BookmarkData(name=bookmarkName, text=bookmarkText)
         request = asposewordscloud.models.requests.UpdateBookmarkRequest(name=remoteFileName, bookmark_data=requestBookmarkData, bookmark_name=bookmarkName, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
 
         result = self.words_api.update_bookmark(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.bookmark, 'Validate UpdateBookmark response')
+        self.assertEqual(bookmarkName, result.bookmark.name)
+        self.assertEqual(bookmarkText, result.bookmark.text)

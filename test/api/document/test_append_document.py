@@ -49,3 +49,4 @@ class TestAppendDocument(BaseTestContext):
 
         result = self.words_api.append_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

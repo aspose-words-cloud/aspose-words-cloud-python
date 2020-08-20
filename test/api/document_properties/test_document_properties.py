@@ -47,6 +47,7 @@ class TestDocumentProperties(BaseTestContext):
         result = self.words_api.get_document_properties(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # A test for GetDocumentProperty.
     #
@@ -61,6 +62,7 @@ class TestDocumentProperties(BaseTestContext):
 
         result = self.words_api.get_document_property(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for deleting document property.
@@ -92,3 +94,4 @@ class TestDocumentProperties(BaseTestContext):
 
         result = self.words_api.create_or_update_document_property(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

@@ -48,6 +48,7 @@ class TestField(BaseTestContext):
         result = self.words_api.get_fields(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting fields without node path.
     #
@@ -63,6 +64,7 @@ class TestField(BaseTestContext):
 
         result = self.words_api.get_fields(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for getting field by index.
@@ -80,6 +82,7 @@ class TestField(BaseTestContext):
         result = self.words_api.get_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting field by index without node path.
     #
@@ -95,6 +98,7 @@ class TestField(BaseTestContext):
 
         result = self.words_api.get_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for putting field.
@@ -113,6 +117,7 @@ class TestField(BaseTestContext):
         result = self.words_api.insert_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for putting field without node path.
     #
@@ -129,6 +134,7 @@ class TestField(BaseTestContext):
 
         result = self.words_api.insert_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for posting field.
@@ -147,6 +153,7 @@ class TestField(BaseTestContext):
         result = self.words_api.update_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for inserting page numbers field.
     #
@@ -162,6 +169,7 @@ class TestField(BaseTestContext):
 
         result = self.words_api.insert_page_numbers(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for deleting field.
@@ -299,3 +307,4 @@ class TestField(BaseTestContext):
 
         result = self.words_api.update_fields(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

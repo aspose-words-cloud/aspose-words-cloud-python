@@ -47,6 +47,7 @@ class TestHyperlink(BaseTestContext):
         result = self.words_api.get_document_hyperlink_by_index(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting hyperlinks.
     #
@@ -61,3 +62,4 @@ class TestHyperlink(BaseTestContext):
 
         result = self.words_api.get_document_hyperlinks(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

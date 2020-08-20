@@ -47,6 +47,7 @@ class TestLists(BaseTestContext):
         result = self.words_api.get_lists(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting list from document.
     #
@@ -61,6 +62,7 @@ class TestLists(BaseTestContext):
 
         result = self.words_api.get_list(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for updating list from document.
@@ -78,6 +80,7 @@ class TestLists(BaseTestContext):
         result = self.words_api.update_list(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for updating list level from document.
     #
@@ -94,6 +97,7 @@ class TestLists(BaseTestContext):
         result = self.words_api.update_list_level(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for inserting list from document.
     #
@@ -109,3 +113,4 @@ class TestLists(BaseTestContext):
 
         result = self.words_api.insert_list(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

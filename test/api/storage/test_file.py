@@ -45,6 +45,7 @@ class TestFile(BaseTestContext):
         result = self.words_api.upload_file(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for copy file.
     #
@@ -104,3 +105,4 @@ class TestFile(BaseTestContext):
 
         result = self.words_api.download_file(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

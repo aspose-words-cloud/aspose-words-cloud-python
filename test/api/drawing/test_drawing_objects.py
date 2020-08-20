@@ -47,6 +47,7 @@ class TestDrawingObjects(BaseTestContext):
         result = self.words_api.get_document_drawing_objects(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting drawing objects from document without node path.
     #
@@ -61,6 +62,7 @@ class TestDrawingObjects(BaseTestContext):
 
         result = self.words_api.get_document_drawing_objects(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for getting drawing object by specified index.
@@ -77,6 +79,7 @@ class TestDrawingObjects(BaseTestContext):
         result = self.words_api.get_document_drawing_object_by_index(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting drawing object by specified index without node path.
     #
@@ -91,6 +94,7 @@ class TestDrawingObjects(BaseTestContext):
 
         result = self.words_api.get_document_drawing_object_by_index(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for getting drawing object by specified index and format.
@@ -107,6 +111,7 @@ class TestDrawingObjects(BaseTestContext):
         result = self.words_api.render_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting drawing object by specified index and format without node path.
     #
@@ -121,6 +126,7 @@ class TestDrawingObjects(BaseTestContext):
 
         result = self.words_api.render_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for reading drawing object's image data.
@@ -137,6 +143,7 @@ class TestDrawingObjects(BaseTestContext):
         result = self.words_api.get_document_drawing_object_image_data(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for reading drawing object's image data without node path.
     #
@@ -151,6 +158,7 @@ class TestDrawingObjects(BaseTestContext):
 
         result = self.words_api.get_document_drawing_object_image_data(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for getting drawing object OLE data.
@@ -167,6 +175,7 @@ class TestDrawingObjects(BaseTestContext):
         result = self.words_api.get_document_drawing_object_ole_data(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting drawing object OLE data without node path.
     #
@@ -181,6 +190,7 @@ class TestDrawingObjects(BaseTestContext):
 
         result = self.words_api.get_document_drawing_object_ole_data(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for adding drawing object.
@@ -198,6 +208,7 @@ class TestDrawingObjects(BaseTestContext):
         result = self.words_api.insert_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for adding drawing object without node path.
     #
@@ -213,6 +224,7 @@ class TestDrawingObjects(BaseTestContext):
 
         result = self.words_api.insert_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for deleting drawing object.
@@ -260,6 +272,7 @@ class TestDrawingObjects(BaseTestContext):
         result = self.words_api.update_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for updating drawing object without node path.
     #
@@ -275,3 +288,4 @@ class TestDrawingObjects(BaseTestContext):
 
         result = self.words_api.update_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

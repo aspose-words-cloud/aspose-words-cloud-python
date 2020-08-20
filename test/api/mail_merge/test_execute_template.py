@@ -49,6 +49,7 @@ class TestExecuteTemplate(BaseTestContext):
         result = self.words_api.execute_mail_merge(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for execute template online.
     #
@@ -61,3 +62,4 @@ class TestExecuteTemplate(BaseTestContext):
 
         result = self.words_api.execute_mail_merge_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
