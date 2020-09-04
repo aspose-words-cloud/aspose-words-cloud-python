@@ -42,3 +42,4 @@ class TestLoadWebDocument(BaseTestContext):
 
         result = self.words_api.load_web_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

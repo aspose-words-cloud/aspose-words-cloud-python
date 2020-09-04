@@ -48,6 +48,7 @@ class TestDocumentProtection(BaseTestContext):
         result = self.words_api.protect_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting document protection.
     #
@@ -62,6 +63,7 @@ class TestDocumentProtection(BaseTestContext):
 
         result = self.words_api.get_document_protection(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for changing document protection.
@@ -79,6 +81,7 @@ class TestDocumentProtection(BaseTestContext):
         result = self.words_api.protect_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for deleting unprotect document.
     #
@@ -94,3 +97,4 @@ class TestDocumentProtection(BaseTestContext):
 
         result = self.words_api.unprotect_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

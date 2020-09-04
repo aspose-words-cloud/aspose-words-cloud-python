@@ -44,6 +44,7 @@ class TestMailMergeFileds(BaseTestContext):
         result = self.words_api.get_document_field_names_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting mailmerge fields.
     #
@@ -57,3 +58,4 @@ class TestMailMergeFileds(BaseTestContext):
 
         result = self.words_api.get_document_field_names(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

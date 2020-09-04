@@ -48,6 +48,7 @@ class TestRun(BaseTestContext):
         result = self.words_api.update_run(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for adding run.
     #
@@ -63,6 +64,7 @@ class TestRun(BaseTestContext):
 
         result = self.words_api.insert_run(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for deleting run.

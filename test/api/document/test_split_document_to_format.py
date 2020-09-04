@@ -46,3 +46,4 @@ class TestSplitDocumentToFormat(BaseTestContext):
 
         result = self.words_api.split_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

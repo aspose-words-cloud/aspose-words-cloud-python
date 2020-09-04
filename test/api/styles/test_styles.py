@@ -47,6 +47,7 @@ class TestStyles(BaseTestContext):
         result = self.words_api.get_styles(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting style from document.
     #
@@ -61,6 +62,7 @@ class TestStyles(BaseTestContext):
 
         result = self.words_api.get_style(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for updating style from document.
@@ -78,6 +80,7 @@ class TestStyles(BaseTestContext):
         result = self.words_api.update_style(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for inserting style from document.
     #
@@ -93,6 +96,7 @@ class TestStyles(BaseTestContext):
 
         result = self.words_api.insert_style(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for coping style from document.
@@ -110,6 +114,7 @@ class TestStyles(BaseTestContext):
         result = self.words_api.copy_style(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting style from document element.
     #
@@ -124,6 +129,7 @@ class TestStyles(BaseTestContext):
 
         result = self.words_api.get_style_from_document_element(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for applying style to document element.
@@ -140,3 +146,4 @@ class TestStyles(BaseTestContext):
 
         result = self.words_api.apply_style_to_document_element(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

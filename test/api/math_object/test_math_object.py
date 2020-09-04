@@ -47,6 +47,7 @@ class TestMathObject(BaseTestContext):
         result = self.words_api.get_office_math_objects(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting mathObjects without node path.
     #
@@ -61,6 +62,7 @@ class TestMathObject(BaseTestContext):
 
         result = self.words_api.get_office_math_objects(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for getting mathObject.
@@ -77,6 +79,7 @@ class TestMathObject(BaseTestContext):
         result = self.words_api.get_office_math_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting mathObject without node path.
     #
@@ -91,6 +94,7 @@ class TestMathObject(BaseTestContext):
 
         result = self.words_api.get_office_math_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for rendering mathObject.
@@ -107,6 +111,7 @@ class TestMathObject(BaseTestContext):
         result = self.words_api.render_math_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for rendering mathObject without node path.
     #
@@ -121,6 +126,7 @@ class TestMathObject(BaseTestContext):
 
         result = self.words_api.render_math_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for deleting mathObject.

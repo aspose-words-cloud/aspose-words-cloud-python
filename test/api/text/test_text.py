@@ -48,6 +48,7 @@ class TestText(BaseTestContext):
         result = self.words_api.replace_text(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for searching.
     #
@@ -62,3 +63,4 @@ class TestText(BaseTestContext):
 
         result = self.words_api.search(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

@@ -48,6 +48,7 @@ class TestFootnote(BaseTestContext):
         result = self.words_api.insert_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for adding footnote without node path.
     #
@@ -63,6 +64,7 @@ class TestFootnote(BaseTestContext):
 
         result = self.words_api.insert_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for deleting footnote.
@@ -109,6 +111,7 @@ class TestFootnote(BaseTestContext):
         result = self.words_api.get_footnotes(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting footnotes without node path.
     #
@@ -123,6 +126,7 @@ class TestFootnote(BaseTestContext):
 
         result = self.words_api.get_footnotes(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for getting footnote.
@@ -139,6 +143,7 @@ class TestFootnote(BaseTestContext):
         result = self.words_api.get_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for getting footnote without node path.
     #
@@ -153,6 +158,7 @@ class TestFootnote(BaseTestContext):
 
         result = self.words_api.get_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for updating footnote.
@@ -170,6 +176,7 @@ class TestFootnote(BaseTestContext):
         result = self.words_api.update_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for updating footnote without node path.
     #
@@ -185,3 +192,4 @@ class TestFootnote(BaseTestContext):
 
         result = self.words_api.update_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
