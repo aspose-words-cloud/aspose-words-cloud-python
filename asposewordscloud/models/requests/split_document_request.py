@@ -24,6 +24,8 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
+from six.moves.urllib.parse import quote
+
 class SplitDocumentRequest(object):
     """
     Request model for split_document operation.
@@ -53,3 +55,74 @@ class SplitDocumentRequest(object):
         self.to = to
         self.zip_output = zip_output
         self.fonts_location = fonts_location
+
+    def create_http_request(self, api_client):
+        # verify the required parameter 'name' is set
+        if self.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `split_document`")  # noqa: E501
+        # verify the required parameter 'format' is set
+        if self.format is None:
+            raise ValueError("Missing the required parameter `format` when calling `split_document`")  # noqa: E501
+
+        path = '/v4.0/words/{name}/split'
+        path_params = {}
+        if self.name is not None:
+            path_params['name'] = self.name  # noqa: E501
+        else:
+            path_params['name'] = ''  # noqa: E501
+
+        # path parameters
+        collection_formats = {}
+        if path_params:
+            path_params = api_client.sanitize_for_serialization(path_params)
+            path_params = api_client.parameters_to_tuples(path_params, collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                path = path.replace(
+                    '{%s}' % k,
+                    quote(str(v), safe=api_client.configuration.safe_chars_for_path_param)
+                )
+
+        # remove optional path parameters
+        path = path.replace('//', '/')
+
+        query_params = []
+        if self.format is not None:
+                query_params.append(('format', self.format))  # noqa: E501
+        if self.folder is not None:
+                query_params.append(('folder', self.folder))  # noqa: E501
+        if self.storage is not None:
+                query_params.append(('storage', self.storage))  # noqa: E501
+        if self.load_encoding is not None:
+                query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
+        if self.password is not None:
+                query_params.append(('password', self.password))  # noqa: E501
+        if self.dest_file_name is not None:
+                query_params.append(('destFileName', self.dest_file_name))  # noqa: E501
+        if self._from is not None:
+                query_params.append(('from', self._from))  # noqa: E501
+        if self.to is not None:
+                query_params.append(('to', self.to))  # noqa: E501
+        if self.zip_output is not None:
+                query_params.append(('zipOutput', self.zip_output))  # noqa: E501
+        if self.fonts_location is not None:
+                query_params.append(('fontsLocation', self.fonts_location))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+
+        body_params = None
+        return {
+            "method": "PUT",
+            "path": path,
+            "query_params": query_params,
+            "header_params": header_params,
+            "form_params": form_params,
+            "body": body_params,
+            "collection_formats": collection_formats,
+            "response_type": 'SplitDocumentResponse'  # noqa: E501
+        }
+
+    def get_response_type(self):
+        return 'SplitDocumentResponse'  # noqa: E501

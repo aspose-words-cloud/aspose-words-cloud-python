@@ -24,6 +24,8 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
+from six.moves.urllib.parse import quote
+
 class ExecuteMailMergeRequest(object):
     """
     Request model for execute_mail_merge operation.
@@ -53,3 +55,74 @@ class ExecuteMailMergeRequest(object):
         self.cleanup = cleanup
         self.use_whole_paragraph_as_region = use_whole_paragraph_as_region
         self.dest_file_name = dest_file_name
+
+    def create_http_request(self, api_client):
+        # verify the required parameter 'name' is set
+        if self.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `execute_mail_merge`")  # noqa: E501
+
+        path = '/v4.0/words/{name}/MailMerge'
+        path_params = {}
+        if self.name is not None:
+            path_params['name'] = self.name  # noqa: E501
+        else:
+            path_params['name'] = ''  # noqa: E501
+
+        # path parameters
+        collection_formats = {}
+        if path_params:
+            path_params = api_client.sanitize_for_serialization(path_params)
+            path_params = api_client.parameters_to_tuples(path_params, collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                path = path.replace(
+                    '{%s}' % k,
+                    quote(str(v), safe=api_client.configuration.safe_chars_for_path_param)
+                )
+
+        # remove optional path parameters
+        path = path.replace('//', '/')
+
+        query_params = []
+        if self.folder is not None:
+                query_params.append(('folder', self.folder))  # noqa: E501
+        if self.storage is not None:
+                query_params.append(('storage', self.storage))  # noqa: E501
+        if self.load_encoding is not None:
+                query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
+        if self.password is not None:
+                query_params.append(('password', self.password))  # noqa: E501
+        if self.with_regions is not None:
+                query_params.append(('withRegions', self.with_regions))  # noqa: E501
+        if self.mail_merge_data_file is not None:
+                query_params.append(('mailMergeDataFile', self.mail_merge_data_file))  # noqa: E501
+        if self.cleanup is not None:
+                query_params.append(('cleanup', self.cleanup))  # noqa: E501
+        if self.use_whole_paragraph_as_region is not None:
+                query_params.append(('useWholeParagraphAsRegion', self.use_whole_paragraph_as_region))  # noqa: E501
+        if self.dest_file_name is not None:
+                query_params.append(('destFileName', self.dest_file_name))  # noqa: E501
+
+        header_params = {}
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        form_params = []
+        if self.data is not None:
+            form_params.append(['data', self.data, 'string'])  # noqa: E501
+
+        body_params = None
+        return {
+            "method": "PUT",
+            "path": path,
+            "query_params": query_params,
+            "header_params": header_params,
+            "form_params": form_params,
+            "body": body_params,
+            "collection_formats": collection_formats,
+            "response_type": 'DocumentResponse'  # noqa: E501
+        }
+
+    def get_response_type(self):
+        return 'DocumentResponse'  # noqa: E501

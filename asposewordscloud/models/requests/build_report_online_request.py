@@ -24,6 +24,8 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
+from six.moves.urllib.parse import quote
+
 class BuildReportOnlineRequest(object):
     """
     Request model for build_report_online operation.
@@ -39,3 +41,64 @@ class BuildReportOnlineRequest(object):
         self.data = data
         self.report_engine_settings = report_engine_settings
         self.document_file_name = document_file_name
+
+    def create_http_request(self, api_client):
+        # verify the required parameter 'template' is set
+        if self.template is None:
+            raise ValueError("Missing the required parameter `template` when calling `build_report_online`")  # noqa: E501
+        # verify the required parameter 'data' is set
+        if self.data is None:
+            raise ValueError("Missing the required parameter `data` when calling `build_report_online`")  # noqa: E501
+        # verify the required parameter 'report_engine_settings' is set
+        if self.report_engine_settings is None:
+            raise ValueError("Missing the required parameter `report_engine_settings` when calling `build_report_online`")  # noqa: E501
+
+        path = '/v4.0/words/buildReport'
+        path_params = {}
+
+        # path parameters
+        collection_formats = {}
+        if path_params:
+            path_params = api_client.sanitize_for_serialization(path_params)
+            path_params = api_client.parameters_to_tuples(path_params, collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                path = path.replace(
+                    '{%s}' % k,
+                    quote(str(v), safe=api_client.configuration.safe_chars_for_path_param)
+                )
+
+        # remove optional path parameters
+        path = path.replace('//', '/')
+
+        query_params = []
+        if self.document_file_name is not None:
+                query_params.append(('documentFileName', self.document_file_name))  # noqa: E501
+
+        header_params = {}
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        form_params = []
+        if self.template is not None:
+            form_params.append(['template', self.template, 'file'])  # noqa: E501
+        if self.data is not None:
+            form_params.append(['data', self.data, 'string'])  # noqa: E501
+        if self.report_engine_settings is not None:
+            form_params.append(['reportEngineSettings', self.report_engine_settings.to_json(), 'string'])  # noqa: E501
+
+        body_params = None
+        return {
+            "method": "PUT",
+            "path": path,
+            "query_params": query_params,
+            "header_params": header_params,
+            "form_params": form_params,
+            "body": body_params,
+            "collection_formats": collection_formats,
+            "response_type": 'file'  # noqa: E501
+        }
+
+    def get_response_type(self):
+        return 'file'  # noqa: E501

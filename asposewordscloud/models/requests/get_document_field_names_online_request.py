@@ -24,6 +24,8 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
+from six.moves.urllib.parse import quote
+
 class GetDocumentFieldNamesOnlineRequest(object):
     """
     Request model for get_document_field_names_online operation.
@@ -35,3 +37,54 @@ class GetDocumentFieldNamesOnlineRequest(object):
     def __init__(self, template, use_non_merge_fields=None):
         self.template = template
         self.use_non_merge_fields = use_non_merge_fields
+
+    def create_http_request(self, api_client):
+        # verify the required parameter 'template' is set
+        if self.template is None:
+            raise ValueError("Missing the required parameter `template` when calling `get_document_field_names_online`")  # noqa: E501
+
+        path = '/v4.0/words/mailMerge/FieldNames'
+        path_params = {}
+
+        # path parameters
+        collection_formats = {}
+        if path_params:
+            path_params = api_client.sanitize_for_serialization(path_params)
+            path_params = api_client.parameters_to_tuples(path_params, collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                path = path.replace(
+                    '{%s}' % k,
+                    quote(str(v), safe=api_client.configuration.safe_chars_for_path_param)
+                )
+
+        # remove optional path parameters
+        path = path.replace('//', '/')
+
+        query_params = []
+        if self.use_non_merge_fields is not None:
+                query_params.append(('useNonMergeFields', self.use_non_merge_fields))  # noqa: E501
+
+        header_params = {}
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        form_params = []
+        if self.template is not None:
+            form_params.append(['template', self.template, 'file'])  # noqa: E501
+
+        body_params = None
+        return {
+            "method": "PUT",
+            "path": path,
+            "query_params": query_params,
+            "header_params": header_params,
+            "form_params": form_params,
+            "body": body_params,
+            "collection_formats": collection_formats,
+            "response_type": 'FieldNamesResponse'  # noqa: E501
+        }
+
+    def get_response_type(self):
+        return 'FieldNamesResponse'  # noqa: E501
