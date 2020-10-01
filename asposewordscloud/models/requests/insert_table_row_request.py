@@ -24,6 +24,8 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
+from six.moves.urllib.parse import quote
+
 class InsertTableRowRequest(object):
     """
     Request model for insert_table_row operation.
@@ -51,3 +53,81 @@ class InsertTableRowRequest(object):
         self.dest_file_name = dest_file_name
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
+
+    def create_http_request(self, api_client):
+        # verify the required parameter 'name' is set
+        if self.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `insert_table_row`")  # noqa: E501
+        # verify the required parameter 'row' is set
+        if self.row is None:
+            raise ValueError("Missing the required parameter `row` when calling `insert_table_row`")  # noqa: E501
+        # verify the required parameter 'table_path' is set
+        if self.table_path is None:
+            raise ValueError("Missing the required parameter `table_path` when calling `insert_table_row`")  # noqa: E501
+
+        path = '/v4.0/words/{name}/{tablePath}/rows'
+        path_params = {}
+        if self.name is not None:
+            path_params['name'] = self.name  # noqa: E501
+        else:
+            path_params['name'] = ''  # noqa: E501
+        if self.table_path is not None:
+            path_params['tablePath'] = self.table_path  # noqa: E501
+        else:
+            path_params['tablePath'] = ''  # noqa: E501
+
+        # path parameters
+        collection_formats = {}
+        if path_params:
+            path_params = api_client.sanitize_for_serialization(path_params)
+            path_params = api_client.parameters_to_tuples(path_params, collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                path = path.replace(
+                    '{%s}' % k,
+                    quote(str(v), safe=api_client.configuration.safe_chars_for_path_param)
+                )
+
+        # remove optional path parameters
+        path = path.replace('//', '/')
+
+        query_params = []
+        if self.folder is not None:
+                query_params.append(('folder', self.folder))  # noqa: E501
+        if self.storage is not None:
+                query_params.append(('storage', self.storage))  # noqa: E501
+        if self.load_encoding is not None:
+                query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
+        if self.password is not None:
+                query_params.append(('password', self.password))  # noqa: E501
+        if self.dest_file_name is not None:
+                query_params.append(('destFileName', self.dest_file_name))  # noqa: E501
+        if self.revision_author is not None:
+                query_params.append(('revisionAuthor', self.revision_author))  # noqa: E501
+        if self.revision_date_time is not None:
+                query_params.append(('revisionDateTime', self.revision_date_time))  # noqa: E501
+
+        header_params = {}
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        form_params = []
+
+        body_params = None
+        if self.row is not None:
+            body_params = self.row
+
+        return {
+            "method": "POST",
+            "path": path,
+            "query_params": query_params,
+            "header_params": header_params,
+            "form_params": form_params,
+            "body": body_params,
+            "collection_formats": collection_formats,
+            "response_type": 'TableRowResponse'  # noqa: E501
+        }
+
+    def get_response_type(self):
+        return 'TableRowResponse'  # noqa: E501

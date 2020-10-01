@@ -54,6 +54,7 @@ class RESTResponse(io.IOBase):
         self.status = resp.status
         self.reason = resp.reason
         self.data = resp.data
+        logging.getLogger('urllib3.connectionpool').setLevel('ERROR')
 
     def getheaders(self):
         """Returns a dictionary of the response headers."""

@@ -24,6 +24,8 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
+from six.moves.urllib.parse import quote
+
 class DownloadFileRequest(object):
     """
     Request model for download_file operation.
@@ -37,3 +39,55 @@ class DownloadFileRequest(object):
         self.path = path
         self.storage_name = storage_name
         self.version_id = version_id
+
+    def create_http_request(self, api_client):
+        # verify the required parameter 'path' is set
+        if self.path is None:
+            raise ValueError("Missing the required parameter `path` when calling `download_file`")  # noqa: E501
+
+        path = '/v4.0/words/storage/file/{path}'
+        path_params = {}
+        if self.path is not None:
+            path_params['path'] = self.path  # noqa: E501
+        else:
+            path_params['path'] = ''  # noqa: E501
+
+        # path parameters
+        collection_formats = {}
+        if path_params:
+            path_params = api_client.sanitize_for_serialization(path_params)
+            path_params = api_client.parameters_to_tuples(path_params, collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                path = path.replace(
+                    '{%s}' % k,
+                    quote(str(v), safe=api_client.configuration.safe_chars_for_path_param)
+                )
+
+        # remove optional path parameters
+        path = path.replace('//', '/')
+
+        query_params = []
+        if self.storage_name is not None:
+                query_params.append(('storageName', self.storage_name))  # noqa: E501
+        if self.version_id is not None:
+                query_params.append(('versionId', self.version_id))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+
+        body_params = None
+        return {
+            "method": "GET",
+            "path": path,
+            "query_params": query_params,
+            "header_params": header_params,
+            "form_params": form_params,
+            "body": body_params,
+            "collection_formats": collection_formats,
+            "response_type": 'file'  # noqa: E501
+        }
+
+    def get_response_type(self):
+        return 'file'  # noqa: E501
