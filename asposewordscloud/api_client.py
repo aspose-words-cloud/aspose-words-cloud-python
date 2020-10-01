@@ -607,8 +607,8 @@ class ApiClient(object):
         os.close(fd)
         os.remove(path)
 
-        content_disposition = headers["Content-Disposition"]
-        if content_disposition:
+        if 'Content-Disposition' in headers.keys():
+            content_disposition = headers["Content-Disposition"]
             filename = re.search(r'filename=[\'"]?([^\'"\s]+)[\'"]?',
                                  content_disposition).group(1)
             filename = filename.replace('/', '_')
