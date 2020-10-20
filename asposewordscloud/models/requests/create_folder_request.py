@@ -24,6 +24,8 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
+from six.moves.urllib.parse import quote
+
 class CreateFolderRequest(object):
     """
     Request model for create_folder operation.
@@ -35,3 +37,53 @@ class CreateFolderRequest(object):
     def __init__(self, path, storage_name=None):
         self.path = path
         self.storage_name = storage_name
+
+    def create_http_request(self, api_client):
+        # verify the required parameter 'path' is set
+        if self.path is None:
+            raise ValueError("Missing the required parameter `path` when calling `create_folder`")  # noqa: E501
+
+        path = '/v4.0/words/storage/folder/{path}'
+        path_params = {}
+        if self.path is not None:
+            path_params['path'] = self.path  # noqa: E501
+        else:
+            path_params['path'] = ''  # noqa: E501
+
+        # path parameters
+        collection_formats = {}
+        if path_params:
+            path_params = api_client.sanitize_for_serialization(path_params)
+            path_params = api_client.parameters_to_tuples(path_params, collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                path = path.replace(
+                    '{%s}' % k,
+                    quote(str(v), safe=api_client.configuration.safe_chars_for_path_param)
+                )
+
+        # remove optional path parameters
+        path = path.replace('//', '/')
+
+        query_params = []
+        if self.storage_name is not None:
+                query_params.append(('storageName', self.storage_name))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+
+        body_params = None
+        return {
+            "method": "PUT",
+            "path": path,
+            "query_params": query_params,
+            "header_params": header_params,
+            "form_params": form_params,
+            "body": body_params,
+            "collection_formats": collection_formats,
+            "response_type": None  # noqa: E501
+        }
+
+    def get_response_type(self):
+        return None  # noqa: E501

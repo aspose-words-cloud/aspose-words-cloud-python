@@ -78,7 +78,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.accept_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.accept_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
@@ -110,60 +110,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `accept_all_revisions`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/revisions/acceptAll'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='RevisionsModificationResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def append_document(self, request, **kwargs):  # noqa: E501
         """Appends documents to original document.  # noqa: E501
@@ -193,7 +158,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.append_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.append_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -225,69 +190,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `append_document`")  # noqa: E501
-        # verify the required parameter 'document_list' is set
-        if request.document_list is None:
-            raise ValueError("Missing the required parameter `document_list` when calling `append_document`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/appendDocument'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.document_list is not None:
-            body_params = request.document_list
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DocumentResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def apply_style_to_document_element(self, request, **kwargs):  # noqa: E501
         """Apply a style to the document node.  # noqa: E501
@@ -318,7 +242,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.apply_style_to_document_element_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.apply_style_to_document_element_with_http_info(request, **kwargs)  # noqa: E501
@@ -350,76 +274,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `apply_style_to_document_element`")  # noqa: E501
-        # verify the required parameter 'style_apply' is set
-        if request.style_apply is None:
-            raise ValueError("Missing the required parameter `style_apply` when calling `apply_style_to_document_element`")  # noqa: E501
-        # verify the required parameter 'styled_node_path' is set
-        if request.styled_node_path is None:
-            raise ValueError("Missing the required parameter `styled_node_path` when calling `apply_style_to_document_element`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{styledNodePath}/style'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.styled_node_path is not None:
-            path_params[self.__downcase_first_letter('StyledNodePath')] = request.styled_node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('StyledNodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.style_apply is not None:
-            body_params = request.style_apply
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='WordsResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def build_report(self, request, **kwargs):  # noqa: E501
         """Executes document "build report" operation.  # noqa: E501
@@ -448,7 +324,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.build_report_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.build_report_with_http_info(request, **kwargs)  # noqa: E501
@@ -480,70 +356,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `build_report`")  # noqa: E501
-        # verify the required parameter 'data' is set
-        if request.data is None:
-            raise ValueError("Missing the required parameter `data` when calling `build_report`")  # noqa: E501
-        # verify the required parameter 'report_engine_settings' is set
-        if request.report_engine_settings is None:
-            raise ValueError("Missing the required parameter `report_engine_settings` when calling `build_report`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/buildReport'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        if request.data is not None:
-            form_params.append([self.__downcase_first_letter('Data'), request.data, 'string'])  # noqa: E501
-        if request.report_engine_settings is not None:
-            form_params.append([self.__downcase_first_letter('ReportEngineSettings'), request.report_engine_settings.to_json(), 'string'])  # noqa: E501
-
-        body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DocumentResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def build_report_online(self, request, **kwargs):  # noqa: E501
         """Executes document "build report" online operation.  # noqa: E501
@@ -568,7 +402,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.build_report_online_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.build_report_online_with_http_info(request, **kwargs)  # noqa: E501
@@ -600,60 +434,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'template' is set
-        if request.template is None:
-            raise ValueError("Missing the required parameter `template` when calling `build_report_online`")  # noqa: E501
-        # verify the required parameter 'data' is set
-        if request.data is None:
-            raise ValueError("Missing the required parameter `data` when calling `build_report_online`")  # noqa: E501
-        # verify the required parameter 'report_engine_settings' is set
-        if request.report_engine_settings is None:
-            raise ValueError("Missing the required parameter `report_engine_settings` when calling `build_report_online`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/buildReport'
-        path_params = {}
-
-        query_params = []
-        if request.document_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DocumentFileName'), request.document_file_name))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        if request.template is not None:
-            form_params.append([self.__downcase_first_letter('Template'), request.template, 'file'])  # noqa: E501
-        if request.data is not None:
-            form_params.append([self.__downcase_first_letter('Data'), request.data, 'string'])  # noqa: E501
-        if request.report_engine_settings is not None:
-            form_params.append([self.__downcase_first_letter('ReportEngineSettings'), request.report_engine_settings.to_json(), 'string'])  # noqa: E501
-
-        body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='file',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def classify(self, request, **kwargs):  # noqa: E501
         """Classifies raw text.  # noqa: E501
@@ -676,7 +478,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.classify_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.classify_with_http_info(request, **kwargs)  # noqa: E501
@@ -708,50 +510,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'text' is set
-        if request.text is None:
-            raise ValueError("Missing the required parameter `text` when calling `classify`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/classify'
-        path_params = {}
-
-        query_params = []
-        if request.best_classes_count is not None:
-                query_params.append((self.__downcase_first_letter('BestClassesCount'), request.best_classes_count))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.text is not None:
-            body_params = request.text
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='ClassificationResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def classify_document(self, request, **kwargs):  # noqa: E501
         """Classifies document.  # noqa: E501
@@ -779,7 +559,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.classify_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.classify_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -811,62 +591,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'document_name' is set
-        if request.document_name is None:
-            raise ValueError("Missing the required parameter `document_name` when calling `classify_document`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{documentName}/classify'
-        path_params = {}
-        if request.document_name is not None:
-            path_params[self.__downcase_first_letter('DocumentName')] = request.document_name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('DocumentName')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.best_classes_count is not None:
-                query_params.append((self.__downcase_first_letter('BestClassesCount'), request.best_classes_count))  # noqa: E501
-        if request.taxonomy is not None:
-                query_params.append((self.__downcase_first_letter('Taxonomy'), request.taxonomy))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='ClassificationResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def compare_document(self, request, **kwargs):  # noqa: E501
         """Compares document with original document.  # noqa: E501
@@ -894,7 +637,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.compare_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.compare_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -926,65 +669,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `compare_document`")  # noqa: E501
-        # verify the required parameter 'compare_data' is set
-        if request.compare_data is None:
-            raise ValueError("Missing the required parameter `compare_data` when calling `compare_document`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/compareDocument'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.compare_data is not None:
-            body_params = request.compare_data
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DocumentResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def convert_document(self, request, **kwargs):  # noqa: E501
         """Converts document from the request's content to the specified format.  # noqa: E501
@@ -1011,7 +717,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.convert_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.convert_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -1043,61 +749,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'document' is set
-        if request.document is None:
-            raise ValueError("Missing the required parameter `document` when calling `convert_document`")  # noqa: E501
-        # verify the required parameter 'format' is set
-        if request.format is None:
-            raise ValueError("Missing the required parameter `format` when calling `convert_document`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/convert'
-        path_params = {}
-
-        query_params = []
-        if request.format is not None:
-                query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.out_path is not None:
-                query_params.append((self.__downcase_first_letter('OutPath'), request.out_path))  # noqa: E501
-        if request.file_name_field_value is not None:
-                query_params.append((self.__downcase_first_letter('FileNameFieldValue'), request.file_name_field_value))  # noqa: E501
-        if request.fonts_location is not None:
-                query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        if request.document is not None:
-            form_params.append([self.__downcase_first_letter('Document'), request.document, 'file'])  # noqa: E501
-
-        body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='file',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def copy_file(self, request, **kwargs):  # noqa: E501
         """Copy file.  # noqa: E501
@@ -1123,7 +796,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.copy_file_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.copy_file_with_http_info(request, **kwargs)  # noqa: E501
@@ -1155,61 +828,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'dest_path' is set
-        if request.dest_path is None:
-            raise ValueError("Missing the required parameter `dest_path` when calling `copy_file`")  # noqa: E501
-        # verify the required parameter 'src_path' is set
-        if request.src_path is None:
-            raise ValueError("Missing the required parameter `src_path` when calling `copy_file`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/storage/file/copy/{srcPath}'
-        path_params = {}
-        if request.src_path is not None:
-            path_params[self.__downcase_first_letter('SrcPath')] = request.src_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('SrcPath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.dest_path is not None:
-                query_params.append((self.__downcase_first_letter('DestPath'), request.dest_path))  # noqa: E501
-        if request.src_storage_name is not None:
-                query_params.append((self.__downcase_first_letter('SrcStorageName'), request.src_storage_name))  # noqa: E501
-        if request.dest_storage_name is not None:
-                query_params.append((self.__downcase_first_letter('DestStorageName'), request.dest_storage_name))  # noqa: E501
-        if request.version_id is not None:
-                query_params.append((self.__downcase_first_letter('VersionId'), request.version_id))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def copy_folder(self, request, **kwargs):  # noqa: E501
         """Copy folder.  # noqa: E501
@@ -1234,7 +871,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.copy_folder_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.copy_folder_with_http_info(request, **kwargs)  # noqa: E501
@@ -1266,59 +903,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'dest_path' is set
-        if request.dest_path is None:
-            raise ValueError("Missing the required parameter `dest_path` when calling `copy_folder`")  # noqa: E501
-        # verify the required parameter 'src_path' is set
-        if request.src_path is None:
-            raise ValueError("Missing the required parameter `src_path` when calling `copy_folder`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/storage/folder/copy/{srcPath}'
-        path_params = {}
-        if request.src_path is not None:
-            path_params[self.__downcase_first_letter('SrcPath')] = request.src_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('SrcPath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.dest_path is not None:
-                query_params.append((self.__downcase_first_letter('DestPath'), request.dest_path))  # noqa: E501
-        if request.src_storage_name is not None:
-                query_params.append((self.__downcase_first_letter('SrcStorageName'), request.src_storage_name))  # noqa: E501
-        if request.dest_storage_name is not None:
-                query_params.append((self.__downcase_first_letter('DestStorageName'), request.dest_storage_name))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def copy_style(self, request, **kwargs):  # noqa: E501
         """Copy and insert a new style to the document, returns a copied style.  # noqa: E501
@@ -1348,7 +951,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.copy_style_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.copy_style_with_http_info(request, **kwargs)  # noqa: E501
@@ -1380,69 +983,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `copy_style`")  # noqa: E501
-        # verify the required parameter 'style_copy' is set
-        if request.style_copy is None:
-            raise ValueError("Missing the required parameter `style_copy` when calling `copy_style`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/styles/copy'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.style_copy is not None:
-            body_params = request.style_copy
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='StyleResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def create_document(self, request, **kwargs):  # noqa: E501
         """Creates new document. Document is created with format which is recognized from file extensions. Supported extensions: ".doc", ".docx", ".docm", ".dot", ".dotm", ".dotx", ".flatopc", ".fopc", ".flatopc_macro", ".fopc_macro", ".flatopc_template", ".fopc_template", ".flatopc_template_macro", ".fopc_template_macro", ".wordml", ".wml", ".rtf".  # noqa: E501
@@ -1466,7 +1028,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.create_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.create_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -1498,49 +1060,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-
-        collection_formats = {}
-        path = '/v4.0/words/create'
-        path_params = {}
-
-        query_params = []
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.file_name is not None:
-                query_params.append((self.__downcase_first_letter('FileName'), request.file_name))  # noqa: E501
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DocumentResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def create_folder(self, request, **kwargs):  # noqa: E501
         """Create the folder.  # noqa: E501
@@ -1563,7 +1101,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.create_folder_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.create_folder_with_http_info(request, **kwargs)  # noqa: E501
@@ -1595,52 +1133,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'path' is set
-        if request.path is None:
-            raise ValueError("Missing the required parameter `path` when calling `create_folder`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/storage/folder/{path}'
-        path_params = {}
-        if request.path is not None:
-            path_params[self.__downcase_first_letter('Path')] = request.path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Path')] = ''  # noqa: E501
-
-        query_params = []
-        if request.storage_name is not None:
-                query_params.append((self.__downcase_first_letter('StorageName'), request.storage_name))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def create_or_update_document_property(self, request, **kwargs):  # noqa: E501
         """Adds new or update existing document property.  # noqa: E501
@@ -1671,7 +1182,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.create_or_update_document_property_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.create_or_update_document_property_with_http_info(request, **kwargs)  # noqa: E501
@@ -1703,76 +1214,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `create_or_update_document_property`")  # noqa: E501
-        # verify the required parameter 'property_name' is set
-        if request.property_name is None:
-            raise ValueError("Missing the required parameter `property_name` when calling `create_or_update_document_property`")  # noqa: E501
-        # verify the required parameter '_property' is set
-        if request._property is None:
-            raise ValueError("Missing the required parameter `_property` when calling `create_or_update_document_property`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/documentProperties/{propertyName}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.property_name is not None:
-            path_params[self.__downcase_first_letter('PropertyName')] = request.property_name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('PropertyName')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request._property is not None:
-            body_params = request._property
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DocumentPropertyResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_all_paragraph_tab_stops(self, request, **kwargs):  # noqa: E501
         """Remove all tab stops.  # noqa: E501
@@ -1801,7 +1264,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_all_paragraph_tab_stops_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_all_paragraph_tab_stops_with_http_info(request, **kwargs)  # noqa: E501
@@ -1833,71 +1296,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_all_paragraph_tab_stops`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_all_paragraph_tab_stops`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}/tabstops'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='TabStopsResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_border(self, request, **kwargs):  # noqa: E501
         """'nodePath' should refer to paragraph, cell or row.  # noqa: E501
@@ -1928,7 +1345,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_border_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_border_with_http_info(request, **kwargs)  # noqa: E501
@@ -1960,75 +1377,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_border`")  # noqa: E501
-        # verify the required parameter 'border_type' is set
-        if request.border_type is None:
-            raise ValueError("Missing the required parameter `border_type` when calling `delete_border`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/borders/{borderType}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.border_type is not None:
-            path_params[self.__downcase_first_letter('BorderType')] = request.border_type  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('BorderType')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='BorderResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_borders(self, request, **kwargs):  # noqa: E501
         """'nodePath' should refer to paragraph, cell or row.  # noqa: E501
@@ -2058,7 +1425,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_borders_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_borders_with_http_info(request, **kwargs)  # noqa: E501
@@ -2090,68 +1457,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_borders`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/borders'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='BordersResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_comment(self, request, **kwargs):  # noqa: E501
         """Removes comment from document.  # noqa: E501
@@ -2181,7 +1505,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_comment_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_comment_with_http_info(request, **kwargs)  # noqa: E501
@@ -2213,71 +1537,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_comment`")  # noqa: E501
-        # verify the required parameter 'comment_index' is set
-        if request.comment_index is None:
-            raise ValueError("Missing the required parameter `comment_index` when calling `delete_comment`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/comments/{commentIndex}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.comment_index is not None:
-            path_params[self.__downcase_first_letter('CommentIndex')] = request.comment_index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('CommentIndex')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_document_property(self, request, **kwargs):  # noqa: E501
         """Deletes document property.  # noqa: E501
@@ -2307,7 +1585,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_document_property_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_document_property_with_http_info(request, **kwargs)  # noqa: E501
@@ -2339,71 +1617,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_document_property`")  # noqa: E501
-        # verify the required parameter 'property_name' is set
-        if request.property_name is None:
-            raise ValueError("Missing the required parameter `property_name` when calling `delete_document_property`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/documentProperties/{propertyName}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.property_name is not None:
-            path_params[self.__downcase_first_letter('PropertyName')] = request.property_name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('PropertyName')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_drawing_object(self, request, **kwargs):  # noqa: E501
         """Removes drawing object from document.  # noqa: E501
@@ -2434,7 +1666,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
@@ -2466,75 +1698,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_drawing_object`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_drawing_object`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/drawingObjects/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_field(self, request, **kwargs):  # noqa: E501
         """Deletes field from document.  # noqa: E501
@@ -2565,7 +1747,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_field_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_field_with_http_info(request, **kwargs)  # noqa: E501
@@ -2597,75 +1779,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_field`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_field`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/fields/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_fields(self, request, **kwargs):  # noqa: E501
         """Removes fields from section paragraph.  # noqa: E501
@@ -2695,7 +1827,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_fields_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_fields_with_http_info(request, **kwargs)  # noqa: E501
@@ -2727,68 +1859,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_fields`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/fields'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_file(self, request, **kwargs):  # noqa: E501
         """Delete file.  # noqa: E501
@@ -2812,7 +1901,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_file_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_file_with_http_info(request, **kwargs)  # noqa: E501
@@ -2844,54 +1933,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'path' is set
-        if request.path is None:
-            raise ValueError("Missing the required parameter `path` when calling `delete_file`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/storage/file/{path}'
-        path_params = {}
-        if request.path is not None:
-            path_params[self.__downcase_first_letter('Path')] = request.path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Path')] = ''  # noqa: E501
-
-        query_params = []
-        if request.storage_name is not None:
-                query_params.append((self.__downcase_first_letter('StorageName'), request.storage_name))  # noqa: E501
-        if request.version_id is not None:
-                query_params.append((self.__downcase_first_letter('VersionId'), request.version_id))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_folder(self, request, **kwargs):  # noqa: E501
         """Delete folder.  # noqa: E501
@@ -2915,7 +1975,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_folder_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_folder_with_http_info(request, **kwargs)  # noqa: E501
@@ -2947,54 +2007,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'path' is set
-        if request.path is None:
-            raise ValueError("Missing the required parameter `path` when calling `delete_folder`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/storage/folder/{path}'
-        path_params = {}
-        if request.path is not None:
-            path_params[self.__downcase_first_letter('Path')] = request.path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Path')] = ''  # noqa: E501
-
-        query_params = []
-        if request.storage_name is not None:
-                query_params.append((self.__downcase_first_letter('StorageName'), request.storage_name))  # noqa: E501
-        if request.recursive is not None:
-                query_params.append((self.__downcase_first_letter('Recursive'), request.recursive))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_footnote(self, request, **kwargs):  # noqa: E501
         """Removes footnote from document.  # noqa: E501
@@ -3025,7 +2056,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_footnote_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_footnote_with_http_info(request, **kwargs)  # noqa: E501
@@ -3057,75 +2088,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_footnote`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_footnote`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/footnotes/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_form_field(self, request, **kwargs):  # noqa: E501
         """Removes form field from document.  # noqa: E501
@@ -3156,7 +2137,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_form_field_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_form_field_with_http_info(request, **kwargs)  # noqa: E501
@@ -3188,75 +2169,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_form_field`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_form_field`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/formfields/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_header_footer(self, request, **kwargs):  # noqa: E501
         """Deletes header/footer from document.  # noqa: E501
@@ -3287,7 +2218,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_header_footer_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_header_footer_with_http_info(request, **kwargs)  # noqa: E501
@@ -3319,78 +2250,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_header_footer`")  # noqa: E501
-        # verify the required parameter 'section_path' is set
-        if request.section_path is None:
-            raise ValueError("Missing the required parameter `section_path` when calling `delete_header_footer`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_header_footer`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{sectionPath}/headersfooters/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.section_path is not None:
-            path_params[self.__downcase_first_letter('SectionPath')] = request.section_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('SectionPath')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_headers_footers(self, request, **kwargs):  # noqa: E501
         """Deletes document headers and footers.  # noqa: E501
@@ -3421,7 +2299,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_headers_footers_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_headers_footers_with_http_info(request, **kwargs)  # noqa: E501
@@ -3453,73 +2331,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_headers_footers`")  # noqa: E501
-        # verify the required parameter 'section_path' is set
-        if request.section_path is None:
-            raise ValueError("Missing the required parameter `section_path` when calling `delete_headers_footers`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{sectionPath}/headersfooters'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.section_path is not None:
-            path_params[self.__downcase_first_letter('SectionPath')] = request.section_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('SectionPath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-        if request.headers_footers_types is not None:
-                query_params.append((self.__downcase_first_letter('HeadersFootersTypes'), request.headers_footers_types))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_macros(self, request, **kwargs):  # noqa: E501
         """Removes macros from document.  # noqa: E501
@@ -3548,7 +2378,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_macros_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_macros_with_http_info(request, **kwargs)  # noqa: E501
@@ -3580,64 +2410,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_macros`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/macros'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_office_math_object(self, request, **kwargs):  # noqa: E501
         """Removes OfficeMath object from document.  # noqa: E501
@@ -3668,7 +2459,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
@@ -3700,75 +2491,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_office_math_object`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_office_math_object`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/OfficeMathObjects/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_paragraph(self, request, **kwargs):  # noqa: E501
         """Removes paragraph from section.  # noqa: E501
@@ -3799,7 +2540,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_paragraph_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_paragraph_with_http_info(request, **kwargs)  # noqa: E501
@@ -3831,75 +2572,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_paragraph`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_paragraph`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_paragraph_list_format(self, request, **kwargs):  # noqa: E501
         """Delete paragraph list format, returns updated list format properties.  # noqa: E501
@@ -3930,7 +2621,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
@@ -3962,75 +2653,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_paragraph_list_format`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_paragraph_list_format`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}/listFormat'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='ParagraphListFormatResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_paragraph_tab_stop(self, request, **kwargs):  # noqa: E501
         """Remove the i-th tab stop.  # noqa: E501
@@ -4060,7 +2701,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_paragraph_tab_stop_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_paragraph_tab_stop_with_http_info(request, **kwargs)  # noqa: E501
@@ -4092,76 +2733,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_paragraph_tab_stop`")  # noqa: E501
-        # verify the required parameter 'position' is set
-        if request.position is None:
-            raise ValueError("Missing the required parameter `position` when calling `delete_paragraph_tab_stop`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_paragraph_tab_stop`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}/tabstop'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.position is not None:
-                query_params.append((self.__downcase_first_letter('Position'), request.position))  # noqa: E501
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='TabStopsResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_run(self, request, **kwargs):  # noqa: E501
         """Removes run from document.  # noqa: E501
@@ -4192,7 +2782,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_run_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_run_with_http_info(request, **kwargs)  # noqa: E501
@@ -4224,78 +2814,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_run`")  # noqa: E501
-        # verify the required parameter 'paragraph_path' is set
-        if request.paragraph_path is None:
-            raise ValueError("Missing the required parameter `paragraph_path` when calling `delete_run`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_run`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{paragraphPath}/runs/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.paragraph_path is not None:
-            path_params[self.__downcase_first_letter('ParagraphPath')] = request.paragraph_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('ParagraphPath')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_section(self, request, **kwargs):  # noqa: E501
         """Removes section from document.  # noqa: E501
@@ -4325,7 +2862,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_section_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_section_with_http_info(request, **kwargs)  # noqa: E501
@@ -4357,71 +2894,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_section`")  # noqa: E501
-        # verify the required parameter 'section_index' is set
-        if request.section_index is None:
-            raise ValueError("Missing the required parameter `section_index` when calling `delete_section`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/sections/{sectionIndex}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.section_index is not None:
-            path_params[self.__downcase_first_letter('SectionIndex')] = request.section_index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('SectionIndex')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_table(self, request, **kwargs):  # noqa: E501
         """Deletes a table.  # noqa: E501
@@ -4452,7 +2943,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_table_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_table_with_http_info(request, **kwargs)  # noqa: E501
@@ -4484,75 +2975,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_table`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_table`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/tables/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_table_cell(self, request, **kwargs):  # noqa: E501
         """Deletes a table cell.  # noqa: E501
@@ -4583,7 +3024,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_table_cell_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_table_cell_with_http_info(request, **kwargs)  # noqa: E501
@@ -4615,78 +3056,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_table_cell`")  # noqa: E501
-        # verify the required parameter 'table_row_path' is set
-        if request.table_row_path is None:
-            raise ValueError("Missing the required parameter `table_row_path` when calling `delete_table_cell`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_table_cell`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{tableRowPath}/cells/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.table_row_path is not None:
-            path_params[self.__downcase_first_letter('TableRowPath')] = request.table_row_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('TableRowPath')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_table_row(self, request, **kwargs):  # noqa: E501
         """Deletes a table row.  # noqa: E501
@@ -4717,7 +3105,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_table_row_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_table_row_with_http_info(request, **kwargs)  # noqa: E501
@@ -4749,78 +3137,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_table_row`")  # noqa: E501
-        # verify the required parameter 'table_path' is set
-        if request.table_path is None:
-            raise ValueError("Missing the required parameter `table_path` when calling `delete_table_row`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `delete_table_row`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{tablePath}/rows/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.table_path is not None:
-            path_params[self.__downcase_first_letter('TablePath')] = request.table_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('TablePath')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def delete_watermark(self, request, **kwargs):  # noqa: E501
         """Deletes watermark (for deleting last watermark from the document).  # noqa: E501
@@ -4849,7 +3184,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_watermark_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.delete_watermark_with_http_info(request, **kwargs)  # noqa: E501
@@ -4881,64 +3216,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `delete_watermark`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/watermarks/deleteLast'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DocumentResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def download_file(self, request, **kwargs):  # noqa: E501
         """Download file.  # noqa: E501
@@ -4962,7 +3258,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.download_file_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.download_file_with_http_info(request, **kwargs)  # noqa: E501
@@ -4994,54 +3290,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'path' is set
-        if request.path is None:
-            raise ValueError("Missing the required parameter `path` when calling `download_file`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/storage/file/{path}'
-        path_params = {}
-        if request.path is not None:
-            path_params[self.__downcase_first_letter('Path')] = request.path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Path')] = ''  # noqa: E501
-
-        query_params = []
-        if request.storage_name is not None:
-                query_params.append((self.__downcase_first_letter('StorageName'), request.storage_name))  # noqa: E501
-        if request.version_id is not None:
-                query_params.append((self.__downcase_first_letter('VersionId'), request.version_id))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='file',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def execute_mail_merge(self, request, **kwargs):  # noqa: E501
         """Executes document mail merge operation.  # noqa: E501
@@ -5073,7 +3340,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.execute_mail_merge_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.execute_mail_merge_with_http_info(request, **kwargs)  # noqa: E501
@@ -5105,70 +3372,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `execute_mail_merge`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/MailMerge'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.with_regions is not None:
-                query_params.append((self.__downcase_first_letter('WithRegions'), request.with_regions))  # noqa: E501
-        if request.mail_merge_data_file is not None:
-                query_params.append((self.__downcase_first_letter('MailMergeDataFile'), request.mail_merge_data_file))  # noqa: E501
-        if request.cleanup is not None:
-                query_params.append((self.__downcase_first_letter('Cleanup'), request.cleanup))  # noqa: E501
-        if request.use_whole_paragraph_as_region is not None:
-                query_params.append((self.__downcase_first_letter('UseWholeParagraphAsRegion'), request.use_whole_paragraph_as_region))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        if request.data is not None:
-            form_params.append([self.__downcase_first_letter('Data'), request.data, 'string'])  # noqa: E501
-
-        body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DocumentResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def execute_mail_merge_online(self, request, **kwargs):  # noqa: E501
         """Executes document mail merge online.  # noqa: E501
@@ -5194,7 +3419,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.execute_mail_merge_online_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.execute_mail_merge_online_with_http_info(request, **kwargs)  # noqa: E501
@@ -5226,59 +3451,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'template' is set
-        if request.template is None:
-            raise ValueError("Missing the required parameter `template` when calling `execute_mail_merge_online`")  # noqa: E501
-        # verify the required parameter 'data' is set
-        if request.data is None:
-            raise ValueError("Missing the required parameter `data` when calling `execute_mail_merge_online`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/MailMerge'
-        path_params = {}
-
-        query_params = []
-        if request.with_regions is not None:
-                query_params.append((self.__downcase_first_letter('WithRegions'), request.with_regions))  # noqa: E501
-        if request.cleanup is not None:
-                query_params.append((self.__downcase_first_letter('Cleanup'), request.cleanup))  # noqa: E501
-        if request.document_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DocumentFileName'), request.document_file_name))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        if request.template is not None:
-            form_params.append([self.__downcase_first_letter('Template'), request.template, 'file'])  # noqa: E501
-        if request.data is not None:
-            form_params.append([self.__downcase_first_letter('Data'), request.data, 'file'])  # noqa: E501
-
-        body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='file',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_available_fonts(self, request, **kwargs):  # noqa: E501
         """Gets the list of fonts, available for document processing.  # noqa: E501
@@ -5300,7 +3494,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_available_fonts_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_available_fonts_with_http_info(request, **kwargs)  # noqa: E501
@@ -5332,45 +3526,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-
-        collection_formats = {}
-        path = '/v4.0/words/fonts/available'
-        path_params = {}
-
-        query_params = []
-        if request.fonts_location is not None:
-                query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='AvailableFontsResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_bookmark_by_name(self, request, **kwargs):  # noqa: E501
         """Reads document bookmark data by its name.  # noqa: E501
@@ -5397,7 +3571,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_bookmark_by_name_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_bookmark_by_name_with_http_info(request, **kwargs)  # noqa: E501
@@ -5429,65 +3603,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_bookmark_by_name`")  # noqa: E501
-        # verify the required parameter 'bookmark_name' is set
-        if request.bookmark_name is None:
-            raise ValueError("Missing the required parameter `bookmark_name` when calling `get_bookmark_by_name`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/bookmarks/{bookmarkName}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.bookmark_name is not None:
-            path_params[self.__downcase_first_letter('BookmarkName')] = request.bookmark_name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('BookmarkName')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='BookmarkResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_bookmarks(self, request, **kwargs):  # noqa: E501
         """Reads document bookmarks common info.  # noqa: E501
@@ -5513,7 +3647,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_bookmarks_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_bookmarks_with_http_info(request, **kwargs)  # noqa: E501
@@ -5545,58 +3679,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_bookmarks`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/bookmarks'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='BookmarksResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_border(self, request, **kwargs):  # noqa: E501
         """'nodePath' should refer to paragraph, cell or row.  # noqa: E501
@@ -5624,7 +3725,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_border_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_border_with_http_info(request, **kwargs)  # noqa: E501
@@ -5656,69 +3757,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_border`")  # noqa: E501
-        # verify the required parameter 'border_type' is set
-        if request.border_type is None:
-            raise ValueError("Missing the required parameter `border_type` when calling `get_border`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/borders/{borderType}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.border_type is not None:
-            path_params[self.__downcase_first_letter('BorderType')] = request.border_type  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('BorderType')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='BorderResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_borders(self, request, **kwargs):  # noqa: E501
         """'nodePath' should refer to paragraph, cell or row.  # noqa: E501
@@ -5745,7 +3802,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_borders_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_borders_with_http_info(request, **kwargs)  # noqa: E501
@@ -5777,62 +3834,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_borders`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/borders'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='BordersResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_comment(self, request, **kwargs):  # noqa: E501
         """Gets comment from document.  # noqa: E501
@@ -5859,7 +3879,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_comment_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_comment_with_http_info(request, **kwargs)  # noqa: E501
@@ -5891,65 +3911,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_comment`")  # noqa: E501
-        # verify the required parameter 'comment_index' is set
-        if request.comment_index is None:
-            raise ValueError("Missing the required parameter `comment_index` when calling `get_comment`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/comments/{commentIndex}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.comment_index is not None:
-            path_params[self.__downcase_first_letter('CommentIndex')] = request.comment_index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('CommentIndex')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='CommentResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_comments(self, request, **kwargs):  # noqa: E501
         """Gets comments from document.  # noqa: E501
@@ -5975,7 +3955,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_comments_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_comments_with_http_info(request, **kwargs)  # noqa: E501
@@ -6007,58 +3987,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_comments`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/comments'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='CommentsResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_document(self, request, **kwargs):  # noqa: E501
         """Reads document common info.  # noqa: E501
@@ -6084,7 +4031,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -6116,58 +4063,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'document_name' is set
-        if request.document_name is None:
-            raise ValueError("Missing the required parameter `document_name` when calling `get_document`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{documentName}'
-        path_params = {}
-        if request.document_name is not None:
-            path_params[self.__downcase_first_letter('DocumentName')] = request.document_name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('DocumentName')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DocumentResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_document_drawing_object_by_index(self, request, **kwargs):  # noqa: E501
         """Reads document drawing object common info by its index or convert to format specified.  # noqa: E501
@@ -6195,7 +4109,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_drawing_object_by_index_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_drawing_object_by_index_with_http_info(request, **kwargs)  # noqa: E501
@@ -6227,69 +4141,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_document_drawing_object_by_index`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_by_index`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/drawingObjects/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DrawingObjectResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_document_drawing_object_image_data(self, request, **kwargs):  # noqa: E501
         """Reads drawing object image data.  # noqa: E501
@@ -6317,7 +4187,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_drawing_object_image_data_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_drawing_object_image_data_with_http_info(request, **kwargs)  # noqa: E501
@@ -6349,69 +4219,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_document_drawing_object_image_data`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_image_data`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/drawingObjects/{index}/imageData'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='file',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_document_drawing_object_ole_data(self, request, **kwargs):  # noqa: E501
         """Gets drawing object OLE data.  # noqa: E501
@@ -6439,7 +4265,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_drawing_object_ole_data_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_drawing_object_ole_data_with_http_info(request, **kwargs)  # noqa: E501
@@ -6471,69 +4297,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_document_drawing_object_ole_data`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_document_drawing_object_ole_data`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/drawingObjects/{index}/oleData'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='file',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_document_drawing_objects(self, request, **kwargs):  # noqa: E501
         """Reads document drawing objects common info.  # noqa: E501
@@ -6560,7 +4342,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_drawing_objects_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_drawing_objects_with_http_info(request, **kwargs)  # noqa: E501
@@ -6592,62 +4374,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_document_drawing_objects`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/drawingObjects'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DrawingObjectsResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_document_field_names(self, request, **kwargs):  # noqa: E501
         """Reads document field names.  # noqa: E501
@@ -6674,7 +4419,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_field_names_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_field_names_with_http_info(request, **kwargs)  # noqa: E501
@@ -6706,60 +4451,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_document_field_names`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/mailMerge/FieldNames'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.use_non_merge_fields is not None:
-                query_params.append((self.__downcase_first_letter('UseNonMergeFields'), request.use_non_merge_fields))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='FieldNamesResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_document_field_names_online(self, request, **kwargs):  # noqa: E501
         """Reads document field names.  # noqa: E501
@@ -6782,7 +4492,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_field_names_online_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_field_names_online_with_http_info(request, **kwargs)  # noqa: E501
@@ -6814,50 +4524,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'template' is set
-        if request.template is None:
-            raise ValueError("Missing the required parameter `template` when calling `get_document_field_names_online`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/mailMerge/FieldNames'
-        path_params = {}
-
-        query_params = []
-        if request.use_non_merge_fields is not None:
-                query_params.append((self.__downcase_first_letter('UseNonMergeFields'), request.use_non_merge_fields))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        if request.template is not None:
-            form_params.append([self.__downcase_first_letter('Template'), request.template, 'file'])  # noqa: E501
-
-        body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='FieldNamesResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_document_hyperlink_by_index(self, request, **kwargs):  # noqa: E501
         """Reads document hyperlink by its index.  # noqa: E501
@@ -6884,7 +4572,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_hyperlink_by_index_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_hyperlink_by_index_with_http_info(request, **kwargs)  # noqa: E501
@@ -6916,65 +4604,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_document_hyperlink_by_index`")  # noqa: E501
-        # verify the required parameter 'hyperlink_index' is set
-        if request.hyperlink_index is None:
-            raise ValueError("Missing the required parameter `hyperlink_index` when calling `get_document_hyperlink_by_index`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/hyperlinks/{hyperlinkIndex}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.hyperlink_index is not None:
-            path_params[self.__downcase_first_letter('HyperlinkIndex')] = request.hyperlink_index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('HyperlinkIndex')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='HyperlinkResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_document_hyperlinks(self, request, **kwargs):  # noqa: E501
         """Reads document hyperlinks common info.  # noqa: E501
@@ -7000,7 +4648,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_hyperlinks_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_hyperlinks_with_http_info(request, **kwargs)  # noqa: E501
@@ -7032,58 +4680,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_document_hyperlinks`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/hyperlinks'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='HyperlinksResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_document_properties(self, request, **kwargs):  # noqa: E501
         """Reads document properties info.  # noqa: E501
@@ -7109,7 +4724,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_properties_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_properties_with_http_info(request, **kwargs)  # noqa: E501
@@ -7141,58 +4756,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_document_properties`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/documentProperties'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DocumentPropertiesResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_document_property(self, request, **kwargs):  # noqa: E501
         """Reads document property info by the property name.  # noqa: E501
@@ -7219,7 +4801,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_property_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_property_with_http_info(request, **kwargs)  # noqa: E501
@@ -7251,65 +4833,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_document_property`")  # noqa: E501
-        # verify the required parameter 'property_name' is set
-        if request.property_name is None:
-            raise ValueError("Missing the required parameter `property_name` when calling `get_document_property`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/documentProperties/{propertyName}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.property_name is not None:
-            path_params[self.__downcase_first_letter('PropertyName')] = request.property_name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('PropertyName')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DocumentPropertyResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_document_protection(self, request, **kwargs):  # noqa: E501
         """Reads document protection common info.  # noqa: E501
@@ -7335,7 +4877,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_protection_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_protection_with_http_info(request, **kwargs)  # noqa: E501
@@ -7367,58 +4909,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_document_protection`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/protection'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='ProtectionDataResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_document_statistics(self, request, **kwargs):  # noqa: E501
         """Reads document statistics.  # noqa: E501
@@ -7447,7 +4956,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_statistics_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_statistics_with_http_info(request, **kwargs)  # noqa: E501
@@ -7479,64 +4988,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_document_statistics`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/statistics'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.include_comments is not None:
-                query_params.append((self.__downcase_first_letter('IncludeComments'), request.include_comments))  # noqa: E501
-        if request.include_footnotes is not None:
-                query_params.append((self.__downcase_first_letter('IncludeFootnotes'), request.include_footnotes))  # noqa: E501
-        if request.include_text_in_shapes is not None:
-                query_params.append((self.__downcase_first_letter('IncludeTextInShapes'), request.include_text_in_shapes))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='StatDataResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_document_with_format(self, request, **kwargs):  # noqa: E501
         """Exports the document into the specified format.  # noqa: E501
@@ -7565,7 +5035,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_with_format_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_document_with_format_with_http_info(request, **kwargs)  # noqa: E501
@@ -7597,67 +5067,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_document_with_format`")  # noqa: E501
-        # verify the required parameter 'format' is set
-        if request.format is None:
-            raise ValueError("Missing the required parameter `format` when calling `get_document_with_format`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.format is not None:
-                query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.out_path is not None:
-                query_params.append((self.__downcase_first_letter('OutPath'), request.out_path))  # noqa: E501
-        if request.fonts_location is not None:
-                query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='file',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_field(self, request, **kwargs):  # noqa: E501
         """Gets field from document.  # noqa: E501
@@ -7685,7 +5113,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_field_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_field_with_http_info(request, **kwargs)  # noqa: E501
@@ -7717,69 +5145,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_field`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_field`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/fields/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='FieldResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_fields(self, request, **kwargs):  # noqa: E501
         """Get fields from document.  # noqa: E501
@@ -7806,7 +5190,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_fields_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_fields_with_http_info(request, **kwargs)  # noqa: E501
@@ -7838,62 +5222,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_fields`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/fields'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='FieldsResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_files_list(self, request, **kwargs):  # noqa: E501
         """Get all files and folders within a folder.  # noqa: E501
@@ -7916,7 +5263,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_files_list_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_files_list_with_http_info(request, **kwargs)  # noqa: E501
@@ -7948,52 +5295,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'path' is set
-        if request.path is None:
-            raise ValueError("Missing the required parameter `path` when calling `get_files_list`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/storage/folder/{path}'
-        path_params = {}
-        if request.path is not None:
-            path_params[self.__downcase_first_letter('Path')] = request.path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Path')] = ''  # noqa: E501
-
-        query_params = []
-        if request.storage_name is not None:
-                query_params.append((self.__downcase_first_letter('StorageName'), request.storage_name))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='FilesList',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_footnote(self, request, **kwargs):  # noqa: E501
         """Reads footnote by index.  # noqa: E501
@@ -8021,7 +5341,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_footnote_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_footnote_with_http_info(request, **kwargs)  # noqa: E501
@@ -8053,69 +5373,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_footnote`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_footnote`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/footnotes/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='FootnoteResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_footnotes(self, request, **kwargs):  # noqa: E501
         """Gets footnotes from document.  # noqa: E501
@@ -8142,7 +5418,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_footnotes_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_footnotes_with_http_info(request, **kwargs)  # noqa: E501
@@ -8174,62 +5450,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_footnotes`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/footnotes'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='FootnotesResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_form_field(self, request, **kwargs):  # noqa: E501
         """Returns representation of an one of the form field.  # noqa: E501
@@ -8257,7 +5496,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_form_field_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_form_field_with_http_info(request, **kwargs)  # noqa: E501
@@ -8289,69 +5528,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_form_field`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_form_field`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/formfields/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='FormFieldResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_form_fields(self, request, **kwargs):  # noqa: E501
         """Gets form fields from document.  # noqa: E501
@@ -8378,7 +5573,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_form_fields_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_form_fields_with_http_info(request, **kwargs)  # noqa: E501
@@ -8410,62 +5605,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_form_fields`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/formfields'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='FormFieldsResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_header_footer(self, request, **kwargs):  # noqa: E501
         """Returns a header/footer from the document by index.  # noqa: E501
@@ -8493,7 +5651,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_header_footer_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_header_footer_with_http_info(request, **kwargs)  # noqa: E501
@@ -8525,67 +5683,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_header_footer`")  # noqa: E501
-        # verify the required parameter 'header_footer_index' is set
-        if request.header_footer_index is None:
-            raise ValueError("Missing the required parameter `header_footer_index` when calling `get_header_footer`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/headersfooters/{headerFooterIndex}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.header_footer_index is not None:
-            path_params[self.__downcase_first_letter('HeaderFooterIndex')] = request.header_footer_index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('HeaderFooterIndex')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.filter_by_type is not None:
-                query_params.append((self.__downcase_first_letter('FilterByType'), request.filter_by_type))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='HeaderFooterResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_header_footer_of_section(self, request, **kwargs):  # noqa: E501
         """Returns a header/footer from the document section.  # noqa: E501
@@ -8614,7 +5730,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_header_footer_of_section_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_header_footer_of_section_with_http_info(request, **kwargs)  # noqa: E501
@@ -8646,74 +5762,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_header_footer_of_section`")  # noqa: E501
-        # verify the required parameter 'header_footer_index' is set
-        if request.header_footer_index is None:
-            raise ValueError("Missing the required parameter `header_footer_index` when calling `get_header_footer_of_section`")  # noqa: E501
-        # verify the required parameter 'section_index' is set
-        if request.section_index is None:
-            raise ValueError("Missing the required parameter `section_index` when calling `get_header_footer_of_section`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/sections/{sectionIndex}/headersfooters/{headerFooterIndex}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.header_footer_index is not None:
-            path_params[self.__downcase_first_letter('HeaderFooterIndex')] = request.header_footer_index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('HeaderFooterIndex')] = ''  # noqa: E501
-        if request.section_index is not None:
-            path_params[self.__downcase_first_letter('SectionIndex')] = request.section_index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('SectionIndex')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.filter_by_type is not None:
-                query_params.append((self.__downcase_first_letter('FilterByType'), request.filter_by_type))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='HeaderFooterResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_header_footers(self, request, **kwargs):  # noqa: E501
         """Returns a list of header/footers from the document.  # noqa: E501
@@ -8741,7 +5808,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_header_footers_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_header_footers_with_http_info(request, **kwargs)  # noqa: E501
@@ -8773,67 +5840,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_header_footers`")  # noqa: E501
-        # verify the required parameter 'section_path' is set
-        if request.section_path is None:
-            raise ValueError("Missing the required parameter `section_path` when calling `get_header_footers`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{sectionPath}/headersfooters'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.section_path is not None:
-            path_params[self.__downcase_first_letter('SectionPath')] = request.section_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('SectionPath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.filter_by_type is not None:
-                query_params.append((self.__downcase_first_letter('FilterByType'), request.filter_by_type))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='HeaderFootersResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_list(self, request, **kwargs):  # noqa: E501
         """This resource represents one of the lists contained in the document.  # noqa: E501
@@ -8860,7 +5885,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_list_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_list_with_http_info(request, **kwargs)  # noqa: E501
@@ -8892,65 +5917,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_list`")  # noqa: E501
-        # verify the required parameter 'list_id' is set
-        if request.list_id is None:
-            raise ValueError("Missing the required parameter `list_id` when calling `get_list`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/lists/{listId}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.list_id is not None:
-            path_params[self.__downcase_first_letter('ListId')] = request.list_id  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('ListId')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='ListResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_lists(self, request, **kwargs):  # noqa: E501
         """Returns a list of lists that are contained in the document.  # noqa: E501
@@ -8976,7 +5961,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_lists_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_lists_with_http_info(request, **kwargs)  # noqa: E501
@@ -9008,58 +5993,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_lists`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/lists'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='ListsResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_office_math_object(self, request, **kwargs):  # noqa: E501
         """Reads OfficeMath object by index.  # noqa: E501
@@ -9087,7 +6039,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
@@ -9119,69 +6071,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_office_math_object`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_office_math_object`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/OfficeMathObjects/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='OfficeMathObjectResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_office_math_objects(self, request, **kwargs):  # noqa: E501
         """Gets OfficeMath objects from document.  # noqa: E501
@@ -9208,7 +6116,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_office_math_objects_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_office_math_objects_with_http_info(request, **kwargs)  # noqa: E501
@@ -9240,62 +6148,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_office_math_objects`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/OfficeMathObjects'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='OfficeMathObjectsResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_paragraph(self, request, **kwargs):  # noqa: E501
         """This resource represents one of the paragraphs contained in the document.  # noqa: E501
@@ -9323,7 +6194,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_paragraph_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_paragraph_with_http_info(request, **kwargs)  # noqa: E501
@@ -9355,69 +6226,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_paragraph`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_paragraph`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='ParagraphResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_paragraph_format(self, request, **kwargs):  # noqa: E501
         """Represents all the formatting for a paragraph.  # noqa: E501
@@ -9445,7 +6272,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
@@ -9477,69 +6304,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_paragraph_format`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_paragraph_format`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}/format'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='ParagraphFormatResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_paragraph_list_format(self, request, **kwargs):  # noqa: E501
         """Represents list format for a paragraph.  # noqa: E501
@@ -9567,7 +6350,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
@@ -9599,69 +6382,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_paragraph_list_format`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_paragraph_list_format`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}/listFormat'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='ParagraphListFormatResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_paragraphs(self, request, **kwargs):  # noqa: E501
         """Returns a list of paragraphs that are contained in the document.  # noqa: E501
@@ -9688,7 +6427,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_paragraphs_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_paragraphs_with_http_info(request, **kwargs)  # noqa: E501
@@ -9720,62 +6459,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_paragraphs`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='ParagraphLinkCollectionResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_paragraph_tab_stops(self, request, **kwargs):  # noqa: E501
         """Get all tab stops for the paragraph.  # noqa: E501
@@ -9803,7 +6505,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_paragraph_tab_stops_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_paragraph_tab_stops_with_http_info(request, **kwargs)  # noqa: E501
@@ -9835,69 +6537,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_paragraph_tab_stops`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_paragraph_tab_stops`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}/tabstops'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='TabStopsResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_range_text(self, request, **kwargs):  # noqa: E501
         """Gets the text from the range.  # noqa: E501
@@ -9925,7 +6583,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_range_text_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_range_text_with_http_info(request, **kwargs)  # noqa: E501
@@ -9957,69 +6615,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_range_text`")  # noqa: E501
-        # verify the required parameter 'range_start_identifier' is set
-        if request.range_start_identifier is None:
-            raise ValueError("Missing the required parameter `range_start_identifier` when calling `get_range_text`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.range_start_identifier is not None:
-            path_params[self.__downcase_first_letter('RangeStartIdentifier')] = request.range_start_identifier  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('RangeStartIdentifier')] = ''  # noqa: E501
-        if request.range_end_identifier is not None:
-            path_params[self.__downcase_first_letter('RangeEndIdentifier')] = request.range_end_identifier  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('RangeEndIdentifier')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='RangeTextResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_run(self, request, **kwargs):  # noqa: E501
         """This resource represents run of text contained in the document.  # noqa: E501
@@ -10047,7 +6661,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_run_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_run_with_http_info(request, **kwargs)  # noqa: E501
@@ -10079,72 +6693,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_run`")  # noqa: E501
-        # verify the required parameter 'paragraph_path' is set
-        if request.paragraph_path is None:
-            raise ValueError("Missing the required parameter `paragraph_path` when calling `get_run`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_run`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{paragraphPath}/runs/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.paragraph_path is not None:
-            path_params[self.__downcase_first_letter('ParagraphPath')] = request.paragraph_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('ParagraphPath')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='RunResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_run_font(self, request, **kwargs):  # noqa: E501
         """This resource represents font of run.  # noqa: E501
@@ -10172,7 +6739,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_run_font_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_run_font_with_http_info(request, **kwargs)  # noqa: E501
@@ -10204,72 +6771,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_run_font`")  # noqa: E501
-        # verify the required parameter 'paragraph_path' is set
-        if request.paragraph_path is None:
-            raise ValueError("Missing the required parameter `paragraph_path` when calling `get_run_font`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_run_font`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{paragraphPath}/runs/{index}/font'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.paragraph_path is not None:
-            path_params[self.__downcase_first_letter('ParagraphPath')] = request.paragraph_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('ParagraphPath')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='FontResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_runs(self, request, **kwargs):  # noqa: E501
         """This resource represents collection of runs in the paragraph.  # noqa: E501
@@ -10296,7 +6816,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_runs_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_runs_with_http_info(request, **kwargs)  # noqa: E501
@@ -10328,65 +6848,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_runs`")  # noqa: E501
-        # verify the required parameter 'paragraph_path' is set
-        if request.paragraph_path is None:
-            raise ValueError("Missing the required parameter `paragraph_path` when calling `get_runs`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{paragraphPath}/runs'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.paragraph_path is not None:
-            path_params[self.__downcase_first_letter('ParagraphPath')] = request.paragraph_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('ParagraphPath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='RunsResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_section(self, request, **kwargs):  # noqa: E501
         """Gets document section by index.  # noqa: E501
@@ -10413,7 +6893,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_section_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_section_with_http_info(request, **kwargs)  # noqa: E501
@@ -10445,65 +6925,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_section`")  # noqa: E501
-        # verify the required parameter 'section_index' is set
-        if request.section_index is None:
-            raise ValueError("Missing the required parameter `section_index` when calling `get_section`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/sections/{sectionIndex}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.section_index is not None:
-            path_params[self.__downcase_first_letter('SectionIndex')] = request.section_index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('SectionIndex')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='SectionResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_section_page_setup(self, request, **kwargs):  # noqa: E501
         """Gets page setup of section.  # noqa: E501
@@ -10530,7 +6970,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
@@ -10562,65 +7002,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_section_page_setup`")  # noqa: E501
-        # verify the required parameter 'section_index' is set
-        if request.section_index is None:
-            raise ValueError("Missing the required parameter `section_index` when calling `get_section_page_setup`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/sections/{sectionIndex}/pageSetup'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.section_index is not None:
-            path_params[self.__downcase_first_letter('SectionIndex')] = request.section_index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('SectionIndex')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='SectionPageSetupResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_sections(self, request, **kwargs):  # noqa: E501
         """Returns a list of sections that are contained in the document.  # noqa: E501
@@ -10646,7 +7046,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_sections_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_sections_with_http_info(request, **kwargs)  # noqa: E501
@@ -10678,58 +7078,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_sections`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/sections'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='SectionLinkCollectionResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_style(self, request, **kwargs):  # noqa: E501
         """This resource represents one of the styles contained in the document.  # noqa: E501
@@ -10756,7 +7123,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_style_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_style_with_http_info(request, **kwargs)  # noqa: E501
@@ -10788,65 +7155,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_style`")  # noqa: E501
-        # verify the required parameter 'style_name' is set
-        if request.style_name is None:
-            raise ValueError("Missing the required parameter `style_name` when calling `get_style`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/styles/{styleName}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.style_name is not None:
-            path_params[self.__downcase_first_letter('StyleName')] = request.style_name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('StyleName')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='StyleResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_style_from_document_element(self, request, **kwargs):  # noqa: E501
         """Gets a style from the document node.  # noqa: E501
@@ -10873,7 +7200,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_style_from_document_element_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_style_from_document_element_with_http_info(request, **kwargs)  # noqa: E501
@@ -10905,65 +7232,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_style_from_document_element`")  # noqa: E501
-        # verify the required parameter 'styled_node_path' is set
-        if request.styled_node_path is None:
-            raise ValueError("Missing the required parameter `styled_node_path` when calling `get_style_from_document_element`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{styledNodePath}/style'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.styled_node_path is not None:
-            path_params[self.__downcase_first_letter('StyledNodePath')] = request.styled_node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('StyledNodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='StyleResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_styles(self, request, **kwargs):  # noqa: E501
         """Returns a list of styles contained in the document.  # noqa: E501
@@ -10989,7 +7276,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_styles_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_styles_with_http_info(request, **kwargs)  # noqa: E501
@@ -11021,58 +7308,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_styles`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/styles'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='StylesResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_table(self, request, **kwargs):  # noqa: E501
         """Returns a table.  # noqa: E501
@@ -11100,7 +7354,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_table_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_table_with_http_info(request, **kwargs)  # noqa: E501
@@ -11132,69 +7386,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_table`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_table`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/tables/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='TableResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_table_cell(self, request, **kwargs):  # noqa: E501
         """Returns a table cell.  # noqa: E501
@@ -11222,7 +7432,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_table_cell_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_table_cell_with_http_info(request, **kwargs)  # noqa: E501
@@ -11254,72 +7464,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_table_cell`")  # noqa: E501
-        # verify the required parameter 'table_row_path' is set
-        if request.table_row_path is None:
-            raise ValueError("Missing the required parameter `table_row_path` when calling `get_table_cell`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_table_cell`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{tableRowPath}/cells/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.table_row_path is not None:
-            path_params[self.__downcase_first_letter('TableRowPath')] = request.table_row_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('TableRowPath')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='TableCellResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_table_cell_format(self, request, **kwargs):  # noqa: E501
         """Returns a table cell format.  # noqa: E501
@@ -11347,7 +7510,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
@@ -11379,72 +7542,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_table_cell_format`")  # noqa: E501
-        # verify the required parameter 'table_row_path' is set
-        if request.table_row_path is None:
-            raise ValueError("Missing the required parameter `table_row_path` when calling `get_table_cell_format`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_table_cell_format`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{tableRowPath}/cells/{index}/cellformat'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.table_row_path is not None:
-            path_params[self.__downcase_first_letter('TableRowPath')] = request.table_row_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('TableRowPath')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='TableCellFormatResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_table_properties(self, request, **kwargs):  # noqa: E501
         """Returns a table properties.  # noqa: E501
@@ -11472,7 +7588,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_table_properties_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_table_properties_with_http_info(request, **kwargs)  # noqa: E501
@@ -11504,69 +7620,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_table_properties`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_table_properties`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/tables/{index}/properties'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='TablePropertiesResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_table_row(self, request, **kwargs):  # noqa: E501
         """Returns a table row.  # noqa: E501
@@ -11594,7 +7666,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_table_row_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_table_row_with_http_info(request, **kwargs)  # noqa: E501
@@ -11626,72 +7698,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_table_row`")  # noqa: E501
-        # verify the required parameter 'table_path' is set
-        if request.table_path is None:
-            raise ValueError("Missing the required parameter `table_path` when calling `get_table_row`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_table_row`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{tablePath}/rows/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.table_path is not None:
-            path_params[self.__downcase_first_letter('TablePath')] = request.table_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('TablePath')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='TableRowResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_table_row_format(self, request, **kwargs):  # noqa: E501
         """Returns a table row format.  # noqa: E501
@@ -11719,7 +7744,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
@@ -11751,72 +7776,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_table_row_format`")  # noqa: E501
-        # verify the required parameter 'table_path' is set
-        if request.table_path is None:
-            raise ValueError("Missing the required parameter `table_path` when calling `get_table_row_format`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `get_table_row_format`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{tablePath}/rows/{index}/rowformat'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.table_path is not None:
-            path_params[self.__downcase_first_letter('TablePath')] = request.table_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('TablePath')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='TableRowFormatResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def get_tables(self, request, **kwargs):  # noqa: E501
         """Returns a list of tables that are contained in the document.  # noqa: E501
@@ -11843,7 +7821,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_tables_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.get_tables_with_http_info(request, **kwargs)  # noqa: E501
@@ -11875,62 +7853,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `get_tables`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/tables'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='TableLinkCollectionResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def insert_comment(self, request, **kwargs):  # noqa: E501
         """Adds comment to document, returns inserted comment data.  # noqa: E501
@@ -11960,7 +7901,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_comment_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_comment_with_http_info(request, **kwargs)  # noqa: E501
@@ -11992,69 +7933,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `insert_comment`")  # noqa: E501
-        # verify the required parameter 'comment' is set
-        if request.comment is None:
-            raise ValueError("Missing the required parameter `comment` when calling `insert_comment`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/comments'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.comment is not None:
-            body_params = request.comment
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='CommentResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def insert_drawing_object(self, request, **kwargs):  # noqa: E501
         """Adds drawing object to document, returns added  drawing object's data.  # noqa: E501
@@ -12086,7 +7986,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
@@ -12118,78 +8018,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `insert_drawing_object`")  # noqa: E501
-        # verify the required parameter 'drawing_object' is set
-        if request.drawing_object is None:
-            raise ValueError("Missing the required parameter `drawing_object` when calling `insert_drawing_object`")  # noqa: E501
-        # verify the required parameter 'image_file' is set
-        if request.image_file is None:
-            raise ValueError("Missing the required parameter `image_file` when calling `insert_drawing_object`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/drawingObjects'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        if request.drawing_object is not None:
-            form_params.append([self.__downcase_first_letter('DrawingObject'), request.drawing_object.to_json(), 'string'])  # noqa: E501
-        if request.image_file is not None:
-            form_params.append([self.__downcase_first_letter('ImageFile'), request.image_file, 'file'])  # noqa: E501
-
-        body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DrawingObjectResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def insert_field(self, request, **kwargs):  # noqa: E501
         """Adds field to document, returns inserted field's data.  # noqa: E501
@@ -12221,7 +8071,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_field_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_field_with_http_info(request, **kwargs)  # noqa: E501
@@ -12253,75 +8103,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `insert_field`")  # noqa: E501
-        # verify the required parameter 'field' is set
-        if request.field is None:
-            raise ValueError("Missing the required parameter `field` when calling `insert_field`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/fields'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-        if request.insert_before_node is not None:
-                query_params.append((self.__downcase_first_letter('InsertBeforeNode'), request.insert_before_node))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.field is not None:
-            body_params = request.field
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='FieldResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def insert_footnote(self, request, **kwargs):  # noqa: E501
         """Adds footnote to document, returns added footnote's data.  # noqa: E501
@@ -12352,7 +8155,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_footnote_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_footnote_with_http_info(request, **kwargs)  # noqa: E501
@@ -12384,73 +8187,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `insert_footnote`")  # noqa: E501
-        # verify the required parameter 'footnote_dto' is set
-        if request.footnote_dto is None:
-            raise ValueError("Missing the required parameter `footnote_dto` when calling `insert_footnote`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/footnotes'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.footnote_dto is not None:
-            body_params = request.footnote_dto
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='FootnoteResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def insert_form_field(self, request, **kwargs):  # noqa: E501
         """Adds form field to paragraph, returns added form field's data.  # noqa: E501
@@ -12482,7 +8240,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_form_field_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_form_field_with_http_info(request, **kwargs)  # noqa: E501
@@ -12514,75 +8272,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `insert_form_field`")  # noqa: E501
-        # verify the required parameter 'form_field' is set
-        if request.form_field is None:
-            raise ValueError("Missing the required parameter `form_field` when calling `insert_form_field`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/formfields'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-        if request.insert_before_node is not None:
-                query_params.append((self.__downcase_first_letter('InsertBeforeNode'), request.insert_before_node))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.form_field is not None:
-            body_params = request.form_field
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='FormFieldResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def insert_header_footer(self, request, **kwargs):  # noqa: E501
         """Inserts to document header or footer.  # noqa: E501
@@ -12613,7 +8324,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_header_footer_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_header_footer_with_http_info(request, **kwargs)  # noqa: E501
@@ -12645,76 +8356,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `insert_header_footer`")  # noqa: E501
-        # verify the required parameter 'header_footer_type' is set
-        if request.header_footer_type is None:
-            raise ValueError("Missing the required parameter `header_footer_type` when calling `insert_header_footer`")  # noqa: E501
-        # verify the required parameter 'section_path' is set
-        if request.section_path is None:
-            raise ValueError("Missing the required parameter `section_path` when calling `insert_header_footer`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{sectionPath}/headersfooters'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.section_path is not None:
-            path_params[self.__downcase_first_letter('SectionPath')] = request.section_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('SectionPath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.header_footer_type is not None:
-            body_params = request.header_footer_type
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='HeaderFooterResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def insert_list(self, request, **kwargs):  # noqa: E501
         """Adds list to document, returns added list's data.  # noqa: E501
@@ -12744,7 +8407,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_list_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_list_with_http_info(request, **kwargs)  # noqa: E501
@@ -12776,69 +8439,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `insert_list`")  # noqa: E501
-        # verify the required parameter 'list_insert' is set
-        if request.list_insert is None:
-            raise ValueError("Missing the required parameter `list_insert` when calling `insert_list`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/lists'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.list_insert is not None:
-            body_params = request.list_insert
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='ListResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def insert_or_update_paragraph_tab_stop(self, request, **kwargs):  # noqa: E501
         """Insert or resplace tab stop if a tab stop with the position exists.  # noqa: E501
@@ -12868,7 +8490,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_or_update_paragraph_tab_stop_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_or_update_paragraph_tab_stop_with_http_info(request, **kwargs)  # noqa: E501
@@ -12900,76 +8522,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `insert_or_update_paragraph_tab_stop`")  # noqa: E501
-        # verify the required parameter 'dto' is set
-        if request.dto is None:
-            raise ValueError("Missing the required parameter `dto` when calling `insert_or_update_paragraph_tab_stop`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `insert_or_update_paragraph_tab_stop`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}/tabstops'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.dto is not None:
-            body_params = request.dto
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='TabStopsResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def insert_page_numbers(self, request, **kwargs):  # noqa: E501
         """Inserts document page numbers.  # noqa: E501
@@ -12999,7 +8573,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_page_numbers_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_page_numbers_with_http_info(request, **kwargs)  # noqa: E501
@@ -13031,69 +8605,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `insert_page_numbers`")  # noqa: E501
-        # verify the required parameter 'page_number' is set
-        if request.page_number is None:
-            raise ValueError("Missing the required parameter `page_number` when calling `insert_page_numbers`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/PageNumbers'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.page_number is not None:
-            body_params = request.page_number
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DocumentResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def insert_paragraph(self, request, **kwargs):  # noqa: E501
         """Adds paragraph to document, returns added paragraph's data.  # noqa: E501
@@ -13125,7 +8658,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_paragraph_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_paragraph_with_http_info(request, **kwargs)  # noqa: E501
@@ -13157,75 +8690,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `insert_paragraph`")  # noqa: E501
-        # verify the required parameter 'paragraph' is set
-        if request.paragraph is None:
-            raise ValueError("Missing the required parameter `paragraph` when calling `insert_paragraph`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-        if request.insert_before_node is not None:
-                query_params.append((self.__downcase_first_letter('InsertBeforeNode'), request.insert_before_node))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.paragraph is not None:
-            body_params = request.paragraph
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='ParagraphResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def insert_run(self, request, **kwargs):  # noqa: E501
         """Adds run to document, returns added paragraph's data.  # noqa: E501
@@ -13257,7 +8743,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_run_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_run_with_http_info(request, **kwargs)  # noqa: E501
@@ -13289,78 +8775,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `insert_run`")  # noqa: E501
-        # verify the required parameter 'paragraph_path' is set
-        if request.paragraph_path is None:
-            raise ValueError("Missing the required parameter `paragraph_path` when calling `insert_run`")  # noqa: E501
-        # verify the required parameter 'run' is set
-        if request.run is None:
-            raise ValueError("Missing the required parameter `run` when calling `insert_run`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{paragraphPath}/runs'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.paragraph_path is not None:
-            path_params[self.__downcase_first_letter('ParagraphPath')] = request.paragraph_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('ParagraphPath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-        if request.insert_before_node is not None:
-                query_params.append((self.__downcase_first_letter('InsertBeforeNode'), request.insert_before_node))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.run is not None:
-            body_params = request.run
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='RunResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def insert_style(self, request, **kwargs):  # noqa: E501
         """Adds a style to the document, returns an added style.  # noqa: E501
@@ -13390,7 +8826,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_style_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_style_with_http_info(request, **kwargs)  # noqa: E501
@@ -13422,69 +8858,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `insert_style`")  # noqa: E501
-        # verify the required parameter 'style_insert' is set
-        if request.style_insert is None:
-            raise ValueError("Missing the required parameter `style_insert` when calling `insert_style`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/styles/insert'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.style_insert is not None:
-            body_params = request.style_insert
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='StyleResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def insert_table(self, request, **kwargs):  # noqa: E501
         """Adds table to document, returns added table's data.  # noqa: E501
@@ -13515,7 +8910,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_table_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_table_with_http_info(request, **kwargs)  # noqa: E501
@@ -13547,73 +8942,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `insert_table`")  # noqa: E501
-        # verify the required parameter 'table' is set
-        if request.table is None:
-            raise ValueError("Missing the required parameter `table` when calling `insert_table`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/tables'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.table is not None:
-            body_params = request.table
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='TableResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def insert_table_cell(self, request, **kwargs):  # noqa: E501
         """Adds table cell to table, returns added cell's data.  # noqa: E501
@@ -13644,7 +8994,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_table_cell_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_table_cell_with_http_info(request, **kwargs)  # noqa: E501
@@ -13676,76 +9026,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `insert_table_cell`")  # noqa: E501
-        # verify the required parameter 'cell' is set
-        if request.cell is None:
-            raise ValueError("Missing the required parameter `cell` when calling `insert_table_cell`")  # noqa: E501
-        # verify the required parameter 'table_row_path' is set
-        if request.table_row_path is None:
-            raise ValueError("Missing the required parameter `table_row_path` when calling `insert_table_cell`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{tableRowPath}/cells'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.table_row_path is not None:
-            path_params[self.__downcase_first_letter('TableRowPath')] = request.table_row_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('TableRowPath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.cell is not None:
-            body_params = request.cell
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='TableCellResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def insert_table_row(self, request, **kwargs):  # noqa: E501
         """Adds table row to table, returns added row's data.  # noqa: E501
@@ -13776,7 +9078,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_table_row_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_table_row_with_http_info(request, **kwargs)  # noqa: E501
@@ -13808,76 +9110,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `insert_table_row`")  # noqa: E501
-        # verify the required parameter 'row' is set
-        if request.row is None:
-            raise ValueError("Missing the required parameter `row` when calling `insert_table_row`")  # noqa: E501
-        # verify the required parameter 'table_path' is set
-        if request.table_path is None:
-            raise ValueError("Missing the required parameter `table_path` when calling `insert_table_row`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{tablePath}/rows'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.table_path is not None:
-            path_params[self.__downcase_first_letter('TablePath')] = request.table_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('TablePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.row is not None:
-            body_params = request.row
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='TableRowResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def insert_watermark_image(self, request, **kwargs):  # noqa: E501
         """Inserts document watermark image.  # noqa: E501
@@ -13909,7 +9163,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_watermark_image_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_watermark_image_with_http_info(request, **kwargs)  # noqa: E501
@@ -13941,70 +9195,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `insert_watermark_image`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/watermarks/images'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-        if request.rotation_angle is not None:
-                query_params.append((self.__downcase_first_letter('RotationAngle'), request.rotation_angle))  # noqa: E501
-        if request.image is not None:
-                query_params.append((self.__downcase_first_letter('Image'), request.image))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        if request.image_file is not None:
-            form_params.append([self.__downcase_first_letter('ImageFile'), request.image_file, 'file'])  # noqa: E501
-
-        body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DocumentResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def insert_watermark_text(self, request, **kwargs):  # noqa: E501
         """Inserts document watermark text.  # noqa: E501
@@ -14034,7 +9246,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_watermark_text_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.insert_watermark_text_with_http_info(request, **kwargs)  # noqa: E501
@@ -14066,69 +9278,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `insert_watermark_text`")  # noqa: E501
-        # verify the required parameter 'watermark_text' is set
-        if request.watermark_text is None:
-            raise ValueError("Missing the required parameter `watermark_text` when calling `insert_watermark_text`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/watermarks/texts'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.watermark_text is not None:
-            body_params = request.watermark_text
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DocumentResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def load_web_document(self, request, **kwargs):  # noqa: E501
         """Loads new document from web into the file with any supported format of data.  # noqa: E501
@@ -14151,7 +9322,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.load_web_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.load_web_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -14183,50 +9354,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'data' is set
-        if request.data is None:
-            raise ValueError("Missing the required parameter `data` when calling `load_web_document`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/loadWebDocument'
-        path_params = {}
-
-        query_params = []
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.data is not None:
-            body_params = request.data
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='SaveResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def move_file(self, request, **kwargs):  # noqa: E501
         """Move file.  # noqa: E501
@@ -14252,7 +9401,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.move_file_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.move_file_with_http_info(request, **kwargs)  # noqa: E501
@@ -14284,61 +9433,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'dest_path' is set
-        if request.dest_path is None:
-            raise ValueError("Missing the required parameter `dest_path` when calling `move_file`")  # noqa: E501
-        # verify the required parameter 'src_path' is set
-        if request.src_path is None:
-            raise ValueError("Missing the required parameter `src_path` when calling `move_file`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/storage/file/move/{srcPath}'
-        path_params = {}
-        if request.src_path is not None:
-            path_params[self.__downcase_first_letter('SrcPath')] = request.src_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('SrcPath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.dest_path is not None:
-                query_params.append((self.__downcase_first_letter('DestPath'), request.dest_path))  # noqa: E501
-        if request.src_storage_name is not None:
-                query_params.append((self.__downcase_first_letter('SrcStorageName'), request.src_storage_name))  # noqa: E501
-        if request.dest_storage_name is not None:
-                query_params.append((self.__downcase_first_letter('DestStorageName'), request.dest_storage_name))  # noqa: E501
-        if request.version_id is not None:
-                query_params.append((self.__downcase_first_letter('VersionId'), request.version_id))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def move_folder(self, request, **kwargs):  # noqa: E501
         """Move folder.  # noqa: E501
@@ -14363,7 +9476,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.move_folder_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.move_folder_with_http_info(request, **kwargs)  # noqa: E501
@@ -14395,59 +9508,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'dest_path' is set
-        if request.dest_path is None:
-            raise ValueError("Missing the required parameter `dest_path` when calling `move_folder`")  # noqa: E501
-        # verify the required parameter 'src_path' is set
-        if request.src_path is None:
-            raise ValueError("Missing the required parameter `src_path` when calling `move_folder`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/storage/folder/move/{srcPath}'
-        path_params = {}
-        if request.src_path is not None:
-            path_params[self.__downcase_first_letter('SrcPath')] = request.src_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('SrcPath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.dest_path is not None:
-                query_params.append((self.__downcase_first_letter('DestPath'), request.dest_path))  # noqa: E501
-        if request.src_storage_name is not None:
-                query_params.append((self.__downcase_first_letter('SrcStorageName'), request.src_storage_name))  # noqa: E501
-        if request.dest_storage_name is not None:
-                query_params.append((self.__downcase_first_letter('DestStorageName'), request.dest_storage_name))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def optimize_document(self, request, **kwargs):  # noqa: E501
         """Allows to optimize the document contents as well as default Aspose.Words behavior to a particular versions of MS Word.  # noqa: E501
@@ -14477,7 +9556,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.optimize_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.optimize_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -14509,69 +9588,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `optimize_document`")  # noqa: E501
-        # verify the required parameter 'options' is set
-        if request.options is None:
-            raise ValueError("Missing the required parameter `options` when calling `optimize_document`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/compatibility/optimize'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.options is not None:
-            body_params = request.options
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def protect_document(self, request, **kwargs):  # noqa: E501
         """Protects document.  # noqa: E501
@@ -14599,7 +9637,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.protect_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.protect_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -14631,65 +9669,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `protect_document`")  # noqa: E501
-        # verify the required parameter 'protection_request' is set
-        if request.protection_request is None:
-            raise ValueError("Missing the required parameter `protection_request` when calling `protect_document`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/protection'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.protection_request is not None:
-            body_params = request.protection_request
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='ProtectionDataResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def reject_all_revisions(self, request, **kwargs):  # noqa: E501
         """Rejects all revisions in document.  # noqa: E501
@@ -14716,7 +9717,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.reject_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.reject_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
@@ -14748,60 +9749,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `reject_all_revisions`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/revisions/rejectAll'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='RevisionsModificationResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def remove_range(self, request, **kwargs):  # noqa: E501
         """Removes the range from the document.  # noqa: E501
@@ -14830,7 +9796,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.remove_range_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.remove_range_with_http_info(request, **kwargs)  # noqa: E501
@@ -14862,71 +9828,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `remove_range`")  # noqa: E501
-        # verify the required parameter 'range_start_identifier' is set
-        if request.range_start_identifier is None:
-            raise ValueError("Missing the required parameter `range_start_identifier` when calling `remove_range`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.range_start_identifier is not None:
-            path_params[self.__downcase_first_letter('RangeStartIdentifier')] = request.range_start_identifier  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('RangeStartIdentifier')] = ''  # noqa: E501
-        if request.range_end_identifier is not None:
-            path_params[self.__downcase_first_letter('RangeEndIdentifier')] = request.range_end_identifier  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('RangeEndIdentifier')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DocumentResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def render_drawing_object(self, request, **kwargs):  # noqa: E501
         """Renders drawing object to specified format.  # noqa: E501
@@ -14956,7 +9876,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.render_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.render_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
@@ -14988,76 +9908,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `render_drawing_object`")  # noqa: E501
-        # verify the required parameter 'format' is set
-        if request.format is None:
-            raise ValueError("Missing the required parameter `format` when calling `render_drawing_object`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `render_drawing_object`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/drawingObjects/{index}/render'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.format is not None:
-                query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.fonts_location is not None:
-                query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='file',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def render_math_object(self, request, **kwargs):  # noqa: E501
         """Renders math object to specified format.  # noqa: E501
@@ -15087,7 +9956,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.render_math_object_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.render_math_object_with_http_info(request, **kwargs)  # noqa: E501
@@ -15119,76 +9988,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `render_math_object`")  # noqa: E501
-        # verify the required parameter 'format' is set
-        if request.format is None:
-            raise ValueError("Missing the required parameter `format` when calling `render_math_object`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `render_math_object`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/OfficeMathObjects/{index}/render'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.format is not None:
-                query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.fonts_location is not None:
-                query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='file',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def render_page(self, request, **kwargs):  # noqa: E501
         """Renders page to specified format.  # noqa: E501
@@ -15217,7 +10035,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.render_page_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.render_page_with_http_info(request, **kwargs)  # noqa: E501
@@ -15249,72 +10067,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `render_page`")  # noqa: E501
-        # verify the required parameter 'page_index' is set
-        if request.page_index is None:
-            raise ValueError("Missing the required parameter `page_index` when calling `render_page`")  # noqa: E501
-        # verify the required parameter 'format' is set
-        if request.format is None:
-            raise ValueError("Missing the required parameter `format` when calling `render_page`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/pages/{pageIndex}/render'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.page_index is not None:
-            path_params[self.__downcase_first_letter('PageIndex')] = request.page_index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('PageIndex')] = ''  # noqa: E501
-
-        query_params = []
-        if request.format is not None:
-                query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.fonts_location is not None:
-                query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='file',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def render_paragraph(self, request, **kwargs):  # noqa: E501
         """Renders paragraph to specified format.  # noqa: E501
@@ -15344,7 +10115,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.render_paragraph_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.render_paragraph_with_http_info(request, **kwargs)  # noqa: E501
@@ -15376,76 +10147,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `render_paragraph`")  # noqa: E501
-        # verify the required parameter 'format' is set
-        if request.format is None:
-            raise ValueError("Missing the required parameter `format` when calling `render_paragraph`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `render_paragraph`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}/render'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.format is not None:
-                query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.fonts_location is not None:
-                query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='file',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def render_table(self, request, **kwargs):  # noqa: E501
         """Renders table to specified format.  # noqa: E501
@@ -15475,7 +10195,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.render_table_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.render_table_with_http_info(request, **kwargs)  # noqa: E501
@@ -15507,76 +10227,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `render_table`")  # noqa: E501
-        # verify the required parameter 'format' is set
-        if request.format is None:
-            raise ValueError("Missing the required parameter `format` when calling `render_table`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `render_table`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/tables/{index}/render'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.format is not None:
-                query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.fonts_location is not None:
-                query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='file',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def replace_text(self, request, **kwargs):  # noqa: E501
         """Replaces document text.  # noqa: E501
@@ -15606,7 +10275,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.replace_text_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.replace_text_with_http_info(request, **kwargs)  # noqa: E501
@@ -15638,69 +10307,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `replace_text`")  # noqa: E501
-        # verify the required parameter 'replace_text' is set
-        if request.replace_text is None:
-            raise ValueError("Missing the required parameter `replace_text` when calling `replace_text`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/replaceText'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.replace_text is not None:
-            body_params = request.replace_text
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='ReplaceTextResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def replace_with_text(self, request, **kwargs):  # noqa: E501
         """Replaces the content in the range.  # noqa: E501
@@ -15730,7 +10358,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.replace_with_text_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.replace_with_text_with_http_info(request, **kwargs)  # noqa: E501
@@ -15762,76 +10390,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `replace_with_text`")  # noqa: E501
-        # verify the required parameter 'range_start_identifier' is set
-        if request.range_start_identifier is None:
-            raise ValueError("Missing the required parameter `range_start_identifier` when calling `replace_with_text`")  # noqa: E501
-        # verify the required parameter 'range_text' is set
-        if request.range_text is None:
-            raise ValueError("Missing the required parameter `range_text` when calling `replace_with_text`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.range_start_identifier is not None:
-            path_params[self.__downcase_first_letter('RangeStartIdentifier')] = request.range_start_identifier  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('RangeStartIdentifier')] = ''  # noqa: E501
-        if request.range_end_identifier is not None:
-            path_params[self.__downcase_first_letter('RangeEndIdentifier')] = request.range_end_identifier  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('RangeEndIdentifier')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.range_text is not None:
-            body_params = request.range_text
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DocumentResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def reset_cache(self, request, **kwargs):  # noqa: E501
         """Resets font's cache.  # noqa: E501
@@ -15852,7 +10432,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.reset_cache_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.reset_cache_with_http_info(request, **kwargs)  # noqa: E501
@@ -15884,43 +10464,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-
-        collection_formats = {}
-        path = '/v4.0/words/fonts/cache'
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type=None,  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def save_as(self, request, **kwargs):  # noqa: E501
         """Converts document to destination format with detailed settings and saves result to storage.  # noqa: E501
@@ -15948,7 +10510,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.save_as_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.save_as_with_http_info(request, **kwargs)  # noqa: E501
@@ -15980,65 +10542,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `save_as`")  # noqa: E501
-        # verify the required parameter 'save_options_data' is set
-        if request.save_options_data is None:
-            raise ValueError("Missing the required parameter `save_options_data` when calling `save_as`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/saveAs'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.fonts_location is not None:
-                query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.save_options_data is not None:
-            body_params = request.save_options_data
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='SaveResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def save_as_range(self, request, **kwargs):  # noqa: E501
         """Saves the selected range as a new document.  # noqa: E501
@@ -16067,7 +10592,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.save_as_range_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.save_as_range_with_http_info(request, **kwargs)  # noqa: E501
@@ -16099,74 +10624,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `save_as_range`")  # noqa: E501
-        # verify the required parameter 'range_start_identifier' is set
-        if request.range_start_identifier is None:
-            raise ValueError("Missing the required parameter `range_start_identifier` when calling `save_as_range`")  # noqa: E501
-        # verify the required parameter 'document_parameters' is set
-        if request.document_parameters is None:
-            raise ValueError("Missing the required parameter `document_parameters` when calling `save_as_range`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}/SaveAs'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.range_start_identifier is not None:
-            path_params[self.__downcase_first_letter('RangeStartIdentifier')] = request.range_start_identifier  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('RangeStartIdentifier')] = ''  # noqa: E501
-        if request.range_end_identifier is not None:
-            path_params[self.__downcase_first_letter('RangeEndIdentifier')] = request.range_end_identifier  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('RangeEndIdentifier')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.document_parameters is not None:
-            body_params = request.document_parameters
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DocumentResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def save_as_tiff(self, request, **kwargs):  # noqa: E501
         """Converts document to tiff with detailed settings and saves result to storage.  # noqa: E501
@@ -16211,7 +10690,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.save_as_tiff_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.save_as_tiff_with_http_info(request, **kwargs)  # noqa: E501
@@ -16243,99 +10722,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `save_as_tiff`")  # noqa: E501
-        # verify the required parameter 'save_options' is set
-        if request.save_options is None:
-            raise ValueError("Missing the required parameter `save_options` when calling `save_as_tiff`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/saveAs/tiff'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.use_anti_aliasing is not None:
-                query_params.append((self.__downcase_first_letter('UseAntiAliasing'), request.use_anti_aliasing))  # noqa: E501
-        if request.use_high_quality_rendering is not None:
-                query_params.append((self.__downcase_first_letter('UseHighQualityRendering'), request.use_high_quality_rendering))  # noqa: E501
-        if request.image_brightness is not None:
-                query_params.append((self.__downcase_first_letter('ImageBrightness'), request.image_brightness))  # noqa: E501
-        if request.image_color_mode is not None:
-                query_params.append((self.__downcase_first_letter('ImageColorMode'), request.image_color_mode))  # noqa: E501
-        if request.image_contrast is not None:
-                query_params.append((self.__downcase_first_letter('ImageContrast'), request.image_contrast))  # noqa: E501
-        if request.numeral_format is not None:
-                query_params.append((self.__downcase_first_letter('NumeralFormat'), request.numeral_format))  # noqa: E501
-        if request.page_count is not None:
-                query_params.append((self.__downcase_first_letter('PageCount'), request.page_count))  # noqa: E501
-        if request.page_index is not None:
-                query_params.append((self.__downcase_first_letter('PageIndex'), request.page_index))  # noqa: E501
-        if request.paper_color is not None:
-                query_params.append((self.__downcase_first_letter('PaperColor'), request.paper_color))  # noqa: E501
-        if request.pixel_format is not None:
-                query_params.append((self.__downcase_first_letter('PixelFormat'), request.pixel_format))  # noqa: E501
-        if request.resolution is not None:
-                query_params.append((self.__downcase_first_letter('Resolution'), request.resolution))  # noqa: E501
-        if request.scale is not None:
-                query_params.append((self.__downcase_first_letter('Scale'), request.scale))  # noqa: E501
-        if request.tiff_compression is not None:
-                query_params.append((self.__downcase_first_letter('TiffCompression'), request.tiff_compression))  # noqa: E501
-        if request.dml_rendering_mode is not None:
-                query_params.append((self.__downcase_first_letter('DmlRenderingMode'), request.dml_rendering_mode))  # noqa: E501
-        if request.dml_effects_rendering_mode is not None:
-                query_params.append((self.__downcase_first_letter('DmlEffectsRenderingMode'), request.dml_effects_rendering_mode))  # noqa: E501
-        if request.tiff_binarization_method is not None:
-                query_params.append((self.__downcase_first_letter('TiffBinarizationMethod'), request.tiff_binarization_method))  # noqa: E501
-        if request.zip_output is not None:
-                query_params.append((self.__downcase_first_letter('ZipOutput'), request.zip_output))  # noqa: E501
-        if request.fonts_location is not None:
-                query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.save_options is not None:
-            body_params = request.save_options
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='SaveResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def search(self, request, **kwargs):  # noqa: E501
         """Searches text in document.  # noqa: E501
@@ -16362,7 +10770,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.search_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.search_with_http_info(request, **kwargs)  # noqa: E501
@@ -16394,63 +10802,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `search`")  # noqa: E501
-        # verify the required parameter 'pattern' is set
-        if request.pattern is None:
-            raise ValueError("Missing the required parameter `pattern` when calling `search`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/search'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.pattern is not None:
-                query_params.append((self.__downcase_first_letter('Pattern'), request.pattern))  # noqa: E501
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='SearchResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def split_document(self, request, **kwargs):  # noqa: E501
         """Splits document.  # noqa: E501
@@ -16482,7 +10852,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.split_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.split_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -16514,73 +10884,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `split_document`")  # noqa: E501
-        # verify the required parameter 'format' is set
-        if request.format is None:
-            raise ValueError("Missing the required parameter `format` when calling `split_document`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/split'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.format is not None:
-                query_params.append((self.__downcase_first_letter('Format'), request.format))  # noqa: E501
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request._from is not None:
-                query_params.append((self.__downcase_first_letter('From'), request._from))  # noqa: E501
-        if request.to is not None:
-                query_params.append((self.__downcase_first_letter('To'), request.to))  # noqa: E501
-        if request.zip_output is not None:
-                query_params.append((self.__downcase_first_letter('ZipOutput'), request.zip_output))  # noqa: E501
-        if request.fonts_location is not None:
-                query_params.append((self.__downcase_first_letter('FontsLocation'), request.fonts_location))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='SplitDocumentResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def unprotect_document(self, request, **kwargs):  # noqa: E501
         """Unprotects document.  # noqa: E501
@@ -16608,7 +10930,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.unprotect_document_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.unprotect_document_with_http_info(request, **kwargs)  # noqa: E501
@@ -16640,65 +10962,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `unprotect_document`")  # noqa: E501
-        # verify the required parameter 'protection_request' is set
-        if request.protection_request is None:
-            raise ValueError("Missing the required parameter `protection_request` when calling `unprotect_document`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/protection'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.protection_request is not None:
-            body_params = request.protection_request
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='ProtectionDataResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def update_bookmark(self, request, **kwargs):  # noqa: E501
         """Updates document bookmark.  # noqa: E501
@@ -16729,7 +11014,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_bookmark_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_bookmark_with_http_info(request, **kwargs)  # noqa: E501
@@ -16761,76 +11046,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `update_bookmark`")  # noqa: E501
-        # verify the required parameter 'bookmark_data' is set
-        if request.bookmark_data is None:
-            raise ValueError("Missing the required parameter `bookmark_data` when calling `update_bookmark`")  # noqa: E501
-        # verify the required parameter 'bookmark_name' is set
-        if request.bookmark_name is None:
-            raise ValueError("Missing the required parameter `bookmark_name` when calling `update_bookmark`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/bookmarks/{bookmarkName}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.bookmark_name is not None:
-            path_params[self.__downcase_first_letter('BookmarkName')] = request.bookmark_name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('BookmarkName')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.bookmark_data is not None:
-            body_params = request.bookmark_data
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='BookmarkResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def update_border(self, request, **kwargs):  # noqa: E501
         """'nodePath' should refer to paragraph, cell or row.  # noqa: E501
@@ -16862,7 +11099,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_border_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_border_with_http_info(request, **kwargs)  # noqa: E501
@@ -16894,80 +11131,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `update_border`")  # noqa: E501
-        # verify the required parameter 'border_properties' is set
-        if request.border_properties is None:
-            raise ValueError("Missing the required parameter `border_properties` when calling `update_border`")  # noqa: E501
-        # verify the required parameter 'border_type' is set
-        if request.border_type is None:
-            raise ValueError("Missing the required parameter `border_type` when calling `update_border`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/borders/{borderType}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.border_type is not None:
-            path_params[self.__downcase_first_letter('BorderType')] = request.border_type  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('BorderType')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.border_properties is not None:
-            body_params = request.border_properties
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='BorderResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def update_comment(self, request, **kwargs):  # noqa: E501
         """Updates the comment, returns updated comment data.  # noqa: E501
@@ -16998,7 +11183,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_comment_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_comment_with_http_info(request, **kwargs)  # noqa: E501
@@ -17030,76 +11215,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `update_comment`")  # noqa: E501
-        # verify the required parameter 'comment_index' is set
-        if request.comment_index is None:
-            raise ValueError("Missing the required parameter `comment_index` when calling `update_comment`")  # noqa: E501
-        # verify the required parameter 'comment' is set
-        if request.comment is None:
-            raise ValueError("Missing the required parameter `comment` when calling `update_comment`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/comments/{commentIndex}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.comment_index is not None:
-            path_params[self.__downcase_first_letter('CommentIndex')] = request.comment_index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('CommentIndex')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.comment is not None:
-            body_params = request.comment
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='CommentResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def update_drawing_object(self, request, **kwargs):  # noqa: E501
         """Updates drawing object, returns updated  drawing object's data.  # noqa: E501
@@ -17132,7 +11269,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
@@ -17164,85 +11301,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `update_drawing_object`")  # noqa: E501
-        # verify the required parameter 'drawing_object' is set
-        if request.drawing_object is None:
-            raise ValueError("Missing the required parameter `drawing_object` when calling `update_drawing_object`")  # noqa: E501
-        # verify the required parameter 'image_file' is set
-        if request.image_file is None:
-            raise ValueError("Missing the required parameter `image_file` when calling `update_drawing_object`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `update_drawing_object`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/drawingObjects/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        if request.drawing_object is not None:
-            form_params.append([self.__downcase_first_letter('DrawingObject'), request.drawing_object.to_json(), 'string'])  # noqa: E501
-        if request.image_file is not None:
-            form_params.append([self.__downcase_first_letter('ImageFile'), request.image_file, 'file'])  # noqa: E501
-
-        body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DrawingObjectResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def update_field(self, request, **kwargs):  # noqa: E501
         """Updates field's properties, returns updated field's data.  # noqa: E501
@@ -17274,7 +11354,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_field_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_field_with_http_info(request, **kwargs)  # noqa: E501
@@ -17306,80 +11386,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `update_field`")  # noqa: E501
-        # verify the required parameter 'field' is set
-        if request.field is None:
-            raise ValueError("Missing the required parameter `field` when calling `update_field`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `update_field`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/fields/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.field is not None:
-            body_params = request.field
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='FieldResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def update_fields(self, request, **kwargs):  # noqa: E501
         """Updates (reevaluate) fields in document.  # noqa: E501
@@ -17406,7 +11434,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_fields_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_fields_with_http_info(request, **kwargs)  # noqa: E501
@@ -17438,60 +11466,25 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `update_fields`")  # noqa: E501
-
-        collection_formats = {}
-        path = '/v4.0/words/{name}/updateFields'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='DocumentResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def update_footnote(self, request, **kwargs):  # noqa: E501
         """Updates footnote's properties, returns updated run's data.  # noqa: E501
@@ -17523,7 +11516,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_footnote_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_footnote_with_http_info(request, **kwargs)  # noqa: E501
@@ -17555,80 +11548,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `update_footnote`")  # noqa: E501
-        # verify the required parameter 'footnote_dto' is set
-        if request.footnote_dto is None:
-            raise ValueError("Missing the required parameter `footnote_dto` when calling `update_footnote`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `update_footnote`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/footnotes/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.footnote_dto is not None:
-            body_params = request.footnote_dto
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='FootnoteResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def update_form_field(self, request, **kwargs):  # noqa: E501
         """Updates properties of form field, returns updated form field.  # noqa: E501
@@ -17660,7 +11601,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_form_field_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_form_field_with_http_info(request, **kwargs)  # noqa: E501
@@ -17692,80 +11633,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `update_form_field`")  # noqa: E501
-        # verify the required parameter 'form_field' is set
-        if request.form_field is None:
-            raise ValueError("Missing the required parameter `form_field` when calling `update_form_field`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `update_form_field`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/formfields/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.form_field is not None:
-            body_params = request.form_field
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='FormFieldResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def update_list(self, request, **kwargs):  # noqa: E501
         """Updates list properties, returns updated list.  # noqa: E501
@@ -17796,7 +11685,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_list_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_list_with_http_info(request, **kwargs)  # noqa: E501
@@ -17828,76 +11717,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `update_list`")  # noqa: E501
-        # verify the required parameter 'list_update' is set
-        if request.list_update is None:
-            raise ValueError("Missing the required parameter `list_update` when calling `update_list`")  # noqa: E501
-        # verify the required parameter 'list_id' is set
-        if request.list_id is None:
-            raise ValueError("Missing the required parameter `list_id` when calling `update_list`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/lists/{listId}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.list_id is not None:
-            path_params[self.__downcase_first_letter('ListId')] = request.list_id  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('ListId')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.list_update is not None:
-            body_params = request.list_update
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='ListResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def update_list_level(self, request, **kwargs):  # noqa: E501
         """Updates list level in document list, returns updated list.  # noqa: E501
@@ -17929,7 +11770,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_list_level_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_list_level_with_http_info(request, **kwargs)  # noqa: E501
@@ -17961,83 +11802,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `update_list_level`")  # noqa: E501
-        # verify the required parameter 'list_update' is set
-        if request.list_update is None:
-            raise ValueError("Missing the required parameter `list_update` when calling `update_list_level`")  # noqa: E501
-        # verify the required parameter 'list_id' is set
-        if request.list_id is None:
-            raise ValueError("Missing the required parameter `list_id` when calling `update_list_level`")  # noqa: E501
-        # verify the required parameter 'list_level' is set
-        if request.list_level is None:
-            raise ValueError("Missing the required parameter `list_level` when calling `update_list_level`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/lists/{listId}/listLevels/{listLevel}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.list_id is not None:
-            path_params[self.__downcase_first_letter('ListId')] = request.list_id  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('ListId')] = ''  # noqa: E501
-        if request.list_level is not None:
-            path_params[self.__downcase_first_letter('ListLevel')] = request.list_level  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('ListLevel')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.list_update is not None:
-            body_params = request.list_update
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='ListResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def update_paragraph_format(self, request, **kwargs):  # noqa: E501
         """Updates paragraph format properties, returns updated format properties.  # noqa: E501
@@ -18069,7 +11855,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
@@ -18101,80 +11887,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `update_paragraph_format`")  # noqa: E501
-        # verify the required parameter 'dto' is set
-        if request.dto is None:
-            raise ValueError("Missing the required parameter `dto` when calling `update_paragraph_format`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `update_paragraph_format`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}/format'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.dto is not None:
-            body_params = request.dto
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='ParagraphFormatResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def update_paragraph_list_format(self, request, **kwargs):  # noqa: E501
         """Updates paragraph list format properties, returns updated list format properties.  # noqa: E501
@@ -18206,7 +11940,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
@@ -18238,80 +11972,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `update_paragraph_list_format`")  # noqa: E501
-        # verify the required parameter 'dto' is set
-        if request.dto is None:
-            raise ValueError("Missing the required parameter `dto` when calling `update_paragraph_list_format`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `update_paragraph_list_format`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}/listFormat'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.dto is not None:
-            body_params = request.dto
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='ParagraphListFormatResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def update_run(self, request, **kwargs):  # noqa: E501
         """Updates run's properties, returns updated run's data.  # noqa: E501
@@ -18343,7 +12025,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_run_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_run_with_http_info(request, **kwargs)  # noqa: E501
@@ -18375,83 +12057,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `update_run`")  # noqa: E501
-        # verify the required parameter 'run' is set
-        if request.run is None:
-            raise ValueError("Missing the required parameter `run` when calling `update_run`")  # noqa: E501
-        # verify the required parameter 'paragraph_path' is set
-        if request.paragraph_path is None:
-            raise ValueError("Missing the required parameter `paragraph_path` when calling `update_run`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `update_run`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{paragraphPath}/runs/{index}'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.paragraph_path is not None:
-            path_params[self.__downcase_first_letter('ParagraphPath')] = request.paragraph_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('ParagraphPath')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.run is not None:
-            body_params = request.run
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='RunResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def update_run_font(self, request, **kwargs):  # noqa: E501
         """Updates font properties, returns updated font data.  # noqa: E501
@@ -18483,7 +12110,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_run_font_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_run_font_with_http_info(request, **kwargs)  # noqa: E501
@@ -18515,83 +12142,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `update_run_font`")  # noqa: E501
-        # verify the required parameter 'font_dto' is set
-        if request.font_dto is None:
-            raise ValueError("Missing the required parameter `font_dto` when calling `update_run_font`")  # noqa: E501
-        # verify the required parameter 'paragraph_path' is set
-        if request.paragraph_path is None:
-            raise ValueError("Missing the required parameter `paragraph_path` when calling `update_run_font`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `update_run_font`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{paragraphPath}/runs/{index}/font'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.paragraph_path is not None:
-            path_params[self.__downcase_first_letter('ParagraphPath')] = request.paragraph_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('ParagraphPath')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.font_dto is not None:
-            body_params = request.font_dto
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='FontResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def update_section_page_setup(self, request, **kwargs):  # noqa: E501
         """Updates page setup of section.  # noqa: E501
@@ -18622,7 +12194,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
@@ -18654,76 +12226,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `update_section_page_setup`")  # noqa: E501
-        # verify the required parameter 'section_index' is set
-        if request.section_index is None:
-            raise ValueError("Missing the required parameter `section_index` when calling `update_section_page_setup`")  # noqa: E501
-        # verify the required parameter 'page_setup' is set
-        if request.page_setup is None:
-            raise ValueError("Missing the required parameter `page_setup` when calling `update_section_page_setup`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/sections/{sectionIndex}/pageSetup'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.section_index is not None:
-            path_params[self.__downcase_first_letter('SectionIndex')] = request.section_index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('SectionIndex')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.page_setup is not None:
-            body_params = request.page_setup
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='SectionPageSetupResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def update_style(self, request, **kwargs):  # noqa: E501
         """Updates style properties, returns an updated style.  # noqa: E501
@@ -18754,7 +12278,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_style_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_style_with_http_info(request, **kwargs)  # noqa: E501
@@ -18786,76 +12310,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `update_style`")  # noqa: E501
-        # verify the required parameter 'style_update' is set
-        if request.style_update is None:
-            raise ValueError("Missing the required parameter `style_update` when calling `update_style`")  # noqa: E501
-        # verify the required parameter 'style_name' is set
-        if request.style_name is None:
-            raise ValueError("Missing the required parameter `style_name` when calling `update_style`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/styles/{styleName}/update'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.style_name is not None:
-            path_params[self.__downcase_first_letter('StyleName')] = request.style_name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('StyleName')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.style_update is not None:
-            body_params = request.style_update
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='StyleResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def update_table_cell_format(self, request, **kwargs):  # noqa: E501
         """Updates a table cell format.  # noqa: E501
@@ -18887,7 +12363,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
@@ -18919,83 +12395,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `update_table_cell_format`")  # noqa: E501
-        # verify the required parameter 'format' is set
-        if request.format is None:
-            raise ValueError("Missing the required parameter `format` when calling `update_table_cell_format`")  # noqa: E501
-        # verify the required parameter 'table_row_path' is set
-        if request.table_row_path is None:
-            raise ValueError("Missing the required parameter `table_row_path` when calling `update_table_cell_format`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `update_table_cell_format`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{tableRowPath}/cells/{index}/cellformat'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.table_row_path is not None:
-            path_params[self.__downcase_first_letter('TableRowPath')] = request.table_row_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('TableRowPath')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.format is not None:
-            body_params = request.format
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='TableCellFormatResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def update_table_properties(self, request, **kwargs):  # noqa: E501
         """Updates a table properties.  # noqa: E501
@@ -19027,7 +12448,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_table_properties_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_table_properties_with_http_info(request, **kwargs)  # noqa: E501
@@ -19059,80 +12480,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `update_table_properties`")  # noqa: E501
-        # verify the required parameter 'properties' is set
-        if request.properties is None:
-            raise ValueError("Missing the required parameter `properties` when calling `update_table_properties`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `update_table_properties`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{nodePath}/tables/{index}/properties'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-        if request.node_path is not None:
-            path_params[self.__downcase_first_letter('NodePath')] = request.node_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('NodePath')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.properties is not None:
-            body_params = request.properties
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='TablePropertiesResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def update_table_row_format(self, request, **kwargs):  # noqa: E501
         """Updates a table row format.  # noqa: E501
@@ -19164,7 +12533,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.update_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
@@ -19196,83 +12565,28 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if request.name is None:
-            raise ValueError("Missing the required parameter `name` when calling `update_table_row_format`")  # noqa: E501
-        # verify the required parameter 'format' is set
-        if request.format is None:
-            raise ValueError("Missing the required parameter `format` when calling `update_table_row_format`")  # noqa: E501
-        # verify the required parameter 'table_path' is set
-        if request.table_path is None:
-            raise ValueError("Missing the required parameter `table_path` when calling `update_table_row_format`")  # noqa: E501
-        # verify the required parameter 'index' is set
-        if request.index is None:
-            raise ValueError("Missing the required parameter `index` when calling `update_table_row_format`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/{name}/{tablePath}/rows/{index}/rowformat'
-        path_params = {}
-        if request.name is not None:
-            path_params[self.__downcase_first_letter('Name')] = request.name  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Name')] = ''  # noqa: E501
-        if request.table_path is not None:
-            path_params[self.__downcase_first_letter('TablePath')] = request.table_path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('TablePath')] = ''  # noqa: E501
-        if request.index is not None:
-            path_params[self.__downcase_first_letter('Index')] = request.index  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Index')] = ''  # noqa: E501
-
-        query_params = []
-        if request.folder is not None:
-                query_params.append((self.__downcase_first_letter('Folder'), request.folder))  # noqa: E501
-        if request.storage is not None:
-                query_params.append((self.__downcase_first_letter('Storage'), request.storage))  # noqa: E501
-        if request.load_encoding is not None:
-                query_params.append((self.__downcase_first_letter('LoadEncoding'), request.load_encoding))  # noqa: E501
-        if request.password is not None:
-                query_params.append((self.__downcase_first_letter('Password'), request.password))  # noqa: E501
-        if request.dest_file_name is not None:
-                query_params.append((self.__downcase_first_letter('DestFileName'), request.dest_file_name))  # noqa: E501
-        if request.revision_author is not None:
-                query_params.append((self.__downcase_first_letter('RevisionAuthor'), request.revision_author))  # noqa: E501
-        if request.revision_date_time is not None:
-                query_params.append((self.__downcase_first_letter('RevisionDateTime'), request.revision_date_time))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-
-        body_params = None
-        if request.format is not None:
-            body_params = request.format
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/xml', 'application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='TableRowFormatResponse',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
     def upload_file(self, request, **kwargs):  # noqa: E501
         """Upload file.  # noqa: E501
@@ -19296,7 +12610,7 @@ class WordsApi(object):
             return data
         except ApiException as e:
             if e.status == 401:
-                self.api_client.__request_token()
+                self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.upload_file_with_http_info(request, **kwargs)  # noqa: E501
             (data) = self.upload_file_with_http_info(request, **kwargs)  # noqa: E501
@@ -19328,61 +12642,47 @@ class WordsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'file_content' is set
-        if request.file_content is None:
-            raise ValueError("Missing the required parameter `file_content` when calling `upload_file`")  # noqa: E501
-        # verify the required parameter 'path' is set
-        if request.path is None:
-            raise ValueError("Missing the required parameter `path` when calling `upload_file`")  # noqa: E501
+        http_params = request.create_http_request(self.api_client)
 
-        collection_formats = {}
-        path = '/v4.0/words/storage/file/{path}'
-        path_params = {}
-        if request.path is not None:
-            path_params[self.__downcase_first_letter('Path')] = request.path  # noqa: E501
-        else:
-            path_params[self.__downcase_first_letter('Path')] = ''  # noqa: E501
-
-        query_params = []
-        if request.storage_name is not None:
-                query_params.append((self.__downcase_first_letter('StorageName'), request.storage_name))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        if request.file_content is not None:
-            form_params.append([self.__downcase_first_letter('FileContent'), request.file_content, 'file'])  # noqa: E501
-
-        body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
             ['application/xml', 'application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
         return self.api_client.call_api(
-            path, 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            response_type='FilesUploadResult',  # noqa: E501
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=http_params['collection_formats'])
 
-    # Helper method to convert first letter to downcase
-    def __downcase_first_letter(self, s):
-        if len(s) == 0:
-            return s
-        else:
-            return s[0].lower() + s[1:]
+    def batch(self, *requests):  # noqa: E501
+        if requests is None:
+            return None
+
+        if len(requests) == 0:
+            return None
+
+        post_params=[]
+        for request in requests:
+            post_params.append(self.api_client.request_to_batch_part(request))
+
+        header_params={'Content-Type': 'multipart/form-data'}
+        response = self.api_client.call_api(
+            resource_path="/v4.0/words/batch",
+            method='PUT',
+            post_params=post_params,
+            header_params=header_params,
+            response_type='multipart',  # noqa: E501
+            auth_settings=['JWT'],
+            _return_http_data_only=True)
+        return self.api_client.deserialize_multipart(response, requests)

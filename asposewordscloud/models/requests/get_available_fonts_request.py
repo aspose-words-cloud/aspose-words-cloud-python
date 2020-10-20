@@ -24,6 +24,8 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
+from six.moves.urllib.parse import quote
+
 class GetAvailableFontsRequest(object):
     """
     Request model for get_available_fonts operation.
@@ -33,3 +35,46 @@ class GetAvailableFontsRequest(object):
 
     def __init__(self, fonts_location=None):
         self.fonts_location = fonts_location
+
+    def create_http_request(self, api_client):
+
+        path = '/v4.0/words/fonts/available'
+        path_params = {}
+
+        # path parameters
+        collection_formats = {}
+        if path_params:
+            path_params = api_client.sanitize_for_serialization(path_params)
+            path_params = api_client.parameters_to_tuples(path_params, collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                path = path.replace(
+                    '{%s}' % k,
+                    quote(str(v), safe=api_client.configuration.safe_chars_for_path_param)
+                )
+
+        # remove optional path parameters
+        path = path.replace('//', '/')
+
+        query_params = []
+        if self.fonts_location is not None:
+                query_params.append(('fontsLocation', self.fonts_location))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+
+        body_params = None
+        return {
+            "method": "GET",
+            "path": path,
+            "query_params": query_params,
+            "header_params": header_params,
+            "form_params": form_params,
+            "body": body_params,
+            "collection_formats": collection_formats,
+            "response_type": 'AvailableFontsResponse'  # noqa: E501
+        }
+
+    def get_response_type(self):
+        return 'AvailableFontsResponse'  # noqa: E501

@@ -24,6 +24,8 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
+from six.moves.urllib.parse import quote
+
 class DeleteDrawingObjectRequest(object):
     """
     Request model for delete_drawing_object operation.
@@ -51,3 +53,76 @@ class DeleteDrawingObjectRequest(object):
         self.dest_file_name = dest_file_name
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
+
+    def create_http_request(self, api_client):
+        # verify the required parameter 'name' is set
+        if self.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `delete_drawing_object`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if self.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `delete_drawing_object`")  # noqa: E501
+
+        path = '/v4.0/words/{name}/{nodePath}/drawingObjects/{index}'
+        path_params = {}
+        if self.name is not None:
+            path_params['name'] = self.name  # noqa: E501
+        else:
+            path_params['name'] = ''  # noqa: E501
+        if self.index is not None:
+            path_params['index'] = self.index  # noqa: E501
+        else:
+            path_params['index'] = ''  # noqa: E501
+        if self.node_path is not None:
+            path_params['nodePath'] = self.node_path  # noqa: E501
+        else:
+            path_params['nodePath'] = ''  # noqa: E501
+
+        # path parameters
+        collection_formats = {}
+        if path_params:
+            path_params = api_client.sanitize_for_serialization(path_params)
+            path_params = api_client.parameters_to_tuples(path_params, collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                path = path.replace(
+                    '{%s}' % k,
+                    quote(str(v), safe=api_client.configuration.safe_chars_for_path_param)
+                )
+
+        # remove optional path parameters
+        path = path.replace('//', '/')
+
+        query_params = []
+        if self.folder is not None:
+                query_params.append(('folder', self.folder))  # noqa: E501
+        if self.storage is not None:
+                query_params.append(('storage', self.storage))  # noqa: E501
+        if self.load_encoding is not None:
+                query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
+        if self.password is not None:
+                query_params.append(('password', self.password))  # noqa: E501
+        if self.dest_file_name is not None:
+                query_params.append(('destFileName', self.dest_file_name))  # noqa: E501
+        if self.revision_author is not None:
+                query_params.append(('revisionAuthor', self.revision_author))  # noqa: E501
+        if self.revision_date_time is not None:
+                query_params.append(('revisionDateTime', self.revision_date_time))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+
+        body_params = None
+        return {
+            "method": "DELETE",
+            "path": path,
+            "query_params": query_params,
+            "header_params": header_params,
+            "form_params": form_params,
+            "body": body_params,
+            "collection_formats": collection_formats,
+            "response_type": None  # noqa: E501
+        }
+
+    def get_response_type(self):
+        return None  # noqa: E501

@@ -24,6 +24,8 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
+from six.moves.urllib.parse import quote
+
 class LoadWebDocumentRequest(object):
     """
     Request model for load_web_document operation.
@@ -35,3 +37,55 @@ class LoadWebDocumentRequest(object):
     def __init__(self, data, storage=None):
         self.data = data
         self.storage = storage
+
+    def create_http_request(self, api_client):
+        # verify the required parameter 'data' is set
+        if self.data is None:
+            raise ValueError("Missing the required parameter `data` when calling `load_web_document`")  # noqa: E501
+
+        path = '/v4.0/words/loadWebDocument'
+        path_params = {}
+
+        # path parameters
+        collection_formats = {}
+        if path_params:
+            path_params = api_client.sanitize_for_serialization(path_params)
+            path_params = api_client.parameters_to_tuples(path_params, collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                path = path.replace(
+                    '{%s}' % k,
+                    quote(str(v), safe=api_client.configuration.safe_chars_for_path_param)
+                )
+
+        # remove optional path parameters
+        path = path.replace('//', '/')
+
+        query_params = []
+        if self.storage is not None:
+                query_params.append(('storage', self.storage))  # noqa: E501
+
+        header_params = {}
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        form_params = []
+
+        body_params = None
+        if self.data is not None:
+            body_params = self.data
+
+        return {
+            "method": "PUT",
+            "path": path,
+            "query_params": query_params,
+            "header_params": header_params,
+            "form_params": form_params,
+            "body": body_params,
+            "collection_formats": collection_formats,
+            "response_type": 'SaveResponse'  # noqa: E501
+        }
+
+    def get_response_type(self):
+        return 'SaveResponse'  # noqa: E501
