@@ -57,11 +57,11 @@ class TestBatch(BaseTestContext):
             template=open(os.path.join(self.local_test_folder, reportingFolder + '/' + localDocumentFile), 'rb'),
             data=localDataFile, report_engine_settings=requestReportEngineSettings)
 
-        result = self.words_api.batch(request0, request1, request2, request3, request4, request5)
-        self.assertEqual(len(result), 6)
-        self.assertIsInstance(result[0], asposewordscloud.FilesUploadResult)
-        self.assertIsInstance(result[1], asposewordscloud.ParagraphLinkCollectionResponse)
+        self.words_api.upload_file(request0)
+        result = self.words_api.batch(request1, request2, request3, request4, request5)
+        self.assertEqual(len(result), 5)
+        self.assertIsInstance(result[0], asposewordscloud.ParagraphLinkCollectionResponse)
+        self.assertIsInstance(result[1], asposewordscloud.ParagraphResponse)
         self.assertIsInstance(result[2], asposewordscloud.ParagraphResponse)
-        self.assertIsInstance(result[3], asposewordscloud.ParagraphResponse)
-        self.assertIsNone(result[4])
-        self.assertIsInstance(result[5], str)
+        self.assertIsNone(result[3])
+        self.assertIsInstance(result[4], str)
