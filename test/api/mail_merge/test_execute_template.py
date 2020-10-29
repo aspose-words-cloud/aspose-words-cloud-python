@@ -48,7 +48,8 @@ class TestExecuteTemplate(BaseTestContext):
 
         result = self.words_api.execute_mail_merge(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.document, 'Validate ExecuteTemplate response')
+        self.assertEqual('TestExecuteTemplate.docx', result.document.file_name)
 
     #
     # Test for execute template online.

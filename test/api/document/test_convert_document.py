@@ -47,7 +47,9 @@ class TestConvertDocument(BaseTestContext):
 
         result = self.words_api.save_as(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.save_result, 'Validate SaveAs response')
+        self.assertIsNotNone(result.save_result.dest_document, 'Validate SaveAs response')
+        self.assertEqual('Temp/SdkTests/NET/TestData/DocumentActions/ConvertDocument/TestOut/NET/TestSaveAs.pdf', result.save_result.dest_document.href)
 
     #
     # Test for converting document to one of the available formats.
@@ -65,7 +67,9 @@ class TestConvertDocument(BaseTestContext):
 
         result = self.words_api.save_as(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.save_result, 'Validate SaveAsDocx response')
+        self.assertIsNotNone(result.save_result.dest_document, 'Validate SaveAsDocx response')
+        self.assertEqual('Temp/SdkTests/NET/TestData/DocumentActions/ConvertDocument/TestOut/NET/TestSaveAsFromPdfToDoc.docx', result.save_result.dest_document.href)
 
     #
     # Test for converting document to one of the available formats.
@@ -82,7 +86,9 @@ class TestConvertDocument(BaseTestContext):
 
         result = self.words_api.save_as_tiff(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.save_result, 'Validate SaveAsTiff response')
+        self.assertIsNotNone(result.save_result.dest_document, 'Validate SaveAsTiff response')
+        self.assertEqual('Temp/SdkTests/NET/TestData/DocumentActions/ConvertDocument/TestOut/NET/abc.tiff', result.save_result.dest_document.href)
 
     #
     # A test for ConvertDocument.

@@ -46,4 +46,7 @@ class TestSplitDocumentToFormat(BaseTestContext):
 
         result = self.words_api.split_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.split_result, 'Validate SplitDocument response')
+        self.assertIsNotNone(result.split_result.pages, 'Validate SplitDocument response')
+        self.assertEqual(2, len(result.split_result.pages))
+        self.assertEqual('TestOut/NET/TestSplitDocument_page1.text', result.split_result.pages[0].href)

@@ -46,7 +46,11 @@ class TestTableBorder(BaseTestContext):
 
         result = self.words_api.get_borders(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.borders, 'Validate GetBorders response')
+        self.assertIsNotNone(result.borders.list, 'Validate GetBorders response')
+        self.assertEqual(6, len(result.borders.list))
+        self.assertIsNotNone(result.borders.list[0].color, 'Validate GetBorders response')
+        self.assertEqual('#000000', result.borders.list[0].color.web)
 
     #
     # Test for getting border.
@@ -62,7 +66,9 @@ class TestTableBorder(BaseTestContext):
 
         result = self.words_api.get_border(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.border, 'Validate GetBorder response')
+        self.assertIsNotNone(result.border.color, 'Validate GetBorder response')
+        self.assertEqual('#000000', result.border.color.web)
 
     #
     # Test for deleting borders.
@@ -78,7 +84,11 @@ class TestTableBorder(BaseTestContext):
 
         result = self.words_api.delete_borders(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.borders, 'Validate DeleteBorders response')
+        self.assertIsNotNone(result.borders.list, 'Validate DeleteBorders response')
+        self.assertEqual(6, len(result.borders.list))
+        self.assertIsNotNone(result.borders.list[0].color, 'Validate DeleteBorders response')
+        self.assertEqual('', result.borders.list[0].color.web)
 
     #
     # Test for deleting border.
@@ -94,7 +104,9 @@ class TestTableBorder(BaseTestContext):
 
         result = self.words_api.delete_border(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.border, 'Validate DeleteBorder response')
+        self.assertIsNotNone(result.border.color, 'Validate DeleteBorder response')
+        self.assertEqual('', result.border.color.web)
 
     #
     # Test for updating border.
@@ -112,4 +124,9 @@ class TestTableBorder(BaseTestContext):
 
         result = self.words_api.update_border(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.border, 'Validate UpdateBorder response')
+        self.assertIsNotNone(result.border.color, 'Validate UpdateBorder response')
+        self.assertEqual('#000002', result.border.color.web)
+        self.assertEqual(6, result.border.distance_from_text)
+        self.assertEqual(2, result.border.line_width)
+        self.assertIsTrue(result.border.shadow, 'Validate UpdateBorder response')

@@ -46,7 +46,9 @@ class TestRevisions(BaseTestContext):
 
         result = self.words_api.accept_all_revisions(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.result, 'Validate AcceptAllRevisions response')
+        self.assertIsNotNone(result.result.dest, 'Validate AcceptAllRevisions response')
+        self.assertEqual('TestOut/NET/TestAcceptAllRevisions.docx', result.result.dest.href)
 
     #
     # Test for rejecting revisions in document.
@@ -62,4 +64,6 @@ class TestRevisions(BaseTestContext):
 
         result = self.words_api.reject_all_revisions(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.result, 'Validate RejectAllRevisions response')
+        self.assertIsNotNone(result.result.dest, 'Validate RejectAllRevisions response')
+        self.assertEqual('TestOut/NET/TestRejectAllRevisions.docx', result.result.dest.href)

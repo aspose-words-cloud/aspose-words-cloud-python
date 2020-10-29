@@ -46,7 +46,8 @@ class TestPageSetup(BaseTestContext):
 
         result = self.words_api.get_section_page_setup(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.page_setup, 'Validate GetSectionPageSetup response')
+        self.assertEqual(1, result.page_setup.line_starting_number)
 
     #
     # Test for updating page settings.
@@ -63,6 +64,9 @@ class TestPageSetup(BaseTestContext):
 
         result = self.words_api.update_section_page_setup(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.page_setup, 'Validate UpdateSectionPageSetup response')
+        self.assertIsTrue(result.page_setup.rtl_gutter, 'Validate UpdateSectionPageSetup response')
+
 
 
     #

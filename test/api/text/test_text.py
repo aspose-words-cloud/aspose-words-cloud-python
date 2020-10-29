@@ -42,12 +42,12 @@ class TestText(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestReplaceText = asposewordscloud.ReplaceTextParameters(old_value='aspose', new_value='aspose new')
+        requestReplaceText = asposewordscloud.ReplaceTextParameters(old_value='Testing', new_value='Aspose testing')
         request = asposewordscloud.models.requests.ReplaceTextRequest(name=remoteFileName, replace_text=requestReplaceText, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
 
         result = self.words_api.replace_text(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertEqual(3, result.matches)
 
     #
     # Test for searching.
@@ -63,4 +63,8 @@ class TestText(BaseTestContext):
 
         result = self.words_api.search(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.search_results, 'Validate Search response')
+        self.assertIsNotNone(result.search_results.results_list, 'Validate Search response')
+        self.assertEqual(23, len(result.search_results.results_list))
+        self.assertIsNotNone(result.search_results.results_list[0].range_start, 'Validate Search response')
+        self.assertEqual(65, result.search_results.results_list[0].range_start.offset)
