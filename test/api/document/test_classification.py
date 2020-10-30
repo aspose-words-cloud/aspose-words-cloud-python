@@ -40,7 +40,7 @@ class TestClassification(BaseTestContext):
 
         result = self.words_api.classify(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-        self.assertEqual('Science', result.best_class_name)
+        self.assertIsTrue(result.best_class_name.startswith('Science'))
         self.assertIsNotNone(result.best_results, 'Validate Classify response')
         self.assertEqual(3, len(result.best_results))
 
@@ -58,6 +58,6 @@ class TestClassification(BaseTestContext):
 
         result = self.words_api.classify_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-        self.assertEqual('Hobbies_&_Interests', result.best_class_name)
+        self.assertIsTrue(result.best_class_name.startswith('Hobbies_&_Interests'))
         self.assertIsNotNone(result.best_results, 'Validate ClassifyDocument response')
         self.assertEqual(3, len(result.best_results))

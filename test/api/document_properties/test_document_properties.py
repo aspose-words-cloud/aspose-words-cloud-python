@@ -50,8 +50,8 @@ class TestDocumentProperties(BaseTestContext):
         self.assertIsNotNone(result.document_properties.list, 'Validate GetDocumentProperties response')
         self.assertEqual(24, len(result.document_properties.list))
         self.assertIsNotNone(result.document_properties.list[0], 'Validate GetDocumentProperties response')
-        self.assertEqual('Author', result.document_properties.list[0].name)
-        self.assertEqual('', result.document_properties.list[0].value)
+        self.assertIsTrue(result.document_properties.list[0].name.startswith('Author'))
+        self.assertIsTrue(result.document_properties.list[0].value.startswith(''))
 
     #
     # A test for GetDocumentProperty.
@@ -68,8 +68,8 @@ class TestDocumentProperties(BaseTestContext):
         result = self.words_api.get_document_property(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.document_property, 'Validate GetDocumentProperty response')
-        self.assertEqual('Author', result.document_property.name)
-        self.assertEqual('', result.document_property.value)
+        self.assertIsTrue(result.document_property.name.startswith('Author'))
+        self.assertIsTrue(result.document_property.value.startswith(''))
 
     #
     # Test for deleting document property.
@@ -102,5 +102,5 @@ class TestDocumentProperties(BaseTestContext):
         result = self.words_api.create_or_update_document_property(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.document_property, 'Validate UpdateDocumentProperty response')
-        self.assertEqual('AsposeAuthor', result.document_property.name)
-        self.assertEqual('Imran Anwar', result.document_property.value)
+        self.assertIsTrue(result.document_property.name.startswith('AsposeAuthor'))
+        self.assertIsTrue(result.document_property.value.startswith('Imran Anwar'))

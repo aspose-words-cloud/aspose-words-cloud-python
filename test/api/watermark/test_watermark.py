@@ -49,7 +49,7 @@ class TestWatermark(BaseTestContext):
         result = self.words_api.insert_watermark_image(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.document, 'Validate InsertWatermarkImage response')
-        self.assertEqual('TestInsertWatermarkImage.docx', result.document.file_name)
+        self.assertIsTrue(result.document.file_name.startswith('TestInsertWatermarkImage.docx'))
 
     #
     # Test for adding watermark text.
@@ -67,7 +67,7 @@ class TestWatermark(BaseTestContext):
         result = self.words_api.insert_watermark_text(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.document, 'Validate InsertWatermarkText response')
-        self.assertEqual('TestInsertWatermarkText.docx', result.document.file_name)
+        self.assertIsTrue(result.document.file_name.startswith('TestInsertWatermarkText.docx'))
 
     #
     # Test for deleting watermark.
@@ -84,4 +84,4 @@ class TestWatermark(BaseTestContext):
         result = self.words_api.delete_watermark(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.document, 'Validate DeleteWatermark response')
-        self.assertEqual('TestDeleteWatermark.docx', result.document.file_name)
+        self.assertIsTrue(result.document.file_name.startswith('TestDeleteWatermark.docx'))

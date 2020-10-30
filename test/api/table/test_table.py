@@ -49,7 +49,7 @@ class TestTable(BaseTestContext):
         self.assertIsNotNone(result.tables, 'Validate GetTables response')
         self.assertIsNotNone(result.tables.table_link_list, 'Validate GetTables response')
         self.assertEqual(5, len(result.tables.table_link_list))
-        self.assertEqual('0.0.1', result.tables.table_link_list[0].node_id)
+        self.assertIsTrue(result.tables.table_link_list[0].node_id.startswith('0.0.1'))
 
     #
     # Test for getting tables without node path.
@@ -68,7 +68,7 @@ class TestTable(BaseTestContext):
         self.assertIsNotNone(result.tables, 'Validate GetTablesWithoutNodePath response')
         self.assertIsNotNone(result.tables.table_link_list, 'Validate GetTablesWithoutNodePath response')
         self.assertEqual(5, len(result.tables.table_link_list))
-        self.assertEqual('0.0.1', result.tables.table_link_list[0].node_id)
+        self.assertIsTrue(result.tables.table_link_list[0].node_id.startswith('0.0.1'))
 
     #
     # Test for getting table.
@@ -197,7 +197,7 @@ class TestTable(BaseTestContext):
         result = self.words_api.get_table_properties(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.properties, 'Validate GetTableProperties response')
-        self.assertEqual('Table Grid', result.properties.style_name)
+        self.assertIsTrue(result.properties.style_name.startswith('Table Grid'))
 
     #
     # Test for getting document properties without node path.
@@ -214,7 +214,7 @@ class TestTable(BaseTestContext):
         result = self.words_api.get_table_properties(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.properties, 'Validate GetTablePropertiesWithoutNodePath response')
-        self.assertEqual('Table Grid', result.properties.style_name)
+        self.assertIsTrue(result.properties.style_name.startswith('Table Grid'))
 
     #
     # Test for updating table properties.
@@ -362,7 +362,7 @@ class TestTable(BaseTestContext):
         result = self.words_api.get_table_cell(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.cell, 'Validate GetTableCell response')
-        self.assertEqual('0.0.5.0.0', result.cell.node_id)
+        self.assertIsTrue(result.cell.node_id.startswith('0.0.5.0.0'))
 
     #
     # Test for deleting cell.
@@ -395,7 +395,7 @@ class TestTable(BaseTestContext):
         result = self.words_api.insert_table_cell(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.cell, 'Validate InsertTableCell response')
-        self.assertEqual('0.0.5.0.3', result.cell.node_id)
+        self.assertIsTrue(result.cell.node_id.startswith('0.0.5.0.3'))
 
     #
     # Test for getting cell format.

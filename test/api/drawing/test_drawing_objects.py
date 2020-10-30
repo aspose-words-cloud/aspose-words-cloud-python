@@ -214,7 +214,7 @@ class TestDrawingObjects(BaseTestContext):
         result = self.words_api.insert_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.drawing_object, 'Validate InsertDrawingObject response')
-        self.assertEqual('0.3.7.1', result.drawing_object.node_id)
+        self.assertIsTrue(result.drawing_object.node_id.startswith('0.3.7.1'))
 
     #
     # Test for adding drawing object without node path.
@@ -232,7 +232,7 @@ class TestDrawingObjects(BaseTestContext):
         result = self.words_api.insert_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.drawing_object, 'Validate InsertDrawingObjectWithoutNodePath response')
-        self.assertEqual('0.3.7.1', result.drawing_object.node_id)
+        self.assertIsTrue(result.drawing_object.node_id.startswith('0.3.7.1'))
 
     #
     # Test for deleting drawing object.

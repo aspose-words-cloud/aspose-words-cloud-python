@@ -44,4 +44,4 @@ class TestLoadWebDocument(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.save_result, 'Validate LoadWebDocument response')
         self.assertIsNotNone(result.save_result.dest_document, 'Validate LoadWebDocument response')
-        self.assertEqual('google.doc', result.save_result.dest_document.href)
+        self.assertIsTrue(result.save_result.dest_document.href.startswith('google.doc'))

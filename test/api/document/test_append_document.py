@@ -50,4 +50,4 @@ class TestAppendDocument(BaseTestContext):
         result = self.words_api.append_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.document, 'Validate AppendDocument response')
-        self.assertEqual('TestAppendDocument.docx', result.document.file_name)
+        self.assertIsTrue(result.document.file_name.startswith('TestAppendDocument.docx'))

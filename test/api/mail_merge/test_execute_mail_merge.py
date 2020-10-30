@@ -63,4 +63,4 @@ class TestExecuteMailMerge(BaseTestContext):
         result = self.words_api.execute_mail_merge(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.document, 'Validate ExecuteMailMerge response')
-        self.assertEqual('TestExecuteMailMerge.docx', result.document.file_name)
+        self.assertIsTrue(result.document.file_name.startswith('TestExecuteMailMerge.docx'))

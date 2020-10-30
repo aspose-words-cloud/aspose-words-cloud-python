@@ -49,7 +49,7 @@ class TestSection(BaseTestContext):
         self.assertIsNotNone(result.section, 'Validate GetSection response')
         self.assertIsNotNone(result.section.child_nodes, 'Validate GetSection response')
         self.assertEqual(13, len(result.section.child_nodes))
-        self.assertEqual('0.3.0', result.section.child_nodes[0].node_id)
+        self.assertIsTrue(result.section.child_nodes[0].node_id.startswith('0.3.0'))
 
     #
     # Test for getting sections.
@@ -68,7 +68,7 @@ class TestSection(BaseTestContext):
         self.assertIsNotNone(result.sections, 'Validate GetSections response')
         self.assertIsNotNone(result.sections.section_link_list, 'Validate GetSections response')
         self.assertEqual(1, len(result.sections.section_link_list))
-        self.assertEqual('0', result.sections.section_link_list[0].node_id)
+        self.assertIsTrue(result.sections.section_link_list[0].node_id.startswith('0'))
 
     #
     # Test for delete a section.

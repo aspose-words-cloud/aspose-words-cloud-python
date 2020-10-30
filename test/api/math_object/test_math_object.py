@@ -49,7 +49,7 @@ class TestMathObject(BaseTestContext):
         self.assertIsNotNone(result.office_math_objects, 'Validate GetOfficeMathObjects response')
         self.assertIsNotNone(result.office_math_objects.list, 'Validate GetOfficeMathObjects response')
         self.assertEqual(16, len(result.office_math_objects.list))
-        self.assertEqual('0.0.0.0', result.office_math_objects.list[0].node_id)
+        self.assertIsTrue(result.office_math_objects.list[0].node_id.startswith('0.0.0.0'))
 
     #
     # Test for getting mathObjects without node path.
@@ -68,7 +68,7 @@ class TestMathObject(BaseTestContext):
         self.assertIsNotNone(result.office_math_objects, 'Validate GetOfficeMathObjectsWithoutNodePath response')
         self.assertIsNotNone(result.office_math_objects.list, 'Validate GetOfficeMathObjectsWithoutNodePath response')
         self.assertEqual(16, len(result.office_math_objects.list))
-        self.assertEqual('0.0.0.0', result.office_math_objects.list[0].node_id)
+        self.assertIsTrue(result.office_math_objects.list[0].node_id.startswith('0.0.0.0'))
 
     #
     # Test for getting mathObject.
@@ -85,7 +85,7 @@ class TestMathObject(BaseTestContext):
         result = self.words_api.get_office_math_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.office_math_object, 'Validate GetOfficeMathObject response')
-        self.assertEqual('0.0.0.0', result.office_math_object.node_id)
+        self.assertIsTrue(result.office_math_object.node_id.startswith('0.0.0.0'))
 
     #
     # Test for getting mathObject without node path.
@@ -102,7 +102,7 @@ class TestMathObject(BaseTestContext):
         result = self.words_api.get_office_math_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.office_math_object, 'Validate GetOfficeMathObjectWithoutNodePath response')
-        self.assertEqual('0.0.0.0', result.office_math_object.node_id)
+        self.assertIsTrue(result.office_math_object.node_id.startswith('0.0.0.0'))
 
     #
     # Test for rendering mathObject.

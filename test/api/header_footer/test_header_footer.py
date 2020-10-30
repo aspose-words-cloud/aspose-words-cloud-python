@@ -67,7 +67,7 @@ class TestHeaderFooter(BaseTestContext):
         self.assertIsNotNone(result.header_footer, 'Validate GetHeaderFooter response')
         self.assertIsNotNone(result.header_footer.child_nodes, 'Validate GetHeaderFooter response')
         self.assertEqual(1, len(result.header_footer.child_nodes))
-        self.assertEqual('0.0.0', result.header_footer.child_nodes[0].node_id)
+        self.assertIsTrue(result.header_footer.child_nodes[0].node_id.startswith('0.0.0'))
 
     #
     # Test for getting headerfooter of section.
@@ -86,7 +86,7 @@ class TestHeaderFooter(BaseTestContext):
         self.assertIsNotNone(result.header_footer, 'Validate GetHeaderFooterOfSection response')
         self.assertIsNotNone(result.header_footer.child_nodes, 'Validate GetHeaderFooterOfSection response')
         self.assertEqual(1, len(result.header_footer.child_nodes))
-        self.assertEqual('0.0.0', result.header_footer.child_nodes[0].node_id)
+        self.assertIsTrue(result.header_footer.child_nodes[0].node_id.startswith('0.0.0'))
 
     #
     # Test for deleting headerfooter.
@@ -135,4 +135,4 @@ class TestHeaderFooter(BaseTestContext):
         self.assertIsNotNone(result.header_footer, 'Validate InsertHeaderFooter response')
         self.assertIsNotNone(result.header_footer.child_nodes, 'Validate InsertHeaderFooter response')
         self.assertEqual(1, len(result.header_footer.child_nodes))
-        self.assertEqual('0.2.0', result.header_footer.child_nodes[0].node_id)
+        self.assertIsTrue(result.header_footer.child_nodes[0].node_id.startswith('0.2.0'))

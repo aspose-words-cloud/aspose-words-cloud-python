@@ -48,7 +48,7 @@ class TestStyles(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.styles, 'Validate GetStyles response')
         self.assertEqual(22, len(result.styles))
-        self.assertEqual('Default Paragraph Font', result.styles[0].name)
+        self.assertIsTrue(result.styles[0].name.startswith('Default Paragraph Font'))
 
     #
     # Test for getting style from document.
@@ -65,7 +65,7 @@ class TestStyles(BaseTestContext):
         result = self.words_api.get_style(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.style, 'Validate GetStyle response')
-        self.assertEqual('Heading 1', result.style.name)
+        self.assertIsTrue(result.style.name.startswith('Heading 1'))
 
     #
     # Test for updating style from document.
@@ -83,7 +83,7 @@ class TestStyles(BaseTestContext):
         result = self.words_api.update_style(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.style, 'Validate UpdateStyle response')
-        self.assertEqual('My Style', result.style.name)
+        self.assertIsTrue(result.style.name.startswith('My Style'))
 
     #
     # Test for inserting style from document.
@@ -101,7 +101,7 @@ class TestStyles(BaseTestContext):
         result = self.words_api.insert_style(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.style, 'Validate InsertStyle response')
-        self.assertEqual('My Style', result.style.name)
+        self.assertIsTrue(result.style.name.startswith('My Style'))
 
     #
     # Test for coping style from document.
@@ -119,7 +119,7 @@ class TestStyles(BaseTestContext):
         result = self.words_api.copy_style(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.style, 'Validate CopyStyle response')
-        self.assertEqual('Heading 1_0', result.style.name)
+        self.assertIsTrue(result.style.name.startswith('Heading 1_0'))
 
     #
     # Test for getting style from document element.
@@ -136,7 +136,7 @@ class TestStyles(BaseTestContext):
         result = self.words_api.get_style_from_document_element(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.style, 'Validate GetStyleFromDocumentElement response')
-        self.assertEqual('TOC 1', result.style.name)
+        self.assertIsTrue(result.style.name.startswith('TOC 1'))
 
     #
     # Test for applying style to document element.

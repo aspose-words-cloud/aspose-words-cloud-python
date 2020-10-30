@@ -66,4 +66,4 @@ class TestBuildReport(BaseTestContext):
         result = self.words_api.build_report(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.document, 'Validate BuildReport response')
-        self.assertEqual('TestBuildReport.docx', result.document.file_name)
+        self.assertIsTrue(result.document.file_name.startswith('TestBuildReport.docx'))

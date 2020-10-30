@@ -46,7 +46,7 @@ class TestMailMergeFileds(BaseTestContext):
         self.assertIsNotNone(result.field_names, 'Validate GetDocumentFieldNamesOnline response')
         self.assertIsNotNone(result.field_names.names, 'Validate GetDocumentFieldNamesOnline response')
         self.assertEqual(15, len(result.field_names.names))
-        self.assertEqual('TableStart:Order', result.field_names.names[0])
+        self.assertIsTrue(result.field_names.names[0].startswith('TableStart:Order'))
 
     #
     # Test for getting mailmerge fields.

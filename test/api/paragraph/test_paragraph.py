@@ -47,7 +47,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.get_paragraph(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.paragraph, 'Validate GetDocumentParagraphByIndex response')
-        self.assertEqual('0.0.0', result.paragraph.node_id)
+        self.assertIsTrue(result.paragraph.node_id.startswith('0.0.0'))
 
     #
     # Test for getting paragraph without node path.
@@ -64,7 +64,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.get_paragraph(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.paragraph, 'Validate GetDocumentParagraphByIndexWithoutNodePath response')
-        self.assertEqual('0.0.0', result.paragraph.node_id)
+        self.assertIsTrue(result.paragraph.node_id.startswith('0.0.0'))
 
     #
     # Test for getting all paragraphs.
@@ -83,7 +83,7 @@ class TestParagraph(BaseTestContext):
         self.assertIsNotNone(result.paragraphs, 'Validate GetDocumentParagraphs response')
         self.assertIsNotNone(result.paragraphs.paragraph_link_list, 'Validate GetDocumentParagraphs response')
         self.assertEqual(15, len(result.paragraphs.paragraph_link_list))
-        self.assertEqual('Page 1 of 3', result.paragraphs.paragraph_link_list[0].text)
+        self.assertIsTrue(result.paragraphs.paragraph_link_list[0].text.startswith('Page 1 of 3'))
 
     #
     # Test for getting all paragraphs without node path.
@@ -102,7 +102,7 @@ class TestParagraph(BaseTestContext):
         self.assertIsNotNone(result.paragraphs, 'Validate GetDocumentParagraphsWithoutNodePath response')
         self.assertIsNotNone(result.paragraphs.paragraph_link_list, 'Validate GetDocumentParagraphsWithoutNodePath response')
         self.assertEqual(15, len(result.paragraphs.paragraph_link_list))
-        self.assertEqual('Page 1 of 3', result.paragraphs.paragraph_link_list[0].text)
+        self.assertIsTrue(result.paragraphs.paragraph_link_list[0].text.startswith('Page 1 of 3'))
 
     #
     # Test for getting paragraph run.
@@ -119,7 +119,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.get_run(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.run, 'Validate GetDocumentParagraphRun response')
-        self.assertEqual('Page ', result.run.text)
+        self.assertIsTrue(result.run.text.startswith('Page '))
 
     #
     # Test for getting paragraph run font.
@@ -136,7 +136,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.get_run_font(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.font, 'Validate GetDocumentParagraphRunFont response')
-        self.assertEqual('Times New Roman', result.font.name)
+        self.assertIsTrue(result.font.name.startswith('Times New Roman'))
 
     #
     # Test for getting paragraph runs.
@@ -155,7 +155,7 @@ class TestParagraph(BaseTestContext):
         self.assertIsNotNone(result.runs, 'Validate GetParagraphRuns response')
         self.assertIsNotNone(result.runs.list, 'Validate GetParagraphRuns response')
         self.assertEqual(6, len(result.runs.list))
-        self.assertEqual('Page ', result.runs.list[0].text)
+        self.assertIsTrue(result.runs.list[0].text.startswith('Page '))
 
     #
     # Test for updating paragraph run font.
@@ -191,7 +191,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.insert_paragraph(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.paragraph, 'Validate InsertParagraph response')
-        self.assertEqual('0.3.8', result.paragraph.node_id)
+        self.assertIsTrue(result.paragraph.node_id.startswith('0.3.8'))
 
     #
     # Test for adding paragraph without node path.
@@ -209,7 +209,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.insert_paragraph(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.paragraph, 'Validate InsertParagraphWithoutNodePath response')
-        self.assertEqual('0.3.8', result.paragraph.node_id)
+        self.assertIsTrue(result.paragraph.node_id.startswith('0.3.8'))
 
     #
     # Test for paragraph rendering.
@@ -258,7 +258,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.get_paragraph_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.paragraph_format, 'Validate GetParagraphFormat response')
-        self.assertEqual('Normal', result.paragraph_format.style_name)
+        self.assertIsTrue(result.paragraph_format.style_name.startswith('Normal'))
 
     #
     # Test for getting paragraph format settings without node path.
@@ -275,7 +275,7 @@ class TestParagraph(BaseTestContext):
         result = self.words_api.get_paragraph_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.paragraph_format, 'Validate GetParagraphFormatWithoutNodePath response')
-        self.assertEqual('Normal', result.paragraph_format.style_name)
+        self.assertIsTrue(result.paragraph_format.style_name.startswith('Normal'))
 
     #
     # Test for updating  paragraph format settings.

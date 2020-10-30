@@ -48,8 +48,8 @@ class TestFormField(BaseTestContext):
         result = self.words_api.update_form_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.form_field, 'Validate UpdateFormField response')
-        self.assertEqual('FullName', result.form_field.name)
-        self.assertEqual('', result.form_field.status_text)
+        self.assertIsTrue(result.form_field.name.startswith('FullName'))
+        self.assertIsTrue(result.form_field.status_text.startswith(''))
 
     #
     # Test for posting form field without node path.
@@ -67,8 +67,8 @@ class TestFormField(BaseTestContext):
         result = self.words_api.update_form_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.form_field, 'Validate UpdateFormFieldWithoutNodePath response')
-        self.assertEqual('FullName', result.form_field.name)
-        self.assertEqual('', result.form_field.status_text)
+        self.assertIsTrue(result.form_field.name.startswith('FullName'))
+        self.assertIsTrue(result.form_field.status_text.startswith(''))
 
     #
     # Test for getting form field.
@@ -85,7 +85,7 @@ class TestFormField(BaseTestContext):
         result = self.words_api.get_form_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.form_field, 'Validate GetFormField response')
-        self.assertEqual('FullName', result.form_field.name)
+        self.assertIsTrue(result.form_field.name.startswith('FullName'))
 
     #
     # Test for getting form field without node path.
@@ -102,7 +102,7 @@ class TestFormField(BaseTestContext):
         result = self.words_api.get_form_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.form_field, 'Validate GetFormFieldWithoutNodePath response')
-        self.assertEqual('FullName', result.form_field.name)
+        self.assertIsTrue(result.form_field.name.startswith('FullName'))
 
     #
     # Test for getting form fields.
@@ -121,7 +121,7 @@ class TestFormField(BaseTestContext):
         self.assertIsNotNone(result.form_fields, 'Validate GetFormFields response')
         self.assertIsNotNone(result.form_fields.list, 'Validate GetFormFields response')
         self.assertEqual(5, len(result.form_fields.list))
-        self.assertEqual('FullName', result.form_fields.list[0].name)
+        self.assertIsTrue(result.form_fields.list[0].name.startswith('FullName'))
 
     #
     # Test for getting form fields without node path.
@@ -140,7 +140,7 @@ class TestFormField(BaseTestContext):
         self.assertIsNotNone(result.form_fields, 'Validate GetFormFieldsWithoutNodePath response')
         self.assertIsNotNone(result.form_fields.list, 'Validate GetFormFieldsWithoutNodePath response')
         self.assertEqual(5, len(result.form_fields.list))
-        self.assertEqual('FullName', result.form_fields.list[0].name)
+        self.assertIsTrue(result.form_fields.list[0].name.startswith('FullName'))
 
     #
     # Test for insert form field without node path.
@@ -157,8 +157,8 @@ class TestFormField(BaseTestContext):
         result = self.words_api.insert_form_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.form_field, 'Validate InsertFormField response')
-        self.assertEqual('FullName', result.form_field.name)
-        self.assertEqual('', result.form_field.status_text)
+        self.assertIsTrue(result.form_field.name.startswith('FullName'))
+        self.assertIsTrue(result.form_field.status_text.startswith(''))
 
     #
     # Test for insert form field without node path.
@@ -175,8 +175,8 @@ class TestFormField(BaseTestContext):
         result = self.words_api.insert_form_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.form_field, 'Validate InsertFormFieldWithoutNodePath response')
-        self.assertEqual('FullName', result.form_field.name)
-        self.assertEqual('', result.form_field.status_text)
+        self.assertIsTrue(result.form_field.name.startswith('FullName'))
+        self.assertIsTrue(result.form_field.status_text.startswith(''))
 
     #
     # Test for deleting form field.
