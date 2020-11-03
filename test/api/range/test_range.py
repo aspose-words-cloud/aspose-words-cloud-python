@@ -46,7 +46,7 @@ class TestRange(BaseTestContext):
 
         result = self.words_api.get_range_text(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-        self.assertIsTrue(result.text.startswith('This is HEADER '))
+        self.assertEqual('This is HEADER ', result.text)
 
     #
     # Test for removing the text for range.
@@ -63,7 +63,7 @@ class TestRange(BaseTestContext):
         result = self.words_api.remove_range(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.document, 'Validate RemoveRange response')
-        self.assertIsTrue(result.document.file_name.startswith('TestRemoveRange.docx'))
+        self.assertEqual('TestRemoveRange.docx', result.document.file_name)
 
     #
     # Test for saving a range as a new document.
@@ -81,7 +81,7 @@ class TestRange(BaseTestContext):
         result = self.words_api.save_as_range(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.document, 'Validate SaveAsRange response')
-        self.assertIsTrue(result.document.file_name.startswith('NewDoc.docx'))
+        self.assertEqual('NewDoc.docx', result.document.file_name)
 
     #
     # Test for replacing text in range.
@@ -99,4 +99,4 @@ class TestRange(BaseTestContext):
         result = self.words_api.replace_with_text(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.document, 'Validate ReplaceWithText response')
-        self.assertIsTrue(result.document.file_name.startswith('TestReplaceWithText.docx'))
+        self.assertEqual('TestReplaceWithText.docx', result.document.file_name)

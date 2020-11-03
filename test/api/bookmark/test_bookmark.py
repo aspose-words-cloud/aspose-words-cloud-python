@@ -48,7 +48,7 @@ class TestBookmark(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.bookmarks, 'Validate GetBookmarks response')
         self.assertEqual(3, len(result.bookmarks.bookmark_list))
-        self.assertIsTrue(result.bookmarks.bookmark_list[1].name.startswith('aspose'))
+        self.assertEqual('aspose', result.bookmarks.bookmark_list[1].name)
 
     #
     # Test for getting bookmark by specified name.
@@ -66,7 +66,7 @@ class TestBookmark(BaseTestContext):
         result = self.words_api.get_bookmark_by_name(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.bookmark, 'Validate GetBookmarkByName response')
-        self.assertIsTrue(result.bookmark.name.startswith(bookmarkName))
+        self.assertEqual(bookmarkName, result.bookmark.name)
 
     #
     # Test for updating existed bookmark.
@@ -86,5 +86,5 @@ class TestBookmark(BaseTestContext):
         result = self.words_api.update_bookmark(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.bookmark, 'Validate UpdateBookmark response')
-        self.assertIsTrue(result.bookmark.name.startswith(bookmarkName))
-        self.assertIsTrue(result.bookmark.text.startswith(bookmarkText))
+        self.assertEqual(bookmarkName, result.bookmark.name)
+        self.assertEqual(bookmarkText, result.bookmark.text)

@@ -48,7 +48,7 @@ class TestDocumentProtection(BaseTestContext):
         result = self.words_api.protect_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.protection_data, 'Validate ProtectDocument response')
-        self.assertIsTrue(result.protection_data.protection_type.startswith('ReadOnly'))
+        self.assertEqual('ReadOnly', result.protection_data.protection_type)
 
     #
     # Test for getting document protection.
@@ -65,7 +65,7 @@ class TestDocumentProtection(BaseTestContext):
         result = self.words_api.get_document_protection(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.protection_data, 'Validate GetDocumentProtection response')
-        self.assertIsTrue(result.protection_data.protection_type.startswith('ReadOnly'))
+        self.assertEqual('ReadOnly', result.protection_data.protection_type)
 
     #
     # Test for deleting unprotect document.
@@ -83,4 +83,4 @@ class TestDocumentProtection(BaseTestContext):
         result = self.words_api.unprotect_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.protection_data, 'Validate DeleteUnprotectDocument response')
-        self.assertIsTrue(result.protection_data.protection_type.startswith('NoProtection'))
+        self.assertEqual('NoProtection', result.protection_data.protection_type)

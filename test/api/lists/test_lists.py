@@ -85,7 +85,7 @@ class TestLists(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.list, 'Validate UpdateList response')
         self.assertEqual(1, result.list.list_id)
-        self.assertIsTrue(result.list.is_restart_at_each_section, 'Validate UpdateList response')
+        self.assertTrue(result.list.is_restart_at_each_section, 'Validate UpdateList response')
 
     #
     # Test for updating list level from document.

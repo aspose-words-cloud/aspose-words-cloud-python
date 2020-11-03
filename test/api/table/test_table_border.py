@@ -50,7 +50,7 @@ class TestTableBorder(BaseTestContext):
         self.assertIsNotNone(result.borders.list, 'Validate GetBorders response')
         self.assertEqual(6, len(result.borders.list))
         self.assertIsNotNone(result.borders.list[0].color, 'Validate GetBorders response')
-        self.assertIsTrue(result.borders.list[0].color.web.startswith('#000000'))
+        self.assertEqual('#000000', result.borders.list[0].color.web)
 
     #
     # Test for getting border.
@@ -68,7 +68,7 @@ class TestTableBorder(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.border, 'Validate GetBorder response')
         self.assertIsNotNone(result.border.color, 'Validate GetBorder response')
-        self.assertIsTrue(result.border.color.web.startswith('#000000'))
+        self.assertEqual('#000000', result.border.color.web)
 
     #
     # Test for deleting borders.
@@ -88,7 +88,7 @@ class TestTableBorder(BaseTestContext):
         self.assertIsNotNone(result.borders.list, 'Validate DeleteBorders response')
         self.assertEqual(6, len(result.borders.list))
         self.assertIsNotNone(result.borders.list[0].color, 'Validate DeleteBorders response')
-        self.assertIsTrue(result.borders.list[0].color.web.startswith(''))
+        self.assertEqual('', result.borders.list[0].color.web)
 
     #
     # Test for deleting border.
@@ -106,7 +106,7 @@ class TestTableBorder(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.border, 'Validate DeleteBorder response')
         self.assertIsNotNone(result.border.color, 'Validate DeleteBorder response')
-        self.assertIsTrue(result.border.color.web.startswith(''))
+        self.assertEqual('', result.border.color.web)
 
     #
     # Test for updating border.
@@ -119,14 +119,14 @@ class TestTableBorder(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
         requestBorderPropertiesColor = asposewordscloud.XmlColor(alpha=2)
-        requestBorderProperties = asposewordscloud.Border(border_type='Left', color=requestBorderPropertiesColor, distance_from_text=6, line_style='DashDotStroker', line_width=2, shadow=True)
+        requestBorderProperties = asposewordscloud.Border(border_type='Left', color=requestBorderPropertiesColor, distance_from_text=6.0, line_style='DashDotStroker', line_width=2.0, shadow=True)
         request = asposewordscloud.models.requests.UpdateBorderRequest(name=remoteFileName, border_properties=requestBorderProperties, border_type='left', node_path='tables/1/rows/0/cells/0', folder=remoteDataFolder)
 
         result = self.words_api.update_border(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.border, 'Validate UpdateBorder response')
         self.assertIsNotNone(result.border.color, 'Validate UpdateBorder response')
-        self.assertIsTrue(result.border.color.web.startswith('#000002'))
-        self.assertEqual(6, result.border.distance_from_text)
-        self.assertEqual(2, result.border.line_width)
-        self.assertIsTrue(result.border.shadow, 'Validate UpdateBorder response')
+        self.assertEqual('#000002', result.border.color.web)
+        self.assertEqual(6.0, result.border.distance_from_text)
+        self.assertEqual(2.0, result.border.line_width)
+        self.assertTrue(result.border.shadow, 'Validate UpdateBorder response')

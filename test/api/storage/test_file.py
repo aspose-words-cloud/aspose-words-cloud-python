@@ -46,7 +46,7 @@ class TestFile(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.uploaded, 'Validate UploadFile response')
         self.assertEqual(1, len(result.uploaded))
-        self.assertIsTrue(result.uploaded[0].startswith('TestUploadFile.docx'))
+        self.assertEqual('TestUploadFile.docx', result.uploaded[0])
 
     #
     # Test for copy file.

@@ -50,7 +50,7 @@ class TestField(BaseTestContext):
         self.assertIsNotNone(result.fields, 'Validate GetFields response')
         self.assertIsNotNone(result.fields.list, 'Validate GetFields response')
         self.assertEqual(1, len(result.fields.list))
-        self.assertIsTrue(result.fields.list[0].result.startswith('1'))
+        self.assertEqual('1', result.fields.list[0].result)
 
     #
     # Test for getting fields without node path.
@@ -70,7 +70,7 @@ class TestField(BaseTestContext):
         self.assertIsNotNone(result.fields, 'Validate GetFieldsWithoutNodePath response')
         self.assertIsNotNone(result.fields.list, 'Validate GetFieldsWithoutNodePath response')
         self.assertEqual(1, len(result.fields.list))
-        self.assertIsTrue(result.fields.list[0].result.startswith('1'))
+        self.assertEqual('1', result.fields.list[0].result)
 
     #
     # Test for getting field by index.
@@ -88,7 +88,7 @@ class TestField(BaseTestContext):
         result = self.words_api.get_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.field, 'Validate GetField response')
-        self.assertIsTrue(result.field.result.startswith('1'))
+        self.assertEqual('1', result.field.result)
 
     #
     # Test for getting field by index without node path.
@@ -106,7 +106,7 @@ class TestField(BaseTestContext):
         result = self.words_api.get_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.field, 'Validate GetFieldWithoutNodePath response')
-        self.assertIsTrue(result.field.result.startswith('1'))
+        self.assertEqual('1', result.field.result)
 
     #
     # Test for putting field.
@@ -125,8 +125,8 @@ class TestField(BaseTestContext):
         result = self.words_api.insert_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.field, 'Validate InsertField response')
-        self.assertIsTrue(result.field.field_code.startswith('{ NUMPAGES }'))
-        self.assertIsTrue(result.field.node_id.startswith('0.0.0.1'))
+        self.assertEqual('{ NUMPAGES }', result.field.field_code)
+        self.assertEqual('0.0.0.1', result.field.node_id)
 
     #
     # Test for putting field without node path.
@@ -145,8 +145,8 @@ class TestField(BaseTestContext):
         result = self.words_api.insert_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.field, 'Validate InsertFieldWithoutNodePath response')
-        self.assertIsTrue(result.field.field_code.startswith('{ NUMPAGES }'))
-        self.assertIsTrue(result.field.node_id.startswith('5.0.22.0'))
+        self.assertEqual('{ NUMPAGES }', result.field.field_code)
+        self.assertEqual('5.0.22.0', result.field.node_id)
 
     #
     # Test for posting field.
@@ -165,8 +165,8 @@ class TestField(BaseTestContext):
         result = self.words_api.update_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.field, 'Validate UpdateField response')
-        self.assertIsTrue(result.field.field_code.startswith('{ NUMPAGES }'))
-        self.assertIsTrue(result.field.node_id.startswith('0.0.0.0'))
+        self.assertEqual('{ NUMPAGES }', result.field.field_code)
+        self.assertEqual('0.0.0.0', result.field.node_id)
 
     #
     # Test for inserting page numbers field.
@@ -184,7 +184,7 @@ class TestField(BaseTestContext):
         result = self.words_api.insert_page_numbers(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.document, 'Validate InsertPageNumbers response')
-        self.assertIsTrue(result.document.file_name.startswith('TestInsertPageNumbers.docx'))
+        self.assertEqual('TestInsertPageNumbers.docx', result.document.file_name)
 
     #
     # Test for deleting field.
@@ -323,4 +323,4 @@ class TestField(BaseTestContext):
         result = self.words_api.update_fields(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.document, 'Validate UpdateDocumentFields response')
-        self.assertIsTrue(result.document.file_name.startswith('TestUpdateDocumentFields.docx'))
+        self.assertEqual('TestUpdateDocumentFields.docx', result.document.file_name)

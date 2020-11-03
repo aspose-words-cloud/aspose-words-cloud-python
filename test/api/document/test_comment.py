@@ -47,7 +47,7 @@ class TestComment(BaseTestContext):
         result = self.words_api.get_comment(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.comment, 'Validate GetComment response')
-        self.assertIsTrue(result.comment.text.startswith('Comment 1'))
+        self.assertEqual('Comment 1' + '\r\n\r\n', result.comment.text)
 
     #
     # Test for getting all comments from document.
@@ -66,7 +66,7 @@ class TestComment(BaseTestContext):
         self.assertIsNotNone(result.comments, 'Validate GetComments response')
         self.assertIsNotNone(result.comments.comment_list, 'Validate GetComments response')
         self.assertEqual(1, len(result.comments.comment_list))
-        self.assertIsTrue(result.comments.comment_list[0].text.startswith('Comment 1'))
+        self.assertEqual('Comment 1' + '\r\n\r\n', result.comments.comment_list[0].text)
 
     #
     # Test for adding comment.
@@ -88,10 +88,10 @@ class TestComment(BaseTestContext):
         result = self.words_api.insert_comment(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.comment, 'Validate InsertComment response')
-        self.assertIsTrue(result.comment.text.startswith('A new Comment'))
+        self.assertEqual('A new Comment' + '\r\n', result.comment.text)
         self.assertIsNotNone(result.comment.range_start, 'Validate InsertComment response')
         self.assertIsNotNone(result.comment.range_start.node, 'Validate InsertComment response')
-        self.assertIsTrue(result.comment.range_start.node.node_id.startswith('0.3.0.4'))
+        self.assertEqual('0.3.0.4', result.comment.range_start.node.node_id)
 
     #
     # Test for updating comment.
@@ -113,10 +113,10 @@ class TestComment(BaseTestContext):
         result = self.words_api.update_comment(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.comment, 'Validate UpdateComment response')
-        self.assertIsTrue(result.comment.text.startswith('A new Comment'))
+        self.assertEqual('A new Comment' + '\r\n', result.comment.text)
         self.assertIsNotNone(result.comment.range_start, 'Validate UpdateComment response')
         self.assertIsNotNone(result.comment.range_start.node, 'Validate UpdateComment response')
-        self.assertIsTrue(result.comment.range_start.node.node_id.startswith('0.3.0.1'))
+        self.assertEqual('0.3.0.1', result.comment.range_start.node.node_id)
 
     #
     # A test for DeleteComment.

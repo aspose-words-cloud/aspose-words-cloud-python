@@ -83,7 +83,7 @@ class TestDrawingObjects(BaseTestContext):
         result = self.words_api.get_document_drawing_object_by_index(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.drawing_object, 'Validate GetDocumentDrawingObjectByIndex response')
-        self.assertEqual(300, result.drawing_object.height)
+        self.assertEqual(300.0, result.drawing_object.height)
 
     #
     # Test for getting drawing object by specified index without node path.
@@ -100,7 +100,7 @@ class TestDrawingObjects(BaseTestContext):
         result = self.words_api.get_document_drawing_object_by_index(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.drawing_object, 'Validate GetDocumentDrawingObjectByIndexWithoutNodePath response')
-        self.assertEqual(300, result.drawing_object.height)
+        self.assertEqual(300.0, result.drawing_object.height)
 
     #
     # Test for getting drawing object by specified index and format.
@@ -208,13 +208,13 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestDrawingObject = asposewordscloud.DrawingObjectInsert(height=0, left=0, top=0, width=0, relative_horizontal_position='Margin', relative_vertical_position='Margin', wrap_type='Inline')
+        requestDrawingObject = asposewordscloud.DrawingObjectInsert(height=0.0, left=0.0, top=0.0, width=0.0, relative_horizontal_position='Margin', relative_vertical_position='Margin', wrap_type='Inline')
         request = asposewordscloud.models.requests.InsertDrawingObjectRequest(name=remoteFileName, drawing_object=requestDrawingObject, image_file=open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), node_path='', folder=remoteDataFolder)
 
         result = self.words_api.insert_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.drawing_object, 'Validate InsertDrawingObject response')
-        self.assertIsTrue(result.drawing_object.node_id.startswith('0.3.7.1'))
+        self.assertEqual('0.3.7.1', result.drawing_object.node_id)
 
     #
     # Test for adding drawing object without node path.
@@ -226,13 +226,13 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestDrawingObject = asposewordscloud.DrawingObjectInsert(height=0, left=0, top=0, width=0, relative_horizontal_position='Margin', relative_vertical_position='Margin', wrap_type='Inline')
+        requestDrawingObject = asposewordscloud.DrawingObjectInsert(height=0.0, left=0.0, top=0.0, width=0.0, relative_horizontal_position='Margin', relative_vertical_position='Margin', wrap_type='Inline')
         request = asposewordscloud.models.requests.InsertDrawingObjectRequest(name=remoteFileName, drawing_object=requestDrawingObject, image_file=open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), folder=remoteDataFolder)
 
         result = self.words_api.insert_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.drawing_object, 'Validate InsertDrawingObjectWithoutNodePath response')
-        self.assertIsTrue(result.drawing_object.node_id.startswith('0.3.7.1'))
+        self.assertEqual('0.3.7.1', result.drawing_object.node_id)
 
     #
     # Test for deleting drawing object.
@@ -274,13 +274,13 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestDrawingObject = asposewordscloud.DrawingObjectUpdate(left=1)
+        requestDrawingObject = asposewordscloud.DrawingObjectUpdate(left=1.0)
         request = asposewordscloud.models.requests.UpdateDrawingObjectRequest(name=remoteFileName, drawing_object=requestDrawingObject, image_file=open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), index=0, node_path='', folder=remoteDataFolder)
 
         result = self.words_api.update_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.drawing_object, 'Validate UpdateDrawingObject response')
-        self.assertEqual(1, result.drawing_object.left)
+        self.assertEqual(1.0, result.drawing_object.left)
 
     #
     # Test for updating drawing object without node path.
@@ -292,10 +292,10 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestDrawingObject = asposewordscloud.DrawingObjectUpdate(left=1)
+        requestDrawingObject = asposewordscloud.DrawingObjectUpdate(left=1.0)
         request = asposewordscloud.models.requests.UpdateDrawingObjectRequest(name=remoteFileName, drawing_object=requestDrawingObject, image_file=open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), index=0, folder=remoteDataFolder)
 
         result = self.words_api.update_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.drawing_object, 'Validate UpdateDrawingObjectWithoutNodePath response')
-        self.assertEqual(1, result.drawing_object.left)
+        self.assertEqual(1.0, result.drawing_object.left)

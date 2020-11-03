@@ -47,7 +47,7 @@ class TestHyperlink(BaseTestContext):
         result = self.words_api.get_document_hyperlink_by_index(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.hyperlink, 'Validate GetDocumentHyperlinkByIndex response')
-        self.assertIsTrue(result.hyperlink.display_text.startswith('Aspose'))
+        self.assertEqual('Aspose', result.hyperlink.display_text)
 
     #
     # Test for getting hyperlinks.
@@ -66,4 +66,4 @@ class TestHyperlink(BaseTestContext):
         self.assertIsNotNone(result.hyperlinks, 'Validate GetDocumentHyperlinks response')
         self.assertIsNotNone(result.hyperlinks.hyperlink_list, 'Validate GetDocumentHyperlinks response')
         self.assertEqual(2, len(result.hyperlinks.hyperlink_list))
-        self.assertIsTrue(result.hyperlinks.hyperlink_list[0].display_text.startswith('Aspose'))
+        self.assertEqual('Aspose', result.hyperlinks.hyperlink_list[0].display_text)
