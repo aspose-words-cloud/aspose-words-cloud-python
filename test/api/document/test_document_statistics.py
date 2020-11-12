@@ -46,4 +46,5 @@ class TestDocumentStatistics(BaseTestContext):
 
         result = self.words_api.get_document_statistics(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.stat_data, 'Validate GetDocumentStatistics response')
+        self.assertEqual(10, result.stat_data.word_count)

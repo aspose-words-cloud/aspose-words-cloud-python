@@ -47,7 +47,9 @@ class TestFootnote(BaseTestContext):
 
         result = self.words_api.insert_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.footnote, 'Validate InsertFootnote response')
+        self.assertEqual('0.1.7.1', result.footnote.node_id)
+        self.assertEqual(' test endnote' + '\r\n', result.footnote.text)
 
     #
     # Test for adding footnote without node path.
@@ -64,7 +66,9 @@ class TestFootnote(BaseTestContext):
 
         result = self.words_api.insert_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.footnote, 'Validate InsertFootnoteWithoutNodePath response')
+        self.assertEqual('0.1.7.1', result.footnote.node_id)
+        self.assertEqual(' test endnote' + '\r\n', result.footnote.text)
 
     #
     # Test for deleting footnote.
@@ -110,7 +114,10 @@ class TestFootnote(BaseTestContext):
 
         result = self.words_api.get_footnotes(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.footnotes, 'Validate GetFootnotes response')
+        self.assertIsNotNone(result.footnotes.list, 'Validate GetFootnotes response')
+        self.assertEqual(6, len(result.footnotes.list))
+        self.assertEqual(' Footnote 1.' + '\r\n', result.footnotes.list[0].text)
 
     #
     # Test for getting footnotes without node path.
@@ -126,7 +133,10 @@ class TestFootnote(BaseTestContext):
 
         result = self.words_api.get_footnotes(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.footnotes, 'Validate GetFootnotesWithoutNodePath response')
+        self.assertIsNotNone(result.footnotes.list, 'Validate GetFootnotesWithoutNodePath response')
+        self.assertEqual(6, len(result.footnotes.list))
+        self.assertEqual(' Footnote 1.' + '\r\n', result.footnotes.list[0].text)
 
     #
     # Test for getting footnote.
@@ -142,7 +152,8 @@ class TestFootnote(BaseTestContext):
 
         result = self.words_api.get_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.footnote, 'Validate GetFootnote response')
+        self.assertEqual(' Footnote 1.' + '\r\n', result.footnote.text)
 
     #
     # Test for getting footnote without node path.
@@ -158,7 +169,8 @@ class TestFootnote(BaseTestContext):
 
         result = self.words_api.get_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.footnote, 'Validate GetFootnoteWithoutNodePath response')
+        self.assertEqual(' Footnote 1.' + '\r\n', result.footnote.text)
 
     #
     # Test for updating footnote.
@@ -175,7 +187,8 @@ class TestFootnote(BaseTestContext):
 
         result = self.words_api.update_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.footnote, 'Validate UpdateFootnote response')
+        self.assertEqual(' new text is here' + '\r\n', result.footnote.text)
 
     #
     # Test for updating footnote without node path.
@@ -192,4 +205,5 @@ class TestFootnote(BaseTestContext):
 
         result = self.words_api.update_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.footnote, 'Validate UpdateFootnoteWithoutNodePath response')
+        self.assertEqual(' new text is here' + '\r\n', result.footnote.text)

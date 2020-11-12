@@ -46,7 +46,9 @@ class TestHeaderFooter(BaseTestContext):
 
         result = self.words_api.get_header_footers(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.header_footers, 'Validate GetHeaderFooters response')
+        self.assertIsNotNone(result.header_footers.list, 'Validate GetHeaderFooters response')
+        self.assertEqual(6, len(result.header_footers.list))
 
     #
     # Test for getting headerfooter.
@@ -62,7 +64,10 @@ class TestHeaderFooter(BaseTestContext):
 
         result = self.words_api.get_header_footer(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.header_footer, 'Validate GetHeaderFooter response')
+        self.assertIsNotNone(result.header_footer.child_nodes, 'Validate GetHeaderFooter response')
+        self.assertEqual(1, len(result.header_footer.child_nodes))
+        self.assertEqual('0.0.0', result.header_footer.child_nodes[0].node_id)
 
     #
     # Test for getting headerfooter of section.
@@ -78,7 +83,10 @@ class TestHeaderFooter(BaseTestContext):
 
         result = self.words_api.get_header_footer_of_section(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.header_footer, 'Validate GetHeaderFooterOfSection response')
+        self.assertIsNotNone(result.header_footer.child_nodes, 'Validate GetHeaderFooterOfSection response')
+        self.assertEqual(1, len(result.header_footer.child_nodes))
+        self.assertEqual('0.0.0', result.header_footer.child_nodes[0].node_id)
 
     #
     # Test for deleting headerfooter.
@@ -124,4 +132,7 @@ class TestHeaderFooter(BaseTestContext):
 
         result = self.words_api.insert_header_footer(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.header_footer, 'Validate InsertHeaderFooter response')
+        self.assertIsNotNone(result.header_footer.child_nodes, 'Validate InsertHeaderFooter response')
+        self.assertEqual(1, len(result.header_footer.child_nodes))
+        self.assertEqual('0.2.0', result.header_footer.child_nodes[0].node_id)

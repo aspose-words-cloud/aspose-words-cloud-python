@@ -42,4 +42,6 @@ class TestLoadWebDocument(BaseTestContext):
 
         result = self.words_api.load_web_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.save_result, 'Validate LoadWebDocument response')
+        self.assertIsNotNone(result.save_result.dest_document, 'Validate LoadWebDocument response')
+        self.assertEqual('google.doc', result.save_result.dest_document.href)

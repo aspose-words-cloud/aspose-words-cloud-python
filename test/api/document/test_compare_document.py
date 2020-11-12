@@ -51,4 +51,5 @@ class TestCompareDocument(BaseTestContext):
 
         result = self.words_api.compare_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.document, 'Validate CompareDocument response')
+        self.assertEqual('TestCompareDocumentOut.doc', result.document.file_name)

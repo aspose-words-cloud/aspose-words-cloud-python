@@ -49,4 +49,4 @@ class TestFont(BaseTestContext):
 
         result = self.words_api.get_available_fonts(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.system_fonts, 'Validate GetAvailableFonts response')
