@@ -36,8 +36,8 @@ class TestReadme(BaseTestContext):
     def test_readme_code(self):
         creds = self.read_config()
 
-        client_id = creds["ClientId"]
         client_secret = creds["ClientSecret"]
+        client_id = creds["ClientId"]
         base_url = creds["BaseUrl"]
 
         local_folder = self.local_common_folder
