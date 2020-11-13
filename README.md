@@ -120,7 +120,7 @@ The complete source code is available at [GitHub Repository](https://github.com/
 ```python
         # Start README example
 
-        self.words_api = asposewordscloud.WordsApi(api_sid, api_key)
+        self.words_api = asposewordscloud.WordsApi(client_id, client_secret)
         self.words_api.api_client.configuration.host = base_url
 
         upload_request = asposewordscloud.models.requests.UploadFileRequest(

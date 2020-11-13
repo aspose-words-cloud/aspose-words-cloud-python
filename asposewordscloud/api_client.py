@@ -109,8 +109,8 @@ class ApiClient(object):
         config = self.configuration
         request_url = "/connect/token"
         form_params = [['grant_type', 'client_credentials', 'string'],
-                       ['client_id', config.api_key['app_sid'], 'string'],
-                       ['client_secret', config.api_key['api_key'], 'string']]
+                       ['client_id', config.client_secret['client_id'], 'string'],
+                       ['client_secret', config.client_secret['client_secret'], 'string']]
 
         header_params = {'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded'}
 

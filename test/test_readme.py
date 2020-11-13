@@ -36,8 +36,8 @@ class TestReadme(BaseTestContext):
     def test_readme_code(self):
         creds = self.read_config()
 
-        api_key = creds["AppKey"]
-        api_sid = creds["AppSid"]
+        client_id = creds["ClientId"]
+        client_secret = creds["ClientSecret"]
         base_url = creds["BaseUrl"]
 
         local_folder = self.local_common_folder
@@ -48,7 +48,7 @@ class TestReadme(BaseTestContext):
 
         # Start README example
 
-        self.words_api = asposewordscloud.WordsApi(api_sid, api_key)
+        self.words_api = asposewordscloud.WordsApi(client_id, client_secret)
         self.words_api.api_client.configuration.host = base_url
 
         upload_request = asposewordscloud.models.requests.UploadFileRequest(

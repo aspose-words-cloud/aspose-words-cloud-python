@@ -39,19 +39,19 @@ class WordsApi(object):
     """
     Aspose.Words for Cloud API
 
-    :param app_sid: app sid of client.
-    :param app_key: app key of client.
+    :param client_id: client id.
+    :param client_secret: client secret.
     """
-    def __init__(self, app_sid, app_key):
-        if len(app_sid) == 0:
-            raise ValueError("app_sid could not be an empty string.")
+    def __init__(self, client_id, client_secret):
+        if len(client_id) == 0:
+            raise ValueError("client_id could not be an empty string.")
         
-        if len(app_sid) == 0:
-            raise ValueError("app_sid could not be an empty string.")
+        if len(client_id) == 0:
+            raise ValueError("client_id could not be an empty string.")
         
         self.api_client = ApiClient()
-        self.api_client.configuration.api_key['api_key'] = app_key
-        self.api_client.configuration.api_key['app_sid'] = app_sid
+        self.api_client.configuration.client_secret['client_id'] = client_id
+        self.api_client.configuration.client_secret['client_secret'] = client_secret
 
     def accept_all_revisions(self, request, **kwargs):  # noqa: E501
         """Accepts all revisions in document.  # noqa: E501
