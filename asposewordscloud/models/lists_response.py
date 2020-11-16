@@ -31,7 +31,7 @@ import json
 
 
 class ListsResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/lists.
+    """The REST response with a collection of lists, contained in the document.
     """
 
     """
@@ -67,7 +67,7 @@ class ListsResponse(object):
     def request_id(self):
         """Gets the request_id of this ListsResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this ListsResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class ListsResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this ListsResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this ListsResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class ListsResponse(object):
     def lists(self):
         """Gets the lists of this ListsResponse.  # noqa: E501
 
-        Gets or sets lists which are contained in document.  # noqa: E501
+        Gets or sets the collection of lists, contained in the document.  # noqa: E501
 
         :return: The lists of this ListsResponse.  # noqa: E501
         :rtype: Lists
@@ -100,7 +100,7 @@ class ListsResponse(object):
     def lists(self, lists):
         """Sets the lists of this ListsResponse.
 
-        Gets or sets lists which are contained in document.  # noqa: E501
+        Gets or sets the collection of lists, contained in the document.  # noqa: E501
 
         :param lists: The lists of this ListsResponse.  # noqa: E501
         :type: Lists

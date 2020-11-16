@@ -30,8 +30,8 @@ class GetTableCellRequest(object):
     """
     Request model for get_table_cell operation.
     Initializes a new instance.
-    :param name The document name.
-    :param table_row_path Path to table row.
+    :param name The filename of the input document.
+    :param table_row_path The path to the table row in the document tree.
     :param index Object index.
     :param folder Original document folder.
     :param storage Original document storage.

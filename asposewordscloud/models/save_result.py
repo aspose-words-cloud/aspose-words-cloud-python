@@ -72,7 +72,7 @@ class SaveResult(object):
     def additional_items(self):
         """Gets the additional_items of this SaveResult.  # noqa: E501
 
-        Gets or sets links to additional items (css, images etc).  # noqa: E501
+        Gets or sets the list of links to additional items (css, images etc).  # noqa: E501
 
         :return: The additional_items of this SaveResult.  # noqa: E501
         :rtype: list[FileLink]
@@ -83,7 +83,7 @@ class SaveResult(object):
     def additional_items(self, additional_items):
         """Sets the additional_items of this SaveResult.
 
-        Gets or sets links to additional items (css, images etc).  # noqa: E501
+        Gets or sets the list of links to additional items (css, images etc).  # noqa: E501
 
         :param additional_items: The additional_items of this SaveResult.  # noqa: E501
         :type: list[FileLink]
@@ -94,7 +94,7 @@ class SaveResult(object):
     def dest_document(self):
         """Gets the dest_document of this SaveResult.  # noqa: E501
 
-        Gets or sets link to destination document.  # noqa: E501
+        Gets or sets the link to destination document.  # noqa: E501
 
         :return: The dest_document of this SaveResult.  # noqa: E501
         :rtype: FileLink
@@ -105,7 +105,7 @@ class SaveResult(object):
     def dest_document(self, dest_document):
         """Sets the dest_document of this SaveResult.
 
-        Gets or sets link to destination document.  # noqa: E501
+        Gets or sets the link to destination document.  # noqa: E501
 
         :param dest_document: The dest_document of this SaveResult.  # noqa: E501
         :type: FileLink
@@ -116,7 +116,7 @@ class SaveResult(object):
     def source_document(self):
         """Gets the source_document of this SaveResult.  # noqa: E501
 
-        Gets or sets link to source document.  # noqa: E501
+        Gets or sets the link to source document.  # noqa: E501
 
         :return: The source_document of this SaveResult.  # noqa: E501
         :rtype: FileLink
@@ -127,7 +127,7 @@ class SaveResult(object):
     def source_document(self, source_document):
         """Sets the source_document of this SaveResult.
 
-        Gets or sets link to source document.  # noqa: E501
+        Gets or sets the link to source document.  # noqa: E501
 
         :param source_document: The source_document of this SaveResult.  # noqa: E501
         :type: FileLink

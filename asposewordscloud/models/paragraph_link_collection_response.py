@@ -31,7 +31,7 @@ import json
 
 
 class ParagraphLinkCollectionResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs.
+    """The REST response with a collection of paragraphs.
     """
 
     """
@@ -67,7 +67,7 @@ class ParagraphLinkCollectionResponse(object):
     def request_id(self):
         """Gets the request_id of this ParagraphLinkCollectionResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this ParagraphLinkCollectionResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class ParagraphLinkCollectionResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this ParagraphLinkCollectionResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this ParagraphLinkCollectionResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class ParagraphLinkCollectionResponse(object):
     def paragraphs(self):
         """Gets the paragraphs of this ParagraphLinkCollectionResponse.  # noqa: E501
 
-        Gets or sets collection of paragraphs.  # noqa: E501
+        Gets or sets the collection of paragraphs.  # noqa: E501
 
         :return: The paragraphs of this ParagraphLinkCollectionResponse.  # noqa: E501
         :rtype: ParagraphLinkCollection
@@ -100,7 +100,7 @@ class ParagraphLinkCollectionResponse(object):
     def paragraphs(self, paragraphs):
         """Sets the paragraphs of this ParagraphLinkCollectionResponse.
 
-        Gets or sets collection of paragraphs.  # noqa: E501
+        Gets or sets the collection of paragraphs.  # noqa: E501
 
         :param paragraphs: The paragraphs of this ParagraphLinkCollectionResponse.  # noqa: E501
         :type: ParagraphLinkCollection

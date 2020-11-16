@@ -31,7 +31,7 @@ import json
 
 
 class TableCellResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/tables/{0}.
+    """The REST response with a table cell.
     """
 
     """
@@ -67,7 +67,7 @@ class TableCellResponse(object):
     def request_id(self):
         """Gets the request_id of this TableCellResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this TableCellResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class TableCellResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this TableCellResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this TableCellResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class TableCellResponse(object):
     def cell(self):
         """Gets the cell of this TableCellResponse.  # noqa: E501
 
-        Gets or sets table cell.  # noqa: E501
+        Gets or sets the table cell.  # noqa: E501
 
         :return: The cell of this TableCellResponse.  # noqa: E501
         :rtype: TableCell
@@ -100,7 +100,7 @@ class TableCellResponse(object):
     def cell(self, cell):
         """Sets the cell of this TableCellResponse.
 
-        Gets or sets table cell.  # noqa: E501
+        Gets or sets the table cell.  # noqa: E501
 
         :param cell: The cell of this TableCellResponse.  # noqa: E501
         :type: TableCell

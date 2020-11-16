@@ -77,7 +77,7 @@ class ReportEngineSettings(object):
     def csv_data_load_options(self):
         """Gets the csv_data_load_options of this ReportEngineSettings.  # noqa: E501
 
-        Gets or sets options for parsing CSV data.  # noqa: E501
+        Gets or sets the options for parsing CSV data.  # noqa: E501
 
         :return: The csv_data_load_options of this ReportEngineSettings.  # noqa: E501
         :rtype: CsvDataLoadOptions
@@ -88,7 +88,7 @@ class ReportEngineSettings(object):
     def csv_data_load_options(self, csv_data_load_options):
         """Sets the csv_data_load_options of this ReportEngineSettings.
 
-        Gets or sets options for parsing CSV data.  # noqa: E501
+        Gets or sets the options for parsing CSV data.  # noqa: E501
 
         :param csv_data_load_options: The csv_data_load_options of this ReportEngineSettings.  # noqa: E501
         :type: CsvDataLoadOptions
@@ -99,7 +99,7 @@ class ReportEngineSettings(object):
     def data_source_name(self):
         """Gets the data_source_name of this ReportEngineSettings.  # noqa: E501
 
-        Gets or sets a name to reference the data source object in the template.  # noqa: E501
+        Gets or sets the name to reference the data source object in the template.  # noqa: E501
 
         :return: The data_source_name of this ReportEngineSettings.  # noqa: E501
         :rtype: str
@@ -110,7 +110,7 @@ class ReportEngineSettings(object):
     def data_source_name(self, data_source_name):
         """Sets the data_source_name of this ReportEngineSettings.
 
-        Gets or sets a name to reference the data source object in the template.  # noqa: E501
+        Gets or sets the name to reference the data source object in the template.  # noqa: E501
 
         :param data_source_name: The data_source_name of this ReportEngineSettings.  # noqa: E501
         :type: str

@@ -89,7 +89,7 @@ class BookmarkData(object):
     def text(self):
         """Gets the text of this BookmarkData.  # noqa: E501
 
-        Gets or sets the text enclosed in the bookmark.  # noqa: E501
+        Gets or sets text, enclosed in the bookmark.  # noqa: E501
 
         :return: The text of this BookmarkData.  # noqa: E501
         :rtype: str
@@ -100,7 +100,7 @@ class BookmarkData(object):
     def text(self, text):
         """Sets the text of this BookmarkData.
 
-        Gets or sets the text enclosed in the bookmark.  # noqa: E501
+        Gets or sets text, enclosed in the bookmark.  # noqa: E501
 
         :param text: The text of this BookmarkData.  # noqa: E501
         :type: str

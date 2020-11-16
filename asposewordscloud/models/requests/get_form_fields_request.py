@@ -30,8 +30,8 @@ class GetFormFieldsRequest(object):
     """
     Request model for get_form_fields operation.
     Initializes a new instance.
-    :param name The document name.
-    :param node_path Path to the node containing collection of form fields.
+    :param name The filename of the input document.
+    :param node_path The path to the node in the document tree.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

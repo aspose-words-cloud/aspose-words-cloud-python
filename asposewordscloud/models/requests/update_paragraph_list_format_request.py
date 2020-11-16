@@ -30,10 +30,10 @@ class UpdateParagraphListFormatRequest(object):
     """
     Request model for update_paragraph_list_format operation.
     Initializes a new instance.
-    :param name The document name.
-    :param dto Paragraph format object.
+    :param name The filename of the input document.
+    :param dto The formatting properties of a paragraph list.
     :param index Object index.
-    :param node_path Path to the node which contains paragraphs.
+    :param node_path The path to the node in the document tree.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

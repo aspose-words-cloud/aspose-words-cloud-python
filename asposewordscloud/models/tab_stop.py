@@ -31,7 +31,7 @@ import json
 
 
 class TabStop(object):
-    """Paragraph format tab stop.
+    """DTO container with paragraph format tab stop.
     """
 
     """

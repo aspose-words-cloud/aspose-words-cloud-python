@@ -54,13 +54,13 @@ class WordsApi(object):
         self.api_client.configuration.client_secret['client_secret'] = client_secret
 
     def accept_all_revisions(self, request, **kwargs):  # noqa: E501
-        """Accepts all revisions in document.  # noqa: E501
+        """Accepts all revisions in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -85,7 +85,7 @@ class WordsApi(object):
             return data
         
     def accept_all_revisions_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Accepts all revisions in document.  # noqa: E501
+        """Accepts all revisions in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -131,14 +131,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def append_document(self, request, **kwargs):  # noqa: E501
-        """Appends documents to original document.  # noqa: E501
+        """Appends documents to the original document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : Original document name. (required)
-        :param document_list DocumentEntryList : DocumentEntryList with a list of documents to append. (required)
+        :param name str : The filename of the input document. (required)
+        :param document_list DocumentEntryList : The collection of documents to append. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -165,7 +165,7 @@ class WordsApi(object):
             return data
         
     def append_document_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Appends documents to original document.  # noqa: E501
+        """Appends documents to the original document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -214,15 +214,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def apply_style_to_document_element(self, request, **kwargs):  # noqa: E501
-        """Apply a style to the document node.  # noqa: E501
+        """Applies a style to the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param style_apply StyleApply : Style to apply. (required)
-        :param styled_node_path str : The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table. (required)
+        :param name str : The filename of the input document. (required)
+        :param style_apply StyleApply : The style to apply. (required)
+        :param styled_node_path str : The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -249,7 +249,7 @@ class WordsApi(object):
             return data
         
     def apply_style_to_document_element_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Apply a style to the document node.  # noqa: E501
+        """Applies a style to the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -298,20 +298,20 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def build_report(self, request, **kwargs):  # noqa: E501
-        """Executes document "build report" operation.  # noqa: E501
+        """Executes the report generation process using the specified document template and the external data source in XML, JSON or CSV format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The template name. (required)
+        :param name str : The filename of the input document. (required)
         :param data str : A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv. (required)
         :param report_engine_settings ReportEngineSettings : An object providing a settings of report engine. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
-        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name.
+        :param dest_file_name str : The filename of the output document. If this parameter is omitted, the result will be saved with autogenerated name.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -331,7 +331,7 @@ class WordsApi(object):
             return data
         
     def build_report_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Executes document "build report" operation.  # noqa: E501
+        """Executes the report generation process using the specified document template and the external data source in XML, JSON or CSV format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -380,7 +380,7 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def build_report_online(self, request, **kwargs):  # noqa: E501
-        """Executes document "build report" online operation.  # noqa: E501
+        """Executes the report generation process online using the specified document template and the external data source in XML, JSON or CSV format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -389,7 +389,7 @@ class WordsApi(object):
         :param template file : File with template. (required)
         :param data str : A string providing a data to populate the specified template. The string must be of one of the following types: xml, json, csv. (required)
         :param report_engine_settings ReportEngineSettings : An object providing a settings of report engine. (required)
-        :param document_file_name str : This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+        :param document_file_name str : The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -409,7 +409,7 @@ class WordsApi(object):
             return data
         
     def build_report_online_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Executes document "build report" online operation.  # noqa: E501
+        """Executes the report generation process online using the specified document template and the external data source in XML, JSON or CSV format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -458,14 +458,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def classify(self, request, **kwargs):  # noqa: E501
-        """Classifies raw text.  # noqa: E501
+        """Runs a multi-class text classification for the specified raw text.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param text str : Text to classify. (required)
-        :param best_classes_count str : Number of the best classes to return.
+        :param text str : The text to classify. (required)
+        :param best_classes_count str : The number of the best classes to return.
         :return: ClassificationResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -485,7 +485,7 @@ class WordsApi(object):
             return data
         
     def classify_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Classifies raw text.  # noqa: E501
+        """Runs a multi-class text classification for the specified raw text.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -534,19 +534,19 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def classify_document(self, request, **kwargs):  # noqa: E501
-        """Classifies document.  # noqa: E501
+        """Runs a multi-class text classification for the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param document_name str : The document name. (required)
+        :param document_name str : The filename of the input document. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
-        :param best_classes_count str : Count of the best classes to return.
-        :param taxonomy str : Taxonomy to use for classification return.
+        :param best_classes_count str : The number of the best classes to return.
+        :param taxonomy str : The taxonomy to use.
         :return: ClassificationResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -566,7 +566,7 @@ class WordsApi(object):
             return data
         
     def classify_document_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Classifies document.  # noqa: E501
+        """Runs a multi-class text classification for the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -612,14 +612,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def compare_document(self, request, **kwargs):  # noqa: E501
-        """Compares document with original document.  # noqa: E501
+        """Compares two documents.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : Original document name. (required)
-        :param compare_data CompareData : CompareData with a document to compare. (required)
+        :param name str : The filename of the input document. (required)
+        :param compare_data CompareData : The properties of the document to compare with. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -644,7 +644,7 @@ class WordsApi(object):
             return data
         
     def compare_document_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Compares document with original document.  # noqa: E501
+        """Compares two documents.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -693,17 +693,17 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def convert_document(self, request, **kwargs):  # noqa: E501
-        """Converts document from the request's content to the specified format.  # noqa: E501
+        """Converts a document on a local drive to the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
         :param document file : Converting document. (required)
-        :param format str : Format to convert. (required)
+        :param format str : The format to convert. (required)
         :param storage str : Original document storage.
-        :param out_path str : Path for saving operation result to the local storage.
-        :param file_name_field_value str : This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead.
+        :param out_path str : The path to the output document on a local storage.
+        :param file_name_field_value str : The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
                  If the method is called asynchronously,
@@ -724,7 +724,7 @@ class WordsApi(object):
             return data
         
     def convert_document_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Converts document from the request's content to the specified format.  # noqa: E501
+        """Converts a document on a local drive to the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -924,14 +924,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def copy_style(self, request, **kwargs):  # noqa: E501
-        """Copy and insert a new style to the document, returns a copied style.  # noqa: E501
+        """Makes a copy of the style in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param style_copy StyleCopy : Style to copy. (required)
+        :param name str : The filename of the input document. (required)
+        :param style_copy StyleCopy : The properties of the style. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -958,7 +958,7 @@ class WordsApi(object):
             return data
         
     def copy_style_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Copy and insert a new style to the document, returns a copied style.  # noqa: E501
+        """Makes a copy of the style in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1007,15 +1007,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def create_document(self, request, **kwargs):  # noqa: E501
-        """Creates new document. Document is created with format which is recognized from file extensions. Supported extensions: ".doc", ".docx", ".docm", ".dot", ".dotm", ".dotx", ".flatopc", ".fopc", ".flatopc_macro", ".fopc_macro", ".flatopc_template", ".fopc_template", ".flatopc_template_macro", ".fopc_template_macro", ".wordml", ".wml", ".rtf".  # noqa: E501
+        """Supported extensions: ".doc", ".docx", ".docm", ".dot", ".dotm", ".dotx", ".flatopc", ".fopc", ".flatopc_macro", ".fopc_macro", ".flatopc_template", ".fopc_template", ".flatopc_template_macro", ".fopc_template_macro", ".wordml", ".wml", ".rtf".  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
         :param storage str : Original document storage.
-        :param file_name str : The document name.
-        :param folder str : The document folder.
+        :param file_name str : The filename of the document.
+        :param folder str : The path to the document folder.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1035,7 +1035,7 @@ class WordsApi(object):
             return data
         
     def create_document_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Creates new document. Document is created with format which is recognized from file extensions. Supported extensions: ".doc", ".docx", ".docm", ".dot", ".dotm", ".dotx", ".flatopc", ".fopc", ".flatopc_macro", ".fopc_macro", ".flatopc_template", ".fopc_template", ".flatopc_template_macro", ".fopc_template_macro", ".wordml", ".wml", ".rtf".  # noqa: E501
+        """Supported extensions: ".doc", ".docx", ".docm", ".dot", ".dotm", ".dotx", ".flatopc", ".fopc", ".flatopc_macro", ".fopc_macro", ".flatopc_template", ".fopc_template", ".flatopc_template_macro", ".fopc_template_macro", ".wordml", ".wml", ".rtf".  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1154,15 +1154,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def create_or_update_document_property(self, request, **kwargs):  # noqa: E501
-        """Adds new or update existing document property.  # noqa: E501
+        """Adds a new or updates an existing document property.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param property_name str : The property name. (required)
-        :param _property DocumentPropertyCreateOrUpdate : The property with new value. (required)
+        :param name str : The filename of the input document. (required)
+        :param property_name str : The name of the property. (required)
+        :param _property DocumentPropertyCreateOrUpdate : The property with a new value. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -1189,7 +1189,7 @@ class WordsApi(object):
             return data
         
     def create_or_update_document_property_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Adds new or update existing document property.  # noqa: E501
+        """Adds a new or updates an existing document property.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1238,15 +1238,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_all_paragraph_tab_stops(self, request, **kwargs):  # noqa: E501
-        """Remove all tab stops.  # noqa: E501
+        """Removes paragraph tab stops from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node which contains paragraph.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -1271,7 +1271,7 @@ class WordsApi(object):
             return data
         
     def delete_all_paragraph_tab_stops_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Remove all tab stops.  # noqa: E501
+        """Removes paragraph tab stops from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1317,15 +1317,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_border(self, request, **kwargs):  # noqa: E501
-        """'nodePath' should refer to paragraph, cell or row.  # noqa: E501
+        """The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param border_type str : Border type. (required)
-        :param node_path str : Path to the node with border(node should be paragraph, cell or row).
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -1352,7 +1352,7 @@ class WordsApi(object):
             return data
         
     def delete_border_with_http_info(self, request, **kwargs):  # noqa: E501
-        """'nodePath' should refer to paragraph, cell or row.  # noqa: E501
+        """The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1398,14 +1398,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_borders(self, request, **kwargs):  # noqa: E501
-        """'nodePath' should refer to paragraph, cell or row.  # noqa: E501
+        """The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param node_path str : Path to the node with borders(node should be paragraph, cell or row).
+        :param name str : The filename of the input document. (required)
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -1432,7 +1432,7 @@ class WordsApi(object):
             return data
         
     def delete_borders_with_http_info(self, request, **kwargs):  # noqa: E501
-        """'nodePath' should refer to paragraph, cell or row.  # noqa: E501
+        """The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1478,14 +1478,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_comment(self, request, **kwargs):  # noqa: E501
-        """Removes comment from document.  # noqa: E501
+        """Removes a comment from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param comment_index int : The comment index. (required)
+        :param name str : The filename of the input document. (required)
+        :param comment_index int : The index of the comment. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -1512,7 +1512,7 @@ class WordsApi(object):
             return data
         
     def delete_comment_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Removes comment from document.  # noqa: E501
+        """Removes a comment from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1558,14 +1558,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_document_property(self, request, **kwargs):  # noqa: E501
-        """Deletes document property.  # noqa: E501
+        """Removes a document property.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param property_name str : The property name. (required)
+        :param name str : The filename of the input document. (required)
+        :param property_name str : The name of the property. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -1592,7 +1592,7 @@ class WordsApi(object):
             return data
         
     def delete_document_property_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Deletes document property.  # noqa: E501
+        """Removes a document property.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1638,15 +1638,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_drawing_object(self, request, **kwargs):  # noqa: E501
-        """Removes drawing object from document.  # noqa: E501
+        """Removes a DrawingObject from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains collection of drawing objects.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -1673,7 +1673,7 @@ class WordsApi(object):
             return data
         
     def delete_drawing_object_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Removes drawing object from document.  # noqa: E501
+        """Removes a DrawingObject from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1719,15 +1719,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_field(self, request, **kwargs):  # noqa: E501
-        """Deletes field from document.  # noqa: E501
+        """Removes a field from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains collection of fields.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -1754,7 +1754,7 @@ class WordsApi(object):
             return data
         
     def delete_field_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Deletes field from document.  # noqa: E501
+        """Removes a field from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1800,14 +1800,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_fields(self, request, **kwargs):  # noqa: E501
-        """Removes fields from section paragraph.  # noqa: E501
+        """Removes fields from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param node_path str : Path to the node, which contains collection of fields.
+        :param name str : The filename of the input document. (required)
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -1834,7 +1834,7 @@ class WordsApi(object):
             return data
         
     def delete_fields_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Removes fields from section paragraph.  # noqa: E501
+        """Removes fields from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2028,15 +2028,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_footnote(self, request, **kwargs):  # noqa: E501
-        """Removes footnote from document.  # noqa: E501
+        """Removes a footnote from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains collection of footnotes.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -2063,7 +2063,7 @@ class WordsApi(object):
             return data
         
     def delete_footnote_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Removes footnote from document.  # noqa: E501
+        """Removes a footnote from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2109,15 +2109,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_form_field(self, request, **kwargs):  # noqa: E501
-        """Removes form field from document.  # noqa: E501
+        """Removes a form field from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node that contains collection of formfields.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -2144,7 +2144,7 @@ class WordsApi(object):
             return data
         
     def delete_form_field_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Removes form field from document.  # noqa: E501
+        """Removes a form field from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2190,14 +2190,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_header_footer(self, request, **kwargs):  # noqa: E501
-        """Deletes header/footer from document.  # noqa: E501
+        """Removes a HeaderFooter object from the document section.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param section_path str : Path to parent section. (required)
+        :param name str : The filename of the input document. (required)
+        :param section_path str : The path to the section in the document tree. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -2225,7 +2225,7 @@ class WordsApi(object):
             return data
         
     def delete_header_footer_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Deletes header/footer from document.  # noqa: E501
+        """Removes a HeaderFooter object from the document section.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2271,14 +2271,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_headers_footers(self, request, **kwargs):  # noqa: E501
-        """Deletes document headers and footers.  # noqa: E501
+        """Removes HeaderFooter objects from the document section.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param section_path str : Path to parent section. (required)
+        :param name str : The filename of the input document. (required)
+        :param section_path str : The path to the section in the document tree. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -2286,7 +2286,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param headers_footers_types str : List of types of headers and footers.
+        :param headers_footers_types str : The list of HeaderFooter types.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2306,7 +2306,7 @@ class WordsApi(object):
             return data
         
     def delete_headers_footers_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Deletes document headers and footers.  # noqa: E501
+        """Removes HeaderFooter objects from the document section.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2352,13 +2352,13 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_macros(self, request, **kwargs):  # noqa: E501
-        """Removes macros from document.  # noqa: E501
+        """Removes macros from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -2385,7 +2385,7 @@ class WordsApi(object):
             return data
         
     def delete_macros_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Removes macros from document.  # noqa: E501
+        """Removes macros from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2431,15 +2431,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_office_math_object(self, request, **kwargs):  # noqa: E501
-        """Removes OfficeMath object from document.  # noqa: E501
+        """Removes an OfficeMath object from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains collection of OfficeMath objects.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -2466,7 +2466,7 @@ class WordsApi(object):
             return data
         
     def delete_office_math_object_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Removes OfficeMath object from document.  # noqa: E501
+        """Removes an OfficeMath object from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2512,15 +2512,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_paragraph(self, request, **kwargs):  # noqa: E501
-        """Removes paragraph from section.  # noqa: E501
+        """Removes a paragraph from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The file name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node which contains paragraphs.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -2547,7 +2547,7 @@ class WordsApi(object):
             return data
         
     def delete_paragraph_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Removes paragraph from section.  # noqa: E501
+        """Removes a paragraph from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2593,15 +2593,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_paragraph_list_format(self, request, **kwargs):  # noqa: E501
-        """Delete paragraph list format, returns updated list format properties.  # noqa: E501
+        """Removes the formatting properties of a paragraph list from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node which contains paragraphs.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -2628,7 +2628,7 @@ class WordsApi(object):
             return data
         
     def delete_paragraph_list_format_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Delete paragraph list format, returns updated list format properties.  # noqa: E501
+        """Removes the formatting properties of a paragraph list from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2674,16 +2674,16 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_paragraph_tab_stop(self, request, **kwargs):  # noqa: E501
-        """Remove the i-th tab stop.  # noqa: E501
+        """Removes a paragraph tab stop from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param position float : a tab stop position to remove. (required)
+        :param name str : The filename of the input document. (required)
+        :param position float : The position of a tab stop to remove. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node which contains paragraph.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -2708,7 +2708,7 @@ class WordsApi(object):
             return data
         
     def delete_paragraph_tab_stop_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Remove the i-th tab stop.  # noqa: E501
+        """Removes a paragraph tab stop from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2754,14 +2754,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_run(self, request, **kwargs):  # noqa: E501
-        """Removes run from document.  # noqa: E501
+        """Removes a Run object from the paragraph.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param paragraph_path str : Path to parent paragraph. (required)
+        :param name str : The filename of the input document. (required)
+        :param paragraph_path str : The path to the paragraph in the document tree. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -2789,7 +2789,7 @@ class WordsApi(object):
             return data
         
     def delete_run_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Removes run from document.  # noqa: E501
+        """Removes a Run object from the paragraph.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2835,14 +2835,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_section(self, request, **kwargs):  # noqa: E501
-        """Removes section from document.  # noqa: E501
+        """Removes a section from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param section_index int : Section index. (required)
+        :param name str : The filename of the input document. (required)
+        :param section_index int : The index of the section. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -2869,7 +2869,7 @@ class WordsApi(object):
             return data
         
     def delete_section_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Removes section from document.  # noqa: E501
+        """Removes a section from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2915,15 +2915,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_table(self, request, **kwargs):  # noqa: E501
-        """Deletes a table.  # noqa: E501
+        """Removes a table from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains tables.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -2950,7 +2950,7 @@ class WordsApi(object):
             return data
         
     def delete_table_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Deletes a table.  # noqa: E501
+        """Removes a table from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2996,14 +2996,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_table_cell(self, request, **kwargs):  # noqa: E501
-        """Deletes a table cell.  # noqa: E501
+        """Removes a cell from the table row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param table_row_path str : Path to table row. (required)
+        :param name str : The filename of the input document. (required)
+        :param table_row_path str : The path to the table row in the document tree. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -3031,7 +3031,7 @@ class WordsApi(object):
             return data
         
     def delete_table_cell_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Deletes a table cell.  # noqa: E501
+        """Removes a cell from the table row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -3077,14 +3077,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_table_row(self, request, **kwargs):  # noqa: E501
-        """Deletes a table row.  # noqa: E501
+        """Removes a row from the table.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param table_path str : Path to table. (required)
+        :param name str : The filename of the input document. (required)
+        :param table_path str : The path to the table in the document tree. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -3112,7 +3112,7 @@ class WordsApi(object):
             return data
         
     def delete_table_row_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Deletes a table row.  # noqa: E501
+        """Removes a row from the table.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -3158,13 +3158,13 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def delete_watermark(self, request, **kwargs):  # noqa: E501
-        """Deletes watermark (for deleting last watermark from the document).  # noqa: E501
+        """Removes a watermark from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -3191,7 +3191,7 @@ class WordsApi(object):
             return data
         
     def delete_watermark_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Deletes watermark (for deleting last watermark from the document).  # noqa: E501
+        """Removes a watermark from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -3311,23 +3311,23 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def execute_mail_merge(self, request, **kwargs):  # noqa: E501
-        """Executes document mail merge operation.  # noqa: E501
+        """Executes a Mail Merge operation.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The template name. (required)
+        :param name str : The filename of the input document. (required)
         :param data str : Mail merge data.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
-        :param with_regions bool : With regions flag.
-        :param mail_merge_data_file str : Mail merge data file.
-        :param cleanup str : Clean up options.
-        :param use_whole_paragraph_as_region bool : Gets or sets a value indicating whether paragraph with TableStart or. TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields. The default value is true.
-        :param dest_file_name str : Result name of the document after the operation. If this parameter is omitted then result of the operation will be saved with autogenerated name.
+        :param with_regions bool : The flag indicating whether to execute Mail Merge operation with regions.
+        :param mail_merge_data_file str : The data file.
+        :param cleanup str : The cleanup options.
+        :param use_whole_paragraph_as_region bool : The flag indicating whether paragraph with TableStart or TableEnd field should be fully included into mail merge region or particular range between TableStart and TableEnd fields. The default value is true.
+        :param dest_file_name str : The filename of the output document. If this parameter is omitted, the result will be saved with autogenerated name.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3347,7 +3347,7 @@ class WordsApi(object):
             return data
         
     def execute_mail_merge_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Executes document mail merge operation.  # noqa: E501
+        """Executes a Mail Merge operation.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -3396,7 +3396,7 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def execute_mail_merge_online(self, request, **kwargs):  # noqa: E501
-        """Executes document mail merge online.  # noqa: E501
+        """Executes a Mail Merge operation online.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -3404,9 +3404,9 @@ class WordsApi(object):
         :param is_async bool
         :param template file : File with template. (required)
         :param data file : File with mailmerge data. (required)
-        :param with_regions bool : With regions flag.
-        :param cleanup str : Clean up options.
-        :param document_file_name str : This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "template" will be used instead.
+        :param with_regions bool : The flag indicating whether to execute Mail Merge operation with regions.
+        :param cleanup str : The cleanup options.
+        :param document_file_name str : The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3426,7 +3426,7 @@ class WordsApi(object):
             return data
         
     def execute_mail_merge_online_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Executes document mail merge online.  # noqa: E501
+        """Executes a Mail Merge operation online.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -3475,13 +3475,13 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_available_fonts(self, request, **kwargs):  # noqa: E501
-        """Gets the list of fonts, available for document processing.  # noqa: E501
+        """Reads available fonts from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param fonts_location str : Folder in filestorage with custom fonts.
+        :param fonts_location str : The folder in cloud storage with custom fonts.
         :return: AvailableFontsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3501,7 +3501,7 @@ class WordsApi(object):
             return data
         
     def get_available_fonts_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Gets the list of fonts, available for document processing.  # noqa: E501
+        """Reads available fonts from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -3547,14 +3547,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_bookmark_by_name(self, request, **kwargs):  # noqa: E501
-        """Reads document bookmark data by its name.  # noqa: E501
+        """Reads a bookmark, specified by name, from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param bookmark_name str : The bookmark name. (required)
+        :param name str : The filename of the input document. (required)
+        :param bookmark_name str : The name of the bookmark. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -3578,7 +3578,7 @@ class WordsApi(object):
             return data
         
     def get_bookmark_by_name_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reads document bookmark data by its name.  # noqa: E501
+        """Reads a bookmark, specified by name, from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -3624,13 +3624,13 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_bookmarks(self, request, **kwargs):  # noqa: E501
-        """Reads document bookmarks common info.  # noqa: E501
+        """Reads bookmarks from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -3654,7 +3654,7 @@ class WordsApi(object):
             return data
         
     def get_bookmarks_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reads document bookmarks common info.  # noqa: E501
+        """Reads bookmarks from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -3700,15 +3700,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_border(self, request, **kwargs):  # noqa: E501
-        """'nodePath' should refer to paragraph, cell or row.  # noqa: E501
+        """The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param border_type str : Border type. (required)
-        :param node_path str : Path to the node with border(node should be paragraph, cell or row).
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -3732,7 +3732,7 @@ class WordsApi(object):
             return data
         
     def get_border_with_http_info(self, request, **kwargs):  # noqa: E501
-        """'nodePath' should refer to paragraph, cell or row.  # noqa: E501
+        """The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -3778,14 +3778,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_borders(self, request, **kwargs):  # noqa: E501
-        """'nodePath' should refer to paragraph, cell or row.  # noqa: E501
+        """Reads borders from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param node_path str : Path to the node with borders (node should be paragraph, cell or row).
+        :param name str : The filename of the input document. (required)
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -3809,7 +3809,7 @@ class WordsApi(object):
             return data
         
     def get_borders_with_http_info(self, request, **kwargs):  # noqa: E501
-        """'nodePath' should refer to paragraph, cell or row.  # noqa: E501
+        """Reads borders from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -3855,14 +3855,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_comment(self, request, **kwargs):  # noqa: E501
-        """Gets comment from document.  # noqa: E501
+        """Reads a comment from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param comment_index int : The comment index. (required)
+        :param name str : The filename of the input document. (required)
+        :param comment_index int : The index of the comment. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -3886,7 +3886,7 @@ class WordsApi(object):
             return data
         
     def get_comment_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Gets comment from document.  # noqa: E501
+        """Reads a comment from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -3932,13 +3932,13 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_comments(self, request, **kwargs):  # noqa: E501
-        """Gets comments from document.  # noqa: E501
+        """Reads comments from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -3962,7 +3962,7 @@ class WordsApi(object):
             return data
         
     def get_comments_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Gets comments from document.  # noqa: E501
+        """Reads comments from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -4008,13 +4008,13 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_document(self, request, **kwargs):  # noqa: E501
-        """Reads document common info.  # noqa: E501
+        """Reads common information from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param document_name str : The document name. (required)
+        :param document_name str : The filename of the input document. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -4038,7 +4038,7 @@ class WordsApi(object):
             return data
         
     def get_document_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reads document common info.  # noqa: E501
+        """Reads common information from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -4084,15 +4084,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_document_drawing_object_by_index(self, request, **kwargs):  # noqa: E501
-        """Reads document drawing object common info by its index or convert to format specified.  # noqa: E501
+        """Reads a DrawingObject from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains collection of drawing objects.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -4116,7 +4116,7 @@ class WordsApi(object):
             return data
         
     def get_document_drawing_object_by_index_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reads document drawing object common info by its index or convert to format specified.  # noqa: E501
+        """Reads a DrawingObject from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -4162,15 +4162,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_document_drawing_object_image_data(self, request, **kwargs):  # noqa: E501
-        """Reads drawing object image data.  # noqa: E501
+        """Reads image data of a DrawingObject from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains collection of drawing objects.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -4194,7 +4194,7 @@ class WordsApi(object):
             return data
         
     def get_document_drawing_object_image_data_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reads drawing object image data.  # noqa: E501
+        """Reads image data of a DrawingObject from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -4240,15 +4240,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_document_drawing_object_ole_data(self, request, **kwargs):  # noqa: E501
-        """Gets drawing object OLE data.  # noqa: E501
+        """Reads OLE data of a DrawingObject from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains collection of drawing objects.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -4272,7 +4272,7 @@ class WordsApi(object):
             return data
         
     def get_document_drawing_object_ole_data_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Gets drawing object OLE data.  # noqa: E501
+        """Reads OLE data of a DrawingObject from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -4318,14 +4318,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_document_drawing_objects(self, request, **kwargs):  # noqa: E501
-        """Reads document drawing objects common info.  # noqa: E501
+        """Reads DrawingObjects from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param node_path str : Path to the node, which contains collection of drawing objects.
+        :param name str : The filename of the input document. (required)
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -4349,7 +4349,7 @@ class WordsApi(object):
             return data
         
     def get_document_drawing_objects_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reads document drawing objects common info.  # noqa: E501
+        """Reads DrawingObjects from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -4395,18 +4395,18 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_document_field_names(self, request, **kwargs):  # noqa: E501
-        """Reads document field names.  # noqa: E501
+        """Reads merge field names from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The template name. (required)
+        :param name str : The filename of the input document. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
-        :param use_non_merge_fields bool : If true, result includes "mustache" field names.
+        :param use_non_merge_fields bool : The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
         :return: FieldNamesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4426,7 +4426,7 @@ class WordsApi(object):
             return data
         
     def get_document_field_names_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reads document field names.  # noqa: E501
+        """Reads merge field names from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -4472,14 +4472,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_document_field_names_online(self, request, **kwargs):  # noqa: E501
-        """Reads document field names.  # noqa: E501
+        """Reads merge field names from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
         :param template file : File with template. (required)
-        :param use_non_merge_fields bool : Use non merge fields or not.
+        :param use_non_merge_fields bool : The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
         :return: FieldNamesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4499,7 +4499,7 @@ class WordsApi(object):
             return data
         
     def get_document_field_names_online_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reads document field names.  # noqa: E501
+        """Reads merge field names from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -4548,14 +4548,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_document_hyperlink_by_index(self, request, **kwargs):  # noqa: E501
-        """Reads document hyperlink by its index.  # noqa: E501
+        """Reads a hyperlink from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param hyperlink_index int : The hyperlink index. (required)
+        :param name str : The filename of the input document. (required)
+        :param hyperlink_index int : The index of the hyperlink. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -4579,7 +4579,7 @@ class WordsApi(object):
             return data
         
     def get_document_hyperlink_by_index_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reads document hyperlink by its index.  # noqa: E501
+        """Reads a hyperlink from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -4625,13 +4625,13 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_document_hyperlinks(self, request, **kwargs):  # noqa: E501
-        """Reads document hyperlinks common info.  # noqa: E501
+        """Reads hyperlinks from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -4655,7 +4655,7 @@ class WordsApi(object):
             return data
         
     def get_document_hyperlinks_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reads document hyperlinks common info.  # noqa: E501
+        """Reads hyperlinks from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -4701,13 +4701,13 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_document_properties(self, request, **kwargs):  # noqa: E501
-        """Reads document properties info.  # noqa: E501
+        """Reads document properties.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document's name. (required)
+        :param name str : The filename of the input document. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -4731,7 +4731,7 @@ class WordsApi(object):
             return data
         
     def get_document_properties_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reads document properties info.  # noqa: E501
+        """Reads document properties.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -4777,14 +4777,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_document_property(self, request, **kwargs):  # noqa: E501
-        """Reads document property info by the property name.  # noqa: E501
+        """Reads a document property.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param property_name str : The property name. (required)
+        :param name str : The filename of the input document. (required)
+        :param property_name str : The name of the property. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -4808,7 +4808,7 @@ class WordsApi(object):
             return data
         
     def get_document_property_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reads document property info by the property name.  # noqa: E501
+        """Reads a document property.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -4854,13 +4854,13 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_document_protection(self, request, **kwargs):  # noqa: E501
-        """Reads document protection common info.  # noqa: E501
+        """Reads protection properties from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -4884,7 +4884,7 @@ class WordsApi(object):
             return data
         
     def get_document_protection_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reads document protection common info.  # noqa: E501
+        """Reads protection properties from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -4936,14 +4936,14 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
-        :param include_comments bool : Support including/excluding comments from the WordCount. Default value is "false".
-        :param include_footnotes bool : Support including/excluding footnotes from the WordCount. Default value is "false".
-        :param include_text_in_shapes bool : Support including/excluding shape's text from the WordCount. Default value is "false".
+        :param include_comments bool : The flag indicating whether to include comments from the WordCount. The default value is "false".
+        :param include_footnotes bool : The flag indicating whether to include footnotes from the WordCount. The default value is "false".
+        :param include_text_in_shapes bool : The flag indicating whether to include shape's text from the WordCount. The default value is "false".
         :return: StatDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5009,19 +5009,19 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_document_with_format(self, request, **kwargs):  # noqa: E501
-        """Exports the document into the specified format.  # noqa: E501
+        """Converts a document in cloud storage to the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param format str : The destination format. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
-        :param out_path str : Path to save the result.
+        :param out_path str : The path to the output document.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
                  If the method is called asynchronously,
@@ -5042,7 +5042,7 @@ class WordsApi(object):
             return data
         
     def get_document_with_format_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Exports the document into the specified format.  # noqa: E501
+        """Converts a document in cloud storage to the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -5088,15 +5088,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_field(self, request, **kwargs):  # noqa: E501
-        """Gets field from document.  # noqa: E501
+        """Reads a field from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains collection of fields.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -5120,7 +5120,7 @@ class WordsApi(object):
             return data
         
     def get_field_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Gets field from document.  # noqa: E501
+        """Reads a field from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -5166,14 +5166,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_fields(self, request, **kwargs):  # noqa: E501
-        """Get fields from document.  # noqa: E501
+        """Reads fields from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param node_path str : Path to the node, which contains collection of fields.
+        :param name str : The filename of the input document. (required)
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -5197,7 +5197,7 @@ class WordsApi(object):
             return data
         
     def get_fields_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Get fields from document.  # noqa: E501
+        """Reads fields from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -5316,15 +5316,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_footnote(self, request, **kwargs):  # noqa: E501
-        """Reads footnote by index.  # noqa: E501
+        """Reads a footnote from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains collection of footnotes.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -5348,7 +5348,7 @@ class WordsApi(object):
             return data
         
     def get_footnote_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reads footnote by index.  # noqa: E501
+        """Reads a footnote from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -5394,14 +5394,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_footnotes(self, request, **kwargs):  # noqa: E501
-        """Gets footnotes from document.  # noqa: E501
+        """Reads footnotes from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param node_path str : Path to the node, which contains collection of footnotes.
+        :param name str : The filename of the input document. (required)
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -5425,7 +5425,7 @@ class WordsApi(object):
             return data
         
     def get_footnotes_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Gets footnotes from document.  # noqa: E501
+        """Reads footnotes from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -5471,15 +5471,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_form_field(self, request, **kwargs):  # noqa: E501
-        """Returns representation of an one of the form field.  # noqa: E501
+        """Reads a form field from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node that contains collection of formfields.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -5503,7 +5503,7 @@ class WordsApi(object):
             return data
         
     def get_form_field_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Returns representation of an one of the form field.  # noqa: E501
+        """Reads a form field from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -5549,14 +5549,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_form_fields(self, request, **kwargs):  # noqa: E501
-        """Gets form fields from document.  # noqa: E501
+        """Reads form fields from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param node_path str : Path to the node containing collection of form fields.
+        :param name str : The filename of the input document. (required)
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -5580,7 +5580,7 @@ class WordsApi(object):
             return data
         
     def get_form_fields_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Gets form fields from document.  # noqa: E501
+        """Reads form fields from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -5626,19 +5626,19 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_header_footer(self, request, **kwargs):  # noqa: E501
-        """Returns a header/footer from the document by index.  # noqa: E501
+        """Reads a HeaderFooter object from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param header_footer_index int : Header/footer index. (required)
+        :param name str : The filename of the input document. (required)
+        :param header_footer_index int : The index of the HeaderFooter object. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
-        :param filter_by_type str : List of types of headers and footers.
+        :param filter_by_type str : The list of HeaderFooter types.
         :return: HeaderFooterResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5658,7 +5658,7 @@ class WordsApi(object):
             return data
         
     def get_header_footer_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Returns a header/footer from the document by index.  # noqa: E501
+        """Reads a HeaderFooter object from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -5704,20 +5704,20 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_header_footer_of_section(self, request, **kwargs):  # noqa: E501
-        """Returns a header/footer from the document section.  # noqa: E501
+        """Reads a HeaderFooter object from the document section.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param header_footer_index int : Header/footer index. (required)
-        :param section_index int : Section index. (required)
+        :param name str : The filename of the input document. (required)
+        :param header_footer_index int : The index of the HeaderFooter object. (required)
+        :param section_index int : The index of the section. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
-        :param filter_by_type str : List of types of headers and footers.
+        :param filter_by_type str : The list of HeaderFooter types.
         :return: HeaderFooterResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5737,7 +5737,7 @@ class WordsApi(object):
             return data
         
     def get_header_footer_of_section_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Returns a header/footer from the document section.  # noqa: E501
+        """Reads a HeaderFooter object from the document section.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -5783,19 +5783,19 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_header_footers(self, request, **kwargs):  # noqa: E501
-        """Returns a list of header/footers from the document.  # noqa: E501
+        """Reads HeaderFooter objects from the document section.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param section_path str : Path to parent section. (required)
+        :param name str : The filename of the input document. (required)
+        :param section_path str : The path to the section in the document tree. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
-        :param filter_by_type str : List of types of headers and footers.
+        :param filter_by_type str : The list of HeaderFooter types.
         :return: HeaderFootersResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5815,7 +5815,7 @@ class WordsApi(object):
             return data
         
     def get_header_footers_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Returns a list of header/footers from the document.  # noqa: E501
+        """Reads HeaderFooter objects from the document section.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -5861,14 +5861,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_list(self, request, **kwargs):  # noqa: E501
-        """This resource represents one of the lists contained in the document.  # noqa: E501
+        """Reads a list from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param list_id int : List unique identifier. (required)
+        :param name str : The filename of the input document. (required)
+        :param list_id int : The list Id. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -5892,7 +5892,7 @@ class WordsApi(object):
             return data
         
     def get_list_with_http_info(self, request, **kwargs):  # noqa: E501
-        """This resource represents one of the lists contained in the document.  # noqa: E501
+        """Reads a list from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -5938,13 +5938,13 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_lists(self, request, **kwargs):  # noqa: E501
-        """Returns a list of lists that are contained in the document.  # noqa: E501
+        """Reads lists from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -5968,7 +5968,7 @@ class WordsApi(object):
             return data
         
     def get_lists_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Returns a list of lists that are contained in the document.  # noqa: E501
+        """Reads lists from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -6014,15 +6014,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_office_math_object(self, request, **kwargs):  # noqa: E501
-        """Reads OfficeMath object by index.  # noqa: E501
+        """Reads an OfficeMath object from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains collection of OfficeMath objects.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -6046,7 +6046,7 @@ class WordsApi(object):
             return data
         
     def get_office_math_object_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reads OfficeMath object by index.  # noqa: E501
+        """Reads an OfficeMath object from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -6092,14 +6092,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_office_math_objects(self, request, **kwargs):  # noqa: E501
-        """Gets OfficeMath objects from document.  # noqa: E501
+        """Reads OfficeMath objects from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param node_path str : Path to the node, which contains collection of OfficeMath objects.
+        :param name str : The filename of the input document. (required)
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -6123,7 +6123,7 @@ class WordsApi(object):
             return data
         
     def get_office_math_objects_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Gets OfficeMath objects from document.  # noqa: E501
+        """Reads OfficeMath objects from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -6169,15 +6169,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_paragraph(self, request, **kwargs):  # noqa: E501
-        """This resource represents one of the paragraphs contained in the document.  # noqa: E501
+        """Reads a paragraph from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node which contains paragraphs.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -6201,7 +6201,7 @@ class WordsApi(object):
             return data
         
     def get_paragraph_with_http_info(self, request, **kwargs):  # noqa: E501
-        """This resource represents one of the paragraphs contained in the document.  # noqa: E501
+        """Reads a paragraph from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -6247,15 +6247,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_paragraph_format(self, request, **kwargs):  # noqa: E501
-        """Represents all the formatting for a paragraph.  # noqa: E501
+        """Reads the formatting properties of a paragraph from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node which contains paragraphs.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -6279,7 +6279,7 @@ class WordsApi(object):
             return data
         
     def get_paragraph_format_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Represents all the formatting for a paragraph.  # noqa: E501
+        """Reads the formatting properties of a paragraph from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -6325,15 +6325,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_paragraph_list_format(self, request, **kwargs):  # noqa: E501
-        """Represents list format for a paragraph.  # noqa: E501
+        """Reads the formatting properties of a paragraph list from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node which contains paragraphs.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -6357,7 +6357,7 @@ class WordsApi(object):
             return data
         
     def get_paragraph_list_format_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Represents list format for a paragraph.  # noqa: E501
+        """Reads the formatting properties of a paragraph list from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -6403,14 +6403,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_paragraphs(self, request, **kwargs):  # noqa: E501
-        """Returns a list of paragraphs that are contained in the document.  # noqa: E501
+        """Reads paragraphs from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param node_path str : Path to the node which contains paragraphs.
+        :param name str : The filename of the input document. (required)
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -6434,7 +6434,7 @@ class WordsApi(object):
             return data
         
     def get_paragraphs_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Returns a list of paragraphs that are contained in the document.  # noqa: E501
+        """Reads paragraphs from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -6480,15 +6480,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_paragraph_tab_stops(self, request, **kwargs):  # noqa: E501
-        """Get all tab stops for the paragraph.  # noqa: E501
+        """Reads paragraph tab stops from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node which contains paragraph.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -6512,7 +6512,7 @@ class WordsApi(object):
             return data
         
     def get_paragraph_tab_stops_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Get all tab stops for the paragraph.  # noqa: E501
+        """Reads paragraph tab stops from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -6558,14 +6558,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_range_text(self, request, **kwargs):  # noqa: E501
-        """Gets the text from the range.  # noqa: E501
+        """Reads range text from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document. (required)
-        :param range_start_identifier str : The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
+        :param name str : The filename of the input document. (required)
+        :param range_start_identifier str : The range start identifier. (required)
         :param range_end_identifier str : The range end identifier.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -6590,7 +6590,7 @@ class WordsApi(object):
             return data
         
     def get_range_text_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Gets the text from the range.  # noqa: E501
+        """Reads range text from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -6636,14 +6636,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_run(self, request, **kwargs):  # noqa: E501
-        """This resource represents run of text contained in the document.  # noqa: E501
+        """Reads a Run object from the paragraph.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param paragraph_path str : Path to parent paragraph. (required)
+        :param name str : The filename of the input document. (required)
+        :param paragraph_path str : The path to the paragraph in the document tree. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -6668,7 +6668,7 @@ class WordsApi(object):
             return data
         
     def get_run_with_http_info(self, request, **kwargs):  # noqa: E501
-        """This resource represents run of text contained in the document.  # noqa: E501
+        """Reads a Run object from the paragraph.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -6714,14 +6714,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_run_font(self, request, **kwargs):  # noqa: E501
-        """This resource represents font of run.  # noqa: E501
+        """Reads the font properties of a Run object from the paragraph.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param paragraph_path str : Path to parent paragraph. (required)
+        :param name str : The filename of the input document. (required)
+        :param paragraph_path str : The path to the paragraph in the document tree. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -6746,7 +6746,7 @@ class WordsApi(object):
             return data
         
     def get_run_font_with_http_info(self, request, **kwargs):  # noqa: E501
-        """This resource represents font of run.  # noqa: E501
+        """Reads the font properties of a Run object from the paragraph.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -6792,14 +6792,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_runs(self, request, **kwargs):  # noqa: E501
-        """This resource represents collection of runs in the paragraph.  # noqa: E501
+        """Reads Run objects from the paragraph.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param paragraph_path str : Path to parent paragraph. (required)
+        :param name str : The filename of the input document. (required)
+        :param paragraph_path str : The path to the paragraph in the document tree. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -6823,7 +6823,7 @@ class WordsApi(object):
             return data
         
     def get_runs_with_http_info(self, request, **kwargs):  # noqa: E501
-        """This resource represents collection of runs in the paragraph.  # noqa: E501
+        """Reads Run objects from the paragraph.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -6869,14 +6869,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_section(self, request, **kwargs):  # noqa: E501
-        """Gets document section by index.  # noqa: E501
+        """Reads a section from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param section_index int : Section index. (required)
+        :param name str : The filename of the input document. (required)
+        :param section_index int : The index of the section. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -6900,7 +6900,7 @@ class WordsApi(object):
             return data
         
     def get_section_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Gets document section by index.  # noqa: E501
+        """Reads a section from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -6946,14 +6946,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_section_page_setup(self, request, **kwargs):  # noqa: E501
-        """Gets page setup of section.  # noqa: E501
+        """Reads the page setup of a section from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param section_index int : Section index. (required)
+        :param name str : The filename of the input document. (required)
+        :param section_index int : The index of the section. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -6977,7 +6977,7 @@ class WordsApi(object):
             return data
         
     def get_section_page_setup_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Gets page setup of section.  # noqa: E501
+        """Reads the page setup of a section from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -7023,13 +7023,13 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_sections(self, request, **kwargs):  # noqa: E501
-        """Returns a list of sections that are contained in the document.  # noqa: E501
+        """Reads sections from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -7053,7 +7053,7 @@ class WordsApi(object):
             return data
         
     def get_sections_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Returns a list of sections that are contained in the document.  # noqa: E501
+        """Reads sections from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -7099,14 +7099,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_style(self, request, **kwargs):  # noqa: E501
-        """This resource represents one of the styles contained in the document.  # noqa: E501
+        """Reads a style from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param style_name str : Style name. (required)
+        :param name str : The filename of the input document. (required)
+        :param style_name str : The name of the style. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -7130,7 +7130,7 @@ class WordsApi(object):
             return data
         
     def get_style_with_http_info(self, request, **kwargs):  # noqa: E501
-        """This resource represents one of the styles contained in the document.  # noqa: E501
+        """Reads a style from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -7176,14 +7176,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_style_from_document_element(self, request, **kwargs):  # noqa: E501
-        """Gets a style from the document node.  # noqa: E501
+        """Reads a style from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param styled_node_path str : The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table. (required)
+        :param name str : The filename of the input document. (required)
+        :param styled_node_path str : The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -7207,7 +7207,7 @@ class WordsApi(object):
             return data
         
     def get_style_from_document_element_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Gets a style from the document node.  # noqa: E501
+        """Reads a style from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -7253,13 +7253,13 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_styles(self, request, **kwargs):  # noqa: E501
-        """Returns a list of styles contained in the document.  # noqa: E501
+        """Reads styles from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -7283,7 +7283,7 @@ class WordsApi(object):
             return data
         
     def get_styles_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Returns a list of styles contained in the document.  # noqa: E501
+        """Reads styles from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -7329,15 +7329,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_table(self, request, **kwargs):  # noqa: E501
-        """Returns a table.  # noqa: E501
+        """Reads a table from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains tables.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -7361,7 +7361,7 @@ class WordsApi(object):
             return data
         
     def get_table_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Returns a table.  # noqa: E501
+        """Reads a table from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -7407,14 +7407,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_table_cell(self, request, **kwargs):  # noqa: E501
-        """Returns a table cell.  # noqa: E501
+        """Reads a cell from the table row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param table_row_path str : Path to table row. (required)
+        :param name str : The filename of the input document. (required)
+        :param table_row_path str : The path to the table row in the document tree. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -7439,7 +7439,7 @@ class WordsApi(object):
             return data
         
     def get_table_cell_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Returns a table cell.  # noqa: E501
+        """Reads a cell from the table row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -7485,14 +7485,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_table_cell_format(self, request, **kwargs):  # noqa: E501
-        """Returns a table cell format.  # noqa: E501
+        """Reads the formatting properties of a table cell.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param table_row_path str : Path to table row. (required)
+        :param name str : The filename of the input document. (required)
+        :param table_row_path str : The path to the table row in the document tree. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -7517,7 +7517,7 @@ class WordsApi(object):
             return data
         
     def get_table_cell_format_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Returns a table cell format.  # noqa: E501
+        """Reads the formatting properties of a table cell.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -7563,15 +7563,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_table_properties(self, request, **kwargs):  # noqa: E501
-        """Returns a table properties.  # noqa: E501
+        """Reads properties of a table from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains tables.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -7595,7 +7595,7 @@ class WordsApi(object):
             return data
         
     def get_table_properties_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Returns a table properties.  # noqa: E501
+        """Reads properties of a table from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -7641,14 +7641,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_table_row(self, request, **kwargs):  # noqa: E501
-        """Returns a table row.  # noqa: E501
+        """Reads a row from the table.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param table_path str : Path to table. (required)
+        :param name str : The filename of the input document. (required)
+        :param table_path str : The path to the table in the document tree. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -7673,7 +7673,7 @@ class WordsApi(object):
             return data
         
     def get_table_row_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Returns a table row.  # noqa: E501
+        """Reads a row from the table.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -7719,14 +7719,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_table_row_format(self, request, **kwargs):  # noqa: E501
-        """Returns a table row format.  # noqa: E501
+        """Reads the formatting properties of a table row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param table_path str : Path to table. (required)
+        :param name str : The filename of the input document. (required)
+        :param table_path str : The path to the table in the document tree. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -7751,7 +7751,7 @@ class WordsApi(object):
             return data
         
     def get_table_row_format_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Returns a table row format.  # noqa: E501
+        """Reads the formatting properties of a table row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -7797,14 +7797,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def get_tables(self, request, **kwargs):  # noqa: E501
-        """Returns a list of tables that are contained in the document.  # noqa: E501
+        """Reads tables from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param node_path str : Path to the node, which contains tables.
+        :param name str : The filename of the input document. (required)
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -7828,7 +7828,7 @@ class WordsApi(object):
             return data
         
     def get_tables_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Returns a list of tables that are contained in the document.  # noqa: E501
+        """Reads tables from the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -7874,14 +7874,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def insert_comment(self, request, **kwargs):  # noqa: E501
-        """Adds comment to document, returns inserted comment data.  # noqa: E501
+        """Inserts a new comment to the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param comment CommentInsert : The comment data. (required)
+        :param name str : The filename of the input document. (required)
+        :param comment CommentInsert : The properties of the comment. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -7908,7 +7908,7 @@ class WordsApi(object):
             return data
         
     def insert_comment_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Adds comment to document, returns inserted comment data.  # noqa: E501
+        """Inserts a new comment to the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -7957,16 +7957,16 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def insert_drawing_object(self, request, **kwargs):  # noqa: E501
-        """Adds drawing object to document, returns added  drawing object's data.  # noqa: E501
+        """Inserts a new DrawingObject to the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param drawing_object DrawingObjectInsert : Drawing object parameters. (required)
         :param image_file file : File with image. (required)
-        :param node_path str : Path to the node, which contains collection of drawing objects.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -7993,7 +7993,7 @@ class WordsApi(object):
             return data
         
     def insert_drawing_object_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Adds drawing object to document, returns added  drawing object's data.  # noqa: E501
+        """Inserts a new DrawingObject to the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -8042,15 +8042,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def insert_field(self, request, **kwargs):  # noqa: E501
-        """Adds field to document, returns inserted field's data.  # noqa: E501
+        """Inserts a new field to the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param field FieldInsert : Field data. (required)
-        :param node_path str : Path to the node, which contains collection of fields.
+        :param name str : The filename of the input document. (required)
+        :param field FieldInsert : The properties of the field. (required)
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -8058,7 +8058,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param insert_before_node str : Field will be inserted before node with id="nodeId".
+        :param insert_before_node str : The index of the node. A new field will be inserted before the node with the specified node Id.
         :return: FieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8078,7 +8078,7 @@ class WordsApi(object):
             return data
         
     def insert_field_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Adds field to document, returns inserted field's data.  # noqa: E501
+        """Inserts a new field to the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -8127,15 +8127,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def insert_footnote(self, request, **kwargs):  # noqa: E501
-        """Adds footnote to document, returns added footnote's data.  # noqa: E501
+        """Inserts a new footnote to the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param footnote_dto FootnoteInsert : Footnote data. (required)
-        :param node_path str : Path to the node, which contains collection of footnotes.
+        :param name str : The filename of the input document. (required)
+        :param footnote_dto FootnoteInsert : The properties of the footnote. (required)
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -8162,7 +8162,7 @@ class WordsApi(object):
             return data
         
     def insert_footnote_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Adds footnote to document, returns added footnote's data.  # noqa: E501
+        """Inserts a new footnote to the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -8211,15 +8211,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def insert_form_field(self, request, **kwargs):  # noqa: E501
-        """Adds form field to paragraph, returns added form field's data.  # noqa: E501
+        """Inserts a new form field to the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param form_field FormField : From field data. (required)
-        :param node_path str : Path to the node that contains collection of formfields.
+        :param name str : The filename of the input document. (required)
+        :param form_field FormField : The properties of the form field. (required)
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -8227,7 +8227,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param insert_before_node str : Form field will be inserted before node with index.
+        :param insert_before_node str : The index of the node. A new form field will be inserted before the node with the specified node Id.
         :return: FormFieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8247,7 +8247,7 @@ class WordsApi(object):
             return data
         
     def insert_form_field_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Adds form field to paragraph, returns added form field's data.  # noqa: E501
+        """Inserts a new form field to the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -8296,15 +8296,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def insert_header_footer(self, request, **kwargs):  # noqa: E501
-        """Inserts to document header or footer.  # noqa: E501
+        """Inserts a new HeaderFooter object to the document section.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param header_footer_type str : Type of header/footer. (required)
-        :param section_path str : Path to parent section. (required)
+        :param name str : The filename of the input document. (required)
+        :param header_footer_type str : The type of a HeaderFooter object. (required)
+        :param section_path str : The path to the section in the document tree. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -8331,7 +8331,7 @@ class WordsApi(object):
             return data
         
     def insert_header_footer_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Inserts to document header or footer.  # noqa: E501
+        """Inserts a new HeaderFooter object to the document section.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -8380,14 +8380,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def insert_list(self, request, **kwargs):  # noqa: E501
-        """Adds list to document, returns added list's data.  # noqa: E501
+        """Inserts a new list to the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param list_insert ListInsert : List to insert. (required)
+        :param name str : The filename of the input document. (required)
+        :param list_insert ListInsert : The properties of the list. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -8414,7 +8414,7 @@ class WordsApi(object):
             return data
         
     def insert_list_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Adds list to document, returns added list's data.  # noqa: E501
+        """Inserts a new list to the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -8463,16 +8463,16 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def insert_or_update_paragraph_tab_stop(self, request, **kwargs):  # noqa: E501
-        """Insert or resplace tab stop if a tab stop with the position exists.  # noqa: E501
+        """Inserts a new or updates an existing paragraph tab stop in the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param dto TabStopInsert : Paragraph tab stop. (required)
+        :param name str : The filename of the input document. (required)
+        :param dto TabStopInsert : The properties of the paragraph tab stop. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node which contains paragraph.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -8497,7 +8497,7 @@ class WordsApi(object):
             return data
         
     def insert_or_update_paragraph_tab_stop_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Insert or resplace tab stop if a tab stop with the position exists.  # noqa: E501
+        """Inserts a new or updates an existing paragraph tab stop in the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -8546,14 +8546,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def insert_page_numbers(self, request, **kwargs):  # noqa: E501
-        """Inserts document page numbers.  # noqa: E501
+        """Inserts page numbers to the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : A document name. (required)
-        :param page_number PageNumber : PageNumber with the page numbers settings. (required)
+        :param name str : The filename of the input document. (required)
+        :param page_number PageNumber : The page numbers settings. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -8580,7 +8580,7 @@ class WordsApi(object):
             return data
         
     def insert_page_numbers_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Inserts document page numbers.  # noqa: E501
+        """Inserts page numbers to the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -8629,15 +8629,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def insert_paragraph(self, request, **kwargs):  # noqa: E501
-        """Adds paragraph to document, returns added paragraph's data.  # noqa: E501
+        """Inserts a new paragraph to the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param paragraph ParagraphInsert : Paragraph data. (required)
-        :param node_path str : Path to the node which contains paragraphs.
+        :param name str : The filename of the input document. (required)
+        :param paragraph ParagraphInsert : The properties of the paragraph. (required)
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -8645,7 +8645,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param insert_before_node str : Paragraph will be inserted before node with index.
+        :param insert_before_node str : The index of the node. A new paragraph will be inserted before the node with the specified index.
         :return: ParagraphResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8665,7 +8665,7 @@ class WordsApi(object):
             return data
         
     def insert_paragraph_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Adds paragraph to document, returns added paragraph's data.  # noqa: E501
+        """Inserts a new paragraph to the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -8714,15 +8714,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def insert_run(self, request, **kwargs):  # noqa: E501
-        """Adds run to document, returns added paragraph's data.  # noqa: E501
+        """Inserts a new Run object to the paragraph.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param paragraph_path str : Path to parent paragraph. (required)
-        :param run RunInsert : Run data. (required)
+        :param name str : The filename of the input document. (required)
+        :param paragraph_path str : The path to the paragraph in the document tree. (required)
+        :param run RunInsert : The properties of the Run object. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -8730,7 +8730,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param insert_before_node str : Paragraph will be inserted before node with index.
+        :param insert_before_node str : The index of the node. A new Run object will be inserted before the node with the specified node Id.
         :return: RunResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8750,7 +8750,7 @@ class WordsApi(object):
             return data
         
     def insert_run_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Adds run to document, returns added paragraph's data.  # noqa: E501
+        """Inserts a new Run object to the paragraph.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -8799,14 +8799,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def insert_style(self, request, **kwargs):  # noqa: E501
-        """Adds a style to the document, returns an added style.  # noqa: E501
+        """Inserts a new style to the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param style_insert StyleInsert : Style to insert. (required)
+        :param name str : The filename of the input document. (required)
+        :param style_insert StyleInsert : The properties of the style. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -8833,7 +8833,7 @@ class WordsApi(object):
             return data
         
     def insert_style_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Adds a style to the document, returns an added style.  # noqa: E501
+        """Inserts a new style to the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -8882,15 +8882,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def insert_table(self, request, **kwargs):  # noqa: E501
-        """Adds table to document, returns added table's data.  # noqa: E501
+        """Inserts a new table to the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param table TableInsert : Table parameters/. (required)
-        :param node_path str : Path to the node, which contains tables.
+        :param name str : The filename of the input document. (required)
+        :param table TableInsert : The properties of the table. (required)
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -8917,7 +8917,7 @@ class WordsApi(object):
             return data
         
     def insert_table_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Adds table to document, returns added table's data.  # noqa: E501
+        """Inserts a new table to the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -8966,15 +8966,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def insert_table_cell(self, request, **kwargs):  # noqa: E501
-        """Adds table cell to table, returns added cell's data.  # noqa: E501
+        """Inserts a new cell to the table row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param cell TableCellInsert : Table cell parameters/. (required)
-        :param table_row_path str : Path to table row. (required)
+        :param name str : The filename of the input document. (required)
+        :param cell TableCellInsert : The properties of the cell. (required)
+        :param table_row_path str : The path to the table row in the document tree. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -9001,7 +9001,7 @@ class WordsApi(object):
             return data
         
     def insert_table_cell_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Adds table cell to table, returns added cell's data.  # noqa: E501
+        """Inserts a new cell to the table row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -9050,15 +9050,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def insert_table_row(self, request, **kwargs):  # noqa: E501
-        """Adds table row to table, returns added row's data.  # noqa: E501
+        """Inserts a new row to the table.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param row TableRowInsert : Table row parameters/. (required)
-        :param table_path str : Path to table. (required)
+        :param name str : The filename of the input document. (required)
+        :param row TableRowInsert : The properties of the row. (required)
+        :param table_path str : The path to the table in the document tree. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -9085,7 +9085,7 @@ class WordsApi(object):
             return data
         
     def insert_table_row_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Adds table row to table, returns added row's data.  # noqa: E501
+        """Inserts a new row to the table.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -9134,13 +9134,13 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def insert_watermark_image(self, request, **kwargs):  # noqa: E501
-        """Inserts document watermark image.  # noqa: E501
+        """Inserts a new watermark image to the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param image_file file : File with image.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -9149,8 +9149,8 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :param rotation_angle float : The watermark rotation angle.
-        :param image str : The image file server full name. If the name is empty the image is expected in request content.
+        :param rotation_angle float : The rotation angle of the watermark.
+        :param image str : The filename of the image. If the parameter value is missing — the image data is expected in the request content.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9170,7 +9170,7 @@ class WordsApi(object):
             return data
         
     def insert_watermark_image_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Inserts document watermark image.  # noqa: E501
+        """Inserts a new watermark image to the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -9219,14 +9219,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def insert_watermark_text(self, request, **kwargs):  # noqa: E501
-        """Inserts document watermark text.  # noqa: E501
+        """Inserts a new watermark text to the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param watermark_text WatermarkText : WatermarkText with the watermark data. (required)
+        :param name str : The filename of the input document. (required)
+        :param watermark_text WatermarkText : The watermark text to insert. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -9253,7 +9253,7 @@ class WordsApi(object):
             return data
         
     def insert_watermark_text_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Inserts document watermark text.  # noqa: E501
+        """Inserts a new watermark text to the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -9302,13 +9302,13 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def load_web_document(self, request, **kwargs):  # noqa: E501
-        """Loads new document from web into the file with any supported format of data.  # noqa: E501
+        """Downloads a document from the Web using URL and saves it to cloud storage in the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param data LoadWebDocumentData : Parameters of loading. (required)
+        :param data LoadWebDocumentData : The properties of data downloading. (required)
         :param storage str : Original document storage.
         :return: SaveResponse
                  If the method is called asynchronously,
@@ -9329,7 +9329,7 @@ class WordsApi(object):
             return data
         
     def load_web_document_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Loads new document from web into the file with any supported format of data.  # noqa: E501
+        """Downloads a document from the Web using URL and saves it to cloud storage in the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -9529,13 +9529,13 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def optimize_document(self, request, **kwargs):  # noqa: E501
-        """Allows to optimize the document contents as well as default Aspose.Words behavior to a particular versions of MS Word.  # noqa: E501
+        """Applies document content optimization options, specific to a particular versions of Microsoft Word.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param options OptimizationOptions : The document optimization options. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -9563,7 +9563,7 @@ class WordsApi(object):
             return data
         
     def optimize_document_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Allows to optimize the document contents as well as default Aspose.Words behavior to a particular versions of MS Word.  # noqa: E501
+        """Applies document content optimization options, specific to a particular versions of Microsoft Word.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -9612,14 +9612,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def protect_document(self, request, **kwargs):  # noqa: E501
-        """Protects document.  # noqa: E501
+        """Adds protection to the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param protection_request ProtectionRequest : ProtectionRequest with protection settings. (required)
+        :param name str : The filename of the input document. (required)
+        :param protection_request ProtectionRequest : The protection settings. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -9644,7 +9644,7 @@ class WordsApi(object):
             return data
         
     def protect_document_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Protects document.  # noqa: E501
+        """Adds protection to the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -9693,13 +9693,13 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def reject_all_revisions(self, request, **kwargs):  # noqa: E501
-        """Rejects all revisions in document.  # noqa: E501
+        """Rejects all revisions in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -9724,7 +9724,7 @@ class WordsApi(object):
             return data
         
     def reject_all_revisions_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Rejects all revisions in document.  # noqa: E501
+        """Rejects all revisions in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -9770,14 +9770,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def remove_range(self, request, **kwargs):  # noqa: E501
-        """Removes the range from the document.  # noqa: E501
+        """Removes a range from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document. (required)
-        :param range_start_identifier str : The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
+        :param name str : The filename of the input document. (required)
+        :param range_start_identifier str : The range start identifier. (required)
         :param range_end_identifier str : The range end identifier.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -9803,7 +9803,7 @@ class WordsApi(object):
             return data
         
     def remove_range_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Removes the range from the document.  # noqa: E501
+        """Removes a range from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -9849,16 +9849,16 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def render_drawing_object(self, request, **kwargs):  # noqa: E501
-        """Renders drawing object to specified format.  # noqa: E501
+        """Renders a DrawingObject to the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param format str : The destination format. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains drawing objects.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -9883,7 +9883,7 @@ class WordsApi(object):
             return data
         
     def render_drawing_object_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Renders drawing object to specified format.  # noqa: E501
+        """Renders a DrawingObject to the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -9929,16 +9929,16 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def render_math_object(self, request, **kwargs):  # noqa: E501
-        """Renders math object to specified format.  # noqa: E501
+        """Renders an OfficeMath object to the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param format str : The destination format. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains office math objects.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -9963,7 +9963,7 @@ class WordsApi(object):
             return data
         
     def render_math_object_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Renders math object to specified format.  # noqa: E501
+        """Renders an OfficeMath object to the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -10009,14 +10009,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def render_page(self, request, **kwargs):  # noqa: E501
-        """Renders page to specified format.  # noqa: E501
+        """Renders a page to the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param page_index int : Comment index. (required)
+        :param name str : The filename of the input document. (required)
+        :param page_index int : The index of the page. (required)
         :param format str : The destination format. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -10042,7 +10042,7 @@ class WordsApi(object):
             return data
         
     def render_page_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Renders page to specified format.  # noqa: E501
+        """Renders a page to the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -10088,16 +10088,16 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def render_paragraph(self, request, **kwargs):  # noqa: E501
-        """Renders paragraph to specified format.  # noqa: E501
+        """Renders a paragraph to the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param format str : The destination format. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains paragraphs.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -10122,7 +10122,7 @@ class WordsApi(object):
             return data
         
     def render_paragraph_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Renders paragraph to specified format.  # noqa: E501
+        """Renders a paragraph to the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -10168,16 +10168,16 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def render_table(self, request, **kwargs):  # noqa: E501
-        """Renders table to specified format.  # noqa: E501
+        """Renders a table to the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param format str : The destination format. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains tables.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -10202,7 +10202,7 @@ class WordsApi(object):
             return data
         
     def render_table_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Renders table to specified format.  # noqa: E501
+        """Renders a table to the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -10248,14 +10248,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def replace_text(self, request, **kwargs):  # noqa: E501
-        """Replaces document text.  # noqa: E501
+        """Replaces text in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param replace_text ReplaceTextParameters : ReplaceTextResponse with the replace operation settings. (required)
+        :param name str : The filename of the input document. (required)
+        :param replace_text ReplaceTextParameters : The text replacement parameters. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -10282,7 +10282,7 @@ class WordsApi(object):
             return data
         
     def replace_text_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Replaces document text.  # noqa: E501
+        """Replaces text in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -10331,15 +10331,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def replace_with_text(self, request, **kwargs):  # noqa: E501
-        """Replaces the content in the range.  # noqa: E501
+        """Replaces a range with text in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document. (required)
-        :param range_start_identifier str : The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
-        :param range_text ReplaceRange : Model with text for replacement. (required)
+        :param name str : The filename of the input document. (required)
+        :param range_start_identifier str : The range start identifier. (required)
+        :param range_text ReplaceRange : The text replacement properties. (required)
         :param range_end_identifier str : The range end identifier.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -10365,7 +10365,7 @@ class WordsApi(object):
             return data
         
     def replace_with_text_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Replaces the content in the range.  # noqa: E501
+        """Replaces a range with text in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -10414,7 +10414,7 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def reset_cache(self, request, **kwargs):  # noqa: E501
-        """Resets font's cache.  # noqa: E501
+        """Clears the font cache.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -10439,7 +10439,7 @@ class WordsApi(object):
             return data
         
     def reset_cache_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Resets font's cache.  # noqa: E501
+        """Clears the font cache.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -10485,14 +10485,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def save_as(self, request, **kwargs):  # noqa: E501
-        """Converts document to destination format with detailed settings and saves result to storage.  # noqa: E501
+        """Converts a document in cloud storage to the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param save_options_data SaveOptionsData : Save options. (required)
+        :param name str : The filename of the input document. (required)
+        :param save_options_data SaveOptionsData : The save options. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -10517,7 +10517,7 @@ class WordsApi(object):
             return data
         
     def save_as_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Converts document to destination format with detailed settings and saves result to storage.  # noqa: E501
+        """Converts a document in cloud storage to the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -10566,15 +10566,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def save_as_range(self, request, **kwargs):  # noqa: E501
-        """Saves the selected range as a new document.  # noqa: E501
+        """Saves a range as a new document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document. (required)
-        :param range_start_identifier str : The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table. (required)
-        :param document_parameters RangeDocument : Parameters of a new document. (required)
+        :param name str : The filename of the input document. (required)
+        :param range_start_identifier str : The range start identifier. (required)
+        :param document_parameters RangeDocument : The parameters of a new document. (required)
         :param range_end_identifier str : The range end identifier.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -10599,7 +10599,7 @@ class WordsApi(object):
             return data
         
     def save_as_range_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Saves the selected range as a new document.  # noqa: E501
+        """Saves a range as a new document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -10648,35 +10648,35 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def save_as_tiff(self, request, **kwargs):  # noqa: E501
-        """Converts document to tiff with detailed settings and saves result to storage.  # noqa: E501
+        """Converts a document in cloud storage to TIFF format using detailed conversion settings.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param save_options TiffSaveOptionsData : Tiff save options. (required)
+        :param name str : The filename of the input document. (required)
+        :param save_options TiffSaveOptionsData : The save options to TIFF format. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
-        :param use_anti_aliasing bool : Use antialiasing flag.
-        :param use_high_quality_rendering bool : Use high quality flag.
-        :param image_brightness float : Brightness for the generated images.
-        :param image_color_mode str : Color mode for the generated images.
+        :param use_anti_aliasing bool : The flag indicating whether to use antialiasing.
+        :param use_high_quality_rendering bool : The flag indicating whether to use high quality.
+        :param image_brightness float : The level of brightness for the generated images.
+        :param image_color_mode str : The color mode for the generated images.
         :param image_contrast float : The contrast for the generated images.
         :param numeral_format str : The images numeral format.
-        :param page_count int : Number of pages to render.
-        :param page_index int : Page index to start rendering.
-        :param paper_color str : Background image color.
-        :param pixel_format str : The pixel format of generated images.
-        :param resolution float : The resolution of generated images.
-        :param scale float : Zoom factor for generated images.
+        :param page_count int : The number of pages to render.
+        :param page_index int : The index of the page to start rendering.
+        :param paper_color str : The background image color.
+        :param pixel_format str : The pixel format of the generated images.
+        :param resolution float : The resolution of the generated images.
+        :param scale float : The zoom factor for the generated images.
         :param tiff_compression str : The compression tipe.
-        :param dml_rendering_mode str : Optional, default is Fallback.
-        :param dml_effects_rendering_mode str : Optional, default is Simplified.
-        :param tiff_binarization_method str : Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
-        :param zip_output bool : Optional. A value determining zip output or not.
+        :param dml_rendering_mode str : The optional dml rendering mode. The default value is Fallback.
+        :param dml_effects_rendering_mode str : The optional dml effects rendering mode. The default value is Simplified.
+        :param tiff_binarization_method str : The optional TIFF binarization method. Possible values are: FloydSteinbergDithering, Threshold.
+        :param zip_output bool : The flag indicating whether to ZIP the output.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: SaveResponse
                  If the method is called asynchronously,
@@ -10697,7 +10697,7 @@ class WordsApi(object):
             return data
         
     def save_as_tiff_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Converts document to tiff with detailed settings and saves result to storage.  # noqa: E501
+        """Converts a document in cloud storage to TIFF format using detailed conversion settings.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -10746,13 +10746,13 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def search(self, request, **kwargs):  # noqa: E501
-        """Searches text in document.  # noqa: E501
+        """Searches text, specified by the regular expression, in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param pattern str : The regular expression used to find matches. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -10777,7 +10777,7 @@ class WordsApi(object):
             return data
         
     def search_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Searches text in document.  # noqa: E501
+        """Searches text, specified by the regular expression, in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -10823,22 +10823,22 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def split_document(self, request, **kwargs):  # noqa: E501
-        """Splits document.  # noqa: E501
+        """Splits a document into parts and saves them in the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : Original document name. (required)
-        :param format str : Format to split. (required)
+        :param name str : The filename of the input document. (required)
+        :param format str : The format to split. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-        :param _from int : Start page.
-        :param to int : End page.
-        :param zip_output bool : ZipOutput or not.
+        :param _from int : The start page.
+        :param to int : The end page.
+        :param zip_output bool : The flag indicating whether to ZIP the output.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: SplitDocumentResponse
                  If the method is called asynchronously,
@@ -10859,7 +10859,7 @@ class WordsApi(object):
             return data
         
     def split_document_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Splits document.  # noqa: E501
+        """Splits a document into parts and saves them in the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -10905,14 +10905,14 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def unprotect_document(self, request, **kwargs):  # noqa: E501
-        """Unprotects document.  # noqa: E501
+        """Removes protection from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param protection_request ProtectionRequest : ProtectionRequest with protection settings. (required)
+        :param name str : The filename of the input document. (required)
+        :param protection_request ProtectionRequest : The protection settings. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -10937,7 +10937,7 @@ class WordsApi(object):
             return data
         
     def unprotect_document_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Unprotects document.  # noqa: E501
+        """Removes protection from the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -10986,15 +10986,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def update_bookmark(self, request, **kwargs):  # noqa: E501
-        """Updates document bookmark.  # noqa: E501
+        """Updates a bookmark in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param bookmark_data BookmarkData : BookmarkData with new bookmark data. (required)
-        :param bookmark_name str : The bookmark name. (required)
+        :param name str : The filename of the input document. (required)
+        :param bookmark_data BookmarkData : The properties of the bookmark. (required)
+        :param bookmark_name str : The name of the bookmark. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -11021,7 +11021,7 @@ class WordsApi(object):
             return data
         
     def update_bookmark_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Updates document bookmark.  # noqa: E501
+        """Updates a bookmark in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -11070,16 +11070,16 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def update_border(self, request, **kwargs):  # noqa: E501
-        """'nodePath' should refer to paragraph, cell or row.  # noqa: E501
+        """The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param border_properties Border : Border properties. (required)
+        :param name str : The filename of the input document. (required)
+        :param border_properties Border : The new border properties to update. (required)
         :param border_type str : Border type. (required)
-        :param node_path str : Path to the node with border(node should be paragraph, cell or row).
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -11106,7 +11106,7 @@ class WordsApi(object):
             return data
         
     def update_border_with_http_info(self, request, **kwargs):  # noqa: E501
-        """'nodePath' should refer to paragraph, cell or row.  # noqa: E501
+        """The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -11155,15 +11155,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def update_comment(self, request, **kwargs):  # noqa: E501
-        """Updates the comment, returns updated comment data.  # noqa: E501
+        """Updates a comment in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param comment_index int : The comment index. (required)
-        :param comment CommentUpdate : The comment data. (required)
+        :param name str : The filename of the input document. (required)
+        :param comment_index int : The index of the comment. (required)
+        :param comment CommentUpdate : The properties of the comment. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -11190,7 +11190,7 @@ class WordsApi(object):
             return data
         
     def update_comment_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Updates the comment, returns updated comment data.  # noqa: E501
+        """Updates a comment in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -11239,17 +11239,17 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def update_drawing_object(self, request, **kwargs):  # noqa: E501
-        """Updates drawing object, returns updated  drawing object's data.  # noqa: E501
+        """Updates a DrawingObject in the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param drawing_object DrawingObjectUpdate : Drawing object parameters. (required)
         :param image_file file : File with image. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains collection of drawing objects.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -11276,7 +11276,7 @@ class WordsApi(object):
             return data
         
     def update_drawing_object_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Updates drawing object, returns updated  drawing object's data.  # noqa: E501
+        """Updates a DrawingObject in the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -11325,16 +11325,16 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def update_field(self, request, **kwargs):  # noqa: E501
-        """Updates field's properties, returns updated field's data.  # noqa: E501
+        """Updates a field in the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param field FieldUpdate : Field data. (required)
+        :param name str : The filename of the input document. (required)
+        :param field FieldUpdate : The properties of the field. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains collection of fields.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -11361,7 +11361,7 @@ class WordsApi(object):
             return data
         
     def update_field_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Updates field's properties, returns updated field's data.  # noqa: E501
+        """Updates a field in the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -11410,13 +11410,13 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def update_fields(self, request, **kwargs):  # noqa: E501
-        """Updates (reevaluate) fields in document.  # noqa: E501
+        """Reevaluates field values in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
+        :param name str : The filename of the input document. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -11441,7 +11441,7 @@ class WordsApi(object):
             return data
         
     def update_fields_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Updates (reevaluate) fields in document.  # noqa: E501
+        """Reevaluates field values in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -11487,16 +11487,16 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def update_footnote(self, request, **kwargs):  # noqa: E501
-        """Updates footnote's properties, returns updated run's data.  # noqa: E501
+        """Updates a footnote in the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param footnote_dto FootnoteUpdate : Footnote data. (required)
+        :param name str : The filename of the input document. (required)
+        :param footnote_dto FootnoteUpdate : The properties of the footnote. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains collection of footnotes.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -11523,7 +11523,7 @@ class WordsApi(object):
             return data
         
     def update_footnote_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Updates footnote's properties, returns updated run's data.  # noqa: E501
+        """Updates a footnote in the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -11572,16 +11572,16 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def update_form_field(self, request, **kwargs):  # noqa: E501
-        """Updates properties of form field, returns updated form field.  # noqa: E501
+        """Updates a form field in the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param form_field FormField : From field data. (required)
+        :param name str : The filename of the input document. (required)
+        :param form_field FormField : The new form field properties. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node that contains collection of formfields.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -11608,7 +11608,7 @@ class WordsApi(object):
             return data
         
     def update_form_field_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Updates properties of form field, returns updated form field.  # noqa: E501
+        """Updates a form field in the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -11657,15 +11657,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def update_list(self, request, **kwargs):  # noqa: E501
-        """Updates list properties, returns updated list.  # noqa: E501
+        """Updates a list in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param list_update ListUpdate : List object. (required)
-        :param list_id int : List unique identifier. (required)
+        :param name str : The filename of the input document. (required)
+        :param list_update ListUpdate : The properties of the list. (required)
+        :param list_id int : The list Id. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -11692,7 +11692,7 @@ class WordsApi(object):
             return data
         
     def update_list_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Updates list properties, returns updated list.  # noqa: E501
+        """Updates a list in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -11741,16 +11741,16 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def update_list_level(self, request, **kwargs):  # noqa: E501
-        """Updates list level in document list, returns updated list.  # noqa: E501
+        """Updates the level of a List element in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param list_update ListLevelUpdate : List object. (required)
-        :param list_id int : List unique identifier. (required)
-        :param list_level int : List level identifier. (required)
+        :param name str : The filename of the input document. (required)
+        :param list_update ListLevelUpdate : The properties of the List element. (required)
+        :param list_id int : The list Id. (required)
+        :param list_level int : The list level. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -11777,7 +11777,7 @@ class WordsApi(object):
             return data
         
     def update_list_level_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Updates list level in document list, returns updated list.  # noqa: E501
+        """Updates the level of a List element in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -11826,16 +11826,16 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def update_paragraph_format(self, request, **kwargs):  # noqa: E501
-        """Updates paragraph format properties, returns updated format properties.  # noqa: E501
+        """Updates the formatting properties of a paragraph in the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param dto ParagraphFormatUpdate : Paragraph format object. (required)
+        :param name str : The filename of the input document. (required)
+        :param dto ParagraphFormatUpdate : The formatting properties of a paragraph. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node which contains paragraphs.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -11862,7 +11862,7 @@ class WordsApi(object):
             return data
         
     def update_paragraph_format_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Updates paragraph format properties, returns updated format properties.  # noqa: E501
+        """Updates the formatting properties of a paragraph in the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -11911,16 +11911,16 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def update_paragraph_list_format(self, request, **kwargs):  # noqa: E501
-        """Updates paragraph list format properties, returns updated list format properties.  # noqa: E501
+        """Updates the formatting properties of a paragraph list in the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param dto ListFormatUpdate : Paragraph format object. (required)
+        :param name str : The filename of the input document. (required)
+        :param dto ListFormatUpdate : The formatting properties of a paragraph list. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node which contains paragraphs.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -11947,7 +11947,7 @@ class WordsApi(object):
             return data
         
     def update_paragraph_list_format_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Updates paragraph list format properties, returns updated list format properties.  # noqa: E501
+        """Updates the formatting properties of a paragraph list in the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -11996,15 +11996,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def update_run(self, request, **kwargs):  # noqa: E501
-        """Updates run's properties, returns updated run's data.  # noqa: E501
+        """Updates a Run object in the paragraph.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param run RunUpdate : Run data. (required)
-        :param paragraph_path str : Path to parent paragraph. (required)
+        :param name str : The filename of the input document. (required)
+        :param run RunUpdate : The properties of the Run object. (required)
+        :param paragraph_path str : The path to the paragraph in the document tree. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -12032,7 +12032,7 @@ class WordsApi(object):
             return data
         
     def update_run_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Updates run's properties, returns updated run's data.  # noqa: E501
+        """Updates a Run object in the paragraph.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -12081,15 +12081,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def update_run_font(self, request, **kwargs):  # noqa: E501
-        """Updates font properties, returns updated font data.  # noqa: E501
+        """Updates the font properties of a Run object in the paragraph.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param font_dto Font : Font dto object. (required)
-        :param paragraph_path str : Path to parent paragraph. (required)
+        :param name str : The filename of the input document. (required)
+        :param font_dto Font : The font properties of a Run object. (required)
+        :param paragraph_path str : The path to the paragraph in the document tree. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -12117,7 +12117,7 @@ class WordsApi(object):
             return data
         
     def update_run_font_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Updates font properties, returns updated font data.  # noqa: E501
+        """Updates the font properties of a Run object in the paragraph.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -12166,15 +12166,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def update_section_page_setup(self, request, **kwargs):  # noqa: E501
-        """Updates page setup of section.  # noqa: E501
+        """Updates the page setup of a section in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param section_index int : Section index. (required)
-        :param page_setup PageSetup : Page setup properties dto. (required)
+        :param name str : The filename of the input document. (required)
+        :param section_index int : The index of the section. (required)
+        :param page_setup PageSetup : The properties of the page setup. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -12201,7 +12201,7 @@ class WordsApi(object):
             return data
         
     def update_section_page_setup_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Updates page setup of section.  # noqa: E501
+        """Updates the page setup of a section in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -12250,15 +12250,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def update_style(self, request, **kwargs):  # noqa: E501
-        """Updates style properties, returns an updated style.  # noqa: E501
+        """Updates a style in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param style_update StyleUpdate : Style properties to update. (required)
-        :param style_name str : Style name. (required)
+        :param name str : The filename of the input document. (required)
+        :param style_update StyleUpdate : The properties of the style. (required)
+        :param style_name str : The name of the style. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -12285,7 +12285,7 @@ class WordsApi(object):
             return data
         
     def update_style_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Updates style properties, returns an updated style.  # noqa: E501
+        """Updates a style in the document.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -12334,15 +12334,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def update_table_cell_format(self, request, **kwargs):  # noqa: E501
-        """Updates a table cell format.  # noqa: E501
+        """Updates the formatting properties of a cell in the table row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param format TableCellFormat : The properties. (required)
-        :param table_row_path str : Path to table row. (required)
+        :param name str : The filename of the input document. (required)
+        :param format TableCellFormat : The cell format. (required)
+        :param table_row_path str : The path to the table row in the document tree. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -12370,7 +12370,7 @@ class WordsApi(object):
             return data
         
     def update_table_cell_format_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Updates a table cell format.  # noqa: E501
+        """Updates the formatting properties of a cell in the table row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -12419,16 +12419,16 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def update_table_properties(self, request, **kwargs):  # noqa: E501
-        """Updates a table properties.  # noqa: E501
+        """Updates properties of a table in the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param properties TableProperties : The properties. (required)
+        :param name str : The filename of the input document. (required)
+        :param properties TableProperties : The properties of the table. (required)
         :param index int : Object index. (required)
-        :param node_path str : Path to the node, which contains tables.
+        :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -12455,7 +12455,7 @@ class WordsApi(object):
             return data
         
     def update_table_properties_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Updates a table properties.  # noqa: E501
+        """Updates properties of a table in the document node.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -12504,15 +12504,15 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats'])
 
     def update_table_row_format(self, request, **kwargs):  # noqa: E501
-        """Updates a table row format.  # noqa: E501
+        """Updates the formatting properties of a table row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param name str : The document name. (required)
-        :param format TableRowFormat : Table row format. (required)
-        :param table_path str : Path to table. (required)
+        :param name str : The filename of the input document. (required)
+        :param format TableRowFormat : The row format. (required)
+        :param table_path str : The path to the table in the document tree. (required)
         :param index int : Object index. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -12540,7 +12540,7 @@ class WordsApi(object):
             return data
         
     def update_table_row_format_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Updates a table row format.  # noqa: E501
+        """Updates the formatting properties of a table row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True

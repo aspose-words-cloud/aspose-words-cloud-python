@@ -62,7 +62,7 @@ class CommentLink(object):
     def link(self):
         """Gets the link of this CommentLink.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this CommentLink.  # noqa: E501
         :rtype: WordsApiLink
@@ -73,7 +73,7 @@ class CommentLink(object):
     def link(self, link):
         """Sets the link of this CommentLink.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this CommentLink.  # noqa: E501
         :type: WordsApiLink

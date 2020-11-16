@@ -30,8 +30,8 @@ class ProtectDocumentRequest(object):
     """
     Request model for protect_document operation.
     Initializes a new instance.
-    :param name The document name.
-    :param protection_request ProtectionRequest with protection settings.
+    :param name The filename of the input document.
+    :param protection_request The protection settings.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

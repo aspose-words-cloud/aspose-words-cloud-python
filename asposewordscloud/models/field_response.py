@@ -31,7 +31,7 @@ import json
 
 
 class FieldResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/fields/{1}.
+    """The REST response with a field.
     """
 
     """
@@ -67,7 +67,7 @@ class FieldResponse(object):
     def request_id(self):
         """Gets the request_id of this FieldResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this FieldResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class FieldResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this FieldResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this FieldResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class FieldResponse(object):
     def field(self):
         """Gets the field of this FieldResponse.  # noqa: E501
 
-        Gets or sets field information.  # noqa: E501
+        Gets or sets the field.  # noqa: E501
 
         :return: The field of this FieldResponse.  # noqa: E501
         :rtype: Field
@@ -100,7 +100,7 @@ class FieldResponse(object):
     def field(self, field):
         """Sets the field of this FieldResponse.
 
-        Gets or sets field information.  # noqa: E501
+        Gets or sets the field.  # noqa: E501
 
         :param field: The field of this FieldResponse.  # noqa: E501
         :type: Field

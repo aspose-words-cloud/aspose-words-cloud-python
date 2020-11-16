@@ -30,7 +30,7 @@ class InsertWatermarkImageRequest(object):
     """
     Request model for insert_watermark_image operation.
     Initializes a new instance.
-    :param name The document name.
+    :param name The filename of the input document.
     :param image_file File with image.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -39,8 +39,8 @@ class InsertWatermarkImageRequest(object):
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     :param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     :param revision_date_time The date and time to use for revisions.
-    :param rotation_angle The watermark rotation angle.
-    :param image The image file server full name. If the name is empty the image is expected in request content.
+    :param rotation_angle The rotation angle of the watermark.
+    :param image The filename of the image. If the parameter value is missing — the image data is expected in the request content.
     """
 
     def __init__(self, name, image_file=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None, rotation_angle=None, image=None):

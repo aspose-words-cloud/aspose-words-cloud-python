@@ -31,7 +31,7 @@ import json
 
 
 class TableCellFormatResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/tables/{0}/rows/{1}/cells/{2}/cellformat.
+    """The REST response with the formatting properties of a table cell.
     """
 
     """
@@ -67,7 +67,7 @@ class TableCellFormatResponse(object):
     def request_id(self):
         """Gets the request_id of this TableCellFormatResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this TableCellFormatResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class TableCellFormatResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this TableCellFormatResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this TableCellFormatResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class TableCellFormatResponse(object):
     def cell_format(self):
         """Gets the cell_format of this TableCellFormatResponse.  # noqa: E501
 
-        Gets or sets table.  # noqa: E501
+        Gets or sets the formatting properties of a table cell.  # noqa: E501
 
         :return: The cell_format of this TableCellFormatResponse.  # noqa: E501
         :rtype: TableCellFormat
@@ -100,7 +100,7 @@ class TableCellFormatResponse(object):
     def cell_format(self, cell_format):
         """Sets the cell_format of this TableCellFormatResponse.
 
-        Gets or sets table.  # noqa: E501
+        Gets or sets the formatting properties of a table cell.  # noqa: E501
 
         :param cell_format: The cell_format of this TableCellFormatResponse.  # noqa: E501
         :type: TableCellFormat

@@ -97,7 +97,7 @@ class DrawingObjectInsert(object):
     def height(self):
         """Gets the height of this DrawingObjectInsert.  # noqa: E501
 
-        Gets or sets height of the drawing object in points.  # noqa: E501
+        Gets or sets the height of the DrawingObject in points.  # noqa: E501
 
         :return: The height of this DrawingObjectInsert.  # noqa: E501
         :rtype: float
@@ -108,7 +108,7 @@ class DrawingObjectInsert(object):
     def height(self, height):
         """Sets the height of this DrawingObjectInsert.
 
-        Gets or sets height of the drawing object in points.  # noqa: E501
+        Gets or sets the height of the DrawingObject in points.  # noqa: E501
 
         :param height: The height of this DrawingObjectInsert.  # noqa: E501
         :type: float
@@ -119,7 +119,7 @@ class DrawingObjectInsert(object):
     def left(self):
         """Gets the left of this DrawingObjectInsert.  # noqa: E501
 
-        Gets or sets distance in points from the origin to the left side of the image.  # noqa: E501
+        Gets or sets the distance in points from the origin to the left side of the image.  # noqa: E501
 
         :return: The left of this DrawingObjectInsert.  # noqa: E501
         :rtype: float
@@ -130,7 +130,7 @@ class DrawingObjectInsert(object):
     def left(self, left):
         """Sets the left of this DrawingObjectInsert.
 
-        Gets or sets distance in points from the origin to the left side of the image.  # noqa: E501
+        Gets or sets the distance in points from the origin to the left side of the image.  # noqa: E501
 
         :param left: The left of this DrawingObjectInsert.  # noqa: E501
         :type: float
@@ -141,7 +141,7 @@ class DrawingObjectInsert(object):
     def position(self):
         """Gets the position of this DrawingObjectInsert.  # noqa: E501
 
-        Gets or sets drawing object will be inserted before specified position.  # noqa: E501
+        Gets or sets the position, before which the DrawingObject will be inserted.  # noqa: E501
 
         :return: The position of this DrawingObjectInsert.  # noqa: E501
         :rtype: DocumentPosition
@@ -152,7 +152,7 @@ class DrawingObjectInsert(object):
     def position(self, position):
         """Sets the position of this DrawingObjectInsert.
 
-        Gets or sets drawing object will be inserted before specified position.  # noqa: E501
+        Gets or sets the position, before which the DrawingObject will be inserted.  # noqa: E501
 
         :param position: The position of this DrawingObjectInsert.  # noqa: E501
         :type: DocumentPosition
@@ -163,7 +163,7 @@ class DrawingObjectInsert(object):
     def relative_horizontal_position(self):
         """Gets the relative_horizontal_position of this DrawingObjectInsert.  # noqa: E501
 
-        Gets or sets specifies where the distance to the image is measured from.  # noqa: E501
+        Gets or sets the relative horizontal position, from which the distance to the image is measured.  # noqa: E501
 
         :return: The relative_horizontal_position of this DrawingObjectInsert.  # noqa: E501
         :rtype: str
@@ -174,7 +174,7 @@ class DrawingObjectInsert(object):
     def relative_horizontal_position(self, relative_horizontal_position):
         """Sets the relative_horizontal_position of this DrawingObjectInsert.
 
-        Gets or sets specifies where the distance to the image is measured from.  # noqa: E501
+        Gets or sets the relative horizontal position, from which the distance to the image is measured.  # noqa: E501
 
         :param relative_horizontal_position: The relative_horizontal_position of this DrawingObjectInsert.  # noqa: E501
         :type: str
@@ -193,7 +193,7 @@ class DrawingObjectInsert(object):
     def relative_vertical_position(self):
         """Gets the relative_vertical_position of this DrawingObjectInsert.  # noqa: E501
 
-        Gets or sets specifies where the distance to the image measured from.  # noqa: E501
+        Gets or sets the relative vertical position, from which the distance to the image is measured.  # noqa: E501
 
         :return: The relative_vertical_position of this DrawingObjectInsert.  # noqa: E501
         :rtype: str
@@ -204,7 +204,7 @@ class DrawingObjectInsert(object):
     def relative_vertical_position(self, relative_vertical_position):
         """Sets the relative_vertical_position of this DrawingObjectInsert.
 
-        Gets or sets specifies where the distance to the image measured from.  # noqa: E501
+        Gets or sets the relative vertical position, from which the distance to the image is measured.  # noqa: E501
 
         :param relative_vertical_position: The relative_vertical_position of this DrawingObjectInsert.  # noqa: E501
         :type: str
@@ -223,7 +223,7 @@ class DrawingObjectInsert(object):
     def top(self):
         """Gets the top of this DrawingObjectInsert.  # noqa: E501
 
-        Gets or sets distance in points from the origin to the top side of the image.  # noqa: E501
+        Gets or sets the distance in points from the origin to the top side of the image.  # noqa: E501
 
         :return: The top of this DrawingObjectInsert.  # noqa: E501
         :rtype: float
@@ -234,7 +234,7 @@ class DrawingObjectInsert(object):
     def top(self, top):
         """Sets the top of this DrawingObjectInsert.
 
-        Gets or sets distance in points from the origin to the top side of the image.  # noqa: E501
+        Gets or sets the distance in points from the origin to the top side of the image.  # noqa: E501
 
         :param top: The top of this DrawingObjectInsert.  # noqa: E501
         :type: float
@@ -245,7 +245,7 @@ class DrawingObjectInsert(object):
     def width(self):
         """Gets the width of this DrawingObjectInsert.  # noqa: E501
 
-        Gets or sets width of the drawing objects in points.  # noqa: E501
+        Gets or sets the width of the DrawingObjects in points.  # noqa: E501
 
         :return: The width of this DrawingObjectInsert.  # noqa: E501
         :rtype: float
@@ -256,7 +256,7 @@ class DrawingObjectInsert(object):
     def width(self, width):
         """Sets the width of this DrawingObjectInsert.
 
-        Gets or sets width of the drawing objects in points.  # noqa: E501
+        Gets or sets the width of the DrawingObjects in points.  # noqa: E501
 
         :param width: The width of this DrawingObjectInsert.  # noqa: E501
         :type: float
@@ -267,7 +267,7 @@ class DrawingObjectInsert(object):
     def wrap_type(self):
         """Gets the wrap_type of this DrawingObjectInsert.  # noqa: E501
 
-        Gets or sets specifies how to wrap text around the image.  # noqa: E501
+        Gets or sets the option indicating how to wrap text around the image.  # noqa: E501
 
         :return: The wrap_type of this DrawingObjectInsert.  # noqa: E501
         :rtype: str
@@ -278,7 +278,7 @@ class DrawingObjectInsert(object):
     def wrap_type(self, wrap_type):
         """Sets the wrap_type of this DrawingObjectInsert.
 
-        Gets or sets specifies how to wrap text around the image.  # noqa: E501
+        Gets or sets the option indicating how to wrap text around the image.  # noqa: E501
 
         :param wrap_type: The wrap_type of this DrawingObjectInsert.  # noqa: E501
         :type: str

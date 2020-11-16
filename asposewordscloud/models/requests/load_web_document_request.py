@@ -30,7 +30,7 @@ class LoadWebDocumentRequest(object):
     """
     Request model for load_web_document operation.
     Initializes a new instance.
-    :param data Parameters of loading.
+    :param data The properties of data downloading.
     :param storage Original document storage.
     """
 

@@ -31,7 +31,7 @@ import json
 
 
 class DrawingObjectsResponse(object):
-    """This response should be returned by the service when handling:  GET /drawingObjects.
+    """The REST response with a collection of DrawingObjects.
     """
 
     """
@@ -67,7 +67,7 @@ class DrawingObjectsResponse(object):
     def request_id(self):
         """Gets the request_id of this DrawingObjectsResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this DrawingObjectsResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class DrawingObjectsResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this DrawingObjectsResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this DrawingObjectsResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class DrawingObjectsResponse(object):
     def drawing_objects(self):
         """Gets the drawing_objects of this DrawingObjectsResponse.  # noqa: E501
 
-        Gets or sets collection of drawing objects.  # noqa: E501
+        Gets or sets the collection of DrawingObjects.  # noqa: E501
 
         :return: The drawing_objects of this DrawingObjectsResponse.  # noqa: E501
         :rtype: DrawingObjectCollection
@@ -100,7 +100,7 @@ class DrawingObjectsResponse(object):
     def drawing_objects(self, drawing_objects):
         """Sets the drawing_objects of this DrawingObjectsResponse.
 
-        Gets or sets collection of drawing objects.  # noqa: E501
+        Gets or sets the collection of DrawingObjects.  # noqa: E501
 
         :param drawing_objects: The drawing_objects of this DrawingObjectsResponse.  # noqa: E501
         :type: DrawingObjectCollection

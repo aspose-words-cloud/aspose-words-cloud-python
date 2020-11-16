@@ -31,7 +31,7 @@ import json
 
 
 class HeaderFootersResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/headersfooters.
+    """The REST response with a collection of HeaderFooter elements.
     """
 
     """
@@ -67,7 +67,7 @@ class HeaderFootersResponse(object):
     def request_id(self):
         """Gets the request_id of this HeaderFootersResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this HeaderFootersResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class HeaderFootersResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this HeaderFootersResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this HeaderFootersResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class HeaderFootersResponse(object):
     def header_footers(self):
         """Gets the header_footers of this HeaderFootersResponse.  # noqa: E501
 
-        Gets or sets collection of headers/footers.  # noqa: E501
+        Gets or sets the collection of HeaderFooter elements.  # noqa: E501
 
         :return: The header_footers of this HeaderFootersResponse.  # noqa: E501
         :rtype: HeaderFooterLinkCollection
@@ -100,7 +100,7 @@ class HeaderFootersResponse(object):
     def header_footers(self, header_footers):
         """Sets the header_footers of this HeaderFootersResponse.
 
-        Gets or sets collection of headers/footers.  # noqa: E501
+        Gets or sets the collection of HeaderFooter elements.  # noqa: E501
 
         :param header_footers: The header_footers of this HeaderFootersResponse.  # noqa: E501
         :type: HeaderFooterLinkCollection

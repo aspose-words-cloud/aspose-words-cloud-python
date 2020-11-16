@@ -77,7 +77,7 @@ class DocumentProperty(object):
     def link(self):
         """Gets the link of this DocumentProperty.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this DocumentProperty.  # noqa: E501
         :rtype: WordsApiLink
@@ -88,7 +88,7 @@ class DocumentProperty(object):
     def link(self, link):
         """Sets the link of this DocumentProperty.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this DocumentProperty.  # noqa: E501
         :type: WordsApiLink
@@ -99,7 +99,7 @@ class DocumentProperty(object):
     def built_in(self):
         """Gets the built_in of this DocumentProperty.  # noqa: E501
 
-        Gets or sets a value indicating whether flag indicates whether the property is built-in or not. If true the property is built-in, if false the property is custom.  # noqa: E501
+        Gets or sets a value indicating whether the property is built-in or not. If true the property is built-in, if false the property is custom.  # noqa: E501
 
         :return: The built_in of this DocumentProperty.  # noqa: E501
         :rtype: bool
@@ -110,7 +110,7 @@ class DocumentProperty(object):
     def built_in(self, built_in):
         """Sets the built_in of this DocumentProperty.
 
-        Gets or sets a value indicating whether flag indicates whether the property is built-in or not. If true the property is built-in, if false the property is custom.  # noqa: E501
+        Gets or sets a value indicating whether the property is built-in or not. If true the property is built-in, if false the property is custom.  # noqa: E501
 
         :param built_in: The built_in of this DocumentProperty.  # noqa: E501
         :type: bool
@@ -121,7 +121,7 @@ class DocumentProperty(object):
     def name(self):
         """Gets the name of this DocumentProperty.  # noqa: E501
 
-        Gets or sets name of the document property.  # noqa: E501
+        Gets or sets the name of the document property.  # noqa: E501
 
         :return: The name of this DocumentProperty.  # noqa: E501
         :rtype: str
@@ -132,7 +132,7 @@ class DocumentProperty(object):
     def name(self, name):
         """Sets the name of this DocumentProperty.
 
-        Gets or sets name of the document property.  # noqa: E501
+        Gets or sets the name of the document property.  # noqa: E501
 
         :param name: The name of this DocumentProperty.  # noqa: E501
         :type: str
@@ -143,7 +143,7 @@ class DocumentProperty(object):
     def value(self):
         """Gets the value of this DocumentProperty.  # noqa: E501
 
-        Gets or sets string value of the document property.  # noqa: E501
+        Gets or sets the value of the document property.  # noqa: E501
 
         :return: The value of this DocumentProperty.  # noqa: E501
         :rtype: str
@@ -154,7 +154,7 @@ class DocumentProperty(object):
     def value(self, value):
         """Sets the value of this DocumentProperty.
 
-        Gets or sets string value of the document property.  # noqa: E501
+        Gets or sets the value of the document property.  # noqa: E501
 
         :param value: The value of this DocumentProperty.  # noqa: E501
         :type: str

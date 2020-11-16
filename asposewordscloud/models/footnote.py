@@ -31,7 +31,7 @@ import json
 
 
 class Footnote(object):
-    """Footnote.
+    """DTO container with a footnote.
     """
 
     """
@@ -92,7 +92,7 @@ class Footnote(object):
     def link(self):
         """Gets the link of this Footnote.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this Footnote.  # noqa: E501
         :rtype: WordsApiLink
@@ -103,7 +103,7 @@ class Footnote(object):
     def link(self, link):
         """Sets the link of this Footnote.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this Footnote.  # noqa: E501
         :type: WordsApiLink
@@ -114,7 +114,7 @@ class Footnote(object):
     def node_id(self):
         """Gets the node_id of this Footnote.  # noqa: E501
 
-        Gets or sets node id.  # noqa: E501
+        Gets or sets the node id.  # noqa: E501
 
         :return: The node_id of this Footnote.  # noqa: E501
         :rtype: str
@@ -125,7 +125,7 @@ class Footnote(object):
     def node_id(self, node_id):
         """Sets the node_id of this Footnote.
 
-        Gets or sets node id.  # noqa: E501
+        Gets or sets the node id.  # noqa: E501
 
         :param node_id: The node_id of this Footnote.  # noqa: E501
         :type: str
@@ -136,7 +136,7 @@ class Footnote(object):
     def content(self):
         """Gets the content of this Footnote.  # noqa: E501
 
-        Gets or sets content of footnote.  # noqa: E501
+        Gets or sets the content of the footnote.  # noqa: E501
 
         :return: The content of this Footnote.  # noqa: E501
         :rtype: StoryChildNodes
@@ -147,7 +147,7 @@ class Footnote(object):
     def content(self, content):
         """Sets the content of this Footnote.
 
-        Gets or sets content of footnote.  # noqa: E501
+        Gets or sets the content of the footnote.  # noqa: E501
 
         :param content: The content of this Footnote.  # noqa: E501
         :type: StoryChildNodes
@@ -158,7 +158,7 @@ class Footnote(object):
     def footnote_type(self):
         """Gets the footnote_type of this Footnote.  # noqa: E501
 
-        Gets or sets returns a value that specifies whether this is a footnote or endnote.  # noqa: E501
+        Gets or sets the value, that specifies whether this is a footnote or endnote.  # noqa: E501
 
         :return: The footnote_type of this Footnote.  # noqa: E501
         :rtype: str
@@ -169,7 +169,7 @@ class Footnote(object):
     def footnote_type(self, footnote_type):
         """Sets the footnote_type of this Footnote.
 
-        Gets or sets returns a value that specifies whether this is a footnote or endnote.  # noqa: E501
+        Gets or sets the value, that specifies whether this is a footnote or endnote.  # noqa: E501
 
         :param footnote_type: The footnote_type of this Footnote.  # noqa: E501
         :type: str
@@ -188,7 +188,7 @@ class Footnote(object):
     def position(self):
         """Gets the position of this Footnote.  # noqa: E501
 
-        Gets or sets link to comment range start node.  # noqa: E501
+        Gets or sets the link to comment range start node.  # noqa: E501
 
         :return: The position of this Footnote.  # noqa: E501
         :rtype: DocumentPosition
@@ -199,7 +199,7 @@ class Footnote(object):
     def position(self, position):
         """Sets the position of this Footnote.
 
-        Gets or sets link to comment range start node.  # noqa: E501
+        Gets or sets the link to comment range start node.  # noqa: E501
 
         :param position: The position of this Footnote.  # noqa: E501
         :type: DocumentPosition
@@ -210,7 +210,7 @@ class Footnote(object):
     def reference_mark(self):
         """Gets the reference_mark of this Footnote.  # noqa: E501
 
-        Gets or sets /sets custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.  # noqa: E501
+        Gets or sets the custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.  # noqa: E501
 
         :return: The reference_mark of this Footnote.  # noqa: E501
         :rtype: str
@@ -221,7 +221,7 @@ class Footnote(object):
     def reference_mark(self, reference_mark):
         """Sets the reference_mark of this Footnote.
 
-        Gets or sets /sets custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.  # noqa: E501
+        Gets or sets the custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.  # noqa: E501
 
         :param reference_mark: The reference_mark of this Footnote.  # noqa: E501
         :type: str
@@ -232,7 +232,7 @@ class Footnote(object):
     def text(self):
         """Gets the text of this Footnote.  # noqa: E501
 
-        Gets or sets this is a convenience property that allows to easily get or set text of the footnote.  # noqa: E501
+        Gets or sets text of the footnote.  # noqa: E501
 
         :return: The text of this Footnote.  # noqa: E501
         :rtype: str
@@ -243,7 +243,7 @@ class Footnote(object):
     def text(self, text):
         """Sets the text of this Footnote.
 
-        Gets or sets this is a convenience property that allows to easily get or set text of the footnote.  # noqa: E501
+        Gets or sets text of the footnote.  # noqa: E501
 
         :param text: The text of this Footnote.  # noqa: E501
         :type: str

@@ -31,7 +31,7 @@ import json
 
 
 class BordersResponse(object):
-    """This response should be returned by the service when handling: GET {nodeWithBorders}/borders.
+    """The REST response with a collection of borders.
     """
 
     """
@@ -67,7 +67,7 @@ class BordersResponse(object):
     def request_id(self):
         """Gets the request_id of this BordersResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this BordersResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class BordersResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this BordersResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this BordersResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class BordersResponse(object):
     def borders(self):
         """Gets the borders of this BordersResponse.  # noqa: E501
 
-        Gets or sets table.  # noqa: E501
+        Gets or sets the collection of borders.  # noqa: E501
 
         :return: The borders of this BordersResponse.  # noqa: E501
         :rtype: BordersCollection
@@ -100,7 +100,7 @@ class BordersResponse(object):
     def borders(self, borders):
         """Sets the borders of this BordersResponse.
 
-        Gets or sets table.  # noqa: E501
+        Gets or sets the collection of borders.  # noqa: E501
 
         :param borders: The borders of this BordersResponse.  # noqa: E501
         :type: BordersCollection

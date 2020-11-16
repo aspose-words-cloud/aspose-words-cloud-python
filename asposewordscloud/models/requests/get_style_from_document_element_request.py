@@ -30,8 +30,8 @@ class GetStyleFromDocumentElementRequest(object):
     """
     Request model for get_style_from_document_element operation.
     Initializes a new instance.
-    :param name The document name.
-    :param styled_node_path The path to the node that supports a style. Supported node types: ParagraphFormat, List, ListLevel, Table.
+    :param name The filename of the input document.
+    :param styled_node_path The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

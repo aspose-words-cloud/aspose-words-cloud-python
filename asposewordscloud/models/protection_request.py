@@ -72,7 +72,7 @@ class ProtectionRequest(object):
     def new_password(self):
         """Gets the new_password of this ProtectionRequest.  # noqa: E501
 
-        Gets or sets new password.  # noqa: E501
+        Gets or sets the new password.  # noqa: E501
 
         :return: The new_password of this ProtectionRequest.  # noqa: E501
         :rtype: str
@@ -83,7 +83,7 @@ class ProtectionRequest(object):
     def new_password(self, new_password):
         """Sets the new_password of this ProtectionRequest.
 
-        Gets or sets new password.  # noqa: E501
+        Gets or sets the new password.  # noqa: E501
 
         :param new_password: The new_password of this ProtectionRequest.  # noqa: E501
         :type: str
@@ -94,7 +94,7 @@ class ProtectionRequest(object):
     def password(self):
         """Gets the password of this ProtectionRequest.  # noqa: E501
 
-        Gets or sets current password.  # noqa: E501
+        Gets or sets the current password.  # noqa: E501
 
         :return: The password of this ProtectionRequest.  # noqa: E501
         :rtype: str
@@ -105,7 +105,7 @@ class ProtectionRequest(object):
     def password(self, password):
         """Sets the password of this ProtectionRequest.
 
-        Gets or sets current password.  # noqa: E501
+        Gets or sets the current password.  # noqa: E501
 
         :param password: The password of this ProtectionRequest.  # noqa: E501
         :type: str
@@ -116,7 +116,7 @@ class ProtectionRequest(object):
     def protection_type(self):
         """Gets the protection_type of this ProtectionRequest.  # noqa: E501
 
-        Gets or sets new type of protection.  # noqa: E501
+        Gets or sets the new type of protection.  # noqa: E501
 
         :return: The protection_type of this ProtectionRequest.  # noqa: E501
         :rtype: str
@@ -127,7 +127,7 @@ class ProtectionRequest(object):
     def protection_type(self, protection_type):
         """Sets the protection_type of this ProtectionRequest.
 
-        Gets or sets new type of protection.  # noqa: E501
+        Gets or sets the new type of protection.  # noqa: E501
 
         :param protection_type: The protection_type of this ProtectionRequest.  # noqa: E501
         :type: str

@@ -31,10 +31,10 @@ class ConvertDocumentRequest(object):
     Request model for convert_document operation.
     Initializes a new instance.
     :param document Converting document.
-    :param format Format to convert.
+    :param format The format to convert.
     :param storage Original document storage.
-    :param out_path Path for saving operation result to the local storage.
-    :param file_name_field_value This file name will be used when resulting document has dynamic field for document file name {filename}. If it is not set, "sourceFilename" will be used instead.
+    :param out_path The path to the output document on a local storage.
+    :param file_name_field_value The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.
     :param fonts_location Folder in filestorage with custom fonts.
     """
 

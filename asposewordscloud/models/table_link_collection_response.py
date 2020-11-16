@@ -31,7 +31,7 @@ import json
 
 
 class TableLinkCollectionResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/tables.
+    """The REST response with a collection of tables.
     """
 
     """
@@ -67,7 +67,7 @@ class TableLinkCollectionResponse(object):
     def request_id(self):
         """Gets the request_id of this TableLinkCollectionResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this TableLinkCollectionResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class TableLinkCollectionResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this TableLinkCollectionResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this TableLinkCollectionResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class TableLinkCollectionResponse(object):
     def tables(self):
         """Gets the tables of this TableLinkCollectionResponse.  # noqa: E501
 
-        Gets or sets collection of tables.  # noqa: E501
+        Gets or sets the collection of tables.  # noqa: E501
 
         :return: The tables of this TableLinkCollectionResponse.  # noqa: E501
         :rtype: TableLinkCollection
@@ -100,7 +100,7 @@ class TableLinkCollectionResponse(object):
     def tables(self, tables):
         """Sets the tables of this TableLinkCollectionResponse.
 
-        Gets or sets collection of tables.  # noqa: E501
+        Gets or sets the collection of tables.  # noqa: E501
 
         :param tables: The tables of this TableLinkCollectionResponse.  # noqa: E501
         :type: TableLinkCollection

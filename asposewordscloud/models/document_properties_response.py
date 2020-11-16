@@ -31,7 +31,7 @@ import json
 
 
 class DocumentPropertiesResponse(object):
-    """This response should be returned by the service when handling:  GET /documentProperties.
+    """The REST response with a collection of document properties.
     """
 
     """
@@ -67,7 +67,7 @@ class DocumentPropertiesResponse(object):
     def request_id(self):
         """Gets the request_id of this DocumentPropertiesResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this DocumentPropertiesResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class DocumentPropertiesResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this DocumentPropertiesResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this DocumentPropertiesResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class DocumentPropertiesResponse(object):
     def document_properties(self):
         """Gets the document_properties of this DocumentPropertiesResponse.  # noqa: E501
 
-        Gets or sets collection of document properties.  # noqa: E501
+        Gets or sets the collection of document properties.  # noqa: E501
 
         :return: The document_properties of this DocumentPropertiesResponse.  # noqa: E501
         :rtype: DocumentProperties
@@ -100,7 +100,7 @@ class DocumentPropertiesResponse(object):
     def document_properties(self, document_properties):
         """Sets the document_properties of this DocumentPropertiesResponse.
 
-        Gets or sets collection of document properties.  # noqa: E501
+        Gets or sets the collection of document properties.  # noqa: E501
 
         :param document_properties: The document_properties of this DocumentPropertiesResponse.  # noqa: E501
         :type: DocumentProperties

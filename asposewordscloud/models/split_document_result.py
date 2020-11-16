@@ -72,7 +72,7 @@ class SplitDocumentResult(object):
     def pages(self):
         """Gets the pages of this SplitDocumentResult.  # noqa: E501
 
-        Gets or sets array of pages.  # noqa: E501
+        Gets or sets the list of pages.  # noqa: E501
 
         :return: The pages of this SplitDocumentResult.  # noqa: E501
         :rtype: list[FileLink]
@@ -83,7 +83,7 @@ class SplitDocumentResult(object):
     def pages(self, pages):
         """Sets the pages of this SplitDocumentResult.
 
-        Gets or sets array of pages.  # noqa: E501
+        Gets or sets the list of pages.  # noqa: E501
 
         :param pages: The pages of this SplitDocumentResult.  # noqa: E501
         :type: list[FileLink]
@@ -94,7 +94,7 @@ class SplitDocumentResult(object):
     def source_document(self):
         """Gets the source_document of this SplitDocumentResult.  # noqa: E501
 
-        Gets or sets linkt to the source document.  # noqa: E501
+        Gets or sets the link to the source document.  # noqa: E501
 
         :return: The source_document of this SplitDocumentResult.  # noqa: E501
         :rtype: FileLink
@@ -105,7 +105,7 @@ class SplitDocumentResult(object):
     def source_document(self, source_document):
         """Sets the source_document of this SplitDocumentResult.
 
-        Gets or sets linkt to the source document.  # noqa: E501
+        Gets or sets the link to the source document.  # noqa: E501
 
         :param source_document: The source_document of this SplitDocumentResult.  # noqa: E501
         :type: FileLink
@@ -116,7 +116,7 @@ class SplitDocumentResult(object):
     def zipped_pages(self):
         """Gets the zipped_pages of this SplitDocumentResult.  # noqa: E501
 
-        Gets or sets link to the file archive with pages.  # noqa: E501
+        Gets or sets the link to the file archive with pages.  # noqa: E501
 
         :return: The zipped_pages of this SplitDocumentResult.  # noqa: E501
         :rtype: FileLink
@@ -127,7 +127,7 @@ class SplitDocumentResult(object):
     def zipped_pages(self, zipped_pages):
         """Sets the zipped_pages of this SplitDocumentResult.
 
-        Gets or sets link to the file archive with pages.  # noqa: E501
+        Gets or sets the link to the file archive with pages.  # noqa: E501
 
         :param zipped_pages: The zipped_pages of this SplitDocumentResult.  # noqa: E501
         :type: FileLink

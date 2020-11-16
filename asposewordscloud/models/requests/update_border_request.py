@@ -30,10 +30,10 @@ class UpdateBorderRequest(object):
     """
     Request model for update_border operation.
     Initializes a new instance.
-    :param name The document name.
-    :param border_properties Border properties.
+    :param name The filename of the input document.
+    :param border_properties The new border properties to update.
     :param border_type Border type.
-    :param node_path Path to the node with border(node should be paragraph, cell or row).
+    :param node_path The path to the node in the document tree.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

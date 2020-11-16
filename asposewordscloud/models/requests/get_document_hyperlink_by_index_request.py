@@ -30,8 +30,8 @@ class GetDocumentHyperlinkByIndexRequest(object):
     """
     Request model for get_document_hyperlink_by_index operation.
     Initializes a new instance.
-    :param name The document name.
-    :param hyperlink_index The hyperlink index.
+    :param name The filename of the input document.
+    :param hyperlink_index The index of the hyperlink.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

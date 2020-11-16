@@ -30,10 +30,10 @@ class UpdateListLevelRequest(object):
     """
     Request model for update_list_level operation.
     Initializes a new instance.
-    :param name The document name.
-    :param list_update List object.
-    :param list_id List unique identifier.
-    :param list_level List level identifier.
+    :param name The filename of the input document.
+    :param list_update The properties of the List element.
+    :param list_id The list Id.
+    :param list_level The list level.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

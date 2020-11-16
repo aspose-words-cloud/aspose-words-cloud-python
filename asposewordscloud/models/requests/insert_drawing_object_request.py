@@ -30,10 +30,10 @@ class InsertDrawingObjectRequest(object):
     """
     Request model for insert_drawing_object operation.
     Initializes a new instance.
-    :param name The document name.
+    :param name The filename of the input document.
     :param drawing_object Drawing object parameters.
     :param image_file File with image.
-    :param node_path Path to the node, which contains collection of drawing objects.
+    :param node_path The path to the node in the document tree.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

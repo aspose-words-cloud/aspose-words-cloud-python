@@ -31,7 +31,7 @@ import json
 
 
 class TableRowFormat(object):
-    """Represents all formatting for a table row.
+    """DTO container with formatting for a table row.
     """
 
     """
@@ -82,7 +82,7 @@ class TableRowFormat(object):
     def link(self):
         """Gets the link of this TableRowFormat.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this TableRowFormat.  # noqa: E501
         :rtype: WordsApiLink
@@ -93,7 +93,7 @@ class TableRowFormat(object):
     def link(self, link):
         """Sets the link of this TableRowFormat.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this TableRowFormat.  # noqa: E501
         :type: WordsApiLink
@@ -104,7 +104,7 @@ class TableRowFormat(object):
     def allow_break_across_pages(self):
         """Gets the allow_break_across_pages of this TableRowFormat.  # noqa: E501
 
-        Gets or sets true if the text in a table row is allowed to split across a page break.  # noqa: E501
+        Gets or sets a value indicating whether the text in a table row is allowed to split across a page break.  # noqa: E501
 
         :return: The allow_break_across_pages of this TableRowFormat.  # noqa: E501
         :rtype: bool
@@ -115,7 +115,7 @@ class TableRowFormat(object):
     def allow_break_across_pages(self, allow_break_across_pages):
         """Sets the allow_break_across_pages of this TableRowFormat.
 
-        Gets or sets true if the text in a table row is allowed to split across a page break.  # noqa: E501
+        Gets or sets a value indicating whether the text in a table row is allowed to split across a page break.  # noqa: E501
 
         :param allow_break_across_pages: The allow_break_across_pages of this TableRowFormat.  # noqa: E501
         :type: bool
@@ -126,7 +126,7 @@ class TableRowFormat(object):
     def heading_format(self):
         """Gets the heading_format of this TableRowFormat.  # noqa: E501
 
-        Gets or sets true if the row is repeated as a table heading on every page when the table spans more than one page.  # noqa: E501
+        Gets or sets a value indicating whether the row is repeated as a table heading on every page when the table spans more than one page.  # noqa: E501
 
         :return: The heading_format of this TableRowFormat.  # noqa: E501
         :rtype: bool
@@ -137,7 +137,7 @@ class TableRowFormat(object):
     def heading_format(self, heading_format):
         """Sets the heading_format of this TableRowFormat.
 
-        Gets or sets true if the row is repeated as a table heading on every page when the table spans more than one page.  # noqa: E501
+        Gets or sets a value indicating whether the row is repeated as a table heading on every page when the table spans more than one page.  # noqa: E501
 
         :param heading_format: The heading_format of this TableRowFormat.  # noqa: E501
         :type: bool

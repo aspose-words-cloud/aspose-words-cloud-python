@@ -30,16 +30,16 @@ class SplitDocumentRequest(object):
     """
     Request model for split_document operation.
     Initializes a new instance.
-    :param name Original document name.
-    :param format Format to split.
+    :param name The filename of the input document.
+    :param format The format to split.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    :param _from Start page.
-    :param to End page.
-    :param zip_output ZipOutput or not.
+    :param _from The start page.
+    :param to The end page.
+    :param zip_output The flag indicating whether to ZIP the output.
     :param fonts_location Folder in filestorage with custom fonts.
     """
 

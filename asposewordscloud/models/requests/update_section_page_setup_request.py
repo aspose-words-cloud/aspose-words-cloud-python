@@ -30,9 +30,9 @@ class UpdateSectionPageSetupRequest(object):
     """
     Request model for update_section_page_setup operation.
     Initializes a new instance.
-    :param name The document name.
-    :param section_index Section index.
-    :param page_setup Page setup properties dto.
+    :param name The filename of the input document.
+    :param section_index The index of the section.
+    :param page_setup The properties of the page setup.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

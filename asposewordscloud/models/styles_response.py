@@ -31,7 +31,7 @@ import json
 
 
 class StylesResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/styles.
+    """The REST response with an array of styles.
     """
 
     """
@@ -67,7 +67,7 @@ class StylesResponse(object):
     def request_id(self):
         """Gets the request_id of this StylesResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this StylesResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class StylesResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this StylesResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this StylesResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class StylesResponse(object):
     def styles(self):
         """Gets the styles of this StylesResponse.  # noqa: E501
 
-        Gets or sets styles which are contained in document.  # noqa: E501
+        Gets or sets the array of styles.  # noqa: E501
 
         :return: The styles of this StylesResponse.  # noqa: E501
         :rtype: list[Style]
@@ -100,7 +100,7 @@ class StylesResponse(object):
     def styles(self, styles):
         """Sets the styles of this StylesResponse.
 
-        Gets or sets styles which are contained in document.  # noqa: E501
+        Gets or sets the array of styles.  # noqa: E501
 
         :param styles: The styles of this StylesResponse.  # noqa: E501
         :type: list[Style]

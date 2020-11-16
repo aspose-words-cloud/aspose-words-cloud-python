@@ -30,13 +30,13 @@ class GetDocumentWithFormatRequest(object):
     """
     Request model for get_document_with_format operation.
     Initializes a new instance.
-    :param name The document name.
+    :param name The filename of the input document.
     :param format The destination format.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
-    :param out_path Path to save the result.
+    :param out_path The path to the output document.
     :param fonts_location Folder in filestorage with custom fonts.
     """
 

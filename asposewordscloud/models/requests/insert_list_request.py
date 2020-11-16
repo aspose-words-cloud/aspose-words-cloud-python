@@ -30,8 +30,8 @@ class InsertListRequest(object):
     """
     Request model for insert_list operation.
     Initializes a new instance.
-    :param name The document name.
-    :param list_insert List to insert.
+    :param name The filename of the input document.
+    :param list_insert The properties of the list.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

@@ -30,14 +30,14 @@ class GetHeaderFooterOfSectionRequest(object):
     """
     Request model for get_header_footer_of_section operation.
     Initializes a new instance.
-    :param name The document name.
-    :param header_footer_index Header/footer index.
-    :param section_index Section index.
+    :param name The filename of the input document.
+    :param header_footer_index The index of the HeaderFooter object.
+    :param section_index The index of the section.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
-    :param filter_by_type List of types of headers and footers.
+    :param filter_by_type The list of HeaderFooter types.
     """
 
     def __init__(self, name, header_footer_index, section_index, folder=None, storage=None, load_encoding=None, password=None, filter_by_type=None):

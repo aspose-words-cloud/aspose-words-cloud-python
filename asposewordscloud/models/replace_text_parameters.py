@@ -148,7 +148,7 @@ class ReplaceTextParameters(object):
     def new_value(self):
         """Gets the new_value of this ReplaceTextParameters.  # noqa: E501
 
-        Gets or sets new text value to replace by.  # noqa: E501
+        Gets or sets the new text value to replace by.  # noqa: E501
 
         :return: The new_value of this ReplaceTextParameters.  # noqa: E501
         :rtype: str
@@ -159,7 +159,7 @@ class ReplaceTextParameters(object):
     def new_value(self, new_value):
         """Sets the new_value of this ReplaceTextParameters.
 
-        Gets or sets new text value to replace by.  # noqa: E501
+        Gets or sets the new text value to replace by.  # noqa: E501
 
         :param new_value: The new_value of this ReplaceTextParameters.  # noqa: E501
         :type: str
@@ -170,7 +170,7 @@ class ReplaceTextParameters(object):
     def old_value(self):
         """Gets the old_value of this ReplaceTextParameters.  # noqa: E501
 
-        Gets or sets old text value (or regex pattern IsOldValueRegex) to replace.  # noqa: E501
+        Gets or sets the old text value (or regex pattern IsOldValueRegex) to replace.  # noqa: E501
 
         :return: The old_value of this ReplaceTextParameters.  # noqa: E501
         :rtype: str
@@ -181,7 +181,7 @@ class ReplaceTextParameters(object):
     def old_value(self, old_value):
         """Sets the old_value of this ReplaceTextParameters.
 
-        Gets or sets old text value (or regex pattern IsOldValueRegex) to replace.  # noqa: E501
+        Gets or sets the old text value (or regex pattern IsOldValueRegex) to replace.  # noqa: E501
 
         :param old_value: The old_value of this ReplaceTextParameters.  # noqa: E501
         :type: str

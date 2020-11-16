@@ -77,7 +77,7 @@ class StyleUpdate(object):
     def base_style_name(self):
         """Gets the base_style_name of this StyleUpdate.  # noqa: E501
 
-        Gets or sets /sets the name of the style this style is based on.  # noqa: E501
+        Gets or sets the name of the style this style is based on.  # noqa: E501
 
         :return: The base_style_name of this StyleUpdate.  # noqa: E501
         :rtype: str
@@ -88,7 +88,7 @@ class StyleUpdate(object):
     def base_style_name(self, base_style_name):
         """Sets the base_style_name of this StyleUpdate.
 
-        Gets or sets /sets the name of the style this style is based on.  # noqa: E501
+        Gets or sets the name of the style this style is based on.  # noqa: E501
 
         :param base_style_name: The base_style_name of this StyleUpdate.  # noqa: E501
         :type: str
@@ -99,7 +99,7 @@ class StyleUpdate(object):
     def is_quick_style(self):
         """Gets the is_quick_style of this StyleUpdate.  # noqa: E501
 
-        Gets or sets a value indicating whether specifies whether this style is shown in the Quick Style gallery inside MS Word UI.  # noqa: E501
+        Gets or sets a value indicating whether this style is shown in the Quick Style gallery inside MS Word UI.  # noqa: E501
 
         :return: The is_quick_style of this StyleUpdate.  # noqa: E501
         :rtype: bool
@@ -110,7 +110,7 @@ class StyleUpdate(object):
     def is_quick_style(self, is_quick_style):
         """Sets the is_quick_style of this StyleUpdate.
 
-        Gets or sets a value indicating whether specifies whether this style is shown in the Quick Style gallery inside MS Word UI.  # noqa: E501
+        Gets or sets a value indicating whether this style is shown in the Quick Style gallery inside MS Word UI.  # noqa: E501
 
         :param is_quick_style: The is_quick_style of this StyleUpdate.  # noqa: E501
         :type: bool
@@ -143,7 +143,7 @@ class StyleUpdate(object):
     def next_paragraph_style_name(self):
         """Gets the next_paragraph_style_name of this StyleUpdate.  # noqa: E501
 
-        Gets or sets /sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.  # noqa: E501
+        Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.  # noqa: E501
 
         :return: The next_paragraph_style_name of this StyleUpdate.  # noqa: E501
         :rtype: str
@@ -154,7 +154,7 @@ class StyleUpdate(object):
     def next_paragraph_style_name(self, next_paragraph_style_name):
         """Sets the next_paragraph_style_name of this StyleUpdate.
 
-        Gets or sets /sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.  # noqa: E501
+        Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.  # noqa: E501
 
         :param next_paragraph_style_name: The next_paragraph_style_name of this StyleUpdate.  # noqa: E501
         :type: str

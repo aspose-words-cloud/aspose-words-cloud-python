@@ -67,7 +67,7 @@ class NodeLink(object):
     def link(self):
         """Gets the link of this NodeLink.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this NodeLink.  # noqa: E501
         :rtype: WordsApiLink
@@ -78,7 +78,7 @@ class NodeLink(object):
     def link(self, link):
         """Sets the link of this NodeLink.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this NodeLink.  # noqa: E501
         :type: WordsApiLink
@@ -89,7 +89,7 @@ class NodeLink(object):
     def node_id(self):
         """Gets the node_id of this NodeLink.  # noqa: E501
 
-        Gets or sets node id.  # noqa: E501
+        Gets or sets the node id.  # noqa: E501
 
         :return: The node_id of this NodeLink.  # noqa: E501
         :rtype: str
@@ -100,7 +100,7 @@ class NodeLink(object):
     def node_id(self, node_id):
         """Sets the node_id of this NodeLink.
 
-        Gets or sets node id.  # noqa: E501
+        Gets or sets the node id.  # noqa: E501
 
         :param node_id: The node_id of this NodeLink.  # noqa: E501
         :type: str

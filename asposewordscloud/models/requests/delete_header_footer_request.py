@@ -30,8 +30,8 @@ class DeleteHeaderFooterRequest(object):
     """
     Request model for delete_header_footer operation.
     Initializes a new instance.
-    :param name The document name.
-    :param section_path Path to parent section.
+    :param name The filename of the input document.
+    :param section_path The path to the section in the document tree.
     :param index Object index.
     :param folder Original document folder.
     :param storage Original document storage.

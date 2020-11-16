@@ -77,7 +77,7 @@ class PageStatData(object):
     def footnotes_stat_data(self):
         """Gets the footnotes_stat_data of this PageStatData.  # noqa: E501
 
-        Gets or sets detailed statistics of footnotes.  # noqa: E501
+        Gets or sets the detailed statistics on the footnotes.  # noqa: E501
 
         :return: The footnotes_stat_data of this PageStatData.  # noqa: E501
         :rtype: FootnotesStatData
@@ -88,7 +88,7 @@ class PageStatData(object):
     def footnotes_stat_data(self, footnotes_stat_data):
         """Sets the footnotes_stat_data of this PageStatData.
 
-        Gets or sets detailed statistics of footnotes.  # noqa: E501
+        Gets or sets the detailed statistics on the footnotes.  # noqa: E501
 
         :param footnotes_stat_data: The footnotes_stat_data of this PageStatData.  # noqa: E501
         :type: FootnotesStatData
@@ -99,7 +99,7 @@ class PageStatData(object):
     def page_number(self):
         """Gets the page_number of this PageStatData.  # noqa: E501
 
-        Gets or sets page number.  # noqa: E501
+        Gets or sets the page number.  # noqa: E501
 
         :return: The page_number of this PageStatData.  # noqa: E501
         :rtype: int
@@ -110,7 +110,7 @@ class PageStatData(object):
     def page_number(self, page_number):
         """Sets the page_number of this PageStatData.
 
-        Gets or sets page number.  # noqa: E501
+        Gets or sets the page number.  # noqa: E501
 
         :param page_number: The page_number of this PageStatData.  # noqa: E501
         :type: int
@@ -121,7 +121,7 @@ class PageStatData(object):
     def paragraph_count(self):
         """Gets the paragraph_count of this PageStatData.  # noqa: E501
 
-        Gets or sets total count of paragraphs in the page.  # noqa: E501
+        Gets or sets the total count of paragraphs in the page.  # noqa: E501
 
         :return: The paragraph_count of this PageStatData.  # noqa: E501
         :rtype: int
@@ -132,7 +132,7 @@ class PageStatData(object):
     def paragraph_count(self, paragraph_count):
         """Sets the paragraph_count of this PageStatData.
 
-        Gets or sets total count of paragraphs in the page.  # noqa: E501
+        Gets or sets the total count of paragraphs in the page.  # noqa: E501
 
         :param paragraph_count: The paragraph_count of this PageStatData.  # noqa: E501
         :type: int
@@ -143,7 +143,7 @@ class PageStatData(object):
     def word_count(self):
         """Gets the word_count of this PageStatData.  # noqa: E501
 
-        Gets or sets total count of words in the page.  # noqa: E501
+        Gets or sets the total count of words in the page.  # noqa: E501
 
         :return: The word_count of this PageStatData.  # noqa: E501
         :rtype: int
@@ -154,7 +154,7 @@ class PageStatData(object):
     def word_count(self, word_count):
         """Sets the word_count of this PageStatData.
 
-        Gets or sets total count of words in the page.  # noqa: E501
+        Gets or sets the total count of words in the page.  # noqa: E501
 
         :param word_count: The word_count of this PageStatData.  # noqa: E501
         :type: int

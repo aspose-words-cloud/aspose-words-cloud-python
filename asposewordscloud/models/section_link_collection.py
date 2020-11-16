@@ -31,7 +31,7 @@ import json
 
 
 class SectionLinkCollection(object):
-    """Collection of links to sections.
+    """The collection of section's links.
     """
 
     """
@@ -67,7 +67,7 @@ class SectionLinkCollection(object):
     def link(self):
         """Gets the link of this SectionLinkCollection.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this SectionLinkCollection.  # noqa: E501
         :rtype: WordsApiLink
@@ -78,7 +78,7 @@ class SectionLinkCollection(object):
     def link(self, link):
         """Sets the link of this SectionLinkCollection.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this SectionLinkCollection.  # noqa: E501
         :type: WordsApiLink
@@ -89,7 +89,7 @@ class SectionLinkCollection(object):
     def section_link_list(self):
         """Gets the section_link_list of this SectionLinkCollection.  # noqa: E501
 
-        Gets or sets collection of section's links.  # noqa: E501
+        Gets or sets the collection of section's links.  # noqa: E501
 
         :return: The section_link_list of this SectionLinkCollection.  # noqa: E501
         :rtype: list[SectionLink]
@@ -100,7 +100,7 @@ class SectionLinkCollection(object):
     def section_link_list(self, section_link_list):
         """Sets the section_link_list of this SectionLinkCollection.
 
-        Gets or sets collection of section's links.  # noqa: E501
+        Gets or sets the collection of section's links.  # noqa: E501
 
         :param section_link_list: The section_link_list of this SectionLinkCollection.  # noqa: E501
         :type: list[SectionLink]

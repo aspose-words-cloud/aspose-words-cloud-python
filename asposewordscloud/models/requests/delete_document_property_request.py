@@ -30,8 +30,8 @@ class DeleteDocumentPropertyRequest(object):
     """
     Request model for delete_document_property operation.
     Initializes a new instance.
-    :param name The document name.
-    :param property_name The property name.
+    :param name The filename of the input document.
+    :param property_name The name of the property.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

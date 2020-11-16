@@ -31,7 +31,7 @@ import json
 
 
 class HeaderFooterLinkCollection(object):
-    """Collection of links to header/footers.
+    """The collection of HeaderFooter's links.
     """
 
     """
@@ -67,7 +67,7 @@ class HeaderFooterLinkCollection(object):
     def link(self):
         """Gets the link of this HeaderFooterLinkCollection.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this HeaderFooterLinkCollection.  # noqa: E501
         :rtype: WordsApiLink
@@ -78,7 +78,7 @@ class HeaderFooterLinkCollection(object):
     def link(self, link):
         """Sets the link of this HeaderFooterLinkCollection.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this HeaderFooterLinkCollection.  # noqa: E501
         :type: WordsApiLink
@@ -89,7 +89,7 @@ class HeaderFooterLinkCollection(object):
     def list(self):
         """Gets the list of this HeaderFooterLinkCollection.  # noqa: E501
 
-        Gets or sets collection of section's links.  # noqa: E501
+        Gets or sets the collection of HeaderFooter's links.  # noqa: E501
 
         :return: The list of this HeaderFooterLinkCollection.  # noqa: E501
         :rtype: list[HeaderFooterLink]
@@ -100,7 +100,7 @@ class HeaderFooterLinkCollection(object):
     def list(self, list):
         """Sets the list of this HeaderFooterLinkCollection.
 
-        Gets or sets collection of section's links.  # noqa: E501
+        Gets or sets the collection of HeaderFooter's links.  # noqa: E501
 
         :param list: The list of this HeaderFooterLinkCollection.  # noqa: E501
         :type: list[HeaderFooterLink]
