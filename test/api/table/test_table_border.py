@@ -118,7 +118,7 @@ class TestTableBorder(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestBorderPropertiesColor = asposewordscloud.XmlColor(alpha=2)
+        requestBorderPropertiesColor = asposewordscloud.XmlColor(web='#AABBCC')
         requestBorderProperties = asposewordscloud.Border(border_type='Left', color=requestBorderPropertiesColor, distance_from_text=6.0, line_style='DashDotStroker', line_width=2.0, shadow=True)
         request = asposewordscloud.models.requests.UpdateBorderRequest(name=remoteFileName, border_properties=requestBorderProperties, border_type='left', node_path='tables/1/rows/0/cells/0', folder=remoteDataFolder)
 
@@ -126,7 +126,7 @@ class TestTableBorder(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.border, 'Validate UpdateBorder response')
         self.assertIsNotNone(result.border.color, 'Validate UpdateBorder response')
-        self.assertEqual('#000002', result.border.color.web)
+        self.assertEqual('#AABBCC', result.border.color.web)
         self.assertEqual(6.0, result.border.distance_from_text)
         self.assertEqual(2.0, result.border.line_width)
         self.assertTrue(result.border.shadow, 'Validate UpdateBorder response')
