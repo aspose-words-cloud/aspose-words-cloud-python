@@ -31,7 +31,7 @@ import json
 
 
 class ParagraphFormatResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/format.
+    """The REST response with the formatting properties of a paragraph.
     """
 
     """
@@ -67,7 +67,7 @@ class ParagraphFormatResponse(object):
     def request_id(self):
         """Gets the request_id of this ParagraphFormatResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this ParagraphFormatResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class ParagraphFormatResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this ParagraphFormatResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this ParagraphFormatResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class ParagraphFormatResponse(object):
     def paragraph_format(self):
         """Gets the paragraph_format of this ParagraphFormatResponse.  # noqa: E501
 
-        Gets or sets represents all the formatting for a paragraph.  # noqa: E501
+        Gets or sets the formatting properties of a paragraph.  # noqa: E501
 
         :return: The paragraph_format of this ParagraphFormatResponse.  # noqa: E501
         :rtype: ParagraphFormat
@@ -100,7 +100,7 @@ class ParagraphFormatResponse(object):
     def paragraph_format(self, paragraph_format):
         """Sets the paragraph_format of this ParagraphFormatResponse.
 
-        Gets or sets represents all the formatting for a paragraph.  # noqa: E501
+        Gets or sets the formatting properties of a paragraph.  # noqa: E501
 
         :param paragraph_format: The paragraph_format of this ParagraphFormatResponse.  # noqa: E501
         :type: ParagraphFormat

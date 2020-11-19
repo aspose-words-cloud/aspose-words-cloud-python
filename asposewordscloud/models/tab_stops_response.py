@@ -31,7 +31,7 @@ import json
 
 
 class TabStopsResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/tabstops.
+    """The REST response with an array of tab stops.
     """
 
     """
@@ -67,7 +67,7 @@ class TabStopsResponse(object):
     def request_id(self):
         """Gets the request_id of this TabStopsResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this TabStopsResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class TabStopsResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this TabStopsResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this TabStopsResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class TabStopsResponse(object):
     def tab_stops(self):
         """Gets the tab_stops of this TabStopsResponse.  # noqa: E501
 
-        Gets or sets represents a tab stop.  # noqa: E501
+        Gets or sets the array of tab stops.  # noqa: E501
 
         :return: The tab_stops of this TabStopsResponse.  # noqa: E501
         :rtype: list[TabStop]
@@ -100,7 +100,7 @@ class TabStopsResponse(object):
     def tab_stops(self, tab_stops):
         """Sets the tab_stops of this TabStopsResponse.
 
-        Gets or sets represents a tab stop.  # noqa: E501
+        Gets or sets the array of tab stops.  # noqa: E501
 
         :param tab_stops: The tab_stops of this TabStopsResponse.  # noqa: E501
         :type: list[TabStop]

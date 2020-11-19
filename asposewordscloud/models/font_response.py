@@ -31,7 +31,7 @@ import json
 
 
 class FontResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs/{0}/runs/{1}/font.
+    """The REST response with a font.
     """
 
     """
@@ -67,7 +67,7 @@ class FontResponse(object):
     def request_id(self):
         """Gets the request_id of this FontResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this FontResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class FontResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this FontResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this FontResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class FontResponse(object):
     def font(self):
         """Gets the font of this FontResponse.  # noqa: E501
 
-        Gets or sets font.  # noqa: E501
+        Gets or sets the font.  # noqa: E501
 
         :return: The font of this FontResponse.  # noqa: E501
         :rtype: Font
@@ -100,7 +100,7 @@ class FontResponse(object):
     def font(self, font):
         """Sets the font of this FontResponse.
 
-        Gets or sets font.  # noqa: E501
+        Gets or sets the font.  # noqa: E501
 
         :param font: The font of this FontResponse.  # noqa: E501
         :type: Font

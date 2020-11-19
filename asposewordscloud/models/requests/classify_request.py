@@ -30,8 +30,8 @@ class ClassifyRequest(object):
     """
     Request model for classify operation.
     Initializes a new instance.
-    :param text Text to classify.
-    :param best_classes_count Number of the best classes to return.
+    :param text The text to classify.
+    :param best_classes_count The number of the best classes to return.
     """
 
     def __init__(self, text, best_classes_count=None):

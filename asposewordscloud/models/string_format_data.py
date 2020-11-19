@@ -112,7 +112,7 @@ class StringFormatData(object):
     def format_flags(self):
         """Gets the format_flags of this StringFormatData.  # noqa: E501
 
-        Gets or sets a System.Drawing.StringFormatFlags enumeration that contains formatting information.  # noqa: E501
+        Gets or sets the System.Drawing.StringFormatFlags enumeration, that contains formatting information.  # noqa: E501
 
         :return: The format_flags of this StringFormatData.  # noqa: E501
         :rtype: str
@@ -123,7 +123,7 @@ class StringFormatData(object):
     def format_flags(self, format_flags):
         """Sets the format_flags of this StringFormatData.
 
-        Gets or sets a System.Drawing.StringFormatFlags enumeration that contains formatting information.  # noqa: E501
+        Gets or sets the System.Drawing.StringFormatFlags enumeration, that contains formatting information.  # noqa: E501
 
         :param format_flags: The format_flags of this StringFormatData.  # noqa: E501
         :type: str

@@ -31,8 +31,8 @@ class CreateDocumentRequest(object):
     Request model for create_document operation.
     Initializes a new instance.
     :param storage Original document storage.
-    :param file_name The document name.
-    :param folder The document folder.
+    :param file_name The filename of the document.
+    :param folder The path to the document folder.
     """
 
     def __init__(self, storage=None, file_name=None, folder=None):

@@ -30,14 +30,14 @@ class GetDocumentStatisticsRequest(object):
     """
     Request model for get_document_statistics operation.
     Initializes a new instance.
-    :param name The document name.
+    :param name The filename of the input document.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
-    :param include_comments Support including/excluding comments from the WordCount. Default value is "false".
-    :param include_footnotes Support including/excluding footnotes from the WordCount. Default value is "false".
-    :param include_text_in_shapes Support including/excluding shape's text from the WordCount. Default value is "false".
+    :param include_comments The flag indicating whether to include comments from the WordCount. The default value is "false".
+    :param include_footnotes The flag indicating whether to include footnotes from the WordCount. The default value is "false".
+    :param include_text_in_shapes The flag indicating whether to include shape's text from the WordCount. The default value is "false".
     """
 
     def __init__(self, name, folder=None, storage=None, load_encoding=None, password=None, include_comments=None, include_footnotes=None, include_text_in_shapes=None):

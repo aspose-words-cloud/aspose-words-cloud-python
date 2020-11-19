@@ -31,7 +31,7 @@ import json
 
 
 class ListInfo(object):
-    """Represents a single document list.
+    """DTO container with a single document list.
     """
 
     """
@@ -97,7 +97,7 @@ class ListInfo(object):
     def link(self):
         """Gets the link of this ListInfo.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this ListInfo.  # noqa: E501
         :rtype: WordsApiLink
@@ -108,7 +108,7 @@ class ListInfo(object):
     def link(self, link):
         """Sets the link of this ListInfo.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this ListInfo.  # noqa: E501
         :type: WordsApiLink
@@ -119,7 +119,7 @@ class ListInfo(object):
     def is_list_style_definition(self):
         """Gets the is_list_style_definition of this ListInfo.  # noqa: E501
 
-        Gets or sets a value indicating whether returns true if this list is a definition of a list style.  # noqa: E501
+        Gets or sets a value indicating whether this list is a definition of a list style.  # noqa: E501
 
         :return: The is_list_style_definition of this ListInfo.  # noqa: E501
         :rtype: bool
@@ -130,7 +130,7 @@ class ListInfo(object):
     def is_list_style_definition(self, is_list_style_definition):
         """Sets the is_list_style_definition of this ListInfo.
 
-        Gets or sets a value indicating whether returns true if this list is a definition of a list style.  # noqa: E501
+        Gets or sets a value indicating whether this list is a definition of a list style.  # noqa: E501
 
         :param is_list_style_definition: The is_list_style_definition of this ListInfo.  # noqa: E501
         :type: bool
@@ -141,7 +141,7 @@ class ListInfo(object):
     def is_list_style_reference(self):
         """Gets the is_list_style_reference of this ListInfo.  # noqa: E501
 
-        Gets or sets a value indicating whether returns true if this list is a reference to a list style.  # noqa: E501
+        Gets or sets a value indicating whether this list is a reference to a list style.  # noqa: E501
 
         :return: The is_list_style_reference of this ListInfo.  # noqa: E501
         :rtype: bool
@@ -152,7 +152,7 @@ class ListInfo(object):
     def is_list_style_reference(self, is_list_style_reference):
         """Sets the is_list_style_reference of this ListInfo.
 
-        Gets or sets a value indicating whether returns true if this list is a reference to a list style.  # noqa: E501
+        Gets or sets a value indicating whether this list is a reference to a list style.  # noqa: E501
 
         :param is_list_style_reference: The is_list_style_reference of this ListInfo.  # noqa: E501
         :type: bool
@@ -163,7 +163,7 @@ class ListInfo(object):
     def is_multi_level(self):
         """Gets the is_multi_level of this ListInfo.  # noqa: E501
 
-        Gets or sets a value indicating whether returns true when the list contains 9 levels; false when 1 level.  # noqa: E501
+        Gets or sets a value indicating whether the list contains 9 levels; false when 1 level.  # noqa: E501
 
         :return: The is_multi_level of this ListInfo.  # noqa: E501
         :rtype: bool
@@ -174,7 +174,7 @@ class ListInfo(object):
     def is_multi_level(self, is_multi_level):
         """Sets the is_multi_level of this ListInfo.
 
-        Gets or sets a value indicating whether returns true when the list contains 9 levels; false when 1 level.  # noqa: E501
+        Gets or sets a value indicating whether the list contains 9 levels; false when 1 level.  # noqa: E501
 
         :param is_multi_level: The is_multi_level of this ListInfo.  # noqa: E501
         :type: bool
@@ -185,7 +185,7 @@ class ListInfo(object):
     def is_restart_at_each_section(self):
         """Gets the is_restart_at_each_section of this ListInfo.  # noqa: E501
 
-        Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.  # noqa: E501
+        Gets or sets a value indicating whether list should be restarted at each section. The default value is false.  # noqa: E501
 
         :return: The is_restart_at_each_section of this ListInfo.  # noqa: E501
         :rtype: bool
@@ -196,7 +196,7 @@ class ListInfo(object):
     def is_restart_at_each_section(self, is_restart_at_each_section):
         """Sets the is_restart_at_each_section of this ListInfo.
 
-        Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.  # noqa: E501
+        Gets or sets a value indicating whether list should be restarted at each section. The default value is false.  # noqa: E501
 
         :param is_restart_at_each_section: The is_restart_at_each_section of this ListInfo.  # noqa: E501
         :type: bool

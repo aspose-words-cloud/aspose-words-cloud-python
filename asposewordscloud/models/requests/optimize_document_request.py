@@ -30,7 +30,7 @@ class OptimizeDocumentRequest(object):
     """
     Request model for optimize_document operation.
     Initializes a new instance.
-    :param name The document name.
+    :param name The filename of the input document.
     :param options The document optimization options.
     :param folder Original document folder.
     :param storage Original document storage.

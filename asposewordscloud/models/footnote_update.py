@@ -77,7 +77,7 @@ class FootnoteUpdate(object):
     def footnote_type(self):
         """Gets the footnote_type of this FootnoteUpdate.  # noqa: E501
 
-        Gets or sets returns a value that specifies whether this is a footnote or endnote.  # noqa: E501
+        Gets or sets the option, that specifies whether this is a footnote or endnote.  # noqa: E501
 
         :return: The footnote_type of this FootnoteUpdate.  # noqa: E501
         :rtype: str
@@ -88,7 +88,7 @@ class FootnoteUpdate(object):
     def footnote_type(self, footnote_type):
         """Sets the footnote_type of this FootnoteUpdate.
 
-        Gets or sets returns a value that specifies whether this is a footnote or endnote.  # noqa: E501
+        Gets or sets the option, that specifies whether this is a footnote or endnote.  # noqa: E501
 
         :param footnote_type: The footnote_type of this FootnoteUpdate.  # noqa: E501
         :type: str
@@ -107,7 +107,7 @@ class FootnoteUpdate(object):
     def position(self):
         """Gets the position of this FootnoteUpdate.  # noqa: E501
 
-        Gets or sets link to comment range start node.  # noqa: E501
+        Gets or sets the link to comment range start node.  # noqa: E501
 
         :return: The position of this FootnoteUpdate.  # noqa: E501
         :rtype: DocumentPosition
@@ -118,7 +118,7 @@ class FootnoteUpdate(object):
     def position(self, position):
         """Sets the position of this FootnoteUpdate.
 
-        Gets or sets link to comment range start node.  # noqa: E501
+        Gets or sets the link to comment range start node.  # noqa: E501
 
         :param position: The position of this FootnoteUpdate.  # noqa: E501
         :type: DocumentPosition
@@ -129,7 +129,7 @@ class FootnoteUpdate(object):
     def reference_mark(self):
         """Gets the reference_mark of this FootnoteUpdate.  # noqa: E501
 
-        Gets or sets /sets custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.  # noqa: E501
+        Gets or sets the custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.  # noqa: E501
 
         :return: The reference_mark of this FootnoteUpdate.  # noqa: E501
         :rtype: str
@@ -140,7 +140,7 @@ class FootnoteUpdate(object):
     def reference_mark(self, reference_mark):
         """Sets the reference_mark of this FootnoteUpdate.
 
-        Gets or sets /sets custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.  # noqa: E501
+        Gets or sets the custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.  # noqa: E501
 
         :param reference_mark: The reference_mark of this FootnoteUpdate.  # noqa: E501
         :type: str
@@ -151,7 +151,7 @@ class FootnoteUpdate(object):
     def text(self):
         """Gets the text of this FootnoteUpdate.  # noqa: E501
 
-        Gets or sets this is a convenience property that allows to easily get or set text of the footnote.  # noqa: E501
+        Gets or sets text of the footnote.  # noqa: E501
 
         :return: The text of this FootnoteUpdate.  # noqa: E501
         :rtype: str
@@ -162,7 +162,7 @@ class FootnoteUpdate(object):
     def text(self, text):
         """Sets the text of this FootnoteUpdate.
 
-        Gets or sets this is a convenience property that allows to easily get or set text of the footnote.  # noqa: E501
+        Gets or sets text of the footnote.  # noqa: E501
 
         :param text: The text of this FootnoteUpdate.  # noqa: E501
         :type: str

@@ -31,7 +31,7 @@ import json
 
 
 class FootnoteResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/footnote/0.
+    """The REST response with a footnote.
     """
 
     """
@@ -67,7 +67,7 @@ class FootnoteResponse(object):
     def request_id(self):
         """Gets the request_id of this FootnoteResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this FootnoteResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class FootnoteResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this FootnoteResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this FootnoteResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class FootnoteResponse(object):
     def footnote(self):
         """Gets the footnote of this FootnoteResponse.  # noqa: E501
 
-        Gets or sets footnote information.  # noqa: E501
+        Gets or sets the footnote.  # noqa: E501
 
         :return: The footnote of this FootnoteResponse.  # noqa: E501
         :rtype: Footnote
@@ -100,7 +100,7 @@ class FootnoteResponse(object):
     def footnote(self, footnote):
         """Sets the footnote of this FootnoteResponse.
 
-        Gets or sets footnote information.  # noqa: E501
+        Gets or sets the footnote.  # noqa: E501
 
         :param footnote: The footnote of this FootnoteResponse.  # noqa: E501
         :type: Footnote

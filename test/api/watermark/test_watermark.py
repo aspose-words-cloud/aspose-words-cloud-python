@@ -48,7 +48,8 @@ class TestWatermark(BaseTestContext):
 
         result = self.words_api.insert_watermark_image(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.document, 'Validate InsertWatermarkImage response')
+        self.assertEqual('TestInsertWatermarkImage.docx', result.document.file_name)
 
     #
     # Test for adding watermark text.
@@ -60,12 +61,13 @@ class TestWatermark(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestWatermarkText = asposewordscloud.WatermarkText(text='This is the text', rotation_angle=90)
+        requestWatermarkText = asposewordscloud.WatermarkText(text='This is the text', rotation_angle=90.0)
         request = asposewordscloud.models.requests.InsertWatermarkTextRequest(name=remoteFileName, watermark_text=requestWatermarkText, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
 
         result = self.words_api.insert_watermark_text(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.document, 'Validate InsertWatermarkText response')
+        self.assertEqual('TestInsertWatermarkText.docx', result.document.file_name)
 
     #
     # Test for deleting watermark.
@@ -81,4 +83,5 @@ class TestWatermark(BaseTestContext):
 
         result = self.words_api.delete_watermark(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.document, 'Validate DeleteWatermark response')
+        self.assertEqual('TestDeleteWatermark.docx', result.document.file_name)

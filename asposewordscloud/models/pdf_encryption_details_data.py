@@ -31,7 +31,7 @@ import json
 
 
 class PdfEncryptionDetailsData(object):
-    """container class for details of encryption.
+    """Container class for details of encryption.
     """
 
     """
@@ -77,7 +77,7 @@ class PdfEncryptionDetailsData(object):
     def encryption_algorithm(self):
         """Gets the encryption_algorithm of this PdfEncryptionDetailsData.  # noqa: E501
 
-        Gets or sets specifies the encryption algorithm to use.  # noqa: E501
+        Gets or sets the encryption algorithm to use.  # noqa: E501
 
         :return: The encryption_algorithm of this PdfEncryptionDetailsData.  # noqa: E501
         :rtype: str
@@ -88,7 +88,7 @@ class PdfEncryptionDetailsData(object):
     def encryption_algorithm(self, encryption_algorithm):
         """Sets the encryption_algorithm of this PdfEncryptionDetailsData.
 
-        Gets or sets specifies the encryption algorithm to use.  # noqa: E501
+        Gets or sets the encryption algorithm to use.  # noqa: E501
 
         :param encryption_algorithm: The encryption_algorithm of this PdfEncryptionDetailsData.  # noqa: E501
         :type: str
@@ -99,7 +99,7 @@ class PdfEncryptionDetailsData(object):
     def owner_password(self):
         """Gets the owner_password of this PdfEncryptionDetailsData.  # noqa: E501
 
-        Gets or sets specifies the owner password for the encrypted PDF document.  # noqa: E501
+        Gets or sets the owner password for the encrypted PDF document.  # noqa: E501
 
         :return: The owner_password of this PdfEncryptionDetailsData.  # noqa: E501
         :rtype: str
@@ -110,7 +110,7 @@ class PdfEncryptionDetailsData(object):
     def owner_password(self, owner_password):
         """Sets the owner_password of this PdfEncryptionDetailsData.
 
-        Gets or sets specifies the owner password for the encrypted PDF document.  # noqa: E501
+        Gets or sets the owner password for the encrypted PDF document.  # noqa: E501
 
         :param owner_password: The owner_password of this PdfEncryptionDetailsData.  # noqa: E501
         :type: str
@@ -121,7 +121,7 @@ class PdfEncryptionDetailsData(object):
     def permissions(self):
         """Gets the permissions of this PdfEncryptionDetailsData.  # noqa: E501
 
-        Gets or sets specifies the operations that are allowed to a user on an encrypted PDF document.  # noqa: E501
+        Gets or sets the operations that are allowed to a user on the encrypted PDF document.  # noqa: E501
 
         :return: The permissions of this PdfEncryptionDetailsData.  # noqa: E501
         :rtype: str
@@ -132,7 +132,7 @@ class PdfEncryptionDetailsData(object):
     def permissions(self, permissions):
         """Sets the permissions of this PdfEncryptionDetailsData.
 
-        Gets or sets specifies the operations that are allowed to a user on an encrypted PDF document.  # noqa: E501
+        Gets or sets the operations that are allowed to a user on the encrypted PDF document.  # noqa: E501
 
         :param permissions: The permissions of this PdfEncryptionDetailsData.  # noqa: E501
         :type: str
@@ -143,7 +143,7 @@ class PdfEncryptionDetailsData(object):
     def user_password(self):
         """Gets the user_password of this PdfEncryptionDetailsData.  # noqa: E501
 
-        Gets or sets specifies the user password required for opening the encrypted PDF document.  # noqa: E501
+        Gets or sets the user password required for opening the encrypted PDF document.  # noqa: E501
 
         :return: The user_password of this PdfEncryptionDetailsData.  # noqa: E501
         :rtype: str
@@ -154,7 +154,7 @@ class PdfEncryptionDetailsData(object):
     def user_password(self, user_password):
         """Sets the user_password of this PdfEncryptionDetailsData.
 
-        Gets or sets specifies the user password required for opening the encrypted PDF document.  # noqa: E501
+        Gets or sets the user password required for opening the encrypted PDF document.  # noqa: E501
 
         :param user_password: The user_password of this PdfEncryptionDetailsData.  # noqa: E501
         :type: str

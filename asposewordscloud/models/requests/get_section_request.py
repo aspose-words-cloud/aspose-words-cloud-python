@@ -30,8 +30,8 @@ class GetSectionRequest(object):
     """
     Request model for get_section operation.
     Initializes a new instance.
-    :param name The document name.
-    :param section_index Section index.
+    :param name The filename of the input document.
+    :param section_index The index of the section.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

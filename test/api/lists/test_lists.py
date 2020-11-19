@@ -46,7 +46,10 @@ class TestLists(BaseTestContext):
 
         result = self.words_api.get_lists(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.lists, 'Validate GetLists response')
+        self.assertIsNotNone(result.lists.list_info, 'Validate GetLists response')
+        self.assertEqual(2, len(result.lists.list_info))
+        self.assertEqual(1, result.lists.list_info[0].list_id)
 
     #
     # Test for getting list from document.
@@ -62,7 +65,8 @@ class TestLists(BaseTestContext):
 
         result = self.words_api.get_list(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.list, 'Validate GetList response')
+        self.assertEqual(1, result.list.list_id)
 
     #
     # Test for updating list from document.
@@ -79,7 +83,9 @@ class TestLists(BaseTestContext):
 
         result = self.words_api.update_list(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.list, 'Validate UpdateList response')
+        self.assertEqual(1, result.list.list_id)
+        self.assertTrue(result.list.is_restart_at_each_section, 'Validate UpdateList response')
 
     #
     # Test for updating list level from document.
@@ -96,6 +102,10 @@ class TestLists(BaseTestContext):
 
         result = self.words_api.update_list_level(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.list, 'Validate UpdateListLevel response')
+        self.assertIsNotNone(result.list.list_levels, 'Validate UpdateListLevel response')
+        self.assertIsNotNone(result.list.list_levels.list_level, 'Validate UpdateListLevel response')
+        self.assertEqual(9, len(result.list.list_levels.list_level))
 
 
     #
@@ -113,4 +123,5 @@ class TestLists(BaseTestContext):
 
         result = self.words_api.insert_list(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.list, 'Validate InsertList response')
+        self.assertEqual(3, result.list.list_id)

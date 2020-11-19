@@ -31,7 +31,7 @@ import json
 
 
 class DrawingObjectCollection(object):
-    """Represents drawing objects collection DTO.
+    """DTO container with a collection of DrawingObjects links.
     """
 
     """
@@ -67,7 +67,7 @@ class DrawingObjectCollection(object):
     def link(self):
         """Gets the link of this DrawingObjectCollection.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this DrawingObjectCollection.  # noqa: E501
         :rtype: WordsApiLink
@@ -78,7 +78,7 @@ class DrawingObjectCollection(object):
     def link(self, link):
         """Sets the link of this DrawingObjectCollection.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this DrawingObjectCollection.  # noqa: E501
         :type: WordsApiLink
@@ -89,7 +89,7 @@ class DrawingObjectCollection(object):
     def list(self):
         """Gets the list of this DrawingObjectCollection.  # noqa: E501
 
-        Gets or sets collection of DrawingObjects links.  # noqa: E501
+        Gets or sets the collection of DrawingObjects links.  # noqa: E501
 
         :return: The list of this DrawingObjectCollection.  # noqa: E501
         :rtype: list[LinkElement]
@@ -100,7 +100,7 @@ class DrawingObjectCollection(object):
     def list(self, list):
         """Sets the list of this DrawingObjectCollection.
 
-        Gets or sets collection of DrawingObjects links.  # noqa: E501
+        Gets or sets the collection of DrawingObjects links.  # noqa: E501
 
         :param list: The list of this DrawingObjectCollection.  # noqa: E501
         :type: list[LinkElement]

@@ -31,7 +31,7 @@ import json
 
 
 class TableCell(object):
-    """Table cell element.
+    """DTO container with a table cell element.
     """
 
     """
@@ -72,7 +72,7 @@ class TableCell(object):
     def link(self):
         """Gets the link of this TableCell.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this TableCell.  # noqa: E501
         :rtype: WordsApiLink
@@ -83,7 +83,7 @@ class TableCell(object):
     def link(self, link):
         """Sets the link of this TableCell.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this TableCell.  # noqa: E501
         :type: WordsApiLink
@@ -94,7 +94,7 @@ class TableCell(object):
     def node_id(self):
         """Gets the node_id of this TableCell.  # noqa: E501
 
-        Gets or sets node id.  # noqa: E501
+        Gets or sets the node id.  # noqa: E501
 
         :return: The node_id of this TableCell.  # noqa: E501
         :rtype: str
@@ -105,7 +105,7 @@ class TableCell(object):
     def node_id(self, node_id):
         """Sets the node_id of this TableCell.
 
-        Gets or sets node id.  # noqa: E501
+        Gets or sets the node id.  # noqa: E501
 
         :param node_id: The node_id of this TableCell.  # noqa: E501
         :type: str
@@ -116,7 +116,7 @@ class TableCell(object):
     def child_nodes(self):
         """Gets the child_nodes of this TableCell.  # noqa: E501
 
-        Gets or sets child nodes.  # noqa: E501
+        Gets or sets the list of child nodes.  # noqa: E501
 
         :return: The child_nodes of this TableCell.  # noqa: E501
         :rtype: list[NodeLink]
@@ -127,7 +127,7 @@ class TableCell(object):
     def child_nodes(self, child_nodes):
         """Sets the child_nodes of this TableCell.
 
-        Gets or sets child nodes.  # noqa: E501
+        Gets or sets the list of child nodes.  # noqa: E501
 
         :param child_nodes: The child_nodes of this TableCell.  # noqa: E501
         :type: list[NodeLink]

@@ -30,7 +30,7 @@ class SearchRequest(object):
     """
     Request model for search operation.
     Initializes a new instance.
-    :param name The document name.
+    :param name The filename of the input document.
     :param pattern The regular expression used to find matches.
     :param folder Original document folder.
     :param storage Original document storage.

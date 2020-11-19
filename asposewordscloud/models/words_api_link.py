@@ -31,7 +31,7 @@ import json
 
 
 class WordsApiLink(object):
-    """Provides information for the words api resource link.
+    """Provides information for the words API resource link.
     """
 
     """
@@ -77,7 +77,7 @@ class WordsApiLink(object):
     def href(self):
         """Gets the href of this WordsApiLink.  # noqa: E501
 
-        Gets or sets the "href" attribute contains the link's IRI. atom:link elements MUST have an href attribute, whose value MUST be a IRI reference.  # noqa: E501
+        Gets or sets the "href" attribute with the link's IRI. atom:link elements MUST have an href attribute, whose value MUST be a IRI reference.  # noqa: E501
 
         :return: The href of this WordsApiLink.  # noqa: E501
         :rtype: str
@@ -88,7 +88,7 @@ class WordsApiLink(object):
     def href(self, href):
         """Sets the href of this WordsApiLink.
 
-        Gets or sets the "href" attribute contains the link's IRI. atom:link elements MUST have an href attribute, whose value MUST be a IRI reference.  # noqa: E501
+        Gets or sets the "href" attribute with the link's IRI. atom:link elements MUST have an href attribute, whose value MUST be a IRI reference.  # noqa: E501
 
         :param href: The href of this WordsApiLink.  # noqa: E501
         :type: str
@@ -99,7 +99,7 @@ class WordsApiLink(object):
     def rel(self):
         """Gets the rel of this WordsApiLink.  # noqa: E501
 
-        Gets or sets atom:link elements MAY have a "rel" attribute that indicates the link relation type.  If the "rel" attribute is not present, the link element MUST be interpreted as if the link relation type is "alternate".  # noqa: E501
+        Gets or sets the option that controls whether atom:link elements MAY have a "rel" attribute that indicates the link relation type.  If the "rel" attribute is not present, the link element MUST be interpreted as if the link relation type is "alternate".  # noqa: E501
 
         :return: The rel of this WordsApiLink.  # noqa: E501
         :rtype: str
@@ -110,7 +110,7 @@ class WordsApiLink(object):
     def rel(self, rel):
         """Sets the rel of this WordsApiLink.
 
-        Gets or sets atom:link elements MAY have a "rel" attribute that indicates the link relation type.  If the "rel" attribute is not present, the link element MUST be interpreted as if the link relation type is "alternate".  # noqa: E501
+        Gets or sets the option that controls whether atom:link elements MAY have a "rel" attribute that indicates the link relation type.  If the "rel" attribute is not present, the link element MUST be interpreted as if the link relation type is "alternate".  # noqa: E501
 
         :param rel: The rel of this WordsApiLink.  # noqa: E501
         :type: str
@@ -121,7 +121,7 @@ class WordsApiLink(object):
     def title(self):
         """Gets the title of this WordsApiLink.  # noqa: E501
 
-        Gets or sets the "title" attribute conveys human-readable information about the link.  The content of the "title" attribute is Language-Sensitive.  # noqa: E501
+        Gets or sets the "title" attribute, that conveys human-readable information about the link. The content of the "title" attribute is Language-Sensitive.  # noqa: E501
 
         :return: The title of this WordsApiLink.  # noqa: E501
         :rtype: str
@@ -132,7 +132,7 @@ class WordsApiLink(object):
     def title(self, title):
         """Sets the title of this WordsApiLink.
 
-        Gets or sets the "title" attribute conveys human-readable information about the link.  The content of the "title" attribute is Language-Sensitive.  # noqa: E501
+        Gets or sets the "title" attribute, that conveys human-readable information about the link. The content of the "title" attribute is Language-Sensitive.  # noqa: E501
 
         :param title: The title of this WordsApiLink.  # noqa: E501
         :type: str
@@ -143,7 +143,7 @@ class WordsApiLink(object):
     def type(self):
         """Gets the type of this WordsApiLink.  # noqa: E501
 
-        Gets or sets on the link element, the "type" attribute's value is an advisory media type: it is a hint about the type of the representation that is expected to be returned when the value of the href attribute is dereferenced.  Note that the type attribute does not override the actual media type returned with the representation.  # noqa: E501
+        Gets or sets the "type" attribute. The "type" attribute's value is an advisory media type: it is a hint about the type of the representation that is expected to be returned when the value of the href attribute is dereferenced. Note that the type attribute does not override the actual media type returned with the representation.  # noqa: E501
 
         :return: The type of this WordsApiLink.  # noqa: E501
         :rtype: str
@@ -154,7 +154,7 @@ class WordsApiLink(object):
     def type(self, type):
         """Sets the type of this WordsApiLink.
 
-        Gets or sets on the link element, the "type" attribute's value is an advisory media type: it is a hint about the type of the representation that is expected to be returned when the value of the href attribute is dereferenced.  Note that the type attribute does not override the actual media type returned with the representation.  # noqa: E501
+        Gets or sets the "type" attribute. The "type" attribute's value is an advisory media type: it is a hint about the type of the representation that is expected to be returned when the value of the href attribute is dereferenced. Note that the type attribute does not override the actual media type returned with the representation.  # noqa: E501
 
         :param type: The type of this WordsApiLink.  # noqa: E501
         :type: str

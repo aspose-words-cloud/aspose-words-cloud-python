@@ -31,7 +31,7 @@ import json
 
 
 class WordsResponse(object):
-    """Base class for all responses.
+    """The base class for all responses.
     """
 
     """
@@ -62,7 +62,7 @@ class WordsResponse(object):
     def request_id(self):
         """Gets the request_id of this WordsResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this WordsResponse.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class WordsResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this WordsResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this WordsResponse.  # noqa: E501
         :type: str

@@ -31,7 +31,7 @@ import json
 
 
 class ListLevel(object):
-    """Represents a document list levels.
+    """DTO container with a document list level.
     """
 
     """
@@ -122,7 +122,7 @@ class ListLevel(object):
     def link(self):
         """Gets the link of this ListLevel.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this ListLevel.  # noqa: E501
         :rtype: WordsApiLink
@@ -133,7 +133,7 @@ class ListLevel(object):
     def link(self, link):
         """Sets the link of this ListLevel.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this ListLevel.  # noqa: E501
         :type: WordsApiLink
@@ -174,7 +174,7 @@ class ListLevel(object):
     def font(self):
         """Gets the font of this ListLevel.  # noqa: E501
 
-        Gets or sets specifies character formatting used for the list label.  # noqa: E501
+        Gets or sets character formatting used for the list label.  # noqa: E501
 
         :return: The font of this ListLevel.  # noqa: E501
         :rtype: Font
@@ -185,7 +185,7 @@ class ListLevel(object):
     def font(self, font):
         """Sets the font of this ListLevel.
 
-        Gets or sets specifies character formatting used for the list label.  # noqa: E501
+        Gets or sets character formatting used for the list label.  # noqa: E501
 
         :param font: The font of this ListLevel.  # noqa: E501
         :type: Font
@@ -196,7 +196,7 @@ class ListLevel(object):
     def is_legal(self):
         """Gets the is_legal of this ListLevel.  # noqa: E501
 
-        Gets or sets a value indicating whether true if the level turns all inherited numbers to Arabic, false if it preserves their number style.  # noqa: E501
+        Gets or sets a value indicating whether the level turns all inherited numbers to Arabic, false if it preserves their number style.  # noqa: E501
 
         :return: The is_legal of this ListLevel.  # noqa: E501
         :rtype: bool
@@ -207,7 +207,7 @@ class ListLevel(object):
     def is_legal(self, is_legal):
         """Sets the is_legal of this ListLevel.
 
-        Gets or sets a value indicating whether true if the level turns all inherited numbers to Arabic, false if it preserves their number style.  # noqa: E501
+        Gets or sets a value indicating whether the level turns all inherited numbers to Arabic, false if it preserves their number style.  # noqa: E501
 
         :param is_legal: The is_legal of this ListLevel.  # noqa: E501
         :type: bool
@@ -240,7 +240,7 @@ class ListLevel(object):
     def number_format(self):
         """Gets the number_format of this ListLevel.  # noqa: E501
 
-        Gets or sets returns or sets the number format for the list level.  # noqa: E501
+        Gets or sets the number format for the list level.  # noqa: E501
 
         :return: The number_format of this ListLevel.  # noqa: E501
         :rtype: str
@@ -251,7 +251,7 @@ class ListLevel(object):
     def number_format(self, number_format):
         """Sets the number_format of this ListLevel.
 
-        Gets or sets returns or sets the number format for the list level.  # noqa: E501
+        Gets or sets the number format for the list level.  # noqa: E501
 
         :param number_format: The number_format of this ListLevel.  # noqa: E501
         :type: str
@@ -262,7 +262,7 @@ class ListLevel(object):
     def number_position(self):
         """Gets the number_position of this ListLevel.  # noqa: E501
 
-        Gets or sets returns or sets the position (in points) of the number or bullet for the list level.  # noqa: E501
+        Gets or sets the position (in points) of the number or bullet for the list level.  # noqa: E501
 
         :return: The number_position of this ListLevel.  # noqa: E501
         :rtype: float
@@ -273,7 +273,7 @@ class ListLevel(object):
     def number_position(self, number_position):
         """Sets the number_position of this ListLevel.
 
-        Gets or sets returns or sets the position (in points) of the number or bullet for the list level.  # noqa: E501
+        Gets or sets the position (in points) of the number or bullet for the list level.  # noqa: E501
 
         :param number_position: The number_position of this ListLevel.  # noqa: E501
         :type: float
@@ -284,7 +284,7 @@ class ListLevel(object):
     def number_style(self):
         """Gets the number_style of this ListLevel.  # noqa: E501
 
-        Gets or sets returns or sets the number style for this list level.  # noqa: E501
+        Gets or sets the number style for this list level.  # noqa: E501
 
         :return: The number_style of this ListLevel.  # noqa: E501
         :rtype: str
@@ -295,7 +295,7 @@ class ListLevel(object):
     def number_style(self, number_style):
         """Sets the number_style of this ListLevel.
 
-        Gets or sets returns or sets the number style for this list level.  # noqa: E501
+        Gets or sets the number style for this list level.  # noqa: E501
 
         :param number_style: The number_style of this ListLevel.  # noqa: E501
         :type: str
@@ -314,7 +314,7 @@ class ListLevel(object):
     def restart_after_level(self):
         """Gets the restart_after_level of this ListLevel.  # noqa: E501
 
-        Gets or sets or returns the list level that must appear before the specified list level restarts numbering.  # noqa: E501
+        Gets or sets the list level, that must appear before the specified list level restarts numbering.  # noqa: E501
 
         :return: The restart_after_level of this ListLevel.  # noqa: E501
         :rtype: int
@@ -325,7 +325,7 @@ class ListLevel(object):
     def restart_after_level(self, restart_after_level):
         """Sets the restart_after_level of this ListLevel.
 
-        Gets or sets or returns the list level that must appear before the specified list level restarts numbering.  # noqa: E501
+        Gets or sets the list level, that must appear before the specified list level restarts numbering.  # noqa: E501
 
         :param restart_after_level: The restart_after_level of this ListLevel.  # noqa: E501
         :type: int
@@ -336,7 +336,7 @@ class ListLevel(object):
     def start_at(self):
         """Gets the start_at of this ListLevel.  # noqa: E501
 
-        Gets or sets returns or sets the starting number for this list level.  # noqa: E501
+        Gets or sets the starting number for this list level.  # noqa: E501
 
         :return: The start_at of this ListLevel.  # noqa: E501
         :rtype: int
@@ -347,7 +347,7 @@ class ListLevel(object):
     def start_at(self, start_at):
         """Sets the start_at of this ListLevel.
 
-        Gets or sets returns or sets the starting number for this list level.  # noqa: E501
+        Gets or sets the starting number for this list level.  # noqa: E501
 
         :param start_at: The start_at of this ListLevel.  # noqa: E501
         :type: int
@@ -358,7 +358,7 @@ class ListLevel(object):
     def tab_position(self):
         """Gets the tab_position of this ListLevel.  # noqa: E501
 
-        Gets or sets returns or sets the tab position (in points) for the list level.  # noqa: E501
+        Gets or sets the tab position (in points) for the list level.  # noqa: E501
 
         :return: The tab_position of this ListLevel.  # noqa: E501
         :rtype: float
@@ -369,7 +369,7 @@ class ListLevel(object):
     def tab_position(self, tab_position):
         """Sets the tab_position of this ListLevel.
 
-        Gets or sets returns or sets the tab position (in points) for the list level.  # noqa: E501
+        Gets or sets the tab position (in points) for the list level.  # noqa: E501
 
         :param tab_position: The tab_position of this ListLevel.  # noqa: E501
         :type: float
@@ -380,7 +380,7 @@ class ListLevel(object):
     def text_position(self):
         """Gets the text_position of this ListLevel.  # noqa: E501
 
-        Gets or sets returns or sets the position (in points) for the second line of wrapping text for the list level.  # noqa: E501
+        Gets or sets the position (in points) for the second line of wrapping text for the list level.  # noqa: E501
 
         :return: The text_position of this ListLevel.  # noqa: E501
         :rtype: float
@@ -391,7 +391,7 @@ class ListLevel(object):
     def text_position(self, text_position):
         """Sets the text_position of this ListLevel.
 
-        Gets or sets returns or sets the position (in points) for the second line of wrapping text for the list level.  # noqa: E501
+        Gets or sets the position (in points) for the second line of wrapping text for the list level.  # noqa: E501
 
         :param text_position: The text_position of this ListLevel.  # noqa: E501
         :type: float
@@ -402,7 +402,7 @@ class ListLevel(object):
     def trailing_character(self):
         """Gets the trailing_character of this ListLevel.  # noqa: E501
 
-        Gets or sets returns or sets the character inserted after the number for the list level.  # noqa: E501
+        Gets or sets the character inserted after the number for the list level.  # noqa: E501
 
         :return: The trailing_character of this ListLevel.  # noqa: E501
         :rtype: str
@@ -413,7 +413,7 @@ class ListLevel(object):
     def trailing_character(self, trailing_character):
         """Sets the trailing_character of this ListLevel.
 
-        Gets or sets returns or sets the character inserted after the number for the list level.  # noqa: E501
+        Gets or sets the character inserted after the number for the list level.  # noqa: E501
 
         :param trailing_character: The trailing_character of this ListLevel.  # noqa: E501
         :type: str

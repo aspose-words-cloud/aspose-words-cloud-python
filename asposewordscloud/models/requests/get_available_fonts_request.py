@@ -30,7 +30,7 @@ class GetAvailableFontsRequest(object):
     """
     Request model for get_available_fonts operation.
     Initializes a new instance.
-    :param fonts_location Folder in filestorage with custom fonts.
+    :param fonts_location The folder in cloud storage with custom fonts.
     """
 
     def __init__(self, fonts_location=None):

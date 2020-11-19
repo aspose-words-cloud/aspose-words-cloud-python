@@ -207,7 +207,7 @@ class PageSetup(object):
     def link(self):
         """Gets the link of this PageSetup.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this PageSetup.  # noqa: E501
         :rtype: WordsApiLink
@@ -218,7 +218,7 @@ class PageSetup(object):
     def link(self, link):
         """Sets the link of this PageSetup.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this PageSetup.  # noqa: E501
         :type: WordsApiLink
@@ -229,7 +229,7 @@ class PageSetup(object):
     def bidi(self):
         """Gets the bidi of this PageSetup.  # noqa: E501
 
-        Gets or sets specifies that this section contains bidirectional (complex scripts) text.  # noqa: E501
+        Gets or sets a value indicating whether this section contains bidirectional (complex scripts) text.  # noqa: E501
 
         :return: The bidi of this PageSetup.  # noqa: E501
         :rtype: bool
@@ -240,7 +240,7 @@ class PageSetup(object):
     def bidi(self, bidi):
         """Sets the bidi of this PageSetup.
 
-        Gets or sets specifies that this section contains bidirectional (complex scripts) text.  # noqa: E501
+        Gets or sets a value indicating whether this section contains bidirectional (complex scripts) text.  # noqa: E501
 
         :param bidi: The bidi of this PageSetup.  # noqa: E501
         :type: bool
@@ -251,7 +251,7 @@ class PageSetup(object):
     def border_always_in_front(self):
         """Gets the border_always_in_front of this PageSetup.  # noqa: E501
 
-        Gets or sets specifies where the page border is positioned relative to intersecting texts and objects.  # noqa: E501
+        Gets or sets a value indicating whether the page border is positioned relative to intersecting texts and objects.  # noqa: E501
 
         :return: The border_always_in_front of this PageSetup.  # noqa: E501
         :rtype: bool
@@ -262,7 +262,7 @@ class PageSetup(object):
     def border_always_in_front(self, border_always_in_front):
         """Sets the border_always_in_front of this PageSetup.
 
-        Gets or sets specifies where the page border is positioned relative to intersecting texts and objects.  # noqa: E501
+        Gets or sets a value indicating whether the page border is positioned relative to intersecting texts and objects.  # noqa: E501
 
         :param border_always_in_front: The border_always_in_front of this PageSetup.  # noqa: E501
         :type: bool
@@ -273,7 +273,7 @@ class PageSetup(object):
     def border_applies_to(self):
         """Gets the border_applies_to of this PageSetup.  # noqa: E501
 
-        Gets or sets specifies which pages the page border is printed on.  # noqa: E501
+        Gets or sets the option that controls which pages the page border is printed on.  # noqa: E501
 
         :return: The border_applies_to of this PageSetup.  # noqa: E501
         :rtype: str
@@ -284,7 +284,7 @@ class PageSetup(object):
     def border_applies_to(self, border_applies_to):
         """Sets the border_applies_to of this PageSetup.
 
-        Gets or sets specifies which pages the page border is printed on.  # noqa: E501
+        Gets or sets the option that controls which pages the page border is printed on.  # noqa: E501
 
         :param border_applies_to: The border_applies_to of this PageSetup.  # noqa: E501
         :type: str
@@ -303,7 +303,7 @@ class PageSetup(object):
     def border_distance_from(self):
         """Gets the border_distance_from of this PageSetup.  # noqa: E501
 
-        Gets or sets a value that indicates whether the specified page border is measured from the edge of the page or from the text it surrounds.  # noqa: E501
+        Gets or sets the value, that indicates whether the specified page border is measured from the edge of the page or from the text it surrounds.  # noqa: E501
 
         :return: The border_distance_from of this PageSetup.  # noqa: E501
         :rtype: str
@@ -314,7 +314,7 @@ class PageSetup(object):
     def border_distance_from(self, border_distance_from):
         """Sets the border_distance_from of this PageSetup.
 
-        Gets or sets a value that indicates whether the specified page border is measured from the edge of the page or from the text it surrounds.  # noqa: E501
+        Gets or sets the value, that indicates whether the specified page border is measured from the edge of the page or from the text it surrounds.  # noqa: E501
 
         :param border_distance_from: The border_distance_from of this PageSetup.  # noqa: E501
         :type: str
@@ -333,7 +333,7 @@ class PageSetup(object):
     def bottom_margin(self):
         """Gets the bottom_margin of this PageSetup.  # noqa: E501
 
-        Gets or sets returns or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body text.  # noqa: E501
+        Gets or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body text.  # noqa: E501
 
         :return: The bottom_margin of this PageSetup.  # noqa: E501
         :rtype: float
@@ -344,7 +344,7 @@ class PageSetup(object):
     def bottom_margin(self, bottom_margin):
         """Sets the bottom_margin of this PageSetup.
 
-        Gets or sets returns or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body text.  # noqa: E501
+        Gets or sets the distance (in points) between the bottom edge of the page and the bottom boundary of the body text.  # noqa: E501
 
         :param bottom_margin: The bottom_margin of this PageSetup.  # noqa: E501
         :type: float
@@ -355,7 +355,7 @@ class PageSetup(object):
     def different_first_page_header_footer(self):
         """Gets the different_first_page_header_footer of this PageSetup.  # noqa: E501
 
-        Gets or sets true if a different header or footer is used on the first page.  # noqa: E501
+        Gets or sets a value indicating whether a different header or footer is used on the first page.  # noqa: E501
 
         :return: The different_first_page_header_footer of this PageSetup.  # noqa: E501
         :rtype: bool
@@ -366,7 +366,7 @@ class PageSetup(object):
     def different_first_page_header_footer(self, different_first_page_header_footer):
         """Sets the different_first_page_header_footer of this PageSetup.
 
-        Gets or sets true if a different header or footer is used on the first page.  # noqa: E501
+        Gets or sets a value indicating whether a different header or footer is used on the first page.  # noqa: E501
 
         :param different_first_page_header_footer: The different_first_page_header_footer of this PageSetup.  # noqa: E501
         :type: bool
@@ -399,7 +399,7 @@ class PageSetup(object):
     def footer_distance(self):
         """Gets the footer_distance of this PageSetup.  # noqa: E501
 
-        Gets or sets returns or sets the distance (in points) between the footer and the bottom of the page.  # noqa: E501
+        Gets or sets the distance (in points) between the footer and the bottom of the page.  # noqa: E501
 
         :return: The footer_distance of this PageSetup.  # noqa: E501
         :rtype: float
@@ -410,7 +410,7 @@ class PageSetup(object):
     def footer_distance(self, footer_distance):
         """Sets the footer_distance of this PageSetup.
 
-        Gets or sets returns or sets the distance (in points) between the footer and the bottom of the page.  # noqa: E501
+        Gets or sets the distance (in points) between the footer and the bottom of the page.  # noqa: E501
 
         :param footer_distance: The footer_distance of this PageSetup.  # noqa: E501
         :type: float
@@ -443,7 +443,7 @@ class PageSetup(object):
     def header_distance(self):
         """Gets the header_distance of this PageSetup.  # noqa: E501
 
-        Gets or sets returns or sets the distance (in points) between the header and the top of the page.  # noqa: E501
+        Gets or sets the distance (in points) between the header and the top of the page.  # noqa: E501
 
         :return: The header_distance of this PageSetup.  # noqa: E501
         :rtype: float
@@ -454,7 +454,7 @@ class PageSetup(object):
     def header_distance(self, header_distance):
         """Sets the header_distance of this PageSetup.
 
-        Gets or sets returns or sets the distance (in points) between the header and the top of the page.  # noqa: E501
+        Gets or sets the distance (in points) between the header and the top of the page.  # noqa: E501
 
         :param header_distance: The header_distance of this PageSetup.  # noqa: E501
         :type: float
@@ -465,7 +465,7 @@ class PageSetup(object):
     def left_margin(self):
         """Gets the left_margin of this PageSetup.  # noqa: E501
 
-        Gets or sets returns or sets the distance (in points) between the left edge of the page and the left boundary of the body text.  # noqa: E501
+        Gets or sets the distance (in points) between the left edge of the page and the left boundary of the body text.  # noqa: E501
 
         :return: The left_margin of this PageSetup.  # noqa: E501
         :rtype: float
@@ -476,7 +476,7 @@ class PageSetup(object):
     def left_margin(self, left_margin):
         """Sets the left_margin of this PageSetup.
 
-        Gets or sets returns or sets the distance (in points) between the left edge of the page and the left boundary of the body text.  # noqa: E501
+        Gets or sets the distance (in points) between the left edge of the page and the left boundary of the body text.  # noqa: E501
 
         :param left_margin: The left_margin of this PageSetup.  # noqa: E501
         :type: float
@@ -487,7 +487,7 @@ class PageSetup(object):
     def line_number_count_by(self):
         """Gets the line_number_count_by of this PageSetup.  # noqa: E501
 
-        Gets or sets returns or sets the numeric increment for line numbers.  # noqa: E501
+        Gets or sets the numeric increment for line numbers.  # noqa: E501
 
         :return: The line_number_count_by of this PageSetup.  # noqa: E501
         :rtype: int
@@ -498,7 +498,7 @@ class PageSetup(object):
     def line_number_count_by(self, line_number_count_by):
         """Sets the line_number_count_by of this PageSetup.
 
-        Gets or sets returns or sets the numeric increment for line numbers.  # noqa: E501
+        Gets or sets the numeric increment for line numbers.  # noqa: E501
 
         :param line_number_count_by: The line_number_count_by of this PageSetup.  # noqa: E501
         :type: int
@@ -509,7 +509,7 @@ class PageSetup(object):
     def line_number_distance_from_text(self):
         """Gets the line_number_distance_from_text of this PageSetup.  # noqa: E501
 
-        Gets or sets distance between the right edge of line numbers and the left edge of the document.  # noqa: E501
+        Gets or sets the distance between the right edge of line numbers and the left edge of the document.  # noqa: E501
 
         :return: The line_number_distance_from_text of this PageSetup.  # noqa: E501
         :rtype: float
@@ -520,7 +520,7 @@ class PageSetup(object):
     def line_number_distance_from_text(self, line_number_distance_from_text):
         """Sets the line_number_distance_from_text of this PageSetup.
 
-        Gets or sets distance between the right edge of line numbers and the left edge of the document.  # noqa: E501
+        Gets or sets the distance between the right edge of line numbers and the left edge of the document.  # noqa: E501
 
         :param line_number_distance_from_text: The line_number_distance_from_text of this PageSetup.  # noqa: E501
         :type: float
@@ -583,7 +583,7 @@ class PageSetup(object):
     def orientation(self):
         """Gets the orientation of this PageSetup.  # noqa: E501
 
-        Gets or sets returns or sets the orientation of the page.  # noqa: E501
+        Gets or sets the orientation of the page.  # noqa: E501
 
         :return: The orientation of this PageSetup.  # noqa: E501
         :rtype: str
@@ -594,7 +594,7 @@ class PageSetup(object):
     def orientation(self, orientation):
         """Sets the orientation of this PageSetup.
 
-        Gets or sets returns or sets the orientation of the page.  # noqa: E501
+        Gets or sets the orientation of the page.  # noqa: E501
 
         :param orientation: The orientation of this PageSetup.  # noqa: E501
         :type: str
@@ -635,7 +635,7 @@ class PageSetup(object):
     def page_height(self):
         """Gets the page_height of this PageSetup.  # noqa: E501
 
-        Gets or sets returns or sets the height of the page in points.  # noqa: E501
+        Gets or sets the height of the page in points.  # noqa: E501
 
         :return: The page_height of this PageSetup.  # noqa: E501
         :rtype: float
@@ -646,7 +646,7 @@ class PageSetup(object):
     def page_height(self, page_height):
         """Sets the page_height of this PageSetup.
 
-        Gets or sets returns or sets the height of the page in points.  # noqa: E501
+        Gets or sets the height of the page in points.  # noqa: E501
 
         :param page_height: The page_height of this PageSetup.  # noqa: E501
         :type: float
@@ -709,7 +709,7 @@ class PageSetup(object):
     def page_width(self):
         """Gets the page_width of this PageSetup.  # noqa: E501
 
-        Gets or sets returns or sets the width of the page in points.  # noqa: E501
+        Gets or sets the width of the page in points.  # noqa: E501
 
         :return: The page_width of this PageSetup.  # noqa: E501
         :rtype: float
@@ -720,7 +720,7 @@ class PageSetup(object):
     def page_width(self, page_width):
         """Sets the page_width of this PageSetup.
 
-        Gets or sets returns or sets the width of the page in points.  # noqa: E501
+        Gets or sets the width of the page in points.  # noqa: E501
 
         :param page_width: The page_width of this PageSetup.  # noqa: E501
         :type: float
@@ -731,7 +731,7 @@ class PageSetup(object):
     def paper_size(self):
         """Gets the paper_size of this PageSetup.  # noqa: E501
 
-        Gets or sets returns or sets the paper size.  # noqa: E501
+        Gets or sets the paper size.  # noqa: E501
 
         :return: The paper_size of this PageSetup.  # noqa: E501
         :rtype: str
@@ -742,7 +742,7 @@ class PageSetup(object):
     def paper_size(self, paper_size):
         """Sets the paper_size of this PageSetup.
 
-        Gets or sets returns or sets the paper size.  # noqa: E501
+        Gets or sets the paper size.  # noqa: E501
 
         :param paper_size: The paper_size of this PageSetup.  # noqa: E501
         :type: str
@@ -761,7 +761,7 @@ class PageSetup(object):
     def restart_page_numbering(self):
         """Gets the restart_page_numbering of this PageSetup.  # noqa: E501
 
-        Gets or sets true if page numbering restarts at the beginning of the section.  # noqa: E501
+        Gets or sets a value indicating whether page numbering restarts at the beginning of the section.  # noqa: E501
 
         :return: The restart_page_numbering of this PageSetup.  # noqa: E501
         :rtype: bool
@@ -772,7 +772,7 @@ class PageSetup(object):
     def restart_page_numbering(self, restart_page_numbering):
         """Sets the restart_page_numbering of this PageSetup.
 
-        Gets or sets true if page numbering restarts at the beginning of the section.  # noqa: E501
+        Gets or sets a value indicating whether page numbering restarts at the beginning of the section.  # noqa: E501
 
         :param restart_page_numbering: The restart_page_numbering of this PageSetup.  # noqa: E501
         :type: bool
@@ -783,7 +783,7 @@ class PageSetup(object):
     def right_margin(self):
         """Gets the right_margin of this PageSetup.  # noqa: E501
 
-        Gets or sets returns or sets the distance (in points) between the right edge of the page and the right boundary of the body text.  # noqa: E501
+        Gets or sets the distance (in points) between the right edge of the page and the right boundary of the body text.  # noqa: E501
 
         :return: The right_margin of this PageSetup.  # noqa: E501
         :rtype: float
@@ -794,7 +794,7 @@ class PageSetup(object):
     def right_margin(self, right_margin):
         """Sets the right_margin of this PageSetup.
 
-        Gets or sets returns or sets the distance (in points) between the right edge of the page and the right boundary of the body text.  # noqa: E501
+        Gets or sets the distance (in points) between the right edge of the page and the right boundary of the body text.  # noqa: E501
 
         :param right_margin: The right_margin of this PageSetup.  # noqa: E501
         :type: float
@@ -805,7 +805,7 @@ class PageSetup(object):
     def rtl_gutter(self):
         """Gets the rtl_gutter of this PageSetup.  # noqa: E501
 
-        Gets or sets whether Microsoft Word uses gutters for the section based on a right-to-left language or a left-to-right language.  # noqa: E501
+        Gets or sets a value indicating whether Microsoft Word uses gutters for the section based on a right-to-left language or a left-to-right language.  # noqa: E501
 
         :return: The rtl_gutter of this PageSetup.  # noqa: E501
         :rtype: bool
@@ -816,7 +816,7 @@ class PageSetup(object):
     def rtl_gutter(self, rtl_gutter):
         """Sets the rtl_gutter of this PageSetup.
 
-        Gets or sets whether Microsoft Word uses gutters for the section based on a right-to-left language or a left-to-right language.  # noqa: E501
+        Gets or sets a value indicating whether Microsoft Word uses gutters for the section based on a right-to-left language or a left-to-right language.  # noqa: E501
 
         :param rtl_gutter: The rtl_gutter of this PageSetup.  # noqa: E501
         :type: bool
@@ -827,7 +827,7 @@ class PageSetup(object):
     def section_start(self):
         """Gets the section_start of this PageSetup.  # noqa: E501
 
-        Gets or sets returns or sets the type of section break for the specified object.  # noqa: E501
+        Gets or sets the type of section break for the specified object.  # noqa: E501
 
         :return: The section_start of this PageSetup.  # noqa: E501
         :rtype: str
@@ -838,7 +838,7 @@ class PageSetup(object):
     def section_start(self, section_start):
         """Sets the section_start of this PageSetup.
 
-        Gets or sets returns or sets the type of section break for the specified object.  # noqa: E501
+        Gets or sets the type of section break for the specified object.  # noqa: E501
 
         :param section_start: The section_start of this PageSetup.  # noqa: E501
         :type: str
@@ -857,7 +857,7 @@ class PageSetup(object):
     def suppress_endnotes(self):
         """Gets the suppress_endnotes of this PageSetup.  # noqa: E501
 
-        Gets or sets true if endnotes are printed at the end of the next section that doesn't suppress endnotes. Suppressed endnotes are printed before the endnotes in that section.  # noqa: E501
+        Gets or sets a value indicating whether endnotes are printed at the end of the next section that doesn't suppress endnotes. Suppressed endnotes are printed before the endnotes in that section.  # noqa: E501
 
         :return: The suppress_endnotes of this PageSetup.  # noqa: E501
         :rtype: bool
@@ -868,7 +868,7 @@ class PageSetup(object):
     def suppress_endnotes(self, suppress_endnotes):
         """Sets the suppress_endnotes of this PageSetup.
 
-        Gets or sets true if endnotes are printed at the end of the next section that doesn't suppress endnotes. Suppressed endnotes are printed before the endnotes in that section.  # noqa: E501
+        Gets or sets a value indicating whether endnotes are printed at the end of the next section that doesn't suppress endnotes. Suppressed endnotes are printed before the endnotes in that section.  # noqa: E501
 
         :param suppress_endnotes: The suppress_endnotes of this PageSetup.  # noqa: E501
         :type: bool
@@ -879,7 +879,7 @@ class PageSetup(object):
     def top_margin(self):
         """Gets the top_margin of this PageSetup.  # noqa: E501
 
-        Gets or sets returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.  # noqa: E501
+        Gets or sets the distance (in points) between the top edge of the page and the top boundary of the body text.  # noqa: E501
 
         :return: The top_margin of this PageSetup.  # noqa: E501
         :rtype: float
@@ -890,7 +890,7 @@ class PageSetup(object):
     def top_margin(self, top_margin):
         """Sets the top_margin of this PageSetup.
 
-        Gets or sets returns or sets the distance (in points) between the top edge of the page and the top boundary of the body text.  # noqa: E501
+        Gets or sets the distance (in points) between the top edge of the page and the top boundary of the body text.  # noqa: E501
 
         :param top_margin: The top_margin of this PageSetup.  # noqa: E501
         :type: float
@@ -901,7 +901,7 @@ class PageSetup(object):
     def vertical_alignment(self):
         """Gets the vertical_alignment of this PageSetup.  # noqa: E501
 
-        Gets or sets returns or sets the vertical alignment of text on each page in a document or section.  # noqa: E501
+        Gets or sets the vertical alignment of text on each page in the document.or section.  # noqa: E501
 
         :return: The vertical_alignment of this PageSetup.  # noqa: E501
         :rtype: str
@@ -912,7 +912,7 @@ class PageSetup(object):
     def vertical_alignment(self, vertical_alignment):
         """Sets the vertical_alignment of this PageSetup.
 
-        Gets or sets returns or sets the vertical alignment of text on each page in a document or section.  # noqa: E501
+        Gets or sets the vertical alignment of text on each page in the document.or section.  # noqa: E501
 
         :param vertical_alignment: The vertical_alignment of this PageSetup.  # noqa: E501
         :type: str

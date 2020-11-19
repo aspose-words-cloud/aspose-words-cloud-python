@@ -67,7 +67,7 @@ class Bookmarks(object):
     def link(self):
         """Gets the link of this Bookmarks.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this Bookmarks.  # noqa: E501
         :rtype: WordsApiLink
@@ -78,7 +78,7 @@ class Bookmarks(object):
     def link(self, link):
         """Sets the link of this Bookmarks.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this Bookmarks.  # noqa: E501
         :type: WordsApiLink
@@ -89,7 +89,7 @@ class Bookmarks(object):
     def bookmark_list(self):
         """Gets the bookmark_list of this Bookmarks.  # noqa: E501
 
-        Gets or sets array of bookmarks.  # noqa: E501
+        Gets or sets the array of bookmarks.  # noqa: E501
 
         :return: The bookmark_list of this Bookmarks.  # noqa: E501
         :rtype: list[Bookmark]
@@ -100,7 +100,7 @@ class Bookmarks(object):
     def bookmark_list(self, bookmark_list):
         """Sets the bookmark_list of this Bookmarks.
 
-        Gets or sets array of bookmarks.  # noqa: E501
+        Gets or sets the array of bookmarks.  # noqa: E501
 
         :param bookmark_list: The bookmark_list of this Bookmarks.  # noqa: E501
         :type: list[Bookmark]

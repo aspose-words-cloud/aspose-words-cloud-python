@@ -30,9 +30,9 @@ class UpdateRunFontRequest(object):
     """
     Request model for update_run_font operation.
     Initializes a new instance.
-    :param name The document name.
-    :param font_dto Font dto object.
-    :param paragraph_path Path to parent paragraph.
+    :param name The filename of the input document.
+    :param font_dto The font properties of a Run object.
+    :param paragraph_path The path to the paragraph in the document tree.
     :param index Object index.
     :param folder Original document folder.
     :param storage Original document storage.

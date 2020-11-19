@@ -31,7 +31,7 @@ import json
 
 
 class HtmlFixedSaveOptionsData(object):
-    """container class for fixed html save options.
+    """Container class for fixed html save options.
     """
 
     """
@@ -212,7 +212,7 @@ class HtmlFixedSaveOptionsData(object):
     def dml3_d_effects_rendering_mode(self):
         """Gets the dml3_d_effects_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
+        Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
 
         :return: The dml3_d_effects_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -223,7 +223,7 @@ class HtmlFixedSaveOptionsData(object):
     def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
         """Sets the dml3_d_effects_rendering_mode of this HtmlFixedSaveOptionsData.
 
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
+        Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
 
         :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -242,7 +242,7 @@ class HtmlFixedSaveOptionsData(object):
     def dml_effects_rendering_mode(self):
         """Gets the dml_effects_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :return: The dml_effects_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -253,7 +253,7 @@ class HtmlFixedSaveOptionsData(object):
     def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
         """Sets the dml_effects_rendering_mode of this HtmlFixedSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -264,7 +264,7 @@ class HtmlFixedSaveOptionsData(object):
     def dml_rendering_mode(self):
         """Gets the dml_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
+        Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
 
         :return: The dml_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -275,7 +275,7 @@ class HtmlFixedSaveOptionsData(object):
     def dml_rendering_mode(self, dml_rendering_mode):
         """Sets the dml_rendering_mode of this HtmlFixedSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
+        Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
 
         :param dml_rendering_mode: The dml_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -286,7 +286,7 @@ class HtmlFixedSaveOptionsData(object):
     def file_name(self):
         """Gets the file_name of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets name of destination file.  # noqa: E501
+        Gets or sets the name of destination file.  # noqa: E501
 
         :return: The file_name of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -297,7 +297,7 @@ class HtmlFixedSaveOptionsData(object):
     def file_name(self, file_name):
         """Sets the file_name of this HtmlFixedSaveOptionsData.
 
-        Gets or sets name of destination file.  # noqa: E501
+        Gets or sets the name of destination file.  # noqa: E501
 
         :param file_name: The file_name of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -308,7 +308,7 @@ class HtmlFixedSaveOptionsData(object):
     def save_format(self):
         """Gets the save_format of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets format of save.  # noqa: E501
+        Gets or sets the format of save.  # noqa: E501
 
         :return: The save_format of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -319,7 +319,7 @@ class HtmlFixedSaveOptionsData(object):
     def save_format(self, save_format):
         """Sets the save_format of this HtmlFixedSaveOptionsData.
 
-        Gets or sets format of save.  # noqa: E501
+        Gets or sets the format of save.  # noqa: E501
 
         :param save_format: The save_format of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -330,7 +330,7 @@ class HtmlFixedSaveOptionsData(object):
     def update_fields(self):
         """Gets the update_fields of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.  # noqa: E501
+        Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.  # noqa: E501
 
         :return: The update_fields of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -341,7 +341,7 @@ class HtmlFixedSaveOptionsData(object):
     def update_fields(self, update_fields):
         """Sets the update_fields of this HtmlFixedSaveOptionsData.
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.  # noqa: E501
+        Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.  # noqa: E501
 
         :param update_fields: The update_fields of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: bool
@@ -352,7 +352,7 @@ class HtmlFixedSaveOptionsData(object):
     def update_last_printed_property(self):
         """Gets the update_last_printed_property of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
 
         :return: The update_last_printed_property of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -363,7 +363,7 @@ class HtmlFixedSaveOptionsData(object):
     def update_last_printed_property(self, update_last_printed_property):
         """Sets the update_last_printed_property of this HtmlFixedSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
 
         :param update_last_printed_property: The update_last_printed_property of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: bool
@@ -374,7 +374,7 @@ class HtmlFixedSaveOptionsData(object):
     def update_last_saved_time_property(self):
         """Gets the update_last_saved_time_property of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
 
         :return: The update_last_saved_time_property of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -385,7 +385,7 @@ class HtmlFixedSaveOptionsData(object):
     def update_last_saved_time_property(self, update_last_saved_time_property):
         """Sets the update_last_saved_time_property of this HtmlFixedSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
 
         :param update_last_saved_time_property: The update_last_saved_time_property of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: bool
@@ -396,7 +396,7 @@ class HtmlFixedSaveOptionsData(object):
     def update_sdt_content(self):
         """Gets the update_sdt_content of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :return: The update_sdt_content of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -407,7 +407,7 @@ class HtmlFixedSaveOptionsData(object):
     def update_sdt_content(self, update_sdt_content):
         """Sets the update_sdt_content of this HtmlFixedSaveOptionsData.
 
-        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :param update_sdt_content: The update_sdt_content of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: bool
@@ -418,7 +418,7 @@ class HtmlFixedSaveOptionsData(object):
     def zip_output(self):
         """Gets the zip_output of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
 
         :return: The zip_output of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -429,7 +429,7 @@ class HtmlFixedSaveOptionsData(object):
     def zip_output(self, zip_output):
         """Sets the zip_output of this HtmlFixedSaveOptionsData.
 
-        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
 
         :param zip_output: The zip_output of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: bool
@@ -440,7 +440,7 @@ class HtmlFixedSaveOptionsData(object):
     def color_mode(self):
         """Gets the color_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
+        Gets or sets the value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
 
         :return: The color_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -451,7 +451,7 @@ class HtmlFixedSaveOptionsData(object):
     def color_mode(self, color_mode):
         """Sets the color_mode of this HtmlFixedSaveOptionsData.
 
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
+        Gets or sets the value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
 
         :param color_mode: The color_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -462,7 +462,7 @@ class HtmlFixedSaveOptionsData(object):
     def jpeg_quality(self):
         """Gets the jpeg_quality of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets determines the quality of the JPEG images inside PDF document.  # noqa: E501
+        Gets or sets the quality of the JPEG images inside PDF document.  # noqa: E501
 
         :return: The jpeg_quality of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -473,7 +473,7 @@ class HtmlFixedSaveOptionsData(object):
     def jpeg_quality(self, jpeg_quality):
         """Sets the jpeg_quality of this HtmlFixedSaveOptionsData.
 
-        Gets or sets determines the quality of the JPEG images inside PDF document.  # noqa: E501
+        Gets or sets the quality of the JPEG images inside PDF document.  # noqa: E501
 
         :param jpeg_quality: The jpeg_quality of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: int
@@ -484,7 +484,7 @@ class HtmlFixedSaveOptionsData(object):
     def metafile_rendering_options(self):
         """Gets the metafile_rendering_options of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets allows to specify metafile rendering options.  # noqa: E501
+        Gets or sets the metafile rendering options.  # noqa: E501
 
         :return: The metafile_rendering_options of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: MetafileRenderingOptionsData
@@ -495,7 +495,7 @@ class HtmlFixedSaveOptionsData(object):
     def metafile_rendering_options(self, metafile_rendering_options):
         """Sets the metafile_rendering_options of this HtmlFixedSaveOptionsData.
 
-        Gets or sets allows to specify metafile rendering options.  # noqa: E501
+        Gets or sets the metafile rendering options.  # noqa: E501
 
         :param metafile_rendering_options: The metafile_rendering_options of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: MetafileRenderingOptionsData
@@ -506,7 +506,7 @@ class HtmlFixedSaveOptionsData(object):
     def numeral_format(self):
         """Gets the numeral_format of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
+        Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
 
         :return: The numeral_format of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -517,7 +517,7 @@ class HtmlFixedSaveOptionsData(object):
     def numeral_format(self, numeral_format):
         """Sets the numeral_format of this HtmlFixedSaveOptionsData.
 
-        Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
+        Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
 
         :param numeral_format: The numeral_format of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -528,7 +528,7 @@ class HtmlFixedSaveOptionsData(object):
     def optimize_output(self):
         """Gets the optimize_output of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
+        Gets or sets a value indicating whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.. The default value is false.  # noqa: E501
 
         :return: The optimize_output of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -539,7 +539,7 @@ class HtmlFixedSaveOptionsData(object):
     def optimize_output(self, optimize_output):
         """Sets the optimize_output of this HtmlFixedSaveOptionsData.
 
-        Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
+        Gets or sets a value indicating whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.. The default value is false.  # noqa: E501
 
         :param optimize_output: The optimize_output of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: bool
@@ -550,7 +550,7 @@ class HtmlFixedSaveOptionsData(object):
     def page_count(self):
         """Gets the page_count of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets determines number of pages to render.  # noqa: E501
+        Gets or sets the number of pages to render.  # noqa: E501
 
         :return: The page_count of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -561,7 +561,7 @@ class HtmlFixedSaveOptionsData(object):
     def page_count(self, page_count):
         """Sets the page_count of this HtmlFixedSaveOptionsData.
 
-        Gets or sets determines number of pages to render.  # noqa: E501
+        Gets or sets the number of pages to render.  # noqa: E501
 
         :param page_count: The page_count of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: int
@@ -572,7 +572,7 @@ class HtmlFixedSaveOptionsData(object):
     def page_index(self):
         """Gets the page_index of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets determines 0-based index of the first page to render.  # noqa: E501
+        Gets or sets the 0-based index of the first page to render.  # noqa: E501
 
         :return: The page_index of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -583,7 +583,7 @@ class HtmlFixedSaveOptionsData(object):
     def page_index(self, page_index):
         """Sets the page_index of this HtmlFixedSaveOptionsData.
 
-        Gets or sets determines 0-based index of the first page to render.  # noqa: E501
+        Gets or sets the 0-based index of the first page to render.  # noqa: E501
 
         :param page_index: The page_index of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: int
@@ -594,7 +594,7 @@ class HtmlFixedSaveOptionsData(object):
     def css_class_names_prefix(self):
         """Gets the css_class_names_prefix of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies prefix which is added to all class names in style.css file. Default value is "aw".  # noqa: E501
+        Gets or sets the prefix which is added to all class names in style.css file. Default value is "aw".  # noqa: E501
 
         :return: The css_class_names_prefix of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -605,7 +605,7 @@ class HtmlFixedSaveOptionsData(object):
     def css_class_names_prefix(self, css_class_names_prefix):
         """Sets the css_class_names_prefix of this HtmlFixedSaveOptionsData.
 
-        Gets or sets specifies prefix which is added to all class names in style.css file. Default value is "aw".  # noqa: E501
+        Gets or sets the prefix which is added to all class names in style.css file. Default value is "aw".  # noqa: E501
 
         :param css_class_names_prefix: The css_class_names_prefix of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -616,7 +616,7 @@ class HtmlFixedSaveOptionsData(object):
     def encoding(self):
         """Gets the encoding of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets encoding.  # noqa: E501
+        Gets or sets the character encoding.  # noqa: E501
 
         :return: The encoding of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -627,7 +627,7 @@ class HtmlFixedSaveOptionsData(object):
     def encoding(self, encoding):
         """Sets the encoding of this HtmlFixedSaveOptionsData.
 
-        Gets or sets encoding.  # noqa: E501
+        Gets or sets the character encoding.  # noqa: E501
 
         :param encoding: The encoding of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -638,7 +638,7 @@ class HtmlFixedSaveOptionsData(object):
     def export_embedded_css(self):
         """Gets the export_embedded_css of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether the CSS (Cascading Style Sheet) should be embedded into Html document.  # noqa: E501
+        Gets or sets a value indicating whether the CSS (Cascading Style Sheet) should be embedded into the Html document.  # noqa: E501
 
         :return: The export_embedded_css of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -649,7 +649,7 @@ class HtmlFixedSaveOptionsData(object):
     def export_embedded_css(self, export_embedded_css):
         """Sets the export_embedded_css of this HtmlFixedSaveOptionsData.
 
-        Gets or sets specifies whether the CSS (Cascading Style Sheet) should be embedded into Html document.  # noqa: E501
+        Gets or sets a value indicating whether the CSS (Cascading Style Sheet) should be embedded into the Html document.  # noqa: E501
 
         :param export_embedded_css: The export_embedded_css of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: bool
@@ -660,7 +660,7 @@ class HtmlFixedSaveOptionsData(object):
     def export_embedded_fonts(self):
         """Gets the export_embedded_fonts of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether fonts should be embedded into Html document in Base64 format.  # noqa: E501
+        Gets or sets a value indicating whether fonts should be embedded into the Html document in Base64 format.  # noqa: E501
 
         :return: The export_embedded_fonts of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -671,7 +671,7 @@ class HtmlFixedSaveOptionsData(object):
     def export_embedded_fonts(self, export_embedded_fonts):
         """Sets the export_embedded_fonts of this HtmlFixedSaveOptionsData.
 
-        Gets or sets specifies whether fonts should be embedded into Html document in Base64 format.  # noqa: E501
+        Gets or sets a value indicating whether fonts should be embedded into the Html document in Base64 format.  # noqa: E501
 
         :param export_embedded_fonts: The export_embedded_fonts of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: bool
@@ -682,7 +682,7 @@ class HtmlFixedSaveOptionsData(object):
     def export_embedded_images(self):
         """Gets the export_embedded_images of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether images should be embedded into Html document in Base64 format.  # noqa: E501
+        Gets or sets a value indicating whether images should be embedded into the Html document in Base64 format.  # noqa: E501
 
         :return: The export_embedded_images of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -693,7 +693,7 @@ class HtmlFixedSaveOptionsData(object):
     def export_embedded_images(self, export_embedded_images):
         """Sets the export_embedded_images of this HtmlFixedSaveOptionsData.
 
-        Gets or sets specifies whether images should be embedded into Html document in Base64 format.  # noqa: E501
+        Gets or sets a value indicating whether images should be embedded into the Html document in Base64 format.  # noqa: E501
 
         :param export_embedded_images: The export_embedded_images of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: bool
@@ -704,7 +704,7 @@ class HtmlFixedSaveOptionsData(object):
     def export_form_fields(self):
         """Gets the export_form_fields of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets indication of whether form fields are exported as interactive items (as 'input' tag) rather than converted to text or graphics.  # noqa: E501
+        Gets or sets a value indicating whether form fields are exported as interactive items (as 'input' tag) rather than converted to text or graphics.  # noqa: E501
 
         :return: The export_form_fields of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -715,7 +715,7 @@ class HtmlFixedSaveOptionsData(object):
     def export_form_fields(self, export_form_fields):
         """Sets the export_form_fields of this HtmlFixedSaveOptionsData.
 
-        Gets or sets indication of whether form fields are exported as interactive items (as 'input' tag) rather than converted to text or graphics.  # noqa: E501
+        Gets or sets a value indicating whether form fields are exported as interactive items (as 'input' tag) rather than converted to text or graphics.  # noqa: E501
 
         :param export_form_fields: The export_form_fields of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: bool
@@ -726,7 +726,7 @@ class HtmlFixedSaveOptionsData(object):
     def font_format(self):
         """Gets the font_format of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies export format of fonts.  # noqa: E501
+        Gets or sets the export format of fonts.  # noqa: E501
 
         :return: The font_format of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -737,7 +737,7 @@ class HtmlFixedSaveOptionsData(object):
     def font_format(self, font_format):
         """Sets the font_format of this HtmlFixedSaveOptionsData.
 
-        Gets or sets specifies export format of fonts.  # noqa: E501
+        Gets or sets the export format of fonts.  # noqa: E501
 
         :param font_format: The font_format of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -748,7 +748,7 @@ class HtmlFixedSaveOptionsData(object):
     def page_horizontal_alignment(self):
         """Gets the page_horizontal_alignment of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies the horizontal alignment of pages in an HTML document. Default value is HtmlFixedHorizontalPageAlignment.Center.  # noqa: E501
+        Gets or sets the horizontal alignment of pages in the HTML document. The default value is HtmlFixedHorizontalPageAlignment.Center.  # noqa: E501
 
         :return: The page_horizontal_alignment of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -759,7 +759,7 @@ class HtmlFixedSaveOptionsData(object):
     def page_horizontal_alignment(self, page_horizontal_alignment):
         """Sets the page_horizontal_alignment of this HtmlFixedSaveOptionsData.
 
-        Gets or sets specifies the horizontal alignment of pages in an HTML document. Default value is HtmlFixedHorizontalPageAlignment.Center.  # noqa: E501
+        Gets or sets the horizontal alignment of pages in the HTML document. The default value is HtmlFixedHorizontalPageAlignment.Center.  # noqa: E501
 
         :param page_horizontal_alignment: The page_horizontal_alignment of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -770,7 +770,7 @@ class HtmlFixedSaveOptionsData(object):
     def page_margins(self):
         """Gets the page_margins of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies the margins around pages in an HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points.  # noqa: E501
+        Gets or sets the margin around pages in HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points.  # noqa: E501
 
         :return: The page_margins of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: float
@@ -781,7 +781,7 @@ class HtmlFixedSaveOptionsData(object):
     def page_margins(self, page_margins):
         """Sets the page_margins of this HtmlFixedSaveOptionsData.
 
-        Gets or sets specifies the margins around pages in an HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points.  # noqa: E501
+        Gets or sets the margin around pages in HTML document. The margins value is measured in points and should be equal to or greater than 0. Default value is 10 points.  # noqa: E501
 
         :param page_margins: The page_margins of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: float
@@ -792,7 +792,7 @@ class HtmlFixedSaveOptionsData(object):
     def resources_folder(self):
         """Gets the resources_folder of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies the physical folder where resources are saved when exporting a document.  # noqa: E501
+        Gets or sets the physical folder where resources are saved when exporting the document.  # noqa: E501
 
         :return: The resources_folder of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -803,7 +803,7 @@ class HtmlFixedSaveOptionsData(object):
     def resources_folder(self, resources_folder):
         """Sets the resources_folder of this HtmlFixedSaveOptionsData.
 
-        Gets or sets specifies the physical folder where resources are saved when exporting a document.  # noqa: E501
+        Gets or sets the physical folder where resources are saved when exporting the document.  # noqa: E501
 
         :param resources_folder: The resources_folder of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -814,7 +814,7 @@ class HtmlFixedSaveOptionsData(object):
     def resources_folder_alias(self):
         """Gets the resources_folder_alias of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies the name of the folder used to construct resource URIs.  # noqa: E501
+        Gets or sets the name of the folder used to construct resource URIs.  # noqa: E501
 
         :return: The resources_folder_alias of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -825,7 +825,7 @@ class HtmlFixedSaveOptionsData(object):
     def resources_folder_alias(self, resources_folder_alias):
         """Sets the resources_folder_alias of this HtmlFixedSaveOptionsData.
 
-        Gets or sets specifies the name of the folder used to construct resource URIs.  # noqa: E501
+        Gets or sets the name of the folder used to construct resource URIs.  # noqa: E501
 
         :param resources_folder_alias: The resources_folder_alias of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: str
@@ -836,7 +836,7 @@ class HtmlFixedSaveOptionsData(object):
     def save_font_face_css_separately(self):
         """Gets the save_font_face_css_separately of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets flag indicates whether "@font-face" CSS rules should be placed into a separate file "fontFaces.css" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file "styles.css".  # noqa: E501
+        Gets or sets a value indicating whether "@font-face" CSS rules should be placed into a separate file "fontFaces.css" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). The default value is false, all CSS rules are written into single file "styles.css".  # noqa: E501
 
         :return: The save_font_face_css_separately of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -847,7 +847,7 @@ class HtmlFixedSaveOptionsData(object):
     def save_font_face_css_separately(self, save_font_face_css_separately):
         """Sets the save_font_face_css_separately of this HtmlFixedSaveOptionsData.
 
-        Gets or sets flag indicates whether "@font-face" CSS rules should be placed into a separate file "fontFaces.css" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). Default value is false, all CSS rules are written into single file "styles.css".  # noqa: E501
+        Gets or sets a value indicating whether "@font-face" CSS rules should be placed into a separate file "fontFaces.css" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). The default value is false, all CSS rules are written into single file "styles.css".  # noqa: E501
 
         :param save_font_face_css_separately: The save_font_face_css_separately of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: bool
@@ -858,7 +858,7 @@ class HtmlFixedSaveOptionsData(object):
     def show_page_border(self):
         """Gets the show_page_border of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether border around pages should be shown.  # noqa: E501
+        Gets or sets a value indicating whether to show border around pages.  # noqa: E501
 
         :return: The show_page_border of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -869,7 +869,7 @@ class HtmlFixedSaveOptionsData(object):
     def show_page_border(self, show_page_border):
         """Sets the show_page_border of this HtmlFixedSaveOptionsData.
 
-        Gets or sets specifies whether border around pages should be shown.  # noqa: E501
+        Gets or sets a value indicating whether to show border around pages.  # noqa: E501
 
         :param show_page_border: The show_page_border of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: bool
@@ -880,7 +880,7 @@ class HtmlFixedSaveOptionsData(object):
     def use_target_machine_fonts(self):
         """Gets the use_target_machine_fonts of this HtmlFixedSaveOptionsData.  # noqa: E501
 
-        Gets or sets flag indicates whether fonts from target machine must be used to display the document. If this flag is set to true, Aspose.Words.Saving.HtmlFixedSaveOptions.FontFormat and Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedFonts properties do not have effect, also Aspose.Words.Saving.HtmlFixedSaveOptions.ResourceSavingCallback is not fired for fonts. Default is false.  # noqa: E501
+        Gets or sets a value indicating whether fonts from target machine must be used to display the document. If this flag is set to true, Aspose.Words.Saving.HtmlFixedSaveOptions.FontFormat and Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedFonts properties do not have effect, also Aspose.Words.Saving.HtmlFixedSaveOptions.ResourceSavingCallback is not fired for fonts. The default value is false.  # noqa: E501
 
         :return: The use_target_machine_fonts of this HtmlFixedSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -891,7 +891,7 @@ class HtmlFixedSaveOptionsData(object):
     def use_target_machine_fonts(self, use_target_machine_fonts):
         """Sets the use_target_machine_fonts of this HtmlFixedSaveOptionsData.
 
-        Gets or sets flag indicates whether fonts from target machine must be used to display the document. If this flag is set to true, Aspose.Words.Saving.HtmlFixedSaveOptions.FontFormat and Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedFonts properties do not have effect, also Aspose.Words.Saving.HtmlFixedSaveOptions.ResourceSavingCallback is not fired for fonts. Default is false.  # noqa: E501
+        Gets or sets a value indicating whether fonts from target machine must be used to display the document. If this flag is set to true, Aspose.Words.Saving.HtmlFixedSaveOptions.FontFormat and Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedFonts properties do not have effect, also Aspose.Words.Saving.HtmlFixedSaveOptions.ResourceSavingCallback is not fired for fonts. The default value is false.  # noqa: E501
 
         :param use_target_machine_fonts: The use_target_machine_fonts of this HtmlFixedSaveOptionsData.  # noqa: E501
         :type: bool

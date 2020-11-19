@@ -31,7 +31,7 @@ import json
 
 
 class RangeTextResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/range/{0}/{1}/.
+    """The REST response with a range's text.
     """
 
     """
@@ -67,7 +67,7 @@ class RangeTextResponse(object):
     def request_id(self):
         """Gets the request_id of this RangeTextResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this RangeTextResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class RangeTextResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this RangeTextResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this RangeTextResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class RangeTextResponse(object):
     def text(self):
         """Gets the text of this RangeTextResponse.  # noqa: E501
 
-        Gets or sets text from range.  # noqa: E501
+        Gets or sets the range's text.  # noqa: E501
 
         :return: The text of this RangeTextResponse.  # noqa: E501
         :rtype: str
@@ -100,7 +100,7 @@ class RangeTextResponse(object):
     def text(self, text):
         """Sets the text of this RangeTextResponse.
 
-        Gets or sets text from range.  # noqa: E501
+        Gets or sets the range's text.  # noqa: E501
 
         :param text: The text of this RangeTextResponse.  # noqa: E501
         :type: str

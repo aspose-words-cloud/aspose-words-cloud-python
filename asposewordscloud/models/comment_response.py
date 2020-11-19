@@ -31,7 +31,7 @@ import json
 
 
 class CommentResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/comments/0.
+    """The REST response with a comment.
     """
 
     """
@@ -67,7 +67,7 @@ class CommentResponse(object):
     def request_id(self):
         """Gets the request_id of this CommentResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this CommentResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class CommentResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this CommentResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this CommentResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class CommentResponse(object):
     def comment(self):
         """Gets the comment of this CommentResponse.  # noqa: E501
 
-        Gets or sets comment information.  # noqa: E501
+        Gets or sets the comment.  # noqa: E501
 
         :return: The comment of this CommentResponse.  # noqa: E501
         :rtype: Comment
@@ -100,7 +100,7 @@ class CommentResponse(object):
     def comment(self, comment):
         """Sets the comment of this CommentResponse.
 
-        Gets or sets comment information.  # noqa: E501
+        Gets or sets the comment.  # noqa: E501
 
         :param comment: The comment of this CommentResponse.  # noqa: E501
         :type: Comment

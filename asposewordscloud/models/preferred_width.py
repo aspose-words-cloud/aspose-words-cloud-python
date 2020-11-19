@@ -31,7 +31,7 @@ import json
 
 
 class PreferredWidth(object):
-    """Preferred width.
+    """DTO container with a preferred width value.
     """
 
     """

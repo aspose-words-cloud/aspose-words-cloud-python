@@ -30,8 +30,8 @@ class AppendDocumentRequest(object):
     """
     Request model for append_document operation.
     Initializes a new instance.
-    :param name Original document name.
-    :param document_list DocumentEntryList with a list of documents to append.
+    :param name The filename of the input document.
+    :param document_list The collection of documents to append.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

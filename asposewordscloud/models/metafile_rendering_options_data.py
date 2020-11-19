@@ -31,7 +31,7 @@ import json
 
 
 class MetafileRenderingOptionsData(object):
-    """container class for options of metafile rendering.
+    """Container class for options of metafile rendering.
     """
 
     """
@@ -82,7 +82,7 @@ class MetafileRenderingOptionsData(object):
     def emf_plus_dual_rendering_mode(self):
         """Gets the emf_plus_dual_rendering_mode of this MetafileRenderingOptionsData.  # noqa: E501
 
-        Gets or sets determines how EMF+ Dual metafiles should be rendered.  # noqa: E501
+        Gets or sets the option that controls how EMF+ Dual metafiles should be rendered.  # noqa: E501
 
         :return: The emf_plus_dual_rendering_mode of this MetafileRenderingOptionsData.  # noqa: E501
         :rtype: str
@@ -93,7 +93,7 @@ class MetafileRenderingOptionsData(object):
     def emf_plus_dual_rendering_mode(self, emf_plus_dual_rendering_mode):
         """Sets the emf_plus_dual_rendering_mode of this MetafileRenderingOptionsData.
 
-        Gets or sets determines how EMF+ Dual metafiles should be rendered.  # noqa: E501
+        Gets or sets the option that controls how EMF+ Dual metafiles should be rendered.  # noqa: E501
 
         :param emf_plus_dual_rendering_mode: The emf_plus_dual_rendering_mode of this MetafileRenderingOptionsData.  # noqa: E501
         :type: str
@@ -104,7 +104,7 @@ class MetafileRenderingOptionsData(object):
     def emulate_raster_operations(self):
         """Gets the emulate_raster_operations of this MetafileRenderingOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether or not the raster operations should be emulated.  # noqa: E501
+        Gets or sets a value indicating whether the raster operations should be emulated.  # noqa: E501
 
         :return: The emulate_raster_operations of this MetafileRenderingOptionsData.  # noqa: E501
         :rtype: bool
@@ -115,7 +115,7 @@ class MetafileRenderingOptionsData(object):
     def emulate_raster_operations(self, emulate_raster_operations):
         """Sets the emulate_raster_operations of this MetafileRenderingOptionsData.
 
-        Gets or sets a value determining whether or not the raster operations should be emulated.  # noqa: E501
+        Gets or sets a value indicating whether the raster operations should be emulated.  # noqa: E501
 
         :param emulate_raster_operations: The emulate_raster_operations of this MetafileRenderingOptionsData.  # noqa: E501
         :type: bool
@@ -126,7 +126,7 @@ class MetafileRenderingOptionsData(object):
     def rendering_mode(self):
         """Gets the rendering_mode of this MetafileRenderingOptionsData.  # noqa: E501
 
-        Gets or sets determines how metafile images should be rendered.  # noqa: E501
+        Gets or sets the option that controls how metafile images should be rendered.  # noqa: E501
 
         :return: The rendering_mode of this MetafileRenderingOptionsData.  # noqa: E501
         :rtype: str
@@ -137,7 +137,7 @@ class MetafileRenderingOptionsData(object):
     def rendering_mode(self, rendering_mode):
         """Sets the rendering_mode of this MetafileRenderingOptionsData.
 
-        Gets or sets determines how metafile images should be rendered.  # noqa: E501
+        Gets or sets the option that controls how metafile images should be rendered.  # noqa: E501
 
         :param rendering_mode: The rendering_mode of this MetafileRenderingOptionsData.  # noqa: E501
         :type: str
@@ -148,7 +148,7 @@ class MetafileRenderingOptionsData(object):
     def scale_wmf_fonts_to_metafile_size(self):
         """Gets the scale_wmf_fonts_to_metafile_size of this MetafileRenderingOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether or not to scale fonts in WMF metafile according to metafile size on the page. The default value is true.  # noqa: E501
+        Gets or sets a value indicating whether to scale fonts in WMF metafile according to metafile size on the page. The default value is true.  # noqa: E501
 
         :return: The scale_wmf_fonts_to_metafile_size of this MetafileRenderingOptionsData.  # noqa: E501
         :rtype: bool
@@ -159,7 +159,7 @@ class MetafileRenderingOptionsData(object):
     def scale_wmf_fonts_to_metafile_size(self, scale_wmf_fonts_to_metafile_size):
         """Sets the scale_wmf_fonts_to_metafile_size of this MetafileRenderingOptionsData.
 
-        Gets or sets a value determining whether or not to scale fonts in WMF metafile according to metafile size on the page. The default value is true.  # noqa: E501
+        Gets or sets a value indicating whether to scale fonts in WMF metafile according to metafile size on the page. The default value is true.  # noqa: E501
 
         :param scale_wmf_fonts_to_metafile_size: The scale_wmf_fonts_to_metafile_size of this MetafileRenderingOptionsData.  # noqa: E501
         :type: bool
@@ -170,7 +170,7 @@ class MetafileRenderingOptionsData(object):
     def use_emf_embedded_to_wmf(self):
         """Gets the use_emf_embedded_to_wmf of this MetafileRenderingOptionsData.  # noqa: E501
 
-        Gets or sets determines how WMF metafiles with embedded EMF metafiles should be rendered.  # noqa: E501
+        Gets or sets the flag, that controls how WMF metafiles with embedded EMF metafiles should be rendered.  # noqa: E501
 
         :return: The use_emf_embedded_to_wmf of this MetafileRenderingOptionsData.  # noqa: E501
         :rtype: bool
@@ -181,7 +181,7 @@ class MetafileRenderingOptionsData(object):
     def use_emf_embedded_to_wmf(self, use_emf_embedded_to_wmf):
         """Sets the use_emf_embedded_to_wmf of this MetafileRenderingOptionsData.
 
-        Gets or sets determines how WMF metafiles with embedded EMF metafiles should be rendered.  # noqa: E501
+        Gets or sets the flag, that controls how WMF metafiles with embedded EMF metafiles should be rendered.  # noqa: E501
 
         :param use_emf_embedded_to_wmf: The use_emf_embedded_to_wmf of this MetafileRenderingOptionsData.  # noqa: E501
         :type: bool

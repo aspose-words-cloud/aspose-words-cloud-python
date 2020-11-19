@@ -31,7 +31,7 @@ import json
 
 
 class WordMLSaveOptionsData(object):
-    """container class for wml save options.
+    """Container class for wml save options.
     """
 
     """
@@ -112,7 +112,7 @@ class WordMLSaveOptionsData(object):
     def dml3_d_effects_rendering_mode(self):
         """Gets the dml3_d_effects_rendering_mode of this WordMLSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
+        Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
 
         :return: The dml3_d_effects_rendering_mode of this WordMLSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -123,7 +123,7 @@ class WordMLSaveOptionsData(object):
     def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
         """Sets the dml3_d_effects_rendering_mode of this WordMLSaveOptionsData.
 
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
+        Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
 
         :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this WordMLSaveOptionsData.  # noqa: E501
         :type: str
@@ -142,7 +142,7 @@ class WordMLSaveOptionsData(object):
     def dml_effects_rendering_mode(self):
         """Gets the dml_effects_rendering_mode of this WordMLSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :return: The dml_effects_rendering_mode of this WordMLSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -153,7 +153,7 @@ class WordMLSaveOptionsData(object):
     def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
         """Sets the dml_effects_rendering_mode of this WordMLSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this WordMLSaveOptionsData.  # noqa: E501
         :type: str
@@ -164,7 +164,7 @@ class WordMLSaveOptionsData(object):
     def dml_rendering_mode(self):
         """Gets the dml_rendering_mode of this WordMLSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
+        Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
 
         :return: The dml_rendering_mode of this WordMLSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -175,7 +175,7 @@ class WordMLSaveOptionsData(object):
     def dml_rendering_mode(self, dml_rendering_mode):
         """Sets the dml_rendering_mode of this WordMLSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
+        Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
 
         :param dml_rendering_mode: The dml_rendering_mode of this WordMLSaveOptionsData.  # noqa: E501
         :type: str
@@ -186,7 +186,7 @@ class WordMLSaveOptionsData(object):
     def file_name(self):
         """Gets the file_name of this WordMLSaveOptionsData.  # noqa: E501
 
-        Gets or sets name of destination file.  # noqa: E501
+        Gets or sets the name of destination file.  # noqa: E501
 
         :return: The file_name of this WordMLSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -197,7 +197,7 @@ class WordMLSaveOptionsData(object):
     def file_name(self, file_name):
         """Sets the file_name of this WordMLSaveOptionsData.
 
-        Gets or sets name of destination file.  # noqa: E501
+        Gets or sets the name of destination file.  # noqa: E501
 
         :param file_name: The file_name of this WordMLSaveOptionsData.  # noqa: E501
         :type: str
@@ -208,7 +208,7 @@ class WordMLSaveOptionsData(object):
     def save_format(self):
         """Gets the save_format of this WordMLSaveOptionsData.  # noqa: E501
 
-        Gets or sets format of save.  # noqa: E501
+        Gets or sets the format of save.  # noqa: E501
 
         :return: The save_format of this WordMLSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -219,7 +219,7 @@ class WordMLSaveOptionsData(object):
     def save_format(self, save_format):
         """Sets the save_format of this WordMLSaveOptionsData.
 
-        Gets or sets format of save.  # noqa: E501
+        Gets or sets the format of save.  # noqa: E501
 
         :param save_format: The save_format of this WordMLSaveOptionsData.  # noqa: E501
         :type: str
@@ -230,7 +230,7 @@ class WordMLSaveOptionsData(object):
     def update_fields(self):
         """Gets the update_fields of this WordMLSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.  # noqa: E501
+        Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.  # noqa: E501
 
         :return: The update_fields of this WordMLSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -241,7 +241,7 @@ class WordMLSaveOptionsData(object):
     def update_fields(self, update_fields):
         """Sets the update_fields of this WordMLSaveOptionsData.
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.  # noqa: E501
+        Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.  # noqa: E501
 
         :param update_fields: The update_fields of this WordMLSaveOptionsData.  # noqa: E501
         :type: bool
@@ -252,7 +252,7 @@ class WordMLSaveOptionsData(object):
     def update_last_printed_property(self):
         """Gets the update_last_printed_property of this WordMLSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
 
         :return: The update_last_printed_property of this WordMLSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -263,7 +263,7 @@ class WordMLSaveOptionsData(object):
     def update_last_printed_property(self, update_last_printed_property):
         """Sets the update_last_printed_property of this WordMLSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
 
         :param update_last_printed_property: The update_last_printed_property of this WordMLSaveOptionsData.  # noqa: E501
         :type: bool
@@ -274,7 +274,7 @@ class WordMLSaveOptionsData(object):
     def update_last_saved_time_property(self):
         """Gets the update_last_saved_time_property of this WordMLSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
 
         :return: The update_last_saved_time_property of this WordMLSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -285,7 +285,7 @@ class WordMLSaveOptionsData(object):
     def update_last_saved_time_property(self, update_last_saved_time_property):
         """Sets the update_last_saved_time_property of this WordMLSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
 
         :param update_last_saved_time_property: The update_last_saved_time_property of this WordMLSaveOptionsData.  # noqa: E501
         :type: bool
@@ -296,7 +296,7 @@ class WordMLSaveOptionsData(object):
     def update_sdt_content(self):
         """Gets the update_sdt_content of this WordMLSaveOptionsData.  # noqa: E501
 
-        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :return: The update_sdt_content of this WordMLSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -307,7 +307,7 @@ class WordMLSaveOptionsData(object):
     def update_sdt_content(self, update_sdt_content):
         """Sets the update_sdt_content of this WordMLSaveOptionsData.
 
-        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :param update_sdt_content: The update_sdt_content of this WordMLSaveOptionsData.  # noqa: E501
         :type: bool
@@ -318,7 +318,7 @@ class WordMLSaveOptionsData(object):
     def zip_output(self):
         """Gets the zip_output of this WordMLSaveOptionsData.  # noqa: E501
 
-        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
 
         :return: The zip_output of this WordMLSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -329,7 +329,7 @@ class WordMLSaveOptionsData(object):
     def zip_output(self, zip_output):
         """Sets the zip_output of this WordMLSaveOptionsData.
 
-        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
 
         :param zip_output: The zip_output of this WordMLSaveOptionsData.  # noqa: E501
         :type: bool
@@ -340,7 +340,7 @@ class WordMLSaveOptionsData(object):
     def pretty_format(self):
         """Gets the pretty_format of this WordMLSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether or not use pretty formats output.  # noqa: E501
+        Gets or sets a value indicating whether to use pretty formats output.  # noqa: E501
 
         :return: The pretty_format of this WordMLSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -351,7 +351,7 @@ class WordMLSaveOptionsData(object):
     def pretty_format(self, pretty_format):
         """Sets the pretty_format of this WordMLSaveOptionsData.
 
-        Gets or sets specifies whether or not use pretty formats output.  # noqa: E501
+        Gets or sets a value indicating whether to use pretty formats output.  # noqa: E501
 
         :param pretty_format: The pretty_format of this WordMLSaveOptionsData.  # noqa: E501
         :type: bool

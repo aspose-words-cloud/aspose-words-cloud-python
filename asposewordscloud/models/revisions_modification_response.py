@@ -31,7 +31,7 @@ import json
 
 
 class RevisionsModificationResponse(object):
-    """response of the modification operations for the revisions collection (now these are acceptAll and rejectAll).
+    """The REST response with a result of the modification operations for the revisions collection (now these are acceptAll and rejectAll).
     """
 
     """
@@ -67,7 +67,7 @@ class RevisionsModificationResponse(object):
     def request_id(self):
         """Gets the request_id of this RevisionsModificationResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this RevisionsModificationResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class RevisionsModificationResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this RevisionsModificationResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this RevisionsModificationResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class RevisionsModificationResponse(object):
     def result(self):
         """Gets the result of this RevisionsModificationResponse.  # noqa: E501
 
-        Gets or sets result of the modification operations for the revisions collection.  # noqa: E501
+        Gets or sets the result of the modification operations for the revisions collection.  # noqa: E501
 
         :return: The result of this RevisionsModificationResponse.  # noqa: E501
         :rtype: ModificationOperationResult
@@ -100,7 +100,7 @@ class RevisionsModificationResponse(object):
     def result(self, result):
         """Sets the result of this RevisionsModificationResponse.
 
-        Gets or sets result of the modification operations for the revisions collection.  # noqa: E501
+        Gets or sets the result of the modification operations for the revisions collection.  # noqa: E501
 
         :param result: The result of this RevisionsModificationResponse.  # noqa: E501
         :type: ModificationOperationResult

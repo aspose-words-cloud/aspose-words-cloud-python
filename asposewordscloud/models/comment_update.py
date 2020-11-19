@@ -87,7 +87,7 @@ class CommentUpdate(object):
     def author(self):
         """Gets the author of this CommentUpdate.  # noqa: E501
 
-        Gets or sets returns or sets the author name for a comment.  # noqa: E501
+        Gets or sets the author name for a comment.  # noqa: E501
 
         :return: The author of this CommentUpdate.  # noqa: E501
         :rtype: str
@@ -98,7 +98,7 @@ class CommentUpdate(object):
     def author(self, author):
         """Sets the author of this CommentUpdate.
 
-        Gets or sets returns or sets the author name for a comment.  # noqa: E501
+        Gets or sets the author name for a comment.  # noqa: E501
 
         :param author: The author of this CommentUpdate.  # noqa: E501
         :type: str
@@ -131,7 +131,7 @@ class CommentUpdate(object):
     def initial(self):
         """Gets the initial of this CommentUpdate.  # noqa: E501
 
-        Gets or sets returns or sets the initials of the user associated with a specific comment.  # noqa: E501
+        Gets or sets the initials of the user associated with a specific comment.  # noqa: E501
 
         :return: The initial of this CommentUpdate.  # noqa: E501
         :rtype: str
@@ -142,7 +142,7 @@ class CommentUpdate(object):
     def initial(self, initial):
         """Sets the initial of this CommentUpdate.
 
-        Gets or sets returns or sets the initials of the user associated with a specific comment.  # noqa: E501
+        Gets or sets the initials of the user associated with a specific comment.  # noqa: E501
 
         :param initial: The initial of this CommentUpdate.  # noqa: E501
         :type: str
@@ -153,7 +153,7 @@ class CommentUpdate(object):
     def range_end(self):
         """Gets the range_end of this CommentUpdate.  # noqa: E501
 
-        Gets or sets link to comment range end node.  # noqa: E501
+        Gets or sets the link to comment range end node.  # noqa: E501
 
         :return: The range_end of this CommentUpdate.  # noqa: E501
         :rtype: DocumentPosition
@@ -164,7 +164,7 @@ class CommentUpdate(object):
     def range_end(self, range_end):
         """Sets the range_end of this CommentUpdate.
 
-        Gets or sets link to comment range end node.  # noqa: E501
+        Gets or sets the link to comment range end node.  # noqa: E501
 
         :param range_end: The range_end of this CommentUpdate.  # noqa: E501
         :type: DocumentPosition
@@ -175,7 +175,7 @@ class CommentUpdate(object):
     def range_start(self):
         """Gets the range_start of this CommentUpdate.  # noqa: E501
 
-        Gets or sets link to comment range start node.  # noqa: E501
+        Gets or sets the link to comment range start node.  # noqa: E501
 
         :return: The range_start of this CommentUpdate.  # noqa: E501
         :rtype: DocumentPosition
@@ -186,7 +186,7 @@ class CommentUpdate(object):
     def range_start(self, range_start):
         """Sets the range_start of this CommentUpdate.
 
-        Gets or sets link to comment range start node.  # noqa: E501
+        Gets or sets the link to comment range start node.  # noqa: E501
 
         :param range_start: The range_start of this CommentUpdate.  # noqa: E501
         :type: DocumentPosition
@@ -197,7 +197,7 @@ class CommentUpdate(object):
     def text(self):
         """Gets the text of this CommentUpdate.  # noqa: E501
 
-        Gets or sets this is a convenience property that allows to easily get or set text of the comment.  # noqa: E501
+        Gets or sets text of the comment.  # noqa: E501
 
         :return: The text of this CommentUpdate.  # noqa: E501
         :rtype: str
@@ -208,7 +208,7 @@ class CommentUpdate(object):
     def text(self, text):
         """Sets the text of this CommentUpdate.
 
-        Gets or sets this is a convenience property that allows to easily get or set text of the comment.  # noqa: E501
+        Gets or sets text of the comment.  # noqa: E501
 
         :param text: The text of this CommentUpdate.  # noqa: E501
         :type: str

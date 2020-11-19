@@ -31,7 +31,7 @@ import json
 
 
 class Lists(object):
-    """Represents an array of document lists.
+    """DTO container with an array of document lists.
     """
 
     """
@@ -67,7 +67,7 @@ class Lists(object):
     def link(self):
         """Gets the link of this Lists.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this Lists.  # noqa: E501
         :rtype: WordsApiLink
@@ -78,7 +78,7 @@ class Lists(object):
     def link(self, link):
         """Sets the link of this Lists.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this Lists.  # noqa: E501
         :type: WordsApiLink
@@ -89,7 +89,7 @@ class Lists(object):
     def list_info(self):
         """Gets the list_info of this Lists.  # noqa: E501
 
-        Gets or sets array of document lists.  # noqa: E501
+        Gets or sets the array of document lists.  # noqa: E501
 
         :return: The list_info of this Lists.  # noqa: E501
         :rtype: list[ListInfo]
@@ -100,7 +100,7 @@ class Lists(object):
     def list_info(self, list_info):
         """Sets the list_info of this Lists.
 
-        Gets or sets array of document lists.  # noqa: E501
+        Gets or sets the array of document lists.  # noqa: E501
 
         :param list_info: The list_info of this Lists.  # noqa: E501
         :type: list[ListInfo]

@@ -67,7 +67,7 @@ class FieldUpdate(object):
     def field_code(self):
         """Gets the field_code of this FieldUpdate.  # noqa: E501
 
-        Gets or sets field code.  # noqa: E501
+        Gets or sets the field code.  # noqa: E501
 
         :return: The field_code of this FieldUpdate.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class FieldUpdate(object):
     def field_code(self, field_code):
         """Sets the field_code of this FieldUpdate.
 
-        Gets or sets field code.  # noqa: E501
+        Gets or sets the field code.  # noqa: E501
 
         :param field_code: The field_code of this FieldUpdate.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class FieldUpdate(object):
     def locale_id(self):
         """Gets the locale_id of this FieldUpdate.  # noqa: E501
 
-        Gets or sets LCID of the field.  # noqa: E501
+        Gets or sets the LCID of the field.  # noqa: E501
 
         :return: The locale_id of this FieldUpdate.  # noqa: E501
         :rtype: str
@@ -100,7 +100,7 @@ class FieldUpdate(object):
     def locale_id(self, locale_id):
         """Sets the locale_id of this FieldUpdate.
 
-        Gets or sets LCID of the field.  # noqa: E501
+        Gets or sets the LCID of the field.  # noqa: E501
 
         :param locale_id: The locale_id of this FieldUpdate.  # noqa: E501
         :type: str

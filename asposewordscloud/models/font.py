@@ -31,7 +31,7 @@ import json
 
 
 class Font(object):
-    """Font element.
+    """DTO container with a font element.
     """
 
     """
@@ -262,7 +262,7 @@ class Font(object):
     def link(self):
         """Gets the link of this Font.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this Font.  # noqa: E501
         :rtype: WordsApiLink
@@ -273,7 +273,7 @@ class Font(object):
     def link(self, link):
         """Sets the link of this Font.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this Font.  # noqa: E501
         :type: WordsApiLink
@@ -284,7 +284,7 @@ class Font(object):
     def all_caps(self):
         """Gets the all_caps of this Font.  # noqa: E501
 
-        Gets or sets true if the font is formatted as all capital letters.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as all capital letters.  # noqa: E501
 
         :return: The all_caps of this Font.  # noqa: E501
         :rtype: bool
@@ -295,7 +295,7 @@ class Font(object):
     def all_caps(self, all_caps):
         """Sets the all_caps of this Font.
 
-        Gets or sets true if the font is formatted as all capital letters.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as all capital letters.  # noqa: E501
 
         :param all_caps: The all_caps of this Font.  # noqa: E501
         :type: bool
@@ -306,7 +306,7 @@ class Font(object):
     def bidi(self):
         """Gets the bidi of this Font.  # noqa: E501
 
-        Gets or sets specifies whether the contents of this run shall have right-to-left characteristics.  # noqa: E501
+        Gets or sets a value indicating whether the contents of this run shall have right-to-left characteristics.  # noqa: E501
 
         :return: The bidi of this Font.  # noqa: E501
         :rtype: bool
@@ -317,7 +317,7 @@ class Font(object):
     def bidi(self, bidi):
         """Sets the bidi of this Font.
 
-        Gets or sets specifies whether the contents of this run shall have right-to-left characteristics.  # noqa: E501
+        Gets or sets a value indicating whether the contents of this run shall have right-to-left characteristics.  # noqa: E501
 
         :param bidi: The bidi of this Font.  # noqa: E501
         :type: bool
@@ -328,7 +328,7 @@ class Font(object):
     def bold(self):
         """Gets the bold of this Font.  # noqa: E501
 
-        Gets or sets true if the font is formatted as bold.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as bold.  # noqa: E501
 
         :return: The bold of this Font.  # noqa: E501
         :rtype: bool
@@ -339,7 +339,7 @@ class Font(object):
     def bold(self, bold):
         """Sets the bold of this Font.
 
-        Gets or sets true if the font is formatted as bold.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as bold.  # noqa: E501
 
         :param bold: The bold of this Font.  # noqa: E501
         :type: bool
@@ -350,7 +350,7 @@ class Font(object):
     def bold_bi(self):
         """Gets the bold_bi of this Font.  # noqa: E501
 
-        Gets or sets true if the right-to-left text is formatted as bold.  # noqa: E501
+        Gets or sets a value indicating whether the right-to-left text is formatted as bold.  # noqa: E501
 
         :return: The bold_bi of this Font.  # noqa: E501
         :rtype: bool
@@ -361,7 +361,7 @@ class Font(object):
     def bold_bi(self, bold_bi):
         """Sets the bold_bi of this Font.
 
-        Gets or sets true if the right-to-left text is formatted as bold.  # noqa: E501
+        Gets or sets a value indicating whether the right-to-left text is formatted as bold.  # noqa: E501
 
         :param bold_bi: The bold_bi of this Font.  # noqa: E501
         :type: bool
@@ -372,7 +372,7 @@ class Font(object):
     def border(self):
         """Gets the border of this Font.  # noqa: E501
 
-        Gets or sets border object that specifies border for the font.  # noqa: E501
+        Gets or sets the border object, that specifies border for the font.  # noqa: E501
 
         :return: The border of this Font.  # noqa: E501
         :rtype: Border
@@ -383,7 +383,7 @@ class Font(object):
     def border(self, border):
         """Sets the border of this Font.
 
-        Gets or sets border object that specifies border for the font.  # noqa: E501
+        Gets or sets the border object, that specifies border for the font.  # noqa: E501
 
         :param border: The border of this Font.  # noqa: E501
         :type: Border
@@ -416,7 +416,7 @@ class Font(object):
     def complex_script(self):
         """Gets the complex_script of this Font.  # noqa: E501
 
-        Gets or sets specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.  # noqa: E501
+        Gets or sets a value indicating whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.  # noqa: E501
 
         :return: The complex_script of this Font.  # noqa: E501
         :rtype: bool
@@ -427,7 +427,7 @@ class Font(object):
     def complex_script(self, complex_script):
         """Sets the complex_script of this Font.
 
-        Gets or sets specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.  # noqa: E501
+        Gets or sets a value indicating whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.  # noqa: E501
 
         :param complex_script: The complex_script of this Font.  # noqa: E501
         :type: bool
@@ -438,7 +438,7 @@ class Font(object):
     def double_strike_through(self):
         """Gets the double_strike_through of this Font.  # noqa: E501
 
-        Gets or sets true if the font is formatted as double strikethrough text.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as double strikethrough text.  # noqa: E501
 
         :return: The double_strike_through of this Font.  # noqa: E501
         :rtype: bool
@@ -449,7 +449,7 @@ class Font(object):
     def double_strike_through(self, double_strike_through):
         """Sets the double_strike_through of this Font.
 
-        Gets or sets true if the font is formatted as double strikethrough text.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as double strikethrough text.  # noqa: E501
 
         :param double_strike_through: The double_strike_through of this Font.  # noqa: E501
         :type: bool
@@ -460,7 +460,7 @@ class Font(object):
     def emboss(self):
         """Gets the emboss of this Font.  # noqa: E501
 
-        Gets or sets true if the font is formatted as embossed.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as embossed.  # noqa: E501
 
         :return: The emboss of this Font.  # noqa: E501
         :rtype: bool
@@ -471,7 +471,7 @@ class Font(object):
     def emboss(self, emboss):
         """Sets the emboss of this Font.
 
-        Gets or sets true if the font is formatted as embossed.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as embossed.  # noqa: E501
 
         :param emboss: The emboss of this Font.  # noqa: E501
         :type: bool
@@ -482,7 +482,7 @@ class Font(object):
     def engrave(self):
         """Gets the engrave of this Font.  # noqa: E501
 
-        Gets or sets true if the font is formatted as engraved.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as engraved.  # noqa: E501
 
         :return: The engrave of this Font.  # noqa: E501
         :rtype: bool
@@ -493,7 +493,7 @@ class Font(object):
     def engrave(self, engrave):
         """Sets the engrave of this Font.
 
-        Gets or sets true if the font is formatted as engraved.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as engraved.  # noqa: E501
 
         :param engrave: The engrave of this Font.  # noqa: E501
         :type: bool
@@ -504,7 +504,7 @@ class Font(object):
     def hidden(self):
         """Gets the hidden of this Font.  # noqa: E501
 
-        Gets or sets true if the font is formatted as hidden text.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as hidden text.  # noqa: E501
 
         :return: The hidden of this Font.  # noqa: E501
         :rtype: bool
@@ -515,7 +515,7 @@ class Font(object):
     def hidden(self, hidden):
         """Sets the hidden of this Font.
 
-        Gets or sets true if the font is formatted as hidden text.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as hidden text.  # noqa: E501
 
         :param hidden: The hidden of this Font.  # noqa: E501
         :type: bool
@@ -548,7 +548,7 @@ class Font(object):
     def italic(self):
         """Gets the italic of this Font.  # noqa: E501
 
-        Gets or sets true if the font is formatted as italic.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as italic.  # noqa: E501
 
         :return: The italic of this Font.  # noqa: E501
         :rtype: bool
@@ -559,7 +559,7 @@ class Font(object):
     def italic(self, italic):
         """Sets the italic of this Font.
 
-        Gets or sets true if the font is formatted as italic.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as italic.  # noqa: E501
 
         :param italic: The italic of this Font.  # noqa: E501
         :type: bool
@@ -570,7 +570,7 @@ class Font(object):
     def italic_bi(self):
         """Gets the italic_bi of this Font.  # noqa: E501
 
-        Gets or sets true if the right-to-left text is formatted as italic.  # noqa: E501
+        Gets or sets a value indicating whether the right-to-left text is formatted as italic.  # noqa: E501
 
         :return: The italic_bi of this Font.  # noqa: E501
         :rtype: bool
@@ -581,7 +581,7 @@ class Font(object):
     def italic_bi(self, italic_bi):
         """Sets the italic_bi of this Font.
 
-        Gets or sets true if the right-to-left text is formatted as italic.  # noqa: E501
+        Gets or sets a value indicating whether the right-to-left text is formatted as italic.  # noqa: E501
 
         :param italic_bi: The italic_bi of this Font.  # noqa: E501
         :type: bool
@@ -702,7 +702,7 @@ class Font(object):
     def name_ascii(self):
         """Gets the name_ascii of this Font.  # noqa: E501
 
-        Gets or sets returns or sets the font used for Latin text (characters with character codes from 0 (zero) through 127).  # noqa: E501
+        Gets or sets the font used for Latin text (characters with character codes from 0 (zero) through 127).  # noqa: E501
 
         :return: The name_ascii of this Font.  # noqa: E501
         :rtype: str
@@ -713,7 +713,7 @@ class Font(object):
     def name_ascii(self, name_ascii):
         """Sets the name_ascii of this Font.
 
-        Gets or sets returns or sets the font used for Latin text (characters with character codes from 0 (zero) through 127).  # noqa: E501
+        Gets or sets the font used for Latin text (characters with character codes from 0 (zero) through 127).  # noqa: E501
 
         :param name_ascii: The name_ascii of this Font.  # noqa: E501
         :type: str
@@ -724,7 +724,7 @@ class Font(object):
     def name_bi(self):
         """Gets the name_bi of this Font.  # noqa: E501
 
-        Gets or sets returns or sets the name of the font in a right-to-left language document.  # noqa: E501
+        Gets or sets the name of the font in a right-to-left language document.  # noqa: E501
 
         :return: The name_bi of this Font.  # noqa: E501
         :rtype: str
@@ -735,7 +735,7 @@ class Font(object):
     def name_bi(self, name_bi):
         """Sets the name_bi of this Font.
 
-        Gets or sets returns or sets the name of the font in a right-to-left language document.  # noqa: E501
+        Gets or sets the name of the font in a right-to-left language document.  # noqa: E501
 
         :param name_bi: The name_bi of this Font.  # noqa: E501
         :type: str
@@ -746,7 +746,7 @@ class Font(object):
     def name_far_east(self):
         """Gets the name_far_east of this Font.  # noqa: E501
 
-        Gets or sets returns or sets an East Asian font name.  # noqa: E501
+        Gets or sets the East Asian font name.  # noqa: E501
 
         :return: The name_far_east of this Font.  # noqa: E501
         :rtype: str
@@ -757,7 +757,7 @@ class Font(object):
     def name_far_east(self, name_far_east):
         """Sets the name_far_east of this Font.
 
-        Gets or sets returns or sets an East Asian font name.  # noqa: E501
+        Gets or sets the East Asian font name.  # noqa: E501
 
         :param name_far_east: The name_far_east of this Font.  # noqa: E501
         :type: str
@@ -768,7 +768,7 @@ class Font(object):
     def name_other(self):
         """Gets the name_other of this Font.  # noqa: E501
 
-        Gets or sets returns or sets the font used for characters with character codes from 128 through 255.  # noqa: E501
+        Gets or sets the font used for characters with character codes from 128 through 255.  # noqa: E501
 
         :return: The name_other of this Font.  # noqa: E501
         :rtype: str
@@ -779,7 +779,7 @@ class Font(object):
     def name_other(self, name_other):
         """Sets the name_other of this Font.
 
-        Gets or sets returns or sets the font used for characters with character codes from 128 through 255.  # noqa: E501
+        Gets or sets the font used for characters with character codes from 128 through 255.  # noqa: E501
 
         :param name_other: The name_other of this Font.  # noqa: E501
         :type: str
@@ -790,7 +790,7 @@ class Font(object):
     def no_proofing(self):
         """Gets the no_proofing of this Font.  # noqa: E501
 
-        Gets or sets true when the formatted characters are not to be spell checked.  # noqa: E501
+        Gets or sets a value indicating whether the formatted characters are not to be spell checked.  # noqa: E501
 
         :return: The no_proofing of this Font.  # noqa: E501
         :rtype: bool
@@ -801,7 +801,7 @@ class Font(object):
     def no_proofing(self, no_proofing):
         """Sets the no_proofing of this Font.
 
-        Gets or sets true when the formatted characters are not to be spell checked.  # noqa: E501
+        Gets or sets a value indicating whether the formatted characters are not to be spell checked.  # noqa: E501
 
         :param no_proofing: The no_proofing of this Font.  # noqa: E501
         :type: bool
@@ -812,7 +812,7 @@ class Font(object):
     def outline(self):
         """Gets the outline of this Font.  # noqa: E501
 
-        Gets or sets true if the font is formatted as outline.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as outline.  # noqa: E501
 
         :return: The outline of this Font.  # noqa: E501
         :rtype: bool
@@ -823,7 +823,7 @@ class Font(object):
     def outline(self, outline):
         """Sets the outline of this Font.
 
-        Gets or sets true if the font is formatted as outline.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as outline.  # noqa: E501
 
         :param outline: The outline of this Font.  # noqa: E501
         :type: bool
@@ -878,7 +878,7 @@ class Font(object):
     def shadow(self):
         """Gets the shadow of this Font.  # noqa: E501
 
-        Gets or sets true if the font is formatted as shadowed.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as shadowed.  # noqa: E501
 
         :return: The shadow of this Font.  # noqa: E501
         :rtype: bool
@@ -889,7 +889,7 @@ class Font(object):
     def shadow(self, shadow):
         """Sets the shadow of this Font.
 
-        Gets or sets true if the font is formatted as shadowed.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as shadowed.  # noqa: E501
 
         :param shadow: The shadow of this Font.  # noqa: E501
         :type: bool
@@ -944,7 +944,7 @@ class Font(object):
     def small_caps(self):
         """Gets the small_caps of this Font.  # noqa: E501
 
-        Gets or sets true if the font is formatted as small capital letters.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as small capital letters.  # noqa: E501
 
         :return: The small_caps of this Font.  # noqa: E501
         :rtype: bool
@@ -955,7 +955,7 @@ class Font(object):
     def small_caps(self, small_caps):
         """Sets the small_caps of this Font.
 
-        Gets or sets true if the font is formatted as small capital letters.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as small capital letters.  # noqa: E501
 
         :param small_caps: The small_caps of this Font.  # noqa: E501
         :type: bool
@@ -966,7 +966,7 @@ class Font(object):
     def spacing(self):
         """Gets the spacing of this Font.  # noqa: E501
 
-        Gets or sets returns or sets the spacing (in points) between characters.  # noqa: E501
+        Gets or sets the spacing (in points) between characters.  # noqa: E501
 
         :return: The spacing of this Font.  # noqa: E501
         :rtype: float
@@ -977,7 +977,7 @@ class Font(object):
     def spacing(self, spacing):
         """Sets the spacing of this Font.
 
-        Gets or sets returns or sets the spacing (in points) between characters.  # noqa: E501
+        Gets or sets the spacing (in points) between characters.  # noqa: E501
 
         :param spacing: The spacing of this Font.  # noqa: E501
         :type: float
@@ -988,7 +988,7 @@ class Font(object):
     def strike_through(self):
         """Gets the strike_through of this Font.  # noqa: E501
 
-        Gets or sets true if the font is formatted as strikethrough text.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as strikethrough text.  # noqa: E501
 
         :return: The strike_through of this Font.  # noqa: E501
         :rtype: bool
@@ -999,7 +999,7 @@ class Font(object):
     def strike_through(self, strike_through):
         """Sets the strike_through of this Font.
 
-        Gets or sets true if the font is formatted as strikethrough text.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as strikethrough text.  # noqa: E501
 
         :param strike_through: The strike_through of this Font.  # noqa: E501
         :type: bool
@@ -1062,7 +1062,7 @@ class Font(object):
     def subscript(self):
         """Gets the subscript of this Font.  # noqa: E501
 
-        Gets or sets true if the font is formatted as subscript.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as subscript.  # noqa: E501
 
         :return: The subscript of this Font.  # noqa: E501
         :rtype: bool
@@ -1073,7 +1073,7 @@ class Font(object):
     def subscript(self, subscript):
         """Sets the subscript of this Font.
 
-        Gets or sets true if the font is formatted as subscript.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as subscript.  # noqa: E501
 
         :param subscript: The subscript of this Font.  # noqa: E501
         :type: bool
@@ -1084,7 +1084,7 @@ class Font(object):
     def superscript(self):
         """Gets the superscript of this Font.  # noqa: E501
 
-        Gets or sets true if the font is formatted as superscript.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as superscript.  # noqa: E501
 
         :return: The superscript of this Font.  # noqa: E501
         :rtype: bool
@@ -1095,7 +1095,7 @@ class Font(object):
     def superscript(self, superscript):
         """Sets the superscript of this Font.
 
-        Gets or sets true if the font is formatted as superscript.  # noqa: E501
+        Gets or sets a value indicating whether the font is formatted as superscript.  # noqa: E501
 
         :param superscript: The superscript of this Font.  # noqa: E501
         :type: bool

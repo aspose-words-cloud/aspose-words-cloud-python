@@ -31,7 +31,7 @@ import json
 
 
 class FootnotesResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/footnotes.
+    """The REST response with a collection of footnotes.
     """
 
     """
@@ -67,7 +67,7 @@ class FootnotesResponse(object):
     def request_id(self):
         """Gets the request_id of this FootnotesResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this FootnotesResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class FootnotesResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this FootnotesResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this FootnotesResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class FootnotesResponse(object):
     def footnotes(self):
         """Gets the footnotes of this FootnotesResponse.  # noqa: E501
 
-        Gets or sets collection of footnotes.  # noqa: E501
+        Gets or sets the collection of footnotes.  # noqa: E501
 
         :return: The footnotes of this FootnotesResponse.  # noqa: E501
         :rtype: FootnoteCollection
@@ -100,7 +100,7 @@ class FootnotesResponse(object):
     def footnotes(self, footnotes):
         """Sets the footnotes of this FootnotesResponse.
 
-        Gets or sets collection of footnotes.  # noqa: E501
+        Gets or sets the collection of footnotes.  # noqa: E501
 
         :param footnotes: The footnotes of this FootnotesResponse.  # noqa: E501
         :type: FootnoteCollection

@@ -30,9 +30,9 @@ class UpdateRunRequest(object):
     """
     Request model for update_run operation.
     Initializes a new instance.
-    :param name The document name.
-    :param run Run data.
-    :param paragraph_path Path to parent paragraph.
+    :param name The filename of the input document.
+    :param run The properties of the Run object.
+    :param paragraph_path The path to the paragraph in the document tree.
     :param index Object index.
     :param folder Original document folder.
     :param storage Original document storage.

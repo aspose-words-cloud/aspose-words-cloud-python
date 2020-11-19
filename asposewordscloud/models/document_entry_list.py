@@ -67,7 +67,7 @@ class DocumentEntryList(object):
     def apply_base_document_headers_and_footers_to_appending_documents(self):
         """Gets the apply_base_document_headers_and_footers_to_appending_documents of this DocumentEntryList.  # noqa: E501
 
-        Gets or sets parameter that indicates to apply headers and footers from base document to appending documents. Default is true.  # noqa: E501
+        Gets or sets a value indicating whether to apply headers and footers from base document to appending documents. The default value is true.  # noqa: E501
 
         :return: The apply_base_document_headers_and_footers_to_appending_documents of this DocumentEntryList.  # noqa: E501
         :rtype: bool
@@ -78,7 +78,7 @@ class DocumentEntryList(object):
     def apply_base_document_headers_and_footers_to_appending_documents(self, apply_base_document_headers_and_footers_to_appending_documents):
         """Sets the apply_base_document_headers_and_footers_to_appending_documents of this DocumentEntryList.
 
-        Gets or sets parameter that indicates to apply headers and footers from base document to appending documents. Default is true.  # noqa: E501
+        Gets or sets a value indicating whether to apply headers and footers from base document to appending documents. The default value is true.  # noqa: E501
 
         :param apply_base_document_headers_and_footers_to_appending_documents: The apply_base_document_headers_and_footers_to_appending_documents of this DocumentEntryList.  # noqa: E501
         :type: bool
@@ -89,7 +89,7 @@ class DocumentEntryList(object):
     def document_entries(self):
         """Gets the document_entries of this DocumentEntryList.  # noqa: E501
 
-        Gets or sets list of documents.  # noqa: E501
+        Gets or sets the list of documents.  # noqa: E501
 
         :return: The document_entries of this DocumentEntryList.  # noqa: E501
         :rtype: list[DocumentEntry]
@@ -100,7 +100,7 @@ class DocumentEntryList(object):
     def document_entries(self, document_entries):
         """Sets the document_entries of this DocumentEntryList.
 
-        Gets or sets list of documents.  # noqa: E501
+        Gets or sets the list of documents.  # noqa: E501
 
         :param document_entries: The document_entries of this DocumentEntryList.  # noqa: E501
         :type: list[DocumentEntry]

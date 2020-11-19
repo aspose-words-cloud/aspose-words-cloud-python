@@ -30,29 +30,29 @@ class SaveAsTiffRequest(object):
     """
     Request model for save_as_tiff operation.
     Initializes a new instance.
-    :param name The document name.
-    :param save_options Tiff save options.
+    :param name The filename of the input document.
+    :param save_options The save options to TIFF format.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
-    :param use_anti_aliasing Use antialiasing flag.
-    :param use_high_quality_rendering Use high quality flag.
-    :param image_brightness Brightness for the generated images.
-    :param image_color_mode Color mode for the generated images.
+    :param use_anti_aliasing The flag indicating whether to use antialiasing.
+    :param use_high_quality_rendering The flag indicating whether to use high quality.
+    :param image_brightness The level of brightness for the generated images.
+    :param image_color_mode The color mode for the generated images.
     :param image_contrast The contrast for the generated images.
     :param numeral_format The images numeral format.
-    :param page_count Number of pages to render.
-    :param page_index Page index to start rendering.
-    :param paper_color Background image color.
-    :param pixel_format The pixel format of generated images.
-    :param resolution The resolution of generated images.
-    :param scale Zoom factor for generated images.
+    :param page_count The number of pages to render.
+    :param page_index The index of the page to start rendering.
+    :param paper_color The background image color.
+    :param pixel_format The pixel format of the generated images.
+    :param resolution The resolution of the generated images.
+    :param scale The zoom factor for the generated images.
     :param tiff_compression The compression tipe.
-    :param dml_rendering_mode Optional, default is Fallback.
-    :param dml_effects_rendering_mode Optional, default is Simplified.
-    :param tiff_binarization_method Optional, Tiff binarization method, possible values are: FloydSteinbergDithering, Threshold.
-    :param zip_output Optional. A value determining zip output or not.
+    :param dml_rendering_mode The optional dml rendering mode. The default value is Fallback.
+    :param dml_effects_rendering_mode The optional dml effects rendering mode. The default value is Simplified.
+    :param tiff_binarization_method The optional TIFF binarization method. Possible values are: FloydSteinbergDithering, Threshold.
+    :param zip_output The flag indicating whether to ZIP the output.
     :param fonts_location Folder in filestorage with custom fonts.
     """
 

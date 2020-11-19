@@ -31,7 +31,7 @@ import json
 
 
 class DrawingObjectResponse(object):
-    """Response for "drawingObjects/n" resource.
+    """The REST response with a DrawingObject.
     """
 
     """
@@ -67,7 +67,7 @@ class DrawingObjectResponse(object):
     def request_id(self):
         """Gets the request_id of this DrawingObjectResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this DrawingObjectResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class DrawingObjectResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this DrawingObjectResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this DrawingObjectResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class DrawingObjectResponse(object):
     def drawing_object(self):
         """Gets the drawing_object of this DrawingObjectResponse.  # noqa: E501
 
-        Gets or sets drawing object.  # noqa: E501
+        Gets or sets the DrawingObject.  # noqa: E501
 
         :return: The drawing_object of this DrawingObjectResponse.  # noqa: E501
         :rtype: DrawingObject
@@ -100,7 +100,7 @@ class DrawingObjectResponse(object):
     def drawing_object(self, drawing_object):
         """Sets the drawing_object of this DrawingObjectResponse.
 
-        Gets or sets drawing object.  # noqa: E501
+        Gets or sets the DrawingObject.  # noqa: E501
 
         :param drawing_object: The drawing_object of this DrawingObjectResponse.  # noqa: E501
         :type: DrawingObject

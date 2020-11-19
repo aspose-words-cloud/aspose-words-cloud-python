@@ -31,7 +31,7 @@ import json
 
 
 class Shading(object):
-    """Paragraph format shading element.
+    """DTO container with a paragraph format shading element.
     """
 
     """

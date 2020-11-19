@@ -67,7 +67,7 @@ class FieldNames(object):
     def link(self):
         """Gets the link of this FieldNames.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this FieldNames.  # noqa: E501
         :rtype: WordsApiLink
@@ -78,7 +78,7 @@ class FieldNames(object):
     def link(self, link):
         """Sets the link of this FieldNames.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this FieldNames.  # noqa: E501
         :type: WordsApiLink
@@ -89,7 +89,7 @@ class FieldNames(object):
     def names(self):
         """Gets the names of this FieldNames.  # noqa: E501
 
-        Gets or sets collection of fields names.  # noqa: E501
+        Gets or sets the collection of fields names.  # noqa: E501
 
         :return: The names of this FieldNames.  # noqa: E501
         :rtype: list[str]
@@ -100,7 +100,7 @@ class FieldNames(object):
     def names(self, names):
         """Sets the names of this FieldNames.
 
-        Gets or sets collection of fields names.  # noqa: E501
+        Gets or sets the collection of fields names.  # noqa: E501
 
         :param names: The names of this FieldNames.  # noqa: E501
         :type: list[str]

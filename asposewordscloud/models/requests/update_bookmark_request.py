@@ -30,9 +30,9 @@ class UpdateBookmarkRequest(object):
     """
     Request model for update_bookmark operation.
     Initializes a new instance.
-    :param name The document name.
-    :param bookmark_data BookmarkData with new bookmark data.
-    :param bookmark_name The bookmark name.
+    :param name The filename of the input document.
+    :param bookmark_data The properties of the bookmark.
+    :param bookmark_name The name of the bookmark.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

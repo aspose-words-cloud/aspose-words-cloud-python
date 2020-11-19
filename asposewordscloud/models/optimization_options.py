@@ -62,7 +62,7 @@ class OptimizationOptions(object):
     def ms_word_version(self):
         """Gets the ms_word_version of this OptimizationOptions.  # noqa: E501
 
-        Gets or sets specific MSWord version.  # noqa: E501
+        Gets or sets the specific MSWord version.  # noqa: E501
 
         :return: The ms_word_version of this OptimizationOptions.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class OptimizationOptions(object):
     def ms_word_version(self, ms_word_version):
         """Sets the ms_word_version of this OptimizationOptions.
 
-        Gets or sets specific MSWord version.  # noqa: E501
+        Gets or sets the specific MSWord version.  # noqa: E501
 
         :param ms_word_version: The ms_word_version of this OptimizationOptions.  # noqa: E501
         :type: str

@@ -31,7 +31,7 @@ import json
 
 
 class TableProperties(object):
-    """Represents the table properties.
+    """DTO container with table properties.
     """
 
     """
@@ -132,7 +132,7 @@ class TableProperties(object):
     def link(self):
         """Gets the link of this TableProperties.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this TableProperties.  # noqa: E501
         :rtype: WordsApiLink
@@ -143,7 +143,7 @@ class TableProperties(object):
     def link(self, link):
         """Sets the link of this TableProperties.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this TableProperties.  # noqa: E501
         :type: WordsApiLink
@@ -154,7 +154,7 @@ class TableProperties(object):
     def alignment(self):
         """Gets the alignment of this TableProperties.  # noqa: E501
 
-        Gets or sets specifies how an inline table is aligned in the document.  # noqa: E501
+        Gets or sets the option that controls how an inline table is aligned in the document.  # noqa: E501
 
         :return: The alignment of this TableProperties.  # noqa: E501
         :rtype: str
@@ -165,7 +165,7 @@ class TableProperties(object):
     def alignment(self, alignment):
         """Sets the alignment of this TableProperties.
 
-        Gets or sets specifies how an inline table is aligned in the document.  # noqa: E501
+        Gets or sets the option that controls how an inline table is aligned in the document.  # noqa: E501
 
         :param alignment: The alignment of this TableProperties.  # noqa: E501
         :type: str
@@ -184,7 +184,7 @@ class TableProperties(object):
     def allow_auto_fit(self):
         """Gets the allow_auto_fit of this TableProperties.  # noqa: E501
 
-        Gets or sets allows Microsoft Word and Aspose.Words to automatically resize cells in a table to fit their contents.  # noqa: E501
+        Gets or sets a value indicating whether to automatically resize cells in a table to fit their contents.  # noqa: E501
 
         :return: The allow_auto_fit of this TableProperties.  # noqa: E501
         :rtype: bool
@@ -195,7 +195,7 @@ class TableProperties(object):
     def allow_auto_fit(self, allow_auto_fit):
         """Sets the allow_auto_fit of this TableProperties.
 
-        Gets or sets allows Microsoft Word and Aspose.Words to automatically resize cells in a table to fit their contents.  # noqa: E501
+        Gets or sets a value indicating whether to automatically resize cells in a table to fit their contents.  # noqa: E501
 
         :param allow_auto_fit: The allow_auto_fit of this TableProperties.  # noqa: E501
         :type: bool
@@ -206,7 +206,7 @@ class TableProperties(object):
     def bidi(self):
         """Gets the bidi of this TableProperties.  # noqa: E501
 
-        Gets or sets whether this is a right-to-left table.  # noqa: E501
+        Gets or sets a value indicating whether this is a right-to-left table.  # noqa: E501
 
         :return: The bidi of this TableProperties.  # noqa: E501
         :rtype: bool
@@ -217,7 +217,7 @@ class TableProperties(object):
     def bidi(self, bidi):
         """Sets the bidi of this TableProperties.
 
-        Gets or sets whether this is a right-to-left table.  # noqa: E501
+        Gets or sets a value indicating whether this is a right-to-left table.  # noqa: E501
 
         :param bidi: The bidi of this TableProperties.  # noqa: E501
         :type: bool
@@ -272,7 +272,7 @@ class TableProperties(object):
     def left_indent(self):
         """Gets the left_indent of this TableProperties.  # noqa: E501
 
-        Gets or sets the value that represents the left indent of the table.  # noqa: E501
+        Gets or sets the value, that represents the left indent of the table.  # noqa: E501
 
         :return: The left_indent of this TableProperties.  # noqa: E501
         :rtype: float
@@ -283,7 +283,7 @@ class TableProperties(object):
     def left_indent(self, left_indent):
         """Sets the left_indent of this TableProperties.
 
-        Gets or sets the value that represents the left indent of the table.  # noqa: E501
+        Gets or sets the value, that represents the left indent of the table.  # noqa: E501
 
         :param left_indent: The left_indent of this TableProperties.  # noqa: E501
         :type: float
@@ -412,7 +412,7 @@ class TableProperties(object):
     def style_options(self):
         """Gets the style_options of this TableProperties.  # noqa: E501
 
-        Gets or sets bit flags that specify how a table style is applied to this table.  # noqa: E501
+        Gets or sets the bit flags, that specify how a table style is applied to this table.  # noqa: E501
 
         :return: The style_options of this TableProperties.  # noqa: E501
         :rtype: str
@@ -423,7 +423,7 @@ class TableProperties(object):
     def style_options(self, style_options):
         """Sets the style_options of this TableProperties.
 
-        Gets or sets bit flags that specify how a table style is applied to this table.  # noqa: E501
+        Gets or sets the bit flags, that specify how a table style is applied to this table.  # noqa: E501
 
         :param style_options: The style_options of this TableProperties.  # noqa: E501
         :type: str
@@ -442,7 +442,7 @@ class TableProperties(object):
     def text_wrapping(self):
         """Gets the text_wrapping of this TableProperties.  # noqa: E501
 
-        Gets or sets get or sets TextWrapping for table.  # noqa: E501
+        Gets or sets the option that controls text wrapping for the table.  # noqa: E501
 
         :return: The text_wrapping of this TableProperties.  # noqa: E501
         :rtype: str
@@ -453,7 +453,7 @@ class TableProperties(object):
     def text_wrapping(self, text_wrapping):
         """Sets the text_wrapping of this TableProperties.
 
-        Gets or sets get or sets TextWrapping for table.  # noqa: E501
+        Gets or sets the option that controls text wrapping for the table.  # noqa: E501
 
         :param text_wrapping: The text_wrapping of this TableProperties.  # noqa: E501
         :type: str

@@ -30,8 +30,8 @@ class CompareDocumentRequest(object):
     """
     Request model for compare_document operation.
     Initializes a new instance.
-    :param name Original document name.
-    :param compare_data CompareData with a document to compare.
+    :param name The filename of the input document.
+    :param compare_data The properties of the document to compare with.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
