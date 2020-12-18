@@ -30,7 +30,7 @@ class CreateFolderRequest(object):
     """
     Request model for create_folder operation.
     Initializes a new instance.
-    :param path Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively.
+    :param path Folder path to create e.g. 'folder_1/folder_2/'.
     :param storage_name Storage name.
     """
 

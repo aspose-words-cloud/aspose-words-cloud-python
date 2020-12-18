@@ -779,8 +779,8 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
+        :param src_path str : Source file path e.g. '/folder/file.ext'. (required)
         :param dest_path str : Destination file path. (required)
-        :param src_path str : Source file's path e.g. '/Folder 1/file.ext' or '/Bucket/Folder 1/file.ext'. (required)
         :param src_storage_name str : Source storage name.
         :param dest_storage_name str : Destination storage name.
         :param version_id str : File version ID to copy.
@@ -855,8 +855,8 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
+        :param src_path str : Source folder path e.g. '/src'. (required)
         :param dest_path str : Destination folder path e.g. '/dst'. (required)
-        :param src_path str : Source folder path e.g. /Folder1. (required)
         :param src_storage_name str : Source storage name.
         :param dest_storage_name str : Destination storage name.
         :return: None
@@ -1087,7 +1087,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param path str : Target folder's path e.g. Folder1/Folder2/. The folders will be created recursively. (required)
+        :param path str : Folder path to create e.g. 'folder_1/folder_2/'. (required)
         :param storage_name str : Storage name.
         :return: None
                  If the method is called asynchronously,
@@ -1886,7 +1886,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param path str : Path of the file including file name and extension e.g. /Folder1/file.ext. (required)
+        :param path str : File path e.g. '/folder/file.ext'. (required)
         :param storage_name str : Storage name.
         :param version_id str : File version ID to delete.
         :return: None
@@ -1960,7 +1960,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param path str : Folder path e.g. /Folder1s. (required)
+        :param path str : Folder path e.g. '/folder'. (required)
         :param storage_name str : Storage name.
         :param recursive bool : Enable to delete folders, subfolders and files.
         :return: None
@@ -3243,7 +3243,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param path str : Path of the file including the file name and extension e.g. /folder1/file.ext. (required)
+        :param path str : File path e.g. '/folder/file.ext'. (required)
         :param storage_name str : Storage name.
         :param version_id str : File version ID to download.
         :return: file
@@ -5249,7 +5249,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param path str : Folder path e.g. /Folder1. (required)
+        :param path str : Folder path e.g. '/folder'. (required)
         :param storage_name str : Storage name.
         :return: FilesList
                  If the method is called asynchronously,
@@ -9384,8 +9384,8 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
+        :param src_path str : Source file path e.g. '/src.ext'. (required)
         :param dest_path str : Destination file path e.g. '/dest.ext'. (required)
-        :param src_path str : Source file's path e.g. '/Folder 1/file.ext' or '/Bucket/Folder 1/file.ext'. (required)
         :param src_storage_name str : Source storage name.
         :param dest_storage_name str : Destination storage name.
         :param version_id str : File version ID to move.
@@ -9460,8 +9460,8 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
+        :param src_path str : Folder path to move e.g. '/folder'. (required)
         :param dest_path str : Destination folder path to move to e.g '/dst'. (required)
-        :param src_path str : Source folder path e.g. /Folder1. (required)
         :param src_storage_name str : Source storage name.
         :param dest_storage_name str : Destination storage name.
         :return: None

@@ -30,25 +30,25 @@ class CopyFolderRequest(object):
     """
     Request model for copy_folder operation.
     Initializes a new instance.
+    :param src_path Source folder path e.g. '/src'.
     :param dest_path Destination folder path e.g. '/dst'.
-    :param src_path Source folder path e.g. /Folder1.
     :param src_storage_name Source storage name.
     :param dest_storage_name Destination storage name.
     """
 
-    def __init__(self, dest_path, src_path, src_storage_name=None, dest_storage_name=None):
-        self.dest_path = dest_path
+    def __init__(self, src_path, dest_path, src_storage_name=None, dest_storage_name=None):
         self.src_path = src_path
+        self.dest_path = dest_path
         self.src_storage_name = src_storage_name
         self.dest_storage_name = dest_storage_name
 
     def create_http_request(self, api_client):
-        # verify the required parameter 'dest_path' is set
-        if self.dest_path is None:
-            raise ValueError("Missing the required parameter `dest_path` when calling `copy_folder`")  # noqa: E501
         # verify the required parameter 'src_path' is set
         if self.src_path is None:
             raise ValueError("Missing the required parameter `src_path` when calling `copy_folder`")  # noqa: E501
+        # verify the required parameter 'dest_path' is set
+        if self.dest_path is None:
+            raise ValueError("Missing the required parameter `dest_path` when calling `copy_folder`")  # noqa: E501
 
         path = '/v4.0/words/storage/folder/copy/{srcPath}'
         path_params = {}
