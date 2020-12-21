@@ -30,7 +30,7 @@ class DownloadFileRequest(object):
     """
     Request model for download_file operation.
     Initializes a new instance.
-    :param path File path e.g. '/folder/file.ext'.
+    :param path Path of the file including the file name and extension e.g. /folder1/file.ext.
     :param storage_name Storage name.
     :param version_id File version ID to download.
     """

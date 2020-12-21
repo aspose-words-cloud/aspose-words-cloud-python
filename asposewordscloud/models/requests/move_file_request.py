@@ -30,27 +30,27 @@ class MoveFileRequest(object):
     """
     Request model for move_file operation.
     Initializes a new instance.
-    :param src_path Source file path e.g. '/src.ext'.
     :param dest_path Destination file path e.g. '/dest.ext'.
+    :param src_path Source file's path e.g. '/Folder 1/file.ext' or '/Bucket/Folder 1/file.ext'.
     :param src_storage_name Source storage name.
     :param dest_storage_name Destination storage name.
     :param version_id File version ID to move.
     """
 
-    def __init__(self, src_path, dest_path, src_storage_name=None, dest_storage_name=None, version_id=None):
-        self.src_path = src_path
+    def __init__(self, dest_path, src_path, src_storage_name=None, dest_storage_name=None, version_id=None):
         self.dest_path = dest_path
+        self.src_path = src_path
         self.src_storage_name = src_storage_name
         self.dest_storage_name = dest_storage_name
         self.version_id = version_id
 
     def create_http_request(self, api_client):
-        # verify the required parameter 'src_path' is set
-        if self.src_path is None:
-            raise ValueError("Missing the required parameter `src_path` when calling `move_file`")  # noqa: E501
         # verify the required parameter 'dest_path' is set
         if self.dest_path is None:
             raise ValueError("Missing the required parameter `dest_path` when calling `move_file`")  # noqa: E501
+        # verify the required parameter 'src_path' is set
+        if self.src_path is None:
+            raise ValueError("Missing the required parameter `src_path` when calling `move_file`")  # noqa: E501
 
         path = '/v4.0/words/storage/file/move/{srcPath}'
         path_params = {}

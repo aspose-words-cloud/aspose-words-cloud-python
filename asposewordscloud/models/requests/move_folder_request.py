@@ -30,25 +30,25 @@ class MoveFolderRequest(object):
     """
     Request model for move_folder operation.
     Initializes a new instance.
-    :param src_path Folder path to move e.g. '/folder'.
     :param dest_path Destination folder path to move to e.g '/dst'.
+    :param src_path Source folder path e.g. /Folder1.
     :param src_storage_name Source storage name.
     :param dest_storage_name Destination storage name.
     """
 
-    def __init__(self, src_path, dest_path, src_storage_name=None, dest_storage_name=None):
-        self.src_path = src_path
+    def __init__(self, dest_path, src_path, src_storage_name=None, dest_storage_name=None):
         self.dest_path = dest_path
+        self.src_path = src_path
         self.src_storage_name = src_storage_name
         self.dest_storage_name = dest_storage_name
 
     def create_http_request(self, api_client):
-        # verify the required parameter 'src_path' is set
-        if self.src_path is None:
-            raise ValueError("Missing the required parameter `src_path` when calling `move_folder`")  # noqa: E501
         # verify the required parameter 'dest_path' is set
         if self.dest_path is None:
             raise ValueError("Missing the required parameter `dest_path` when calling `move_folder`")  # noqa: E501
+        # verify the required parameter 'src_path' is set
+        if self.src_path is None:
+            raise ValueError("Missing the required parameter `src_path` when calling `move_folder`")  # noqa: E501
 
         path = '/v4.0/words/storage/folder/move/{srcPath}'
         path_params = {}
