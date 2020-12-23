@@ -68,6 +68,7 @@ class TestFolder(BaseTestContext):
 
         result = self.words_api.get_files_list(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.value, 'Validate GetFilesList response')
 
     #
     # Test for copy folder.

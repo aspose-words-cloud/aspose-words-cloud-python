@@ -67,7 +67,7 @@ class XmlColor(object):
     def alpha(self):
         """Gets the alpha of this XmlColor.  # noqa: E501
 
-        Gets or sets alpha component of color structure.  # noqa: E501
+        Gets or sets the Alpha component of color structure.  # noqa: E501
 
         :return: The alpha of this XmlColor.  # noqa: E501
         :rtype: int
@@ -78,7 +78,7 @@ class XmlColor(object):
     def alpha(self, alpha):
         """Sets the alpha of this XmlColor.
 
-        Gets or sets alpha component of color structure.  # noqa: E501
+        Gets or sets the Alpha component of color structure.  # noqa: E501
 
         :param alpha: The alpha of this XmlColor.  # noqa: E501
         :type: int
@@ -89,7 +89,7 @@ class XmlColor(object):
     def web(self):
         """Gets the web of this XmlColor.  # noqa: E501
 
-        Gets or sets hTML string color representation.  # noqa: E501
+        Gets or sets the HTML string color representation.  # noqa: E501
 
         :return: The web of this XmlColor.  # noqa: E501
         :rtype: str
@@ -100,7 +100,7 @@ class XmlColor(object):
     def web(self, web):
         """Sets the web of this XmlColor.
 
-        Gets or sets hTML string color representation.  # noqa: E501
+        Gets or sets the HTML string color representation.  # noqa: E501
 
         :param web: The web of this XmlColor.  # noqa: E501
         :type: str

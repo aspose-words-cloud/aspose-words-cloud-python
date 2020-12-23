@@ -24,11 +24,13 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
+from six.moves.urllib.parse import quote
+
 class SaveAsRequest(object):
     """
     Request model for save_as operation.
     Initializes a new instance.
-    :param name The document name.
+    :param name The filename of the input document.
     :param save_options_data Save options.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -45,3 +47,70 @@ class SaveAsRequest(object):
         self.load_encoding = load_encoding
         self.password = password
         self.fonts_location = fonts_location
+
+    def create_http_request(self, api_client):
+        # verify the required parameter 'name' is set
+        if self.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `save_as`")  # noqa: E501
+        # verify the required parameter 'save_options_data' is set
+        if self.save_options_data is None:
+            raise ValueError("Missing the required parameter `save_options_data` when calling `save_as`")  # noqa: E501
+
+        path = '/v4.0/words/{name}/saveAs'
+        path_params = {}
+        if self.name is not None:
+            path_params['name'] = self.name  # noqa: E501
+        else:
+            path_params['name'] = ''  # noqa: E501
+
+        # path parameters
+        collection_formats = {}
+        if path_params:
+            path_params = api_client.sanitize_for_serialization(path_params)
+            path_params = api_client.parameters_to_tuples(path_params, collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                path = path.replace(
+                    '{%s}' % k,
+                    quote(str(v), safe=api_client.configuration.safe_chars_for_path_param)
+                )
+
+        # remove optional path parameters
+        path = path.replace('//', '/')
+
+        query_params = []
+        if self.folder is not None:
+                query_params.append(('folder', self.folder))  # noqa: E501
+        if self.storage is not None:
+                query_params.append(('storage', self.storage))  # noqa: E501
+        if self.load_encoding is not None:
+                query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
+        if self.password is not None:
+                query_params.append(('password', self.password))  # noqa: E501
+        if self.fonts_location is not None:
+                query_params.append(('fontsLocation', self.fonts_location))  # noqa: E501
+
+        header_params = {}
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        form_params = []
+
+        body_params = None
+        if self.save_options_data is not None:
+            body_params = self.save_options_data
+
+        return {
+            "method": "PUT",
+            "path": path,
+            "query_params": query_params,
+            "header_params": header_params,
+            "form_params": form_params,
+            "body": body_params,
+            "collection_formats": collection_formats,
+            "response_type": SaveResponse  # noqa: E501
+        }
+
+    def get_response_type(self):
+        return SaveResponse  # noqa: E501

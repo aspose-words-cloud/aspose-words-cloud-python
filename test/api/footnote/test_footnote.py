@@ -47,6 +47,22 @@ class TestFootnote(BaseTestContext):
 
         result = self.words_api.insert_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.footnote, 'Validate InsertFootnote response')
+        self.assertEqual('0.1.7.1', result.footnote.node_id)
+        self.assertEqual(' test endnote' + '\r\n', result.footnote.text)
+
+    #
+    # Test for adding footnote online.
+    #
+    def test_insert_footnote_online(self):
+        footnoteFolder = 'DocumentElements/Footnotes'
+
+        requestFootnoteDto = asposewordscloud.FootnoteInsert(footnote_type='Endnote', text='test endnote')
+        request = asposewordscloud.models.requests.InsertFootnoteOnlineRequest(document=open(os.path.join(self.local_test_folder, footnoteFolder + '/Footnote.doc'), 'rb'), footnote_dto=requestFootnoteDto, node_path='')
+
+        result = self.words_api.insert_footnote_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for adding footnote without node path.
@@ -63,6 +79,9 @@ class TestFootnote(BaseTestContext):
 
         result = self.words_api.insert_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.footnote, 'Validate InsertFootnoteWithoutNodePath response')
+        self.assertEqual('0.1.7.1', result.footnote.node_id)
+        self.assertEqual(' test endnote' + '\r\n', result.footnote.text)
 
     #
     # Test for deleting footnote.
@@ -77,6 +96,18 @@ class TestFootnote(BaseTestContext):
         request = asposewordscloud.models.requests.DeleteFootnoteRequest(name=remoteFileName, index=0, node_path='', folder=remoteDataFolder)
 
         self.words_api.delete_footnote(request)
+
+
+    #
+    # Test for deleting footnote online.
+    #
+    def test_delete_footnote_online(self):
+        footnoteFolder = 'DocumentElements/Footnotes'
+
+        request = asposewordscloud.models.requests.DeleteFootnoteOnlineRequest(document=open(os.path.join(self.local_test_folder, footnoteFolder + '/Footnote.doc'), 'rb'), index=0, node_path='')
+
+        result = self.words_api.delete_footnote_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
 
 
     #
@@ -108,6 +139,22 @@ class TestFootnote(BaseTestContext):
 
         result = self.words_api.get_footnotes(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.footnotes, 'Validate GetFootnotes response')
+        self.assertIsNotNone(result.footnotes.list, 'Validate GetFootnotes response')
+        self.assertEqual(6, len(result.footnotes.list))
+        self.assertEqual(' Footnote 1.' + '\r\n', result.footnotes.list[0].text)
+
+    #
+    # Test for getting footnotes online.
+    #
+    def test_get_footnotes_online(self):
+        footnoteFolder = 'DocumentElements/Footnotes'
+
+        request = asposewordscloud.models.requests.GetFootnotesOnlineRequest(document=open(os.path.join(self.local_test_folder, footnoteFolder + '/Footnote.doc'), 'rb'), node_path='')
+
+        result = self.words_api.get_footnotes_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for getting footnotes without node path.
@@ -123,6 +170,10 @@ class TestFootnote(BaseTestContext):
 
         result = self.words_api.get_footnotes(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.footnotes, 'Validate GetFootnotesWithoutNodePath response')
+        self.assertIsNotNone(result.footnotes.list, 'Validate GetFootnotesWithoutNodePath response')
+        self.assertEqual(6, len(result.footnotes.list))
+        self.assertEqual(' Footnote 1.' + '\r\n', result.footnotes.list[0].text)
 
     #
     # Test for getting footnote.
@@ -138,6 +189,20 @@ class TestFootnote(BaseTestContext):
 
         result = self.words_api.get_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.footnote, 'Validate GetFootnote response')
+        self.assertEqual(' Footnote 1.' + '\r\n', result.footnote.text)
+
+    #
+    # Test for getting footnote online.
+    #
+    def test_get_footnote_online(self):
+        footnoteFolder = 'DocumentElements/Footnotes'
+
+        request = asposewordscloud.models.requests.GetFootnoteOnlineRequest(document=open(os.path.join(self.local_test_folder, footnoteFolder + '/Footnote.doc'), 'rb'), index=0, node_path='')
+
+        result = self.words_api.get_footnote_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for getting footnote without node path.
@@ -153,6 +218,8 @@ class TestFootnote(BaseTestContext):
 
         result = self.words_api.get_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.footnote, 'Validate GetFootnoteWithoutNodePath response')
+        self.assertEqual(' Footnote 1.' + '\r\n', result.footnote.text)
 
     #
     # Test for updating footnote.
@@ -165,10 +232,25 @@ class TestFootnote(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, footnoteFolder + '/Footnote.doc'), 'rb'))
 
         requestFootnoteDto = asposewordscloud.FootnoteUpdate(text='new text is here')
-        request = asposewordscloud.models.requests.UpdateFootnoteRequest(name=remoteFileName, footnote_dto=requestFootnoteDto, index=0, node_path='', folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.UpdateFootnoteRequest(name=remoteFileName, index=0, footnote_dto=requestFootnoteDto, node_path='', folder=remoteDataFolder)
 
         result = self.words_api.update_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.footnote, 'Validate UpdateFootnote response')
+        self.assertEqual(' new text is here' + '\r\n', result.footnote.text)
+
+    #
+    # Test for updating footnote online.
+    #
+    def test_update_footnote_online(self):
+        footnoteFolder = 'DocumentElements/Footnotes'
+
+        requestFootnoteDto = asposewordscloud.FootnoteUpdate(text='new text is here')
+        request = asposewordscloud.models.requests.UpdateFootnoteOnlineRequest(document=open(os.path.join(self.local_test_folder, footnoteFolder + '/Footnote.doc'), 'rb'), index=0, footnote_dto=requestFootnoteDto, node_path='')
+
+        result = self.words_api.update_footnote_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for updating footnote without node path.
@@ -181,7 +263,9 @@ class TestFootnote(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, footnoteFolder + '/Footnote.doc'), 'rb'))
 
         requestFootnoteDto = asposewordscloud.FootnoteUpdate(text='new text is here')
-        request = asposewordscloud.models.requests.UpdateFootnoteRequest(name=remoteFileName, footnote_dto=requestFootnoteDto, index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.UpdateFootnoteRequest(name=remoteFileName, index=0, footnote_dto=requestFootnoteDto, folder=remoteDataFolder)
 
         result = self.words_api.update_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.footnote, 'Validate UpdateFootnoteWithoutNodePath response')
+        self.assertEqual(' new text is here' + '\r\n', result.footnote.text)

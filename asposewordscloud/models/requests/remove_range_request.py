@@ -24,12 +24,14 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
+from six.moves.urllib.parse import quote
+
 class RemoveRangeRequest(object):
     """
     Request model for remove_range operation.
     Initializes a new instance.
-    :param name The document.
-    :param range_start_identifier The range start identifier. Identifier is the value of the "nodeId" field, which every document node has, extended with the prefix "id". It looks like "id0.0.7". Also values like "image5" and "table3" can be used as an identifier for images and tables, where the number is an index of the image/table.
+    :param name The filename of the input document.
+    :param range_start_identifier The range start identifier.
     :param range_end_identifier The range end identifier.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -47,3 +49,72 @@ class RemoveRangeRequest(object):
         self.load_encoding = load_encoding
         self.password = password
         self.dest_file_name = dest_file_name
+
+    def create_http_request(self, api_client):
+        # verify the required parameter 'name' is set
+        if self.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `remove_range`")  # noqa: E501
+        # verify the required parameter 'range_start_identifier' is set
+        if self.range_start_identifier is None:
+            raise ValueError("Missing the required parameter `range_start_identifier` when calling `remove_range`")  # noqa: E501
+
+        path = '/v4.0/words/{name}/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
+        path_params = {}
+        if self.name is not None:
+            path_params['name'] = self.name  # noqa: E501
+        else:
+            path_params['name'] = ''  # noqa: E501
+        if self.range_start_identifier is not None:
+            path_params['rangeStartIdentifier'] = self.range_start_identifier  # noqa: E501
+        else:
+            path_params['rangeStartIdentifier'] = ''  # noqa: E501
+        if self.range_end_identifier is not None:
+            path_params['rangeEndIdentifier'] = self.range_end_identifier  # noqa: E501
+        else:
+            path_params['rangeEndIdentifier'] = ''  # noqa: E501
+
+        # path parameters
+        collection_formats = {}
+        if path_params:
+            path_params = api_client.sanitize_for_serialization(path_params)
+            path_params = api_client.parameters_to_tuples(path_params, collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                path = path.replace(
+                    '{%s}' % k,
+                    quote(str(v), safe=api_client.configuration.safe_chars_for_path_param)
+                )
+
+        # remove optional path parameters
+        path = path.replace('//', '/')
+
+        query_params = []
+        if self.folder is not None:
+                query_params.append(('folder', self.folder))  # noqa: E501
+        if self.storage is not None:
+                query_params.append(('storage', self.storage))  # noqa: E501
+        if self.load_encoding is not None:
+                query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
+        if self.password is not None:
+                query_params.append(('password', self.password))  # noqa: E501
+        if self.dest_file_name is not None:
+                query_params.append(('destFileName', self.dest_file_name))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+
+        body_params = None
+        return {
+            "method": "DELETE",
+            "path": path,
+            "query_params": query_params,
+            "header_params": header_params,
+            "form_params": form_params,
+            "body": body_params,
+            "collection_formats": collection_formats,
+            "response_type": DocumentResponse  # noqa: E501
+        }
+
+    def get_response_type(self):
+        return DocumentResponse  # noqa: E501

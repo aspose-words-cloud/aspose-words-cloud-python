@@ -63,11 +63,11 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
 
         # Authentication Settings
         # dict to store API key(s)
-        self.api_key = {}
-        self.api_key['api_key'] = ""
-        self.api_key['app_sid'] = ""
+        self.client_secret = {}
+        self.client_secret['client_secret'] = ""
+        self.client_secret['client_id'] = ""
         # dict to store API prefix (e.g. Bearer)
-        self.api_key_prefix = {}
+        self.client_secret_prefix = {}
         # Username for HTTP basic authentication
         self.username = ""
         # Password for HTTP basic authentication
@@ -212,17 +212,17 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         self.__logger_format = value
         self.logger_formatter = logging.Formatter(self.__logger_format)
 
-    def get_api_key_with_prefix(self, identifier):
+    def get_client_secret_with_prefix(self, identifier):
         """Gets API key (with prefix if set).
 
-        :param identifier: The identifier of apiKey.
+        :param identifier: The identifier of clientSecret.
         :return: The token for api key authentication.
         """
-        if (self.api_key.get(identifier) and
-                self.api_key_prefix.get(identifier)):
-            return self.api_key_prefix[identifier] + ' ' + self.api_key[identifier]  # noqa: E501
-        elif self.api_key.get(identifier):
-            return self.api_key[identifier]
+        if (self.client_secret.get(identifier) and
+                self.client_secret_prefix.get(identifier)):
+            return self.client_secret_prefix[identifier] + ' ' + self.client_secret[identifier]  # noqa: E501
+        elif self.client_secret.get(identifier):
+            return self.client_secret[identifier]
 
     def get_basic_auth_token(self):
         """Gets HTTP basic authentication header (string).
@@ -258,6 +258,6 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         return "Python SDK Debug Report:\n"\
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
-               "Version of the API: 20.7\n"\
-               "SDK Package Version: 20.7".\
+               "Version of the API: 20.11\n"\
+               "SDK Package Version: 20.11".\
                format(env=sys.platform, pyversion=sys.version)

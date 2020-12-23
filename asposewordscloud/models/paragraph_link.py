@@ -72,7 +72,7 @@ class ParagraphLink(object):
     def link(self):
         """Gets the link of this ParagraphLink.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this ParagraphLink.  # noqa: E501
         :rtype: WordsApiLink
@@ -83,7 +83,7 @@ class ParagraphLink(object):
     def link(self, link):
         """Sets the link of this ParagraphLink.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this ParagraphLink.  # noqa: E501
         :type: WordsApiLink
@@ -94,7 +94,7 @@ class ParagraphLink(object):
     def node_id(self):
         """Gets the node_id of this ParagraphLink.  # noqa: E501
 
-        Gets or sets node id.  # noqa: E501
+        Gets or sets the node id.  # noqa: E501
 
         :return: The node_id of this ParagraphLink.  # noqa: E501
         :rtype: str
@@ -105,7 +105,7 @@ class ParagraphLink(object):
     def node_id(self, node_id):
         """Sets the node_id of this ParagraphLink.
 
-        Gets or sets node id.  # noqa: E501
+        Gets or sets the node id.  # noqa: E501
 
         :param node_id: The node_id of this ParagraphLink.  # noqa: E501
         :type: str
@@ -116,7 +116,7 @@ class ParagraphLink(object):
     def text(self):
         """Gets the text of this ParagraphLink.  # noqa: E501
 
-        Gets or sets paragraph's text.  # noqa: E501
+        Gets or sets the paragraph's text.  # noqa: E501
 
         :return: The text of this ParagraphLink.  # noqa: E501
         :rtype: str
@@ -127,7 +127,7 @@ class ParagraphLink(object):
     def text(self, text):
         """Sets the text of this ParagraphLink.
 
-        Gets or sets paragraph's text.  # noqa: E501
+        Gets or sets the paragraph's text.  # noqa: E501
 
         :param text: The text of this ParagraphLink.  # noqa: E501
         :type: str

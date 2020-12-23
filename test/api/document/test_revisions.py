@@ -46,6 +46,20 @@ class TestRevisions(BaseTestContext):
 
         result = self.words_api.accept_all_revisions(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.result, 'Validate AcceptAllRevisions response')
+        self.assertIsNotNone(result.result.dest, 'Validate AcceptAllRevisions response')
+
+    #
+    # Test for accepting revisions in document online.
+    #
+    def test_accept_all_revisions_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.AcceptAllRevisionsOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'))
+
+        result = self.words_api.accept_all_revisions_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for rejecting revisions in document.
@@ -61,3 +75,17 @@ class TestRevisions(BaseTestContext):
 
         result = self.words_api.reject_all_revisions(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.result, 'Validate RejectAllRevisions response')
+        self.assertIsNotNone(result.result.dest, 'Validate RejectAllRevisions response')
+
+    #
+    # Test for rejecting revisions in document online.
+    #
+    def test_reject_all_revisions_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.RejectAllRevisionsOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'))
+
+        result = self.words_api.reject_all_revisions_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+

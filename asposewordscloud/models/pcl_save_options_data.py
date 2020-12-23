@@ -152,7 +152,7 @@ class PclSaveOptionsData(object):
     def dml3_d_effects_rendering_mode(self):
         """Gets the dml3_d_effects_rendering_mode of this PclSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
+        Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
 
         :return: The dml3_d_effects_rendering_mode of this PclSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -163,7 +163,7 @@ class PclSaveOptionsData(object):
     def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
         """Sets the dml3_d_effects_rendering_mode of this PclSaveOptionsData.
 
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
+        Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
 
         :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this PclSaveOptionsData.  # noqa: E501
         :type: str
@@ -182,7 +182,7 @@ class PclSaveOptionsData(object):
     def dml_effects_rendering_mode(self):
         """Gets the dml_effects_rendering_mode of this PclSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :return: The dml_effects_rendering_mode of this PclSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -193,7 +193,7 @@ class PclSaveOptionsData(object):
     def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
         """Sets the dml_effects_rendering_mode of this PclSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this PclSaveOptionsData.  # noqa: E501
         :type: str
@@ -204,7 +204,7 @@ class PclSaveOptionsData(object):
     def dml_rendering_mode(self):
         """Gets the dml_rendering_mode of this PclSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
+        Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
 
         :return: The dml_rendering_mode of this PclSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -215,7 +215,7 @@ class PclSaveOptionsData(object):
     def dml_rendering_mode(self, dml_rendering_mode):
         """Sets the dml_rendering_mode of this PclSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
+        Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
 
         :param dml_rendering_mode: The dml_rendering_mode of this PclSaveOptionsData.  # noqa: E501
         :type: str
@@ -226,7 +226,7 @@ class PclSaveOptionsData(object):
     def file_name(self):
         """Gets the file_name of this PclSaveOptionsData.  # noqa: E501
 
-        Gets or sets name of destination file.  # noqa: E501
+        Gets or sets the name of destination file.  # noqa: E501
 
         :return: The file_name of this PclSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -237,7 +237,7 @@ class PclSaveOptionsData(object):
     def file_name(self, file_name):
         """Sets the file_name of this PclSaveOptionsData.
 
-        Gets or sets name of destination file.  # noqa: E501
+        Gets or sets the name of destination file.  # noqa: E501
 
         :param file_name: The file_name of this PclSaveOptionsData.  # noqa: E501
         :type: str
@@ -248,7 +248,7 @@ class PclSaveOptionsData(object):
     def save_format(self):
         """Gets the save_format of this PclSaveOptionsData.  # noqa: E501
 
-        Gets or sets format of save.  # noqa: E501
+        Gets or sets the format of save.  # noqa: E501
 
         :return: The save_format of this PclSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -259,7 +259,7 @@ class PclSaveOptionsData(object):
     def save_format(self, save_format):
         """Sets the save_format of this PclSaveOptionsData.
 
-        Gets or sets format of save.  # noqa: E501
+        Gets or sets the format of save.  # noqa: E501
 
         :param save_format: The save_format of this PclSaveOptionsData.  # noqa: E501
         :type: str
@@ -270,7 +270,7 @@ class PclSaveOptionsData(object):
     def update_fields(self):
         """Gets the update_fields of this PclSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.  # noqa: E501
+        Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.  # noqa: E501
 
         :return: The update_fields of this PclSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -281,7 +281,7 @@ class PclSaveOptionsData(object):
     def update_fields(self, update_fields):
         """Sets the update_fields of this PclSaveOptionsData.
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.  # noqa: E501
+        Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.  # noqa: E501
 
         :param update_fields: The update_fields of this PclSaveOptionsData.  # noqa: E501
         :type: bool
@@ -292,7 +292,7 @@ class PclSaveOptionsData(object):
     def update_last_printed_property(self):
         """Gets the update_last_printed_property of this PclSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
 
         :return: The update_last_printed_property of this PclSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -303,7 +303,7 @@ class PclSaveOptionsData(object):
     def update_last_printed_property(self, update_last_printed_property):
         """Sets the update_last_printed_property of this PclSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
 
         :param update_last_printed_property: The update_last_printed_property of this PclSaveOptionsData.  # noqa: E501
         :type: bool
@@ -314,7 +314,7 @@ class PclSaveOptionsData(object):
     def update_last_saved_time_property(self):
         """Gets the update_last_saved_time_property of this PclSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
 
         :return: The update_last_saved_time_property of this PclSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -325,7 +325,7 @@ class PclSaveOptionsData(object):
     def update_last_saved_time_property(self, update_last_saved_time_property):
         """Sets the update_last_saved_time_property of this PclSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
 
         :param update_last_saved_time_property: The update_last_saved_time_property of this PclSaveOptionsData.  # noqa: E501
         :type: bool
@@ -336,7 +336,7 @@ class PclSaveOptionsData(object):
     def update_sdt_content(self):
         """Gets the update_sdt_content of this PclSaveOptionsData.  # noqa: E501
 
-        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :return: The update_sdt_content of this PclSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -347,7 +347,7 @@ class PclSaveOptionsData(object):
     def update_sdt_content(self, update_sdt_content):
         """Sets the update_sdt_content of this PclSaveOptionsData.
 
-        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :param update_sdt_content: The update_sdt_content of this PclSaveOptionsData.  # noqa: E501
         :type: bool
@@ -358,7 +358,7 @@ class PclSaveOptionsData(object):
     def zip_output(self):
         """Gets the zip_output of this PclSaveOptionsData.  # noqa: E501
 
-        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
 
         :return: The zip_output of this PclSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -369,7 +369,7 @@ class PclSaveOptionsData(object):
     def zip_output(self, zip_output):
         """Sets the zip_output of this PclSaveOptionsData.
 
-        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
 
         :param zip_output: The zip_output of this PclSaveOptionsData.  # noqa: E501
         :type: bool
@@ -380,7 +380,7 @@ class PclSaveOptionsData(object):
     def color_mode(self):
         """Gets the color_mode of this PclSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
+        Gets or sets the value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
 
         :return: The color_mode of this PclSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -391,7 +391,7 @@ class PclSaveOptionsData(object):
     def color_mode(self, color_mode):
         """Sets the color_mode of this PclSaveOptionsData.
 
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
+        Gets or sets the value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
 
         :param color_mode: The color_mode of this PclSaveOptionsData.  # noqa: E501
         :type: str
@@ -402,7 +402,7 @@ class PclSaveOptionsData(object):
     def jpeg_quality(self):
         """Gets the jpeg_quality of this PclSaveOptionsData.  # noqa: E501
 
-        Gets or sets determines the quality of the JPEG images inside PDF document.  # noqa: E501
+        Gets or sets the quality of the JPEG images inside PDF document.  # noqa: E501
 
         :return: The jpeg_quality of this PclSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -413,7 +413,7 @@ class PclSaveOptionsData(object):
     def jpeg_quality(self, jpeg_quality):
         """Sets the jpeg_quality of this PclSaveOptionsData.
 
-        Gets or sets determines the quality of the JPEG images inside PDF document.  # noqa: E501
+        Gets or sets the quality of the JPEG images inside PDF document.  # noqa: E501
 
         :param jpeg_quality: The jpeg_quality of this PclSaveOptionsData.  # noqa: E501
         :type: int
@@ -424,7 +424,7 @@ class PclSaveOptionsData(object):
     def metafile_rendering_options(self):
         """Gets the metafile_rendering_options of this PclSaveOptionsData.  # noqa: E501
 
-        Gets or sets allows to specify metafile rendering options.  # noqa: E501
+        Gets or sets the metafile rendering options.  # noqa: E501
 
         :return: The metafile_rendering_options of this PclSaveOptionsData.  # noqa: E501
         :rtype: MetafileRenderingOptionsData
@@ -435,7 +435,7 @@ class PclSaveOptionsData(object):
     def metafile_rendering_options(self, metafile_rendering_options):
         """Sets the metafile_rendering_options of this PclSaveOptionsData.
 
-        Gets or sets allows to specify metafile rendering options.  # noqa: E501
+        Gets or sets the metafile rendering options.  # noqa: E501
 
         :param metafile_rendering_options: The metafile_rendering_options of this PclSaveOptionsData.  # noqa: E501
         :type: MetafileRenderingOptionsData
@@ -446,7 +446,7 @@ class PclSaveOptionsData(object):
     def numeral_format(self):
         """Gets the numeral_format of this PclSaveOptionsData.  # noqa: E501
 
-        Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
+        Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
 
         :return: The numeral_format of this PclSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -457,7 +457,7 @@ class PclSaveOptionsData(object):
     def numeral_format(self, numeral_format):
         """Sets the numeral_format of this PclSaveOptionsData.
 
-        Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
+        Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
 
         :param numeral_format: The numeral_format of this PclSaveOptionsData.  # noqa: E501
         :type: str
@@ -468,7 +468,7 @@ class PclSaveOptionsData(object):
     def optimize_output(self):
         """Gets the optimize_output of this PclSaveOptionsData.  # noqa: E501
 
-        Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
+        Gets or sets a value indicating whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.. The default value is false.  # noqa: E501
 
         :return: The optimize_output of this PclSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -479,7 +479,7 @@ class PclSaveOptionsData(object):
     def optimize_output(self, optimize_output):
         """Sets the optimize_output of this PclSaveOptionsData.
 
-        Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
+        Gets or sets a value indicating whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.. The default value is false.  # noqa: E501
 
         :param optimize_output: The optimize_output of this PclSaveOptionsData.  # noqa: E501
         :type: bool
@@ -490,7 +490,7 @@ class PclSaveOptionsData(object):
     def page_count(self):
         """Gets the page_count of this PclSaveOptionsData.  # noqa: E501
 
-        Gets or sets determines number of pages to render.  # noqa: E501
+        Gets or sets the number of pages to render.  # noqa: E501
 
         :return: The page_count of this PclSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -501,7 +501,7 @@ class PclSaveOptionsData(object):
     def page_count(self, page_count):
         """Sets the page_count of this PclSaveOptionsData.
 
-        Gets or sets determines number of pages to render.  # noqa: E501
+        Gets or sets the number of pages to render.  # noqa: E501
 
         :param page_count: The page_count of this PclSaveOptionsData.  # noqa: E501
         :type: int
@@ -512,7 +512,7 @@ class PclSaveOptionsData(object):
     def page_index(self):
         """Gets the page_index of this PclSaveOptionsData.  # noqa: E501
 
-        Gets or sets determines 0-based index of the first page to render.  # noqa: E501
+        Gets or sets the 0-based index of the first page to render.  # noqa: E501
 
         :return: The page_index of this PclSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -523,7 +523,7 @@ class PclSaveOptionsData(object):
     def page_index(self, page_index):
         """Sets the page_index of this PclSaveOptionsData.
 
-        Gets or sets determines 0-based index of the first page to render.  # noqa: E501
+        Gets or sets the 0-based index of the first page to render.  # noqa: E501
 
         :param page_index: The page_index of this PclSaveOptionsData.  # noqa: E501
         :type: int
@@ -534,7 +534,7 @@ class PclSaveOptionsData(object):
     def falllback_font_name(self):
         """Gets the falllback_font_name of this PclSaveOptionsData.  # noqa: E501
 
-        Gets or sets name of the font that will be used if no expected font is found in printer and built-in fonts collections.  # noqa: E501
+        Gets or sets the font name, that will be used if no expected font is found in printer and built-in fonts collections.  # noqa: E501
 
         :return: The falllback_font_name of this PclSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -545,7 +545,7 @@ class PclSaveOptionsData(object):
     def falllback_font_name(self, falllback_font_name):
         """Sets the falllback_font_name of this PclSaveOptionsData.
 
-        Gets or sets name of the font that will be used if no expected font is found in printer and built-in fonts collections.  # noqa: E501
+        Gets or sets the font name, that will be used if no expected font is found in printer and built-in fonts collections.  # noqa: E501
 
         :param falllback_font_name: The falllback_font_name of this PclSaveOptionsData.  # noqa: E501
         :type: str
@@ -556,7 +556,7 @@ class PclSaveOptionsData(object):
     def rasterize_transformed_elements(self):
         """Gets the rasterize_transformed_elements of this PclSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether or not complex transformed elements should be rasterized before saving to PCL document.  Default is true.  # noqa: E501
+        Gets or sets a value indicating whether complex transformed elements should be rasterized before saving to PCL document.. The default value is true.  # noqa: E501
 
         :return: The rasterize_transformed_elements of this PclSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -567,7 +567,7 @@ class PclSaveOptionsData(object):
     def rasterize_transformed_elements(self, rasterize_transformed_elements):
         """Sets the rasterize_transformed_elements of this PclSaveOptionsData.
 
-        Gets or sets a value determining whether or not complex transformed elements should be rasterized before saving to PCL document.  Default is true.  # noqa: E501
+        Gets or sets a value indicating whether complex transformed elements should be rasterized before saving to PCL document.. The default value is true.  # noqa: E501
 
         :param rasterize_transformed_elements: The rasterize_transformed_elements of this PclSaveOptionsData.  # noqa: E501
         :type: bool

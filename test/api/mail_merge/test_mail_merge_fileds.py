@@ -43,6 +43,10 @@ class TestMailMergeFileds(BaseTestContext):
 
         result = self.words_api.get_document_field_names_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.field_names, 'Validate GetDocumentFieldNamesOnline response')
+        self.assertIsNotNone(result.field_names.names, 'Validate GetDocumentFieldNamesOnline response')
+        self.assertEqual(15, len(result.field_names.names))
+        self.assertEqual('TableStart:Order', result.field_names.names[0])
 
     #
     # Test for getting mailmerge fields.
@@ -57,3 +61,6 @@ class TestMailMergeFileds(BaseTestContext):
 
         result = self.words_api.get_document_field_names(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.field_names, 'Validate GetDocumentFieldNames response')
+        self.assertIsNotNone(result.field_names.names, 'Validate GetDocumentFieldNames response')
+        self.assertEqual(0, len(result.field_names.names))

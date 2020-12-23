@@ -49,6 +49,8 @@ class TestAppendDocument(BaseTestContext):
 
         result = self.words_api.append_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.document, 'Validate AppendDocument response')
+        self.assertEqual('TestAppendDocument.docx', result.document.file_name)
 
     #
     # Test for appending document online.
@@ -67,3 +69,4 @@ class TestAppendDocument(BaseTestContext):
 
         result = self.words_api.append_document_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

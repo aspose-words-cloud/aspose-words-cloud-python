@@ -62,7 +62,7 @@ class DocumentPropertyCreateOrUpdate(object):
     def value(self):
         """Gets the value of this DocumentPropertyCreateOrUpdate.  # noqa: E501
 
-        Gets or sets string value of the document property.  # noqa: E501
+        Gets or sets the value of the document property.  # noqa: E501
 
         :return: The value of this DocumentPropertyCreateOrUpdate.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class DocumentPropertyCreateOrUpdate(object):
     def value(self, value):
         """Sets the value of this DocumentPropertyCreateOrUpdate.
 
-        Gets or sets string value of the document property.  # noqa: E501
+        Gets or sets the value of the document property.  # noqa: E501
 
         :param value: The value of this DocumentPropertyCreateOrUpdate.  # noqa: E501
         :type: str

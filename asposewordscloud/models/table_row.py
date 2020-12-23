@@ -31,7 +31,7 @@ import json
 
 
 class TableRow(object):
-    """Table row element.
+    """DTO container with a table row element.
     """
 
     """
@@ -77,7 +77,7 @@ class TableRow(object):
     def link(self):
         """Gets the link of this TableRow.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this TableRow.  # noqa: E501
         :rtype: WordsApiLink
@@ -88,7 +88,7 @@ class TableRow(object):
     def link(self, link):
         """Sets the link of this TableRow.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this TableRow.  # noqa: E501
         :type: WordsApiLink
@@ -99,7 +99,7 @@ class TableRow(object):
     def node_id(self):
         """Gets the node_id of this TableRow.  # noqa: E501
 
-        Gets or sets node id.  # noqa: E501
+        Gets or sets the node id.  # noqa: E501
 
         :return: The node_id of this TableRow.  # noqa: E501
         :rtype: str
@@ -110,7 +110,7 @@ class TableRow(object):
     def node_id(self, node_id):
         """Sets the node_id of this TableRow.
 
-        Gets or sets node id.  # noqa: E501
+        Gets or sets the node id.  # noqa: E501
 
         :param node_id: The node_id of this TableRow.  # noqa: E501
         :type: str
@@ -121,7 +121,7 @@ class TableRow(object):
     def row_format(self):
         """Gets the row_format of this TableRow.  # noqa: E501
 
-        Gets or sets provides access to the formatting properties of the row.  # noqa: E501
+        Gets or sets the formatting properties of a row.  # noqa: E501
 
         :return: The row_format of this TableRow.  # noqa: E501
         :rtype: TableRowFormat
@@ -132,7 +132,7 @@ class TableRow(object):
     def row_format(self, row_format):
         """Sets the row_format of this TableRow.
 
-        Gets or sets provides access to the formatting properties of the row.  # noqa: E501
+        Gets or sets the formatting properties of a row.  # noqa: E501
 
         :param row_format: The row_format of this TableRow.  # noqa: E501
         :type: TableRowFormat
@@ -143,7 +143,7 @@ class TableRow(object):
     def table_cell_list(self):
         """Gets the table_cell_list of this TableRow.  # noqa: E501
 
-        Gets or sets collection of table's rows.  # noqa: E501
+        Gets or sets the collection of rows.  # noqa: E501
 
         :return: The table_cell_list of this TableRow.  # noqa: E501
         :rtype: list[TableCell]
@@ -154,7 +154,7 @@ class TableRow(object):
     def table_cell_list(self, table_cell_list):
         """Sets the table_cell_list of this TableRow.
 
-        Gets or sets collection of table's rows.  # noqa: E501
+        Gets or sets the collection of rows.  # noqa: E501
 
         :param table_cell_list: The table_cell_list of this TableRow.  # noqa: E501
         :type: list[TableCell]

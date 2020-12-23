@@ -31,7 +31,7 @@ import json
 
 
 class TableRowInsert(object):
-    """Table row element.
+    """DTO container with a table row element.
     """
 
     """
@@ -67,7 +67,7 @@ class TableRowInsert(object):
     def columns_count(self):
         """Gets the columns_count of this TableRowInsert.  # noqa: E501
 
-        Gets or sets count of columns. Default is 1.  # noqa: E501
+        Gets or sets the count of columns. The default value is 1.  # noqa: E501
 
         :return: The columns_count of this TableRowInsert.  # noqa: E501
         :rtype: int
@@ -78,7 +78,7 @@ class TableRowInsert(object):
     def columns_count(self, columns_count):
         """Sets the columns_count of this TableRowInsert.
 
-        Gets or sets count of columns. Default is 1.  # noqa: E501
+        Gets or sets the count of columns. The default value is 1.  # noqa: E501
 
         :param columns_count: The columns_count of this TableRowInsert.  # noqa: E501
         :type: int

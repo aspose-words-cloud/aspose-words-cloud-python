@@ -202,7 +202,7 @@ class ParagraphFormat(object):
     def link(self):
         """Gets the link of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this ParagraphFormat.  # noqa: E501
         :rtype: WordsApiLink
@@ -213,7 +213,7 @@ class ParagraphFormat(object):
     def link(self, link):
         """Sets the link of this ParagraphFormat.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this ParagraphFormat.  # noqa: E501
         :type: WordsApiLink
@@ -224,7 +224,7 @@ class ParagraphFormat(object):
     def add_space_between_far_east_and_alpha(self):
         """Gets the add_space_between_far_east_and_alpha of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets a flag indicating whether inter-character spacing is automatically adjusted between regions of Latin text and regions of East Asian text in the current paragraph.  # noqa: E501
+        Gets or sets a value indicating whether inter-character spacing is automatically adjusted between regions of Latin text and regions of East Asian text in the current paragraph.  # noqa: E501
 
         :return: The add_space_between_far_east_and_alpha of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -235,7 +235,7 @@ class ParagraphFormat(object):
     def add_space_between_far_east_and_alpha(self, add_space_between_far_east_and_alpha):
         """Sets the add_space_between_far_east_and_alpha of this ParagraphFormat.
 
-        Gets or sets a flag indicating whether inter-character spacing is automatically adjusted between regions of Latin text and regions of East Asian text in the current paragraph.  # noqa: E501
+        Gets or sets a value indicating whether inter-character spacing is automatically adjusted between regions of Latin text and regions of East Asian text in the current paragraph.  # noqa: E501
 
         :param add_space_between_far_east_and_alpha: The add_space_between_far_east_and_alpha of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -246,7 +246,7 @@ class ParagraphFormat(object):
     def add_space_between_far_east_and_digit(self):
         """Gets the add_space_between_far_east_and_digit of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets a flag indicating whether inter-character spacing is automatically adjusted between regions of numbers and regions of East Asian text in the current paragraph.  # noqa: E501
+        Gets or sets a value indicating whether inter-character spacing is automatically adjusted between regions of numbers and regions of East Asian text in the current paragraph.  # noqa: E501
 
         :return: The add_space_between_far_east_and_digit of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -257,7 +257,7 @@ class ParagraphFormat(object):
     def add_space_between_far_east_and_digit(self, add_space_between_far_east_and_digit):
         """Sets the add_space_between_far_east_and_digit of this ParagraphFormat.
 
-        Gets or sets a flag indicating whether inter-character spacing is automatically adjusted between regions of numbers and regions of East Asian text in the current paragraph.  # noqa: E501
+        Gets or sets a value indicating whether inter-character spacing is automatically adjusted between regions of numbers and regions of East Asian text in the current paragraph.  # noqa: E501
 
         :param add_space_between_far_east_and_digit: The add_space_between_far_east_and_digit of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -298,7 +298,7 @@ class ParagraphFormat(object):
     def bidi(self):
         """Gets the bidi of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets whether this is a right-to-left paragraph.  # noqa: E501
+        Gets or sets a value indicating whether this is a right-to-left paragraph.  # noqa: E501
 
         :return: The bidi of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -309,7 +309,7 @@ class ParagraphFormat(object):
     def bidi(self, bidi):
         """Sets the bidi of this ParagraphFormat.
 
-        Gets or sets whether this is a right-to-left paragraph.  # noqa: E501
+        Gets or sets a value indicating whether this is a right-to-left paragraph.  # noqa: E501
 
         :param bidi: The bidi of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -372,7 +372,7 @@ class ParagraphFormat(object):
     def keep_together(self):
         """Gets the keep_together of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets true if all lines in the paragraph are to remain on the same page.  # noqa: E501
+        Gets or sets a value indicating whether all lines in the paragraph are to remain on the same page.  # noqa: E501
 
         :return: The keep_together of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -383,7 +383,7 @@ class ParagraphFormat(object):
     def keep_together(self, keep_together):
         """Sets the keep_together of this ParagraphFormat.
 
-        Gets or sets true if all lines in the paragraph are to remain on the same page.  # noqa: E501
+        Gets or sets a value indicating whether all lines in the paragraph are to remain on the same page.  # noqa: E501
 
         :param keep_together: The keep_together of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -394,7 +394,7 @@ class ParagraphFormat(object):
     def keep_with_next(self):
         """Gets the keep_with_next of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets true if the paragraph is to remains on the same page as the paragraph that follows it.  # noqa: E501
+        Gets or sets a value indicating whether the paragraph is to remains on the same page as the paragraph that follows it.  # noqa: E501
 
         :return: The keep_with_next of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -405,7 +405,7 @@ class ParagraphFormat(object):
     def keep_with_next(self, keep_with_next):
         """Sets the keep_with_next of this ParagraphFormat.
 
-        Gets or sets true if the paragraph is to remains on the same page as the paragraph that follows it.  # noqa: E501
+        Gets or sets a value indicating whether the paragraph is to remains on the same page as the paragraph that follows it.  # noqa: E501
 
         :param keep_with_next: The keep_with_next of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -416,7 +416,7 @@ class ParagraphFormat(object):
     def left_indent(self):
         """Gets the left_indent of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets the value (in points) that represents the left indent for paragraph.  # noqa: E501
+        Gets or sets the value (in points), that represents the left indent for paragraph.  # noqa: E501
 
         :return: The left_indent of this ParagraphFormat.  # noqa: E501
         :rtype: float
@@ -427,7 +427,7 @@ class ParagraphFormat(object):
     def left_indent(self, left_indent):
         """Sets the left_indent of this ParagraphFormat.
 
-        Gets or sets the value (in points) that represents the left indent for paragraph.  # noqa: E501
+        Gets or sets the value (in points), that represents the left indent for paragraph.  # noqa: E501
 
         :param left_indent: The left_indent of this ParagraphFormat.  # noqa: E501
         :type: float
@@ -512,7 +512,7 @@ class ParagraphFormat(object):
     def no_space_between_paragraphs_of_same_style(self):
         """Gets the no_space_between_paragraphs_of_same_style of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets when true, SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style.  # noqa: E501
+        Gets or sets a value indicating whether SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style.  # noqa: E501
 
         :return: The no_space_between_paragraphs_of_same_style of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -523,7 +523,7 @@ class ParagraphFormat(object):
     def no_space_between_paragraphs_of_same_style(self, no_space_between_paragraphs_of_same_style):
         """Sets the no_space_between_paragraphs_of_same_style of this ParagraphFormat.
 
-        Gets or sets when true, SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style.  # noqa: E501
+        Gets or sets a value indicating whether SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style.  # noqa: E501
 
         :param no_space_between_paragraphs_of_same_style: The no_space_between_paragraphs_of_same_style of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -534,7 +534,7 @@ class ParagraphFormat(object):
     def outline_level(self):
         """Gets the outline_level of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets specifies the outline level of the paragraph in the document.  # noqa: E501
+        Gets or sets the outline level of the paragraph in the document.  # noqa: E501
 
         :return: The outline_level of this ParagraphFormat.  # noqa: E501
         :rtype: str
@@ -545,7 +545,7 @@ class ParagraphFormat(object):
     def outline_level(self, outline_level):
         """Sets the outline_level of this ParagraphFormat.
 
-        Gets or sets specifies the outline level of the paragraph in the document.  # noqa: E501
+        Gets or sets the outline level of the paragraph in the document.  # noqa: E501
 
         :param outline_level: The outline_level of this ParagraphFormat.  # noqa: E501
         :type: str
@@ -564,7 +564,7 @@ class ParagraphFormat(object):
     def page_break_before(self):
         """Gets the page_break_before of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets true if a page break is forced before the paragraph.  # noqa: E501
+        Gets or sets a value indicating whether a page break is forced before the paragraph.  # noqa: E501
 
         :return: The page_break_before of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -575,7 +575,7 @@ class ParagraphFormat(object):
     def page_break_before(self, page_break_before):
         """Sets the page_break_before of this ParagraphFormat.
 
-        Gets or sets true if a page break is forced before the paragraph.  # noqa: E501
+        Gets or sets a value indicating whether a page break is forced before the paragraph.  # noqa: E501
 
         :param page_break_before: The page_break_before of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -608,7 +608,7 @@ class ParagraphFormat(object):
     def shading(self):
         """Gets the shading of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets a Shading object that refers to the shading formatting for the paragraph.  # noqa: E501
+        Gets or sets the Shading object, that refers to the shading formatting for the paragraph.  # noqa: E501
 
         :return: The shading of this ParagraphFormat.  # noqa: E501
         :rtype: Shading
@@ -619,7 +619,7 @@ class ParagraphFormat(object):
     def shading(self, shading):
         """Sets the shading of this ParagraphFormat.
 
-        Gets or sets a Shading object that refers to the shading formatting for the paragraph.  # noqa: E501
+        Gets or sets the Shading object, that refers to the shading formatting for the paragraph.  # noqa: E501
 
         :param shading: The shading of this ParagraphFormat.  # noqa: E501
         :type: Shading
@@ -652,7 +652,7 @@ class ParagraphFormat(object):
     def space_after_auto(self):
         """Gets the space_after_auto of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets true if the amount of spacing after the paragraph is set automatically.  # noqa: E501
+        Gets or sets a value indicating whether the amount of spacing after the paragraph is set automatically.  # noqa: E501
 
         :return: The space_after_auto of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -663,7 +663,7 @@ class ParagraphFormat(object):
     def space_after_auto(self, space_after_auto):
         """Sets the space_after_auto of this ParagraphFormat.
 
-        Gets or sets true if the amount of spacing after the paragraph is set automatically.  # noqa: E501
+        Gets or sets a value indicating whether the amount of spacing after the paragraph is set automatically.  # noqa: E501
 
         :param space_after_auto: The space_after_auto of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -696,7 +696,7 @@ class ParagraphFormat(object):
     def space_before_auto(self):
         """Gets the space_before_auto of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets true if the amount of spacing before the paragraph is set automatically.  # noqa: E501
+        Gets or sets a value indicating whether the amount of spacing before the paragraph is set automatically.  # noqa: E501
 
         :return: The space_before_auto of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -707,7 +707,7 @@ class ParagraphFormat(object):
     def space_before_auto(self, space_before_auto):
         """Sets the space_before_auto of this ParagraphFormat.
 
-        Gets or sets true if the amount of spacing before the paragraph is set automatically.  # noqa: E501
+        Gets or sets a value indicating whether the amount of spacing before the paragraph is set automatically.  # noqa: E501
 
         :param space_before_auto: The space_before_auto of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -770,7 +770,7 @@ class ParagraphFormat(object):
     def suppress_auto_hyphens(self):
         """Gets the suppress_auto_hyphens of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets specifies whether the current paragraph should be exempted from any hyphenation which is applied in the document settings.  # noqa: E501
+        Gets or sets a value indicating whether the current paragraph should be exempted from any hyphenation which is applied in the document settings.  # noqa: E501
 
         :return: The suppress_auto_hyphens of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -781,7 +781,7 @@ class ParagraphFormat(object):
     def suppress_auto_hyphens(self, suppress_auto_hyphens):
         """Sets the suppress_auto_hyphens of this ParagraphFormat.
 
-        Gets or sets specifies whether the current paragraph should be exempted from any hyphenation which is applied in the document settings.  # noqa: E501
+        Gets or sets a value indicating whether the current paragraph should be exempted from any hyphenation which is applied in the document settings.  # noqa: E501
 
         :param suppress_auto_hyphens: The suppress_auto_hyphens of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -792,7 +792,7 @@ class ParagraphFormat(object):
     def suppress_line_numbers(self):
         """Gets the suppress_line_numbers of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets specifies whether the current paragraph's lines should be exempted from line numbering which is applied in the parent section.  # noqa: E501
+        Gets or sets a value indicating whether the current paragraph's lines should be exempted from line numbering which is applied in the parent section.  # noqa: E501
 
         :return: The suppress_line_numbers of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -803,7 +803,7 @@ class ParagraphFormat(object):
     def suppress_line_numbers(self, suppress_line_numbers):
         """Sets the suppress_line_numbers of this ParagraphFormat.
 
-        Gets or sets specifies whether the current paragraph's lines should be exempted from line numbering which is applied in the parent section.  # noqa: E501
+        Gets or sets a value indicating whether the current paragraph's lines should be exempted from line numbering which is applied in the parent section.  # noqa: E501
 
         :param suppress_line_numbers: The suppress_line_numbers of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -814,7 +814,7 @@ class ParagraphFormat(object):
     def widow_control(self):
         """Gets the widow_control of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets true if the first and last lines in the paragraph are to remain on the same page as the rest of the paragraph.  # noqa: E501
+        Gets or sets a value indicating whether the first and last lines in the paragraph are to remain on the same page as the rest of the paragraph.  # noqa: E501
 
         :return: The widow_control of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -825,7 +825,7 @@ class ParagraphFormat(object):
     def widow_control(self, widow_control):
         """Sets the widow_control of this ParagraphFormat.
 
-        Gets or sets true if the first and last lines in the paragraph are to remain on the same page as the rest of the paragraph.  # noqa: E501
+        Gets or sets a value indicating whether the first and last lines in the paragraph are to remain on the same page as the rest of the paragraph.  # noqa: E501
 
         :param widow_control: The widow_control of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -836,7 +836,7 @@ class ParagraphFormat(object):
     def is_heading(self):
         """Gets the is_heading of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets True when the paragraph style is one of the built-in Heading styles.  # noqa: E501
+        Gets or sets a value indicating whether the paragraph style is one of the built-in Heading styles.  # noqa: E501
 
         :return: The is_heading of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -847,7 +847,7 @@ class ParagraphFormat(object):
     def is_heading(self, is_heading):
         """Sets the is_heading of this ParagraphFormat.
 
-        Gets or sets True when the paragraph style is one of the built-in Heading styles.  # noqa: E501
+        Gets or sets a value indicating whether the paragraph style is one of the built-in Heading styles.  # noqa: E501
 
         :param is_heading: The is_heading of this ParagraphFormat.  # noqa: E501
         :type: bool
@@ -858,7 +858,7 @@ class ParagraphFormat(object):
     def is_list_item(self):
         """Gets the is_list_item of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets True when the paragraph is an item in a bulleted or numbered list.  # noqa: E501
+        Gets or sets a value indicating whether the paragraph is an item in a bulleted or numbered list.  # noqa: E501
 
         :return: The is_list_item of this ParagraphFormat.  # noqa: E501
         :rtype: bool
@@ -869,7 +869,7 @@ class ParagraphFormat(object):
     def is_list_item(self, is_list_item):
         """Sets the is_list_item of this ParagraphFormat.
 
-        Gets or sets True when the paragraph is an item in a bulleted or numbered list.  # noqa: E501
+        Gets or sets a value indicating whether the paragraph is an item in a bulleted or numbered list.  # noqa: E501
 
         :param is_list_item: The is_list_item of this ParagraphFormat.  # noqa: E501
         :type: bool

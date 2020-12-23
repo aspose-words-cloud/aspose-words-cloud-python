@@ -31,7 +31,7 @@ import json
 
 
 class SectionResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/sections/{0}.
+    """The REST response with a section.
     """
 
     """
@@ -67,7 +67,7 @@ class SectionResponse(object):
     def request_id(self):
         """Gets the request_id of this SectionResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this SectionResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class SectionResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this SectionResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this SectionResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class SectionResponse(object):
     def section(self):
         """Gets the section of this SectionResponse.  # noqa: E501
 
-        Gets or sets section.  # noqa: E501
+        Gets or sets the section.  # noqa: E501
 
         :return: The section of this SectionResponse.  # noqa: E501
         :rtype: Section
@@ -100,7 +100,7 @@ class SectionResponse(object):
     def section(self, section):
         """Sets the section of this SectionResponse.
 
-        Gets or sets section.  # noqa: E501
+        Gets or sets the section.  # noqa: E501
 
         :param section: The section of this SectionResponse.  # noqa: E501
         :type: Section

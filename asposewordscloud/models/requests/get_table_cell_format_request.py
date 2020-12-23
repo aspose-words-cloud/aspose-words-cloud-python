@@ -24,12 +24,14 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
+from six.moves.urllib.parse import quote
+
 class GetTableCellFormatRequest(object):
     """
     Request model for get_table_cell_format operation.
     Initializes a new instance.
-    :param name The document name.
-    :param table_row_path Path to table row.
+    :param name The filename of the input document.
+    :param table_row_path The path to the table row in the document tree.
     :param index Object index.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -45,3 +47,73 @@ class GetTableCellFormatRequest(object):
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
+
+    def create_http_request(self, api_client):
+        # verify the required parameter 'name' is set
+        if self.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `get_table_cell_format`")  # noqa: E501
+        # verify the required parameter 'table_row_path' is set
+        if self.table_row_path is None:
+            raise ValueError("Missing the required parameter `table_row_path` when calling `get_table_cell_format`")  # noqa: E501
+        # verify the required parameter 'index' is set
+        if self.index is None:
+            raise ValueError("Missing the required parameter `index` when calling `get_table_cell_format`")  # noqa: E501
+
+        path = '/v4.0/words/{name}/{tableRowPath}/cells/{index}/cellformat'
+        path_params = {}
+        if self.name is not None:
+            path_params['name'] = self.name  # noqa: E501
+        else:
+            path_params['name'] = ''  # noqa: E501
+        if self.table_row_path is not None:
+            path_params['tableRowPath'] = self.table_row_path  # noqa: E501
+        else:
+            path_params['tableRowPath'] = ''  # noqa: E501
+        if self.index is not None:
+            path_params['index'] = self.index  # noqa: E501
+        else:
+            path_params['index'] = ''  # noqa: E501
+
+        # path parameters
+        collection_formats = {}
+        if path_params:
+            path_params = api_client.sanitize_for_serialization(path_params)
+            path_params = api_client.parameters_to_tuples(path_params, collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                path = path.replace(
+                    '{%s}' % k,
+                    quote(str(v), safe=api_client.configuration.safe_chars_for_path_param)
+                )
+
+        # remove optional path parameters
+        path = path.replace('//', '/')
+
+        query_params = []
+        if self.folder is not None:
+                query_params.append(('folder', self.folder))  # noqa: E501
+        if self.storage is not None:
+                query_params.append(('storage', self.storage))  # noqa: E501
+        if self.load_encoding is not None:
+                query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
+        if self.password is not None:
+                query_params.append(('password', self.password))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+
+        body_params = None
+        return {
+            "method": "GET",
+            "path": path,
+            "query_params": query_params,
+            "header_params": header_params,
+            "form_params": form_params,
+            "body": body_params,
+            "collection_formats": collection_formats,
+            "response_type": TableCellFormatResponse  # noqa: E501
+        }
+
+    def get_response_type(self):
+        return TableCellFormatResponse  # noqa: E501

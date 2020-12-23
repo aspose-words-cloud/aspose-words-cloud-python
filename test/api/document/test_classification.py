@@ -40,6 +40,9 @@ class TestClassification(BaseTestContext):
 
         result = self.words_api.classify(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertEqual('Science', result.best_class_name)
+        self.assertIsNotNone(result.best_results, 'Validate Classify response')
+        self.assertEqual(3, len(result.best_results))
 
     #
     # Test for document classification.
@@ -51,7 +54,22 @@ class TestClassification(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.ClassifyDocumentRequest(document_name=remoteFileName, folder=remoteDataFolder, best_classes_count='3')
+        request = asposewordscloud.models.requests.ClassifyDocumentRequest(name=remoteFileName, folder=remoteDataFolder, best_classes_count='3')
 
         result = self.words_api.classify_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertEqual('Hobbies_&_Interests', result.best_class_name)
+        self.assertIsNotNone(result.best_results, 'Validate ClassifyDocument response')
+        self.assertEqual(3, len(result.best_results))
+
+    #
+    # Test for document classification online.
+    #
+    def test_classify_document_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.ClassifyDocumentOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), best_classes_count='3')
+
+        result = self.words_api.classify_document_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+

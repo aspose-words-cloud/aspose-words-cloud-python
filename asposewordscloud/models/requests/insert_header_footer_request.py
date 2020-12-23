@@ -24,13 +24,15 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
+from six.moves.urllib.parse import quote
+
 class InsertHeaderFooterRequest(object):
     """
     Request model for insert_header_footer operation.
     Initializes a new instance.
-    :param name The document name.
+    :param name The filename of the input document.
+    :param section_path The path to the section in the document tree.
     :param header_footer_type Type of header/footer.
-    :param section_path Path to parent section.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -40,10 +42,10 @@ class InsertHeaderFooterRequest(object):
     :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, name, header_footer_type, section_path, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
+    def __init__(self, name, section_path, header_footer_type, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.name = name
-        self.header_footer_type = header_footer_type
         self.section_path = section_path
+        self.header_footer_type = header_footer_type
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
@@ -51,3 +53,81 @@ class InsertHeaderFooterRequest(object):
         self.dest_file_name = dest_file_name
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
+
+    def create_http_request(self, api_client):
+        # verify the required parameter 'name' is set
+        if self.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `insert_header_footer`")  # noqa: E501
+        # verify the required parameter 'section_path' is set
+        if self.section_path is None:
+            raise ValueError("Missing the required parameter `section_path` when calling `insert_header_footer`")  # noqa: E501
+        # verify the required parameter 'header_footer_type' is set
+        if self.header_footer_type is None:
+            raise ValueError("Missing the required parameter `header_footer_type` when calling `insert_header_footer`")  # noqa: E501
+
+        path = '/v4.0/words/{name}/{sectionPath}/headersfooters'
+        path_params = {}
+        if self.name is not None:
+            path_params['name'] = self.name  # noqa: E501
+        else:
+            path_params['name'] = ''  # noqa: E501
+        if self.section_path is not None:
+            path_params['sectionPath'] = self.section_path  # noqa: E501
+        else:
+            path_params['sectionPath'] = ''  # noqa: E501
+
+        # path parameters
+        collection_formats = {}
+        if path_params:
+            path_params = api_client.sanitize_for_serialization(path_params)
+            path_params = api_client.parameters_to_tuples(path_params, collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                path = path.replace(
+                    '{%s}' % k,
+                    quote(str(v), safe=api_client.configuration.safe_chars_for_path_param)
+                )
+
+        # remove optional path parameters
+        path = path.replace('//', '/')
+
+        query_params = []
+        if self.folder is not None:
+                query_params.append(('folder', self.folder))  # noqa: E501
+        if self.storage is not None:
+                query_params.append(('storage', self.storage))  # noqa: E501
+        if self.load_encoding is not None:
+                query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
+        if self.password is not None:
+                query_params.append(('password', self.password))  # noqa: E501
+        if self.dest_file_name is not None:
+                query_params.append(('destFileName', self.dest_file_name))  # noqa: E501
+        if self.revision_author is not None:
+                query_params.append(('revisionAuthor', self.revision_author))  # noqa: E501
+        if self.revision_date_time is not None:
+                query_params.append(('revisionDateTime', self.revision_date_time))  # noqa: E501
+
+        header_params = {}
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        form_params = []
+
+        body_params = None
+        if self.header_footer_type is not None:
+            body_params = self.header_footer_type
+
+        return {
+            "method": "PUT",
+            "path": path,
+            "query_params": query_params,
+            "header_params": header_params,
+            "form_params": form_params,
+            "body": body_params,
+            "collection_formats": collection_formats,
+            "response_type": HeaderFooterResponse  # noqa: E501
+        }
+
+    def get_response_type(self):
+        return HeaderFooterResponse  # noqa: E501

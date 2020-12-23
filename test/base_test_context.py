@@ -58,7 +58,7 @@ class BaseTestContext(unittest.TestCase):
         # with open(os.path.join(root_path, 'Settings', 'servercreds.json')) as f:
         #    creds = json.loads(f.read())
         creds = self.read_config()
-        self.words_api = asposewordscloud.WordsApi(creds['AppSid'], creds['AppKey'])
+        self.words_api = asposewordscloud.WordsApi(creds['ClientId'], creds['ClientSecret'])
         self.words_api.api_client.configuration.host = creds['BaseUrl']
         if six.PY3:
             warnings.simplefilter("ignore", ResourceWarning)

@@ -24,12 +24,14 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
+from six.moves.urllib.parse import quote
+
 class InsertRunRequest(object):
     """
     Request model for insert_run operation.
     Initializes a new instance.
-    :param name The document name.
-    :param paragraph_path Path to parent paragraph.
+    :param name The filename of the input document.
+    :param paragraph_path The path to the paragraph in the document tree.
     :param run Run data.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -38,7 +40,7 @@ class InsertRunRequest(object):
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     :param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     :param revision_date_time The date and time to use for revisions.
-    :param insert_before_node Paragraph will be inserted before node with index.
+    :param insert_before_node The index of the node. A new Run object will be inserted before the node with the specified node Id.
     """
 
     def __init__(self, name, paragraph_path, run, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None, insert_before_node=None):
@@ -53,3 +55,83 @@ class InsertRunRequest(object):
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
         self.insert_before_node = insert_before_node
+
+    def create_http_request(self, api_client):
+        # verify the required parameter 'name' is set
+        if self.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `insert_run`")  # noqa: E501
+        # verify the required parameter 'paragraph_path' is set
+        if self.paragraph_path is None:
+            raise ValueError("Missing the required parameter `paragraph_path` when calling `insert_run`")  # noqa: E501
+        # verify the required parameter 'run' is set
+        if self.run is None:
+            raise ValueError("Missing the required parameter `run` when calling `insert_run`")  # noqa: E501
+
+        path = '/v4.0/words/{name}/{paragraphPath}/runs'
+        path_params = {}
+        if self.name is not None:
+            path_params['name'] = self.name  # noqa: E501
+        else:
+            path_params['name'] = ''  # noqa: E501
+        if self.paragraph_path is not None:
+            path_params['paragraphPath'] = self.paragraph_path  # noqa: E501
+        else:
+            path_params['paragraphPath'] = ''  # noqa: E501
+
+        # path parameters
+        collection_formats = {}
+        if path_params:
+            path_params = api_client.sanitize_for_serialization(path_params)
+            path_params = api_client.parameters_to_tuples(path_params, collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                path = path.replace(
+                    '{%s}' % k,
+                    quote(str(v), safe=api_client.configuration.safe_chars_for_path_param)
+                )
+
+        # remove optional path parameters
+        path = path.replace('//', '/')
+
+        query_params = []
+        if self.folder is not None:
+                query_params.append(('folder', self.folder))  # noqa: E501
+        if self.storage is not None:
+                query_params.append(('storage', self.storage))  # noqa: E501
+        if self.load_encoding is not None:
+                query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
+        if self.password is not None:
+                query_params.append(('password', self.password))  # noqa: E501
+        if self.dest_file_name is not None:
+                query_params.append(('destFileName', self.dest_file_name))  # noqa: E501
+        if self.revision_author is not None:
+                query_params.append(('revisionAuthor', self.revision_author))  # noqa: E501
+        if self.revision_date_time is not None:
+                query_params.append(('revisionDateTime', self.revision_date_time))  # noqa: E501
+        if self.insert_before_node is not None:
+                query_params.append(('insertBeforeNode', self.insert_before_node))  # noqa: E501
+
+        header_params = {}
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = api_client.select_header_content_type(  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
+
+        form_params = []
+
+        body_params = None
+        if self.run is not None:
+            body_params = self.run
+
+        return {
+            "method": "POST",
+            "path": path,
+            "query_params": query_params,
+            "header_params": header_params,
+            "form_params": form_params,
+            "body": body_params,
+            "collection_formats": collection_formats,
+            "response_type": RunResponse  # noqa: E501
+        }
+
+    def get_response_type(self):
+        return RunResponse  # noqa: E501

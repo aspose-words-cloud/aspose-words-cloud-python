@@ -47,6 +47,19 @@ class TestDrawingObjects(BaseTestContext):
         result = self.words_api.get_document_drawing_objects(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
+    #
+    # Test for getting drawing objects from document online.
+    #
+    def test_get_document_drawing_objects_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.GetDocumentDrawingObjectsOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), node_path='sections/0')
+
+        result = self.words_api.get_document_drawing_objects_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
     #
     # Test for getting drawing objects from document without node path.
     #
@@ -61,6 +74,7 @@ class TestDrawingObjects(BaseTestContext):
 
         result = self.words_api.get_document_drawing_objects(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for getting drawing object by specified index.
@@ -77,6 +91,19 @@ class TestDrawingObjects(BaseTestContext):
         result = self.words_api.get_document_drawing_object_by_index(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
+    #
+    # Test for getting drawing object by specified index online.
+    #
+    def test_get_document_drawing_object_by_index_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.GetDocumentDrawingObjectByIndexOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), index=0, node_path='sections/0')
+
+        result = self.words_api.get_document_drawing_object_by_index_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
     #
     # Test for getting drawing object by specified index without node path.
     #
@@ -91,6 +118,7 @@ class TestDrawingObjects(BaseTestContext):
 
         result = self.words_api.get_document_drawing_object_by_index(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for getting drawing object by specified index and format.
@@ -107,6 +135,19 @@ class TestDrawingObjects(BaseTestContext):
         result = self.words_api.render_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
+    #
+    # Test for getting drawing object by specified index and format online.
+    #
+    def test_render_drawing_object_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.RenderDrawingObjectOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), format='png', index=0, node_path='sections/0')
+
+        result = self.words_api.render_drawing_object_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
     #
     # Test for getting drawing object by specified index and format without node path.
     #
@@ -121,6 +162,7 @@ class TestDrawingObjects(BaseTestContext):
 
         result = self.words_api.render_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for reading drawing object's image data.
@@ -137,6 +179,19 @@ class TestDrawingObjects(BaseTestContext):
         result = self.words_api.get_document_drawing_object_image_data(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
+    #
+    # Test for reading drawing object's image data online.
+    #
+    def test_get_document_drawing_object_image_data_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.GetDocumentDrawingObjectImageDataOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), index=0, node_path='sections/0')
+
+        result = self.words_api.get_document_drawing_object_image_data_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
     #
     # Test for reading drawing object's image data without node path.
     #
@@ -151,6 +206,7 @@ class TestDrawingObjects(BaseTestContext):
 
         result = self.words_api.get_document_drawing_object_image_data(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for getting drawing object OLE data.
@@ -167,6 +223,19 @@ class TestDrawingObjects(BaseTestContext):
         result = self.words_api.get_document_drawing_object_ole_data(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
+    #
+    # Test for getting drawing object OLE data online.
+    #
+    def test_get_document_drawing_object_ole_data_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.GetDocumentDrawingObjectOleDataOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), index=0, node_path='sections/0')
+
+        result = self.words_api.get_document_drawing_object_ole_data_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
     #
     # Test for getting drawing object OLE data without node path.
     #
@@ -181,6 +250,7 @@ class TestDrawingObjects(BaseTestContext):
 
         result = self.words_api.get_document_drawing_object_ole_data(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for adding drawing object.
@@ -198,6 +268,20 @@ class TestDrawingObjects(BaseTestContext):
         result = self.words_api.insert_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
+    #
+    # Test for adding drawing object online.
+    #
+    def test_insert_drawing_object_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        requestDrawingObject = asposewordscloud.DrawingObjectInsert(height=0, left=0, top=0, width=0, relative_horizontal_position='Margin', relative_vertical_position='Margin', wrap_type='Inline')
+        request = asposewordscloud.models.requests.InsertDrawingObjectOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), drawing_object=requestDrawingObject, image_file=open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), node_path='')
+
+        result = self.words_api.insert_drawing_object_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
     #
     # Test for adding drawing object without node path.
     #
@@ -214,6 +298,7 @@ class TestDrawingObjects(BaseTestContext):
         result = self.words_api.insert_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
     #
     # Test for deleting drawing object.
     #
@@ -227,6 +312,18 @@ class TestDrawingObjects(BaseTestContext):
         request = asposewordscloud.models.requests.DeleteDrawingObjectRequest(name=remoteFileName, index=0, node_path='', folder=remoteDataFolder)
 
         self.words_api.delete_drawing_object(request)
+
+
+    #
+    # Test for deleting drawing object online.
+    #
+    def test_delete_drawing_object_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.DeleteDrawingObjectOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), index=0, node_path='')
+
+        result = self.words_api.delete_drawing_object_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
 
 
     #
@@ -260,6 +357,20 @@ class TestDrawingObjects(BaseTestContext):
         result = self.words_api.update_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
+    #
+    # Test for updating drawing object online.
+    #
+    def test_update_drawing_object_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        requestDrawingObject = asposewordscloud.DrawingObjectUpdate(left=0)
+        request = asposewordscloud.models.requests.UpdateDrawingObjectOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), drawing_object=requestDrawingObject, image_file=open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), index=0, node_path='')
+
+        result = self.words_api.update_drawing_object_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
     #
     # Test for updating drawing object without node path.
     #
@@ -275,3 +386,4 @@ class TestDrawingObjects(BaseTestContext):
 
         result = self.words_api.update_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

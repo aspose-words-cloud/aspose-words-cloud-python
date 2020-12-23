@@ -24,12 +24,14 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
+from six.moves.urllib.parse import quote
+
 class DeleteHeadersFootersRequest(object):
     """
     Request model for delete_headers_footers operation.
     Initializes a new instance.
-    :param name The document name.
-    :param section_path Path to parent section.
+    :param name The filename of the input document.
+    :param section_path The path to the section in the document tree.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -37,7 +39,7 @@ class DeleteHeadersFootersRequest(object):
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     :param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     :param revision_date_time The date and time to use for revisions.
-    :param headers_footers_types List of types of headers and footers.
+    :param headers_footers_types The list of HeaderFooter types.
     """
 
     def __init__(self, name, section_path, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None, headers_footers_types=None):
@@ -51,3 +53,74 @@ class DeleteHeadersFootersRequest(object):
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
         self.headers_footers_types = headers_footers_types
+
+    def create_http_request(self, api_client):
+        # verify the required parameter 'name' is set
+        if self.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `delete_headers_footers`")  # noqa: E501
+        # verify the required parameter 'section_path' is set
+        if self.section_path is None:
+            raise ValueError("Missing the required parameter `section_path` when calling `delete_headers_footers`")  # noqa: E501
+
+        path = '/v4.0/words/{name}/{sectionPath}/headersfooters'
+        path_params = {}
+        if self.name is not None:
+            path_params['name'] = self.name  # noqa: E501
+        else:
+            path_params['name'] = ''  # noqa: E501
+        if self.section_path is not None:
+            path_params['sectionPath'] = self.section_path  # noqa: E501
+        else:
+            path_params['sectionPath'] = ''  # noqa: E501
+
+        # path parameters
+        collection_formats = {}
+        if path_params:
+            path_params = api_client.sanitize_for_serialization(path_params)
+            path_params = api_client.parameters_to_tuples(path_params, collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                path = path.replace(
+                    '{%s}' % k,
+                    quote(str(v), safe=api_client.configuration.safe_chars_for_path_param)
+                )
+
+        # remove optional path parameters
+        path = path.replace('//', '/')
+
+        query_params = []
+        if self.folder is not None:
+                query_params.append(('folder', self.folder))  # noqa: E501
+        if self.storage is not None:
+                query_params.append(('storage', self.storage))  # noqa: E501
+        if self.load_encoding is not None:
+                query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
+        if self.password is not None:
+                query_params.append(('password', self.password))  # noqa: E501
+        if self.dest_file_name is not None:
+                query_params.append(('destFileName', self.dest_file_name))  # noqa: E501
+        if self.revision_author is not None:
+                query_params.append(('revisionAuthor', self.revision_author))  # noqa: E501
+        if self.revision_date_time is not None:
+                query_params.append(('revisionDateTime', self.revision_date_time))  # noqa: E501
+        if self.headers_footers_types is not None:
+                query_params.append(('headersFootersTypes', self.headers_footers_types))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+
+        body_params = None
+        return {
+            "method": "DELETE",
+            "path": path,
+            "query_params": query_params,
+            "header_params": header_params,
+            "form_params": form_params,
+            "body": body_params,
+            "collection_formats": collection_formats,
+            "response_type": None  # noqa: E501
+        }
+
+    def get_response_type(self):
+        return None  # noqa: E501

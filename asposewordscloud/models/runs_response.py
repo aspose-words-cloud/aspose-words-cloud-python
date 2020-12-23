@@ -31,7 +31,7 @@ import json
 
 
 class RunsResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/{paragraphPath}/runs.
+    """The REST response with a collection of Run elements.
     """
 
     """
@@ -67,7 +67,7 @@ class RunsResponse(object):
     def request_id(self):
         """Gets the request_id of this RunsResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this RunsResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class RunsResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this RunsResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this RunsResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class RunsResponse(object):
     def runs(self):
         """Gets the runs of this RunsResponse.  # noqa: E501
 
-        Gets or sets collection of runs.  # noqa: E501
+        Gets or sets the collection of Run elements.  # noqa: E501
 
         :return: The runs of this RunsResponse.  # noqa: E501
         :rtype: Runs
@@ -100,7 +100,7 @@ class RunsResponse(object):
     def runs(self, runs):
         """Sets the runs of this RunsResponse.
 
-        Gets or sets collection of runs.  # noqa: E501
+        Gets or sets the collection of Run elements.  # noqa: E501
 
         :param runs: The runs of this RunsResponse.  # noqa: E501
         :type: Runs

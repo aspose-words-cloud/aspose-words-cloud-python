@@ -31,7 +31,7 @@ import json
 
 
 class FontInfo(object):
-    """Font info.
+    """DTO container with font info.
     """
 
     """
@@ -77,7 +77,7 @@ class FontInfo(object):
     def file_path(self):
         """Gets the file_path of this FontInfo.  # noqa: E501
 
-        Gets or sets path to the font file if any.  # noqa: E501
+        Gets or sets the path to the font file if any.  # noqa: E501
 
         :return: The file_path of this FontInfo.  # noqa: E501
         :rtype: str
@@ -88,7 +88,7 @@ class FontInfo(object):
     def file_path(self, file_path):
         """Sets the file_path of this FontInfo.
 
-        Gets or sets path to the font file if any.  # noqa: E501
+        Gets or sets the path to the font file if any.  # noqa: E501
 
         :param file_path: The file_path of this FontInfo.  # noqa: E501
         :type: str
@@ -99,7 +99,7 @@ class FontInfo(object):
     def font_family_name(self):
         """Gets the font_family_name of this FontInfo.  # noqa: E501
 
-        Gets or sets family name of the font.  # noqa: E501
+        Gets or sets the family name of the font.  # noqa: E501
 
         :return: The font_family_name of this FontInfo.  # noqa: E501
         :rtype: str
@@ -110,7 +110,7 @@ class FontInfo(object):
     def font_family_name(self, font_family_name):
         """Sets the font_family_name of this FontInfo.
 
-        Gets or sets family name of the font.  # noqa: E501
+        Gets or sets the family name of the font.  # noqa: E501
 
         :param font_family_name: The font_family_name of this FontInfo.  # noqa: E501
         :type: str
@@ -121,7 +121,7 @@ class FontInfo(object):
     def full_font_name(self):
         """Gets the full_font_name of this FontInfo.  # noqa: E501
 
-        Gets or sets full name of the font.  # noqa: E501
+        Gets or sets the full name of the font.  # noqa: E501
 
         :return: The full_font_name of this FontInfo.  # noqa: E501
         :rtype: str
@@ -132,7 +132,7 @@ class FontInfo(object):
     def full_font_name(self, full_font_name):
         """Sets the full_font_name of this FontInfo.
 
-        Gets or sets full name of the font.  # noqa: E501
+        Gets or sets the full name of the font.  # noqa: E501
 
         :param full_font_name: The full_font_name of this FontInfo.  # noqa: E501
         :type: str
@@ -143,7 +143,7 @@ class FontInfo(object):
     def version(self):
         """Gets the version of this FontInfo.  # noqa: E501
 
-        Gets or sets version string of the font.  # noqa: E501
+        Gets or sets the version string of the font.  # noqa: E501
 
         :return: The version of this FontInfo.  # noqa: E501
         :rtype: str
@@ -154,7 +154,7 @@ class FontInfo(object):
     def version(self, version):
         """Sets the version of this FontInfo.
 
-        Gets or sets version string of the font.  # noqa: E501
+        Gets or sets the version string of the font.  # noqa: E501
 
         :param version: The version of this FontInfo.  # noqa: E501
         :type: str

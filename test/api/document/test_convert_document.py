@@ -47,6 +47,8 @@ class TestConvertDocument(BaseTestContext):
 
         result = self.words_api.save_as(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.save_result, 'Validate SaveAs response')
+        self.assertIsNotNone(result.save_result.dest_document, 'Validate SaveAs response')
 
     #
     # Test for converting document online to one of the available formats.
@@ -59,6 +61,7 @@ class TestConvertDocument(BaseTestContext):
 
         result = self.words_api.save_as_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for converting document to one of the available formats.
@@ -76,6 +79,8 @@ class TestConvertDocument(BaseTestContext):
 
         result = self.words_api.save_as(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.save_result, 'Validate SaveAsDocx response')
+        self.assertIsNotNone(result.save_result.dest_document, 'Validate SaveAsDocx response')
 
     #
     # Test for converting document to one of the available formats.
@@ -92,6 +97,21 @@ class TestConvertDocument(BaseTestContext):
 
         result = self.words_api.save_as_tiff(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.save_result, 'Validate SaveAsTiff response')
+        self.assertIsNotNone(result.save_result.dest_document, 'Validate SaveAsTiff response')
+
+    #
+    # Test for converting document to one of the available formats.
+    #
+    def test_save_as_tiff_online(self):
+        localName = 'test_multi_pages.docx'
+
+        requestSaveOptions = asposewordscloud.TiffSaveOptionsData(save_format='tiff', file_name=self.remote_test_out + '/abc.tiff')
+        request = asposewordscloud.models.requests.SaveAsTiffOnlineRequest(document=open(os.path.join(self.local_test_folder, 'Common/' + localName), 'rb'), save_options=requestSaveOptions)
+
+        result = self.words_api.save_as_tiff_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # A test for ConvertDocument.
@@ -103,3 +123,4 @@ class TestConvertDocument(BaseTestContext):
 
         result = self.words_api.convert_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

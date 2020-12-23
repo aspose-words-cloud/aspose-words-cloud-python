@@ -99,7 +99,7 @@ class PageNumber(object):
     def format(self):
         """Gets the format of this PageNumber.  # noqa: E501
 
-        Gets or sets page number format, e.g. "{PAGE} of {NUMPAGES}".  # noqa: E501
+        Gets or sets the page number format, e.g. "{PAGE} of {NUMPAGES}".  # noqa: E501
 
         :return: The format of this PageNumber.  # noqa: E501
         :rtype: str
@@ -110,7 +110,7 @@ class PageNumber(object):
     def format(self, format):
         """Sets the format of this PageNumber.
 
-        Gets or sets page number format, e.g. "{PAGE} of {NUMPAGES}".  # noqa: E501
+        Gets or sets the page number format, e.g. "{PAGE} of {NUMPAGES}".  # noqa: E501
 
         :param format: The format of this PageNumber.  # noqa: E501
         :type: str

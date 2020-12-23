@@ -62,7 +62,7 @@ class ListInsert(object):
     def template(self):
         """Gets the template of this ListInsert.  # noqa: E501
 
-        Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.  # noqa: E501
+        Gets or sets the option that controls how list should be restarted at each section.  # noqa: E501
 
         :return: The template of this ListInsert.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class ListInsert(object):
     def template(self, template):
         """Sets the template of this ListInsert.
 
-        Gets or sets a value indicating whether specifies whether list should be restarted at each section. Default value is false.  # noqa: E501
+        Gets or sets the option that controls how list should be restarted at each section.  # noqa: E501
 
         :param template: The template of this ListInsert.  # noqa: E501
         :type: str

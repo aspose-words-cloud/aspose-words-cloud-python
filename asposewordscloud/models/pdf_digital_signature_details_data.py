@@ -31,7 +31,7 @@ import json
 
 
 class PdfDigitalSignatureDetailsData(object):
-    """container class for details of digital signature.
+    """Container class for details of digital signature.
     """
 
     """
@@ -82,7 +82,7 @@ class PdfDigitalSignatureDetailsData(object):
     def certificate_filename(self):
         """Gets the certificate_filename of this PdfDigitalSignatureDetailsData.  # noqa: E501
 
-        Gets or sets certificate's filename using for signing.  # noqa: E501
+        Gets or sets the certificate's filename using for signing.  # noqa: E501
 
         :return: The certificate_filename of this PdfDigitalSignatureDetailsData.  # noqa: E501
         :rtype: str
@@ -93,7 +93,7 @@ class PdfDigitalSignatureDetailsData(object):
     def certificate_filename(self, certificate_filename):
         """Sets the certificate_filename of this PdfDigitalSignatureDetailsData.
 
-        Gets or sets certificate's filename using for signing.  # noqa: E501
+        Gets or sets the certificate's filename using for signing.  # noqa: E501
 
         :param certificate_filename: The certificate_filename of this PdfDigitalSignatureDetailsData.  # noqa: E501
         :type: str
@@ -104,7 +104,7 @@ class PdfDigitalSignatureDetailsData(object):
     def hash_algorithm(self):
         """Gets the hash_algorithm of this PdfDigitalSignatureDetailsData.  # noqa: E501
 
-        Gets or sets hash algorithm.  # noqa: E501
+        Gets or sets the hash algorithm.  # noqa: E501
 
         :return: The hash_algorithm of this PdfDigitalSignatureDetailsData.  # noqa: E501
         :rtype: str
@@ -115,7 +115,7 @@ class PdfDigitalSignatureDetailsData(object):
     def hash_algorithm(self, hash_algorithm):
         """Sets the hash_algorithm of this PdfDigitalSignatureDetailsData.
 
-        Gets or sets hash algorithm.  # noqa: E501
+        Gets or sets the hash algorithm.  # noqa: E501
 
         :param hash_algorithm: The hash_algorithm of this PdfDigitalSignatureDetailsData.  # noqa: E501
         :type: str
@@ -126,7 +126,7 @@ class PdfDigitalSignatureDetailsData(object):
     def location(self):
         """Gets the location of this PdfDigitalSignatureDetailsData.  # noqa: E501
 
-        Gets or sets location of the signing.  # noqa: E501
+        Gets or sets the location of the signing.  # noqa: E501
 
         :return: The location of this PdfDigitalSignatureDetailsData.  # noqa: E501
         :rtype: str
@@ -137,7 +137,7 @@ class PdfDigitalSignatureDetailsData(object):
     def location(self, location):
         """Sets the location of this PdfDigitalSignatureDetailsData.
 
-        Gets or sets location of the signing.  # noqa: E501
+        Gets or sets the location of the signing.  # noqa: E501
 
         :param location: The location of this PdfDigitalSignatureDetailsData.  # noqa: E501
         :type: str
@@ -148,7 +148,7 @@ class PdfDigitalSignatureDetailsData(object):
     def reason(self):
         """Gets the reason of this PdfDigitalSignatureDetailsData.  # noqa: E501
 
-        Gets or sets reason for the signing.  # noqa: E501
+        Gets or sets the reason for the signing.  # noqa: E501
 
         :return: The reason of this PdfDigitalSignatureDetailsData.  # noqa: E501
         :rtype: str
@@ -159,7 +159,7 @@ class PdfDigitalSignatureDetailsData(object):
     def reason(self, reason):
         """Sets the reason of this PdfDigitalSignatureDetailsData.
 
-        Gets or sets reason for the signing.  # noqa: E501
+        Gets or sets the reason for the signing.  # noqa: E501
 
         :param reason: The reason of this PdfDigitalSignatureDetailsData.  # noqa: E501
         :type: str
@@ -170,7 +170,7 @@ class PdfDigitalSignatureDetailsData(object):
     def signature_date(self):
         """Gets the signature_date of this PdfDigitalSignatureDetailsData.  # noqa: E501
 
-        Gets or sets date of the signing.  # noqa: E501
+        Gets or sets the date of the signing.  # noqa: E501
 
         :return: The signature_date of this PdfDigitalSignatureDetailsData.  # noqa: E501
         :rtype: datetime
@@ -181,7 +181,7 @@ class PdfDigitalSignatureDetailsData(object):
     def signature_date(self, signature_date):
         """Sets the signature_date of this PdfDigitalSignatureDetailsData.
 
-        Gets or sets date of the signing.  # noqa: E501
+        Gets or sets the date of the signing.  # noqa: E501
 
         :param signature_date: The signature_date of this PdfDigitalSignatureDetailsData.  # noqa: E501
         :type: datetime

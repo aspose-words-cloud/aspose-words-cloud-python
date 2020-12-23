@@ -67,7 +67,7 @@ class LoadWebDocumentData(object):
     def loading_document_url(self):
         """Gets the loading_document_url of this LoadWebDocumentData.  # noqa: E501
 
-        Gets or sets web document url.  # noqa: E501
+        Gets or sets the web document URL.  # noqa: E501
 
         :return: The loading_document_url of this LoadWebDocumentData.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class LoadWebDocumentData(object):
     def loading_document_url(self, loading_document_url):
         """Sets the loading_document_url of this LoadWebDocumentData.
 
-        Gets or sets web document url.  # noqa: E501
+        Gets or sets the web document URL.  # noqa: E501
 
         :param loading_document_url: The loading_document_url of this LoadWebDocumentData.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class LoadWebDocumentData(object):
     def save_options(self):
         """Gets the save_options of this LoadWebDocumentData.  # noqa: E501
 
-        Gets or sets save options.  # noqa: E501
+        Gets or sets the save options.  # noqa: E501
 
         :return: The save_options of this LoadWebDocumentData.  # noqa: E501
         :rtype: SaveOptionsData
@@ -100,7 +100,7 @@ class LoadWebDocumentData(object):
     def save_options(self, save_options):
         """Sets the save_options of this LoadWebDocumentData.
 
-        Gets or sets save options.  # noqa: E501
+        Gets or sets the save options.  # noqa: E501
 
         :param save_options: The save_options of this LoadWebDocumentData.  # noqa: E501
         :type: SaveOptionsData

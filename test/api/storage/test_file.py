@@ -44,6 +44,9 @@ class TestFile(BaseTestContext):
 
         result = self.words_api.upload_file(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.uploaded, 'Validate UploadFile response')
+        self.assertEqual(1, len(result.uploaded))
+        self.assertEqual('TestUploadFile.docx', result.uploaded[0])
 
     #
     # Test for copy file.
@@ -104,3 +107,4 @@ class TestFile(BaseTestContext):
 
         result = self.words_api.download_file(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+

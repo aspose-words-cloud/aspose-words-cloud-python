@@ -142,7 +142,7 @@ class TextSaveOptionsData(object):
     def dml3_d_effects_rendering_mode(self):
         """Gets the dml3_d_effects_rendering_mode of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
+        Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
 
         :return: The dml3_d_effects_rendering_mode of this TextSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -153,7 +153,7 @@ class TextSaveOptionsData(object):
     def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
         """Sets the dml3_d_effects_rendering_mode of this TextSaveOptionsData.
 
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
+        Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
 
         :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this TextSaveOptionsData.  # noqa: E501
         :type: str
@@ -172,7 +172,7 @@ class TextSaveOptionsData(object):
     def dml_effects_rendering_mode(self):
         """Gets the dml_effects_rendering_mode of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :return: The dml_effects_rendering_mode of this TextSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -183,7 +183,7 @@ class TextSaveOptionsData(object):
     def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
         """Sets the dml_effects_rendering_mode of this TextSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this TextSaveOptionsData.  # noqa: E501
         :type: str
@@ -194,7 +194,7 @@ class TextSaveOptionsData(object):
     def dml_rendering_mode(self):
         """Gets the dml_rendering_mode of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
+        Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
 
         :return: The dml_rendering_mode of this TextSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -205,7 +205,7 @@ class TextSaveOptionsData(object):
     def dml_rendering_mode(self, dml_rendering_mode):
         """Sets the dml_rendering_mode of this TextSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
+        Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
 
         :param dml_rendering_mode: The dml_rendering_mode of this TextSaveOptionsData.  # noqa: E501
         :type: str
@@ -216,7 +216,7 @@ class TextSaveOptionsData(object):
     def file_name(self):
         """Gets the file_name of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets name of destination file.  # noqa: E501
+        Gets or sets the name of destination file.  # noqa: E501
 
         :return: The file_name of this TextSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -227,7 +227,7 @@ class TextSaveOptionsData(object):
     def file_name(self, file_name):
         """Sets the file_name of this TextSaveOptionsData.
 
-        Gets or sets name of destination file.  # noqa: E501
+        Gets or sets the name of destination file.  # noqa: E501
 
         :param file_name: The file_name of this TextSaveOptionsData.  # noqa: E501
         :type: str
@@ -238,7 +238,7 @@ class TextSaveOptionsData(object):
     def save_format(self):
         """Gets the save_format of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets format of save.  # noqa: E501
+        Gets or sets the format of save.  # noqa: E501
 
         :return: The save_format of this TextSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -249,7 +249,7 @@ class TextSaveOptionsData(object):
     def save_format(self, save_format):
         """Sets the save_format of this TextSaveOptionsData.
 
-        Gets or sets format of save.  # noqa: E501
+        Gets or sets the format of save.  # noqa: E501
 
         :param save_format: The save_format of this TextSaveOptionsData.  # noqa: E501
         :type: str
@@ -260,7 +260,7 @@ class TextSaveOptionsData(object):
     def update_fields(self):
         """Gets the update_fields of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.  # noqa: E501
+        Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.  # noqa: E501
 
         :return: The update_fields of this TextSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -271,7 +271,7 @@ class TextSaveOptionsData(object):
     def update_fields(self, update_fields):
         """Sets the update_fields of this TextSaveOptionsData.
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.  # noqa: E501
+        Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.  # noqa: E501
 
         :param update_fields: The update_fields of this TextSaveOptionsData.  # noqa: E501
         :type: bool
@@ -282,7 +282,7 @@ class TextSaveOptionsData(object):
     def update_last_printed_property(self):
         """Gets the update_last_printed_property of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
 
         :return: The update_last_printed_property of this TextSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -293,7 +293,7 @@ class TextSaveOptionsData(object):
     def update_last_printed_property(self, update_last_printed_property):
         """Sets the update_last_printed_property of this TextSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
 
         :param update_last_printed_property: The update_last_printed_property of this TextSaveOptionsData.  # noqa: E501
         :type: bool
@@ -304,7 +304,7 @@ class TextSaveOptionsData(object):
     def update_last_saved_time_property(self):
         """Gets the update_last_saved_time_property of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
 
         :return: The update_last_saved_time_property of this TextSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -315,7 +315,7 @@ class TextSaveOptionsData(object):
     def update_last_saved_time_property(self, update_last_saved_time_property):
         """Sets the update_last_saved_time_property of this TextSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
 
         :param update_last_saved_time_property: The update_last_saved_time_property of this TextSaveOptionsData.  # noqa: E501
         :type: bool
@@ -326,7 +326,7 @@ class TextSaveOptionsData(object):
     def update_sdt_content(self):
         """Gets the update_sdt_content of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :return: The update_sdt_content of this TextSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -337,7 +337,7 @@ class TextSaveOptionsData(object):
     def update_sdt_content(self, update_sdt_content):
         """Sets the update_sdt_content of this TextSaveOptionsData.
 
-        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :param update_sdt_content: The update_sdt_content of this TextSaveOptionsData.  # noqa: E501
         :type: bool
@@ -348,7 +348,7 @@ class TextSaveOptionsData(object):
     def zip_output(self):
         """Gets the zip_output of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
 
         :return: The zip_output of this TextSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -359,7 +359,7 @@ class TextSaveOptionsData(object):
     def zip_output(self, zip_output):
         """Sets the zip_output of this TextSaveOptionsData.
 
-        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
 
         :param zip_output: The zip_output of this TextSaveOptionsData.  # noqa: E501
         :type: bool
@@ -370,7 +370,7 @@ class TextSaveOptionsData(object):
     def encoding(self):
         """Gets the encoding of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies the encoding to use when exporting in plain text format.  # noqa: E501
+        Gets or sets the character encoding to use when exporting in plain text format.  # noqa: E501
 
         :return: The encoding of this TextSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -381,7 +381,7 @@ class TextSaveOptionsData(object):
     def encoding(self, encoding):
         """Sets the encoding of this TextSaveOptionsData.
 
-        Gets or sets specifies the encoding to use when exporting in plain text format.  # noqa: E501
+        Gets or sets the character encoding to use when exporting in plain text format.  # noqa: E501
 
         :param encoding: The encoding of this TextSaveOptionsData.  # noqa: E501
         :type: str
@@ -392,7 +392,7 @@ class TextSaveOptionsData(object):
     def export_headers_footers_mode(self):
         """Gets the export_headers_footers_mode of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
+        Gets or sets the option that controls whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
 
         :return: The export_headers_footers_mode of this TextSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -403,7 +403,7 @@ class TextSaveOptionsData(object):
     def export_headers_footers_mode(self, export_headers_footers_mode):
         """Sets the export_headers_footers_mode of this TextSaveOptionsData.
 
-        Gets or sets specifies whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
+        Gets or sets the option that controls whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
 
         :param export_headers_footers_mode: The export_headers_footers_mode of this TextSaveOptionsData.  # noqa: E501
         :type: str
@@ -422,7 +422,7 @@ class TextSaveOptionsData(object):
     def force_page_breaks(self):
         """Gets the force_page_breaks of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets allows to specify whether the page breaks should be preserved during export. The default value is false.  # noqa: E501
+        Gets or sets a value indicating whether the page breaks should be preserved during export. The default value is false.  # noqa: E501
 
         :return: The force_page_breaks of this TextSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -433,7 +433,7 @@ class TextSaveOptionsData(object):
     def force_page_breaks(self, force_page_breaks):
         """Sets the force_page_breaks of this TextSaveOptionsData.
 
-        Gets or sets allows to specify whether the page breaks should be preserved during export. The default value is false.  # noqa: E501
+        Gets or sets a value indicating whether the page breaks should be preserved during export. The default value is false.  # noqa: E501
 
         :param force_page_breaks: The force_page_breaks of this TextSaveOptionsData.  # noqa: E501
         :type: bool
@@ -444,7 +444,7 @@ class TextSaveOptionsData(object):
     def paragraph_break(self):
         """Gets the paragraph_break of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies the string to use as a paragraph break when exporting in plain text format.  # noqa: E501
+        Gets or sets the string to use as a paragraph break when exporting in plain text format.  # noqa: E501
 
         :return: The paragraph_break of this TextSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -455,7 +455,7 @@ class TextSaveOptionsData(object):
     def paragraph_break(self, paragraph_break):
         """Sets the paragraph_break of this TextSaveOptionsData.
 
-        Gets or sets specifies the string to use as a paragraph break when exporting in plain text format.  # noqa: E501
+        Gets or sets the string to use as a paragraph break when exporting in plain text format.  # noqa: E501
 
         :param paragraph_break: The paragraph_break of this TextSaveOptionsData.  # noqa: E501
         :type: str
@@ -466,7 +466,7 @@ class TextSaveOptionsData(object):
     def add_bidi_marks(self):
         """Gets the add_bidi_marks of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true.  # noqa: E501
+        Gets or sets a value indicating whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true.  # noqa: E501
 
         :return: The add_bidi_marks of this TextSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -477,7 +477,7 @@ class TextSaveOptionsData(object):
     def add_bidi_marks(self, add_bidi_marks):
         """Sets the add_bidi_marks of this TextSaveOptionsData.
 
-        Gets or sets specifies whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true.  # noqa: E501
+        Gets or sets a value indicating whether to add bi-directional marks before each BiDi run when exporting in plain text format. The default value is true.  # noqa: E501
 
         :param add_bidi_marks: The add_bidi_marks of this TextSaveOptionsData.  # noqa: E501
         :type: bool
@@ -488,7 +488,7 @@ class TextSaveOptionsData(object):
     def preserve_table_layout(self):
         """Gets the preserve_table_layout of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether the program should attempt to preserve layout of tables when saving in the plain text format.  # noqa: E501
+        Gets or sets a value indicating whether the program should attempt to preserve layout of tables when saving in the plain text format.  # noqa: E501
 
         :return: The preserve_table_layout of this TextSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -499,7 +499,7 @@ class TextSaveOptionsData(object):
     def preserve_table_layout(self, preserve_table_layout):
         """Sets the preserve_table_layout of this TextSaveOptionsData.
 
-        Gets or sets specifies whether the program should attempt to preserve layout of tables when saving in the plain text format.  # noqa: E501
+        Gets or sets a value indicating whether the program should attempt to preserve layout of tables when saving in the plain text format.  # noqa: E501
 
         :param preserve_table_layout: The preserve_table_layout of this TextSaveOptionsData.  # noqa: E501
         :type: bool
@@ -510,7 +510,7 @@ class TextSaveOptionsData(object):
     def simplify_list_labels(self):
         """Gets the simplify_list_labels of this TextSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.  # noqa: E501
+        Gets or sets a value indicating whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.  # noqa: E501
 
         :return: The simplify_list_labels of this TextSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -521,7 +521,7 @@ class TextSaveOptionsData(object):
     def simplify_list_labels(self, simplify_list_labels):
         """Sets the simplify_list_labels of this TextSaveOptionsData.
 
-        Gets or sets specifies whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.  # noqa: E501
+        Gets or sets a value indicating whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.  # noqa: E501
 
         :param simplify_list_labels: The simplify_list_labels of this TextSaveOptionsData.  # noqa: E501
         :type: bool

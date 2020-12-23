@@ -31,7 +31,7 @@ import json
 
 
 class TableInsert(object):
-    """Table element.
+    """DTO container with a table element.
     """
 
     """
@@ -72,7 +72,7 @@ class TableInsert(object):
     def columns_count(self):
         """Gets the columns_count of this TableInsert.  # noqa: E501
 
-        Gets or sets count of columns. Default is 2.  # noqa: E501
+        Gets or sets the number of columns. The default value is 2.  # noqa: E501
 
         :return: The columns_count of this TableInsert.  # noqa: E501
         :rtype: int
@@ -83,7 +83,7 @@ class TableInsert(object):
     def columns_count(self, columns_count):
         """Sets the columns_count of this TableInsert.
 
-        Gets or sets count of columns. Default is 2.  # noqa: E501
+        Gets or sets the number of columns. The default value is 2.  # noqa: E501
 
         :param columns_count: The columns_count of this TableInsert.  # noqa: E501
         :type: int
@@ -94,7 +94,7 @@ class TableInsert(object):
     def position(self):
         """Gets the position of this TableInsert.  # noqa: E501
 
-        Gets or sets table will be inserted before specified position.  # noqa: E501
+        Gets or sets the position to insert the table. The table will be inserted before the specified position.  # noqa: E501
 
         :return: The position of this TableInsert.  # noqa: E501
         :rtype: DocumentPosition
@@ -105,7 +105,7 @@ class TableInsert(object):
     def position(self, position):
         """Sets the position of this TableInsert.
 
-        Gets or sets table will be inserted before specified position.  # noqa: E501
+        Gets or sets the position to insert the table. The table will be inserted before the specified position.  # noqa: E501
 
         :param position: The position of this TableInsert.  # noqa: E501
         :type: DocumentPosition
@@ -116,7 +116,7 @@ class TableInsert(object):
     def rows_count(self):
         """Gets the rows_count of this TableInsert.  # noqa: E501
 
-        Gets or sets count of rows. Default is 2.  # noqa: E501
+        Gets or sets the number of rows. The default value is 2.  # noqa: E501
 
         :return: The rows_count of this TableInsert.  # noqa: E501
         :rtype: int
@@ -127,7 +127,7 @@ class TableInsert(object):
     def rows_count(self, rows_count):
         """Sets the rows_count of this TableInsert.
 
-        Gets or sets count of rows. Default is 2.  # noqa: E501
+        Gets or sets the number of rows. The default value is 2.  # noqa: E501
 
         :param rows_count: The rows_count of this TableInsert.  # noqa: E501
         :type: int

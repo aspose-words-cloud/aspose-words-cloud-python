@@ -31,7 +31,7 @@ import json
 
 
 class ListLevels(object):
-    """Represents a single document list.
+    """DTO container with a single document list.
     """
 
     """
@@ -67,7 +67,7 @@ class ListLevels(object):
     def link(self):
         """Gets the link of this ListLevels.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this ListLevels.  # noqa: E501
         :rtype: WordsApiLink
@@ -78,7 +78,7 @@ class ListLevels(object):
     def link(self, link):
         """Sets the link of this ListLevels.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this ListLevels.  # noqa: E501
         :type: WordsApiLink

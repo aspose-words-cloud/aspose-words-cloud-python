@@ -24,6 +24,8 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
+from six.moves.urllib.parse import quote
+
 class UploadFileRequest(object):
     """
     Request model for upload_file operation.
@@ -37,3 +39,61 @@ class UploadFileRequest(object):
         self.file_content = file_content
         self.path = path
         self.storage_name = storage_name
+
+    def create_http_request(self, api_client):
+        # verify the required parameter 'file_content' is set
+        if self.file_content is None:
+            raise ValueError("Missing the required parameter `file_content` when calling `upload_file`")  # noqa: E501
+        # verify the required parameter 'path' is set
+        if self.path is None:
+            raise ValueError("Missing the required parameter `path` when calling `upload_file`")  # noqa: E501
+
+        path = '/v4.0/words/storage/file/{path}'
+        path_params = {}
+        if self.path is not None:
+            path_params['path'] = self.path  # noqa: E501
+        else:
+            path_params['path'] = ''  # noqa: E501
+
+        # path parameters
+        collection_formats = {}
+        if path_params:
+            path_params = api_client.sanitize_for_serialization(path_params)
+            path_params = api_client.parameters_to_tuples(path_params, collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                path = path.replace(
+                    '{%s}' % k,
+                    quote(str(v), safe=api_client.configuration.safe_chars_for_path_param)
+                )
+
+        # remove optional path parameters
+        path = path.replace('//', '/')
+
+        query_params = []
+        if self.storage_name is not None:
+                query_params.append(('storageName', self.storage_name))  # noqa: E501
+
+        header_params = {}
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        form_params = []
+        if self.file_content is not None:
+            form_params.append(['fileContent', self.file_content, 'file'])  # noqa: E501
+
+        body_params = None
+        return {
+            "method": "PUT",
+            "path": path,
+            "query_params": query_params,
+            "header_params": header_params,
+            "form_params": form_params,
+            "body": body_params,
+            "collection_formats": collection_formats,
+            "response_type": FilesUploadResult  # noqa: E501
+        }
+
+    def get_response_type(self):
+        return FilesUploadResult  # noqa: E501

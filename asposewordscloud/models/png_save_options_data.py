@@ -31,7 +31,7 @@ import json
 
 
 class PngSaveOptionsData(object):
-    """container class for png save options.
+    """Container class for png save options.
     """
 
     """
@@ -207,7 +207,7 @@ class PngSaveOptionsData(object):
     def dml3_d_effects_rendering_mode(self):
         """Gets the dml3_d_effects_rendering_mode of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
+        Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
 
         :return: The dml3_d_effects_rendering_mode of this PngSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -218,7 +218,7 @@ class PngSaveOptionsData(object):
     def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
         """Sets the dml3_d_effects_rendering_mode of this PngSaveOptionsData.
 
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
+        Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
 
         :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this PngSaveOptionsData.  # noqa: E501
         :type: str
@@ -237,7 +237,7 @@ class PngSaveOptionsData(object):
     def dml_effects_rendering_mode(self):
         """Gets the dml_effects_rendering_mode of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :return: The dml_effects_rendering_mode of this PngSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -248,7 +248,7 @@ class PngSaveOptionsData(object):
     def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
         """Sets the dml_effects_rendering_mode of this PngSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this PngSaveOptionsData.  # noqa: E501
         :type: str
@@ -259,7 +259,7 @@ class PngSaveOptionsData(object):
     def dml_rendering_mode(self):
         """Gets the dml_rendering_mode of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
+        Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
 
         :return: The dml_rendering_mode of this PngSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -270,7 +270,7 @@ class PngSaveOptionsData(object):
     def dml_rendering_mode(self, dml_rendering_mode):
         """Sets the dml_rendering_mode of this PngSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
+        Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
 
         :param dml_rendering_mode: The dml_rendering_mode of this PngSaveOptionsData.  # noqa: E501
         :type: str
@@ -281,7 +281,7 @@ class PngSaveOptionsData(object):
     def file_name(self):
         """Gets the file_name of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets name of destination file.  # noqa: E501
+        Gets or sets the name of destination file.  # noqa: E501
 
         :return: The file_name of this PngSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -292,7 +292,7 @@ class PngSaveOptionsData(object):
     def file_name(self, file_name):
         """Sets the file_name of this PngSaveOptionsData.
 
-        Gets or sets name of destination file.  # noqa: E501
+        Gets or sets the name of destination file.  # noqa: E501
 
         :param file_name: The file_name of this PngSaveOptionsData.  # noqa: E501
         :type: str
@@ -303,7 +303,7 @@ class PngSaveOptionsData(object):
     def save_format(self):
         """Gets the save_format of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets format of save.  # noqa: E501
+        Gets or sets the format of save.  # noqa: E501
 
         :return: The save_format of this PngSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -314,7 +314,7 @@ class PngSaveOptionsData(object):
     def save_format(self, save_format):
         """Sets the save_format of this PngSaveOptionsData.
 
-        Gets or sets format of save.  # noqa: E501
+        Gets or sets the format of save.  # noqa: E501
 
         :param save_format: The save_format of this PngSaveOptionsData.  # noqa: E501
         :type: str
@@ -325,7 +325,7 @@ class PngSaveOptionsData(object):
     def update_fields(self):
         """Gets the update_fields of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.  # noqa: E501
+        Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.  # noqa: E501
 
         :return: The update_fields of this PngSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -336,7 +336,7 @@ class PngSaveOptionsData(object):
     def update_fields(self, update_fields):
         """Sets the update_fields of this PngSaveOptionsData.
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.  # noqa: E501
+        Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.  # noqa: E501
 
         :param update_fields: The update_fields of this PngSaveOptionsData.  # noqa: E501
         :type: bool
@@ -347,7 +347,7 @@ class PngSaveOptionsData(object):
     def update_last_printed_property(self):
         """Gets the update_last_printed_property of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
 
         :return: The update_last_printed_property of this PngSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -358,7 +358,7 @@ class PngSaveOptionsData(object):
     def update_last_printed_property(self, update_last_printed_property):
         """Sets the update_last_printed_property of this PngSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
 
         :param update_last_printed_property: The update_last_printed_property of this PngSaveOptionsData.  # noqa: E501
         :type: bool
@@ -369,7 +369,7 @@ class PngSaveOptionsData(object):
     def update_last_saved_time_property(self):
         """Gets the update_last_saved_time_property of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
 
         :return: The update_last_saved_time_property of this PngSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -380,7 +380,7 @@ class PngSaveOptionsData(object):
     def update_last_saved_time_property(self, update_last_saved_time_property):
         """Sets the update_last_saved_time_property of this PngSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
 
         :param update_last_saved_time_property: The update_last_saved_time_property of this PngSaveOptionsData.  # noqa: E501
         :type: bool
@@ -391,7 +391,7 @@ class PngSaveOptionsData(object):
     def update_sdt_content(self):
         """Gets the update_sdt_content of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :return: The update_sdt_content of this PngSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -402,7 +402,7 @@ class PngSaveOptionsData(object):
     def update_sdt_content(self, update_sdt_content):
         """Sets the update_sdt_content of this PngSaveOptionsData.
 
-        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :param update_sdt_content: The update_sdt_content of this PngSaveOptionsData.  # noqa: E501
         :type: bool
@@ -413,7 +413,7 @@ class PngSaveOptionsData(object):
     def zip_output(self):
         """Gets the zip_output of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
 
         :return: The zip_output of this PngSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -424,7 +424,7 @@ class PngSaveOptionsData(object):
     def zip_output(self, zip_output):
         """Sets the zip_output of this PngSaveOptionsData.
 
-        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
 
         :param zip_output: The zip_output of this PngSaveOptionsData.  # noqa: E501
         :type: bool
@@ -435,7 +435,7 @@ class PngSaveOptionsData(object):
     def color_mode(self):
         """Gets the color_mode of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
+        Gets or sets the value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
 
         :return: The color_mode of this PngSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -446,7 +446,7 @@ class PngSaveOptionsData(object):
     def color_mode(self, color_mode):
         """Sets the color_mode of this PngSaveOptionsData.
 
-        Gets or sets a value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
+        Gets or sets the value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
 
         :param color_mode: The color_mode of this PngSaveOptionsData.  # noqa: E501
         :type: str
@@ -457,7 +457,7 @@ class PngSaveOptionsData(object):
     def jpeg_quality(self):
         """Gets the jpeg_quality of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets determines the quality of the JPEG images inside PDF document.  # noqa: E501
+        Gets or sets the quality of the JPEG images inside PDF document.  # noqa: E501
 
         :return: The jpeg_quality of this PngSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -468,7 +468,7 @@ class PngSaveOptionsData(object):
     def jpeg_quality(self, jpeg_quality):
         """Sets the jpeg_quality of this PngSaveOptionsData.
 
-        Gets or sets determines the quality of the JPEG images inside PDF document.  # noqa: E501
+        Gets or sets the quality of the JPEG images inside PDF document.  # noqa: E501
 
         :param jpeg_quality: The jpeg_quality of this PngSaveOptionsData.  # noqa: E501
         :type: int
@@ -479,7 +479,7 @@ class PngSaveOptionsData(object):
     def metafile_rendering_options(self):
         """Gets the metafile_rendering_options of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets allows to specify metafile rendering options.  # noqa: E501
+        Gets or sets the metafile rendering options.  # noqa: E501
 
         :return: The metafile_rendering_options of this PngSaveOptionsData.  # noqa: E501
         :rtype: MetafileRenderingOptionsData
@@ -490,7 +490,7 @@ class PngSaveOptionsData(object):
     def metafile_rendering_options(self, metafile_rendering_options):
         """Sets the metafile_rendering_options of this PngSaveOptionsData.
 
-        Gets or sets allows to specify metafile rendering options.  # noqa: E501
+        Gets or sets the metafile rendering options.  # noqa: E501
 
         :param metafile_rendering_options: The metafile_rendering_options of this PngSaveOptionsData.  # noqa: E501
         :type: MetafileRenderingOptionsData
@@ -501,7 +501,7 @@ class PngSaveOptionsData(object):
     def numeral_format(self):
         """Gets the numeral_format of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
+        Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
 
         :return: The numeral_format of this PngSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -512,7 +512,7 @@ class PngSaveOptionsData(object):
     def numeral_format(self, numeral_format):
         """Sets the numeral_format of this PngSaveOptionsData.
 
-        Gets or sets indicates the symbol set that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
+        Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
 
         :param numeral_format: The numeral_format of this PngSaveOptionsData.  # noqa: E501
         :type: str
@@ -523,7 +523,7 @@ class PngSaveOptionsData(object):
     def optimize_output(self):
         """Gets the optimize_output of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
+        Gets or sets a value indicating whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.. The default value is false.  # noqa: E501
 
         :return: The optimize_output of this PngSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -534,7 +534,7 @@ class PngSaveOptionsData(object):
     def optimize_output(self, optimize_output):
         """Sets the optimize_output of this PngSaveOptionsData.
 
-        Gets or sets flag indicates whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.  Default is false.  # noqa: E501
+        Gets or sets a value indicating whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.. The default value is false.  # noqa: E501
 
         :param optimize_output: The optimize_output of this PngSaveOptionsData.  # noqa: E501
         :type: bool
@@ -545,7 +545,7 @@ class PngSaveOptionsData(object):
     def page_count(self):
         """Gets the page_count of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets determines number of pages to render.  # noqa: E501
+        Gets or sets the number of pages to render.  # noqa: E501
 
         :return: The page_count of this PngSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -556,7 +556,7 @@ class PngSaveOptionsData(object):
     def page_count(self, page_count):
         """Sets the page_count of this PngSaveOptionsData.
 
-        Gets or sets determines number of pages to render.  # noqa: E501
+        Gets or sets the number of pages to render.  # noqa: E501
 
         :param page_count: The page_count of this PngSaveOptionsData.  # noqa: E501
         :type: int
@@ -567,7 +567,7 @@ class PngSaveOptionsData(object):
     def page_index(self):
         """Gets the page_index of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets determines 0-based index of the first page to render.  # noqa: E501
+        Gets or sets the 0-based index of the first page to render.  # noqa: E501
 
         :return: The page_index of this PngSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -578,7 +578,7 @@ class PngSaveOptionsData(object):
     def page_index(self, page_index):
         """Sets the page_index of this PngSaveOptionsData.
 
-        Gets or sets determines 0-based index of the first page to render.  # noqa: E501
+        Gets or sets the 0-based index of the first page to render.  # noqa: E501
 
         :param page_index: The page_index of this PngSaveOptionsData.  # noqa: E501
         :type: int
@@ -589,7 +589,7 @@ class PngSaveOptionsData(object):
     def graphics_quality_options(self):
         """Gets the graphics_quality_options of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets allows to specify additional System.Drawing.Graphics quality options.  # noqa: E501
+        Gets or sets the additional System.Drawing.Graphics quality options.  # noqa: E501
 
         :return: The graphics_quality_options of this PngSaveOptionsData.  # noqa: E501
         :rtype: GraphicsQualityOptionsData
@@ -600,7 +600,7 @@ class PngSaveOptionsData(object):
     def graphics_quality_options(self, graphics_quality_options):
         """Sets the graphics_quality_options of this PngSaveOptionsData.
 
-        Gets or sets allows to specify additional System.Drawing.Graphics quality options.  # noqa: E501
+        Gets or sets the additional System.Drawing.Graphics quality options.  # noqa: E501
 
         :param graphics_quality_options: The graphics_quality_options of this PngSaveOptionsData.  # noqa: E501
         :type: GraphicsQualityOptionsData
@@ -611,7 +611,7 @@ class PngSaveOptionsData(object):
     def horizontal_resolution(self):
         """Gets the horizontal_resolution of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets the horizontal resolution for the generated images, in dots per inch. This property has effect only when saving to raster image formats. The default value is 96.  # noqa: E501
+        Gets or sets the horizontal resolution in dots per inch for the generated images. This property has effect only when saving to raster image formats. The default value is 96.  # noqa: E501
 
         :return: The horizontal_resolution of this PngSaveOptionsData.  # noqa: E501
         :rtype: float
@@ -622,7 +622,7 @@ class PngSaveOptionsData(object):
     def horizontal_resolution(self, horizontal_resolution):
         """Sets the horizontal_resolution of this PngSaveOptionsData.
 
-        Gets or sets the horizontal resolution for the generated images, in dots per inch. This property has effect only when saving to raster image formats. The default value is 96.  # noqa: E501
+        Gets or sets the horizontal resolution in dots per inch for the generated images. This property has effect only when saving to raster image formats. The default value is 96.  # noqa: E501
 
         :param horizontal_resolution: The horizontal_resolution of this PngSaveOptionsData.  # noqa: E501
         :type: float
@@ -633,7 +633,7 @@ class PngSaveOptionsData(object):
     def image_brightness(self):
         """Gets the image_brightness of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets brightness of image.  # noqa: E501
+        Gets or sets the brightness level of the image.  # noqa: E501
 
         :return: The image_brightness of this PngSaveOptionsData.  # noqa: E501
         :rtype: float
@@ -644,7 +644,7 @@ class PngSaveOptionsData(object):
     def image_brightness(self, image_brightness):
         """Sets the image_brightness of this PngSaveOptionsData.
 
-        Gets or sets brightness of image.  # noqa: E501
+        Gets or sets the brightness level of the image.  # noqa: E501
 
         :param image_brightness: The image_brightness of this PngSaveOptionsData.  # noqa: E501
         :type: float
@@ -655,7 +655,7 @@ class PngSaveOptionsData(object):
     def image_color_mode(self):
         """Gets the image_color_mode of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets color mode of image.  # noqa: E501
+        Gets or sets the color mode of the image.  # noqa: E501
 
         :return: The image_color_mode of this PngSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -666,7 +666,7 @@ class PngSaveOptionsData(object):
     def image_color_mode(self, image_color_mode):
         """Sets the image_color_mode of this PngSaveOptionsData.
 
-        Gets or sets color mode of image.  # noqa: E501
+        Gets or sets the color mode of the image.  # noqa: E501
 
         :param image_color_mode: The image_color_mode of this PngSaveOptionsData.  # noqa: E501
         :type: str
@@ -677,7 +677,7 @@ class PngSaveOptionsData(object):
     def image_contrast(self):
         """Gets the image_contrast of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets contrast of image.  # noqa: E501
+        Gets or sets the contrast level of the image.  # noqa: E501
 
         :return: The image_contrast of this PngSaveOptionsData.  # noqa: E501
         :rtype: float
@@ -688,7 +688,7 @@ class PngSaveOptionsData(object):
     def image_contrast(self, image_contrast):
         """Sets the image_contrast of this PngSaveOptionsData.
 
-        Gets or sets contrast of image.  # noqa: E501
+        Gets or sets the contrast level of the image.  # noqa: E501
 
         :param image_contrast: The image_contrast of this PngSaveOptionsData.  # noqa: E501
         :type: float
@@ -699,7 +699,7 @@ class PngSaveOptionsData(object):
     def paper_color(self):
         """Gets the paper_color of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets background (paper) color of image.  # noqa: E501
+        Gets or sets the background (paper) color of the image.  # noqa: E501
 
         :return: The paper_color of this PngSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -710,7 +710,7 @@ class PngSaveOptionsData(object):
     def paper_color(self, paper_color):
         """Sets the paper_color of this PngSaveOptionsData.
 
-        Gets or sets background (paper) color of image.  # noqa: E501
+        Gets or sets the background (paper) color of the image.  # noqa: E501
 
         :param paper_color: The paper_color of this PngSaveOptionsData.  # noqa: E501
         :type: str
@@ -721,7 +721,7 @@ class PngSaveOptionsData(object):
     def pixel_format(self):
         """Gets the pixel_format of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets pixel format of image.  # noqa: E501
+        Gets or sets the pixel format of the image.  # noqa: E501
 
         :return: The pixel_format of this PngSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -732,7 +732,7 @@ class PngSaveOptionsData(object):
     def pixel_format(self, pixel_format):
         """Sets the pixel_format of this PngSaveOptionsData.
 
-        Gets or sets pixel format of image.  # noqa: E501
+        Gets or sets the pixel format of the image.  # noqa: E501
 
         :param pixel_format: The pixel_format of this PngSaveOptionsData.  # noqa: E501
         :type: str
@@ -743,7 +743,7 @@ class PngSaveOptionsData(object):
     def resolution(self):
         """Gets the resolution of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets both horizontal and vertical resolution for the generated images, in dots per inch. This property has effect only when saving to raster image formats. The default value is 96.  # noqa: E501
+        Gets or sets both horizontal and vertical resolution in dots per inch for the generated images. This property has effect only when saving to raster image formats. The default value is 96.  # noqa: E501
 
         :return: The resolution of this PngSaveOptionsData.  # noqa: E501
         :rtype: float
@@ -754,7 +754,7 @@ class PngSaveOptionsData(object):
     def resolution(self, resolution):
         """Sets the resolution of this PngSaveOptionsData.
 
-        Gets or sets both horizontal and vertical resolution for the generated images, in dots per inch. This property has effect only when saving to raster image formats. The default value is 96.  # noqa: E501
+        Gets or sets both horizontal and vertical resolution in dots per inch for the generated images. This property has effect only when saving to raster image formats. The default value is 96.  # noqa: E501
 
         :param resolution: The resolution of this PngSaveOptionsData.  # noqa: E501
         :type: float
@@ -765,7 +765,7 @@ class PngSaveOptionsData(object):
     def scale(self):
         """Gets the scale of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets zoom factor of image.  # noqa: E501
+        Gets or sets the zoom factor of the image.  # noqa: E501
 
         :return: The scale of this PngSaveOptionsData.  # noqa: E501
         :rtype: float
@@ -776,7 +776,7 @@ class PngSaveOptionsData(object):
     def scale(self, scale):
         """Sets the scale of this PngSaveOptionsData.
 
-        Gets or sets zoom factor of image.  # noqa: E501
+        Gets or sets the zoom factor of the image.  # noqa: E501
 
         :param scale: The scale of this PngSaveOptionsData.  # noqa: E501
         :type: float
@@ -787,7 +787,7 @@ class PngSaveOptionsData(object):
     def use_anti_aliasing(self):
         """Gets the use_anti_aliasing of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets determine whether or not to use anti-aliasing for rendering.  # noqa: E501
+        Gets or sets a value indicating whether to use anti-aliasing for rendering.  # noqa: E501
 
         :return: The use_anti_aliasing of this PngSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -798,7 +798,7 @@ class PngSaveOptionsData(object):
     def use_anti_aliasing(self, use_anti_aliasing):
         """Sets the use_anti_aliasing of this PngSaveOptionsData.
 
-        Gets or sets determine whether or not to use anti-aliasing for rendering.  # noqa: E501
+        Gets or sets a value indicating whether to use anti-aliasing for rendering.  # noqa: E501
 
         :param use_anti_aliasing: The use_anti_aliasing of this PngSaveOptionsData.  # noqa: E501
         :type: bool
@@ -809,7 +809,7 @@ class PngSaveOptionsData(object):
     def use_gdi_emf_renderer(self):
         """Gets the use_gdi_emf_renderer of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.  # noqa: E501
+        Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.  # noqa: E501
 
         :return: The use_gdi_emf_renderer of this PngSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -820,7 +820,7 @@ class PngSaveOptionsData(object):
     def use_gdi_emf_renderer(self, use_gdi_emf_renderer):
         """Sets the use_gdi_emf_renderer of this PngSaveOptionsData.
 
-        Gets or sets a value determining whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.  # noqa: E501
+        Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.  # noqa: E501
 
         :param use_gdi_emf_renderer: The use_gdi_emf_renderer of this PngSaveOptionsData.  # noqa: E501
         :type: bool
@@ -831,7 +831,7 @@ class PngSaveOptionsData(object):
     def use_high_quality_rendering(self):
         """Gets the use_high_quality_rendering of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets determine whether or not to use high quality (i.e. slow) rendering algorithms.  # noqa: E501
+        Gets or sets a value indicating whether to use high quality (i.e. slow) rendering algorithms.  # noqa: E501
 
         :return: The use_high_quality_rendering of this PngSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -842,7 +842,7 @@ class PngSaveOptionsData(object):
     def use_high_quality_rendering(self, use_high_quality_rendering):
         """Sets the use_high_quality_rendering of this PngSaveOptionsData.
 
-        Gets or sets determine whether or not to use high quality (i.e. slow) rendering algorithms.  # noqa: E501
+        Gets or sets a value indicating whether to use high quality (i.e. slow) rendering algorithms.  # noqa: E501
 
         :param use_high_quality_rendering: The use_high_quality_rendering of this PngSaveOptionsData.  # noqa: E501
         :type: bool
@@ -853,7 +853,7 @@ class PngSaveOptionsData(object):
     def vertical_resolution(self):
         """Gets the vertical_resolution of this PngSaveOptionsData.  # noqa: E501
 
-        Gets or sets the vertical resolution for the generated images, in dots per inch. This property has effect only when saving to raster image formats. The default value is 96.  # noqa: E501
+        Gets or sets the vertical resolution in dots per inch for the generated images. This property has effect only when saving to raster image formats. The default value is 96.  # noqa: E501
 
         :return: The vertical_resolution of this PngSaveOptionsData.  # noqa: E501
         :rtype: float
@@ -864,7 +864,7 @@ class PngSaveOptionsData(object):
     def vertical_resolution(self, vertical_resolution):
         """Sets the vertical_resolution of this PngSaveOptionsData.
 
-        Gets or sets the vertical resolution for the generated images, in dots per inch. This property has effect only when saving to raster image formats. The default value is 96.  # noqa: E501
+        Gets or sets the vertical resolution in dots per inch for the generated images. This property has effect only when saving to raster image formats. The default value is 96.  # noqa: E501
 
         :param vertical_resolution: The vertical_resolution of this PngSaveOptionsData.  # noqa: E501
         :type: float

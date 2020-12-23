@@ -77,7 +77,7 @@ class CompareData(object):
     def author(self):
         """Gets the author of this CompareData.  # noqa: E501
 
-        Gets or sets initials of the author to use for revisions.  # noqa: E501
+        Gets or sets the initials of the author to use for revisions.  # noqa: E501
 
         :return: The author of this CompareData.  # noqa: E501
         :rtype: str
@@ -88,7 +88,7 @@ class CompareData(object):
     def author(self, author):
         """Sets the author of this CompareData.
 
-        Gets or sets initials of the author to use for revisions.  # noqa: E501
+        Gets or sets the initials of the author to use for revisions.  # noqa: E501
 
         :param author: The author of this CompareData.  # noqa: E501
         :type: str
@@ -121,7 +121,7 @@ class CompareData(object):
     def comparing_with_document(self):
         """Gets the comparing_with_document of this CompareData.  # noqa: E501
 
-        Gets or sets path to document to compare at the server.  # noqa: E501
+        Gets or sets the path to document to compare at the server.  # noqa: E501
 
         :return: The comparing_with_document of this CompareData.  # noqa: E501
         :rtype: str
@@ -132,7 +132,7 @@ class CompareData(object):
     def comparing_with_document(self, comparing_with_document):
         """Sets the comparing_with_document of this CompareData.
 
-        Gets or sets path to document to compare at the server.  # noqa: E501
+        Gets or sets the path to document to compare at the server.  # noqa: E501
 
         :param comparing_with_document: The comparing_with_document of this CompareData.  # noqa: E501
         :type: str

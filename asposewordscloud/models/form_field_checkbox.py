@@ -127,7 +127,7 @@ class FormFieldCheckbox(object):
     def link(self):
         """Gets the link of this FormFieldCheckbox.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this FormFieldCheckbox.  # noqa: E501
         :rtype: WordsApiLink
@@ -138,7 +138,7 @@ class FormFieldCheckbox(object):
     def link(self, link):
         """Sets the link of this FormFieldCheckbox.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this FormFieldCheckbox.  # noqa: E501
         :type: WordsApiLink
@@ -149,7 +149,7 @@ class FormFieldCheckbox(object):
     def node_id(self):
         """Gets the node_id of this FormFieldCheckbox.  # noqa: E501
 
-        Gets or sets node id.  # noqa: E501
+        Gets or sets the node id.  # noqa: E501
 
         :return: The node_id of this FormFieldCheckbox.  # noqa: E501
         :rtype: str
@@ -160,7 +160,7 @@ class FormFieldCheckbox(object):
     def node_id(self, node_id):
         """Sets the node_id of this FormFieldCheckbox.
 
-        Gets or sets node id.  # noqa: E501
+        Gets or sets the node id.  # noqa: E501
 
         :param node_id: The node_id of this FormFieldCheckbox.  # noqa: E501
         :type: str
@@ -171,7 +171,7 @@ class FormFieldCheckbox(object):
     def calculate_on_exit(self):
         """Gets the calculate_on_exit of this FormFieldCheckbox.  # noqa: E501
 
-        Gets or sets true if references to the specified form field are automatically updated whenever the field is exited.  # noqa: E501
+        Gets or sets a value indicating whether references to the specified form field are automatically updated whenever the field is exited.  # noqa: E501
 
         :return: The calculate_on_exit of this FormFieldCheckbox.  # noqa: E501
         :rtype: bool
@@ -182,7 +182,7 @@ class FormFieldCheckbox(object):
     def calculate_on_exit(self, calculate_on_exit):
         """Sets the calculate_on_exit of this FormFieldCheckbox.
 
-        Gets or sets true if references to the specified form field are automatically updated whenever the field is exited.  # noqa: E501
+        Gets or sets a value indicating whether references to the specified form field are automatically updated whenever the field is exited.  # noqa: E501
 
         :param calculate_on_exit: The calculate_on_exit of this FormFieldCheckbox.  # noqa: E501
         :type: bool
@@ -193,7 +193,7 @@ class FormFieldCheckbox(object):
     def enabled(self):
         """Gets the enabled of this FormFieldCheckbox.  # noqa: E501
 
-        Gets or sets true if a form field is enabled.  # noqa: E501
+        Gets or sets a value indicating whether a form field is enabled.  # noqa: E501
 
         :return: The enabled of this FormFieldCheckbox.  # noqa: E501
         :rtype: bool
@@ -204,7 +204,7 @@ class FormFieldCheckbox(object):
     def enabled(self, enabled):
         """Sets the enabled of this FormFieldCheckbox.
 
-        Gets or sets true if a form field is enabled.  # noqa: E501
+        Gets or sets a value indicating whether a form field is enabled.  # noqa: E501
 
         :param enabled: The enabled of this FormFieldCheckbox.  # noqa: E501
         :type: bool
@@ -215,7 +215,7 @@ class FormFieldCheckbox(object):
     def entry_macro(self):
         """Gets the entry_macro of this FormFieldCheckbox.  # noqa: E501
 
-        Gets or sets returns or sets an entry macro name for the form field.  # noqa: E501
+        Gets or sets the entry macro name for the form field.  # noqa: E501
 
         :return: The entry_macro of this FormFieldCheckbox.  # noqa: E501
         :rtype: str
@@ -226,7 +226,7 @@ class FormFieldCheckbox(object):
     def entry_macro(self, entry_macro):
         """Sets the entry_macro of this FormFieldCheckbox.
 
-        Gets or sets returns or sets an entry macro name for the form field.  # noqa: E501
+        Gets or sets the entry macro name for the form field.  # noqa: E501
 
         :param entry_macro: The entry_macro of this FormFieldCheckbox.  # noqa: E501
         :type: str
@@ -237,7 +237,7 @@ class FormFieldCheckbox(object):
     def exit_macro(self):
         """Gets the exit_macro of this FormFieldCheckbox.  # noqa: E501
 
-        Gets or sets returns or sets an exit macro name for the form field.  # noqa: E501
+        Gets or sets the exit macro name for the form field.  # noqa: E501
 
         :return: The exit_macro of this FormFieldCheckbox.  # noqa: E501
         :rtype: str
@@ -248,7 +248,7 @@ class FormFieldCheckbox(object):
     def exit_macro(self, exit_macro):
         """Sets the exit_macro of this FormFieldCheckbox.
 
-        Gets or sets returns or sets an exit macro name for the form field.  # noqa: E501
+        Gets or sets the exit macro name for the form field.  # noqa: E501
 
         :param exit_macro: The exit_macro of this FormFieldCheckbox.  # noqa: E501
         :type: str
@@ -259,7 +259,7 @@ class FormFieldCheckbox(object):
     def help_text(self):
         """Gets the help_text of this FormFieldCheckbox.  # noqa: E501
 
-        Gets or sets returns or sets the text that's displayed in a message box when the form field has the focus and the user presses F1.  # noqa: E501
+        Gets or sets text, displayed in a message box when the form field has the focus and the user presses F1.  # noqa: E501
 
         :return: The help_text of this FormFieldCheckbox.  # noqa: E501
         :rtype: str
@@ -270,7 +270,7 @@ class FormFieldCheckbox(object):
     def help_text(self, help_text):
         """Sets the help_text of this FormFieldCheckbox.
 
-        Gets or sets returns or sets the text that's displayed in a message box when the form field has the focus and the user presses F1.  # noqa: E501
+        Gets or sets text, displayed in a message box when the form field has the focus and the user presses F1.  # noqa: E501
 
         :param help_text: The help_text of this FormFieldCheckbox.  # noqa: E501
         :type: str
@@ -303,7 +303,7 @@ class FormFieldCheckbox(object):
     def own_help(self):
         """Gets the own_help of this FormFieldCheckbox.  # noqa: E501
 
-        Gets or sets specifies the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.  # noqa: E501
+        Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.  # noqa: E501
 
         :return: The own_help of this FormFieldCheckbox.  # noqa: E501
         :rtype: bool
@@ -314,7 +314,7 @@ class FormFieldCheckbox(object):
     def own_help(self, own_help):
         """Sets the own_help of this FormFieldCheckbox.
 
-        Gets or sets specifies the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.  # noqa: E501
+        Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.  # noqa: E501
 
         :param own_help: The own_help of this FormFieldCheckbox.  # noqa: E501
         :type: bool
@@ -325,7 +325,7 @@ class FormFieldCheckbox(object):
     def own_status(self):
         """Gets the own_status of this FormFieldCheckbox.  # noqa: E501
 
-        Gets or sets specifies the source of the text that's displayed in the status bar when a form field has the focus.  # noqa: E501
+        Gets or sets a value indicating whether the source of the text that's displayed in the status bar when a form field has the focus.  # noqa: E501
 
         :return: The own_status of this FormFieldCheckbox.  # noqa: E501
         :rtype: bool
@@ -336,7 +336,7 @@ class FormFieldCheckbox(object):
     def own_status(self, own_status):
         """Sets the own_status of this FormFieldCheckbox.
 
-        Gets or sets specifies the source of the text that's displayed in the status bar when a form field has the focus.  # noqa: E501
+        Gets or sets a value indicating whether the source of the text that's displayed in the status bar when a form field has the focus.  # noqa: E501
 
         :param own_status: The own_status of this FormFieldCheckbox.  # noqa: E501
         :type: bool
@@ -347,7 +347,7 @@ class FormFieldCheckbox(object):
     def status_text(self):
         """Gets the status_text of this FormFieldCheckbox.  # noqa: E501
 
-        Gets or sets returns or sets the text that's displayed in the status bar when a form field has the focus.  # noqa: E501
+        Gets or sets text, displayed in the status bar when a form field has the focus.  # noqa: E501
 
         :return: The status_text of this FormFieldCheckbox.  # noqa: E501
         :rtype: str
@@ -358,7 +358,7 @@ class FormFieldCheckbox(object):
     def status_text(self, status_text):
         """Sets the status_text of this FormFieldCheckbox.
 
-        Gets or sets returns or sets the text that's displayed in the status bar when a form field has the focus.  # noqa: E501
+        Gets or sets text, displayed in the status bar when a form field has the focus.  # noqa: E501
 
         :param status_text: The status_text of this FormFieldCheckbox.  # noqa: E501
         :type: str
@@ -413,7 +413,7 @@ class FormFieldCheckbox(object):
     def is_check_box_exact_size(self):
         """Gets the is_check_box_exact_size of this FormFieldCheckbox.  # noqa: E501
 
-        Gets or sets the boolean value that indicates whether the size of the textbox is automatic or specified explicitly.  # noqa: E501
+        Gets or sets a value indicating whether the size of the textbox is automatic or specified explicitly.  # noqa: E501
 
         :return: The is_check_box_exact_size of this FormFieldCheckbox.  # noqa: E501
         :rtype: bool
@@ -424,7 +424,7 @@ class FormFieldCheckbox(object):
     def is_check_box_exact_size(self, is_check_box_exact_size):
         """Sets the is_check_box_exact_size of this FormFieldCheckbox.
 
-        Gets or sets the boolean value that indicates whether the size of the textbox is automatic or specified explicitly.  # noqa: E501
+        Gets or sets a value indicating whether the size of the textbox is automatic or specified explicitly.  # noqa: E501
 
         :param is_check_box_exact_size: The is_check_box_exact_size of this FormFieldCheckbox.  # noqa: E501
         :type: bool

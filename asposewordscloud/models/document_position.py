@@ -31,7 +31,7 @@ import json
 
 
 class DocumentPosition(object):
-    """Represents a position in the document tree.
+    """DTO container with a position in the document tree.
     """
 
     """
@@ -67,7 +67,7 @@ class DocumentPosition(object):
     def node(self):
         """Gets the node of this DocumentPosition.  # noqa: E501
 
-        Gets or sets link to  node.  # noqa: E501
+        Gets or sets the link to a node.  # noqa: E501
 
         :return: The node of this DocumentPosition.  # noqa: E501
         :rtype: NodeLink
@@ -78,7 +78,7 @@ class DocumentPosition(object):
     def node(self, node):
         """Sets the node of this DocumentPosition.
 
-        Gets or sets link to  node.  # noqa: E501
+        Gets or sets the link to a node.  # noqa: E501
 
         :param node: The node of this DocumentPosition.  # noqa: E501
         :type: NodeLink
@@ -89,7 +89,7 @@ class DocumentPosition(object):
     def offset(self):
         """Gets the offset of this DocumentPosition.  # noqa: E501
 
-        Gets or sets offset into the node.  # noqa: E501
+        Gets or sets the offset in the node.  # noqa: E501
 
         :return: The offset of this DocumentPosition.  # noqa: E501
         :rtype: int
@@ -100,7 +100,7 @@ class DocumentPosition(object):
     def offset(self, offset):
         """Sets the offset of this DocumentPosition.
 
-        Gets or sets offset into the node.  # noqa: E501
+        Gets or sets the offset in the node.  # noqa: E501
 
         :param offset: The offset of this DocumentPosition.  # noqa: E501
         :type: int

@@ -31,7 +31,7 @@ import json
 
 
 class BookmarkResponse(object):
-    """This response should be returned by the service when handling:  GET bookmarks/{bookmarkName}.
+    """The REST response with a bookmark.
     """
 
     """
@@ -67,7 +67,7 @@ class BookmarkResponse(object):
     def request_id(self):
         """Gets the request_id of this BookmarkResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this BookmarkResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class BookmarkResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this BookmarkResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this BookmarkResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class BookmarkResponse(object):
     def bookmark(self):
         """Gets the bookmark of this BookmarkResponse.  # noqa: E501
 
-        Gets or sets bookmark.  # noqa: E501
+        Gets or sets the bookmark.  # noqa: E501
 
         :return: The bookmark of this BookmarkResponse.  # noqa: E501
         :rtype: Bookmark
@@ -100,7 +100,7 @@ class BookmarkResponse(object):
     def bookmark(self, bookmark):
         """Sets the bookmark of this BookmarkResponse.
 
-        Gets or sets bookmark.  # noqa: E501
+        Gets or sets the bookmark.  # noqa: E501
 
         :param bookmark: The bookmark of this BookmarkResponse.  # noqa: E501
         :type: Bookmark

@@ -46,3 +46,18 @@ class TestSplitDocumentToFormat(BaseTestContext):
 
         result = self.words_api.split_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.split_result, 'Validate SplitDocument response')
+        self.assertIsNotNone(result.split_result.pages, 'Validate SplitDocument response')
+        self.assertEqual(2, len(result.split_result.pages))
+
+    #
+    # Test for document splitting online.
+    #
+    def test_split_document_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.SplitDocumentOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), format='text', dest_file_name=self.remote_test_out + '/TestSplitDocument.text', _from=1, to=2)
+
+        result = self.words_api.split_document_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+

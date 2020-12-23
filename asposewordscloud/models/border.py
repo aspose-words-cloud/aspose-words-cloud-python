@@ -92,7 +92,7 @@ class Border(object):
     def link(self):
         """Gets the link of this Border.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this Border.  # noqa: E501
         :rtype: WordsApiLink
@@ -103,7 +103,7 @@ class Border(object):
     def link(self, link):
         """Sets the link of this Border.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this Border.  # noqa: E501
         :type: WordsApiLink
@@ -166,7 +166,7 @@ class Border(object):
     def distance_from_text(self):
         """Gets the distance_from_text of this Border.  # noqa: E501
 
-        Gets or sets distance of the border from text or from the page edge in points.  # noqa: E501
+        Gets or sets the distance of the border from text or from the page edge in points.  # noqa: E501
 
         :return: The distance_from_text of this Border.  # noqa: E501
         :rtype: float
@@ -177,7 +177,7 @@ class Border(object):
     def distance_from_text(self, distance_from_text):
         """Sets the distance_from_text of this Border.
 
-        Gets or sets distance of the border from text or from the page edge in points.  # noqa: E501
+        Gets or sets the distance of the border from text or from the page edge in points.  # noqa: E501
 
         :param distance_from_text: The distance_from_text of this Border.  # noqa: E501
         :type: float

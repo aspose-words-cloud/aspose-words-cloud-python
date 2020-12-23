@@ -31,7 +31,7 @@ import json
 
 
 class ListFormat(object):
-    """Paragraph list format element.
+    """DTO container with a paragraph list format element.
     """
 
     """
@@ -77,7 +77,7 @@ class ListFormat(object):
     def link(self):
         """Gets the link of this ListFormat.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this ListFormat.  # noqa: E501
         :rtype: WordsApiLink
@@ -88,7 +88,7 @@ class ListFormat(object):
     def link(self, link):
         """Sets the link of this ListFormat.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this ListFormat.  # noqa: E501
         :type: WordsApiLink

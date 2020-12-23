@@ -31,7 +31,7 @@ import json
 
 
 class Style(object):
-    """Represents a single document style.
+    """DTO container with a single document style.
     """
 
     """
@@ -117,7 +117,7 @@ class Style(object):
     def link(self):
         """Gets the link of this Style.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this Style.  # noqa: E501
         :rtype: WordsApiLink
@@ -128,7 +128,7 @@ class Style(object):
     def link(self, link):
         """Sets the link of this Style.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this Style.  # noqa: E501
         :type: WordsApiLink
@@ -161,7 +161,7 @@ class Style(object):
     def base_style_name(self):
         """Gets the base_style_name of this Style.  # noqa: E501
 
-        Gets or sets /sets the name of the style this style is based on.  # noqa: E501
+        Gets or sets the name of the style this style is based on.  # noqa: E501
 
         :return: The base_style_name of this Style.  # noqa: E501
         :rtype: str
@@ -172,7 +172,7 @@ class Style(object):
     def base_style_name(self, base_style_name):
         """Sets the base_style_name of this Style.
 
-        Gets or sets /sets the name of the style this style is based on.  # noqa: E501
+        Gets or sets the name of the style this style is based on.  # noqa: E501
 
         :param base_style_name: The base_style_name of this Style.  # noqa: E501
         :type: str
@@ -183,7 +183,7 @@ class Style(object):
     def built_in(self):
         """Gets the built_in of this Style.  # noqa: E501
 
-        Gets or sets a value indicating whether true if this style is one of the built-in styles in MS Word.  # noqa: E501
+        Gets or sets a value indicating whether this style is one of the built-in styles in MS Word.  # noqa: E501
 
         :return: The built_in of this Style.  # noqa: E501
         :rtype: bool
@@ -194,7 +194,7 @@ class Style(object):
     def built_in(self, built_in):
         """Sets the built_in of this Style.
 
-        Gets or sets a value indicating whether true if this style is one of the built-in styles in MS Word.  # noqa: E501
+        Gets or sets a value indicating whether this style is one of the built-in styles in MS Word.  # noqa: E501
 
         :param built_in: The built_in of this Style.  # noqa: E501
         :type: bool
@@ -227,7 +227,7 @@ class Style(object):
     def is_heading(self):
         """Gets the is_heading of this Style.  # noqa: E501
 
-        Gets or sets a value indicating whether true when the style is one of the built-in Heading styles.  # noqa: E501
+        Gets or sets a value indicating whether the style is one of the built-in Heading styles.  # noqa: E501
 
         :return: The is_heading of this Style.  # noqa: E501
         :rtype: bool
@@ -238,7 +238,7 @@ class Style(object):
     def is_heading(self, is_heading):
         """Sets the is_heading of this Style.
 
-        Gets or sets a value indicating whether true when the style is one of the built-in Heading styles.  # noqa: E501
+        Gets or sets a value indicating whether the style is one of the built-in Heading styles.  # noqa: E501
 
         :param is_heading: The is_heading of this Style.  # noqa: E501
         :type: bool
@@ -249,7 +249,7 @@ class Style(object):
     def is_quick_style(self):
         """Gets the is_quick_style of this Style.  # noqa: E501
 
-        Gets or sets a value indicating whether specifies whether this style is shown in the Quick Style gallery inside MS Word UI.  # noqa: E501
+        Gets or sets a value indicating whether this style is shown in the Quick Style gallery inside MS Word UI.  # noqa: E501
 
         :return: The is_quick_style of this Style.  # noqa: E501
         :rtype: bool
@@ -260,7 +260,7 @@ class Style(object):
     def is_quick_style(self, is_quick_style):
         """Sets the is_quick_style of this Style.
 
-        Gets or sets a value indicating whether specifies whether this style is shown in the Quick Style gallery inside MS Word UI.  # noqa: E501
+        Gets or sets a value indicating whether this style is shown in the Quick Style gallery inside MS Word UI.  # noqa: E501
 
         :param is_quick_style: The is_quick_style of this Style.  # noqa: E501
         :type: bool
@@ -315,7 +315,7 @@ class Style(object):
     def next_paragraph_style_name(self):
         """Gets the next_paragraph_style_name of this Style.  # noqa: E501
 
-        Gets or sets /sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.  # noqa: E501
+        Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.  # noqa: E501
 
         :return: The next_paragraph_style_name of this Style.  # noqa: E501
         :rtype: str
@@ -326,7 +326,7 @@ class Style(object):
     def next_paragraph_style_name(self, next_paragraph_style_name):
         """Sets the next_paragraph_style_name of this Style.
 
-        Gets or sets /sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.  # noqa: E501
+        Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.  # noqa: E501
 
         :param next_paragraph_style_name: The next_paragraph_style_name of this Style.  # noqa: E501
         :type: str

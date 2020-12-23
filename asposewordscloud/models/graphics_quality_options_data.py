@@ -87,7 +87,7 @@ class GraphicsQualityOptionsData(object):
     def compositing_mode(self):
         """Gets the compositing_mode of this GraphicsQualityOptionsData.  # noqa: E501
 
-        Gets or sets a value that specifies how composited images are drawn to this Graphics.  # noqa: E501
+        Gets or sets the value, that specifies how composited images are drawn to this Graphics.  # noqa: E501
 
         :return: The compositing_mode of this GraphicsQualityOptionsData.  # noqa: E501
         :rtype: str
@@ -98,7 +98,7 @@ class GraphicsQualityOptionsData(object):
     def compositing_mode(self, compositing_mode):
         """Sets the compositing_mode of this GraphicsQualityOptionsData.
 
-        Gets or sets a value that specifies how composited images are drawn to this Graphics.  # noqa: E501
+        Gets or sets the value, that specifies how composited images are drawn to this Graphics.  # noqa: E501
 
         :param compositing_mode: The compositing_mode of this GraphicsQualityOptionsData.  # noqa: E501
         :type: str

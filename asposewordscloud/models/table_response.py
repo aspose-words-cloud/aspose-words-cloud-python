@@ -31,7 +31,7 @@ import json
 
 
 class TableResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/tables/{0}.
+    """The REST response with a table.
     """
 
     """
@@ -67,7 +67,7 @@ class TableResponse(object):
     def request_id(self):
         """Gets the request_id of this TableResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this TableResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class TableResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this TableResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this TableResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class TableResponse(object):
     def table(self):
         """Gets the table of this TableResponse.  # noqa: E501
 
-        Gets or sets table.  # noqa: E501
+        Gets or sets the table.  # noqa: E501
 
         :return: The table of this TableResponse.  # noqa: E501
         :rtype: Table
@@ -100,7 +100,7 @@ class TableResponse(object):
     def table(self, table):
         """Sets the table of this TableResponse.
 
-        Gets or sets table.  # noqa: E501
+        Gets or sets the table.  # noqa: E501
 
         :param table: The table of this TableResponse.  # noqa: E501
         :type: Table

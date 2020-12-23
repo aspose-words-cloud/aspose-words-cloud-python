@@ -307,7 +307,7 @@ class EpubSaveOptionsData(object):
     def dml3_d_effects_rendering_mode(self):
         """Gets the dml3_d_effects_rendering_mode of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
+        Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
 
         :return: The dml3_d_effects_rendering_mode of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -318,7 +318,7 @@ class EpubSaveOptionsData(object):
     def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
         """Sets the dml3_d_effects_rendering_mode of this EpubSaveOptionsData.
 
-        Gets or sets a value determining how 3D effects are rendered.  # noqa: E501
+        Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
 
         :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -337,7 +337,7 @@ class EpubSaveOptionsData(object):
     def dml_effects_rendering_mode(self):
         """Gets the dml_effects_rendering_mode of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :return: The dml_effects_rendering_mode of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -348,7 +348,7 @@ class EpubSaveOptionsData(object):
     def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
         """Sets the dml_effects_rendering_mode of this EpubSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
         :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -359,7 +359,7 @@ class EpubSaveOptionsData(object):
     def dml_rendering_mode(self):
         """Gets the dml_rendering_mode of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
+        Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
 
         :return: The dml_rendering_mode of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -370,7 +370,7 @@ class EpubSaveOptionsData(object):
     def dml_rendering_mode(self, dml_rendering_mode):
         """Sets the dml_rendering_mode of this EpubSaveOptionsData.
 
-        Gets or sets a value determining how DrawingML shapes are rendered. { Fallback | DrawingML }.  # noqa: E501
+        Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
 
         :param dml_rendering_mode: The dml_rendering_mode of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -381,7 +381,7 @@ class EpubSaveOptionsData(object):
     def file_name(self):
         """Gets the file_name of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets name of destination file.  # noqa: E501
+        Gets or sets the name of destination file.  # noqa: E501
 
         :return: The file_name of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -392,7 +392,7 @@ class EpubSaveOptionsData(object):
     def file_name(self, file_name):
         """Sets the file_name of this EpubSaveOptionsData.
 
-        Gets or sets name of destination file.  # noqa: E501
+        Gets or sets the name of destination file.  # noqa: E501
 
         :param file_name: The file_name of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -403,7 +403,7 @@ class EpubSaveOptionsData(object):
     def save_format(self):
         """Gets the save_format of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets format of save.  # noqa: E501
+        Gets or sets the format of save.  # noqa: E501
 
         :return: The save_format of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -414,7 +414,7 @@ class EpubSaveOptionsData(object):
     def save_format(self, save_format):
         """Sets the save_format of this EpubSaveOptionsData.
 
-        Gets or sets format of save.  # noqa: E501
+        Gets or sets the format of save.  # noqa: E501
 
         :param save_format: The save_format of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -425,7 +425,7 @@ class EpubSaveOptionsData(object):
     def update_fields(self):
         """Gets the update_fields of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.  # noqa: E501
+        Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.  # noqa: E501
 
         :return: The update_fields of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -436,7 +436,7 @@ class EpubSaveOptionsData(object):
     def update_fields(self, update_fields):
         """Sets the update_fields of this EpubSaveOptionsData.
 
-        Gets or sets a value determining if fields should be updated before saving the document to a fixed page format. Default value for this property is. true.  # noqa: E501
+        Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.  # noqa: E501
 
         :param update_fields: The update_fields of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -447,7 +447,7 @@ class EpubSaveOptionsData(object):
     def update_last_printed_property(self):
         """Gets the update_last_printed_property of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
 
         :return: The update_last_printed_property of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -458,7 +458,7 @@ class EpubSaveOptionsData(object):
     def update_last_printed_property(self, update_last_printed_property):
         """Sets the update_last_printed_property of this EpubSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
 
         :param update_last_printed_property: The update_last_printed_property of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -469,7 +469,7 @@ class EpubSaveOptionsData(object):
     def update_last_saved_time_property(self):
         """Gets the update_last_saved_time_property of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
 
         :return: The update_last_saved_time_property of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -480,7 +480,7 @@ class EpubSaveOptionsData(object):
     def update_last_saved_time_property(self, update_last_saved_time_property):
         """Sets the update_last_saved_time_property of this EpubSaveOptionsData.
 
-        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
 
         :param update_last_saved_time_property: The update_last_saved_time_property of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -491,7 +491,7 @@ class EpubSaveOptionsData(object):
     def update_sdt_content(self):
         """Gets the update_sdt_content of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :return: The update_sdt_content of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -502,7 +502,7 @@ class EpubSaveOptionsData(object):
     def update_sdt_content(self, update_sdt_content):
         """Sets the update_sdt_content of this EpubSaveOptionsData.
 
-        Gets or sets value determining whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
         :param update_sdt_content: The update_sdt_content of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -513,7 +513,7 @@ class EpubSaveOptionsData(object):
     def zip_output(self):
         """Gets the zip_output of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
 
         :return: The zip_output of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -524,7 +524,7 @@ class EpubSaveOptionsData(object):
     def zip_output(self, zip_output):
         """Sets the zip_output of this EpubSaveOptionsData.
 
-        Gets or sets controls zip output or not. Default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
 
         :param zip_output: The zip_output of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -535,7 +535,7 @@ class EpubSaveOptionsData(object):
     def allow_negative_indent(self):
         """Gets the allow_negative_indent of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether negative left and right indents of paragraphs are allowed (not normalized).  # noqa: E501
+        Gets or sets a value indicating whether negative left and right indents of paragraphs are allowed (not normalized).  # noqa: E501
 
         :return: The allow_negative_indent of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -546,7 +546,7 @@ class EpubSaveOptionsData(object):
     def allow_negative_indent(self, allow_negative_indent):
         """Sets the allow_negative_indent of this EpubSaveOptionsData.
 
-        Gets or sets specifies whether negative left and right indents of paragraphs are allowed (not normalized).  # noqa: E501
+        Gets or sets a value indicating whether negative left and right indents of paragraphs are allowed (not normalized).  # noqa: E501
 
         :param allow_negative_indent: The allow_negative_indent of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -557,7 +557,7 @@ class EpubSaveOptionsData(object):
     def css_class_name_prefix(self):
         """Gets the css_class_name_prefix of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies a prefix which is added to all CSS class names. Default value is an empty string and generated CSS class names have no common prefix. If this value is not empty, all CSS classes generated by Aspose.Words will start with the specified prefix.This might be useful, for example, if you add custom CSS to generated documents and want to prevent class name conflicts. If the value is not null or empty, it must be a valid CSS identifier.  # noqa: E501
+        Gets or sets the prefix which is added to all CSS class names. The default value is an empty string and generated CSS class names have no common prefix. If this value is not empty, all CSS classes generated by Aspose.Words will start with the specified prefix.This might be useful, for example, if you add custom CSS to generated documents and want to prevent class name conflicts. If the value is not null or empty, it must be a valid CSS identifier.  # noqa: E501
 
         :return: The css_class_name_prefix of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -568,7 +568,7 @@ class EpubSaveOptionsData(object):
     def css_class_name_prefix(self, css_class_name_prefix):
         """Sets the css_class_name_prefix of this EpubSaveOptionsData.
 
-        Gets or sets specifies a prefix which is added to all CSS class names. Default value is an empty string and generated CSS class names have no common prefix. If this value is not empty, all CSS classes generated by Aspose.Words will start with the specified prefix.This might be useful, for example, if you add custom CSS to generated documents and want to prevent class name conflicts. If the value is not null or empty, it must be a valid CSS identifier.  # noqa: E501
+        Gets or sets the prefix which is added to all CSS class names. The default value is an empty string and generated CSS class names have no common prefix. If this value is not empty, all CSS classes generated by Aspose.Words will start with the specified prefix.This might be useful, for example, if you add custom CSS to generated documents and want to prevent class name conflicts. If the value is not null or empty, it must be a valid CSS identifier.  # noqa: E501
 
         :param css_class_name_prefix: The css_class_name_prefix of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -579,7 +579,7 @@ class EpubSaveOptionsData(object):
     def css_style_sheet_file_name(self):
         """Gets the css_style_sheet_file_name of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies the name of the CSS file written when the document is exported to HTML.  # noqa: E501
+        Gets or sets the name of the CSS file written when the document is exported to HTML.  # noqa: E501
 
         :return: The css_style_sheet_file_name of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -590,7 +590,7 @@ class EpubSaveOptionsData(object):
     def css_style_sheet_file_name(self, css_style_sheet_file_name):
         """Sets the css_style_sheet_file_name of this EpubSaveOptionsData.
 
-        Gets or sets specifies the name of the CSS file written when the document is exported to HTML.  # noqa: E501
+        Gets or sets the name of the CSS file written when the document is exported to HTML.  # noqa: E501
 
         :param css_style_sheet_file_name: The css_style_sheet_file_name of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -601,7 +601,7 @@ class EpubSaveOptionsData(object):
     def css_style_sheet_type(self):
         """Gets the css_style_sheet_type of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies how CSS styles are exported.  # noqa: E501
+        Gets or sets the option that controls how the CSS styles are exported.  # noqa: E501
 
         :return: The css_style_sheet_type of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -612,7 +612,7 @@ class EpubSaveOptionsData(object):
     def css_style_sheet_type(self, css_style_sheet_type):
         """Sets the css_style_sheet_type of this EpubSaveOptionsData.
 
-        Gets or sets specifies how CSS styles are exported.  # noqa: E501
+        Gets or sets the option that controls how the CSS styles are exported.  # noqa: E501
 
         :param css_style_sheet_type: The css_style_sheet_type of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -623,7 +623,7 @@ class EpubSaveOptionsData(object):
     def document_split_criteria(self):
         """Gets the document_split_criteria of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies how the document should be split when saving.  # noqa: E501
+        Gets or sets the option that controls how the document should be split when saving.  # noqa: E501
 
         :return: The document_split_criteria of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -634,7 +634,7 @@ class EpubSaveOptionsData(object):
     def document_split_criteria(self, document_split_criteria):
         """Sets the document_split_criteria of this EpubSaveOptionsData.
 
-        Gets or sets specifies how the document should be split when saving.  # noqa: E501
+        Gets or sets the option that controls how the document should be split when saving.  # noqa: E501
 
         :param document_split_criteria: The document_split_criteria of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -645,7 +645,7 @@ class EpubSaveOptionsData(object):
     def document_split_heading_level(self):
         """Gets the document_split_heading_level of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies the maximum level of headings at which to split the document.  # noqa: E501
+        Gets or sets the maximum level of headings at which to split the document.  # noqa: E501
 
         :return: The document_split_heading_level of this EpubSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -656,7 +656,7 @@ class EpubSaveOptionsData(object):
     def document_split_heading_level(self, document_split_heading_level):
         """Sets the document_split_heading_level of this EpubSaveOptionsData.
 
-        Gets or sets specifies the maximum level of headings at which to split the document.  # noqa: E501
+        Gets or sets the maximum level of headings at which to split the document.  # noqa: E501
 
         :param document_split_heading_level: The document_split_heading_level of this EpubSaveOptionsData.  # noqa: E501
         :type: int
@@ -667,7 +667,7 @@ class EpubSaveOptionsData(object):
     def encoding(self):
         """Gets the encoding of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies the encoding to use when exporting.  # noqa: E501
+        Gets or sets the character encoding to use when exporting.  # noqa: E501
 
         :return: The encoding of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -678,7 +678,7 @@ class EpubSaveOptionsData(object):
     def encoding(self, encoding):
         """Sets the encoding of this EpubSaveOptionsData.
 
-        Gets or sets specifies the encoding to use when exporting.  # noqa: E501
+        Gets or sets the character encoding to use when exporting.  # noqa: E501
 
         :param encoding: The encoding of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -689,7 +689,7 @@ class EpubSaveOptionsData(object):
     def export_document_properties(self):
         """Gets the export_document_properties of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether to export built-in and custom document properties.  # noqa: E501
+        Gets or sets a value indicating whether to export built-in and custom document properties.  # noqa: E501
 
         :return: The export_document_properties of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -700,7 +700,7 @@ class EpubSaveOptionsData(object):
     def export_document_properties(self, export_document_properties):
         """Sets the export_document_properties of this EpubSaveOptionsData.
 
-        Gets or sets specifies whether to export built-in and custom document properties.  # noqa: E501
+        Gets or sets a value indicating whether to export built-in and custom document properties.  # noqa: E501
 
         :param export_document_properties: The export_document_properties of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -711,7 +711,7 @@ class EpubSaveOptionsData(object):
     def export_drop_down_form_field_as_text(self):
         """Gets the export_drop_down_form_field_as_text of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets controls how drop-down form fields are saved to HTML. Default value is false.  # noqa: E501
+        Gets or sets the flag, that controls how drop-down form fields are saved to HTML. The default value is false.  # noqa: E501
 
         :return: The export_drop_down_form_field_as_text of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -722,7 +722,7 @@ class EpubSaveOptionsData(object):
     def export_drop_down_form_field_as_text(self, export_drop_down_form_field_as_text):
         """Sets the export_drop_down_form_field_as_text of this EpubSaveOptionsData.
 
-        Gets or sets controls how drop-down form fields are saved to HTML. Default value is false.  # noqa: E501
+        Gets or sets the flag, that controls how drop-down form fields are saved to HTML. The default value is false.  # noqa: E501
 
         :param export_drop_down_form_field_as_text: The export_drop_down_form_field_as_text of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -733,7 +733,7 @@ class EpubSaveOptionsData(object):
     def export_font_resources(self):
         """Gets the export_font_resources of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether font resources should be exported.  # noqa: E501
+        Gets or sets a value indicating whether font resources should be exported.  # noqa: E501
 
         :return: The export_font_resources of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -744,7 +744,7 @@ class EpubSaveOptionsData(object):
     def export_font_resources(self, export_font_resources):
         """Sets the export_font_resources of this EpubSaveOptionsData.
 
-        Gets or sets specifies whether font resources should be exported.  # noqa: E501
+        Gets or sets a value indicating whether font resources should be exported.  # noqa: E501
 
         :param export_font_resources: The export_font_resources of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -755,7 +755,7 @@ class EpubSaveOptionsData(object):
     def export_fonts_as_base64(self):
         """Gets the export_fonts_as_base64 of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether fonts resources should be embedded to HTML in Base64 encoding.  Default is false.  # noqa: E501
+        Gets or sets a value indicating whether fonts resources should be embedded to HTML in Base64 encoding. The default value is false.  # noqa: E501
 
         :return: The export_fonts_as_base64 of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -766,7 +766,7 @@ class EpubSaveOptionsData(object):
     def export_fonts_as_base64(self, export_fonts_as_base64):
         """Sets the export_fonts_as_base64 of this EpubSaveOptionsData.
 
-        Gets or sets specifies whether fonts resources should be embedded to HTML in Base64 encoding.  Default is false.  # noqa: E501
+        Gets or sets a value indicating whether fonts resources should be embedded to HTML in Base64 encoding. The default value is false.  # noqa: E501
 
         :param export_fonts_as_base64: The export_fonts_as_base64 of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -777,7 +777,7 @@ class EpubSaveOptionsData(object):
     def export_headers_footers_mode(self):
         """Gets the export_headers_footers_mode of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies how headers and footers are output.  # noqa: E501
+        Gets or sets the option that controls how headers and footers are exported.  # noqa: E501
 
         :return: The export_headers_footers_mode of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -788,7 +788,7 @@ class EpubSaveOptionsData(object):
     def export_headers_footers_mode(self, export_headers_footers_mode):
         """Sets the export_headers_footers_mode of this EpubSaveOptionsData.
 
-        Gets or sets specifies how headers and footers are output.  # noqa: E501
+        Gets or sets the option that controls how headers and footers are exported.  # noqa: E501
 
         :param export_headers_footers_mode: The export_headers_footers_mode of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -799,7 +799,7 @@ class EpubSaveOptionsData(object):
     def export_images_as_base64(self):
         """Gets the export_images_as_base64 of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether images are saved in Base64 format.  # noqa: E501
+        Gets or sets a value indicating whether images are saved in Base64 format.  # noqa: E501
 
         :return: The export_images_as_base64 of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -810,7 +810,7 @@ class EpubSaveOptionsData(object):
     def export_images_as_base64(self, export_images_as_base64):
         """Sets the export_images_as_base64 of this EpubSaveOptionsData.
 
-        Gets or sets specifies whether images are saved in Base64 format.  # noqa: E501
+        Gets or sets a value indicating whether images are saved in Base64 format.  # noqa: E501
 
         :param export_images_as_base64: The export_images_as_base64 of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -821,7 +821,7 @@ class EpubSaveOptionsData(object):
     def export_language_information(self):
         """Gets the export_language_information of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether language information is exported.  # noqa: E501
+        Gets or sets a value indicating whether language information is exported.  # noqa: E501
 
         :return: The export_language_information of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -832,7 +832,7 @@ class EpubSaveOptionsData(object):
     def export_language_information(self, export_language_information):
         """Sets the export_language_information of this EpubSaveOptionsData.
 
-        Gets or sets specifies whether language information is exported.  # noqa: E501
+        Gets or sets a value indicating whether language information is exported.  # noqa: E501
 
         :param export_language_information: The export_language_information of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -843,7 +843,7 @@ class EpubSaveOptionsData(object):
     def export_list_labels(self):
         """Gets the export_list_labels of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets controls how list labels are output.  # noqa: E501
+        Gets or sets the option that controls how list labels are exported.  # noqa: E501
 
         :return: The export_list_labels of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -854,7 +854,7 @@ class EpubSaveOptionsData(object):
     def export_list_labels(self, export_list_labels):
         """Sets the export_list_labels of this EpubSaveOptionsData.
 
-        Gets or sets controls how list labels are output.  # noqa: E501
+        Gets or sets the option that controls how list labels are exported.  # noqa: E501
 
         :param export_list_labels: The export_list_labels of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -865,7 +865,7 @@ class EpubSaveOptionsData(object):
     def export_original_url_for_linked_images(self):
         """Gets the export_original_url_for_linked_images of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether original URL should be used as the URL of the linked images. Default value is false.  # noqa: E501
+        Gets or sets a value indicating whether the original URL should be used as the URL of the linked images. The default value is false.  # noqa: E501
 
         :return: The export_original_url_for_linked_images of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -876,7 +876,7 @@ class EpubSaveOptionsData(object):
     def export_original_url_for_linked_images(self, export_original_url_for_linked_images):
         """Sets the export_original_url_for_linked_images of this EpubSaveOptionsData.
 
-        Gets or sets specifies whether original URL should be used as the URL of the linked images. Default value is false.  # noqa: E501
+        Gets or sets a value indicating whether the original URL should be used as the URL of the linked images. The default value is false.  # noqa: E501
 
         :param export_original_url_for_linked_images: The export_original_url_for_linked_images of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -887,7 +887,7 @@ class EpubSaveOptionsData(object):
     def export_page_margins(self):
         """Gets the export_page_margins of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether page margins is exported to HTML, MHTML or EPUB. Default is false.  # noqa: E501
+        Gets or sets a value indicating whether page margins are exported to HTML, MHTML or EPUB. The default value is false.  # noqa: E501
 
         :return: The export_page_margins of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -898,7 +898,7 @@ class EpubSaveOptionsData(object):
     def export_page_margins(self, export_page_margins):
         """Sets the export_page_margins of this EpubSaveOptionsData.
 
-        Gets or sets specifies whether page margins is exported to HTML, MHTML or EPUB. Default is false.  # noqa: E501
+        Gets or sets a value indicating whether page margins are exported to HTML, MHTML or EPUB. The default value is false.  # noqa: E501
 
         :param export_page_margins: The export_page_margins of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -909,7 +909,7 @@ class EpubSaveOptionsData(object):
     def export_page_setup(self):
         """Gets the export_page_setup of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether page setup is exported.  # noqa: E501
+        Gets or sets a value indicating whether page setup is exported.  # noqa: E501
 
         :return: The export_page_setup of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -920,7 +920,7 @@ class EpubSaveOptionsData(object):
     def export_page_setup(self, export_page_setup):
         """Sets the export_page_setup of this EpubSaveOptionsData.
 
-        Gets or sets specifies whether page setup is exported.  # noqa: E501
+        Gets or sets a value indicating whether page setup is exported.  # noqa: E501
 
         :param export_page_setup: The export_page_setup of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -931,7 +931,7 @@ class EpubSaveOptionsData(object):
     def export_relative_font_size(self):
         """Gets the export_relative_font_size of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether font sizes should be output in relative units when saving.  # noqa: E501
+        Gets or sets a value indicating whether font sizes should be output in relative units when saving.  # noqa: E501
 
         :return: The export_relative_font_size of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -942,7 +942,7 @@ class EpubSaveOptionsData(object):
     def export_relative_font_size(self, export_relative_font_size):
         """Sets the export_relative_font_size of this EpubSaveOptionsData.
 
-        Gets or sets specifies whether font sizes should be output in relative units when saving.  # noqa: E501
+        Gets or sets a value indicating whether font sizes should be output in relative units when saving.  # noqa: E501
 
         :param export_relative_font_size: The export_relative_font_size of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -953,7 +953,7 @@ class EpubSaveOptionsData(object):
     def export_roundtrip_information(self):
         """Gets the export_roundtrip_information of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether to write the roundtrip information when saving to HTML Default value is true.  # noqa: E501
+        Gets or sets a value indicating whether to write the roundtrip information when saving to HTML. The default value is true.  # noqa: E501
 
         :return: The export_roundtrip_information of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -964,7 +964,7 @@ class EpubSaveOptionsData(object):
     def export_roundtrip_information(self, export_roundtrip_information):
         """Sets the export_roundtrip_information of this EpubSaveOptionsData.
 
-        Gets or sets specifies whether to write the roundtrip information when saving to HTML Default value is true.  # noqa: E501
+        Gets or sets a value indicating whether to write the roundtrip information when saving to HTML. The default value is true.  # noqa: E501
 
         :param export_roundtrip_information: The export_roundtrip_information of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -975,7 +975,7 @@ class EpubSaveOptionsData(object):
     def export_text_box_as_svg(self):
         """Gets the export_text_box_as_svg of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets controls how textboxes represented by Aspose.Words.Drawing.Shape are saved to HTML, MHTML or EPUB. Default value is false. When set to true, exports textboxes as inline "svg" elements. When false, exports as "image" elements.  # noqa: E501
+        Gets or sets the flag, that controls how textboxes represented by Aspose.Words.Drawing.Shape are saved to HTML, MHTML or EPUB. The default value is false. When set to true, exports textboxes as inline "svg" elements. When false, exports as "image" elements.  # noqa: E501
 
         :return: The export_text_box_as_svg of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -986,7 +986,7 @@ class EpubSaveOptionsData(object):
     def export_text_box_as_svg(self, export_text_box_as_svg):
         """Sets the export_text_box_as_svg of this EpubSaveOptionsData.
 
-        Gets or sets controls how textboxes represented by Aspose.Words.Drawing.Shape are saved to HTML, MHTML or EPUB. Default value is false. When set to true, exports textboxes as inline "svg" elements. When false, exports as "image" elements.  # noqa: E501
+        Gets or sets the flag, that controls how textboxes represented by Aspose.Words.Drawing.Shape are saved to HTML, MHTML or EPUB. The default value is false. When set to true, exports textboxes as inline "svg" elements. When false, exports as "image" elements.  # noqa: E501
 
         :param export_text_box_as_svg: The export_text_box_as_svg of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -997,7 +997,7 @@ class EpubSaveOptionsData(object):
     def export_text_input_form_field_as_text(self):
         """Gets the export_text_input_form_field_as_text of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets controls how text input form fields are saved.  # noqa: E501
+        Gets or sets the flag, that controls how text input form fields are saved.  # noqa: E501
 
         :return: The export_text_input_form_field_as_text of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -1008,7 +1008,7 @@ class EpubSaveOptionsData(object):
     def export_text_input_form_field_as_text(self, export_text_input_form_field_as_text):
         """Sets the export_text_input_form_field_as_text of this EpubSaveOptionsData.
 
-        Gets or sets controls how text input form fields are saved.  # noqa: E501
+        Gets or sets the flag, that controls how text input form fields are saved.  # noqa: E501
 
         :param export_text_input_form_field_as_text: The export_text_input_form_field_as_text of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -1019,7 +1019,7 @@ class EpubSaveOptionsData(object):
     def export_toc_page_numbers(self):
         """Gets the export_toc_page_numbers of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether to write page numbers to table of contents when saving.  # noqa: E501
+        Gets or sets a value indicating whether to write page numbers to table of contents when saving.  # noqa: E501
 
         :return: The export_toc_page_numbers of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -1030,7 +1030,7 @@ class EpubSaveOptionsData(object):
     def export_toc_page_numbers(self, export_toc_page_numbers):
         """Sets the export_toc_page_numbers of this EpubSaveOptionsData.
 
-        Gets or sets specifies whether to write page numbers to table of contents when saving.  # noqa: E501
+        Gets or sets a value indicating whether to write page numbers to table of contents when saving.  # noqa: E501
 
         :param export_toc_page_numbers: The export_toc_page_numbers of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -1041,7 +1041,7 @@ class EpubSaveOptionsData(object):
     def export_xhtml_transitional(self):
         """Gets the export_xhtml_transitional of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether to write the DOCTYPE declaration when saving.  # noqa: E501
+        Gets or sets a value indicating whether to write the DOCTYPE declaration when saving.  # noqa: E501
 
         :return: The export_xhtml_transitional of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -1052,7 +1052,7 @@ class EpubSaveOptionsData(object):
     def export_xhtml_transitional(self, export_xhtml_transitional):
         """Sets the export_xhtml_transitional of this EpubSaveOptionsData.
 
-        Gets or sets specifies whether to write the DOCTYPE declaration when saving.  # noqa: E501
+        Gets or sets a value indicating whether to write the DOCTYPE declaration when saving.  # noqa: E501
 
         :param export_xhtml_transitional: The export_xhtml_transitional of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -1063,7 +1063,7 @@ class EpubSaveOptionsData(object):
     def font_resources_subsetting_size_threshold(self):
         """Gets the font_resources_subsetting_size_threshold of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets controls which font resources need subsetting when saving.  # noqa: E501
+        Gets or sets the option that controls which font resources need subsetting when saving.  # noqa: E501
 
         :return: The font_resources_subsetting_size_threshold of this EpubSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -1074,7 +1074,7 @@ class EpubSaveOptionsData(object):
     def font_resources_subsetting_size_threshold(self, font_resources_subsetting_size_threshold):
         """Sets the font_resources_subsetting_size_threshold of this EpubSaveOptionsData.
 
-        Gets or sets controls which font resources need subsetting when saving.  # noqa: E501
+        Gets or sets the option that controls which font resources need subsetting when saving.  # noqa: E501
 
         :param font_resources_subsetting_size_threshold: The font_resources_subsetting_size_threshold of this EpubSaveOptionsData.  # noqa: E501
         :type: int
@@ -1085,7 +1085,7 @@ class EpubSaveOptionsData(object):
     def fonts_folder(self):
         """Gets the fonts_folder of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies the physical folder where fonts are saved when exporting a document.  # noqa: E501
+        Gets or sets the physical folder where fonts are saved when exporting a document.  # noqa: E501
 
         :return: The fonts_folder of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -1096,7 +1096,7 @@ class EpubSaveOptionsData(object):
     def fonts_folder(self, fonts_folder):
         """Sets the fonts_folder of this EpubSaveOptionsData.
 
-        Gets or sets specifies the physical folder where fonts are saved when exporting a document.  # noqa: E501
+        Gets or sets the physical folder where fonts are saved when exporting a document.  # noqa: E501
 
         :param fonts_folder: The fonts_folder of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -1107,7 +1107,7 @@ class EpubSaveOptionsData(object):
     def fonts_folder_alias(self):
         """Gets the fonts_folder_alias of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies the name of the folder used to construct font URIs.  # noqa: E501
+        Gets or sets the name of the folder used to construct font URIs.  # noqa: E501
 
         :return: The fonts_folder_alias of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -1118,7 +1118,7 @@ class EpubSaveOptionsData(object):
     def fonts_folder_alias(self, fonts_folder_alias):
         """Sets the fonts_folder_alias of this EpubSaveOptionsData.
 
-        Gets or sets specifies the name of the folder used to construct font URIs.  # noqa: E501
+        Gets or sets the name of the folder used to construct font URIs.  # noqa: E501
 
         :param fonts_folder_alias: The fonts_folder_alias of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -1129,7 +1129,7 @@ class EpubSaveOptionsData(object):
     def html_version(self):
         """Gets the html_version of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies version of HTML standard that should be used when saving the document to HTML or MHTML. Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.  # noqa: E501
+        Gets or sets the version of HTML standard, that should be used when saving the document to HTML or MHTML. Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.  # noqa: E501
 
         :return: The html_version of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -1140,7 +1140,7 @@ class EpubSaveOptionsData(object):
     def html_version(self, html_version):
         """Sets the html_version of this EpubSaveOptionsData.
 
-        Gets or sets specifies version of HTML standard that should be used when saving the document to HTML or MHTML. Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.  # noqa: E501
+        Gets or sets the version of HTML standard, that should be used when saving the document to HTML or MHTML. Default value is Aspose.Words.Saving.HtmlVersion.Xhtml.  # noqa: E501
 
         :param html_version: The html_version of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -1159,7 +1159,7 @@ class EpubSaveOptionsData(object):
     def image_resolution(self):
         """Gets the image_resolution of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies the output resolution for images when exporting.  # noqa: E501
+        Gets or sets the output resolution for images when exporting.  # noqa: E501
 
         :return: The image_resolution of this EpubSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -1170,7 +1170,7 @@ class EpubSaveOptionsData(object):
     def image_resolution(self, image_resolution):
         """Sets the image_resolution of this EpubSaveOptionsData.
 
-        Gets or sets specifies the output resolution for images when exporting.  # noqa: E501
+        Gets or sets the output resolution for images when exporting.  # noqa: E501
 
         :param image_resolution: The image_resolution of this EpubSaveOptionsData.  # noqa: E501
         :type: int
@@ -1181,7 +1181,7 @@ class EpubSaveOptionsData(object):
     def images_folder(self):
         """Gets the images_folder of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies the physical folder where images are saved when exporting a document.  # noqa: E501
+        Gets or sets the physical folder where images are saved when exporting a document.  # noqa: E501
 
         :return: The images_folder of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -1192,7 +1192,7 @@ class EpubSaveOptionsData(object):
     def images_folder(self, images_folder):
         """Sets the images_folder of this EpubSaveOptionsData.
 
-        Gets or sets specifies the physical folder where images are saved when exporting a document.  # noqa: E501
+        Gets or sets the physical folder where images are saved when exporting a document.  # noqa: E501
 
         :param images_folder: The images_folder of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -1203,7 +1203,7 @@ class EpubSaveOptionsData(object):
     def images_folder_alias(self):
         """Gets the images_folder_alias of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies the name of the folder used to construct image URIs.  # noqa: E501
+        Gets or sets the name of the folder used to construct image URIs.  # noqa: E501
 
         :return: The images_folder_alias of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -1214,7 +1214,7 @@ class EpubSaveOptionsData(object):
     def images_folder_alias(self, images_folder_alias):
         """Sets the images_folder_alias of this EpubSaveOptionsData.
 
-        Gets or sets specifies the name of the folder used to construct image URIs.  # noqa: E501
+        Gets or sets the name of the folder used to construct image URIs.  # noqa: E501
 
         :param images_folder_alias: The images_folder_alias of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -1225,7 +1225,7 @@ class EpubSaveOptionsData(object):
     def metafile_format(self):
         """Gets the metafile_format of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB. Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images. Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.  # noqa: E501
+        Gets or sets the options, that controls in what format metafiles are saved when exporting to HTML, MHTML, or EPUB. The default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images. Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.  # noqa: E501
 
         :return: The metafile_format of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -1236,7 +1236,7 @@ class EpubSaveOptionsData(object):
     def metafile_format(self, metafile_format):
         """Sets the metafile_format of this EpubSaveOptionsData.
 
-        Gets or sets specifies in what format metafiles are saved when exporting to HTML, MHTML, or EPUB. Default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images. Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.  # noqa: E501
+        Gets or sets the options, that controls in what format metafiles are saved when exporting to HTML, MHTML, or EPUB. The default value is Aspose.Words.Saving.HtmlMetafileFormat.Png, meaning that metafiles are rendered to raster PNG images. Metafiles are not natively displayed by HTML browsers. By default, Aspose.Words converts WMF and EMF images into PNG files when exporting to HTML.Other options are to convert metafiles to SVG images or to export them as is without conversion. Some image transforms, in particular image cropping, will not be applied to metafile images if they are exported to HTML without conversion.  # noqa: E501
 
         :param metafile_format: The metafile_format of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -1255,7 +1255,7 @@ class EpubSaveOptionsData(object):
     def office_math_output_mode(self):
         """Gets the office_math_output_mode of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image.  # noqa: E501
+        Gets or sets the option that controls how OfficeMath objects are exported to HTML, MHTML or EPUB. The default value is HtmlOfficeMathOutputMode.Image.  # noqa: E501
 
         :return: The office_math_output_mode of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -1266,7 +1266,7 @@ class EpubSaveOptionsData(object):
     def office_math_output_mode(self, office_math_output_mode):
         """Sets the office_math_output_mode of this EpubSaveOptionsData.
 
-        Gets or sets controls how OfficeMath objects are exported to HTML, MHTML or EPUB.  Default value is HtmlOfficeMathOutputMode.Image.  # noqa: E501
+        Gets or sets the option that controls how OfficeMath objects are exported to HTML, MHTML or EPUB. The default value is HtmlOfficeMathOutputMode.Image.  # noqa: E501
 
         :param office_math_output_mode: The office_math_output_mode of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -1285,7 +1285,7 @@ class EpubSaveOptionsData(object):
     def pretty_format(self):
         """Gets the pretty_format of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether or not use pretty formats output.  # noqa: E501
+        Gets or sets a value indicating whether to use pretty formats output.  # noqa: E501
 
         :return: The pretty_format of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -1296,7 +1296,7 @@ class EpubSaveOptionsData(object):
     def pretty_format(self, pretty_format):
         """Sets the pretty_format of this EpubSaveOptionsData.
 
-        Gets or sets specifies whether or not use pretty formats output.  # noqa: E501
+        Gets or sets a value indicating whether to use pretty formats output.  # noqa: E501
 
         :param pretty_format: The pretty_format of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -1307,7 +1307,7 @@ class EpubSaveOptionsData(object):
     def resolve_font_names(self):
         """Gets the resolve_font_names of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether font family names used in the document are resolved and substituted according to FontSettings when being written into HTML-based formats. default value is false.  # noqa: E501
+        Gets or sets a value indicating whether font family names used in the document are resolved and substituted according to FontSettings when being written into HTML-based formats. The default value is false.  # noqa: E501
 
         :return: The resolve_font_names of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -1318,7 +1318,7 @@ class EpubSaveOptionsData(object):
     def resolve_font_names(self, resolve_font_names):
         """Sets the resolve_font_names of this EpubSaveOptionsData.
 
-        Gets or sets specifies whether font family names used in the document are resolved and substituted according to FontSettings when being written into HTML-based formats. default value is false.  # noqa: E501
+        Gets or sets a value indicating whether font family names used in the document are resolved and substituted according to FontSettings when being written into HTML-based formats. The default value is false.  # noqa: E501
 
         :param resolve_font_names: The resolve_font_names of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -1329,7 +1329,7 @@ class EpubSaveOptionsData(object):
     def resource_folder(self):
         """Gets the resource_folder of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies a physical folder where all resources like images, fonts, and external CSS are saved when a document is exported to HTML. Default is an empty string.  # noqa: E501
+        Gets or sets the physical folder where all resources like images, fonts, and external CSS are saved when a document is exported to HTML. The default value is an empty string.  # noqa: E501
 
         :return: The resource_folder of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -1340,7 +1340,7 @@ class EpubSaveOptionsData(object):
     def resource_folder(self, resource_folder):
         """Sets the resource_folder of this EpubSaveOptionsData.
 
-        Gets or sets specifies a physical folder where all resources like images, fonts, and external CSS are saved when a document is exported to HTML. Default is an empty string.  # noqa: E501
+        Gets or sets the physical folder where all resources like images, fonts, and external CSS are saved when a document is exported to HTML. The default value is an empty string.  # noqa: E501
 
         :param resource_folder: The resource_folder of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -1351,7 +1351,7 @@ class EpubSaveOptionsData(object):
     def resource_folder_alias(self):
         """Gets the resource_folder_alias of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies the name of the folder used to construct URIs of all resources written into an HTML document.  Default is an empty string.  # noqa: E501
+        Gets or sets the name of the folder used to construct URIs of all resources written into HTML document. The default value is an empty string.  # noqa: E501
 
         :return: The resource_folder_alias of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -1362,7 +1362,7 @@ class EpubSaveOptionsData(object):
     def resource_folder_alias(self, resource_folder_alias):
         """Sets the resource_folder_alias of this EpubSaveOptionsData.
 
-        Gets or sets specifies the name of the folder used to construct URIs of all resources written into an HTML document.  Default is an empty string.  # noqa: E501
+        Gets or sets the name of the folder used to construct URIs of all resources written into HTML document. The default value is an empty string.  # noqa: E501
 
         :param resource_folder_alias: The resource_folder_alias of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -1373,7 +1373,7 @@ class EpubSaveOptionsData(object):
     def scale_image_to_shape_size(self):
         """Gets the scale_image_to_shape_size of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies whether images are scaled by Aspose.Words to the bounding shape size when exporting.  # noqa: E501
+        Gets or sets a value indicating whether images are scaled by Aspose.Words to the bounding shape size when exporting.  # noqa: E501
 
         :return: The scale_image_to_shape_size of this EpubSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -1384,7 +1384,7 @@ class EpubSaveOptionsData(object):
     def scale_image_to_shape_size(self, scale_image_to_shape_size):
         """Sets the scale_image_to_shape_size of this EpubSaveOptionsData.
 
-        Gets or sets specifies whether images are scaled by Aspose.Words to the bounding shape size when exporting.  # noqa: E501
+        Gets or sets a value indicating whether images are scaled by Aspose.Words to the bounding shape size when exporting.  # noqa: E501
 
         :param scale_image_to_shape_size: The scale_image_to_shape_size of this EpubSaveOptionsData.  # noqa: E501
         :type: bool
@@ -1395,7 +1395,7 @@ class EpubSaveOptionsData(object):
     def table_width_output_mode(self):
         """Gets the table_width_output_mode of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets controls how table, row and cell widths are exported.  # noqa: E501
+        Gets or sets the option that controls how table, row and cell widths are exported.  # noqa: E501
 
         :return: The table_width_output_mode of this EpubSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -1406,7 +1406,7 @@ class EpubSaveOptionsData(object):
     def table_width_output_mode(self, table_width_output_mode):
         """Sets the table_width_output_mode of this EpubSaveOptionsData.
 
-        Gets or sets controls how table, row and cell widths are exported.  # noqa: E501
+        Gets or sets the option that controls how table, row and cell widths are exported.  # noqa: E501
 
         :param table_width_output_mode: The table_width_output_mode of this EpubSaveOptionsData.  # noqa: E501
         :type: str
@@ -1417,7 +1417,7 @@ class EpubSaveOptionsData(object):
     def epub_navigation_map_level(self):
         """Gets the epub_navigation_map_level of this EpubSaveOptionsData.  # noqa: E501
 
-        Gets or sets specifies the maximum level of headings populated to the navigation map when exporting.  # noqa: E501
+        Gets or sets the maximum level of headings populated to the navigation map when exporting.  # noqa: E501
 
         :return: The epub_navigation_map_level of this EpubSaveOptionsData.  # noqa: E501
         :rtype: int
@@ -1428,7 +1428,7 @@ class EpubSaveOptionsData(object):
     def epub_navigation_map_level(self, epub_navigation_map_level):
         """Sets the epub_navigation_map_level of this EpubSaveOptionsData.
 
-        Gets or sets specifies the maximum level of headings populated to the navigation map when exporting.  # noqa: E501
+        Gets or sets the maximum level of headings populated to the navigation map when exporting.  # noqa: E501
 
         :param epub_navigation_map_level: The epub_navigation_map_level of this EpubSaveOptionsData.  # noqa: E501
         :type: int

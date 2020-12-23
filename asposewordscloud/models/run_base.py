@@ -62,7 +62,7 @@ class RunBase(object):
     def text(self):
         """Gets the text of this RunBase.  # noqa: E501
 
-        Gets or sets run's text.  # noqa: E501
+        Gets or sets the run's text.  # noqa: E501
 
         :return: The text of this RunBase.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class RunBase(object):
     def text(self, text):
         """Sets the text of this RunBase.
 
-        Gets or sets run's text.  # noqa: E501
+        Gets or sets the run's text.  # noqa: E501
 
         :param text: The text of this RunBase.  # noqa: E501
         :type: str

@@ -31,7 +31,7 @@ import json
 
 
 class RangeDocument(object):
-    """Range element.
+    """DTO container with a Range element.
     """
 
     """
@@ -62,7 +62,7 @@ class RangeDocument(object):
     def document_name(self):
         """Gets the document_name of this RangeDocument.  # noqa: E501
 
-        Gets or sets name for new document.  # noqa: E501
+        Gets or sets the name for a new document.  # noqa: E501
 
         :return: The document_name of this RangeDocument.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class RangeDocument(object):
     def document_name(self, document_name):
         """Sets the document_name of this RangeDocument.
 
-        Gets or sets name for new document.  # noqa: E501
+        Gets or sets the name for a new document.  # noqa: E501
 
         :param document_name: The document_name of this RangeDocument.  # noqa: E501
         :type: str

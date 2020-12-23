@@ -24,12 +24,14 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
+from six.moves.urllib.parse import quote
+
 class CreateDocumentRequest(object):
     """
     Request model for create_document operation.
     Initializes a new instance.
-    :param file_name The document name.
-    :param folder The document folder.
+    :param file_name The filename of the document.
+    :param folder The path to the document folder.
     :param storage Original document storage.
     """
 
@@ -37,3 +39,50 @@ class CreateDocumentRequest(object):
         self.file_name = file_name
         self.folder = folder
         self.storage = storage
+
+    def create_http_request(self, api_client):
+
+        path = '/v4.0/words/create'
+        path_params = {}
+
+        # path parameters
+        collection_formats = {}
+        if path_params:
+            path_params = api_client.sanitize_for_serialization(path_params)
+            path_params = api_client.parameters_to_tuples(path_params, collection_formats)
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                path = path.replace(
+                    '{%s}' % k,
+                    quote(str(v), safe=api_client.configuration.safe_chars_for_path_param)
+                )
+
+        # remove optional path parameters
+        path = path.replace('//', '/')
+
+        query_params = []
+        if self.file_name is not None:
+                query_params.append(('fileName', self.file_name))  # noqa: E501
+        if self.folder is not None:
+                query_params.append(('folder', self.folder))  # noqa: E501
+        if self.storage is not None:
+                query_params.append(('storage', self.storage))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+
+        body_params = None
+        return {
+            "method": "PUT",
+            "path": path,
+            "query_params": query_params,
+            "header_params": header_params,
+            "form_params": form_params,
+            "body": body_params,
+            "collection_formats": collection_formats,
+            "response_type": DocumentResponse  # noqa: E501
+        }
+
+    def get_response_type(self):
+        return DocumentResponse  # noqa: E501

@@ -31,7 +31,7 @@ import json
 
 
 class ReplaceRange(object):
-    """Range element.
+    """DTO container with a range element.
     """
 
     """
@@ -67,7 +67,7 @@ class ReplaceRange(object):
     def text(self):
         """Gets the text of this ReplaceRange.  # noqa: E501
 
-        Gets or sets range's text.  # noqa: E501
+        Gets or sets the range's text.  # noqa: E501
 
         :return: The text of this ReplaceRange.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class ReplaceRange(object):
     def text(self, text):
         """Sets the text of this ReplaceRange.
 
-        Gets or sets range's text.  # noqa: E501
+        Gets or sets the range's text.  # noqa: E501
 
         :param text: The text of this ReplaceRange.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class ReplaceRange(object):
     def text_type(self):
         """Gets the text_type of this ReplaceRange.  # noqa: E501
 
-        Gets or sets range's text type.  # noqa: E501
+        Gets or sets the range's text type.  # noqa: E501
 
         :return: The text_type of this ReplaceRange.  # noqa: E501
         :rtype: str
@@ -100,7 +100,7 @@ class ReplaceRange(object):
     def text_type(self, text_type):
         """Sets the text_type of this ReplaceRange.
 
-        Gets or sets range's text type.  # noqa: E501
+        Gets or sets the range's text type.  # noqa: E501
 
         :param text_type: The text_type of this ReplaceRange.  # noqa: E501
         :type: str

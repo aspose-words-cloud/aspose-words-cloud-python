@@ -47,3 +47,16 @@ class TestCompatibility(BaseTestContext):
 
         self.words_api.optimize_document(request)
 
+
+    #
+    # Test for optimize document to specific MS Word version.
+    #
+    def test_optimize_document_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        requestOptions = asposewordscloud.OptimizationOptions(ms_word_version='Word2002')
+        request = asposewordscloud.models.requests.OptimizeDocumentOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), options=requestOptions)
+
+        result = self.words_api.optimize_document_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+

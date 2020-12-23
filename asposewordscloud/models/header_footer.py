@@ -31,7 +31,7 @@ import json
 
 
 class HeaderFooter(object):
-    """Section element.
+    """DTO container with a section element.
     """
 
     """
@@ -82,7 +82,7 @@ class HeaderFooter(object):
     def link(self):
         """Gets the link of this HeaderFooter.  # noqa: E501
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :return: The link of this HeaderFooter.  # noqa: E501
         :rtype: WordsApiLink
@@ -93,7 +93,7 @@ class HeaderFooter(object):
     def link(self, link):
         """Sets the link of this HeaderFooter.
 
-        Gets or sets link to the document.  # noqa: E501
+        Gets or sets the link to the document.  # noqa: E501
 
         :param link: The link of this HeaderFooter.  # noqa: E501
         :type: WordsApiLink
@@ -104,7 +104,7 @@ class HeaderFooter(object):
     def type(self):
         """Gets the type of this HeaderFooter.  # noqa: E501
 
-        Gets or sets paragraph's text.  # noqa: E501
+        Gets or sets the paragraph's text.  # noqa: E501
 
         :return: The type of this HeaderFooter.  # noqa: E501
         :rtype: str
@@ -115,7 +115,7 @@ class HeaderFooter(object):
     def type(self, type):
         """Sets the type of this HeaderFooter.
 
-        Gets or sets paragraph's text.  # noqa: E501
+        Gets or sets the paragraph's text.  # noqa: E501
 
         :param type: The type of this HeaderFooter.  # noqa: E501
         :type: str
@@ -134,7 +134,7 @@ class HeaderFooter(object):
     def child_nodes(self):
         """Gets the child_nodes of this HeaderFooter.  # noqa: E501
 
-        Gets or sets child nodes.  # noqa: E501
+        Gets or sets the child nodes.  # noqa: E501
 
         :return: The child_nodes of this HeaderFooter.  # noqa: E501
         :rtype: list[NodeLink]
@@ -145,7 +145,7 @@ class HeaderFooter(object):
     def child_nodes(self, child_nodes):
         """Sets the child_nodes of this HeaderFooter.
 
-        Gets or sets child nodes.  # noqa: E501
+        Gets or sets the child nodes.  # noqa: E501
 
         :param child_nodes: The child_nodes of this HeaderFooter.  # noqa: E501
         :type: list[NodeLink]
@@ -156,7 +156,7 @@ class HeaderFooter(object):
     def drawing_objects(self):
         """Gets the drawing_objects of this HeaderFooter.  # noqa: E501
 
-        Gets or sets link to DrawingObjects resource.  # noqa: E501
+        Gets or sets the link to DrawingObjects resource.  # noqa: E501
 
         :return: The drawing_objects of this HeaderFooter.  # noqa: E501
         :rtype: LinkElement
@@ -167,7 +167,7 @@ class HeaderFooter(object):
     def drawing_objects(self, drawing_objects):
         """Sets the drawing_objects of this HeaderFooter.
 
-        Gets or sets link to DrawingObjects resource.  # noqa: E501
+        Gets or sets the link to DrawingObjects resource.  # noqa: E501
 
         :param drawing_objects: The drawing_objects of this HeaderFooter.  # noqa: E501
         :type: LinkElement
@@ -178,7 +178,7 @@ class HeaderFooter(object):
     def paragraphs(self):
         """Gets the paragraphs of this HeaderFooter.  # noqa: E501
 
-        Gets or sets link to Paragraphs resource.  # noqa: E501
+        Gets or sets the link to Paragraphs resource.  # noqa: E501
 
         :return: The paragraphs of this HeaderFooter.  # noqa: E501
         :rtype: LinkElement
@@ -189,7 +189,7 @@ class HeaderFooter(object):
     def paragraphs(self, paragraphs):
         """Sets the paragraphs of this HeaderFooter.
 
-        Gets or sets link to Paragraphs resource.  # noqa: E501
+        Gets or sets the link to Paragraphs resource.  # noqa: E501
 
         :param paragraphs: The paragraphs of this HeaderFooter.  # noqa: E501
         :type: LinkElement

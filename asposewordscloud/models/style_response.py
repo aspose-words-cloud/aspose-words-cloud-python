@@ -31,7 +31,7 @@ import json
 
 
 class StyleResponse(object):
-    """This response should be returned by the service when handling: GET https://api.aspose.cloud/v4.0/words/Test.doc/styles/{0}.
+    """The REST response with a style.
     """
 
     """
@@ -67,7 +67,7 @@ class StyleResponse(object):
     def request_id(self):
         """Gets the request_id of this StyleResponse.  # noqa: E501
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :return: The request_id of this StyleResponse.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class StyleResponse(object):
     def request_id(self, request_id):
         """Sets the request_id of this StyleResponse.
 
-        Gets or sets request Id.  # noqa: E501
+        Gets or sets the request Id.  # noqa: E501
 
         :param request_id: The request_id of this StyleResponse.  # noqa: E501
         :type: str
@@ -89,7 +89,7 @@ class StyleResponse(object):
     def style(self):
         """Gets the style of this StyleResponse.  # noqa: E501
 
-        Gets or sets style which are contained in document.  # noqa: E501
+        Gets or sets the style, containded in the document.  # noqa: E501
 
         :return: The style of this StyleResponse.  # noqa: E501
         :rtype: Style
@@ -100,7 +100,7 @@ class StyleResponse(object):
     def style(self, style):
         """Sets the style of this StyleResponse.
 
-        Gets or sets style which are contained in document.  # noqa: E501
+        Gets or sets the style, containded in the document.  # noqa: E501
 
         :param style: The style of this StyleResponse.  # noqa: E501
         :type: Style
