@@ -25,6 +25,9 @@
 # -----------------------------------------------------------------------------------
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
 class DeleteTableRequest(object):
     """
