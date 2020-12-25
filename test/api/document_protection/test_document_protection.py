@@ -51,6 +51,24 @@ class TestDocumentProtection(BaseTestContext):
         self.assertEqual('ReadOnly', result.protection_data.protection_type)
 
     #
+    # Test for changing document protection.
+    #
+    def test_change_document_protection(self):
+        remoteDataFolder = self.remote_test_folder + '/DocumentElements/DocumentProtection'
+        localFilePath = 'DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx'
+        remoteFileName = 'TestChangeDocumentProtection.docx'
+
+        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFilePath), 'rb'))
+
+        requestProtectionRequest = asposewordscloud.ProtectionRequest(password='aspose', protection_type='AllowOnlyComments')
+        request = asposewordscloud.models.requests.ProtectDocumentRequest(name=remoteFileName, protection_request=requestProtectionRequest, folder=remoteDataFolder)
+
+        result = self.words_api.protect_document(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.protection_data, 'Validate ChangeDocumentProtection response')
+        self.assertEqual('AllowOnlyComments', result.protection_data.protection_type)
+
+    #
     # Test for getting document protection.
     #
     def test_get_document_protection(self):
