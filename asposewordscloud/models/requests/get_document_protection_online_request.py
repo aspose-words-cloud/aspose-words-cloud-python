@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class GetDocumentProtectionOnlineRequest(object):
+class GetDocumentProtectionOnlineRequest(BaseRequestObject):
     """
     Request model for get_document_protection_online operation.
     Initializes a new instance.
@@ -90,8 +91,11 @@ class GetDocumentProtectionOnlineRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": ProtectionDataResponse  # noqa: E501
+            "response_type": 'ProtectionDataResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return ProtectionDataResponse  # noqa: E501
+        return 'ProtectionDataResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, ProtectionDataResponse, api_client)

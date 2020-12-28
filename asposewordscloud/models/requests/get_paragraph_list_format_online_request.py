@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class GetParagraphListFormatOnlineRequest(object):
+class GetParagraphListFormatOnlineRequest(BaseRequestObject):
     """
     Request model for get_paragraph_list_format_online operation.
     Initializes a new instance.
@@ -55,7 +56,7 @@ class GetParagraphListFormatOnlineRequest(object):
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_paragraph_list_format_online`")  # noqa: E501
 
-        path = '/v4.0words//online/get/{nodePath}/paragraphs/{index}/listFormat'
+        path = '/v4.0/words/online/get/{nodePath}/paragraphs/{index}/listFormat'
         path_params = {}
         if self.index is not None:
             path_params['index'] = self.index  # noqa: E501
@@ -105,8 +106,11 @@ class GetParagraphListFormatOnlineRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": ParagraphListFormatResponse  # noqa: E501
+            "response_type": 'ParagraphListFormatResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return ParagraphListFormatResponse  # noqa: E501
+        return 'ParagraphListFormatResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, ParagraphListFormatResponse, api_client)

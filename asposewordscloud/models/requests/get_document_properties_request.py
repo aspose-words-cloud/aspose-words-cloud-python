@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class GetDocumentPropertiesRequest(object):
+class GetDocumentPropertiesRequest(BaseRequestObject):
     """
     Request model for get_document_properties operation.
     Initializes a new instance.
@@ -97,8 +98,11 @@ class GetDocumentPropertiesRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": DocumentPropertiesResponse  # noqa: E501
+            "response_type": 'DocumentPropertiesResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return DocumentPropertiesResponse  # noqa: E501
+        return 'DocumentPropertiesResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, DocumentPropertiesResponse, api_client)

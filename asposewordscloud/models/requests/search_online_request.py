@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class SearchOnlineRequest(object):
+class SearchOnlineRequest(BaseRequestObject):
     """
     Request model for search_online operation.
     Initializes a new instance.
@@ -97,8 +98,11 @@ class SearchOnlineRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": SearchResponse  # noqa: E501
+            "response_type": 'SearchResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return SearchResponse  # noqa: E501
+        return 'SearchResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, SearchResponse, api_client)

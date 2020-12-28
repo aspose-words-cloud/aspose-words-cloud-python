@@ -29,6 +29,6 @@ class UpdateSectionPageSetupOnlineResponse(object):
     Response model for update_section_page_setup_online operation.
     Initializes a new instance.
     """
-    def __init__(self):
-        self.model = None
-        self.document = None
+    def __init__(self, model, document):
+        self.model = model
+        self.document = document

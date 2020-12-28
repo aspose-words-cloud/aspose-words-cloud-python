@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class AcceptAllRevisionsRequest(object):
+class AcceptAllRevisionsRequest(BaseRequestObject):
     """
     Request model for accept_all_revisions operation.
     Initializes a new instance.
@@ -101,8 +102,11 @@ class AcceptAllRevisionsRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": RevisionsModificationResponse  # noqa: E501
+            "response_type": 'RevisionsModificationResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return RevisionsModificationResponse  # noqa: E501
+        return 'RevisionsModificationResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, RevisionsModificationResponse, api_client)

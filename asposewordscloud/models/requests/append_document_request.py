@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class AppendDocumentRequest(object):
+class AppendDocumentRequest(BaseRequestObject):
     """
     Request model for append_document operation.
     Initializes a new instance.
@@ -120,8 +121,11 @@ class AppendDocumentRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": DocumentResponse  # noqa: E501
+            "response_type": 'DocumentResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return DocumentResponse  # noqa: E501
+        return 'DocumentResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, DocumentResponse, api_client)

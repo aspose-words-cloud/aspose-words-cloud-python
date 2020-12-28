@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class UpdateListLevelRequest(object):
+class UpdateListLevelRequest(BaseRequestObject):
     """
     Request model for update_list_level operation.
     Initializes a new instance.
@@ -138,8 +139,11 @@ class UpdateListLevelRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": ListResponse  # noqa: E501
+            "response_type": 'ListResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return ListResponse  # noqa: E501
+        return 'ListResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, ListResponse, api_client)

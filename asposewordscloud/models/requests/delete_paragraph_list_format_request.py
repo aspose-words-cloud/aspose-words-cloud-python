@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class DeleteParagraphListFormatRequest(object):
+class DeleteParagraphListFormatRequest(BaseRequestObject):
     """
     Request model for delete_paragraph_list_format operation.
     Initializes a new instance.
@@ -124,8 +125,11 @@ class DeleteParagraphListFormatRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": ParagraphListFormatResponse  # noqa: E501
+            "response_type": 'ParagraphListFormatResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return ParagraphListFormatResponse  # noqa: E501
+        return 'ParagraphListFormatResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, ParagraphListFormatResponse, api_client)

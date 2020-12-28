@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class GetBorderOnlineRequest(object):
+class GetBorderOnlineRequest(BaseRequestObject):
     """
     Request model for get_border_online operation.
     Initializes a new instance.
@@ -55,7 +56,7 @@ class GetBorderOnlineRequest(object):
         if self.border_type is None:
             raise ValueError("Missing the required parameter `border_type` when calling `get_border_online`")  # noqa: E501
 
-        path = '/v4.0words/online/get/{nodePath}/borders/{borderType}'
+        path = '/v4.0/words/online/get/{nodePath}/borders/{borderType}'
         path_params = {}
         if self.border_type is not None:
             path_params['borderType'] = self.border_type  # noqa: E501
@@ -105,8 +106,11 @@ class GetBorderOnlineRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": BorderResponse  # noqa: E501
+            "response_type": 'BorderResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return BorderResponse  # noqa: E501
+        return 'BorderResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, BorderResponse, api_client)

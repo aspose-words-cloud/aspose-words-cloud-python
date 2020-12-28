@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class GetRangeTextRequest(object):
+class GetRangeTextRequest(BaseRequestObject):
     """
     Request model for get_range_text operation.
     Initializes a new instance.
@@ -112,8 +113,11 @@ class GetRangeTextRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": RangeTextResponse  # noqa: E501
+            "response_type": 'RangeTextResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return RangeTextResponse  # noqa: E501
+        return 'RangeTextResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, RangeTextResponse, api_client)

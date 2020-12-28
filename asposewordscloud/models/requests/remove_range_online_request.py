@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class RemoveRangeOnlineRequest(object):
+class RemoveRangeOnlineRequest(BaseRequestObject):
     """
     Request model for remove_range_online operation.
     Initializes a new instance.
@@ -57,7 +58,7 @@ class RemoveRangeOnlineRequest(object):
         if self.range_start_identifier is None:
             raise ValueError("Missing the required parameter `range_start_identifier` when calling `remove_range_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
+        path = '/v4.0/words/online/delete/range/{rangeStartIdentifier}/{rangeEndIdentifier}'
         path_params = {}
         if self.range_start_identifier is not None:
             path_params['rangeStartIdentifier'] = self.range_start_identifier  # noqa: E501
@@ -102,15 +103,21 @@ class RemoveRangeOnlineRequest(object):
 
         body_params = None
         return {
-            "method": "DELETE",
+            "method": "POST",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": RemoveRangeOnlineResponse  # noqa: E501
+            "response_type": 'RemoveRangeOnlineResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return RemoveRangeOnlineResponse  # noqa: E501
+        return 'RemoveRangeOnlineResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        multipart = self.getparts(response)
+        return RemoveRangeOnlineResponse(
+          self.deserialize(json.loads(multipart[0].text), DocumentResponse, api_client),
+          self.deserialize_file(multipart[1].content, multipart[1].headers, api_client))

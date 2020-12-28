@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class GetDocumentFieldNamesRequest(object):
+class GetDocumentFieldNamesRequest(BaseRequestObject):
     """
     Request model for get_document_field_names operation.
     Initializes a new instance.
@@ -101,8 +102,11 @@ class GetDocumentFieldNamesRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": FieldNamesResponse  # noqa: E501
+            "response_type": 'FieldNamesResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return FieldNamesResponse  # noqa: E501
+        return 'FieldNamesResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, FieldNamesResponse, api_client)

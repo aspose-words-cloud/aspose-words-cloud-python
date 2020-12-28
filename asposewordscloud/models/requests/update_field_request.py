@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class UpdateFieldRequest(object):
+class UpdateFieldRequest(BaseRequestObject):
     """
     Request model for update_field operation.
     Initializes a new instance.
@@ -135,8 +136,11 @@ class UpdateFieldRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": FieldResponse  # noqa: E501
+            "response_type": 'FieldResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return FieldResponse  # noqa: E501
+        return 'FieldResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, FieldResponse, api_client)

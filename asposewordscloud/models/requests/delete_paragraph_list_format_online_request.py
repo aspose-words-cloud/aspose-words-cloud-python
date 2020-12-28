@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class DeleteParagraphListFormatOnlineRequest(object):
+class DeleteParagraphListFormatOnlineRequest(BaseRequestObject):
     """
     Request model for delete_paragraph_list_format_online operation.
     Initializes a new instance.
@@ -61,7 +62,7 @@ class DeleteParagraphListFormatOnlineRequest(object):
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_paragraph_list_format_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/{nodePath}/paragraphs/{index}/listFormat'
+        path = '/v4.0/words/online/delete/{nodePath}/paragraphs/{index}/listFormat'
         path_params = {}
         if self.index is not None:
             path_params['index'] = self.index  # noqa: E501
@@ -110,15 +111,21 @@ class DeleteParagraphListFormatOnlineRequest(object):
 
         body_params = None
         return {
-            "method": "DELETE",
+            "method": "POST",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": DeleteParagraphListFormatOnlineResponse  # noqa: E501
+            "response_type": 'DeleteParagraphListFormatOnlineResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return DeleteParagraphListFormatOnlineResponse  # noqa: E501
+        return 'DeleteParagraphListFormatOnlineResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        multipart = self.getparts(response)
+        return DeleteParagraphListFormatOnlineResponse(
+          self.deserialize(json.loads(multipart[0].text), ParagraphListFormatResponse, api_client),
+          self.deserialize_file(multipart[1].content, multipart[1].headers, api_client))

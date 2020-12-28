@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class CopyStyleOnlineRequest(object):
+class CopyStyleOnlineRequest(BaseRequestObject):
     """
     Request model for copy_style_online operation.
     Initializes a new instance.
@@ -109,8 +110,14 @@ class CopyStyleOnlineRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": CopyStyleOnlineResponse  # noqa: E501
+            "response_type": 'CopyStyleOnlineResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return CopyStyleOnlineResponse  # noqa: E501
+        return 'CopyStyleOnlineResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        multipart = self.getparts(response)
+        return CopyStyleOnlineResponse(
+          self.deserialize(json.loads(multipart[0].text), StyleResponse, api_client),
+          self.deserialize_file(multipart[1].content, multipart[1].headers, api_client))

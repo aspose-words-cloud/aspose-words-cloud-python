@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class GetBookmarkByNameOnlineRequest(object):
+class GetBookmarkByNameOnlineRequest(BaseRequestObject):
     """
     Request model for get_bookmark_by_name_online operation.
     Initializes a new instance.
@@ -99,8 +100,11 @@ class GetBookmarkByNameOnlineRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": BookmarkResponse  # noqa: E501
+            "response_type": 'BookmarkResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return BookmarkResponse  # noqa: E501
+        return 'BookmarkResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, BookmarkResponse, api_client)

@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class InsertRunRequest(object):
+class InsertRunRequest(BaseRequestObject):
     """
     Request model for insert_run operation.
     Initializes a new instance.
@@ -133,8 +134,11 @@ class InsertRunRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": RunResponse  # noqa: E501
+            "response_type": 'RunResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return RunResponse  # noqa: E501
+        return 'RunResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, RunResponse, api_client)

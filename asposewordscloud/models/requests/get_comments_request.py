@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class GetCommentsRequest(object):
+class GetCommentsRequest(BaseRequestObject):
     """
     Request model for get_comments operation.
     Initializes a new instance.
@@ -97,8 +98,11 @@ class GetCommentsRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": CommentsResponse  # noqa: E501
+            "response_type": 'CommentsResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return CommentsResponse  # noqa: E501
+        return 'CommentsResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, CommentsResponse, api_client)

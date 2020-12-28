@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class DeleteBorderOnlineRequest(object):
+class DeleteBorderOnlineRequest(BaseRequestObject):
     """
     Request model for delete_border_online operation.
     Initializes a new instance.
@@ -61,7 +62,7 @@ class DeleteBorderOnlineRequest(object):
         if self.border_type is None:
             raise ValueError("Missing the required parameter `border_type` when calling `delete_border_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/{nodePath}/borders/{borderType}'
+        path = '/v4.0/words/online/delete/{nodePath}/borders/{borderType}'
         path_params = {}
         if self.border_type is not None:
             path_params['borderType'] = self.border_type  # noqa: E501
@@ -110,15 +111,21 @@ class DeleteBorderOnlineRequest(object):
 
         body_params = None
         return {
-            "method": "DELETE",
+            "method": "POST",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": DeleteBorderOnlineResponse  # noqa: E501
+            "response_type": 'DeleteBorderOnlineResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return DeleteBorderOnlineResponse  # noqa: E501
+        return 'DeleteBorderOnlineResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        multipart = self.getparts(response)
+        return DeleteBorderOnlineResponse(
+          self.deserialize(json.loads(multipart[0].text), BorderResponse, api_client),
+          self.deserialize_file(multipart[1].content, multipart[1].headers, api_client))

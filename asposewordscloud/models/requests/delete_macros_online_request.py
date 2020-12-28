@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class DeleteMacrosOnlineRequest(object):
+class DeleteMacrosOnlineRequest(BaseRequestObject):
     """
     Request model for delete_macros_online operation.
     Initializes a new instance.
@@ -54,7 +55,7 @@ class DeleteMacrosOnlineRequest(object):
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `delete_macros_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/macros'
+        path = '/v4.0/words/online/delete/macros'
         path_params = {}
 
         # path parameters
@@ -95,15 +96,18 @@ class DeleteMacrosOnlineRequest(object):
 
         body_params = None
         return {
-            "method": "DELETE",
+            "method": "POST",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": file  # noqa: E501
+            "response_type": 'file'  # noqa: E501
         }
 
     def get_response_type(self):
-        return file  # noqa: E501
+        return 'file'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize_file(response.data, response.getheaders(), api_client)

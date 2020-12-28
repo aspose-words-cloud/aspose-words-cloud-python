@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class UnprotectDocumentOnlineRequest(object):
+class UnprotectDocumentOnlineRequest(BaseRequestObject):
     """
     Request model for unprotect_document_online operation.
     Initializes a new instance.
@@ -55,7 +56,7 @@ class UnprotectDocumentOnlineRequest(object):
         if self.protection_request is None:
             raise ValueError("Missing the required parameter `protection_request` when calling `unprotect_document_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/protection'
+        path = '/v4.0/words/online/delete/protection'
         path_params = {}
 
         # path parameters
@@ -94,15 +95,21 @@ class UnprotectDocumentOnlineRequest(object):
 
         body_params = None
         return {
-            "method": "DELETE",
+            "method": "POST",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": UnprotectDocumentOnlineResponse  # noqa: E501
+            "response_type": 'UnprotectDocumentOnlineResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return UnprotectDocumentOnlineResponse  # noqa: E501
+        return 'UnprotectDocumentOnlineResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        multipart = self.getparts(response)
+        return UnprotectDocumentOnlineResponse(
+          self.deserialize(json.loads(multipart[0].text), ProtectionDataResponse, api_client),
+          self.deserialize_file(multipart[1].content, multipart[1].headers, api_client))

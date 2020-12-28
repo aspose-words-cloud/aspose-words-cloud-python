@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class RejectAllRevisionsOnlineRequest(object):
+class RejectAllRevisionsOnlineRequest(BaseRequestObject):
     """
     Request model for reject_all_revisions_online operation.
     Initializes a new instance.
@@ -94,8 +95,14 @@ class RejectAllRevisionsOnlineRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": RejectAllRevisionsOnlineResponse  # noqa: E501
+            "response_type": 'RejectAllRevisionsOnlineResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return RejectAllRevisionsOnlineResponse  # noqa: E501
+        return 'RejectAllRevisionsOnlineResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        multipart = self.getparts(response)
+        return RejectAllRevisionsOnlineResponse(
+          self.deserialize(json.loads(multipart[0].text), RevisionsModificationResponse, api_client),
+          self.deserialize_file(multipart[1].content, multipart[1].headers, api_client))

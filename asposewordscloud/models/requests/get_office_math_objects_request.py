@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class GetOfficeMathObjectsRequest(object):
+class GetOfficeMathObjectsRequest(BaseRequestObject):
     """
     Request model for get_office_math_objects operation.
     Initializes a new instance.
@@ -103,8 +104,11 @@ class GetOfficeMathObjectsRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": OfficeMathObjectsResponse  # noqa: E501
+            "response_type": 'OfficeMathObjectsResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return OfficeMathObjectsResponse  # noqa: E501
+        return 'OfficeMathObjectsResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, OfficeMathObjectsResponse, api_client)

@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class GetRunOnlineRequest(object):
+class GetRunOnlineRequest(BaseRequestObject):
     """
     Request model for get_run_online operation.
     Initializes a new instance.
@@ -58,7 +59,7 @@ class GetRunOnlineRequest(object):
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_run_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/get/{paragraphPath}/runs/{index}'
+        path = '/v4.0/words/online/get/{paragraphPath}/runs/{index}/getByIndex'
         path_params = {}
         if self.paragraph_path is not None:
             path_params['paragraphPath'] = self.paragraph_path  # noqa: E501
@@ -101,15 +102,18 @@ class GetRunOnlineRequest(object):
 
         body_params = None
         return {
-            "method": "GET",
+            "method": "POST",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": RunResponse  # noqa: E501
+            "response_type": 'RunResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return RunResponse  # noqa: E501
+        return 'RunResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, RunResponse, api_client)

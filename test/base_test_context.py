@@ -31,7 +31,6 @@ import unittest
 import warnings
 import asposewordscloud
 import six
-import xmlrunner
 
 
 class BaseTestContext(unittest.TestCase):
@@ -69,9 +68,3 @@ class BaseTestContext(unittest.TestCase):
 
     def create_random_guid(self):
         return str(uuid.uuid4())
-
-if __name__ == '__main__':
-    with open('testReport.xml', 'wb') as output:
-        unittest.main(
-            testRunner=xmlrunner.XMLTestRunner(output=output),
-            failfast=False, buffer=False, catchbreak=False)

@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class UpdateFootnoteOnlineRequest(object):
+class UpdateFootnoteOnlineRequest(BaseRequestObject):
     """
     Request model for update_footnote_online operation.
     Initializes a new instance.
@@ -124,8 +125,14 @@ class UpdateFootnoteOnlineRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": UpdateFootnoteOnlineResponse  # noqa: E501
+            "response_type": 'UpdateFootnoteOnlineResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return UpdateFootnoteOnlineResponse  # noqa: E501
+        return 'UpdateFootnoteOnlineResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        multipart = self.getparts(response)
+        return UpdateFootnoteOnlineResponse(
+          self.deserialize(json.loads(multipart[0].text), FootnoteResponse, api_client),
+          self.deserialize_file(multipart[1].content, multipart[1].headers, api_client))

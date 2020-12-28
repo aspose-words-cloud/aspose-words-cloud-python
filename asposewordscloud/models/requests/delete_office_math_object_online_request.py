@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class DeleteOfficeMathObjectOnlineRequest(object):
+class DeleteOfficeMathObjectOnlineRequest(BaseRequestObject):
     """
     Request model for delete_office_math_object_online operation.
     Initializes a new instance.
@@ -61,7 +62,7 @@ class DeleteOfficeMathObjectOnlineRequest(object):
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_office_math_object_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/{nodePath}/OfficeMathObjects/{index}'
+        path = '/v4.0/words/online/delete/{nodePath}/OfficeMathObjects/{index}'
         path_params = {}
         if self.index is not None:
             path_params['index'] = self.index  # noqa: E501
@@ -110,15 +111,18 @@ class DeleteOfficeMathObjectOnlineRequest(object):
 
         body_params = None
         return {
-            "method": "DELETE",
+            "method": "POST",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": file  # noqa: E501
+            "response_type": 'file'  # noqa: E501
         }
 
     def get_response_type(self):
-        return file  # noqa: E501
+        return 'file'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize_file(response.data, response.getheaders(), api_client)

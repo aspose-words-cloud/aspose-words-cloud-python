@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class GetHeaderFootersRequest(object):
+class GetHeaderFootersRequest(BaseRequestObject):
     """
     Request model for get_header_footers operation.
     Initializes a new instance.
@@ -110,8 +111,11 @@ class GetHeaderFootersRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": HeaderFootersResponse  # noqa: E501
+            "response_type": 'HeaderFootersResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return HeaderFootersResponse  # noqa: E501
+        return 'HeaderFootersResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, HeaderFootersResponse, api_client)

@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class GetDocumentHyperlinkByIndexRequest(object):
+class GetDocumentHyperlinkByIndexRequest(BaseRequestObject):
     """
     Request model for get_document_hyperlink_by_index operation.
     Initializes a new instance.
@@ -106,8 +107,11 @@ class GetDocumentHyperlinkByIndexRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": HyperlinkResponse  # noqa: E501
+            "response_type": 'HyperlinkResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return HyperlinkResponse  # noqa: E501
+        return 'HyperlinkResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, HyperlinkResponse, api_client)

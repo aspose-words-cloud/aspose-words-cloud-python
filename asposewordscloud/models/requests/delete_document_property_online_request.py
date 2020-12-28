@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class DeleteDocumentPropertyOnlineRequest(object):
+class DeleteDocumentPropertyOnlineRequest(BaseRequestObject):
     """
     Request model for delete_document_property_online operation.
     Initializes a new instance.
@@ -59,7 +60,7 @@ class DeleteDocumentPropertyOnlineRequest(object):
         if self.property_name is None:
             raise ValueError("Missing the required parameter `property_name` when calling `delete_document_property_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/documentProperties/{propertyName}'
+        path = '/v4.0/words/online/delete/documentProperties/{propertyName}'
         path_params = {}
         if self.property_name is not None:
             path_params['propertyName'] = self.property_name  # noqa: E501
@@ -104,15 +105,18 @@ class DeleteDocumentPropertyOnlineRequest(object):
 
         body_params = None
         return {
-            "method": "DELETE",
+            "method": "POST",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": file  # noqa: E501
+            "response_type": 'file'  # noqa: E501
         }
 
     def get_response_type(self):
-        return file  # noqa: E501
+        return 'file'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize_file(response.data, response.getheaders(), api_client)

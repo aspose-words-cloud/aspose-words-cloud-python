@@ -179,7 +179,7 @@ class TestTableBorder(BaseTestContext):
     def test_update_border_online(self):
         localFile = 'DocumentElements/Tables/TablesGet.docx'
 
-        requestBorderPropertiesColor = asposewordscloud.XmlColor(alpha=2)
+        requestBorderPropertiesColor = asposewordscloud.XmlColor(web='#AABBCC')
         requestBorderProperties = asposewordscloud.Border(border_type='Left', color=requestBorderPropertiesColor, distance_from_text=6, line_style='DashDotStroker', line_width=2, shadow=True)
         request = asposewordscloud.models.requests.UpdateBorderOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), border_properties=requestBorderProperties, border_type='left', node_path='tables/1/rows/0/cells/0')
 

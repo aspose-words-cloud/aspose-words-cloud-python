@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class DeleteHeadersFootersOnlineRequest(object):
+class DeleteHeadersFootersOnlineRequest(BaseRequestObject):
     """
     Request model for delete_headers_footers_online operation.
     Initializes a new instance.
@@ -61,7 +62,7 @@ class DeleteHeadersFootersOnlineRequest(object):
         if self.section_path is None:
             raise ValueError("Missing the required parameter `section_path` when calling `delete_headers_footers_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/{sectionPath}/headersfooters'
+        path = '/v4.0/words/online/delete/{sectionPath}/headersfooters'
         path_params = {}
         if self.section_path is not None:
             path_params['sectionPath'] = self.section_path  # noqa: E501
@@ -108,15 +109,18 @@ class DeleteHeadersFootersOnlineRequest(object):
 
         body_params = None
         return {
-            "method": "DELETE",
+            "method": "POST",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": file  # noqa: E501
+            "response_type": 'file'  # noqa: E501
         }
 
     def get_response_type(self):
-        return file  # noqa: E501
+        return 'file'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize_file(response.data, response.getheaders(), api_client)

@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class DeleteBordersOnlineRequest(object):
+class DeleteBordersOnlineRequest(BaseRequestObject):
     """
     Request model for delete_borders_online operation.
     Initializes a new instance.
@@ -56,7 +57,7 @@ class DeleteBordersOnlineRequest(object):
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `delete_borders_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/{nodePath}/borders'
+        path = '/v4.0/words/online/delete/{nodePath}/borders'
         path_params = {}
         if self.node_path is not None:
             path_params['nodePath'] = self.node_path  # noqa: E501
@@ -101,15 +102,21 @@ class DeleteBordersOnlineRequest(object):
 
         body_params = None
         return {
-            "method": "DELETE",
+            "method": "POST",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": DeleteBordersOnlineResponse  # noqa: E501
+            "response_type": 'DeleteBordersOnlineResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return DeleteBordersOnlineResponse  # noqa: E501
+        return 'DeleteBordersOnlineResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        multipart = self.getparts(response)
+        return DeleteBordersOnlineResponse(
+          self.deserialize(json.loads(multipart[0].text), BordersResponse, api_client),
+          self.deserialize_file(multipart[1].content, multipart[1].headers, api_client))

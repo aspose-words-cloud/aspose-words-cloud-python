@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class DeleteWatermarkOnlineRequest(object):
+class DeleteWatermarkOnlineRequest(BaseRequestObject):
     """
     Request model for delete_watermark_online operation.
     Initializes a new instance.
@@ -102,8 +103,14 @@ class DeleteWatermarkOnlineRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": DeleteWatermarkOnlineResponse  # noqa: E501
+            "response_type": 'DeleteWatermarkOnlineResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return DeleteWatermarkOnlineResponse  # noqa: E501
+        return 'DeleteWatermarkOnlineResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        multipart = self.getparts(response)
+        return DeleteWatermarkOnlineResponse(
+          self.deserialize(json.loads(multipart[0].text), DocumentResponse, api_client),
+          self.deserialize_file(multipart[1].content, multipart[1].headers, api_client))

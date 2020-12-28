@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class ApplyStyleToDocumentElementRequest(object):
+class ApplyStyleToDocumentElementRequest(BaseRequestObject):
     """
     Request model for apply_style_to_document_element operation.
     Initializes a new instance.
@@ -129,8 +130,11 @@ class ApplyStyleToDocumentElementRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": WordsResponse  # noqa: E501
+            "response_type": 'WordsResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return WordsResponse  # noqa: E501
+        return 'WordsResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, WordsResponse, api_client)

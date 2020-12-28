@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class DeleteTableRowOnlineRequest(object):
+class DeleteTableRowOnlineRequest(BaseRequestObject):
     """
     Request model for delete_table_row_online operation.
     Initializes a new instance.
@@ -64,7 +65,7 @@ class DeleteTableRowOnlineRequest(object):
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_table_row_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/{tablePath}/rows/{index}'
+        path = '/v4.0/words/online/delete/{tablePath}/rows/{index}'
         path_params = {}
         if self.table_path is not None:
             path_params['tablePath'] = self.table_path  # noqa: E501
@@ -113,15 +114,18 @@ class DeleteTableRowOnlineRequest(object):
 
         body_params = None
         return {
-            "method": "DELETE",
+            "method": "POST",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": file  # noqa: E501
+            "response_type": 'file'  # noqa: E501
         }
 
     def get_response_type(self):
-        return file  # noqa: E501
+        return 'file'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize_file(response.data, response.getheaders(), api_client)

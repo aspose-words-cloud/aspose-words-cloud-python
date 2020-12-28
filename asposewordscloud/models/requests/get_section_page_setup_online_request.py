@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class GetSectionPageSetupOnlineRequest(object):
+class GetSectionPageSetupOnlineRequest(BaseRequestObject):
     """
     Request model for get_section_page_setup_online operation.
     Initializes a new instance.
@@ -99,8 +100,11 @@ class GetSectionPageSetupOnlineRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": SectionPageSetupResponse  # noqa: E501
+            "response_type": 'SectionPageSetupResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return SectionPageSetupResponse  # noqa: E501
+        return 'SectionPageSetupResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, SectionPageSetupResponse, api_client)

@@ -29,6 +29,6 @@ class UpdateFieldsOnlineResponse(object):
     Response model for update_fields_online operation.
     Initializes a new instance.
     """
-    def __init__(self):
-        self.model = None
-        self.document = None
+    def __init__(self, model, document):
+        self.model = model
+        self.document = document

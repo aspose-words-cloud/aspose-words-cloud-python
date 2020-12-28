@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class DeleteParagraphTabStopRequest(object):
+class DeleteParagraphTabStopRequest(BaseRequestObject):
     """
     Request model for delete_paragraph_tab_stop operation.
     Initializes a new instance.
@@ -123,8 +124,11 @@ class DeleteParagraphTabStopRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": TabStopsResponse  # noqa: E501
+            "response_type": 'TabStopsResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return TabStopsResponse  # noqa: E501
+        return 'TabStopsResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, TabStopsResponse, api_client)

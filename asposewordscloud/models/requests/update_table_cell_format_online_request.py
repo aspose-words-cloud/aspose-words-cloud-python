@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class UpdateTableCellFormatOnlineRequest(object):
+class UpdateTableCellFormatOnlineRequest(BaseRequestObject):
     """
     Request model for update_table_cell_format_online operation.
     Initializes a new instance.
@@ -127,8 +128,14 @@ class UpdateTableCellFormatOnlineRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": UpdateTableCellFormatOnlineResponse  # noqa: E501
+            "response_type": 'UpdateTableCellFormatOnlineResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return UpdateTableCellFormatOnlineResponse  # noqa: E501
+        return 'UpdateTableCellFormatOnlineResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        multipart = self.getparts(response)
+        return UpdateTableCellFormatOnlineResponse(
+          self.deserialize(json.loads(multipart[0].text), TableCellFormatResponse, api_client),
+          self.deserialize_file(multipart[1].content, multipart[1].headers, api_client))

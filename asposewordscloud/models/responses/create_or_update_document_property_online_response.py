@@ -29,6 +29,6 @@ class CreateOrUpdateDocumentPropertyOnlineResponse(object):
     Response model for create_or_update_document_property_online operation.
     Initializes a new instance.
     """
-    def __init__(self):
-        self.model = None
-        self.document = None
+    def __init__(self, model, document):
+        self.model = model
+        self.document = document

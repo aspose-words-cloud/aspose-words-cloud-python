@@ -29,6 +29,6 @@ class RemoveRangeOnlineResponse(object):
     Response model for remove_range_online operation.
     Initializes a new instance.
     """
-    def __init__(self):
-        self.model = None
-        self.document = None
+    def __init__(self, model, document):
+        self.model = model
+        self.document = document

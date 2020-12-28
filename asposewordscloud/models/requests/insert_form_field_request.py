@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class InsertFormFieldRequest(object):
+class InsertFormFieldRequest(BaseRequestObject):
     """
     Request model for insert_form_field operation.
     Initializes a new instance.
@@ -130,8 +131,11 @@ class InsertFormFieldRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": FormFieldResponse  # noqa: E501
+            "response_type": 'FormFieldResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return FormFieldResponse  # noqa: E501
+        return 'FormFieldResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, FormFieldResponse, api_client)

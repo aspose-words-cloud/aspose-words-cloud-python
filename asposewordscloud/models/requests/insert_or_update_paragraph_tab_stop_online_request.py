@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class InsertOrUpdateParagraphTabStopOnlineRequest(object):
+class InsertOrUpdateParagraphTabStopOnlineRequest(BaseRequestObject):
     """
     Request model for insert_or_update_paragraph_tab_stop_online operation.
     Initializes a new instance.
@@ -62,7 +63,7 @@ class InsertOrUpdateParagraphTabStopOnlineRequest(object):
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `insert_or_update_paragraph_tab_stop_online`")  # noqa: E501
 
-        path = '/v4.0words//online/{nodePath}/paragraphs/{index}/tabstops'
+        path = '/v4.0/words/online/{nodePath}/paragraphs/{index}/tabstops'
         path_params = {}
         if self.index is not None:
             path_params['index'] = self.index  # noqa: E501
@@ -116,8 +117,14 @@ class InsertOrUpdateParagraphTabStopOnlineRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": InsertOrUpdateParagraphTabStopOnlineResponse  # noqa: E501
+            "response_type": 'InsertOrUpdateParagraphTabStopOnlineResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return InsertOrUpdateParagraphTabStopOnlineResponse  # noqa: E501
+        return 'InsertOrUpdateParagraphTabStopOnlineResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        multipart = self.getparts(response)
+        return InsertOrUpdateParagraphTabStopOnlineResponse(
+          self.deserialize(json.loads(multipart[0].text), TabStopsResponse, api_client),
+          self.deserialize_file(multipart[1].content, multipart[1].headers, api_client))

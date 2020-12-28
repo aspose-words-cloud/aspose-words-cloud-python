@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class GetDocumentDrawingObjectsRequest(object):
+class GetDocumentDrawingObjectsRequest(BaseRequestObject):
     """
     Request model for get_document_drawing_objects operation.
     Initializes a new instance.
@@ -103,8 +104,11 @@ class GetDocumentDrawingObjectsRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": DrawingObjectsResponse  # noqa: E501
+            "response_type": 'DrawingObjectsResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return DrawingObjectsResponse  # noqa: E501
+        return 'DrawingObjectsResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, DrawingObjectsResponse, api_client)

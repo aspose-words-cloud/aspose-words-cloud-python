@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class SplitDocumentRequest(object):
+class SplitDocumentRequest(BaseRequestObject):
     """
     Request model for split_document operation.
     Initializes a new instance.
@@ -124,8 +125,11 @@ class SplitDocumentRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": SplitDocumentResponse  # noqa: E501
+            "response_type": 'SplitDocumentResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return SplitDocumentResponse  # noqa: E501
+        return 'SplitDocumentResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, SplitDocumentResponse, api_client)

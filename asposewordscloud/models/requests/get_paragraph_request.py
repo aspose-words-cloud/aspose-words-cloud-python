@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class GetParagraphRequest(object):
+class GetParagraphRequest(BaseRequestObject):
     """
     Request model for get_paragraph operation.
     Initializes a new instance.
@@ -112,8 +113,11 @@ class GetParagraphRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": ParagraphResponse  # noqa: E501
+            "response_type": 'ParagraphResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return ParagraphResponse  # noqa: E501
+        return 'ParagraphResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, ParagraphResponse, api_client)

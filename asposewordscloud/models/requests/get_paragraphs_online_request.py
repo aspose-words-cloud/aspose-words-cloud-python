@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class GetParagraphsOnlineRequest(object):
+class GetParagraphsOnlineRequest(BaseRequestObject):
     """
     Request model for get_paragraphs_online operation.
     Initializes a new instance.
@@ -50,7 +51,7 @@ class GetParagraphsOnlineRequest(object):
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `get_paragraphs_online`")  # noqa: E501
 
-        path = '/v4.0words//online/get/{nodePath}/paragraphs'
+        path = '/v4.0/words/online/get/{nodePath}/paragraphs'
         path_params = {}
         if self.node_path is not None:
             path_params['nodePath'] = self.node_path  # noqa: E501
@@ -96,8 +97,11 @@ class GetParagraphsOnlineRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": ParagraphLinkCollectionResponse  # noqa: E501
+            "response_type": 'ParagraphLinkCollectionResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return ParagraphLinkCollectionResponse  # noqa: E501
+        return 'ParagraphLinkCollectionResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, ParagraphLinkCollectionResponse, api_client)

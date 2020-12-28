@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class UpdateTablePropertiesOnlineRequest(object):
+class UpdateTablePropertiesOnlineRequest(BaseRequestObject):
     """
     Request model for update_table_properties_online operation.
     Initializes a new instance.
@@ -124,8 +125,14 @@ class UpdateTablePropertiesOnlineRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": UpdateTablePropertiesOnlineResponse  # noqa: E501
+            "response_type": 'UpdateTablePropertiesOnlineResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return UpdateTablePropertiesOnlineResponse  # noqa: E501
+        return 'UpdateTablePropertiesOnlineResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        multipart = self.getparts(response)
+        return UpdateTablePropertiesOnlineResponse(
+          self.deserialize(json.loads(multipart[0].text), TablePropertiesResponse, api_client),
+          self.deserialize_file(multipart[1].content, multipart[1].headers, api_client))

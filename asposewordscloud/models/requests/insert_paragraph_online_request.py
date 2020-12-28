@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class InsertParagraphOnlineRequest(object):
+class InsertParagraphOnlineRequest(BaseRequestObject):
     """
     Request model for insert_paragraph_online operation.
     Initializes a new instance.
@@ -63,7 +64,7 @@ class InsertParagraphOnlineRequest(object):
         if self.paragraph is None:
             raise ValueError("Missing the required parameter `paragraph` when calling `insert_paragraph_online`")  # noqa: E501
 
-        path = '/v4.0words//online/{nodePath}/paragraphs'
+        path = '/v4.0/words/online/{nodePath}/paragraphs'
         path_params = {}
         if self.node_path is not None:
             path_params['nodePath'] = self.node_path  # noqa: E501
@@ -119,8 +120,14 @@ class InsertParagraphOnlineRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": InsertParagraphOnlineResponse  # noqa: E501
+            "response_type": 'InsertParagraphOnlineResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return InsertParagraphOnlineResponse  # noqa: E501
+        return 'InsertParagraphOnlineResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        multipart = self.getparts(response)
+        return InsertParagraphOnlineResponse(
+          self.deserialize(json.loads(multipart[0].text), ParagraphResponse, api_client),
+          self.deserialize_file(multipart[1].content, multipart[1].headers, api_client))

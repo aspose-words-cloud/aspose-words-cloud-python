@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class GetAvailableFontsRequest(object):
+class GetAvailableFontsRequest(BaseRequestObject):
     """
     Request model for get_available_fonts operation.
     Initializes a new instance.
@@ -76,8 +77,11 @@ class GetAvailableFontsRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": AvailableFontsResponse  # noqa: E501
+            "response_type": 'AvailableFontsResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return AvailableFontsResponse  # noqa: E501
+        return 'AvailableFontsResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, AvailableFontsResponse, api_client)

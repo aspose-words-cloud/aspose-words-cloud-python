@@ -29,6 +29,6 @@ class InsertOrUpdateParagraphTabStopOnlineResponse(object):
     Response model for insert_or_update_paragraph_tab_stop_online operation.
     Initializes a new instance.
     """
-    def __init__(self):
-        self.model = None
-        self.document = None
+    def __init__(self, model, document):
+        self.model = model
+        self.document = document

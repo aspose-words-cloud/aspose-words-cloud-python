@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class GetTableRowOnlineRequest(object):
+class GetTableRowOnlineRequest(BaseRequestObject):
     """
     Request model for get_table_row_online operation.
     Initializes a new instance.
@@ -101,15 +102,18 @@ class GetTableRowOnlineRequest(object):
 
         body_params = None
         return {
-            "method": "GET",
+            "method": "PUT",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": TableRowResponse  # noqa: E501
+            "response_type": 'TableRowResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return TableRowResponse  # noqa: E501
+        return 'TableRowResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, TableRowResponse, api_client)

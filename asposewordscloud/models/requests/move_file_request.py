@@ -23,13 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
 from asposewordscloud import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class MoveFileRequest(object):
+class MoveFileRequest(BaseRequestObject):
     """
     Request model for move_file operation.
     Initializes a new instance.
@@ -100,8 +101,11 @@ class MoveFileRequest(object):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": None  # noqa: E501
+            "response_type": 'None'  # noqa: E501
         }
 
     def get_response_type(self):
-        return None  # noqa: E501
+        return 'None'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return None
