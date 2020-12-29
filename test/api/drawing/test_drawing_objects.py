@@ -228,9 +228,9 @@ class TestDrawingObjects(BaseTestContext):
     # Test for getting drawing object OLE data online.
     #
     def test_get_document_drawing_object_ole_data_online(self):
-        localFile = 'Common/test_multi_pages.docx'
+        localDrawingFile = 'DocumentElements/DrawingObjects/sample_EmbeddedOLE.docx'
 
-        request = asposewordscloud.models.requests.GetDocumentDrawingObjectOleDataOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), index=0, node_path='sections/0')
+        request = asposewordscloud.models.requests.GetDocumentDrawingObjectOleDataOnlineRequest(document=open(os.path.join(self.local_test_folder, localDrawingFile), 'rb'), index=0, node_path='sections/0')
 
         result = self.words_api.get_document_drawing_object_ole_data_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

@@ -22428,6 +22428,6 @@ class WordsApi(object):
             post_params=post_params,
             header_params=header_params,
             response_type='multipart',  # noqa: E501
-            auth_settings=['JWT'],
-            _return_http_data_only=True)
-        return self.api_client.deserialize_multipart(response, requests)
+            auth_settings=['JWT'])
+        data = self.api_client.deserialize(response.data, response.getheaders(), 'multipart')
+        return self.api_client.deserialize_multipart(data, requests)
