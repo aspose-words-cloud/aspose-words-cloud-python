@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="classify_document_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,14 +23,18 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class ClassifyDocumentRequest(object):
+class ClassifyDocumentRequest(BaseRequestObject):
     """
     Request model for classify_document operation.
     Initializes a new instance.
-    :param document_name The filename of the input document.
+    :param name The document name.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -39,8 +43,8 @@ class ClassifyDocumentRequest(object):
     :param taxonomy The taxonomy to use.
     """
 
-    def __init__(self, document_name, folder=None, storage=None, load_encoding=None, password=None, best_classes_count=None, taxonomy=None):
-        self.document_name = document_name
+    def __init__(self, name, folder=None, storage=None, load_encoding=None, password=None, best_classes_count=None, taxonomy=None):
+        self.name = name
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
@@ -49,16 +53,16 @@ class ClassifyDocumentRequest(object):
         self.taxonomy = taxonomy
 
     def create_http_request(self, api_client):
-        # verify the required parameter 'document_name' is set
-        if self.document_name is None:
-            raise ValueError("Missing the required parameter `document_name` when calling `classify_document`")  # noqa: E501
+        # verify the required parameter 'name' is set
+        if self.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `classify_document`")  # noqa: E501
 
-        path = '/v4.0/words/{documentName}/classify'
+        path = '/v4.0/words/{name}/classify'
         path_params = {}
-        if self.document_name is not None:
-            path_params['documentName'] = self.document_name  # noqa: E501
+        if self.name is not None:
+            path_params['name'] = self.name  # noqa: E501
         else:
-            path_params['documentName'] = ''  # noqa: E501
+            path_params['name'] = ''  # noqa: E501
 
         # path parameters
         collection_formats = {}
@@ -107,3 +111,6 @@ class ClassifyDocumentRequest(object):
 
     def get_response_type(self):
         return 'ClassificationResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, ClassificationResponse, api_client)

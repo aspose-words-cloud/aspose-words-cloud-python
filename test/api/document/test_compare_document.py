@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_compare_document.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -53,3 +53,22 @@ class TestCompareDocument(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.document, 'Validate CompareDocument response')
         self.assertEqual('TestCompareDocumentOut.doc', result.document.file_name)
+
+    #
+    # Test for document comparison online.
+    #
+    def test_compare_document_online(self):
+        remoteFolder = self.remote_test_folder + '/DocumentActions/CompareDocument'
+        localFolder = 'DocumentActions/CompareDocument'
+        localName1 = 'compareTestDoc1.doc'
+        localName2 = 'compareTestDoc2.doc'
+        remoteName2 = 'TestCompareDocument2.doc'
+
+        self.upload_file(remoteFolder + '/' + remoteName2, open(os.path.join(self.local_test_folder, localFolder + '/' + localName2), 'rb'))
+
+        requestCompareData = asposewordscloud.CompareData(author='author', comparing_with_document=remoteFolder + '/' + remoteName2, date_time=dateutil.parser.isoparse('2015-10-26T00:00:00.0000000Z'))
+        request = asposewordscloud.models.requests.CompareDocumentOnlineRequest(document=open(os.path.join(self.local_test_folder, localFolder + '/' + localName1), 'rb'), compare_data=requestCompareData, dest_file_name=self.remote_test_out + '/TestCompareDocumentOut.doc')
+
+        result = self.words_api.compare_document_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+

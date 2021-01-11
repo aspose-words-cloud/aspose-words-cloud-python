@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_run.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -51,6 +51,19 @@ class TestRun(BaseTestContext):
         self.assertEqual('run with text', result.run.text)
 
     #
+    # Test for updating run online.
+    #
+    def test_update_run_online(self):
+        localFile = 'DocumentElements/Runs/Run.doc'
+
+        requestRun = asposewordscloud.RunUpdate(text='run with text')
+        request = asposewordscloud.models.requests.UpdateRunOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), run=requestRun, paragraph_path='paragraphs/1', index=0)
+
+        result = self.words_api.update_run_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for adding run.
     #
     def test_insert_run(self):
@@ -70,6 +83,19 @@ class TestRun(BaseTestContext):
         self.assertEqual('0.0.1.3', result.run.node_id)
 
     #
+    # Test for adding run online.
+    #
+    def test_insert_run_online(self):
+        localFile = 'DocumentElements/Runs/Run.doc'
+
+        requestRun = asposewordscloud.RunInsert(text='run with text')
+        request = asposewordscloud.models.requests.InsertRunOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), paragraph_path='paragraphs/1', run=requestRun)
+
+        result = self.words_api.insert_run_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for deleting run.
     #
     def test_delete_run(self):
@@ -82,4 +108,16 @@ class TestRun(BaseTestContext):
         request = asposewordscloud.models.requests.DeleteRunRequest(name=remoteFileName, paragraph_path='paragraphs/1', index=0, folder=remoteDataFolder)
 
         self.words_api.delete_run(request)
+
+
+    #
+    # Test for deleting run online.
+    #
+    def test_delete_run_online(self):
+        localFile = 'DocumentElements/Runs/Run.doc'
+
+        request = asposewordscloud.models.requests.DeleteRunOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), paragraph_path='paragraphs/1', index=0)
+
+        result = self.words_api.delete_run_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
 

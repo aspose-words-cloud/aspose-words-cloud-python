@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="update_bookmark_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,16 +23,20 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class UpdateBookmarkRequest(object):
+class UpdateBookmarkRequest(BaseRequestObject):
     """
     Request model for update_bookmark operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param bookmark_data The properties of the bookmark.
     :param bookmark_name The name of the bookmark.
+    :param bookmark_data Bookmark data.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -42,10 +46,10 @@ class UpdateBookmarkRequest(object):
     :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, name, bookmark_data, bookmark_name, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
+    def __init__(self, name, bookmark_name, bookmark_data, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.name = name
-        self.bookmark_data = bookmark_data
         self.bookmark_name = bookmark_name
+        self.bookmark_data = bookmark_data
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
@@ -58,12 +62,12 @@ class UpdateBookmarkRequest(object):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_bookmark`")  # noqa: E501
-        # verify the required parameter 'bookmark_data' is set
-        if self.bookmark_data is None:
-            raise ValueError("Missing the required parameter `bookmark_data` when calling `update_bookmark`")  # noqa: E501
         # verify the required parameter 'bookmark_name' is set
         if self.bookmark_name is None:
             raise ValueError("Missing the required parameter `bookmark_name` when calling `update_bookmark`")  # noqa: E501
+        # verify the required parameter 'bookmark_data' is set
+        if self.bookmark_data is None:
+            raise ValueError("Missing the required parameter `bookmark_data` when calling `update_bookmark`")  # noqa: E501
 
         path = '/v4.0/words/{name}/bookmarks/{bookmarkName}'
         path_params = {}
@@ -131,3 +135,6 @@ class UpdateBookmarkRequest(object):
 
     def get_response_type(self):
         return 'BookmarkResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, BookmarkResponse, api_client)

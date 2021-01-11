@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_watermark.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -52,6 +52,18 @@ class TestWatermark(BaseTestContext):
         self.assertEqual('TestInsertWatermarkImage.docx', result.document.file_name)
 
     #
+    # Test for adding watermark image online.
+    #
+    def test_insert_watermark_image_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.InsertWatermarkImageOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), image_file=open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'))
+
+        result = self.words_api.insert_watermark_image_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for adding watermark text.
     #
     def test_insert_watermark_text(self):
@@ -70,6 +82,19 @@ class TestWatermark(BaseTestContext):
         self.assertEqual('TestInsertWatermarkText.docx', result.document.file_name)
 
     #
+    # Test for adding watermark text online.
+    #
+    def test_insert_watermark_text_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        requestWatermarkText = asposewordscloud.WatermarkText(text='This is the text', rotation_angle=90)
+        request = asposewordscloud.models.requests.InsertWatermarkTextOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), watermark_text=requestWatermarkText)
+
+        result = self.words_api.insert_watermark_text_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for deleting watermark.
     #
     def test_delete_watermark(self):
@@ -85,3 +110,15 @@ class TestWatermark(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.document, 'Validate DeleteWatermark response')
         self.assertEqual('TestDeleteWatermark.docx', result.document.file_name)
+
+    #
+    # Test for deleting watermark online.
+    #
+    def test_delete_watermark_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.DeleteWatermarkOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'))
+
+        result = self.words_api.delete_watermark_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="update_footnote_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,16 +23,20 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class UpdateFootnoteRequest(object):
+class UpdateFootnoteRequest(BaseRequestObject):
     """
     Request model for update_footnote operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param footnote_dto The properties of the footnote.
     :param index Object index.
+    :param footnote_dto Footnote data.
     :param node_path The path to the node in the document tree.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -43,10 +47,10 @@ class UpdateFootnoteRequest(object):
     :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, name, footnote_dto, index, node_path=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
+    def __init__(self, name, index, footnote_dto, node_path=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.name = name
-        self.footnote_dto = footnote_dto
         self.index = index
+        self.footnote_dto = footnote_dto
         self.node_path = node_path
         self.folder = folder
         self.storage = storage
@@ -60,12 +64,12 @@ class UpdateFootnoteRequest(object):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_footnote`")  # noqa: E501
-        # verify the required parameter 'footnote_dto' is set
-        if self.footnote_dto is None:
-            raise ValueError("Missing the required parameter `footnote_dto` when calling `update_footnote`")  # noqa: E501
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_footnote`")  # noqa: E501
+        # verify the required parameter 'footnote_dto' is set
+        if self.footnote_dto is None:
+            raise ValueError("Missing the required parameter `footnote_dto` when calling `update_footnote`")  # noqa: E501
 
         path = '/v4.0/words/{name}/{nodePath}/footnotes/{index}'
         path_params = {}
@@ -125,7 +129,7 @@ class UpdateFootnoteRequest(object):
             body_params = self.footnote_dto
 
         return {
-            "method": "PUT",
+            "method": "POST",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,
@@ -137,3 +141,6 @@ class UpdateFootnoteRequest(object):
 
     def get_response_type(self):
         return 'FootnoteResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, FootnoteResponse, api_client)

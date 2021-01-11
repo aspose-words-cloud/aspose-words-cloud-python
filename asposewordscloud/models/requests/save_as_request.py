@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="save_as_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,15 +23,19 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class SaveAsRequest(object):
+class SaveAsRequest(BaseRequestObject):
     """
     Request model for save_as operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param save_options_data The save options.
+    :param save_options_data Save options.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -114,3 +118,6 @@ class SaveAsRequest(object):
 
     def get_response_type(self):
         return 'SaveResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, SaveResponse, api_client)

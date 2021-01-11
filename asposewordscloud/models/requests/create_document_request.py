@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="create_document_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,22 +23,26 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class CreateDocumentRequest(object):
+class CreateDocumentRequest(BaseRequestObject):
     """
     Request model for create_document operation.
     Initializes a new instance.
-    :param storage Original document storage.
     :param file_name The filename of the document.
     :param folder The path to the document folder.
+    :param storage Original document storage.
     """
 
-    def __init__(self, storage=None, file_name=None, folder=None):
-        self.storage = storage
+    def __init__(self, file_name=None, folder=None, storage=None):
         self.file_name = file_name
         self.folder = folder
+        self.storage = storage
 
     def create_http_request(self, api_client):
 
@@ -61,12 +65,12 @@ class CreateDocumentRequest(object):
         path = path.replace('//', '/')
 
         query_params = []
-        if self.storage is not None:
-                query_params.append(('storage', self.storage))  # noqa: E501
         if self.file_name is not None:
                 query_params.append(('fileName', self.file_name))  # noqa: E501
         if self.folder is not None:
                 query_params.append(('folder', self.folder))  # noqa: E501
+        if self.storage is not None:
+                query_params.append(('storage', self.storage))  # noqa: E501
 
         header_params = {}
 
@@ -86,3 +90,6 @@ class CreateDocumentRequest(object):
 
     def get_response_type(self):
         return 'DocumentResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, DocumentResponse, api_client)

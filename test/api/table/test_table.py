@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_table.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -52,6 +52,18 @@ class TestTable(BaseTestContext):
         self.assertEqual('0.0.1', result.tables.table_link_list[0].node_id)
 
     #
+    # Test for getting tables online.
+    #
+    def test_get_tables_online(self):
+        localFile = 'DocumentElements/Tables/TablesGet.docx'
+
+        request = asposewordscloud.models.requests.GetTablesOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), node_path='')
+
+        result = self.words_api.get_tables_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for getting tables without node path.
     #
     def test_get_tables_without_node_path(self):
@@ -91,6 +103,18 @@ class TestTable(BaseTestContext):
         self.assertEqual(2, len(result.table.table_row_list[0].table_cell_list))
 
     #
+    # Test for getting table online.
+    #
+    def test_get_table_online(self):
+        localFile = 'DocumentElements/Tables/TablesGet.docx'
+
+        request = asposewordscloud.models.requests.GetTableOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), index=1, node_path='')
+
+        result = self.words_api.get_table_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for getting table without node path.
     #
     def test_get_table_without_node_path(self):
@@ -123,6 +147,18 @@ class TestTable(BaseTestContext):
         request = asposewordscloud.models.requests.DeleteTableRequest(name=remoteFileName, index=1, node_path='', folder=remoteDataFolder)
 
         self.words_api.delete_table(request)
+
+
+    #
+    # Test for deleting table online.
+    #
+    def test_delete_table_online(self):
+        localFile = 'DocumentElements/Tables/TablesGet.docx'
+
+        request = asposewordscloud.models.requests.DeleteTableOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), index=1, node_path='')
+
+        result = self.words_api.delete_table_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
 
 
     #
@@ -160,6 +196,19 @@ class TestTable(BaseTestContext):
         self.assertEqual(4, len(result.table.table_row_list))
         self.assertIsNotNone(result.table.table_row_list[0].table_cell_list, 'Validate InsertTable response')
         self.assertEqual(5, len(result.table.table_row_list[0].table_cell_list))
+
+    #
+    # Test for adding table online.
+    #
+    def test_insert_table_online(self):
+        localFile = 'DocumentElements/Tables/TablesGet.docx'
+
+        requestTable = asposewordscloud.TableInsert(columns_count=5, rows_count=4)
+        request = asposewordscloud.models.requests.InsertTableOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), table=requestTable, node_path='')
+
+        result = self.words_api.insert_table_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for adding table without node path.
@@ -200,6 +249,18 @@ class TestTable(BaseTestContext):
         self.assertEqual('Table Grid', result.properties.style_name)
 
     #
+    # Test for getting document properties online.
+    #
+    def test_get_table_properties_online(self):
+        localFile = 'DocumentElements/Tables/TablesGet.docx'
+
+        request = asposewordscloud.models.requests.GetTablePropertiesOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), index=1, node_path='')
+
+        result = self.words_api.get_table_properties_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for getting document properties without node path.
     #
     def test_get_table_properties_without_node_path(self):
@@ -236,6 +297,19 @@ class TestTable(BaseTestContext):
         self.assertTrue(result.properties.bidi, 'Validate UpdateTableProperties response')
         self.assertEqual(1.0, result.properties.bottom_padding)
         self.assertEqual(2.0, result.properties.cell_spacing)
+
+    #
+    # Test for updating table properties online.
+    #
+    def test_update_table_properties_online(self):
+        localFile = 'DocumentElements/Tables/TablesGet.docx'
+
+        requestProperties = asposewordscloud.TableProperties(alignment='Right', allow_auto_fit=False, bidi=True, bottom_padding=1, cell_spacing=2, style_options='ColumnBands')
+        request = asposewordscloud.models.requests.UpdateTablePropertiesOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), properties=requestProperties, index=1, node_path='')
+
+        result = self.words_api.update_table_properties_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for updating table properties without node path.
@@ -277,6 +351,18 @@ class TestTable(BaseTestContext):
         self.assertEqual(2, len(result.row.table_cell_list))
 
     #
+    # Test for getting table row online.
+    #
+    def test_get_table_row_online(self):
+        localFile = 'DocumentElements/Tables/TablesGet.docx'
+
+        request = asposewordscloud.models.requests.GetTableRowOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), table_path='tables/1', index=0)
+
+        result = self.words_api.get_table_row_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for deleting table row.
     #
     def test_delete_table_row(self):
@@ -289,6 +375,18 @@ class TestTable(BaseTestContext):
         request = asposewordscloud.models.requests.DeleteTableRowRequest(name=remoteFileName, table_path='tables/1', index=0, folder=remoteDataFolder)
 
         self.words_api.delete_table_row(request)
+
+
+    #
+    # Test for deleting table row online.
+    #
+    def test_delete_table_row_online(self):
+        localFile = 'DocumentElements/Tables/TablesGet.docx'
+
+        request = asposewordscloud.models.requests.DeleteTableRowOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), table_path='tables/1', index=0)
+
+        result = self.words_api.delete_table_row_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
 
 
     #
@@ -311,6 +409,19 @@ class TestTable(BaseTestContext):
         self.assertEqual(5, len(result.row.table_cell_list))
 
     #
+    # Test for adding row online.
+    #
+    def test_insert_table_row_online(self):
+        localFile = 'DocumentElements/Tables/TablesGet.docx'
+
+        requestRow = asposewordscloud.TableRowInsert(columns_count=5)
+        request = asposewordscloud.models.requests.InsertTableRowOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), row=requestRow, table_path='sections/0/tables/2')
+
+        result = self.words_api.insert_table_row_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for getting row format.
     #
     def test_get_table_row_format(self):
@@ -326,6 +437,18 @@ class TestTable(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.row_format, 'Validate GetTableRowFormat response')
         self.assertTrue(result.row_format.allow_break_across_pages, 'Validate GetTableRowFormat response')
+
+    #
+    # Test for getting row format online.
+    #
+    def test_get_table_row_format_online(self):
+        localFile = 'DocumentElements/Tables/TablesGet.docx'
+
+        request = asposewordscloud.models.requests.GetTableRowFormatOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), table_path='sections/0/tables/2', index=0)
+
+        result = self.words_api.get_table_row_format_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test updating row format.
@@ -348,6 +471,19 @@ class TestTable(BaseTestContext):
         self.assertEqual(10.0, result.row_format.height)
 
     #
+    # Test updating row format online.
+    #
+    def test_update_table_row_format_online(self):
+        localFile = 'DocumentElements/Tables/TablesGet.docx'
+
+        requestFormat = asposewordscloud.TableRowFormat(allow_break_across_pages=True, heading_format=True, height=10, height_rule='Auto')
+        request = asposewordscloud.models.requests.UpdateTableRowFormatOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), format=requestFormat, table_path='sections/0/tables/2', index=0)
+
+        result = self.words_api.update_table_row_format_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for getting table cell.
     #
     def test_get_table_cell(self):
@@ -365,6 +501,18 @@ class TestTable(BaseTestContext):
         self.assertEqual('0.0.5.0.0', result.cell.node_id)
 
     #
+    # Test for getting table cell online.
+    #
+    def test_get_table_cell_online(self):
+        localFile = 'DocumentElements/Tables/TablesGet.docx'
+
+        request = asposewordscloud.models.requests.GetTableCellOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), table_row_path='sections/0/tables/2/rows/0', index=0)
+
+        result = self.words_api.get_table_cell_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for deleting cell.
     #
     def test_delete_table_cell(self):
@@ -377,6 +525,18 @@ class TestTable(BaseTestContext):
         request = asposewordscloud.models.requests.DeleteTableCellRequest(name=remoteFileName, table_row_path='sections/0/tables/2/rows/0', index=0, folder=remoteDataFolder)
 
         self.words_api.delete_table_cell(request)
+
+
+    #
+    # Test for deleting cell online.
+    #
+    def test_delete_table_cell_online(self):
+        localFile = 'DocumentElements/Tables/TablesGet.docx'
+
+        request = asposewordscloud.models.requests.DeleteTableCellOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), table_row_path='sections/0/tables/2/rows/0', index=0)
+
+        result = self.words_api.delete_table_cell_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
 
 
     #
@@ -398,6 +558,19 @@ class TestTable(BaseTestContext):
         self.assertEqual('0.0.5.0.3', result.cell.node_id)
 
     #
+    # Test for adding cell online.
+    #
+    def test_insert_table_cell_online(self):
+        localFile = 'DocumentElements/Tables/TablesGet.docx'
+
+        requestCell = asposewordscloud.TableCellInsert()
+        request = asposewordscloud.models.requests.InsertTableCellOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), cell=requestCell, table_row_path='sections/0/tables/2/rows/0')
+
+        result = self.words_api.insert_table_cell_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for getting cell format.
     #
     def test_get_table_cell_format(self):
@@ -413,6 +586,18 @@ class TestTable(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.cell_format, 'Validate GetTableCellFormat response')
         self.assertTrue(result.cell_format.wrap_text, 'Validate GetTableCellFormat response')
+
+    #
+    # Test for getting cell format online.
+    #
+    def test_get_table_cell_format_online(self):
+        localFile = 'DocumentElements/Tables/TablesGet.docx'
+
+        request = asposewordscloud.models.requests.GetTableCellFormatOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), table_row_path='sections/0/tables/2/rows/0', index=0)
+
+        result = self.words_api.get_table_cell_format_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for updating cell format.
@@ -435,6 +620,19 @@ class TestTable(BaseTestContext):
         self.assertTrue(result.cell_format.wrap_text, 'Validate UpdateTableCellFormat response')
 
     #
+    # Test for updating cell format online.
+    #
+    def test_update_table_cell_format_online(self):
+        localFile = 'DocumentElements/Tables/TablesGet.docx'
+
+        requestFormat = asposewordscloud.TableCellFormat(bottom_padding=5, fit_text=True, horizontal_merge='First', wrap_text=True)
+        request = asposewordscloud.models.requests.UpdateTableCellFormatOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), format=requestFormat, table_row_path='sections/0/tables/2/rows/0', index=0)
+
+        result = self.words_api.update_table_cell_format_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for table rendering.
     #
     def test_render_table(self):
@@ -447,6 +645,18 @@ class TestTable(BaseTestContext):
         request = asposewordscloud.models.requests.RenderTableRequest(name=remoteFileName, format='png', index=0, node_path='', folder=remoteDataFolder)
 
         result = self.words_api.render_table(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
+    # Test for table rendering.
+    #
+    def test_render_table_online(self):
+        localFile = 'DocumentElements/Tables/TablesGet.docx'
+
+        request = asposewordscloud.models.requests.RenderTableOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), format='png', index=0, node_path='')
+
+        result = self.words_api.render_table_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
 

@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_section.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -52,6 +52,18 @@ class TestSection(BaseTestContext):
         self.assertEqual('0.3.0', result.section.child_nodes[0].node_id)
 
     #
+    # Test for getting section by index online.
+    #
+    def test_get_section_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.GetSectionOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), section_index=0)
+
+        result = self.words_api.get_section_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for getting sections.
     #
     def test_get_sections(self):
@@ -71,6 +83,18 @@ class TestSection(BaseTestContext):
         self.assertEqual('0', result.sections.section_link_list[0].node_id)
 
     #
+    # Test for getting sections online.
+    #
+    def test_get_sections_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.GetSectionsOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'))
+
+        result = self.words_api.get_sections_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for delete a section.
     #
     def test_delete_section(self):
@@ -83,4 +107,16 @@ class TestSection(BaseTestContext):
         request = asposewordscloud.models.requests.DeleteSectionRequest(name=remoteFileName, section_index=0, folder=remoteDataFolder)
 
         self.words_api.delete_section(request)
+
+
+    #
+    # Test for delete a section online.
+    #
+    def test_delete_section_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.DeleteSectionOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), section_index=0)
+
+        result = self.words_api.delete_section_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
 

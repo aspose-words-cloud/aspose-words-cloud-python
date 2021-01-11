@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="replace_with_text_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,16 +23,20 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class ReplaceWithTextRequest(object):
+class ReplaceWithTextRequest(BaseRequestObject):
     """
     Request model for replace_with_text operation.
     Initializes a new instance.
     :param name The filename of the input document.
     :param range_start_identifier The range start identifier.
-    :param range_text The text replacement properties.
+    :param range_text Model with text for replacement.
     :param range_end_identifier The range end identifier.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -129,3 +133,6 @@ class ReplaceWithTextRequest(object):
 
     def get_response_type(self):
         return 'DocumentResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, DocumentResponse, api_client)

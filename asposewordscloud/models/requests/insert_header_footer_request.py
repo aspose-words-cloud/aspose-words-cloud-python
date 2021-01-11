@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_header_footer_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,16 +23,20 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class InsertHeaderFooterRequest(object):
+class InsertHeaderFooterRequest(BaseRequestObject):
     """
     Request model for insert_header_footer operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param header_footer_type The type of a HeaderFooter object.
     :param section_path The path to the section in the document tree.
+    :param header_footer_type Type of header/footer.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -42,10 +46,10 @@ class InsertHeaderFooterRequest(object):
     :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, name, header_footer_type, section_path, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
+    def __init__(self, name, section_path, header_footer_type, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.name = name
-        self.header_footer_type = header_footer_type
         self.section_path = section_path
+        self.header_footer_type = header_footer_type
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
@@ -58,12 +62,12 @@ class InsertHeaderFooterRequest(object):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_header_footer`")  # noqa: E501
-        # verify the required parameter 'header_footer_type' is set
-        if self.header_footer_type is None:
-            raise ValueError("Missing the required parameter `header_footer_type` when calling `insert_header_footer`")  # noqa: E501
         # verify the required parameter 'section_path' is set
         if self.section_path is None:
             raise ValueError("Missing the required parameter `section_path` when calling `insert_header_footer`")  # noqa: E501
+        # verify the required parameter 'header_footer_type' is set
+        if self.header_footer_type is None:
+            raise ValueError("Missing the required parameter `header_footer_type` when calling `insert_header_footer`")  # noqa: E501
 
         path = '/v4.0/words/{name}/{sectionPath}/headersfooters'
         path_params = {}
@@ -119,7 +123,7 @@ class InsertHeaderFooterRequest(object):
             body_params = self.header_footer_type
 
         return {
-            "method": "PUT",
+            "method": "POST",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,
@@ -131,3 +135,6 @@ class InsertHeaderFooterRequest(object):
 
     def get_response_type(self):
         return 'HeaderFooterResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, HeaderFooterResponse, api_client)

@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="api_client.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -153,7 +153,7 @@ class ApiClient(object):
             self, resource_path, method,
             query_params=None, header_params=None, body=None, post_params=None,
             response_type=None, auth_settings=None,
-            _return_http_data_only=None, collection_formats=None,
+            collection_formats=None,
             _preload_content=True, _request_timeout=None):
         """Call api method"""
         config = self.configuration
@@ -205,12 +205,7 @@ class ApiClient(object):
 
         self.last_response = response_data
 
-        return_data = self.deserialize(response_data.data, response_data.getheaders(), response_type)
-
-        if _return_http_data_only:
-            return return_data
-        return (return_data, response_data.status,
-                response_data.getheaders())
+        return response_data
 
     def sanitize_for_serialization(self, obj):
         """Builds a JSON POST object.
@@ -257,14 +252,15 @@ class ApiClient(object):
                 for key, val in six.iteritems(obj_dict)}
 
     def deserialize_multipart(self, multipart, requests):
-        if len(multipart.parts) != len(requests):
+        multipart_response = decoder.MultipartDecoder(multipart, multipart.getheader('Content-Type'), 'UTF-8')
+        if len(multipart_response.parts) != len(requests):
             raise rest.ApiException(status=0, reason="Response parts and requests count mismatch.")
 
         results = []
-        for part_id in range(len(multipart.parts)):
+        for part_id in range(len(multipart_response.parts)):
             try:
                 response_type = requests[part_id].get_response_type()
-                part = multipart.parts[part_id]
+                part = multipart_response.parts[part_id]
                 data = part.content
                 packet_parts = data.split(b"\r\n\r\n", 1)
                 header_parts = packet_parts[0].split(b"\r\n")
@@ -361,7 +357,7 @@ class ApiClient(object):
                  query_params=None, header_params=None,
                  body=None, post_params=None,
                  response_type=None, auth_settings=None, is_async=None,
-                 _return_http_data_only=None, collection_formats=None,
+                 collection_formats=None,
                  _preload_content=True, _request_timeout=None):
         """Makes the HTTP request (synchronous) and returns deserialized data.
 
@@ -380,8 +376,6 @@ class ApiClient(object):
         :param files dict: key -> filename, value -> filepath,
             for `multipart/form-data`.
         :param is_async bool: execute request asynchronously
-        :param _return_http_data_only: response data without head status code
-                                       and headers
         :param collection_formats: dict of collection formats for path, query,
             header, and post parameters.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -403,7 +397,7 @@ class ApiClient(object):
                                    query_params, header_params,
                                    body, post_params,
                                    response_type, auth_settings,
-                                   _return_http_data_only, collection_formats,
+                                   collection_formats,
                                    _preload_content, _request_timeout)
         else:
             thread = self.pool.apply_async(self.__call_api, (resource_path,
@@ -411,7 +405,6 @@ class ApiClient(object):
                                                              header_params, body,
                                                              post_params,
                                                              response_type, auth_settings,
-                                                             _return_http_data_only,
                                                              collection_formats,
                                                              _preload_content, _request_timeout))
         return thread

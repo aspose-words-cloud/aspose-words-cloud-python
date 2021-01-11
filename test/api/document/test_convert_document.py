@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_convert_document.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -51,6 +51,19 @@ class TestConvertDocument(BaseTestContext):
         self.assertIsNotNone(result.save_result.dest_document, 'Validate SaveAs response')
 
     #
+    # Test for converting document online to one of the available formats.
+    #
+    def test_save_as_online(self):
+        localName = 'test_multi_pages.docx'
+
+        requestSaveOptionsData = asposewordscloud.SaveOptionsData(save_format='pdf', file_name=self.remote_test_out + '/TestSaveAs.pdf')
+        request = asposewordscloud.models.requests.SaveAsOnlineRequest(document=open(os.path.join(self.local_test_folder, 'Common/' + localName), 'rb'), save_options_data=requestSaveOptionsData)
+
+        result = self.words_api.save_as_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for converting document to one of the available formats.
     #
     def test_save_as_docx(self):
@@ -86,6 +99,19 @@ class TestConvertDocument(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.save_result, 'Validate SaveAsTiff response')
         self.assertIsNotNone(result.save_result.dest_document, 'Validate SaveAsTiff response')
+
+    #
+    # Test for converting document to one of the available formats.
+    #
+    def test_save_as_tiff_online(self):
+        localName = 'test_multi_pages.docx'
+
+        requestSaveOptions = asposewordscloud.TiffSaveOptionsData(save_format='tiff', file_name=self.remote_test_out + '/abc.tiff')
+        request = asposewordscloud.models.requests.SaveAsTiffOnlineRequest(document=open(os.path.join(self.local_test_folder, 'Common/' + localName), 'rb'), save_options=requestSaveOptions)
+
+        result = self.words_api.save_as_tiff_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # A test for ConvertDocument.

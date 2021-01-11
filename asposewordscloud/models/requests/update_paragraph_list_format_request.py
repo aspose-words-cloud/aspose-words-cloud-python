@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="update_paragraph_list_format_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,16 +23,20 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class UpdateParagraphListFormatRequest(object):
+class UpdateParagraphListFormatRequest(BaseRequestObject):
     """
     Request model for update_paragraph_list_format operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param dto The formatting properties of a paragraph list.
     :param index Object index.
+    :param list_format_dto ListFormatUpdate dto.
     :param node_path The path to the node in the document tree.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -43,10 +47,10 @@ class UpdateParagraphListFormatRequest(object):
     :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, name, dto, index, node_path=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
+    def __init__(self, name, index, list_format_dto, node_path=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.name = name
-        self.dto = dto
         self.index = index
+        self.list_format_dto = list_format_dto
         self.node_path = node_path
         self.folder = folder
         self.storage = storage
@@ -60,12 +64,12 @@ class UpdateParagraphListFormatRequest(object):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_paragraph_list_format`")  # noqa: E501
-        # verify the required parameter 'dto' is set
-        if self.dto is None:
-            raise ValueError("Missing the required parameter `dto` when calling `update_paragraph_list_format`")  # noqa: E501
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_paragraph_list_format`")  # noqa: E501
+        # verify the required parameter 'list_format_dto' is set
+        if self.list_format_dto is None:
+            raise ValueError("Missing the required parameter `list_format_dto` when calling `update_paragraph_list_format`")  # noqa: E501
 
         path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}/listFormat'
         path_params = {}
@@ -121,11 +125,11 @@ class UpdateParagraphListFormatRequest(object):
         form_params = []
 
         body_params = None
-        if self.dto is not None:
-            body_params = self.dto
+        if self.list_format_dto is not None:
+            body_params = self.list_format_dto
 
         return {
-            "method": "PUT",
+            "method": "POST",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,
@@ -137,3 +141,6 @@ class UpdateParagraphListFormatRequest(object):
 
     def get_response_type(self):
         return 'ParagraphListFormatResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, ParagraphListFormatResponse, api_client)

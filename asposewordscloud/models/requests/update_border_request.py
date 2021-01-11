@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="update_border_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,16 +23,20 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class UpdateBorderRequest(object):
+class UpdateBorderRequest(BaseRequestObject):
     """
     Request model for update_border operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param border_properties The new border properties to update.
     :param border_type Border type.
+    :param border_properties Border properties.
     :param node_path The path to the node in the document tree.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -43,10 +47,10 @@ class UpdateBorderRequest(object):
     :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, name, border_properties, border_type, node_path=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
+    def __init__(self, name, border_type, border_properties, node_path=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.name = name
-        self.border_properties = border_properties
         self.border_type = border_type
+        self.border_properties = border_properties
         self.node_path = node_path
         self.folder = folder
         self.storage = storage
@@ -60,12 +64,12 @@ class UpdateBorderRequest(object):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_border`")  # noqa: E501
-        # verify the required parameter 'border_properties' is set
-        if self.border_properties is None:
-            raise ValueError("Missing the required parameter `border_properties` when calling `update_border`")  # noqa: E501
         # verify the required parameter 'border_type' is set
         if self.border_type is None:
             raise ValueError("Missing the required parameter `border_type` when calling `update_border`")  # noqa: E501
+        # verify the required parameter 'border_properties' is set
+        if self.border_properties is None:
+            raise ValueError("Missing the required parameter `border_properties` when calling `update_border`")  # noqa: E501
 
         path = '/v4.0/words/{name}/{nodePath}/borders/{borderType}'
         path_params = {}
@@ -125,7 +129,7 @@ class UpdateBorderRequest(object):
             body_params = self.border_properties
 
         return {
-            "method": "PUT",
+            "method": "POST",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,
@@ -137,3 +141,6 @@ class UpdateBorderRequest(object):
 
     def get_response_type(self):
         return 'BorderResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, BorderResponse, api_client)

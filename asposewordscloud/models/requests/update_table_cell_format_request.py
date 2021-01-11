@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="update_table_cell_format_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,17 +23,21 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class UpdateTableCellFormatRequest(object):
+class UpdateTableCellFormatRequest(BaseRequestObject):
     """
     Request model for update_table_cell_format operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param format The cell format.
     :param table_row_path The path to the table row in the document tree.
     :param index Object index.
+    :param format The properties.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -43,11 +47,11 @@ class UpdateTableCellFormatRequest(object):
     :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, name, format, table_row_path, index, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
+    def __init__(self, name, table_row_path, index, format, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.name = name
-        self.format = format
         self.table_row_path = table_row_path
         self.index = index
+        self.format = format
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
@@ -60,15 +64,15 @@ class UpdateTableCellFormatRequest(object):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_table_cell_format`")  # noqa: E501
-        # verify the required parameter 'format' is set
-        if self.format is None:
-            raise ValueError("Missing the required parameter `format` when calling `update_table_cell_format`")  # noqa: E501
         # verify the required parameter 'table_row_path' is set
         if self.table_row_path is None:
             raise ValueError("Missing the required parameter `table_row_path` when calling `update_table_cell_format`")  # noqa: E501
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_table_cell_format`")  # noqa: E501
+        # verify the required parameter 'format' is set
+        if self.format is None:
+            raise ValueError("Missing the required parameter `format` when calling `update_table_cell_format`")  # noqa: E501
 
         path = '/v4.0/words/{name}/{tableRowPath}/cells/{index}/cellformat'
         path_params = {}
@@ -128,7 +132,7 @@ class UpdateTableCellFormatRequest(object):
             body_params = self.format
 
         return {
-            "method": "PUT",
+            "method": "POST",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,
@@ -140,3 +144,6 @@ class UpdateTableCellFormatRequest(object):
 
     def get_response_type(self):
         return 'TableCellFormatResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, TableCellFormatResponse, api_client)

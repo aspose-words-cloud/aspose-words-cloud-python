@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="get_office_math_objects_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class GetOfficeMathObjectsRequest(object):
+class GetOfficeMathObjectsRequest(BaseRequestObject):
     """
     Request model for get_office_math_objects operation.
     Initializes a new instance.
@@ -105,3 +109,6 @@ class GetOfficeMathObjectsRequest(object):
 
     def get_response_type(self):
         return 'OfficeMathObjectsResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, OfficeMathObjectsResponse, api_client)

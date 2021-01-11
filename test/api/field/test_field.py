@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_field.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -53,6 +53,18 @@ class TestField(BaseTestContext):
         self.assertEqual('1', result.fields.list[0].result)
 
     #
+    # Test for getting fields online.
+    #
+    def test_get_fields_online(self):
+        fieldFolder = 'DocumentElements/Fields'
+
+        request = asposewordscloud.models.requests.GetFieldsOnlineRequest(document=open(os.path.join(self.local_test_folder, fieldFolder + '/GetField.docx'), 'rb'), node_path='sections/0')
+
+        result = self.words_api.get_fields_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for getting fields without node path.
     #
     def test_get_fields_without_node_path(self):
@@ -89,6 +101,18 @@ class TestField(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.field, 'Validate GetField response')
         self.assertEqual('1', result.field.result)
+
+    #
+    # Test for getting field by index online.
+    #
+    def test_get_field_online(self):
+        fieldFolder = 'DocumentElements/Fields'
+
+        request = asposewordscloud.models.requests.GetFieldOnlineRequest(document=open(os.path.join(self.local_test_folder, fieldFolder + '/GetField.docx'), 'rb'), index=0, node_path='sections/0/paragraphs/0')
+
+        result = self.words_api.get_field_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for getting field by index without node path.
@@ -129,6 +153,19 @@ class TestField(BaseTestContext):
         self.assertEqual('0.0.0.1', result.field.node_id)
 
     #
+    # Test for putting field online.
+    #
+    def test_insert_field_online(self):
+        fieldFolder = 'DocumentElements/Fields'
+
+        requestField = asposewordscloud.FieldInsert(field_code='{ NUMPAGES }')
+        request = asposewordscloud.models.requests.InsertFieldOnlineRequest(document=open(os.path.join(self.local_test_folder, fieldFolder + '/GetField.docx'), 'rb'), field=requestField, node_path='sections/0/paragraphs/0')
+
+        result = self.words_api.insert_field_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for putting field without node path.
     #
     def test_insert_field_without_node_path(self):
@@ -160,13 +197,26 @@ class TestField(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, fieldFolder + '/' + localFileName), 'rb'))
 
         requestField = asposewordscloud.FieldUpdate(field_code='{ NUMPAGES }')
-        request = asposewordscloud.models.requests.UpdateFieldRequest(name=remoteFileName, field=requestField, index=0, node_path='sections/0/paragraphs/0', folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.UpdateFieldRequest(name=remoteFileName, index=0, field=requestField, node_path='sections/0/paragraphs/0', folder=remoteDataFolder)
 
         result = self.words_api.update_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.field, 'Validate UpdateField response')
         self.assertEqual('{ NUMPAGES }', result.field.field_code)
         self.assertEqual('0.0.0.0', result.field.node_id)
+
+    #
+    # Test for posting field online.
+    #
+    def test_update_field_online(self):
+        fieldFolder = 'DocumentElements/Fields'
+
+        requestField = asposewordscloud.FieldUpdate(field_code='{ NUMPAGES }')
+        request = asposewordscloud.models.requests.UpdateFieldOnlineRequest(document=open(os.path.join(self.local_test_folder, fieldFolder + '/GetField.docx'), 'rb'), index=0, field=requestField, node_path='sections/0/paragraphs/0')
+
+        result = self.words_api.update_field_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for inserting page numbers field.
@@ -187,6 +237,19 @@ class TestField(BaseTestContext):
         self.assertEqual('TestInsertPageNumbers.docx', result.document.file_name)
 
     #
+    # Test for inserting page numbers field online.
+    #
+    def test_insert_page_numbers_online(self):
+        localFileName = 'test_multi_pages.docx'
+
+        requestPageNumber = asposewordscloud.PageNumber(alignment='center', format='{PAGE} of {NUMPAGES}')
+        request = asposewordscloud.models.requests.InsertPageNumbersOnlineRequest(document=open(os.path.join(self.local_test_folder, 'Common/' + localFileName), 'rb'), page_number=requestPageNumber)
+
+        result = self.words_api.insert_page_numbers_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for deleting field.
     #
     def test_delete_field(self):
@@ -200,6 +263,18 @@ class TestField(BaseTestContext):
         request = asposewordscloud.models.requests.DeleteFieldRequest(name=remoteFileName, index=0, node_path='sections/0/paragraphs/0', folder=remoteDataFolder)
 
         self.words_api.delete_field(request)
+
+
+    #
+    # Test for deleting field online.
+    #
+    def test_delete_field_online(self):
+        fieldFolder = 'DocumentElements/Fields'
+
+        request = asposewordscloud.models.requests.DeleteFieldOnlineRequest(document=open(os.path.join(self.local_test_folder, fieldFolder + '/GetField.docx'), 'rb'), index=0, node_path='sections/0/paragraphs/0')
+
+        result = self.words_api.delete_field_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
 
 
     #
@@ -309,6 +384,18 @@ class TestField(BaseTestContext):
 
 
     #
+    # Test for deleting fields online.
+    #
+    def test_delete_document_fields_online(self):
+        localFileName = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.DeleteFieldsOnlineRequest(document=open(os.path.join(self.local_test_folder, localFileName), 'rb'), node_path='')
+
+        result = self.words_api.delete_fields_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for posting updated fields.
     #
     def test_update_document_fields(self):
@@ -324,3 +411,15 @@ class TestField(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.document, 'Validate UpdateDocumentFields response')
         self.assertEqual('TestUpdateDocumentFields.docx', result.document.file_name)
+
+    #
+    # Test for posting updated fields online.
+    #
+    def test_update_document_fields_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.UpdateFieldsOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'))
+
+        result = self.words_api.update_fields_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+

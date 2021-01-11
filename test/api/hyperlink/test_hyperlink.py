@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_hyperlink.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -50,6 +50,18 @@ class TestHyperlink(BaseTestContext):
         self.assertEqual('Aspose', result.hyperlink.display_text)
 
     #
+    # Test for getting hyperlink by specified index online.
+    #
+    def test_get_document_hyperlink_by_index_online(self):
+        localFile = 'Common/test_doc.docx'
+
+        request = asposewordscloud.models.requests.GetDocumentHyperlinkByIndexOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), hyperlink_index=0)
+
+        result = self.words_api.get_document_hyperlink_by_index_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for getting hyperlinks.
     #
     def test_get_document_hyperlinks(self):
@@ -67,3 +79,15 @@ class TestHyperlink(BaseTestContext):
         self.assertIsNotNone(result.hyperlinks.hyperlink_list, 'Validate GetDocumentHyperlinks response')
         self.assertEqual(2, len(result.hyperlinks.hyperlink_list))
         self.assertEqual('Aspose', result.hyperlinks.hyperlink_list[0].display_text)
+
+    #
+    # Test for getting hyperlinks online.
+    #
+    def test_get_document_hyperlinks_online(self):
+        localFile = 'Common/test_doc.docx'
+
+        request = asposewordscloud.models.requests.GetDocumentHyperlinksOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'))
+
+        result = self.words_api.get_document_hyperlinks_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+

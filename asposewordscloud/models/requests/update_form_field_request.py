@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="update_form_field_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,16 +23,20 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class UpdateFormFieldRequest(object):
+class UpdateFormFieldRequest(BaseRequestObject):
     """
     Request model for update_form_field operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param form_field The new form field properties.
     :param index Object index.
+    :param form_field From field data.
     :param node_path The path to the node in the document tree.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -43,10 +47,10 @@ class UpdateFormFieldRequest(object):
     :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, name, form_field, index, node_path=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
+    def __init__(self, name, index, form_field, node_path=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.name = name
-        self.form_field = form_field
         self.index = index
+        self.form_field = form_field
         self.node_path = node_path
         self.folder = folder
         self.storage = storage
@@ -60,12 +64,12 @@ class UpdateFormFieldRequest(object):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_form_field`")  # noqa: E501
-        # verify the required parameter 'form_field' is set
-        if self.form_field is None:
-            raise ValueError("Missing the required parameter `form_field` when calling `update_form_field`")  # noqa: E501
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_form_field`")  # noqa: E501
+        # verify the required parameter 'form_field' is set
+        if self.form_field is None:
+            raise ValueError("Missing the required parameter `form_field` when calling `update_form_field`")  # noqa: E501
 
         path = '/v4.0/words/{name}/{nodePath}/formfields/{index}'
         path_params = {}
@@ -125,7 +129,7 @@ class UpdateFormFieldRequest(object):
             body_params = self.form_field
 
         return {
-            "method": "PUT",
+            "method": "POST",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,
@@ -137,3 +141,6 @@ class UpdateFormFieldRequest(object):
 
     def get_response_type(self):
         return 'FormFieldResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, FormFieldResponse, api_client)

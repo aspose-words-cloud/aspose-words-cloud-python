@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_document_statistics.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,3 +48,15 @@ class TestDocumentStatistics(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.stat_data, 'Validate GetDocumentStatistics response')
         self.assertEqual(10, result.stat_data.word_count)
+
+    #
+    # Test for document classification online.
+    #
+    def test_get_document_statistics_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.GetDocumentStatisticsOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'))
+
+        result = self.words_api.get_document_statistics_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
