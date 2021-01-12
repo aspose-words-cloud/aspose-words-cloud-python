@@ -81,12 +81,12 @@ class ApiClient(object):
 
         self.pool = ThreadPool()
         self.rest_client = rest.RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '20.12'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '21.1'}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'python sdk 20.12'
+        self.user_agent = 'python sdk 21.1'
 
     def __del__(self):
         self.pool.close()
@@ -252,15 +252,14 @@ class ApiClient(object):
                 for key, val in six.iteritems(obj_dict)}
 
     def deserialize_multipart(self, multipart, requests):
-        multipart_response = decoder.MultipartDecoder(multipart, multipart.getheader('Content-Type'), 'UTF-8')
-        if len(multipart_response.parts) != len(requests):
+        if len(multipart.parts) != len(requests):
             raise rest.ApiException(status=0, reason="Response parts and requests count mismatch.")
 
         results = []
-        for part_id in range(len(multipart_response.parts)):
+        for part_id in range(len(multipart.parts)):
             try:
                 response_type = requests[part_id].get_response_type()
-                part = multipart_response.parts[part_id]
+                part = multipart.parts[part_id]
                 data = part.content
                 packet_parts = data.split(b"\r\n\r\n", 1)
                 header_parts = packet_parts[0].split(b"\r\n")
@@ -276,7 +275,7 @@ class ApiClient(object):
 
                 result = None
                 if code == 200:
-                    if response_type is not None:
+                    if response_type is not 'None':
                         result = self.deserialize(body, headers, response_type)
                 else:
                     result = rest.ApiException(status=code, reason=body.decode('UTF-8'))
