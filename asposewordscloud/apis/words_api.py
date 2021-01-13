@@ -17410,7 +17410,7 @@ class WordsApi(object):
         :param password str : Password for opening an encrypted document.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param fonts_location str : Folder in filestorage with custom fonts.
-        :return: RenderDrawingObjectOnlineResponse
+        :return: file
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -17435,7 +17435,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request RenderDrawingObjectOnlineRequest object with parameters
-        :return: RenderDrawingObjectOnlineResponse
+        :return: file
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -17567,7 +17567,7 @@ class WordsApi(object):
         :param password str : Password for opening an encrypted document.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param fonts_location str : Folder in filestorage with custom fonts.
-        :return: RenderMathObjectOnlineResponse
+        :return: file
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -17592,7 +17592,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request RenderMathObjectOnlineRequest object with parameters
-        :return: RenderMathObjectOnlineResponse
+        :return: file
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -17877,7 +17877,7 @@ class WordsApi(object):
         :param password str : Password for opening an encrypted document.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param fonts_location str : Folder in filestorage with custom fonts.
-        :return: RenderParagraphOnlineResponse
+        :return: file
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -17902,7 +17902,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request RenderParagraphOnlineRequest object with parameters
-        :return: RenderParagraphOnlineResponse
+        :return: file
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -18034,7 +18034,7 @@ class WordsApi(object):
         :param password str : Password for opening an encrypted document.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param fonts_location str : Folder in filestorage with custom fonts.
-        :return: RenderTableOnlineResponse
+        :return: file
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -18059,7 +18059,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request RenderTableOnlineRequest object with parameters
-        :return: RenderTableOnlineResponse
+        :return: file
                  If the method is called asynchronously,
                  returns the request thread.
         """

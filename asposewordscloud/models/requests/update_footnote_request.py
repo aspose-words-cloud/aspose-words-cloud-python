@@ -129,7 +129,7 @@ class UpdateFootnoteRequest(BaseRequestObject):
             body_params = self.footnote_dto
 
         return {
-            "method": "POST",
+            "method": "PUT",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,

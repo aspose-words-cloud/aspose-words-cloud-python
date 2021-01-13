@@ -132,7 +132,7 @@ class UpdateTableCellFormatRequest(BaseRequestObject):
             body_params = self.format
 
         return {
-            "method": "POST",
+            "method": "PUT",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,

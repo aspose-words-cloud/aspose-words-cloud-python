@@ -129,7 +129,7 @@ class UpdateFormFieldRequest(BaseRequestObject):
             body_params = self.form_field
 
         return {
-            "method": "POST",
+            "method": "PUT",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,

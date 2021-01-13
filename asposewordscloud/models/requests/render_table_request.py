@@ -121,7 +121,7 @@ class RenderTableRequest(BaseRequestObject):
 
         body_params = None
         return {
-            "method": "POST",
+            "method": "GET",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,

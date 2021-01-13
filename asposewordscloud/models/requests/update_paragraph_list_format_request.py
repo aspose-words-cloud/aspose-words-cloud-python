@@ -129,7 +129,7 @@ class UpdateParagraphListFormatRequest(BaseRequestObject):
             body_params = self.list_format_dto
 
         return {
-            "method": "POST",
+            "method": "PUT",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,

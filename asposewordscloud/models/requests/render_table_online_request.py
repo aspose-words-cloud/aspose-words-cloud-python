@@ -121,14 +121,11 @@ class RenderTableOnlineRequest(BaseRequestObject):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": 'RenderTableOnlineResponse'  # noqa: E501
+            "response_type": 'file'  # noqa: E501
         }
 
     def get_response_type(self):
-        return 'RenderTableOnlineResponse'  # noqa: E501
+        return 'file'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        multipart = self.getparts(response)
-        return RenderTableOnlineResponse(
-          self.deserialize_file(multipart[1].content, multipart[1].headers, api_client),
-          self.deserialize_file(multipart[1].content, multipart[1].headers, api_client))
+        return self.deserialize_file(response.data, response.getheaders(), api_client)

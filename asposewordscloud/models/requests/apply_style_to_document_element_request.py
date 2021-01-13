@@ -123,7 +123,7 @@ class ApplyStyleToDocumentElementRequest(BaseRequestObject):
             body_params = self.style_apply
 
         return {
-            "method": "POST",
+            "method": "PUT",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,
