@@ -62,7 +62,7 @@ class DeleteBorderOnlineRequest(BaseRequestObject):
         if self.border_type is None:
             raise ValueError("Missing the required parameter `border_type` when calling `delete_border_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/delete/{name}/{nodePath}/borders/{borderType}'
+        path = '/v4.0/words/online/delete/{nodePath}/borders/{borderType}'
         path_params = {}
         if self.border_type is not None:
             path_params['borderType'] = self.border_type  # noqa: E501

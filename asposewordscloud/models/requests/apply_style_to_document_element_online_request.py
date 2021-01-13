@@ -65,7 +65,7 @@ class ApplyStyleToDocumentElementOnlineRequest(BaseRequestObject):
         if self.style_apply is None:
             raise ValueError("Missing the required parameter `style_apply` when calling `apply_style_to_document_element_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/put/{name}/{styledNodePath}/style'
+        path = '/v4.0/words/online/put/{styledNodePath}/style'
         path_params = {}
         if self.styled_node_path is not None:
             path_params['styledNodePath'] = self.styled_node_path  # noqa: E501

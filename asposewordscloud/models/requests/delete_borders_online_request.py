@@ -57,7 +57,7 @@ class DeleteBordersOnlineRequest(BaseRequestObject):
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `delete_borders_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/delete/{name}/{nodePath}/borders'
+        path = '/v4.0/words/online/delete/{nodePath}/borders'
         path_params = {}
         if self.node_path is not None:
             path_params['nodePath'] = self.node_path  # noqa: E501

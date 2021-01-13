@@ -59,7 +59,7 @@ class GetTableRowOnlineRequest(BaseRequestObject):
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_table_row_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/get/{name}/{tablePath}/rows/{index}'
+        path = '/v4.0/words/online/get/{tablePath}/rows/{index}'
         path_params = {}
         if self.table_path is not None:
             path_params['tablePath'] = self.table_path  # noqa: E501

@@ -72,7 +72,7 @@ class UpdateDrawingObjectOnlineRequest(BaseRequestObject):
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_drawing_object_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/put/{name}/{nodePath}/drawingObjects/{index}'
+        path = '/v4.0/words/online/put/{nodePath}/drawingObjects/{index}'
         path_params = {}
         if self.index is not None:
             path_params['index'] = self.index  # noqa: E501

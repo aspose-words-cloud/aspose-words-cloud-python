@@ -67,7 +67,7 @@ class InsertDrawingObjectOnlineRequest(BaseRequestObject):
         if self.image_file is None:
             raise ValueError("Missing the required parameter `image_file` when calling `insert_drawing_object_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/post/{name}/{nodePath}/drawingObjects'
+        path = '/v4.0/words/online/post/{nodePath}/drawingObjects'
         path_params = {}
         if self.node_path is not None:
             path_params['nodePath'] = self.node_path  # noqa: E501

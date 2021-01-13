@@ -67,7 +67,7 @@ class UpdateTablePropertiesOnlineRequest(BaseRequestObject):
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_table_properties_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/put/{name}/{nodePath}/tables/{index}/properties'
+        path = '/v4.0/words/online/put/{nodePath}/tables/{index}/properties'
         path_params = {}
         if self.index is not None:
             path_params['index'] = self.index  # noqa: E501

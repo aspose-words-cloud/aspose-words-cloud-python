@@ -54,7 +54,7 @@ class GetRunsOnlineRequest(BaseRequestObject):
         if self.paragraph_path is None:
             raise ValueError("Missing the required parameter `paragraph_path` when calling `get_runs_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/get/{name}/{paragraphPath}/runs'
+        path = '/v4.0/words/online/get/{paragraphPath}/runs'
         path_params = {}
         if self.paragraph_path is not None:
             path_params['paragraphPath'] = self.paragraph_path  # noqa: E501

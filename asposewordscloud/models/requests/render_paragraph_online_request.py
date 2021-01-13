@@ -65,7 +65,7 @@ class RenderParagraphOnlineRequest(BaseRequestObject):
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `render_paragraph_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/get/{name}/{nodePath}/paragraphs/{index}/render'
+        path = '/v4.0/words/online/get/{nodePath}/paragraphs/{index}/render'
         path_params = {}
         if self.index is not None:
             path_params['index'] = self.index  # noqa: E501

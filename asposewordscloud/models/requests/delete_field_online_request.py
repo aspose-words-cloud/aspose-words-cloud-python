@@ -62,7 +62,7 @@ class DeleteFieldOnlineRequest(BaseRequestObject):
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_field_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/delete/{name}/{nodePath}/fields/{index}'
+        path = '/v4.0/words/online/delete/{nodePath}/fields/{index}'
         path_params = {}
         if self.index is not None:
             path_params['index'] = self.index  # noqa: E501

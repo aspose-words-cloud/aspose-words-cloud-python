@@ -54,7 +54,7 @@ class GetStyleFromDocumentElementOnlineRequest(BaseRequestObject):
         if self.styled_node_path is None:
             raise ValueError("Missing the required parameter `styled_node_path` when calling `get_style_from_document_element_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/get/{name}/{styledNodePath}/style'
+        path = '/v4.0/words/online/get/{styledNodePath}/style'
         path_params = {}
         if self.styled_node_path is not None:
             path_params['styledNodePath'] = self.styled_node_path  # noqa: E501

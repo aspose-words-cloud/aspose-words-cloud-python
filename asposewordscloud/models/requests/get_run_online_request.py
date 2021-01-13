@@ -59,7 +59,7 @@ class GetRunOnlineRequest(BaseRequestObject):
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_run_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/get/{name}/{paragraphPath}/runs/{index}'
+        path = '/v4.0/words/online/get/{paragraphPath}/runs/{index}'
         path_params = {}
         if self.paragraph_path is not None:
             path_params['paragraphPath'] = self.paragraph_path  # noqa: E501

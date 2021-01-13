@@ -64,7 +64,7 @@ class InsertFormFieldOnlineRequest(BaseRequestObject):
         if self.form_field is None:
             raise ValueError("Missing the required parameter `form_field` when calling `insert_form_field_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/post/{name}/{nodePath}/formfields'
+        path = '/v4.0/words/online/post/{nodePath}/formfields'
         path_params = {}
         if self.node_path is not None:
             path_params['nodePath'] = self.node_path  # noqa: E501

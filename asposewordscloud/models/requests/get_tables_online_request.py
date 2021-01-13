@@ -51,7 +51,7 @@ class GetTablesOnlineRequest(BaseRequestObject):
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `get_tables_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/get/{name}/{nodePath}/tables'
+        path = '/v4.0/words/online/get/{nodePath}/tables'
         path_params = {}
         if self.node_path is not None:
             path_params['nodePath'] = self.node_path  # noqa: E501

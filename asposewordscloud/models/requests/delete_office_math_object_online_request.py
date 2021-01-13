@@ -62,7 +62,7 @@ class DeleteOfficeMathObjectOnlineRequest(BaseRequestObject):
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_office_math_object_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/delete/{name}/{nodePath}/OfficeMathObjects/{index}'
+        path = '/v4.0/words/online/delete/{nodePath}/OfficeMathObjects/{index}'
         path_params = {}
         if self.index is not None:
             path_params['index'] = self.index  # noqa: E501

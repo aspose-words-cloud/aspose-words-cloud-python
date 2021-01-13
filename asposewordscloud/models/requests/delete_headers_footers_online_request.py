@@ -62,7 +62,7 @@ class DeleteHeadersFootersOnlineRequest(BaseRequestObject):
         if self.section_path is None:
             raise ValueError("Missing the required parameter `section_path` when calling `delete_headers_footers_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/delete/{name}/{sectionPath}/headersfooters'
+        path = '/v4.0/words/online/delete/{sectionPath}/headersfooters'
         path_params = {}
         if self.section_path is not None:
             path_params['sectionPath'] = self.section_path  # noqa: E501

@@ -65,7 +65,7 @@ class DeleteTableRowOnlineRequest(BaseRequestObject):
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_table_row_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/delete/{name}/{tablePath}/rows/{index}'
+        path = '/v4.0/words/online/delete/{tablePath}/rows/{index}'
         path_params = {}
         if self.table_path is not None:
             path_params['tablePath'] = self.table_path  # noqa: E501

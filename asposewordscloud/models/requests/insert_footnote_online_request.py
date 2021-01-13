@@ -62,7 +62,7 @@ class InsertFootnoteOnlineRequest(BaseRequestObject):
         if self.footnote_dto is None:
             raise ValueError("Missing the required parameter `footnote_dto` when calling `insert_footnote_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/post/{name}/{nodePath}/footnotes'
+        path = '/v4.0/words/online/post/{nodePath}/footnotes'
         path_params = {}
         if self.node_path is not None:
             path_params['nodePath'] = self.node_path  # noqa: E501

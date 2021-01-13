@@ -51,7 +51,7 @@ class GetFieldsOnlineRequest(BaseRequestObject):
         if self.document is None:
             raise ValueError("Missing the required parameter `document` when calling `get_fields_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/get/{name}/{nodePath}/fields'
+        path = '/v4.0/words/online/get/{nodePath}/fields'
         path_params = {}
         if self.node_path is not None:
             path_params['nodePath'] = self.node_path  # noqa: E501

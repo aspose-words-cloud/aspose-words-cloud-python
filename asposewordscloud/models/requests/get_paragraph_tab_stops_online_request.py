@@ -56,7 +56,7 @@ class GetParagraphTabStopsOnlineRequest(BaseRequestObject):
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `get_paragraph_tab_stops_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/get/{name}/{nodePath}/paragraphs/{index}/tabstops'
+        path = '/v4.0/words/online/get/{nodePath}/paragraphs/{index}/tabstops'
         path_params = {}
         if self.index is not None:
             path_params['index'] = self.index  # noqa: E501

@@ -67,7 +67,7 @@ class UpdateFieldOnlineRequest(BaseRequestObject):
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_field_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/put/{name}/{nodePath}/fields/{index}'
+        path = '/v4.0/words/online/put/{nodePath}/fields/{index}'
         path_params = {}
         if self.index is not None:
             path_params['index'] = self.index  # noqa: E501

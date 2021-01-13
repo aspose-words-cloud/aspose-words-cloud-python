@@ -70,7 +70,7 @@ class UpdateTableCellFormatOnlineRequest(BaseRequestObject):
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_table_cell_format_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/put/{name}/{tableRowPath}/cells/{index}/cellformat'
+        path = '/v4.0/words/online/put/{tableRowPath}/cells/{index}/cellformat'
         path_params = {}
         if self.table_row_path is not None:
             path_params['tableRowPath'] = self.table_row_path  # noqa: E501

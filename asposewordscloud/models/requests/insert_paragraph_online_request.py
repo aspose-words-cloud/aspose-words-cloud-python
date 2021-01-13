@@ -64,7 +64,7 @@ class InsertParagraphOnlineRequest(BaseRequestObject):
         if self.paragraph is None:
             raise ValueError("Missing the required parameter `paragraph` when calling `insert_paragraph_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/post/{name}/{nodePath}/paragraphs'
+        path = '/v4.0/words/online/post/{nodePath}/paragraphs'
         path_params = {}
         if self.node_path is not None:
             path_params['nodePath'] = self.node_path  # noqa: E501

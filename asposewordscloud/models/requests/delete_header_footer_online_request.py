@@ -65,7 +65,7 @@ class DeleteHeaderFooterOnlineRequest(BaseRequestObject):
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `delete_header_footer_online`")  # noqa: E501
 
-        path = '/v4.0/words/online/delete/{name}/{sectionPath}/headersfooters/{index}'
+        path = '/v4.0/words/online/delete/{sectionPath}/headersfooters/{index}'
         path_params = {}
         if self.section_path is not None:
             path_params['sectionPath'] = self.section_path  # noqa: E501
