@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="get_header_footer_of_section_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class GetHeaderFooterOfSectionRequest(object):
+class GetHeaderFooterOfSectionRequest(BaseRequestObject):
     """
     Request model for get_header_footer_of_section operation.
     Initializes a new instance.
@@ -121,3 +125,6 @@ class GetHeaderFooterOfSectionRequest(object):
 
     def get_response_type(self):
         return 'HeaderFooterResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, HeaderFooterResponse, api_client)

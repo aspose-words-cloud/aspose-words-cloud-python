@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_footnote_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,15 +23,19 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class InsertFootnoteRequest(object):
+class InsertFootnoteRequest(BaseRequestObject):
     """
     Request model for insert_footnote operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param footnote_dto The properties of the footnote.
+    :param footnote_dto Footnote data.
     :param node_path The path to the node in the document tree.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -128,3 +132,6 @@ class InsertFootnoteRequest(object):
 
     def get_response_type(self):
         return 'FootnoteResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, FootnoteResponse, api_client)

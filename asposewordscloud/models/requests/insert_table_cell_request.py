@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_table_cell_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,16 +23,20 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class InsertTableCellRequest(object):
+class InsertTableCellRequest(BaseRequestObject):
     """
     Request model for insert_table_cell operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param cell The properties of the cell.
     :param table_row_path The path to the table row in the document tree.
+    :param cell Table cell parameters.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -42,10 +46,10 @@ class InsertTableCellRequest(object):
     :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, name, cell, table_row_path, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
+    def __init__(self, name, table_row_path, cell, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.name = name
-        self.cell = cell
         self.table_row_path = table_row_path
+        self.cell = cell
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
@@ -58,12 +62,12 @@ class InsertTableCellRequest(object):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_table_cell`")  # noqa: E501
-        # verify the required parameter 'cell' is set
-        if self.cell is None:
-            raise ValueError("Missing the required parameter `cell` when calling `insert_table_cell`")  # noqa: E501
         # verify the required parameter 'table_row_path' is set
         if self.table_row_path is None:
             raise ValueError("Missing the required parameter `table_row_path` when calling `insert_table_cell`")  # noqa: E501
+        # verify the required parameter 'cell' is set
+        if self.cell is None:
+            raise ValueError("Missing the required parameter `cell` when calling `insert_table_cell`")  # noqa: E501
 
         path = '/v4.0/words/{name}/{tableRowPath}/cells'
         path_params = {}
@@ -131,3 +135,6 @@ class InsertTableCellRequest(object):
 
     def get_response_type(self):
         return 'TableCellResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, TableCellResponse, api_client)

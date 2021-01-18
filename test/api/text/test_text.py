@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_text.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -50,6 +50,19 @@ class TestText(BaseTestContext):
         self.assertEqual(3, result.matches)
 
     #
+    # Test for replacing text online.
+    #
+    def test_replace_text_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        requestReplaceText = asposewordscloud.ReplaceTextParameters(old_value='aspose', new_value='aspose new')
+        request = asposewordscloud.models.requests.ReplaceTextOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), replace_text=requestReplaceText)
+
+        result = self.words_api.replace_text_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for searching.
     #
     def test_search(self):
@@ -68,3 +81,15 @@ class TestText(BaseTestContext):
         self.assertEqual(23, len(result.search_results.results_list))
         self.assertIsNotNone(result.search_results.results_list[0].range_start, 'Validate Search response')
         self.assertEqual(65, result.search_results.results_list[0].range_start.offset)
+
+    #
+    # Test for searching online.
+    #
+    def test_search_online(self):
+        localFile = 'DocumentElements/Text/SampleWordDocument.docx'
+
+        request = asposewordscloud.models.requests.SearchOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), pattern='aspose')
+
+        result = self.words_api.search_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+

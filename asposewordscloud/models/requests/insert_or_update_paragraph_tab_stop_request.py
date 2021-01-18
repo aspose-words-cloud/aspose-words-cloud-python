@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_or_update_paragraph_tab_stop_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,16 +23,20 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class InsertOrUpdateParagraphTabStopRequest(object):
+class InsertOrUpdateParagraphTabStopRequest(BaseRequestObject):
     """
     Request model for insert_or_update_paragraph_tab_stop operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param dto The properties of the paragraph tab stop.
     :param index Object index.
+    :param tab_stop_insert_dto TabStopInsert dto.
     :param node_path The path to the node in the document tree.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -41,10 +45,10 @@ class InsertOrUpdateParagraphTabStopRequest(object):
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     """
 
-    def __init__(self, name, dto, index, node_path=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None):
+    def __init__(self, name, index, tab_stop_insert_dto, node_path=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None):
         self.name = name
-        self.dto = dto
         self.index = index
+        self.tab_stop_insert_dto = tab_stop_insert_dto
         self.node_path = node_path
         self.folder = folder
         self.storage = storage
@@ -56,12 +60,12 @@ class InsertOrUpdateParagraphTabStopRequest(object):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `insert_or_update_paragraph_tab_stop`")  # noqa: E501
-        # verify the required parameter 'dto' is set
-        if self.dto is None:
-            raise ValueError("Missing the required parameter `dto` when calling `insert_or_update_paragraph_tab_stop`")  # noqa: E501
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `insert_or_update_paragraph_tab_stop`")  # noqa: E501
+        # verify the required parameter 'tab_stop_insert_dto' is set
+        if self.tab_stop_insert_dto is None:
+            raise ValueError("Missing the required parameter `tab_stop_insert_dto` when calling `insert_or_update_paragraph_tab_stop`")  # noqa: E501
 
         path = '/v4.0/words/{name}/{nodePath}/paragraphs/{index}/tabstops'
         path_params = {}
@@ -113,8 +117,8 @@ class InsertOrUpdateParagraphTabStopRequest(object):
         form_params = []
 
         body_params = None
-        if self.dto is not None:
-            body_params = self.dto
+        if self.tab_stop_insert_dto is not None:
+            body_params = self.tab_stop_insert_dto
 
         return {
             "method": "POST",
@@ -129,3 +133,6 @@ class InsertOrUpdateParagraphTabStopRequest(object):
 
     def get_response_type(self):
         return 'TabStopsResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, TabStopsResponse, api_client)

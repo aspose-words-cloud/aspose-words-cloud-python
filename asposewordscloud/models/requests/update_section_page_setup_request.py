@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="update_section_page_setup_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,16 +23,20 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class UpdateSectionPageSetupRequest(object):
+class UpdateSectionPageSetupRequest(BaseRequestObject):
     """
     Request model for update_section_page_setup operation.
     Initializes a new instance.
     :param name The filename of the input document.
     :param section_index The index of the section.
-    :param page_setup The properties of the page setup.
+    :param page_setup Page setup properties dto.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -131,3 +135,6 @@ class UpdateSectionPageSetupRequest(object):
 
     def get_response_type(self):
         return 'SectionPageSetupResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, SectionPageSetupResponse, api_client)

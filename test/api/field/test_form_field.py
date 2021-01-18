@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_form_field.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -43,13 +43,26 @@ class TestFormField(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, fieldFolder + '/FormFilled.docx'), 'rb'))
 
         requestFormField = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='', text_input_type='Regular', text_input_default='No name')
-        request = asposewordscloud.models.requests.UpdateFormFieldRequest(name=remoteFileName, form_field=requestFormField, index=0, node_path='sections/0', folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
+        request = asposewordscloud.models.requests.UpdateFormFieldRequest(name=remoteFileName, index=0, form_field=requestFormField, node_path='sections/0', folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
 
         result = self.words_api.update_form_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.form_field, 'Validate UpdateFormField response')
         self.assertEqual('FullName', result.form_field.name)
         self.assertEqual('', result.form_field.status_text)
+
+    #
+    # Test for posting form field online.
+    #
+    def test_update_form_field_online(self):
+        fieldFolder = 'DocumentElements/FormFields'
+
+        requestFormField = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='', text_input_type='Regular', text_input_default='No name')
+        request = asposewordscloud.models.requests.UpdateFormFieldOnlineRequest(document=open(os.path.join(self.local_test_folder, fieldFolder + '/FormFilled.docx'), 'rb'), index=0, form_field=requestFormField, node_path='sections/0')
+
+        result = self.words_api.update_form_field_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for posting form field without node path.
@@ -62,7 +75,7 @@ class TestFormField(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, fieldFolder + '/FormFilled.docx'), 'rb'))
 
         requestFormField = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='', text_input_type='Regular', text_input_default='No name')
-        request = asposewordscloud.models.requests.UpdateFormFieldRequest(name=remoteFileName, form_field=requestFormField, index=0, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
+        request = asposewordscloud.models.requests.UpdateFormFieldRequest(name=remoteFileName, index=0, form_field=requestFormField, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
 
         result = self.words_api.update_form_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -86,6 +99,18 @@ class TestFormField(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.form_field, 'Validate GetFormField response')
         self.assertEqual('FullName', result.form_field.name)
+
+    #
+    # Test for getting form field online.
+    #
+    def test_get_form_field_online(self):
+        fieldFolder = 'DocumentElements/FormFields'
+
+        request = asposewordscloud.models.requests.GetFormFieldOnlineRequest(document=open(os.path.join(self.local_test_folder, fieldFolder + '/FormFilled.docx'), 'rb'), index=0, node_path='sections/0')
+
+        result = self.words_api.get_form_field_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for getting form field without node path.
@@ -122,6 +147,18 @@ class TestFormField(BaseTestContext):
         self.assertIsNotNone(result.form_fields.list, 'Validate GetFormFields response')
         self.assertEqual(5, len(result.form_fields.list))
         self.assertEqual('FullName', result.form_fields.list[0].name)
+
+    #
+    # Test for getting form fields online.
+    #
+    def test_get_form_fields_online(self):
+        fieldFolder = 'DocumentElements/FormFields'
+
+        request = asposewordscloud.models.requests.GetFormFieldsOnlineRequest(document=open(os.path.join(self.local_test_folder, fieldFolder + '/FormFilled.docx'), 'rb'), node_path='sections/0')
+
+        result = self.words_api.get_form_fields_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
 
     #
     # Test for getting form fields without node path.
@@ -161,6 +198,19 @@ class TestFormField(BaseTestContext):
         self.assertEqual('', result.form_field.status_text)
 
     #
+    # Test for insert form field without node path online.
+    #
+    def test_insert_form_field_online(self):
+        fieldFolder = 'DocumentElements/FormFields'
+
+        requestFormField = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='', text_input_type='Regular', text_input_default='123', text_input_format='UPPERCASE')
+        request = asposewordscloud.models.requests.InsertFormFieldOnlineRequest(document=open(os.path.join(self.local_test_folder, fieldFolder + '/FormFilled.docx'), 'rb'), form_field=requestFormField, node_path='sections/0/paragraphs/0')
+
+        result = self.words_api.insert_form_field_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for insert form field without node path.
     #
     def test_insert_form_field_without_node_path(self):
@@ -191,6 +241,18 @@ class TestFormField(BaseTestContext):
         request = asposewordscloud.models.requests.DeleteFormFieldRequest(name=remoteFileName, index=0, node_path='sections/0', folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
 
         self.words_api.delete_form_field(request)
+
+
+    #
+    # Test for deleting form field online.
+    #
+    def test_delete_form_field_online(self):
+        fieldFolder = 'DocumentElements/FormFields'
+
+        request = asposewordscloud.models.requests.DeleteFormFieldOnlineRequest(document=open(os.path.join(self.local_test_folder, fieldFolder + '/FormFilled.docx'), 'rb'), index=0, node_path='sections/0')
+
+        result = self.words_api.delete_form_field_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
 
 
     #

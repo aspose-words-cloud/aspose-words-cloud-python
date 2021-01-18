@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="create_or_update_document_property_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,16 +23,20 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class CreateOrUpdateDocumentPropertyRequest(object):
+class CreateOrUpdateDocumentPropertyRequest(BaseRequestObject):
     """
     Request model for create_or_update_document_property operation.
     Initializes a new instance.
     :param name The filename of the input document.
     :param property_name The name of the property.
-    :param _property The property with a new value.
+    :param _property The property with new value.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -131,3 +135,6 @@ class CreateOrUpdateDocumentPropertyRequest(object):
 
     def get_response_type(self):
         return 'DocumentPropertyResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, DocumentPropertyResponse, api_client)

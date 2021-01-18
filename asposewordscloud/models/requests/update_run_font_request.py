@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="update_run_font_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,17 +23,21 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class UpdateRunFontRequest(object):
+class UpdateRunFontRequest(BaseRequestObject):
     """
     Request model for update_run_font operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param font_dto The font properties of a Run object.
     :param paragraph_path The path to the paragraph in the document tree.
     :param index Object index.
+    :param font_dto Font dto object.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -43,11 +47,11 @@ class UpdateRunFontRequest(object):
     :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, name, font_dto, paragraph_path, index, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
+    def __init__(self, name, paragraph_path, index, font_dto, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.name = name
-        self.font_dto = font_dto
         self.paragraph_path = paragraph_path
         self.index = index
+        self.font_dto = font_dto
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
@@ -60,15 +64,15 @@ class UpdateRunFontRequest(object):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `update_run_font`")  # noqa: E501
-        # verify the required parameter 'font_dto' is set
-        if self.font_dto is None:
-            raise ValueError("Missing the required parameter `font_dto` when calling `update_run_font`")  # noqa: E501
         # verify the required parameter 'paragraph_path' is set
         if self.paragraph_path is None:
             raise ValueError("Missing the required parameter `paragraph_path` when calling `update_run_font`")  # noqa: E501
         # verify the required parameter 'index' is set
         if self.index is None:
             raise ValueError("Missing the required parameter `index` when calling `update_run_font`")  # noqa: E501
+        # verify the required parameter 'font_dto' is set
+        if self.font_dto is None:
+            raise ValueError("Missing the required parameter `font_dto` when calling `update_run_font`")  # noqa: E501
 
         path = '/v4.0/words/{name}/{paragraphPath}/runs/{index}/font'
         path_params = {}
@@ -140,3 +144,6 @@ class UpdateRunFontRequest(object):
 
     def get_response_type(self):
         return 'FontResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, FontResponse, api_client)

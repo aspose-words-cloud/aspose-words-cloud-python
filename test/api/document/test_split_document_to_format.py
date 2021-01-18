@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_split_document_to_format.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -49,3 +49,15 @@ class TestSplitDocumentToFormat(BaseTestContext):
         self.assertIsNotNone(result.split_result, 'Validate SplitDocument response')
         self.assertIsNotNone(result.split_result.pages, 'Validate SplitDocument response')
         self.assertEqual(2, len(result.split_result.pages))
+
+    #
+    # Test for document splitting online.
+    #
+    def test_split_document_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.SplitDocumentOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), format='text', dest_file_name=self.remote_test_out + '/TestSplitDocument.text', _from=1, to=2)
+
+        result = self.words_api.split_document_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+

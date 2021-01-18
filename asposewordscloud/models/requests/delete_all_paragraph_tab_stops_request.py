@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="delete_all_paragraph_tab_stops_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class DeleteAllParagraphTabStopsRequest(object):
+class DeleteAllParagraphTabStopsRequest(BaseRequestObject):
     """
     Request model for delete_all_paragraph_tab_stops operation.
     Initializes a new instance.
@@ -118,3 +122,6 @@ class DeleteAllParagraphTabStopsRequest(object):
 
     def get_response_type(self):
         return 'TabStopsResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, TabStopsResponse, api_client)

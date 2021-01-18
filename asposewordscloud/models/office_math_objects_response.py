@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="office_math_objects_response.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,6 +26,7 @@
 import pprint
 import re  # noqa: F401
 
+import datetime
 import six
 import json
 
@@ -114,21 +115,25 @@ class OfficeMathObjectsResponse(object):
 
         for attr, _ in six.iteritems(self.swagger_types):
             value = getattr(self, attr)
+            if value is None:
+                continue
             if isinstance(value, list):
-                result[attr] = list(map(
+                result[self.attribute_map[attr]] = list(map(
                     lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
                     value
                 ))
             elif hasattr(value, "to_dict"):
-                result[attr] = value.to_dict()
+                result[self.attribute_map[attr]] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
+                result[self.attribute_map[attr]] = dict(map(
                     lambda item: (item[0], item[1].to_dict())
                     if hasattr(item[1], "to_dict") else item,
                     value.items()
                 ))
+            elif isinstance(value, (datetime.datetime, datetime.date)):
+                result[self.attribute_map[attr]] = value.isoformat()
             else:
-                result[attr] = value
+                result[self.attribute_map[attr]] = value
 
         return result
 
@@ -151,6 +156,8 @@ class OfficeMathObjectsResponse(object):
                     if hasattr(item[1], "to_dict") else item,
                     value.items()
                 ))
+            elif isinstance(value, (datetime.datetime, datetime.date)):
+                result[self.attribute_map[attr]] = value.isoformat()
             else:
                 result[self.attribute_map[attr]] = value
 

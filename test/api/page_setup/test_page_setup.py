@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_page_setup.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -50,6 +50,18 @@ class TestPageSetup(BaseTestContext):
         self.assertEqual(1, result.page_setup.line_starting_number)
 
     #
+    # Test for getting page settings online.
+    #
+    def test_get_section_page_setup_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.GetSectionPageSetupOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), section_index=0)
+
+        result = self.words_api.get_section_page_setup_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for updating page settings.
     #
     def test_update_section_page_setup(self):
@@ -70,6 +82,19 @@ class TestPageSetup(BaseTestContext):
 
 
     #
+    # Test for updating page settings online.
+    #
+    def test_update_section_page_setup_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        requestPageSetup = asposewordscloud.PageSetup(rtl_gutter=True, left_margin=10, orientation='Landscape', paper_size='A5')
+        request = asposewordscloud.models.requests.UpdateSectionPageSetupOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), section_index=0, page_setup=requestPageSetup)
+
+        result = self.words_api.update_section_page_setup_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for page rendering.
     #
     def test_get_render_page(self):
@@ -82,5 +107,17 @@ class TestPageSetup(BaseTestContext):
         request = asposewordscloud.models.requests.RenderPageRequest(name=remoteFileName, page_index=1, format='bmp', folder=remoteDataFolder)
 
         result = self.words_api.render_page(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
+    # Test for page rendering.
+    #
+    def test_get_render_page_online(self):
+        localTextFile = 'DocumentElements/Text/SampleWordDocument.docx'
+
+        request = asposewordscloud.models.requests.RenderPageOnlineRequest(document=open(os.path.join(self.local_test_folder, localTextFile), 'rb'), page_index=1, format='bmp')
+
+        result = self.words_api.render_page_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 

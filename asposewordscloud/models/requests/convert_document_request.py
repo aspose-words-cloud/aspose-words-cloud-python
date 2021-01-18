@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="convert_document_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,27 +23,31 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class ConvertDocumentRequest(object):
+class ConvertDocumentRequest(BaseRequestObject):
     """
     Request model for convert_document operation.
     Initializes a new instance.
     :param document Converting document.
     :param format The format to convert.
-    :param storage Original document storage.
     :param out_path The path to the output document on a local storage.
     :param file_name_field_value The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.
+    :param storage Original document storage.
     :param fonts_location Folder in filestorage with custom fonts.
     """
 
-    def __init__(self, document, format, storage=None, out_path=None, file_name_field_value=None, fonts_location=None):
+    def __init__(self, document, format, out_path=None, file_name_field_value=None, storage=None, fonts_location=None):
         self.document = document
         self.format = format
-        self.storage = storage
         self.out_path = out_path
         self.file_name_field_value = file_name_field_value
+        self.storage = storage
         self.fonts_location = fonts_location
 
     def create_http_request(self, api_client):
@@ -75,12 +79,12 @@ class ConvertDocumentRequest(object):
         query_params = []
         if self.format is not None:
                 query_params.append(('format', self.format))  # noqa: E501
-        if self.storage is not None:
-                query_params.append(('storage', self.storage))  # noqa: E501
         if self.out_path is not None:
                 query_params.append(('outPath', self.out_path))  # noqa: E501
         if self.file_name_field_value is not None:
                 query_params.append(('fileNameFieldValue', self.file_name_field_value))  # noqa: E501
+        if self.storage is not None:
+                query_params.append(('storage', self.storage))  # noqa: E501
         if self.fonts_location is not None:
                 query_params.append(('fontsLocation', self.fonts_location))  # noqa: E501
 
@@ -107,3 +111,6 @@ class ConvertDocumentRequest(object):
 
     def get_response_type(self):
         return 'file'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize_file(response.data, response.getheaders(), api_client)

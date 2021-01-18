@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="apply_style_to_document_element_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,16 +23,20 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class ApplyStyleToDocumentElementRequest(object):
+class ApplyStyleToDocumentElementRequest(BaseRequestObject):
     """
     Request model for apply_style_to_document_element operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param style_apply The style to apply.
     :param styled_node_path The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table.
+    :param style_apply Style to apply.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -42,10 +46,10 @@ class ApplyStyleToDocumentElementRequest(object):
     :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, name, style_apply, styled_node_path, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
+    def __init__(self, name, styled_node_path, style_apply, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.name = name
-        self.style_apply = style_apply
         self.styled_node_path = styled_node_path
+        self.style_apply = style_apply
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
@@ -58,12 +62,12 @@ class ApplyStyleToDocumentElementRequest(object):
         # verify the required parameter 'name' is set
         if self.name is None:
             raise ValueError("Missing the required parameter `name` when calling `apply_style_to_document_element`")  # noqa: E501
-        # verify the required parameter 'style_apply' is set
-        if self.style_apply is None:
-            raise ValueError("Missing the required parameter `style_apply` when calling `apply_style_to_document_element`")  # noqa: E501
         # verify the required parameter 'styled_node_path' is set
         if self.styled_node_path is None:
             raise ValueError("Missing the required parameter `styled_node_path` when calling `apply_style_to_document_element`")  # noqa: E501
+        # verify the required parameter 'style_apply' is set
+        if self.style_apply is None:
+            raise ValueError("Missing the required parameter `style_apply` when calling `apply_style_to_document_element`")  # noqa: E501
 
         path = '/v4.0/words/{name}/{styledNodePath}/style'
         path_params = {}
@@ -131,3 +135,6 @@ class ApplyStyleToDocumentElementRequest(object):
 
     def get_response_type(self):
         return 'WordsResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, WordsResponse, api_client)

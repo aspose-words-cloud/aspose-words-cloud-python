@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_mail_merge_fileds.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -39,7 +39,7 @@ class TestMailMergeFileds(BaseTestContext):
         mailMergeFolder = 'DocumentActions/MailMerge'
         localDocumentFile = 'SampleExecuteTemplate.docx'
 
-        request = asposewordscloud.models.requests.GetDocumentFieldNamesOnlineRequest(template=open(os.path.join(self.local_test_folder, mailMergeFolder + '/' + localDocumentFile), 'rb'), use_non_merge_fields=True)
+        request = asposewordscloud.models.requests.GetDocumentFieldNamesOnlineRequest(document=open(os.path.join(self.local_test_folder, mailMergeFolder + '/' + localDocumentFile), 'rb'), use_non_merge_fields=True)
 
         result = self.words_api.get_document_field_names_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

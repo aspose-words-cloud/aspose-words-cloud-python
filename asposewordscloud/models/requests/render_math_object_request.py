@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="render_math_object_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,10 +23,14 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class RenderMathObjectRequest(object):
+class RenderMathObjectRequest(BaseRequestObject):
     """
     Request model for render_math_object operation.
     Initializes a new instance.
@@ -38,10 +42,11 @@ class RenderMathObjectRequest(object):
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
+    :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     :param fonts_location Folder in filestorage with custom fonts.
     """
 
-    def __init__(self, name, format, index, node_path=None, folder=None, storage=None, load_encoding=None, password=None, fonts_location=None):
+    def __init__(self, name, format, index, node_path=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, fonts_location=None):
         self.name = name
         self.format = format
         self.index = index
@@ -50,6 +55,7 @@ class RenderMathObjectRequest(object):
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
+        self.dest_file_name = dest_file_name
         self.fonts_location = fonts_location
 
     def create_http_request(self, api_client):
@@ -104,6 +110,8 @@ class RenderMathObjectRequest(object):
                 query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
         if self.password is not None:
                 query_params.append(('password', self.password))  # noqa: E501
+        if self.dest_file_name is not None:
+                query_params.append(('destFileName', self.dest_file_name))  # noqa: E501
         if self.fonts_location is not None:
                 query_params.append(('fontsLocation', self.fonts_location))  # noqa: E501
 
@@ -125,3 +133,6 @@ class RenderMathObjectRequest(object):
 
     def get_response_type(self):
         return 'file'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize_file(response.data, response.getheaders(), api_client)

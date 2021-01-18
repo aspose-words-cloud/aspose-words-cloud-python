@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_form_field_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,15 +23,19 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class InsertFormFieldRequest(object):
+class InsertFormFieldRequest(BaseRequestObject):
     """
     Request model for insert_form_field operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param form_field The properties of the form field.
+    :param form_field From field data.
     :param node_path The path to the node in the document tree.
     :param folder Original document folder.
     :param storage Original document storage.
@@ -132,3 +136,6 @@ class InsertFormFieldRequest(object):
 
     def get_response_type(self):
         return 'FormFieldResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, FormFieldResponse, api_client)

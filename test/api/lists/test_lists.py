@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_lists.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -52,6 +52,18 @@ class TestLists(BaseTestContext):
         self.assertEqual(1, result.lists.list_info[0].list_id)
 
     #
+    # Test for getting lists from document online.
+    #
+    def test_get_lists_online(self):
+        localFile = 'DocumentElements/Lists/ListsGet.doc'
+
+        request = asposewordscloud.models.requests.GetListsOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'))
+
+        result = self.words_api.get_lists_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for getting list from document.
     #
     def test_get_list(self):
@@ -69,6 +81,18 @@ class TestLists(BaseTestContext):
         self.assertEqual(1, result.list.list_id)
 
     #
+    # Test for getting list from document online.
+    #
+    def test_get_list_online(self):
+        localFile = 'DocumentElements/Lists/ListsGet.doc'
+
+        request = asposewordscloud.models.requests.GetListOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), list_id=1)
+
+        result = self.words_api.get_list_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for updating list from document.
     #
     def test_update_list(self):
@@ -79,13 +103,26 @@ class TestLists(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
         requestListUpdate = asposewordscloud.ListUpdate(is_restart_at_each_section=True)
-        request = asposewordscloud.models.requests.UpdateListRequest(name=remoteFileName, list_update=requestListUpdate, list_id=1, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.UpdateListRequest(name=remoteFileName, list_id=1, list_update=requestListUpdate, folder=remoteDataFolder)
 
         result = self.words_api.update_list(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-        self.assertIsNotNone(result.list, 'Validate UpdateList response')
-        self.assertEqual(1, result.list.list_id)
-        self.assertTrue(result.list.is_restart_at_each_section, 'Validate UpdateList response')
+
+
+    #
+    # Test for updating list from document online.
+    #
+    def test_update_list_online(self):
+        localFile = 'DocumentElements/Lists/ListsGet.doc'
+
+        requestListUpdate = asposewordscloud.ListUpdate(is_restart_at_each_section=True)
+        request = asposewordscloud.models.requests.UpdateListOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), list_id=1, list_update=requestListUpdate)
+
+        result = self.words_api.update_list_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.model.list, 'Validate UpdateListOnline response')
+        self.assertEqual(1, result.model.list.list_id)
+        self.assertTrue(result.model.list.is_restart_at_each_section, 'Validate UpdateListOnline response')
 
     #
     # Test for updating list level from document.
@@ -98,14 +135,27 @@ class TestLists(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
         requestListUpdate = asposewordscloud.ListLevelUpdate(alignment='Right')
-        request = asposewordscloud.models.requests.UpdateListLevelRequest(name=remoteFileName, list_update=requestListUpdate, list_id=1, list_level=1, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.UpdateListLevelRequest(name=remoteFileName, list_id=1, list_level=1, list_update=requestListUpdate, folder=remoteDataFolder)
 
         result = self.words_api.update_list_level(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-        self.assertIsNotNone(result.list, 'Validate UpdateListLevel response')
-        self.assertIsNotNone(result.list.list_levels, 'Validate UpdateListLevel response')
-        self.assertIsNotNone(result.list.list_levels.list_level, 'Validate UpdateListLevel response')
-        self.assertEqual(9, len(result.list.list_levels.list_level))
+
+
+    #
+    # Test for updating list level from document online.
+    #
+    def test_update_list_level_online(self):
+        localFile = 'DocumentElements/Lists/ListsGet.doc'
+
+        requestListUpdate = asposewordscloud.ListLevelUpdate(alignment='Right')
+        request = asposewordscloud.models.requests.UpdateListLevelOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), list_id=1, list_level=1, list_update=requestListUpdate)
+
+        result = self.words_api.update_list_level_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+        self.assertIsNotNone(result.model.list, 'Validate UpdateListLevelOnline response')
+        self.assertIsNotNone(result.model.list.list_levels, 'Validate UpdateListLevelOnline response')
+        self.assertIsNotNone(result.model.list.list_levels.list_level, 'Validate UpdateListLevelOnline response')
+        self.assertEqual(9, len(result.model.list.list_levels.list_level))
 
 
     #
@@ -125,3 +175,16 @@ class TestLists(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.list, 'Validate InsertList response')
         self.assertEqual(3, result.list.list_id)
+
+    #
+    # Test for inserting list from document online.
+    #
+    def test_insert_list_online(self):
+        localFile = 'DocumentElements/Lists/ListsGet.doc'
+
+        requestListInsert = asposewordscloud.ListInsert(template='OutlineLegal')
+        request = asposewordscloud.models.requests.InsertListOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), list_insert=requestListInsert)
+
+        result = self.words_api.insert_list_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+

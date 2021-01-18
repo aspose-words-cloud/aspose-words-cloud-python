@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="words_api.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -70,18 +70,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.accept_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.accept_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.accept_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.accept_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.accept_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.accept_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def accept_all_revisions_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -99,7 +98,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -115,7 +113,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -125,10 +123,84 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def accept_all_revisions_online(self, request, **kwargs):  # noqa: E501
+        """Accepts all revisions in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :return: AcceptAllRevisionsOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.accept_all_revisions_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.accept_all_revisions_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.accept_all_revisions_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.accept_all_revisions_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def accept_all_revisions_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Accepts all revisions in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request AcceptAllRevisionsOnlineRequest object with parameters
+        :return: AcceptAllRevisionsOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method accept_all_revisions_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def append_document(self, request, **kwargs):  # noqa: E501
         """Appends documents to the original document.  # noqa: E501
@@ -138,7 +210,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param document_list DocumentEntryList : The collection of documents to append. (required)
+        :param document_list DocumentEntryList : <see cref="DocumentEntryList"/> with a list of documents to append. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -150,18 +222,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.append_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.append_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.append_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.append_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.append_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.append_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def append_document_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -179,7 +250,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -198,7 +268,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -208,10 +278,87 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def append_document_online(self, request, **kwargs):  # noqa: E501
+        """Appends documents to the original document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param document_list DocumentEntryList : <see cref="DocumentEntryList"/> with a list of documents to append. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: AppendDocumentOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.append_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.append_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.append_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.append_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def append_document_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Appends documents to the original document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request AppendDocumentOnlineRequest object with parameters
+        :return: AppendDocumentOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method append_document_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def apply_style_to_document_element(self, request, **kwargs):  # noqa: E501
         """Applies a style to the document node.  # noqa: E501
@@ -221,8 +368,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param style_apply StyleApply : The style to apply. (required)
         :param styled_node_path str : The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table. (required)
+        :param style_apply StyleApply : Style to apply. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -234,18 +381,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.apply_style_to_document_element_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.apply_style_to_document_element_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.apply_style_to_document_element_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.apply_style_to_document_element_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.apply_style_to_document_element_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.apply_style_to_document_element_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def apply_style_to_document_element_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -263,7 +409,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -282,7 +427,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -292,10 +437,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def apply_style_to_document_element_online(self, request, **kwargs):  # noqa: E501
+        """Applies a style to the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param styled_node_path str : The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table. (required)
+        :param style_apply StyleApply : Style to apply. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: ApplyStyleToDocumentElementOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.apply_style_to_document_element_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.apply_style_to_document_element_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.apply_style_to_document_element_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.apply_style_to_document_element_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def apply_style_to_document_element_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Applies a style to the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request ApplyStyleToDocumentElementOnlineRequest object with parameters
+        :return: ApplyStyleToDocumentElementOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method apply_style_to_document_element_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def build_report(self, request, **kwargs):  # noqa: E501
         """Executes the report generation process using the specified document template and the external data source in XML, JSON or CSV format.  # noqa: E501
@@ -316,18 +539,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.build_report_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.build_report_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.build_report_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.build_report_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.build_report_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.build_report_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def build_report_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -345,7 +567,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -364,7 +585,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -374,10 +595,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def build_report_online(self, request, **kwargs):  # noqa: E501
         """Executes the report generation process online using the specified document template and the external data source in XML, JSON or CSV format.  # noqa: E501
@@ -394,18 +614,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.build_report_online_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.build_report_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.build_report_online_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.build_report_online_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.build_report_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.build_report_online_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def build_report_online_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -423,7 +642,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -442,7 +660,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -452,10 +670,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def classify(self, request, **kwargs):  # noqa: E501
         """Runs a multi-class text classification for the specified raw text.  # noqa: E501
@@ -470,18 +687,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.classify_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.classify_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.classify_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.classify_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.classify_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.classify_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def classify_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -499,7 +715,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -518,7 +733,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -528,10 +743,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def classify_document(self, request, **kwargs):  # noqa: E501
         """Runs a multi-class text classification for the document.  # noqa: E501
@@ -540,7 +754,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param document_name str : The filename of the input document. (required)
+        :param name str : The document name. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -551,18 +765,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.classify_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.classify_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.classify_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.classify_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.classify_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.classify_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def classify_document_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -580,7 +793,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -596,7 +808,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -606,10 +818,85 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def classify_document_online(self, request, **kwargs):  # noqa: E501
+        """Runs a multi-class text classification for the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param best_classes_count str : The number of the best classes to return.
+        :param taxonomy str : The taxonomy to use.
+        :return: ClassificationResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.classify_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.classify_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.classify_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.classify_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def classify_document_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Runs a multi-class text classification for the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request ClassifyDocumentOnlineRequest object with parameters
+        :return: ClassificationResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method classify_document_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def compare_document(self, request, **kwargs):  # noqa: E501
         """Compares two documents.  # noqa: E501
@@ -619,7 +906,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param compare_data CompareData : The properties of the document to compare with. (required)
+        :param compare_data CompareData : Compare data. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -629,18 +916,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.compare_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.compare_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.compare_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.compare_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.compare_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.compare_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def compare_document_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -658,7 +944,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -677,7 +962,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -687,10 +972,85 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def compare_document_online(self, request, **kwargs):  # noqa: E501
+        """Compares two documents.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param compare_data CompareData : Compare data. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :return: CompareDocumentOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.compare_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.compare_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.compare_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.compare_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def compare_document_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Compares two documents.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request CompareDocumentOnlineRequest object with parameters
+        :return: CompareDocumentOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method compare_document_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def convert_document(self, request, **kwargs):  # noqa: E501
         """Converts a document on a local drive to the specified format.  # noqa: E501
@@ -701,26 +1061,25 @@ class WordsApi(object):
         :param is_async bool
         :param document file : Converting document. (required)
         :param format str : The format to convert. (required)
-        :param storage str : Original document storage.
         :param out_path str : The path to the output document on a local storage.
         :param file_name_field_value str : The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.
+        :param storage str : Original document storage.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.convert_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.convert_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.convert_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.convert_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.convert_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.convert_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def convert_document_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -738,7 +1097,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -757,7 +1115,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -767,10 +1125,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def copy_file(self, request, **kwargs):  # noqa: E501
         """Copy file.  # noqa: E501
@@ -788,18 +1145,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.copy_file_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.copy_file_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.copy_file_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.copy_file_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.copy_file_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.copy_file_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def copy_file_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -817,7 +1173,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -833,7 +1188,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -843,10 +1198,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def copy_folder(self, request, **kwargs):  # noqa: E501
         """Copy folder.  # noqa: E501
@@ -863,18 +1217,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.copy_folder_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.copy_folder_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.copy_folder_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.copy_folder_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.copy_folder_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.copy_folder_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def copy_folder_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -892,7 +1245,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -908,7 +1260,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -918,10 +1270,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def copy_style(self, request, **kwargs):  # noqa: E501
         """Makes a copy of the style in the document.  # noqa: E501
@@ -931,7 +1282,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param style_copy StyleCopy : The properties of the style. (required)
+        :param style_copy StyleCopy : Style to copy. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -943,18 +1294,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.copy_style_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.copy_style_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.copy_style_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.copy_style_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.copy_style_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.copy_style_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def copy_style_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -972,7 +1322,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -991,7 +1340,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -1001,10 +1350,87 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def copy_style_online(self, request, **kwargs):  # noqa: E501
+        """Makes a copy of the style in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param style_copy StyleCopy : Style to copy. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: CopyStyleOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.copy_style_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.copy_style_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.copy_style_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.copy_style_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def copy_style_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Makes a copy of the style in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request CopyStyleOnlineRequest object with parameters
+        :return: CopyStyleOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method copy_style_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def create_document(self, request, **kwargs):  # noqa: E501
         """Supported extensions: ".doc", ".docx", ".docm", ".dot", ".dotm", ".dotx", ".flatopc", ".fopc", ".flatopc_macro", ".fopc_macro", ".flatopc_template", ".fopc_template", ".flatopc_template_macro", ".fopc_template_macro", ".wordml", ".wml", ".rtf".  # noqa: E501
@@ -1013,25 +1439,24 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param storage str : Original document storage.
         :param file_name str : The filename of the document.
         :param folder str : The path to the document folder.
+        :param storage str : Original document storage.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.create_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.create_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.create_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.create_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.create_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.create_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def create_document_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -1049,7 +1474,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -1065,7 +1489,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -1075,10 +1499,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def create_folder(self, request, **kwargs):  # noqa: E501
         """Create the folder.  # noqa: E501
@@ -1093,18 +1516,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.create_folder_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.create_folder_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.create_folder_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.create_folder_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.create_folder_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.create_folder_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def create_folder_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -1122,7 +1544,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -1138,7 +1559,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -1148,10 +1569,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def create_or_update_document_property(self, request, **kwargs):  # noqa: E501
         """Adds a new or updates an existing document property.  # noqa: E501
@@ -1162,7 +1582,7 @@ class WordsApi(object):
         :param is_async bool
         :param name str : The filename of the input document. (required)
         :param property_name str : The name of the property. (required)
-        :param _property DocumentPropertyCreateOrUpdate : The property with a new value. (required)
+        :param _property DocumentPropertyCreateOrUpdate : The property with new value. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -1174,18 +1594,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.create_or_update_document_property_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.create_or_update_document_property_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.create_or_update_document_property_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.create_or_update_document_property_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.create_or_update_document_property_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.create_or_update_document_property_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def create_or_update_document_property_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -1203,7 +1622,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -1222,7 +1640,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -1232,10 +1650,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def create_or_update_document_property_online(self, request, **kwargs):  # noqa: E501
+        """Adds a new or updates an existing document property.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param property_name str : The name of the property. (required)
+        :param _property DocumentPropertyCreateOrUpdate : The property with new value. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: CreateOrUpdateDocumentPropertyOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.create_or_update_document_property_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.create_or_update_document_property_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.create_or_update_document_property_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.create_or_update_document_property_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def create_or_update_document_property_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Adds a new or updates an existing document property.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request CreateOrUpdateDocumentPropertyOnlineRequest object with parameters
+        :return: CreateOrUpdateDocumentPropertyOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_or_update_document_property_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_all_paragraph_tab_stops(self, request, **kwargs):  # noqa: E501
         """Removes paragraph tab stops from the document node.  # noqa: E501
@@ -1256,18 +1752,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_all_paragraph_tab_stops_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_all_paragraph_tab_stops_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_all_paragraph_tab_stops_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_all_paragraph_tab_stops_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_all_paragraph_tab_stops_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_all_paragraph_tab_stops_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_all_paragraph_tab_stops_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -1285,7 +1780,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -1301,7 +1795,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -1311,10 +1805,86 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_all_paragraph_tab_stops_online(self, request, **kwargs):  # noqa: E501
+        """Removes paragraph tab stops from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :return: DeleteAllParagraphTabStopsOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_all_paragraph_tab_stops_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_all_paragraph_tab_stops_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_all_paragraph_tab_stops_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_all_paragraph_tab_stops_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_all_paragraph_tab_stops_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes paragraph tab stops from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteAllParagraphTabStopsOnlineRequest object with parameters
+        :return: DeleteAllParagraphTabStopsOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_all_paragraph_tab_stops_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_border(self, request, **kwargs):  # noqa: E501
         """The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
@@ -1337,18 +1907,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_border_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_border_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_border_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_border_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_border_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_border_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_border_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -1366,7 +1935,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -1382,7 +1950,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -1392,10 +1960,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_border_online(self, request, **kwargs):  # noqa: E501
+        """Removes a border from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param border_type str : Border type. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: DeleteBorderOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_border_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_border_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_border_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_border_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_border_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes a border from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteBorderOnlineRequest object with parameters
+        :return: DeleteBorderOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_border_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_borders(self, request, **kwargs):  # noqa: E501
         """The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
@@ -1417,18 +2063,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_borders_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_borders_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_borders_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_borders_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_borders_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_borders_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_borders_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -1446,7 +2091,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -1462,7 +2106,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -1472,10 +2116,87 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_borders_online(self, request, **kwargs):  # noqa: E501
+        """Removes borders from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: DeleteBordersOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_borders_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_borders_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_borders_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_borders_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_borders_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes borders from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteBordersOnlineRequest object with parameters
+        :return: DeleteBordersOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_borders_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_comment(self, request, **kwargs):  # noqa: E501
         """Removes a comment from the document.  # noqa: E501
@@ -1497,18 +2218,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_comment_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_comment_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_comment_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_comment_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_comment_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_comment_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_comment_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -1526,7 +2246,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -1542,7 +2261,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -1552,10 +2271,87 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_comment_online(self, request, **kwargs):  # noqa: E501
+        """Removes a comment from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param comment_index int : The index of the comment. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_comment_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_comment_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_comment_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_comment_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_comment_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes a comment from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteCommentOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_comment_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_document_property(self, request, **kwargs):  # noqa: E501
         """Removes a document property.  # noqa: E501
@@ -1577,18 +2373,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_document_property_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_document_property_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_document_property_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_document_property_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_document_property_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_document_property_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_document_property_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -1606,7 +2401,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -1622,7 +2416,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -1632,10 +2426,87 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_document_property_online(self, request, **kwargs):  # noqa: E501
+        """Removes a document property.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param property_name str : The name of the property. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_document_property_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_document_property_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_document_property_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_document_property_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_document_property_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes a document property.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteDocumentPropertyOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_document_property_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_drawing_object(self, request, **kwargs):  # noqa: E501
         """Removes a DrawingObject from the document node.  # noqa: E501
@@ -1658,18 +2529,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_drawing_object_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -1687,7 +2557,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -1703,7 +2572,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -1713,10 +2582,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_drawing_object_online(self, request, **kwargs):  # noqa: E501
+        """Removes a DrawingObject from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_drawing_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_drawing_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_drawing_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_drawing_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_drawing_object_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes a DrawingObject from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteDrawingObjectOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_drawing_object_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_field(self, request, **kwargs):  # noqa: E501
         """Removes a field from the document node.  # noqa: E501
@@ -1739,18 +2686,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_field_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_field_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_field_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_field_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_field_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_field_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_field_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -1768,7 +2714,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -1784,7 +2729,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -1794,10 +2739,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_field_online(self, request, **kwargs):  # noqa: E501
+        """Removes a field from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_field_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes a field from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteFieldOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_field_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_fields(self, request, **kwargs):  # noqa: E501
         """Removes fields from the document node.  # noqa: E501
@@ -1819,18 +2842,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_fields_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_fields_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_fields_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_fields_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_fields_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_fields_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_fields_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -1848,7 +2870,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -1864,7 +2885,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -1874,10 +2895,87 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_fields_online(self, request, **kwargs):  # noqa: E501
+        """Removes fields from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_fields_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_fields_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_fields_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_fields_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_fields_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes fields from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteFieldsOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_fields_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_file(self, request, **kwargs):  # noqa: E501
         """Delete file.  # noqa: E501
@@ -1893,18 +2991,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_file_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_file_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_file_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_file_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_file_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_file_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_file_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -1922,7 +3019,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -1938,7 +3034,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -1948,10 +3044,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def delete_folder(self, request, **kwargs):  # noqa: E501
         """Delete folder.  # noqa: E501
@@ -1967,18 +3062,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_folder_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_folder_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_folder_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_folder_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_folder_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_folder_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_folder_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -1996,7 +3090,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -2012,7 +3105,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -2022,10 +3115,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def delete_footnote(self, request, **kwargs):  # noqa: E501
         """Removes a footnote from the document node.  # noqa: E501
@@ -2048,18 +3140,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_footnote_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_footnote_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_footnote_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_footnote_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_footnote_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_footnote_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_footnote_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -2077,7 +3168,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -2093,7 +3183,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -2103,10 +3193,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_footnote_online(self, request, **kwargs):  # noqa: E501
+        """Removes a footnote from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_footnote_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_footnote_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_footnote_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_footnote_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_footnote_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes a footnote from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteFootnoteOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_footnote_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_form_field(self, request, **kwargs):  # noqa: E501
         """Removes a form field from the document node.  # noqa: E501
@@ -2129,18 +3297,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_form_field_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_form_field_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_form_field_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_form_field_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_form_field_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_form_field_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_form_field_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -2158,7 +3325,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -2174,7 +3340,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -2184,10 +3350,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_form_field_online(self, request, **kwargs):  # noqa: E501
+        """Removes a form field from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_form_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_form_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_form_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_form_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_form_field_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes a form field from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteFormFieldOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_form_field_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_header_footer(self, request, **kwargs):  # noqa: E501
         """Removes a HeaderFooter object from the document section.  # noqa: E501
@@ -2210,18 +3454,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_header_footer_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_header_footer_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_header_footer_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_header_footer_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_header_footer_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -2239,7 +3482,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -2255,7 +3497,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -2265,10 +3507,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_header_footer_online(self, request, **kwargs):  # noqa: E501
+        """Removes a HeaderFooter object from the document section.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param section_path str : The path to the section in the document tree. (required)
+        :param index int : Object index. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_header_footer_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_header_footer_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_header_footer_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_header_footer_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_header_footer_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes a HeaderFooter object from the document section.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteHeaderFooterOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_header_footer_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_headers_footers(self, request, **kwargs):  # noqa: E501
         """Removes HeaderFooter objects from the document section.  # noqa: E501
@@ -2291,18 +3611,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_headers_footers_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_headers_footers_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_headers_footers_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_headers_footers_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_headers_footers_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_headers_footers_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_headers_footers_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -2320,7 +3639,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -2336,7 +3654,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -2346,10 +3664,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_headers_footers_online(self, request, **kwargs):  # noqa: E501
+        """Removes HeaderFooter objects from the document section.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param section_path str : The path to the section in the document tree. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param headers_footers_types str : The list of HeaderFooter types.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_headers_footers_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_headers_footers_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_headers_footers_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_headers_footers_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_headers_footers_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes HeaderFooter objects from the document section.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteHeadersFootersOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_headers_footers_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_macros(self, request, **kwargs):  # noqa: E501
         """Removes macros from the document.  # noqa: E501
@@ -2370,18 +3766,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_macros_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_macros_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_macros_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_macros_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_macros_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_macros_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_macros_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -2399,7 +3794,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -2415,7 +3809,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -2425,10 +3819,86 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_macros_online(self, request, **kwargs):  # noqa: E501
+        """Removes macros from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_macros_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_macros_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_macros_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_macros_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_macros_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes macros from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteMacrosOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_macros_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_office_math_object(self, request, **kwargs):  # noqa: E501
         """Removes an OfficeMath object from the document node.  # noqa: E501
@@ -2451,18 +3921,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_office_math_object_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -2480,7 +3949,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -2496,7 +3964,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -2506,10 +3974,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_office_math_object_online(self, request, **kwargs):  # noqa: E501
+        """Removes an OfficeMath object from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_office_math_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_office_math_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_office_math_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_office_math_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_office_math_object_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes an OfficeMath object from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteOfficeMathObjectOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_office_math_object_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_paragraph(self, request, **kwargs):  # noqa: E501
         """Removes a paragraph from the document node.  # noqa: E501
@@ -2532,18 +4078,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_paragraph_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_paragraph_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_paragraph_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_paragraph_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_paragraph_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -2561,7 +4106,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -2577,7 +4121,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -2587,10 +4131,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def delete_paragraph_list_format(self, request, **kwargs):  # noqa: E501
         """Removes the formatting properties of a paragraph list from the document node.  # noqa: E501
@@ -2613,18 +4156,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_paragraph_list_format_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -2642,7 +4184,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -2658,7 +4199,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -2668,10 +4209,167 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_paragraph_list_format_online(self, request, **kwargs):  # noqa: E501
+        """Removes the formatting properties of a paragraph list from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: DeleteParagraphListFormatOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_paragraph_list_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_paragraph_list_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_paragraph_list_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_paragraph_list_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_paragraph_list_format_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes the formatting properties of a paragraph list from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteParagraphListFormatOnlineRequest object with parameters
+        :return: DeleteParagraphListFormatOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_paragraph_list_format_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
+
+    def delete_paragraph_online(self, request, **kwargs):  # noqa: E501
+        """Removes a paragraph from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_paragraph_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_paragraph_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_paragraph_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_paragraph_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_paragraph_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes a paragraph from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteParagraphOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_paragraph_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_paragraph_tab_stop(self, request, **kwargs):  # noqa: E501
         """Removes a paragraph tab stop from the document node.  # noqa: E501
@@ -2693,18 +4391,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_paragraph_tab_stop_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_paragraph_tab_stop_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_paragraph_tab_stop_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_paragraph_tab_stop_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_paragraph_tab_stop_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_paragraph_tab_stop_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_paragraph_tab_stop_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -2722,7 +4419,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -2738,7 +4434,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -2748,10 +4444,87 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_paragraph_tab_stop_online(self, request, **kwargs):  # noqa: E501
+        """Removes a paragraph tab stop from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param position float : The position of a tab stop to remove. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :return: DeleteParagraphTabStopOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_paragraph_tab_stop_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_paragraph_tab_stop_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_paragraph_tab_stop_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_paragraph_tab_stop_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_paragraph_tab_stop_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes a paragraph tab stop from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteParagraphTabStopOnlineRequest object with parameters
+        :return: DeleteParagraphTabStopOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_paragraph_tab_stop_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_run(self, request, **kwargs):  # noqa: E501
         """Removes a Run object from the paragraph.  # noqa: E501
@@ -2774,18 +4547,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_run_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_run_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_run_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_run_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_run_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_run_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_run_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -2803,7 +4575,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -2819,7 +4590,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -2829,10 +4600,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_run_online(self, request, **kwargs):  # noqa: E501
+        """Removes a Run object from the paragraph.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param paragraph_path str : The path to the paragraph in the document tree. (required)
+        :param index int : Object index. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_run_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_run_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_run_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_run_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_run_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes a Run object from the paragraph.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteRunOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_run_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_section(self, request, **kwargs):  # noqa: E501
         """Removes a section from the document.  # noqa: E501
@@ -2854,18 +4703,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_section_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_section_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_section_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_section_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_section_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_section_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_section_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -2883,7 +4731,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -2899,7 +4746,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -2909,10 +4756,87 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_section_online(self, request, **kwargs):  # noqa: E501
+        """Removes a section from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param section_index int : The index of the section. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_section_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_section_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_section_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_section_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_section_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes a section from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteSectionOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_section_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_table(self, request, **kwargs):  # noqa: E501
         """Removes a table from the document node.  # noqa: E501
@@ -2935,18 +4859,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_table_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_table_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_table_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_table_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_table_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_table_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_table_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -2964,7 +4887,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -2980,7 +4902,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -2990,10 +4912,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def delete_table_cell(self, request, **kwargs):  # noqa: E501
         """Removes a cell from the table row.  # noqa: E501
@@ -3016,18 +4937,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_table_cell_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_table_cell_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_table_cell_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_table_cell_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_table_cell_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_table_cell_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_table_cell_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -3045,7 +4965,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -3061,7 +4980,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -3071,10 +4990,167 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_table_cell_online(self, request, **kwargs):  # noqa: E501
+        """Removes a cell from the table row.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param table_row_path str : The path to the table row in the document tree. (required)
+        :param index int : Object index. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_table_cell_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_table_cell_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_table_cell_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_table_cell_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_table_cell_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes a cell from the table row.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteTableCellOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_table_cell_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
+
+    def delete_table_online(self, request, **kwargs):  # noqa: E501
+        """Removes a table from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_table_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_table_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_table_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_table_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_table_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes a table from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteTableOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_table_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_table_row(self, request, **kwargs):  # noqa: E501
         """Removes a row from the table.  # noqa: E501
@@ -3097,18 +5173,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_table_row_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_table_row_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_table_row_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_table_row_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_table_row_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_table_row_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_table_row_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -3126,7 +5201,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -3142,7 +5216,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -3152,10 +5226,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_table_row_online(self, request, **kwargs):  # noqa: E501
+        """Removes a row from the table.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param table_path str : The path to the table in the document tree. (required)
+        :param index int : Object index. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_table_row_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_table_row_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_table_row_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_table_row_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_table_row_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes a row from the table.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteTableRowOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_table_row_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def delete_watermark(self, request, **kwargs):  # noqa: E501
         """Removes a watermark from the document.  # noqa: E501
@@ -3176,18 +5328,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.delete_watermark_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_watermark_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_watermark_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.delete_watermark_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.delete_watermark_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_watermark_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def delete_watermark_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -3205,7 +5356,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -3221,7 +5371,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -3231,10 +5381,86 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def delete_watermark_online(self, request, **kwargs):  # noqa: E501
+        """Removes a watermark from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: DeleteWatermarkOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.delete_watermark_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_watermark_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.delete_watermark_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.delete_watermark_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def delete_watermark_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes a watermark from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request DeleteWatermarkOnlineRequest object with parameters
+        :return: DeleteWatermarkOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_watermark_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def download_file(self, request, **kwargs):  # noqa: E501
         """Download file.  # noqa: E501
@@ -3250,18 +5476,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.download_file_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.download_file_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.download_file_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.download_file_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.download_file_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.download_file_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def download_file_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -3279,7 +5504,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -3295,7 +5519,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -3305,10 +5529,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def execute_mail_merge(self, request, **kwargs):  # noqa: E501
         """Executes a Mail Merge operation.  # noqa: E501
@@ -3332,18 +5555,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.execute_mail_merge_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.execute_mail_merge_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.execute_mail_merge_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.execute_mail_merge_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.execute_mail_merge_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.execute_mail_merge_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def execute_mail_merge_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -3361,7 +5583,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -3380,7 +5601,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -3390,10 +5611,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def execute_mail_merge_online(self, request, **kwargs):  # noqa: E501
         """Executes a Mail Merge operation online.  # noqa: E501
@@ -3411,18 +5631,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.execute_mail_merge_online_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.execute_mail_merge_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.execute_mail_merge_online_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.execute_mail_merge_online_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.execute_mail_merge_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.execute_mail_merge_online_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def execute_mail_merge_online_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -3440,7 +5659,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -3459,7 +5677,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -3469,10 +5687,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def get_available_fonts(self, request, **kwargs):  # noqa: E501
         """Reads available fonts from the document.  # noqa: E501
@@ -3486,18 +5703,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_available_fonts_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_available_fonts_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_available_fonts_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_available_fonts_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_available_fonts_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_available_fonts_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_available_fonts_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -3515,7 +5731,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -3531,7 +5746,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -3541,10 +5756,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def get_bookmark_by_name(self, request, **kwargs):  # noqa: E501
         """Reads a bookmark, specified by name, from the document.  # noqa: E501
@@ -3563,18 +5777,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_bookmark_by_name_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_bookmark_by_name_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_bookmark_by_name_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_bookmark_by_name_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_bookmark_by_name_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_bookmark_by_name_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_bookmark_by_name_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -3592,7 +5805,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -3608,7 +5820,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -3618,10 +5830,84 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_bookmark_by_name_online(self, request, **kwargs):  # noqa: E501
+        """Reads a bookmark, specified by name, from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param bookmark_name str : The name of the bookmark. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: BookmarkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_bookmark_by_name_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_bookmark_by_name_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_bookmark_by_name_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_bookmark_by_name_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_bookmark_by_name_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads a bookmark, specified by name, from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetBookmarkByNameOnlineRequest object with parameters
+        :return: BookmarkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_bookmark_by_name_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_bookmarks(self, request, **kwargs):  # noqa: E501
         """Reads bookmarks from the document.  # noqa: E501
@@ -3639,18 +5925,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_bookmarks_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_bookmarks_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_bookmarks_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_bookmarks_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_bookmarks_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_bookmarks_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_bookmarks_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -3668,7 +5953,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -3684,7 +5968,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -3694,10 +5978,83 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_bookmarks_online(self, request, **kwargs):  # noqa: E501
+        """Reads bookmarks from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: BookmarksResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_bookmarks_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_bookmarks_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_bookmarks_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_bookmarks_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_bookmarks_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads bookmarks from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetBookmarksOnlineRequest object with parameters
+        :return: BookmarksResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_bookmarks_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_border(self, request, **kwargs):  # noqa: E501
         """The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
@@ -3717,18 +6074,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_border_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_border_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_border_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_border_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_border_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_border_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_border_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -3746,7 +6102,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -3762,7 +6117,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -3772,10 +6127,85 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_border_online(self, request, **kwargs):  # noqa: E501
+        """Reads a border from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param border_type str : Border type. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: BorderResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_border_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_border_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_border_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_border_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_border_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads a border from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetBorderOnlineRequest object with parameters
+        :return: BorderResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_border_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_borders(self, request, **kwargs):  # noqa: E501
         """Reads borders from the document node.  # noqa: E501
@@ -3794,18 +6224,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_borders_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_borders_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_borders_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_borders_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_borders_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_borders_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_borders_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -3823,7 +6252,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -3839,7 +6267,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -3849,10 +6277,84 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_borders_online(self, request, **kwargs):  # noqa: E501
+        """Reads borders from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: BordersResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_borders_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_borders_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_borders_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_borders_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_borders_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads borders from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetBordersOnlineRequest object with parameters
+        :return: BordersResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_borders_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_comment(self, request, **kwargs):  # noqa: E501
         """Reads a comment from the document.  # noqa: E501
@@ -3871,18 +6373,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_comment_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_comment_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_comment_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_comment_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_comment_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_comment_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_comment_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -3900,7 +6401,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -3916,7 +6416,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -3926,10 +6426,84 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_comment_online(self, request, **kwargs):  # noqa: E501
+        """Reads a comment from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param comment_index int : The index of the comment. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: CommentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_comment_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_comment_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_comment_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_comment_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_comment_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads a comment from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetCommentOnlineRequest object with parameters
+        :return: CommentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_comment_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_comments(self, request, **kwargs):  # noqa: E501
         """Reads comments from the document.  # noqa: E501
@@ -3947,18 +6521,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_comments_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_comments_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_comments_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_comments_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_comments_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_comments_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_comments_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -3976,7 +6549,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -3992,7 +6564,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -4002,10 +6574,83 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_comments_online(self, request, **kwargs):  # noqa: E501
+        """Reads comments from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: CommentsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_comments_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_comments_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_comments_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_comments_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_comments_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads comments from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetCommentsOnlineRequest object with parameters
+        :return: CommentsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_comments_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_document(self, request, **kwargs):  # noqa: E501
         """Reads common information from the document.  # noqa: E501
@@ -4023,18 +6668,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_document_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -4052,7 +6696,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -4068,7 +6711,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -4078,10 +6721,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def get_document_drawing_object_by_index(self, request, **kwargs):  # noqa: E501
         """Reads a DrawingObject from the document node.  # noqa: E501
@@ -4101,18 +6743,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_document_drawing_object_by_index_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_drawing_object_by_index_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_drawing_object_by_index_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_drawing_object_by_index_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_drawing_object_by_index_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_drawing_object_by_index_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_document_drawing_object_by_index_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -4130,7 +6771,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -4146,7 +6786,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -4156,10 +6796,85 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_document_drawing_object_by_index_online(self, request, **kwargs):  # noqa: E501
+        """Reads a DrawingObject from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: DrawingObjectResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_document_drawing_object_by_index_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_drawing_object_by_index_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_drawing_object_by_index_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_drawing_object_by_index_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_document_drawing_object_by_index_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads a DrawingObject from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetDocumentDrawingObjectByIndexOnlineRequest object with parameters
+        :return: DrawingObjectResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_document_drawing_object_by_index_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_document_drawing_object_image_data(self, request, **kwargs):  # noqa: E501
         """Reads image data of a DrawingObject from the document node.  # noqa: E501
@@ -4179,18 +6894,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_document_drawing_object_image_data_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_drawing_object_image_data_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_drawing_object_image_data_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_drawing_object_image_data_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_drawing_object_image_data_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_drawing_object_image_data_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_document_drawing_object_image_data_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -4208,7 +6922,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -4224,7 +6937,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -4234,10 +6947,85 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_document_drawing_object_image_data_online(self, request, **kwargs):  # noqa: E501
+        """Reads image data of a DrawingObject from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_document_drawing_object_image_data_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_drawing_object_image_data_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_drawing_object_image_data_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_drawing_object_image_data_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_document_drawing_object_image_data_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads image data of a DrawingObject from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetDocumentDrawingObjectImageDataOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_document_drawing_object_image_data_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_document_drawing_object_ole_data(self, request, **kwargs):  # noqa: E501
         """Reads OLE data of a DrawingObject from the document node.  # noqa: E501
@@ -4257,18 +7045,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_document_drawing_object_ole_data_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_drawing_object_ole_data_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_drawing_object_ole_data_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_drawing_object_ole_data_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_drawing_object_ole_data_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_drawing_object_ole_data_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_document_drawing_object_ole_data_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -4286,7 +7073,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -4302,7 +7088,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -4312,10 +7098,85 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_document_drawing_object_ole_data_online(self, request, **kwargs):  # noqa: E501
+        """Reads OLE data of a DrawingObject from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_document_drawing_object_ole_data_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_drawing_object_ole_data_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_drawing_object_ole_data_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_drawing_object_ole_data_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_document_drawing_object_ole_data_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads OLE data of a DrawingObject from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetDocumentDrawingObjectOleDataOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_document_drawing_object_ole_data_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_document_drawing_objects(self, request, **kwargs):  # noqa: E501
         """Reads DrawingObjects from the document node.  # noqa: E501
@@ -4334,18 +7195,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_document_drawing_objects_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_drawing_objects_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_drawing_objects_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_drawing_objects_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_drawing_objects_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_drawing_objects_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_document_drawing_objects_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -4363,7 +7223,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -4379,7 +7238,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -4389,10 +7248,84 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_document_drawing_objects_online(self, request, **kwargs):  # noqa: E501
+        """Reads DrawingObjects from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: DrawingObjectsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_document_drawing_objects_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_drawing_objects_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_drawing_objects_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_drawing_objects_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_document_drawing_objects_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads DrawingObjects from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetDocumentDrawingObjectsOnlineRequest object with parameters
+        :return: DrawingObjectsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_document_drawing_objects_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_document_field_names(self, request, **kwargs):  # noqa: E501
         """Reads merge field names from the document.  # noqa: E501
@@ -4411,18 +7344,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_document_field_names_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_field_names_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_field_names_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_field_names_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_field_names_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_field_names_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_document_field_names_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -4440,7 +7372,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -4456,7 +7387,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -4466,10 +7397,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def get_document_field_names_online(self, request, **kwargs):  # noqa: E501
         """Reads merge field names from the document.  # noqa: E501
@@ -4478,24 +7408,25 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param template file : File with template. (required)
+        :param document file : The document. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
         :param use_non_merge_fields bool : The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
         :return: FieldNamesResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_document_field_names_online_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_field_names_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_field_names_online_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_field_names_online_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_field_names_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_field_names_online_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_document_field_names_online_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -4513,7 +7444,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -4532,7 +7462,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -4542,10 +7472,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def get_document_hyperlink_by_index(self, request, **kwargs):  # noqa: E501
         """Reads a hyperlink from the document.  # noqa: E501
@@ -4564,18 +7493,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_document_hyperlink_by_index_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_hyperlink_by_index_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_hyperlink_by_index_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_hyperlink_by_index_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_hyperlink_by_index_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_hyperlink_by_index_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_document_hyperlink_by_index_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -4593,7 +7521,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -4609,7 +7536,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -4619,10 +7546,84 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_document_hyperlink_by_index_online(self, request, **kwargs):  # noqa: E501
+        """Reads a hyperlink from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param hyperlink_index int : The index of the hyperlink. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: HyperlinkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_document_hyperlink_by_index_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_hyperlink_by_index_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_hyperlink_by_index_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_hyperlink_by_index_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_document_hyperlink_by_index_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads a hyperlink from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetDocumentHyperlinkByIndexOnlineRequest object with parameters
+        :return: HyperlinkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_document_hyperlink_by_index_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_document_hyperlinks(self, request, **kwargs):  # noqa: E501
         """Reads hyperlinks from the document.  # noqa: E501
@@ -4640,18 +7641,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_document_hyperlinks_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_hyperlinks_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_hyperlinks_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_hyperlinks_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_hyperlinks_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_hyperlinks_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_document_hyperlinks_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -4669,7 +7669,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -4685,7 +7684,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -4695,10 +7694,83 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_document_hyperlinks_online(self, request, **kwargs):  # noqa: E501
+        """Reads hyperlinks from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: HyperlinksResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_document_hyperlinks_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_hyperlinks_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_hyperlinks_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_hyperlinks_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_document_hyperlinks_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads hyperlinks from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetDocumentHyperlinksOnlineRequest object with parameters
+        :return: HyperlinksResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_document_hyperlinks_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_document_properties(self, request, **kwargs):  # noqa: E501
         """Reads document properties.  # noqa: E501
@@ -4716,18 +7788,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_document_properties_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_properties_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_properties_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_properties_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_properties_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_properties_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_document_properties_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -4745,7 +7816,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -4761,7 +7831,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -4771,10 +7841,83 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_document_properties_online(self, request, **kwargs):  # noqa: E501
+        """Reads document properties.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: DocumentPropertiesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_document_properties_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_properties_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_properties_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_properties_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_document_properties_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads document properties.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetDocumentPropertiesOnlineRequest object with parameters
+        :return: DocumentPropertiesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_document_properties_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_document_property(self, request, **kwargs):  # noqa: E501
         """Reads a document property.  # noqa: E501
@@ -4793,18 +7936,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_document_property_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_property_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_property_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_property_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_property_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_property_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_document_property_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -4822,7 +7964,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -4838,7 +7979,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -4848,10 +7989,84 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_document_property_online(self, request, **kwargs):  # noqa: E501
+        """Reads a document property.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param property_name str : The name of the property. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: DocumentPropertyResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_document_property_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_property_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_property_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_property_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_document_property_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads a document property.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetDocumentPropertyOnlineRequest object with parameters
+        :return: DocumentPropertyResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_document_property_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_document_protection(self, request, **kwargs):  # noqa: E501
         """Reads protection properties from the document.  # noqa: E501
@@ -4869,18 +8084,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_document_protection_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_protection_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_protection_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_protection_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_protection_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_protection_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_document_protection_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -4898,7 +8112,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -4914,7 +8127,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -4924,10 +8137,83 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_document_protection_online(self, request, **kwargs):  # noqa: E501
+        """Reads protection properties from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: ProtectionDataResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_document_protection_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_protection_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_protection_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_protection_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_document_protection_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads protection properties from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetDocumentProtectionOnlineRequest object with parameters
+        :return: ProtectionDataResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_document_protection_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_document_statistics(self, request, **kwargs):  # noqa: E501
         """Reads document statistics.  # noqa: E501
@@ -4948,18 +8234,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_document_statistics_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_statistics_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_statistics_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_statistics_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_statistics_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_statistics_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_document_statistics_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -4977,7 +8262,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -4993,7 +8277,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -5003,10 +8287,86 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_document_statistics_online(self, request, **kwargs):  # noqa: E501
+        """Reads document statistics.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param include_comments bool : The flag indicating whether to include comments from the WordCount. The default value is "false".
+        :param include_footnotes bool : The flag indicating whether to include footnotes from the WordCount. The default value is "false".
+        :param include_text_in_shapes bool : The flag indicating whether to include shape's text from the WordCount. The default value is "false".
+        :return: StatDataResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_document_statistics_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_statistics_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_document_statistics_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_statistics_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_document_statistics_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads document statistics.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetDocumentStatisticsOnlineRequest object with parameters
+        :return: StatDataResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_document_statistics_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_document_with_format(self, request, **kwargs):  # noqa: E501
         """Converts a document in cloud storage to the specified format.  # noqa: E501
@@ -5027,18 +8387,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_document_with_format_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_with_format_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_with_format_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_document_with_format_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_document_with_format_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_document_with_format_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_document_with_format_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -5056,7 +8415,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -5072,7 +8430,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -5082,10 +8440,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def get_field(self, request, **kwargs):  # noqa: E501
         """Reads a field from the document node.  # noqa: E501
@@ -5105,18 +8462,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_field_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_field_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_field_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_field_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_field_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_field_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_field_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -5134,7 +8490,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -5150,7 +8505,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -5160,10 +8515,85 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_field_online(self, request, **kwargs):  # noqa: E501
+        """Reads a field from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: FieldResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_field_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads a field from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetFieldOnlineRequest object with parameters
+        :return: FieldResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_field_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_fields(self, request, **kwargs):  # noqa: E501
         """Reads fields from the document node.  # noqa: E501
@@ -5182,18 +8612,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_fields_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_fields_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_fields_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_fields_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_fields_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_fields_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_fields_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -5211,7 +8640,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -5227,7 +8655,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -5237,10 +8665,84 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_fields_online(self, request, **kwargs):  # noqa: E501
+        """Reads fields from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: FieldsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_fields_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_fields_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_fields_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_fields_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_fields_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads fields from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetFieldsOnlineRequest object with parameters
+        :return: FieldsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_fields_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_files_list(self, request, **kwargs):  # noqa: E501
         """Get all files and folders within a folder.  # noqa: E501
@@ -5255,18 +8757,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_files_list_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_files_list_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_files_list_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_files_list_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_files_list_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_files_list_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_files_list_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -5284,7 +8785,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -5300,7 +8800,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -5310,10 +8810,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def get_footnote(self, request, **kwargs):  # noqa: E501
         """Reads a footnote from the document node.  # noqa: E501
@@ -5333,18 +8832,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_footnote_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_footnote_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_footnote_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_footnote_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_footnote_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_footnote_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_footnote_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -5362,7 +8860,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -5378,7 +8875,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -5388,10 +8885,85 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_footnote_online(self, request, **kwargs):  # noqa: E501
+        """Reads a footnote from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: FootnoteResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_footnote_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_footnote_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_footnote_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_footnote_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_footnote_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads a footnote from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetFootnoteOnlineRequest object with parameters
+        :return: FootnoteResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_footnote_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_footnotes(self, request, **kwargs):  # noqa: E501
         """Reads footnotes from the document node.  # noqa: E501
@@ -5410,18 +8982,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_footnotes_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_footnotes_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_footnotes_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_footnotes_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_footnotes_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_footnotes_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_footnotes_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -5439,7 +9010,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -5455,7 +9025,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -5465,10 +9035,84 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_footnotes_online(self, request, **kwargs):  # noqa: E501
+        """Reads footnotes from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: FootnotesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_footnotes_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_footnotes_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_footnotes_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_footnotes_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_footnotes_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads footnotes from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetFootnotesOnlineRequest object with parameters
+        :return: FootnotesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_footnotes_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_form_field(self, request, **kwargs):  # noqa: E501
         """Reads a form field from the document node.  # noqa: E501
@@ -5488,18 +9132,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_form_field_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_form_field_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_form_field_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_form_field_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_form_field_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_form_field_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_form_field_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -5517,7 +9160,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -5533,7 +9175,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -5543,10 +9185,85 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_form_field_online(self, request, **kwargs):  # noqa: E501
+        """Reads a form field from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: FormFieldResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_form_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_form_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_form_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_form_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_form_field_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads a form field from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetFormFieldOnlineRequest object with parameters
+        :return: FormFieldResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_form_field_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_form_fields(self, request, **kwargs):  # noqa: E501
         """Reads form fields from the document node.  # noqa: E501
@@ -5565,18 +9282,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_form_fields_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_form_fields_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_form_fields_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_form_fields_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_form_fields_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_form_fields_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_form_fields_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -5594,7 +9310,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -5610,7 +9325,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -5620,10 +9335,84 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_form_fields_online(self, request, **kwargs):  # noqa: E501
+        """Reads form fields from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: FormFieldsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_form_fields_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_form_fields_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_form_fields_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_form_fields_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_form_fields_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads form fields from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetFormFieldsOnlineRequest object with parameters
+        :return: FormFieldsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_form_fields_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_header_footer(self, request, **kwargs):  # noqa: E501
         """Reads a HeaderFooter object from the document.  # noqa: E501
@@ -5643,18 +9432,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_header_footer_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_header_footer_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_header_footer_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_header_footer_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_header_footer_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -5672,7 +9460,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -5688,7 +9475,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -5698,10 +9485,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def get_header_footer_of_section(self, request, **kwargs):  # noqa: E501
         """Reads a HeaderFooter object from the document section.  # noqa: E501
@@ -5722,18 +9508,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_header_footer_of_section_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_header_footer_of_section_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_header_footer_of_section_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_header_footer_of_section_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_header_footer_of_section_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_header_footer_of_section_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_header_footer_of_section_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -5751,7 +9536,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -5767,7 +9551,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -5777,10 +9561,162 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_header_footer_of_section_online(self, request, **kwargs):  # noqa: E501
+        """Reads a HeaderFooter object from the document section.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param header_footer_index int : The index of the HeaderFooter object. (required)
+        :param section_index int : The index of the section. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param filter_by_type str : The list of HeaderFooter types.
+        :return: HeaderFooterResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_header_footer_of_section_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_header_footer_of_section_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_header_footer_of_section_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_header_footer_of_section_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_header_footer_of_section_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads a HeaderFooter object from the document section.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetHeaderFooterOfSectionOnlineRequest object with parameters
+        :return: HeaderFooterResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_header_footer_of_section_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
+
+    def get_header_footer_online(self, request, **kwargs):  # noqa: E501
+        """Reads a HeaderFooter object from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param header_footer_index int : The index of the HeaderFooter object. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param filter_by_type str : The list of HeaderFooter types.
+        :return: HeaderFooterResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_header_footer_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_header_footer_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_header_footer_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_header_footer_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_header_footer_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads a HeaderFooter object from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetHeaderFooterOnlineRequest object with parameters
+        :return: HeaderFooterResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_header_footer_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_header_footers(self, request, **kwargs):  # noqa: E501
         """Reads HeaderFooter objects from the document section.  # noqa: E501
@@ -5800,18 +9736,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_header_footers_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_header_footers_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_header_footers_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_header_footers_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_header_footers_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_header_footers_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_header_footers_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -5829,7 +9764,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -5845,7 +9779,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -5855,10 +9789,85 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_header_footers_online(self, request, **kwargs):  # noqa: E501
+        """Reads HeaderFooter objects from the document section.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param section_path str : The path to the section in the document tree. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param filter_by_type str : The list of HeaderFooter types.
+        :return: HeaderFootersResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_header_footers_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_header_footers_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_header_footers_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_header_footers_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_header_footers_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads HeaderFooter objects from the document section.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetHeaderFootersOnlineRequest object with parameters
+        :return: HeaderFootersResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_header_footers_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_list(self, request, **kwargs):  # noqa: E501
         """Reads a list from the document.  # noqa: E501
@@ -5877,18 +9886,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_list_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_list_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_list_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_list_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_list_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_list_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_list_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -5906,7 +9914,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -5922,7 +9929,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -5932,10 +9939,84 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_list_online(self, request, **kwargs):  # noqa: E501
+        """Reads a list from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param list_id int : The list Id. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: ListResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_list_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_list_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_list_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_list_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_list_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads a list from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetListOnlineRequest object with parameters
+        :return: ListResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_list_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_lists(self, request, **kwargs):  # noqa: E501
         """Reads lists from the document.  # noqa: E501
@@ -5953,18 +10034,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_lists_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_lists_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_lists_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_lists_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_lists_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_lists_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_lists_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -5982,7 +10062,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -5998,7 +10077,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -6008,10 +10087,83 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_lists_online(self, request, **kwargs):  # noqa: E501
+        """Reads lists from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: ListsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_lists_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_lists_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_lists_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_lists_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_lists_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads lists from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetListsOnlineRequest object with parameters
+        :return: ListsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_lists_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_office_math_object(self, request, **kwargs):  # noqa: E501
         """Reads an OfficeMath object from the document node.  # noqa: E501
@@ -6031,18 +10183,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_office_math_object_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_office_math_object_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -6060,7 +10211,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -6076,7 +10226,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -6086,10 +10236,85 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_office_math_object_online(self, request, **kwargs):  # noqa: E501
+        """Reads an OfficeMath object from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: OfficeMathObjectResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_office_math_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_office_math_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_office_math_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_office_math_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_office_math_object_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads an OfficeMath object from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetOfficeMathObjectOnlineRequest object with parameters
+        :return: OfficeMathObjectResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_office_math_object_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_office_math_objects(self, request, **kwargs):  # noqa: E501
         """Reads OfficeMath objects from the document node.  # noqa: E501
@@ -6108,18 +10333,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_office_math_objects_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_office_math_objects_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_office_math_objects_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_office_math_objects_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_office_math_objects_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_office_math_objects_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_office_math_objects_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -6137,7 +10361,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -6153,7 +10376,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -6163,10 +10386,84 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_office_math_objects_online(self, request, **kwargs):  # noqa: E501
+        """Reads OfficeMath objects from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: OfficeMathObjectsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_office_math_objects_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_office_math_objects_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_office_math_objects_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_office_math_objects_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_office_math_objects_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads OfficeMath objects from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetOfficeMathObjectsOnlineRequest object with parameters
+        :return: OfficeMathObjectsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_office_math_objects_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_paragraph(self, request, **kwargs):  # noqa: E501
         """Reads a paragraph from the document node.  # noqa: E501
@@ -6186,18 +10483,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_paragraph_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_paragraph_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_paragraph_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_paragraph_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_paragraph_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -6215,7 +10511,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -6231,7 +10526,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -6241,10 +10536,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def get_paragraph_format(self, request, **kwargs):  # noqa: E501
         """Reads the formatting properties of a paragraph from the document node.  # noqa: E501
@@ -6264,18 +10558,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_paragraph_format_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -6293,7 +10586,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -6309,7 +10601,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -6319,10 +10611,85 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_paragraph_format_online(self, request, **kwargs):  # noqa: E501
+        """Reads the formatting properties of a paragraph from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: ParagraphFormatResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_paragraph_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_paragraph_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_paragraph_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_paragraph_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_paragraph_format_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads the formatting properties of a paragraph from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetParagraphFormatOnlineRequest object with parameters
+        :return: ParagraphFormatResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_paragraph_format_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_paragraph_list_format(self, request, **kwargs):  # noqa: E501
         """Reads the formatting properties of a paragraph list from the document node.  # noqa: E501
@@ -6342,18 +10709,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_paragraph_list_format_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -6371,7 +10737,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -6387,7 +10752,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -6397,10 +10762,161 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_paragraph_list_format_online(self, request, **kwargs):  # noqa: E501
+        """Reads the formatting properties of a paragraph list from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: ParagraphListFormatResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_paragraph_list_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_paragraph_list_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_paragraph_list_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_paragraph_list_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_paragraph_list_format_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads the formatting properties of a paragraph list from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetParagraphListFormatOnlineRequest object with parameters
+        :return: ParagraphListFormatResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_paragraph_list_format_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
+
+    def get_paragraph_online(self, request, **kwargs):  # noqa: E501
+        """Reads a paragraph from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: ParagraphResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_paragraph_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_paragraph_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_paragraph_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_paragraph_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_paragraph_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads a paragraph from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetParagraphOnlineRequest object with parameters
+        :return: ParagraphResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_paragraph_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_paragraphs(self, request, **kwargs):  # noqa: E501
         """Reads paragraphs from the document node.  # noqa: E501
@@ -6419,18 +10935,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_paragraphs_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_paragraphs_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_paragraphs_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_paragraphs_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_paragraphs_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_paragraphs_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_paragraphs_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -6448,7 +10963,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -6464,7 +10978,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -6474,10 +10988,84 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_paragraphs_online(self, request, **kwargs):  # noqa: E501
+        """Reads paragraphs from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: ParagraphLinkCollectionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_paragraphs_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_paragraphs_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_paragraphs_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_paragraphs_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_paragraphs_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads paragraphs from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetParagraphsOnlineRequest object with parameters
+        :return: ParagraphLinkCollectionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_paragraphs_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_paragraph_tab_stops(self, request, **kwargs):  # noqa: E501
         """Reads paragraph tab stops from the document node.  # noqa: E501
@@ -6497,18 +11085,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_paragraph_tab_stops_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_paragraph_tab_stops_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_paragraph_tab_stops_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_paragraph_tab_stops_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_paragraph_tab_stops_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_paragraph_tab_stops_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_paragraph_tab_stops_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -6526,7 +11113,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -6542,7 +11128,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -6552,10 +11138,85 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_paragraph_tab_stops_online(self, request, **kwargs):  # noqa: E501
+        """Reads paragraph tab stops from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: TabStopsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_paragraph_tab_stops_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_paragraph_tab_stops_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_paragraph_tab_stops_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_paragraph_tab_stops_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_paragraph_tab_stops_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads paragraph tab stops from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetParagraphTabStopsOnlineRequest object with parameters
+        :return: TabStopsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_paragraph_tab_stops_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_range_text(self, request, **kwargs):  # noqa: E501
         """Reads range text from the document.  # noqa: E501
@@ -6575,18 +11236,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_range_text_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_range_text_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_range_text_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_range_text_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_range_text_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_range_text_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_range_text_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -6604,7 +11264,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -6620,7 +11279,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -6630,10 +11289,85 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_range_text_online(self, request, **kwargs):  # noqa: E501
+        """Reads range text from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param range_start_identifier str : The range start identifier. (required)
+        :param range_end_identifier str : The range end identifier.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: RangeTextResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_range_text_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_range_text_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_range_text_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_range_text_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_range_text_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads range text from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetRangeTextOnlineRequest object with parameters
+        :return: RangeTextResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_range_text_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_run(self, request, **kwargs):  # noqa: E501
         """Reads a Run object from the paragraph.  # noqa: E501
@@ -6653,18 +11387,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_run_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_run_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_run_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_run_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_run_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_run_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_run_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -6682,7 +11415,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -6698,7 +11430,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -6708,10 +11440,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def get_run_font(self, request, **kwargs):  # noqa: E501
         """Reads the font properties of a Run object from the paragraph.  # noqa: E501
@@ -6731,18 +11462,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_run_font_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_run_font_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_run_font_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_run_font_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_run_font_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_run_font_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_run_font_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -6760,7 +11490,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -6776,7 +11505,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -6786,10 +11515,161 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_run_font_online(self, request, **kwargs):  # noqa: E501
+        """Reads the font properties of a Run object from the paragraph.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param paragraph_path str : The path to the paragraph in the document tree. (required)
+        :param index int : Object index. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: FontResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_run_font_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_run_font_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_run_font_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_run_font_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_run_font_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads the font properties of a Run object from the paragraph.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetRunFontOnlineRequest object with parameters
+        :return: FontResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_run_font_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
+
+    def get_run_online(self, request, **kwargs):  # noqa: E501
+        """Reads a Run object from the paragraph.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param paragraph_path str : The path to the paragraph in the document tree. (required)
+        :param index int : Object index. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: RunResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_run_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_run_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_run_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_run_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_run_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads a Run object from the paragraph.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetRunOnlineRequest object with parameters
+        :return: RunResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_run_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_runs(self, request, **kwargs):  # noqa: E501
         """Reads Run objects from the paragraph.  # noqa: E501
@@ -6808,18 +11688,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_runs_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_runs_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_runs_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_runs_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_runs_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_runs_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_runs_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -6837,7 +11716,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -6853,7 +11731,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -6863,10 +11741,84 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_runs_online(self, request, **kwargs):  # noqa: E501
+        """Reads Run objects from the paragraph.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param paragraph_path str : The path to the paragraph in the document tree. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: RunsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_runs_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_runs_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_runs_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_runs_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_runs_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads Run objects from the paragraph.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetRunsOnlineRequest object with parameters
+        :return: RunsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_runs_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_section(self, request, **kwargs):  # noqa: E501
         """Reads a section from the document.  # noqa: E501
@@ -6885,18 +11837,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_section_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_section_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_section_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_section_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_section_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_section_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_section_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -6914,7 +11865,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -6930,7 +11880,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -6940,10 +11890,84 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_section_online(self, request, **kwargs):  # noqa: E501
+        """Reads a section from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param section_index int : The index of the section. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: SectionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_section_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_section_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_section_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_section_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_section_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads a section from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetSectionOnlineRequest object with parameters
+        :return: SectionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_section_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_section_page_setup(self, request, **kwargs):  # noqa: E501
         """Reads the page setup of a section from the document.  # noqa: E501
@@ -6962,18 +11986,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_section_page_setup_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -6991,7 +12014,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -7007,7 +12029,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -7017,10 +12039,84 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_section_page_setup_online(self, request, **kwargs):  # noqa: E501
+        """Reads the page setup of a section from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param section_index int : The index of the section. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: SectionPageSetupResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_section_page_setup_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_section_page_setup_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_section_page_setup_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_section_page_setup_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_section_page_setup_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads the page setup of a section from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetSectionPageSetupOnlineRequest object with parameters
+        :return: SectionPageSetupResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_section_page_setup_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_sections(self, request, **kwargs):  # noqa: E501
         """Reads sections from the document.  # noqa: E501
@@ -7038,18 +12134,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_sections_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_sections_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_sections_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_sections_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_sections_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_sections_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_sections_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -7067,7 +12162,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -7083,7 +12177,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -7093,10 +12187,83 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_sections_online(self, request, **kwargs):  # noqa: E501
+        """Reads sections from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: SectionLinkCollectionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_sections_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_sections_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_sections_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_sections_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_sections_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads sections from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetSectionsOnlineRequest object with parameters
+        :return: SectionLinkCollectionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_sections_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_style(self, request, **kwargs):  # noqa: E501
         """Reads a style from the document.  # noqa: E501
@@ -7115,18 +12282,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_style_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_style_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_style_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_style_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_style_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_style_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_style_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -7144,7 +12310,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -7160,7 +12325,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -7170,10 +12335,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def get_style_from_document_element(self, request, **kwargs):  # noqa: E501
         """Reads a style from the document node.  # noqa: E501
@@ -7192,18 +12356,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_style_from_document_element_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_style_from_document_element_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_style_from_document_element_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_style_from_document_element_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_style_from_document_element_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_style_from_document_element_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_style_from_document_element_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -7221,7 +12384,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -7237,7 +12399,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -7247,10 +12409,159 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_style_from_document_element_online(self, request, **kwargs):  # noqa: E501
+        """Reads a style from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param styled_node_path str : The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: StyleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_style_from_document_element_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_style_from_document_element_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_style_from_document_element_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_style_from_document_element_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_style_from_document_element_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads a style from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetStyleFromDocumentElementOnlineRequest object with parameters
+        :return: StyleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_style_from_document_element_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
+
+    def get_style_online(self, request, **kwargs):  # noqa: E501
+        """Reads a style from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param style_name str : The name of the style. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: StyleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_style_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_style_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_style_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_style_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_style_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads a style from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetStyleOnlineRequest object with parameters
+        :return: StyleResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_style_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_styles(self, request, **kwargs):  # noqa: E501
         """Reads styles from the document.  # noqa: E501
@@ -7268,18 +12579,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_styles_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_styles_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_styles_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_styles_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_styles_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_styles_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_styles_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -7297,7 +12607,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -7313,7 +12622,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -7323,10 +12632,83 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_styles_online(self, request, **kwargs):  # noqa: E501
+        """Reads styles from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: StylesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_styles_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_styles_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_styles_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_styles_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_styles_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads styles from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetStylesOnlineRequest object with parameters
+        :return: StylesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_styles_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_table(self, request, **kwargs):  # noqa: E501
         """Reads a table from the document node.  # noqa: E501
@@ -7346,18 +12728,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_table_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_table_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_table_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_table_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_table_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -7375,7 +12756,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -7391,7 +12771,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -7401,10 +12781,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def get_table_cell(self, request, **kwargs):  # noqa: E501
         """Reads a cell from the table row.  # noqa: E501
@@ -7424,18 +12803,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_table_cell_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_table_cell_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_cell_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_table_cell_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_table_cell_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_cell_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_table_cell_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -7453,7 +12831,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -7469,7 +12846,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -7479,10 +12856,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def get_table_cell_format(self, request, **kwargs):  # noqa: E501
         """Reads the formatting properties of a table cell.  # noqa: E501
@@ -7502,18 +12878,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_table_cell_format_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -7531,7 +12906,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -7547,7 +12921,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -7557,10 +12931,237 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_table_cell_format_online(self, request, **kwargs):  # noqa: E501
+        """Reads the formatting properties of a table cell.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param table_row_path str : The path to the table row in the document tree. (required)
+        :param index int : Object index. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: TableCellFormatResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_table_cell_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_cell_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_table_cell_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_cell_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_table_cell_format_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads the formatting properties of a table cell.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetTableCellFormatOnlineRequest object with parameters
+        :return: TableCellFormatResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_table_cell_format_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
+
+    def get_table_cell_online(self, request, **kwargs):  # noqa: E501
+        """Reads a cell from the table row.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param table_row_path str : The path to the table row in the document tree. (required)
+        :param index int : Object index. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: TableCellResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_table_cell_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_cell_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_table_cell_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_cell_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_table_cell_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads a cell from the table row.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetTableCellOnlineRequest object with parameters
+        :return: TableCellResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_table_cell_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
+
+    def get_table_online(self, request, **kwargs):  # noqa: E501
+        """Reads a table from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: TableResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_table_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_table_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_table_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads a table from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetTableOnlineRequest object with parameters
+        :return: TableResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_table_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_table_properties(self, request, **kwargs):  # noqa: E501
         """Reads properties of a table from the document node.  # noqa: E501
@@ -7580,18 +13181,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_table_properties_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_table_properties_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_properties_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_table_properties_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_table_properties_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_properties_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_table_properties_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -7609,7 +13209,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -7625,7 +13224,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -7635,10 +13234,85 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_table_properties_online(self, request, **kwargs):  # noqa: E501
+        """Reads properties of a table from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: TablePropertiesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_table_properties_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_properties_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_table_properties_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_properties_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_table_properties_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads properties of a table from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetTablePropertiesOnlineRequest object with parameters
+        :return: TablePropertiesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_table_properties_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_table_row(self, request, **kwargs):  # noqa: E501
         """Reads a row from the table.  # noqa: E501
@@ -7658,18 +13332,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_table_row_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_table_row_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_row_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_table_row_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_table_row_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_row_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_table_row_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -7687,7 +13360,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -7703,7 +13375,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -7713,10 +13385,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def get_table_row_format(self, request, **kwargs):  # noqa: E501
         """Reads the formatting properties of a table row.  # noqa: E501
@@ -7736,18 +13407,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_table_row_format_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -7765,7 +13435,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -7781,7 +13450,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -7791,10 +13460,161 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_table_row_format_online(self, request, **kwargs):  # noqa: E501
+        """Reads the formatting properties of a table row.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param table_path str : The path to the table in the document tree. (required)
+        :param index int : Object index. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: TableRowFormatResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_table_row_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_row_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_table_row_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_row_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_table_row_format_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads the formatting properties of a table row.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetTableRowFormatOnlineRequest object with parameters
+        :return: TableRowFormatResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_table_row_format_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
+
+    def get_table_row_online(self, request, **kwargs):  # noqa: E501
+        """Reads a row from the table.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param table_path str : The path to the table in the document tree. (required)
+        :param index int : Object index. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: TableRowResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_table_row_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_row_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_table_row_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_table_row_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_table_row_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads a row from the table.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetTableRowOnlineRequest object with parameters
+        :return: TableRowResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_table_row_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def get_tables(self, request, **kwargs):  # noqa: E501
         """Reads tables from the document node.  # noqa: E501
@@ -7813,18 +13633,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.get_tables_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_tables_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_tables_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.get_tables_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.get_tables_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_tables_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def get_tables_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -7842,7 +13661,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -7858,7 +13676,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -7868,10 +13686,84 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def get_tables_online(self, request, **kwargs):  # noqa: E501
+        """Reads tables from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: TableLinkCollectionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.get_tables_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_tables_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.get_tables_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.get_tables_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def get_tables_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reads tables from the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request GetTablesOnlineRequest object with parameters
+        :return: TableLinkCollectionResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_tables_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def insert_comment(self, request, **kwargs):  # noqa: E501
         """Inserts a new comment to the document.  # noqa: E501
@@ -7881,7 +13773,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param comment CommentInsert : The properties of the comment. (required)
+        :param comment CommentInsert : Comment data. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -7893,18 +13785,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.insert_comment_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_comment_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_comment_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_comment_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_comment_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_comment_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def insert_comment_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -7922,7 +13813,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -7941,7 +13831,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -7951,10 +13841,87 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def insert_comment_online(self, request, **kwargs):  # noqa: E501
+        """Inserts a new comment to the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param comment CommentInsert : Comment data. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: InsertCommentOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_comment_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_comment_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_comment_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_comment_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_comment_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Inserts a new comment to the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertCommentOnlineRequest object with parameters
+        :return: InsertCommentOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_comment_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def insert_drawing_object(self, request, **kwargs):  # noqa: E501
         """Inserts a new DrawingObject to the document node.  # noqa: E501
@@ -7978,18 +13945,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.insert_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def insert_drawing_object_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -8007,7 +13973,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -8026,7 +13991,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -8036,10 +14001,89 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def insert_drawing_object_online(self, request, **kwargs):  # noqa: E501
+        """Inserts a new DrawingObject to the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param drawing_object DrawingObjectInsert : Drawing object parameters. (required)
+        :param image_file file : File with image. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: InsertDrawingObjectOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_drawing_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_drawing_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_drawing_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_drawing_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_drawing_object_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Inserts a new DrawingObject to the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertDrawingObjectOnlineRequest object with parameters
+        :return: InsertDrawingObjectOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_drawing_object_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def insert_field(self, request, **kwargs):  # noqa: E501
         """Inserts a new field to the document node.  # noqa: E501
@@ -8049,7 +14093,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param field FieldInsert : The properties of the field. (required)
+        :param field FieldInsert : Field data. (required)
         :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -8063,18 +14107,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.insert_field_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_field_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_field_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_field_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_field_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_field_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def insert_field_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -8092,7 +14135,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -8111,7 +14153,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -8121,10 +14163,89 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def insert_field_online(self, request, **kwargs):  # noqa: E501
+        """Inserts a new field to the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param field FieldInsert : Field data. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param insert_before_node str : The index of the node. A new field will be inserted before the node with the specified node Id.
+        :return: InsertFieldOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_field_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Inserts a new field to the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertFieldOnlineRequest object with parameters
+        :return: InsertFieldOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_field_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def insert_footnote(self, request, **kwargs):  # noqa: E501
         """Inserts a new footnote to the document node.  # noqa: E501
@@ -8134,7 +14255,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param footnote_dto FootnoteInsert : The properties of the footnote. (required)
+        :param footnote_dto FootnoteInsert : Footnote data. (required)
         :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -8147,18 +14268,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.insert_footnote_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_footnote_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_footnote_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_footnote_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_footnote_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_footnote_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def insert_footnote_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -8176,7 +14296,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -8195,7 +14314,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -8205,10 +14324,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def insert_footnote_online(self, request, **kwargs):  # noqa: E501
+        """Inserts a new footnote to the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param footnote_dto FootnoteInsert : Footnote data. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: InsertFootnoteOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_footnote_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_footnote_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_footnote_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_footnote_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_footnote_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Inserts a new footnote to the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertFootnoteOnlineRequest object with parameters
+        :return: InsertFootnoteOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_footnote_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def insert_form_field(self, request, **kwargs):  # noqa: E501
         """Inserts a new form field to the document node.  # noqa: E501
@@ -8218,7 +14415,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param form_field FormField : The properties of the form field. (required)
+        :param form_field FormField : From field data. (required)
         :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -8232,18 +14429,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.insert_form_field_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_form_field_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_form_field_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_form_field_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_form_field_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_form_field_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def insert_form_field_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -8261,7 +14457,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -8280,7 +14475,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -8290,10 +14485,89 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def insert_form_field_online(self, request, **kwargs):  # noqa: E501
+        """Inserts a new form field to the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param form_field FormField : From field data. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param insert_before_node str : The index of the node. A new form field will be inserted before the node with the specified node Id.
+        :return: InsertFormFieldOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_form_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_form_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_form_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_form_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_form_field_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Inserts a new form field to the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertFormFieldOnlineRequest object with parameters
+        :return: InsertFormFieldOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_form_field_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def insert_header_footer(self, request, **kwargs):  # noqa: E501
         """Inserts a new HeaderFooter object to the document section.  # noqa: E501
@@ -8303,8 +14577,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param header_footer_type str : The type of a HeaderFooter object. (required)
         :param section_path str : The path to the section in the document tree. (required)
+        :param header_footer_type str : Type of header/footer. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -8316,18 +14590,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.insert_header_footer_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_header_footer_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_header_footer_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_header_footer_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_header_footer_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def insert_header_footer_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -8345,7 +14618,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -8364,7 +14636,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -8374,10 +14646,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def insert_header_footer_online(self, request, **kwargs):  # noqa: E501
+        """Inserts a new HeaderFooter object to the document section.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param section_path str : The path to the section in the document tree. (required)
+        :param header_footer_type str : Type of header/footer. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: InsertHeaderFooterOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_header_footer_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_header_footer_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_header_footer_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_header_footer_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_header_footer_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Inserts a new HeaderFooter object to the document section.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertHeaderFooterOnlineRequest object with parameters
+        :return: InsertHeaderFooterOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_header_footer_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def insert_list(self, request, **kwargs):  # noqa: E501
         """Inserts a new list to the document.  # noqa: E501
@@ -8387,7 +14737,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param list_insert ListInsert : The properties of the list. (required)
+        :param list_insert ListInsert : List object. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -8399,18 +14749,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.insert_list_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_list_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_list_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_list_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_list_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_list_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def insert_list_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -8428,7 +14777,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -8447,7 +14795,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -8457,10 +14805,87 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def insert_list_online(self, request, **kwargs):  # noqa: E501
+        """Inserts a new list to the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param list_insert ListInsert : List object. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: InsertListOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_list_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_list_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_list_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_list_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_list_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Inserts a new list to the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertListOnlineRequest object with parameters
+        :return: InsertListOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_list_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def insert_or_update_paragraph_tab_stop(self, request, **kwargs):  # noqa: E501
         """Inserts a new or updates an existing paragraph tab stop in the document node.  # noqa: E501
@@ -8470,8 +14895,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param dto TabStopInsert : The properties of the paragraph tab stop. (required)
         :param index int : Object index. (required)
+        :param tab_stop_insert_dto TabStopInsert : TabStopInsert dto. (required)
         :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -8482,18 +14907,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.insert_or_update_paragraph_tab_stop_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_or_update_paragraph_tab_stop_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_or_update_paragraph_tab_stop_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_or_update_paragraph_tab_stop_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_or_update_paragraph_tab_stop_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_or_update_paragraph_tab_stop_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def insert_or_update_paragraph_tab_stop_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -8511,7 +14935,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -8530,7 +14953,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -8540,10 +14963,87 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def insert_or_update_paragraph_tab_stop_online(self, request, **kwargs):  # noqa: E501
+        """Inserts a new or updates an existing paragraph tab stop in the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param tab_stop_insert_dto TabStopInsert : TabStopInsert dto. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :return: InsertOrUpdateParagraphTabStopOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_or_update_paragraph_tab_stop_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_or_update_paragraph_tab_stop_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_or_update_paragraph_tab_stop_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_or_update_paragraph_tab_stop_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_or_update_paragraph_tab_stop_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Inserts a new or updates an existing paragraph tab stop in the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertOrUpdateParagraphTabStopOnlineRequest object with parameters
+        :return: InsertOrUpdateParagraphTabStopOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_or_update_paragraph_tab_stop_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def insert_page_numbers(self, request, **kwargs):  # noqa: E501
         """Inserts page numbers to the document.  # noqa: E501
@@ -8553,7 +15053,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param page_number PageNumber : The page numbers settings. (required)
+        :param page_number PageNumber : Page number dto. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -8565,18 +15065,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.insert_page_numbers_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_page_numbers_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_page_numbers_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_page_numbers_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_page_numbers_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_page_numbers_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def insert_page_numbers_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -8594,7 +15093,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -8613,7 +15111,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -8623,10 +15121,87 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def insert_page_numbers_online(self, request, **kwargs):  # noqa: E501
+        """Inserts page numbers to the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param page_number PageNumber : Page number dto. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: InsertPageNumbersOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_page_numbers_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_page_numbers_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_page_numbers_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_page_numbers_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_page_numbers_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Inserts page numbers to the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertPageNumbersOnlineRequest object with parameters
+        :return: InsertPageNumbersOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_page_numbers_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def insert_paragraph(self, request, **kwargs):  # noqa: E501
         """Inserts a new paragraph to the document node.  # noqa: E501
@@ -8636,7 +15211,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param paragraph ParagraphInsert : The properties of the paragraph. (required)
+        :param paragraph ParagraphInsert : Paragraph data. (required)
         :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -8650,18 +15225,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.insert_paragraph_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_paragraph_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_paragraph_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_paragraph_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def insert_paragraph_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -8679,7 +15253,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -8698,7 +15271,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -8708,10 +15281,89 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def insert_paragraph_online(self, request, **kwargs):  # noqa: E501
+        """Inserts a new paragraph to the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param paragraph ParagraphInsert : Paragraph data. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param insert_before_node str : The index of the node. A new paragraph will be inserted before the node with the specified index.
+        :return: InsertParagraphOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_paragraph_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_paragraph_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_paragraph_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_paragraph_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_paragraph_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Inserts a new paragraph to the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertParagraphOnlineRequest object with parameters
+        :return: InsertParagraphOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_paragraph_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def insert_run(self, request, **kwargs):  # noqa: E501
         """Inserts a new Run object to the paragraph.  # noqa: E501
@@ -8722,7 +15374,7 @@ class WordsApi(object):
         :param is_async bool
         :param name str : The filename of the input document. (required)
         :param paragraph_path str : The path to the paragraph in the document tree. (required)
-        :param run RunInsert : The properties of the Run object. (required)
+        :param run RunInsert : Run data. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -8735,18 +15387,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.insert_run_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_run_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_run_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_run_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_run_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_run_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def insert_run_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -8764,7 +15415,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -8783,7 +15433,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -8793,10 +15443,89 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def insert_run_online(self, request, **kwargs):  # noqa: E501
+        """Inserts a new Run object to the paragraph.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param paragraph_path str : The path to the paragraph in the document tree. (required)
+        :param run RunInsert : Run data. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param insert_before_node str : The index of the node. A new Run object will be inserted before the node with the specified node Id.
+        :return: InsertRunOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_run_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_run_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_run_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_run_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_run_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Inserts a new Run object to the paragraph.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertRunOnlineRequest object with parameters
+        :return: InsertRunOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_run_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def insert_style(self, request, **kwargs):  # noqa: E501
         """Inserts a new style to the document.  # noqa: E501
@@ -8806,7 +15535,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param style_insert StyleInsert : The properties of the style. (required)
+        :param style_insert StyleInsert : Style to insert. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -8818,18 +15547,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.insert_style_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_style_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_style_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_style_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_style_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_style_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def insert_style_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -8847,7 +15575,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -8866,7 +15593,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -8876,10 +15603,87 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def insert_style_online(self, request, **kwargs):  # noqa: E501
+        """Inserts a new style to the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param style_insert StyleInsert : Style to insert. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: InsertStyleOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_style_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_style_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_style_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_style_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_style_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Inserts a new style to the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertStyleOnlineRequest object with parameters
+        :return: InsertStyleOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_style_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def insert_table(self, request, **kwargs):  # noqa: E501
         """Inserts a new table to the document node.  # noqa: E501
@@ -8889,7 +15693,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param table TableInsert : The properties of the table. (required)
+        :param table TableInsert : Table parameters. (required)
         :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -8902,18 +15706,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.insert_table_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_table_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_table_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_table_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_table_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_table_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def insert_table_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -8931,7 +15734,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -8950,7 +15752,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -8960,10 +15762,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def insert_table_cell(self, request, **kwargs):  # noqa: E501
         """Inserts a new cell to the table row.  # noqa: E501
@@ -8973,8 +15774,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param cell TableCellInsert : The properties of the cell. (required)
         :param table_row_path str : The path to the table row in the document tree. (required)
+        :param cell TableCellInsert : Table cell parameters. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -8986,18 +15787,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.insert_table_cell_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_table_cell_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_table_cell_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_table_cell_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_table_cell_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_table_cell_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def insert_table_cell_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -9015,7 +15815,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -9034,7 +15833,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -9044,10 +15843,167 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def insert_table_cell_online(self, request, **kwargs):  # noqa: E501
+        """Inserts a new cell to the table row.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param table_row_path str : The path to the table row in the document tree. (required)
+        :param cell TableCellInsert : Table cell parameters. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: InsertTableCellOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_table_cell_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_table_cell_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_table_cell_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_table_cell_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_table_cell_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Inserts a new cell to the table row.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertTableCellOnlineRequest object with parameters
+        :return: InsertTableCellOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_table_cell_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
+
+    def insert_table_online(self, request, **kwargs):  # noqa: E501
+        """Inserts a new table to the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param table TableInsert : Table parameters. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: InsertTableOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_table_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_table_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_table_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_table_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_table_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Inserts a new table to the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertTableOnlineRequest object with parameters
+        :return: InsertTableOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_table_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def insert_table_row(self, request, **kwargs):  # noqa: E501
         """Inserts a new row to the table.  # noqa: E501
@@ -9057,8 +16013,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param row TableRowInsert : The properties of the row. (required)
         :param table_path str : The path to the table in the document tree. (required)
+        :param row TableRowInsert : Table row parameters. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -9070,18 +16026,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.insert_table_row_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_table_row_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_table_row_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_table_row_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_table_row_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_table_row_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def insert_table_row_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -9099,7 +16054,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -9118,7 +16072,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -9128,10 +16082,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def insert_table_row_online(self, request, **kwargs):  # noqa: E501
+        """Inserts a new row to the table.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param table_path str : The path to the table in the document tree. (required)
+        :param row TableRowInsert : Table row parameters. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: InsertTableRowOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_table_row_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_table_row_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_table_row_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_table_row_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_table_row_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Inserts a new row to the table.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertTableRowOnlineRequest object with parameters
+        :return: InsertTableRowOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_table_row_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def insert_watermark_image(self, request, **kwargs):  # noqa: E501
         """Inserts a new watermark image to the document.  # noqa: E501
@@ -9155,18 +16187,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.insert_watermark_image_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_watermark_image_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_watermark_image_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_watermark_image_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_watermark_image_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_watermark_image_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def insert_watermark_image_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -9184,7 +16215,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -9203,7 +16233,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -9213,10 +16243,89 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def insert_watermark_image_online(self, request, **kwargs):  # noqa: E501
+        """Inserts a new watermark image to the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param image_file file : File with image. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :param rotation_angle float : The rotation angle of the watermark.
+        :param image str : The filename of the image. If the parameter value is missing — the image data is expected in the request content.
+        :return: InsertWatermarkImageOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_watermark_image_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_watermark_image_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_watermark_image_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_watermark_image_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_watermark_image_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Inserts a new watermark image to the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertWatermarkImageOnlineRequest object with parameters
+        :return: InsertWatermarkImageOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_watermark_image_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def insert_watermark_text(self, request, **kwargs):  # noqa: E501
         """Inserts a new watermark text to the document.  # noqa: E501
@@ -9226,7 +16335,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param watermark_text WatermarkText : The watermark text to insert. (required)
+        :param watermark_text WatermarkText : The watermark data. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -9238,18 +16347,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.insert_watermark_text_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_watermark_text_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_watermark_text_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.insert_watermark_text_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.insert_watermark_text_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_watermark_text_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def insert_watermark_text_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -9267,7 +16375,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -9286,7 +16393,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -9296,10 +16403,87 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def insert_watermark_text_online(self, request, **kwargs):  # noqa: E501
+        """Inserts a new watermark text to the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param watermark_text WatermarkText : The watermark data. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: InsertWatermarkTextOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.insert_watermark_text_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_watermark_text_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.insert_watermark_text_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.insert_watermark_text_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def insert_watermark_text_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Inserts a new watermark text to the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request InsertWatermarkTextOnlineRequest object with parameters
+        :return: InsertWatermarkTextOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method insert_watermark_text_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def load_web_document(self, request, **kwargs):  # noqa: E501
         """Downloads a document from the Web using URL and saves it to cloud storage in the specified format.  # noqa: E501
@@ -9314,18 +16498,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.load_web_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.load_web_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.load_web_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.load_web_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.load_web_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.load_web_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def load_web_document_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -9343,7 +16526,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -9362,7 +16544,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -9372,10 +16554,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def move_file(self, request, **kwargs):  # noqa: E501
         """Move file.  # noqa: E501
@@ -9393,18 +16574,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.move_file_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.move_file_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.move_file_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.move_file_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.move_file_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.move_file_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def move_file_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -9422,7 +16602,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -9438,7 +16617,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -9448,10 +16627,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def move_folder(self, request, **kwargs):  # noqa: E501
         """Move folder.  # noqa: E501
@@ -9468,18 +16646,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.move_folder_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.move_folder_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.move_folder_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.move_folder_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.move_folder_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.move_folder_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def move_folder_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -9497,7 +16674,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -9513,7 +16689,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -9523,10 +16699,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def optimize_document(self, request, **kwargs):  # noqa: E501
         """Applies document content optimization options, specific to a particular versions of Microsoft Word.  # noqa: E501
@@ -9548,18 +16723,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.optimize_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.optimize_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.optimize_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.optimize_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.optimize_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.optimize_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def optimize_document_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -9577,7 +16751,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -9596,7 +16769,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -9606,10 +16779,87 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def optimize_document_online(self, request, **kwargs):  # noqa: E501
+        """Applies document content optimization options, specific to a particular versions of Microsoft Word.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param options OptimizationOptions : The document optimization options. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.optimize_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.optimize_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.optimize_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.optimize_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def optimize_document_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Applies document content optimization options, specific to a particular versions of Microsoft Word.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request OptimizeDocumentOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method optimize_document_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def protect_document(self, request, **kwargs):  # noqa: E501
         """Adds protection to the document.  # noqa: E501
@@ -9619,7 +16869,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param protection_request ProtectionRequest : The protection settings. (required)
+        :param protection_request ProtectionRequest : Protection request. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -9629,18 +16879,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.protect_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.protect_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.protect_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.protect_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.protect_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.protect_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def protect_document_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -9658,7 +16907,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -9677,7 +16925,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -9687,10 +16935,85 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def protect_document_online(self, request, **kwargs):  # noqa: E501
+        """Adds protection to the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param protection_request ProtectionRequest : Protection request. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :return: ProtectDocumentOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.protect_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.protect_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.protect_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.protect_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def protect_document_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Adds protection to the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request ProtectDocumentOnlineRequest object with parameters
+        :return: ProtectDocumentOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method protect_document_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def reject_all_revisions(self, request, **kwargs):  # noqa: E501
         """Rejects all revisions in the document.  # noqa: E501
@@ -9709,18 +17032,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.reject_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.reject_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.reject_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.reject_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.reject_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.reject_all_revisions_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def reject_all_revisions_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -9738,7 +17060,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -9754,7 +17075,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -9764,10 +17085,84 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def reject_all_revisions_online(self, request, **kwargs):  # noqa: E501
+        """Rejects all revisions in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :return: RejectAllRevisionsOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.reject_all_revisions_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.reject_all_revisions_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.reject_all_revisions_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.reject_all_revisions_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def reject_all_revisions_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Rejects all revisions in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request RejectAllRevisionsOnlineRequest object with parameters
+        :return: RejectAllRevisionsOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method reject_all_revisions_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def remove_range(self, request, **kwargs):  # noqa: E501
         """Removes a range from the document.  # noqa: E501
@@ -9788,18 +17183,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.remove_range_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.remove_range_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.remove_range_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.remove_range_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.remove_range_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.remove_range_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def remove_range_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -9817,7 +17211,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -9833,7 +17226,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -9843,10 +17236,86 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def remove_range_online(self, request, **kwargs):  # noqa: E501
+        """Removes a range from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param range_start_identifier str : The range start identifier. (required)
+        :param range_end_identifier str : The range end identifier.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :return: RemoveRangeOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.remove_range_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.remove_range_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.remove_range_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.remove_range_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def remove_range_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes a range from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request RemoveRangeOnlineRequest object with parameters
+        :return: RemoveRangeOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method remove_range_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def render_drawing_object(self, request, **kwargs):  # noqa: E501
         """Renders a DrawingObject to the specified format.  # noqa: E501
@@ -9863,23 +17332,23 @@ class WordsApi(object):
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.render_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.render_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.render_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.render_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.render_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.render_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def render_drawing_object_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -9897,7 +17366,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -9913,7 +17381,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -9923,10 +17391,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def render_drawing_object_online(self, request, **kwargs):  # noqa: E501
+        """Renders a DrawingObject to the specified format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param format str : The destination format. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param fonts_location str : Folder in filestorage with custom fonts.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.render_drawing_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.render_drawing_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.render_drawing_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.render_drawing_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def render_drawing_object_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Renders a DrawingObject to the specified format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request RenderDrawingObjectOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method render_drawing_object_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def render_math_object(self, request, **kwargs):  # noqa: E501
         """Renders an OfficeMath object to the specified format.  # noqa: E501
@@ -9943,23 +17489,23 @@ class WordsApi(object):
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.render_math_object_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.render_math_object_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.render_math_object_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.render_math_object_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.render_math_object_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.render_math_object_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def render_math_object_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -9977,7 +17523,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -9993,7 +17538,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -10003,10 +17548,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def render_math_object_online(self, request, **kwargs):  # noqa: E501
+        """Renders an OfficeMath object to the specified format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param format str : The destination format. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param fonts_location str : Folder in filestorage with custom fonts.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.render_math_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.render_math_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.render_math_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.render_math_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def render_math_object_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Renders an OfficeMath object to the specified format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request RenderMathObjectOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method render_math_object_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def render_page(self, request, **kwargs):  # noqa: E501
         """Renders a page to the specified format.  # noqa: E501
@@ -10027,18 +17650,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.render_page_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.render_page_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.render_page_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.render_page_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.render_page_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.render_page_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def render_page_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -10056,7 +17678,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -10072,7 +17693,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -10082,10 +17703,86 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def render_page_online(self, request, **kwargs):  # noqa: E501
+        """Renders a page to the specified format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param page_index int : The index of the page. (required)
+        :param format str : The destination format. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param fonts_location str : Folder in filestorage with custom fonts.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.render_page_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.render_page_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.render_page_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.render_page_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def render_page_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Renders a page to the specified format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request RenderPageOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method render_page_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def render_paragraph(self, request, **kwargs):  # noqa: E501
         """Renders a paragraph to the specified format.  # noqa: E501
@@ -10102,23 +17799,23 @@ class WordsApi(object):
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.render_paragraph_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.render_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.render_paragraph_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.render_paragraph_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.render_paragraph_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.render_paragraph_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def render_paragraph_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -10136,7 +17833,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -10152,7 +17848,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -10162,10 +17858,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def render_paragraph_online(self, request, **kwargs):  # noqa: E501
+        """Renders a paragraph to the specified format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param format str : The destination format. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param fonts_location str : Folder in filestorage with custom fonts.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.render_paragraph_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.render_paragraph_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.render_paragraph_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.render_paragraph_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def render_paragraph_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Renders a paragraph to the specified format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request RenderParagraphOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method render_paragraph_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def render_table(self, request, **kwargs):  # noqa: E501
         """Renders a table to the specified format.  # noqa: E501
@@ -10182,23 +17956,23 @@ class WordsApi(object):
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.render_table_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.render_table_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.render_table_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.render_table_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.render_table_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.render_table_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def render_table_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -10216,7 +17990,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -10232,7 +18005,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -10242,10 +18015,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def render_table_online(self, request, **kwargs):  # noqa: E501
+        """Renders a table to the specified format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param format str : The destination format. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param fonts_location str : Folder in filestorage with custom fonts.
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.render_table_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.render_table_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.render_table_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.render_table_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def render_table_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Renders a table to the specified format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request RenderTableOnlineRequest object with parameters
+        :return: file
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method render_table_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def replace_text(self, request, **kwargs):  # noqa: E501
         """Replaces text in the document.  # noqa: E501
@@ -10255,7 +18106,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param replace_text ReplaceTextParameters : The text replacement parameters. (required)
+        :param replace_text ReplaceTextParameters : The replace operation settings. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -10267,18 +18118,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.replace_text_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.replace_text_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.replace_text_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.replace_text_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.replace_text_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.replace_text_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def replace_text_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -10296,7 +18146,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -10315,7 +18164,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -10325,10 +18174,87 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def replace_text_online(self, request, **kwargs):  # noqa: E501
+        """Replaces text in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param replace_text ReplaceTextParameters : The replace operation settings. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: ReplaceTextOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.replace_text_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.replace_text_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.replace_text_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.replace_text_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def replace_text_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Replaces text in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request ReplaceTextOnlineRequest object with parameters
+        :return: ReplaceTextOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method replace_text_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def replace_with_text(self, request, **kwargs):  # noqa: E501
         """Replaces a range with text in the document.  # noqa: E501
@@ -10339,7 +18265,7 @@ class WordsApi(object):
         :param is_async bool
         :param name str : The filename of the input document. (required)
         :param range_start_identifier str : The range start identifier. (required)
-        :param range_text ReplaceRange : The text replacement properties. (required)
+        :param range_text ReplaceRange : Model with text for replacement. (required)
         :param range_end_identifier str : The range end identifier.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -10350,18 +18276,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.replace_with_text_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.replace_with_text_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.replace_with_text_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.replace_with_text_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.replace_with_text_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.replace_with_text_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def replace_with_text_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -10379,7 +18304,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -10398,7 +18322,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -10408,10 +18332,87 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def replace_with_text_online(self, request, **kwargs):  # noqa: E501
+        """Replaces a range with text in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param range_start_identifier str : The range start identifier. (required)
+        :param range_text ReplaceRange : Model with text for replacement. (required)
+        :param range_end_identifier str : The range end identifier.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :return: ReplaceWithTextOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.replace_with_text_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.replace_with_text_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.replace_with_text_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.replace_with_text_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def replace_with_text_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Replaces a range with text in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request ReplaceWithTextOnlineRequest object with parameters
+        :return: ReplaceWithTextOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method replace_with_text_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def reset_cache(self, request, **kwargs):  # noqa: E501
         """Clears the font cache.  # noqa: E501
@@ -10424,18 +18425,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.reset_cache_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.reset_cache_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.reset_cache_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.reset_cache_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.reset_cache_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.reset_cache_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def reset_cache_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -10453,7 +18453,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -10469,7 +18468,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -10479,10 +18478,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def save_as(self, request, **kwargs):  # noqa: E501
         """Converts a document in cloud storage to the specified format.  # noqa: E501
@@ -10492,7 +18490,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param save_options_data SaveOptionsData : The save options. (required)
+        :param save_options_data SaveOptionsData : Save options. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -10502,18 +18500,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.save_as_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.save_as_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.save_as_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.save_as_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.save_as_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.save_as_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def save_as_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -10531,7 +18528,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -10550,7 +18546,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -10560,10 +18556,85 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def save_as_online(self, request, **kwargs):  # noqa: E501
+        """Converts a document in cloud storage to the specified format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param save_options_data SaveOptionsData : Save options. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param fonts_location str : Folder in filestorage with custom fonts.
+        :return: SaveAsOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.save_as_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.save_as_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.save_as_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.save_as_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def save_as_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Converts a document in cloud storage to the specified format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request SaveAsOnlineRequest object with parameters
+        :return: SaveAsOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method save_as_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def save_as_range(self, request, **kwargs):  # noqa: E501
         """Saves a range as a new document.  # noqa: E501
@@ -10574,7 +18645,7 @@ class WordsApi(object):
         :param is_async bool
         :param name str : The filename of the input document. (required)
         :param range_start_identifier str : The range start identifier. (required)
-        :param document_parameters RangeDocument : The parameters of a new document. (required)
+        :param document_parameters RangeDocument : Parameters of a new document. (required)
         :param range_end_identifier str : The range end identifier.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -10584,18 +18655,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.save_as_range_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.save_as_range_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.save_as_range_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.save_as_range_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.save_as_range_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.save_as_range_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def save_as_range_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -10613,7 +18683,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -10632,7 +18701,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -10642,10 +18711,86 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def save_as_range_online(self, request, **kwargs):  # noqa: E501
+        """Saves a range as a new document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param range_start_identifier str : The range start identifier. (required)
+        :param document_parameters RangeDocument : Parameters of a new document. (required)
+        :param range_end_identifier str : The range end identifier.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: SaveAsRangeOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.save_as_range_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.save_as_range_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.save_as_range_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.save_as_range_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def save_as_range_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Saves a range as a new document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request SaveAsRangeOnlineRequest object with parameters
+        :return: SaveAsRangeOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method save_as_range_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def save_as_tiff(self, request, **kwargs):  # noqa: E501
         """Converts a document in cloud storage to TIFF format using detailed conversion settings.  # noqa: E501
@@ -10655,7 +18800,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param save_options TiffSaveOptionsData : The save options to TIFF format. (required)
+        :param save_options TiffSaveOptionsData : Tiff save options. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -10682,18 +18827,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.save_as_tiff_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.save_as_tiff_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.save_as_tiff_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.save_as_tiff_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.save_as_tiff_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.save_as_tiff_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def save_as_tiff_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -10711,7 +18855,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -10730,7 +18873,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -10740,10 +18883,102 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def save_as_tiff_online(self, request, **kwargs):  # noqa: E501
+        """Converts a document in cloud storage to TIFF format using detailed conversion settings.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param save_options TiffSaveOptionsData : Tiff save options. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param use_anti_aliasing bool : The flag indicating whether to use antialiasing.
+        :param use_high_quality_rendering bool : The flag indicating whether to use high quality.
+        :param image_brightness float : The level of brightness for the generated images.
+        :param image_color_mode str : The color mode for the generated images.
+        :param image_contrast float : The contrast for the generated images.
+        :param numeral_format str : The images numeral format.
+        :param page_count int : The number of pages to render.
+        :param page_index int : The index of the page to start rendering.
+        :param paper_color str : The background image color.
+        :param pixel_format str : The pixel format of the generated images.
+        :param resolution float : The resolution of the generated images.
+        :param scale float : The zoom factor for the generated images.
+        :param tiff_compression str : The compression tipe.
+        :param dml_rendering_mode str : The optional dml rendering mode. The default value is Fallback.
+        :param dml_effects_rendering_mode str : The optional dml effects rendering mode. The default value is Simplified.
+        :param tiff_binarization_method str : The optional TIFF binarization method. Possible values are: FloydSteinbergDithering, Threshold.
+        :param zip_output bool : The flag indicating whether to ZIP the output.
+        :param fonts_location str : Folder in filestorage with custom fonts.
+        :return: SaveAsTiffOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.save_as_tiff_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.save_as_tiff_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.save_as_tiff_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.save_as_tiff_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def save_as_tiff_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Converts a document in cloud storage to TIFF format using detailed conversion settings.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request SaveAsTiffOnlineRequest object with parameters
+        :return: SaveAsTiffOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method save_as_tiff_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def search(self, request, **kwargs):  # noqa: E501
         """Searches text, specified by the regular expression, in the document.  # noqa: E501
@@ -10762,18 +18997,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.search_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.search_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.search_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.search_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.search_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.search_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def search_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -10791,7 +19025,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -10807,7 +19040,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -10817,10 +19050,84 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def search_online(self, request, **kwargs):  # noqa: E501
+        """Searches text, specified by the regular expression, in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param pattern str : The regular expression used to find matches. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :return: SearchResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.search_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.search_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.search_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.search_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def search_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Searches text, specified by the regular expression, in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request SearchOnlineRequest object with parameters
+        :return: SearchResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method search_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def split_document(self, request, **kwargs):  # noqa: E501
         """Splits a document into parts and saves them in the specified format.  # noqa: E501
@@ -10844,18 +19151,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.split_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.split_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.split_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.split_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.split_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.split_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def split_document_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -10873,7 +19179,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -10889,7 +19194,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -10899,10 +19204,89 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def split_document_online(self, request, **kwargs):  # noqa: E501
+        """Splits a document into parts and saves them in the specified format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param format str : The format to split. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param _from int : The start page.
+        :param to int : The end page.
+        :param zip_output bool : The flag indicating whether to ZIP the output.
+        :param fonts_location str : Folder in filestorage with custom fonts.
+        :return: SplitDocumentOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.split_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.split_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.split_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.split_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def split_document_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Splits a document into parts and saves them in the specified format.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request SplitDocumentOnlineRequest object with parameters
+        :return: SplitDocumentOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method split_document_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def unprotect_document(self, request, **kwargs):  # noqa: E501
         """Removes protection from the document.  # noqa: E501
@@ -10912,7 +19296,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param protection_request ProtectionRequest : The protection settings. (required)
+        :param protection_request ProtectionRequest : Protection request. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -10922,18 +19306,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.unprotect_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.unprotect_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.unprotect_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.unprotect_document_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.unprotect_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.unprotect_document_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def unprotect_document_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -10951,7 +19334,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -10970,7 +19352,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -10980,10 +19362,85 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def unprotect_document_online(self, request, **kwargs):  # noqa: E501
+        """Removes protection from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param protection_request ProtectionRequest : Protection request. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :return: UnprotectDocumentOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.unprotect_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.unprotect_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.unprotect_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.unprotect_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def unprotect_document_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Removes protection from the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UnprotectDocumentOnlineRequest object with parameters
+        :return: UnprotectDocumentOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method unprotect_document_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def update_bookmark(self, request, **kwargs):  # noqa: E501
         """Updates a bookmark in the document.  # noqa: E501
@@ -10993,8 +19450,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param bookmark_data BookmarkData : The properties of the bookmark. (required)
         :param bookmark_name str : The name of the bookmark. (required)
+        :param bookmark_data BookmarkData : Bookmark data. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -11006,18 +19463,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.update_bookmark_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_bookmark_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_bookmark_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_bookmark_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_bookmark_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_bookmark_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def update_bookmark_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -11035,7 +19491,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -11054,7 +19509,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -11064,10 +19519,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def update_bookmark_online(self, request, **kwargs):  # noqa: E501
+        """Updates a bookmark in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param bookmark_name str : The name of the bookmark. (required)
+        :param bookmark_data BookmarkData : Bookmark data. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: UpdateBookmarkOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.update_bookmark_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_bookmark_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.update_bookmark_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_bookmark_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_bookmark_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Updates a bookmark in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateBookmarkOnlineRequest object with parameters
+        :return: UpdateBookmarkOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_bookmark_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def update_border(self, request, **kwargs):  # noqa: E501
         """The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
@@ -11077,8 +19610,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param border_properties Border : The new border properties to update. (required)
         :param border_type str : Border type. (required)
+        :param border_properties Border : Border properties. (required)
         :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -11091,18 +19624,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.update_border_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_border_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_border_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_border_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_border_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_border_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def update_border_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -11120,7 +19652,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -11139,7 +19670,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -11149,10 +19680,89 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def update_border_online(self, request, **kwargs):  # noqa: E501
+        """Updates a border in the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param border_properties Border : Border properties. (required)
+        :param border_type str : Border type. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: UpdateBorderOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.update_border_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_border_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.update_border_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_border_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_border_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Updates a border in the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateBorderOnlineRequest object with parameters
+        :return: UpdateBorderOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_border_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def update_comment(self, request, **kwargs):  # noqa: E501
         """Updates a comment in the document.  # noqa: E501
@@ -11163,7 +19773,7 @@ class WordsApi(object):
         :param is_async bool
         :param name str : The filename of the input document. (required)
         :param comment_index int : The index of the comment. (required)
-        :param comment CommentUpdate : The properties of the comment. (required)
+        :param comment CommentUpdate : Comment data. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -11175,18 +19785,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.update_comment_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_comment_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_comment_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_comment_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_comment_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_comment_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def update_comment_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -11204,7 +19813,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -11223,7 +19831,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -11233,10 +19841,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def update_comment_online(self, request, **kwargs):  # noqa: E501
+        """Updates a comment in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param comment_index int : The index of the comment. (required)
+        :param comment CommentUpdate : Comment data. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: UpdateCommentOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.update_comment_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_comment_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.update_comment_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_comment_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_comment_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Updates a comment in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateCommentOnlineRequest object with parameters
+        :return: UpdateCommentOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_comment_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def update_drawing_object(self, request, **kwargs):  # noqa: E501
         """Updates a DrawingObject in the document node.  # noqa: E501
@@ -11261,18 +19947,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.update_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_drawing_object_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def update_drawing_object_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -11290,7 +19975,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -11309,7 +19993,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -11319,10 +20003,90 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def update_drawing_object_online(self, request, **kwargs):  # noqa: E501
+        """Updates a DrawingObject in the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param drawing_object DrawingObjectUpdate : Drawing object parameters. (required)
+        :param image_file file : File with image. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: UpdateDrawingObjectOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.update_drawing_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_drawing_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.update_drawing_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_drawing_object_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_drawing_object_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Updates a DrawingObject in the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateDrawingObjectOnlineRequest object with parameters
+        :return: UpdateDrawingObjectOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_drawing_object_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def update_field(self, request, **kwargs):  # noqa: E501
         """Updates a field in the document node.  # noqa: E501
@@ -11332,8 +20096,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param field FieldUpdate : The properties of the field. (required)
         :param index int : Object index. (required)
+        :param field FieldUpdate : Field data. (required)
         :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -11346,18 +20110,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.update_field_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_field_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_field_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_field_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_field_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_field_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def update_field_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -11375,7 +20138,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -11394,7 +20156,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -11404,10 +20166,89 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def update_field_online(self, request, **kwargs):  # noqa: E501
+        """Updates a field in the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param field FieldUpdate : Field data. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: UpdateFieldOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.update_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.update_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_field_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Updates a field in the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateFieldOnlineRequest object with parameters
+        :return: UpdateFieldOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_field_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def update_fields(self, request, **kwargs):  # noqa: E501
         """Reevaluates field values in the document.  # noqa: E501
@@ -11426,18 +20267,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.update_fields_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_fields_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_fields_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_fields_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_fields_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_fields_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def update_fields_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -11455,7 +20295,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -11471,7 +20310,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -11481,10 +20320,84 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def update_fields_online(self, request, **kwargs):  # noqa: E501
+        """Reevaluates field values in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :return: UpdateFieldsOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.update_fields_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_fields_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.update_fields_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_fields_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_fields_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Reevaluates field values in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateFieldsOnlineRequest object with parameters
+        :return: UpdateFieldsOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_fields_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def update_footnote(self, request, **kwargs):  # noqa: E501
         """Updates a footnote in the document node.  # noqa: E501
@@ -11494,8 +20407,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param footnote_dto FootnoteUpdate : The properties of the footnote. (required)
         :param index int : Object index. (required)
+        :param footnote_dto FootnoteUpdate : Footnote data. (required)
         :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -11508,18 +20421,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.update_footnote_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_footnote_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_footnote_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_footnote_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_footnote_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_footnote_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def update_footnote_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -11537,7 +20449,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -11556,7 +20467,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -11566,10 +20477,89 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def update_footnote_online(self, request, **kwargs):  # noqa: E501
+        """Updates a footnote in the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param footnote_dto FootnoteUpdate : Footnote data. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: UpdateFootnoteOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.update_footnote_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_footnote_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.update_footnote_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_footnote_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_footnote_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Updates a footnote in the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateFootnoteOnlineRequest object with parameters
+        :return: UpdateFootnoteOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_footnote_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def update_form_field(self, request, **kwargs):  # noqa: E501
         """Updates a form field in the document node.  # noqa: E501
@@ -11579,8 +20569,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param form_field FormField : The new form field properties. (required)
         :param index int : Object index. (required)
+        :param form_field FormField : From field data. (required)
         :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -11593,18 +20583,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.update_form_field_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_form_field_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_form_field_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_form_field_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_form_field_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_form_field_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def update_form_field_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -11622,7 +20611,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -11641,7 +20629,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -11651,10 +20639,89 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def update_form_field_online(self, request, **kwargs):  # noqa: E501
+        """Updates a form field in the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param form_field FormField : From field data. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: UpdateFormFieldOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.update_form_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_form_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.update_form_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_form_field_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_form_field_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Updates a form field in the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateFormFieldOnlineRequest object with parameters
+        :return: UpdateFormFieldOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_form_field_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def update_list(self, request, **kwargs):  # noqa: E501
         """Updates a list in the document.  # noqa: E501
@@ -11664,8 +20731,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param list_update ListUpdate : The properties of the list. (required)
         :param list_id int : The list Id. (required)
+        :param list_update ListUpdate : List object. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -11677,18 +20744,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.update_list_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_list_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_list_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_list_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_list_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_list_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def update_list_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -11706,7 +20772,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -11725,7 +20790,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -11735,10 +20800,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def update_list_level(self, request, **kwargs):  # noqa: E501
         """Updates the level of a List element in the document.  # noqa: E501
@@ -11748,9 +20812,9 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param list_update ListLevelUpdate : The properties of the List element. (required)
         :param list_id int : The list Id. (required)
         :param list_level int : The list level. (required)
+        :param list_update ListLevelUpdate : List object. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -11762,18 +20826,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.update_list_level_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_list_level_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_list_level_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_list_level_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_list_level_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_list_level_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def update_list_level_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -11791,7 +20854,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -11810,7 +20872,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -11820,10 +20882,168 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def update_list_level_online(self, request, **kwargs):  # noqa: E501
+        """Updates the level of a List element in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param list_id int : The list Id. (required)
+        :param list_update ListLevelUpdate : List object. (required)
+        :param list_level int : The list level. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: UpdateListLevelOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.update_list_level_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_list_level_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.update_list_level_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_list_level_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_list_level_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Updates the level of a List element in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateListLevelOnlineRequest object with parameters
+        :return: UpdateListLevelOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_list_level_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
+
+    def update_list_online(self, request, **kwargs):  # noqa: E501
+        """Updates a list in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param list_id int : The list Id. (required)
+        :param list_update ListUpdate : List object. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: UpdateListOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.update_list_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_list_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.update_list_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_list_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_list_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Updates a list in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateListOnlineRequest object with parameters
+        :return: UpdateListOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_list_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def update_paragraph_format(self, request, **kwargs):  # noqa: E501
         """Updates the formatting properties of a paragraph in the document node.  # noqa: E501
@@ -11833,8 +21053,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param dto ParagraphFormatUpdate : The formatting properties of a paragraph. (required)
         :param index int : Object index. (required)
+        :param paragraph_format_dto ParagraphFormatUpdate : Dto for paragraph format update. (required)
         :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -11847,18 +21067,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.update_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_paragraph_format_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def update_paragraph_format_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -11876,7 +21095,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -11895,7 +21113,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -11905,10 +21123,89 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def update_paragraph_format_online(self, request, **kwargs):  # noqa: E501
+        """Updates the formatting properties of a paragraph in the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param paragraph_format_dto ParagraphFormatUpdate : Dto for paragraph format update. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: UpdateParagraphFormatOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.update_paragraph_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_paragraph_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.update_paragraph_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_paragraph_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_paragraph_format_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Updates the formatting properties of a paragraph in the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateParagraphFormatOnlineRequest object with parameters
+        :return: UpdateParagraphFormatOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_paragraph_format_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def update_paragraph_list_format(self, request, **kwargs):  # noqa: E501
         """Updates the formatting properties of a paragraph list in the document node.  # noqa: E501
@@ -11918,8 +21215,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param dto ListFormatUpdate : The formatting properties of a paragraph list. (required)
         :param index int : Object index. (required)
+        :param list_format_dto ListFormatUpdate : ListFormatUpdate dto. (required)
         :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -11932,18 +21229,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.update_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_paragraph_list_format_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def update_paragraph_list_format_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -11961,7 +21257,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -11980,7 +21275,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -11990,10 +21285,89 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def update_paragraph_list_format_online(self, request, **kwargs):  # noqa: E501
+        """Updates the formatting properties of a paragraph list in the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param list_format_dto ListFormatUpdate : ListFormatUpdate dto. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: UpdateParagraphListFormatOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.update_paragraph_list_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_paragraph_list_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.update_paragraph_list_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_paragraph_list_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_paragraph_list_format_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Updates the formatting properties of a paragraph list in the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateParagraphListFormatOnlineRequest object with parameters
+        :return: UpdateParagraphListFormatOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_paragraph_list_format_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def update_run(self, request, **kwargs):  # noqa: E501
         """Updates a Run object in the paragraph.  # noqa: E501
@@ -12003,9 +21377,9 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param run RunUpdate : The properties of the Run object. (required)
         :param paragraph_path str : The path to the paragraph in the document tree. (required)
         :param index int : Object index. (required)
+        :param run RunUpdate : Run data. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -12017,18 +21391,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.update_run_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_run_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_run_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_run_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_run_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_run_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def update_run_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -12046,7 +21419,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -12065,7 +21437,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -12075,10 +21447,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def update_run_font(self, request, **kwargs):  # noqa: E501
         """Updates the font properties of a Run object in the paragraph.  # noqa: E501
@@ -12088,9 +21459,9 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param font_dto Font : The font properties of a Run object. (required)
         :param paragraph_path str : The path to the paragraph in the document tree. (required)
         :param index int : Object index. (required)
+        :param font_dto Font : Font dto object. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -12102,18 +21473,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.update_run_font_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_run_font_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_run_font_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_run_font_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_run_font_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_run_font_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def update_run_font_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -12131,7 +21501,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -12150,7 +21519,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -12160,10 +21529,169 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def update_run_font_online(self, request, **kwargs):  # noqa: E501
+        """Updates the font properties of a Run object in the paragraph.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param paragraph_path str : The path to the paragraph in the document tree. (required)
+        :param font_dto Font : Font dto object. (required)
+        :param index int : Object index. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: UpdateRunFontOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.update_run_font_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_run_font_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.update_run_font_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_run_font_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_run_font_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Updates the font properties of a Run object in the paragraph.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateRunFontOnlineRequest object with parameters
+        :return: UpdateRunFontOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_run_font_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
+
+    def update_run_online(self, request, **kwargs):  # noqa: E501
+        """Updates a Run object in the paragraph.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param paragraph_path str : The path to the paragraph in the document tree. (required)
+        :param run RunUpdate : Run data. (required)
+        :param index int : Object index. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: UpdateRunOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.update_run_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_run_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.update_run_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_run_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_run_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Updates a Run object in the paragraph.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateRunOnlineRequest object with parameters
+        :return: UpdateRunOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_run_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def update_section_page_setup(self, request, **kwargs):  # noqa: E501
         """Updates the page setup of a section in the document.  # noqa: E501
@@ -12174,7 +21702,7 @@ class WordsApi(object):
         :param is_async bool
         :param name str : The filename of the input document. (required)
         :param section_index int : The index of the section. (required)
-        :param page_setup PageSetup : The properties of the page setup. (required)
+        :param page_setup PageSetup : Page setup properties dto. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -12186,18 +21714,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.update_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_section_page_setup_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def update_section_page_setup_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -12215,7 +21742,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -12234,7 +21760,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -12244,10 +21770,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def update_section_page_setup_online(self, request, **kwargs):  # noqa: E501
+        """Updates the page setup of a section in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param section_index int : The index of the section. (required)
+        :param page_setup PageSetup : Page setup properties dto. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: UpdateSectionPageSetupOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.update_section_page_setup_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_section_page_setup_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.update_section_page_setup_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_section_page_setup_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_section_page_setup_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Updates the page setup of a section in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateSectionPageSetupOnlineRequest object with parameters
+        :return: UpdateSectionPageSetupOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_section_page_setup_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def update_style(self, request, **kwargs):  # noqa: E501
         """Updates a style in the document.  # noqa: E501
@@ -12257,8 +21861,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param style_update StyleUpdate : The properties of the style. (required)
         :param style_name str : The name of the style. (required)
+        :param style_update StyleUpdate : Style properties to update. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -12270,18 +21874,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.update_style_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_style_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_style_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_style_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_style_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_style_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def update_style_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -12299,7 +21902,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -12318,7 +21920,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -12328,10 +21930,88 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def update_style_online(self, request, **kwargs):  # noqa: E501
+        """Updates a style in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param style_name str : The name of the style. (required)
+        :param style_update StyleUpdate : Style properties to update. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: UpdateStyleOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.update_style_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_style_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.update_style_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_style_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_style_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Updates a style in the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateStyleOnlineRequest object with parameters
+        :return: UpdateStyleOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_style_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def update_table_cell_format(self, request, **kwargs):  # noqa: E501
         """Updates the formatting properties of a cell in the table row.  # noqa: E501
@@ -12341,9 +22021,9 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param format TableCellFormat : The cell format. (required)
         :param table_row_path str : The path to the table row in the document tree. (required)
         :param index int : Object index. (required)
+        :param format TableCellFormat : The properties. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -12355,18 +22035,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.update_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_table_cell_format_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def update_table_cell_format_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -12384,7 +22063,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -12403,7 +22081,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -12413,10 +22091,89 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def update_table_cell_format_online(self, request, **kwargs):  # noqa: E501
+        """Updates the formatting properties of a cell in the table row.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param table_row_path str : The path to the table row in the document tree. (required)
+        :param format TableCellFormat : The properties. (required)
+        :param index int : Object index. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: UpdateTableCellFormatOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.update_table_cell_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_table_cell_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.update_table_cell_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_table_cell_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_table_cell_format_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Updates the formatting properties of a cell in the table row.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateTableCellFormatOnlineRequest object with parameters
+        :return: UpdateTableCellFormatOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_table_cell_format_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def update_table_properties(self, request, **kwargs):  # noqa: E501
         """Updates properties of a table in the document node.  # noqa: E501
@@ -12426,8 +22183,8 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param properties TableProperties : The properties of the table. (required)
         :param index int : Object index. (required)
+        :param properties TableProperties : The properties. (required)
         :param node_path str : The path to the node in the document tree.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
@@ -12440,18 +22197,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.update_table_properties_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_table_properties_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_table_properties_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_table_properties_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_table_properties_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_table_properties_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def update_table_properties_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -12469,7 +22225,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -12488,7 +22243,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -12498,10 +22253,89 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def update_table_properties_online(self, request, **kwargs):  # noqa: E501
+        """Updates properties of a table in the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param properties TableProperties : The properties. (required)
+        :param index int : Object index. (required)
+        :param node_path str : The path to the node in the document tree.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: UpdateTablePropertiesOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.update_table_properties_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_table_properties_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.update_table_properties_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_table_properties_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_table_properties_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Updates properties of a table in the document node.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateTablePropertiesOnlineRequest object with parameters
+        :return: UpdateTablePropertiesOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_table_properties_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def update_table_row_format(self, request, **kwargs):  # noqa: E501
         """Updates the formatting properties of a table row.  # noqa: E501
@@ -12511,9 +22345,9 @@ class WordsApi(object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param format TableRowFormat : The row format. (required)
         :param table_path str : The path to the table in the document tree. (required)
         :param index int : Object index. (required)
+        :param format TableRowFormat : Table row format. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -12525,18 +22359,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.update_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.update_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.update_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_table_row_format_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def update_table_row_format_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -12554,7 +22387,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -12573,7 +22405,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -12583,10 +22415,89 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
+
+    def update_table_row_format_online(self, request, **kwargs):  # noqa: E501
+        """Updates the formatting properties of a table row.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param table_path str : The path to the table in the document tree. (required)
+        :param format TableRowFormat : Table row format. (required)
+        :param index int : Object index. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password for opening an encrypted document.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
+        :param revision_date_time str : The date and time to use for revisions.
+        :return: UpdateTableRowFormatOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.update_table_row_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_table_row_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.update_table_row_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.update_table_row_format_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def update_table_row_format_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Updates the formatting properties of a table row.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request UpdateTableRowFormatOnlineRequest object with parameters
+        :return: UpdateTableRowFormatOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = ''
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_table_row_format_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
 
     def upload_file(self, request, **kwargs):  # noqa: E501
         """Upload file.  # noqa: E501
@@ -12602,18 +22513,17 @@ class WordsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
         try:
             if kwargs.get('is_async'):
                 return self.upload_file_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.upload_file_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.upload_file_with_http_info(request, **kwargs)  # noqa: E501
             return data
         except ApiException as e:
             if e.status == 401:
                 self.api_client.request_token()
                 if kwargs.get('is_async'):
                     return self.upload_file_with_http_info(request, **kwargs)  # noqa: E501
-            (data) = self.upload_file_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.upload_file_with_http_info(request, **kwargs)  # noqa: E501
             return data
         
     def upload_file_with_http_info(self, request, **kwargs):  # noqa: E501
@@ -12631,7 +22541,6 @@ class WordsApi(object):
 
         params = locals()
         params['is_async'] = ''
-        params['_return_http_data_only'] = False
         params['_preload_content'] = True
         params['_request_timeout'] = ''
         for key, val in six.iteritems(params['kwargs']):
@@ -12650,7 +22559,7 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
-        return self.api_client.call_api(
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
             http_params['query_params'],
@@ -12660,10 +22569,9 @@ class WordsApi(object):
             response_type=http_params['response_type'],  # noqa: E501
             auth_settings=auth_settings,
             is_async=params.get('is_async'),
-            _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=http_params['collection_formats'])
+            collection_formats=http_params['collection_formats']))
 
     def batch(self, *requests):  # noqa: E501
         if requests is None:
@@ -12683,6 +22591,6 @@ class WordsApi(object):
             post_params=post_params,
             header_params=header_params,
             response_type='multipart',  # noqa: E501
-            auth_settings=['JWT'],
-            _return_http_data_only=True)
-        return self.api_client.deserialize_multipart(response, requests)
+            auth_settings=['JWT'])
+        data = self.api_client.deserialize(response.data, response.getheaders(), 'multipart')
+        return self.api_client.deserialize_multipart(data, requests)

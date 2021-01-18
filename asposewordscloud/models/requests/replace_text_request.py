@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="replace_text_request.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,15 +23,19 @@
 #  SOFTWARE.
 # </summary>
 # -----------------------------------------------------------------------------------
+import json
 
 from six.moves.urllib.parse import quote
+from asposewordscloud import *
+from asposewordscloud.models.requests import *
+from asposewordscloud.models.responses import *
 
-class ReplaceTextRequest(object):
+class ReplaceTextRequest(BaseRequestObject):
     """
     Request model for replace_text operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param replace_text The text replacement parameters.
+    :param replace_text The replace operation settings.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -122,3 +126,6 @@ class ReplaceTextRequest(object):
 
     def get_response_type(self):
         return 'ReplaceTextResponse'  # noqa: E501
+
+    def deserialize_response(self, api_client, response):
+        return self.deserialize(response, ReplaceTextResponse, api_client)

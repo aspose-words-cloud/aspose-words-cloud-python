@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_revisions.py">
-#   Copyright (c) 2020 Aspose.Words for Cloud
+#   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -50,6 +50,18 @@ class TestRevisions(BaseTestContext):
         self.assertIsNotNone(result.result.dest, 'Validate AcceptAllRevisions response')
 
     #
+    # Test for accepting revisions in document online.
+    #
+    def test_accept_all_revisions_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.AcceptAllRevisionsOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'))
+
+        result = self.words_api.accept_all_revisions_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for rejecting revisions in document.
     #
     def test_reject_all_revisions(self):
@@ -65,3 +77,15 @@ class TestRevisions(BaseTestContext):
         self.assertIsNotNone(result, 'Error has occurred.')
         self.assertIsNotNone(result.result, 'Validate RejectAllRevisions response')
         self.assertIsNotNone(result.result.dest, 'Validate RejectAllRevisions response')
+
+    #
+    # Test for rejecting revisions in document online.
+    #
+    def test_reject_all_revisions_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.RejectAllRevisionsOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'))
+
+        result = self.words_api.reject_all_revisions_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
