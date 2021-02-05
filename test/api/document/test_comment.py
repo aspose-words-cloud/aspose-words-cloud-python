@@ -202,3 +202,30 @@ class TestComment(BaseTestContext):
         result = self.words_api.delete_comment_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
+    #
+    # A test for DeleteComments.
+    #
+    def test_delete_comments(self):
+        remoteDataFolder = self.remote_test_folder + '/Comments'
+        localFile = 'Common/test_multi_pages.docx'
+        remoteFileName = 'TestDeleteComment.docx'
+
+        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+
+        request = asposewordscloud.models.requests.DeleteCommentsRequest(name=remoteFileName, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
+
+        self.words_api.delete_comments(request)
+
+
+    #
+    # A test for DeleteComments online.
+    #
+    def test_delete_comments_online(self):
+        localFile = 'Common/test_multi_pages.docx'
+
+        request = asposewordscloud.models.requests.DeleteCommentsOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'))
+
+        result = self.words_api.delete_comments_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
