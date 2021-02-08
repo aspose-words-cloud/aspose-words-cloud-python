@@ -34,7 +34,7 @@ class GetFilesListRequest(BaseRequestObject):
     """
     Request model for get_files_list operation.
     Initializes a new instance.
-    :param path Folder path e.g. /Folder1.
+    :param path Folder path e.g. '/folder'.
     :param storage_name Storage name.
     """
 

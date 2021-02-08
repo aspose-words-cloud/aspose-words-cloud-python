@@ -34,7 +34,7 @@ class DeleteFolderRequest(BaseRequestObject):
     """
     Request model for delete_folder operation.
     Initializes a new instance.
-    :param path Folder path e.g. /Folder1s.
+    :param path Folder path e.g. '/folder'.
     :param storage_name Storage name.
     :param recursive Enable to delete folders, subfolders and files.
     """

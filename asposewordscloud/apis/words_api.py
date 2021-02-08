@@ -3137,7 +3137,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param path str : Path of the file including file name and extension e.g. /Folder1/file.ext. (required)
+        :param path str : Path of the file including the file name and extension e.g. /folder1/file.ext. (required)
         :param storage_name str : Storage name.
         :param version_id str : File version ID to delete.
         :return: None
@@ -3208,7 +3208,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param path str : Folder path e.g. /Folder1s. (required)
+        :param path str : Folder path e.g. '/folder'. (required)
         :param storage_name str : Storage name.
         :param recursive bool : Enable to delete folders, subfolders and files.
         :return: None
@@ -8904,7 +8904,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param path str : Folder path e.g. /Folder1. (required)
+        :param path str : Folder path e.g. '/folder'. (required)
         :param storage_name str : Storage name.
         :return: FilesList
                  If the method is called asynchronously,
