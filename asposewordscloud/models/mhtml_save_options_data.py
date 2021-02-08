@@ -43,6 +43,7 @@ class MhtmlSaveOptionsData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'allow_embedding_post_script_fonts': 'bool',
         'dml3_d_effects_rendering_mode': 'str',
         'dml_effects_rendering_mode': 'str',
         'dml_rendering_mode': 'str',
@@ -96,6 +97,7 @@ class MhtmlSaveOptionsData(object):
     }
 
     attribute_map = {
+        'allow_embedding_post_script_fonts': 'AllowEmbeddingPostScriptFonts',
         'dml3_d_effects_rendering_mode': 'Dml3DEffectsRenderingMode',
         'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
         'dml_rendering_mode': 'DmlRenderingMode',
@@ -148,9 +150,10 @@ class MhtmlSaveOptionsData(object):
         'export_cid_urls_for_mhtml_resources': 'ExportCidUrlsForMhtmlResources'
     }
 
-    def __init__(self, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, allow_negative_indent=None, css_class_name_prefix=None, css_style_sheet_file_name=None, css_style_sheet_type=None, document_split_criteria=None, document_split_heading_level=None, encoding=None, export_document_properties=None, export_drop_down_form_field_as_text=None, export_font_resources=None, export_fonts_as_base64=None, export_headers_footers_mode=None, export_images_as_base64=None, export_language_information=None, export_list_labels=None, export_original_url_for_linked_images=None, export_page_margins=None, export_page_setup=None, export_relative_font_size=None, export_roundtrip_information=None, export_text_box_as_svg=None, export_text_input_form_field_as_text=None, export_toc_page_numbers=None, export_xhtml_transitional=None, font_resources_subsetting_size_threshold=None, fonts_folder=None, fonts_folder_alias=None, html_version=None, image_resolution=None, images_folder=None, images_folder_alias=None, metafile_format=None, office_math_output_mode=None, pretty_format=None, resolve_font_names=None, resource_folder=None, resource_folder_alias=None, scale_image_to_shape_size=None, table_width_output_mode=None, export_cid_urls_for_mhtml_resources=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, allow_negative_indent=None, css_class_name_prefix=None, css_style_sheet_file_name=None, css_style_sheet_type=None, document_split_criteria=None, document_split_heading_level=None, encoding=None, export_document_properties=None, export_drop_down_form_field_as_text=None, export_font_resources=None, export_fonts_as_base64=None, export_headers_footers_mode=None, export_images_as_base64=None, export_language_information=None, export_list_labels=None, export_original_url_for_linked_images=None, export_page_margins=None, export_page_setup=None, export_relative_font_size=None, export_roundtrip_information=None, export_text_box_as_svg=None, export_text_input_form_field_as_text=None, export_toc_page_numbers=None, export_xhtml_transitional=None, font_resources_subsetting_size_threshold=None, fonts_folder=None, fonts_folder_alias=None, html_version=None, image_resolution=None, images_folder=None, images_folder_alias=None, metafile_format=None, office_math_output_mode=None, pretty_format=None, resolve_font_names=None, resource_folder=None, resource_folder_alias=None, scale_image_to_shape_size=None, table_width_output_mode=None, export_cid_urls_for_mhtml_resources=None):  # noqa: E501
         """MhtmlSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
+        self._allow_embedding_post_script_fonts = None
         self._dml3_d_effects_rendering_mode = None
         self._dml_effects_rendering_mode = None
         self._dml_rendering_mode = None
@@ -203,6 +206,8 @@ class MhtmlSaveOptionsData(object):
         self._export_cid_urls_for_mhtml_resources = None
         self.discriminator = None
 
+        if allow_embedding_post_script_fonts is not None:
+            self.allow_embedding_post_script_fonts = allow_embedding_post_script_fonts
         if dml3_d_effects_rendering_mode is not None:
             self.dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
         if dml_effects_rendering_mode is not None:
@@ -303,6 +308,28 @@ class MhtmlSaveOptionsData(object):
             self.table_width_output_mode = table_width_output_mode
         if export_cid_urls_for_mhtml_resources is not None:
             self.export_cid_urls_for_mhtml_resources = export_cid_urls_for_mhtml_resources
+
+    @property
+    def allow_embedding_post_script_fonts(self):
+        """Gets the allow_embedding_post_script_fonts of this MhtmlSaveOptionsData.  # noqa: E501
+
+        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..  # noqa: E501
+
+        :return: The allow_embedding_post_script_fonts of this MhtmlSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_embedding_post_script_fonts
+
+    @allow_embedding_post_script_fonts.setter
+    def allow_embedding_post_script_fonts(self, allow_embedding_post_script_fonts):
+        """Sets the allow_embedding_post_script_fonts of this MhtmlSaveOptionsData.
+
+        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..  # noqa: E501
+
+        :param allow_embedding_post_script_fonts: The allow_embedding_post_script_fonts of this MhtmlSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._allow_embedding_post_script_fonts = allow_embedding_post_script_fonts
 
     @property
     def dml3_d_effects_rendering_mode(self):
