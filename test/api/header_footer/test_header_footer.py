@@ -36,13 +36,13 @@ class TestHeaderFooter(BaseTestContext):
     # Test for getting headers and footers.
     #
     def test_get_header_footers(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentElements/HeaderFooters'
-        localFile = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
-        remoteFileName = 'TestGetHeadersFooters.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/HeaderFooters'
+        local_file = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
+        remote_file_name = 'TestGetHeadersFooters.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetHeaderFootersRequest(name = remoteFileName, section_path = '', folder = remoteDataFolder)
+        request = asposewordscloud.models.requests.GetHeaderFootersRequest(name = remote_file_name, section_path = '', folder = remote_data_folder)
 
         result = self.words_api.get_header_footers(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -54,9 +54,9 @@ class TestHeaderFooter(BaseTestContext):
     # Test for getting headers and footers online.
     #
     def test_get_header_footers_online(self):
-        localFile = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
+        local_file = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
 
-        request = asposewordscloud.models.requests.GetHeaderFootersOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), section_path = '')
+        request = asposewordscloud.models.requests.GetHeaderFootersOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), section_path = '')
 
         result = self.words_api.get_header_footers_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -66,13 +66,13 @@ class TestHeaderFooter(BaseTestContext):
     # Test for getting headerfooter.
     #
     def test_get_header_footer(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentElements/HeaderFooters'
-        localFile = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
-        remoteFileName = 'TestGetHeaderFooter.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/HeaderFooters'
+        local_file = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
+        remote_file_name = 'TestGetHeaderFooter.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetHeaderFooterRequest(name = remoteFileName, header_footer_index = 0, folder = remoteDataFolder)
+        request = asposewordscloud.models.requests.GetHeaderFooterRequest(name = remote_file_name, header_footer_index = 0, folder = remote_data_folder)
 
         result = self.words_api.get_header_footer(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -85,9 +85,9 @@ class TestHeaderFooter(BaseTestContext):
     # Test for getting headerfooter online.
     #
     def test_get_header_footer_online(self):
-        localFile = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
+        local_file = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
 
-        request = asposewordscloud.models.requests.GetHeaderFooterOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), header_footer_index = 0)
+        request = asposewordscloud.models.requests.GetHeaderFooterOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), header_footer_index = 0)
 
         result = self.words_api.get_header_footer_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -97,13 +97,13 @@ class TestHeaderFooter(BaseTestContext):
     # Test for getting headerfooter of section.
     #
     def test_get_header_footer_of_section(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentElements/HeaderFooters'
-        localFile = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
-        remoteFileName = 'TestGetHeaderFooterOfSection.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/HeaderFooters'
+        local_file = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
+        remote_file_name = 'TestGetHeaderFooterOfSection.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetHeaderFooterOfSectionRequest(name = remoteFileName, header_footer_index = 0, section_index = 0, folder = remoteDataFolder)
+        request = asposewordscloud.models.requests.GetHeaderFooterOfSectionRequest(name = remote_file_name, header_footer_index = 0, section_index = 0, folder = remote_data_folder)
 
         result = self.words_api.get_header_footer_of_section(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -116,9 +116,9 @@ class TestHeaderFooter(BaseTestContext):
     # Test for getting headerfooter of section online.
     #
     def test_get_header_footer_of_section_online(self):
-        localFile = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
+        local_file = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
 
-        request = asposewordscloud.models.requests.GetHeaderFooterOfSectionOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), header_footer_index = 0, section_index = 0)
+        request = asposewordscloud.models.requests.GetHeaderFooterOfSectionOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), header_footer_index = 0, section_index = 0)
 
         result = self.words_api.get_header_footer_of_section_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -128,13 +128,13 @@ class TestHeaderFooter(BaseTestContext):
     # Test for deleting headerfooter.
     #
     def test_delete_header_footer(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentElements/HeaderFooters'
-        localFile = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
-        remoteFileName = 'TestDeleteHeaderFooter.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/HeaderFooters'
+        local_file = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
+        remote_file_name = 'TestDeleteHeaderFooter.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteHeaderFooterRequest(name = remoteFileName, section_path = '', index = 0, folder = remoteDataFolder)
+        request = asposewordscloud.models.requests.DeleteHeaderFooterRequest(name = remote_file_name, section_path = '', index = 0, folder = remote_data_folder)
 
         self.words_api.delete_header_footer(request)
 
@@ -143,9 +143,9 @@ class TestHeaderFooter(BaseTestContext):
     # Test for deleting headerfooter online.
     #
     def test_delete_header_footer_online(self):
-        localFile = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
+        local_file = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
 
-        request = asposewordscloud.models.requests.DeleteHeaderFooterOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), section_path = '', index = 0)
+        request = asposewordscloud.models.requests.DeleteHeaderFooterOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), section_path = '', index = 0)
 
         result = self.words_api.delete_header_footer_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -155,13 +155,13 @@ class TestHeaderFooter(BaseTestContext):
     # Test for deleting headerfooters.
     #
     def test_delete_headers_footers(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentElements/HeaderFooters'
-        localFile = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
-        remoteFileName = 'TestDeleteHeadersFooters.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/HeaderFooters'
+        local_file = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
+        remote_file_name = 'TestDeleteHeadersFooters.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteHeadersFootersRequest(name = remoteFileName, section_path = '', folder = remoteDataFolder)
+        request = asposewordscloud.models.requests.DeleteHeadersFootersRequest(name = remote_file_name, section_path = '', folder = remote_data_folder)
 
         self.words_api.delete_headers_footers(request)
 
@@ -170,9 +170,9 @@ class TestHeaderFooter(BaseTestContext):
     # Test for deleting headerfooters online.
     #
     def test_delete_headers_footers_online(self):
-        localFile = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
+        local_file = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
 
-        request = asposewordscloud.models.requests.DeleteHeadersFootersOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), section_path = '')
+        request = asposewordscloud.models.requests.DeleteHeadersFootersOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), section_path = '')
 
         result = self.words_api.delete_headers_footers_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -182,13 +182,13 @@ class TestHeaderFooter(BaseTestContext):
     # Test for adding headerfooters.
     #
     def test_insert_header_footer(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentElements/HeaderFooters'
-        localFile = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
-        remoteFileName = 'TestInsertHeaderFooter.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/HeaderFooters'
+        local_file = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
+        remote_file_name = 'TestInsertHeaderFooter.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.InsertHeaderFooterRequest(name = remoteFileName, section_path = '', header_footer_type = 'FooterEven', folder = remoteDataFolder)
+        request = asposewordscloud.models.requests.InsertHeaderFooterRequest(name = remote_file_name, section_path = '', header_footer_type = 'FooterEven', folder = remote_data_folder)
 
         result = self.words_api.insert_header_footer(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -198,9 +198,9 @@ class TestHeaderFooter(BaseTestContext):
     # Test for adding headerfooters online.
     #
     def test_insert_header_footer_online(self):
-        localFile = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
+        local_file = 'DocumentElements/HeaderFooters/HeadersFooters.doc'
 
-        request = asposewordscloud.models.requests.InsertHeaderFooterOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), section_path = '', header_footer_type = 'FooterEven')
+        request = asposewordscloud.models.requests.InsertHeaderFooterOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), section_path = '', header_footer_type = 'FooterEven')
 
         result = self.words_api.insert_header_footer_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

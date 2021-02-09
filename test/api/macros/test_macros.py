@@ -36,13 +36,13 @@ class TestMacros(BaseTestContext):
     # Test for deleting macros.
     #
     def test_delete_macros(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentElements/Macros'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'TestDeleteDocumentMacros.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/Macros'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestDeleteDocumentMacros.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteMacrosRequest(name = remoteFileName, folder = remoteDataFolder)
+        request = asposewordscloud.models.requests.DeleteMacrosRequest(name = remote_file_name, folder = remote_data_folder)
 
         self.words_api.delete_macros(request)
 
@@ -51,9 +51,9 @@ class TestMacros(BaseTestContext):
     # Test for deleting macros online.
     #
     def test_delete_macros_online(self):
-        localFile = 'Common/test_multi_pages.docx'
+        local_file = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.DeleteMacrosOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        request = asposewordscloud.models.requests.DeleteMacrosOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
         result = self.words_api.delete_macros_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

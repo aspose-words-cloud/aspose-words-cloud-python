@@ -36,13 +36,13 @@ class TestSection(BaseTestContext):
     # Test for getting section by index.
     #
     def test_get_section(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentElements/Section'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'TestGetSection.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/Section'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestGetSection.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetSectionRequest(name = remoteFileName, section_index = 0, folder = remoteDataFolder)
+        request = asposewordscloud.models.requests.GetSectionRequest(name = remote_file_name, section_index = 0, folder = remote_data_folder)
 
         result = self.words_api.get_section(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -55,9 +55,9 @@ class TestSection(BaseTestContext):
     # Test for getting section by index online.
     #
     def test_get_section_online(self):
-        localFile = 'Common/test_multi_pages.docx'
+        local_file = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.GetSectionOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), section_index = 0)
+        request = asposewordscloud.models.requests.GetSectionOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), section_index = 0)
 
         result = self.words_api.get_section_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -67,13 +67,13 @@ class TestSection(BaseTestContext):
     # Test for getting sections.
     #
     def test_get_sections(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentElements/Section'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'TestGetSections.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/Section'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestGetSections.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetSectionsRequest(name = remoteFileName, folder = remoteDataFolder)
+        request = asposewordscloud.models.requests.GetSectionsRequest(name = remote_file_name, folder = remote_data_folder)
 
         result = self.words_api.get_sections(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -86,9 +86,9 @@ class TestSection(BaseTestContext):
     # Test for getting sections online.
     #
     def test_get_sections_online(self):
-        localFile = 'Common/test_multi_pages.docx'
+        local_file = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.GetSectionsOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        request = asposewordscloud.models.requests.GetSectionsOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
         result = self.words_api.get_sections_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -98,13 +98,13 @@ class TestSection(BaseTestContext):
     # Test for delete a section.
     #
     def test_delete_section(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentElements/Section'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'TestDeleteSection.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/Section'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestDeleteSection.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteSectionRequest(name = remoteFileName, section_index = 0, folder = remoteDataFolder)
+        request = asposewordscloud.models.requests.DeleteSectionRequest(name = remote_file_name, section_index = 0, folder = remote_data_folder)
 
         self.words_api.delete_section(request)
 
@@ -113,9 +113,9 @@ class TestSection(BaseTestContext):
     # Test for delete a section online.
     #
     def test_delete_section_online(self):
-        localFile = 'Common/test_multi_pages.docx'
+        local_file = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.DeleteSectionOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), section_index = 0)
+        request = asposewordscloud.models.requests.DeleteSectionOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), section_index = 0)
 
         result = self.words_api.delete_section_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

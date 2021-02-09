@@ -36,13 +36,13 @@ class TestSplitDocumentToFormat(BaseTestContext):
     # Test for document splitting.
     #
     def test_split_document(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentActions/SplitDocument'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'TestSplitDocument.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentActions/SplitDocument'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestSplitDocument.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.SplitDocumentRequest(name = remoteFileName, format = 'text', folder = remoteDataFolder, dest_file_name = self.remote_test_out + '/TestSplitDocument.text', _from = 1, to = 2)
+        request = asposewordscloud.models.requests.SplitDocumentRequest(name = remote_file_name, format = 'text', folder = remote_data_folder, dest_file_name = self.remote_test_out + '/TestSplitDocument.text', _from = 1, to = 2)
 
         result = self.words_api.split_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -54,9 +54,9 @@ class TestSplitDocumentToFormat(BaseTestContext):
     # Test for document splitting online.
     #
     def test_split_document_online(self):
-        localFile = 'Common/test_multi_pages.docx'
+        local_file = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.SplitDocumentOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), format = 'text', dest_file_name = self.remote_test_out + '/TestSplitDocument.text', _from = 1, to = 2)
+        request = asposewordscloud.models.requests.SplitDocumentOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), format = 'text', dest_file_name = self.remote_test_out + '/TestSplitDocument.text', _from = 1, to = 2)
 
         result = self.words_api.split_document_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

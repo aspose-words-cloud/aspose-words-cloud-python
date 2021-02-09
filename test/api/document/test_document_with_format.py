@@ -36,13 +36,13 @@ class TestDocumentWithFormat(BaseTestContext):
     # Test for getting document with specified format.
     #
     def test_get_document_with_format(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentActions/DocumentWithFormat'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'TestGetDocumentWithFormat.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentActions/DocumentWithFormat'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestGetDocumentWithFormat.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetDocumentWithFormatRequest(name = remoteFileName, format = 'text', folder = remoteDataFolder)
+        request = asposewordscloud.models.requests.GetDocumentWithFormatRequest(name = remote_file_name, format = 'text', folder = remote_data_folder)
 
         result = self.words_api.get_document_with_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -52,13 +52,13 @@ class TestDocumentWithFormat(BaseTestContext):
     # Test for getting document with specified format.
     #
     def test_get_document_with_format_and_out_path(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentActions/DocumentWithFormat'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'TestGetDocumentWithFormat.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentActions/DocumentWithFormat'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestGetDocumentWithFormat.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetDocumentWithFormatRequest(name = remoteFileName, format = 'text', folder = remoteDataFolder, out_path = self.remote_test_out + '/TestGetDocumentWithFormatAndOutPath.text')
+        request = asposewordscloud.models.requests.GetDocumentWithFormatRequest(name = remote_file_name, format = 'text', folder = remote_data_folder, out_path = self.remote_test_out + '/TestGetDocumentWithFormatAndOutPath.text')
 
         result = self.words_api.get_document_with_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')

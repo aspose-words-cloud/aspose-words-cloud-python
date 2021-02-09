@@ -36,9 +36,9 @@ class TestFolder(BaseTestContext):
     # Test for create folder.
     #
     def test_create_folder(self):
-        remoteDataFolder = self.remote_test_folder + '/Storage'
+        remote_data_folder = self.remote_test_folder + '/Storage'
 
-        request = asposewordscloud.models.requests.CreateFolderRequest(path = remoteDataFolder + '/TestCreateFolder')
+        request = asposewordscloud.models.requests.CreateFolderRequest(path = remote_data_folder + '/TestCreateFolder')
 
         self.words_api.create_folder(request)
 
@@ -47,13 +47,13 @@ class TestFolder(BaseTestContext):
     # Test for delete folder.
     #
     def test_delete_folder(self):
-        remoteDataFolder = self.remote_test_folder + '/Storage'
-        localFile = 'Common/test_multi_pages.docx'
-        testDeleteFolder = remoteDataFolder + '/TestDeleteFolder'
+        remote_data_folder = self.remote_test_folder + '/Storage'
+        local_file = 'Common/test_multi_pages.docx'
+        test_delete_folder = remote_data_folder + '/TestDeleteFolder'
 
-        self.upload_file(testDeleteFolder + '/TestDeleteFolder.docx', open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(test_delete_folder + '/TestDeleteFolder.docx', open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteFolderRequest(path = testDeleteFolder)
+        request = asposewordscloud.models.requests.DeleteFolderRequest(path = test_delete_folder)
 
         self.words_api.delete_folder(request)
 
@@ -62,9 +62,9 @@ class TestFolder(BaseTestContext):
     # Test for get file list of folder.
     #
     def test_get_files_list(self):
-        remoteDataFolder = self.remote_test_folder + '/Storage'
+        remote_data_folder = self.remote_test_folder + '/Storage'
 
-        request = asposewordscloud.models.requests.GetFilesListRequest(path = remoteDataFolder)
+        request = asposewordscloud.models.requests.GetFilesListRequest(path = remote_data_folder)
 
         result = self.words_api.get_files_list(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -74,13 +74,13 @@ class TestFolder(BaseTestContext):
     # Test for copy folder.
     #
     def test_copy_folder(self):
-        remoteDataFolder = self.remote_test_folder + '/Storage'
-        localFile = 'Common/test_multi_pages.docx'
-        folderToCopy = remoteDataFolder + '/TestCopyFolder'
+        remote_data_folder = self.remote_test_folder + '/Storage'
+        local_file = 'Common/test_multi_pages.docx'
+        folder_to_copy = remote_data_folder + '/TestCopyFolder'
 
-        self.upload_file(folderToCopy + 'Src/TestCopyFolderSrc.docx', open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(folder_to_copy + 'Src/TestCopyFolderSrc.docx', open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.CopyFolderRequest(dest_path = folderToCopy + 'Dest', src_path = folderToCopy + 'Src')
+        request = asposewordscloud.models.requests.CopyFolderRequest(dest_path = folder_to_copy + 'Dest', src_path = folder_to_copy + 'Src')
 
         self.words_api.copy_folder(request)
 
@@ -89,12 +89,12 @@ class TestFolder(BaseTestContext):
     # Test for move folder.
     #
     def test_move_folder(self):
-        remoteDataFolder = self.remote_test_folder + '/Storage'
-        localFile = 'Common/test_multi_pages.docx'
+        remote_data_folder = self.remote_test_folder + '/Storage'
+        local_file = 'Common/test_multi_pages.docx'
 
-        self.upload_file(remoteDataFolder + '/TestMoveFolderSrc/TestMoveFolderSrc.docx', open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/TestMoveFolderSrc/TestMoveFolderSrc.docx', open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.MoveFolderRequest(dest_path = self.remote_test_out + '/TestMoveFolderDest_' + self.create_random_guid(), src_path = remoteDataFolder + '/TestMoveFolderSrc')
+        request = asposewordscloud.models.requests.MoveFolderRequest(dest_path = self.remote_test_out + '/TestMoveFolderDest_' + self.create_random_guid(), src_path = remote_data_folder + '/TestMoveFolderSrc')
 
         self.words_api.move_folder(request)
 

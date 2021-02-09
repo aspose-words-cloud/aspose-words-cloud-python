@@ -39,3 +39,7 @@ from test.api.table.test_table import TestTable
 from test.api.table.test_table_border import TestTableBorder
 from test.api.text.test_text import TestText
 from test.api.watermark.test_watermark import TestWatermark
+from test.test_url_encode import TestUrlEncode
+from test.test_readme import TestReadme
+from test.test_batch import TestBatch
+from test.test_examples import TestExamples

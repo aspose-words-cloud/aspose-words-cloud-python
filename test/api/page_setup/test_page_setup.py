@@ -36,13 +36,13 @@ class TestPageSetup(BaseTestContext):
     # Test for getting page settings.
     #
     def test_get_section_page_setup(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentElements/PageSetup'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'TestGetSectionPageSetup.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/PageSetup'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestGetSectionPageSetup.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetSectionPageSetupRequest(name = remoteFileName, section_index = 0, folder = remoteDataFolder)
+        request = asposewordscloud.models.requests.GetSectionPageSetupRequest(name = remote_file_name, section_index = 0, folder = remote_data_folder)
 
         result = self.words_api.get_section_page_setup(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -53,9 +53,9 @@ class TestPageSetup(BaseTestContext):
     # Test for getting page settings online.
     #
     def test_get_section_page_setup_online(self):
-        localFile = 'Common/test_multi_pages.docx'
+        local_file = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.GetSectionPageSetupOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), section_index = 0)
+        request = asposewordscloud.models.requests.GetSectionPageSetupOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), section_index = 0)
 
         result = self.words_api.get_section_page_setup_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -65,14 +65,14 @@ class TestPageSetup(BaseTestContext):
     # Test for updating page settings.
     #
     def test_update_section_page_setup(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentElements/PageSetup'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'TestUpdateSectionPageSetup.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/PageSetup'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestUpdateSectionPageSetup.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        requestPageSetup = asposewordscloud.PageSetup(rtl_gutter = True, left_margin = 10.0, orientation = 'Landscape', paper_size = 'A5')
-        request = asposewordscloud.models.requests.UpdateSectionPageSetupRequest(name = remoteFileName, section_index = 0, page_setup = requestPageSetup, folder = remoteDataFolder)
+        request_page_setup = asposewordscloud.PageSetup(rtl_gutter = True, left_margin = 10.0, orientation = 'Landscape', paper_size = 'A5')
+        request = asposewordscloud.models.requests.UpdateSectionPageSetupRequest(name = remote_file_name, section_index = 0, page_setup = request_page_setup, folder = remote_data_folder)
 
         result = self.words_api.update_section_page_setup(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -85,10 +85,10 @@ class TestPageSetup(BaseTestContext):
     # Test for updating page settings online.
     #
     def test_update_section_page_setup_online(self):
-        localFile = 'Common/test_multi_pages.docx'
+        local_file = 'Common/test_multi_pages.docx'
 
-        requestPageSetup = asposewordscloud.PageSetup(rtl_gutter = True, left_margin = 10, orientation = 'Landscape', paper_size = 'A5')
-        request = asposewordscloud.models.requests.UpdateSectionPageSetupOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), section_index = 0, page_setup = requestPageSetup)
+        request_page_setup = asposewordscloud.PageSetup(rtl_gutter = True, left_margin = 10, orientation = 'Landscape', paper_size = 'A5')
+        request = asposewordscloud.models.requests.UpdateSectionPageSetupOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), section_index = 0, page_setup = request_page_setup)
 
         result = self.words_api.update_section_page_setup_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -98,13 +98,13 @@ class TestPageSetup(BaseTestContext):
     # Test for page rendering.
     #
     def test_get_render_page(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentElements/PageSetup'
-        localTextFile = 'DocumentElements/Text/SampleWordDocument.docx'
-        remoteFileName = 'TestGetRenderPage.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/PageSetup'
+        local_text_file = 'DocumentElements/Text/SampleWordDocument.docx'
+        remote_file_name = 'TestGetRenderPage.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localTextFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_text_file), 'rb'))
 
-        request = asposewordscloud.models.requests.RenderPageRequest(name = remoteFileName, page_index = 1, format = 'bmp', folder = remoteDataFolder)
+        request = asposewordscloud.models.requests.RenderPageRequest(name = remote_file_name, page_index = 1, format = 'bmp', folder = remote_data_folder)
 
         result = self.words_api.render_page(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -114,9 +114,9 @@ class TestPageSetup(BaseTestContext):
     # Test for page rendering.
     #
     def test_get_render_page_online(self):
-        localTextFile = 'DocumentElements/Text/SampleWordDocument.docx'
+        local_text_file = 'DocumentElements/Text/SampleWordDocument.docx'
 
-        request = asposewordscloud.models.requests.RenderPageOnlineRequest(document = open(os.path.join(self.local_test_folder, localTextFile), 'rb'), page_index = 1, format = 'bmp')
+        request = asposewordscloud.models.requests.RenderPageOnlineRequest(document = open(os.path.join(self.local_test_folder, local_text_file), 'rb'), page_index = 1, format = 'bmp')
 
         result = self.words_api.render_page_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
