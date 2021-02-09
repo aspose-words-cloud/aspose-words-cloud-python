@@ -42,7 +42,7 @@ class TestRange(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetRangeTextRequest(name=remoteFileName, range_start_identifier='id0.0.0', range_end_identifier='id0.0.1', folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetRangeTextRequest(name = remoteFileName, range_start_identifier = 'id0.0.0', range_end_identifier = 'id0.0.1', folder = remoteDataFolder)
 
         result = self.words_api.get_range_text(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -54,7 +54,7 @@ class TestRange(BaseTestContext):
     def test_get_range_text_online(self):
         localFile = 'DocumentElements/Range/RangeGet.doc'
 
-        request = asposewordscloud.models.requests.GetRangeTextOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), range_start_identifier='id0.0.0', range_end_identifier='id0.0.1')
+        request = asposewordscloud.models.requests.GetRangeTextOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), range_start_identifier = 'id0.0.0', range_end_identifier = 'id0.0.1')
 
         result = self.words_api.get_range_text_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -70,7 +70,7 @@ class TestRange(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.RemoveRangeRequest(name=remoteFileName, range_start_identifier='id0.0.0', range_end_identifier='id0.0.1', folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.RemoveRangeRequest(name = remoteFileName, range_start_identifier = 'id0.0.0', range_end_identifier = 'id0.0.1', folder = remoteDataFolder)
 
         result = self.words_api.remove_range(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -82,7 +82,7 @@ class TestRange(BaseTestContext):
     def test_remove_range_online(self):
         localFile = 'DocumentElements/Range/RangeGet.doc'
 
-        request = asposewordscloud.models.requests.RemoveRangeOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), range_start_identifier='id0.0.0', range_end_identifier='id0.0.1')
+        request = asposewordscloud.models.requests.RemoveRangeOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), range_start_identifier = 'id0.0.0', range_end_identifier = 'id0.0.1')
 
         result = self.words_api.remove_range_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -98,8 +98,8 @@ class TestRange(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestDocumentParameters = asposewordscloud.RangeDocument(document_name=remoteDataFolder + '/NewDoc.docx')
-        request = asposewordscloud.models.requests.SaveAsRangeRequest(name=remoteFileName, range_start_identifier='id0.0.0', document_parameters=requestDocumentParameters, range_end_identifier='id0.0.1', folder=remoteDataFolder)
+        requestDocumentParameters = asposewordscloud.RangeDocument(document_name = remoteDataFolder + '/NewDoc.docx')
+        request = asposewordscloud.models.requests.SaveAsRangeRequest(name = remoteFileName, range_start_identifier = 'id0.0.0', document_parameters = requestDocumentParameters, range_end_identifier = 'id0.0.1', folder = remoteDataFolder)
 
         result = self.words_api.save_as_range(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -113,8 +113,8 @@ class TestRange(BaseTestContext):
         remoteDataFolder = self.remote_test_folder + '/DocumentElements/Range'
         localFile = 'DocumentElements/Range/RangeGet.doc'
 
-        requestDocumentParameters = asposewordscloud.RangeDocument(document_name=remoteDataFolder + '/NewDoc.docx')
-        request = asposewordscloud.models.requests.SaveAsRangeOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), range_start_identifier='id0.0.0', document_parameters=requestDocumentParameters, range_end_identifier='id0.0.1')
+        requestDocumentParameters = asposewordscloud.RangeDocument(document_name = remoteDataFolder + '/NewDoc.docx')
+        request = asposewordscloud.models.requests.SaveAsRangeOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), range_start_identifier = 'id0.0.0', document_parameters = requestDocumentParameters, range_end_identifier = 'id0.0.1')
 
         result = self.words_api.save_as_range_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -130,8 +130,8 @@ class TestRange(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestRangeText = asposewordscloud.ReplaceRange(text='Replaced header')
-        request = asposewordscloud.models.requests.ReplaceWithTextRequest(name=remoteFileName, range_start_identifier='id0.0.0', range_text=requestRangeText, range_end_identifier='id0.0.1', folder=remoteDataFolder)
+        requestRangeText = asposewordscloud.ReplaceRange(text = 'Replaced header')
+        request = asposewordscloud.models.requests.ReplaceWithTextRequest(name = remoteFileName, range_start_identifier = 'id0.0.0', range_text = requestRangeText, range_end_identifier = 'id0.0.1', folder = remoteDataFolder)
 
         result = self.words_api.replace_with_text(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -144,8 +144,8 @@ class TestRange(BaseTestContext):
     def test_replace_with_text_online(self):
         localFile = 'DocumentElements/Range/RangeGet.doc'
 
-        requestRangeText = asposewordscloud.ReplaceRange(text='Replaced header')
-        request = asposewordscloud.models.requests.ReplaceWithTextOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), range_start_identifier='id0.0.0', range_text=requestRangeText, range_end_identifier='id0.0.1')
+        requestRangeText = asposewordscloud.ReplaceRange(text = 'Replaced header')
+        request = asposewordscloud.models.requests.ReplaceWithTextOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), range_start_identifier = 'id0.0.0', range_text = requestRangeText, range_end_identifier = 'id0.0.1')
 
         result = self.words_api.replace_with_text_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

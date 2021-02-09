@@ -42,7 +42,7 @@ class TestDocumentWithFormat(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetDocumentWithFormatRequest(name=remoteFileName, format='text', folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetDocumentWithFormatRequest(name = remoteFileName, format = 'text', folder = remoteDataFolder)
 
         result = self.words_api.get_document_with_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -58,7 +58,7 @@ class TestDocumentWithFormat(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetDocumentWithFormatRequest(name=remoteFileName, format='text', folder=remoteDataFolder, out_path=self.remote_test_out + '/TestGetDocumentWithFormatAndOutPath.text')
+        request = asposewordscloud.models.requests.GetDocumentWithFormatRequest(name = remoteFileName, format = 'text', folder = remoteDataFolder, out_path = self.remote_test_out + '/TestGetDocumentWithFormatAndOutPath.text')
 
         result = self.words_api.get_document_with_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')

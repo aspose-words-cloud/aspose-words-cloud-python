@@ -42,7 +42,7 @@ class TestTableBorder(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetBordersRequest(name=remoteFileName, node_path='tables/1/rows/0/cells/0', folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetBordersRequest(name = remoteFileName, node_path = 'tables/1/rows/0/cells/0', folder = remoteDataFolder)
 
         result = self.words_api.get_borders(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -58,7 +58,7 @@ class TestTableBorder(BaseTestContext):
     def test_get_borders_online(self):
         localFile = 'DocumentElements/Tables/TablesGet.docx'
 
-        request = asposewordscloud.models.requests.GetBordersOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), node_path='tables/1/rows/0/cells/0')
+        request = asposewordscloud.models.requests.GetBordersOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), node_path = 'tables/1/rows/0/cells/0')
 
         result = self.words_api.get_borders_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -74,7 +74,7 @@ class TestTableBorder(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetBorderRequest(name=remoteFileName, border_type='left', node_path='tables/1/rows/0/cells/0', folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetBorderRequest(name = remoteFileName, border_type = 'left', node_path = 'tables/1/rows/0/cells/0', folder = remoteDataFolder)
 
         result = self.words_api.get_border(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -88,7 +88,7 @@ class TestTableBorder(BaseTestContext):
     def test_get_border_online(self):
         localFile = 'DocumentElements/Tables/TablesGet.docx'
 
-        request = asposewordscloud.models.requests.GetBorderOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), border_type='left', node_path='tables/1/rows/0/cells/0')
+        request = asposewordscloud.models.requests.GetBorderOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), border_type = 'left', node_path = 'tables/1/rows/0/cells/0')
 
         result = self.words_api.get_border_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -104,7 +104,7 @@ class TestTableBorder(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteBordersRequest(name=remoteFileName, node_path='tables/1/rows/0/cells/0', folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.DeleteBordersRequest(name = remoteFileName, node_path = 'tables/1/rows/0/cells/0', folder = remoteDataFolder)
 
         result = self.words_api.delete_borders(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -116,7 +116,7 @@ class TestTableBorder(BaseTestContext):
     def test_delete_borders_online(self):
         localFile = 'DocumentElements/Tables/TablesGet.docx'
 
-        request = asposewordscloud.models.requests.DeleteBordersOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), node_path='tables/1/rows/0/cells/0')
+        request = asposewordscloud.models.requests.DeleteBordersOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), node_path = 'tables/1/rows/0/cells/0')
 
         result = self.words_api.delete_borders_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -132,7 +132,7 @@ class TestTableBorder(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteBorderRequest(name=remoteFileName, border_type='left', node_path='tables/1/rows/0/cells/0', folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.DeleteBorderRequest(name = remoteFileName, border_type = 'left', node_path = 'tables/1/rows/0/cells/0', folder = remoteDataFolder)
 
         result = self.words_api.delete_border(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -144,7 +144,7 @@ class TestTableBorder(BaseTestContext):
     def test_delete_border_online(self):
         localFile = 'DocumentElements/Tables/TablesGet.docx'
 
-        request = asposewordscloud.models.requests.DeleteBorderOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), border_type='left', node_path='tables/1/rows/0/cells/0')
+        request = asposewordscloud.models.requests.DeleteBorderOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), border_type = 'left', node_path = 'tables/1/rows/0/cells/0')
 
         result = self.words_api.delete_border_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -160,9 +160,9 @@ class TestTableBorder(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestBorderPropertiesColor = asposewordscloud.XmlColor(web='#AABBCC')
-        requestBorderProperties = asposewordscloud.Border(border_type='Left', color=requestBorderPropertiesColor, distance_from_text=6.0, line_style='DashDotStroker', line_width=2.0, shadow=True)
-        request = asposewordscloud.models.requests.UpdateBorderRequest(name=remoteFileName, border_type='left', border_properties=requestBorderProperties, node_path='tables/1/rows/0/cells/0', folder=remoteDataFolder)
+        requestBorderPropertiesColor = asposewordscloud.XmlColor(web = '#AABBCC')
+        requestBorderProperties = asposewordscloud.Border(border_type = 'Left', color = requestBorderPropertiesColor, distance_from_text = 6.0, line_style = 'DashDotStroker', line_width = 2.0, shadow = True)
+        request = asposewordscloud.models.requests.UpdateBorderRequest(name = remoteFileName, border_type = 'left', border_properties = requestBorderProperties, node_path = 'tables/1/rows/0/cells/0', folder = remoteDataFolder)
 
         result = self.words_api.update_border(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -179,9 +179,9 @@ class TestTableBorder(BaseTestContext):
     def test_update_border_online(self):
         localFile = 'DocumentElements/Tables/TablesGet.docx'
 
-        requestBorderPropertiesColor = asposewordscloud.XmlColor(web='#AABBCC')
-        requestBorderProperties = asposewordscloud.Border(border_type='Left', color=requestBorderPropertiesColor, distance_from_text=6, line_style='DashDotStroker', line_width=2, shadow=True)
-        request = asposewordscloud.models.requests.UpdateBorderOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), border_properties=requestBorderProperties, border_type='left', node_path='tables/1/rows/0/cells/0')
+        requestBorderPropertiesColor = asposewordscloud.XmlColor(web = '#AABBCC')
+        requestBorderProperties = asposewordscloud.Border(border_type = 'Left', color = requestBorderPropertiesColor, distance_from_text = 6, line_style = 'DashDotStroker', line_width = 2, shadow = True)
+        request = asposewordscloud.models.requests.UpdateBorderOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), border_properties = requestBorderProperties, border_type = 'left', node_path = 'tables/1/rows/0/cells/0')
 
         result = self.words_api.update_border_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

@@ -42,7 +42,7 @@ class TestDocumentStatistics(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetDocumentStatisticsRequest(name=remoteFileName, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetDocumentStatisticsRequest(name = remoteFileName, folder = remoteDataFolder)
 
         result = self.words_api.get_document_statistics(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -55,7 +55,7 @@ class TestDocumentStatistics(BaseTestContext):
     def test_get_document_statistics_online(self):
         localFile = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.GetDocumentStatisticsOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        request = asposewordscloud.models.requests.GetDocumentStatisticsOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
         result = self.words_api.get_document_statistics_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

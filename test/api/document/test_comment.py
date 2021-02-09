@@ -42,7 +42,7 @@ class TestComment(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetCommentRequest(name=remoteFileName, comment_index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetCommentRequest(name = remoteFileName, comment_index = 0, folder = remoteDataFolder)
 
         result = self.words_api.get_comment(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -55,7 +55,7 @@ class TestComment(BaseTestContext):
     def test_get_comment_online(self):
         localFile = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.GetCommentOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), comment_index=0)
+        request = asposewordscloud.models.requests.GetCommentOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), comment_index = 0)
 
         result = self.words_api.get_comment_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -71,7 +71,7 @@ class TestComment(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetCommentsRequest(name=remoteFileName, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetCommentsRequest(name = remoteFileName, folder = remoteDataFolder)
 
         result = self.words_api.get_comments(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -86,7 +86,7 @@ class TestComment(BaseTestContext):
     def test_get_comments_online(self):
         localFile = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.GetCommentsOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        request = asposewordscloud.models.requests.GetCommentsOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
         result = self.words_api.get_comments_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -102,12 +102,12 @@ class TestComment(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestCommentRangeStartNode = asposewordscloud.NodeLink(node_id='0.3.0.3')
-        requestCommentRangeStart = asposewordscloud.DocumentPosition(node=requestCommentRangeStartNode, offset=0)
-        requestCommentRangeEndNode = asposewordscloud.NodeLink(node_id='0.3.0.3')
-        requestCommentRangeEnd = asposewordscloud.DocumentPosition(node=requestCommentRangeEndNode, offset=0)
-        requestComment = asposewordscloud.CommentInsert(range_start=requestCommentRangeStart, range_end=requestCommentRangeEnd, initial='IA', author='Imran Anwar', text='A new Comment')
-        request = asposewordscloud.models.requests.InsertCommentRequest(name=remoteFileName, comment=requestComment, folder=remoteDataFolder)
+        requestCommentRangeStartNode = asposewordscloud.NodeLink(node_id = '0.3.0.3')
+        requestCommentRangeStart = asposewordscloud.DocumentPosition(node = requestCommentRangeStartNode, offset = 0)
+        requestCommentRangeEndNode = asposewordscloud.NodeLink(node_id = '0.3.0.3')
+        requestCommentRangeEnd = asposewordscloud.DocumentPosition(node = requestCommentRangeEndNode, offset = 0)
+        requestComment = asposewordscloud.CommentInsert(range_start = requestCommentRangeStart, range_end = requestCommentRangeEnd, initial = 'IA', author = 'Imran Anwar', text = 'A new Comment')
+        request = asposewordscloud.models.requests.InsertCommentRequest(name = remoteFileName, comment = requestComment, folder = remoteDataFolder)
 
         result = self.words_api.insert_comment(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -123,12 +123,12 @@ class TestComment(BaseTestContext):
     def test_insert_comment_online(self):
         localFile = 'Common/test_multi_pages.docx'
 
-        requestCommentRangeStartNode = asposewordscloud.NodeLink(node_id='0.3.0.3')
-        requestCommentRangeStart = asposewordscloud.DocumentPosition(node=requestCommentRangeStartNode, offset=0)
-        requestCommentRangeEndNode = asposewordscloud.NodeLink(node_id='0.3.0.3')
-        requestCommentRangeEnd = asposewordscloud.DocumentPosition(node=requestCommentRangeEndNode, offset=0)
-        requestComment = asposewordscloud.CommentInsert(range_start=requestCommentRangeStart, range_end=requestCommentRangeEnd, initial='IA', author='Imran Anwar', text='A new Comment')
-        request = asposewordscloud.models.requests.InsertCommentOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), comment=requestComment)
+        requestCommentRangeStartNode = asposewordscloud.NodeLink(node_id = '0.3.0.3')
+        requestCommentRangeStart = asposewordscloud.DocumentPosition(node = requestCommentRangeStartNode, offset = 0)
+        requestCommentRangeEndNode = asposewordscloud.NodeLink(node_id = '0.3.0.3')
+        requestCommentRangeEnd = asposewordscloud.DocumentPosition(node = requestCommentRangeEndNode, offset = 0)
+        requestComment = asposewordscloud.CommentInsert(range_start = requestCommentRangeStart, range_end = requestCommentRangeEnd, initial = 'IA', author = 'Imran Anwar', text = 'A new Comment')
+        request = asposewordscloud.models.requests.InsertCommentOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), comment = requestComment)
 
         result = self.words_api.insert_comment_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -144,12 +144,12 @@ class TestComment(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestCommentRangeStartNode = asposewordscloud.NodeLink(node_id='0.3.0')
-        requestCommentRangeStart = asposewordscloud.DocumentPosition(node=requestCommentRangeStartNode, offset=0)
-        requestCommentRangeEndNode = asposewordscloud.NodeLink(node_id='0.3.0')
-        requestCommentRangeEnd = asposewordscloud.DocumentPosition(node=requestCommentRangeEndNode, offset=0)
-        requestComment = asposewordscloud.CommentUpdate(range_start=requestCommentRangeStart, range_end=requestCommentRangeEnd, initial='IA', author='Imran Anwar', text='A new Comment')
-        request = asposewordscloud.models.requests.UpdateCommentRequest(name=remoteFileName, comment_index=0, comment=requestComment, folder=remoteDataFolder)
+        requestCommentRangeStartNode = asposewordscloud.NodeLink(node_id = '0.3.0')
+        requestCommentRangeStart = asposewordscloud.DocumentPosition(node = requestCommentRangeStartNode, offset = 0)
+        requestCommentRangeEndNode = asposewordscloud.NodeLink(node_id = '0.3.0')
+        requestCommentRangeEnd = asposewordscloud.DocumentPosition(node = requestCommentRangeEndNode, offset = 0)
+        requestComment = asposewordscloud.CommentUpdate(range_start = requestCommentRangeStart, range_end = requestCommentRangeEnd, initial = 'IA', author = 'Imran Anwar', text = 'A new Comment')
+        request = asposewordscloud.models.requests.UpdateCommentRequest(name = remoteFileName, comment_index = 0, comment = requestComment, folder = remoteDataFolder)
 
         result = self.words_api.update_comment(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -165,12 +165,12 @@ class TestComment(BaseTestContext):
     def test_update_comment_online(self):
         localFile = 'Common/test_multi_pages.docx'
 
-        requestCommentRangeStartNode = asposewordscloud.NodeLink(node_id='0.3.0')
-        requestCommentRangeStart = asposewordscloud.DocumentPosition(node=requestCommentRangeStartNode, offset=0)
-        requestCommentRangeEndNode = asposewordscloud.NodeLink(node_id='0.3.0')
-        requestCommentRangeEnd = asposewordscloud.DocumentPosition(node=requestCommentRangeEndNode, offset=0)
-        requestComment = asposewordscloud.CommentUpdate(range_start=requestCommentRangeStart, range_end=requestCommentRangeEnd, initial='IA', author='Imran Anwar', text='A new Comment')
-        request = asposewordscloud.models.requests.UpdateCommentOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), comment_index=0, comment=requestComment)
+        requestCommentRangeStartNode = asposewordscloud.NodeLink(node_id = '0.3.0')
+        requestCommentRangeStart = asposewordscloud.DocumentPosition(node = requestCommentRangeStartNode, offset = 0)
+        requestCommentRangeEndNode = asposewordscloud.NodeLink(node_id = '0.3.0')
+        requestCommentRangeEnd = asposewordscloud.DocumentPosition(node = requestCommentRangeEndNode, offset = 0)
+        requestComment = asposewordscloud.CommentUpdate(range_start = requestCommentRangeStart, range_end = requestCommentRangeEnd, initial = 'IA', author = 'Imran Anwar', text = 'A new Comment')
+        request = asposewordscloud.models.requests.UpdateCommentOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), comment_index = 0, comment = requestComment)
 
         result = self.words_api.update_comment_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -186,7 +186,7 @@ class TestComment(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteCommentRequest(name=remoteFileName, comment_index=0, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
+        request = asposewordscloud.models.requests.DeleteCommentRequest(name = remoteFileName, comment_index = 0, folder = remoteDataFolder, dest_file_name = self.remote_test_out + '/' + remoteFileName)
 
         self.words_api.delete_comment(request)
 
@@ -197,7 +197,7 @@ class TestComment(BaseTestContext):
     def test_delete_comment_online(self):
         localFile = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.DeleteCommentOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), comment_index=0)
+        request = asposewordscloud.models.requests.DeleteCommentOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), comment_index = 0)
 
         result = self.words_api.delete_comment_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -213,7 +213,7 @@ class TestComment(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteCommentsRequest(name=remoteFileName, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
+        request = asposewordscloud.models.requests.DeleteCommentsRequest(name = remoteFileName, folder = remoteDataFolder, dest_file_name = self.remote_test_out + '/' + remoteFileName)
 
         self.words_api.delete_comments(request)
 
@@ -224,7 +224,7 @@ class TestComment(BaseTestContext):
     def test_delete_comments_online(self):
         localFile = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.DeleteCommentsOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        request = asposewordscloud.models.requests.DeleteCommentsOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
         result = self.words_api.delete_comments_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

@@ -42,8 +42,8 @@ class TestConvertDocument(BaseTestContext):
 
         self.upload_file(remoteFolder + '/' + remoteName, open(os.path.join(self.local_test_folder, 'Common/' + localName), 'rb'))
 
-        requestSaveOptionsData = asposewordscloud.SaveOptionsData(save_format='pdf', file_name=self.remote_test_out + '/TestSaveAs.pdf')
-        request = asposewordscloud.models.requests.SaveAsRequest(name=remoteName, save_options_data=requestSaveOptionsData, folder=remoteFolder)
+        requestSaveOptionsData = asposewordscloud.SaveOptionsData(save_format = 'pdf', file_name = self.remote_test_out + '/TestSaveAs.pdf')
+        request = asposewordscloud.models.requests.SaveAsRequest(name = remoteName, save_options_data = requestSaveOptionsData, folder = remoteFolder)
 
         result = self.words_api.save_as(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -56,8 +56,8 @@ class TestConvertDocument(BaseTestContext):
     def test_save_as_online(self):
         localName = 'test_multi_pages.docx'
 
-        requestSaveOptionsData = asposewordscloud.SaveOptionsData(save_format='pdf', file_name=self.remote_test_out + '/TestSaveAs.pdf')
-        request = asposewordscloud.models.requests.SaveAsOnlineRequest(document=open(os.path.join(self.local_test_folder, 'Common/' + localName), 'rb'), save_options_data=requestSaveOptionsData)
+        requestSaveOptionsData = asposewordscloud.SaveOptionsData(save_format = 'pdf', file_name = self.remote_test_out + '/TestSaveAs.pdf')
+        request = asposewordscloud.models.requests.SaveAsOnlineRequest(document = open(os.path.join(self.local_test_folder, 'Common/' + localName), 'rb'), save_options_data = requestSaveOptionsData)
 
         result = self.words_api.save_as_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -74,8 +74,8 @@ class TestConvertDocument(BaseTestContext):
 
         self.upload_file(remoteFolder + '/' + remoteName, open(os.path.join(self.local_test_folder, localFolder + '/' + localName), 'rb'))
 
-        requestSaveOptionsData = asposewordscloud.SaveOptionsData(save_format='docx', file_name=self.remote_test_out + '/TestSaveAsFromPdfToDoc.docx')
-        request = asposewordscloud.models.requests.SaveAsRequest(name=remoteName, save_options_data=requestSaveOptionsData, folder=remoteFolder)
+        requestSaveOptionsData = asposewordscloud.SaveOptionsData(save_format = 'docx', file_name = self.remote_test_out + '/TestSaveAsFromPdfToDoc.docx')
+        request = asposewordscloud.models.requests.SaveAsRequest(name = remoteName, save_options_data = requestSaveOptionsData, folder = remoteFolder)
 
         result = self.words_api.save_as(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -92,8 +92,8 @@ class TestConvertDocument(BaseTestContext):
 
         self.upload_file(remoteFolder + '/' + remoteName, open(os.path.join(self.local_test_folder, 'Common/' + localName), 'rb'))
 
-        requestSaveOptions = asposewordscloud.TiffSaveOptionsData(save_format='tiff', file_name=self.remote_test_out + '/abc.tiff')
-        request = asposewordscloud.models.requests.SaveAsTiffRequest(name=remoteName, save_options=requestSaveOptions, folder=remoteFolder)
+        requestSaveOptions = asposewordscloud.TiffSaveOptionsData(save_format = 'tiff', file_name = self.remote_test_out + '/abc.tiff')
+        request = asposewordscloud.models.requests.SaveAsTiffRequest(name = remoteName, save_options = requestSaveOptions, folder = remoteFolder)
 
         result = self.words_api.save_as_tiff(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -106,8 +106,8 @@ class TestConvertDocument(BaseTestContext):
     def test_save_as_tiff_online(self):
         localName = 'test_multi_pages.docx'
 
-        requestSaveOptions = asposewordscloud.TiffSaveOptionsData(save_format='tiff', file_name=self.remote_test_out + '/abc.tiff')
-        request = asposewordscloud.models.requests.SaveAsTiffOnlineRequest(document=open(os.path.join(self.local_test_folder, 'Common/' + localName), 'rb'), save_options=requestSaveOptions)
+        requestSaveOptions = asposewordscloud.TiffSaveOptionsData(save_format = 'tiff', file_name = self.remote_test_out + '/abc.tiff')
+        request = asposewordscloud.models.requests.SaveAsTiffOnlineRequest(document = open(os.path.join(self.local_test_folder, 'Common/' + localName), 'rb'), save_options = requestSaveOptions)
 
         result = self.words_api.save_as_tiff_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -119,7 +119,7 @@ class TestConvertDocument(BaseTestContext):
     def test_convert_document(self):
         localFolder = 'DocumentActions/ConvertDocument'
 
-        request = asposewordscloud.models.requests.ConvertDocumentRequest(document=open(os.path.join(self.local_test_folder, localFolder + '/test_uploadfile.docx'), 'rb'), format='pdf')
+        request = asposewordscloud.models.requests.ConvertDocumentRequest(document = open(os.path.join(self.local_test_folder, localFolder + '/test_uploadfile.docx'), 'rb'), format = 'pdf')
 
         result = self.words_api.convert_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')

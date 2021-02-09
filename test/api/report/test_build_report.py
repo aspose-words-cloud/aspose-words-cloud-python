@@ -40,8 +40,8 @@ class TestBuildReport(BaseTestContext):
         localDocumentFile = 'ReportTemplate.docx'
         localDataFile = open(os.path.join(self.local_test_folder, reportingFolder + '/ReportData.json')).read()
 
-        requestReportEngineSettings = asposewordscloud.ReportEngineSettings(data_source_type='Json', data_source_name='persons')
-        request = asposewordscloud.models.requests.BuildReportOnlineRequest(template=open(os.path.join(self.local_test_folder, reportingFolder + '/' + localDocumentFile), 'rb'), data=localDataFile, report_engine_settings=requestReportEngineSettings)
+        requestReportEngineSettings = asposewordscloud.ReportEngineSettings(data_source_type = 'Json', data_source_name = 'persons')
+        request = asposewordscloud.models.requests.BuildReportOnlineRequest(template = open(os.path.join(self.local_test_folder, reportingFolder + '/' + localDocumentFile), 'rb'), data = localDataFile, report_engine_settings = requestReportEngineSettings)
 
         result = self.words_api.build_report_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -60,8 +60,8 @@ class TestBuildReport(BaseTestContext):
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, reportingFolder + '/' + localDocumentFile), 'rb'))
 
         requestReportEngineSettingsReportBuildOptions = ['AllowMissingMembers', 'RemoveEmptyParagraphs']
-        requestReportEngineSettings = asposewordscloud.ReportEngineSettings(data_source_type='Json', report_build_options=requestReportEngineSettingsReportBuildOptions)
-        request = asposewordscloud.models.requests.BuildReportRequest(name=remoteFileName, data=localDataFile, report_engine_settings=requestReportEngineSettings, folder=remoteDataFolder)
+        requestReportEngineSettings = asposewordscloud.ReportEngineSettings(data_source_type = 'Json', report_build_options = requestReportEngineSettingsReportBuildOptions)
+        request = asposewordscloud.models.requests.BuildReportRequest(name = remoteFileName, data = localDataFile, report_engine_settings = requestReportEngineSettings, folder = remoteDataFolder)
 
         result = self.words_api.build_report(request)
         self.assertIsNotNone(result, 'Error has occurred.')

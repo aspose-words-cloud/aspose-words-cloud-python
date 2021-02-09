@@ -42,7 +42,7 @@ class TestHyperlink(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetDocumentHyperlinkByIndexRequest(name=remoteFileName, hyperlink_index=0, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetDocumentHyperlinkByIndexRequest(name = remoteFileName, hyperlink_index = 0, folder = remoteDataFolder)
 
         result = self.words_api.get_document_hyperlink_by_index(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -55,7 +55,7 @@ class TestHyperlink(BaseTestContext):
     def test_get_document_hyperlink_by_index_online(self):
         localFile = 'Common/test_doc.docx'
 
-        request = asposewordscloud.models.requests.GetDocumentHyperlinkByIndexOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), hyperlink_index=0)
+        request = asposewordscloud.models.requests.GetDocumentHyperlinkByIndexOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), hyperlink_index = 0)
 
         result = self.words_api.get_document_hyperlink_by_index_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -71,7 +71,7 @@ class TestHyperlink(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.GetDocumentHyperlinksRequest(name=remoteFileName, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetDocumentHyperlinksRequest(name = remoteFileName, folder = remoteDataFolder)
 
         result = self.words_api.get_document_hyperlinks(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -86,7 +86,7 @@ class TestHyperlink(BaseTestContext):
     def test_get_document_hyperlinks_online(self):
         localFile = 'Common/test_doc.docx'
 
-        request = asposewordscloud.models.requests.GetDocumentHyperlinksOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        request = asposewordscloud.models.requests.GetDocumentHyperlinksOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
         result = self.words_api.get_document_hyperlinks_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

@@ -42,8 +42,8 @@ class TestDocumentProtection(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        requestProtectionRequest = asposewordscloud.ProtectionRequest(password='123', protection_type='ReadOnly')
-        request = asposewordscloud.models.requests.ProtectDocumentRequest(name=remoteFileName, protection_request=requestProtectionRequest, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
+        requestProtectionRequest = asposewordscloud.ProtectionRequest(password = '123', protection_type = 'ReadOnly')
+        request = asposewordscloud.models.requests.ProtectDocumentRequest(name = remoteFileName, protection_request = requestProtectionRequest, folder = remoteDataFolder, dest_file_name = self.remote_test_out + '/' + remoteFileName)
 
         result = self.words_api.protect_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -56,8 +56,8 @@ class TestDocumentProtection(BaseTestContext):
     def test_protect_document_online(self):
         localFile = 'Common/test_multi_pages.docx'
 
-        requestProtectionRequest = asposewordscloud.ProtectionRequest(new_password='123')
-        request = asposewordscloud.models.requests.ProtectDocumentOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), protection_request=requestProtectionRequest)
+        requestProtectionRequest = asposewordscloud.ProtectionRequest(new_password = '123')
+        request = asposewordscloud.models.requests.ProtectDocumentOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), protection_request = requestProtectionRequest)
 
         result = self.words_api.protect_document_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -73,7 +73,7 @@ class TestDocumentProtection(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFilePath), 'rb'))
 
-        request = asposewordscloud.models.requests.GetDocumentProtectionRequest(name=remoteFileName, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetDocumentProtectionRequest(name = remoteFileName, folder = remoteDataFolder)
 
         result = self.words_api.get_document_protection(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -85,7 +85,7 @@ class TestDocumentProtection(BaseTestContext):
     def test_get_document_protection_online(self):
         localFile = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.GetDocumentProtectionOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        request = asposewordscloud.models.requests.GetDocumentProtectionOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
         result = self.words_api.get_document_protection_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -101,8 +101,8 @@ class TestDocumentProtection(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFilePath), 'rb'))
 
-        requestProtectionRequest = asposewordscloud.ProtectionRequest(password='aspose')
-        request = asposewordscloud.models.requests.UnprotectDocumentRequest(name=remoteFileName, protection_request=requestProtectionRequest, folder=remoteDataFolder)
+        requestProtectionRequest = asposewordscloud.ProtectionRequest(password = 'aspose')
+        request = asposewordscloud.models.requests.UnprotectDocumentRequest(name = remoteFileName, protection_request = requestProtectionRequest, folder = remoteDataFolder)
 
         result = self.words_api.unprotect_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -115,8 +115,8 @@ class TestDocumentProtection(BaseTestContext):
     def test_delete_unprotect_document_online(self):
         localFilePath = 'DocumentActions/DocumentProtection/SampleProtectedBlankWordDocument.docx'
 
-        requestProtectionRequest = asposewordscloud.ProtectionRequest(password='aspose')
-        request = asposewordscloud.models.requests.UnprotectDocumentOnlineRequest(document=open(os.path.join(self.local_test_folder, localFilePath), 'rb'), protection_request=requestProtectionRequest)
+        requestProtectionRequest = asposewordscloud.ProtectionRequest(password = 'aspose')
+        request = asposewordscloud.models.requests.UnprotectDocumentOnlineRequest(document = open(os.path.join(self.local_test_folder, localFilePath), 'rb'), protection_request = requestProtectionRequest)
 
         result = self.words_api.unprotect_document_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

@@ -42,7 +42,7 @@ class TestSplitDocumentToFormat(BaseTestContext):
 
         self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
 
-        request = asposewordscloud.models.requests.SplitDocumentRequest(name=remoteFileName, format='text', folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/TestSplitDocument.text', _from=1, to=2)
+        request = asposewordscloud.models.requests.SplitDocumentRequest(name = remoteFileName, format = 'text', folder = remoteDataFolder, dest_file_name = self.remote_test_out + '/TestSplitDocument.text', _from = 1, to = 2)
 
         result = self.words_api.split_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -56,7 +56,7 @@ class TestSplitDocumentToFormat(BaseTestContext):
     def test_split_document_online(self):
         localFile = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.SplitDocumentOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), format='text', dest_file_name=self.remote_test_out + '/TestSplitDocument.text', _from=1, to=2)
+        request = asposewordscloud.models.requests.SplitDocumentOnlineRequest(document = open(os.path.join(self.local_test_folder, localFile), 'rb'), format = 'text', dest_file_name = self.remote_test_out + '/TestSplitDocument.text', _from = 1, to = 2)
 
         result = self.words_api.split_document_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
