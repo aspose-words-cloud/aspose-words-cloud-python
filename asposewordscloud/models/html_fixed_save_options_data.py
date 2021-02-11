@@ -43,6 +43,7 @@ class HtmlFixedSaveOptionsData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'allow_embedding_post_script_fonts': 'bool',
         'dml3_d_effects_rendering_mode': 'str',
         'dml_effects_rendering_mode': 'str',
         'dml_rendering_mode': 'str',
@@ -77,6 +78,7 @@ class HtmlFixedSaveOptionsData(object):
     }
 
     attribute_map = {
+        'allow_embedding_post_script_fonts': 'AllowEmbeddingPostScriptFonts',
         'dml3_d_effects_rendering_mode': 'Dml3DEffectsRenderingMode',
         'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
         'dml_rendering_mode': 'DmlRenderingMode',
@@ -110,9 +112,10 @@ class HtmlFixedSaveOptionsData(object):
         'use_target_machine_fonts': 'UseTargetMachineFonts'
     }
 
-    def __init__(self, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, css_class_names_prefix=None, encoding=None, export_embedded_css=None, export_embedded_fonts=None, export_embedded_images=None, export_form_fields=None, font_format=None, page_horizontal_alignment=None, page_margins=None, resources_folder=None, resources_folder_alias=None, save_font_face_css_separately=None, show_page_border=None, use_target_machine_fonts=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, css_class_names_prefix=None, encoding=None, export_embedded_css=None, export_embedded_fonts=None, export_embedded_images=None, export_form_fields=None, font_format=None, page_horizontal_alignment=None, page_margins=None, resources_folder=None, resources_folder_alias=None, save_font_face_css_separately=None, show_page_border=None, use_target_machine_fonts=None):  # noqa: E501
         """HtmlFixedSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
+        self._allow_embedding_post_script_fonts = None
         self._dml3_d_effects_rendering_mode = None
         self._dml_effects_rendering_mode = None
         self._dml_rendering_mode = None
@@ -146,6 +149,8 @@ class HtmlFixedSaveOptionsData(object):
         self._use_target_machine_fonts = None
         self.discriminator = None
 
+        if allow_embedding_post_script_fonts is not None:
+            self.allow_embedding_post_script_fonts = allow_embedding_post_script_fonts
         if dml3_d_effects_rendering_mode is not None:
             self.dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
         if dml_effects_rendering_mode is not None:
@@ -208,6 +213,28 @@ class HtmlFixedSaveOptionsData(object):
             self.show_page_border = show_page_border
         if use_target_machine_fonts is not None:
             self.use_target_machine_fonts = use_target_machine_fonts
+
+    @property
+    def allow_embedding_post_script_fonts(self):
+        """Gets the allow_embedding_post_script_fonts of this HtmlFixedSaveOptionsData.  # noqa: E501
+
+        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..  # noqa: E501
+
+        :return: The allow_embedding_post_script_fonts of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_embedding_post_script_fonts
+
+    @allow_embedding_post_script_fonts.setter
+    def allow_embedding_post_script_fonts(self, allow_embedding_post_script_fonts):
+        """Sets the allow_embedding_post_script_fonts of this HtmlFixedSaveOptionsData.
+
+        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..  # noqa: E501
+
+        :param allow_embedding_post_script_fonts: The allow_embedding_post_script_fonts of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._allow_embedding_post_script_fonts = allow_embedding_post_script_fonts
 
     @property
     def dml3_d_effects_rendering_mode(self):

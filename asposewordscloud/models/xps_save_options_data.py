@@ -43,6 +43,7 @@ class XpsSaveOptionsData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'allow_embedding_post_script_fonts': 'bool',
         'dml3_d_effects_rendering_mode': 'str',
         'dml_effects_rendering_mode': 'str',
         'dml_rendering_mode': 'str',
@@ -67,6 +68,7 @@ class XpsSaveOptionsData(object):
     }
 
     attribute_map = {
+        'allow_embedding_post_script_fonts': 'AllowEmbeddingPostScriptFonts',
         'dml3_d_effects_rendering_mode': 'Dml3DEffectsRenderingMode',
         'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
         'dml_rendering_mode': 'DmlRenderingMode',
@@ -90,9 +92,10 @@ class XpsSaveOptionsData(object):
         'use_book_fold_printing_settings': 'UseBookFoldPrintingSettings'
     }
 
-    def __init__(self, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, bookmarks_outline_level=None, headings_outline_levels=None, outline_options=None, use_book_fold_printing_settings=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, bookmarks_outline_level=None, headings_outline_levels=None, outline_options=None, use_book_fold_printing_settings=None):  # noqa: E501
         """XpsSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
+        self._allow_embedding_post_script_fonts = None
         self._dml3_d_effects_rendering_mode = None
         self._dml_effects_rendering_mode = None
         self._dml_rendering_mode = None
@@ -116,6 +119,8 @@ class XpsSaveOptionsData(object):
         self._use_book_fold_printing_settings = None
         self.discriminator = None
 
+        if allow_embedding_post_script_fonts is not None:
+            self.allow_embedding_post_script_fonts = allow_embedding_post_script_fonts
         if dml3_d_effects_rendering_mode is not None:
             self.dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
         if dml_effects_rendering_mode is not None:
@@ -158,6 +163,28 @@ class XpsSaveOptionsData(object):
             self.outline_options = outline_options
         if use_book_fold_printing_settings is not None:
             self.use_book_fold_printing_settings = use_book_fold_printing_settings
+
+    @property
+    def allow_embedding_post_script_fonts(self):
+        """Gets the allow_embedding_post_script_fonts of this XpsSaveOptionsData.  # noqa: E501
+
+        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..  # noqa: E501
+
+        :return: The allow_embedding_post_script_fonts of this XpsSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_embedding_post_script_fonts
+
+    @allow_embedding_post_script_fonts.setter
+    def allow_embedding_post_script_fonts(self, allow_embedding_post_script_fonts):
+        """Sets the allow_embedding_post_script_fonts of this XpsSaveOptionsData.
+
+        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..  # noqa: E501
+
+        :param allow_embedding_post_script_fonts: The allow_embedding_post_script_fonts of this XpsSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._allow_embedding_post_script_fonts = allow_embedding_post_script_fonts
 
     @property
     def dml3_d_effects_rendering_mode(self):
