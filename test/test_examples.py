@@ -33,7 +33,7 @@ from test.base_test_context import BaseTestContext
 class TestExamples(BaseTestContext):
     def setUp(self):
         super().setUp()
-        self.words_api.uploadFile(UploadFileRequest(
+        self.words_api.upload_file(asposewordscloud.models.requests.UploadFileRequest(
             open(os.path.join('ExamplesData', 'test_doc.docx'), 'rb'),
             'test_doc.docx'
         ))
