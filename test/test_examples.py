@@ -33,6 +33,11 @@ from test.base_test_context import BaseTestContext
 class TestExamples(BaseTestContext):
     def setUp(self):
         super().setUp()
+        words_api.uploadFile(UploadFileRequest(
+            open(os.path.join('ExamplesData', 'test_doc.docx'), 'rb'),
+            'test_doc.docx'
+        ))
+
 
     def test_accept_all_revisions(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
