@@ -36,11 +36,11 @@ class TestExecuteMailMerge(BaseTestContext):
     # Test for executing mail merge online.
     #
     def test_execute_mail_merge_online(self):
-        mailMergeFolder = 'DocumentActions/MailMerge'
-        localDocumentFile = 'SampleExecuteTemplate.docx'
-        localDataFile = 'SampleExecuteTemplateData.txt'
+        mail_merge_folder = 'DocumentActions/MailMerge'
+        local_document_file = 'SampleExecuteTemplate.docx'
+        local_data_file = 'SampleExecuteTemplateData.txt'
 
-        request = asposewordscloud.models.requests.ExecuteMailMergeOnlineRequest(template=open(os.path.join(self.local_test_folder, mailMergeFolder + '/' + localDocumentFile), 'rb'), data=open(os.path.join(self.local_test_folder, mailMergeFolder + '/' + localDataFile), 'rb'))
+        request = asposewordscloud.models.requests.ExecuteMailMergeOnlineRequest(template = open(os.path.join(self.local_test_folder, mail_merge_folder + '/' + local_document_file), 'rb'), data = open(os.path.join(self.local_test_folder, mail_merge_folder + '/' + local_data_file), 'rb'))
 
         result = self.words_api.execute_mail_merge_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -50,15 +50,15 @@ class TestExecuteMailMerge(BaseTestContext):
     # Test for executing mail merge.
     #
     def test_execute_mail_merge(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentActions/MailMerge'
-        mailMergeFolder = 'DocumentActions/MailMerge'
-        localDocumentFile = 'SampleExecuteTemplate.docx'
-        remoteFileName = 'TestExecuteMailMerge.docx'
-        localDataFile = open(os.path.join(self.local_test_folder, mailMergeFolder + '/SampleMailMergeTemplateData.txt')).read()
+        remote_data_folder = self.remote_test_folder + '/DocumentActions/MailMerge'
+        mail_merge_folder = 'DocumentActions/MailMerge'
+        local_document_file = 'SampleExecuteTemplate.docx'
+        remote_file_name = 'TestExecuteMailMerge.docx'
+        local_data_file = open(os.path.join(self.local_test_folder, mail_merge_folder + '/SampleMailMergeTemplateData.txt')).read()
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, mailMergeFolder + '/' + localDocumentFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, mail_merge_folder + '/' + local_document_file), 'rb'))
 
-        request = asposewordscloud.models.requests.ExecuteMailMergeRequest(name=remoteFileName, data=localDataFile, folder=remoteDataFolder, with_regions=False, dest_file_name=self.remote_test_out + '/' + remoteFileName)
+        request = asposewordscloud.models.requests.ExecuteMailMergeRequest(name = remote_file_name, data = local_data_file, folder = remote_data_folder, with_regions = False, dest_file_name = self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.execute_mail_merge(request)
         self.assertIsNotNone(result, 'Error has occurred.')

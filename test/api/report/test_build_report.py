@@ -36,12 +36,12 @@ class TestBuildReport(BaseTestContext):
     # Test for build report online.
     #
     def test_build_report_online(self):
-        reportingFolder = 'DocumentActions/Reporting'
-        localDocumentFile = 'ReportTemplate.docx'
-        localDataFile = open(os.path.join(self.local_test_folder, reportingFolder + '/ReportData.json')).read()
+        reporting_folder = 'DocumentActions/Reporting'
+        local_document_file = 'ReportTemplate.docx'
+        local_data_file = open(os.path.join(self.local_test_folder, reporting_folder + '/ReportData.json')).read()
 
-        requestReportEngineSettings = asposewordscloud.ReportEngineSettings(data_source_type='Json', data_source_name='persons')
-        request = asposewordscloud.models.requests.BuildReportOnlineRequest(template=open(os.path.join(self.local_test_folder, reportingFolder + '/' + localDocumentFile), 'rb'), data=localDataFile, report_engine_settings=requestReportEngineSettings)
+        request_report_engine_settings = asposewordscloud.ReportEngineSettings(data_source_type = 'Json', data_source_name = 'persons')
+        request = asposewordscloud.models.requests.BuildReportOnlineRequest(template = open(os.path.join(self.local_test_folder, reporting_folder + '/' + local_document_file), 'rb'), data = local_data_file, report_engine_settings = request_report_engine_settings)
 
         result = self.words_api.build_report_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -51,17 +51,17 @@ class TestBuildReport(BaseTestContext):
     # Test for build report.
     #
     def test_build_report(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentActions/Reporting'
-        reportingFolder = 'DocumentActions/Reporting'
-        localDocumentFile = 'ReportTemplate.docx'
-        remoteFileName = 'TestBuildReport.docx'
-        localDataFile = open(os.path.join(self.local_test_folder, reportingFolder + '/ReportData.json')).read()
+        remote_data_folder = self.remote_test_folder + '/DocumentActions/Reporting'
+        reporting_folder = 'DocumentActions/Reporting'
+        local_document_file = 'ReportTemplate.docx'
+        remote_file_name = 'TestBuildReport.docx'
+        local_data_file = open(os.path.join(self.local_test_folder, reporting_folder + '/ReportData.json')).read()
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, reportingFolder + '/' + localDocumentFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, reporting_folder + '/' + local_document_file), 'rb'))
 
-        requestReportEngineSettingsReportBuildOptions = ['AllowMissingMembers', 'RemoveEmptyParagraphs']
-        requestReportEngineSettings = asposewordscloud.ReportEngineSettings(data_source_type='Json', report_build_options=requestReportEngineSettingsReportBuildOptions)
-        request = asposewordscloud.models.requests.BuildReportRequest(name=remoteFileName, data=localDataFile, report_engine_settings=requestReportEngineSettings, folder=remoteDataFolder)
+        request_report_engine_settings_report_build_options = ['AllowMissingMembers', 'RemoveEmptyParagraphs']
+        request_report_engine_settings = asposewordscloud.ReportEngineSettings(data_source_type = 'Json', report_build_options = request_report_engine_settings_report_build_options)
+        request = asposewordscloud.models.requests.BuildReportRequest(name = remote_file_name, data = local_data_file, report_engine_settings = request_report_engine_settings, folder = remote_data_folder)
 
         result = self.words_api.build_report(request)
         self.assertIsNotNone(result, 'Error has occurred.')

@@ -36,14 +36,14 @@ class TestCompatibility(BaseTestContext):
     # Test for optimize document to specific MS Word version.
     #
     def test_optimize_document(self):
-        remoteDataFolder = self.remote_test_folder + '/Compatibility'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'TestOptimizeDocument.docx'
+        remote_data_folder = self.remote_test_folder + '/Compatibility'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestOptimizeDocument.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        requestOptions = asposewordscloud.OptimizationOptions(ms_word_version='Word2002')
-        request = asposewordscloud.models.requests.OptimizeDocumentRequest(name=remoteFileName, options=requestOptions, folder=remoteDataFolder)
+        request_options = asposewordscloud.OptimizationOptions(ms_word_version = 'Word2002')
+        request = asposewordscloud.models.requests.OptimizeDocumentRequest(name = remote_file_name, options = request_options, folder = remote_data_folder)
 
         self.words_api.optimize_document(request)
 
@@ -52,10 +52,10 @@ class TestCompatibility(BaseTestContext):
     # Test for optimize document to specific MS Word version.
     #
     def test_optimize_document_online(self):
-        localFile = 'Common/test_multi_pages.docx'
+        local_file = 'Common/test_multi_pages.docx'
 
-        requestOptions = asposewordscloud.OptimizationOptions(ms_word_version='Word2002')
-        request = asposewordscloud.models.requests.OptimizeDocumentOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), options=requestOptions)
+        request_options = asposewordscloud.OptimizationOptions(ms_word_version = 'Word2002')
+        request = asposewordscloud.models.requests.OptimizeDocumentOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), options = request_options)
 
         result = self.words_api.optimize_document_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
