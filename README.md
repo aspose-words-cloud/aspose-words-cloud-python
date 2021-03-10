@@ -16,6 +16,12 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 - [Convert a document to desired file format](https://docs.aspose.cloud/display/wordscloud/Convert+Document+to+Destination+Format+with+Detailed+Settings+and+Save+Result+to+Storage) along with detailed settings.
 - Convert an encrypted PDF document into Word document format.
 
+## Enhancements in Version 21.3
+
+- Added 'UpdateCreatedTimeProperty' save option
+- Added Tables into HeaderFooter so it's possible to address paragraphs inside table which is located in headerfooter (sections/0/headersfooters/1/tables/0/rows/0/cells/0/paragraphs/0)
+
+
 ## Enhancements in Version 21.2
 
 - Added delete all comments method
