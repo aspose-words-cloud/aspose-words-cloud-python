@@ -36,13 +36,13 @@ class TestRevisions(BaseTestContext):
     # Test for accepting revisions in document.
     #
     def test_accept_all_revisions(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentActions/Revisions'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'TestAcceptAllRevisions.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentActions/Revisions'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestAcceptAllRevisions.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.AcceptAllRevisionsRequest(name=remoteFileName, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
+        request = asposewordscloud.models.requests.AcceptAllRevisionsRequest(name = remote_file_name, folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.accept_all_revisions(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -53,9 +53,9 @@ class TestRevisions(BaseTestContext):
     # Test for accepting revisions in document online.
     #
     def test_accept_all_revisions_online(self):
-        localFile = 'Common/test_multi_pages.docx'
+        local_file = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.AcceptAllRevisionsOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        request = asposewordscloud.models.requests.AcceptAllRevisionsOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
         result = self.words_api.accept_all_revisions_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -65,13 +65,13 @@ class TestRevisions(BaseTestContext):
     # Test for rejecting revisions in document.
     #
     def test_reject_all_revisions(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentActions/Revisions'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'TestRejectAllRevisions.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentActions/Revisions'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestRejectAllRevisions.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.RejectAllRevisionsRequest(name=remoteFileName, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
+        request = asposewordscloud.models.requests.RejectAllRevisionsRequest(name = remote_file_name, folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.reject_all_revisions(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -82,9 +82,9 @@ class TestRevisions(BaseTestContext):
     # Test for rejecting revisions in document online.
     #
     def test_reject_all_revisions_online(self):
-        localFile = 'Common/test_multi_pages.docx'
+        local_file = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.RejectAllRevisionsOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        request = asposewordscloud.models.requests.RejectAllRevisionsOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
         result = self.words_api.reject_all_revisions_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

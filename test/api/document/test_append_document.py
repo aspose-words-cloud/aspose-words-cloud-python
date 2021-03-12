@@ -36,16 +36,16 @@ class TestAppendDocument(BaseTestContext):
     # Test for appending document.
     #
     def test_append_document(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentActions/AppendDocument'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'TestAppendDocument.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentActions/AppendDocument'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestAppendDocument.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        requestDocumentListDocumentEntries0 = asposewordscloud.DocumentEntry(href=remoteDataFolder + '/' + remoteFileName, import_format_mode='KeepSourceFormatting')
-        requestDocumentListDocumentEntries = [requestDocumentListDocumentEntries0]
-        requestDocumentList = asposewordscloud.DocumentEntryList(document_entries=requestDocumentListDocumentEntries)
-        request = asposewordscloud.models.requests.AppendDocumentRequest(name=remoteFileName, document_list=requestDocumentList, folder=remoteDataFolder, dest_file_name=self.remote_test_out + '/' + remoteFileName)
+        request_document_list_document_entries0 = asposewordscloud.DocumentEntry(href = remote_data_folder + '/' + remote_file_name, import_format_mode = 'KeepSourceFormatting')
+        request_document_list_document_entries = [request_document_list_document_entries0]
+        request_document_list = asposewordscloud.DocumentEntryList(document_entries = request_document_list_document_entries)
+        request = asposewordscloud.models.requests.AppendDocumentRequest(name = remote_file_name, document_list = request_document_list, folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.append_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -56,16 +56,16 @@ class TestAppendDocument(BaseTestContext):
     # Test for appending document online.
     #
     def test_append_document_online(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentActions/AppendDocument'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'TestAppendDocument.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentActions/AppendDocument'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestAppendDocument.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        requestDocumentListDocumentEntries0 = asposewordscloud.DocumentEntry(href=remoteDataFolder + '/' + remoteFileName, import_format_mode='KeepSourceFormatting')
-        requestDocumentListDocumentEntries = [requestDocumentListDocumentEntries0]
-        requestDocumentList = asposewordscloud.DocumentEntryList(document_entries=requestDocumentListDocumentEntries)
-        request = asposewordscloud.models.requests.AppendDocumentOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), document_list=requestDocumentList)
+        request_document_list_document_entries0 = asposewordscloud.DocumentEntry(href = remote_data_folder + '/' + remote_file_name, import_format_mode = 'KeepSourceFormatting')
+        request_document_list_document_entries = [request_document_list_document_entries0]
+        request_document_list = asposewordscloud.DocumentEntryList(document_entries = request_document_list_document_entries)
+        request = asposewordscloud.models.requests.AppendDocumentOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), document_list = request_document_list)
 
         result = self.words_api.append_document_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

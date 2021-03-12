@@ -36,11 +36,11 @@ class TestFile(BaseTestContext):
     # Test for uploading file.
     #
     def test_upload_file(self):
-        remoteDataFolder = self.remote_test_folder + '/Storage'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'TestUploadFile.docx'
+        remote_data_folder = self.remote_test_folder + '/Storage'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestUploadFile.docx'
 
-        request = asposewordscloud.models.requests.UploadFileRequest(file_content=open(os.path.join(self.local_test_folder, localFile), 'rb'), path=remoteDataFolder + '/' + remoteFileName)
+        request = asposewordscloud.models.requests.UploadFileRequest(file_content = open(os.path.join(self.local_test_folder, local_file), 'rb'), path = remote_data_folder + '/' + remote_file_name)
 
         result = self.words_api.upload_file(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -52,13 +52,13 @@ class TestFile(BaseTestContext):
     # Test for copy file.
     #
     def test_copy_file(self):
-        remoteDataFolder = self.remote_test_folder + '/Storage'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'TestCopyFileSrc.docx'
+        remote_data_folder = self.remote_test_folder + '/Storage'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestCopyFileSrc.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.CopyFileRequest(dest_path=remoteDataFolder + '/TestCopyFileDest.docx', src_path=remoteDataFolder + '/' + remoteFileName)
+        request = asposewordscloud.models.requests.CopyFileRequest(dest_path = remote_data_folder + '/TestCopyFileDest.docx', src_path = remote_data_folder + '/' + remote_file_name)
 
         self.words_api.copy_file(request)
 
@@ -67,13 +67,13 @@ class TestFile(BaseTestContext):
     # Test for move file.
     #
     def test_move_file(self):
-        remoteDataFolder = self.remote_test_folder + '/Storage'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'TestMoveFileSrc.docx'
+        remote_data_folder = self.remote_test_folder + '/Storage'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestMoveFileSrc.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.MoveFileRequest(dest_path=self.remote_test_out + '/TestMoveFileDest_' + self.create_random_guid() + '.docx', src_path=remoteDataFolder + '/' + remoteFileName)
+        request = asposewordscloud.models.requests.MoveFileRequest(dest_path = self.remote_test_out + '/TestMoveFileDest_' + self.create_random_guid() + '.docx', src_path = remote_data_folder + '/' + remote_file_name)
 
         self.words_api.move_file(request)
 
@@ -82,13 +82,13 @@ class TestFile(BaseTestContext):
     # Test for delete file.
     #
     def test_delete_file(self):
-        remoteDataFolder = self.remote_test_folder + '/Storage'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'TestDeleteFile.docx'
+        remote_data_folder = self.remote_test_folder + '/Storage'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestDeleteFile.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteFileRequest(path=remoteDataFolder + '/' + remoteFileName)
+        request = asposewordscloud.models.requests.DeleteFileRequest(path = remote_data_folder + '/' + remote_file_name)
 
         self.words_api.delete_file(request)
 
@@ -97,13 +97,13 @@ class TestFile(BaseTestContext):
     # Test for download file.
     #
     def test_download_file(self):
-        remoteDataFolder = self.remote_test_folder + '/Storage'
-        localFile = 'Common/test_multi_pages.docx'
-        remoteFileName = 'TestDownloadFile.docx'
+        remote_data_folder = self.remote_test_folder + '/Storage'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestDownloadFile.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.DownloadFileRequest(path=remoteDataFolder + '/' + remoteFileName)
+        request = asposewordscloud.models.requests.DownloadFileRequest(path = remote_data_folder + '/' + remote_file_name)
 
         result = self.words_api.download_file(request)
         self.assertIsNotNone(result, 'Error has occurred.')

@@ -36,13 +36,13 @@ class TestStyles(BaseTestContext):
     # Test for getting styles from document.
     #
     def test_get_styles(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentElements/Styles'
-        localFile = 'DocumentElements/Styles/GetStyles.docx'
-        remoteFileName = 'TestGetStyles.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/Styles'
+        local_file = 'DocumentElements/Styles/GetStyles.docx'
+        remote_file_name = 'TestGetStyles.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetStylesRequest(name=remoteFileName, folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetStylesRequest(name = remote_file_name, folder = remote_data_folder)
 
         result = self.words_api.get_styles(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -54,9 +54,9 @@ class TestStyles(BaseTestContext):
     # Test for getting styles from document online.
     #
     def test_get_styles_online(self):
-        localFile = 'DocumentElements/Styles/GetStyles.docx'
+        local_file = 'DocumentElements/Styles/GetStyles.docx'
 
-        request = asposewordscloud.models.requests.GetStylesOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        request = asposewordscloud.models.requests.GetStylesOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
         result = self.words_api.get_styles_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -66,13 +66,13 @@ class TestStyles(BaseTestContext):
     # Test for getting style from document.
     #
     def test_get_style(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentElements/Styles'
-        localFile = 'DocumentElements/Styles/GetStyles.docx'
-        remoteFileName = 'TestGetStyle.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/Styles'
+        local_file = 'DocumentElements/Styles/GetStyles.docx'
+        remote_file_name = 'TestGetStyle.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetStyleRequest(name=remoteFileName, style_name='Heading 1', folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetStyleRequest(name = remote_file_name, style_name = 'Heading 1', folder = remote_data_folder)
 
         result = self.words_api.get_style(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -83,9 +83,9 @@ class TestStyles(BaseTestContext):
     # Test for getting style from document online.
     #
     def test_get_style_online(self):
-        localFile = 'DocumentElements/Styles/GetStyles.docx'
+        local_file = 'DocumentElements/Styles/GetStyles.docx'
 
-        request = asposewordscloud.models.requests.GetStyleOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), style_name='Heading 1')
+        request = asposewordscloud.models.requests.GetStyleOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), style_name = 'Heading 1')
 
         result = self.words_api.get_style_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -95,14 +95,14 @@ class TestStyles(BaseTestContext):
     # Test for updating style from document.
     #
     def test_update_style(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentElements/Styles'
-        localFile = 'DocumentElements/Styles/GetStyles.docx'
-        remoteFileName = 'TestUpdateStyle.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/Styles'
+        local_file = 'DocumentElements/Styles/GetStyles.docx'
+        remote_file_name = 'TestUpdateStyle.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        requestStyleUpdate = asposewordscloud.StyleUpdate(name='My Style')
-        request = asposewordscloud.models.requests.UpdateStyleRequest(name=remoteFileName, style_update=requestStyleUpdate, style_name='Heading 1', folder=remoteDataFolder)
+        request_style_update = asposewordscloud.StyleUpdate(name = 'My Style')
+        request = asposewordscloud.models.requests.UpdateStyleRequest(name = remote_file_name, style_update = request_style_update, style_name = 'Heading 1', folder = remote_data_folder)
 
         result = self.words_api.update_style(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -113,10 +113,10 @@ class TestStyles(BaseTestContext):
     # Test for updating style from document online.
     #
     def test_update_style_online(self):
-        localFile = 'DocumentElements/Styles/GetStyles.docx'
+        local_file = 'DocumentElements/Styles/GetStyles.docx'
 
-        requestStyleUpdate = asposewordscloud.StyleUpdate(name='My Style')
-        request = asposewordscloud.models.requests.UpdateStyleOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), style_update=requestStyleUpdate, style_name='Heading 1')
+        request_style_update = asposewordscloud.StyleUpdate(name = 'My Style')
+        request = asposewordscloud.models.requests.UpdateStyleOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), style_update = request_style_update, style_name = 'Heading 1')
 
         result = self.words_api.update_style_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -126,14 +126,14 @@ class TestStyles(BaseTestContext):
     # Test for inserting style from document.
     #
     def test_insert_style(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentElements/Styles'
-        localFile = 'DocumentElements/Styles/GetStyles.docx'
-        remoteFileName = 'TestInsertStyle.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/Styles'
+        local_file = 'DocumentElements/Styles/GetStyles.docx'
+        remote_file_name = 'TestInsertStyle.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        requestStyleInsert = asposewordscloud.StyleInsert(style_name='My Style', style_type='Paragraph')
-        request = asposewordscloud.models.requests.InsertStyleRequest(name=remoteFileName, style_insert=requestStyleInsert, folder=remoteDataFolder)
+        request_style_insert = asposewordscloud.StyleInsert(style_name = 'My Style', style_type = 'Paragraph')
+        request = asposewordscloud.models.requests.InsertStyleRequest(name = remote_file_name, style_insert = request_style_insert, folder = remote_data_folder)
 
         result = self.words_api.insert_style(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -144,10 +144,10 @@ class TestStyles(BaseTestContext):
     # Test for inserting style from document online.
     #
     def test_insert_style_online(self):
-        localFile = 'DocumentElements/Styles/GetStyles.docx'
+        local_file = 'DocumentElements/Styles/GetStyles.docx'
 
-        requestStyleInsert = asposewordscloud.StyleInsert(style_name='My Style', style_type='Paragraph')
-        request = asposewordscloud.models.requests.InsertStyleOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), style_insert=requestStyleInsert)
+        request_style_insert = asposewordscloud.StyleInsert(style_name = 'My Style', style_type = 'Paragraph')
+        request = asposewordscloud.models.requests.InsertStyleOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), style_insert = request_style_insert)
 
         result = self.words_api.insert_style_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -157,14 +157,14 @@ class TestStyles(BaseTestContext):
     # Test for coping style from document.
     #
     def test_copy_style(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentElements/Styles'
-        localFile = 'DocumentElements/Styles/GetStyles.docx'
-        remoteFileName = 'TestCopyStyle.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/Styles'
+        local_file = 'DocumentElements/Styles/GetStyles.docx'
+        remote_file_name = 'TestCopyStyle.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        requestStyleCopy = asposewordscloud.StyleCopy(style_name='Heading 1')
-        request = asposewordscloud.models.requests.CopyStyleRequest(name=remoteFileName, style_copy=requestStyleCopy, folder=remoteDataFolder)
+        request_style_copy = asposewordscloud.StyleCopy(style_name = 'Heading 1')
+        request = asposewordscloud.models.requests.CopyStyleRequest(name = remote_file_name, style_copy = request_style_copy, folder = remote_data_folder)
 
         result = self.words_api.copy_style(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -175,10 +175,10 @@ class TestStyles(BaseTestContext):
     # Test for coping style from document online.
     #
     def test_copy_style_online(self):
-        localFile = 'DocumentElements/Styles/GetStyles.docx'
+        local_file = 'DocumentElements/Styles/GetStyles.docx'
 
-        requestStyleCopy = asposewordscloud.StyleCopy(style_name='Heading 1')
-        request = asposewordscloud.models.requests.CopyStyleOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), style_copy=requestStyleCopy)
+        request_style_copy = asposewordscloud.StyleCopy(style_name = 'Heading 1')
+        request = asposewordscloud.models.requests.CopyStyleOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), style_copy = request_style_copy)
 
         result = self.words_api.copy_style_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -188,13 +188,13 @@ class TestStyles(BaseTestContext):
     # Test for getting style from document element.
     #
     def test_get_style_from_document_element(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentElements/Styles'
-        localFile = 'DocumentElements/Styles/GetStyles.docx'
-        remoteFileName = 'TestGetStyleFromDocumentElement.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/Styles'
+        local_file = 'DocumentElements/Styles/GetStyles.docx'
+        remote_file_name = 'TestGetStyleFromDocumentElement.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetStyleFromDocumentElementRequest(name=remoteFileName, styled_node_path='paragraphs/1/paragraphFormat', folder=remoteDataFolder)
+        request = asposewordscloud.models.requests.GetStyleFromDocumentElementRequest(name = remote_file_name, styled_node_path = 'paragraphs/1/paragraphFormat', folder = remote_data_folder)
 
         result = self.words_api.get_style_from_document_element(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -205,9 +205,9 @@ class TestStyles(BaseTestContext):
     # Test for getting style from document element online.
     #
     def test_get_style_from_document_element_online(self):
-        localFile = 'DocumentElements/Styles/GetStyles.docx'
+        local_file = 'DocumentElements/Styles/GetStyles.docx'
 
-        request = asposewordscloud.models.requests.GetStyleFromDocumentElementOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), styled_node_path='paragraphs/1/paragraphFormat')
+        request = asposewordscloud.models.requests.GetStyleFromDocumentElementOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), styled_node_path = 'paragraphs/1/paragraphFormat')
 
         result = self.words_api.get_style_from_document_element_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -217,14 +217,14 @@ class TestStyles(BaseTestContext):
     # Test for applying style to document element.
     #
     def test_apply_style_to_document_element(self):
-        remoteDataFolder = self.remote_test_folder + '/DocumentElements/Styles'
-        localFile = 'DocumentElements/Styles/GetStyles.docx'
-        remoteFileName = 'TestApplyStyleToDocumentElement.docx'
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/Styles'
+        local_file = 'DocumentElements/Styles/GetStyles.docx'
+        remote_file_name = 'TestApplyStyleToDocumentElement.docx'
 
-        self.upload_file(remoteDataFolder + '/' + remoteFileName, open(os.path.join(self.local_test_folder, localFile), 'rb'))
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        requestStyleApply = asposewordscloud.StyleApply(style_name='Heading 1')
-        request = asposewordscloud.models.requests.ApplyStyleToDocumentElementRequest(name=remoteFileName, style_apply=requestStyleApply, styled_node_path='paragraphs/1/paragraphFormat', folder=remoteDataFolder)
+        request_style_apply = asposewordscloud.StyleApply(style_name = 'Heading 1')
+        request = asposewordscloud.models.requests.ApplyStyleToDocumentElementRequest(name = remote_file_name, style_apply = request_style_apply, styled_node_path = 'paragraphs/1/paragraphFormat', folder = remote_data_folder)
 
         result = self.words_api.apply_style_to_document_element(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -234,10 +234,10 @@ class TestStyles(BaseTestContext):
     # Test for applying style to document element online.
     #
     def test_apply_style_to_document_element_online(self):
-        localFile = 'DocumentElements/Styles/GetStyles.docx'
+        local_file = 'DocumentElements/Styles/GetStyles.docx'
 
-        requestStyleApply = asposewordscloud.StyleApply(style_name='Heading 1')
-        request = asposewordscloud.models.requests.ApplyStyleToDocumentElementOnlineRequest(document=open(os.path.join(self.local_test_folder, localFile), 'rb'), style_apply=requestStyleApply, styled_node_path='paragraphs/1/paragraphFormat')
+        request_style_apply = asposewordscloud.StyleApply(style_name = 'Heading 1')
+        request = asposewordscloud.models.requests.ApplyStyleToDocumentElementOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), style_apply = request_style_apply, styled_node_path = 'paragraphs/1/paragraphFormat')
 
         result = self.words_api.apply_style_to_document_element_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

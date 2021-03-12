@@ -49,6 +49,7 @@ class PdfSaveOptionsData(object):
         'dml_rendering_mode': 'str',
         'file_name': 'str',
         'save_format': 'str',
+        'update_created_time_property': 'bool',
         'update_fields': 'bool',
         'update_last_printed_property': 'bool',
         'update_last_saved_time_property': 'bool',
@@ -95,6 +96,7 @@ class PdfSaveOptionsData(object):
         'dml_rendering_mode': 'DmlRenderingMode',
         'file_name': 'FileName',
         'save_format': 'SaveFormat',
+        'update_created_time_property': 'UpdateCreatedTimeProperty',
         'update_fields': 'UpdateFields',
         'update_last_printed_property': 'UpdateLastPrintedProperty',
         'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
@@ -134,7 +136,7 @@ class PdfSaveOptionsData(object):
         'zoom_factor': 'ZoomFactor'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_full_fonts=None, encryption_details=None, escape_uri=None, export_document_structure=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, interpolate_images=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_full_fonts=None, encryption_details=None, escape_uri=None, export_document_structure=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, interpolate_images=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
         """PdfSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -143,6 +145,7 @@ class PdfSaveOptionsData(object):
         self._dml_rendering_mode = None
         self._file_name = None
         self._save_format = None
+        self._update_created_time_property = None
         self._update_fields = None
         self._update_last_printed_property = None
         self._update_last_saved_time_property = None
@@ -194,6 +197,8 @@ class PdfSaveOptionsData(object):
             self.file_name = file_name
         if save_format is not None:
             self.save_format = save_format
+        if update_created_time_property is not None:
+            self.update_created_time_property = update_created_time_property
         if update_fields is not None:
             self.update_fields = update_fields
         if update_last_printed_property is not None:
@@ -408,6 +413,28 @@ class PdfSaveOptionsData(object):
         :type: str
         """
         self._save_format = save_format
+
+    @property
+    def update_created_time_property(self):
+        """Gets the update_created_time_property of this PdfSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+
+        :return: The update_created_time_property of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._update_created_time_property
+
+    @update_created_time_property.setter
+    def update_created_time_property(self, update_created_time_property):
+        """Sets the update_created_time_property of this PdfSaveOptionsData.
+
+        Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
+
+        :param update_created_time_property: The update_created_time_property of this PdfSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._update_created_time_property = update_created_time_property
 
     @property
     def update_fields(self):
