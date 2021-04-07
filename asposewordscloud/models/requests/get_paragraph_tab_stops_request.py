@@ -1,4 +1,4 @@
-# coding: utf-8
+﻿# coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="get_paragraph_tab_stops_request.py">
 #   Copyright (c) 2021 Aspose.Words for Cloud

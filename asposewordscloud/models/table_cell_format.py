@@ -1,4 +1,4 @@
-# coding: utf-8
+﻿# coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="table_cell_format.py">
 #   Copyright (c) 2021 Aspose.Words for Cloud

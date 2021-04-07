@@ -1,4 +1,4 @@
-# coding: utf-8
+﻿# coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="pdf_save_options_data.py">
 #   Copyright (c) 2021 Aspose.Words for Cloud
@@ -70,7 +70,6 @@ class PdfSaveOptionsData(object):
         'downsample_options': 'DownsampleOptionsData',
         'embed_full_fonts': 'bool',
         'encryption_details': 'PdfEncryptionDetailsData',
-        'escape_uri': 'bool',
         'export_document_structure': 'bool',
         'font_embedding_mode': 'str',
         'header_footer_bookmarks_export_mode': 'str',
@@ -117,7 +116,6 @@ class PdfSaveOptionsData(object):
         'downsample_options': 'DownsampleOptions',
         'embed_full_fonts': 'EmbedFullFonts',
         'encryption_details': 'EncryptionDetails',
-        'escape_uri': 'EscapeUri',
         'export_document_structure': 'ExportDocumentStructure',
         'font_embedding_mode': 'FontEmbeddingMode',
         'header_footer_bookmarks_export_mode': 'HeaderFooterBookmarksExportMode',
@@ -136,7 +134,7 @@ class PdfSaveOptionsData(object):
         'zoom_factor': 'ZoomFactor'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_full_fonts=None, encryption_details=None, escape_uri=None, export_document_structure=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, interpolate_images=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_full_fonts=None, encryption_details=None, export_document_structure=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, interpolate_images=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
         """PdfSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -166,7 +164,6 @@ class PdfSaveOptionsData(object):
         self._downsample_options = None
         self._embed_full_fonts = None
         self._encryption_details = None
-        self._escape_uri = None
         self._export_document_structure = None
         self._font_embedding_mode = None
         self._header_footer_bookmarks_export_mode = None
@@ -239,8 +236,6 @@ class PdfSaveOptionsData(object):
             self.embed_full_fonts = embed_full_fonts
         if encryption_details is not None:
             self.encryption_details = encryption_details
-        if escape_uri is not None:
-            self.escape_uri = escape_uri
         if export_document_structure is not None:
             self.export_document_structure = export_document_structure
         if font_embedding_mode is not None:
@@ -875,28 +870,6 @@ class PdfSaveOptionsData(object):
         :type: PdfEncryptionDetailsData
         """
         self._encryption_details = encryption_details
-
-    @property
-    def escape_uri(self):
-        """Gets the escape_uri of this PdfSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value indicating whether URI should be escaped before writing.  # noqa: E501
-
-        :return: The escape_uri of this PdfSaveOptionsData.  # noqa: E501
-        :rtype: bool
-        """
-        return self._escape_uri
-
-    @escape_uri.setter
-    def escape_uri(self, escape_uri):
-        """Sets the escape_uri of this PdfSaveOptionsData.
-
-        Gets or sets a value indicating whether URI should be escaped before writing.  # noqa: E501
-
-        :param escape_uri: The escape_uri of this PdfSaveOptionsData.  # noqa: E501
-        :type: bool
-        """
-        self._escape_uri = escape_uri
 
     @property
     def export_document_structure(self):

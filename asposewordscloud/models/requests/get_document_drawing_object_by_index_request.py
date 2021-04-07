@@ -1,4 +1,4 @@
-# coding: utf-8
+﻿# coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="get_document_drawing_object_by_index_request.py">
 #   Copyright (c) 2021 Aspose.Words for Cloud

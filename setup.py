@@ -1,4 +1,4 @@
-# coding: utf-8
+﻿# coding: utf-8
 
 """
     Aspose.Words for Cloud API Reference

@@ -1,4 +1,4 @@
-# coding: utf-8
+﻿# coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="office_math_objects_collection.py">
 #   Copyright (c) 2021 Aspose.Words for Cloud

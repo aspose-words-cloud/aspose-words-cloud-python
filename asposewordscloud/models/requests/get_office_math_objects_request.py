@@ -1,4 +1,4 @@
-# coding: utf-8
+﻿# coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="get_office_math_objects_request.py">
 #   Copyright (c) 2021 Aspose.Words for Cloud

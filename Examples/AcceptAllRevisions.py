@@ -1,4 +1,4 @@
-import os
+﻿import os
 import asposewordscloud
 import asposewordscloud.models.requests
 from asposewordscloud.rest import ApiException

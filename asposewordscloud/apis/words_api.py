@@ -1,4 +1,4 @@
-# coding: utf-8
+﻿# coding: utf-8
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="words_api.py">
