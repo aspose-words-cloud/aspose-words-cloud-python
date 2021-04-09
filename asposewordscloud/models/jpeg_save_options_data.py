@@ -44,6 +44,7 @@ class JpegSaveOptionsData(object):
     """
     swagger_types = {
         'allow_embedding_post_script_fonts': 'bool',
+        'custom_time_zone_info_data': 'TimeZoneInfoData',
         'dml3_d_effects_rendering_mode': 'str',
         'dml_effects_rendering_mode': 'str',
         'dml_rendering_mode': 'str',
@@ -79,6 +80,7 @@ class JpegSaveOptionsData(object):
 
     attribute_map = {
         'allow_embedding_post_script_fonts': 'AllowEmbeddingPostScriptFonts',
+        'custom_time_zone_info_data': 'CustomTimeZoneInfoData',
         'dml3_d_effects_rendering_mode': 'Dml3DEffectsRenderingMode',
         'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
         'dml_rendering_mode': 'DmlRenderingMode',
@@ -112,10 +114,11 @@ class JpegSaveOptionsData(object):
         'vertical_resolution': 'VerticalResolution'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, graphics_quality_options=None, horizontal_resolution=None, image_brightness=None, image_color_mode=None, image_contrast=None, paper_color=None, pixel_format=None, resolution=None, scale=None, use_anti_aliasing=None, use_gdi_emf_renderer=None, use_high_quality_rendering=None, vertical_resolution=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, graphics_quality_options=None, horizontal_resolution=None, image_brightness=None, image_color_mode=None, image_contrast=None, paper_color=None, pixel_format=None, resolution=None, scale=None, use_anti_aliasing=None, use_gdi_emf_renderer=None, use_high_quality_rendering=None, vertical_resolution=None):  # noqa: E501
         """JpegSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
+        self._custom_time_zone_info_data = None
         self._dml3_d_effects_rendering_mode = None
         self._dml_effects_rendering_mode = None
         self._dml_rendering_mode = None
@@ -151,6 +154,8 @@ class JpegSaveOptionsData(object):
 
         if allow_embedding_post_script_fonts is not None:
             self.allow_embedding_post_script_fonts = allow_embedding_post_script_fonts
+        if custom_time_zone_info_data is not None:
+            self.custom_time_zone_info_data = custom_time_zone_info_data
         if dml3_d_effects_rendering_mode is not None:
             self.dml3_d_effects_rendering_mode = dml3_d_effects_rendering_mode
         if dml_effects_rendering_mode is not None:
@@ -235,6 +240,28 @@ class JpegSaveOptionsData(object):
         :type: bool
         """
         self._allow_embedding_post_script_fonts = allow_embedding_post_script_fonts
+
+    @property
+    def custom_time_zone_info_data(self):
+        """Gets the custom_time_zone_info_data of this JpegSaveOptionsData.  # noqa: E501
+
+        Gets or sets CustomTimeZoneInfo.  # noqa: E501
+
+        :return: The custom_time_zone_info_data of this JpegSaveOptionsData.  # noqa: E501
+        :rtype: TimeZoneInfoData
+        """
+        return self._custom_time_zone_info_data
+
+    @custom_time_zone_info_data.setter
+    def custom_time_zone_info_data(self, custom_time_zone_info_data):
+        """Sets the custom_time_zone_info_data of this JpegSaveOptionsData.
+
+        Gets or sets CustomTimeZoneInfo.  # noqa: E501
+
+        :param custom_time_zone_info_data: The custom_time_zone_info_data of this JpegSaveOptionsData.  # noqa: E501
+        :type: TimeZoneInfoData
+        """
+        self._custom_time_zone_info_data = custom_time_zone_info_data
 
     @property
     def dml3_d_effects_rendering_mode(self):
