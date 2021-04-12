@@ -38,7 +38,7 @@ class TestUrlEncode(BaseTestContext):
     #
     def test_url_encode(self):
         filename = 'test_multi_pages.docx'
-        remote_name = '[“Test_Two,_Inc.”]-_83(b)Election([“Bill_Gates”]).docx'
+        remote_name = '[â€œTest_Two,_Inc.â€]-_83(b)Election([â€œBill_Gatesâ€]).docx'
         bookmark_name = 'aspose'
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetBookmarkByNameRequest(remote_name, bookmark_name,

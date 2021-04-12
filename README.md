@@ -1,4 +1,4 @@
-Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate Microsoft Word® file generation, manipulation, conversion & inspection features into your own python applications.
+Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate Microsoft WordÂ® file generation, manipulation, conversion & inspection features into your own python applications.
 
 [Aspose.Words Cloud SDK for Python](https://products.aspose.cloud/words/python) allows to work with Word document headers, footers, page numbering, tables, sections, document comments, drawing objects, FormFields, fonts, hyperlinks, ranges, paragraphs, math objects, watermarks, revisions and document protection. It also assists in appending documents, splitting documents as well as converting document to other supported file formats. Please feel free to explore the [Developer's Guide](https://docs.aspose.cloud/display/wordscloud/Developer+Guide) for all possible usage scenarios. 
 
@@ -125,7 +125,7 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 
 ## Platform Independence
 
-Aspose.Words Cloud’s platform independent document manipulation API is a true REST API that can be used from any platform. You can use it with any language or platform that supports REST, be it the web, desktop, mobile, or the cloud. The API integrates with other cloud services to provide you the flexibility you require for processing documents. It is suitable for the most types of businesses, documents, or content.
+Aspose.Words Cloudâ€™s platform independent document manipulation API is a true REST API that can be used from any platform. You can use it with any language or platform that supports REST, be it the web, desktop, mobile, or the cloud. The API integrates with other cloud services to provide you the flexibility you require for processing documents. It is suitable for the most types of businesses, documents, or content.
 
 ## Getting Started with Aspose.Words Cloud SDK for Python
 

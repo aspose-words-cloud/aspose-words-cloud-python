@@ -814,7 +814,7 @@ class PdfSaveOptionsData(object):
     def display_doc_title(self):
         """Gets the display_doc_title of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.  # noqa: E501
+        Gets or sets a value indicating whether the windowâ€™s title bar should display the document title taken from the Title entry of the document information dictionary.  # noqa: E501
 
         :return: The display_doc_title of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -825,7 +825,7 @@ class PdfSaveOptionsData(object):
     def display_doc_title(self, display_doc_title):
         """Sets the display_doc_title of this PdfSaveOptionsData.
 
-        Gets or sets a value indicating whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.  # noqa: E501
+        Gets or sets a value indicating whether the windowâ€™s title bar should display the document title taken from the Title entry of the document information dictionary.  # noqa: E501
 
         :param display_doc_title: The display_doc_title of this PdfSaveOptionsData.  # noqa: E501
         :type: bool

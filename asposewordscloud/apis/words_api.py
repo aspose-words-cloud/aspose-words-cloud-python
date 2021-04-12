@@ -16335,7 +16335,7 @@ class WordsApi(object):
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
         :param rotation_angle float : The rotation angle of the watermark.
-        :param image str : The filename of the image. If the parameter value is missing — the image data is expected in the request content.
+        :param image str : The filename of the image. If the parameter value is missing â€” the image data is expected in the request content.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16415,7 +16415,7 @@ class WordsApi(object):
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
         :param rotation_angle float : The rotation angle of the watermark.
-        :param image str : The filename of the image. If the parameter value is missing — the image data is expected in the request content.
+        :param image str : The filename of the image. If the parameter value is missing â€” the image data is expected in the request content.
         :return: InsertWatermarkImageOnlineResponse
                  If the method is called asynchronously,
                  returns the request thread.
