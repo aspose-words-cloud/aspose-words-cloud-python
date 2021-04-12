@@ -1,4 +1,4 @@
-﻿python -m pip install --upgrade setuptools wheel
+python -m pip install --upgrade setuptools wheel
 pip install urllib3
 pip install requests-toolbelt
 pip install --index-url https://test.pypi.org/simple/ aspose-words-cloud

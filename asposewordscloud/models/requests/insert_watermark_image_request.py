@@ -1,4 +1,4 @@
-﻿# coding: utf-8
+# coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="insert_watermark_image_request.py">
 #   Copyright (c) 2021 Aspose.Words for Cloud
@@ -44,7 +44,7 @@ class InsertWatermarkImageRequest(BaseRequestObject):
     :param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     :param revision_date_time The date and time to use for revisions.
     :param rotation_angle The rotation angle of the watermark.
-    :param image The filename of the image. If the parameter value is missing — the image data is expected in the request content.
+    :param image The filename of the image. If the parameter value is missing � the image data is expected in the request content.
     """
 
     def __init__(self, name, image_file=None, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None, rotation_angle=None, image=None):

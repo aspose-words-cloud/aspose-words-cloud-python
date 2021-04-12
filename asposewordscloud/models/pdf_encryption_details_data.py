@@ -1,4 +1,4 @@
-﻿# coding: utf-8
+# coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="pdf_encryption_details_data.py">
 #   Copyright (c) 2021 Aspose.Words for Cloud

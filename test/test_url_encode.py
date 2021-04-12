@@ -1,4 +1,4 @@
-Ôªø# coding: utf-8
+# coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="test_url_encode.py">
 #   Copyright (c) 2021 Aspose.Words for Cloud
@@ -38,7 +38,7 @@ class TestUrlEncode(BaseTestContext):
     #
     def test_url_encode(self):
         filename = 'test_multi_pages.docx'
-        remote_name = '[‚ÄúTest_Two,_Inc.‚Äù]-_83(b)Election([‚ÄúBill_Gates‚Äù]).docx'
+        remote_name = '[ìTest_Two,_Inc.î]-_83(b)Election([ìBill_Gatesî]).docx'
         bookmark_name = 'aspose'
         self.upload_file(os.path.join(self.remote_test_folder, self.test_folder, remote_name), open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb'))
         request = asposewordscloud.models.requests.GetBookmarkByNameRequest(remote_name, bookmark_name,

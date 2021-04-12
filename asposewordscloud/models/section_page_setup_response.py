@@ -1,4 +1,4 @@
-﻿# coding: utf-8
+# coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="section_page_setup_response.py">
 #   Copyright (c) 2021 Aspose.Words for Cloud

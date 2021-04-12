@@ -1,4 +1,4 @@
-﻿documents_dir = '...'
+documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
 file_name = 'test_doc.docx'
 
