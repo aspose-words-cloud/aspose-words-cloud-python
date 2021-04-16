@@ -59,7 +59,10 @@ class TestRevisions(BaseTestContext):
 
         result = self.words_api.accept_all_revisions_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.document, 'Validate AcceptAllRevisionsOnline response')
+        self.assertIsNotNone(result.model, 'Validate AcceptAllRevisionsOnline response')
+        self.assertIsNotNone(result.model.result, 'Validate AcceptAllRevisionsOnline response')
+        self.assertIsNotNone(result.model.result.dest, 'Validate AcceptAllRevisionsOnline response')
 
     #
     # Test for rejecting revisions in document.
@@ -88,4 +91,7 @@ class TestRevisions(BaseTestContext):
 
         result = self.words_api.reject_all_revisions_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
-
+        self.assertIsNotNone(result.document, 'Validate RejectAllRevisionsOnline response')
+        self.assertIsNotNone(result.model, 'Validate RejectAllRevisionsOnline response')
+        self.assertIsNotNone(result.model.result, 'Validate RejectAllRevisionsOnline response')
+        self.assertIsNotNone(result.model.result.dest, 'Validate RejectAllRevisionsOnline response')

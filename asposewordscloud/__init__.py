@@ -238,6 +238,7 @@ from asposewordscloud.models.tab_stop_insert import TabStopInsert
 from asposewordscloud.models.tab_stops_response import TabStopsResponse
 from asposewordscloud.models.text_save_options_data import TextSaveOptionsData
 from asposewordscloud.models.tiff_save_options_data import TiffSaveOptionsData
+from asposewordscloud.models.time_zone_info_data import TimeZoneInfoData
 from asposewordscloud.models.txt_save_options_base_data import TxtSaveOptionsBaseData
 from asposewordscloud.models.watermark_text import WatermarkText
 from asposewordscloud.models.word_ml_save_options_data import WordMLSaveOptionsData
