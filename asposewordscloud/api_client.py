@@ -79,7 +79,7 @@ class ApiClient(object):
             configuration = Configuration()
         self.configuration = configuration
 
-        self.pool = ThreadPool()
+        self.pool = None
         self.rest_client = rest.RESTClientObject(configuration)
         self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '21.5'}
         if header_name is not None:
@@ -89,8 +89,9 @@ class ApiClient(object):
         self.user_agent = 'python sdk 21.5'
 
     def __del__(self):
-        self.pool.close()
-        self.pool.join()
+        if not self.pool is None:
+            self.pool.close()
+            self.pool.join()
 
     @property
     def user_agent(self):
@@ -399,6 +400,8 @@ class ApiClient(object):
                                    collection_formats,
                                    _preload_content, _request_timeout)
         else:
+            if self.pool is None:
+                self.pool = ThreadPool()
             thread = self.pool.apply_async(self.__call_api, (resource_path,
                                                              method, query_params,
                                                              header_params, body,
