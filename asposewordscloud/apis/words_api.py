@@ -985,6 +985,7 @@ class WordsApi(object):
         :param is_async bool
         :param document file : The document. (required)
         :param compare_data CompareData : Compare data. (required)
+        :param comparing_document file : The comparing document.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.

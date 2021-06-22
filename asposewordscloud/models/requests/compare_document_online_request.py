@@ -36,14 +36,16 @@ class CompareDocumentOnlineRequest(BaseRequestObject):
     Initializes a new instance.
     :param document The document.
     :param compare_data Compare data.
+    :param comparing_document The comparing document.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     """
 
-    def __init__(self, document, compare_data, load_encoding=None, password=None, dest_file_name=None):
+    def __init__(self, document, compare_data, comparing_document=None, load_encoding=None, password=None, dest_file_name=None):
         self.document = document
         self.compare_data = compare_data
+        self.comparing_document = comparing_document
         self.load_encoding = load_encoding
         self.password = password
         self.dest_file_name = dest_file_name
@@ -92,6 +94,8 @@ class CompareDocumentOnlineRequest(BaseRequestObject):
             form_params.append(['document', self.document, 'file'])  # noqa: E501
         if self.compare_data is not None:
             form_params.append(['compareData', self.compare_data.to_json(), 'string'])  # noqa: E501
+        if self.comparing_document is not None:
+            form_params.append(['comparingDocument', self.comparing_document, 'file'])  # noqa: E501
 
         body_params = None
         return {
