@@ -16,6 +16,13 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 - [Convert a document to desired file format](https://docs.aspose.cloud/display/wordscloud/Convert+Document+to+Destination+Format+with+Detailed+Settings+and+Save+Result+to+Storage) along with detailed settings.
 - Convert an encrypted PDF document into Word document format.
 
+## Enhancements in Version 21.6
+
+- Implemented beta version of CompareDocumentOnline feature with both document sending in request
+- CompareDocument method now can handle PDF files
+- AcceptAllRevisionsBeforeComparison option introduced which is used to specify if accept all revisions before comparison
+
+
 ## Enhancements in Version 21.5
 
 - Update dependencies in sdk

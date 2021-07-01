@@ -72,3 +72,22 @@ class TestCompareDocument(BaseTestContext):
         result = self.words_api.compare_document_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
+    #
+    # Test for document comparison online.
+    #
+    def test_compare_two_document_online(self):
+        remote_folder = self.remote_test_folder + '/DocumentActions/CompareDocument'
+        local_folder = 'DocumentActions/CompareDocument'
+        local_name1 = 'compareTestDoc1.doc'
+        local_name2 = 'compareTestDoc2.doc'
+        remote_name2 = 'TestCompareDocument2.doc'
+
+        self.upload_file(remote_folder + '/' + remote_name2, open(os.path.join(self.local_test_folder, local_folder + '/' + local_name2), 'rb'))
+
+        request_compare_data = asposewordscloud.CompareData(author = 'author', comparing_with_document = remote_folder + '/' + remote_name2, date_time = dateutil.parser.isoparse('2015-10-26T00:00:00.0000000Z'))
+        request = asposewordscloud.models.requests.CompareDocumentOnlineRequest(document = open(os.path.join(self.local_test_folder, local_folder + '/' + local_name1), 'rb'), compare_data = request_compare_data, comparing_document = open(os.path.join(self.local_test_folder, local_folder + '/' + local_name2), 'rb'), dest_file_name = self.remote_test_out + '/TestCompareDocumentOut.doc')
+
+        result = self.words_api.compare_document_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+

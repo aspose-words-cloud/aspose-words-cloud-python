@@ -43,6 +43,7 @@ class CompareOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'accept_all_revisions_before_comparison': 'bool',
         'ignore_case_changes': 'bool',
         'ignore_comments': 'bool',
         'ignore_fields': 'bool',
@@ -55,6 +56,7 @@ class CompareOptions(object):
     }
 
     attribute_map = {
+        'accept_all_revisions_before_comparison': 'AcceptAllRevisionsBeforeComparison',
         'ignore_case_changes': 'IgnoreCaseChanges',
         'ignore_comments': 'IgnoreComments',
         'ignore_fields': 'IgnoreFields',
@@ -66,9 +68,10 @@ class CompareOptions(object):
         'target': 'Target'
     }
 
-    def __init__(self, ignore_case_changes=None, ignore_comments=None, ignore_fields=None, ignore_footnotes=None, ignore_formatting=None, ignore_headers_and_footers=None, ignore_tables=None, ignore_textboxes=None, target=None):  # noqa: E501
+    def __init__(self, accept_all_revisions_before_comparison=None, ignore_case_changes=None, ignore_comments=None, ignore_fields=None, ignore_footnotes=None, ignore_formatting=None, ignore_headers_and_footers=None, ignore_tables=None, ignore_textboxes=None, target=None):  # noqa: E501
         """CompareOptions - a model defined in Swagger"""  # noqa: E501
 
+        self._accept_all_revisions_before_comparison = None
         self._ignore_case_changes = None
         self._ignore_comments = None
         self._ignore_fields = None
@@ -80,6 +83,8 @@ class CompareOptions(object):
         self._target = None
         self.discriminator = None
 
+        if accept_all_revisions_before_comparison is not None:
+            self.accept_all_revisions_before_comparison = accept_all_revisions_before_comparison
         if ignore_case_changes is not None:
             self.ignore_case_changes = ignore_case_changes
         if ignore_comments is not None:
@@ -98,6 +103,28 @@ class CompareOptions(object):
             self.ignore_textboxes = ignore_textboxes
         if target is not None:
             self.target = target
+
+    @property
+    def accept_all_revisions_before_comparison(self):
+        """Gets the accept_all_revisions_before_comparison of this CompareOptions.  # noqa: E501
+
+        Gets or sets whether accept revisions before comparison or not.  # noqa: E501
+
+        :return: The accept_all_revisions_before_comparison of this CompareOptions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._accept_all_revisions_before_comparison
+
+    @accept_all_revisions_before_comparison.setter
+    def accept_all_revisions_before_comparison(self, accept_all_revisions_before_comparison):
+        """Sets the accept_all_revisions_before_comparison of this CompareOptions.
+
+        Gets or sets whether accept revisions before comparison or not.  # noqa: E501
+
+        :param accept_all_revisions_before_comparison: The accept_all_revisions_before_comparison of this CompareOptions.  # noqa: E501
+        :type: bool
+        """
+        self._accept_all_revisions_before_comparison = accept_all_revisions_before_comparison
 
     @property
     def ignore_case_changes(self):
