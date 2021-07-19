@@ -49,6 +49,7 @@ class PdfSaveOptionsData(object):
         'dml_effects_rendering_mode': 'str',
         'dml_rendering_mode': 'str',
         'file_name': 'str',
+        'iml_rendering_mode': 'str',
         'save_format': 'str',
         'update_created_time_property': 'bool',
         'update_fields': 'bool',
@@ -96,6 +97,7 @@ class PdfSaveOptionsData(object):
         'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
         'dml_rendering_mode': 'DmlRenderingMode',
         'file_name': 'FileName',
+        'iml_rendering_mode': 'ImlRenderingMode',
         'save_format': 'SaveFormat',
         'update_created_time_property': 'UpdateCreatedTimeProperty',
         'update_fields': 'UpdateFields',
@@ -136,7 +138,7 @@ class PdfSaveOptionsData(object):
         'zoom_factor': 'ZoomFactor'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_full_fonts=None, encryption_details=None, export_document_structure=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, interpolate_images=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_full_fonts=None, encryption_details=None, export_document_structure=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, interpolate_images=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
         """PdfSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -145,6 +147,7 @@ class PdfSaveOptionsData(object):
         self._dml_effects_rendering_mode = None
         self._dml_rendering_mode = None
         self._file_name = None
+        self._iml_rendering_mode = None
         self._save_format = None
         self._update_created_time_property = None
         self._update_fields = None
@@ -197,6 +200,8 @@ class PdfSaveOptionsData(object):
             self.dml_rendering_mode = dml_rendering_mode
         if file_name is not None:
             self.file_name = file_name
+        if iml_rendering_mode is not None:
+            self.iml_rendering_mode = iml_rendering_mode
         if save_format is not None:
             self.save_format = save_format
         if update_created_time_property is not None:
@@ -413,6 +418,28 @@ class PdfSaveOptionsData(object):
         :type: str
         """
         self._file_name = file_name
+
+    @property
+    def iml_rendering_mode(self):
+        """Gets the iml_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
+
+        Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
+
+        :return: The iml_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._iml_rendering_mode
+
+    @iml_rendering_mode.setter
+    def iml_rendering_mode(self, iml_rendering_mode):
+        """Sets the iml_rendering_mode of this PdfSaveOptionsData.
+
+        Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
+
+        :param iml_rendering_mode: The iml_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        self._iml_rendering_mode = iml_rendering_mode
 
     @property
     def save_format(self):
