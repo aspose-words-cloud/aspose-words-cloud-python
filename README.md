@@ -16,6 +16,12 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 - [Convert a document to desired file format](https://docs.aspose.cloud/display/wordscloud/Convert+Document+to+Destination+Format+with+Detailed+Settings+and+Save+Result+to+Storage) along with detailed settings.
 - Convert an encrypted PDF document into Word document format.
 
+## Enhancements in Version 21.7
+
+- ImlRenderingMode option introduced witch is used to determine how ink (InkML) objects are rendered
+- MaxCharactersPerLine option introduced which is used to specify the maximum number of characters per one line
+
+
 ## Enhancements in Version 21.6
 
 - Implemented beta version of CompareDocumentOnline feature with both document sending in request

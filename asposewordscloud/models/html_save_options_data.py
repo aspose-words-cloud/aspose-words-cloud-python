@@ -49,6 +49,7 @@ class HtmlSaveOptionsData(object):
         'dml_effects_rendering_mode': 'str',
         'dml_rendering_mode': 'str',
         'file_name': 'str',
+        'iml_rendering_mode': 'str',
         'save_format': 'str',
         'update_created_time_property': 'bool',
         'update_fields': 'bool',
@@ -104,6 +105,7 @@ class HtmlSaveOptionsData(object):
         'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
         'dml_rendering_mode': 'DmlRenderingMode',
         'file_name': 'FileName',
+        'iml_rendering_mode': 'ImlRenderingMode',
         'save_format': 'SaveFormat',
         'update_created_time_property': 'UpdateCreatedTimeProperty',
         'update_fields': 'UpdateFields',
@@ -152,7 +154,7 @@ class HtmlSaveOptionsData(object):
         'table_width_output_mode': 'TableWidthOutputMode'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, allow_negative_indent=None, css_class_name_prefix=None, css_style_sheet_file_name=None, css_style_sheet_type=None, document_split_criteria=None, document_split_heading_level=None, encoding=None, export_document_properties=None, export_drop_down_form_field_as_text=None, export_font_resources=None, export_fonts_as_base64=None, export_headers_footers_mode=None, export_images_as_base64=None, export_language_information=None, export_list_labels=None, export_original_url_for_linked_images=None, export_page_margins=None, export_page_setup=None, export_relative_font_size=None, export_roundtrip_information=None, export_text_box_as_svg=None, export_text_input_form_field_as_text=None, export_toc_page_numbers=None, export_xhtml_transitional=None, font_resources_subsetting_size_threshold=None, fonts_folder=None, fonts_folder_alias=None, html_version=None, image_resolution=None, images_folder=None, images_folder_alias=None, metafile_format=None, office_math_output_mode=None, pretty_format=None, resolve_font_names=None, resource_folder=None, resource_folder_alias=None, scale_image_to_shape_size=None, table_width_output_mode=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, allow_negative_indent=None, css_class_name_prefix=None, css_style_sheet_file_name=None, css_style_sheet_type=None, document_split_criteria=None, document_split_heading_level=None, encoding=None, export_document_properties=None, export_drop_down_form_field_as_text=None, export_font_resources=None, export_fonts_as_base64=None, export_headers_footers_mode=None, export_images_as_base64=None, export_language_information=None, export_list_labels=None, export_original_url_for_linked_images=None, export_page_margins=None, export_page_setup=None, export_relative_font_size=None, export_roundtrip_information=None, export_text_box_as_svg=None, export_text_input_form_field_as_text=None, export_toc_page_numbers=None, export_xhtml_transitional=None, font_resources_subsetting_size_threshold=None, fonts_folder=None, fonts_folder_alias=None, html_version=None, image_resolution=None, images_folder=None, images_folder_alias=None, metafile_format=None, office_math_output_mode=None, pretty_format=None, resolve_font_names=None, resource_folder=None, resource_folder_alias=None, scale_image_to_shape_size=None, table_width_output_mode=None):  # noqa: E501
         """HtmlSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -161,6 +163,7 @@ class HtmlSaveOptionsData(object):
         self._dml_effects_rendering_mode = None
         self._dml_rendering_mode = None
         self._file_name = None
+        self._iml_rendering_mode = None
         self._save_format = None
         self._update_created_time_property = None
         self._update_fields = None
@@ -221,6 +224,8 @@ class HtmlSaveOptionsData(object):
             self.dml_rendering_mode = dml_rendering_mode
         if file_name is not None:
             self.file_name = file_name
+        if iml_rendering_mode is not None:
+            self.iml_rendering_mode = iml_rendering_mode
         if save_format is not None:
             self.save_format = save_format
         if update_created_time_property is not None:
@@ -453,6 +458,28 @@ class HtmlSaveOptionsData(object):
         :type: str
         """
         self._file_name = file_name
+
+    @property
+    def iml_rendering_mode(self):
+        """Gets the iml_rendering_mode of this HtmlSaveOptionsData.  # noqa: E501
+
+        Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
+
+        :return: The iml_rendering_mode of this HtmlSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._iml_rendering_mode
+
+    @iml_rendering_mode.setter
+    def iml_rendering_mode(self, iml_rendering_mode):
+        """Sets the iml_rendering_mode of this HtmlSaveOptionsData.
+
+        Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
+
+        :param iml_rendering_mode: The iml_rendering_mode of this HtmlSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        self._iml_rendering_mode = iml_rendering_mode
 
     @property
     def save_format(self):
