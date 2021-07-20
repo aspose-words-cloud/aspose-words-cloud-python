@@ -49,6 +49,7 @@ class HtmlFixedSaveOptionsData(object):
         'dml_effects_rendering_mode': 'str',
         'dml_rendering_mode': 'str',
         'file_name': 'str',
+        'iml_rendering_mode': 'str',
         'save_format': 'str',
         'update_created_time_property': 'bool',
         'update_fields': 'bool',
@@ -86,6 +87,7 @@ class HtmlFixedSaveOptionsData(object):
         'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
         'dml_rendering_mode': 'DmlRenderingMode',
         'file_name': 'FileName',
+        'iml_rendering_mode': 'ImlRenderingMode',
         'save_format': 'SaveFormat',
         'update_created_time_property': 'UpdateCreatedTimeProperty',
         'update_fields': 'UpdateFields',
@@ -116,7 +118,7 @@ class HtmlFixedSaveOptionsData(object):
         'use_target_machine_fonts': 'UseTargetMachineFonts'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, css_class_names_prefix=None, encoding=None, export_embedded_css=None, export_embedded_fonts=None, export_embedded_images=None, export_form_fields=None, font_format=None, page_horizontal_alignment=None, page_margins=None, resources_folder=None, resources_folder_alias=None, save_font_face_css_separately=None, show_page_border=None, use_target_machine_fonts=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, css_class_names_prefix=None, encoding=None, export_embedded_css=None, export_embedded_fonts=None, export_embedded_images=None, export_form_fields=None, font_format=None, page_horizontal_alignment=None, page_margins=None, resources_folder=None, resources_folder_alias=None, save_font_face_css_separately=None, show_page_border=None, use_target_machine_fonts=None):  # noqa: E501
         """HtmlFixedSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -125,6 +127,7 @@ class HtmlFixedSaveOptionsData(object):
         self._dml_effects_rendering_mode = None
         self._dml_rendering_mode = None
         self._file_name = None
+        self._iml_rendering_mode = None
         self._save_format = None
         self._update_created_time_property = None
         self._update_fields = None
@@ -167,6 +170,8 @@ class HtmlFixedSaveOptionsData(object):
             self.dml_rendering_mode = dml_rendering_mode
         if file_name is not None:
             self.file_name = file_name
+        if iml_rendering_mode is not None:
+            self.iml_rendering_mode = iml_rendering_mode
         if save_format is not None:
             self.save_format = save_format
         if update_created_time_property is not None:
@@ -363,6 +368,28 @@ class HtmlFixedSaveOptionsData(object):
         :type: str
         """
         self._file_name = file_name
+
+    @property
+    def iml_rendering_mode(self):
+        """Gets the iml_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
+
+        Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
+
+        :return: The iml_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._iml_rendering_mode
+
+    @iml_rendering_mode.setter
+    def iml_rendering_mode(self, iml_rendering_mode):
+        """Sets the iml_rendering_mode of this HtmlFixedSaveOptionsData.
+
+        Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
+
+        :param iml_rendering_mode: The iml_rendering_mode of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        self._iml_rendering_mode = iml_rendering_mode
 
     @property
     def save_format(self):
