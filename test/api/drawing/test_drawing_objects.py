@@ -262,8 +262,8 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        drawing_object = asposewordscloud.DrawingObjectInsert(height = 0, left = 0, top = 0, width = 0, relative_horizontal_position = 'Margin', relative_vertical_position = 'Margin', wrap_type = 'Inline')
-        request = asposewordscloud.models.requests.InsertDrawingObjectRequest(name = remote_file_name, drawing_object = drawing_object, image_file = open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), node_path = '', folder = remote_data_folder)
+        request_drawing_object = asposewordscloud.DrawingObjectInsert(height = 0, left = 0, top = 0, width = 0, relative_horizontal_position = 'Margin', relative_vertical_position = 'Margin', wrap_type = 'Inline')
+        request = asposewordscloud.models.requests.InsertDrawingObjectRequest(name = remote_file_name, drawing_object = request_drawing_object, image_file = open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), node_path = '', folder = remote_data_folder)
 
         result = self.words_api.insert_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -275,8 +275,8 @@ class TestDrawingObjects(BaseTestContext):
     def test_insert_drawing_object_online(self):
         local_file = 'Common/test_multi_pages.docx'
 
-        drawing_object = asposewordscloud.DrawingObjectInsert(height = 0, left = 0, top = 0, width = 0, relative_horizontal_position = 'Margin', relative_vertical_position = 'Margin', wrap_type = 'Inline')
-        request = asposewordscloud.models.requests.InsertDrawingObjectOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), drawing_object = drawing_object, image_file = open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), node_path = '')
+        request_drawing_object = asposewordscloud.DrawingObjectInsert(height = 0, left = 0, top = 0, width = 0, relative_horizontal_position = 'Margin', relative_vertical_position = 'Margin', wrap_type = 'Inline')
+        request = asposewordscloud.models.requests.InsertDrawingObjectOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), drawing_object = request_drawing_object, image_file = open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), node_path = '')
 
         result = self.words_api.insert_drawing_object_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -292,8 +292,8 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        drawing_object = asposewordscloud.DrawingObjectInsert(height = 0, left = 0, top = 0, width = 0, relative_horizontal_position = 'Margin', relative_vertical_position = 'Margin', wrap_type = 'Inline')
-        request = asposewordscloud.models.requests.InsertDrawingObjectRequest(name = remote_file_name, drawing_object = drawing_object, image_file = open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), folder = remote_data_folder)
+        request_drawing_object = asposewordscloud.DrawingObjectInsert(height = 0, left = 0, top = 0, width = 0, relative_horizontal_position = 'Margin', relative_vertical_position = 'Margin', wrap_type = 'Inline')
+        request = asposewordscloud.models.requests.InsertDrawingObjectRequest(name = remote_file_name, drawing_object = request_drawing_object, image_file = open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), folder = remote_data_folder)
 
         result = self.words_api.insert_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -351,8 +351,8 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        drawing_object = asposewordscloud.DrawingObjectUpdate(left = 0)
-        request = asposewordscloud.models.requests.UpdateDrawingObjectRequest(name = remote_file_name, drawing_object = drawing_object, image_file = open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), index = 0, node_path = '', folder = remote_data_folder)
+        request_drawing_object = asposewordscloud.DrawingObjectUpdate(left = 0)
+        request = asposewordscloud.models.requests.UpdateDrawingObjectRequest(name = remote_file_name, drawing_object = request_drawing_object, image_file = open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), index = 0, node_path = '', folder = remote_data_folder)
 
         result = self.words_api.update_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -364,8 +364,8 @@ class TestDrawingObjects(BaseTestContext):
     def test_update_drawing_object_online(self):
         local_file = 'Common/test_multi_pages.docx'
 
-        drawing_object = asposewordscloud.DrawingObjectUpdate(left = 0)
-        request = asposewordscloud.models.requests.UpdateDrawingObjectOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), drawing_object = drawing_object, image_file = open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), index = 0, node_path = '')
+        request_drawing_object = asposewordscloud.DrawingObjectUpdate(left = 0)
+        request = asposewordscloud.models.requests.UpdateDrawingObjectOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), drawing_object = request_drawing_object, image_file = open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), index = 0, node_path = '')
 
         result = self.words_api.update_drawing_object_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -381,8 +381,8 @@ class TestDrawingObjects(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        drawing_object = asposewordscloud.DrawingObjectUpdate(left = 0)
-        request = asposewordscloud.models.requests.UpdateDrawingObjectRequest(name = remote_file_name, drawing_object = drawing_object, image_file = open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), index = 0, folder = remote_data_folder)
+        request_drawing_object = asposewordscloud.DrawingObjectUpdate(left = 0)
+        request = asposewordscloud.models.requests.UpdateDrawingObjectRequest(name = remote_file_name, drawing_object = request_drawing_object, image_file = open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'), index = 0, folder = remote_data_folder)
 
         result = self.words_api.update_drawing_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')

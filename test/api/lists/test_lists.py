@@ -102,8 +102,8 @@ class TestLists(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        list_update = asposewordscloud.ListUpdate(is_restart_at_each_section = True)
-        request = asposewordscloud.models.requests.UpdateListRequest(name = remote_file_name, list_id = 1, list_update = list_update, folder = remote_data_folder)
+        request_list_update = asposewordscloud.ListUpdate(is_restart_at_each_section = True)
+        request = asposewordscloud.models.requests.UpdateListRequest(name = remote_file_name, list_id = 1, list_update = request_list_update, folder = remote_data_folder)
 
         result = self.words_api.update_list(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -115,8 +115,8 @@ class TestLists(BaseTestContext):
     def test_update_list_online(self):
         local_file = 'DocumentElements/Lists/ListsGet.doc'
 
-        list_update = asposewordscloud.ListUpdate(is_restart_at_each_section = True)
-        request = asposewordscloud.models.requests.UpdateListOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), list_id = 1, list_update = list_update)
+        request_list_update = asposewordscloud.ListUpdate(is_restart_at_each_section = True)
+        request = asposewordscloud.models.requests.UpdateListOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), list_id = 1, list_update = request_list_update)
 
         result = self.words_api.update_list_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -134,8 +134,8 @@ class TestLists(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        list_update = asposewordscloud.ListLevelUpdate(alignment = 'Right')
-        request = asposewordscloud.models.requests.UpdateListLevelRequest(name = remote_file_name, list_id = 1, list_level = 1, list_update = list_update, folder = remote_data_folder)
+        request_list_update = asposewordscloud.ListLevelUpdate(alignment = 'Right')
+        request = asposewordscloud.models.requests.UpdateListLevelRequest(name = remote_file_name, list_id = 1, list_level = 1, list_update = request_list_update, folder = remote_data_folder)
 
         result = self.words_api.update_list_level(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -147,8 +147,8 @@ class TestLists(BaseTestContext):
     def test_update_list_level_online(self):
         local_file = 'DocumentElements/Lists/ListsGet.doc'
 
-        list_update = asposewordscloud.ListLevelUpdate(alignment = 'Right')
-        request = asposewordscloud.models.requests.UpdateListLevelOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), list_id = 1, list_level = 1, list_update = list_update)
+        request_list_update = asposewordscloud.ListLevelUpdate(alignment = 'Right')
+        request = asposewordscloud.models.requests.UpdateListLevelOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), list_id = 1, list_level = 1, list_update = request_list_update)
 
         result = self.words_api.update_list_level_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -168,8 +168,8 @@ class TestLists(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        list_insert = asposewordscloud.ListInsert(template = 'OutlineLegal')
-        request = asposewordscloud.models.requests.InsertListRequest(name = remote_file_name, list_insert = list_insert, folder = remote_data_folder)
+        request_list_insert = asposewordscloud.ListInsert(template = 'OutlineLegal')
+        request = asposewordscloud.models.requests.InsertListRequest(name = remote_file_name, list_insert = request_list_insert, folder = remote_data_folder)
 
         result = self.words_api.insert_list(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -182,8 +182,8 @@ class TestLists(BaseTestContext):
     def test_insert_list_online(self):
         local_file = 'DocumentElements/Lists/ListsGet.doc'
 
-        list_insert = asposewordscloud.ListInsert(template = 'OutlineLegal')
-        request = asposewordscloud.models.requests.InsertListOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), list_insert = list_insert)
+        request_list_insert = asposewordscloud.ListInsert(template = 'OutlineLegal')
+        request = asposewordscloud.models.requests.InsertListOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), list_insert = request_list_insert)
 
         result = self.words_api.insert_list_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

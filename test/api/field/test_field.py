@@ -143,8 +143,8 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, text_folder + '/' + local_file_name), 'rb'))
 
-        field = asposewordscloud.FieldInsert(field_code = '{ NUMPAGES }')
-        request = asposewordscloud.models.requests.InsertFieldRequest(name = remote_file_name, field = field, node_path = 'sections/0/paragraphs/0', folder = remote_data_folder)
+        request_field = asposewordscloud.FieldInsert(field_code = '{ NUMPAGES }')
+        request = asposewordscloud.models.requests.InsertFieldRequest(name = remote_file_name, field = request_field, node_path = 'sections/0/paragraphs/0', folder = remote_data_folder)
 
         result = self.words_api.insert_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -158,8 +158,8 @@ class TestField(BaseTestContext):
     def test_insert_field_online(self):
         field_folder = 'DocumentElements/Fields'
 
-        field = asposewordscloud.FieldInsert(field_code = '{ NUMPAGES }')
-        request = asposewordscloud.models.requests.InsertFieldOnlineRequest(document = open(os.path.join(self.local_test_folder, field_folder + '/GetField.docx'), 'rb'), field = field, node_path = 'sections/0/paragraphs/0')
+        request_field = asposewordscloud.FieldInsert(field_code = '{ NUMPAGES }')
+        request = asposewordscloud.models.requests.InsertFieldOnlineRequest(document = open(os.path.join(self.local_test_folder, field_folder + '/GetField.docx'), 'rb'), field = request_field, node_path = 'sections/0/paragraphs/0')
 
         result = self.words_api.insert_field_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -176,8 +176,8 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, text_folder + '/' + local_file_name), 'rb'))
 
-        field = asposewordscloud.FieldInsert(field_code = '{ NUMPAGES }')
-        request = asposewordscloud.models.requests.InsertFieldRequest(name = remote_file_name, field = field, folder = remote_data_folder)
+        request_field = asposewordscloud.FieldInsert(field_code = '{ NUMPAGES }')
+        request = asposewordscloud.models.requests.InsertFieldRequest(name = remote_file_name, field = request_field, folder = remote_data_folder)
 
         result = self.words_api.insert_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -196,8 +196,8 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, field_folder + '/' + local_file_name), 'rb'))
 
-        field = asposewordscloud.FieldUpdate(field_code = '{ NUMPAGES }')
-        request = asposewordscloud.models.requests.UpdateFieldRequest(name = remote_file_name, index = 0, field = field, node_path = 'sections/0/paragraphs/0', folder = remote_data_folder)
+        request_field = asposewordscloud.FieldUpdate(field_code = '{ NUMPAGES }')
+        request = asposewordscloud.models.requests.UpdateFieldRequest(name = remote_file_name, index = 0, field = request_field, node_path = 'sections/0/paragraphs/0', folder = remote_data_folder)
 
         result = self.words_api.update_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -211,8 +211,8 @@ class TestField(BaseTestContext):
     def test_update_field_online(self):
         field_folder = 'DocumentElements/Fields'
 
-        field = asposewordscloud.FieldUpdate(field_code = '{ NUMPAGES }')
-        request = asposewordscloud.models.requests.UpdateFieldOnlineRequest(document = open(os.path.join(self.local_test_folder, field_folder + '/GetField.docx'), 'rb'), index = 0, field = field, node_path = 'sections/0/paragraphs/0')
+        request_field = asposewordscloud.FieldUpdate(field_code = '{ NUMPAGES }')
+        request = asposewordscloud.models.requests.UpdateFieldOnlineRequest(document = open(os.path.join(self.local_test_folder, field_folder + '/GetField.docx'), 'rb'), index = 0, field = request_field, node_path = 'sections/0/paragraphs/0')
 
         result = self.words_api.update_field_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -228,8 +228,8 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, 'Common/' + local_file_name), 'rb'))
 
-        page_number = asposewordscloud.PageNumber(alignment = 'center', format = '{PAGE} of {NUMPAGES}')
-        request = asposewordscloud.models.requests.InsertPageNumbersRequest(name = remote_file_name, page_number = page_number, folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
+        request_page_number = asposewordscloud.PageNumber(alignment = 'center', format = '{PAGE} of {NUMPAGES}')
+        request = asposewordscloud.models.requests.InsertPageNumbersRequest(name = remote_file_name, page_number = request_page_number, folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.insert_page_numbers(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -242,8 +242,8 @@ class TestField(BaseTestContext):
     def test_insert_page_numbers_online(self):
         local_file_name = 'test_multi_pages.docx'
 
-        page_number = asposewordscloud.PageNumber(alignment = 'center', format = '{PAGE} of {NUMPAGES}')
-        request = asposewordscloud.models.requests.InsertPageNumbersOnlineRequest(document = open(os.path.join(self.local_test_folder, 'Common/' + local_file_name), 'rb'), page_number = page_number)
+        request_page_number = asposewordscloud.PageNumber(alignment = 'center', format = '{PAGE} of {NUMPAGES}')
+        request = asposewordscloud.models.requests.InsertPageNumbersOnlineRequest(document = open(os.path.join(self.local_test_folder, 'Common/' + local_file_name), 'rb'), page_number = request_page_number)
 
         result = self.words_api.insert_page_numbers_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

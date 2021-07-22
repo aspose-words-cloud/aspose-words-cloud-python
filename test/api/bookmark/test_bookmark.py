@@ -102,8 +102,8 @@ class TestBookmark(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        bookmark_data = asposewordscloud.BookmarkData(name = bookmark_name, text = bookmark_text)
-        request = asposewordscloud.models.requests.UpdateBookmarkRequest(name = remote_file_name, bookmark_name = bookmark_name, bookmark_data = bookmark_data, folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
+        request_bookmark_data = asposewordscloud.BookmarkData(name = bookmark_name, text = bookmark_text)
+        request = asposewordscloud.models.requests.UpdateBookmarkRequest(name = remote_file_name, bookmark_name = bookmark_name, bookmark_data = request_bookmark_data, folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.update_bookmark(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -117,8 +117,8 @@ class TestBookmark(BaseTestContext):
         bookmark_name = 'aspose'
         remote_file_name = 'TestUpdateDocumentBookmark.docx'
 
-        bookmark_data = asposewordscloud.BookmarkData(name = bookmark_name, text = 'This will be the text for Aspose')
-        request = asposewordscloud.models.requests.UpdateBookmarkOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), bookmark_name = bookmark_name, bookmark_data = bookmark_data, dest_file_name = self.remote_test_out + '/' + remote_file_name)
+        request_bookmark_data = asposewordscloud.BookmarkData(name = bookmark_name, text = 'This will be the text for Aspose')
+        request = asposewordscloud.models.requests.UpdateBookmarkOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), bookmark_name = bookmark_name, bookmark_data = request_bookmark_data, dest_file_name = self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.update_bookmark_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

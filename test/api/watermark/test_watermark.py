@@ -73,8 +73,8 @@ class TestWatermark(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        watermark_text = asposewordscloud.WatermarkText(text = 'This is the text', rotation_angle = 90.0)
-        request = asposewordscloud.models.requests.InsertWatermarkTextRequest(name = remote_file_name, watermark_text = watermark_text, folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
+        request_watermark_text = asposewordscloud.WatermarkText(text = 'This is the text', rotation_angle = 90.0)
+        request = asposewordscloud.models.requests.InsertWatermarkTextRequest(name = remote_file_name, watermark_text = request_watermark_text, folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.insert_watermark_text(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -87,8 +87,8 @@ class TestWatermark(BaseTestContext):
     def test_insert_watermark_text_online(self):
         local_file = 'Common/test_multi_pages.docx'
 
-        watermark_text = asposewordscloud.WatermarkText(text = 'This is the text', rotation_angle = 90)
-        request = asposewordscloud.models.requests.InsertWatermarkTextOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), watermark_text = watermark_text)
+        request_watermark_text = asposewordscloud.WatermarkText(text = 'This is the text', rotation_angle = 90)
+        request = asposewordscloud.models.requests.InsertWatermarkTextOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), watermark_text = request_watermark_text)
 
         result = self.words_api.insert_watermark_text_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
