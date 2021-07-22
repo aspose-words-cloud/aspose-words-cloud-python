@@ -42,8 +42,8 @@ class TestCompatibility(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_options = asposewordscloud.OptimizationOptions(ms_word_version = 'Word2002')
-        request = asposewordscloud.models.requests.OptimizeDocumentRequest(name = remote_file_name, options = request_options, folder = remote_data_folder)
+        options = asposewordscloud.OptimizationOptions(ms_word_version = 'Word2002')
+        request = asposewordscloud.models.requests.OptimizeDocumentRequest(name = remote_file_name, options = options, folder = remote_data_folder)
 
         self.words_api.optimize_document(request)
 
@@ -54,8 +54,8 @@ class TestCompatibility(BaseTestContext):
     def test_optimize_document_online(self):
         local_file = 'Common/test_multi_pages.docx'
 
-        request_options = asposewordscloud.OptimizationOptions(ms_word_version = 'Word2002')
-        request = asposewordscloud.models.requests.OptimizeDocumentOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), options = request_options)
+        options = asposewordscloud.OptimizationOptions(ms_word_version = 'Word2002')
+        request = asposewordscloud.models.requests.OptimizeDocumentOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), options = options)
 
         result = self.words_api.optimize_document_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
