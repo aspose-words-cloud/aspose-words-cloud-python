@@ -34,7 +34,7 @@ class AppendDocumentOnlineRequest(BaseRequestObject):
     """
     Request model for append_document_online operation.
     Initializes a new instance.
-    :param document The document.
+    :param document Original document.
     :param document_list <see cref="DocumentEntryList"/> with a list of documents to append.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
