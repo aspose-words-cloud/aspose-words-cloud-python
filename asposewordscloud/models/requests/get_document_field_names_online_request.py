@@ -34,22 +34,22 @@ class GetDocumentFieldNamesOnlineRequest(BaseRequestObject):
     """
     Request model for get_document_field_names_online operation.
     Initializes a new instance.
-    :param document The document.
+    :param template The template document.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password for opening an encrypted document.
     :param use_non_merge_fields The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
     """
 
-    def __init__(self, document, load_encoding=None, password=None, use_non_merge_fields=None):
-        self.document = document
+    def __init__(self, template, load_encoding=None, password=None, use_non_merge_fields=None):
+        self.template = template
         self.load_encoding = load_encoding
         self.password = password
         self.use_non_merge_fields = use_non_merge_fields
 
     def create_http_request(self, api_client):
-        # verify the required parameter 'document' is set
-        if self.document is None:
-            raise ValueError("Missing the required parameter `document` when calling `get_document_field_names_online`")  # noqa: E501
+        # verify the required parameter 'template' is set
+        if self.template is None:
+            raise ValueError("Missing the required parameter `template` when calling `get_document_field_names_online`")  # noqa: E501
 
         path = '/v4.0/words/online/get/mailMerge/FieldNames'
         path_params = {}
@@ -83,8 +83,8 @@ class GetDocumentFieldNamesOnlineRequest(BaseRequestObject):
             ['multipart/form-data'])  # noqa: E501
 
         form_params = []
-        if self.document is not None:
-            form_params.append(['document', self.document, 'file'])  # noqa: E501
+        if self.template is not None:
+            form_params.append(['template', self.template, 'file'])  # noqa: E501
 
         body_params = None
         return {
