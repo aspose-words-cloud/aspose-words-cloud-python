@@ -49,6 +49,7 @@ class TextSaveOptionsData(object):
         'dml_effects_rendering_mode': 'str',
         'dml_rendering_mode': 'str',
         'file_name': 'str',
+        'iml_rendering_mode': 'str',
         'save_format': 'str',
         'update_created_time_property': 'bool',
         'update_fields': 'bool',
@@ -61,6 +62,7 @@ class TextSaveOptionsData(object):
         'force_page_breaks': 'bool',
         'paragraph_break': 'str',
         'add_bidi_marks': 'bool',
+        'max_characters_per_line': 'int',
         'preserve_table_layout': 'bool',
         'simplify_list_labels': 'bool'
     }
@@ -72,6 +74,7 @@ class TextSaveOptionsData(object):
         'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
         'dml_rendering_mode': 'DmlRenderingMode',
         'file_name': 'FileName',
+        'iml_rendering_mode': 'ImlRenderingMode',
         'save_format': 'SaveFormat',
         'update_created_time_property': 'UpdateCreatedTimeProperty',
         'update_fields': 'UpdateFields',
@@ -84,11 +87,12 @@ class TextSaveOptionsData(object):
         'force_page_breaks': 'ForcePageBreaks',
         'paragraph_break': 'ParagraphBreak',
         'add_bidi_marks': 'AddBidiMarks',
+        'max_characters_per_line': 'MaxCharactersPerLine',
         'preserve_table_layout': 'PreserveTableLayout',
         'simplify_list_labels': 'SimplifyListLabels'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, encoding=None, export_headers_footers_mode=None, force_page_breaks=None, paragraph_break=None, add_bidi_marks=None, preserve_table_layout=None, simplify_list_labels=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, encoding=None, export_headers_footers_mode=None, force_page_breaks=None, paragraph_break=None, add_bidi_marks=None, max_characters_per_line=None, preserve_table_layout=None, simplify_list_labels=None):  # noqa: E501
         """TextSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -97,6 +101,7 @@ class TextSaveOptionsData(object):
         self._dml_effects_rendering_mode = None
         self._dml_rendering_mode = None
         self._file_name = None
+        self._iml_rendering_mode = None
         self._save_format = None
         self._update_created_time_property = None
         self._update_fields = None
@@ -109,6 +114,7 @@ class TextSaveOptionsData(object):
         self._force_page_breaks = None
         self._paragraph_break = None
         self._add_bidi_marks = None
+        self._max_characters_per_line = None
         self._preserve_table_layout = None
         self._simplify_list_labels = None
         self.discriminator = None
@@ -125,6 +131,8 @@ class TextSaveOptionsData(object):
             self.dml_rendering_mode = dml_rendering_mode
         if file_name is not None:
             self.file_name = file_name
+        if iml_rendering_mode is not None:
+            self.iml_rendering_mode = iml_rendering_mode
         if save_format is not None:
             self.save_format = save_format
         if update_created_time_property is not None:
@@ -149,6 +157,8 @@ class TextSaveOptionsData(object):
             self.paragraph_break = paragraph_break
         if add_bidi_marks is not None:
             self.add_bidi_marks = add_bidi_marks
+        if max_characters_per_line is not None:
+            self.max_characters_per_line = max_characters_per_line
         if preserve_table_layout is not None:
             self.preserve_table_layout = preserve_table_layout
         if simplify_list_labels is not None:
@@ -293,6 +303,28 @@ class TextSaveOptionsData(object):
         :type: str
         """
         self._file_name = file_name
+
+    @property
+    def iml_rendering_mode(self):
+        """Gets the iml_rendering_mode of this TextSaveOptionsData.  # noqa: E501
+
+        Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
+
+        :return: The iml_rendering_mode of this TextSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._iml_rendering_mode
+
+    @iml_rendering_mode.setter
+    def iml_rendering_mode(self, iml_rendering_mode):
+        """Sets the iml_rendering_mode of this TextSaveOptionsData.
+
+        Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
+
+        :param iml_rendering_mode: The iml_rendering_mode of this TextSaveOptionsData.  # noqa: E501
+        :type: str
+        """
+        self._iml_rendering_mode = iml_rendering_mode
 
     @property
     def save_format(self):
@@ -565,6 +597,28 @@ class TextSaveOptionsData(object):
         :type: bool
         """
         self._add_bidi_marks = add_bidi_marks
+
+    @property
+    def max_characters_per_line(self):
+        """Gets the max_characters_per_line of this TextSaveOptionsData.  # noqa: E501
+
+        Gets or sets an integer value that specifies the maximum number of characters per one line. The default value is 0, that means no limit.  # noqa: E501
+
+        :return: The max_characters_per_line of this TextSaveOptionsData.  # noqa: E501
+        :rtype: int
+        """
+        return self._max_characters_per_line
+
+    @max_characters_per_line.setter
+    def max_characters_per_line(self, max_characters_per_line):
+        """Sets the max_characters_per_line of this TextSaveOptionsData.
+
+        Gets or sets an integer value that specifies the maximum number of characters per one line. The default value is 0, that means no limit.  # noqa: E501
+
+        :param max_characters_per_line: The max_characters_per_line of this TextSaveOptionsData.  # noqa: E501
+        :type: int
+        """
+        self._max_characters_per_line = max_characters_per_line
 
     @property
     def preserve_table_layout(self):

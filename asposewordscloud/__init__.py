@@ -162,6 +162,7 @@ from asposewordscloud.models.protection_data import ProtectionData
 from asposewordscloud.models.protection_data_response import ProtectionDataResponse
 from asposewordscloud.models.protection_request import ProtectionRequest
 from asposewordscloud.models.ps_save_options_data import PsSaveOptionsData
+from asposewordscloud.models.public_key_response import PublicKeyResponse
 from asposewordscloud.models.range_document import RangeDocument
 from asposewordscloud.models.range_document_dto import RangeDocumentDto
 from asposewordscloud.models.range_text_response import RangeTextResponse
