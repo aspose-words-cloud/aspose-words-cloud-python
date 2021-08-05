@@ -289,7 +289,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param document file : The document. (required)
+        :param document file : Original document. (required)
         :param document_list DocumentEntryList : <see cref="DocumentEntryList"/> with a list of documents to append. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
@@ -7562,7 +7562,7 @@ class WordsApi(object):
         asynchronous HTTP request, please pass is_async=True
 
         :param is_async bool
-        :param document file : The document. (required)
+        :param template file : The template document. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password for opening an encrypted document.
         :param use_non_merge_fields bool : The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
@@ -18783,7 +18783,7 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats']))
 
     def save_as_online(self, request, **kwargs):  # noqa: E501
-        """Converts a document in cloud storage to the specified format.  # noqa: E501
+        """Converts a document to the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -18812,7 +18812,7 @@ class WordsApi(object):
             return data
         
     def save_as_online_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Converts a document in cloud storage to the specified format.  # noqa: E501
+        """Converts a document to the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -19110,7 +19110,7 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats']))
 
     def save_as_tiff_online(self, request, **kwargs):  # noqa: E501
-        """Converts a document in cloud storage to TIFF format using detailed conversion settings.  # noqa: E501
+        """Converts a document to TIFF format using detailed conversion settings.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -19156,7 +19156,7 @@ class WordsApi(object):
             return data
         
     def save_as_tiff_online_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Converts a document in cloud storage to TIFF format using detailed conversion settings.  # noqa: E501
+        """Converts a document to TIFF format using detailed conversion settings.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
