@@ -36,9 +36,7 @@ class TestExamples(BaseTestContext):
 
     def test_accept_all_revisions(self):
         words_api = self.words_api
-        remote_file_name= 'Sample.docx'
-
-        accept_request = asposewordscloud.models.requests.AcceptAllRevisionsRequest(name = remote_file_name,dest_file_name = remote_file_name)
+        accept_request = asposewordscloud.models.requests.AcceptAllRevisionsRequest(name = 'Sample.docx')
         words_api.accept_all_revisions(accept_request)
 
     def test_accept_all_revisions_online(self):
@@ -51,7 +49,7 @@ class TestExamples(BaseTestContext):
         words_api = self.words_api
         remote_file_name= 'Sample.docx'
 
-        append_request = asposewordscloud.models.requests.AppendDocumentRequest(name = remote_file_name,document_list = request_document_list,dest_file_name = remote_file_name)
+        append_request = asposewordscloud.models.requests.AppendDocumentRequest(name = remote_file_name,document_list = request_document_list)
         words_api.append_document(append_request)
 
     def test_append_document_online(self):
@@ -150,9 +148,7 @@ class TestExamples(BaseTestContext):
 
     def test_create_or_update_document_property(self):
         words_api = self.words_api
-        remote_file_name= 'Sample.docx'
-
-        create_request = asposewordscloud.models.requests.CreateOrUpdateDocumentPropertyRequest(name = remote_file_name,property_name = 'AsposeAuthor',_property = request_property,dest_file_name = remote_file_name)
+        create_request = asposewordscloud.models.requests.CreateOrUpdateDocumentPropertyRequest(name = 'Sample.docx',property_name = 'AsposeAuthor',_property = request_property)
         words_api.create_or_update_document_property(create_request)
 
     def test_create_or_update_document_property_online(self):
@@ -196,9 +192,7 @@ class TestExamples(BaseTestContext):
 
     def test_delete_comment(self):
         words_api = self.words_api
-        remote_file_name= 'Sample.docx'
-
-        delete_request = asposewordscloud.models.requests.DeleteCommentRequest(name = remote_file_name,comment_index = 0,dest_file_name = remote_file_name)
+        delete_request = asposewordscloud.models.requests.DeleteCommentRequest(name = 'Sample.docx',comment_index = 0)
         words_api.delete_comment(delete_request)
 
     def test_delete_comment_online(self):
@@ -209,9 +203,7 @@ class TestExamples(BaseTestContext):
 
     def test_delete_comments(self):
         words_api = self.words_api
-        remote_file_name= 'Sample.docx'
-
-        delete_request = asposewordscloud.models.requests.DeleteCommentsRequest(name = remote_file_name,dest_file_name = remote_file_name)
+        delete_request = asposewordscloud.models.requests.DeleteCommentsRequest(name = 'Sample.docx')
         words_api.delete_comments(delete_request)
 
     def test_delete_comments_online(self):
@@ -222,9 +214,7 @@ class TestExamples(BaseTestContext):
 
     def test_delete_custom_xml_part(self):
         words_api = self.words_api
-        remote_file_name= 'Sample.docx'
-
-        delete_request = asposewordscloud.models.requests.DeleteCustomXmlPartRequest(name = remote_file_name,custom_xml_part_index = 0,dest_file_name = remote_file_name)
+        delete_request = asposewordscloud.models.requests.DeleteCustomXmlPartRequest(name = 'Sample.docx',custom_xml_part_index = 0)
         words_api.delete_custom_xml_part(delete_request)
 
     def test_delete_custom_xml_part_online(self):
@@ -235,9 +225,7 @@ class TestExamples(BaseTestContext):
 
     def test_delete_custom_xml_parts(self):
         words_api = self.words_api
-        remote_file_name= 'Sample.docx'
-
-        delete_request = asposewordscloud.models.requests.DeleteCustomXmlPartsRequest(name = remote_file_name,dest_file_name = remote_file_name)
+        delete_request = asposewordscloud.models.requests.DeleteCustomXmlPartsRequest(name = 'Sample.docx')
         words_api.delete_custom_xml_parts(delete_request)
 
     def test_delete_custom_xml_parts_online(self):
@@ -248,9 +236,7 @@ class TestExamples(BaseTestContext):
 
     def test_delete_document_property(self):
         words_api = self.words_api
-        remote_file_name= 'Sample.docx'
-
-        delete_request = asposewordscloud.models.requests.DeleteDocumentPropertyRequest(name = remote_file_name,property_name = 'testProp',dest_file_name = remote_file_name)
+        delete_request = asposewordscloud.models.requests.DeleteDocumentPropertyRequest(name = 'Sample.docx',property_name = 'testProp')
         words_api.delete_document_property(delete_request)
 
     def test_delete_document_property_online(self):
@@ -315,9 +301,7 @@ class TestExamples(BaseTestContext):
 
     def test_delete_form_field(self):
         words_api = self.words_api
-        remote_file_name= 'Sample.docx'
-
-        delete_request = asposewordscloud.models.requests.DeleteFormFieldRequest(name = remote_file_name,index = 0,dest_file_name = remote_file_name)
+        delete_request = asposewordscloud.models.requests.DeleteFormFieldRequest(name = 'Sample.docx',index = 0)
         words_api.delete_form_field(delete_request)
 
     def test_delete_form_field_online(self):
@@ -334,7 +318,7 @@ class TestExamples(BaseTestContext):
     def test_delete_header_footer_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        delete_request = asposewordscloud.models.requests.DeleteHeaderFooterOnlineRequest(document = open(os.path.join(documents_dir, 'DocumentElements/HeaderFooters/HeadersFooters.doc'), 'rb'),section_path = '',index = 0)
+        delete_request = asposewordscloud.models.requests.DeleteHeaderFooterOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),section_path = '',index = 0)
         words_api.delete_header_footer_online(delete_request)
 
     def test_delete_headers_footers(self):
@@ -345,7 +329,7 @@ class TestExamples(BaseTestContext):
     def test_delete_headers_footers_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        delete_request = asposewordscloud.models.requests.DeleteHeadersFootersOnlineRequest(document = open(os.path.join(documents_dir, 'DocumentElements/HeaderFooters/HeadersFooters.doc'), 'rb'),section_path = '')
+        delete_request = asposewordscloud.models.requests.DeleteHeadersFootersOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),section_path = '')
         words_api.delete_headers_footers_online(delete_request)
 
     def test_delete_macros(self):
@@ -411,7 +395,7 @@ class TestExamples(BaseTestContext):
     def test_delete_run_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        delete_request = asposewordscloud.models.requests.DeleteRunOnlineRequest(document = open(os.path.join(documents_dir, 'DocumentElements/Runs/Run.doc'), 'rb'),paragraph_path = 'paragraphs/1',index = 0)
+        delete_request = asposewordscloud.models.requests.DeleteRunOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),paragraph_path = 'paragraphs/1',index = 0)
         words_api.delete_run_online(delete_request)
 
     def test_delete_section(self):
@@ -460,9 +444,7 @@ class TestExamples(BaseTestContext):
 
     def test_delete_watermark(self):
         words_api = self.words_api
-        remote_file_name= 'Sample.docx'
-
-        delete_request = asposewordscloud.models.requests.DeleteWatermarkRequest(name = remote_file_name,dest_file_name = remote_file_name)
+        delete_request = asposewordscloud.models.requests.DeleteWatermarkRequest(name = 'Sample.docx')
         words_api.delete_watermark(delete_request)
 
     def test_delete_watermark_online(self):
@@ -478,9 +460,7 @@ class TestExamples(BaseTestContext):
 
     def test_execute_mail_merge(self):
         words_api = self.words_api
-        remote_file_name= 'Sample.docx'
-
-        mail_merge_request = asposewordscloud.models.requests.ExecuteMailMergeRequest(name = remote_file_name,data = 'TestExecuteTemplateData.txt',dest_file_name = remote_file_name)
+        mail_merge_request = asposewordscloud.models.requests.ExecuteMailMergeRequest(name = 'Sample.docx',data = 'TestExecuteTemplateData.txt')
         words_api.execute_mail_merge(mail_merge_request)
 
     def test_execute_mail_merge_online(self):
@@ -797,13 +777,13 @@ class TestExamples(BaseTestContext):
     def test_get_header_footer_of_section_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        request = asposewordscloud.models.requests.GetHeaderFooterOfSectionOnlineRequest(document = open(os.path.join(documents_dir, 'DocumentElements/HeaderFooters/HeadersFooters.doc'), 'rb'),header_footer_index = 0,section_index = 0)
+        request = asposewordscloud.models.requests.GetHeaderFooterOfSectionOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),header_footer_index = 0,section_index = 0)
         words_api.get_header_footer_of_section_online(request)
 
     def test_get_header_footer_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        request = asposewordscloud.models.requests.GetHeaderFooterOnlineRequest(document = open(os.path.join(documents_dir, 'DocumentElements/HeaderFooters/HeadersFooters.doc'), 'rb'),header_footer_index = 0)
+        request = asposewordscloud.models.requests.GetHeaderFooterOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),header_footer_index = 0)
         words_api.get_header_footer_online(request)
 
     def test_get_header_footers(self):
@@ -814,7 +794,7 @@ class TestExamples(BaseTestContext):
     def test_get_header_footers_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        request = asposewordscloud.models.requests.GetHeaderFootersOnlineRequest(document = open(os.path.join(documents_dir, 'DocumentElements/HeaderFooters/HeadersFooters.doc'), 'rb'),section_path = '')
+        request = asposewordscloud.models.requests.GetHeaderFootersOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),section_path = '')
         words_api.get_header_footers_online(request)
 
     def test_get_list(self):
@@ -825,7 +805,7 @@ class TestExamples(BaseTestContext):
     def test_get_list_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        request = asposewordscloud.models.requests.GetListOnlineRequest(document = open(os.path.join(documents_dir, 'DocumentElements/Lists/ListsGet.doc'), 'rb'),list_id = 1)
+        request = asposewordscloud.models.requests.GetListOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),list_id = 1)
         words_api.get_list_online(request)
 
     def test_get_lists(self):
@@ -836,7 +816,7 @@ class TestExamples(BaseTestContext):
     def test_get_lists_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        request = asposewordscloud.models.requests.GetListsOnlineRequest(document = open(os.path.join(documents_dir, 'DocumentElements/Lists/ListsGet.doc'), 'rb'))
+        request = asposewordscloud.models.requests.GetListsOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'))
         words_api.get_lists_online(request)
 
     def test_get_office_math_object(self):
@@ -929,7 +909,7 @@ class TestExamples(BaseTestContext):
     def test_get_range_text_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        request = asposewordscloud.models.requests.GetRangeTextOnlineRequest(document = open(os.path.join(documents_dir, 'DocumentElements/Range/RangeGet.doc'), 'rb'),range_start_identifier = 'id0.0.0',range_end_identifier = 'id0.0.1')
+        request = asposewordscloud.models.requests.GetRangeTextOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),range_start_identifier = 'id0.0.0',range_end_identifier = 'id0.0.1')
         words_api.get_range_text_online(request)
 
     def test_get_run(self):
@@ -1166,9 +1146,7 @@ class TestExamples(BaseTestContext):
 
     def test_insert_form_field(self):
         words_api = self.words_api
-        remote_file_name= 'Sample.docx'
-
-        insert_request = asposewordscloud.models.requests.InsertFormFieldRequest(name = remote_file_name,form_field = request_form_field,dest_file_name = remote_file_name)
+        insert_request = asposewordscloud.models.requests.InsertFormFieldRequest(name = 'Sample.docx',form_field = request_form_field)
         words_api.insert_form_field(insert_request)
 
     def test_insert_form_field_online(self):
@@ -1185,7 +1163,7 @@ class TestExamples(BaseTestContext):
     def test_insert_header_footer_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        insert_request = asposewordscloud.models.requests.InsertHeaderFooterOnlineRequest(document = open(os.path.join(documents_dir, 'DocumentElements/HeaderFooters/HeadersFooters.doc'), 'rb'),section_path = '',header_footer_type = 'FooterEven')
+        insert_request = asposewordscloud.models.requests.InsertHeaderFooterOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),section_path = '',header_footer_type = 'FooterEven')
         words_api.insert_header_footer_online(insert_request)
 
     def test_insert_list(self):
@@ -1196,7 +1174,7 @@ class TestExamples(BaseTestContext):
     def test_insert_list_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        insert_request = asposewordscloud.models.requests.InsertListOnlineRequest(document = open(os.path.join(documents_dir, 'DocumentElements/Lists/ListsGet.doc'), 'rb'),list_insert = request_list_insert)
+        insert_request = asposewordscloud.models.requests.InsertListOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),list_insert = request_list_insert)
         words_api.insert_list_online(insert_request)
 
     def test_insert_or_update_paragraph_tab_stop(self):
@@ -1212,9 +1190,7 @@ class TestExamples(BaseTestContext):
 
     def test_insert_page_numbers(self):
         words_api = self.words_api
-        remote_file_name= 'Sample.docx'
-
-        insert_request = asposewordscloud.models.requests.InsertPageNumbersRequest(name = remote_file_name,page_number = request_page_number,dest_file_name = remote_file_name)
+        insert_request = asposewordscloud.models.requests.InsertPageNumbersRequest(name = 'Sample.docx',page_number = request_page_number)
         words_api.insert_page_numbers(insert_request)
 
     def test_insert_page_numbers_online(self):
@@ -1242,7 +1218,7 @@ class TestExamples(BaseTestContext):
     def test_insert_run_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        insert_request = asposewordscloud.models.requests.InsertRunOnlineRequest(document = open(os.path.join(documents_dir, 'DocumentElements/Runs/Run.doc'), 'rb'),paragraph_path = 'paragraphs/1',run = request_run)
+        insert_request = asposewordscloud.models.requests.InsertRunOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),paragraph_path = 'paragraphs/1',run = request_run)
         words_api.insert_run_online(insert_request)
 
     def test_insert_style(self):
@@ -1292,9 +1268,7 @@ class TestExamples(BaseTestContext):
     def test_insert_watermark_image(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        remote_file_name= 'Sample.docx'
-
-        insert_request = asposewordscloud.models.requests.InsertWatermarkImageRequest(name = remote_file_name,image_file = None,dest_file_name = remote_file_name,image = 'Sample.png')
+        insert_request = asposewordscloud.models.requests.InsertWatermarkImageRequest(name = 'Sample.docx',image_file = None,image = 'Sample.png')
         words_api.insert_watermark_image(insert_request)
 
     def test_insert_watermark_image_online(self):
@@ -1305,9 +1279,7 @@ class TestExamples(BaseTestContext):
 
     def test_insert_watermark_text(self):
         words_api = self.words_api
-        remote_file_name= 'Sample.docx'
-
-        insert_request = asposewordscloud.models.requests.InsertWatermarkTextRequest(name = remote_file_name,watermark_text = request_watermark_text,dest_file_name = remote_file_name)
+        insert_request = asposewordscloud.models.requests.InsertWatermarkTextRequest(name = 'Sample.docx',watermark_text = request_watermark_text)
         words_api.insert_watermark_text(insert_request)
 
     def test_insert_watermark_text_online(self):
@@ -1344,9 +1316,7 @@ class TestExamples(BaseTestContext):
 
     def test_protect_document(self):
         words_api = self.words_api
-        remote_file_name= 'Sample.docx'
-
-        protect_request = asposewordscloud.models.requests.ProtectDocumentRequest(name = remote_file_name,protection_request = request_protection_request,dest_file_name = remote_file_name)
+        protect_request = asposewordscloud.models.requests.ProtectDocumentRequest(name = 'Sample.docx',protection_request = request_protection_request)
         words_api.protect_document(protect_request)
 
     def test_protect_document_online(self):
@@ -1357,9 +1327,7 @@ class TestExamples(BaseTestContext):
 
     def test_reject_all_revisions(self):
         words_api = self.words_api
-        remote_file_name= 'Sample.docx'
-
-        reject_request = asposewordscloud.models.requests.RejectAllRevisionsRequest(name = remote_file_name,dest_file_name = remote_file_name)
+        reject_request = asposewordscloud.models.requests.RejectAllRevisionsRequest(name = 'Sample.docx')
         words_api.reject_all_revisions(reject_request)
 
     def test_reject_all_revisions_online(self):
@@ -1376,7 +1344,7 @@ class TestExamples(BaseTestContext):
     def test_remove_range_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        remove_request = asposewordscloud.models.requests.RemoveRangeOnlineRequest(document = open(os.path.join(documents_dir, 'DocumentElements/Range/RangeGet.doc'), 'rb'),range_start_identifier = 'id0.0.0',range_end_identifier = 'id0.0.1')
+        remove_request = asposewordscloud.models.requests.RemoveRangeOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),range_start_identifier = 'id0.0.0',range_end_identifier = 'id0.0.1')
         words_api.remove_range_online(remove_request)
 
     def test_render_drawing_object(self):
@@ -1409,7 +1377,7 @@ class TestExamples(BaseTestContext):
     def test_render_page_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        render_request = asposewordscloud.models.requests.RenderPageOnlineRequest(document = open(os.path.join(documents_dir, 'DocumentElements/Text/SampleWordDocument.docx'), 'rb'),page_index = 1,format = 'bmp')
+        render_request = asposewordscloud.models.requests.RenderPageOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),page_index = 1,format = 'bmp')
         words_api.render_page_online(render_request)
 
     def test_render_paragraph(self):
@@ -1436,9 +1404,7 @@ class TestExamples(BaseTestContext):
 
     def test_replace_text(self):
         words_api = self.words_api
-        remote_file_name= 'Sample.docx'
-
-        replace_request = asposewordscloud.models.requests.ReplaceTextRequest(name = remote_file_name,replace_text = request_replace_text,dest_file_name = remote_file_name)
+        replace_request = asposewordscloud.models.requests.ReplaceTextRequest(name = 'Sample.docx',replace_text = request_replace_text)
         words_api.replace_text(replace_request)
 
     def test_replace_text_online(self):
@@ -1455,7 +1421,7 @@ class TestExamples(BaseTestContext):
     def test_replace_with_text_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        replace_request = asposewordscloud.models.requests.ReplaceWithTextOnlineRequest(document = open(os.path.join(documents_dir, 'DocumentElements/Range/RangeGet.doc'), 'rb'),range_start_identifier = 'id0.0.0',range_text = request_range_text,range_end_identifier = 'id0.0.1')
+        replace_request = asposewordscloud.models.requests.ReplaceWithTextOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),range_start_identifier = 'id0.0.0',range_text = request_range_text,range_end_identifier = 'id0.0.1')
         words_api.replace_with_text_online(replace_request)
 
     def test_reset_cache(self):
@@ -1482,7 +1448,7 @@ class TestExamples(BaseTestContext):
     def test_save_as_range_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        save_request = asposewordscloud.models.requests.SaveAsRangeOnlineRequest(document = open(os.path.join(documents_dir, 'DocumentElements/Range/RangeGet.doc'), 'rb'),range_start_identifier = 'id0.0.0',document_parameters = request_document_parameters,range_end_identifier = 'id0.0.1')
+        save_request = asposewordscloud.models.requests.SaveAsRangeOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),range_start_identifier = 'id0.0.0',document_parameters = request_document_parameters,range_end_identifier = 'id0.0.1')
         words_api.save_as_range_online(save_request)
 
     def test_save_as_tiff(self):
@@ -1532,9 +1498,8 @@ class TestExamples(BaseTestContext):
     def test_update_bookmark(self):
         words_api = self.words_api
         bookmark_name= 'aspose'
-        remote_file_name= 'Sample.docx'
 
-        update_request = asposewordscloud.models.requests.UpdateBookmarkRequest(name = remote_file_name,bookmark_name = bookmark_name,bookmark_data = request_bookmark_data,dest_file_name = remote_file_name)
+        update_request = asposewordscloud.models.requests.UpdateBookmarkRequest(name = 'Sample.docx',bookmark_name = bookmark_name,bookmark_data = request_bookmark_data)
         words_api.update_bookmark(update_request)
 
     def test_update_bookmark_online(self):
@@ -1625,9 +1590,7 @@ class TestExamples(BaseTestContext):
 
     def test_update_form_field(self):
         words_api = self.words_api
-        remote_file_name= 'Sample.docx'
-
-        update_request = asposewordscloud.models.requests.UpdateFormFieldRequest(name = remote_file_name,index = 0,form_field = request_form_field,dest_file_name = remote_file_name)
+        update_request = asposewordscloud.models.requests.UpdateFormFieldRequest(name = 'Sample.docx',index = 0,form_field = request_form_field)
         words_api.update_form_field(update_request)
 
     def test_update_form_field_online(self):
@@ -1649,13 +1612,13 @@ class TestExamples(BaseTestContext):
     def test_update_list_level_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        update_request = asposewordscloud.models.requests.UpdateListLevelOnlineRequest(document = open(os.path.join(documents_dir, 'DocumentElements/Lists/ListsGet.doc'), 'rb'),list_id = 1,list_update = request_list_update,list_level = 1)
+        update_request = asposewordscloud.models.requests.UpdateListLevelOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),list_id = 1,list_update = request_list_update,list_level = 1)
         words_api.update_list_level_online(update_request)
 
     def test_update_list_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        update_request = asposewordscloud.models.requests.UpdateListOnlineRequest(document = open(os.path.join(documents_dir, 'DocumentElements/Lists/ListsGet.doc'), 'rb'),list_id = 1,list_update = request_list_update)
+        update_request = asposewordscloud.models.requests.UpdateListOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),list_id = 1,list_update = request_list_update)
         words_api.update_list_online(update_request)
 
     def test_update_paragraph_format(self):
@@ -1687,9 +1650,7 @@ class TestExamples(BaseTestContext):
 
     def test_update_run_font(self):
         words_api = self.words_api
-        remote_file_name= 'Sample.docx'
-
-        update_request = asposewordscloud.models.requests.UpdateRunFontRequest(name = remote_file_name,paragraph_path = 'paragraphs/0',index = 0,font_dto = request_font_dto,dest_file_name = remote_file_name)
+        update_request = asposewordscloud.models.requests.UpdateRunFontRequest(name = 'Sample.docx',paragraph_path = 'paragraphs/0',index = 0,font_dto = request_font_dto)
         words_api.update_run_font(update_request)
 
     def test_update_run_font_online(self):
@@ -1701,7 +1662,7 @@ class TestExamples(BaseTestContext):
     def test_update_run_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        update_request = asposewordscloud.models.requests.UpdateRunOnlineRequest(document = open(os.path.join(documents_dir, 'DocumentElements/Runs/Run.doc'), 'rb'),paragraph_path = 'paragraphs/1',run = request_run,index = 0)
+        update_request = asposewordscloud.models.requests.UpdateRunOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),paragraph_path = 'paragraphs/1',run = request_run,index = 0)
         words_api.update_run_online(update_request)
 
     def test_update_section_page_setup(self):
