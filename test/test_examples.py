@@ -112,7 +112,7 @@ class TestExamples(BaseTestContext):
     def test_convert_document(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        convert_request = asposewordscloud.models.requests.ConvertDocumentRequest(document = open(os.path.join(documents_dir, '/test_uploadfile.docx'), 'rb'),format = 'pdf')
+        convert_request = asposewordscloud.models.requests.ConvertDocumentRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),format = 'pdf')
         words_api.convert_document(convert_request)
 
     def test_copy_file(self):
@@ -169,7 +169,7 @@ class TestExamples(BaseTestContext):
     def test_delete_all_paragraph_tab_stops_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        delete_request = asposewordscloud.models.requests.DeleteAllParagraphTabStopsOnlineRequest(document = open(os.path.join(documents_dir, '/ParagraphTabStops.docx'), 'rb'),index = 0,node_path = '')
+        delete_request = asposewordscloud.models.requests.DeleteAllParagraphTabStopsOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 0)
         words_api.delete_all_paragraph_tab_stops_online(delete_request)
 
     def test_delete_border(self):
@@ -267,7 +267,7 @@ class TestExamples(BaseTestContext):
     def test_delete_drawing_object_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        delete_request = asposewordscloud.models.requests.DeleteDrawingObjectOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 0,node_path = '')
+        delete_request = asposewordscloud.models.requests.DeleteDrawingObjectOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 0)
         words_api.delete_drawing_object_online(delete_request)
 
     def test_delete_field(self):
@@ -278,18 +278,18 @@ class TestExamples(BaseTestContext):
     def test_delete_field_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        delete_request = asposewordscloud.models.requests.DeleteFieldOnlineRequest(document = open(os.path.join(documents_dir, '/GetField.docx'), 'rb'),index = 0,node_path = 'sections/0/paragraphs/0')
+        delete_request = asposewordscloud.models.requests.DeleteFieldOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 0,node_path = 'sections/0/paragraphs/0')
         words_api.delete_field_online(delete_request)
 
     def test_delete_fields(self):
         words_api = self.words_api
-        delete_request = asposewordscloud.models.requests.DeleteFieldsRequest(name = 'Sample.docx',node_path = '')
+        delete_request = asposewordscloud.models.requests.DeleteFieldsRequest(name = 'Sample.docx')
         words_api.delete_fields(delete_request)
 
     def test_delete_fields_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        delete_request = asposewordscloud.models.requests.DeleteFieldsOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),node_path = '')
+        delete_request = asposewordscloud.models.requests.DeleteFieldsOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'))
         words_api.delete_fields_online(delete_request)
 
     def test_delete_file(self):
@@ -310,7 +310,7 @@ class TestExamples(BaseTestContext):
     def test_delete_footnote_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        delete_request = asposewordscloud.models.requests.DeleteFootnoteOnlineRequest(document = open(os.path.join(documents_dir, '/Footnote.doc'), 'rb'),index = 0,node_path = '')
+        delete_request = asposewordscloud.models.requests.DeleteFootnoteOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),index = 0)
         words_api.delete_footnote_online(delete_request)
 
     def test_delete_form_field(self):
@@ -323,7 +323,7 @@ class TestExamples(BaseTestContext):
     def test_delete_form_field_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        delete_request = asposewordscloud.models.requests.DeleteFormFieldOnlineRequest(document = open(os.path.join(documents_dir, '/FormFilled.docx'), 'rb'),index = 0,node_path = 'sections/0')
+        delete_request = asposewordscloud.models.requests.DeleteFormFieldOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 0,node_path = 'sections/0')
         words_api.delete_form_field_online(delete_request)
 
     def test_delete_header_footer(self):
@@ -367,7 +367,7 @@ class TestExamples(BaseTestContext):
     def test_delete_office_math_object_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        delete_request = asposewordscloud.models.requests.DeleteOfficeMathObjectOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 0,node_path = '')
+        delete_request = asposewordscloud.models.requests.DeleteOfficeMathObjectOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 0)
         words_api.delete_office_math_object_online(delete_request)
 
     def test_delete_paragraph(self):
@@ -383,13 +383,13 @@ class TestExamples(BaseTestContext):
     def test_delete_paragraph_list_format_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        delete_request = asposewordscloud.models.requests.DeleteParagraphListFormatOnlineRequest(document = open(os.path.join(documents_dir, '/ParagraphDeleteListFormat.doc'), 'rb'),index = 0,node_path = '')
+        delete_request = asposewordscloud.models.requests.DeleteParagraphListFormatOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),index = 0)
         words_api.delete_paragraph_list_format_online(delete_request)
 
     def test_delete_paragraph_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        delete_request = asposewordscloud.models.requests.DeleteParagraphOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 0,node_path = '')
+        delete_request = asposewordscloud.models.requests.DeleteParagraphOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 0)
         words_api.delete_paragraph_online(delete_request)
 
     def test_delete_paragraph_tab_stop(self):
@@ -400,7 +400,7 @@ class TestExamples(BaseTestContext):
     def test_delete_paragraph_tab_stop_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        delete_request = asposewordscloud.models.requests.DeleteParagraphTabStopOnlineRequest(document = open(os.path.join(documents_dir, '/ParagraphTabStops.docx'), 'rb'),position = 72.0,index = 0,node_path = '')
+        delete_request = asposewordscloud.models.requests.DeleteParagraphTabStopOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),position = 72.0,index = 0)
         words_api.delete_paragraph_tab_stop_online(delete_request)
 
     def test_delete_run(self):
@@ -444,7 +444,7 @@ class TestExamples(BaseTestContext):
     def test_delete_table_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        delete_request = asposewordscloud.models.requests.DeleteTableOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 1,node_path = '')
+        delete_request = asposewordscloud.models.requests.DeleteTableOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 1)
         words_api.delete_table_online(delete_request)
 
     def test_delete_table_row(self):
@@ -721,7 +721,7 @@ class TestExamples(BaseTestContext):
     def test_get_field_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        request = asposewordscloud.models.requests.GetFieldOnlineRequest(document = open(os.path.join(documents_dir, '/GetField.docx'), 'rb'),index = 0,node_path = 'sections/0/paragraphs/0')
+        request = asposewordscloud.models.requests.GetFieldOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 0,node_path = 'sections/0/paragraphs/0')
         words_api.get_field_online(request)
 
     def test_get_fields(self):
@@ -732,7 +732,7 @@ class TestExamples(BaseTestContext):
     def test_get_fields_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        request = asposewordscloud.models.requests.GetFieldsOnlineRequest(document = open(os.path.join(documents_dir, '/GetField.docx'), 'rb'),node_path = 'sections/0')
+        request = asposewordscloud.models.requests.GetFieldsOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),node_path = 'sections/0')
         words_api.get_fields_online(request)
 
     def test_get_files_list(self):
@@ -748,7 +748,7 @@ class TestExamples(BaseTestContext):
     def test_get_footnote_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        request = asposewordscloud.models.requests.GetFootnoteOnlineRequest(document = open(os.path.join(documents_dir, '/Footnote.doc'), 'rb'),index = 0,node_path = '')
+        request = asposewordscloud.models.requests.GetFootnoteOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),index = 0)
         words_api.get_footnote_online(request)
 
     def test_get_footnotes(self):
@@ -759,7 +759,7 @@ class TestExamples(BaseTestContext):
     def test_get_footnotes_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        request = asposewordscloud.models.requests.GetFootnotesOnlineRequest(document = open(os.path.join(documents_dir, '/Footnote.doc'), 'rb'),node_path = '')
+        request = asposewordscloud.models.requests.GetFootnotesOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'))
         words_api.get_footnotes_online(request)
 
     def test_get_form_field(self):
@@ -770,7 +770,7 @@ class TestExamples(BaseTestContext):
     def test_get_form_field_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        request = asposewordscloud.models.requests.GetFormFieldOnlineRequest(document = open(os.path.join(documents_dir, '/FormFilled.docx'), 'rb'),index = 0,node_path = 'sections/0')
+        request = asposewordscloud.models.requests.GetFormFieldOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 0,node_path = 'sections/0')
         words_api.get_form_field_online(request)
 
     def test_get_form_fields(self):
@@ -781,7 +781,7 @@ class TestExamples(BaseTestContext):
     def test_get_form_fields_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        request = asposewordscloud.models.requests.GetFormFieldsOnlineRequest(document = open(os.path.join(documents_dir, '/FormFilled.docx'), 'rb'),node_path = 'sections/0')
+        request = asposewordscloud.models.requests.GetFormFieldsOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),node_path = 'sections/0')
         words_api.get_form_fields_online(request)
 
     def test_get_header_footer(self):
@@ -847,7 +847,7 @@ class TestExamples(BaseTestContext):
     def test_get_office_math_object_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        request = asposewordscloud.models.requests.GetOfficeMathObjectOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 0,node_path = '')
+        request = asposewordscloud.models.requests.GetOfficeMathObjectOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 0)
         words_api.get_office_math_object_online(request)
 
     def test_get_office_math_objects(self):
@@ -858,7 +858,7 @@ class TestExamples(BaseTestContext):
     def test_get_office_math_objects_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        request = asposewordscloud.models.requests.GetOfficeMathObjectsOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),node_path = '')
+        request = asposewordscloud.models.requests.GetOfficeMathObjectsOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'))
         words_api.get_office_math_objects_online(request)
 
     def test_get_paragraph(self):
@@ -874,7 +874,7 @@ class TestExamples(BaseTestContext):
     def test_get_paragraph_format_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        request = asposewordscloud.models.requests.GetParagraphFormatOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 0,node_path = '')
+        request = asposewordscloud.models.requests.GetParagraphFormatOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 0)
         words_api.get_paragraph_format_online(request)
 
     def test_get_paragraph_list_format(self):
@@ -885,7 +885,7 @@ class TestExamples(BaseTestContext):
     def test_get_paragraph_list_format_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        request = asposewordscloud.models.requests.GetParagraphListFormatOnlineRequest(document = open(os.path.join(documents_dir, '/ParagraphGetListFormat.doc'), 'rb'),index = 0,node_path = '')
+        request = asposewordscloud.models.requests.GetParagraphListFormatOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),index = 0)
         words_api.get_paragraph_list_format_online(request)
 
     def test_get_paragraph_online(self):
@@ -913,7 +913,7 @@ class TestExamples(BaseTestContext):
     def test_get_paragraph_tab_stops_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        request = asposewordscloud.models.requests.GetParagraphTabStopsOnlineRequest(document = open(os.path.join(documents_dir, '/ParagraphTabStops.docx'), 'rb'),index = 0,node_path = '')
+        request = asposewordscloud.models.requests.GetParagraphTabStopsOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 0)
         words_api.get_paragraph_tab_stops_online(request)
 
     def test_get_public_key(self):
@@ -1061,7 +1061,7 @@ class TestExamples(BaseTestContext):
     def test_get_table_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        request = asposewordscloud.models.requests.GetTableOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 1,node_path = '')
+        request = asposewordscloud.models.requests.GetTableOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 1)
         words_api.get_table_online(request)
 
     def test_get_table_properties(self):
@@ -1072,7 +1072,7 @@ class TestExamples(BaseTestContext):
     def test_get_table_properties_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        request = asposewordscloud.models.requests.GetTablePropertiesOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 1,node_path = '')
+        request = asposewordscloud.models.requests.GetTablePropertiesOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),index = 1)
         words_api.get_table_properties_online(request)
 
     def test_get_table_row(self):
@@ -1105,7 +1105,7 @@ class TestExamples(BaseTestContext):
     def test_get_tables_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        request = asposewordscloud.models.requests.GetTablesOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),node_path = '')
+        request = asposewordscloud.models.requests.GetTablesOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'))
         words_api.get_tables_online(request)
 
     def test_insert_comment(self):
@@ -1139,7 +1139,7 @@ class TestExamples(BaseTestContext):
     def test_insert_drawing_object_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        insert_request = asposewordscloud.models.requests.InsertDrawingObjectOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),drawing_object = request_drawing_object,image_file = open(os.path.join(documents_dir, 'Common/aspose-cloud.png'), 'rb'),node_path = '')
+        insert_request = asposewordscloud.models.requests.InsertDrawingObjectOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),drawing_object = request_drawing_object,image_file = open(os.path.join(documents_dir, 'Common/aspose-cloud.png'), 'rb'))
         words_api.insert_drawing_object_online(insert_request)
 
     def test_insert_field(self):
@@ -1150,7 +1150,7 @@ class TestExamples(BaseTestContext):
     def test_insert_field_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        insert_request = asposewordscloud.models.requests.InsertFieldOnlineRequest(document = open(os.path.join(documents_dir, '/GetField.docx'), 'rb'),field = request_field,node_path = 'sections/0/paragraphs/0')
+        insert_request = asposewordscloud.models.requests.InsertFieldOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),field = request_field,node_path = 'sections/0/paragraphs/0')
         words_api.insert_field_online(insert_request)
 
     def test_insert_footnote(self):
@@ -1161,7 +1161,7 @@ class TestExamples(BaseTestContext):
     def test_insert_footnote_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        insert_request = asposewordscloud.models.requests.InsertFootnoteOnlineRequest(document = open(os.path.join(documents_dir, '/Footnote.doc'), 'rb'),footnote_dto = request_footnote_dto,node_path = '')
+        insert_request = asposewordscloud.models.requests.InsertFootnoteOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),footnote_dto = request_footnote_dto)
         words_api.insert_footnote_online(insert_request)
 
     def test_insert_form_field(self):
@@ -1174,7 +1174,7 @@ class TestExamples(BaseTestContext):
     def test_insert_form_field_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        insert_request = asposewordscloud.models.requests.InsertFormFieldOnlineRequest(document = open(os.path.join(documents_dir, '/FormFilled.docx'), 'rb'),form_field = request_form_field,node_path = 'sections/0/paragraphs/0')
+        insert_request = asposewordscloud.models.requests.InsertFormFieldOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),form_field = request_form_field,node_path = 'sections/0/paragraphs/0')
         words_api.insert_form_field_online(insert_request)
 
     def test_insert_header_footer(self):
@@ -1207,7 +1207,7 @@ class TestExamples(BaseTestContext):
     def test_insert_or_update_paragraph_tab_stop_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        insert_request = asposewordscloud.models.requests.InsertOrUpdateParagraphTabStopOnlineRequest(document = open(os.path.join(documents_dir, '/ParagraphTabStops.docx'), 'rb'),tab_stop_insert_dto = request_tab_stop_insert_dto,index = 0,node_path = '')
+        insert_request = asposewordscloud.models.requests.InsertOrUpdateParagraphTabStopOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),tab_stop_insert_dto = request_tab_stop_insert_dto,index = 0)
         words_api.insert_or_update_paragraph_tab_stop_online(insert_request)
 
     def test_insert_page_numbers(self):
@@ -1275,7 +1275,7 @@ class TestExamples(BaseTestContext):
     def test_insert_table_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        insert_request = asposewordscloud.models.requests.InsertTableOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),table = request_table,node_path = '')
+        insert_request = asposewordscloud.models.requests.InsertTableOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),table = request_table)
         words_api.insert_table_online(insert_request)
 
     def test_insert_table_row(self):
@@ -1398,7 +1398,7 @@ class TestExamples(BaseTestContext):
     def test_render_math_object_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        render_request = asposewordscloud.models.requests.RenderMathObjectOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),format = 'png',index = 0,node_path = '')
+        render_request = asposewordscloud.models.requests.RenderMathObjectOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),format = 'png',index = 0)
         words_api.render_math_object_online(render_request)
 
     def test_render_page(self):
@@ -1420,7 +1420,7 @@ class TestExamples(BaseTestContext):
     def test_render_paragraph_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        render_request = asposewordscloud.models.requests.RenderParagraphOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),format = 'png',index = 0,node_path = '')
+        render_request = asposewordscloud.models.requests.RenderParagraphOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),format = 'png',index = 0)
         words_api.render_paragraph_online(render_request)
 
     def test_render_table(self):
@@ -1431,7 +1431,7 @@ class TestExamples(BaseTestContext):
     def test_render_table_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        render_request = asposewordscloud.models.requests.RenderTableOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),format = 'png',index = 0,node_path = '')
+        render_request = asposewordscloud.models.requests.RenderTableOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),format = 'png',index = 0)
         words_api.render_table_online(render_request)
 
     def test_replace_text(self):
@@ -1587,7 +1587,7 @@ class TestExamples(BaseTestContext):
     def test_update_drawing_object_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        update_request = asposewordscloud.models.requests.UpdateDrawingObjectOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),drawing_object = request_drawing_object,image_file = open(os.path.join(documents_dir, 'Common/aspose-cloud.png'), 'rb'),index = 0,node_path = '')
+        update_request = asposewordscloud.models.requests.UpdateDrawingObjectOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),drawing_object = request_drawing_object,image_file = open(os.path.join(documents_dir, 'Common/aspose-cloud.png'), 'rb'),index = 0)
         words_api.update_drawing_object_online(update_request)
 
     def test_update_field(self):
@@ -1598,7 +1598,7 @@ class TestExamples(BaseTestContext):
     def test_update_field_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        update_request = asposewordscloud.models.requests.UpdateFieldOnlineRequest(document = open(os.path.join(documents_dir, '/GetField.docx'), 'rb'),field = request_field,index = 0,node_path = 'sections/0/paragraphs/0')
+        update_request = asposewordscloud.models.requests.UpdateFieldOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),field = request_field,index = 0,node_path = 'sections/0/paragraphs/0')
         words_api.update_field_online(update_request)
 
     def test_update_fields(self):
@@ -1620,7 +1620,7 @@ class TestExamples(BaseTestContext):
     def test_update_footnote_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        update_request = asposewordscloud.models.requests.UpdateFootnoteOnlineRequest(document = open(os.path.join(documents_dir, '/Footnote.doc'), 'rb'),footnote_dto = request_footnote_dto,index = 0,node_path = '')
+        update_request = asposewordscloud.models.requests.UpdateFootnoteOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),footnote_dto = request_footnote_dto,index = 0)
         words_api.update_footnote_online(update_request)
 
     def test_update_form_field(self):
@@ -1633,7 +1633,7 @@ class TestExamples(BaseTestContext):
     def test_update_form_field_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        update_request = asposewordscloud.models.requests.UpdateFormFieldOnlineRequest(document = open(os.path.join(documents_dir, '/FormFilled.docx'), 'rb'),form_field = request_form_field,index = 0,node_path = 'sections/0')
+        update_request = asposewordscloud.models.requests.UpdateFormFieldOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),form_field = request_form_field,index = 0,node_path = 'sections/0')
         words_api.update_form_field_online(update_request)
 
     def test_update_list(self):
@@ -1660,13 +1660,13 @@ class TestExamples(BaseTestContext):
 
     def test_update_paragraph_format(self):
         words_api = self.words_api
-        update_request = asposewordscloud.models.requests.UpdateParagraphFormatRequest(name = 'Sample.docx',index = 0,paragraph_format_dto = request_paragraph_format_dto,node_path = '')
+        update_request = asposewordscloud.models.requests.UpdateParagraphFormatRequest(name = 'Sample.docx',index = 0,paragraph_format_dto = request_paragraph_format_dto)
         words_api.update_paragraph_format(update_request)
 
     def test_update_paragraph_format_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        update_request = asposewordscloud.models.requests.UpdateParagraphFormatOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),paragraph_format_dto = request_paragraph_format_dto,index = 0,node_path = '')
+        update_request = asposewordscloud.models.requests.UpdateParagraphFormatOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),paragraph_format_dto = request_paragraph_format_dto,index = 0)
         words_api.update_paragraph_format_online(update_request)
 
     def test_update_paragraph_list_format(self):
@@ -1677,7 +1677,7 @@ class TestExamples(BaseTestContext):
     def test_update_paragraph_list_format_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        update_request = asposewordscloud.models.requests.UpdateParagraphListFormatOnlineRequest(document = open(os.path.join(documents_dir, '/ParagraphUpdateListFormat.doc'), 'rb'),list_format_dto = request_list_format_dto,index = 0,node_path = '')
+        update_request = asposewordscloud.models.requests.UpdateParagraphListFormatOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),list_format_dto = request_list_format_dto,index = 0)
         words_api.update_paragraph_list_format_online(update_request)
 
     def test_update_run(self):
@@ -1745,7 +1745,7 @@ class TestExamples(BaseTestContext):
     def test_update_table_properties_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        update_request = asposewordscloud.models.requests.UpdateTablePropertiesOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),properties = request_properties,index = 1,node_path = '')
+        update_request = asposewordscloud.models.requests.UpdateTablePropertiesOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),properties = request_properties,index = 1)
         words_api.update_table_properties_online(update_request)
 
     def test_update_table_row_format(self):
