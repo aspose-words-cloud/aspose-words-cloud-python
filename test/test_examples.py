@@ -1531,6 +1531,7 @@ class TestExamples(BaseTestContext):
 
     def test_update_bookmark(self):
         words_api = self.words_api
+        bookmark_name= 'aspose'
         remote_file_name= 'Sample.docx'
 
         update_request = asposewordscloud.models.requests.UpdateBookmarkRequest(name = remote_file_name,bookmark_name = bookmark_name,bookmark_data = request_bookmark_data,dest_file_name = remote_file_name)
@@ -1539,6 +1540,8 @@ class TestExamples(BaseTestContext):
     def test_update_bookmark_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
+        bookmark_name= 'aspose'
+
         update_request = asposewordscloud.models.requests.UpdateBookmarkOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),bookmark_name = bookmark_name,bookmark_data = request_bookmark_data,dest_file_name = 'Sample.docx')
         words_api.update_bookmark_online(update_request)
 
