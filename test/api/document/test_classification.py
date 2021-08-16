@@ -68,7 +68,8 @@ class TestClassification(BaseTestContext):
     def test_classify_document_online(self):
         local_file = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.ClassifyDocumentOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), best_classes_count = '3')
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.ClassifyDocumentOnlineRequest(document = request_document, best_classes_count = '3')
 
         result = self.words_api.classify_document_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

@@ -59,7 +59,8 @@ class TestDocumentProperties(BaseTestContext):
     def test_get_document_properties_online(self):
         local_file = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.GetDocumentPropertiesOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'))
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.GetDocumentPropertiesOnlineRequest(document = request_document)
 
         result = self.words_api.get_document_properties_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -89,7 +90,8 @@ class TestDocumentProperties(BaseTestContext):
     def test_get_document_property_online(self):
         local_file = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.GetDocumentPropertyOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), property_name = 'Author')
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.GetDocumentPropertyOnlineRequest(document = request_document, property_name = 'Author')
 
         result = self.words_api.get_document_property_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -116,7 +118,8 @@ class TestDocumentProperties(BaseTestContext):
     def test_delete_document_property_online(self):
         local_file = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.DeleteDocumentPropertyOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), property_name = 'testProp')
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.DeleteDocumentPropertyOnlineRequest(document = request_document, property_name = 'testProp')
 
         result = self.words_api.delete_document_property_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -132,7 +135,6 @@ class TestDocumentProperties(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_property = asposewordscloud.DocumentPropertyCreateOrUpdate(value = 'Imran Anwar')
         request = asposewordscloud.models.requests.CreateOrUpdateDocumentPropertyRequest(name = remote_file_name, property_name = 'AsposeAuthor', _property = request_property, folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.create_or_update_document_property(request)
@@ -147,8 +149,9 @@ class TestDocumentProperties(BaseTestContext):
     def test_update_document_property_online(self):
         local_file = 'Common/test_multi_pages.docx'
 
-        request_property = asposewordscloud.DocumentPropertyCreateOrUpdate(value = 'Imran Anwar')
-        request = asposewordscloud.models.requests.CreateOrUpdateDocumentPropertyOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), property_name = 'AsposeAuthor', _property = request_property)
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+
+        request = asposewordscloud.models.requests.CreateOrUpdateDocumentPropertyOnlineRequest(document = request_document, property_name = 'AsposeAuthor', _property = request_property)
 
         result = self.words_api.create_or_update_document_property_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

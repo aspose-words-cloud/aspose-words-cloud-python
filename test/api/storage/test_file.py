@@ -40,7 +40,8 @@ class TestFile(BaseTestContext):
         local_file = 'Common/test_multi_pages.docx'
         remote_file_name = 'TestUploadFile.docx'
 
-        request = asposewordscloud.models.requests.UploadFileRequest(file_content = open(os.path.join(self.local_test_folder, local_file), 'rb'), path = remote_data_folder + '/' + remote_file_name)
+        request_file_content = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.UploadFileRequest(file_content = request_file_content, path = remote_data_folder + '/' + remote_file_name)
 
         result = self.words_api.upload_file(request)
         self.assertIsNotNone(result, 'Error has occurred.')

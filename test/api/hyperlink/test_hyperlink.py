@@ -55,7 +55,8 @@ class TestHyperlink(BaseTestContext):
     def test_get_document_hyperlink_by_index_online(self):
         local_file = 'Common/test_doc.docx'
 
-        request = asposewordscloud.models.requests.GetDocumentHyperlinkByIndexOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), hyperlink_index = 0)
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.GetDocumentHyperlinkByIndexOnlineRequest(document = request_document, hyperlink_index = 0)
 
         result = self.words_api.get_document_hyperlink_by_index_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -86,7 +87,8 @@ class TestHyperlink(BaseTestContext):
     def test_get_document_hyperlinks_online(self):
         local_file = 'Common/test_doc.docx'
 
-        request = asposewordscloud.models.requests.GetDocumentHyperlinksOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'))
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.GetDocumentHyperlinksOnlineRequest(document = request_document)
 
         result = self.words_api.get_document_hyperlinks_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

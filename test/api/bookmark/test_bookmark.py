@@ -54,7 +54,8 @@ class TestBookmark(BaseTestContext):
     def test_get_bookmarks_online(self):
         local_file = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.GetBookmarksOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'))
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.GetBookmarksOnlineRequest(document = request_document)
 
         result = self.words_api.get_bookmarks_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -84,7 +85,8 @@ class TestBookmark(BaseTestContext):
         local_file = 'Common/test_multi_pages.docx'
         bookmark_name = 'aspose'
 
-        request = asposewordscloud.models.requests.GetBookmarkByNameOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), bookmark_name = bookmark_name)
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.GetBookmarkByNameOnlineRequest(document = request_document, bookmark_name = bookmark_name)
 
         result = self.words_api.get_bookmark_by_name_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -102,7 +104,6 @@ class TestBookmark(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_bookmark_data = asposewordscloud.BookmarkData(name = bookmark_name, text = bookmark_text)
         request = asposewordscloud.models.requests.UpdateBookmarkRequest(name = remote_file_name, bookmark_name = bookmark_name, bookmark_data = request_bookmark_data, folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.update_bookmark(request)
@@ -117,8 +118,9 @@ class TestBookmark(BaseTestContext):
         bookmark_name = 'aspose'
         remote_file_name = 'TestUpdateDocumentBookmark.docx'
 
-        request_bookmark_data = asposewordscloud.BookmarkData(name = bookmark_name, text = 'This will be the text for Aspose')
-        request = asposewordscloud.models.requests.UpdateBookmarkOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), bookmark_name = bookmark_name, bookmark_data = request_bookmark_data, dest_file_name = self.remote_test_out + '/' + remote_file_name)
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+
+        request = asposewordscloud.models.requests.UpdateBookmarkOnlineRequest(document = request_document, bookmark_name = bookmark_name, bookmark_data = request_bookmark_data, dest_file_name = self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.update_bookmark_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

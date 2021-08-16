@@ -40,8 +40,9 @@ class TestBuildReport(BaseTestContext):
         local_document_file = 'ReportTemplate.docx'
         local_data_file = open(os.path.join(self.local_test_folder, reporting_folder + '/ReportData.json')).read()
 
-        request_report_engine_settings = asposewordscloud.ReportEngineSettings(data_source_type = 'Json', data_source_name = 'persons')
-        request = asposewordscloud.models.requests.BuildReportOnlineRequest(template = open(os.path.join(self.local_test_folder, reporting_folder + '/' + local_document_file), 'rb'), data = local_data_file, report_engine_settings = request_report_engine_settings)
+        request_template = open(os.path.join(self.local_test_folder, reporting_folder + '/' + local_document_file), 'rb')
+
+        request = asposewordscloud.models.requests.BuildReportOnlineRequest(template = request_template, data = local_data_file, report_engine_settings = request_report_engine_settings)
 
         result = self.words_api.build_report_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -59,8 +60,6 @@ class TestBuildReport(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, reporting_folder + '/' + local_document_file), 'rb'))
 
-        request_report_engine_settings_report_build_options = ['AllowMissingMembers', 'RemoveEmptyParagraphs']
-        request_report_engine_settings = asposewordscloud.ReportEngineSettings(data_source_type = 'Json', report_build_options = request_report_engine_settings_report_build_options)
         request = asposewordscloud.models.requests.BuildReportRequest(name = remote_file_name, data = local_data_file, report_engine_settings = request_report_engine_settings, folder = remote_data_folder)
 
         result = self.words_api.build_report(request)

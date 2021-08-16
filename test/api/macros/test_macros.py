@@ -53,7 +53,8 @@ class TestMacros(BaseTestContext):
     def test_delete_macros_online(self):
         local_file = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.DeleteMacrosOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'))
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.DeleteMacrosOnlineRequest(document = request_document)
 
         result = self.words_api.delete_macros_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

@@ -56,7 +56,8 @@ class TestCustomXmlParts(BaseTestContext):
     def test_get_custom_xml_part_online(self):
         local_file = 'DocumentElements/CustomXmlParts/MultipleCustomXmlParts.docx'
 
-        request = asposewordscloud.models.requests.GetCustomXmlPartOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), custom_xml_part_index = 0)
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.GetCustomXmlPartOnlineRequest(document = request_document, custom_xml_part_index = 0)
 
         result = self.words_api.get_custom_xml_part_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -90,7 +91,8 @@ class TestCustomXmlParts(BaseTestContext):
     def test_get_custom_xml_parts_online(self):
         local_file = 'DocumentElements/CustomXmlParts/MultipleCustomXmlParts.docx'
 
-        request = asposewordscloud.models.requests.GetCustomXmlPartsOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'))
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.GetCustomXmlPartsOnlineRequest(document = request_document)
 
         result = self.words_api.get_custom_xml_parts_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -110,7 +112,6 @@ class TestCustomXmlParts(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_custom_xml_part = asposewordscloud.CustomXmlPartInsert(id = 'hello', data = '<data>Hello world</data>')
         request = asposewordscloud.models.requests.InsertCustomXmlPartRequest(name = remote_file_name, custom_xml_part = request_custom_xml_part, folder = remote_data_folder)
 
         result = self.words_api.insert_custom_xml_part(request)
@@ -125,8 +126,9 @@ class TestCustomXmlParts(BaseTestContext):
     def test_insert_custom_xml_part_online(self):
         local_file = 'DocumentElements/CustomXmlParts/MultipleCustomXmlParts.docx'
 
-        request_custom_xml_part = asposewordscloud.CustomXmlPartInsert(id = 'hello', data = '<data>Hello world</data>')
-        request = asposewordscloud.models.requests.InsertCustomXmlPartOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), custom_xml_part = request_custom_xml_part)
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+
+        request = asposewordscloud.models.requests.InsertCustomXmlPartOnlineRequest(document = request_document, custom_xml_part = request_custom_xml_part)
 
         result = self.words_api.insert_custom_xml_part_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -144,7 +146,6 @@ class TestCustomXmlParts(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_custom_xml_part = asposewordscloud.CustomXmlPartUpdate(data = '<data>Hello world</data>')
         request = asposewordscloud.models.requests.UpdateCustomXmlPartRequest(name = remote_file_name, custom_xml_part_index = 0, custom_xml_part = request_custom_xml_part, folder = remote_data_folder)
 
         result = self.words_api.update_custom_xml_part(request)
@@ -159,8 +160,9 @@ class TestCustomXmlParts(BaseTestContext):
     def test_update_custom_xml_part_online(self):
         local_file = 'DocumentElements/CustomXmlParts/MultipleCustomXmlParts.docx'
 
-        request_custom_xml_part = asposewordscloud.CustomXmlPartUpdate(data = '<data>Hello world</data>')
-        request = asposewordscloud.models.requests.UpdateCustomXmlPartOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), custom_xml_part_index = 0, custom_xml_part = request_custom_xml_part)
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+
+        request = asposewordscloud.models.requests.UpdateCustomXmlPartOnlineRequest(document = request_document, custom_xml_part_index = 0, custom_xml_part = request_custom_xml_part)
 
         result = self.words_api.update_custom_xml_part_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -189,7 +191,8 @@ class TestCustomXmlParts(BaseTestContext):
     def test_delete_custom_xml_part_online(self):
         local_file = 'DocumentElements/CustomXmlParts/MultipleCustomXmlParts.docx'
 
-        request = asposewordscloud.models.requests.DeleteCustomXmlPartOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), custom_xml_part_index = 0)
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.DeleteCustomXmlPartOnlineRequest(document = request_document, custom_xml_part_index = 0)
 
         result = self.words_api.delete_custom_xml_part_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -216,7 +219,8 @@ class TestCustomXmlParts(BaseTestContext):
     def test_delete_custom_xml_parts_online(self):
         local_file = 'DocumentElements/CustomXmlParts/MultipleCustomXmlParts.docx'
 
-        request = asposewordscloud.models.requests.DeleteCustomXmlPartsOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'))
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.DeleteCustomXmlPartsOnlineRequest(document = request_document)
 
         result = self.words_api.delete_custom_xml_parts_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

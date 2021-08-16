@@ -55,7 +55,8 @@ class TestPageSetup(BaseTestContext):
     def test_get_section_page_setup_online(self):
         local_file = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.GetSectionPageSetupOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), section_index = 0)
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.GetSectionPageSetupOnlineRequest(document = request_document, section_index = 0)
 
         result = self.words_api.get_section_page_setup_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -71,7 +72,6 @@ class TestPageSetup(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_page_setup = asposewordscloud.PageSetup(rtl_gutter = True, left_margin = 10.0, orientation = 'Landscape', paper_size = 'A5')
         request = asposewordscloud.models.requests.UpdateSectionPageSetupRequest(name = remote_file_name, section_index = 0, page_setup = request_page_setup, folder = remote_data_folder)
 
         result = self.words_api.update_section_page_setup(request)
@@ -87,8 +87,9 @@ class TestPageSetup(BaseTestContext):
     def test_update_section_page_setup_online(self):
         local_file = 'Common/test_multi_pages.docx'
 
-        request_page_setup = asposewordscloud.PageSetup(rtl_gutter = True, left_margin = 10, orientation = 'Landscape', paper_size = 'A5')
-        request = asposewordscloud.models.requests.UpdateSectionPageSetupOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), section_index = 0, page_setup = request_page_setup)
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+
+        request = asposewordscloud.models.requests.UpdateSectionPageSetupOnlineRequest(document = request_document, section_index = 0, page_setup = request_page_setup)
 
         result = self.words_api.update_section_page_setup_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -116,7 +117,8 @@ class TestPageSetup(BaseTestContext):
     def test_get_render_page_online(self):
         local_text_file = 'DocumentElements/Text/SampleWordDocument.docx'
 
-        request = asposewordscloud.models.requests.RenderPageOnlineRequest(document = open(os.path.join(self.local_test_folder, local_text_file), 'rb'), page_index = 1, format = 'bmp')
+        request_document = open(os.path.join(self.local_test_folder, local_text_file), 'rb')
+        request = asposewordscloud.models.requests.RenderPageOnlineRequest(document = request_document, page_index = 1, format = 'bmp')
 
         result = self.words_api.render_page_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

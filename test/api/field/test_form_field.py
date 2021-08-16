@@ -42,7 +42,6 @@ class TestFormField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, field_folder + '/FormFilled.docx'), 'rb'))
 
-        request_form_field = asposewordscloud.FormFieldTextInput(name = 'FullName', enabled = True, calculate_on_exit = True, status_text = '', text_input_type = 'Regular', text_input_default = 'No name')
         request = asposewordscloud.models.requests.UpdateFormFieldRequest(name = remote_file_name, index = 0, form_field = request_form_field, node_path = 'sections/0', folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.update_form_field(request)
@@ -57,8 +56,9 @@ class TestFormField(BaseTestContext):
     def test_update_form_field_online(self):
         field_folder = 'DocumentElements/FormFields'
 
-        request_form_field = asposewordscloud.FormFieldTextInput(name = 'FullName', enabled = True, calculate_on_exit = True, status_text = '', text_input_type = 'Regular', text_input_default = 'No name')
-        request = asposewordscloud.models.requests.UpdateFormFieldOnlineRequest(document = open(os.path.join(self.local_test_folder, field_folder + '/FormFilled.docx'), 'rb'), index = 0, form_field = request_form_field, node_path = 'sections/0')
+        request_document = open(os.path.join(self.local_test_folder, field_folder + '/FormFilled.docx'), 'rb')
+
+        request = asposewordscloud.models.requests.UpdateFormFieldOnlineRequest(document = request_document, index = 0, form_field = request_form_field, node_path = 'sections/0')
 
         result = self.words_api.update_form_field_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -74,7 +74,6 @@ class TestFormField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, field_folder + '/FormFilled.docx'), 'rb'))
 
-        request_form_field = asposewordscloud.FormFieldTextInput(name = 'FullName', enabled = True, calculate_on_exit = True, status_text = '', text_input_type = 'Regular', text_input_default = 'No name')
         request = asposewordscloud.models.requests.UpdateFormFieldRequest(name = remote_file_name, index = 0, form_field = request_form_field, folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.update_form_field(request)
@@ -106,7 +105,8 @@ class TestFormField(BaseTestContext):
     def test_get_form_field_online(self):
         field_folder = 'DocumentElements/FormFields'
 
-        request = asposewordscloud.models.requests.GetFormFieldOnlineRequest(document = open(os.path.join(self.local_test_folder, field_folder + '/FormFilled.docx'), 'rb'), index = 0, node_path = 'sections/0')
+        request_document = open(os.path.join(self.local_test_folder, field_folder + '/FormFilled.docx'), 'rb')
+        request = asposewordscloud.models.requests.GetFormFieldOnlineRequest(document = request_document, index = 0, node_path = 'sections/0')
 
         result = self.words_api.get_form_field_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -154,7 +154,8 @@ class TestFormField(BaseTestContext):
     def test_get_form_fields_online(self):
         field_folder = 'DocumentElements/FormFields'
 
-        request = asposewordscloud.models.requests.GetFormFieldsOnlineRequest(document = open(os.path.join(self.local_test_folder, field_folder + '/FormFilled.docx'), 'rb'), node_path = 'sections/0')
+        request_document = open(os.path.join(self.local_test_folder, field_folder + '/FormFilled.docx'), 'rb')
+        request = asposewordscloud.models.requests.GetFormFieldsOnlineRequest(document = request_document, node_path = 'sections/0')
 
         result = self.words_api.get_form_fields_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -188,7 +189,6 @@ class TestFormField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, 'Common/test_multi_pages.docx'), 'rb'))
 
-        request_form_field = asposewordscloud.FormFieldTextInput(name = 'FullName', enabled = True, calculate_on_exit = True, status_text = '', text_input_type = 'Regular', text_input_default = '123', text_input_format = 'UPPERCASE')
         request = asposewordscloud.models.requests.InsertFormFieldRequest(name = remote_file_name, form_field = request_form_field, node_path = 'sections/0/paragraphs/0', folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.insert_form_field(request)
@@ -203,8 +203,9 @@ class TestFormField(BaseTestContext):
     def test_insert_form_field_online(self):
         field_folder = 'DocumentElements/FormFields'
 
-        request_form_field = asposewordscloud.FormFieldTextInput(name = 'FullName', enabled = True, calculate_on_exit = True, status_text = '', text_input_type = 'Regular', text_input_default = '123', text_input_format = 'UPPERCASE')
-        request = asposewordscloud.models.requests.InsertFormFieldOnlineRequest(document = open(os.path.join(self.local_test_folder, field_folder + '/FormFilled.docx'), 'rb'), form_field = request_form_field, node_path = 'sections/0/paragraphs/0')
+        request_document = open(os.path.join(self.local_test_folder, field_folder + '/FormFilled.docx'), 'rb')
+
+        request = asposewordscloud.models.requests.InsertFormFieldOnlineRequest(document = request_document, form_field = request_form_field, node_path = 'sections/0/paragraphs/0')
 
         result = self.words_api.insert_form_field_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -219,7 +220,6 @@ class TestFormField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, 'Common/test_multi_pages.docx'), 'rb'))
 
-        request_form_field = asposewordscloud.FormFieldTextInput(name = 'FullName', enabled = True, calculate_on_exit = True, status_text = '', text_input_type = 'Regular', text_input_default = '123', text_input_format = 'UPPERCASE')
         request = asposewordscloud.models.requests.InsertFormFieldRequest(name = remote_file_name, form_field = request_form_field, folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.insert_form_field(request)
@@ -249,7 +249,8 @@ class TestFormField(BaseTestContext):
     def test_delete_form_field_online(self):
         field_folder = 'DocumentElements/FormFields'
 
-        request = asposewordscloud.models.requests.DeleteFormFieldOnlineRequest(document = open(os.path.join(self.local_test_folder, field_folder + '/FormFilled.docx'), 'rb'), index = 0, node_path = 'sections/0')
+        request_document = open(os.path.join(self.local_test_folder, field_folder + '/FormFilled.docx'), 'rb')
+        request = asposewordscloud.models.requests.DeleteFormFieldOnlineRequest(document = request_document, index = 0, node_path = 'sections/0')
 
         result = self.words_api.delete_form_field_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

@@ -40,7 +40,9 @@ class TestExecuteMailMerge(BaseTestContext):
         local_document_file = 'SampleExecuteTemplate.docx'
         local_data_file = 'SampleExecuteTemplateData.txt'
 
-        request = asposewordscloud.models.requests.ExecuteMailMergeOnlineRequest(template = open(os.path.join(self.local_test_folder, mail_merge_folder + '/' + local_document_file), 'rb'), data = open(os.path.join(self.local_test_folder, mail_merge_folder + '/' + local_data_file), 'rb'))
+        request_template = open(os.path.join(self.local_test_folder, mail_merge_folder + '/' + local_document_file), 'rb')
+        request_data = open(os.path.join(self.local_test_folder, mail_merge_folder + '/' + local_data_file), 'rb')
+        request = asposewordscloud.models.requests.ExecuteMailMergeOnlineRequest(template = request_template, data = request_data)
 
         result = self.words_api.execute_mail_merge_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

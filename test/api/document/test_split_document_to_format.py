@@ -56,7 +56,8 @@ class TestSplitDocumentToFormat(BaseTestContext):
     def test_split_document_online(self):
         local_file = 'Common/test_multi_pages.docx'
 
-        request = asposewordscloud.models.requests.SplitDocumentOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), format = 'text', dest_file_name = self.remote_test_out + '/TestSplitDocument.text', _from = 1, to = 2)
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.SplitDocumentOnlineRequest(document = request_document, format = 'text', dest_file_name = self.remote_test_out + '/TestSplitDocument.text', _from = 1, to = 2)
 
         result = self.words_api.split_document_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

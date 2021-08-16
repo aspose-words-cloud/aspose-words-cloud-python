@@ -42,9 +42,6 @@ class TestAppendDocument(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_document_list_document_entries0 = asposewordscloud.DocumentEntry(href = remote_data_folder + '/' + remote_file_name, import_format_mode = 'KeepSourceFormatting')
-        request_document_list_document_entries = [request_document_list_document_entries0]
-        request_document_list = asposewordscloud.DocumentEntryList(document_entries = request_document_list_document_entries)
         request = asposewordscloud.models.requests.AppendDocumentRequest(name = remote_file_name, document_list = request_document_list, folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.append_document(request)
@@ -62,10 +59,11 @@ class TestAppendDocument(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_document_list_document_entries0 = asposewordscloud.DocumentEntry(href = remote_data_folder + '/' + remote_file_name, import_format_mode = 'KeepSourceFormatting')
-        request_document_list_document_entries = [request_document_list_document_entries0]
-        request_document_list = asposewordscloud.DocumentEntryList(document_entries = request_document_list_document_entries)
-        request = asposewordscloud.models.requests.AppendDocumentOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), document_list = request_document_list)
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+
+
+
+        request = asposewordscloud.models.requests.AppendDocumentOnlineRequest(document = request_document, document_list = request_document_list)
 
         result = self.words_api.append_document_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
