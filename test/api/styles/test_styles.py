@@ -103,6 +103,7 @@ class TestStyles(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
+        request_style_update = asposewordscloud.StyleUpdate(name = 'My Style')
         request = asposewordscloud.models.requests.UpdateStyleRequest(name = remote_file_name, style_update = request_style_update, style_name = 'Heading 1', folder = remote_data_folder)
 
         result = self.words_api.update_style(request)
@@ -117,7 +118,7 @@ class TestStyles(BaseTestContext):
         local_file = 'DocumentElements/Styles/GetStyles.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-
+        request_style_update = asposewordscloud.StyleUpdate(name = 'My Style')
         request = asposewordscloud.models.requests.UpdateStyleOnlineRequest(document = request_document, style_update = request_style_update, style_name = 'Heading 1')
 
         result = self.words_api.update_style_online(request)
@@ -134,6 +135,7 @@ class TestStyles(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
+        request_style_insert = asposewordscloud.StyleInsert(style_name = 'My Style', style_type = 'Paragraph')
         request = asposewordscloud.models.requests.InsertStyleRequest(name = remote_file_name, style_insert = request_style_insert, folder = remote_data_folder)
 
         result = self.words_api.insert_style(request)
@@ -148,7 +150,7 @@ class TestStyles(BaseTestContext):
         local_file = 'DocumentElements/Styles/GetStyles.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-
+        request_style_insert = asposewordscloud.StyleInsert(style_name = 'My Style', style_type = 'Paragraph')
         request = asposewordscloud.models.requests.InsertStyleOnlineRequest(document = request_document, style_insert = request_style_insert)
 
         result = self.words_api.insert_style_online(request)
@@ -165,6 +167,7 @@ class TestStyles(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
+        request_style_copy = asposewordscloud.StyleCopy(style_name = 'Heading 1')
         request = asposewordscloud.models.requests.CopyStyleRequest(name = remote_file_name, style_copy = request_style_copy, folder = remote_data_folder)
 
         result = self.words_api.copy_style(request)
@@ -179,7 +182,7 @@ class TestStyles(BaseTestContext):
         local_file = 'DocumentElements/Styles/GetStyles.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-
+        request_style_copy = asposewordscloud.StyleCopy(style_name = 'Heading 1')
         request = asposewordscloud.models.requests.CopyStyleOnlineRequest(document = request_document, style_copy = request_style_copy)
 
         result = self.words_api.copy_style_online(request)
@@ -226,6 +229,7 @@ class TestStyles(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
+        request_style_apply = asposewordscloud.StyleApply(style_name = 'Heading 1')
         request = asposewordscloud.models.requests.ApplyStyleToDocumentElementRequest(name = remote_file_name, style_apply = request_style_apply, styled_node_path = 'paragraphs/1/paragraphFormat', folder = remote_data_folder)
 
         result = self.words_api.apply_style_to_document_element(request)
@@ -239,7 +243,7 @@ class TestStyles(BaseTestContext):
         local_file = 'DocumentElements/Styles/GetStyles.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-
+        request_style_apply = asposewordscloud.StyleApply(style_name = 'Heading 1')
         request = asposewordscloud.models.requests.ApplyStyleToDocumentElementOnlineRequest(document = request_document, style_apply = request_style_apply, styled_node_path = 'paragraphs/1/paragraphFormat')
 
         result = self.words_api.apply_style_to_document_element_online(request)

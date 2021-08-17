@@ -112,6 +112,7 @@ class TestCustomXmlParts(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
+        request_custom_xml_part = asposewordscloud.CustomXmlPartInsert(id = 'hello', data = '<data>Hello world</data>')
         request = asposewordscloud.models.requests.InsertCustomXmlPartRequest(name = remote_file_name, custom_xml_part = request_custom_xml_part, folder = remote_data_folder)
 
         result = self.words_api.insert_custom_xml_part(request)
@@ -127,7 +128,7 @@ class TestCustomXmlParts(BaseTestContext):
         local_file = 'DocumentElements/CustomXmlParts/MultipleCustomXmlParts.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-
+        request_custom_xml_part = asposewordscloud.CustomXmlPartInsert(id = 'hello', data = '<data>Hello world</data>')
         request = asposewordscloud.models.requests.InsertCustomXmlPartOnlineRequest(document = request_document, custom_xml_part = request_custom_xml_part)
 
         result = self.words_api.insert_custom_xml_part_online(request)
@@ -146,6 +147,7 @@ class TestCustomXmlParts(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
+        request_custom_xml_part = asposewordscloud.CustomXmlPartUpdate(data = '<data>Hello world</data>')
         request = asposewordscloud.models.requests.UpdateCustomXmlPartRequest(name = remote_file_name, custom_xml_part_index = 0, custom_xml_part = request_custom_xml_part, folder = remote_data_folder)
 
         result = self.words_api.update_custom_xml_part(request)
@@ -161,7 +163,7 @@ class TestCustomXmlParts(BaseTestContext):
         local_file = 'DocumentElements/CustomXmlParts/MultipleCustomXmlParts.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-
+        request_custom_xml_part = asposewordscloud.CustomXmlPartUpdate(data = '<data>Hello world</data>')
         request = asposewordscloud.models.requests.UpdateCustomXmlPartOnlineRequest(document = request_document, custom_xml_part_index = 0, custom_xml_part = request_custom_xml_part)
 
         result = self.words_api.update_custom_xml_part_online(request)

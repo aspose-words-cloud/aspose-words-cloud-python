@@ -104,6 +104,7 @@ class TestLists(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
+        request_list_update = asposewordscloud.ListUpdate(is_restart_at_each_section = True)
         request = asposewordscloud.models.requests.UpdateListRequest(name = remote_file_name, list_id = 1, list_update = request_list_update, folder = remote_data_folder)
 
         result = self.words_api.update_list(request)
@@ -117,7 +118,7 @@ class TestLists(BaseTestContext):
         local_file = 'DocumentElements/Lists/ListsGet.doc'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-
+        request_list_update = asposewordscloud.ListUpdate(is_restart_at_each_section = True)
         request = asposewordscloud.models.requests.UpdateListOnlineRequest(document = request_document, list_id = 1, list_update = request_list_update)
 
         result = self.words_api.update_list_online(request)
@@ -136,6 +137,7 @@ class TestLists(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
+        request_list_update = asposewordscloud.ListLevelUpdate(alignment = 'Right')
         request = asposewordscloud.models.requests.UpdateListLevelRequest(name = remote_file_name, list_id = 1, list_level = 1, list_update = request_list_update, folder = remote_data_folder)
 
         result = self.words_api.update_list_level(request)
@@ -149,7 +151,7 @@ class TestLists(BaseTestContext):
         local_file = 'DocumentElements/Lists/ListsGet.doc'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-
+        request_list_update = asposewordscloud.ListLevelUpdate(alignment = 'Right')
         request = asposewordscloud.models.requests.UpdateListLevelOnlineRequest(document = request_document, list_id = 1, list_level = 1, list_update = request_list_update)
 
         result = self.words_api.update_list_level_online(request)
@@ -170,6 +172,7 @@ class TestLists(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
+        request_list_insert = asposewordscloud.ListInsert(template = 'OutlineLegal')
         request = asposewordscloud.models.requests.InsertListRequest(name = remote_file_name, list_insert = request_list_insert, folder = remote_data_folder)
 
         result = self.words_api.insert_list(request)
@@ -184,7 +187,7 @@ class TestLists(BaseTestContext):
         local_file = 'DocumentElements/Lists/ListsGet.doc'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-
+        request_list_insert = asposewordscloud.ListInsert(template = 'OutlineLegal')
         request = asposewordscloud.models.requests.InsertListOnlineRequest(document = request_document, list_insert = request_list_insert)
 
         result = self.words_api.insert_list_online(request)

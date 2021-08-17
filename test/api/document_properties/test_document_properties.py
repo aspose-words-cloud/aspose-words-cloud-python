@@ -135,6 +135,7 @@ class TestDocumentProperties(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
+        request_property = asposewordscloud.DocumentPropertyCreateOrUpdate(value = 'Imran Anwar')
         request = asposewordscloud.models.requests.CreateOrUpdateDocumentPropertyRequest(name = remote_file_name, property_name = 'AsposeAuthor', _property = request_property, folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.create_or_update_document_property(request)
@@ -150,7 +151,7 @@ class TestDocumentProperties(BaseTestContext):
         local_file = 'Common/test_multi_pages.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-
+        request_property = asposewordscloud.DocumentPropertyCreateOrUpdate(value = 'Imran Anwar')
         request = asposewordscloud.models.requests.CreateOrUpdateDocumentPropertyOnlineRequest(document = request_document, property_name = 'AsposeAuthor', _property = request_property)
 
         result = self.words_api.create_or_update_document_property_online(request)

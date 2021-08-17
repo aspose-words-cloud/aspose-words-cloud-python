@@ -104,6 +104,11 @@ class TestComment(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
+        request_comment_range_start_node = asposewordscloud.NodeLink(node_id = '0.3.0.3')
+        request_comment_range_start = asposewordscloud.DocumentPosition(node = request_comment_range_start_node, offset = 0)
+        request_comment_range_end_node = asposewordscloud.NodeLink(node_id = '0.3.0.3')
+        request_comment_range_end = asposewordscloud.DocumentPosition(node = request_comment_range_end_node, offset = 0)
+        request_comment = asposewordscloud.CommentInsert(range_start = request_comment_range_start, range_end = request_comment_range_end, initial = 'IA', author = 'Imran Anwar', text = 'A new Comment')
         request = asposewordscloud.models.requests.InsertCommentRequest(name = remote_file_name, comment = request_comment, folder = remote_data_folder)
 
         result = self.words_api.insert_comment(request)
@@ -121,11 +126,11 @@ class TestComment(BaseTestContext):
         local_file = 'Common/test_multi_pages.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-
-
-
-
-
+        request_comment_range_start_node = asposewordscloud.NodeLink(node_id = '0.3.0.3')
+        request_comment_range_start = asposewordscloud.DocumentPosition(node = request_comment_range_start_node, offset = 0)
+        request_comment_range_end_node = asposewordscloud.NodeLink(node_id = '0.3.0.3')
+        request_comment_range_end = asposewordscloud.DocumentPosition(node = request_comment_range_end_node, offset = 0)
+        request_comment = asposewordscloud.CommentInsert(range_start = request_comment_range_start, range_end = request_comment_range_end, initial = 'IA', author = 'Imran Anwar', text = 'A new Comment')
         request = asposewordscloud.models.requests.InsertCommentOnlineRequest(document = request_document, comment = request_comment)
 
         result = self.words_api.insert_comment_online(request)
@@ -142,6 +147,11 @@ class TestComment(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
+        request_comment_range_start_node = asposewordscloud.NodeLink(node_id = '0.3.0')
+        request_comment_range_start = asposewordscloud.DocumentPosition(node = request_comment_range_start_node, offset = 0)
+        request_comment_range_end_node = asposewordscloud.NodeLink(node_id = '0.3.0')
+        request_comment_range_end = asposewordscloud.DocumentPosition(node = request_comment_range_end_node, offset = 0)
+        request_comment = asposewordscloud.CommentUpdate(range_start = request_comment_range_start, range_end = request_comment_range_end, initial = 'IA', author = 'Imran Anwar', text = 'A new Comment')
         request = asposewordscloud.models.requests.UpdateCommentRequest(name = remote_file_name, comment_index = 0, comment = request_comment, folder = remote_data_folder)
 
         result = self.words_api.update_comment(request)
@@ -159,11 +169,11 @@ class TestComment(BaseTestContext):
         local_file = 'Common/test_multi_pages.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-
-
-
-
-
+        request_comment_range_start_node = asposewordscloud.NodeLink(node_id = '0.3.0')
+        request_comment_range_start = asposewordscloud.DocumentPosition(node = request_comment_range_start_node, offset = 0)
+        request_comment_range_end_node = asposewordscloud.NodeLink(node_id = '0.3.0')
+        request_comment_range_end = asposewordscloud.DocumentPosition(node = request_comment_range_end_node, offset = 0)
+        request_comment = asposewordscloud.CommentUpdate(range_start = request_comment_range_start, range_end = request_comment_range_end, initial = 'IA', author = 'Imran Anwar', text = 'A new Comment')
         request = asposewordscloud.models.requests.UpdateCommentOnlineRequest(document = request_document, comment_index = 0, comment = request_comment)
 
         result = self.words_api.update_comment_online(request)
