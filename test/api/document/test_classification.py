@@ -36,7 +36,7 @@ class TestClassification(BaseTestContext):
     # Test for raw text classification.
     #
     def test_classify(self):
-        request = asposewordscloud.models.requests.ClassifyRequest(text = 'Try text classification', best_classes_count = '3')
+        request = asposewordscloud.models.requests.ClassifyRequest(text='Try text classification', best_classes_count='3')
 
         result = self.words_api.classify(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -54,7 +54,7 @@ class TestClassification(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.ClassifyDocumentRequest(name = remote_file_name, folder = remote_data_folder, best_classes_count = '3')
+        request = asposewordscloud.models.requests.ClassifyDocumentRequest(name=remote_file_name, folder=remote_data_folder, best_classes_count='3')
 
         result = self.words_api.classify_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -69,7 +69,7 @@ class TestClassification(BaseTestContext):
         local_file = 'Common/test_multi_pages.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request = asposewordscloud.models.requests.ClassifyDocumentOnlineRequest(document = request_document, best_classes_count = '3')
+        request = asposewordscloud.models.requests.ClassifyDocumentOnlineRequest(document=request_document, best_classes_count='3')
 
         result = self.words_api.classify_document_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

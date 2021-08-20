@@ -43,7 +43,7 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, field_folder + '/' + local_file_name), 'rb'))
 
-        request = asposewordscloud.models.requests.GetFieldsRequest(name = remote_file_name, node_path = 'sections/0', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetFieldsRequest(name=remote_file_name, node_path='sections/0', folder=remote_data_folder)
 
         result = self.words_api.get_fields(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -59,7 +59,7 @@ class TestField(BaseTestContext):
         field_folder = 'DocumentElements/Fields'
 
         request_document = open(os.path.join(self.local_test_folder, field_folder + '/GetField.docx'), 'rb')
-        request = asposewordscloud.models.requests.GetFieldsOnlineRequest(document = request_document, node_path = 'sections/0')
+        request = asposewordscloud.models.requests.GetFieldsOnlineRequest(document=request_document, node_path='sections/0')
 
         result = self.words_api.get_fields_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -76,7 +76,7 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, field_folder + '/' + local_file_name), 'rb'))
 
-        request = asposewordscloud.models.requests.GetFieldsRequest(name = remote_file_name, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetFieldsRequest(name=remote_file_name, folder=remote_data_folder)
 
         result = self.words_api.get_fields(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -96,7 +96,7 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, field_folder + '/' + local_file_name), 'rb'))
 
-        request = asposewordscloud.models.requests.GetFieldRequest(name = remote_file_name, index = 0, node_path = 'sections/0/paragraphs/0', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetFieldRequest(name=remote_file_name, index=0, node_path='sections/0/paragraphs/0', folder=remote_data_folder)
 
         result = self.words_api.get_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -110,7 +110,7 @@ class TestField(BaseTestContext):
         field_folder = 'DocumentElements/Fields'
 
         request_document = open(os.path.join(self.local_test_folder, field_folder + '/GetField.docx'), 'rb')
-        request = asposewordscloud.models.requests.GetFieldOnlineRequest(document = request_document, index = 0, node_path = 'sections/0/paragraphs/0')
+        request = asposewordscloud.models.requests.GetFieldOnlineRequest(document=request_document, index=0, node_path='sections/0/paragraphs/0')
 
         result = self.words_api.get_field_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -127,7 +127,7 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, field_folder + '/' + local_file_name), 'rb'))
 
-        request = asposewordscloud.models.requests.GetFieldRequest(name = remote_file_name, index = 0, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetFieldRequest(name=remote_file_name, index=0, folder=remote_data_folder)
 
         result = self.words_api.get_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -145,8 +145,8 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, text_folder + '/' + local_file_name), 'rb'))
 
-        request_field = asposewordscloud.FieldInsert(field_code = '{ NUMPAGES }')
-        request = asposewordscloud.models.requests.InsertFieldRequest(name = remote_file_name, field = request_field, node_path = 'sections/0/paragraphs/0', folder = remote_data_folder)
+        request_field = asposewordscloud.FieldInsert(field_code='{ NUMPAGES }')
+        request = asposewordscloud.models.requests.InsertFieldRequest(name=remote_file_name, field=request_field, node_path='sections/0/paragraphs/0', folder=remote_data_folder)
 
         result = self.words_api.insert_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -161,8 +161,8 @@ class TestField(BaseTestContext):
         field_folder = 'DocumentElements/Fields'
 
         request_document = open(os.path.join(self.local_test_folder, field_folder + '/GetField.docx'), 'rb')
-        request_field = asposewordscloud.FieldInsert(field_code = '{ NUMPAGES }')
-        request = asposewordscloud.models.requests.InsertFieldOnlineRequest(document = request_document, field = request_field, node_path = 'sections/0/paragraphs/0')
+        request_field = asposewordscloud.FieldInsert(field_code='{ NUMPAGES }')
+        request = asposewordscloud.models.requests.InsertFieldOnlineRequest(document=request_document, field=request_field, node_path='sections/0/paragraphs/0')
 
         result = self.words_api.insert_field_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -179,8 +179,8 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, text_folder + '/' + local_file_name), 'rb'))
 
-        request_field = asposewordscloud.FieldInsert(field_code = '{ NUMPAGES }')
-        request = asposewordscloud.models.requests.InsertFieldRequest(name = remote_file_name, field = request_field, folder = remote_data_folder)
+        request_field = asposewordscloud.FieldInsert(field_code='{ NUMPAGES }')
+        request = asposewordscloud.models.requests.InsertFieldRequest(name=remote_file_name, field=request_field, folder=remote_data_folder)
 
         result = self.words_api.insert_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -199,8 +199,8 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, field_folder + '/' + local_file_name), 'rb'))
 
-        request_field = asposewordscloud.FieldUpdate(field_code = '{ NUMPAGES }')
-        request = asposewordscloud.models.requests.UpdateFieldRequest(name = remote_file_name, index = 0, field = request_field, node_path = 'sections/0/paragraphs/0', folder = remote_data_folder)
+        request_field = asposewordscloud.FieldUpdate(field_code='{ NUMPAGES }')
+        request = asposewordscloud.models.requests.UpdateFieldRequest(name=remote_file_name, index=0, field=request_field, node_path='sections/0/paragraphs/0', folder=remote_data_folder)
 
         result = self.words_api.update_field(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -215,8 +215,8 @@ class TestField(BaseTestContext):
         field_folder = 'DocumentElements/Fields'
 
         request_document = open(os.path.join(self.local_test_folder, field_folder + '/GetField.docx'), 'rb')
-        request_field = asposewordscloud.FieldUpdate(field_code = '{ NUMPAGES }')
-        request = asposewordscloud.models.requests.UpdateFieldOnlineRequest(document = request_document, index = 0, field = request_field, node_path = 'sections/0/paragraphs/0')
+        request_field = asposewordscloud.FieldUpdate(field_code='{ NUMPAGES }')
+        request = asposewordscloud.models.requests.UpdateFieldOnlineRequest(document=request_document, index=0, field=request_field, node_path='sections/0/paragraphs/0')
 
         result = self.words_api.update_field_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -232,8 +232,8 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, 'Common/' + local_file_name), 'rb'))
 
-        request_page_number = asposewordscloud.PageNumber(alignment = 'center', format = '{PAGE} of {NUMPAGES}')
-        request = asposewordscloud.models.requests.InsertPageNumbersRequest(name = remote_file_name, page_number = request_page_number, folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
+        request_page_number = asposewordscloud.PageNumber(alignment='center', format='{PAGE} of {NUMPAGES}')
+        request = asposewordscloud.models.requests.InsertPageNumbersRequest(name=remote_file_name, page_number=request_page_number, folder=remote_data_folder, dest_file_name=self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.insert_page_numbers(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -247,8 +247,8 @@ class TestField(BaseTestContext):
         local_file_name = 'test_multi_pages.docx'
 
         request_document = open(os.path.join(self.local_test_folder, 'Common/' + local_file_name), 'rb')
-        request_page_number = asposewordscloud.PageNumber(alignment = 'center', format = '{PAGE} of {NUMPAGES}')
-        request = asposewordscloud.models.requests.InsertPageNumbersOnlineRequest(document = request_document, page_number = request_page_number)
+        request_page_number = asposewordscloud.PageNumber(alignment='center', format='{PAGE} of {NUMPAGES}')
+        request = asposewordscloud.models.requests.InsertPageNumbersOnlineRequest(document=request_document, page_number=request_page_number)
 
         result = self.words_api.insert_page_numbers_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -265,7 +265,7 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, field_folder + '/' + local_file_name), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteFieldRequest(name = remote_file_name, index = 0, node_path = 'sections/0/paragraphs/0', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.DeleteFieldRequest(name=remote_file_name, index=0, node_path='sections/0/paragraphs/0', folder=remote_data_folder)
 
         self.words_api.delete_field(request)
 
@@ -277,7 +277,7 @@ class TestField(BaseTestContext):
         field_folder = 'DocumentElements/Fields'
 
         request_document = open(os.path.join(self.local_test_folder, field_folder + '/GetField.docx'), 'rb')
-        request = asposewordscloud.models.requests.DeleteFieldOnlineRequest(document = request_document, index = 0, node_path = 'sections/0/paragraphs/0')
+        request = asposewordscloud.models.requests.DeleteFieldOnlineRequest(document=request_document, index=0, node_path='sections/0/paragraphs/0')
 
         result = self.words_api.delete_field_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -294,7 +294,7 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, field_folder + '/' + local_file_name), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteFieldRequest(name = remote_file_name, index = 0, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.DeleteFieldRequest(name=remote_file_name, index=0, folder=remote_data_folder)
 
         self.words_api.delete_field(request)
 
@@ -309,7 +309,7 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, 'Common/' + local_file_name), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteFieldsRequest(name = remote_file_name, node_path = 'paragraphs/0', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.DeleteFieldsRequest(name=remote_file_name, node_path='paragraphs/0', folder=remote_data_folder)
 
         self.words_api.delete_fields(request)
 
@@ -324,7 +324,7 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, 'Common/' + local_file_name), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteFieldsRequest(name = remote_file_name, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.DeleteFieldsRequest(name=remote_file_name, folder=remote_data_folder)
 
         self.words_api.delete_fields(request)
 
@@ -339,7 +339,7 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, 'Common/' + local_file_name), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteFieldsRequest(name = remote_file_name, node_path = 'sections/0', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.DeleteFieldsRequest(name=remote_file_name, node_path='sections/0', folder=remote_data_folder)
 
         self.words_api.delete_fields(request)
 
@@ -354,7 +354,7 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, 'Common/' + local_file_name), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteFieldsRequest(name = remote_file_name, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.DeleteFieldsRequest(name=remote_file_name, folder=remote_data_folder)
 
         self.words_api.delete_fields(request)
 
@@ -369,7 +369,7 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, 'Common/' + local_file_name), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteFieldsRequest(name = remote_file_name, node_path = 'sections/0/paragraphs/0', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.DeleteFieldsRequest(name=remote_file_name, node_path='sections/0/paragraphs/0', folder=remote_data_folder)
 
         self.words_api.delete_fields(request)
 
@@ -384,7 +384,7 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, 'Common/' + local_file_name), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteFieldsRequest(name = remote_file_name, node_path = '', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.DeleteFieldsRequest(name=remote_file_name, node_path='', folder=remote_data_folder)
 
         self.words_api.delete_fields(request)
 
@@ -396,7 +396,7 @@ class TestField(BaseTestContext):
         local_file_name = 'Common/test_multi_pages.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file_name), 'rb')
-        request = asposewordscloud.models.requests.DeleteFieldsOnlineRequest(document = request_document, node_path = '')
+        request = asposewordscloud.models.requests.DeleteFieldsOnlineRequest(document=request_document, node_path='')
 
         result = self.words_api.delete_fields_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -412,7 +412,7 @@ class TestField(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, 'Common/' + local_file_name), 'rb'))
 
-        request = asposewordscloud.models.requests.UpdateFieldsRequest(name = remote_file_name, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.UpdateFieldsRequest(name=remote_file_name, folder=remote_data_folder)
 
         result = self.words_api.update_fields(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -426,7 +426,7 @@ class TestField(BaseTestContext):
         local_file = 'Common/test_multi_pages.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request = asposewordscloud.models.requests.UpdateFieldsOnlineRequest(document = request_document)
+        request = asposewordscloud.models.requests.UpdateFieldsOnlineRequest(document=request_document)
 
         result = self.words_api.update_fields_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

@@ -42,8 +42,8 @@ class TestFootnote(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, footnote_folder + '/Footnote.doc'), 'rb'))
 
-        request_footnote_dto = asposewordscloud.FootnoteInsert(footnote_type = 'Endnote', text = 'test endnote')
-        request = asposewordscloud.models.requests.InsertFootnoteRequest(name = remote_file_name, footnote_dto = request_footnote_dto, node_path = '', folder = remote_data_folder)
+        request_footnote_dto = asposewordscloud.FootnoteInsert(footnote_type='Endnote', text='test endnote')
+        request = asposewordscloud.models.requests.InsertFootnoteRequest(name=remote_file_name, footnote_dto=request_footnote_dto, node_path='', folder=remote_data_folder)
 
         result = self.words_api.insert_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -58,8 +58,8 @@ class TestFootnote(BaseTestContext):
         footnote_folder = 'DocumentElements/Footnotes'
 
         request_document = open(os.path.join(self.local_test_folder, footnote_folder + '/Footnote.doc'), 'rb')
-        request_footnote_dto = asposewordscloud.FootnoteInsert(footnote_type = 'Endnote', text = 'test endnote')
-        request = asposewordscloud.models.requests.InsertFootnoteOnlineRequest(document = request_document, footnote_dto = request_footnote_dto, node_path = '')
+        request_footnote_dto = asposewordscloud.FootnoteInsert(footnote_type='Endnote', text='test endnote')
+        request = asposewordscloud.models.requests.InsertFootnoteOnlineRequest(document=request_document, footnote_dto=request_footnote_dto, node_path='')
 
         result = self.words_api.insert_footnote_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -75,8 +75,8 @@ class TestFootnote(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, footnote_folder + '/Footnote.doc'), 'rb'))
 
-        request_footnote_dto = asposewordscloud.FootnoteInsert(footnote_type = 'Endnote', text = 'test endnote')
-        request = asposewordscloud.models.requests.InsertFootnoteRequest(name = remote_file_name, footnote_dto = request_footnote_dto, folder = remote_data_folder)
+        request_footnote_dto = asposewordscloud.FootnoteInsert(footnote_type='Endnote', text='test endnote')
+        request = asposewordscloud.models.requests.InsertFootnoteRequest(name=remote_file_name, footnote_dto=request_footnote_dto, folder=remote_data_folder)
 
         result = self.words_api.insert_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -94,7 +94,7 @@ class TestFootnote(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, footnote_folder + '/Footnote.doc'), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteFootnoteRequest(name = remote_file_name, index = 0, node_path = '', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.DeleteFootnoteRequest(name=remote_file_name, index=0, node_path='', folder=remote_data_folder)
 
         self.words_api.delete_footnote(request)
 
@@ -106,7 +106,7 @@ class TestFootnote(BaseTestContext):
         footnote_folder = 'DocumentElements/Footnotes'
 
         request_document = open(os.path.join(self.local_test_folder, footnote_folder + '/Footnote.doc'), 'rb')
-        request = asposewordscloud.models.requests.DeleteFootnoteOnlineRequest(document = request_document, index = 0, node_path = '')
+        request = asposewordscloud.models.requests.DeleteFootnoteOnlineRequest(document=request_document, index=0, node_path='')
 
         result = self.words_api.delete_footnote_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -122,7 +122,7 @@ class TestFootnote(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, footnote_folder + '/Footnote.doc'), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteFootnoteRequest(name = remote_file_name, index = 0, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.DeleteFootnoteRequest(name=remote_file_name, index=0, folder=remote_data_folder)
 
         self.words_api.delete_footnote(request)
 
@@ -137,7 +137,7 @@ class TestFootnote(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, footnote_folder + '/Footnote.doc'), 'rb'))
 
-        request = asposewordscloud.models.requests.GetFootnotesRequest(name = remote_file_name, node_path = '', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetFootnotesRequest(name=remote_file_name, node_path='', folder=remote_data_folder)
 
         result = self.words_api.get_footnotes(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -153,7 +153,7 @@ class TestFootnote(BaseTestContext):
         footnote_folder = 'DocumentElements/Footnotes'
 
         request_document = open(os.path.join(self.local_test_folder, footnote_folder + '/Footnote.doc'), 'rb')
-        request = asposewordscloud.models.requests.GetFootnotesOnlineRequest(document = request_document, node_path = '')
+        request = asposewordscloud.models.requests.GetFootnotesOnlineRequest(document=request_document, node_path='')
 
         result = self.words_api.get_footnotes_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -169,7 +169,7 @@ class TestFootnote(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, footnote_folder + '/Footnote.doc'), 'rb'))
 
-        request = asposewordscloud.models.requests.GetFootnotesRequest(name = remote_file_name, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetFootnotesRequest(name=remote_file_name, folder=remote_data_folder)
 
         result = self.words_api.get_footnotes(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -188,7 +188,7 @@ class TestFootnote(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, footnote_folder + '/Footnote.doc'), 'rb'))
 
-        request = asposewordscloud.models.requests.GetFootnoteRequest(name = remote_file_name, index = 0, node_path = '', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetFootnoteRequest(name=remote_file_name, index=0, node_path='', folder=remote_data_folder)
 
         result = self.words_api.get_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -202,7 +202,7 @@ class TestFootnote(BaseTestContext):
         footnote_folder = 'DocumentElements/Footnotes'
 
         request_document = open(os.path.join(self.local_test_folder, footnote_folder + '/Footnote.doc'), 'rb')
-        request = asposewordscloud.models.requests.GetFootnoteOnlineRequest(document = request_document, index = 0, node_path = '')
+        request = asposewordscloud.models.requests.GetFootnoteOnlineRequest(document=request_document, index=0, node_path='')
 
         result = self.words_api.get_footnote_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -218,7 +218,7 @@ class TestFootnote(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, footnote_folder + '/Footnote.doc'), 'rb'))
 
-        request = asposewordscloud.models.requests.GetFootnoteRequest(name = remote_file_name, index = 0, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetFootnoteRequest(name=remote_file_name, index=0, folder=remote_data_folder)
 
         result = self.words_api.get_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -235,8 +235,8 @@ class TestFootnote(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, footnote_folder + '/Footnote.doc'), 'rb'))
 
-        request_footnote_dto = asposewordscloud.FootnoteUpdate(text = 'new text is here')
-        request = asposewordscloud.models.requests.UpdateFootnoteRequest(name = remote_file_name, index = 0, footnote_dto = request_footnote_dto, node_path = '', folder = remote_data_folder)
+        request_footnote_dto = asposewordscloud.FootnoteUpdate(text='new text is here')
+        request = asposewordscloud.models.requests.UpdateFootnoteRequest(name=remote_file_name, index=0, footnote_dto=request_footnote_dto, node_path='', folder=remote_data_folder)
 
         result = self.words_api.update_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -250,8 +250,8 @@ class TestFootnote(BaseTestContext):
         footnote_folder = 'DocumentElements/Footnotes'
 
         request_document = open(os.path.join(self.local_test_folder, footnote_folder + '/Footnote.doc'), 'rb')
-        request_footnote_dto = asposewordscloud.FootnoteUpdate(text = 'new text is here')
-        request = asposewordscloud.models.requests.UpdateFootnoteOnlineRequest(document = request_document, index = 0, footnote_dto = request_footnote_dto, node_path = '')
+        request_footnote_dto = asposewordscloud.FootnoteUpdate(text='new text is here')
+        request = asposewordscloud.models.requests.UpdateFootnoteOnlineRequest(document=request_document, index=0, footnote_dto=request_footnote_dto, node_path='')
 
         result = self.words_api.update_footnote_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -267,8 +267,8 @@ class TestFootnote(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, footnote_folder + '/Footnote.doc'), 'rb'))
 
-        request_footnote_dto = asposewordscloud.FootnoteUpdate(text = 'new text is here')
-        request = asposewordscloud.models.requests.UpdateFootnoteRequest(name = remote_file_name, index = 0, footnote_dto = request_footnote_dto, folder = remote_data_folder)
+        request_footnote_dto = asposewordscloud.FootnoteUpdate(text='new text is here')
+        request = asposewordscloud.models.requests.UpdateFootnoteRequest(name=remote_file_name, index=0, footnote_dto=request_footnote_dto, folder=remote_data_folder)
 
         result = self.words_api.update_footnote(request)
         self.assertIsNotNone(result, 'Error has occurred.')

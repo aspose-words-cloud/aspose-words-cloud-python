@@ -42,7 +42,7 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetTablesRequest(name = remote_file_name, node_path = '', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetTablesRequest(name=remote_file_name, node_path='', folder=remote_data_folder)
 
         result = self.words_api.get_tables(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -58,7 +58,7 @@ class TestTable(BaseTestContext):
         local_file = 'DocumentElements/Tables/TablesGet.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request = asposewordscloud.models.requests.GetTablesOnlineRequest(document = request_document, node_path = '')
+        request = asposewordscloud.models.requests.GetTablesOnlineRequest(document=request_document, node_path='')
 
         result = self.words_api.get_tables_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -74,7 +74,7 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetTablesRequest(name = remote_file_name, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetTablesRequest(name=remote_file_name, folder=remote_data_folder)
 
         result = self.words_api.get_tables(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -93,7 +93,7 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetTableRequest(name = remote_file_name, index = 1, node_path = '', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetTableRequest(name=remote_file_name, index=1, node_path='', folder=remote_data_folder)
 
         result = self.words_api.get_table(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -110,7 +110,7 @@ class TestTable(BaseTestContext):
         local_file = 'DocumentElements/Tables/TablesGet.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request = asposewordscloud.models.requests.GetTableOnlineRequest(document = request_document, index = 1, node_path = '')
+        request = asposewordscloud.models.requests.GetTableOnlineRequest(document=request_document, index=1, node_path='')
 
         result = self.words_api.get_table_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -126,7 +126,7 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetTableRequest(name = remote_file_name, index = 1, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetTableRequest(name=remote_file_name, index=1, folder=remote_data_folder)
 
         result = self.words_api.get_table(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -146,7 +146,7 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteTableRequest(name = remote_file_name, index = 1, node_path = '', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.DeleteTableRequest(name=remote_file_name, index=1, node_path='', folder=remote_data_folder)
 
         self.words_api.delete_table(request)
 
@@ -158,7 +158,7 @@ class TestTable(BaseTestContext):
         local_file = 'DocumentElements/Tables/TablesGet.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request = asposewordscloud.models.requests.DeleteTableOnlineRequest(document = request_document, index = 1, node_path = '')
+        request = asposewordscloud.models.requests.DeleteTableOnlineRequest(document=request_document, index=1, node_path='')
 
         result = self.words_api.delete_table_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -174,7 +174,7 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteTableRequest(name = remote_file_name, index = 1, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.DeleteTableRequest(name=remote_file_name, index=1, folder=remote_data_folder)
 
         self.words_api.delete_table(request)
 
@@ -189,8 +189,8 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_table = asposewordscloud.TableInsert(columns_count = 5, rows_count = 4)
-        request = asposewordscloud.models.requests.InsertTableRequest(name = remote_file_name, table = request_table, node_path = '', folder = remote_data_folder)
+        request_table = asposewordscloud.TableInsert(columns_count=5, rows_count=4)
+        request = asposewordscloud.models.requests.InsertTableRequest(name=remote_file_name, table=request_table, node_path='', folder=remote_data_folder)
 
         result = self.words_api.insert_table(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -207,8 +207,8 @@ class TestTable(BaseTestContext):
         local_file = 'DocumentElements/Tables/TablesGet.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request_table = asposewordscloud.TableInsert(columns_count = 5, rows_count = 4)
-        request = asposewordscloud.models.requests.InsertTableOnlineRequest(document = request_document, table = request_table, node_path = '')
+        request_table = asposewordscloud.TableInsert(columns_count=5, rows_count=4)
+        request = asposewordscloud.models.requests.InsertTableOnlineRequest(document=request_document, table=request_table, node_path='')
 
         result = self.words_api.insert_table_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -224,8 +224,8 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_table = asposewordscloud.TableInsert(columns_count = 5, rows_count = 4)
-        request = asposewordscloud.models.requests.InsertTableRequest(name = remote_file_name, table = request_table, folder = remote_data_folder)
+        request_table = asposewordscloud.TableInsert(columns_count=5, rows_count=4)
+        request = asposewordscloud.models.requests.InsertTableRequest(name=remote_file_name, table=request_table, folder=remote_data_folder)
 
         result = self.words_api.insert_table(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -245,7 +245,7 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetTablePropertiesRequest(name = remote_file_name, index = 1, node_path = '', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetTablePropertiesRequest(name=remote_file_name, index=1, node_path='', folder=remote_data_folder)
 
         result = self.words_api.get_table_properties(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -259,7 +259,7 @@ class TestTable(BaseTestContext):
         local_file = 'DocumentElements/Tables/TablesGet.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request = asposewordscloud.models.requests.GetTablePropertiesOnlineRequest(document = request_document, index = 1, node_path = '')
+        request = asposewordscloud.models.requests.GetTablePropertiesOnlineRequest(document=request_document, index=1, node_path='')
 
         result = self.words_api.get_table_properties_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -275,7 +275,7 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetTablePropertiesRequest(name = remote_file_name, index = 1, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetTablePropertiesRequest(name=remote_file_name, index=1, folder=remote_data_folder)
 
         result = self.words_api.get_table_properties(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -292,8 +292,8 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_properties = asposewordscloud.TableProperties(alignment = 'Right', allow_auto_fit = False, bidi = True, bottom_padding = 1, cell_spacing = 2.0, style_options = 'ColumnBands')
-        request = asposewordscloud.models.requests.UpdateTablePropertiesRequest(name = remote_file_name, properties = request_properties, index = 1, node_path = '', folder = remote_data_folder)
+        request_properties = asposewordscloud.TableProperties(alignment='Right', allow_auto_fit=False, bidi=True, bottom_padding=1, cell_spacing=2.0, style_options='ColumnBands')
+        request = asposewordscloud.models.requests.UpdateTablePropertiesRequest(name=remote_file_name, properties=request_properties, index=1, node_path='', folder=remote_data_folder)
 
         result = self.words_api.update_table_properties(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -310,8 +310,8 @@ class TestTable(BaseTestContext):
         local_file = 'DocumentElements/Tables/TablesGet.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request_properties = asposewordscloud.TableProperties(alignment = 'Right', allow_auto_fit = False, bidi = True, bottom_padding = 1, cell_spacing = 2, style_options = 'ColumnBands')
-        request = asposewordscloud.models.requests.UpdateTablePropertiesOnlineRequest(document = request_document, properties = request_properties, index = 1, node_path = '')
+        request_properties = asposewordscloud.TableProperties(alignment='Right', allow_auto_fit=False, bidi=True, bottom_padding=1, cell_spacing=2, style_options='ColumnBands')
+        request = asposewordscloud.models.requests.UpdateTablePropertiesOnlineRequest(document=request_document, properties=request_properties, index=1, node_path='')
 
         result = self.words_api.update_table_properties_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -327,8 +327,8 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_properties = asposewordscloud.TableProperties(alignment = 'Right', allow_auto_fit = False, bidi = True, bottom_padding = 1.0, cell_spacing = 2.0, style_options = 'ColumnBands')
-        request = asposewordscloud.models.requests.UpdateTablePropertiesRequest(name = remote_file_name, properties = request_properties, index = 1, folder = remote_data_folder)
+        request_properties = asposewordscloud.TableProperties(alignment='Right', allow_auto_fit=False, bidi=True, bottom_padding=1.0, cell_spacing=2.0, style_options='ColumnBands')
+        request = asposewordscloud.models.requests.UpdateTablePropertiesRequest(name=remote_file_name, properties=request_properties, index=1, folder=remote_data_folder)
 
         result = self.words_api.update_table_properties(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -348,7 +348,7 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetTableRowRequest(name = remote_file_name, table_path = 'tables/1', index = 0, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetTableRowRequest(name=remote_file_name, table_path='tables/1', index=0, folder=remote_data_folder)
 
         result = self.words_api.get_table_row(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -363,7 +363,7 @@ class TestTable(BaseTestContext):
         local_file = 'DocumentElements/Tables/TablesGet.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request = asposewordscloud.models.requests.GetTableRowOnlineRequest(document = request_document, table_path = 'tables/1', index = 0)
+        request = asposewordscloud.models.requests.GetTableRowOnlineRequest(document=request_document, table_path='tables/1', index=0)
 
         result = self.words_api.get_table_row_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -379,7 +379,7 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteTableRowRequest(name = remote_file_name, table_path = 'tables/1', index = 0, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.DeleteTableRowRequest(name=remote_file_name, table_path='tables/1', index=0, folder=remote_data_folder)
 
         self.words_api.delete_table_row(request)
 
@@ -391,7 +391,7 @@ class TestTable(BaseTestContext):
         local_file = 'DocumentElements/Tables/TablesGet.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request = asposewordscloud.models.requests.DeleteTableRowOnlineRequest(document = request_document, table_path = 'tables/1', index = 0)
+        request = asposewordscloud.models.requests.DeleteTableRowOnlineRequest(document=request_document, table_path='tables/1', index=0)
 
         result = self.words_api.delete_table_row_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -407,8 +407,8 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_row = asposewordscloud.TableRowInsert(columns_count = 5)
-        request = asposewordscloud.models.requests.InsertTableRowRequest(name = remote_file_name, row = request_row, table_path = 'sections/0/tables/2', folder = remote_data_folder)
+        request_row = asposewordscloud.TableRowInsert(columns_count=5)
+        request = asposewordscloud.models.requests.InsertTableRowRequest(name=remote_file_name, row=request_row, table_path='sections/0/tables/2', folder=remote_data_folder)
 
         result = self.words_api.insert_table_row(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -423,8 +423,8 @@ class TestTable(BaseTestContext):
         local_file = 'DocumentElements/Tables/TablesGet.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request_row = asposewordscloud.TableRowInsert(columns_count = 5)
-        request = asposewordscloud.models.requests.InsertTableRowOnlineRequest(document = request_document, row = request_row, table_path = 'sections/0/tables/2')
+        request_row = asposewordscloud.TableRowInsert(columns_count=5)
+        request = asposewordscloud.models.requests.InsertTableRowOnlineRequest(document=request_document, row=request_row, table_path='sections/0/tables/2')
 
         result = self.words_api.insert_table_row_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -440,7 +440,7 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetTableRowFormatRequest(name = remote_file_name, table_path = 'sections/0/tables/2', index = 0, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetTableRowFormatRequest(name=remote_file_name, table_path='sections/0/tables/2', index=0, folder=remote_data_folder)
 
         result = self.words_api.get_table_row_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -454,7 +454,7 @@ class TestTable(BaseTestContext):
         local_file = 'DocumentElements/Tables/TablesGet.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request = asposewordscloud.models.requests.GetTableRowFormatOnlineRequest(document = request_document, table_path = 'sections/0/tables/2', index = 0)
+        request = asposewordscloud.models.requests.GetTableRowFormatOnlineRequest(document=request_document, table_path='sections/0/tables/2', index=0)
 
         result = self.words_api.get_table_row_format_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -470,8 +470,8 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_format = asposewordscloud.TableRowFormat(allow_break_across_pages = True, heading_format = True, height = 10.0, height_rule = 'Exactly')
-        request = asposewordscloud.models.requests.UpdateTableRowFormatRequest(name = remote_file_name, format = request_format, table_path = 'sections/0/tables/2', index = 0, folder = remote_data_folder)
+        request_format = asposewordscloud.TableRowFormat(allow_break_across_pages=True, heading_format=True, height=10.0, height_rule='Exactly')
+        request = asposewordscloud.models.requests.UpdateTableRowFormatRequest(name=remote_file_name, format=request_format, table_path='sections/0/tables/2', index=0, folder=remote_data_folder)
 
         result = self.words_api.update_table_row_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -487,8 +487,8 @@ class TestTable(BaseTestContext):
         local_file = 'DocumentElements/Tables/TablesGet.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request_format = asposewordscloud.TableRowFormat(allow_break_across_pages = True, heading_format = True, height = 10, height_rule = 'Auto')
-        request = asposewordscloud.models.requests.UpdateTableRowFormatOnlineRequest(document = request_document, format = request_format, table_path = 'sections/0/tables/2', index = 0)
+        request_format = asposewordscloud.TableRowFormat(allow_break_across_pages=True, heading_format=True, height=10, height_rule='Auto')
+        request = asposewordscloud.models.requests.UpdateTableRowFormatOnlineRequest(document=request_document, format=request_format, table_path='sections/0/tables/2', index=0)
 
         result = self.words_api.update_table_row_format_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -504,7 +504,7 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetTableCellRequest(name = remote_file_name, table_row_path = 'sections/0/tables/2/rows/0', index = 0, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetTableCellRequest(name=remote_file_name, table_row_path='sections/0/tables/2/rows/0', index=0, folder=remote_data_folder)
 
         result = self.words_api.get_table_cell(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -518,7 +518,7 @@ class TestTable(BaseTestContext):
         local_file = 'DocumentElements/Tables/TablesGet.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request = asposewordscloud.models.requests.GetTableCellOnlineRequest(document = request_document, table_row_path = 'sections/0/tables/2/rows/0', index = 0)
+        request = asposewordscloud.models.requests.GetTableCellOnlineRequest(document=request_document, table_row_path='sections/0/tables/2/rows/0', index=0)
 
         result = self.words_api.get_table_cell_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -534,7 +534,7 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteTableCellRequest(name = remote_file_name, table_row_path = 'sections/0/tables/2/rows/0', index = 0, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.DeleteTableCellRequest(name=remote_file_name, table_row_path='sections/0/tables/2/rows/0', index=0, folder=remote_data_folder)
 
         self.words_api.delete_table_cell(request)
 
@@ -546,7 +546,7 @@ class TestTable(BaseTestContext):
         local_file = 'DocumentElements/Tables/TablesGet.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request = asposewordscloud.models.requests.DeleteTableCellOnlineRequest(document = request_document, table_row_path = 'sections/0/tables/2/rows/0', index = 0)
+        request = asposewordscloud.models.requests.DeleteTableCellOnlineRequest(document=request_document, table_row_path='sections/0/tables/2/rows/0', index=0)
 
         result = self.words_api.delete_table_cell_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -563,7 +563,7 @@ class TestTable(BaseTestContext):
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
         request_cell = asposewordscloud.TableCellInsert()
-        request = asposewordscloud.models.requests.InsertTableCellRequest(name = remote_file_name, cell = request_cell, table_row_path = 'sections/0/tables/2/rows/0', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.InsertTableCellRequest(name=remote_file_name, cell=request_cell, table_row_path='sections/0/tables/2/rows/0', folder=remote_data_folder)
 
         result = self.words_api.insert_table_cell(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -578,7 +578,7 @@ class TestTable(BaseTestContext):
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
         request_cell = asposewordscloud.TableCellInsert()
-        request = asposewordscloud.models.requests.InsertTableCellOnlineRequest(document = request_document, cell = request_cell, table_row_path = 'sections/0/tables/2/rows/0')
+        request = asposewordscloud.models.requests.InsertTableCellOnlineRequest(document=request_document, cell=request_cell, table_row_path='sections/0/tables/2/rows/0')
 
         result = self.words_api.insert_table_cell_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -594,7 +594,7 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetTableCellFormatRequest(name = remote_file_name, table_row_path = 'sections/0/tables/2/rows/0', index = 0, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetTableCellFormatRequest(name=remote_file_name, table_row_path='sections/0/tables/2/rows/0', index=0, folder=remote_data_folder)
 
         result = self.words_api.get_table_cell_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -608,7 +608,7 @@ class TestTable(BaseTestContext):
         local_file = 'DocumentElements/Tables/TablesGet.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request = asposewordscloud.models.requests.GetTableCellFormatOnlineRequest(document = request_document, table_row_path = 'sections/0/tables/2/rows/0', index = 0)
+        request = asposewordscloud.models.requests.GetTableCellFormatOnlineRequest(document=request_document, table_row_path='sections/0/tables/2/rows/0', index=0)
 
         result = self.words_api.get_table_cell_format_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -624,8 +624,8 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_format = asposewordscloud.TableCellFormat(bottom_padding = 5.0, fit_text = True, horizontal_merge = 'First', wrap_text = True)
-        request = asposewordscloud.models.requests.UpdateTableCellFormatRequest(name = remote_file_name, format = request_format, table_row_path = 'sections/0/tables/2/rows/0', index = 0, folder = remote_data_folder)
+        request_format = asposewordscloud.TableCellFormat(bottom_padding=5.0, fit_text=True, horizontal_merge='First', wrap_text=True)
+        request = asposewordscloud.models.requests.UpdateTableCellFormatRequest(name=remote_file_name, format=request_format, table_row_path='sections/0/tables/2/rows/0', index=0, folder=remote_data_folder)
 
         result = self.words_api.update_table_cell_format(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -641,8 +641,8 @@ class TestTable(BaseTestContext):
         local_file = 'DocumentElements/Tables/TablesGet.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request_format = asposewordscloud.TableCellFormat(bottom_padding = 5, fit_text = True, horizontal_merge = 'First', wrap_text = True)
-        request = asposewordscloud.models.requests.UpdateTableCellFormatOnlineRequest(document = request_document, format = request_format, table_row_path = 'sections/0/tables/2/rows/0', index = 0)
+        request_format = asposewordscloud.TableCellFormat(bottom_padding=5, fit_text=True, horizontal_merge='First', wrap_text=True)
+        request = asposewordscloud.models.requests.UpdateTableCellFormatOnlineRequest(document=request_document, format=request_format, table_row_path='sections/0/tables/2/rows/0', index=0)
 
         result = self.words_api.update_table_cell_format_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -658,7 +658,7 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.RenderTableRequest(name = remote_file_name, format = 'png', index = 0, node_path = '', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.RenderTableRequest(name=remote_file_name, format='png', index=0, node_path='', folder=remote_data_folder)
 
         result = self.words_api.render_table(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -671,7 +671,7 @@ class TestTable(BaseTestContext):
         local_file = 'DocumentElements/Tables/TablesGet.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request = asposewordscloud.models.requests.RenderTableOnlineRequest(document = request_document, format = 'png', index = 0, node_path = '')
+        request = asposewordscloud.models.requests.RenderTableOnlineRequest(document=request_document, format='png', index=0, node_path='')
 
         result = self.words_api.render_table_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -687,7 +687,7 @@ class TestTable(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.RenderTableRequest(name = remote_file_name, format = 'png', index = 0, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.RenderTableRequest(name=remote_file_name, format='png', index=0, folder=remote_data_folder)
 
         result = self.words_api.render_table(request)
         self.assertIsNotNone(result, 'Error has occurred.')

@@ -42,8 +42,8 @@ class TestText(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_replace_text = asposewordscloud.ReplaceTextParameters(old_value = 'Testing', new_value = 'Aspose testing')
-        request = asposewordscloud.models.requests.ReplaceTextRequest(name = remote_file_name, replace_text = request_replace_text, folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
+        request_replace_text = asposewordscloud.ReplaceTextParameters(old_value='Testing', new_value='Aspose testing')
+        request = asposewordscloud.models.requests.ReplaceTextRequest(name=remote_file_name, replace_text=request_replace_text, folder=remote_data_folder, dest_file_name=self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.replace_text(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -56,8 +56,8 @@ class TestText(BaseTestContext):
         local_file = 'Common/test_multi_pages.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request_replace_text = asposewordscloud.ReplaceTextParameters(old_value = 'aspose', new_value = 'aspose new')
-        request = asposewordscloud.models.requests.ReplaceTextOnlineRequest(document = request_document, replace_text = request_replace_text)
+        request_replace_text = asposewordscloud.ReplaceTextParameters(old_value='aspose', new_value='aspose new')
+        request = asposewordscloud.models.requests.ReplaceTextOnlineRequest(document=request_document, replace_text=request_replace_text)
 
         result = self.words_api.replace_text_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -73,7 +73,7 @@ class TestText(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.SearchRequest(name = remote_file_name, pattern = 'aspose', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.SearchRequest(name=remote_file_name, pattern='aspose', folder=remote_data_folder)
 
         result = self.words_api.search(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -90,7 +90,7 @@ class TestText(BaseTestContext):
         local_file = 'DocumentElements/Text/SampleWordDocument.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request = asposewordscloud.models.requests.SearchOnlineRequest(document = request_document, pattern = 'aspose')
+        request = asposewordscloud.models.requests.SearchOnlineRequest(document=request_document, pattern='aspose')
 
         result = self.words_api.search_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

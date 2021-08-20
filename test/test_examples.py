@@ -47,12 +47,12 @@ class TestExamples(BaseTestContext):
         # Upload original document to cloud storage.
         my_var1 = open(os.path.join(documents_dir, file_name), 'rb')
         my_var2 = file_name
-        upload_file_request = asposewordscloud.models.requests.UploadFileRequest(file_content = my_var1,path = my_var2)
+        upload_file_request = asposewordscloud.models.requests.UploadFileRequest(file_content=my_var1, path=my_var2)
         words_api.upload_file(upload_file_request)
 
         # Calls AcceptAllRevisions method for document in cloud.
         my_var3 = file_name
-        request = asposewordscloud.models.requests.AcceptAllRevisionsRequest(name = my_var3)
+        request = asposewordscloud.models.requests.AcceptAllRevisionsRequest(name=my_var3)
         words_api.accept_all_revisions(request)
 
     def test_accept_all_revisions_online(self):
@@ -62,6 +62,6 @@ class TestExamples(BaseTestContext):
 
         # Calls AcceptAllRevisionsOnline method for document in cloud.
         request_document = open(os.path.join(documents_dir, file_name), 'rb')
-        request = asposewordscloud.models.requests.AcceptAllRevisionsOnlineRequest(document = request_document)
+        request = asposewordscloud.models.requests.AcceptAllRevisionsOnlineRequest(document=request_document)
         accept_all_revisions_online_result = words_api.accept_all_revisions_online(request)
         copyfile(accept_all_revisions_online_result.document, 'test_result.docx')

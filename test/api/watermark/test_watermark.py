@@ -44,7 +44,7 @@ class TestWatermark(BaseTestContext):
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
         self.upload_file(remote_image_path, open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb'))
 
-        request = asposewordscloud.models.requests.InsertWatermarkImageRequest(name = remote_file_name, image_file = None, folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name, image = remote_image_path)
+        request = asposewordscloud.models.requests.InsertWatermarkImageRequest(name=remote_file_name, image_file=None, folder=remote_data_folder, dest_file_name=self.remote_test_out + '/' + remote_file_name, image=remote_image_path)
 
         result = self.words_api.insert_watermark_image(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -59,7 +59,7 @@ class TestWatermark(BaseTestContext):
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
         request_image_file = open(os.path.join(self.local_test_folder, 'Common/aspose-cloud.png'), 'rb')
-        request = asposewordscloud.models.requests.InsertWatermarkImageOnlineRequest(document = request_document, image_file = request_image_file)
+        request = asposewordscloud.models.requests.InsertWatermarkImageOnlineRequest(document=request_document, image_file=request_image_file)
 
         result = self.words_api.insert_watermark_image_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -75,8 +75,8 @@ class TestWatermark(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_watermark_text = asposewordscloud.WatermarkText(text = 'This is the text', rotation_angle = 90.0)
-        request = asposewordscloud.models.requests.InsertWatermarkTextRequest(name = remote_file_name, watermark_text = request_watermark_text, folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
+        request_watermark_text = asposewordscloud.WatermarkText(text='This is the text', rotation_angle=90.0)
+        request = asposewordscloud.models.requests.InsertWatermarkTextRequest(name=remote_file_name, watermark_text=request_watermark_text, folder=remote_data_folder, dest_file_name=self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.insert_watermark_text(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -90,8 +90,8 @@ class TestWatermark(BaseTestContext):
         local_file = 'Common/test_multi_pages.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request_watermark_text = asposewordscloud.WatermarkText(text = 'This is the text', rotation_angle = 90)
-        request = asposewordscloud.models.requests.InsertWatermarkTextOnlineRequest(document = request_document, watermark_text = request_watermark_text)
+        request_watermark_text = asposewordscloud.WatermarkText(text='This is the text', rotation_angle=90)
+        request = asposewordscloud.models.requests.InsertWatermarkTextOnlineRequest(document=request_document, watermark_text=request_watermark_text)
 
         result = self.words_api.insert_watermark_text_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -107,7 +107,7 @@ class TestWatermark(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteWatermarkRequest(name = remote_file_name, folder = remote_data_folder, dest_file_name = self.remote_test_out + '/' + remote_file_name)
+        request = asposewordscloud.models.requests.DeleteWatermarkRequest(name=remote_file_name, folder=remote_data_folder, dest_file_name=self.remote_test_out + '/' + remote_file_name)
 
         result = self.words_api.delete_watermark(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -121,7 +121,7 @@ class TestWatermark(BaseTestContext):
         local_file = 'Common/test_multi_pages.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request = asposewordscloud.models.requests.DeleteWatermarkOnlineRequest(document = request_document)
+        request = asposewordscloud.models.requests.DeleteWatermarkOnlineRequest(document=request_document)
 
         result = self.words_api.delete_watermark_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')

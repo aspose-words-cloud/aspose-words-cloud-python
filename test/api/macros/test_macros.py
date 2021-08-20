@@ -42,7 +42,7 @@ class TestMacros(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteMacrosRequest(name = remote_file_name, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.DeleteMacrosRequest(name=remote_file_name, folder=remote_data_folder)
 
         self.words_api.delete_macros(request)
 
@@ -54,7 +54,7 @@ class TestMacros(BaseTestContext):
         local_file = 'Common/test_multi_pages.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request = asposewordscloud.models.requests.DeleteMacrosOnlineRequest(document = request_document)
+        request = asposewordscloud.models.requests.DeleteMacrosOnlineRequest(document=request_document)
 
         result = self.words_api.delete_macros_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
