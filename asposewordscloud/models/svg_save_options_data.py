@@ -49,6 +49,7 @@ class SvgSaveOptionsData(object):
         'dml_effects_rendering_mode': 'str',
         'dml_rendering_mode': 'str',
         'file_name': 'str',
+        'flat_opc_xml_mapping_only': 'bool',
         'iml_rendering_mode': 'str',
         'save_format': 'str',
         'update_created_time_property': 'bool',
@@ -79,6 +80,7 @@ class SvgSaveOptionsData(object):
         'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
         'dml_rendering_mode': 'DmlRenderingMode',
         'file_name': 'FileName',
+        'flat_opc_xml_mapping_only': 'FlatOpcXmlMappingOnly',
         'iml_rendering_mode': 'ImlRenderingMode',
         'save_format': 'SaveFormat',
         'update_created_time_property': 'UpdateCreatedTimeProperty',
@@ -102,7 +104,7 @@ class SvgSaveOptionsData(object):
         'text_output_mode': 'TextOutputMode'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, export_embedded_images=None, fit_to_view_port=None, resources_folder=None, resources_folder_alias=None, show_page_border=None, text_output_mode=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, export_embedded_images=None, fit_to_view_port=None, resources_folder=None, resources_folder_alias=None, show_page_border=None, text_output_mode=None):  # noqa: E501
         """SvgSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -111,6 +113,7 @@ class SvgSaveOptionsData(object):
         self._dml_effects_rendering_mode = None
         self._dml_rendering_mode = None
         self._file_name = None
+        self._flat_opc_xml_mapping_only = None
         self._iml_rendering_mode = None
         self._save_format = None
         self._update_created_time_property = None
@@ -146,6 +149,8 @@ class SvgSaveOptionsData(object):
             self.dml_rendering_mode = dml_rendering_mode
         if file_name is not None:
             self.file_name = file_name
+        if flat_opc_xml_mapping_only is not None:
+            self.flat_opc_xml_mapping_only = flat_opc_xml_mapping_only
         if iml_rendering_mode is not None:
             self.iml_rendering_mode = iml_rendering_mode
         if save_format is not None:
@@ -328,6 +333,28 @@ class SvgSaveOptionsData(object):
         :type: str
         """
         self._file_name = file_name
+
+    @property
+    def flat_opc_xml_mapping_only(self):
+        """Gets the flat_opc_xml_mapping_only of this SvgSaveOptionsData.  # noqa: E501
+
+        Gets or sets value determining which document formats are allowed to be mapped by Aspose.Words.Markup.StructuredDocumentTag.XmlMapping. By default only Aspose.Words.LoadFormat.FlatOpc document format is allowed to be mapped.  # noqa: E501
+
+        :return: The flat_opc_xml_mapping_only of this SvgSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._flat_opc_xml_mapping_only
+
+    @flat_opc_xml_mapping_only.setter
+    def flat_opc_xml_mapping_only(self, flat_opc_xml_mapping_only):
+        """Sets the flat_opc_xml_mapping_only of this SvgSaveOptionsData.
+
+        Gets or sets value determining which document formats are allowed to be mapped by Aspose.Words.Markup.StructuredDocumentTag.XmlMapping. By default only Aspose.Words.LoadFormat.FlatOpc document format is allowed to be mapped.  # noqa: E501
+
+        :param flat_opc_xml_mapping_only: The flat_opc_xml_mapping_only of this SvgSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._flat_opc_xml_mapping_only = flat_opc_xml_mapping_only
 
     @property
     def iml_rendering_mode(self):
