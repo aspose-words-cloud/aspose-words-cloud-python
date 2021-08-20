@@ -42,7 +42,7 @@ class TestDocument(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetDocumentRequest(document_name = remote_file_name, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetDocumentRequest(document_name=remote_file_name, folder=remote_data_folder)
 
         result = self.words_api.get_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -56,7 +56,7 @@ class TestDocument(BaseTestContext):
         remote_data_folder = self.remote_test_folder + '/DocumentActions/Document'
         remote_file_name = 'TestCreateDocument.doc'
 
-        request = asposewordscloud.models.requests.CreateDocumentRequest(file_name = remote_file_name, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.CreateDocumentRequest(file_name=remote_file_name, folder=remote_data_folder)
 
         result = self.words_api.create_document(request)
         self.assertIsNotNone(result, 'Error has occurred.')
