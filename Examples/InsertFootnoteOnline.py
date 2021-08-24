@@ -1,4 +1,5 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-insert_request = asposewordscloud.models.requests.InsertFootnoteOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),footnote_dto = request_footnote_dto)
+request_document = open('Sample.doc', 'rb')
+request_footnote_dto = asposewordscloud.FootnoteInsert(footnote_type='Endnote', text='test endnote')
+insert_request = asposewordscloud.models.requests.InsertFootnoteOnlineRequest(document=request_document, footnote_dto=request_footnote_dto)
 words_api.insert_footnote_online(insert_request)

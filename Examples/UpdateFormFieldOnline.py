@@ -1,4 +1,5 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-update_request = asposewordscloud.models.requests.UpdateFormFieldOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),form_field = request_form_field,index = 0,node_path = 'sections/0')
+request_document = open('Sample.docx', 'rb')
+request_form_field = asposewordscloud.FormFieldTextInput(name='FullName', enabled=True, calculate_on_exit=True, status_text='', text_input_type='Regular', text_input_default='No name')
+update_request = asposewordscloud.models.requests.UpdateFormFieldOnlineRequest(document=request_document, form_field=request_form_field, index=0, node_path='sections/0')
 words_api.update_form_field_online(update_request)

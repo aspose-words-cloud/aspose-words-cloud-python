@@ -1,4 +1,5 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-update_request = asposewordscloud.models.requests.UpdateTableRowFormatOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),table_path = 'sections/0/tables/2',format = request_format,index = 0)
+request_document = open('Sample.docx', 'rb')
+request_format = asposewordscloud.TableRowFormat(allow_break_across_pages=True, heading_format=True, height=10, height_rule='Auto')
+update_request = asposewordscloud.models.requests.UpdateTableRowFormatOnlineRequest(document=request_document, table_path='sections/0/tables/2', format=request_format, index=0)
 words_api.update_table_row_format_online(update_request)

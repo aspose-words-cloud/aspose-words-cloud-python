@@ -1,4 +1,5 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-build_report_request = asposewordscloud.models.requests.BuildReportOnlineRequest(template = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),data = 'Data.json',report_engine_settings = request_report_engine_settings)
+request_template = open('Sample.docx', 'rb')
+request_report_engine_settings = asposewordscloud.ReportEngineSettings(data_source_type='Json', data_source_name='persons')
+build_report_request = asposewordscloud.models.requests.BuildReportOnlineRequest(template=request_template, data='Data.json', report_engine_settings=request_report_engine_settings)
 words_api.build_report_online(build_report_request)

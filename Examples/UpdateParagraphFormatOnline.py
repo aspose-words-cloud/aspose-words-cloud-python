@@ -1,4 +1,5 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-update_request = asposewordscloud.models.requests.UpdateParagraphFormatOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),paragraph_format_dto = request_paragraph_format_dto,index = 0)
+request_document = open('Sample.docx', 'rb')
+request_paragraph_format_dto = asposewordscloud.ParagraphFormatUpdate(alignment='Right')
+update_request = asposewordscloud.models.requests.UpdateParagraphFormatOnlineRequest(document=request_document, paragraph_format_dto=request_paragraph_format_dto, index=0)
 words_api.update_paragraph_format_online(update_request)

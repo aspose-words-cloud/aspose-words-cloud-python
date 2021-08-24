@@ -1,4 +1,5 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-insert_request = asposewordscloud.models.requests.InsertListOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),list_insert = request_list_insert)
+request_document = open('Sample.doc', 'rb')
+request_list_insert = asposewordscloud.ListInsert(template='OutlineLegal')
+insert_request = asposewordscloud.models.requests.InsertListOnlineRequest(document=request_document, list_insert=request_list_insert)
 words_api.insert_list_online(insert_request)

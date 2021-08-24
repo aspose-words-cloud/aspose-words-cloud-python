@@ -1,3 +1,3 @@
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-request = asposewordscloud.models.requests.GetFieldsRequest(name = 'Sample.docx')
+request = asposewordscloud.models.requests.GetFieldsRequest(name='Sample.docx')
 words_api.get_fields(request)

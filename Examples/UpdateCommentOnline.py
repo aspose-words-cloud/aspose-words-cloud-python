@@ -1,4 +1,9 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-update_request = asposewordscloud.models.requests.UpdateCommentOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),comment_index = 0,comment = request_comment)
+request_document = open('Sample.docx', 'rb')
+request_comment_range_start_node = asposewordscloud.NodeLink(node_id='0.3.0')
+request_comment_range_start = asposewordscloud.DocumentPosition(node=request_comment_range_start_node, offset=0)
+request_comment_range_end_node = asposewordscloud.NodeLink(node_id='0.3.0')
+request_comment_range_end = asposewordscloud.DocumentPosition(node=request_comment_range_end_node, offset=0)
+request_comment = asposewordscloud.CommentUpdate(range_start=request_comment_range_start, range_end=request_comment_range_end, initial='IA', author='Imran Anwar', text='A new Comment')
+update_request = asposewordscloud.models.requests.UpdateCommentOnlineRequest(document=request_document, comment_index=0, comment=request_comment)
 words_api.update_comment_online(update_request)

@@ -1,4 +1,5 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-replace_request = asposewordscloud.models.requests.ReplaceWithTextOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),range_start_identifier = 'id0.0.0',range_text = request_range_text,range_end_identifier = 'id0.0.1')
+request_document = open('Sample.doc', 'rb')
+request_range_text = asposewordscloud.ReplaceRange(text='Replaced header')
+replace_request = asposewordscloud.models.requests.ReplaceWithTextOnlineRequest(document=request_document, range_start_identifier='id0.0.0', range_text=request_range_text, range_end_identifier='id0.0.1')
 words_api.replace_with_text_online(replace_request)

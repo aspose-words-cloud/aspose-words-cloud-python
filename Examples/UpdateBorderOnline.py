@@ -1,4 +1,6 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-update_request = asposewordscloud.models.requests.UpdateBorderOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),border_properties = request_border_properties,border_type = 'left',node_path = 'tables/1/rows/0/cells/0')
+request_document = open('Sample.docx', 'rb')
+request_border_properties_color = asposewordscloud.XmlColor(web='#AABBCC')
+request_border_properties = asposewordscloud.Border(border_type='Left', color=request_border_properties_color, distance_from_text=6, line_style='DashDotStroker', line_width=2, shadow=True)
+update_request = asposewordscloud.models.requests.UpdateBorderOnlineRequest(document=request_document, border_properties=request_border_properties, border_type='left', node_path='tables/1/rows/0/cells/0')
 words_api.update_border_online(update_request)

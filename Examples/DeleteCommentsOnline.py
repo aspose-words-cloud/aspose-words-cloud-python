@@ -1,4 +1,4 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-delete_request = asposewordscloud.models.requests.DeleteCommentsOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'))
+request_document = open('Sample.docx', 'rb')
+delete_request = asposewordscloud.models.requests.DeleteCommentsOnlineRequest(document=request_document)
 words_api.delete_comments_online(delete_request)

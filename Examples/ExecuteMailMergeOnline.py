@@ -1,4 +1,5 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-mail_merge_request = asposewordscloud.models.requests.ExecuteMailMergeOnlineRequest(template = open(os.path.join(documents_dir, 'TestExecuteTemplate.doc'), 'rb'),data = open(os.path.join(documents_dir, 'TestExecuteTemplateData.txt'), 'rb'))
+request_template = open('TestExecuteTemplate.doc', 'rb')
+request_data = open('TestExecuteTemplateData.txt', 'rb')
+mail_merge_request = asposewordscloud.models.requests.ExecuteMailMergeOnlineRequest(template=request_template, data=request_data)
 words_api.execute_mail_merge_online(mail_merge_request)

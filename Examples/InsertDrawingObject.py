@@ -1,4 +1,5 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-insert_request = asposewordscloud.models.requests.InsertDrawingObjectRequest(name = 'Sample.docx',drawing_object = request_drawing_object,image_file = open(os.path.join(documents_dir, 'Common/aspose-cloud.png'), 'rb'))
+request_drawing_object = asposewordscloud.DrawingObjectInsert(height=0, left=0, top=0, width=0, relative_horizontal_position='Margin', relative_vertical_position='Margin', wrap_type='Inline')
+request_image_file = open('Common/aspose-cloud.png', 'rb')
+insert_request = asposewordscloud.models.requests.InsertDrawingObjectRequest(name='Sample.docx', drawing_object=request_drawing_object, image_file=request_image_file)
 words_api.insert_drawing_object(insert_request)

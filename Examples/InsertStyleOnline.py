@@ -1,4 +1,5 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-insert_request = asposewordscloud.models.requests.InsertStyleOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),style_insert = request_style_insert)
+request_document = open('Sample.docx', 'rb')
+request_style_insert = asposewordscloud.StyleInsert(style_name='My Style', style_type='Paragraph')
+insert_request = asposewordscloud.models.requests.InsertStyleOnlineRequest(document=request_document, style_insert=request_style_insert)
 words_api.insert_style_online(insert_request)

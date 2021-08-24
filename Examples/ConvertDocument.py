@@ -1,4 +1,4 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-convert_request = asposewordscloud.models.requests.ConvertDocumentRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),format = 'pdf')
+request_document = open('Sample.docx', 'rb')
+convert_request = asposewordscloud.models.requests.ConvertDocumentRequest(document=request_document, format='pdf')
 words_api.convert_document(convert_request)

@@ -1,3 +1,5 @@
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-load_request = asposewordscloud.models.requests.LoadWebDocumentRequest(data = request_data)
+request_data_save_options = asposewordscloud.SaveOptionsData(file_name='google.doc', save_format='doc', dml_effects_rendering_mode='1', dml_rendering_mode='1', update_sdt_content=False, zip_output=False)
+request_data = asposewordscloud.LoadWebDocumentData(loading_document_url='http://google.com', save_options=request_data_save_options)
+load_request = asposewordscloud.models.requests.LoadWebDocumentRequest(data=request_data)
 words_api.load_web_document(load_request)

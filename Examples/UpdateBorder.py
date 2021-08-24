@@ -1,3 +1,5 @@
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-update_request = asposewordscloud.models.requests.UpdateBorderRequest(name = 'Sample.docx',border_type = 'left',border_properties = request_border_properties,node_path = 'tables/1/rows/0/cells/0')
+request_border_properties_color = asposewordscloud.XmlColor(web='#AABBCC')
+request_border_properties = asposewordscloud.Border(border_type='Left', color=request_border_properties_color, distance_from_text=6.0, line_style='DashDotStroker', line_width=2.0, shadow=True)
+update_request = asposewordscloud.models.requests.UpdateBorderRequest(name='Sample.docx', border_type='left', border_properties=request_border_properties, node_path='tables/1/rows/0/cells/0')
 words_api.update_border(update_request)

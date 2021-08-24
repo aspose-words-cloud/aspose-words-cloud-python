@@ -1,4 +1,5 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-apply_style_request = asposewordscloud.models.requests.ApplyStyleToDocumentElementOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),styled_node_path = 'paragraphs/1/paragraphFormat',style_apply = request_style_apply)
+request_document = open('Sample.docx', 'rb')
+request_style_apply = asposewordscloud.StyleApply(style_name='Heading 1')
+apply_style_request = asposewordscloud.models.requests.ApplyStyleToDocumentElementOnlineRequest(document=request_document, styled_node_path='paragraphs/1/paragraphFormat', style_apply=request_style_apply)
 words_api.apply_style_to_document_element_online(apply_style_request)

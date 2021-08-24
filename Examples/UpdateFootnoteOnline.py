@@ -1,4 +1,5 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-update_request = asposewordscloud.models.requests.UpdateFootnoteOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),footnote_dto = request_footnote_dto,index = 0)
+request_document = open('Sample.doc', 'rb')
+request_footnote_dto = asposewordscloud.FootnoteUpdate(text='new text is here')
+update_request = asposewordscloud.models.requests.UpdateFootnoteOnlineRequest(document=request_document, footnote_dto=request_footnote_dto, index=0)
 words_api.update_footnote_online(update_request)

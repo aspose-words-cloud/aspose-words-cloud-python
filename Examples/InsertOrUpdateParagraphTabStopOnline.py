@@ -1,4 +1,5 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-insert_request = asposewordscloud.models.requests.InsertOrUpdateParagraphTabStopOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),tab_stop_insert_dto = request_tab_stop_insert_dto,index = 0)
+request_document = open('Sample.docx', 'rb')
+request_tab_stop_insert_dto = asposewordscloud.TabStopInsert(alignment='Left', leader='None', position=72)
+insert_request = asposewordscloud.models.requests.InsertOrUpdateParagraphTabStopOnlineRequest(document=request_document, tab_stop_insert_dto=request_tab_stop_insert_dto, index=0)
 words_api.insert_or_update_paragraph_tab_stop_online(insert_request)

@@ -1,4 +1,4 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-upload_request = asposewordscloud.models.requests.UploadFileRequest(file_content = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),path = 'Sample.docx')
+request_file_content = open('Sample.docx', 'rb')
+upload_request = asposewordscloud.models.requests.UploadFileRequest(file_content=request_file_content, path='Sample.docx')
 words_api.upload_file(upload_request)

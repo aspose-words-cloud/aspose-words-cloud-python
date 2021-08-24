@@ -1,4 +1,5 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-insert_request = asposewordscloud.models.requests.InsertWatermarkTextOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),watermark_text = request_watermark_text)
+request_document = open('Sample.docx', 'rb')
+request_watermark_text = asposewordscloud.WatermarkText(text='This is the text', rotation_angle=90)
+insert_request = asposewordscloud.models.requests.InsertWatermarkTextOnlineRequest(document=request_document, watermark_text=request_watermark_text)
 words_api.insert_watermark_text_online(insert_request)

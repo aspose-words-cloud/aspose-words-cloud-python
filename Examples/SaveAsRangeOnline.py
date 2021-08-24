@@ -1,4 +1,5 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-save_request = asposewordscloud.models.requests.SaveAsRangeOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.doc'), 'rb'),range_start_identifier = 'id0.0.0',document_parameters = request_document_parameters,range_end_identifier = 'id0.0.1')
+request_document = open('Sample.doc', 'rb')
+request_document_parameters = asposewordscloud.RangeDocument(document_name='/NewDoc.docx')
+save_request = asposewordscloud.models.requests.SaveAsRangeOnlineRequest(document=request_document, range_start_identifier='id0.0.0', document_parameters=request_document_parameters, range_end_identifier='id0.0.1')
 words_api.save_as_range_online(save_request)

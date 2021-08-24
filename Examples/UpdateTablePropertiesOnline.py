@@ -1,4 +1,5 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-update_request = asposewordscloud.models.requests.UpdateTablePropertiesOnlineRequest(document = open(os.path.join(documents_dir, 'Sample.docx'), 'rb'),properties = request_properties,index = 1)
+request_document = open('Sample.docx', 'rb')
+request_properties = asposewordscloud.TableProperties(alignment='Right', allow_auto_fit=False, bidi=True, bottom_padding=1, cell_spacing=2, style_options='ColumnBands')
+update_request = asposewordscloud.models.requests.UpdateTablePropertiesOnlineRequest(document=request_document, properties=request_properties, index=1)
 words_api.update_table_properties_online(update_request)

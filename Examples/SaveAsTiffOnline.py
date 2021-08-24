@@ -1,4 +1,5 @@
-documents_dir = '...'
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-save_request = asposewordscloud.models.requests.SaveAsTiffOnlineRequest(document = open(os.path.join(documents_dir, 'Common/test_multi_pages.docx'), 'rb'),save_options = request_save_options)
+request_document = open('Common/test_multi_pages.docx', 'rb')
+request_save_options = asposewordscloud.TiffSaveOptionsData(save_format='tiff', file_name='/abc.tiff')
+save_request = asposewordscloud.models.requests.SaveAsTiffOnlineRequest(document=request_document, save_options=request_save_options)
 words_api.save_as_tiff_online(save_request)
