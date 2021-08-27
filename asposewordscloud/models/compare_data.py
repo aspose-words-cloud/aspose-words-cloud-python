@@ -46,23 +46,26 @@ class CompareData(object):
         'author': 'str',
         'compare_options': 'CompareOptions',
         'comparing_with_document': 'str',
-        'date_time': 'datetime'
+        'date_time': 'datetime',
+        'result_document_format': 'str'
     }
 
     attribute_map = {
         'author': 'Author',
         'compare_options': 'CompareOptions',
         'comparing_with_document': 'ComparingWithDocument',
-        'date_time': 'DateTime'
+        'date_time': 'DateTime',
+        'result_document_format': 'ResultDocumentFormat'
     }
 
-    def __init__(self, author=None, compare_options=None, comparing_with_document=None, date_time=None):  # noqa: E501
+    def __init__(self, author=None, compare_options=None, comparing_with_document=None, date_time=None, result_document_format=None):  # noqa: E501
         """CompareData - a model defined in Swagger"""  # noqa: E501
 
         self._author = None
         self._compare_options = None
         self._comparing_with_document = None
         self._date_time = None
+        self._result_document_format = None
         self.discriminator = None
 
         if author is not None:
@@ -73,6 +76,8 @@ class CompareData(object):
             self.comparing_with_document = comparing_with_document
         if date_time is not None:
             self.date_time = date_time
+        if result_document_format is not None:
+            self.result_document_format = result_document_format
 
     @property
     def author(self):
@@ -161,6 +166,28 @@ class CompareData(object):
         :type: datetime
         """
         self._date_time = date_time
+
+    @property
+    def result_document_format(self):
+        """Gets the result_document_format of this CompareData.  # noqa: E501
+
+        Gets or sets the result document format.  # noqa: E501
+
+        :return: The result_document_format of this CompareData.  # noqa: E501
+        :rtype: str
+        """
+        return self._result_document_format
+
+    @result_document_format.setter
+    def result_document_format(self, result_document_format):
+        """Sets the result_document_format of this CompareData.
+
+        Gets or sets the result document format.  # noqa: E501
+
+        :param result_document_format: The result_document_format of this CompareData.  # noqa: E501
+        :type: str
+        """
+        self._result_document_format = result_document_format
 
 
     def to_dict(self):

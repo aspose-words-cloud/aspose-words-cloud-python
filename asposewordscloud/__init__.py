@@ -36,6 +36,13 @@ from asposewordscloud.models.comment_update import CommentUpdate
 from asposewordscloud.models.compare_data import CompareData
 from asposewordscloud.models.compare_options import CompareOptions
 from asposewordscloud.models.csv_data_load_options import CsvDataLoadOptions
+from asposewordscloud.models.custom_xml_part import CustomXmlPart
+from asposewordscloud.models.custom_xml_part_insert import CustomXmlPartInsert
+from asposewordscloud.models.custom_xml_part_link import CustomXmlPartLink
+from asposewordscloud.models.custom_xml_part_response import CustomXmlPartResponse
+from asposewordscloud.models.custom_xml_parts_collection import CustomXmlPartsCollection
+from asposewordscloud.models.custom_xml_parts_response import CustomXmlPartsResponse
+from asposewordscloud.models.custom_xml_part_update import CustomXmlPartUpdate
 from asposewordscloud.models.doc_save_options_data import DocSaveOptionsData
 from asposewordscloud.models.document import Document
 from asposewordscloud.models.document_entry import DocumentEntry

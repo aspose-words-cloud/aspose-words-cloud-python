@@ -42,7 +42,7 @@ class TestMathObject(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetOfficeMathObjectsRequest(name = remote_file_name, node_path = '', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetOfficeMathObjectsRequest(name=remote_file_name, node_path='', folder=remote_data_folder)
 
         result = self.words_api.get_office_math_objects(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -57,7 +57,8 @@ class TestMathObject(BaseTestContext):
     def test_get_office_math_objects_online(self):
         local_file = 'DocumentElements/MathObjects/MathObjects.docx'
 
-        request = asposewordscloud.models.requests.GetOfficeMathObjectsOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), node_path = '')
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.GetOfficeMathObjectsOnlineRequest(document=request_document, node_path='')
 
         result = self.words_api.get_office_math_objects_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -73,7 +74,7 @@ class TestMathObject(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetOfficeMathObjectsRequest(name = remote_file_name, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetOfficeMathObjectsRequest(name=remote_file_name, folder=remote_data_folder)
 
         result = self.words_api.get_office_math_objects(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -92,7 +93,7 @@ class TestMathObject(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetOfficeMathObjectRequest(name = remote_file_name, index = 0, node_path = '', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetOfficeMathObjectRequest(name=remote_file_name, index=0, node_path='', folder=remote_data_folder)
 
         result = self.words_api.get_office_math_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -105,7 +106,8 @@ class TestMathObject(BaseTestContext):
     def test_get_office_math_object_online(self):
         local_file = 'DocumentElements/MathObjects/MathObjects.docx'
 
-        request = asposewordscloud.models.requests.GetOfficeMathObjectOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), index = 0, node_path = '')
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.GetOfficeMathObjectOnlineRequest(document=request_document, index=0, node_path='')
 
         result = self.words_api.get_office_math_object_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -121,7 +123,7 @@ class TestMathObject(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.GetOfficeMathObjectRequest(name = remote_file_name, index = 0, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.GetOfficeMathObjectRequest(name=remote_file_name, index=0, folder=remote_data_folder)
 
         result = self.words_api.get_office_math_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -138,7 +140,7 @@ class TestMathObject(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.RenderMathObjectRequest(name = remote_file_name, format = 'png', index = 0, node_path = '', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.RenderMathObjectRequest(name=remote_file_name, format='png', index=0, node_path='', folder=remote_data_folder)
 
         result = self.words_api.render_math_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -150,7 +152,8 @@ class TestMathObject(BaseTestContext):
     def test_render_math_object_online(self):
         local_file = 'DocumentElements/MathObjects/MathObjects.docx'
 
-        request = asposewordscloud.models.requests.RenderMathObjectOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), format = 'png', index = 0, node_path = '')
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.RenderMathObjectOnlineRequest(document=request_document, format='png', index=0, node_path='')
 
         result = self.words_api.render_math_object_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -166,7 +169,7 @@ class TestMathObject(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.RenderMathObjectRequest(name = remote_file_name, format = 'png', index = 0, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.RenderMathObjectRequest(name=remote_file_name, format='png', index=0, folder=remote_data_folder)
 
         result = self.words_api.render_math_object(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -182,7 +185,7 @@ class TestMathObject(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteOfficeMathObjectRequest(name = remote_file_name, index = 0, node_path = '', folder = remote_data_folder)
+        request = asposewordscloud.models.requests.DeleteOfficeMathObjectRequest(name=remote_file_name, index=0, node_path='', folder=remote_data_folder)
 
         self.words_api.delete_office_math_object(request)
 
@@ -193,7 +196,8 @@ class TestMathObject(BaseTestContext):
     def test_delete_office_math_object_online(self):
         local_file = 'DocumentElements/MathObjects/MathObjects.docx'
 
-        request = asposewordscloud.models.requests.DeleteOfficeMathObjectOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), index = 0, node_path = '')
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.DeleteOfficeMathObjectOnlineRequest(document=request_document, index=0, node_path='')
 
         result = self.words_api.delete_office_math_object_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -209,7 +213,7 @@ class TestMathObject(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteOfficeMathObjectRequest(name = remote_file_name, index = 0, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.DeleteOfficeMathObjectRequest(name=remote_file_name, index=0, folder=remote_data_folder)
 
         self.words_api.delete_office_math_object(request)
 

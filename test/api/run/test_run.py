@@ -42,8 +42,8 @@ class TestRun(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_run = asposewordscloud.RunUpdate(text = 'run with text')
-        request = asposewordscloud.models.requests.UpdateRunRequest(name = remote_file_name, run = request_run, paragraph_path = 'paragraphs/1', index = 0, folder = remote_data_folder)
+        request_run = asposewordscloud.RunUpdate(text='run with text')
+        request = asposewordscloud.models.requests.UpdateRunRequest(name=remote_file_name, run=request_run, paragraph_path='paragraphs/1', index=0, folder=remote_data_folder)
 
         result = self.words_api.update_run(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -56,8 +56,9 @@ class TestRun(BaseTestContext):
     def test_update_run_online(self):
         local_file = 'DocumentElements/Runs/Run.doc'
 
-        request_run = asposewordscloud.RunUpdate(text = 'run with text')
-        request = asposewordscloud.models.requests.UpdateRunOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), run = request_run, paragraph_path = 'paragraphs/1', index = 0)
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request_run = asposewordscloud.RunUpdate(text='run with text')
+        request = asposewordscloud.models.requests.UpdateRunOnlineRequest(document=request_document, run=request_run, paragraph_path='paragraphs/1', index=0)
 
         result = self.words_api.update_run_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -73,8 +74,8 @@ class TestRun(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_run = asposewordscloud.RunInsert(text = 'run with text')
-        request = asposewordscloud.models.requests.InsertRunRequest(name = remote_file_name, paragraph_path = 'paragraphs/1', run = request_run, folder = remote_data_folder)
+        request_run = asposewordscloud.RunInsert(text='run with text')
+        request = asposewordscloud.models.requests.InsertRunRequest(name=remote_file_name, paragraph_path='paragraphs/1', run=request_run, folder=remote_data_folder)
 
         result = self.words_api.insert_run(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -88,8 +89,9 @@ class TestRun(BaseTestContext):
     def test_insert_run_online(self):
         local_file = 'DocumentElements/Runs/Run.doc'
 
-        request_run = asposewordscloud.RunInsert(text = 'run with text')
-        request = asposewordscloud.models.requests.InsertRunOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), paragraph_path = 'paragraphs/1', run = request_run)
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request_run = asposewordscloud.RunInsert(text='run with text')
+        request = asposewordscloud.models.requests.InsertRunOnlineRequest(document=request_document, paragraph_path='paragraphs/1', run=request_run)
 
         result = self.words_api.insert_run_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -105,7 +107,7 @@ class TestRun(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request = asposewordscloud.models.requests.DeleteRunRequest(name = remote_file_name, paragraph_path = 'paragraphs/1', index = 0, folder = remote_data_folder)
+        request = asposewordscloud.models.requests.DeleteRunRequest(name=remote_file_name, paragraph_path='paragraphs/1', index=0, folder=remote_data_folder)
 
         self.words_api.delete_run(request)
 
@@ -116,7 +118,8 @@ class TestRun(BaseTestContext):
     def test_delete_run_online(self):
         local_file = 'DocumentElements/Runs/Run.doc'
 
-        request = asposewordscloud.models.requests.DeleteRunOnlineRequest(document = open(os.path.join(self.local_test_folder, local_file), 'rb'), paragraph_path = 'paragraphs/1', index = 0)
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.DeleteRunOnlineRequest(document=request_document, paragraph_path='paragraphs/1', index=0)
 
         result = self.words_api.delete_run_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
