@@ -65,7 +65,6 @@ class TiffSaveOptionsData(object):
         'optimize_output': 'bool',
         'page_count': 'int',
         'page_index': 'int',
-        'graphics_quality_options': 'GraphicsQualityOptionsData',
         'horizontal_resolution': 'float',
         'image_brightness': 'float',
         'image_color_mode': 'str',
@@ -106,7 +105,6 @@ class TiffSaveOptionsData(object):
         'optimize_output': 'OptimizeOutput',
         'page_count': 'PageCount',
         'page_index': 'PageIndex',
-        'graphics_quality_options': 'GraphicsQualityOptions',
         'horizontal_resolution': 'HorizontalResolution',
         'image_brightness': 'ImageBrightness',
         'image_color_mode': 'ImageColorMode',
@@ -124,7 +122,7 @@ class TiffSaveOptionsData(object):
         'tiff_compression': 'TiffCompression'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, graphics_quality_options=None, horizontal_resolution=None, image_brightness=None, image_color_mode=None, image_contrast=None, paper_color=None, pixel_format=None, resolution=None, scale=None, use_anti_aliasing=None, use_gdi_emf_renderer=None, use_high_quality_rendering=None, vertical_resolution=None, threshold_for_floyd_steinberg_dithering=None, tiff_binarization_method=None, tiff_compression=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, horizontal_resolution=None, image_brightness=None, image_color_mode=None, image_contrast=None, paper_color=None, pixel_format=None, resolution=None, scale=None, use_anti_aliasing=None, use_gdi_emf_renderer=None, use_high_quality_rendering=None, vertical_resolution=None, threshold_for_floyd_steinberg_dithering=None, tiff_binarization_method=None, tiff_compression=None):  # noqa: E501
         """TiffSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -149,7 +147,6 @@ class TiffSaveOptionsData(object):
         self._optimize_output = None
         self._page_count = None
         self._page_index = None
-        self._graphics_quality_options = None
         self._horizontal_resolution = None
         self._image_brightness = None
         self._image_color_mode = None
@@ -211,8 +208,6 @@ class TiffSaveOptionsData(object):
             self.page_count = page_count
         if page_index is not None:
             self.page_index = page_index
-        if graphics_quality_options is not None:
-            self.graphics_quality_options = graphics_quality_options
         if horizontal_resolution is not None:
             self.horizontal_resolution = horizontal_resolution
         if image_brightness is not None:
@@ -735,28 +730,6 @@ class TiffSaveOptionsData(object):
         :type: int
         """
         self._page_index = page_index
-
-    @property
-    def graphics_quality_options(self):
-        """Gets the graphics_quality_options of this TiffSaveOptionsData.  # noqa: E501
-
-        Gets or sets the additional System.Drawing.Graphics quality options.  # noqa: E501
-
-        :return: The graphics_quality_options of this TiffSaveOptionsData.  # noqa: E501
-        :rtype: GraphicsQualityOptionsData
-        """
-        return self._graphics_quality_options
-
-    @graphics_quality_options.setter
-    def graphics_quality_options(self, graphics_quality_options):
-        """Sets the graphics_quality_options of this TiffSaveOptionsData.
-
-        Gets or sets the additional System.Drawing.Graphics quality options.  # noqa: E501
-
-        :param graphics_quality_options: The graphics_quality_options of this TiffSaveOptionsData.  # noqa: E501
-        :type: GraphicsQualityOptionsData
-        """
-        self._graphics_quality_options = graphics_quality_options
 
     @property
     def horizontal_resolution(self):
