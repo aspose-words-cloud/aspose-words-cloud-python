@@ -111,6 +111,7 @@ from asposewordscloud.models.hyperlinks import Hyperlinks
 from asposewordscloud.models.hyperlinks_response import HyperlinksResponse
 from asposewordscloud.models.image_save_options_data import ImageSaveOptionsData
 from asposewordscloud.models.jpeg_save_options_data import JpegSaveOptionsData
+from asposewordscloud.models.json_data_load_options import JsonDataLoadOptions
 from asposewordscloud.models.link import Link
 from asposewordscloud.models.link_element import LinkElement
 from asposewordscloud.models.list_format import ListFormat
@@ -249,4 +250,5 @@ from asposewordscloud.models.words_response import WordsResponse
 from asposewordscloud.models.xaml_fixed_save_options_data import XamlFixedSaveOptionsData
 from asposewordscloud.models.xaml_flow_save_options_data import XamlFlowSaveOptionsData
 from asposewordscloud.models.xml_color import XmlColor
+from asposewordscloud.models.xml_data_load_options import XmlDataLoadOptions
 from asposewordscloud.models.xps_save_options_data import XpsSaveOptionsData
