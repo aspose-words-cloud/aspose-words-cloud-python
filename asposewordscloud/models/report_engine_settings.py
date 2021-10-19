@@ -46,23 +46,29 @@ class ReportEngineSettings(object):
         'csv_data_load_options': 'CsvDataLoadOptions',
         'data_source_name': 'str',
         'data_source_type': 'str',
-        'report_build_options': 'list[str]'
+        'json_data_load_options': 'JsonDataLoadOptions',
+        'report_build_options': 'list[str]',
+        'xml_data_load_options': 'XmlDataLoadOptions'
     }
 
     attribute_map = {
         'csv_data_load_options': 'CsvDataLoadOptions',
         'data_source_name': 'DataSourceName',
         'data_source_type': 'DataSourceType',
-        'report_build_options': 'ReportBuildOptions'
+        'json_data_load_options': 'JsonDataLoadOptions',
+        'report_build_options': 'ReportBuildOptions',
+        'xml_data_load_options': 'XmlDataLoadOptions'
     }
 
-    def __init__(self, csv_data_load_options=None, data_source_name=None, data_source_type=None, report_build_options=None):  # noqa: E501
+    def __init__(self, csv_data_load_options=None, data_source_name=None, data_source_type=None, json_data_load_options=None, report_build_options=None, xml_data_load_options=None):  # noqa: E501
         """ReportEngineSettings - a model defined in Swagger"""  # noqa: E501
 
         self._csv_data_load_options = None
         self._data_source_name = None
         self._data_source_type = None
+        self._json_data_load_options = None
         self._report_build_options = None
+        self._xml_data_load_options = None
         self.discriminator = None
 
         if csv_data_load_options is not None:
@@ -71,8 +77,12 @@ class ReportEngineSettings(object):
             self.data_source_name = data_source_name
         if data_source_type is not None:
             self.data_source_type = data_source_type
+        if json_data_load_options is not None:
+            self.json_data_load_options = json_data_load_options
         if report_build_options is not None:
             self.report_build_options = report_build_options
+        if xml_data_load_options is not None:
+            self.xml_data_load_options = xml_data_load_options
 
     @property
     def csv_data_load_options(self):
@@ -149,6 +159,28 @@ class ReportEngineSettings(object):
             self._data_source_type = allowed_values[int(data_source_type) if six.PY3 else long(data_source_type)]
 
     @property
+    def json_data_load_options(self):
+        """Gets the json_data_load_options of this ReportEngineSettings.  # noqa: E501
+
+        Gets or sets the options for parsing JSON data.  # noqa: E501
+
+        :return: The json_data_load_options of this ReportEngineSettings.  # noqa: E501
+        :rtype: JsonDataLoadOptions
+        """
+        return self._json_data_load_options
+
+    @json_data_load_options.setter
+    def json_data_load_options(self, json_data_load_options):
+        """Sets the json_data_load_options of this ReportEngineSettings.
+
+        Gets or sets the options for parsing JSON data.  # noqa: E501
+
+        :param json_data_load_options: The json_data_load_options of this ReportEngineSettings.  # noqa: E501
+        :type: JsonDataLoadOptions
+        """
+        self._json_data_load_options = json_data_load_options
+
+    @property
     def report_build_options(self):
         """Gets the report_build_options of this ReportEngineSettings.  # noqa: E501
 
@@ -169,6 +201,28 @@ class ReportEngineSettings(object):
         :type: list[str]
         """
         self._report_build_options = report_build_options
+
+    @property
+    def xml_data_load_options(self):
+        """Gets the xml_data_load_options of this ReportEngineSettings.  # noqa: E501
+
+        Gets or sets the options for parsing XML data.  # noqa: E501
+
+        :return: The xml_data_load_options of this ReportEngineSettings.  # noqa: E501
+        :rtype: XmlDataLoadOptions
+        """
+        return self._xml_data_load_options
+
+    @xml_data_load_options.setter
+    def xml_data_load_options(self, xml_data_load_options):
+        """Sets the xml_data_load_options of this ReportEngineSettings.
+
+        Gets or sets the options for parsing XML data.  # noqa: E501
+
+        :param xml_data_load_options: The xml_data_load_options of this ReportEngineSettings.  # noqa: E501
+        :type: XmlDataLoadOptions
+        """
+        self._xml_data_load_options = xml_data_load_options
 
 
     def to_dict(self):
