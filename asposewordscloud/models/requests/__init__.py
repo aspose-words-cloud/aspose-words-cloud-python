@@ -1,4 +1,5 @@
 from asposewordscloud.models.requests.base_request_object import BaseRequestObject
+from asposewordscloud.models.requests.batch_request import BatchRequest
 from asposewordscloud.models.requests.accept_all_revisions_request import AcceptAllRevisionsRequest
 from asposewordscloud.models.requests.accept_all_revisions_online_request import AcceptAllRevisionsOnlineRequest
 from asposewordscloud.models.requests.append_document_request import AppendDocumentRequest

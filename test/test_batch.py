@@ -24,6 +24,8 @@
 # </summary>
 # -----------------------------------------------------------------------------------
 
+from urllib3 import request
+import asposewordscloud.models
 import os
 import asposewordscloud.models.requests
 from test.base_test_context import BaseTestContext
@@ -58,10 +60,67 @@ class TestBatch(BaseTestContext):
             data=localDataFile, report_engine_settings=requestReportEngineSettings)
 
         self.words_api.upload_file(request0)
-        result = self.words_api.batch(request1, request2, request3, request4, request5)
+
+        batch_request1 = asposewordscloud.models.requests.BatchRequest(request = request1)
+        batch_request2 = asposewordscloud.models.requests.BatchRequest(request = request2)
+        batch_request3 = asposewordscloud.models.requests.BatchRequest(request = request3)
+        batch_request4 = asposewordscloud.models.requests.BatchRequest(request = request4)
+        batch_request5 = asposewordscloud.models.requests.BatchRequest(request = request5)
+
+        result = self.words_api.batch(batch_request1, batch_request2, batch_request3, batch_request4, batch_request5)
+        self.assertEqual(len(result), 5)
         self.assertEqual(len(result), 5)
         self.assertIsInstance(result[0], asposewordscloud.ParagraphLinkCollectionResponse)
         self.assertIsInstance(result[1], asposewordscloud.ParagraphResponse)
         self.assertIsInstance(result[2], asposewordscloud.ParagraphResponse)
         self.assertIsNone(result[3])
         self.assertIsInstance(result[4], str)
+
+    #
+    # Test for a batch with depend on feature
+    #
+    def test_batch_with_reversed_order(self):
+        filename = 'test_multi_pages.docx'
+        remote_name = 'test_batch_with_reversed_order.docx'
+        file = open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb')
+        remote_path = os.path.join(self.remote_test_folder, self.test_folder, remote_name)
+        remote_folder = os.path.join(self.remote_test_folder, self.test_folder)
+
+        self.upload_file(remote_folder + '/' + remote_name, file)
+
+        request1 =  asposewordscloud.models.requests.GetParagraphsRequest(name=remote_name, node_path="sections/0", folder=remote_folder)
+        request2 = asposewordscloud.models.requests.GetParagraphRequest(name=remote_name, index=0, node_path="sections/0", folder=remote_folder)
+
+        batch_request1 = asposewordscloud.models.requests.BatchRequest(request=request1)
+        batch_request2 = asposewordscloud.models.requests.BatchRequest(request=request2)
+        batch_request1.depends_on(batch_request2)
+
+        result = self.words_api.batch(batch_request1, batch_request2)
+        self.assertEqual(len(result), 2)
+        self.assertIsInstance(result[0], asposewordscloud.models.ParagraphResponse)
+        self.assertIsInstance(result[1], asposewordscloud.models.ParagraphLinkCollectionResponse)
+
+
+    #
+    # Test for a batch with resultOf feature
+    #
+    def test_batch_with_result_of(self):
+        filename = 'test_multi_pages.docx'
+        remote_name = 'test_batch_with_result_of.docx'
+        file = open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb')
+        remote_path = os.path.join(self.remote_test_folder, self.test_folder, remote_name)
+        remote_folder = os.path.join(self.remote_test_folder, self.test_folder)
+
+        self.upload_file(remote_folder + '/' + remote_name, file)
+
+        request1 =  asposewordscloud.models.requests.GetDocumentWithFormatRequest(name=remote_name, format='docx', folder=remote_folder)
+        batch_request1 = asposewordscloud.models.requests.BatchRequest(request=request1)
+
+        request2 = asposewordscloud.models.requests.DeleteCommentsOnlineRequest(document=batch_request1.use_as_source())
+        batch_request2 = asposewordscloud.models.requests.BatchRequest(request=request2)
+
+        batch_request2.depends_on(batch_request1)
+
+        result = self.words_api.batch(batch_request1, batch_request2)
+        self.assertEqual(len(result), 2)
+        self.assertIsInstance(result[1], str)
