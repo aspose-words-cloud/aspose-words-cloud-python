@@ -306,3 +306,4 @@ from asposewordscloud.models.requests.update_table_properties_online_request imp
 from asposewordscloud.models.requests.update_table_row_format_request import UpdateTableRowFormatRequest
 from asposewordscloud.models.requests.update_table_row_format_online_request import UpdateTableRowFormatOnlineRequest
 from asposewordscloud.models.requests.upload_file_request import UploadFileRequest
+from asposewordscloud.models.requests.batch_request import BatchRequest

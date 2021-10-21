@@ -26,7 +26,7 @@
 import uuid
 import io
 
-class BatchRequest():
+class BatchRequest(object):
     """
     Request wrapper for batch operation.
     Initializes a new instance.
@@ -37,7 +37,7 @@ class BatchRequest():
         self.id = str(uuid.uuid4())
         self.parent_id = None 
 
-    def dependsOn(self, parent_request):
+    def depends_on(self, parent_request):
         self.parent_id = parent_request.id
 
     def create_http_request(self, api_client):
@@ -57,5 +57,5 @@ class BatchRequest():
 
     def use_as_source(self):
         data = io.StringIO()
-        data.write('"resultOf(' + self.id + ')')
+        data.write('resultOf(' + self.id + ')')
         return data

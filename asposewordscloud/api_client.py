@@ -28,6 +28,7 @@ from __future__ import absolute_import
 
 import datetime
 import email.parser
+import io
 import json
 import mimetypes
 from multiprocessing.pool import ThreadPool
@@ -256,11 +257,13 @@ class ApiClient(object):
         if len(multipart.parts) != len(requests):
             raise rest.ApiException(status=0, reason="Response parts and requests count mismatch.")
 
+        id_to_requests = {}
+        for r in requests:
+            id_to_requests[r.id] = r
+
         results = []
-        for part_id in range(len(multipart.parts)):
+        for part in multipart.parts:
             try:
-                response_type = requests[part_id].get_response_type()
-                part = multipart.parts[part_id]
                 data = part.content
                 packet_parts = data.split(b"\r\n\r\n", 1)
                 header_parts = packet_parts[0].split(b"\r\n")
@@ -273,6 +276,8 @@ class ApiClient(object):
                         header_line_parts = header_line.decode('UTF-8').split(':', 1)
                         if len(header_line_parts) == 2:
                             headers[header_line_parts[0].strip()] = header_line_parts[1].strip()
+
+                response_type = id_to_requests[headers["RequestId"]].get_response_type()
 
                 result = None
                 if code == 200:
@@ -524,12 +529,13 @@ class ApiClient(object):
                             continue
                         file_names = v if type(v) is list else [v]
                         for n in file_names:
-                            filename = os.path.basename(n.name)
-                            filedata = n.read()
-                            mimetype = (mimetypes.guess_type(filename)[0] or
-                                        'application/octet-stream')
-                            params.append(
-                                tuple([k, tuple([filename, filedata, mimetype])]))
+                            if isinstance(n, io.StringIO):
+                                params.append(tuple([k, tuple(['document', n.getvalue(), 'application/octet-stream'])]))
+                            else:
+                                filename = os.path.basename(n.name)
+                                filedata = n.read()
+                                mimetype = (mimetypes.guess_type(filename)[0] or 'application/octet-stream')
+                                params.append(tuple([k, tuple([filename, filedata, mimetype])]))
 
         return params
 
