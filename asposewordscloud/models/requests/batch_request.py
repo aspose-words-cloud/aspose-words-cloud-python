@@ -19,7 +19,7 @@ class BatchRequest(object):
         http_request = self.request.create_http_request(api_client)
         http_request["header_params"]["RequestId"] = self.id
 
-        if self.parent_id != None:
+        if self.parent_id is not None:
             http_request["header_params"]["DependsOn"] = self.parent_id
 
         return http_request

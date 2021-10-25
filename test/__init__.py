@@ -45,3 +45,4 @@ from test.test_url_encode import TestUrlEncode
 from test.test_readme import TestReadme
 from test.test_batch import TestBatch
 from test.test_examples import TestExamples
+from test.test_doc_with_password import TestDocWithPassword

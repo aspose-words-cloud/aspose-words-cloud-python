@@ -33,7 +33,11 @@ import re  # noqa: F401
 import six
 from asposewordscloud.rest import ApiException
 from asposewordscloud.api_client import ApiClient
+from asposewordscloud.models.requests import GetPublicKeyRequest
 
+from base64 import b64decode, b64encode
+from Crypto.PublicKey.RSA import construct
+from Crypto.Cipher import PKCS1_v1_5
 
 class WordsApi(object):
     """
@@ -42,7 +46,7 @@ class WordsApi(object):
     :param client_id: client id.
     :param client_secret: client secret.
     """
-    def __init__(self, client_id, client_secret):
+    def __init__(self, client_id, client_secret, base_url = None):
         if len(client_id) == 0:
             raise ValueError("client_id could not be an empty string.")
         
@@ -52,6 +56,17 @@ class WordsApi(object):
         self.api_client = ApiClient()
         self.api_client.configuration.client_secret['client_id'] = client_id
         self.api_client.configuration.client_secret['client_secret'] = client_secret
+
+        if base_url is not None:
+            self.api_client.configuration.host = base_url
+
+        self.rsa_key = None
+        data = self.get_public_key(GetPublicKeyRequest())
+        modulus = b64decode(data.modulus)
+        exponent = b64decode(data.exponent)
+        n = int.from_bytes(modulus, byteorder='big')
+        e = int.from_bytes(exponent, byteorder='big')
+        self.rsa_key = PKCS1_v1_5.new(construct((n, e)))
 
     def accept_all_revisions(self, request, **kwargs):  # noqa: E501
         """Accepts all revisions in the document.  # noqa: E501
@@ -112,6 +127,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -187,6 +204,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -268,6 +287,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -345,6 +366,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -427,6 +450,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -505,6 +530,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -585,6 +612,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -660,6 +689,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -732,6 +763,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -808,6 +841,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -883,6 +918,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -962,6 +999,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -1038,6 +1077,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -1116,6 +1157,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -1189,6 +1232,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -1260,6 +1305,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -1341,6 +1388,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -1419,6 +1468,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -1490,6 +1541,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -1559,6 +1612,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -1641,6 +1696,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -1720,6 +1777,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -1795,6 +1854,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -1873,6 +1934,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -1950,6 +2013,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -2030,6 +2095,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -2106,6 +2173,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -2185,6 +2254,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -2261,6 +2332,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -2340,6 +2413,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -2415,6 +2490,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -2493,6 +2570,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -2569,6 +2648,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -2648,6 +2729,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -2723,6 +2806,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -2801,6 +2886,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -2877,6 +2964,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -2956,6 +3045,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -3033,6 +3124,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -3113,6 +3206,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -3190,6 +3285,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -3270,6 +3367,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -3346,6 +3445,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -3425,6 +3526,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -3496,6 +3599,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -3566,6 +3671,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -3644,6 +3751,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -3724,6 +3833,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -3801,6 +3912,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -3881,6 +3994,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -3958,6 +4073,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -4038,6 +4155,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -4115,6 +4234,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -4195,6 +4316,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -4270,6 +4393,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -4348,6 +4473,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -4425,6 +4552,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -4505,6 +4634,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -4583,6 +4714,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -4660,6 +4793,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -4740,6 +4875,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -4819,6 +4956,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -4895,6 +5034,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -4974,6 +5115,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -5051,6 +5194,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -5131,6 +5276,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -5207,6 +5354,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -5286,6 +5435,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -5364,6 +5515,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -5441,6 +5594,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -5521,6 +5676,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -5600,6 +5757,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -5677,6 +5836,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -5757,6 +5918,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -5832,6 +5995,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -5910,6 +6075,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -5980,6 +6147,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -6063,6 +6232,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -6139,6 +6310,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -6207,6 +6380,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -6281,6 +6456,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -6357,6 +6534,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -6429,6 +6608,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -6504,6 +6685,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -6578,6 +6761,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -6655,6 +6840,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -6728,6 +6915,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -6804,6 +6993,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -6877,6 +7068,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -6953,6 +7146,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -7025,6 +7220,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -7100,6 +7297,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -7173,6 +7372,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -7249,6 +7450,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -7321,6 +7524,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -7396,6 +7601,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -7468,6 +7675,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -7543,6 +7752,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -7620,6 +7831,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -7694,6 +7907,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -7771,6 +7986,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -7845,6 +8062,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -7922,6 +8141,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -7995,6 +8216,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -8071,6 +8294,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -8144,6 +8369,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -8220,6 +8447,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -8293,6 +8522,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -8369,6 +8600,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -8441,6 +8674,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -8516,6 +8751,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -8588,6 +8825,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -8663,6 +8902,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -8736,6 +8977,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -8812,6 +9055,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -8884,6 +9129,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -8958,6 +9205,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -9034,6 +9283,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -9112,6 +9363,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -9188,6 +9441,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -9262,6 +9517,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -9339,6 +9596,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -9412,6 +9671,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -9488,6 +9749,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -9557,6 +9820,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -9632,6 +9897,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -9709,6 +9976,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -9782,6 +10051,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -9858,6 +10129,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -9932,6 +10205,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -10009,6 +10284,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -10082,6 +10359,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -10158,6 +10437,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -10232,6 +10513,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -10308,6 +10591,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -10386,6 +10671,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -10462,6 +10749,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -10536,6 +10825,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -10613,6 +10904,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -10686,6 +10979,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -10762,6 +11057,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -10834,6 +11131,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -10909,6 +11208,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -10983,6 +11284,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -11060,6 +11363,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -11133,6 +11438,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -11209,6 +11516,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -11284,6 +11593,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -11358,6 +11669,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -11435,6 +11748,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -11509,6 +11824,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -11586,6 +11903,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -11662,6 +11981,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -11735,6 +12056,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -11811,6 +12134,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -11885,6 +12210,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -11962,6 +12289,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -12029,6 +12358,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -12104,6 +12435,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -12181,6 +12514,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -12256,6 +12591,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -12330,6 +12667,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -12407,6 +12746,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -12483,6 +12824,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -12556,6 +12899,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -12632,6 +12977,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -12705,6 +13052,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -12781,6 +13130,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -12854,6 +13205,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -12930,6 +13283,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -13002,6 +13357,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -13077,6 +13434,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -13151,6 +13510,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -13224,6 +13585,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -13300,6 +13663,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -13375,6 +13740,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -13447,6 +13814,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -13521,6 +13890,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -13597,6 +13968,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -13672,6 +14045,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -13746,6 +14121,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -13823,6 +14200,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -13898,6 +14277,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -13975,6 +14356,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -14049,6 +14432,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -14126,6 +14511,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -14201,6 +14588,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -14275,6 +14664,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -14352,6 +14743,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -14428,6 +14821,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -14501,6 +14896,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -14576,6 +14973,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -14657,6 +15056,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -14734,6 +15135,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -14815,6 +15218,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -14892,6 +15297,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -14975,6 +15382,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -15054,6 +15463,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -15137,6 +15548,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -15216,6 +15629,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -15298,6 +15713,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -15376,6 +15793,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -15459,6 +15878,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -15538,6 +15959,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -15620,6 +16043,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -15698,6 +16123,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -15779,6 +16206,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -15856,6 +16285,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -15937,6 +16368,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -16014,6 +16447,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -16095,6 +16530,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -16172,6 +16609,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -16255,6 +16694,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -16334,6 +16775,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -16417,6 +16860,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -16496,6 +16941,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -16577,6 +17024,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -16654,6 +17103,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -16736,6 +17187,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -16817,6 +17270,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -16896,6 +17351,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -16974,6 +17431,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -17056,6 +17515,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -17134,6 +17595,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -17217,6 +17680,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -17296,6 +17761,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -17377,6 +17844,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -17455,6 +17924,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -17527,6 +17998,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -17601,6 +18074,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -17672,6 +18147,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -17753,6 +18230,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -17830,6 +18309,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -17909,6 +18390,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -17985,6 +18468,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -18058,6 +18543,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -18134,6 +18621,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -18209,6 +18698,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -18287,6 +18778,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -18364,6 +18857,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -18444,6 +18939,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -18521,6 +19018,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -18601,6 +19100,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -18676,6 +19177,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -18754,6 +19257,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -18831,6 +19336,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -18911,6 +19418,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -18988,6 +19497,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -19067,6 +19578,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -19148,6 +19661,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -19225,6 +19740,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -19306,6 +19823,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -19384,6 +19903,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -19451,6 +19972,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -19530,6 +20053,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -19605,6 +20130,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -19685,6 +20212,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -19761,6 +20290,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -19857,6 +20388,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -19950,6 +20483,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -20023,6 +20558,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -20098,6 +20635,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -20177,6 +20716,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -20258,6 +20799,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -20336,6 +20879,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -20411,6 +20956,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -20493,6 +21040,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -20571,6 +21120,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -20654,6 +21205,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -20733,6 +21286,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -20815,6 +21370,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -20893,6 +21450,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -20975,6 +21534,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -21053,6 +21614,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -21137,6 +21700,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -21217,6 +21782,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -21300,6 +21867,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -21380,6 +21949,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -21453,6 +22024,8 @@ class WordsApi(object):
 
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -21528,6 +22101,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -21611,6 +22186,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -21690,6 +22267,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -21773,6 +22352,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -21852,6 +22433,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -21933,6 +22516,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -22016,6 +22601,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -22096,6 +22683,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -22174,6 +22763,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -22257,6 +22848,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -22336,6 +22929,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -22419,6 +23014,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -22498,6 +23095,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -22581,6 +23180,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -22663,6 +23264,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -22743,6 +23346,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -22822,6 +23427,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -22904,6 +23511,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -22982,6 +23591,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -23064,6 +23675,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -23142,6 +23755,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -23225,6 +23840,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -23304,6 +23921,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -23387,6 +24006,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -23466,6 +24087,8 @@ class WordsApi(object):
             ['application/xml', 'application/json'])  # noqa: E501
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self.rsa_key)
 
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
@@ -23549,6 +24172,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -23629,6 +24254,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -23703,6 +24330,8 @@ class WordsApi(object):
         # Authentication setting
         auth_settings = ['JWT']  # noqa: E501
 
+        self.api_client.handle_password(http_params, self.rsa_key)
+
         return request.deserialize_response(self.api_client, self.api_client.call_api(
             http_params['path'],
             http_params['method'],
@@ -23726,7 +24355,7 @@ class WordsApi(object):
 
         post_params=[]
         for request in requests:
-            post_params.append(self.api_client.request_to_batch_part(request))
+            post_params.append(self.api_client.request_to_batch_part(request, self.rsa_key))
 
         header_params={'Content-Type': 'multipart/form-data'}
         response = self.api_client.call_api(
