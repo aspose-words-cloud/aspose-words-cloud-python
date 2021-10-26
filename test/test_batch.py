@@ -69,12 +69,47 @@ class TestBatch(BaseTestContext):
 
         result = self.words_api.batch(batch_request1, batch_request2, batch_request3, batch_request4, batch_request5)
         self.assertEqual(len(result), 5)
-        self.assertEqual(len(result), 5)
         self.assertIsInstance(result[0], asposewordscloud.ParagraphLinkCollectionResponse)
         self.assertIsInstance(result[1], asposewordscloud.ParagraphResponse)
         self.assertIsInstance(result[2], asposewordscloud.ParagraphResponse)
         self.assertIsNone(result[3])
         self.assertIsInstance(result[4], str)
+
+    #
+    # Test for batch request without returning of intermediate results
+    #
+    def test_batch_without_intermidiate_results(self):
+        filename = 'test_multi_pages.docx'
+        remote_name = 'TestBatchParagraphs.docx'
+        file = open(os.path.join(self.local_test_folder, self.local_common_folder, filename), 'rb')
+        remote_path = os.path.join(self.remote_test_folder, self.test_folder, remote_name)
+        remote_folder = os.path.join(self.remote_test_folder, self.test_folder)
+        paragraph = asposewordscloud.models.ParagraphInsert(text="This is a new paragraph for your document")
+        request0 = asposewordscloud.models.requests.UploadFileRequest(file, remote_path)
+        request1 = asposewordscloud.models.requests.GetParagraphsRequest(name=remote_name, node_path="sections/0", folder=remote_folder)
+        request2 = asposewordscloud.models.requests.GetParagraphRequest(name=remote_name, index=0, node_path="sections/0", folder=remote_folder)
+        request3 = asposewordscloud.models.requests.InsertParagraphRequest(name=remote_name, paragraph=paragraph, node_path="sections/0", folder=remote_folder)
+        request4 = asposewordscloud.models.requests.DeleteParagraphRequest(name=remote_name, index=0, node_path="", folder=remote_folder)
+
+        reportingFolder = 'DocumentActions/Reporting'
+        localDocumentFile = 'ReportTemplate.docx'
+        localDataFile = open(os.path.join(self.local_test_folder, reportingFolder + '/ReportData.json')).read()
+        requestReportEngineSettings = asposewordscloud.ReportEngineSettings(data_source_type='Json', data_source_name='persons')
+        request5 = asposewordscloud.models.requests.BuildReportOnlineRequest(
+            template=open(os.path.join(self.local_test_folder, reportingFolder + '/' + localDocumentFile), 'rb'),
+            data=localDataFile, report_engine_settings=requestReportEngineSettings)
+
+        self.words_api.upload_file(request0)
+
+        batch_request1 = asposewordscloud.models.requests.BatchRequest(request = request1)
+        batch_request2 = asposewordscloud.models.requests.BatchRequest(request = request2)
+        batch_request3 = asposewordscloud.models.requests.BatchRequest(request = request3)
+        batch_request4 = asposewordscloud.models.requests.BatchRequest(request = request4)
+        batch_request5 = asposewordscloud.models.requests.BatchRequest(request = request5)
+
+        result = self.words_api.batch_with_options(True, batch_request1, batch_request2, batch_request3, batch_request4, batch_request5)
+        self.assertEqual(len(result), 1)
+        self.assertIsInstance(result[0], str)
 
     #
     # Test for a batch with depend on feature

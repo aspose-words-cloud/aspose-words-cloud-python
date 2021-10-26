@@ -254,9 +254,13 @@ class ApiClient(object):
         return {key: self.sanitize_for_serialization(val)
                 for key, val in six.iteritems(obj_dict)}
 
-    def deserialize_multipart(self, multipart, requests):
-        if len(multipart.parts) != len(requests):
-            raise rest.ApiException(status=0, reason="Response parts and requests count mismatch.")
+    def deserialize_multipart(self, without_intermediate_results, multipart, requests):
+        if without_intermediate_results:
+            if len(multipart.parts) != 1:
+                raise rest.ApiException(status=0, reason="Response must have one part.")
+        else:
+            if len(multipart.parts) != len(requests):
+                raise rest.ApiException(status=0, reason="Response parts and requests count mismatch.")
 
         id_to_requests = {}
         for r in requests:

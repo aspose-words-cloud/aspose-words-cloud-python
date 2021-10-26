@@ -24347,6 +24347,9 @@ class WordsApi(object):
             collection_formats=http_params['collection_formats']))
 
     def batch(self, *requests):  # noqa: E501
+        return self.batch_with_options(False, *requests)
+
+    def batch_with_options(self, without_intermediate_results, *requests):  # noqa: E501
         if requests is None:
             return None
 
@@ -24359,11 +24362,11 @@ class WordsApi(object):
 
         header_params={'Content-Type': 'multipart/form-data'}
         response = self.api_client.call_api(
-            resource_path="/v4.0/words/batch",
+            resource_path="/v4.0/words/batch" + ('?displayIntermediateResults=false' if without_intermediate_results else ''),
             method='PUT',
             post_params=post_params,
             header_params=header_params,
             response_type='multipart',  # noqa: E501
             auth_settings=['JWT'])
         data = self.api_client.deserialize(response.data, response.getheaders(), 'multipart')
-        return self.api_client.deserialize_multipart(data, requests)
+        return self.api_client.deserialize_multipart(without_intermediate_results, data, requests)
