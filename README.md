@@ -189,8 +189,7 @@ The complete source code is available at [GitHub Repository](https://github.com/
 ```python
         # Start README example
 
-        self.words_api = asposewordscloud.WordsApi(client_id, client_secret)
-        self.words_api.api_client.configuration.host = base_url
+        self.words_api = asposewordscloud.WordsApi(client_id, client_secret, base_url)
 
         upload_request = asposewordscloud.models.requests.UploadFileRequest(
             open(os.path.join(local_folder, filename), 'rb'), os.path.join(remote_folder, remote_name))
