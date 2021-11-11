@@ -28,6 +28,7 @@ from __future__ import absolute_import
 
 import datetime
 import email.parser
+import io
 import json
 import mimetypes
 from multiprocessing.pool import ThreadPool
@@ -41,6 +42,7 @@ from urllib.parse import urlencode
 from six.moves.urllib.parse import quote
 import six
 from urllib3 import encode_multipart_formdata
+from base64 import b64encode
 
 from asposewordscloud.configuration import Configuration
 import asposewordscloud.models
@@ -81,12 +83,12 @@ class ApiClient(object):
 
         self.pool = None
         self.rest_client = rest.RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '21.10'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '21.11'}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'python sdk 21.10'
+        self.user_agent = 'python sdk 21.11'
 
     def __del__(self):
         if not self.pool is None:
@@ -252,15 +254,21 @@ class ApiClient(object):
         return {key: self.sanitize_for_serialization(val)
                 for key, val in six.iteritems(obj_dict)}
 
-    def deserialize_multipart(self, multipart, requests):
-        if len(multipart.parts) != len(requests):
-            raise rest.ApiException(status=0, reason="Response parts and requests count mismatch.")
+    def deserialize_multipart(self, without_intermediate_results, multipart, requests):
+        if without_intermediate_results:
+            if len(multipart.parts) != 1:
+                raise rest.ApiException(status=0, reason="Response must have one part.")
+        else:
+            if len(multipart.parts) != len(requests):
+                raise rest.ApiException(status=0, reason="Response parts and requests count mismatch.")
+
+        id_to_requests = {}
+        for r in requests:
+            id_to_requests[r.id] = r
 
         results = []
-        for part_id in range(len(multipart.parts)):
+        for part in multipart.parts:
             try:
-                response_type = requests[part_id].get_response_type()
-                part = multipart.parts[part_id]
                 data = part.content
                 packet_parts = data.split(b"\r\n\r\n", 1)
                 header_parts = packet_parts[0].split(b"\r\n")
@@ -273,6 +281,8 @@ class ApiClient(object):
                         header_line_parts = header_line.decode('UTF-8').split(':', 1)
                         if len(header_line_parts) == 2:
                             headers[header_line_parts[0].strip()] = header_line_parts[1].strip()
+
+                response_type = id_to_requests[headers["RequestId"]].get_response_type()
 
                 result = None
                 if code == 200:
@@ -524,12 +534,13 @@ class ApiClient(object):
                             continue
                         file_names = v if type(v) is list else [v]
                         for n in file_names:
-                            filename = os.path.basename(n.name)
-                            filedata = n.read()
-                            mimetype = (mimetypes.guess_type(filename)[0] or
-                                        'application/octet-stream')
-                            params.append(
-                                tuple([k, tuple([filename, filedata, mimetype])]))
+                            if isinstance(n, io.StringIO):
+                                params.append(tuple([k, tuple(['document', n.getvalue(), 'application/octet-stream'])]))
+                            else:
+                                filename = os.path.basename(n.name)
+                                filedata = n.read()
+                                mimetype = (mimetypes.guess_type(filename)[0] or 'application/octet-stream')
+                                params.append(tuple([k, tuple([filename, filedata, mimetype])]))
 
         return params
 
@@ -708,10 +719,12 @@ class ApiClient(object):
                 instance = self.__deserialize(data, klass_name)
         return instance
 
-    def request_to_batch_part(self, request):
+    def request_to_batch_part(self, request, rsa_key):
         http_request = request.create_http_request(self)
         if http_request['form_params'] and http_request['body']:
             raise ValueError("body parameter cannot be used with post_params parameter.")
+
+        self.handle_password(http_request, rsa_key)
 
         url = http_request['path'][len('/v4.0/words/'):]
         if http_request['query_params']:
@@ -747,3 +760,19 @@ class ApiClient(object):
             result.extend(body)
 
         return [None, result, 'multipart']
+
+    def handle_password(self, http_params, rsa_key):
+
+        if rsa_key is None:
+            return
+
+        index = -1
+        for i in range(len(http_params['query_params'])):
+            k, v = http_params['query_params'][i]
+            if k == 'password':
+                index = i
+                break
+
+        if index > -1:
+            k,v = http_params['query_params'].pop(index)
+            http_params['query_params'].append(('encryptedPassword', b64encode(rsa_key.encrypt(v.encode('utf-8')))))
