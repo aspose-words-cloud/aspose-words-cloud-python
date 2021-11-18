@@ -22,6 +22,7 @@ from test.api.font.test_font import TestFont
 from test.api.footnote.test_footnote import TestFootnote
 from test.api.header_footer.test_header_footer import TestHeaderFooter
 from test.api.hyperlink.test_hyperlink import TestHyperlink
+from test.api.info.test_info import TestInfo
 from test.api.lists.test_lists import TestLists
 from test.api.macros.test_macros import TestMacros
 from test.api.mail_merge.test_execute_mail_merge import TestExecuteMailMerge

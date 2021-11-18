@@ -110,6 +110,8 @@ from asposewordscloud.models.hyperlink_response import HyperlinkResponse
 from asposewordscloud.models.hyperlinks import Hyperlinks
 from asposewordscloud.models.hyperlinks_response import HyperlinksResponse
 from asposewordscloud.models.image_save_options_data import ImageSaveOptionsData
+from asposewordscloud.models.info_additional_item import InfoAdditionalItem
+from asposewordscloud.models.info_response import InfoResponse
 from asposewordscloud.models.jpeg_save_options_data import JpegSaveOptionsData
 from asposewordscloud.models.json_data_load_options import JsonDataLoadOptions
 from asposewordscloud.models.link import Link
