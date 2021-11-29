@@ -27,6 +27,7 @@ from test.api.lists.test_lists import TestLists
 from test.api.macros.test_macros import TestMacros
 from test.api.mail_merge.test_execute_mail_merge import TestExecuteMailMerge
 from test.api.mail_merge.test_execute_template import TestExecuteTemplate
+from test.api.mail_merge.test_execute_template_with_field_options import TestExecuteTemplateWithFieldOptions
 from test.api.mail_merge.test_mail_merge_fileds import TestMailMergeFileds
 from test.api.math_object.test_math_object import TestMathObject
 from test.api.page_setup.test_page_setup import TestPageSetup
