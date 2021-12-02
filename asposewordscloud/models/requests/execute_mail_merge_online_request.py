@@ -37,14 +37,16 @@ class ExecuteMailMergeOnlineRequest(BaseRequestObject):
     Initializes a new instance.
     :param template File with template.
     :param data File with mailmerge data.
+    :param options Mail merge options.
     :param with_regions The flag indicating whether to execute Mail Merge operation with regions.
     :param cleanup The cleanup options.
     :param document_file_name The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
     """
 
-    def __init__(self, template, data, with_regions=None, cleanup=None, document_file_name=None):
+    def __init__(self, template, data, options=None, with_regions=None, cleanup=None, document_file_name=None):
         self.template = template
         self.data = data
+        self.options = options
         self.with_regions = with_regions
         self.cleanup = cleanup
         self.document_file_name = document_file_name
@@ -93,6 +95,8 @@ class ExecuteMailMergeOnlineRequest(BaseRequestObject):
             form_params.append(['template', self.template, 'file'])  # noqa: E501
         if self.data is not None:
             form_params.append(['data', self.data, 'file'])  # noqa: E501
+        if self.options is not None:
+            form_params.append(['options', self.options.to_json(), 'string'])  # noqa: E501
 
         body_params = None
         return {

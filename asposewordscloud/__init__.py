@@ -75,6 +75,7 @@ from asposewordscloud.models.field_insert import FieldInsert
 from asposewordscloud.models.field_link import FieldLink
 from asposewordscloud.models.field_names import FieldNames
 from asposewordscloud.models.field_names_response import FieldNamesResponse
+from asposewordscloud.models.field_options import FieldOptions
 from asposewordscloud.models.field_response import FieldResponse
 from asposewordscloud.models.fields_response import FieldsResponse
 from asposewordscloud.models.field_update import FieldUpdate
@@ -249,6 +250,7 @@ from asposewordscloud.models.text_save_options_data import TextSaveOptionsData
 from asposewordscloud.models.tiff_save_options_data import TiffSaveOptionsData
 from asposewordscloud.models.time_zone_info_data import TimeZoneInfoData
 from asposewordscloud.models.txt_save_options_base_data import TxtSaveOptionsBaseData
+from asposewordscloud.models.user_information import UserInformation
 from asposewordscloud.models.watermark_text import WatermarkText
 from asposewordscloud.models.word_ml_save_options_data import WordMLSaveOptionsData
 from asposewordscloud.models.words_api_error_response import WordsApiErrorResponse
