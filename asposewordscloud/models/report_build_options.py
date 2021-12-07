@@ -42,6 +42,7 @@ class ReportBuildOptions(object):
     ALLOWMISSINGMEMBERS = "AllowMissingMembers"
     REMOVEEMPTYPARAGRAPHS = "RemoveEmptyParagraphs"
     INLINEERRORMESSAGES = "InlineErrorMessages"
+    USELEGACYHEADERFOOTERVISITING = "UseLegacyHeaderFooterVisiting"
 
     """
     Attributes:

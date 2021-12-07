@@ -37,7 +37,7 @@ class ExecuteMailMergeRequest(BaseRequestObject):
     Initializes a new instance.
     :param name The filename of the input document.
     :param data Mail merge data.
-    :param options Mail merge options.
+    :param options Field options.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

@@ -6173,7 +6173,7 @@ class WordsApi(object):
         :param is_async bool
         :param name str : The filename of the input document. (required)
         :param data str : Mail merge data.
-        :param options FieldOptions : Mail merge options.
+        :param options FieldOptions : Field options.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -6258,7 +6258,7 @@ class WordsApi(object):
         :param is_async bool
         :param template file : File with template. (required)
         :param data file : File with mailmerge data. (required)
-        :param options FieldOptions : Mail merge options.
+        :param options FieldOptions : Field options.
         :param with_regions bool : The flag indicating whether to execute Mail Merge operation with regions.
         :param cleanup str : The cleanup options.
         :param document_file_name str : The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
