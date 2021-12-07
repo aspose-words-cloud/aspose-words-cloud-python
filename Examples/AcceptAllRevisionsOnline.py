@@ -1,5 +1,5 @@
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-file_name = 'test_doc.docx'
+file_name= 'test_doc.docx'
 
 # Calls AcceptAllRevisionsOnline method for document in cloud.
 request_document = open(file_name, 'rb')

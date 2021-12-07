@@ -5,7 +5,7 @@ from asposewordscloud.rest import ApiException
 from shutil import copyfile
 
 words_api = WordsApi(client_id = '####-####-####-####-####', client_secret = '##################') 
-file_name = 'test_doc.docx'
+file_name= 'test_doc.docx'
 
 # Upload original document to cloud storage.
 my_var1 = open(file_name, 'rb')
