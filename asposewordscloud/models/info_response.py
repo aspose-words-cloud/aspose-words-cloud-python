@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="report_build_options.py">
+# <copyright company="Aspose" file="info_response.py">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -31,18 +31,9 @@ import six
 import json
 
 
-class ReportBuildOptions(object):
-    """Specifies options controlling behavior of ReportingEngine while building a report.
+class InfoResponse(object):
+    """Response with API info.
     """
-
-    """
-    allowed enum values
-    """
-    NONE = "None"
-    ALLOWMISSINGMEMBERS = "AllowMissingMembers"
-    REMOVEEMPTYPARAGRAPHS = "RemoveEmptyParagraphs"
-    INLINEERRORMESSAGES = "InlineErrorMessages"
-    USELEGACYHEADERFOOTERVISITING = "UseLegacyHeaderFooterVisiting"
 
     """
     Attributes:
@@ -52,16 +43,124 @@ class ReportBuildOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'request_id': 'str',
+        'additional_info': 'list[InfoAdditionalItem]',
+        'name': 'str',
+        'version': 'str'
     }
 
     attribute_map = {
+        'request_id': 'RequestId',
+        'additional_info': 'AdditionalInfo',
+        'name': 'Name',
+        'version': 'Version'
     }
 
-    def __init__(self):  # noqa: E501
-        """ReportBuildOptions - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, request_id=None, additional_info=None, name=None, version=None):  # noqa: E501
+        """InfoResponse - a model defined in Swagger"""  # noqa: E501
 
+        self._request_id = None
+        self._additional_info = None
+        self._name = None
+        self._version = None
         self.discriminator = None
 
+        if request_id is not None:
+            self.request_id = request_id
+        if additional_info is not None:
+            self.additional_info = additional_info
+        if name is not None:
+            self.name = name
+        if version is not None:
+            self.version = version
+
+    @property
+    def request_id(self):
+        """Gets the request_id of this InfoResponse.  # noqa: E501
+
+        Gets or sets the request Id.  # noqa: E501
+
+        :return: The request_id of this InfoResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._request_id
+
+    @request_id.setter
+    def request_id(self, request_id):
+        """Sets the request_id of this InfoResponse.
+
+        Gets or sets the request Id.  # noqa: E501
+
+        :param request_id: The request_id of this InfoResponse.  # noqa: E501
+        :type: str
+        """
+        self._request_id = request_id
+
+    @property
+    def additional_info(self):
+        """Gets the additional_info of this InfoResponse.  # noqa: E501
+
+        Gets or sets additional info.  # noqa: E501
+
+        :return: The additional_info of this InfoResponse.  # noqa: E501
+        :rtype: list[InfoAdditionalItem]
+        """
+        return self._additional_info
+
+    @additional_info.setter
+    def additional_info(self, additional_info):
+        """Sets the additional_info of this InfoResponse.
+
+        Gets or sets additional info.  # noqa: E501
+
+        :param additional_info: The additional_info of this InfoResponse.  # noqa: E501
+        :type: list[InfoAdditionalItem]
+        """
+        self._additional_info = additional_info
+
+    @property
+    def name(self):
+        """Gets the name of this InfoResponse.  # noqa: E501
+
+        Gets or sets application name.  # noqa: E501
+
+        :return: The name of this InfoResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this InfoResponse.
+
+        Gets or sets application name.  # noqa: E501
+
+        :param name: The name of this InfoResponse.  # noqa: E501
+        :type: str
+        """
+        self._name = name
+
+    @property
+    def version(self):
+        """Gets the version of this InfoResponse.  # noqa: E501
+
+        Gets or sets version.  # noqa: E501
+
+        :return: The version of this InfoResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """Sets the version of this InfoResponse.
+
+        Gets or sets version.  # noqa: E501
+
+        :param version: The version of this InfoResponse.  # noqa: E501
+        :type: str
+        """
+        self._version = version
 
 
     def to_dict(self):
@@ -128,7 +227,7 @@ class ReportBuildOptions(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, ReportBuildOptions):
+        if not isinstance(other, InfoResponse):
             return False
 
         return self.__dict__ == other.__dict__

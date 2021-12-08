@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="report_build_options.py">
+# <copyright company="Aspose" file="user_information.py">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -31,18 +31,9 @@ import six
 import json
 
 
-class ReportBuildOptions(object):
-    """Specifies options controlling behavior of ReportingEngine while building a report.
+class UserInformation(object):
+    """DTO for user information.
     """
-
-    """
-    allowed enum values
-    """
-    NONE = "None"
-    ALLOWMISSINGMEMBERS = "AllowMissingMembers"
-    REMOVEEMPTYPARAGRAPHS = "RemoveEmptyParagraphs"
-    INLINEERRORMESSAGES = "InlineErrorMessages"
-    USELEGACYHEADERFOOTERVISITING = "UseLegacyHeaderFooterVisiting"
 
     """
     Attributes:
@@ -52,16 +43,97 @@ class ReportBuildOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'address': 'str',
+        'initials': 'str',
+        'name': 'str'
     }
 
     attribute_map = {
+        'address': 'Address',
+        'initials': 'Initials',
+        'name': 'Name'
     }
 
-    def __init__(self):  # noqa: E501
-        """ReportBuildOptions - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, address=None, initials=None, name=None):  # noqa: E501
+        """UserInformation - a model defined in Swagger"""  # noqa: E501
 
+        self._address = None
+        self._initials = None
+        self._name = None
         self.discriminator = None
 
+        if address is not None:
+            self.address = address
+        if initials is not None:
+            self.initials = initials
+        if name is not None:
+            self.name = name
+
+    @property
+    def address(self):
+        """Gets the address of this UserInformation.  # noqa: E501
+
+        Gets or sets user address.  # noqa: E501
+
+        :return: The address of this UserInformation.  # noqa: E501
+        :rtype: str
+        """
+        return self._address
+
+    @address.setter
+    def address(self, address):
+        """Sets the address of this UserInformation.
+
+        Gets or sets user address.  # noqa: E501
+
+        :param address: The address of this UserInformation.  # noqa: E501
+        :type: str
+        """
+        self._address = address
+
+    @property
+    def initials(self):
+        """Gets the initials of this UserInformation.  # noqa: E501
+
+        Gets or sets user initials.  # noqa: E501
+
+        :return: The initials of this UserInformation.  # noqa: E501
+        :rtype: str
+        """
+        return self._initials
+
+    @initials.setter
+    def initials(self, initials):
+        """Sets the initials of this UserInformation.
+
+        Gets or sets user initials.  # noqa: E501
+
+        :param initials: The initials of this UserInformation.  # noqa: E501
+        :type: str
+        """
+        self._initials = initials
+
+    @property
+    def name(self):
+        """Gets the name of this UserInformation.  # noqa: E501
+
+        Gets or sets user name.  # noqa: E501
+
+        :return: The name of this UserInformation.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this UserInformation.
+
+        Gets or sets user name.  # noqa: E501
+
+        :param name: The name of this UserInformation.  # noqa: E501
+        :type: str
+        """
+        self._name = name
 
 
     def to_dict(self):
@@ -128,7 +200,7 @@ class ReportBuildOptions(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, ReportBuildOptions):
+        if not isinstance(other, UserInformation):
             return False
 
         return self.__dict__ == other.__dict__

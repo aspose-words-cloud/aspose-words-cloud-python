@@ -42,7 +42,7 @@ class TestExamples(BaseTestContext):
     def test_accept_all_revisions(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        file_name = 'test_doc.docx'
+        file_name= 'test_doc.docx'
 
         # Upload original document to cloud storage.
         my_var1 = open(os.path.join(documents_dir, file_name), 'rb')
@@ -58,7 +58,7 @@ class TestExamples(BaseTestContext):
     def test_accept_all_revisions_online(self):
         documents_dir = os.path.abspath(os.path.realpath(os.path.dirname(__file__)) + "/../ExamplesData")
         words_api = self.words_api
-        file_name = 'test_doc.docx'
+        file_name= 'test_doc.docx'
 
         # Calls AcceptAllRevisionsOnline method for document in cloud.
         request_document = open(os.path.join(documents_dir, file_name), 'rb')

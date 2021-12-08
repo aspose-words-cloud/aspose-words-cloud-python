@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="report_build_options.py">
+# <copyright company="Aspose" file="info_additional_item.py">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -31,18 +31,9 @@ import six
 import json
 
 
-class ReportBuildOptions(object):
-    """Specifies options controlling behavior of ReportingEngine while building a report.
+class InfoAdditionalItem(object):
+    """Info additional item.
     """
-
-    """
-    allowed enum values
-    """
-    NONE = "None"
-    ALLOWMISSINGMEMBERS = "AllowMissingMembers"
-    REMOVEEMPTYPARAGRAPHS = "RemoveEmptyParagraphs"
-    INLINEERRORMESSAGES = "InlineErrorMessages"
-    USELEGACYHEADERFOOTERVISITING = "UseLegacyHeaderFooterVisiting"
 
     """
     Attributes:
@@ -52,16 +43,70 @@ class ReportBuildOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'key': 'str',
+        'value': 'str'
     }
 
     attribute_map = {
+        'key': 'Key',
+        'value': 'Value'
     }
 
-    def __init__(self):  # noqa: E501
-        """ReportBuildOptions - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, key=None, value=None):  # noqa: E501
+        """InfoAdditionalItem - a model defined in Swagger"""  # noqa: E501
 
+        self._key = None
+        self._value = None
         self.discriminator = None
 
+        if key is not None:
+            self.key = key
+        if value is not None:
+            self.value = value
+
+    @property
+    def key(self):
+        """Gets the key of this InfoAdditionalItem.  # noqa: E501
+
+        Gets or sets Key.  # noqa: E501
+
+        :return: The key of this InfoAdditionalItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._key
+
+    @key.setter
+    def key(self, key):
+        """Sets the key of this InfoAdditionalItem.
+
+        Gets or sets Key.  # noqa: E501
+
+        :param key: The key of this InfoAdditionalItem.  # noqa: E501
+        :type: str
+        """
+        self._key = key
+
+    @property
+    def value(self):
+        """Gets the value of this InfoAdditionalItem.  # noqa: E501
+
+        Gets or sets Value.  # noqa: E501
+
+        :return: The value of this InfoAdditionalItem.  # noqa: E501
+        :rtype: str
+        """
+        return self._value
+
+    @value.setter
+    def value(self, value):
+        """Sets the value of this InfoAdditionalItem.
+
+        Gets or sets Value.  # noqa: E501
+
+        :param value: The value of this InfoAdditionalItem.  # noqa: E501
+        :type: str
+        """
+        self._value = value
 
 
     def to_dict(self):
@@ -128,7 +173,7 @@ class ReportBuildOptions(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, ReportBuildOptions):
+        if not isinstance(other, InfoAdditionalItem):
             return False
 
         return self.__dict__ == other.__dict__

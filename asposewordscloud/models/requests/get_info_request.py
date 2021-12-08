@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="execute_mail_merge_online_request.py">
+# <copyright company="Aspose" file="get_info_request.py">
 #   Copyright (c) 2021 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -31,35 +31,17 @@ from asposewordscloud.models import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class ExecuteMailMergeOnlineRequest(BaseRequestObject):
+class GetInfoRequest(BaseRequestObject):
     """
-    Request model for execute_mail_merge_online operation.
+    Request model for get_info operation.
     Initializes a new instance.
-    :param template File with template.
-    :param data File with mailmerge data.
-    :param options Field options.
-    :param with_regions The flag indicating whether to execute Mail Merge operation with regions.
-    :param cleanup The cleanup options.
-    :param document_file_name The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "template" will be used instead.
     """
 
-    def __init__(self, template, data, options=None, with_regions=None, cleanup=None, document_file_name=None):
-        self.template = template
-        self.data = data
-        self.options = options
-        self.with_regions = with_regions
-        self.cleanup = cleanup
-        self.document_file_name = document_file_name
-
+    def __init__(self):
+        pass
     def create_http_request(self, api_client):
-        # verify the required parameter 'template' is set
-        if self.template is None:
-            raise ValueError("Missing the required parameter `template` when calling `execute_mail_merge_online`")  # noqa: E501
-        # verify the required parameter 'data' is set
-        if self.data is None:
-            raise ValueError("Missing the required parameter `data` when calling `execute_mail_merge_online`")  # noqa: E501
 
-        path = '/v4.0/words/MailMerge'
+        path = '/v4.0/words/info'
         path_params = {}
 
         # path parameters
@@ -78,40 +60,25 @@ class ExecuteMailMergeOnlineRequest(BaseRequestObject):
         path = path.replace('//', '/')
 
         query_params = []
-        if self.with_regions is not None:
-                query_params.append(('withRegions', self.with_regions))  # noqa: E501
-        if self.cleanup is not None:
-                query_params.append(('cleanup', self.cleanup))  # noqa: E501
-        if self.document_file_name is not None:
-                query_params.append(('documentFileName', self.document_file_name))  # noqa: E501
 
         header_params = {}
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
 
         form_params = []
-        if self.template is not None:
-            form_params.append(['template', self.template, 'file'])  # noqa: E501
-        if self.data is not None:
-            form_params.append(['data', self.data, 'file'])  # noqa: E501
-        if self.options is not None:
-            form_params.append(['options', self.options.to_json(), 'string'])  # noqa: E501
 
         body_params = None
         return {
-            "method": "PUT",
+            "method": "GET",
             "path": path,
             "query_params": query_params,
             "header_params": header_params,
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": 'file'  # noqa: E501
+            "response_type": 'InfoResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return 'file'  # noqa: E501
+        return 'InfoResponse'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        return self.deserialize_file(response.data, response.getheaders(), api_client)
+        return self.deserialize(response, InfoResponse, api_client)
