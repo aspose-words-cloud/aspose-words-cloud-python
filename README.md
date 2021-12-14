@@ -18,6 +18,8 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 
 ## Enhancements in Version 21.12
 
+- Added FieldOptions parameter to mail merge operations
+- Added timeout parameter to api configuration
 
 
 ## Enhancements in Version 21.11
