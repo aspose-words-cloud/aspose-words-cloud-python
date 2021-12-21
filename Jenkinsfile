@@ -6,6 +6,7 @@ properties([
 			[$class: 'StringParameterDefinition', name: 'apiUrl', defaultValue: 'https://api-qa.aspose.cloud', description: 'api url'],
             [$class: 'BooleanParameterDefinition', name: 'ignoreCiSkip', defaultValue: false, description: 'ignore CI Skip'],
             [$class: 'StringParameterDefinition', name: 'credentialsId', defaultValue: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', description: 'credentials id'],
+            [$class: 'BooleanParameterDefinition', name: 'packageTesting', defaultValue: false, description: 'Testing package from repository without local sources. Used for prodhealthcheck'],
 		]
 	]
 ])
@@ -35,6 +36,10 @@ def runtests(dockerImageVersion)
             
             if (needToBuild) {
                 docker.image('python:' + dockerImageVersion).inside('-u root'){
+                 if (params.packageTesting) {
+                            sh "rm -rf asposewordscloud"
+                            sh "mv requirements-test.txt requirements.txt"
+                    }
                     stage('build'){
                         sh "python -m pip install -r requirements.txt && python -m pip install -r test-requirements.txt"
                     }
