@@ -40,17 +40,19 @@ class GetHeaderFootersRequest(BaseRequestObject):
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    :param password Password for opening an encrypted document.
+    :param password Password for opening an encrypted document. The password is provided as is (obsolete).
+    :param encrypted_password Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
     :param filter_by_type The list of HeaderFooter types.
     """
 
-    def __init__(self, name, section_path, folder=None, storage=None, load_encoding=None, password=None, filter_by_type=None):
+    def __init__(self, name, section_path, folder=None, storage=None, load_encoding=None, password=None, encrypted_password=None, filter_by_type=None):
         self.name = name
         self.section_path = section_path
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
+        self.encrypted_password = encrypted_password
         self.filter_by_type = filter_by_type
 
     def create_http_request(self, api_client):
@@ -96,6 +98,8 @@ class GetHeaderFootersRequest(BaseRequestObject):
                 query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
         if self.password is not None:
                 query_params.append(('password', self.password))  # noqa: E501
+        if self.encrypted_password is not None:
+                query_params.append(('encryptedPassword', self.encrypted_password))  # noqa: E501
         if self.filter_by_type is not None:
                 query_params.append(('filterByType', self.filter_by_type))  # noqa: E501
 

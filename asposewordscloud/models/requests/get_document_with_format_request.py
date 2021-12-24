@@ -40,18 +40,20 @@ class GetDocumentWithFormatRequest(BaseRequestObject):
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    :param password Password for opening an encrypted document.
+    :param password Password for opening an encrypted document. The password is provided as is (obsolete).
+    :param encrypted_password Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
     :param out_path The path to the output document.
     :param fonts_location Folder in filestorage with custom fonts.
     """
 
-    def __init__(self, name, format, folder=None, storage=None, load_encoding=None, password=None, out_path=None, fonts_location=None):
+    def __init__(self, name, format, folder=None, storage=None, load_encoding=None, password=None, encrypted_password=None, out_path=None, fonts_location=None):
         self.name = name
         self.format = format
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
+        self.encrypted_password = encrypted_password
         self.out_path = out_path
         self.fonts_location = fonts_location
 
@@ -96,6 +98,8 @@ class GetDocumentWithFormatRequest(BaseRequestObject):
                 query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
         if self.password is not None:
                 query_params.append(('password', self.password))  # noqa: E501
+        if self.encrypted_password is not None:
+                query_params.append(('encryptedPassword', self.encrypted_password))  # noqa: E501
         if self.out_path is not None:
                 query_params.append(('outPath', self.out_path))  # noqa: E501
         if self.fonts_location is not None:

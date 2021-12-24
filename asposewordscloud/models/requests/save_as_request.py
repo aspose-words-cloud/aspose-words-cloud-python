@@ -40,17 +40,19 @@ class SaveAsRequest(BaseRequestObject):
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    :param password Password for opening an encrypted document.
+    :param password Password for opening an encrypted document. The password is provided as is (obsolete).
+    :param encrypted_password Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
     :param fonts_location Folder in filestorage with custom fonts.
     """
 
-    def __init__(self, name, save_options_data, folder=None, storage=None, load_encoding=None, password=None, fonts_location=None):
+    def __init__(self, name, save_options_data, folder=None, storage=None, load_encoding=None, password=None, encrypted_password=None, fonts_location=None):
         self.name = name
         self.save_options_data = save_options_data
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
+        self.encrypted_password = encrypted_password
         self.fonts_location = fonts_location
 
     def create_http_request(self, api_client):
@@ -92,6 +94,8 @@ class SaveAsRequest(BaseRequestObject):
                 query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
         if self.password is not None:
                 query_params.append(('password', self.password))  # noqa: E501
+        if self.encrypted_password is not None:
+                query_params.append(('encryptedPassword', self.encrypted_password))  # noqa: E501
         if self.fonts_location is not None:
                 query_params.append(('fontsLocation', self.fonts_location))  # noqa: E501
 

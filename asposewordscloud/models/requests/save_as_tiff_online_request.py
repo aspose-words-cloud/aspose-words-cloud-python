@@ -38,7 +38,8 @@ class SaveAsTiffOnlineRequest(BaseRequestObject):
     :param document The document.
     :param save_options Tiff save options.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    :param password Password for opening an encrypted document.
+    :param password Password for opening an encrypted document. The password is provided as is (obsolete).
+    :param encrypted_password Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
     :param use_anti_aliasing The flag indicating whether to use antialiasing.
     :param use_high_quality_rendering The flag indicating whether to use high quality.
     :param image_brightness The level of brightness for the generated images.
@@ -59,11 +60,12 @@ class SaveAsTiffOnlineRequest(BaseRequestObject):
     :param fonts_location Folder in filestorage with custom fonts.
     """
 
-    def __init__(self, document, save_options, load_encoding=None, password=None, use_anti_aliasing=None, use_high_quality_rendering=None, image_brightness=None, image_color_mode=None, image_contrast=None, numeral_format=None, page_count=None, page_index=None, paper_color=None, pixel_format=None, resolution=None, scale=None, tiff_compression=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, tiff_binarization_method=None, zip_output=None, fonts_location=None):
+    def __init__(self, document, save_options, load_encoding=None, password=None, encrypted_password=None, use_anti_aliasing=None, use_high_quality_rendering=None, image_brightness=None, image_color_mode=None, image_contrast=None, numeral_format=None, page_count=None, page_index=None, paper_color=None, pixel_format=None, resolution=None, scale=None, tiff_compression=None, dml_rendering_mode=None, dml_effects_rendering_mode=None, tiff_binarization_method=None, zip_output=None, fonts_location=None):
         self.document = document
         self.save_options = save_options
         self.load_encoding = load_encoding
         self.password = password
+        self.encrypted_password = encrypted_password
         self.use_anti_aliasing = use_anti_aliasing
         self.use_high_quality_rendering = use_high_quality_rendering
         self.image_brightness = image_brightness
@@ -114,6 +116,8 @@ class SaveAsTiffOnlineRequest(BaseRequestObject):
                 query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
         if self.password is not None:
                 query_params.append(('password', self.password))  # noqa: E501
+        if self.encrypted_password is not None:
+                query_params.append(('encryptedPassword', self.encrypted_password))  # noqa: E501
         if self.use_anti_aliasing is not None:
                 query_params.append(('useAntiAliasing', self.use_anti_aliasing))  # noqa: E501
         if self.use_high_quality_rendering is not None:

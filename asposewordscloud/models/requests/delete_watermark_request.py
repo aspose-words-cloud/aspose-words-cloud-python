@@ -39,18 +39,20 @@ class DeleteWatermarkRequest(BaseRequestObject):
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    :param password Password for opening an encrypted document.
+    :param password Password for opening an encrypted document. The password is provided as is (obsolete).
+    :param encrypted_password Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     :param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
     :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, name, folder=None, storage=None, load_encoding=None, password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
+    def __init__(self, name, folder=None, storage=None, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
         self.name = name
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
+        self.encrypted_password = encrypted_password
         self.dest_file_name = dest_file_name
         self.revision_author = revision_author
         self.revision_date_time = revision_date_time
@@ -91,6 +93,8 @@ class DeleteWatermarkRequest(BaseRequestObject):
                 query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
         if self.password is not None:
                 query_params.append(('password', self.password))  # noqa: E501
+        if self.encrypted_password is not None:
+                query_params.append(('encryptedPassword', self.encrypted_password))  # noqa: E501
         if self.dest_file_name is not None:
                 query_params.append(('destFileName', self.dest_file_name))  # noqa: E501
         if self.revision_author is not None:

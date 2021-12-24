@@ -37,15 +37,17 @@ class ClassifyDocumentOnlineRequest(BaseRequestObject):
     Initializes a new instance.
     :param document The document.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    :param password Password for opening an encrypted document.
+    :param password Password for opening an encrypted document. The password is provided as is (obsolete).
+    :param encrypted_password Password for opening an encrypted document. The password must be encrypted on RSA public key provided by GetPublicKey() method and then encoded as base64 string.
     :param best_classes_count The number of the best classes to return.
     :param taxonomy The taxonomy to use.
     """
 
-    def __init__(self, document, load_encoding=None, password=None, best_classes_count=None, taxonomy=None):
+    def __init__(self, document, load_encoding=None, password=None, encrypted_password=None, best_classes_count=None, taxonomy=None):
         self.document = document
         self.load_encoding = load_encoding
         self.password = password
+        self.encrypted_password = encrypted_password
         self.best_classes_count = best_classes_count
         self.taxonomy = taxonomy
 
@@ -77,6 +79,8 @@ class ClassifyDocumentOnlineRequest(BaseRequestObject):
                 query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
         if self.password is not None:
                 query_params.append(('password', self.password))  # noqa: E501
+        if self.encrypted_password is not None:
+                query_params.append(('encryptedPassword', self.encrypted_password))  # noqa: E501
         if self.best_classes_count is not None:
                 query_params.append(('bestClassesCount', self.best_classes_count))  # noqa: E501
         if self.taxonomy is not None:
