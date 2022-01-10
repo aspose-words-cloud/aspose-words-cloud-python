@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="words_api.py">
-#   Copyright (c) 2021 Aspose.Words for Cloud
+#   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -81,7 +81,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: RevisionsModificationResponse
                  If the method is called asynchronously,
@@ -155,7 +156,8 @@ class WordsApi(object):
         :param is_async bool
         :param document file : The document. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: AcceptAllRevisionsOnlineResponse
                  If the method is called asynchronously,
@@ -235,7 +237,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -315,7 +318,8 @@ class WordsApi(object):
         :param document file : Original document. (required)
         :param document_list DocumentEntryList : <see cref="DocumentEntryList"/> with a list of documents to append. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -398,7 +402,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -479,7 +484,8 @@ class WordsApi(object):
         :param styled_node_path str : The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table. (required)
         :param style_apply StyleApply : Style to apply. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -562,7 +568,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : The filename of the output document. If this parameter is omitted, the result will be saved with autogenerated name.
         :return: DocumentResponse
                  If the method is called asynchronously,
@@ -793,7 +800,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param best_classes_count str : The number of the best classes to return.
         :param taxonomy str : The taxonomy to use.
         :return: ClassificationResponse
@@ -868,7 +876,8 @@ class WordsApi(object):
         :param is_async bool
         :param document file : The document. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param best_classes_count str : The number of the best classes to return.
         :param taxonomy str : The taxonomy to use.
         :return: ClassificationResponse
@@ -949,8 +958,10 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param encrypted_password2 str : encrypted password for the second document.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1028,8 +1039,10 @@ class WordsApi(object):
         :param compare_data CompareData : Compare data. (required)
         :param comparing_document file : The comparing document.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :param encrypted_password2 str : encrypted password for the second document.
         :return: CompareDocumentOnlineResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1336,7 +1349,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -1416,7 +1430,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param style_copy StyleCopy : Style to copy. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -1644,7 +1659,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -1725,7 +1741,8 @@ class WordsApi(object):
         :param property_name str : The name of the property. (required)
         :param _property DocumentPropertyCreateOrUpdate : The property with new value. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -1808,7 +1825,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: TabStopsResponse
                  If the method is called asynchronously,
@@ -1884,7 +1902,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: DeleteAllParagraphTabStopsOnlineResponse
                  If the method is called asynchronously,
@@ -1965,7 +1984,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -2043,7 +2063,8 @@ class WordsApi(object):
         :param border_type str : Border type. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -2125,7 +2146,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -2202,7 +2224,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -2284,7 +2307,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -2361,7 +2385,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param comment_index int : The index of the comment. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -2442,7 +2467,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -2518,7 +2544,8 @@ class WordsApi(object):
         :param is_async bool
         :param document file : The document. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -2600,7 +2627,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -2677,7 +2705,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param custom_xml_part_index int : The index of the custom xml part. This index is the number of the entry in the collection of custom xml parts, not the ID of the part. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -2758,7 +2787,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -2834,7 +2864,8 @@ class WordsApi(object):
         :param is_async bool
         :param document file : The document. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -2916,7 +2947,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -2993,7 +3025,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param property_name str : The name of the property. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -3076,7 +3109,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -3154,7 +3188,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -3237,7 +3272,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -3315,7 +3351,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -3397,7 +3434,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -3474,7 +3512,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -3703,7 +3742,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -3781,7 +3821,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -3864,7 +3905,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -3942,7 +3984,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -4025,7 +4068,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -4103,7 +4147,8 @@ class WordsApi(object):
         :param section_path str : The path to the section in the document tree. (required)
         :param index int : Object index. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -4185,7 +4230,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -4263,7 +4309,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param section_path str : The path to the section in the document tree. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -4345,7 +4392,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -4421,7 +4469,8 @@ class WordsApi(object):
         :param is_async bool
         :param document file : The document. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -4504,7 +4553,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -4582,7 +4632,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -4665,7 +4716,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -4745,7 +4797,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -4823,7 +4876,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -4904,7 +4958,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -4988,7 +5043,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: TabStopsResponse
                  If the method is called asynchronously,
@@ -5065,7 +5121,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: DeleteParagraphTabStopOnlineResponse
                  If the method is called asynchronously,
@@ -5146,7 +5203,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -5224,7 +5282,8 @@ class WordsApi(object):
         :param paragraph_path str : The path to the paragraph in the document tree. (required)
         :param index int : Object index. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -5306,7 +5365,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -5383,7 +5443,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param section_index int : The index of the section. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -5466,7 +5527,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -5546,7 +5608,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -5624,7 +5687,8 @@ class WordsApi(object):
         :param table_row_path str : The path to the table row in the document tree. (required)
         :param index int : Object index. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -5705,7 +5769,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -5788,7 +5853,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -5866,7 +5932,8 @@ class WordsApi(object):
         :param table_path str : The path to the table in the document tree. (required)
         :param index int : Object index. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -5947,7 +6014,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -6023,7 +6091,8 @@ class WordsApi(object):
         :param is_async bool
         :param document file : The document. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -6179,7 +6248,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param with_regions bool : The flag indicating whether to execute Mail Merge operation with regions.
         :param mail_merge_data_file str : The data file.
         :param cleanup str : The cleanup options.
@@ -6413,7 +6483,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: BookmarkResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6487,7 +6558,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param bookmark_name str : The name of the bookmark. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: BookmarkResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6565,7 +6637,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: BookmarksResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6638,7 +6711,8 @@ class WordsApi(object):
         :param is_async bool
         :param document file : The document. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: BookmarksResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6718,7 +6792,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: BorderResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6793,7 +6868,8 @@ class WordsApi(object):
         :param border_type str : Border type. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: BorderResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6872,7 +6948,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: BordersResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6946,7 +7023,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: BordersResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7025,7 +7103,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: CommentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7099,7 +7178,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param comment_index int : The index of the comment. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: CommentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7177,7 +7257,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: CommentsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7250,7 +7331,8 @@ class WordsApi(object):
         :param is_async bool
         :param document file : The document. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: CommentsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7329,7 +7411,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: CustomXmlPartResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7403,7 +7486,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param custom_xml_part_index int : The index of the custom xml part. This index is the number of the entry in the collection of custom xml parts, not the ID of the part. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: CustomXmlPartResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7481,7 +7565,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: CustomXmlPartsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7554,7 +7639,8 @@ class WordsApi(object):
         :param is_async bool
         :param document file : The document. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: CustomXmlPartsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7632,7 +7718,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7709,7 +7796,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: DrawingObjectResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7784,7 +7872,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: DrawingObjectResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7864,7 +7953,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7939,7 +8029,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8019,7 +8110,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8094,7 +8186,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8173,7 +8266,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: DrawingObjectsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8247,7 +8341,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: DrawingObjectsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8325,7 +8420,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param use_non_merge_fields bool : The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
         :return: FieldNamesResponse
                  If the method is called asynchronously,
@@ -8399,7 +8495,8 @@ class WordsApi(object):
         :param is_async bool
         :param template file : The template document. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param use_non_merge_fields bool : The flag indicating whether to use non merge fields. If true, result includes "mustache" field names.
         :return: FieldNamesResponse
                  If the method is called asynchronously,
@@ -8479,7 +8576,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: HyperlinkResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8553,7 +8651,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param hyperlink_index int : The index of the hyperlink. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: HyperlinkResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8631,7 +8730,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: HyperlinksResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8704,7 +8804,8 @@ class WordsApi(object):
         :param is_async bool
         :param document file : The document. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: HyperlinksResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8782,7 +8883,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: DocumentPropertiesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8855,7 +8957,8 @@ class WordsApi(object):
         :param is_async bool
         :param document file : The document. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: DocumentPropertiesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8934,7 +9037,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: DocumentPropertyResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9008,7 +9112,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param property_name str : The name of the property. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: DocumentPropertyResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9086,7 +9191,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: ProtectionDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9159,7 +9265,8 @@ class WordsApi(object):
         :param is_async bool
         :param document file : The document. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: ProtectionDataResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9237,7 +9344,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param include_comments bool : The flag indicating whether to include comments from the WordCount. The default value is "false".
         :param include_footnotes bool : The flag indicating whether to include footnotes from the WordCount. The default value is "false".
         :param include_text_in_shapes bool : The flag indicating whether to include shape's text from the WordCount. The default value is "false".
@@ -9313,7 +9421,8 @@ class WordsApi(object):
         :param is_async bool
         :param document file : The document. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param include_comments bool : The flag indicating whether to include comments from the WordCount. The default value is "false".
         :param include_footnotes bool : The flag indicating whether to include footnotes from the WordCount. The default value is "false".
         :param include_text_in_shapes bool : The flag indicating whether to include shape's text from the WordCount. The default value is "false".
@@ -9395,7 +9504,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param out_path str : The path to the output document.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
@@ -9474,7 +9584,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: FieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9549,7 +9660,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: FieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9628,7 +9740,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: FieldsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9702,7 +9815,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: FieldsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9854,7 +9968,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: FootnoteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9929,7 +10044,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: FootnoteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10008,7 +10124,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: FootnotesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10082,7 +10199,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: FootnotesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10162,7 +10280,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: FormFieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10237,7 +10356,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: FormFieldResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10316,7 +10436,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: FormFieldsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10390,7 +10511,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: FormFieldsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10469,7 +10591,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param filter_by_type str : The list of HeaderFooter types.
         :return: HeaderFooterResponse
                  If the method is called asynchronously,
@@ -10547,7 +10670,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param filter_by_type str : The list of HeaderFooter types.
         :return: HeaderFooterResponse
                  If the method is called asynchronously,
@@ -10623,7 +10747,8 @@ class WordsApi(object):
         :param header_footer_index int : The index of the HeaderFooter object. (required)
         :param section_index int : The index of the section. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param filter_by_type str : The list of HeaderFooter types.
         :return: HeaderFooterResponse
                  If the method is called asynchronously,
@@ -10701,7 +10826,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param header_footer_index int : The index of the HeaderFooter object. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param filter_by_type str : The list of HeaderFooter types.
         :return: HeaderFooterResponse
                  If the method is called asynchronously,
@@ -10781,7 +10907,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param filter_by_type str : The list of HeaderFooter types.
         :return: HeaderFootersResponse
                  If the method is called asynchronously,
@@ -10856,7 +10983,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param section_path str : The path to the section in the document tree. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param filter_by_type str : The list of HeaderFooter types.
         :return: HeaderFootersResponse
                  If the method is called asynchronously,
@@ -11006,7 +11134,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: ListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11080,7 +11209,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param list_id int : The list Id. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: ListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11158,7 +11288,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: ListsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11231,7 +11362,8 @@ class WordsApi(object):
         :param is_async bool
         :param document file : The document. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: ListsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11311,7 +11443,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: OfficeMathObjectResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11386,7 +11519,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: OfficeMathObjectResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11465,7 +11599,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: OfficeMathObjectsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11539,7 +11674,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: OfficeMathObjectsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11619,7 +11755,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: ParagraphResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11696,7 +11833,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: ParagraphFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11771,7 +11909,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: ParagraphFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11851,7 +11990,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: ParagraphListFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11926,7 +12066,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: ParagraphListFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12004,7 +12145,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: ParagraphResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12083,7 +12225,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: ParagraphLinkCollectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12157,7 +12300,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: ParagraphLinkCollectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12237,7 +12381,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: TabStopsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12312,7 +12457,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: TabStopsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12462,7 +12608,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: RangeTextResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12537,7 +12684,8 @@ class WordsApi(object):
         :param range_start_identifier str : The range start identifier. (required)
         :param range_end_identifier str : The range end identifier.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: RangeTextResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12617,7 +12765,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: RunResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12694,7 +12843,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: FontResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12769,7 +12919,8 @@ class WordsApi(object):
         :param paragraph_path str : The path to the paragraph in the document tree. (required)
         :param index int : Object index. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: FontResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12847,7 +12998,8 @@ class WordsApi(object):
         :param paragraph_path str : The path to the paragraph in the document tree. (required)
         :param index int : Object index. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: RunResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12926,7 +13078,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: RunsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13000,7 +13153,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param paragraph_path str : The path to the paragraph in the document tree. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: RunsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13079,7 +13233,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: SectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13153,7 +13308,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param section_index int : The index of the section. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: SectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13232,7 +13388,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: SectionPageSetupResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13306,7 +13463,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param section_index int : The index of the section. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: SectionPageSetupResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13384,7 +13542,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: SectionLinkCollectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13457,7 +13616,8 @@ class WordsApi(object):
         :param is_async bool
         :param document file : The document. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: SectionLinkCollectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13536,7 +13696,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: StyleResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13612,7 +13773,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: StyleResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13686,7 +13848,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param styled_node_path str : The path to the node in the document tree, that supports styles: ParagraphFormat, List, ListLevel, Table. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: StyleResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13763,7 +13926,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param style_name str : The name of the style. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: StyleResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13841,7 +14005,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: StylesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13914,7 +14079,8 @@ class WordsApi(object):
         :param is_async bool
         :param document file : The document. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: StylesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13994,7 +14160,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: TableResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14071,7 +14238,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: TableCellResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14148,7 +14316,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: TableCellFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14223,7 +14392,8 @@ class WordsApi(object):
         :param table_row_path str : The path to the table row in the document tree. (required)
         :param index int : Object index. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: TableCellFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14301,7 +14471,8 @@ class WordsApi(object):
         :param table_row_path str : The path to the table row in the document tree. (required)
         :param index int : Object index. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: TableCellResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14379,7 +14550,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: TableResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14459,7 +14631,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: TablePropertiesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14534,7 +14707,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: TablePropertiesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14614,7 +14788,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: TableRowResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14691,7 +14866,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: TableRowFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14766,7 +14942,8 @@ class WordsApi(object):
         :param table_path str : The path to the table in the document tree. (required)
         :param index int : Object index. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: TableRowFormatResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14844,7 +15021,8 @@ class WordsApi(object):
         :param table_path str : The path to the table in the document tree. (required)
         :param index int : Object index. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: TableRowResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14923,7 +15101,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: TableLinkCollectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14997,7 +15176,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: TableLinkCollectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15076,7 +15256,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -15156,7 +15337,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param comment CommentInsert : Comment data. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -15238,7 +15420,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -15318,7 +15501,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param custom_xml_part CustomXmlPartInsert : Custom xml part. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -15402,7 +15586,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -15484,7 +15669,8 @@ class WordsApi(object):
         :param image_file file : File with image. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -15567,7 +15753,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -15649,7 +15836,8 @@ class WordsApi(object):
         :param field FieldInsert : Field data. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -15733,7 +15921,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -15814,7 +16003,8 @@ class WordsApi(object):
         :param footnote_dto FootnoteInsert : Footnote data. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -15897,7 +16087,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -15979,7 +16170,8 @@ class WordsApi(object):
         :param form_field FormField : From field data. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -16063,7 +16255,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -16144,7 +16337,8 @@ class WordsApi(object):
         :param section_path str : The path to the section in the document tree. (required)
         :param header_footer_type str : Type of header/footer. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -16226,7 +16420,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -16306,7 +16501,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param list_insert ListInsert : List object. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -16390,7 +16586,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: TabStopsResponse
                  If the method is called asynchronously,
@@ -16470,7 +16667,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: InsertOrUpdateParagraphTabStopOnlineResponse
                  If the method is called asynchronously,
@@ -16550,7 +16748,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -16630,7 +16829,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param page_number PageNumber : Page number dto. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -16713,7 +16913,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -16795,7 +16996,8 @@ class WordsApi(object):
         :param paragraph ParagraphInsert : Paragraph data. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -16879,7 +17081,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -16961,7 +17164,8 @@ class WordsApi(object):
         :param paragraph_path str : The path to the paragraph in the document tree. (required)
         :param run RunInsert : Run data. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -17044,7 +17248,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -17124,7 +17329,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param style_insert StyleInsert : Style to insert. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -17207,7 +17413,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -17290,7 +17497,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -17371,7 +17579,8 @@ class WordsApi(object):
         :param table_row_path str : The path to the table row in the document tree. (required)
         :param cell TableCellInsert : Table cell parameters. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -17452,7 +17661,8 @@ class WordsApi(object):
         :param table TableInsert : Table parameters. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -17535,7 +17745,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -17616,7 +17827,8 @@ class WordsApi(object):
         :param table_path str : The path to the table in the document tree. (required)
         :param row TableRowInsert : Table row parameters. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -17698,7 +17910,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -17780,7 +17993,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param image_file file : File with image. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -17864,7 +18078,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -17944,7 +18159,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param watermark_text WatermarkText : The watermark data. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -18250,7 +18466,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -18330,7 +18547,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param options OptimizationOptions : The document optimization options. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -18412,7 +18630,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: ProtectionDataResponse
                  If the method is called asynchronously,
@@ -18490,7 +18709,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param protection_request ProtectionRequest : Protection request. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: ProtectDocumentOnlineResponse
                  If the method is called asynchronously,
@@ -18569,7 +18789,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: RevisionsModificationResponse
                  If the method is called asynchronously,
@@ -18643,7 +18864,8 @@ class WordsApi(object):
         :param is_async bool
         :param document file : The document. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: RejectAllRevisionsOnlineResponse
                  If the method is called asynchronously,
@@ -18724,7 +18946,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: DocumentResponse
                  If the method is called asynchronously,
@@ -18800,7 +19023,8 @@ class WordsApi(object):
         :param range_start_identifier str : The range start identifier. (required)
         :param range_end_identifier str : The range end identifier.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: RemoveRangeOnlineResponse
                  If the method is called asynchronously,
@@ -18882,7 +19106,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
@@ -18960,7 +19185,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
@@ -19043,7 +19269,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
@@ -19121,7 +19348,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
@@ -19203,7 +19431,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
                  If the method is called asynchronously,
@@ -19279,7 +19508,8 @@ class WordsApi(object):
         :param page_index int : The index of the page. (required)
         :param format str : The destination format. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
                  If the method is called asynchronously,
@@ -19361,7 +19591,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
@@ -19439,7 +19670,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
@@ -19522,7 +19754,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
@@ -19600,7 +19833,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
@@ -19681,7 +19915,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -19761,7 +19996,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param replace_text ReplaceTextParameters : The replace operation settings. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -19845,7 +20081,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: DocumentResponse
                  If the method is called asynchronously,
@@ -19925,7 +20162,8 @@ class WordsApi(object):
         :param range_text ReplaceRange : Model with text for replacement. (required)
         :param range_end_identifier str : The range end identifier.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: ReplaceWithTextOnlineResponse
                  If the method is called asynchronously,
@@ -20075,7 +20313,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: SaveResponse
                  If the method is called asynchronously,
@@ -20153,7 +20392,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param save_options_data SaveOptionsData : Save options. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: SaveAsOnlineResponse
                  If the method is called asynchronously,
@@ -20235,7 +20475,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: DocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20314,7 +20555,8 @@ class WordsApi(object):
         :param document_parameters RangeDocument : Parameters of a new document. (required)
         :param range_end_identifier str : The range end identifier.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: SaveAsRangeOnlineResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20393,7 +20635,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param use_anti_aliasing bool : The flag indicating whether to use antialiasing.
         :param use_high_quality_rendering bool : The flag indicating whether to use high quality.
         :param image_brightness float : The level of brightness for the generated images.
@@ -20488,7 +20731,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param save_options TiffSaveOptionsData : Tiff save options. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param use_anti_aliasing bool : The flag indicating whether to use antialiasing.
         :param use_high_quality_rendering bool : The flag indicating whether to use high quality.
         :param image_brightness float : The level of brightness for the generated images.
@@ -20585,7 +20829,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: SearchResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20659,7 +20904,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param pattern str : The regular expression used to find matches. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :return: SearchResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20738,7 +20984,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param _from int : The start page.
         :param to int : The end page.
@@ -20817,7 +21064,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param format str : The format to split. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param _from int : The start page.
         :param to int : The end page.
@@ -20901,7 +21149,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: ProtectionDataResponse
                  If the method is called asynchronously,
@@ -20979,7 +21228,8 @@ class WordsApi(object):
         :param document file : The document. (required)
         :param protection_request ProtectionRequest : Protection request. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: UnprotectDocumentOnlineResponse
                  If the method is called asynchronously,
@@ -21060,7 +21310,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -21141,7 +21392,8 @@ class WordsApi(object):
         :param bookmark_name str : The name of the bookmark. (required)
         :param bookmark_data BookmarkData : Bookmark data. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -21225,7 +21477,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -21307,7 +21560,8 @@ class WordsApi(object):
         :param border_type str : Border type. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -21390,7 +21644,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -21471,7 +21726,8 @@ class WordsApi(object):
         :param comment_index int : The index of the comment. (required)
         :param comment CommentUpdate : Comment data. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -21554,7 +21810,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -21635,7 +21892,8 @@ class WordsApi(object):
         :param custom_xml_part_index int : The index of the custom xml part. This index is the number of the entry in the collection of custom xml parts, not the ID of the part. (required)
         :param custom_xml_part CustomXmlPartUpdate : Custom xml part. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -21720,7 +21978,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -21803,7 +22062,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -21887,7 +22147,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -21969,7 +22230,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -22050,7 +22312,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: DocumentResponse
                  If the method is called asynchronously,
@@ -22124,7 +22387,8 @@ class WordsApi(object):
         :param is_async bool
         :param document file : The document. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :return: UpdateFieldsOnlineResponse
                  If the method is called asynchronously,
@@ -22206,7 +22470,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -22288,7 +22553,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -22372,7 +22638,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -22454,7 +22721,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -22537,7 +22805,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -22621,7 +22890,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -22703,7 +22973,8 @@ class WordsApi(object):
         :param list_update ListLevelUpdate : List object. (required)
         :param list_level int : The list level. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -22784,7 +23055,8 @@ class WordsApi(object):
         :param list_id int : The list Id. (required)
         :param list_update ListUpdate : List object. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -22868,7 +23140,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -22950,7 +23223,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -23034,7 +23308,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -23116,7 +23391,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -23200,7 +23476,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -23284,7 +23561,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -23366,7 +23644,8 @@ class WordsApi(object):
         :param font_dto Font : Font dto object. (required)
         :param index int : Object index. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -23448,7 +23727,8 @@ class WordsApi(object):
         :param run RunUpdate : Run data. (required)
         :param index int : Object index. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -23531,7 +23811,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -23612,7 +23893,8 @@ class WordsApi(object):
         :param section_index int : The index of the section. (required)
         :param page_setup PageSetup : Page setup properties dto. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -23695,7 +23977,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -23776,7 +24059,8 @@ class WordsApi(object):
         :param style_name str : The name of the style. (required)
         :param style_update StyleUpdate : Style properties to update. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -23860,7 +24144,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -23942,7 +24227,8 @@ class WordsApi(object):
         :param format TableCellFormat : The properties. (required)
         :param index int : Object index. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -24026,7 +24312,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -24108,7 +24395,8 @@ class WordsApi(object):
         :param index int : Object index. (required)
         :param node_path str : The path to the node in the document tree.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -24192,7 +24480,8 @@ class WordsApi(object):
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
@@ -24274,7 +24563,8 @@ class WordsApi(object):
         :param format TableRowFormat : Table row format. (required)
         :param index int : Object index. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-        :param password str : Password for opening an encrypted document.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
