@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="field_options.py">
-#   Copyright (c) 2021 Aspose.Words for Cloud
+#   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,6 +48,7 @@ class FieldOptions(object):
         'custom_toc_style_separator': 'str',
         'default_document_author': 'str',
         'field_index_format': 'str',
+        'field_update_culture_name': 'str',
         'field_update_culture_source': 'str',
         'file_name': 'str',
         'is_bidi_text_supported_on_update': 'bool',
@@ -63,6 +64,7 @@ class FieldOptions(object):
         'custom_toc_style_separator': 'CustomTocStyleSeparator',
         'default_document_author': 'DefaultDocumentAuthor',
         'field_index_format': 'FieldIndexFormat',
+        'field_update_culture_name': 'FieldUpdateCultureName',
         'field_update_culture_source': 'FieldUpdateCultureSource',
         'file_name': 'FileName',
         'is_bidi_text_supported_on_update': 'IsBidiTextSupportedOnUpdate',
@@ -72,7 +74,7 @@ class FieldOptions(object):
         'use_invariant_culture_number_format': 'UseInvariantCultureNumberFormat'
     }
 
-    def __init__(self, built_in_templates_paths=None, current_user=None, custom_toc_style_separator=None, default_document_author=None, field_index_format=None, field_update_culture_source=None, file_name=None, is_bidi_text_supported_on_update=None, legacy_number_format=None, pre_process_culture_name=None, template_name=None, use_invariant_culture_number_format=None):  # noqa: E501
+    def __init__(self, built_in_templates_paths=None, current_user=None, custom_toc_style_separator=None, default_document_author=None, field_index_format=None, field_update_culture_name=None, field_update_culture_source=None, file_name=None, is_bidi_text_supported_on_update=None, legacy_number_format=None, pre_process_culture_name=None, template_name=None, use_invariant_culture_number_format=None):  # noqa: E501
         """FieldOptions - a model defined in Swagger"""  # noqa: E501
 
         self._built_in_templates_paths = None
@@ -80,6 +82,7 @@ class FieldOptions(object):
         self._custom_toc_style_separator = None
         self._default_document_author = None
         self._field_index_format = None
+        self._field_update_culture_name = None
         self._field_update_culture_source = None
         self._file_name = None
         self._is_bidi_text_supported_on_update = None
@@ -99,6 +102,8 @@ class FieldOptions(object):
             self.default_document_author = default_document_author
         if field_index_format is not None:
             self.field_index_format = field_index_format
+        if field_update_culture_name is not None:
+            self.field_update_culture_name = field_update_culture_name
         if field_update_culture_source is not None:
             self.field_update_culture_source = field_update_culture_source
         if file_name is not None:
@@ -233,6 +238,28 @@ class FieldOptions(object):
             self._field_index_format = allowed_values[int(field_index_format) if six.PY3 else long(field_index_format)]
 
     @property
+    def field_update_culture_name(self):
+        """Gets the field_update_culture_name of this FieldOptions.  # noqa: E501
+
+        Gets or sets Field Update Culture Name. It is used for all fields if FieldUpdateCultureSource is FieldCode.  # noqa: E501
+
+        :return: The field_update_culture_name of this FieldOptions.  # noqa: E501
+        :rtype: str
+        """
+        return self._field_update_culture_name
+
+    @field_update_culture_name.setter
+    def field_update_culture_name(self, field_update_culture_name):
+        """Sets the field_update_culture_name of this FieldOptions.
+
+        Gets or sets Field Update Culture Name. It is used for all fields if FieldUpdateCultureSource is FieldCode.  # noqa: E501
+
+        :param field_update_culture_name: The field_update_culture_name of this FieldOptions.  # noqa: E501
+        :type: str
+        """
+        self._field_update_culture_name = field_update_culture_name
+
+    @property
     def field_update_culture_source(self):
         """Gets the field_update_culture_source of this FieldOptions.  # noqa: E501
 
@@ -332,7 +359,7 @@ class FieldOptions(object):
     def pre_process_culture_name(self):
         """Gets the pre_process_culture_name of this FieldOptions.  # noqa: E501
 
-        Gets or sets PreProcess Culture Name.  # noqa: E501
+        Gets or sets PreProcess Culture Name. It is a culture code for DOC fields.  # noqa: E501
 
         :return: The pre_process_culture_name of this FieldOptions.  # noqa: E501
         :rtype: str
@@ -343,7 +370,7 @@ class FieldOptions(object):
     def pre_process_culture_name(self, pre_process_culture_name):
         """Sets the pre_process_culture_name of this FieldOptions.
 
-        Gets or sets PreProcess Culture Name.  # noqa: E501
+        Gets or sets PreProcess Culture Name. It is a culture code for DOC fields.  # noqa: E501
 
         :param pre_process_culture_name: The pre_process_culture_name of this FieldOptions.  # noqa: E501
         :type: str
