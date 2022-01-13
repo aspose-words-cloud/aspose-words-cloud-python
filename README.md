@@ -16,13 +16,6 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 - [Convert a document to desired file format](https://docs.aspose.cloud/display/wordscloud/Convert+Document+to+Destination+Format+with+Detailed+Settings+and+Save+Result+to+Storage) along with detailed settings.
 - Convert an encrypted PDF document into Word document format.
 
-## Enhancements in Version 22.1
-
-- Added 'FieldOptions.FieldUpdateCultureName' to set Culture for fields
-- Added 'DocumentEntry.Password' to set an encrypted password for appending document
-- Added 'encryptedPassword2' query parameter to CompareDocuments to set an encrypted password for the second comparing document
-
-
 ## Enhancements in Version 21.12
 
 - Added FieldOptions parameter to mail merge operations
