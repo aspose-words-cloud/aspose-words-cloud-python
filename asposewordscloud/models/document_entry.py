@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="document_entry.py">
-#   Copyright (c) 2021 Aspose.Words for Cloud
+#   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -44,25 +44,30 @@ class DocumentEntry(object):
     """
     swagger_types = {
         'href': 'str',
-        'import_format_mode': 'str'
+        'import_format_mode': 'str',
+        'password': 'str'
     }
 
     attribute_map = {
         'href': 'Href',
-        'import_format_mode': 'ImportFormatMode'
+        'import_format_mode': 'ImportFormatMode',
+        'password': 'Password'
     }
 
-    def __init__(self, href=None, import_format_mode=None):  # noqa: E501
+    def __init__(self, href=None, import_format_mode=None, password=None):  # noqa: E501
         """DocumentEntry - a model defined in Swagger"""  # noqa: E501
 
         self._href = None
         self._import_format_mode = None
+        self._password = None
         self.discriminator = None
 
         if href is not None:
             self.href = href
         if import_format_mode is not None:
             self.import_format_mode = import_format_mode
+        if password is not None:
+            self.password = password
 
     @property
     def href(self):
@@ -107,6 +112,28 @@ class DocumentEntry(object):
         :type: str
         """
         self._import_format_mode = import_format_mode
+
+    @property
+    def password(self):
+        """Gets the password of this DocumentEntry.  # noqa: E501
+
+        Gets or sets document password encrypted on API public key. The default value is null (the document has no password).  # noqa: E501
+
+        :return: The password of this DocumentEntry.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this DocumentEntry.
+
+        Gets or sets document password encrypted on API public key. The default value is null (the document has no password).  # noqa: E501
+
+        :param password: The password of this DocumentEntry.  # noqa: E501
+        :type: str
+        """
+        self._password = password
 
 
     def to_dict(self):

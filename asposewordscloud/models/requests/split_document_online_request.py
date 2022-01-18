@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="split_document_online_request.py">
-#   Copyright (c) 2021 Aspose.Words for Cloud
+#   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -38,7 +38,8 @@ class SplitDocumentOnlineRequest(BaseRequestObject):
     :param document The document.
     :param format The format to split.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    :param password Password for opening an encrypted document.
+    :param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+    :param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
     :param _from The start page.
     :param to The end page.
@@ -46,11 +47,12 @@ class SplitDocumentOnlineRequest(BaseRequestObject):
     :param fonts_location Folder in filestorage with custom fonts.
     """
 
-    def __init__(self, document, format, load_encoding=None, password=None, dest_file_name=None, _from=None, to=None, zip_output=None, fonts_location=None):
+    def __init__(self, document, format, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, _from=None, to=None, zip_output=None, fonts_location=None):
         self.document = document
         self.format = format
         self.load_encoding = load_encoding
         self.password = password
+        self.encrypted_password = encrypted_password
         self.dest_file_name = dest_file_name
         self._from = _from
         self.to = to
@@ -90,6 +92,8 @@ class SplitDocumentOnlineRequest(BaseRequestObject):
                 query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
         if self.password is not None:
                 query_params.append(('password', self.password))  # noqa: E501
+        if self.encrypted_password is not None:
+                query_params.append(('encryptedPassword', self.encrypted_password))  # noqa: E501
         if self.dest_file_name is not None:
                 query_params.append(('destFileName', self.dest_file_name))  # noqa: E501
         if self._from is not None:

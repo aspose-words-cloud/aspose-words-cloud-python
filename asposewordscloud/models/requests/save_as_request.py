@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="save_as_request.py">
-#   Copyright (c) 2021 Aspose.Words for Cloud
+#   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -40,17 +40,19 @@ class SaveAsRequest(BaseRequestObject):
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
-    :param password Password for opening an encrypted document.
+    :param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+    :param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
     :param fonts_location Folder in filestorage with custom fonts.
     """
 
-    def __init__(self, name, save_options_data, folder=None, storage=None, load_encoding=None, password=None, fonts_location=None):
+    def __init__(self, name, save_options_data, folder=None, storage=None, load_encoding=None, password=None, encrypted_password=None, fonts_location=None):
         self.name = name
         self.save_options_data = save_options_data
         self.folder = folder
         self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
+        self.encrypted_password = encrypted_password
         self.fonts_location = fonts_location
 
     def create_http_request(self, api_client):
@@ -92,6 +94,8 @@ class SaveAsRequest(BaseRequestObject):
                 query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
         if self.password is not None:
                 query_params.append(('password', self.password))  # noqa: E501
+        if self.encrypted_password is not None:
+                query_params.append(('encryptedPassword', self.encrypted_password))  # noqa: E501
         if self.fonts_location is not None:
                 query_params.append(('fontsLocation', self.fonts_location))  # noqa: E501
 
