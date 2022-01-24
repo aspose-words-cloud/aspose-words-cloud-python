@@ -38,6 +38,7 @@ from asposewordscloud.models.custom_xml_part_response import CustomXmlPartRespon
 from asposewordscloud.models.custom_xml_parts_collection import CustomXmlPartsCollection
 from asposewordscloud.models.custom_xml_parts_response import CustomXmlPartsResponse
 from asposewordscloud.models.custom_xml_part_update import CustomXmlPartUpdate
+from asposewordscloud.models.docm_save_options_data import DocmSaveOptionsData
 from asposewordscloud.models.doc_save_options_data import DocSaveOptionsData
 from asposewordscloud.models.document import Document
 from asposewordscloud.models.document_entry import DocumentEntry
@@ -51,6 +52,10 @@ from asposewordscloud.models.document_property_create_or_update import DocumentP
 from asposewordscloud.models.document_property_response import DocumentPropertyResponse
 from asposewordscloud.models.document_response import DocumentResponse
 from asposewordscloud.models.document_stat_data import DocumentStatData
+from asposewordscloud.models.docx_save_options_data import DocxSaveOptionsData
+from asposewordscloud.models.dotm_save_options_data import DotmSaveOptionsData
+from asposewordscloud.models.dot_save_options_data import DotSaveOptionsData
+from asposewordscloud.models.dotx_save_options_data import DotxSaveOptionsData
 from asposewordscloud.models.downsample_options_data import DownsampleOptionsData
 from asposewordscloud.models.drawing_object import DrawingObject
 from asposewordscloud.models.drawing_object_collection import DrawingObjectCollection
@@ -78,6 +83,10 @@ from asposewordscloud.models.file_link import FileLink
 from asposewordscloud.models.files_list import FilesList
 from asposewordscloud.models.files_upload_result import FilesUploadResult
 from asposewordscloud.models.fixed_page_save_options_data import FixedPageSaveOptionsData
+from asposewordscloud.models.flat_opc_macro_save_options_data import FlatOpcMacroSaveOptionsData
+from asposewordscloud.models.flat_opc_save_options_data import FlatOpcSaveOptionsData
+from asposewordscloud.models.flat_opc_template_macro_save_options_data import FlatOpcTemplateMacroSaveOptionsData
+from asposewordscloud.models.flat_opc_template_save_options_data import FlatOpcTemplateSaveOptionsData
 from asposewordscloud.models.font import Font
 from asposewordscloud.models.font_dto import FontDto
 from asposewordscloud.models.font_info import FontInfo
@@ -142,6 +151,7 @@ from asposewordscloud.models.office_math_objects_collection import OfficeMathObj
 from asposewordscloud.models.office_math_objects_response import OfficeMathObjectsResponse
 from asposewordscloud.models.ooxml_save_options_data import OoxmlSaveOptionsData
 from asposewordscloud.models.optimization_options import OptimizationOptions
+from asposewordscloud.models.ott_save_options_data import OttSaveOptionsData
 from asposewordscloud.models.outline_options_data import OutlineOptionsData
 from asposewordscloud.models.page_number import PageNumber
 from asposewordscloud.models.page_setup import PageSetup
@@ -252,6 +262,7 @@ from asposewordscloud.models.words_api_error_response import WordsApiErrorRespon
 from asposewordscloud.models.words_api_link import WordsApiLink
 from asposewordscloud.models.words_response import WordsResponse
 from asposewordscloud.models.xaml_fixed_save_options_data import XamlFixedSaveOptionsData
+from asposewordscloud.models.xaml_flow_pack_save_options_data import XamlFlowPackSaveOptionsData
 from asposewordscloud.models.xaml_flow_save_options_data import XamlFlowSaveOptionsData
 from asposewordscloud.models.xml_color import XmlColor
 from asposewordscloud.models.xml_data_load_options import XmlDataLoadOptions

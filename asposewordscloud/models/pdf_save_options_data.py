@@ -51,7 +51,6 @@ class PdfSaveOptionsData(object):
         'file_name': 'str',
         'flat_opc_xml_mapping_only': 'bool',
         'iml_rendering_mode': 'str',
-        'save_format': 'str',
         'update_created_time_property': 'bool',
         'update_fields': 'bool',
         'update_last_printed_property': 'bool',
@@ -85,6 +84,7 @@ class PdfSaveOptionsData(object):
         'page_mode': 'str',
         'preblend_images': 'bool',
         'preserve_form_fields': 'bool',
+        'save_format': 'str',
         'text_compression': 'str',
         'use_book_fold_printing_settings': 'bool',
         'use_core_fonts': 'bool',
@@ -101,7 +101,6 @@ class PdfSaveOptionsData(object):
         'file_name': 'FileName',
         'flat_opc_xml_mapping_only': 'FlatOpcXmlMappingOnly',
         'iml_rendering_mode': 'ImlRenderingMode',
-        'save_format': 'SaveFormat',
         'update_created_time_property': 'UpdateCreatedTimeProperty',
         'update_fields': 'UpdateFields',
         'update_last_printed_property': 'UpdateLastPrintedProperty',
@@ -135,6 +134,7 @@ class PdfSaveOptionsData(object):
         'page_mode': 'PageMode',
         'preblend_images': 'PreblendImages',
         'preserve_form_fields': 'PreserveFormFields',
+        'save_format': 'SaveFormat',
         'text_compression': 'TextCompression',
         'use_book_fold_printing_settings': 'UseBookFoldPrintingSettings',
         'use_core_fonts': 'UseCoreFonts',
@@ -142,7 +142,7 @@ class PdfSaveOptionsData(object):
         'zoom_factor': 'ZoomFactor'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_full_fonts=None, encryption_details=None, export_document_structure=None, export_language_to_span_tag=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, interpolate_images=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_full_fonts=None, encryption_details=None, export_document_structure=None, export_language_to_span_tag=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, interpolate_images=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
         """PdfSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -153,7 +153,6 @@ class PdfSaveOptionsData(object):
         self._file_name = None
         self._flat_opc_xml_mapping_only = None
         self._iml_rendering_mode = None
-        self._save_format = None
         self._update_created_time_property = None
         self._update_fields = None
         self._update_last_printed_property = None
@@ -187,6 +186,7 @@ class PdfSaveOptionsData(object):
         self._page_mode = None
         self._preblend_images = None
         self._preserve_form_fields = None
+        self._save_format = "pdf"
         self._text_compression = None
         self._use_book_fold_printing_settings = None
         self._use_core_fonts = None
@@ -210,8 +210,6 @@ class PdfSaveOptionsData(object):
             self.flat_opc_xml_mapping_only = flat_opc_xml_mapping_only
         if iml_rendering_mode is not None:
             self.iml_rendering_mode = iml_rendering_mode
-        if save_format is not None:
-            self.save_format = save_format
         if update_created_time_property is not None:
             self.update_created_time_property = update_created_time_property
         if update_fields is not None:
@@ -472,28 +470,6 @@ class PdfSaveOptionsData(object):
         :type: str
         """
         self._iml_rendering_mode = iml_rendering_mode
-
-    @property
-    def save_format(self):
-        """Gets the save_format of this PdfSaveOptionsData.  # noqa: E501
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :return: The save_format of this PdfSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._save_format
-
-    @save_format.setter
-    def save_format(self, save_format):
-        """Sets the save_format of this PdfSaveOptionsData.
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :param save_format: The save_format of this PdfSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._save_format = save_format
 
     @property
     def update_created_time_property(self):
@@ -1228,6 +1204,18 @@ class PdfSaveOptionsData(object):
         :type: bool
         """
         self._preserve_form_fields = preserve_form_fields
+
+    @property
+    def save_format(self):
+        """Gets the save_format of this PdfSaveOptionsData.  # noqa: E501
+
+        Gets or sets the format of save.  # noqa: E501
+
+        :return: The save_format of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._save_format
+
 
     @property
     def text_compression(self):
