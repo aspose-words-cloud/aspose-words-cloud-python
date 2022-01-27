@@ -960,7 +960,7 @@ class GifSaveOptionsData(object):
     def save_format(self):
         """Gets the save_format of this GifSaveOptionsData.  # noqa: E501
 
-        Gets or sets the format of save.  # noqa: E501
+        Gets the format of save.  # noqa: E501
 
         :return: The save_format of this GifSaveOptionsData.  # noqa: E501
         :rtype: str
