@@ -51,7 +51,6 @@ class HtmlFixedSaveOptionsData(object):
         'file_name': 'str',
         'flat_opc_xml_mapping_only': 'bool',
         'iml_rendering_mode': 'str',
-        'save_format': 'str',
         'update_created_time_property': 'bool',
         'update_fields': 'bool',
         'update_last_printed_property': 'bool',
@@ -77,6 +76,7 @@ class HtmlFixedSaveOptionsData(object):
         'resources_folder': 'str',
         'resources_folder_alias': 'str',
         'save_font_face_css_separately': 'bool',
+        'save_format': 'str',
         'show_page_border': 'bool',
         'use_target_machine_fonts': 'bool'
     }
@@ -90,7 +90,6 @@ class HtmlFixedSaveOptionsData(object):
         'file_name': 'FileName',
         'flat_opc_xml_mapping_only': 'FlatOpcXmlMappingOnly',
         'iml_rendering_mode': 'ImlRenderingMode',
-        'save_format': 'SaveFormat',
         'update_created_time_property': 'UpdateCreatedTimeProperty',
         'update_fields': 'UpdateFields',
         'update_last_printed_property': 'UpdateLastPrintedProperty',
@@ -116,11 +115,12 @@ class HtmlFixedSaveOptionsData(object):
         'resources_folder': 'ResourcesFolder',
         'resources_folder_alias': 'ResourcesFolderAlias',
         'save_font_face_css_separately': 'SaveFontFaceCssSeparately',
+        'save_format': 'SaveFormat',
         'show_page_border': 'ShowPageBorder',
         'use_target_machine_fonts': 'UseTargetMachineFonts'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, css_class_names_prefix=None, encoding=None, export_embedded_css=None, export_embedded_fonts=None, export_embedded_images=None, export_form_fields=None, font_format=None, page_horizontal_alignment=None, page_margins=None, resources_folder=None, resources_folder_alias=None, save_font_face_css_separately=None, show_page_border=None, use_target_machine_fonts=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, css_class_names_prefix=None, encoding=None, export_embedded_css=None, export_embedded_fonts=None, export_embedded_images=None, export_form_fields=None, font_format=None, page_horizontal_alignment=None, page_margins=None, resources_folder=None, resources_folder_alias=None, save_font_face_css_separately=None, show_page_border=None, use_target_machine_fonts=None):  # noqa: E501
         """HtmlFixedSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -131,7 +131,6 @@ class HtmlFixedSaveOptionsData(object):
         self._file_name = None
         self._flat_opc_xml_mapping_only = None
         self._iml_rendering_mode = None
-        self._save_format = None
         self._update_created_time_property = None
         self._update_fields = None
         self._update_last_printed_property = None
@@ -157,6 +156,7 @@ class HtmlFixedSaveOptionsData(object):
         self._resources_folder = None
         self._resources_folder_alias = None
         self._save_font_face_css_separately = None
+        self._save_format = "htmlfixed"
         self._show_page_border = None
         self._use_target_machine_fonts = None
         self.discriminator = None
@@ -177,8 +177,6 @@ class HtmlFixedSaveOptionsData(object):
             self.flat_opc_xml_mapping_only = flat_opc_xml_mapping_only
         if iml_rendering_mode is not None:
             self.iml_rendering_mode = iml_rendering_mode
-        if save_format is not None:
-            self.save_format = save_format
         if update_created_time_property is not None:
             self.update_created_time_property = update_created_time_property
         if update_fields is not None:
@@ -417,28 +415,6 @@ class HtmlFixedSaveOptionsData(object):
         :type: str
         """
         self._iml_rendering_mode = iml_rendering_mode
-
-    @property
-    def save_format(self):
-        """Gets the save_format of this HtmlFixedSaveOptionsData.  # noqa: E501
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :return: The save_format of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._save_format
-
-    @save_format.setter
-    def save_format(self, save_format):
-        """Sets the save_format of this HtmlFixedSaveOptionsData.
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :param save_format: The save_format of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._save_format = save_format
 
     @property
     def update_created_time_property(self):
@@ -989,6 +965,18 @@ class HtmlFixedSaveOptionsData(object):
         :type: bool
         """
         self._save_font_face_css_separately = save_font_face_css_separately
+
+    @property
+    def save_format(self):
+        """Gets the save_format of this HtmlFixedSaveOptionsData.  # noqa: E501
+
+        Gets or sets the format of save.  # noqa: E501
+
+        :return: The save_format of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._save_format
+
 
     @property
     def show_page_border(self):

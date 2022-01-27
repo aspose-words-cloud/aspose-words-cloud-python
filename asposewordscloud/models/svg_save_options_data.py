@@ -51,7 +51,6 @@ class SvgSaveOptionsData(object):
         'file_name': 'str',
         'flat_opc_xml_mapping_only': 'bool',
         'iml_rendering_mode': 'str',
-        'save_format': 'str',
         'update_created_time_property': 'bool',
         'update_fields': 'bool',
         'update_last_printed_property': 'bool',
@@ -69,6 +68,7 @@ class SvgSaveOptionsData(object):
         'fit_to_view_port': 'bool',
         'resources_folder': 'str',
         'resources_folder_alias': 'str',
+        'save_format': 'str',
         'show_page_border': 'bool',
         'text_output_mode': 'str'
     }
@@ -82,7 +82,6 @@ class SvgSaveOptionsData(object):
         'file_name': 'FileName',
         'flat_opc_xml_mapping_only': 'FlatOpcXmlMappingOnly',
         'iml_rendering_mode': 'ImlRenderingMode',
-        'save_format': 'SaveFormat',
         'update_created_time_property': 'UpdateCreatedTimeProperty',
         'update_fields': 'UpdateFields',
         'update_last_printed_property': 'UpdateLastPrintedProperty',
@@ -100,11 +99,12 @@ class SvgSaveOptionsData(object):
         'fit_to_view_port': 'FitToViewPort',
         'resources_folder': 'ResourcesFolder',
         'resources_folder_alias': 'ResourcesFolderAlias',
+        'save_format': 'SaveFormat',
         'show_page_border': 'ShowPageBorder',
         'text_output_mode': 'TextOutputMode'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, export_embedded_images=None, fit_to_view_port=None, resources_folder=None, resources_folder_alias=None, show_page_border=None, text_output_mode=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, export_embedded_images=None, fit_to_view_port=None, resources_folder=None, resources_folder_alias=None, show_page_border=None, text_output_mode=None):  # noqa: E501
         """SvgSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -115,7 +115,6 @@ class SvgSaveOptionsData(object):
         self._file_name = None
         self._flat_opc_xml_mapping_only = None
         self._iml_rendering_mode = None
-        self._save_format = None
         self._update_created_time_property = None
         self._update_fields = None
         self._update_last_printed_property = None
@@ -133,6 +132,7 @@ class SvgSaveOptionsData(object):
         self._fit_to_view_port = None
         self._resources_folder = None
         self._resources_folder_alias = None
+        self._save_format = "svg"
         self._show_page_border = None
         self._text_output_mode = None
         self.discriminator = None
@@ -153,8 +153,6 @@ class SvgSaveOptionsData(object):
             self.flat_opc_xml_mapping_only = flat_opc_xml_mapping_only
         if iml_rendering_mode is not None:
             self.iml_rendering_mode = iml_rendering_mode
-        if save_format is not None:
-            self.save_format = save_format
         if update_created_time_property is not None:
             self.update_created_time_property = update_created_time_property
         if update_fields is not None:
@@ -377,28 +375,6 @@ class SvgSaveOptionsData(object):
         :type: str
         """
         self._iml_rendering_mode = iml_rendering_mode
-
-    @property
-    def save_format(self):
-        """Gets the save_format of this SvgSaveOptionsData.  # noqa: E501
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :return: The save_format of this SvgSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._save_format
-
-    @save_format.setter
-    def save_format(self, save_format):
-        """Sets the save_format of this SvgSaveOptionsData.
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :param save_format: The save_format of this SvgSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._save_format = save_format
 
     @property
     def update_created_time_property(self):
@@ -773,6 +749,18 @@ class SvgSaveOptionsData(object):
         :type: str
         """
         self._resources_folder_alias = resources_folder_alias
+
+    @property
+    def save_format(self):
+        """Gets the save_format of this SvgSaveOptionsData.  # noqa: E501
+
+        Gets or sets the format of save.  # noqa: E501
+
+        :return: The save_format of this SvgSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._save_format
+
 
     @property
     def show_page_border(self):

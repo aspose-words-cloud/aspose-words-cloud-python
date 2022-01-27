@@ -78,7 +78,7 @@ class SaveOptionsData(object):
         'zip_output': 'ZipOutput'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None):  # noqa: E501
         """SaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -114,8 +114,6 @@ class SaveOptionsData(object):
             self.flat_opc_xml_mapping_only = flat_opc_xml_mapping_only
         if iml_rendering_mode is not None:
             self.iml_rendering_mode = iml_rendering_mode
-        if save_format is not None:
-            self.save_format = save_format
         if update_created_time_property is not None:
             self.update_created_time_property = update_created_time_property
         if update_fields is not None:
@@ -324,16 +322,6 @@ class SaveOptionsData(object):
         """
         return self._save_format
 
-    @save_format.setter
-    def save_format(self, save_format):
-        """Sets the save_format of this SaveOptionsData.
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :param save_format: The save_format of this SaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._save_format = save_format
 
     @property
     def update_created_time_property(self):
