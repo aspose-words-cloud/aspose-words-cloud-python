@@ -142,5 +142,5 @@ class UpdateTableRowFormatOnlineRequest(BaseRequestObject):
     def deserialize_response(self, api_client, response):
         multipart = self.getparts(response)
         return UpdateTableRowFormatOnlineResponse(
-          self.deserialize(json.loads(multipart[0].text), TableRowFormatResponse, api_client),
-          self.deserialize_file(multipart[1].content, multipart[1].headers, api_client))
+          self.deserialize(json.loads(api_client.findMultipartByName(multipart, "Model").text), TableRowFormatResponse, api_client),
+          self.deserialize_files_collection(api_client.findMultipartByName(multipart, "Document").content, api_client.findMultipartByName(multipart, "Document").headers, api_client))

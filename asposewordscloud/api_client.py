@@ -36,6 +36,7 @@ from requests_toolbelt.multipart import decoder
 import os
 import re
 import tempfile
+import uuid
 
 # python 2 and python 3 compatibility library
 from urllib.parse import urlencode
@@ -83,12 +84,12 @@ class ApiClient(object):
 
         self.pool = None
         self.rest_client = rest.RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '22.2'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '22.1'}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'python sdk 22.2'
+        self.user_agent = 'python sdk 22.1'
 
     def __del__(self):
         if not self.pool is None:
@@ -254,6 +255,31 @@ class ApiClient(object):
         return {key: self.sanitize_for_serialization(val)
                 for key, val in six.iteritems(obj_dict)}
 
+    def getFilenameFromHeaders(self, headers):
+        disposition = headers[b'Content-Disposition']
+        if type(disposition) != str:
+            disposition = disposition.decode("utf-8") 
+
+        dispparts = disposition.split(";")
+        for dispart in dispparts:
+            subparts = dispart.split("=")
+            if len(subparts) == 2 and subparts[0].strip(" \"") == "filename":
+                return subparts[1].strip(" \"")
+        return ""
+
+    def findMultipartByName(self, multipart, name):
+        for part in multipart:
+            disposition = part.headers[b'Content-Disposition']
+            if type(disposition) != str:
+                disposition = disposition.decode("utf-8")
+
+            dispparts = disposition.split(";")
+            for dispart in dispparts:
+                subparts = dispart.split("=")
+                if len(subparts) == 2 and subparts[0].strip(" \"") == "name" and subparts[1].strip(" \"") == name:
+                    return part
+        return None
+
     def deserialize_multipart(self, without_intermediate_results, multipart, requests):
         if without_intermediate_results:
             if len(multipart.parts) != 1:
@@ -312,7 +338,7 @@ class ApiClient(object):
             return self.__deserialize_file(data, headers)
 
         if response_type == "multipart":
-            return decoder.MultipartDecoder(data, headers['Content-Type'], 'UTF-8')
+            return decoder.MultipartDecoder(data, headers[b'Content-Type'], 'UTF-8')
 
         # fetch data from response object
         if six.PY3:
@@ -613,12 +639,14 @@ class ApiClient(object):
         os.close(fd)
         os.remove(path)
 
-        if 'Content-Disposition' in headers.keys():
-            content_disposition = headers["Content-Disposition"]
-            filename = re.search(r'filename=[\'"]?([^\'"\s]+)[\'"]?',
-                                 content_disposition).group(1)
-            filename = filename.replace('/', '_')
-            path = os.path.join(os.path.dirname(path), filename)
+        filename = ""
+        if b'Content-Disposition' in headers.keys():
+            filename = api_client.getFilenameFromHeaders(headers).replace('/', '_')
+
+        if filename == "":
+            filename = str(uuid.uuid4())
+
+        path = os.path.join(os.path.dirname(path), filename)
 
         with open(path, "wb") as f:
             f.write(data)

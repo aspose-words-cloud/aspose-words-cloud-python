@@ -2390,7 +2390,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2415,7 +2415,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request DeleteCommentOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2549,7 +2549,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2574,7 +2574,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request DeleteCommentsOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2710,7 +2710,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2735,7 +2735,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request DeleteCustomXmlPartOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2869,7 +2869,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2894,7 +2894,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request DeleteCustomXmlPartsOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3030,7 +3030,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3055,7 +3055,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request DeleteDocumentPropertyOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3193,7 +3193,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3218,7 +3218,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request DeleteDrawingObjectOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3356,7 +3356,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3381,7 +3381,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request DeleteFieldOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3517,7 +3517,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3542,7 +3542,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request DeleteFieldsOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3826,7 +3826,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3851,7 +3851,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request DeleteFootnoteOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3989,7 +3989,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4014,7 +4014,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request DeleteFormFieldOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4152,7 +4152,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4177,7 +4177,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request DeleteHeaderFooterOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4315,7 +4315,7 @@ class WordsApi(object):
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
         :param headers_footers_types str : The list of HeaderFooter types.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4340,7 +4340,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request DeleteHeadersFootersOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4474,7 +4474,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4499,7 +4499,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request DeleteMacrosOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4637,7 +4637,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4662,7 +4662,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request DeleteOfficeMathObjectOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4963,7 +4963,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4988,7 +4988,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request DeleteParagraphOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5287,7 +5287,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5312,7 +5312,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request DeleteRunOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5448,7 +5448,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5473,7 +5473,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request DeleteSectionOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5692,7 +5692,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5717,7 +5717,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request DeleteTableCellOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5774,7 +5774,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5799,7 +5799,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request DeleteTableOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5937,7 +5937,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5962,7 +5962,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request DeleteTableRowOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -18552,7 +18552,7 @@ class WordsApi(object):
         :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
         :param revision_author str : Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
         :param revision_date_time str : The date and time to use for revisions.
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -18577,7 +18577,7 @@ class WordsApi(object):
 
         :param is_async bool
         :param request OptimizeDocumentOnlineRequest object with parameters
-        :return: file
+        :return: dict
                  If the method is called asynchronously,
                  returns the request thread.
         """

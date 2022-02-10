@@ -3,6 +3,7 @@ import os
 import re
 import datetime
 import tempfile
+import uuid
 
 import six
 from requests_toolbelt.multipart import decoder
@@ -77,6 +78,16 @@ class BaseRequestObject(object):
         else:
             return self.__deserialize_model(data, klass, api_client)
 
+    def deserialize_files_collection(self, data, headers, api_client):
+        result = {}
+        if b'Content-Type' in headers.keys() and headers[b'Content-Type'].decode("utf-8").startswith("multipart/mixed"):
+            parts = decoder.MultipartDecoder(data, headers[b'Content-Type'], 'UTF-8').parts
+            for part in parts:
+                result[api_client.getFilenameFromHeaders(part.headers)] = self.deserialize_file(part.content, part.headers, api_client)
+        else:
+            result[api_client.getFilenameFromHeaders(headers)] = self.deserialize_file(data, headers, api_client)
+
+        return result
 
     def deserialize_file(self, data, headers, api_client):
         """Deserializes body to file
@@ -91,12 +102,14 @@ class BaseRequestObject(object):
         os.close(fd)
         os.remove(path)
 
-        if 'Content-Disposition' in headers.keys():
-            content_disposition = headers["Content-Disposition"]
-            filename = re.search(r'filename=[\'"]?([^\'"\s]+)[\'"]?',
-                                 content_disposition).group(1)
-            filename = filename.replace('/', '_')
-            path = os.path.join(os.path.dirname(path), filename)
+        filename = ""
+        if b'Content-Disposition' in headers.keys():
+            filename = api_client.getFilenameFromHeaders(headers).replace('/', '_')
+
+        if filename == "":
+            filename = str(uuid.uuid4())
+
+        path = os.path.join(os.path.dirname(path), filename)
 
         with open(path, "wb") as f:
             f.write(data)

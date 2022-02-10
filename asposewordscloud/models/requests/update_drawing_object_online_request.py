@@ -146,5 +146,5 @@ class UpdateDrawingObjectOnlineRequest(BaseRequestObject):
     def deserialize_response(self, api_client, response):
         multipart = self.getparts(response)
         return UpdateDrawingObjectOnlineResponse(
-          self.deserialize(json.loads(multipart[0].text), DrawingObjectResponse, api_client),
-          self.deserialize_file(multipart[1].content, multipart[1].headers, api_client))
+          self.deserialize(json.loads(api_client.findMultipartByName(multipart, "Model").text), DrawingObjectResponse, api_client),
+          self.deserialize_files_collection(api_client.findMultipartByName(multipart, "Document").content, api_client.findMultipartByName(multipart, "Document").headers, api_client))
