@@ -81,7 +81,11 @@ class BaseRequestObject(object):
     def deserialize_files_collection(self, data, headers, api_client):
         result = {}
         if b'Content-Type' in headers.keys() and headers[b'Content-Type'].decode("utf-8").startswith("multipart/mixed"):
-            parts = decoder.MultipartDecoder(data, headers[b'Content-Type'], 'UTF-8').parts
+            parts = decoder.MultipartDecoder(data, headers[b'Content-Type'].decode("utf-8"), 'UTF-8').parts
+            for part in parts:
+                result[api_client.getFilenameFromHeaders(part.headers)] = self.deserialize_file(part.content, part.headers, api_client)
+        elif "Content-Type" in headers.keys() and headers["Content-Type"].startswith("multipart/mixed"):
+            parts = decoder.MultipartDecoder(data, headers["Content-Type"], 'UTF-8').parts
             for part in parts:
                 result[api_client.getFilenameFromHeaders(part.headers)] = self.deserialize_file(part.content, part.headers, api_client)
         else:
@@ -102,10 +106,7 @@ class BaseRequestObject(object):
         os.close(fd)
         os.remove(path)
 
-        filename = ""
-        if b'Content-Disposition' in headers.keys():
-            filename = api_client.getFilenameFromHeaders(headers).replace('/', '_')
-
+        filename = api_client.getFilenameFromHeaders(headers).replace('/', '_')
         if filename == "":
             filename = str(uuid.uuid4())
 

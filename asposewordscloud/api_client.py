@@ -256,9 +256,15 @@ class ApiClient(object):
                 for key, val in six.iteritems(obj_dict)}
 
     def getFilenameFromHeaders(self, headers):
-        disposition = headers[b'Content-Disposition']
-        if type(disposition) != str:
-            disposition = disposition.decode("utf-8") 
+        disposition = ""
+        if b'Content-Type' in headers:
+            disposition = headers[b'Content-Disposition']
+            if type(disposition) != str:
+                disposition = disposition.decode("utf-8") 
+        elif "Content-Type" in headers:
+            disposition = headers["Content-Disposition"]
+        else:
+            return ""
 
         dispparts = disposition.split(";")
         for dispart in dispparts:
@@ -269,9 +275,13 @@ class ApiClient(object):
 
     def findMultipartByName(self, multipart, name):
         for part in multipart:
-            disposition = part.headers[b'Content-Disposition']
-            if type(disposition) != str:
-                disposition = disposition.decode("utf-8")
+            disposition = ""
+            if b'Content-Type' in headers:
+                disposition = headers[b'Content-Disposition']
+                if type(disposition) != str:
+                    disposition = disposition.decode("utf-8") 
+            elif "Content-Type" in headers:
+                disposition = headers["Content-Disposition"]
 
             dispparts = disposition.split(";")
             for dispart in dispparts:
@@ -338,7 +348,10 @@ class ApiClient(object):
             return self.__deserialize_file(data, headers)
 
         if response_type == "multipart":
-            return decoder.MultipartDecoder(data, headers[b'Content-Type'], 'UTF-8')
+            if b'Content-Type' in headers:
+                return decoder.MultipartDecoder(data, headers[b'Content-Type'], 'UTF-8')
+            if "Content-Type" in headers:
+                return decoder.MultipartDecoder(data, headers["Content-Type"], 'UTF-8')
 
         # fetch data from response object
         if six.PY3:
@@ -639,10 +652,7 @@ class ApiClient(object):
         os.close(fd)
         os.remove(path)
 
-        filename = ""
-        if b'Content-Disposition' in headers.keys():
-            filename = api_client.getFilenameFromHeaders(headers).replace('/', '_')
-
+        filename = self.getFilenameFromHeaders(headers).replace('/', '_')
         if filename == "":
             filename = str(uuid.uuid4())
 
