@@ -51,7 +51,6 @@ class DocSaveOptionsData(object):
         'file_name': 'str',
         'flat_opc_xml_mapping_only': 'bool',
         'iml_rendering_mode': 'str',
-        'save_format': 'str',
         'update_created_time_property': 'bool',
         'update_fields': 'bool',
         'update_last_printed_property': 'bool',
@@ -60,6 +59,7 @@ class DocSaveOptionsData(object):
         'zip_output': 'bool',
         'always_compress_metafiles': 'bool',
         'password': 'str',
+        'save_format': 'str',
         'save_picture_bullet': 'bool',
         'save_routing_slip': 'bool'
     }
@@ -73,7 +73,6 @@ class DocSaveOptionsData(object):
         'file_name': 'FileName',
         'flat_opc_xml_mapping_only': 'FlatOpcXmlMappingOnly',
         'iml_rendering_mode': 'ImlRenderingMode',
-        'save_format': 'SaveFormat',
         'update_created_time_property': 'UpdateCreatedTimeProperty',
         'update_fields': 'UpdateFields',
         'update_last_printed_property': 'UpdateLastPrintedProperty',
@@ -82,11 +81,12 @@ class DocSaveOptionsData(object):
         'zip_output': 'ZipOutput',
         'always_compress_metafiles': 'AlwaysCompressMetafiles',
         'password': 'Password',
+        'save_format': 'SaveFormat',
         'save_picture_bullet': 'SavePictureBullet',
         'save_routing_slip': 'SaveRoutingSlip'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, always_compress_metafiles=None, password=None, save_picture_bullet=None, save_routing_slip=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, always_compress_metafiles=None, password=None, save_picture_bullet=None, save_routing_slip=None):  # noqa: E501
         """DocSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -97,7 +97,6 @@ class DocSaveOptionsData(object):
         self._file_name = None
         self._flat_opc_xml_mapping_only = None
         self._iml_rendering_mode = None
-        self._save_format = None
         self._update_created_time_property = None
         self._update_fields = None
         self._update_last_printed_property = None
@@ -106,6 +105,7 @@ class DocSaveOptionsData(object):
         self._zip_output = None
         self._always_compress_metafiles = None
         self._password = None
+        self._save_format = "doc"
         self._save_picture_bullet = None
         self._save_routing_slip = None
         self.discriminator = None
@@ -126,8 +126,6 @@ class DocSaveOptionsData(object):
             self.flat_opc_xml_mapping_only = flat_opc_xml_mapping_only
         if iml_rendering_mode is not None:
             self.iml_rendering_mode = iml_rendering_mode
-        if save_format is not None:
-            self.save_format = save_format
         if update_created_time_property is not None:
             self.update_created_time_property = update_created_time_property
         if update_fields is not None:
@@ -334,28 +332,6 @@ class DocSaveOptionsData(object):
         self._iml_rendering_mode = iml_rendering_mode
 
     @property
-    def save_format(self):
-        """Gets the save_format of this DocSaveOptionsData.  # noqa: E501
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :return: The save_format of this DocSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._save_format
-
-    @save_format.setter
-    def save_format(self, save_format):
-        """Sets the save_format of this DocSaveOptionsData.
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :param save_format: The save_format of this DocSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._save_format = save_format
-
-    @property
     def update_created_time_property(self):
         """Gets the update_created_time_property of this DocSaveOptionsData.  # noqa: E501
 
@@ -530,6 +506,18 @@ class DocSaveOptionsData(object):
         :type: str
         """
         self._password = password
+
+    @property
+    def save_format(self):
+        """Gets the save_format of this DocSaveOptionsData.  # noqa: E501
+
+        Gets the format of save.  # noqa: E501
+
+        :return: The save_format of this DocSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._save_format
+
 
     @property
     def save_picture_bullet(self):

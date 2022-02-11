@@ -51,7 +51,6 @@ class TextSaveOptionsData(object):
         'file_name': 'str',
         'flat_opc_xml_mapping_only': 'bool',
         'iml_rendering_mode': 'str',
-        'save_format': 'str',
         'update_created_time_property': 'bool',
         'update_fields': 'bool',
         'update_last_printed_property': 'bool',
@@ -65,6 +64,7 @@ class TextSaveOptionsData(object):
         'add_bidi_marks': 'bool',
         'max_characters_per_line': 'int',
         'preserve_table_layout': 'bool',
+        'save_format': 'str',
         'simplify_list_labels': 'bool'
     }
 
@@ -77,7 +77,6 @@ class TextSaveOptionsData(object):
         'file_name': 'FileName',
         'flat_opc_xml_mapping_only': 'FlatOpcXmlMappingOnly',
         'iml_rendering_mode': 'ImlRenderingMode',
-        'save_format': 'SaveFormat',
         'update_created_time_property': 'UpdateCreatedTimeProperty',
         'update_fields': 'UpdateFields',
         'update_last_printed_property': 'UpdateLastPrintedProperty',
@@ -91,10 +90,11 @@ class TextSaveOptionsData(object):
         'add_bidi_marks': 'AddBidiMarks',
         'max_characters_per_line': 'MaxCharactersPerLine',
         'preserve_table_layout': 'PreserveTableLayout',
+        'save_format': 'SaveFormat',
         'simplify_list_labels': 'SimplifyListLabels'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, encoding=None, export_headers_footers_mode=None, force_page_breaks=None, paragraph_break=None, add_bidi_marks=None, max_characters_per_line=None, preserve_table_layout=None, simplify_list_labels=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, encoding=None, export_headers_footers_mode=None, force_page_breaks=None, paragraph_break=None, add_bidi_marks=None, max_characters_per_line=None, preserve_table_layout=None, simplify_list_labels=None):  # noqa: E501
         """TextSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -105,7 +105,6 @@ class TextSaveOptionsData(object):
         self._file_name = None
         self._flat_opc_xml_mapping_only = None
         self._iml_rendering_mode = None
-        self._save_format = None
         self._update_created_time_property = None
         self._update_fields = None
         self._update_last_printed_property = None
@@ -119,6 +118,7 @@ class TextSaveOptionsData(object):
         self._add_bidi_marks = None
         self._max_characters_per_line = None
         self._preserve_table_layout = None
+        self._save_format = "txt"
         self._simplify_list_labels = None
         self.discriminator = None
 
@@ -138,8 +138,6 @@ class TextSaveOptionsData(object):
             self.flat_opc_xml_mapping_only = flat_opc_xml_mapping_only
         if iml_rendering_mode is not None:
             self.iml_rendering_mode = iml_rendering_mode
-        if save_format is not None:
-            self.save_format = save_format
         if update_created_time_property is not None:
             self.update_created_time_property = update_created_time_property
         if update_fields is not None:
@@ -352,28 +350,6 @@ class TextSaveOptionsData(object):
         :type: str
         """
         self._iml_rendering_mode = iml_rendering_mode
-
-    @property
-    def save_format(self):
-        """Gets the save_format of this TextSaveOptionsData.  # noqa: E501
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :return: The save_format of this TextSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._save_format
-
-    @save_format.setter
-    def save_format(self, save_format):
-        """Sets the save_format of this TextSaveOptionsData.
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :param save_format: The save_format of this TextSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._save_format = save_format
 
     @property
     def update_created_time_property(self):
@@ -668,6 +644,18 @@ class TextSaveOptionsData(object):
         :type: bool
         """
         self._preserve_table_layout = preserve_table_layout
+
+    @property
+    def save_format(self):
+        """Gets the save_format of this TextSaveOptionsData.  # noqa: E501
+
+        Gets the format of save.  # noqa: E501
+
+        :return: The save_format of this TextSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._save_format
+
 
     @property
     def simplify_list_labels(self):

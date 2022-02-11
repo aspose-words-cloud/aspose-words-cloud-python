@@ -51,7 +51,6 @@ class PclSaveOptionsData(object):
         'file_name': 'str',
         'flat_opc_xml_mapping_only': 'bool',
         'iml_rendering_mode': 'str',
-        'save_format': 'str',
         'update_created_time_property': 'bool',
         'update_fields': 'bool',
         'update_last_printed_property': 'bool',
@@ -66,7 +65,8 @@ class PclSaveOptionsData(object):
         'page_count': 'int',
         'page_index': 'int',
         'falllback_font_name': 'str',
-        'rasterize_transformed_elements': 'bool'
+        'rasterize_transformed_elements': 'bool',
+        'save_format': 'str'
     }
 
     attribute_map = {
@@ -78,7 +78,6 @@ class PclSaveOptionsData(object):
         'file_name': 'FileName',
         'flat_opc_xml_mapping_only': 'FlatOpcXmlMappingOnly',
         'iml_rendering_mode': 'ImlRenderingMode',
-        'save_format': 'SaveFormat',
         'update_created_time_property': 'UpdateCreatedTimeProperty',
         'update_fields': 'UpdateFields',
         'update_last_printed_property': 'UpdateLastPrintedProperty',
@@ -93,10 +92,11 @@ class PclSaveOptionsData(object):
         'page_count': 'PageCount',
         'page_index': 'PageIndex',
         'falllback_font_name': 'FalllbackFontName',
-        'rasterize_transformed_elements': 'RasterizeTransformedElements'
+        'rasterize_transformed_elements': 'RasterizeTransformedElements',
+        'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, falllback_font_name=None, rasterize_transformed_elements=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, falllback_font_name=None, rasterize_transformed_elements=None):  # noqa: E501
         """PclSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -107,7 +107,6 @@ class PclSaveOptionsData(object):
         self._file_name = None
         self._flat_opc_xml_mapping_only = None
         self._iml_rendering_mode = None
-        self._save_format = None
         self._update_created_time_property = None
         self._update_fields = None
         self._update_last_printed_property = None
@@ -123,6 +122,7 @@ class PclSaveOptionsData(object):
         self._page_index = None
         self._falllback_font_name = None
         self._rasterize_transformed_elements = None
+        self._save_format = "pcl"
         self.discriminator = None
 
         if allow_embedding_post_script_fonts is not None:
@@ -141,8 +141,6 @@ class PclSaveOptionsData(object):
             self.flat_opc_xml_mapping_only = flat_opc_xml_mapping_only
         if iml_rendering_mode is not None:
             self.iml_rendering_mode = iml_rendering_mode
-        if save_format is not None:
-            self.save_format = save_format
         if update_created_time_property is not None:
             self.update_created_time_property = update_created_time_property
         if update_fields is not None:
@@ -357,28 +355,6 @@ class PclSaveOptionsData(object):
         :type: str
         """
         self._iml_rendering_mode = iml_rendering_mode
-
-    @property
-    def save_format(self):
-        """Gets the save_format of this PclSaveOptionsData.  # noqa: E501
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :return: The save_format of this PclSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._save_format
-
-    @save_format.setter
-    def save_format(self, save_format):
-        """Sets the save_format of this PclSaveOptionsData.
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :param save_format: The save_format of this PclSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._save_format = save_format
 
     @property
     def update_created_time_property(self):
@@ -709,6 +685,18 @@ class PclSaveOptionsData(object):
         :type: bool
         """
         self._rasterize_transformed_elements = rasterize_transformed_elements
+
+    @property
+    def save_format(self):
+        """Gets the save_format of this PclSaveOptionsData.  # noqa: E501
+
+        Gets the format of save.  # noqa: E501
+
+        :return: The save_format of this PclSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._save_format
+
 
 
     def to_dict(self):

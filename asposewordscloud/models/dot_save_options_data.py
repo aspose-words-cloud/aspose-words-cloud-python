@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="xaml_flow_save_options_data.py">
+# <copyright company="Aspose" file="dot_save_options_data.py">
 #   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -31,8 +31,8 @@ import six
 import json
 
 
-class XamlFlowSaveOptionsData(object):
-    """Container class for xaml flow save options.
+class DotSaveOptionsData(object):
+    """Container class for dot save options.
     """
 
     """
@@ -57,8 +57,10 @@ class XamlFlowSaveOptionsData(object):
         'update_last_saved_time_property': 'bool',
         'update_sdt_content': 'bool',
         'zip_output': 'bool',
-        'images_folder': 'str',
-        'images_folder_alias': 'str',
+        'always_compress_metafiles': 'bool',
+        'password': 'str',
+        'save_picture_bullet': 'bool',
+        'save_routing_slip': 'bool',
         'save_format': 'str'
     }
 
@@ -77,13 +79,15 @@ class XamlFlowSaveOptionsData(object):
         'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
         'update_sdt_content': 'UpdateSdtContent',
         'zip_output': 'ZipOutput',
-        'images_folder': 'ImagesFolder',
-        'images_folder_alias': 'ImagesFolderAlias',
+        'always_compress_metafiles': 'AlwaysCompressMetafiles',
+        'password': 'Password',
+        'save_picture_bullet': 'SavePictureBullet',
+        'save_routing_slip': 'SaveRoutingSlip',
         'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, images_folder=None, images_folder_alias=None):  # noqa: E501
-        """XamlFlowSaveOptionsData - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, always_compress_metafiles=None, password=None, save_picture_bullet=None, save_routing_slip=None):  # noqa: E501
+        """DotSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
         self._custom_time_zone_info_data = None
@@ -99,9 +103,11 @@ class XamlFlowSaveOptionsData(object):
         self._update_last_saved_time_property = None
         self._update_sdt_content = None
         self._zip_output = None
-        self._images_folder = None
-        self._images_folder_alias = None
-        self._save_format = "xamlflow"
+        self._always_compress_metafiles = None
+        self._password = None
+        self._save_picture_bullet = None
+        self._save_routing_slip = None
+        self._save_format = "dot"
         self.discriminator = None
 
         if allow_embedding_post_script_fonts is not None:
@@ -132,73 +138,77 @@ class XamlFlowSaveOptionsData(object):
             self.update_sdt_content = update_sdt_content
         if zip_output is not None:
             self.zip_output = zip_output
-        if images_folder is not None:
-            self.images_folder = images_folder
-        if images_folder_alias is not None:
-            self.images_folder_alias = images_folder_alias
+        if always_compress_metafiles is not None:
+            self.always_compress_metafiles = always_compress_metafiles
+        if password is not None:
+            self.password = password
+        if save_picture_bullet is not None:
+            self.save_picture_bullet = save_picture_bullet
+        if save_routing_slip is not None:
+            self.save_routing_slip = save_routing_slip
 
     @property
     def allow_embedding_post_script_fonts(self):
-        """Gets the allow_embedding_post_script_fonts of this XamlFlowSaveOptionsData.  # noqa: E501
+        """Gets the allow_embedding_post_script_fonts of this DotSaveOptionsData.  # noqa: E501
 
         Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..  # noqa: E501
 
-        :return: The allow_embedding_post_script_fonts of this XamlFlowSaveOptionsData.  # noqa: E501
+        :return: The allow_embedding_post_script_fonts of this DotSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._allow_embedding_post_script_fonts
 
     @allow_embedding_post_script_fonts.setter
     def allow_embedding_post_script_fonts(self, allow_embedding_post_script_fonts):
-        """Sets the allow_embedding_post_script_fonts of this XamlFlowSaveOptionsData.
+        """Sets the allow_embedding_post_script_fonts of this DotSaveOptionsData.
 
         Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..  # noqa: E501
 
-        :param allow_embedding_post_script_fonts: The allow_embedding_post_script_fonts of this XamlFlowSaveOptionsData.  # noqa: E501
+        :param allow_embedding_post_script_fonts: The allow_embedding_post_script_fonts of this DotSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._allow_embedding_post_script_fonts = allow_embedding_post_script_fonts
 
     @property
     def custom_time_zone_info_data(self):
-        """Gets the custom_time_zone_info_data of this XamlFlowSaveOptionsData.  # noqa: E501
+        """Gets the custom_time_zone_info_data of this DotSaveOptionsData.  # noqa: E501
 
         Gets or sets CustomTimeZoneInfo.  # noqa: E501
 
-        :return: The custom_time_zone_info_data of this XamlFlowSaveOptionsData.  # noqa: E501
+        :return: The custom_time_zone_info_data of this DotSaveOptionsData.  # noqa: E501
         :rtype: TimeZoneInfoData
         """
         return self._custom_time_zone_info_data
 
     @custom_time_zone_info_data.setter
     def custom_time_zone_info_data(self, custom_time_zone_info_data):
-        """Sets the custom_time_zone_info_data of this XamlFlowSaveOptionsData.
+        """Sets the custom_time_zone_info_data of this DotSaveOptionsData.
 
         Gets or sets CustomTimeZoneInfo.  # noqa: E501
 
-        :param custom_time_zone_info_data: The custom_time_zone_info_data of this XamlFlowSaveOptionsData.  # noqa: E501
+        :param custom_time_zone_info_data: The custom_time_zone_info_data of this DotSaveOptionsData.  # noqa: E501
         :type: TimeZoneInfoData
         """
         self._custom_time_zone_info_data = custom_time_zone_info_data
 
     @property
     def dml3_d_effects_rendering_mode(self):
-        """Gets the dml3_d_effects_rendering_mode of this XamlFlowSaveOptionsData.  # noqa: E501
+        """Gets the dml3_d_effects_rendering_mode of this DotSaveOptionsData.  # noqa: E501
 
         Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
 
-        :return: The dml3_d_effects_rendering_mode of this XamlFlowSaveOptionsData.  # noqa: E501
+        :return: The dml3_d_effects_rendering_mode of this DotSaveOptionsData.  # noqa: E501
         :rtype: str
         """
         return self._dml3_d_effects_rendering_mode
 
     @dml3_d_effects_rendering_mode.setter
     def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
-        """Sets the dml3_d_effects_rendering_mode of this XamlFlowSaveOptionsData.
+        """Sets the dml3_d_effects_rendering_mode of this DotSaveOptionsData.
 
         Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
 
-        :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this XamlFlowSaveOptionsData.  # noqa: E501
+        :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this DotSaveOptionsData.  # noqa: E501
         :type: str
         """
         allowed_values = ["Basic", "Advanced"]  # noqa: E501
@@ -213,297 +223,341 @@ class XamlFlowSaveOptionsData(object):
 
     @property
     def dml_effects_rendering_mode(self):
-        """Gets the dml_effects_rendering_mode of this XamlFlowSaveOptionsData.  # noqa: E501
+        """Gets the dml_effects_rendering_mode of this DotSaveOptionsData.  # noqa: E501
 
         Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
-        :return: The dml_effects_rendering_mode of this XamlFlowSaveOptionsData.  # noqa: E501
+        :return: The dml_effects_rendering_mode of this DotSaveOptionsData.  # noqa: E501
         :rtype: str
         """
         return self._dml_effects_rendering_mode
 
     @dml_effects_rendering_mode.setter
     def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
-        """Sets the dml_effects_rendering_mode of this XamlFlowSaveOptionsData.
+        """Sets the dml_effects_rendering_mode of this DotSaveOptionsData.
 
         Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
-        :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this XamlFlowSaveOptionsData.  # noqa: E501
+        :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this DotSaveOptionsData.  # noqa: E501
         :type: str
         """
         self._dml_effects_rendering_mode = dml_effects_rendering_mode
 
     @property
     def dml_rendering_mode(self):
-        """Gets the dml_rendering_mode of this XamlFlowSaveOptionsData.  # noqa: E501
+        """Gets the dml_rendering_mode of this DotSaveOptionsData.  # noqa: E501
 
         Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
 
-        :return: The dml_rendering_mode of this XamlFlowSaveOptionsData.  # noqa: E501
+        :return: The dml_rendering_mode of this DotSaveOptionsData.  # noqa: E501
         :rtype: str
         """
         return self._dml_rendering_mode
 
     @dml_rendering_mode.setter
     def dml_rendering_mode(self, dml_rendering_mode):
-        """Sets the dml_rendering_mode of this XamlFlowSaveOptionsData.
+        """Sets the dml_rendering_mode of this DotSaveOptionsData.
 
         Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
 
-        :param dml_rendering_mode: The dml_rendering_mode of this XamlFlowSaveOptionsData.  # noqa: E501
+        :param dml_rendering_mode: The dml_rendering_mode of this DotSaveOptionsData.  # noqa: E501
         :type: str
         """
         self._dml_rendering_mode = dml_rendering_mode
 
     @property
     def file_name(self):
-        """Gets the file_name of this XamlFlowSaveOptionsData.  # noqa: E501
+        """Gets the file_name of this DotSaveOptionsData.  # noqa: E501
 
         Gets or sets the name of destination file.  # noqa: E501
 
-        :return: The file_name of this XamlFlowSaveOptionsData.  # noqa: E501
+        :return: The file_name of this DotSaveOptionsData.  # noqa: E501
         :rtype: str
         """
         return self._file_name
 
     @file_name.setter
     def file_name(self, file_name):
-        """Sets the file_name of this XamlFlowSaveOptionsData.
+        """Sets the file_name of this DotSaveOptionsData.
 
         Gets or sets the name of destination file.  # noqa: E501
 
-        :param file_name: The file_name of this XamlFlowSaveOptionsData.  # noqa: E501
+        :param file_name: The file_name of this DotSaveOptionsData.  # noqa: E501
         :type: str
         """
         self._file_name = file_name
 
     @property
     def flat_opc_xml_mapping_only(self):
-        """Gets the flat_opc_xml_mapping_only of this XamlFlowSaveOptionsData.  # noqa: E501
+        """Gets the flat_opc_xml_mapping_only of this DotSaveOptionsData.  # noqa: E501
 
         Gets or sets value determining which document formats are allowed to be mapped by Aspose.Words.Markup.StructuredDocumentTag.XmlMapping. By default only Aspose.Words.LoadFormat.FlatOpc document format is allowed to be mapped.  # noqa: E501
 
-        :return: The flat_opc_xml_mapping_only of this XamlFlowSaveOptionsData.  # noqa: E501
+        :return: The flat_opc_xml_mapping_only of this DotSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._flat_opc_xml_mapping_only
 
     @flat_opc_xml_mapping_only.setter
     def flat_opc_xml_mapping_only(self, flat_opc_xml_mapping_only):
-        """Sets the flat_opc_xml_mapping_only of this XamlFlowSaveOptionsData.
+        """Sets the flat_opc_xml_mapping_only of this DotSaveOptionsData.
 
         Gets or sets value determining which document formats are allowed to be mapped by Aspose.Words.Markup.StructuredDocumentTag.XmlMapping. By default only Aspose.Words.LoadFormat.FlatOpc document format is allowed to be mapped.  # noqa: E501
 
-        :param flat_opc_xml_mapping_only: The flat_opc_xml_mapping_only of this XamlFlowSaveOptionsData.  # noqa: E501
+        :param flat_opc_xml_mapping_only: The flat_opc_xml_mapping_only of this DotSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._flat_opc_xml_mapping_only = flat_opc_xml_mapping_only
 
     @property
     def iml_rendering_mode(self):
-        """Gets the iml_rendering_mode of this XamlFlowSaveOptionsData.  # noqa: E501
+        """Gets the iml_rendering_mode of this DotSaveOptionsData.  # noqa: E501
 
         Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
 
-        :return: The iml_rendering_mode of this XamlFlowSaveOptionsData.  # noqa: E501
+        :return: The iml_rendering_mode of this DotSaveOptionsData.  # noqa: E501
         :rtype: str
         """
         return self._iml_rendering_mode
 
     @iml_rendering_mode.setter
     def iml_rendering_mode(self, iml_rendering_mode):
-        """Sets the iml_rendering_mode of this XamlFlowSaveOptionsData.
+        """Sets the iml_rendering_mode of this DotSaveOptionsData.
 
         Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
 
-        :param iml_rendering_mode: The iml_rendering_mode of this XamlFlowSaveOptionsData.  # noqa: E501
+        :param iml_rendering_mode: The iml_rendering_mode of this DotSaveOptionsData.  # noqa: E501
         :type: str
         """
         self._iml_rendering_mode = iml_rendering_mode
 
     @property
     def update_created_time_property(self):
-        """Gets the update_created_time_property of this XamlFlowSaveOptionsData.  # noqa: E501
+        """Gets the update_created_time_property of this DotSaveOptionsData.  # noqa: E501
 
         Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
 
-        :return: The update_created_time_property of this XamlFlowSaveOptionsData.  # noqa: E501
+        :return: The update_created_time_property of this DotSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._update_created_time_property
 
     @update_created_time_property.setter
     def update_created_time_property(self, update_created_time_property):
-        """Sets the update_created_time_property of this XamlFlowSaveOptionsData.
+        """Sets the update_created_time_property of this DotSaveOptionsData.
 
         Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
 
-        :param update_created_time_property: The update_created_time_property of this XamlFlowSaveOptionsData.  # noqa: E501
+        :param update_created_time_property: The update_created_time_property of this DotSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._update_created_time_property = update_created_time_property
 
     @property
     def update_fields(self):
-        """Gets the update_fields of this XamlFlowSaveOptionsData.  # noqa: E501
+        """Gets the update_fields of this DotSaveOptionsData.  # noqa: E501
 
         Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.  # noqa: E501
 
-        :return: The update_fields of this XamlFlowSaveOptionsData.  # noqa: E501
+        :return: The update_fields of this DotSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._update_fields
 
     @update_fields.setter
     def update_fields(self, update_fields):
-        """Sets the update_fields of this XamlFlowSaveOptionsData.
+        """Sets the update_fields of this DotSaveOptionsData.
 
         Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.  # noqa: E501
 
-        :param update_fields: The update_fields of this XamlFlowSaveOptionsData.  # noqa: E501
+        :param update_fields: The update_fields of this DotSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._update_fields = update_fields
 
     @property
     def update_last_printed_property(self):
-        """Gets the update_last_printed_property of this XamlFlowSaveOptionsData.  # noqa: E501
+        """Gets the update_last_printed_property of this DotSaveOptionsData.  # noqa: E501
 
         Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
 
-        :return: The update_last_printed_property of this XamlFlowSaveOptionsData.  # noqa: E501
+        :return: The update_last_printed_property of this DotSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._update_last_printed_property
 
     @update_last_printed_property.setter
     def update_last_printed_property(self, update_last_printed_property):
-        """Sets the update_last_printed_property of this XamlFlowSaveOptionsData.
+        """Sets the update_last_printed_property of this DotSaveOptionsData.
 
         Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
 
-        :param update_last_printed_property: The update_last_printed_property of this XamlFlowSaveOptionsData.  # noqa: E501
+        :param update_last_printed_property: The update_last_printed_property of this DotSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._update_last_printed_property = update_last_printed_property
 
     @property
     def update_last_saved_time_property(self):
-        """Gets the update_last_saved_time_property of this XamlFlowSaveOptionsData.  # noqa: E501
+        """Gets the update_last_saved_time_property of this DotSaveOptionsData.  # noqa: E501
 
         Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
 
-        :return: The update_last_saved_time_property of this XamlFlowSaveOptionsData.  # noqa: E501
+        :return: The update_last_saved_time_property of this DotSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._update_last_saved_time_property
 
     @update_last_saved_time_property.setter
     def update_last_saved_time_property(self, update_last_saved_time_property):
-        """Sets the update_last_saved_time_property of this XamlFlowSaveOptionsData.
+        """Sets the update_last_saved_time_property of this DotSaveOptionsData.
 
         Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
 
-        :param update_last_saved_time_property: The update_last_saved_time_property of this XamlFlowSaveOptionsData.  # noqa: E501
+        :param update_last_saved_time_property: The update_last_saved_time_property of this DotSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._update_last_saved_time_property = update_last_saved_time_property
 
     @property
     def update_sdt_content(self):
-        """Gets the update_sdt_content of this XamlFlowSaveOptionsData.  # noqa: E501
+        """Gets the update_sdt_content of this DotSaveOptionsData.  # noqa: E501
 
         Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
-        :return: The update_sdt_content of this XamlFlowSaveOptionsData.  # noqa: E501
+        :return: The update_sdt_content of this DotSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._update_sdt_content
 
     @update_sdt_content.setter
     def update_sdt_content(self, update_sdt_content):
-        """Sets the update_sdt_content of this XamlFlowSaveOptionsData.
+        """Sets the update_sdt_content of this DotSaveOptionsData.
 
         Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
-        :param update_sdt_content: The update_sdt_content of this XamlFlowSaveOptionsData.  # noqa: E501
+        :param update_sdt_content: The update_sdt_content of this DotSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._update_sdt_content = update_sdt_content
 
     @property
     def zip_output(self):
-        """Gets the zip_output of this XamlFlowSaveOptionsData.  # noqa: E501
+        """Gets the zip_output of this DotSaveOptionsData.  # noqa: E501
 
         Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
 
-        :return: The zip_output of this XamlFlowSaveOptionsData.  # noqa: E501
+        :return: The zip_output of this DotSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._zip_output
 
     @zip_output.setter
     def zip_output(self, zip_output):
-        """Sets the zip_output of this XamlFlowSaveOptionsData.
+        """Sets the zip_output of this DotSaveOptionsData.
 
         Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
 
-        :param zip_output: The zip_output of this XamlFlowSaveOptionsData.  # noqa: E501
+        :param zip_output: The zip_output of this DotSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._zip_output = zip_output
 
     @property
-    def images_folder(self):
-        """Gets the images_folder of this XamlFlowSaveOptionsData.  # noqa: E501
+    def always_compress_metafiles(self):
+        """Gets the always_compress_metafiles of this DotSaveOptionsData.  # noqa: E501
 
-        Gets or sets the physical folder where images are saved when exporting.  # noqa: E501
+        Gets or sets a value indicating when False, that small metafiles are not compressed for performance reason. The default value is true, all metafiles are compressed regardless of its size.  # noqa: E501
 
-        :return: The images_folder of this XamlFlowSaveOptionsData.  # noqa: E501
-        :rtype: str
+        :return: The always_compress_metafiles of this DotSaveOptionsData.  # noqa: E501
+        :rtype: bool
         """
-        return self._images_folder
+        return self._always_compress_metafiles
 
-    @images_folder.setter
-    def images_folder(self, images_folder):
-        """Sets the images_folder of this XamlFlowSaveOptionsData.
+    @always_compress_metafiles.setter
+    def always_compress_metafiles(self, always_compress_metafiles):
+        """Sets the always_compress_metafiles of this DotSaveOptionsData.
 
-        Gets or sets the physical folder where images are saved when exporting.  # noqa: E501
+        Gets or sets a value indicating when False, that small metafiles are not compressed for performance reason. The default value is true, all metafiles are compressed regardless of its size.  # noqa: E501
 
-        :param images_folder: The images_folder of this XamlFlowSaveOptionsData.  # noqa: E501
-        :type: str
+        :param always_compress_metafiles: The always_compress_metafiles of this DotSaveOptionsData.  # noqa: E501
+        :type: bool
         """
-        self._images_folder = images_folder
+        self._always_compress_metafiles = always_compress_metafiles
 
     @property
-    def images_folder_alias(self):
-        """Gets the images_folder_alias of this XamlFlowSaveOptionsData.  # noqa: E501
+    def password(self):
+        """Gets the password of this DotSaveOptionsData.  # noqa: E501
 
-        Gets or sets the name of the folder used to construct image URIs.  # noqa: E501
+        Gets or sets the password.  # noqa: E501
 
-        :return: The images_folder_alias of this XamlFlowSaveOptionsData.  # noqa: E501
+        :return: The password of this DotSaveOptionsData.  # noqa: E501
         :rtype: str
         """
-        return self._images_folder_alias
+        return self._password
 
-    @images_folder_alias.setter
-    def images_folder_alias(self, images_folder_alias):
-        """Sets the images_folder_alias of this XamlFlowSaveOptionsData.
+    @password.setter
+    def password(self, password):
+        """Sets the password of this DotSaveOptionsData.
 
-        Gets or sets the name of the folder used to construct image URIs.  # noqa: E501
+        Gets or sets the password.  # noqa: E501
 
-        :param images_folder_alias: The images_folder_alias of this XamlFlowSaveOptionsData.  # noqa: E501
+        :param password: The password of this DotSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._images_folder_alias = images_folder_alias
+        self._password = password
+
+    @property
+    def save_picture_bullet(self):
+        """Gets the save_picture_bullet of this DotSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value indicating when False, that PictureBullet data is not saved to the output document. The default value is true.  # noqa: E501
+
+        :return: The save_picture_bullet of this DotSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._save_picture_bullet
+
+    @save_picture_bullet.setter
+    def save_picture_bullet(self, save_picture_bullet):
+        """Sets the save_picture_bullet of this DotSaveOptionsData.
+
+        Gets or sets a value indicating when False, that PictureBullet data is not saved to the output document. The default value is true.  # noqa: E501
+
+        :param save_picture_bullet: The save_picture_bullet of this DotSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._save_picture_bullet = save_picture_bullet
+
+    @property
+    def save_routing_slip(self):
+        """Gets the save_routing_slip of this DotSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value indicating whether to save RoutingSlip data to output document.  # noqa: E501
+
+        :return: The save_routing_slip of this DotSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._save_routing_slip
+
+    @save_routing_slip.setter
+    def save_routing_slip(self, save_routing_slip):
+        """Sets the save_routing_slip of this DotSaveOptionsData.
+
+        Gets or sets a value indicating whether to save RoutingSlip data to output document.  # noqa: E501
+
+        :param save_routing_slip: The save_routing_slip of this DotSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._save_routing_slip = save_routing_slip
 
     @property
     def save_format(self):
-        """Gets the save_format of this XamlFlowSaveOptionsData.  # noqa: E501
+        """Gets the save_format of this DotSaveOptionsData.  # noqa: E501
 
         Gets the format of save.  # noqa: E501
 
-        :return: The save_format of this XamlFlowSaveOptionsData.  # noqa: E501
+        :return: The save_format of this DotSaveOptionsData.  # noqa: E501
         :rtype: str
         """
         return self._save_format
@@ -574,7 +628,7 @@ class XamlFlowSaveOptionsData(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, XamlFlowSaveOptionsData):
+        if not isinstance(other, DotSaveOptionsData):
             return False
 
         return self.__dict__ == other.__dict__

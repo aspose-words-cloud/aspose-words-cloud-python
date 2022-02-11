@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="image_save_options_data.py">
+# <copyright company="Aspose" file="open_xps_save_options_data.py">
 #   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -31,8 +31,8 @@ import six
 import json
 
 
-class ImageSaveOptionsData(object):
-    """Container abstract class for image save options.
+class OpenXpsSaveOptionsData(object):
+    """Container class for xps save options.
     """
 
     """
@@ -51,7 +51,6 @@ class ImageSaveOptionsData(object):
         'file_name': 'str',
         'flat_opc_xml_mapping_only': 'bool',
         'iml_rendering_mode': 'str',
-        'save_format': 'str',
         'update_created_time_property': 'bool',
         'update_fields': 'bool',
         'update_last_printed_property': 'bool',
@@ -65,18 +64,11 @@ class ImageSaveOptionsData(object):
         'optimize_output': 'bool',
         'page_count': 'int',
         'page_index': 'int',
-        'horizontal_resolution': 'float',
-        'image_brightness': 'float',
-        'image_color_mode': 'str',
-        'image_contrast': 'float',
-        'paper_color': 'str',
-        'pixel_format': 'str',
-        'resolution': 'float',
-        'scale': 'float',
-        'use_anti_aliasing': 'bool',
-        'use_gdi_emf_renderer': 'bool',
-        'use_high_quality_rendering': 'bool',
-        'vertical_resolution': 'float'
+        'bookmarks_outline_level': 'int',
+        'headings_outline_levels': 'int',
+        'outline_options': 'OutlineOptionsData',
+        'use_book_fold_printing_settings': 'bool',
+        'save_format': 'str'
     }
 
     attribute_map = {
@@ -88,7 +80,6 @@ class ImageSaveOptionsData(object):
         'file_name': 'FileName',
         'flat_opc_xml_mapping_only': 'FlatOpcXmlMappingOnly',
         'iml_rendering_mode': 'ImlRenderingMode',
-        'save_format': 'SaveFormat',
         'update_created_time_property': 'UpdateCreatedTimeProperty',
         'update_fields': 'UpdateFields',
         'update_last_printed_property': 'UpdateLastPrintedProperty',
@@ -102,22 +93,15 @@ class ImageSaveOptionsData(object):
         'optimize_output': 'OptimizeOutput',
         'page_count': 'PageCount',
         'page_index': 'PageIndex',
-        'horizontal_resolution': 'HorizontalResolution',
-        'image_brightness': 'ImageBrightness',
-        'image_color_mode': 'ImageColorMode',
-        'image_contrast': 'ImageContrast',
-        'paper_color': 'PaperColor',
-        'pixel_format': 'PixelFormat',
-        'resolution': 'Resolution',
-        'scale': 'Scale',
-        'use_anti_aliasing': 'UseAntiAliasing',
-        'use_gdi_emf_renderer': 'UseGdiEmfRenderer',
-        'use_high_quality_rendering': 'UseHighQualityRendering',
-        'vertical_resolution': 'VerticalResolution'
+        'bookmarks_outline_level': 'BookmarksOutlineLevel',
+        'headings_outline_levels': 'HeadingsOutlineLevels',
+        'outline_options': 'OutlineOptions',
+        'use_book_fold_printing_settings': 'UseBookFoldPrintingSettings',
+        'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, horizontal_resolution=None, image_brightness=None, image_color_mode=None, image_contrast=None, paper_color=None, pixel_format=None, resolution=None, scale=None, use_anti_aliasing=None, use_gdi_emf_renderer=None, use_high_quality_rendering=None, vertical_resolution=None):  # noqa: E501
-        """ImageSaveOptionsData - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, bookmarks_outline_level=None, headings_outline_levels=None, outline_options=None, use_book_fold_printing_settings=None):  # noqa: E501
+        """OpenXpsSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
         self._custom_time_zone_info_data = None
@@ -127,7 +111,6 @@ class ImageSaveOptionsData(object):
         self._file_name = None
         self._flat_opc_xml_mapping_only = None
         self._iml_rendering_mode = None
-        self._save_format = None
         self._update_created_time_property = None
         self._update_fields = None
         self._update_last_printed_property = None
@@ -141,18 +124,11 @@ class ImageSaveOptionsData(object):
         self._optimize_output = None
         self._page_count = None
         self._page_index = None
-        self._horizontal_resolution = None
-        self._image_brightness = None
-        self._image_color_mode = None
-        self._image_contrast = None
-        self._paper_color = None
-        self._pixel_format = None
-        self._resolution = None
-        self._scale = None
-        self._use_anti_aliasing = None
-        self._use_gdi_emf_renderer = None
-        self._use_high_quality_rendering = None
-        self._vertical_resolution = None
+        self._bookmarks_outline_level = None
+        self._headings_outline_levels = None
+        self._outline_options = None
+        self._use_book_fold_printing_settings = None
+        self._save_format = "openxps"
         self.discriminator = None
 
         if allow_embedding_post_script_fonts is not None:
@@ -171,8 +147,6 @@ class ImageSaveOptionsData(object):
             self.flat_opc_xml_mapping_only = flat_opc_xml_mapping_only
         if iml_rendering_mode is not None:
             self.iml_rendering_mode = iml_rendering_mode
-        if save_format is not None:
-            self.save_format = save_format
         if update_created_time_property is not None:
             self.update_created_time_property = update_created_time_property
         if update_fields is not None:
@@ -199,93 +173,77 @@ class ImageSaveOptionsData(object):
             self.page_count = page_count
         if page_index is not None:
             self.page_index = page_index
-        if horizontal_resolution is not None:
-            self.horizontal_resolution = horizontal_resolution
-        if image_brightness is not None:
-            self.image_brightness = image_brightness
-        if image_color_mode is not None:
-            self.image_color_mode = image_color_mode
-        if image_contrast is not None:
-            self.image_contrast = image_contrast
-        if paper_color is not None:
-            self.paper_color = paper_color
-        if pixel_format is not None:
-            self.pixel_format = pixel_format
-        if resolution is not None:
-            self.resolution = resolution
-        if scale is not None:
-            self.scale = scale
-        if use_anti_aliasing is not None:
-            self.use_anti_aliasing = use_anti_aliasing
-        if use_gdi_emf_renderer is not None:
-            self.use_gdi_emf_renderer = use_gdi_emf_renderer
-        if use_high_quality_rendering is not None:
-            self.use_high_quality_rendering = use_high_quality_rendering
-        if vertical_resolution is not None:
-            self.vertical_resolution = vertical_resolution
+        if bookmarks_outline_level is not None:
+            self.bookmarks_outline_level = bookmarks_outline_level
+        if headings_outline_levels is not None:
+            self.headings_outline_levels = headings_outline_levels
+        if outline_options is not None:
+            self.outline_options = outline_options
+        if use_book_fold_printing_settings is not None:
+            self.use_book_fold_printing_settings = use_book_fold_printing_settings
 
     @property
     def allow_embedding_post_script_fonts(self):
-        """Gets the allow_embedding_post_script_fonts of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the allow_embedding_post_script_fonts of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..  # noqa: E501
 
-        :return: The allow_embedding_post_script_fonts of this ImageSaveOptionsData.  # noqa: E501
+        :return: The allow_embedding_post_script_fonts of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._allow_embedding_post_script_fonts
 
     @allow_embedding_post_script_fonts.setter
     def allow_embedding_post_script_fonts(self, allow_embedding_post_script_fonts):
-        """Sets the allow_embedding_post_script_fonts of this ImageSaveOptionsData.
+        """Sets the allow_embedding_post_script_fonts of this OpenXpsSaveOptionsData.
 
         Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..  # noqa: E501
 
-        :param allow_embedding_post_script_fonts: The allow_embedding_post_script_fonts of this ImageSaveOptionsData.  # noqa: E501
+        :param allow_embedding_post_script_fonts: The allow_embedding_post_script_fonts of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._allow_embedding_post_script_fonts = allow_embedding_post_script_fonts
 
     @property
     def custom_time_zone_info_data(self):
-        """Gets the custom_time_zone_info_data of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the custom_time_zone_info_data of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets CustomTimeZoneInfo.  # noqa: E501
 
-        :return: The custom_time_zone_info_data of this ImageSaveOptionsData.  # noqa: E501
+        :return: The custom_time_zone_info_data of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: TimeZoneInfoData
         """
         return self._custom_time_zone_info_data
 
     @custom_time_zone_info_data.setter
     def custom_time_zone_info_data(self, custom_time_zone_info_data):
-        """Sets the custom_time_zone_info_data of this ImageSaveOptionsData.
+        """Sets the custom_time_zone_info_data of this OpenXpsSaveOptionsData.
 
         Gets or sets CustomTimeZoneInfo.  # noqa: E501
 
-        :param custom_time_zone_info_data: The custom_time_zone_info_data of this ImageSaveOptionsData.  # noqa: E501
+        :param custom_time_zone_info_data: The custom_time_zone_info_data of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: TimeZoneInfoData
         """
         self._custom_time_zone_info_data = custom_time_zone_info_data
 
     @property
     def dml3_d_effects_rendering_mode(self):
-        """Gets the dml3_d_effects_rendering_mode of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the dml3_d_effects_rendering_mode of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
 
-        :return: The dml3_d_effects_rendering_mode of this ImageSaveOptionsData.  # noqa: E501
+        :return: The dml3_d_effects_rendering_mode of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: str
         """
         return self._dml3_d_effects_rendering_mode
 
     @dml3_d_effects_rendering_mode.setter
     def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
-        """Sets the dml3_d_effects_rendering_mode of this ImageSaveOptionsData.
+        """Sets the dml3_d_effects_rendering_mode of this OpenXpsSaveOptionsData.
 
         Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
 
-        :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this ImageSaveOptionsData.  # noqa: E501
+        :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: str
         """
         allowed_values = ["Basic", "Advanced"]  # noqa: E501
@@ -300,685 +258,499 @@ class ImageSaveOptionsData(object):
 
     @property
     def dml_effects_rendering_mode(self):
-        """Gets the dml_effects_rendering_mode of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the dml_effects_rendering_mode of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
-        :return: The dml_effects_rendering_mode of this ImageSaveOptionsData.  # noqa: E501
+        :return: The dml_effects_rendering_mode of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: str
         """
         return self._dml_effects_rendering_mode
 
     @dml_effects_rendering_mode.setter
     def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
-        """Sets the dml_effects_rendering_mode of this ImageSaveOptionsData.
+        """Sets the dml_effects_rendering_mode of this OpenXpsSaveOptionsData.
 
         Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
-        :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this ImageSaveOptionsData.  # noqa: E501
+        :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: str
         """
         self._dml_effects_rendering_mode = dml_effects_rendering_mode
 
     @property
     def dml_rendering_mode(self):
-        """Gets the dml_rendering_mode of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the dml_rendering_mode of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
 
-        :return: The dml_rendering_mode of this ImageSaveOptionsData.  # noqa: E501
+        :return: The dml_rendering_mode of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: str
         """
         return self._dml_rendering_mode
 
     @dml_rendering_mode.setter
     def dml_rendering_mode(self, dml_rendering_mode):
-        """Sets the dml_rendering_mode of this ImageSaveOptionsData.
+        """Sets the dml_rendering_mode of this OpenXpsSaveOptionsData.
 
         Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
 
-        :param dml_rendering_mode: The dml_rendering_mode of this ImageSaveOptionsData.  # noqa: E501
+        :param dml_rendering_mode: The dml_rendering_mode of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: str
         """
         self._dml_rendering_mode = dml_rendering_mode
 
     @property
     def file_name(self):
-        """Gets the file_name of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the file_name of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets the name of destination file.  # noqa: E501
 
-        :return: The file_name of this ImageSaveOptionsData.  # noqa: E501
+        :return: The file_name of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: str
         """
         return self._file_name
 
     @file_name.setter
     def file_name(self, file_name):
-        """Sets the file_name of this ImageSaveOptionsData.
+        """Sets the file_name of this OpenXpsSaveOptionsData.
 
         Gets or sets the name of destination file.  # noqa: E501
 
-        :param file_name: The file_name of this ImageSaveOptionsData.  # noqa: E501
+        :param file_name: The file_name of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: str
         """
         self._file_name = file_name
 
     @property
     def flat_opc_xml_mapping_only(self):
-        """Gets the flat_opc_xml_mapping_only of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the flat_opc_xml_mapping_only of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets value determining which document formats are allowed to be mapped by Aspose.Words.Markup.StructuredDocumentTag.XmlMapping. By default only Aspose.Words.LoadFormat.FlatOpc document format is allowed to be mapped.  # noqa: E501
 
-        :return: The flat_opc_xml_mapping_only of this ImageSaveOptionsData.  # noqa: E501
+        :return: The flat_opc_xml_mapping_only of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._flat_opc_xml_mapping_only
 
     @flat_opc_xml_mapping_only.setter
     def flat_opc_xml_mapping_only(self, flat_opc_xml_mapping_only):
-        """Sets the flat_opc_xml_mapping_only of this ImageSaveOptionsData.
+        """Sets the flat_opc_xml_mapping_only of this OpenXpsSaveOptionsData.
 
         Gets or sets value determining which document formats are allowed to be mapped by Aspose.Words.Markup.StructuredDocumentTag.XmlMapping. By default only Aspose.Words.LoadFormat.FlatOpc document format is allowed to be mapped.  # noqa: E501
 
-        :param flat_opc_xml_mapping_only: The flat_opc_xml_mapping_only of this ImageSaveOptionsData.  # noqa: E501
+        :param flat_opc_xml_mapping_only: The flat_opc_xml_mapping_only of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._flat_opc_xml_mapping_only = flat_opc_xml_mapping_only
 
     @property
     def iml_rendering_mode(self):
-        """Gets the iml_rendering_mode of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the iml_rendering_mode of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
 
-        :return: The iml_rendering_mode of this ImageSaveOptionsData.  # noqa: E501
+        :return: The iml_rendering_mode of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: str
         """
         return self._iml_rendering_mode
 
     @iml_rendering_mode.setter
     def iml_rendering_mode(self, iml_rendering_mode):
-        """Sets the iml_rendering_mode of this ImageSaveOptionsData.
+        """Sets the iml_rendering_mode of this OpenXpsSaveOptionsData.
 
         Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
 
-        :param iml_rendering_mode: The iml_rendering_mode of this ImageSaveOptionsData.  # noqa: E501
+        :param iml_rendering_mode: The iml_rendering_mode of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: str
         """
         self._iml_rendering_mode = iml_rendering_mode
 
     @property
-    def save_format(self):
-        """Gets the save_format of this ImageSaveOptionsData.  # noqa: E501
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :return: The save_format of this ImageSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._save_format
-
-    @save_format.setter
-    def save_format(self, save_format):
-        """Sets the save_format of this ImageSaveOptionsData.
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :param save_format: The save_format of this ImageSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._save_format = save_format
-
-    @property
     def update_created_time_property(self):
-        """Gets the update_created_time_property of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the update_created_time_property of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
 
-        :return: The update_created_time_property of this ImageSaveOptionsData.  # noqa: E501
+        :return: The update_created_time_property of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._update_created_time_property
 
     @update_created_time_property.setter
     def update_created_time_property(self, update_created_time_property):
-        """Sets the update_created_time_property of this ImageSaveOptionsData.
+        """Sets the update_created_time_property of this OpenXpsSaveOptionsData.
 
         Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
 
-        :param update_created_time_property: The update_created_time_property of this ImageSaveOptionsData.  # noqa: E501
+        :param update_created_time_property: The update_created_time_property of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._update_created_time_property = update_created_time_property
 
     @property
     def update_fields(self):
-        """Gets the update_fields of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the update_fields of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.  # noqa: E501
 
-        :return: The update_fields of this ImageSaveOptionsData.  # noqa: E501
+        :return: The update_fields of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._update_fields
 
     @update_fields.setter
     def update_fields(self, update_fields):
-        """Sets the update_fields of this ImageSaveOptionsData.
+        """Sets the update_fields of this OpenXpsSaveOptionsData.
 
         Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.  # noqa: E501
 
-        :param update_fields: The update_fields of this ImageSaveOptionsData.  # noqa: E501
+        :param update_fields: The update_fields of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._update_fields = update_fields
 
     @property
     def update_last_printed_property(self):
-        """Gets the update_last_printed_property of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the update_last_printed_property of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
 
-        :return: The update_last_printed_property of this ImageSaveOptionsData.  # noqa: E501
+        :return: The update_last_printed_property of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._update_last_printed_property
 
     @update_last_printed_property.setter
     def update_last_printed_property(self, update_last_printed_property):
-        """Sets the update_last_printed_property of this ImageSaveOptionsData.
+        """Sets the update_last_printed_property of this OpenXpsSaveOptionsData.
 
         Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
 
-        :param update_last_printed_property: The update_last_printed_property of this ImageSaveOptionsData.  # noqa: E501
+        :param update_last_printed_property: The update_last_printed_property of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._update_last_printed_property = update_last_printed_property
 
     @property
     def update_last_saved_time_property(self):
-        """Gets the update_last_saved_time_property of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the update_last_saved_time_property of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
 
-        :return: The update_last_saved_time_property of this ImageSaveOptionsData.  # noqa: E501
+        :return: The update_last_saved_time_property of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._update_last_saved_time_property
 
     @update_last_saved_time_property.setter
     def update_last_saved_time_property(self, update_last_saved_time_property):
-        """Sets the update_last_saved_time_property of this ImageSaveOptionsData.
+        """Sets the update_last_saved_time_property of this OpenXpsSaveOptionsData.
 
         Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
 
-        :param update_last_saved_time_property: The update_last_saved_time_property of this ImageSaveOptionsData.  # noqa: E501
+        :param update_last_saved_time_property: The update_last_saved_time_property of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._update_last_saved_time_property = update_last_saved_time_property
 
     @property
     def update_sdt_content(self):
-        """Gets the update_sdt_content of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the update_sdt_content of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
-        :return: The update_sdt_content of this ImageSaveOptionsData.  # noqa: E501
+        :return: The update_sdt_content of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._update_sdt_content
 
     @update_sdt_content.setter
     def update_sdt_content(self, update_sdt_content):
-        """Sets the update_sdt_content of this ImageSaveOptionsData.
+        """Sets the update_sdt_content of this OpenXpsSaveOptionsData.
 
         Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
-        :param update_sdt_content: The update_sdt_content of this ImageSaveOptionsData.  # noqa: E501
+        :param update_sdt_content: The update_sdt_content of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._update_sdt_content = update_sdt_content
 
     @property
     def zip_output(self):
-        """Gets the zip_output of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the zip_output of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
 
-        :return: The zip_output of this ImageSaveOptionsData.  # noqa: E501
+        :return: The zip_output of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._zip_output
 
     @zip_output.setter
     def zip_output(self, zip_output):
-        """Sets the zip_output of this ImageSaveOptionsData.
+        """Sets the zip_output of this OpenXpsSaveOptionsData.
 
         Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
 
-        :param zip_output: The zip_output of this ImageSaveOptionsData.  # noqa: E501
+        :param zip_output: The zip_output of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._zip_output = zip_output
 
     @property
     def color_mode(self):
-        """Gets the color_mode of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the color_mode of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets the value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
 
-        :return: The color_mode of this ImageSaveOptionsData.  # noqa: E501
+        :return: The color_mode of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: str
         """
         return self._color_mode
 
     @color_mode.setter
     def color_mode(self, color_mode):
-        """Sets the color_mode of this ImageSaveOptionsData.
+        """Sets the color_mode of this OpenXpsSaveOptionsData.
 
         Gets or sets the value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
 
-        :param color_mode: The color_mode of this ImageSaveOptionsData.  # noqa: E501
+        :param color_mode: The color_mode of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: str
         """
         self._color_mode = color_mode
 
     @property
     def jpeg_quality(self):
-        """Gets the jpeg_quality of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the jpeg_quality of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets the quality of the JPEG images inside PDF document.  # noqa: E501
 
-        :return: The jpeg_quality of this ImageSaveOptionsData.  # noqa: E501
+        :return: The jpeg_quality of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: int
         """
         return self._jpeg_quality
 
     @jpeg_quality.setter
     def jpeg_quality(self, jpeg_quality):
-        """Sets the jpeg_quality of this ImageSaveOptionsData.
+        """Sets the jpeg_quality of this OpenXpsSaveOptionsData.
 
         Gets or sets the quality of the JPEG images inside PDF document.  # noqa: E501
 
-        :param jpeg_quality: The jpeg_quality of this ImageSaveOptionsData.  # noqa: E501
+        :param jpeg_quality: The jpeg_quality of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: int
         """
         self._jpeg_quality = jpeg_quality
 
     @property
     def metafile_rendering_options(self):
-        """Gets the metafile_rendering_options of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the metafile_rendering_options of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets the metafile rendering options.  # noqa: E501
 
-        :return: The metafile_rendering_options of this ImageSaveOptionsData.  # noqa: E501
+        :return: The metafile_rendering_options of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: MetafileRenderingOptionsData
         """
         return self._metafile_rendering_options
 
     @metafile_rendering_options.setter
     def metafile_rendering_options(self, metafile_rendering_options):
-        """Sets the metafile_rendering_options of this ImageSaveOptionsData.
+        """Sets the metafile_rendering_options of this OpenXpsSaveOptionsData.
 
         Gets or sets the metafile rendering options.  # noqa: E501
 
-        :param metafile_rendering_options: The metafile_rendering_options of this ImageSaveOptionsData.  # noqa: E501
+        :param metafile_rendering_options: The metafile_rendering_options of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: MetafileRenderingOptionsData
         """
         self._metafile_rendering_options = metafile_rendering_options
 
     @property
     def numeral_format(self):
-        """Gets the numeral_format of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the numeral_format of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
 
-        :return: The numeral_format of this ImageSaveOptionsData.  # noqa: E501
+        :return: The numeral_format of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: str
         """
         return self._numeral_format
 
     @numeral_format.setter
     def numeral_format(self, numeral_format):
-        """Sets the numeral_format of this ImageSaveOptionsData.
+        """Sets the numeral_format of this OpenXpsSaveOptionsData.
 
         Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.  # noqa: E501
 
-        :param numeral_format: The numeral_format of this ImageSaveOptionsData.  # noqa: E501
+        :param numeral_format: The numeral_format of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: str
         """
         self._numeral_format = numeral_format
 
     @property
     def optimize_output(self):
-        """Gets the optimize_output of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the optimize_output of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets a value indicating whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.. The default value is false.  # noqa: E501
 
-        :return: The optimize_output of this ImageSaveOptionsData.  # noqa: E501
+        :return: The optimize_output of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._optimize_output
 
     @optimize_output.setter
     def optimize_output(self, optimize_output):
-        """Sets the optimize_output of this ImageSaveOptionsData.
+        """Sets the optimize_output of this OpenXpsSaveOptionsData.
 
         Gets or sets a value indicating whether it is required to optimize output of XPS. If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated. Note: The accuracy of the content display may be affected if this property is set to true.. The default value is false.  # noqa: E501
 
-        :param optimize_output: The optimize_output of this ImageSaveOptionsData.  # noqa: E501
+        :param optimize_output: The optimize_output of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._optimize_output = optimize_output
 
     @property
     def page_count(self):
-        """Gets the page_count of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the page_count of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets the number of pages to render.  # noqa: E501
 
-        :return: The page_count of this ImageSaveOptionsData.  # noqa: E501
+        :return: The page_count of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: int
         """
         return self._page_count
 
     @page_count.setter
     def page_count(self, page_count):
-        """Sets the page_count of this ImageSaveOptionsData.
+        """Sets the page_count of this OpenXpsSaveOptionsData.
 
         Gets or sets the number of pages to render.  # noqa: E501
 
-        :param page_count: The page_count of this ImageSaveOptionsData.  # noqa: E501
+        :param page_count: The page_count of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: int
         """
         self._page_count = page_count
 
     @property
     def page_index(self):
-        """Gets the page_index of this ImageSaveOptionsData.  # noqa: E501
+        """Gets the page_index of this OpenXpsSaveOptionsData.  # noqa: E501
 
         Gets or sets the 0-based index of the first page to render.  # noqa: E501
 
-        :return: The page_index of this ImageSaveOptionsData.  # noqa: E501
+        :return: The page_index of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: int
         """
         return self._page_index
 
     @page_index.setter
     def page_index(self, page_index):
-        """Sets the page_index of this ImageSaveOptionsData.
+        """Sets the page_index of this OpenXpsSaveOptionsData.
 
         Gets or sets the 0-based index of the first page to render.  # noqa: E501
 
-        :param page_index: The page_index of this ImageSaveOptionsData.  # noqa: E501
+        :param page_index: The page_index of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: int
         """
         self._page_index = page_index
 
     @property
-    def horizontal_resolution(self):
-        """Gets the horizontal_resolution of this ImageSaveOptionsData.  # noqa: E501
+    def bookmarks_outline_level(self):
+        """Gets the bookmarks_outline_level of this OpenXpsSaveOptionsData.  # noqa: E501
 
-        Gets or sets the horizontal resolution in dots per inch for the generated images. This property has effect only when saving to raster image formats. The default value is 96.  # noqa: E501
+        Gets or sets the level in the XPS document outline at which to display Word bookmarks.  # noqa: E501
 
-        :return: The horizontal_resolution of this ImageSaveOptionsData.  # noqa: E501
-        :rtype: float
+        :return: The bookmarks_outline_level of this OpenXpsSaveOptionsData.  # noqa: E501
+        :rtype: int
         """
-        return self._horizontal_resolution
+        return self._bookmarks_outline_level
 
-    @horizontal_resolution.setter
-    def horizontal_resolution(self, horizontal_resolution):
-        """Sets the horizontal_resolution of this ImageSaveOptionsData.
+    @bookmarks_outline_level.setter
+    def bookmarks_outline_level(self, bookmarks_outline_level):
+        """Sets the bookmarks_outline_level of this OpenXpsSaveOptionsData.
 
-        Gets or sets the horizontal resolution in dots per inch for the generated images. This property has effect only when saving to raster image formats. The default value is 96.  # noqa: E501
+        Gets or sets the level in the XPS document outline at which to display Word bookmarks.  # noqa: E501
 
-        :param horizontal_resolution: The horizontal_resolution of this ImageSaveOptionsData.  # noqa: E501
-        :type: float
+        :param bookmarks_outline_level: The bookmarks_outline_level of this OpenXpsSaveOptionsData.  # noqa: E501
+        :type: int
         """
-        self._horizontal_resolution = horizontal_resolution
+        self._bookmarks_outline_level = bookmarks_outline_level
 
     @property
-    def image_brightness(self):
-        """Gets the image_brightness of this ImageSaveOptionsData.  # noqa: E501
+    def headings_outline_levels(self):
+        """Gets the headings_outline_levels of this OpenXpsSaveOptionsData.  # noqa: E501
 
-        Gets or sets the brightness level of the image.  # noqa: E501
+        Gets or sets the number of heading levels (paragraphs formatted with the Heading styles) to include in the XPS document outline.  # noqa: E501
 
-        :return: The image_brightness of this ImageSaveOptionsData.  # noqa: E501
-        :rtype: float
+        :return: The headings_outline_levels of this OpenXpsSaveOptionsData.  # noqa: E501
+        :rtype: int
         """
-        return self._image_brightness
+        return self._headings_outline_levels
 
-    @image_brightness.setter
-    def image_brightness(self, image_brightness):
-        """Sets the image_brightness of this ImageSaveOptionsData.
+    @headings_outline_levels.setter
+    def headings_outline_levels(self, headings_outline_levels):
+        """Sets the headings_outline_levels of this OpenXpsSaveOptionsData.
 
-        Gets or sets the brightness level of the image.  # noqa: E501
+        Gets or sets the number of heading levels (paragraphs formatted with the Heading styles) to include in the XPS document outline.  # noqa: E501
 
-        :param image_brightness: The image_brightness of this ImageSaveOptionsData.  # noqa: E501
-        :type: float
+        :param headings_outline_levels: The headings_outline_levels of this OpenXpsSaveOptionsData.  # noqa: E501
+        :type: int
         """
-        self._image_brightness = image_brightness
+        self._headings_outline_levels = headings_outline_levels
 
     @property
-    def image_color_mode(self):
-        """Gets the image_color_mode of this ImageSaveOptionsData.  # noqa: E501
+    def outline_options(self):
+        """Gets the outline_options of this OpenXpsSaveOptionsData.  # noqa: E501
 
-        Gets or sets the color mode of the image.  # noqa: E501
+        Gets or sets the outline options.  # noqa: E501
 
-        :return: The image_color_mode of this ImageSaveOptionsData.  # noqa: E501
-        :rtype: str
+        :return: The outline_options of this OpenXpsSaveOptionsData.  # noqa: E501
+        :rtype: OutlineOptionsData
         """
-        return self._image_color_mode
+        return self._outline_options
 
-    @image_color_mode.setter
-    def image_color_mode(self, image_color_mode):
-        """Sets the image_color_mode of this ImageSaveOptionsData.
+    @outline_options.setter
+    def outline_options(self, outline_options):
+        """Sets the outline_options of this OpenXpsSaveOptionsData.
 
-        Gets or sets the color mode of the image.  # noqa: E501
+        Gets or sets the outline options.  # noqa: E501
 
-        :param image_color_mode: The image_color_mode of this ImageSaveOptionsData.  # noqa: E501
-        :type: str
+        :param outline_options: The outline_options of this OpenXpsSaveOptionsData.  # noqa: E501
+        :type: OutlineOptionsData
         """
-        self._image_color_mode = image_color_mode
+        self._outline_options = outline_options
 
     @property
-    def image_contrast(self):
-        """Gets the image_contrast of this ImageSaveOptionsData.  # noqa: E501
+    def use_book_fold_printing_settings(self):
+        """Gets the use_book_fold_printing_settings of this OpenXpsSaveOptionsData.  # noqa: E501
 
-        Gets or sets the contrast level of the image.  # noqa: E501
+        Gets or sets a value indicating whether the document should be saved using a booklet printing layout.  # noqa: E501
 
-        :return: The image_contrast of this ImageSaveOptionsData.  # noqa: E501
-        :rtype: float
-        """
-        return self._image_contrast
-
-    @image_contrast.setter
-    def image_contrast(self, image_contrast):
-        """Sets the image_contrast of this ImageSaveOptionsData.
-
-        Gets or sets the contrast level of the image.  # noqa: E501
-
-        :param image_contrast: The image_contrast of this ImageSaveOptionsData.  # noqa: E501
-        :type: float
-        """
-        self._image_contrast = image_contrast
-
-    @property
-    def paper_color(self):
-        """Gets the paper_color of this ImageSaveOptionsData.  # noqa: E501
-
-        Gets or sets the background (paper) color of the image.  # noqa: E501
-
-        :return: The paper_color of this ImageSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._paper_color
-
-    @paper_color.setter
-    def paper_color(self, paper_color):
-        """Sets the paper_color of this ImageSaveOptionsData.
-
-        Gets or sets the background (paper) color of the image.  # noqa: E501
-
-        :param paper_color: The paper_color of this ImageSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._paper_color = paper_color
-
-    @property
-    def pixel_format(self):
-        """Gets the pixel_format of this ImageSaveOptionsData.  # noqa: E501
-
-        Gets or sets the pixel format of the image.  # noqa: E501
-
-        :return: The pixel_format of this ImageSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._pixel_format
-
-    @pixel_format.setter
-    def pixel_format(self, pixel_format):
-        """Sets the pixel_format of this ImageSaveOptionsData.
-
-        Gets or sets the pixel format of the image.  # noqa: E501
-
-        :param pixel_format: The pixel_format of this ImageSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._pixel_format = pixel_format
-
-    @property
-    def resolution(self):
-        """Gets the resolution of this ImageSaveOptionsData.  # noqa: E501
-
-        Gets or sets both horizontal and vertical resolution in dots per inch for the generated images. This property has effect only when saving to raster image formats. The default value is 96.  # noqa: E501
-
-        :return: The resolution of this ImageSaveOptionsData.  # noqa: E501
-        :rtype: float
-        """
-        return self._resolution
-
-    @resolution.setter
-    def resolution(self, resolution):
-        """Sets the resolution of this ImageSaveOptionsData.
-
-        Gets or sets both horizontal and vertical resolution in dots per inch for the generated images. This property has effect only when saving to raster image formats. The default value is 96.  # noqa: E501
-
-        :param resolution: The resolution of this ImageSaveOptionsData.  # noqa: E501
-        :type: float
-        """
-        self._resolution = resolution
-
-    @property
-    def scale(self):
-        """Gets the scale of this ImageSaveOptionsData.  # noqa: E501
-
-        Gets or sets the zoom factor of the image.  # noqa: E501
-
-        :return: The scale of this ImageSaveOptionsData.  # noqa: E501
-        :rtype: float
-        """
-        return self._scale
-
-    @scale.setter
-    def scale(self, scale):
-        """Sets the scale of this ImageSaveOptionsData.
-
-        Gets or sets the zoom factor of the image.  # noqa: E501
-
-        :param scale: The scale of this ImageSaveOptionsData.  # noqa: E501
-        :type: float
-        """
-        self._scale = scale
-
-    @property
-    def use_anti_aliasing(self):
-        """Gets the use_anti_aliasing of this ImageSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value indicating whether to use anti-aliasing for rendering.  # noqa: E501
-
-        :return: The use_anti_aliasing of this ImageSaveOptionsData.  # noqa: E501
+        :return: The use_book_fold_printing_settings of this OpenXpsSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
-        return self._use_anti_aliasing
+        return self._use_book_fold_printing_settings
 
-    @use_anti_aliasing.setter
-    def use_anti_aliasing(self, use_anti_aliasing):
-        """Sets the use_anti_aliasing of this ImageSaveOptionsData.
+    @use_book_fold_printing_settings.setter
+    def use_book_fold_printing_settings(self, use_book_fold_printing_settings):
+        """Sets the use_book_fold_printing_settings of this OpenXpsSaveOptionsData.
 
-        Gets or sets a value indicating whether to use anti-aliasing for rendering.  # noqa: E501
+        Gets or sets a value indicating whether the document should be saved using a booklet printing layout.  # noqa: E501
 
-        :param use_anti_aliasing: The use_anti_aliasing of this ImageSaveOptionsData.  # noqa: E501
+        :param use_book_fold_printing_settings: The use_book_fold_printing_settings of this OpenXpsSaveOptionsData.  # noqa: E501
         :type: bool
         """
-        self._use_anti_aliasing = use_anti_aliasing
+        self._use_book_fold_printing_settings = use_book_fold_printing_settings
 
     @property
-    def use_gdi_emf_renderer(self):
-        """Gets the use_gdi_emf_renderer of this ImageSaveOptionsData.  # noqa: E501
+    def save_format(self):
+        """Gets the save_format of this OpenXpsSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.  # noqa: E501
+        Gets the format of save.  # noqa: E501
 
-        :return: The use_gdi_emf_renderer of this ImageSaveOptionsData.  # noqa: E501
-        :rtype: bool
+        :return: The save_format of this OpenXpsSaveOptionsData.  # noqa: E501
+        :rtype: str
         """
-        return self._use_gdi_emf_renderer
+        return self._save_format
 
-    @use_gdi_emf_renderer.setter
-    def use_gdi_emf_renderer(self, use_gdi_emf_renderer):
-        """Sets the use_gdi_emf_renderer of this ImageSaveOptionsData.
-
-        Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.  # noqa: E501
-
-        :param use_gdi_emf_renderer: The use_gdi_emf_renderer of this ImageSaveOptionsData.  # noqa: E501
-        :type: bool
-        """
-        self._use_gdi_emf_renderer = use_gdi_emf_renderer
-
-    @property
-    def use_high_quality_rendering(self):
-        """Gets the use_high_quality_rendering of this ImageSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value indicating whether to use high quality (i.e. slow) rendering algorithms.  # noqa: E501
-
-        :return: The use_high_quality_rendering of this ImageSaveOptionsData.  # noqa: E501
-        :rtype: bool
-        """
-        return self._use_high_quality_rendering
-
-    @use_high_quality_rendering.setter
-    def use_high_quality_rendering(self, use_high_quality_rendering):
-        """Sets the use_high_quality_rendering of this ImageSaveOptionsData.
-
-        Gets or sets a value indicating whether to use high quality (i.e. slow) rendering algorithms.  # noqa: E501
-
-        :param use_high_quality_rendering: The use_high_quality_rendering of this ImageSaveOptionsData.  # noqa: E501
-        :type: bool
-        """
-        self._use_high_quality_rendering = use_high_quality_rendering
-
-    @property
-    def vertical_resolution(self):
-        """Gets the vertical_resolution of this ImageSaveOptionsData.  # noqa: E501
-
-        Gets or sets the vertical resolution in dots per inch for the generated images. This property has effect only when saving to raster image formats. The default value is 96.  # noqa: E501
-
-        :return: The vertical_resolution of this ImageSaveOptionsData.  # noqa: E501
-        :rtype: float
-        """
-        return self._vertical_resolution
-
-    @vertical_resolution.setter
-    def vertical_resolution(self, vertical_resolution):
-        """Sets the vertical_resolution of this ImageSaveOptionsData.
-
-        Gets or sets the vertical resolution in dots per inch for the generated images. This property has effect only when saving to raster image formats. The default value is 96.  # noqa: E501
-
-        :param vertical_resolution: The vertical_resolution of this ImageSaveOptionsData.  # noqa: E501
-        :type: float
-        """
-        self._vertical_resolution = vertical_resolution
 
 
     def to_dict(self):
@@ -1045,7 +817,7 @@ class ImageSaveOptionsData(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, ImageSaveOptionsData):
+        if not isinstance(other, OpenXpsSaveOptionsData):
             return False
 
         return self.__dict__ == other.__dict__

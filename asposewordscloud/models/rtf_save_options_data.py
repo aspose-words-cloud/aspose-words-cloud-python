@@ -51,7 +51,6 @@ class RtfSaveOptionsData(object):
         'file_name': 'str',
         'flat_opc_xml_mapping_only': 'bool',
         'iml_rendering_mode': 'str',
-        'save_format': 'str',
         'update_created_time_property': 'bool',
         'update_fields': 'bool',
         'update_last_printed_property': 'bool',
@@ -61,6 +60,7 @@ class RtfSaveOptionsData(object):
         'export_compact_size': 'bool',
         'export_images_for_old_readers': 'bool',
         'pretty_format': 'bool',
+        'save_format': 'str',
         'save_images_as_wmf': 'bool'
     }
 
@@ -73,7 +73,6 @@ class RtfSaveOptionsData(object):
         'file_name': 'FileName',
         'flat_opc_xml_mapping_only': 'FlatOpcXmlMappingOnly',
         'iml_rendering_mode': 'ImlRenderingMode',
-        'save_format': 'SaveFormat',
         'update_created_time_property': 'UpdateCreatedTimeProperty',
         'update_fields': 'UpdateFields',
         'update_last_printed_property': 'UpdateLastPrintedProperty',
@@ -83,10 +82,11 @@ class RtfSaveOptionsData(object):
         'export_compact_size': 'ExportCompactSize',
         'export_images_for_old_readers': 'ExportImagesForOldReaders',
         'pretty_format': 'PrettyFormat',
+        'save_format': 'SaveFormat',
         'save_images_as_wmf': 'SaveImagesAsWmf'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, export_compact_size=None, export_images_for_old_readers=None, pretty_format=None, save_images_as_wmf=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, export_compact_size=None, export_images_for_old_readers=None, pretty_format=None, save_images_as_wmf=None):  # noqa: E501
         """RtfSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -97,7 +97,6 @@ class RtfSaveOptionsData(object):
         self._file_name = None
         self._flat_opc_xml_mapping_only = None
         self._iml_rendering_mode = None
-        self._save_format = None
         self._update_created_time_property = None
         self._update_fields = None
         self._update_last_printed_property = None
@@ -107,6 +106,7 @@ class RtfSaveOptionsData(object):
         self._export_compact_size = None
         self._export_images_for_old_readers = None
         self._pretty_format = None
+        self._save_format = "rtf"
         self._save_images_as_wmf = None
         self.discriminator = None
 
@@ -126,8 +126,6 @@ class RtfSaveOptionsData(object):
             self.flat_opc_xml_mapping_only = flat_opc_xml_mapping_only
         if iml_rendering_mode is not None:
             self.iml_rendering_mode = iml_rendering_mode
-        if save_format is not None:
-            self.save_format = save_format
         if update_created_time_property is not None:
             self.update_created_time_property = update_created_time_property
         if update_fields is not None:
@@ -334,28 +332,6 @@ class RtfSaveOptionsData(object):
         self._iml_rendering_mode = iml_rendering_mode
 
     @property
-    def save_format(self):
-        """Gets the save_format of this RtfSaveOptionsData.  # noqa: E501
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :return: The save_format of this RtfSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._save_format
-
-    @save_format.setter
-    def save_format(self, save_format):
-        """Sets the save_format of this RtfSaveOptionsData.
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :param save_format: The save_format of this RtfSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._save_format = save_format
-
-    @property
     def update_created_time_property(self):
         """Gets the update_created_time_property of this RtfSaveOptionsData.  # noqa: E501
 
@@ -552,6 +528,18 @@ class RtfSaveOptionsData(object):
         :type: bool
         """
         self._pretty_format = pretty_format
+
+    @property
+    def save_format(self):
+        """Gets the save_format of this RtfSaveOptionsData.  # noqa: E501
+
+        Gets the format of save.  # noqa: E501
+
+        :return: The save_format of this RtfSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._save_format
+
 
     @property
     def save_images_as_wmf(self):

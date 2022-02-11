@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="txt_save_options_base_data.py">
+# <copyright company="Aspose" file="xaml_flow_pack_save_options_data.py">
 #   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -31,8 +31,8 @@ import six
 import json
 
 
-class TxtSaveOptionsBaseData(object):
-    """Base class for save options of text formats.
+class XamlFlowPackSaveOptionsData(object):
+    """Container class for xamlflow_pack save options.
     """
 
     """
@@ -51,17 +51,15 @@ class TxtSaveOptionsBaseData(object):
         'file_name': 'str',
         'flat_opc_xml_mapping_only': 'bool',
         'iml_rendering_mode': 'str',
-        'save_format': 'str',
         'update_created_time_property': 'bool',
         'update_fields': 'bool',
         'update_last_printed_property': 'bool',
         'update_last_saved_time_property': 'bool',
         'update_sdt_content': 'bool',
         'zip_output': 'bool',
-        'encoding': 'str',
-        'export_headers_footers_mode': 'str',
-        'force_page_breaks': 'bool',
-        'paragraph_break': 'str'
+        'images_folder': 'str',
+        'images_folder_alias': 'str',
+        'save_format': 'str'
     }
 
     attribute_map = {
@@ -73,21 +71,19 @@ class TxtSaveOptionsBaseData(object):
         'file_name': 'FileName',
         'flat_opc_xml_mapping_only': 'FlatOpcXmlMappingOnly',
         'iml_rendering_mode': 'ImlRenderingMode',
-        'save_format': 'SaveFormat',
         'update_created_time_property': 'UpdateCreatedTimeProperty',
         'update_fields': 'UpdateFields',
         'update_last_printed_property': 'UpdateLastPrintedProperty',
         'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
         'update_sdt_content': 'UpdateSdtContent',
         'zip_output': 'ZipOutput',
-        'encoding': 'Encoding',
-        'export_headers_footers_mode': 'ExportHeadersFootersMode',
-        'force_page_breaks': 'ForcePageBreaks',
-        'paragraph_break': 'ParagraphBreak'
+        'images_folder': 'ImagesFolder',
+        'images_folder_alias': 'ImagesFolderAlias',
+        'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, encoding=None, export_headers_footers_mode=None, force_page_breaks=None, paragraph_break=None):  # noqa: E501
-        """TxtSaveOptionsBaseData - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, images_folder=None, images_folder_alias=None):  # noqa: E501
+        """XamlFlowPackSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
         self._custom_time_zone_info_data = None
@@ -97,17 +93,15 @@ class TxtSaveOptionsBaseData(object):
         self._file_name = None
         self._flat_opc_xml_mapping_only = None
         self._iml_rendering_mode = None
-        self._save_format = None
         self._update_created_time_property = None
         self._update_fields = None
         self._update_last_printed_property = None
         self._update_last_saved_time_property = None
         self._update_sdt_content = None
         self._zip_output = None
-        self._encoding = None
-        self._export_headers_footers_mode = None
-        self._force_page_breaks = None
-        self._paragraph_break = None
+        self._images_folder = None
+        self._images_folder_alias = None
+        self._save_format = "xamlflow_pack"
         self.discriminator = None
 
         if allow_embedding_post_script_fonts is not None:
@@ -126,8 +120,6 @@ class TxtSaveOptionsBaseData(object):
             self.flat_opc_xml_mapping_only = flat_opc_xml_mapping_only
         if iml_rendering_mode is not None:
             self.iml_rendering_mode = iml_rendering_mode
-        if save_format is not None:
-            self.save_format = save_format
         if update_created_time_property is not None:
             self.update_created_time_property = update_created_time_property
         if update_fields is not None:
@@ -140,77 +132,73 @@ class TxtSaveOptionsBaseData(object):
             self.update_sdt_content = update_sdt_content
         if zip_output is not None:
             self.zip_output = zip_output
-        if encoding is not None:
-            self.encoding = encoding
-        if export_headers_footers_mode is not None:
-            self.export_headers_footers_mode = export_headers_footers_mode
-        if force_page_breaks is not None:
-            self.force_page_breaks = force_page_breaks
-        if paragraph_break is not None:
-            self.paragraph_break = paragraph_break
+        if images_folder is not None:
+            self.images_folder = images_folder
+        if images_folder_alias is not None:
+            self.images_folder_alias = images_folder_alias
 
     @property
     def allow_embedding_post_script_fonts(self):
-        """Gets the allow_embedding_post_script_fonts of this TxtSaveOptionsBaseData.  # noqa: E501
+        """Gets the allow_embedding_post_script_fonts of this XamlFlowPackSaveOptionsData.  # noqa: E501
 
         Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..  # noqa: E501
 
-        :return: The allow_embedding_post_script_fonts of this TxtSaveOptionsBaseData.  # noqa: E501
+        :return: The allow_embedding_post_script_fonts of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._allow_embedding_post_script_fonts
 
     @allow_embedding_post_script_fonts.setter
     def allow_embedding_post_script_fonts(self, allow_embedding_post_script_fonts):
-        """Sets the allow_embedding_post_script_fonts of this TxtSaveOptionsBaseData.
+        """Sets the allow_embedding_post_script_fonts of this XamlFlowPackSaveOptionsData.
 
         Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..  # noqa: E501
 
-        :param allow_embedding_post_script_fonts: The allow_embedding_post_script_fonts of this TxtSaveOptionsBaseData.  # noqa: E501
+        :param allow_embedding_post_script_fonts: The allow_embedding_post_script_fonts of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._allow_embedding_post_script_fonts = allow_embedding_post_script_fonts
 
     @property
     def custom_time_zone_info_data(self):
-        """Gets the custom_time_zone_info_data of this TxtSaveOptionsBaseData.  # noqa: E501
+        """Gets the custom_time_zone_info_data of this XamlFlowPackSaveOptionsData.  # noqa: E501
 
         Gets or sets CustomTimeZoneInfo.  # noqa: E501
 
-        :return: The custom_time_zone_info_data of this TxtSaveOptionsBaseData.  # noqa: E501
+        :return: The custom_time_zone_info_data of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :rtype: TimeZoneInfoData
         """
         return self._custom_time_zone_info_data
 
     @custom_time_zone_info_data.setter
     def custom_time_zone_info_data(self, custom_time_zone_info_data):
-        """Sets the custom_time_zone_info_data of this TxtSaveOptionsBaseData.
+        """Sets the custom_time_zone_info_data of this XamlFlowPackSaveOptionsData.
 
         Gets or sets CustomTimeZoneInfo.  # noqa: E501
 
-        :param custom_time_zone_info_data: The custom_time_zone_info_data of this TxtSaveOptionsBaseData.  # noqa: E501
+        :param custom_time_zone_info_data: The custom_time_zone_info_data of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :type: TimeZoneInfoData
         """
         self._custom_time_zone_info_data = custom_time_zone_info_data
 
     @property
     def dml3_d_effects_rendering_mode(self):
-        """Gets the dml3_d_effects_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
+        """Gets the dml3_d_effects_rendering_mode of this XamlFlowPackSaveOptionsData.  # noqa: E501
 
         Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
 
-        :return: The dml3_d_effects_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
+        :return: The dml3_d_effects_rendering_mode of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :rtype: str
         """
         return self._dml3_d_effects_rendering_mode
 
     @dml3_d_effects_rendering_mode.setter
     def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
-        """Sets the dml3_d_effects_rendering_mode of this TxtSaveOptionsBaseData.
+        """Sets the dml3_d_effects_rendering_mode of this XamlFlowPackSaveOptionsData.
 
         Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
 
-        :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
+        :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :type: str
         """
         allowed_values = ["Basic", "Advanced"]  # noqa: E501
@@ -225,363 +213,301 @@ class TxtSaveOptionsBaseData(object):
 
     @property
     def dml_effects_rendering_mode(self):
-        """Gets the dml_effects_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
+        """Gets the dml_effects_rendering_mode of this XamlFlowPackSaveOptionsData.  # noqa: E501
 
         Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
-        :return: The dml_effects_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
+        :return: The dml_effects_rendering_mode of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :rtype: str
         """
         return self._dml_effects_rendering_mode
 
     @dml_effects_rendering_mode.setter
     def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
-        """Sets the dml_effects_rendering_mode of this TxtSaveOptionsBaseData.
+        """Sets the dml_effects_rendering_mode of this XamlFlowPackSaveOptionsData.
 
         Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
 
-        :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
+        :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :type: str
         """
         self._dml_effects_rendering_mode = dml_effects_rendering_mode
 
     @property
     def dml_rendering_mode(self):
-        """Gets the dml_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
+        """Gets the dml_rendering_mode of this XamlFlowPackSaveOptionsData.  # noqa: E501
 
         Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
 
-        :return: The dml_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
+        :return: The dml_rendering_mode of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :rtype: str
         """
         return self._dml_rendering_mode
 
     @dml_rendering_mode.setter
     def dml_rendering_mode(self, dml_rendering_mode):
-        """Sets the dml_rendering_mode of this TxtSaveOptionsBaseData.
+        """Sets the dml_rendering_mode of this XamlFlowPackSaveOptionsData.
 
         Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
 
-        :param dml_rendering_mode: The dml_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
+        :param dml_rendering_mode: The dml_rendering_mode of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :type: str
         """
         self._dml_rendering_mode = dml_rendering_mode
 
     @property
     def file_name(self):
-        """Gets the file_name of this TxtSaveOptionsBaseData.  # noqa: E501
+        """Gets the file_name of this XamlFlowPackSaveOptionsData.  # noqa: E501
 
         Gets or sets the name of destination file.  # noqa: E501
 
-        :return: The file_name of this TxtSaveOptionsBaseData.  # noqa: E501
+        :return: The file_name of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :rtype: str
         """
         return self._file_name
 
     @file_name.setter
     def file_name(self, file_name):
-        """Sets the file_name of this TxtSaveOptionsBaseData.
+        """Sets the file_name of this XamlFlowPackSaveOptionsData.
 
         Gets or sets the name of destination file.  # noqa: E501
 
-        :param file_name: The file_name of this TxtSaveOptionsBaseData.  # noqa: E501
+        :param file_name: The file_name of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :type: str
         """
         self._file_name = file_name
 
     @property
     def flat_opc_xml_mapping_only(self):
-        """Gets the flat_opc_xml_mapping_only of this TxtSaveOptionsBaseData.  # noqa: E501
+        """Gets the flat_opc_xml_mapping_only of this XamlFlowPackSaveOptionsData.  # noqa: E501
 
         Gets or sets value determining which document formats are allowed to be mapped by Aspose.Words.Markup.StructuredDocumentTag.XmlMapping. By default only Aspose.Words.LoadFormat.FlatOpc document format is allowed to be mapped.  # noqa: E501
 
-        :return: The flat_opc_xml_mapping_only of this TxtSaveOptionsBaseData.  # noqa: E501
+        :return: The flat_opc_xml_mapping_only of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._flat_opc_xml_mapping_only
 
     @flat_opc_xml_mapping_only.setter
     def flat_opc_xml_mapping_only(self, flat_opc_xml_mapping_only):
-        """Sets the flat_opc_xml_mapping_only of this TxtSaveOptionsBaseData.
+        """Sets the flat_opc_xml_mapping_only of this XamlFlowPackSaveOptionsData.
 
         Gets or sets value determining which document formats are allowed to be mapped by Aspose.Words.Markup.StructuredDocumentTag.XmlMapping. By default only Aspose.Words.LoadFormat.FlatOpc document format is allowed to be mapped.  # noqa: E501
 
-        :param flat_opc_xml_mapping_only: The flat_opc_xml_mapping_only of this TxtSaveOptionsBaseData.  # noqa: E501
+        :param flat_opc_xml_mapping_only: The flat_opc_xml_mapping_only of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._flat_opc_xml_mapping_only = flat_opc_xml_mapping_only
 
     @property
     def iml_rendering_mode(self):
-        """Gets the iml_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
+        """Gets the iml_rendering_mode of this XamlFlowPackSaveOptionsData.  # noqa: E501
 
         Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
 
-        :return: The iml_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
+        :return: The iml_rendering_mode of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :rtype: str
         """
         return self._iml_rendering_mode
 
     @iml_rendering_mode.setter
     def iml_rendering_mode(self, iml_rendering_mode):
-        """Sets the iml_rendering_mode of this TxtSaveOptionsBaseData.
+        """Sets the iml_rendering_mode of this XamlFlowPackSaveOptionsData.
 
         Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
 
-        :param iml_rendering_mode: The iml_rendering_mode of this TxtSaveOptionsBaseData.  # noqa: E501
+        :param iml_rendering_mode: The iml_rendering_mode of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :type: str
         """
         self._iml_rendering_mode = iml_rendering_mode
 
     @property
-    def save_format(self):
-        """Gets the save_format of this TxtSaveOptionsBaseData.  # noqa: E501
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :return: The save_format of this TxtSaveOptionsBaseData.  # noqa: E501
-        :rtype: str
-        """
-        return self._save_format
-
-    @save_format.setter
-    def save_format(self, save_format):
-        """Sets the save_format of this TxtSaveOptionsBaseData.
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :param save_format: The save_format of this TxtSaveOptionsBaseData.  # noqa: E501
-        :type: str
-        """
-        self._save_format = save_format
-
-    @property
     def update_created_time_property(self):
-        """Gets the update_created_time_property of this TxtSaveOptionsBaseData.  # noqa: E501
+        """Gets the update_created_time_property of this XamlFlowPackSaveOptionsData.  # noqa: E501
 
         Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
 
-        :return: The update_created_time_property of this TxtSaveOptionsBaseData.  # noqa: E501
+        :return: The update_created_time_property of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._update_created_time_property
 
     @update_created_time_property.setter
     def update_created_time_property(self, update_created_time_property):
-        """Sets the update_created_time_property of this TxtSaveOptionsBaseData.
+        """Sets the update_created_time_property of this XamlFlowPackSaveOptionsData.
 
         Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving. Default value is false.  # noqa: E501
 
-        :param update_created_time_property: The update_created_time_property of this TxtSaveOptionsBaseData.  # noqa: E501
+        :param update_created_time_property: The update_created_time_property of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._update_created_time_property = update_created_time_property
 
     @property
     def update_fields(self):
-        """Gets the update_fields of this TxtSaveOptionsBaseData.  # noqa: E501
+        """Gets the update_fields of this XamlFlowPackSaveOptionsData.  # noqa: E501
 
         Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.  # noqa: E501
 
-        :return: The update_fields of this TxtSaveOptionsBaseData.  # noqa: E501
+        :return: The update_fields of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._update_fields
 
     @update_fields.setter
     def update_fields(self, update_fields):
-        """Sets the update_fields of this TxtSaveOptionsBaseData.
+        """Sets the update_fields of this XamlFlowPackSaveOptionsData.
 
         Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.  # noqa: E501
 
-        :param update_fields: The update_fields of this TxtSaveOptionsBaseData.  # noqa: E501
+        :param update_fields: The update_fields of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._update_fields = update_fields
 
     @property
     def update_last_printed_property(self):
-        """Gets the update_last_printed_property of this TxtSaveOptionsBaseData.  # noqa: E501
+        """Gets the update_last_printed_property of this XamlFlowPackSaveOptionsData.  # noqa: E501
 
         Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
 
-        :return: The update_last_printed_property of this TxtSaveOptionsBaseData.  # noqa: E501
+        :return: The update_last_printed_property of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._update_last_printed_property
 
     @update_last_printed_property.setter
     def update_last_printed_property(self, update_last_printed_property):
-        """Sets the update_last_printed_property of this TxtSaveOptionsBaseData.
+        """Sets the update_last_printed_property of this XamlFlowPackSaveOptionsData.
 
         Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.  # noqa: E501
 
-        :param update_last_printed_property: The update_last_printed_property of this TxtSaveOptionsBaseData.  # noqa: E501
+        :param update_last_printed_property: The update_last_printed_property of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._update_last_printed_property = update_last_printed_property
 
     @property
     def update_last_saved_time_property(self):
-        """Gets the update_last_saved_time_property of this TxtSaveOptionsBaseData.  # noqa: E501
+        """Gets the update_last_saved_time_property of this XamlFlowPackSaveOptionsData.  # noqa: E501
 
         Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
 
-        :return: The update_last_saved_time_property of this TxtSaveOptionsBaseData.  # noqa: E501
+        :return: The update_last_saved_time_property of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._update_last_saved_time_property
 
     @update_last_saved_time_property.setter
     def update_last_saved_time_property(self, update_last_saved_time_property):
-        """Sets the update_last_saved_time_property of this TxtSaveOptionsBaseData.
+        """Sets the update_last_saved_time_property of this XamlFlowPackSaveOptionsData.
 
         Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
 
-        :param update_last_saved_time_property: The update_last_saved_time_property of this TxtSaveOptionsBaseData.  # noqa: E501
+        :param update_last_saved_time_property: The update_last_saved_time_property of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._update_last_saved_time_property = update_last_saved_time_property
 
     @property
     def update_sdt_content(self):
-        """Gets the update_sdt_content of this TxtSaveOptionsBaseData.  # noqa: E501
+        """Gets the update_sdt_content of this XamlFlowPackSaveOptionsData.  # noqa: E501
 
         Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
-        :return: The update_sdt_content of this TxtSaveOptionsBaseData.  # noqa: E501
+        :return: The update_sdt_content of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._update_sdt_content
 
     @update_sdt_content.setter
     def update_sdt_content(self, update_sdt_content):
-        """Sets the update_sdt_content of this TxtSaveOptionsBaseData.
+        """Sets the update_sdt_content of this XamlFlowPackSaveOptionsData.
 
         Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
 
-        :param update_sdt_content: The update_sdt_content of this TxtSaveOptionsBaseData.  # noqa: E501
+        :param update_sdt_content: The update_sdt_content of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._update_sdt_content = update_sdt_content
 
     @property
     def zip_output(self):
-        """Gets the zip_output of this TxtSaveOptionsBaseData.  # noqa: E501
+        """Gets the zip_output of this XamlFlowPackSaveOptionsData.  # noqa: E501
 
         Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
 
-        :return: The zip_output of this TxtSaveOptionsBaseData.  # noqa: E501
+        :return: The zip_output of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
         return self._zip_output
 
     @zip_output.setter
     def zip_output(self, zip_output):
-        """Sets the zip_output of this TxtSaveOptionsBaseData.
+        """Sets the zip_output of this XamlFlowPackSaveOptionsData.
 
         Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
 
-        :param zip_output: The zip_output of this TxtSaveOptionsBaseData.  # noqa: E501
+        :param zip_output: The zip_output of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :type: bool
         """
         self._zip_output = zip_output
 
     @property
-    def encoding(self):
-        """Gets the encoding of this TxtSaveOptionsBaseData.  # noqa: E501
+    def images_folder(self):
+        """Gets the images_folder of this XamlFlowPackSaveOptionsData.  # noqa: E501
 
-        Gets or sets the character encoding to use when exporting in plain text format.  # noqa: E501
+        Gets or sets the physical folder where images are saved when exporting.  # noqa: E501
 
-        :return: The encoding of this TxtSaveOptionsBaseData.  # noqa: E501
+        :return: The images_folder of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :rtype: str
         """
-        return self._encoding
+        return self._images_folder
 
-    @encoding.setter
-    def encoding(self, encoding):
-        """Sets the encoding of this TxtSaveOptionsBaseData.
+    @images_folder.setter
+    def images_folder(self, images_folder):
+        """Sets the images_folder of this XamlFlowPackSaveOptionsData.
 
-        Gets or sets the character encoding to use when exporting in plain text format.  # noqa: E501
+        Gets or sets the physical folder where images are saved when exporting.  # noqa: E501
 
-        :param encoding: The encoding of this TxtSaveOptionsBaseData.  # noqa: E501
+        :param images_folder: The images_folder of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._encoding = encoding
+        self._images_folder = images_folder
 
     @property
-    def export_headers_footers_mode(self):
-        """Gets the export_headers_footers_mode of this TxtSaveOptionsBaseData.  # noqa: E501
+    def images_folder_alias(self):
+        """Gets the images_folder_alias of this XamlFlowPackSaveOptionsData.  # noqa: E501
 
-        Gets or sets the option that controls whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
+        Gets or sets the name of the folder used to construct image URIs.  # noqa: E501
 
-        :return: The export_headers_footers_mode of this TxtSaveOptionsBaseData.  # noqa: E501
+        :return: The images_folder_alias of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :rtype: str
         """
-        return self._export_headers_footers_mode
+        return self._images_folder_alias
 
-    @export_headers_footers_mode.setter
-    def export_headers_footers_mode(self, export_headers_footers_mode):
-        """Sets the export_headers_footers_mode of this TxtSaveOptionsBaseData.
+    @images_folder_alias.setter
+    def images_folder_alias(self, images_folder_alias):
+        """Sets the images_folder_alias of this XamlFlowPackSaveOptionsData.
 
-        Gets or sets the option that controls whether to output headers and footers when exporting in plain text format. default value is TxtExportHeadersFootersMode.PrimaryOnly.  # noqa: E501
+        Gets or sets the name of the folder used to construct image URIs.  # noqa: E501
 
-        :param export_headers_footers_mode: The export_headers_footers_mode of this TxtSaveOptionsBaseData.  # noqa: E501
+        :param images_folder_alias: The images_folder_alias of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :type: str
         """
-        allowed_values = ["None", "PrimaryOnly", "AllAtEnd"]  # noqa: E501
-        if not export_headers_footers_mode.isdigit():
-            if export_headers_footers_mode not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `export_headers_footers_mode` ({0}), must be one of {1}"  # noqa: E501
-                    .format(export_headers_footers_mode, allowed_values))
-            self._export_headers_footers_mode = export_headers_footers_mode
-        else:
-            self._export_headers_footers_mode = allowed_values[int(export_headers_footers_mode) if six.PY3 else long(export_headers_footers_mode)]
+        self._images_folder_alias = images_folder_alias
 
     @property
-    def force_page_breaks(self):
-        """Gets the force_page_breaks of this TxtSaveOptionsBaseData.  # noqa: E501
+    def save_format(self):
+        """Gets the save_format of this XamlFlowPackSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether the page breaks should be preserved during export. The default value is false.  # noqa: E501
+        Gets the format of save.  # noqa: E501
 
-        :return: The force_page_breaks of this TxtSaveOptionsBaseData.  # noqa: E501
-        :rtype: bool
-        """
-        return self._force_page_breaks
-
-    @force_page_breaks.setter
-    def force_page_breaks(self, force_page_breaks):
-        """Sets the force_page_breaks of this TxtSaveOptionsBaseData.
-
-        Gets or sets a value indicating whether the page breaks should be preserved during export. The default value is false.  # noqa: E501
-
-        :param force_page_breaks: The force_page_breaks of this TxtSaveOptionsBaseData.  # noqa: E501
-        :type: bool
-        """
-        self._force_page_breaks = force_page_breaks
-
-    @property
-    def paragraph_break(self):
-        """Gets the paragraph_break of this TxtSaveOptionsBaseData.  # noqa: E501
-
-        Gets or sets the string to use as a paragraph break when exporting in plain text format.  # noqa: E501
-
-        :return: The paragraph_break of this TxtSaveOptionsBaseData.  # noqa: E501
+        :return: The save_format of this XamlFlowPackSaveOptionsData.  # noqa: E501
         :rtype: str
         """
-        return self._paragraph_break
+        return self._save_format
 
-    @paragraph_break.setter
-    def paragraph_break(self, paragraph_break):
-        """Sets the paragraph_break of this TxtSaveOptionsBaseData.
-
-        Gets or sets the string to use as a paragraph break when exporting in plain text format.  # noqa: E501
-
-        :param paragraph_break: The paragraph_break of this TxtSaveOptionsBaseData.  # noqa: E501
-        :type: str
-        """
-        self._paragraph_break = paragraph_break
 
 
     def to_dict(self):
@@ -648,7 +574,7 @@ class TxtSaveOptionsBaseData(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, TxtSaveOptionsBaseData):
+        if not isinstance(other, XamlFlowPackSaveOptionsData):
             return False
 
         return self.__dict__ == other.__dict__

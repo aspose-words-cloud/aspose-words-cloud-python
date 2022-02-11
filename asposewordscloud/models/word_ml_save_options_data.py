@@ -51,14 +51,14 @@ class WordMLSaveOptionsData(object):
         'file_name': 'str',
         'flat_opc_xml_mapping_only': 'bool',
         'iml_rendering_mode': 'str',
-        'save_format': 'str',
         'update_created_time_property': 'bool',
         'update_fields': 'bool',
         'update_last_printed_property': 'bool',
         'update_last_saved_time_property': 'bool',
         'update_sdt_content': 'bool',
         'zip_output': 'bool',
-        'pretty_format': 'bool'
+        'pretty_format': 'bool',
+        'save_format': 'str'
     }
 
     attribute_map = {
@@ -70,17 +70,17 @@ class WordMLSaveOptionsData(object):
         'file_name': 'FileName',
         'flat_opc_xml_mapping_only': 'FlatOpcXmlMappingOnly',
         'iml_rendering_mode': 'ImlRenderingMode',
-        'save_format': 'SaveFormat',
         'update_created_time_property': 'UpdateCreatedTimeProperty',
         'update_fields': 'UpdateFields',
         'update_last_printed_property': 'UpdateLastPrintedProperty',
         'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
         'update_sdt_content': 'UpdateSdtContent',
         'zip_output': 'ZipOutput',
-        'pretty_format': 'PrettyFormat'
+        'pretty_format': 'PrettyFormat',
+        'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, save_format=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, pretty_format=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, pretty_format=None):  # noqa: E501
         """WordMLSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -91,7 +91,6 @@ class WordMLSaveOptionsData(object):
         self._file_name = None
         self._flat_opc_xml_mapping_only = None
         self._iml_rendering_mode = None
-        self._save_format = None
         self._update_created_time_property = None
         self._update_fields = None
         self._update_last_printed_property = None
@@ -99,6 +98,7 @@ class WordMLSaveOptionsData(object):
         self._update_sdt_content = None
         self._zip_output = None
         self._pretty_format = None
+        self._save_format = "wml"
         self.discriminator = None
 
         if allow_embedding_post_script_fonts is not None:
@@ -117,8 +117,6 @@ class WordMLSaveOptionsData(object):
             self.flat_opc_xml_mapping_only = flat_opc_xml_mapping_only
         if iml_rendering_mode is not None:
             self.iml_rendering_mode = iml_rendering_mode
-        if save_format is not None:
-            self.save_format = save_format
         if update_created_time_property is not None:
             self.update_created_time_property = update_created_time_property
         if update_fields is not None:
@@ -319,28 +317,6 @@ class WordMLSaveOptionsData(object):
         self._iml_rendering_mode = iml_rendering_mode
 
     @property
-    def save_format(self):
-        """Gets the save_format of this WordMLSaveOptionsData.  # noqa: E501
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :return: The save_format of this WordMLSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._save_format
-
-    @save_format.setter
-    def save_format(self, save_format):
-        """Sets the save_format of this WordMLSaveOptionsData.
-
-        Gets or sets the format of save.  # noqa: E501
-
-        :param save_format: The save_format of this WordMLSaveOptionsData.  # noqa: E501
-        :type: str
-        """
-        self._save_format = save_format
-
-    @property
     def update_created_time_property(self):
         """Gets the update_created_time_property of this WordMLSaveOptionsData.  # noqa: E501
 
@@ -493,6 +469,18 @@ class WordMLSaveOptionsData(object):
         :type: bool
         """
         self._pretty_format = pretty_format
+
+    @property
+    def save_format(self):
+        """Gets the save_format of this WordMLSaveOptionsData.  # noqa: E501
+
+        Gets the format of save.  # noqa: E501
+
+        :return: The save_format of this WordMLSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._save_format
+
 
 
     def to_dict(self):
