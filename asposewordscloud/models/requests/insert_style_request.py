@@ -133,4 +133,4 @@ class InsertStyleRequest(BaseRequestObject):
         return 'StyleResponse'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        return self.deserialize(response, StyleResponse, api_client)
+        return api_client.deserialize(response.data, response.getheaders(), StyleResponse)

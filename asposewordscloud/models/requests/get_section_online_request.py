@@ -112,4 +112,4 @@ class GetSectionOnlineRequest(BaseRequestObject):
         return 'SectionResponse'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        return self.deserialize(response, SectionResponse, api_client)
+        return api_client.deserialize(response.data, response.getheaders(), SectionResponse)

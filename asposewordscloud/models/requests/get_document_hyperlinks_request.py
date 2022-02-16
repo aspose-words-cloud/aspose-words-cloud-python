@@ -110,4 +110,4 @@ class GetDocumentHyperlinksRequest(BaseRequestObject):
         return 'HyperlinksResponse'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        return self.deserialize(response, HyperlinksResponse, api_client)
+        return api_client.deserialize(response.data, response.getheaders(), HyperlinksResponse)

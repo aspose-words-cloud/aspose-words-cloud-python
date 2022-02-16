@@ -123,4 +123,4 @@ class GetHeaderFooterRequest(BaseRequestObject):
         return 'HeaderFooterResponse'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        return self.deserialize(response, HeaderFooterResponse, api_client)
+        return api_client.deserialize(response.data, response.getheaders(), HeaderFooterResponse)

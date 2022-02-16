@@ -154,4 +154,4 @@ class UpdateDrawingObjectRequest(BaseRequestObject):
         return 'DrawingObjectResponse'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        return self.deserialize(response, DrawingObjectResponse, api_client)
+        return api_client.deserialize(response.data, response.getheaders(), DrawingObjectResponse)

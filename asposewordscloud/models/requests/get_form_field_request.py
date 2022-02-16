@@ -125,4 +125,4 @@ class GetFormFieldRequest(BaseRequestObject):
         return 'FormFieldResponse'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        return self.deserialize(response, FormFieldResponse, api_client)
+        return api_client.deserialize(response.data, response.getheaders(), FormFieldResponse)

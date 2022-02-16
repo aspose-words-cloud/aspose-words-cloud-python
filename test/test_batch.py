@@ -158,4 +158,4 @@ class TestBatch(BaseTestContext):
 
         result = self.words_api.batch(batch_request1, batch_request2)
         self.assertEqual(len(result), 2)
-        self.assertIsInstance(result[1], str)
+        self.assertIsInstance(result[1], dict)

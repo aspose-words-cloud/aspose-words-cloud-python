@@ -122,4 +122,4 @@ class GetDocumentStatisticsRequest(BaseRequestObject):
         return 'StatDataResponse'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        return self.deserialize(response, StatDataResponse, api_client)
+        return api_client.deserialize(response.data, response.getheaders(), StatDataResponse)

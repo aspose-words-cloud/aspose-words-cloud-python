@@ -116,4 +116,4 @@ class GetTablesRequest(BaseRequestObject):
         return 'TableLinkCollectionResponse'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        return self.deserialize(response, TableLinkCollectionResponse, api_client)
+        return api_client.deserialize(response.data, response.getheaders(), TableLinkCollectionResponse)

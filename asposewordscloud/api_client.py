@@ -257,11 +257,11 @@ class ApiClient(object):
 
     def getFilenameFromHeaders(self, headers):
         disposition = ""
-        if b'Content-Type' in headers:
+        if b'Content-Disposition' in headers:
             disposition = headers[b'Content-Disposition']
             if type(disposition) != str:
                 disposition = disposition.decode("utf-8") 
-        elif "Content-Type" in headers:
+        elif "Content-Disposition" in headers:
             disposition = headers["Content-Disposition"]
         else:
             return ""
@@ -276,12 +276,12 @@ class ApiClient(object):
     def findMultipartByName(self, multipart, name):
         for part in multipart:
             disposition = ""
-            if b'Content-Type' in headers:
-                disposition = headers[b'Content-Disposition']
+            if b'Content-Disposition' in part.headers:
+                disposition = part.headers[b'Content-Disposition']
                 if type(disposition) != str:
                     disposition = disposition.decode("utf-8") 
-            elif "Content-Type" in headers:
-                disposition = headers["Content-Disposition"]
+            elif "Content-Disposition" in part.headers:
+                disposition = part.headers["Content-Disposition"]
 
             dispparts = disposition.split(";")
             for dispart in dispparts:
@@ -333,6 +333,21 @@ class ApiClient(object):
 
         return results
 
+    def deserialize_files_collection(self, data, headers):
+        result = {}
+        if b'Content-Type' in headers.keys() and headers[b'Content-Type'].decode("utf-8").startswith("multipart/mixed"):
+            parts = decoder.MultipartDecoder(data, headers[b'Content-Type'].decode("utf-8"), 'UTF-8').parts
+            for part in parts:
+                result[self.getFilenameFromHeaders(part.headers)] = self.deserialize_file(part.content, part.headers)
+        elif "Content-Type" in headers.keys() and headers["Content-Type"].startswith("multipart/mixed"):
+            parts = decoder.MultipartDecoder(data, headers["Content-Type"], 'UTF-8').parts
+            for part in parts:
+                result[self.getFilenameFromHeaders(part.headers)] = self.deserialize_file(part.content, part.headers)
+        else:
+            result[self.getFilenameFromHeaders(headers)] = self.deserialize_file(data, headers)
+
+        return result
+
     def deserialize(self, data, headers, response_type):
         """Deserializes response into an object.
 
@@ -345,7 +360,10 @@ class ApiClient(object):
         # handle file downloading
         # save response body into a tmp file and return the instance
         if response_type == "file":
-            return self.__deserialize_file(data, headers)
+            return self.deserialize_file(data, headers)
+
+        if response_type == "files_collection":
+            return self.deserialize_files_collection(data, headers)
 
         if response_type == "multipart":
             if b'Content-Type' in headers:
@@ -639,29 +657,8 @@ class ApiClient(object):
                         'Authentication token must be in `query` or `header`'
                     )
 
-    def __deserialize_file(self, data, headers):
-        """Deserializes body to file
-
-        Saves response body into a file in a temporary folder,
-        using the filename from the `Content-Disposition` header if provided.
-
-        :param response:  RESTResponse.
-        :return: file path.
-        """
-        fd, path = tempfile.mkstemp(dir=self.configuration.temp_folder_path)
-        os.close(fd)
-        os.remove(path)
-
-        filename = self.getFilenameFromHeaders(headers).replace('/', '_')
-        if filename == "":
-            filename = str(uuid.uuid4())
-
-        path = os.path.join(os.path.dirname(path), filename)
-
-        with open(path, "wb") as f:
-            f.write(data)
-
-        return path
+    def deserialize_file(self, data, headers):
+        return data
 
     def __deserialize_primitive(self, data, klass):
         """Deserializes string to primitive type.
