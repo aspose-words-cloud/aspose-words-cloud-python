@@ -126,11 +126,11 @@ class DeleteHeaderFooterOnlineRequest(BaseRequestObject):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": 'file'  # noqa: E501
+            "response_type": 'files_collection'  # noqa: E501
         }
 
     def get_response_type(self):
-        return 'file'  # noqa: E501
+        return 'files_collection'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        return self.deserialize_file(response.data, response.getheaders(), api_client)
+        return api_client.deserialize_files_collection(response.data, response.getheaders())

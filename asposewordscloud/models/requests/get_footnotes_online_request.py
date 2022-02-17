@@ -109,4 +109,4 @@ class GetFootnotesOnlineRequest(BaseRequestObject):
         return 'FootnotesResponse'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        return self.deserialize(response, FootnotesResponse, api_client)
+        return api_client.deserialize(response.data, response.getheaders(), FootnotesResponse)

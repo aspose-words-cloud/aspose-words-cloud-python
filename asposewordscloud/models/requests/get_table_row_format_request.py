@@ -128,4 +128,4 @@ class GetTableRowFormatRequest(BaseRequestObject):
         return 'TableRowFormatResponse'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        return self.deserialize(response, TableRowFormatResponse, api_client)
+        return api_client.deserialize(response.data, response.getheaders(), TableRowFormatResponse)

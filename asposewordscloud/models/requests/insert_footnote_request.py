@@ -139,4 +139,4 @@ class InsertFootnoteRequest(BaseRequestObject):
         return 'FootnoteResponse'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        return self.deserialize(response, FootnoteResponse, api_client)
+        return api_client.deserialize(response.data, response.getheaders(), FootnoteResponse)

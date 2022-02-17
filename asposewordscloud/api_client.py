@@ -36,6 +36,7 @@ from requests_toolbelt.multipart import decoder
 import os
 import re
 import tempfile
+import uuid
 
 # python 2 and python 3 compatibility library
 from urllib.parse import urlencode
@@ -254,6 +255,41 @@ class ApiClient(object):
         return {key: self.sanitize_for_serialization(val)
                 for key, val in six.iteritems(obj_dict)}
 
+    def getFilenameFromHeaders(self, headers):
+        disposition = ""
+        if b'Content-Disposition' in headers:
+            disposition = headers[b'Content-Disposition']
+            if type(disposition) != str:
+                disposition = disposition.decode("utf-8") 
+        elif "Content-Disposition" in headers:
+            disposition = headers["Content-Disposition"]
+        else:
+            return ""
+
+        dispparts = disposition.split(";")
+        for dispart in dispparts:
+            subparts = dispart.split("=")
+            if len(subparts) == 2 and subparts[0].strip(" \"") == "filename":
+                return subparts[1].strip(" \"")
+        return ""
+
+    def findMultipartByName(self, multipart, name):
+        for part in multipart:
+            disposition = ""
+            if b'Content-Disposition' in part.headers:
+                disposition = part.headers[b'Content-Disposition']
+                if type(disposition) != str:
+                    disposition = disposition.decode("utf-8") 
+            elif "Content-Disposition" in part.headers:
+                disposition = part.headers["Content-Disposition"]
+
+            dispparts = disposition.split(";")
+            for dispart in dispparts:
+                subparts = dispart.split("=")
+                if len(subparts) == 2 and subparts[0].strip(" \"") == "name" and subparts[1].strip(" \"") == name:
+                    return part
+        return None
+
     def deserialize_multipart(self, without_intermediate_results, multipart, requests):
         if without_intermediate_results:
             if len(multipart.parts) != 1:
@@ -297,6 +333,21 @@ class ApiClient(object):
 
         return results
 
+    def deserialize_files_collection(self, data, headers):
+        result = {}
+        if b'Content-Type' in headers.keys() and headers[b'Content-Type'].decode("utf-8").startswith("multipart/mixed"):
+            parts = decoder.MultipartDecoder(data, headers[b'Content-Type'].decode("utf-8"), 'UTF-8').parts
+            for part in parts:
+                result[self.getFilenameFromHeaders(part.headers)] = self.deserialize_file(part.content, part.headers)
+        elif "Content-Type" in headers.keys() and headers["Content-Type"].startswith("multipart/mixed"):
+            parts = decoder.MultipartDecoder(data, headers["Content-Type"], 'UTF-8').parts
+            for part in parts:
+                result[self.getFilenameFromHeaders(part.headers)] = self.deserialize_file(part.content, part.headers)
+        else:
+            result[self.getFilenameFromHeaders(headers)] = self.deserialize_file(data, headers)
+
+        return result
+
     def deserialize(self, data, headers, response_type):
         """Deserializes response into an object.
 
@@ -309,10 +360,16 @@ class ApiClient(object):
         # handle file downloading
         # save response body into a tmp file and return the instance
         if response_type == "file":
-            return self.__deserialize_file(data, headers)
+            return self.deserialize_file(data, headers)
+
+        if response_type == "files_collection":
+            return self.deserialize_files_collection(data, headers)
 
         if response_type == "multipart":
-            return decoder.MultipartDecoder(data, headers['Content-Type'], 'UTF-8')
+            if b'Content-Type' in headers:
+                return decoder.MultipartDecoder(data, headers[b'Content-Type'], 'UTF-8')
+            if "Content-Type" in headers:
+                return decoder.MultipartDecoder(data, headers["Content-Type"], 'UTF-8')
 
         # fetch data from response object
         if six.PY3:
@@ -600,30 +657,8 @@ class ApiClient(object):
                         'Authentication token must be in `query` or `header`'
                     )
 
-    def __deserialize_file(self, data, headers):
-        """Deserializes body to file
-
-        Saves response body into a file in a temporary folder,
-        using the filename from the `Content-Disposition` header if provided.
-
-        :param response:  RESTResponse.
-        :return: file path.
-        """
-        fd, path = tempfile.mkstemp(dir=self.configuration.temp_folder_path)
-        os.close(fd)
-        os.remove(path)
-
-        if 'Content-Disposition' in headers.keys():
-            content_disposition = headers["Content-Disposition"]
-            filename = re.search(r'filename=[\'"]?([^\'"\s]+)[\'"]?',
-                                 content_disposition).group(1)
-            filename = filename.replace('/', '_')
-            path = os.path.join(os.path.dirname(path), filename)
-
-        with open(path, "wb") as f:
-            f.write(data)
-
-        return path
+    def deserialize_file(self, data, headers):
+        return data
 
     def __deserialize_primitive(self, data, klass):
         """Deserializes string to primitive type.

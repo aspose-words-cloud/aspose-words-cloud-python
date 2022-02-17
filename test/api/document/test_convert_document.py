@@ -65,6 +65,20 @@ class TestConvertDocument(BaseTestContext):
 
 
     #
+    # Test for converting document online to html with additional files like css and images.
+    #
+    def test_save_as_online_html_multifile(self):
+        local_name = 'test_multi_pages.docx'
+
+        request_document = open(os.path.join(self.local_test_folder, 'Common/' + local_name), 'rb')
+        request_save_options_data = asposewordscloud.HtmlSaveOptionsData(file_name=self.remote_test_out + '/TestSaveAsHtml.html', css_style_sheet_type='External', css_style_sheet_file_name=self.remote_test_out + '/TestSaveAsHtml.css')
+        request = asposewordscloud.models.requests.SaveAsOnlineRequest(document=request_document, save_options_data=request_save_options_data)
+
+        result = self.words_api.save_as_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for converting document to one of the available formats.
     #
     def test_save_as_docx(self):

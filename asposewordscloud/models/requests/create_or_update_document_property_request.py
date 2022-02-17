@@ -142,4 +142,4 @@ class CreateOrUpdateDocumentPropertyRequest(BaseRequestObject):
         return 'DocumentPropertyResponse'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        return self.deserialize(response, DocumentPropertyResponse, api_client)
+        return api_client.deserialize(response.data, response.getheaders(), DocumentPropertyResponse)

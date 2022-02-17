@@ -116,4 +116,4 @@ class GetBordersRequest(BaseRequestObject):
         return 'BordersResponse'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        return self.deserialize(response, BordersResponse, api_client)
+        return api_client.deserialize(response.data, response.getheaders(), BordersResponse)

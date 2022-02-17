@@ -724,7 +724,15 @@ class HtmlSaveOptionsData(object):
         :param css_style_sheet_type: The css_style_sheet_type of this HtmlSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._css_style_sheet_type = css_style_sheet_type
+        allowed_values = ["Inline", "Embedded", "External"]  # noqa: E501
+        if not css_style_sheet_type.isdigit():
+            if css_style_sheet_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `css_style_sheet_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(css_style_sheet_type, allowed_values))
+            self._css_style_sheet_type = css_style_sheet_type
+        else:
+            self._css_style_sheet_type = allowed_values[int(css_style_sheet_type) if six.PY3 else long(css_style_sheet_type)]
 
     @property
     def document_split_criteria(self):
