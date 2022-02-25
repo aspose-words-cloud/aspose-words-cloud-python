@@ -45,7 +45,7 @@ class PdfEncryptionDetailsData(object):
     swagger_types = {
         'encryption_algorithm': 'str',
         'owner_password': 'str',
-        'permissions': 'str',
+        'permissions': 'list[str]',
         'user_password': 'str'
     }
 
@@ -94,7 +94,15 @@ class PdfEncryptionDetailsData(object):
         :param encryption_algorithm: The encryption_algorithm of this PdfEncryptionDetailsData.  # noqa: E501
         :type: str
         """
-        self._encryption_algorithm = encryption_algorithm
+        allowed_values = ["RC4_40", "RC4_128"]  # noqa: E501
+        if not encryption_algorithm.isdigit():
+            if encryption_algorithm not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `encryption_algorithm` ({0}), must be one of {1}"  # noqa: E501
+                    .format(encryption_algorithm, allowed_values))
+            self._encryption_algorithm = encryption_algorithm
+        else:
+            self._encryption_algorithm = allowed_values[int(encryption_algorithm) if six.PY3 else long(encryption_algorithm)]
 
     @property
     def owner_password(self):
@@ -125,7 +133,7 @@ class PdfEncryptionDetailsData(object):
         Gets or sets the operations that are allowed to a user on the encrypted PDF document.  # noqa: E501
 
         :return: The permissions of this PdfEncryptionDetailsData.  # noqa: E501
-        :rtype: str
+        :rtype: list[str]
         """
         return self._permissions
 
@@ -136,7 +144,7 @@ class PdfEncryptionDetailsData(object):
         Gets or sets the operations that are allowed to a user on the encrypted PDF document.  # noqa: E501
 
         :param permissions: The permissions of this PdfEncryptionDetailsData.  # noqa: E501
-        :type: str
+        :type: list[str]
         """
         self._permissions = permissions
 

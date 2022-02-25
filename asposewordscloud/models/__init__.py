@@ -164,6 +164,7 @@ from asposewordscloud.models.paragraph_response import ParagraphResponse
 from asposewordscloud.models.pcl_save_options_data import PclSaveOptionsData
 from asposewordscloud.models.pdf_digital_signature_details_data import PdfDigitalSignatureDetailsData
 from asposewordscloud.models.pdf_encryption_details_data import PdfEncryptionDetailsData
+from asposewordscloud.models.pdf_permissions import PdfPermissions
 from asposewordscloud.models.pdf_save_options_data import PdfSaveOptionsData
 from asposewordscloud.models.png_save_options_data import PngSaveOptionsData
 from asposewordscloud.models.preferred_width import PreferredWidth

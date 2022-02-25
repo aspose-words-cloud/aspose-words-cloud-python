@@ -121,7 +121,15 @@ class PdfDigitalSignatureDetailsData(object):
         :param hash_algorithm: The hash_algorithm of this PdfDigitalSignatureDetailsData.  # noqa: E501
         :type: str
         """
-        self._hash_algorithm = hash_algorithm
+        allowed_values = ["Sha1", "Sha256", "Sha384", "Sha512", "Md5"]  # noqa: E501
+        if not hash_algorithm.isdigit():
+            if hash_algorithm not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `hash_algorithm` ({0}), must be one of {1}"  # noqa: E501
+                    .format(hash_algorithm, allowed_values))
+            self._hash_algorithm = hash_algorithm
+        else:
+            self._hash_algorithm = allowed_values[int(hash_algorithm) if six.PY3 else long(hash_algorithm)]
 
     @property
     def location(self):

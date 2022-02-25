@@ -261,7 +261,15 @@ class PsSaveOptionsData(object):
         :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this PsSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._dml_effects_rendering_mode = dml_effects_rendering_mode
+        allowed_values = ["Simplified", "None", "Fine"]  # noqa: E501
+        if not dml_effects_rendering_mode.isdigit():
+            if dml_effects_rendering_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `dml_effects_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(dml_effects_rendering_mode, allowed_values))
+            self._dml_effects_rendering_mode = dml_effects_rendering_mode
+        else:
+            self._dml_effects_rendering_mode = allowed_values[int(dml_effects_rendering_mode) if six.PY3 else long(dml_effects_rendering_mode)]
 
     @property
     def dml_rendering_mode(self):
@@ -283,7 +291,15 @@ class PsSaveOptionsData(object):
         :param dml_rendering_mode: The dml_rendering_mode of this PsSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._dml_rendering_mode = dml_rendering_mode
+        allowed_values = ["Fallback", "DrawingML"]  # noqa: E501
+        if not dml_rendering_mode.isdigit():
+            if dml_rendering_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `dml_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(dml_rendering_mode, allowed_values))
+            self._dml_rendering_mode = dml_rendering_mode
+        else:
+            self._dml_rendering_mode = allowed_values[int(dml_rendering_mode) if six.PY3 else long(dml_rendering_mode)]
 
     @property
     def file_name(self):
@@ -349,7 +365,15 @@ class PsSaveOptionsData(object):
         :param iml_rendering_mode: The iml_rendering_mode of this PsSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._iml_rendering_mode = iml_rendering_mode
+        allowed_values = ["Fallback", "InkML"]  # noqa: E501
+        if not iml_rendering_mode.isdigit():
+            if iml_rendering_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `iml_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(iml_rendering_mode, allowed_values))
+            self._iml_rendering_mode = iml_rendering_mode
+        else:
+            self._iml_rendering_mode = allowed_values[int(iml_rendering_mode) if six.PY3 else long(iml_rendering_mode)]
 
     @property
     def update_created_time_property(self):
@@ -503,7 +527,15 @@ class PsSaveOptionsData(object):
         :param color_mode: The color_mode of this PsSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._color_mode = color_mode
+        allowed_values = ["Normal", "Grayscale"]  # noqa: E501
+        if not color_mode.isdigit():
+            if color_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `color_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(color_mode, allowed_values))
+            self._color_mode = color_mode
+        else:
+            self._color_mode = allowed_values[int(color_mode) if six.PY3 else long(color_mode)]
 
     @property
     def jpeg_quality(self):
@@ -569,7 +601,15 @@ class PsSaveOptionsData(object):
         :param numeral_format: The numeral_format of this PsSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._numeral_format = numeral_format
+        allowed_values = ["European", "ArabicIndic", "EasternArabicIndic", "Context", "System"]  # noqa: E501
+        if not numeral_format.isdigit():
+            if numeral_format not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `numeral_format` ({0}), must be one of {1}"  # noqa: E501
+                    .format(numeral_format, allowed_values))
+            self._numeral_format = numeral_format
+        else:
+            self._numeral_format = allowed_values[int(numeral_format) if six.PY3 else long(numeral_format)]
 
     @property
     def optimize_output(self):

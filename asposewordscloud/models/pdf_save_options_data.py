@@ -381,7 +381,15 @@ class PdfSaveOptionsData(object):
         :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._dml_effects_rendering_mode = dml_effects_rendering_mode
+        allowed_values = ["Simplified", "None", "Fine"]  # noqa: E501
+        if not dml_effects_rendering_mode.isdigit():
+            if dml_effects_rendering_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `dml_effects_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(dml_effects_rendering_mode, allowed_values))
+            self._dml_effects_rendering_mode = dml_effects_rendering_mode
+        else:
+            self._dml_effects_rendering_mode = allowed_values[int(dml_effects_rendering_mode) if six.PY3 else long(dml_effects_rendering_mode)]
 
     @property
     def dml_rendering_mode(self):
@@ -403,7 +411,15 @@ class PdfSaveOptionsData(object):
         :param dml_rendering_mode: The dml_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._dml_rendering_mode = dml_rendering_mode
+        allowed_values = ["Fallback", "DrawingML"]  # noqa: E501
+        if not dml_rendering_mode.isdigit():
+            if dml_rendering_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `dml_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(dml_rendering_mode, allowed_values))
+            self._dml_rendering_mode = dml_rendering_mode
+        else:
+            self._dml_rendering_mode = allowed_values[int(dml_rendering_mode) if six.PY3 else long(dml_rendering_mode)]
 
     @property
     def file_name(self):
@@ -469,7 +485,15 @@ class PdfSaveOptionsData(object):
         :param iml_rendering_mode: The iml_rendering_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._iml_rendering_mode = iml_rendering_mode
+        allowed_values = ["Fallback", "InkML"]  # noqa: E501
+        if not iml_rendering_mode.isdigit():
+            if iml_rendering_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `iml_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(iml_rendering_mode, allowed_values))
+            self._iml_rendering_mode = iml_rendering_mode
+        else:
+            self._iml_rendering_mode = allowed_values[int(iml_rendering_mode) if six.PY3 else long(iml_rendering_mode)]
 
     @property
     def update_created_time_property(self):
@@ -623,7 +647,15 @@ class PdfSaveOptionsData(object):
         :param color_mode: The color_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._color_mode = color_mode
+        allowed_values = ["Normal", "Grayscale"]  # noqa: E501
+        if not color_mode.isdigit():
+            if color_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `color_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(color_mode, allowed_values))
+            self._color_mode = color_mode
+        else:
+            self._color_mode = allowed_values[int(color_mode) if six.PY3 else long(color_mode)]
 
     @property
     def jpeg_quality(self):
@@ -689,7 +721,15 @@ class PdfSaveOptionsData(object):
         :param numeral_format: The numeral_format of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._numeral_format = numeral_format
+        allowed_values = ["European", "ArabicIndic", "EasternArabicIndic", "Context", "System"]  # noqa: E501
+        if not numeral_format.isdigit():
+            if numeral_format not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `numeral_format` ({0}), must be one of {1}"  # noqa: E501
+                    .format(numeral_format, allowed_values))
+            self._numeral_format = numeral_format
+        else:
+            self._numeral_format = allowed_values[int(numeral_format) if six.PY3 else long(numeral_format)]
 
     @property
     def optimize_output(self):
@@ -777,7 +817,15 @@ class PdfSaveOptionsData(object):
         :param compliance: The compliance of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._compliance = compliance
+        allowed_values = ["Pdf17", "Pdf15", "PdfA1a", "PdfA1b", "PdfA2a", "PdfA2u", "PdfUa1"]  # noqa: E501
+        if not compliance.isdigit():
+            if compliance not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `compliance` ({0}), must be one of {1}"  # noqa: E501
+                    .format(compliance, allowed_values))
+            self._compliance = compliance
+        else:
+            self._compliance = allowed_values[int(compliance) if six.PY3 else long(compliance)]
 
     @property
     def create_note_hyperlinks(self):
@@ -821,7 +869,15 @@ class PdfSaveOptionsData(object):
         :param custom_properties_export: The custom_properties_export of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._custom_properties_export = custom_properties_export
+        allowed_values = ["None", "Standard", "Metadata"]  # noqa: E501
+        if not custom_properties_export.isdigit():
+            if custom_properties_export not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `custom_properties_export` ({0}), must be one of {1}"  # noqa: E501
+                    .format(custom_properties_export, allowed_values))
+            self._custom_properties_export = custom_properties_export
+        else:
+            self._custom_properties_export = allowed_values[int(custom_properties_export) if six.PY3 else long(custom_properties_export)]
 
     @property
     def digital_signature_details(self):
@@ -997,7 +1053,15 @@ class PdfSaveOptionsData(object):
         :param font_embedding_mode: The font_embedding_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._font_embedding_mode = font_embedding_mode
+        allowed_values = ["EmbedAll", "EmbedNonstandard", "EmbedNone"]  # noqa: E501
+        if not font_embedding_mode.isdigit():
+            if font_embedding_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `font_embedding_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(font_embedding_mode, allowed_values))
+            self._font_embedding_mode = font_embedding_mode
+        else:
+            self._font_embedding_mode = allowed_values[int(font_embedding_mode) if six.PY3 else long(font_embedding_mode)]
 
     @property
     def header_footer_bookmarks_export_mode(self):
@@ -1049,7 +1113,15 @@ class PdfSaveOptionsData(object):
         :param image_color_space_export_mode: The image_color_space_export_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._image_color_space_export_mode = image_color_space_export_mode
+        allowed_values = ["Auto", "SimpleCmyk"]  # noqa: E501
+        if not image_color_space_export_mode.isdigit():
+            if image_color_space_export_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `image_color_space_export_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(image_color_space_export_mode, allowed_values))
+            self._image_color_space_export_mode = image_color_space_export_mode
+        else:
+            self._image_color_space_export_mode = allowed_values[int(image_color_space_export_mode) if six.PY3 else long(image_color_space_export_mode)]
 
     @property
     def image_compression(self):
@@ -1159,7 +1231,15 @@ class PdfSaveOptionsData(object):
         :param page_mode: The page_mode of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._page_mode = page_mode
+        allowed_values = ["UseNone", "UseOutlines", "UseThumbs", "FullScreen", "UseOC", "UseAttachments"]  # noqa: E501
+        if not page_mode.isdigit():
+            if page_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `page_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(page_mode, allowed_values))
+            self._page_mode = page_mode
+        else:
+            self._page_mode = allowed_values[int(page_mode) if six.PY3 else long(page_mode)]
 
     @property
     def preblend_images(self):
@@ -1237,7 +1317,15 @@ class PdfSaveOptionsData(object):
         :param text_compression: The text_compression of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._text_compression = text_compression
+        allowed_values = ["None", "Flate"]  # noqa: E501
+        if not text_compression.isdigit():
+            if text_compression not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `text_compression` ({0}), must be one of {1}"  # noqa: E501
+                    .format(text_compression, allowed_values))
+            self._text_compression = text_compression
+        else:
+            self._text_compression = allowed_values[int(text_compression) if six.PY3 else long(text_compression)]
 
     @property
     def use_book_fold_printing_settings(self):
@@ -1303,7 +1391,15 @@ class PdfSaveOptionsData(object):
         :param zoom_behavior: The zoom_behavior of this PdfSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._zoom_behavior = zoom_behavior
+        allowed_values = ["None", "ZoomFactor", "FitPage", "FitWidth", "FitHeight", "FitBox"]  # noqa: E501
+        if not zoom_behavior.isdigit():
+            if zoom_behavior not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `zoom_behavior` ({0}), must be one of {1}"  # noqa: E501
+                    .format(zoom_behavior, allowed_values))
+            self._zoom_behavior = zoom_behavior
+        else:
+            self._zoom_behavior = allowed_values[int(zoom_behavior) if six.PY3 else long(zoom_behavior)]
 
     @property
     def zoom_factor(self):
