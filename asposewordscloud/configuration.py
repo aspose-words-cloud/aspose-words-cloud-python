@@ -116,6 +116,10 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         # Safe chars for path_param
         self.safe_chars_for_path_param = '/'
 
+        # RSA key data
+        self.exponent = None
+        self.modulus = None
+
     @property
     def logger_file(self):
         """The logger file.

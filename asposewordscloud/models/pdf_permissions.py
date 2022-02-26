@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="document_entry.py">
+# <copyright company="Aspose" file="pdf_permissions.py">
 #   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -31,9 +31,23 @@ import six
 import json
 
 
-class DocumentEntry(object):
-    """Represents a document which will be appended to the original resource document.
+class PdfPermissions(object):
+    """Specifies the operations that are allowed to a user on an encrypted PDF document.
     """
+
+    """
+    allowed enum values
+    """
+    DISALLOWALL = "DisallowAll"
+    PRINTING = "Printing"
+    MODIFYCONTENTS = "ModifyContents"
+    CONTENTCOPY = "ContentCopy"
+    MODIFYANNOTATIONS = "ModifyAnnotations"
+    FILLIN = "FillIn"
+    CONTENTCOPYFORACCESSIBILITY = "ContentCopyForAccessibility"
+    DOCUMENTASSEMBLY = "DocumentAssembly"
+    HIGHRESOLUTIONPRINTING = "HighResolutionPrinting"
+    ALLOWALL = "AllowAll"
 
     """
     Attributes:
@@ -43,97 +57,16 @@ class DocumentEntry(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'encrypted_password': 'str',
-        'href': 'str',
-        'import_format_mode': 'str'
     }
 
     attribute_map = {
-        'encrypted_password': 'EncryptedPassword',
-        'href': 'Href',
-        'import_format_mode': 'ImportFormatMode'
     }
 
-    def __init__(self, encrypted_password=None, href=None, import_format_mode=None):  # noqa: E501
-        """DocumentEntry - a model defined in Swagger"""  # noqa: E501
+    def __init__(self):  # noqa: E501
+        """PdfPermissions - a model defined in Swagger"""  # noqa: E501
 
-        self._encrypted_password = None
-        self._href = None
-        self._import_format_mode = None
         self.discriminator = None
 
-        if encrypted_password is not None:
-            self.encrypted_password = encrypted_password
-        if href is not None:
-            self.href = href
-        if import_format_mode is not None:
-            self.import_format_mode = import_format_mode
-
-    @property
-    def encrypted_password(self):
-        """Gets the encrypted_password of this DocumentEntry.  # noqa: E501
-
-        Gets or sets document password encrypted on API public key. The default value is null (the document has no password).  # noqa: E501
-
-        :return: The encrypted_password of this DocumentEntry.  # noqa: E501
-        :rtype: str
-        """
-        return self._encrypted_password
-
-    @encrypted_password.setter
-    def encrypted_password(self, encrypted_password):
-        """Sets the encrypted_password of this DocumentEntry.
-
-        Gets or sets document password encrypted on API public key. The default value is null (the document has no password).  # noqa: E501
-
-        :param encrypted_password: The encrypted_password of this DocumentEntry.  # noqa: E501
-        :type: str
-        """
-        self._encrypted_password = encrypted_password
-
-    @property
-    def href(self):
-        """Gets the href of this DocumentEntry.  # noqa: E501
-
-        Gets or sets the path to document to append at the server.  # noqa: E501
-
-        :return: The href of this DocumentEntry.  # noqa: E501
-        :rtype: str
-        """
-        return self._href
-
-    @href.setter
-    def href(self, href):
-        """Sets the href of this DocumentEntry.
-
-        Gets or sets the path to document to append at the server.  # noqa: E501
-
-        :param href: The href of this DocumentEntry.  # noqa: E501
-        :type: str
-        """
-        self._href = href
-
-    @property
-    def import_format_mode(self):
-        """Gets the import_format_mode of this DocumentEntry.  # noqa: E501
-
-        Gets or sets the option that controls formatting will be used: appended or destination document. Can be KeepSourceFormatting or UseDestinationStyles.  # noqa: E501
-
-        :return: The import_format_mode of this DocumentEntry.  # noqa: E501
-        :rtype: str
-        """
-        return self._import_format_mode
-
-    @import_format_mode.setter
-    def import_format_mode(self, import_format_mode):
-        """Sets the import_format_mode of this DocumentEntry.
-
-        Gets or sets the option that controls formatting will be used: appended or destination document. Can be KeepSourceFormatting or UseDestinationStyles.  # noqa: E501
-
-        :param import_format_mode: The import_format_mode of this DocumentEntry.  # noqa: E501
-        :type: str
-        """
-        self._import_format_mode = import_format_mode
 
 
     def to_dict(self):
@@ -200,7 +133,7 @@ class DocumentEntry(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, DocumentEntry):
+        if not isinstance(other, PdfPermissions):
             return False
 
         return self.__dict__ == other.__dict__

@@ -43,7 +43,6 @@ from urllib.parse import urlencode
 from six.moves.urllib.parse import quote
 import six
 from urllib3 import encode_multipart_formdata
-from base64 import b64encode
 
 from asposewordscloud.configuration import Configuration
 import asposewordscloud.models
@@ -754,12 +753,12 @@ class ApiClient(object):
                 instance = self.__deserialize(data, klass_name)
         return instance
 
-    def request_to_batch_part(self, request, rsa_key):
+    def request_to_batch_part(self, request, encryptor):
         http_request = request.create_http_request(self)
         if http_request['form_params'] and http_request['body']:
             raise ValueError("body parameter cannot be used with post_params parameter.")
 
-        self.handle_password(http_request, rsa_key)
+        self.handle_password(http_request, encryptor)
 
         url = http_request['path'][len('/v4.0/words/'):]
         if http_request['query_params']:
@@ -796,10 +795,7 @@ class ApiClient(object):
 
         return [None, result, 'multipart']
 
-    def handle_password(self, http_params, rsa_key):
-
-        if rsa_key is None:
-            return
+    def handle_password(self, http_params, encryptor):
 
         index = -1
         for i in range(len(http_params['query_params'])):
@@ -810,4 +806,4 @@ class ApiClient(object):
 
         if index > -1:
             k,v = http_params['query_params'].pop(index)
-            http_params['query_params'].append(('encryptedPassword', b64encode(rsa_key.encrypt(v.encode('utf-8')))))
+            http_params['query_params'].append(('encryptedPassword', encryptor.encrypt(v)))

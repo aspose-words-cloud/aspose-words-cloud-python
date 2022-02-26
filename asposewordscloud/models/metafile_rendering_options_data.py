@@ -99,7 +99,15 @@ class MetafileRenderingOptionsData(object):
         :param emf_plus_dual_rendering_mode: The emf_plus_dual_rendering_mode of this MetafileRenderingOptionsData.  # noqa: E501
         :type: str
         """
-        self._emf_plus_dual_rendering_mode = emf_plus_dual_rendering_mode
+        allowed_values = ["EmfPlusWithFallback", "EmfPlus", "Emf"]  # noqa: E501
+        if not emf_plus_dual_rendering_mode.isdigit():
+            if emf_plus_dual_rendering_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `emf_plus_dual_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(emf_plus_dual_rendering_mode, allowed_values))
+            self._emf_plus_dual_rendering_mode = emf_plus_dual_rendering_mode
+        else:
+            self._emf_plus_dual_rendering_mode = allowed_values[int(emf_plus_dual_rendering_mode) if six.PY3 else long(emf_plus_dual_rendering_mode)]
 
     @property
     def emulate_raster_operations(self):
@@ -143,7 +151,15 @@ class MetafileRenderingOptionsData(object):
         :param rendering_mode: The rendering_mode of this MetafileRenderingOptionsData.  # noqa: E501
         :type: str
         """
-        self._rendering_mode = rendering_mode
+        allowed_values = ["VectorWithFallback", "Vector", "Bitmap"]  # noqa: E501
+        if not rendering_mode.isdigit():
+            if rendering_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `rendering_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(rendering_mode, allowed_values))
+            self._rendering_mode = rendering_mode
+        else:
+            self._rendering_mode = allowed_values[int(rendering_mode) if six.PY3 else long(rendering_mode)]
 
     @property
     def scale_wmf_fonts_to_metafile_size(self):
