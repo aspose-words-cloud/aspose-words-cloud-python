@@ -43,66 +43,31 @@ class PdfEncryptionDetailsData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'encryption_algorithm': 'str',
         'owner_password': 'str',
         'permissions': 'list[str]',
         'user_password': 'str'
     }
 
     attribute_map = {
-        'encryption_algorithm': 'EncryptionAlgorithm',
         'owner_password': 'OwnerPassword',
         'permissions': 'Permissions',
         'user_password': 'UserPassword'
     }
 
-    def __init__(self, encryption_algorithm=None, owner_password=None, permissions=None, user_password=None):  # noqa: E501
+    def __init__(self, owner_password=None, permissions=None, user_password=None):  # noqa: E501
         """PdfEncryptionDetailsData - a model defined in Swagger"""  # noqa: E501
 
-        self._encryption_algorithm = None
         self._owner_password = None
         self._permissions = None
         self._user_password = None
         self.discriminator = None
 
-        if encryption_algorithm is not None:
-            self.encryption_algorithm = encryption_algorithm
         if owner_password is not None:
             self.owner_password = owner_password
         if permissions is not None:
             self.permissions = permissions
         if user_password is not None:
             self.user_password = user_password
-
-    @property
-    def encryption_algorithm(self):
-        """Gets the encryption_algorithm of this PdfEncryptionDetailsData.  # noqa: E501
-
-        Gets or sets the encryption algorithm to use.  # noqa: E501
-
-        :return: The encryption_algorithm of this PdfEncryptionDetailsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._encryption_algorithm
-
-    @encryption_algorithm.setter
-    def encryption_algorithm(self, encryption_algorithm):
-        """Sets the encryption_algorithm of this PdfEncryptionDetailsData.
-
-        Gets or sets the encryption algorithm to use.  # noqa: E501
-
-        :param encryption_algorithm: The encryption_algorithm of this PdfEncryptionDetailsData.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["RC4_40", "RC4_128"]  # noqa: E501
-        if not encryption_algorithm.isdigit():
-            if encryption_algorithm not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `encryption_algorithm` ({0}), must be one of {1}"  # noqa: E501
-                    .format(encryption_algorithm, allowed_values))
-            self._encryption_algorithm = encryption_algorithm
-        else:
-            self._encryption_algorithm = allowed_values[int(encryption_algorithm) if six.PY3 else long(encryption_algorithm)]
 
     @property
     def owner_password(self):
