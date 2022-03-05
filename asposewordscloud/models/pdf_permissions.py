@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="pdf_encryption_details_data.py">
+# <copyright company="Aspose" file="pdf_permissions.py">
 #   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -31,9 +31,23 @@ import six
 import json
 
 
-class PdfEncryptionDetailsData(object):
-    """Container class for details of encryption.
+class PdfPermissions(object):
+    """Specifies the operations that are allowed to a user on an encrypted PDF document.
     """
+
+    """
+    allowed enum values
+    """
+    DISALLOWALL = "DisallowAll"
+    PRINTING = "Printing"
+    MODIFYCONTENTS = "ModifyContents"
+    CONTENTCOPY = "ContentCopy"
+    MODIFYANNOTATIONS = "ModifyAnnotations"
+    FILLIN = "FillIn"
+    CONTENTCOPYFORACCESSIBILITY = "ContentCopyForAccessibility"
+    DOCUMENTASSEMBLY = "DocumentAssembly"
+    HIGHRESOLUTIONPRINTING = "HighResolutionPrinting"
+    ALLOWALL = "AllowAll"
 
     """
     Attributes:
@@ -43,97 +57,16 @@ class PdfEncryptionDetailsData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'owner_password': 'str',
-        'permissions': 'list[str]',
-        'user_password': 'str'
     }
 
     attribute_map = {
-        'owner_password': 'OwnerPassword',
-        'permissions': 'Permissions',
-        'user_password': 'UserPassword'
     }
 
-    def __init__(self, owner_password=None, permissions=None, user_password=None):  # noqa: E501
-        """PdfEncryptionDetailsData - a model defined in Swagger"""  # noqa: E501
+    def __init__(self):  # noqa: E501
+        """PdfPermissions - a model defined in Swagger"""  # noqa: E501
 
-        self._owner_password = None
-        self._permissions = None
-        self._user_password = None
         self.discriminator = None
 
-        if owner_password is not None:
-            self.owner_password = owner_password
-        if permissions is not None:
-            self.permissions = permissions
-        if user_password is not None:
-            self.user_password = user_password
-
-    @property
-    def owner_password(self):
-        """Gets the owner_password of this PdfEncryptionDetailsData.  # noqa: E501
-
-        Gets or sets the owner password for the encrypted PDF document.  # noqa: E501
-
-        :return: The owner_password of this PdfEncryptionDetailsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._owner_password
-
-    @owner_password.setter
-    def owner_password(self, owner_password):
-        """Sets the owner_password of this PdfEncryptionDetailsData.
-
-        Gets or sets the owner password for the encrypted PDF document.  # noqa: E501
-
-        :param owner_password: The owner_password of this PdfEncryptionDetailsData.  # noqa: E501
-        :type: str
-        """
-        self._owner_password = owner_password
-
-    @property
-    def permissions(self):
-        """Gets the permissions of this PdfEncryptionDetailsData.  # noqa: E501
-
-        Gets or sets the operations that are allowed to a user on the encrypted PDF document.  # noqa: E501
-
-        :return: The permissions of this PdfEncryptionDetailsData.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._permissions
-
-    @permissions.setter
-    def permissions(self, permissions):
-        """Sets the permissions of this PdfEncryptionDetailsData.
-
-        Gets or sets the operations that are allowed to a user on the encrypted PDF document.  # noqa: E501
-
-        :param permissions: The permissions of this PdfEncryptionDetailsData.  # noqa: E501
-        :type: list[str]
-        """
-        self._permissions = permissions
-
-    @property
-    def user_password(self):
-        """Gets the user_password of this PdfEncryptionDetailsData.  # noqa: E501
-
-        Gets or sets the user password required for opening the encrypted PDF document.  # noqa: E501
-
-        :return: The user_password of this PdfEncryptionDetailsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._user_password
-
-    @user_password.setter
-    def user_password(self, user_password):
-        """Sets the user_password of this PdfEncryptionDetailsData.
-
-        Gets or sets the user password required for opening the encrypted PDF document.  # noqa: E501
-
-        :param user_password: The user_password of this PdfEncryptionDetailsData.  # noqa: E501
-        :type: str
-        """
-        self._user_password = user_password
 
 
     def to_dict(self):
@@ -200,7 +133,7 @@ class PdfEncryptionDetailsData(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, PdfEncryptionDetailsData):
+        if not isinstance(other, PdfPermissions):
             return False
 
         return self.__dict__ == other.__dict__

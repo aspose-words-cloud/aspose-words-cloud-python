@@ -103,4 +103,4 @@ class GetDocumentProtectionOnlineRequest(BaseRequestObject):
         return 'ProtectionDataResponse'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        return self.deserialize(response, ProtectionDataResponse, api_client)
+        return api_client.deserialize(response.data, response.getheaders(), ProtectionDataResponse)

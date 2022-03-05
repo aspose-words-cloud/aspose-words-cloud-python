@@ -416,7 +416,15 @@ class HtmlSaveOptionsData(object):
         :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this HtmlSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._dml_effects_rendering_mode = dml_effects_rendering_mode
+        allowed_values = ["Simplified", "None", "Fine"]  # noqa: E501
+        if not dml_effects_rendering_mode.isdigit():
+            if dml_effects_rendering_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `dml_effects_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(dml_effects_rendering_mode, allowed_values))
+            self._dml_effects_rendering_mode = dml_effects_rendering_mode
+        else:
+            self._dml_effects_rendering_mode = allowed_values[int(dml_effects_rendering_mode) if six.PY3 else long(dml_effects_rendering_mode)]
 
     @property
     def dml_rendering_mode(self):
@@ -438,7 +446,15 @@ class HtmlSaveOptionsData(object):
         :param dml_rendering_mode: The dml_rendering_mode of this HtmlSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._dml_rendering_mode = dml_rendering_mode
+        allowed_values = ["Fallback", "DrawingML"]  # noqa: E501
+        if not dml_rendering_mode.isdigit():
+            if dml_rendering_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `dml_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(dml_rendering_mode, allowed_values))
+            self._dml_rendering_mode = dml_rendering_mode
+        else:
+            self._dml_rendering_mode = allowed_values[int(dml_rendering_mode) if six.PY3 else long(dml_rendering_mode)]
 
     @property
     def file_name(self):
@@ -504,7 +520,15 @@ class HtmlSaveOptionsData(object):
         :param iml_rendering_mode: The iml_rendering_mode of this HtmlSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._iml_rendering_mode = iml_rendering_mode
+        allowed_values = ["Fallback", "InkML"]  # noqa: E501
+        if not iml_rendering_mode.isdigit():
+            if iml_rendering_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `iml_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(iml_rendering_mode, allowed_values))
+            self._iml_rendering_mode = iml_rendering_mode
+        else:
+            self._iml_rendering_mode = allowed_values[int(iml_rendering_mode) if six.PY3 else long(iml_rendering_mode)]
 
     @property
     def update_created_time_property(self):
@@ -724,7 +748,15 @@ class HtmlSaveOptionsData(object):
         :param css_style_sheet_type: The css_style_sheet_type of this HtmlSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._css_style_sheet_type = css_style_sheet_type
+        allowed_values = ["Inline", "Embedded", "External"]  # noqa: E501
+        if not css_style_sheet_type.isdigit():
+            if css_style_sheet_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `css_style_sheet_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(css_style_sheet_type, allowed_values))
+            self._css_style_sheet_type = css_style_sheet_type
+        else:
+            self._css_style_sheet_type = allowed_values[int(css_style_sheet_type) if six.PY3 else long(css_style_sheet_type)]
 
     @property
     def document_split_criteria(self):
@@ -746,7 +778,15 @@ class HtmlSaveOptionsData(object):
         :param document_split_criteria: The document_split_criteria of this HtmlSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._document_split_criteria = document_split_criteria
+        allowed_values = ["None", "PageBreak", "ColumnBreak", "SectionBreak", "HeadingParagraph"]  # noqa: E501
+        if not document_split_criteria.isdigit():
+            if document_split_criteria not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `document_split_criteria` ({0}), must be one of {1}"  # noqa: E501
+                    .format(document_split_criteria, allowed_values))
+            self._document_split_criteria = document_split_criteria
+        else:
+            self._document_split_criteria = allowed_values[int(document_split_criteria) if six.PY3 else long(document_split_criteria)]
 
     @property
     def document_split_heading_level(self):
@@ -900,7 +940,15 @@ class HtmlSaveOptionsData(object):
         :param export_headers_footers_mode: The export_headers_footers_mode of this HtmlSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._export_headers_footers_mode = export_headers_footers_mode
+        allowed_values = ["None", "PerSection", "FirstSectionHeaderLastSectionFooter", "FirstPageHeaderFooterPerSection"]  # noqa: E501
+        if not export_headers_footers_mode.isdigit():
+            if export_headers_footers_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `export_headers_footers_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(export_headers_footers_mode, allowed_values))
+            self._export_headers_footers_mode = export_headers_footers_mode
+        else:
+            self._export_headers_footers_mode = allowed_values[int(export_headers_footers_mode) if six.PY3 else long(export_headers_footers_mode)]
 
     @property
     def export_images_as_base64(self):
@@ -966,7 +1014,15 @@ class HtmlSaveOptionsData(object):
         :param export_list_labels: The export_list_labels of this HtmlSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._export_list_labels = export_list_labels
+        allowed_values = ["Auto", "AsInlineText", "ByHtmlTags"]  # noqa: E501
+        if not export_list_labels.isdigit():
+            if export_list_labels not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `export_list_labels` ({0}), must be one of {1}"  # noqa: E501
+                    .format(export_list_labels, allowed_values))
+            self._export_list_labels = export_list_labels
+        else:
+            self._export_list_labels = allowed_values[int(export_list_labels) if six.PY3 else long(export_list_labels)]
 
     @property
     def export_original_url_for_linked_images(self):
@@ -1530,7 +1586,15 @@ class HtmlSaveOptionsData(object):
         :param table_width_output_mode: The table_width_output_mode of this HtmlSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._table_width_output_mode = table_width_output_mode
+        allowed_values = ["All", "RelativeOnly", "None"]  # noqa: E501
+        if not table_width_output_mode.isdigit():
+            if table_width_output_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `table_width_output_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(table_width_output_mode, allowed_values))
+            self._table_width_output_mode = table_width_output_mode
+        else:
+            self._table_width_output_mode = allowed_values[int(table_width_output_mode) if six.PY3 else long(table_width_output_mode)]
 
 
     def to_dict(self):

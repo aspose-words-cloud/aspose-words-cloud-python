@@ -116,6 +116,10 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         # Safe chars for path_param
         self.safe_chars_for_path_param = '/'
 
+        # RSA key data
+        self.exponent = None
+        self.modulus = None
+
     @property
     def logger_file(self):
         """The logger file.
@@ -258,6 +262,6 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         return "Python SDK Debug Report:\n"\
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
-               "Version of the API: 22.2\n"\
-               "SDK Package Version: 22.2".\
+               "Version of the API: 22.3\n"\
+               "SDK Package Version: 22.3".\
                format(env=sys.platform, pyversion=sys.version)

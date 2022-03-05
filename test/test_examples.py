@@ -64,4 +64,4 @@ class TestExamples(BaseTestContext):
         request_document = open(os.path.join(documents_dir, file_name), 'rb')
         request = asposewordscloud.models.requests.AcceptAllRevisionsOnlineRequest(document=request_document)
         accept_all_revisions_online_result = words_api.accept_all_revisions_online(request)
-        copyfile(accept_all_revisions_online_result.document, 'test_result.docx')
+        open('test_result.docx','wb').write(list(accept_all_revisions_online_result.document.values())[0])

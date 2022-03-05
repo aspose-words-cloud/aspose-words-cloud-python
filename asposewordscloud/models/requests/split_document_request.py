@@ -137,4 +137,4 @@ class SplitDocumentRequest(BaseRequestObject):
         return 'SplitDocumentResponse'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        return self.deserialize(response, SplitDocumentResponse, api_client)
+        return api_client.deserialize(response.data, response.getheaders(), SplitDocumentResponse)

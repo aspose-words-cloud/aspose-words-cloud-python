@@ -241,7 +241,15 @@ class OdtSaveOptionsData(object):
         :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this OdtSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._dml_effects_rendering_mode = dml_effects_rendering_mode
+        allowed_values = ["Simplified", "None", "Fine"]  # noqa: E501
+        if not dml_effects_rendering_mode.isdigit():
+            if dml_effects_rendering_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `dml_effects_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(dml_effects_rendering_mode, allowed_values))
+            self._dml_effects_rendering_mode = dml_effects_rendering_mode
+        else:
+            self._dml_effects_rendering_mode = allowed_values[int(dml_effects_rendering_mode) if six.PY3 else long(dml_effects_rendering_mode)]
 
     @property
     def dml_rendering_mode(self):
@@ -263,7 +271,15 @@ class OdtSaveOptionsData(object):
         :param dml_rendering_mode: The dml_rendering_mode of this OdtSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._dml_rendering_mode = dml_rendering_mode
+        allowed_values = ["Fallback", "DrawingML"]  # noqa: E501
+        if not dml_rendering_mode.isdigit():
+            if dml_rendering_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `dml_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(dml_rendering_mode, allowed_values))
+            self._dml_rendering_mode = dml_rendering_mode
+        else:
+            self._dml_rendering_mode = allowed_values[int(dml_rendering_mode) if six.PY3 else long(dml_rendering_mode)]
 
     @property
     def file_name(self):
@@ -329,7 +345,15 @@ class OdtSaveOptionsData(object):
         :param iml_rendering_mode: The iml_rendering_mode of this OdtSaveOptionsData.  # noqa: E501
         :type: str
         """
-        self._iml_rendering_mode = iml_rendering_mode
+        allowed_values = ["Fallback", "InkML"]  # noqa: E501
+        if not iml_rendering_mode.isdigit():
+            if iml_rendering_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `iml_rendering_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(iml_rendering_mode, allowed_values))
+            self._iml_rendering_mode = iml_rendering_mode
+        else:
+            self._iml_rendering_mode = allowed_values[int(iml_rendering_mode) if six.PY3 else long(iml_rendering_mode)]
 
     @property
     def update_created_time_property(self):

@@ -103,4 +103,4 @@ class GetBookmarksOnlineRequest(BaseRequestObject):
         return 'BookmarksResponse'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        return self.deserialize(response, BookmarksResponse, api_client)
+        return api_client.deserialize(response.data, response.getheaders(), BookmarksResponse)

@@ -139,5 +139,5 @@ class UpdateFieldOnlineRequest(BaseRequestObject):
     def deserialize_response(self, api_client, response):
         multipart = self.getparts(response)
         return UpdateFieldOnlineResponse(
-          self.deserialize(json.loads(multipart[0].text), FieldResponse, api_client),
-          self.deserialize_file(multipart[1].content, multipart[1].headers, api_client))
+          api_client.deserialize(api_client.findMultipartByName(multipart, "Model").content, api_client.findMultipartByName(multipart, "Model").headers, FieldResponse),
+          api_client.deserialize_files_collection(api_client.findMultipartByName(multipart, "Document").content, api_client.findMultipartByName(multipart, "Document").headers))

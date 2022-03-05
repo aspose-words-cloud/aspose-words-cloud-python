@@ -43,31 +43,53 @@ class DocumentEntry(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'encrypted_password': 'str',
         'href': 'str',
-        'import_format_mode': 'str',
-        'password': 'str'
+        'import_format_mode': 'str'
     }
 
     attribute_map = {
+        'encrypted_password': 'EncryptedPassword',
         'href': 'Href',
-        'import_format_mode': 'ImportFormatMode',
-        'password': 'Password'
+        'import_format_mode': 'ImportFormatMode'
     }
 
-    def __init__(self, href=None, import_format_mode=None, password=None):  # noqa: E501
+    def __init__(self, encrypted_password=None, href=None, import_format_mode=None):  # noqa: E501
         """DocumentEntry - a model defined in Swagger"""  # noqa: E501
 
+        self._encrypted_password = None
         self._href = None
         self._import_format_mode = None
-        self._password = None
         self.discriminator = None
 
+        if encrypted_password is not None:
+            self.encrypted_password = encrypted_password
         if href is not None:
             self.href = href
         if import_format_mode is not None:
             self.import_format_mode = import_format_mode
-        if password is not None:
-            self.password = password
+
+    @property
+    def encrypted_password(self):
+        """Gets the encrypted_password of this DocumentEntry.  # noqa: E501
+
+        Gets or sets document password encrypted on API public key. The default value is null (the document has no password).  # noqa: E501
+
+        :return: The encrypted_password of this DocumentEntry.  # noqa: E501
+        :rtype: str
+        """
+        return self._encrypted_password
+
+    @encrypted_password.setter
+    def encrypted_password(self, encrypted_password):
+        """Sets the encrypted_password of this DocumentEntry.
+
+        Gets or sets document password encrypted on API public key. The default value is null (the document has no password).  # noqa: E501
+
+        :param encrypted_password: The encrypted_password of this DocumentEntry.  # noqa: E501
+        :type: str
+        """
+        self._encrypted_password = encrypted_password
 
     @property
     def href(self):
@@ -112,28 +134,6 @@ class DocumentEntry(object):
         :type: str
         """
         self._import_format_mode = import_format_mode
-
-    @property
-    def password(self):
-        """Gets the password of this DocumentEntry.  # noqa: E501
-
-        Gets or sets document password encrypted on API public key. The default value is null (the document has no password).  # noqa: E501
-
-        :return: The password of this DocumentEntry.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this DocumentEntry.
-
-        Gets or sets document password encrypted on API public key. The default value is null (the document has no password).  # noqa: E501
-
-        :param password: The password of this DocumentEntry.  # noqa: E501
-        :type: str
-        """
-        self._password = password
 
 
     def to_dict(self):

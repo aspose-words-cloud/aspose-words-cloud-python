@@ -73,7 +73,7 @@ class TestBatch(BaseTestContext):
         self.assertIsInstance(result[1], asposewordscloud.ParagraphResponse)
         self.assertIsInstance(result[2], asposewordscloud.ParagraphResponse)
         self.assertIsNone(result[3])
-        self.assertIsInstance(result[4], str)
+        self.assertIsInstance(result[4], bytes)
 
     #
     # Test for batch request without returning of intermediate results
@@ -109,7 +109,7 @@ class TestBatch(BaseTestContext):
 
         result = self.words_api.batch_with_options(True, batch_request1, batch_request2, batch_request3, batch_request4, batch_request5)
         self.assertEqual(len(result), 1)
-        self.assertIsInstance(result[0], str)
+        self.assertIsInstance(result[0], bytes)
 
     #
     # Test for a batch with depend on feature
@@ -158,4 +158,4 @@ class TestBatch(BaseTestContext):
 
         result = self.words_api.batch(batch_request1, batch_request2)
         self.assertEqual(len(result), 2)
-        self.assertIsInstance(result[1], str)
+        self.assertIsInstance(result[1], dict)

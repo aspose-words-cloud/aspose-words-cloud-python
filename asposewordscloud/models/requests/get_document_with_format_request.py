@@ -125,4 +125,4 @@ class GetDocumentWithFormatRequest(BaseRequestObject):
         return 'file'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        return self.deserialize_file(response.data, response.getheaders(), api_client)
+        return api_client.deserialize_file(response.data, response.getheaders())
