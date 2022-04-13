@@ -249,3 +249,22 @@ class TestStyles(BaseTestContext):
         result = self.words_api.apply_style_to_document_element_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
+    #
+    # Test for copying styles from a template.
+    #
+    def test_copy_styles_from_template(self):
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/Styles'
+        local_file = 'DocumentElements/Styles/GetStyles.docx'
+        remote_file_name = 'TestCopyStylesFromTemplate.docx'
+        template_folder = 'DocumentElements/Styles'
+        template_name = 'StyleTemplate.docx'
+
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
+        self.upload_file(remote_data_folder + '/' + template_name, open(os.path.join(self.local_test_folder, template_folder + '/' + template_name), 'rb'))
+
+        request = asposewordscloud.models.requests.CopyStylesFromTemplateRequest(name=remote_file_name, template_name=template_name, folder=remote_data_folder)
+
+        result = self.words_api.copy_styles_from_template(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
