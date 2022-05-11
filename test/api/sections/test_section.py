@@ -123,3 +123,12 @@ class TestSection(BaseTestContext):
         result = self.words_api.delete_section_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
+    #
+    # Test for linking headers and footers to previous section.
+    #
+    def test_link_header_footers_to_previous(self):
+        request = asposewordscloud.models.requests.LinkHeaderFootersToPreviousRequest(name='DocumentElements/Sections/Source.docx', section_index=1)
+
+        self.words_api.link_header_footers_to_previous(request)
+
