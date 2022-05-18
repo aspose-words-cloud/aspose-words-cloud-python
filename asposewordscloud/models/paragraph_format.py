@@ -285,7 +285,7 @@ class ParagraphFormat(object):
         :param alignment: The alignment of this ParagraphFormat.  # noqa: E501
         :type: str
         """
-        allowed_values = ["Left", "Center", "Right", "Justify", "Distributed", "ArabicMediumKashida", "ArabicHighKashida", "ArabicLowKashida", "ThaiDistributed"]  # noqa: E501
+        allowed_values = ["Left", "Center", "Right", "Justify", "Distributed", "ArabicMediumKashida", "ArabicHighKashida", "ArabicLowKashida", "ThaiDistributed", "MathElementCenterAsGroup"]  # noqa: E501
         if not alignment.isdigit():
             if alignment not in allowed_values:
                 raise ValueError(
