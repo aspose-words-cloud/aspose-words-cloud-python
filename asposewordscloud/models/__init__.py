@@ -10,6 +10,7 @@ from asposewordscloud.models.available_fonts_response import AvailableFontsRespo
 from asposewordscloud.models.bmp_save_options_data import BmpSaveOptionsData
 from asposewordscloud.models.bookmark import Bookmark
 from asposewordscloud.models.bookmark_data import BookmarkData
+from asposewordscloud.models.bookmark_insert import BookmarkInsert
 from asposewordscloud.models.bookmark_response import BookmarkResponse
 from asposewordscloud.models.bookmarks import Bookmarks
 from asposewordscloud.models.bookmarks_outline_level_data import BookmarksOutlineLevelData

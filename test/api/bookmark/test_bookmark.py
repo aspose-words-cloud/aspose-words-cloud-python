@@ -126,3 +126,100 @@ class TestBookmark(BaseTestContext):
         result = self.words_api.update_bookmark_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
 
+
+    #
+    # Test for deleting bookmark by specified name.
+    #
+    def test_delete_bookmark(self):
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/Bookmarks'
+        local_file = 'Common/test_multi_pages.docx'
+        bookmark_name = 'aspose'
+        remote_file_name = 'TestDeleteBookmark.docx'
+
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
+
+        request = asposewordscloud.models.requests.DeleteBookmarkRequest(name=remote_file_name, bookmark_name=bookmark_name, folder=remote_data_folder)
+
+        self.words_api.delete_bookmark(request)
+
+
+    #
+    # Test for deleting bookmark by specified name online.
+    #
+    def test_delete_bookmark_online(self):
+        local_file = 'Common/test_multi_pages.docx'
+        bookmark_name = 'aspose'
+
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.DeleteBookmarkOnlineRequest(document=request_document, bookmark_name=bookmark_name)
+
+        result = self.words_api.delete_bookmark_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
+    # Test for deleting all bookmarks from document.
+    #
+    def test_delete_bookmarks(self):
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/Bookmarks'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestDeleteBookmarks.docx'
+
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
+
+        request = asposewordscloud.models.requests.DeleteBookmarksRequest(name=remote_file_name, folder=remote_data_folder)
+
+        self.words_api.delete_bookmarks(request)
+
+
+    #
+    # Test for deleting all bookmarks from document online.
+    #
+    def test_delete_bookmarks_online(self):
+        local_file = 'Common/test_multi_pages.docx'
+
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.DeleteBookmarksOnlineRequest(document=request_document)
+
+        result = self.words_api.delete_bookmarks_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
+    # Test for inserting new bookmark.
+    #
+    def test_insert_bookmark(self):
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/Bookmarks'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestInsertBookmark.docx'
+
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
+
+        request_bookmark_start_range_node = asposewordscloud.NodeLink(node_id='0.0.0.0')
+        request_bookmark_start_range = asposewordscloud.DocumentPosition(node=request_bookmark_start_range_node)
+        request_bookmark_end_range_node = asposewordscloud.NodeLink(node_id='0.0.0.0')
+        request_bookmark_end_range = asposewordscloud.DocumentPosition(node=request_bookmark_end_range_node)
+        request_bookmark = asposewordscloud.BookmarkInsert(start_range=request_bookmark_start_range, end_range=request_bookmark_end_range, name='new_bookmark', text='Some text')
+        request = asposewordscloud.models.requests.InsertBookmarkRequest(name=remote_file_name, bookmark=request_bookmark, folder=remote_data_folder)
+
+        result = self.words_api.insert_bookmark(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
+    # Test for inserting new bookmark online.
+    #
+    def test_insert_bookmark_online(self):
+        local_file = 'Common/test_multi_pages.docx'
+
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request_bookmark_start_range_node = asposewordscloud.NodeLink(node_id='0.0.0.0')
+        request_bookmark_start_range = asposewordscloud.DocumentPosition(node=request_bookmark_start_range_node)
+        request_bookmark_end_range_node = asposewordscloud.NodeLink(node_id='0.0.0.0')
+        request_bookmark_end_range = asposewordscloud.DocumentPosition(node=request_bookmark_end_range_node)
+        request_bookmark = asposewordscloud.BookmarkInsert(start_range=request_bookmark_start_range, end_range=request_bookmark_end_range, name='new_bookmark', text='Some text')
+        request = asposewordscloud.models.requests.InsertBookmarkOnlineRequest(document=request_document, bookmark=request_bookmark)
+
+        result = self.words_api.insert_bookmark_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
