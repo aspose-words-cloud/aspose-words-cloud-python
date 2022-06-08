@@ -1581,7 +1581,7 @@ class WordsApi(Encryptor, object):
             collection_formats=http_params['collection_formats']))
 
     def create_document(self, request, **kwargs):  # noqa: E501
-        """Supported extensions: ".doc", ".docx", ".docm", ".dot", ".dotm", ".dotx", ".flatopc", ".fopc", ".flatopc_macro", ".fopc_macro", ".flatopc_template", ".fopc_template", ".flatopc_template_macro", ".fopc_template_macro", ".wordml", ".wml", ".rtf".  # noqa: E501
+        """Supported all save format extensions.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1608,7 +1608,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def create_document_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Supported extensions: ".doc", ".docx", ".docm", ".dot", ".dotm", ".dotx", ".flatopc", ".fopc", ".flatopc_macro", ".fopc_macro", ".flatopc_template", ".fopc_template", ".flatopc_template_macro", ".fopc_template_macro", ".wordml", ".wml", ".rtf".  # noqa: E501
+        """Supported all save format extensions.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
