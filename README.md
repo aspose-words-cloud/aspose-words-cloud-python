@@ -16,6 +16,19 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 - [Convert a document to desired file format](https://docs.aspose.cloud/display/wordscloud/Convert+Document+to+Destination+Format+with+Detailed+Settings+and+Save+Result+to+Storage) along with detailed settings.
 - Convert an encrypted PDF document into Word document format.
 
+## Enhancements in Version 22.6
+
+- Added 'DeleteBookmark' and 'DeleteBookmarkOnline' API methods for delete bookmarks by name from the document.
+- Added 'DeleteBookmarks' and 'DeleteBookmarksOnline' API methods for delete all bookmarks from the document.
+- Added 'InsertBookmark' and 'InsertBookmarkOnline' API methods for create new bookmarks in the document.
+- Support all save formats for 'CreateDocument' operation.
+
+
+## Enhancements in Version 22.5
+
+- Internal API fixes and improvments.
+
+
 ## Enhancements in Version 22.4
 
 - Added ExportShapesAsSvg to HtmlSaveOption.
