@@ -36,7 +36,7 @@ class AppendDocumentRequest(BaseRequestObject):
     Request model for append_document operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param document_list <see cref="DocumentEntryList"/> with a list of documents to append.
+    :param document_list <see cref="BaseEntryList"/> with a list of entries to append.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.

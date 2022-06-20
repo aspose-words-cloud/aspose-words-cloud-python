@@ -36,7 +36,7 @@ class AppendDocumentOnlineRequest(BaseRequestObject):
     Request model for append_document_online operation.
     Initializes a new instance.
     :param document Original document.
-    :param document_list <see cref="DocumentEntryList"/> with a list of documents to append.
+    :param document_list <see cref="BaseEntryList"/> with a list of entries to append.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     :param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.

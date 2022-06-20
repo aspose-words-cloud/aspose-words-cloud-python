@@ -7,6 +7,7 @@ from __future__ import absolute_import
 # import models into model package
 from asposewordscloud.models.api_error import ApiError
 from asposewordscloud.models.available_fonts_response import AvailableFontsResponse
+from asposewordscloud.models.base_entry import BaseEntry
 from asposewordscloud.models.bmp_save_options_data import BmpSaveOptionsData
 from asposewordscloud.models.bookmark import Bookmark
 from asposewordscloud.models.bookmark_data import BookmarkData
@@ -115,6 +116,8 @@ from asposewordscloud.models.hyperlink import Hyperlink
 from asposewordscloud.models.hyperlink_response import HyperlinkResponse
 from asposewordscloud.models.hyperlinks import Hyperlinks
 from asposewordscloud.models.hyperlinks_response import HyperlinksResponse
+from asposewordscloud.models.image_entry import ImageEntry
+from asposewordscloud.models.image_entry_list import ImageEntryList
 from asposewordscloud.models.info_additional_item import InfoAdditionalItem
 from asposewordscloud.models.info_response import InfoResponse
 from asposewordscloud.models.jpeg_save_options_data import JpegSaveOptionsData

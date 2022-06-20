@@ -232,7 +232,7 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param document_list DocumentEntryList : <see cref="DocumentEntryList"/> with a list of documents to append. (required)
+        :param document_list BaseEntryList : <see cref="BaseEntryList"/> with a list of entries to append. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -315,7 +315,7 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param document file : Original document. (required)
-        :param document_list DocumentEntryList : <see cref="DocumentEntryList"/> with a list of documents to append. (required)
+        :param document_list BaseEntryList : <see cref="BaseEntryList"/> with a list of entries to append. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
