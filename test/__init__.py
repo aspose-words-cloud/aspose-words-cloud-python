@@ -4,6 +4,7 @@ from test.api.document.test_append_document import TestAppendDocument
 from test.api.document.test_classification import TestClassification
 from test.api.document.test_comment import TestComment
 from test.api.document.test_compare_document import TestCompareDocument
+from test.api.document.test_compress_document import TestCompressDocument
 from test.api.document.test_convert_document import TestConvertDocument
 from test.api.document.test_custom_xml_parts import TestCustomXmlParts
 from test.api.document.test_document import TestDocument
