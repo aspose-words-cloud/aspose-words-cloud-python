@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="report_build_options.py">
+# <copyright company="Aspose" file="image_entry.py">
 #   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -31,19 +31,9 @@ import six
 import json
 
 
-class ReportBuildOptions(object):
-    """Specifies options controlling behavior of ReportingEngine while building a report.
+class ImageEntry(object):
+    """Represents a image which will be appended to the original resource image or document.
     """
-
-    """
-    allowed enum values
-    """
-    NONE = "None"
-    ALLOWMISSINGMEMBERS = "AllowMissingMembers"
-    REMOVEEMPTYPARAGRAPHS = "RemoveEmptyParagraphs"
-    INLINEERRORMESSAGES = "InlineErrorMessages"
-    USELEGACYHEADERFOOTERVISITING = "UseLegacyHeaderFooterVisiting"
-    RESPECTJPEGEXIFORIENTATION = "RespectJpegExifOrientation"
 
     """
     Attributes:
@@ -53,16 +43,43 @@ class ReportBuildOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'href': 'str'
     }
 
     attribute_map = {
+        'href': 'Href'
     }
 
-    def __init__(self):  # noqa: E501
-        """ReportBuildOptions - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, href=None):  # noqa: E501
+        """ImageEntry - a model defined in Swagger"""  # noqa: E501
 
+        self._href = None
         self.discriminator = None
 
+        if href is not None:
+            self.href = href
+
+    @property
+    def href(self):
+        """Gets the href of this ImageEntry.  # noqa: E501
+
+        Gets or sets the path to entry to append at the server.  # noqa: E501
+
+        :return: The href of this ImageEntry.  # noqa: E501
+        :rtype: str
+        """
+        return self._href
+
+    @href.setter
+    def href(self, href):
+        """Sets the href of this ImageEntry.
+
+        Gets or sets the path to entry to append at the server.  # noqa: E501
+
+        :param href: The href of this ImageEntry.  # noqa: E501
+        :type: str
+        """
+        self._href = href
 
 
     def to_dict(self):
@@ -129,7 +146,7 @@ class ReportBuildOptions(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, ReportBuildOptions):
+        if not isinstance(other, ImageEntry):
             return False
 
         return self.__dict__ == other.__dict__

@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="report_build_options.py">
+# <copyright company="Aspose" file="compress_response.py">
 #   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -31,19 +31,9 @@ import six
 import json
 
 
-class ReportBuildOptions(object):
-    """Specifies options controlling behavior of ReportingEngine while building a report.
+class CompressResponse(object):
+    """The REST response of compressed document.
     """
-
-    """
-    allowed enum values
-    """
-    NONE = "None"
-    ALLOWMISSINGMEMBERS = "AllowMissingMembers"
-    REMOVEEMPTYPARAGRAPHS = "RemoveEmptyParagraphs"
-    INLINEERRORMESSAGES = "InlineErrorMessages"
-    USELEGACYHEADERFOOTERVISITING = "UseLegacyHeaderFooterVisiting"
-    RESPECTJPEGEXIFORIENTATION = "RespectJpegExifOrientation"
 
     """
     Attributes:
@@ -53,16 +43,70 @@ class ReportBuildOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'request_id': 'str',
+        'document': 'Document'
     }
 
     attribute_map = {
+        'request_id': 'RequestId',
+        'document': 'Document'
     }
 
-    def __init__(self):  # noqa: E501
-        """ReportBuildOptions - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, request_id=None, document=None):  # noqa: E501
+        """CompressResponse - a model defined in Swagger"""  # noqa: E501
 
+        self._request_id = None
+        self._document = None
         self.discriminator = None
 
+        if request_id is not None:
+            self.request_id = request_id
+        if document is not None:
+            self.document = document
+
+    @property
+    def request_id(self):
+        """Gets the request_id of this CompressResponse.  # noqa: E501
+
+        Gets or sets the request Id.  # noqa: E501
+
+        :return: The request_id of this CompressResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._request_id
+
+    @request_id.setter
+    def request_id(self, request_id):
+        """Sets the request_id of this CompressResponse.
+
+        Gets or sets the request Id.  # noqa: E501
+
+        :param request_id: The request_id of this CompressResponse.  # noqa: E501
+        :type: str
+        """
+        self._request_id = request_id
+
+    @property
+    def document(self):
+        """Gets the document of this CompressResponse.  # noqa: E501
+
+        Gets or sets the destination document info.  # noqa: E501
+
+        :return: The document of this CompressResponse.  # noqa: E501
+        :rtype: Document
+        """
+        return self._document
+
+    @document.setter
+    def document(self, document):
+        """Sets the document of this CompressResponse.
+
+        Gets or sets the destination document info.  # noqa: E501
+
+        :param document: The document of this CompressResponse.  # noqa: E501
+        :type: Document
+        """
+        self._document = document
 
 
     def to_dict(self):
@@ -129,7 +173,7 @@ class ReportBuildOptions(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, ReportBuildOptions):
+        if not isinstance(other, CompressResponse):
             return False
 
         return self.__dict__ == other.__dict__

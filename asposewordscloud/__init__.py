@@ -12,6 +12,7 @@ from asposewordscloud.configuration import Configuration
 # import models into sdk package
 from asposewordscloud.models.api_error import ApiError
 from asposewordscloud.models.available_fonts_response import AvailableFontsResponse
+from asposewordscloud.models.base_entry import BaseEntry
 from asposewordscloud.models.bmp_save_options_data import BmpSaveOptionsData
 from asposewordscloud.models.bookmark import Bookmark
 from asposewordscloud.models.bookmark_data import BookmarkData
@@ -35,6 +36,8 @@ from asposewordscloud.models.comments_response import CommentsResponse
 from asposewordscloud.models.comment_update import CommentUpdate
 from asposewordscloud.models.compare_data import CompareData
 from asposewordscloud.models.compare_options import CompareOptions
+from asposewordscloud.models.compress_options import CompressOptions
+from asposewordscloud.models.compress_response import CompressResponse
 from asposewordscloud.models.csv_data_load_options import CsvDataLoadOptions
 from asposewordscloud.models.custom_xml_part import CustomXmlPart
 from asposewordscloud.models.custom_xml_part_insert import CustomXmlPartInsert
@@ -120,6 +123,8 @@ from asposewordscloud.models.hyperlink import Hyperlink
 from asposewordscloud.models.hyperlink_response import HyperlinkResponse
 from asposewordscloud.models.hyperlinks import Hyperlinks
 from asposewordscloud.models.hyperlinks_response import HyperlinksResponse
+from asposewordscloud.models.image_entry import ImageEntry
+from asposewordscloud.models.image_entry_list import ImageEntryList
 from asposewordscloud.models.info_additional_item import InfoAdditionalItem
 from asposewordscloud.models.info_response import InfoResponse
 from asposewordscloud.models.jpeg_save_options_data import JpegSaveOptionsData

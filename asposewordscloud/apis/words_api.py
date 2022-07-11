@@ -232,7 +232,7 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param document_list DocumentEntryList : <see cref="DocumentEntryList"/> with a list of documents to append. (required)
+        :param document_list BaseEntryList : <see cref="BaseEntryList"/> with a list of entries to append. (required)
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -315,7 +315,7 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param document file : Original document. (required)
-        :param document_list DocumentEntryList : <see cref="DocumentEntryList"/> with a list of documents to append. (required)
+        :param document_list BaseEntryList : <see cref="BaseEntryList"/> with a list of entries to append. (required)
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -1081,6 +1081,166 @@ class WordsApi(Encryptor, object):
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method compare_document_online" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self)
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
+
+    def compress_document(self, request, **kwargs):  # noqa: E501
+        """The default settings allows to reduce the size of the document without any visible degradation of images quality.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param name str : The filename of the input document. (required)
+        :param compress_options CompressOptions : Options for compress the document. (required)
+        :param folder str : Original document folder.
+        :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :return: CompressResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.compress_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.compress_document_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.compress_document_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.compress_document_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def compress_document_with_http_info(self, request, **kwargs):  # noqa: E501
+        """The default settings allows to reduce the size of the document without any visible degradation of images quality.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request CompressDocumentRequest object with parameters
+        :return: CompressResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = self.timeout
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method compress_document" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        http_params = request.create_http_request(self.api_client)
+
+        # HTTP header `Accept`
+        http_params['header_params']['Accept'] = self.api_client.select_header_accept(
+            ['application/xml', 'application/json'])  # noqa: E501
+        # Authentication setting
+        auth_settings = ['JWT']  # noqa: E501
+
+        self.api_client.handle_password(http_params, self)
+
+        return request.deserialize_response(self.api_client, self.api_client.call_api(
+            http_params['path'],
+            http_params['method'],
+            http_params['query_params'],
+            http_params['header_params'],
+            body=http_params['body'],
+            post_params=http_params['form_params'],
+            response_type=http_params['response_type'],  # noqa: E501
+            auth_settings=auth_settings,
+            is_async=params.get('is_async'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=http_params['collection_formats']))
+
+    def compress_document_online(self, request, **kwargs):  # noqa: E501
+        """Compress and resize images inside the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param document file : The document. (required)
+        :param compress_options CompressOptions : Options for compress the document. (required)
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
+        :param dest_file_name str : Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
+        :return: CompressDocumentOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        try:
+            if kwargs.get('is_async'):
+                return self.compress_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.compress_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        except ApiException as e:
+            if e.status == 401:
+                self.api_client.request_token()
+                if kwargs.get('is_async'):
+                    return self.compress_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            data = self.compress_document_online_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+        
+    def compress_document_online_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Compress and resize images inside the document.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass is_async=True
+
+        :param is_async bool
+        :param request CompressDocumentOnlineRequest object with parameters
+        :return: CompressDocumentOnlineResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = locals()
+        params['is_async'] = ''
+        params['_preload_content'] = True
+        params['_request_timeout'] = self.timeout
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method compress_document_online" % key
                 )
             params[key] = val
         del params['kwargs']

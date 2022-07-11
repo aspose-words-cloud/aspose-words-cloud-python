@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="append_document_online_request.py">
+# <copyright company="Aspose" file="compress_document_request.py">
 #   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -31,40 +31,44 @@ from asposewordscloud.models import *
 from asposewordscloud.models.requests import *
 from asposewordscloud.models.responses import *
 
-class AppendDocumentOnlineRequest(BaseRequestObject):
+class CompressDocumentRequest(BaseRequestObject):
     """
-    Request model for append_document_online operation.
+    Request model for compress_document operation.
     Initializes a new instance.
-    :param document Original document.
-    :param document_list <see cref="BaseEntryList"/> with a list of entries to append.
+    :param name The filename of the input document.
+    :param compress_options Options for compress the document.
+    :param folder Original document folder.
+    :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     :param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
     :param dest_file_name Result path of the document after the operation. If this parameter is omitted then result of the operation will be saved as the source document.
-    :param revision_author Initials of the author to use for revisions.If you set this parameter and then make some changes to the document programmatically, save the document and later open the document in MS Word you will see these changes as revisions.
-    :param revision_date_time The date and time to use for revisions.
     """
 
-    def __init__(self, document, document_list, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None, revision_author=None, revision_date_time=None):
-        self.document = document
-        self.document_list = document_list
+    def __init__(self, name, compress_options, folder=None, storage=None, load_encoding=None, password=None, encrypted_password=None, dest_file_name=None):
+        self.name = name
+        self.compress_options = compress_options
+        self.folder = folder
+        self.storage = storage
         self.load_encoding = load_encoding
         self.password = password
         self.encrypted_password = encrypted_password
         self.dest_file_name = dest_file_name
-        self.revision_author = revision_author
-        self.revision_date_time = revision_date_time
 
     def create_http_request(self, api_client):
-        # verify the required parameter 'document' is set
-        if self.document is None:
-            raise ValueError("Missing the required parameter `document` when calling `append_document_online`")  # noqa: E501
-        # verify the required parameter 'document_list' is set
-        if self.document_list is None:
-            raise ValueError("Missing the required parameter `document_list` when calling `append_document_online`")  # noqa: E501
+        # verify the required parameter 'name' is set
+        if self.name is None:
+            raise ValueError("Missing the required parameter `name` when calling `compress_document`")  # noqa: E501
+        # verify the required parameter 'compress_options' is set
+        if self.compress_options is None:
+            raise ValueError("Missing the required parameter `compress_options` when calling `compress_document`")  # noqa: E501
 
-        path = '/v4.0/words/online/put/appendDocument'
+        path = '/v4.0/words/{name}/compress'
         path_params = {}
+        if self.name is not None:
+            path_params['name'] = self.name  # noqa: E501
+        else:
+            path_params['name'] = ''  # noqa: E501
 
         # path parameters
         collection_formats = {}
@@ -82,6 +86,10 @@ class AppendDocumentOnlineRequest(BaseRequestObject):
         path = path.replace('//', '/')
 
         query_params = []
+        if self.folder is not None:
+                query_params.append(('folder', self.folder))  # noqa: E501
+        if self.storage is not None:
+                query_params.append(('storage', self.storage))  # noqa: E501
         if self.load_encoding is not None:
                 query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
         if self.password is not None:
@@ -90,23 +98,18 @@ class AppendDocumentOnlineRequest(BaseRequestObject):
                 query_params.append(('encryptedPassword', self.encrypted_password))  # noqa: E501
         if self.dest_file_name is not None:
                 query_params.append(('destFileName', self.dest_file_name))  # noqa: E501
-        if self.revision_author is not None:
-                query_params.append(('revisionAuthor', self.revision_author))  # noqa: E501
-        if self.revision_date_time is not None:
-                query_params.append(('revisionDateTime', self.revision_date_time))  # noqa: E501
 
         header_params = {}
         # HTTP header `Content-Type`
         header_params['Content-Type'] = api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
+            ['application/xml', 'application/json'])  # noqa: E501
 
         form_params = []
-        if self.document is not None:
-            form_params.append(['document', self.document, 'file'])  # noqa: E501
-        if self.document_list is not None:
-            form_params.append(['documentList', self.document_list.to_json(), 'string'])  # noqa: E501
 
         body_params = None
+        if self.compress_options is not None:
+            body_params = self.compress_options
+
         return {
             "method": "PUT",
             "path": path,
@@ -115,14 +118,11 @@ class AppendDocumentOnlineRequest(BaseRequestObject):
             "form_params": form_params,
             "body": body_params,
             "collection_formats": collection_formats,
-            "response_type": 'AppendDocumentOnlineResponse'  # noqa: E501
+            "response_type": 'CompressResponse'  # noqa: E501
         }
 
     def get_response_type(self):
-        return 'AppendDocumentOnlineResponse'  # noqa: E501
+        return 'CompressResponse'  # noqa: E501
 
     def deserialize_response(self, api_client, response):
-        multipart = self.getparts(response)
-        return AppendDocumentOnlineResponse(
-          api_client.deserialize(api_client.findMultipartByName(multipart, "Model").content, api_client.findMultipartByName(multipart, "Model").headers, DocumentResponse),
-          api_client.deserialize_files_collection(api_client.findMultipartByName(multipart, "Document").content, api_client.findMultipartByName(multipart, "Document").headers))
+        return api_client.deserialize(response.data, response.getheaders(), CompressResponse)

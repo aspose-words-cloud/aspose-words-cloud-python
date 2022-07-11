@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="report_build_options.py">
+# <copyright company="Aspose" file="compress_options.py">
 #   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -31,19 +31,9 @@ import six
 import json
 
 
-class ReportBuildOptions(object):
-    """Specifies options controlling behavior of ReportingEngine while building a report.
+class CompressOptions(object):
+    """Options of document compress.
     """
-
-    """
-    allowed enum values
-    """
-    NONE = "None"
-    ALLOWMISSINGMEMBERS = "AllowMissingMembers"
-    REMOVEEMPTYPARAGRAPHS = "RemoveEmptyParagraphs"
-    INLINEERRORMESSAGES = "InlineErrorMessages"
-    USELEGACYHEADERFOOTERVISITING = "UseLegacyHeaderFooterVisiting"
-    RESPECTJPEGEXIFORIENTATION = "RespectJpegExifOrientation"
 
     """
     Attributes:
@@ -53,16 +43,70 @@ class ReportBuildOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'images_quality': 'int',
+        'images_reduce_size_factor': 'int'
     }
 
     attribute_map = {
+        'images_quality': 'ImagesQuality',
+        'images_reduce_size_factor': 'ImagesReduceSizeFactor'
     }
 
-    def __init__(self):  # noqa: E501
-        """ReportBuildOptions - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, images_quality=None, images_reduce_size_factor=None):  # noqa: E501
+        """CompressOptions - a model defined in Swagger"""  # noqa: E501
 
+        self._images_quality = None
+        self._images_reduce_size_factor = None
         self.discriminator = None
 
+        if images_quality is not None:
+            self.images_quality = images_quality
+        if images_reduce_size_factor is not None:
+            self.images_reduce_size_factor = images_reduce_size_factor
+
+    @property
+    def images_quality(self):
+        """Gets the images_quality of this CompressOptions.  # noqa: E501
+
+        Gets or sets the quality level of images from 0 to 100. Default value is 75.  # noqa: E501
+
+        :return: The images_quality of this CompressOptions.  # noqa: E501
+        :rtype: int
+        """
+        return self._images_quality
+
+    @images_quality.setter
+    def images_quality(self, images_quality):
+        """Sets the images_quality of this CompressOptions.
+
+        Gets or sets the quality level of images from 0 to 100. Default value is 75.  # noqa: E501
+
+        :param images_quality: The images_quality of this CompressOptions.  # noqa: E501
+        :type: int
+        """
+        self._images_quality = images_quality
+
+    @property
+    def images_reduce_size_factor(self):
+        """Gets the images_reduce_size_factor of this CompressOptions.  # noqa: E501
+
+        Gets or sets the resize factor of images. This value determines how many times the size of the images in the document will be reduced. The parameter value must be greater than 1 for resizing. Default value is 1 and has no effect on images size.  # noqa: E501
+
+        :return: The images_reduce_size_factor of this CompressOptions.  # noqa: E501
+        :rtype: int
+        """
+        return self._images_reduce_size_factor
+
+    @images_reduce_size_factor.setter
+    def images_reduce_size_factor(self, images_reduce_size_factor):
+        """Sets the images_reduce_size_factor of this CompressOptions.
+
+        Gets or sets the resize factor of images. This value determines how many times the size of the images in the document will be reduced. The parameter value must be greater than 1 for resizing. Default value is 1 and has no effect on images size.  # noqa: E501
+
+        :param images_reduce_size_factor: The images_reduce_size_factor of this CompressOptions.  # noqa: E501
+        :type: int
+        """
+        self._images_reduce_size_factor = images_reduce_size_factor
 
 
     def to_dict(self):
@@ -129,7 +173,7 @@ class ReportBuildOptions(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, ReportBuildOptions):
+        if not isinstance(other, CompressOptions):
             return False
 
         return self.__dict__ == other.__dict__
