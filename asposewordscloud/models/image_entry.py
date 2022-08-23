@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ImageEntry(object):
     """Represents a image which will be appended to the original resource image or document.
     """
@@ -81,6 +80,9 @@ class ImageEntry(object):
         """
         self._href = href
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

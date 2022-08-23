@@ -112,19 +112,22 @@ class InsertWatermarkTextRequest(BaseRequestObject):
         header_params['Content-Type'] = api_client.select_header_content_type(  # noqa: E501
             ['application/xml', 'application/json'])  # noqa: E501
 
+        file_content_params = []
         form_params = []
-
-        body_params = None
         if self.watermark_text is not None:
-            body_params = self.watermark_text
+            form_params.append(['watermarkText', self.watermark_text, 'json'])  # noqa: E501
+            self.watermark_text.extract_files_content(file_content_params)
+
+        for file_content_value in file_content_params:
+            form_params.append([file_content_value.id, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "POST",
             "path": path,
+            "body": None,
             "query_params": query_params,
             "header_params": header_params,
             "form_params": form_params,
-            "body": body_params,
             "collection_formats": collection_formats,
             "response_type": 'DocumentResponse'  # noqa: E501
         }

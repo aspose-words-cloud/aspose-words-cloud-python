@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ReplaceTextParameters(object):
     """Class for document replace text request building.
     """
@@ -189,6 +188,9 @@ class ReplaceTextParameters(object):
         """
         self._old_value = old_value
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

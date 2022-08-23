@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class Runs(object):
     """DTO container with a collection of runs.
     """
@@ -107,6 +106,16 @@ class Runs(object):
         :type: list[Run]
         """
         self._list = list
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
+        if self._list is not None:
+            for element in self._list:
+                element.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

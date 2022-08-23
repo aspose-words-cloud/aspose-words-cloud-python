@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class Footnote(object):
     """DTO container with a footnote.
     """
@@ -250,6 +249,22 @@ class Footnote(object):
         :type: str
         """
         self._text = text
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
+
+        if self._content is not None:
+            self._content.extract_files_content(filesContentResult)
+
+
+        if self._position is not None:
+            self._position.extract_files_content(filesContentResult)
+
+
 
 
     def to_dict(self):

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class TiffSaveOptionsData(object):
     """Container class for tiff save options.
     """
@@ -1120,6 +1119,49 @@ class TiffSaveOptionsData(object):
             self._tiff_compression = tiff_compression
         else:
             self._tiff_compression = allowed_values[int(tiff_compression) if six.PY3 else long(tiff_compression)]
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._custom_time_zone_info_data is not None:
+            self._custom_time_zone_info_data.extract_files_content(filesContentResult)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        if self._metafile_rendering_options is not None:
+            self._metafile_rendering_options.extract_files_content(filesContentResult)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     def to_dict(self):

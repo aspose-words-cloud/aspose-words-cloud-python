@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class SearchResultsCollection(object):
     """The collection of search results.
     """
@@ -107,6 +106,16 @@ class SearchResultsCollection(object):
         :type: list[SearchResult]
         """
         self._results_list = results_list
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
+        if self._results_list is not None:
+            for element in self._results_list:
+                element.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

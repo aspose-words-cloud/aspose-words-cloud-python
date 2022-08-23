@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class CompressResponse(object):
     """The REST response of compressed document.
     """
@@ -107,6 +106,12 @@ class CompressResponse(object):
         :type: Document
         """
         self._document = document
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._document is not None:
+            self._document.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

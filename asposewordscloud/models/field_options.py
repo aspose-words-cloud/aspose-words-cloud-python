@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class FieldOptions(object):
     """DTO for field options.
     """
@@ -420,6 +419,23 @@ class FieldOptions(object):
         :type: bool
         """
         self._use_invariant_culture_number_format = use_invariant_culture_number_format
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._current_user is not None:
+            self._current_user.extract_files_content(filesContentResult)
+
+
+
+
+
+
+
+
+
+
+
 
 
     def to_dict(self):

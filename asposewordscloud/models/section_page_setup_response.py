@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class SectionPageSetupResponse(object):
     """The REST response with a page setup of a section.
     """
@@ -107,6 +106,12 @@ class SectionPageSetupResponse(object):
         :type: PageSetup
         """
         self._page_setup = page_setup
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._page_setup is not None:
+            self._page_setup.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

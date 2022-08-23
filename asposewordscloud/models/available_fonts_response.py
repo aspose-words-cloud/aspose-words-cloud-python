@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class AvailableFontsResponse(object):
     """The REST response with data on system, additional and custom fonts, available for document processing.
     """
@@ -161,6 +160,21 @@ class AvailableFontsResponse(object):
         :type: list[FontInfo]
         """
         self._system_fonts = system_fonts
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._additional_fonts is not None:
+            for element in self._additional_fonts:
+                element.extract_files_content(filesContentResult)
+
+        if self._custom_fonts is not None:
+            for element in self._custom_fonts:
+                element.extract_files_content(filesContentResult)
+
+        if self._system_fonts is not None:
+            for element in self._system_fonts:
+                element.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

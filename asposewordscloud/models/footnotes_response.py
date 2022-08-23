@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class FootnotesResponse(object):
     """The REST response with a collection of footnotes.
     """
@@ -107,6 +106,12 @@ class FootnotesResponse(object):
         :type: FootnoteCollection
         """
         self._footnotes = footnotes
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._footnotes is not None:
+            self._footnotes.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

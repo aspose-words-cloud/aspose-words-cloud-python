@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class LoadWebDocumentData(object):
     """Contains data for load web document.
     """
@@ -107,6 +106,12 @@ class LoadWebDocumentData(object):
         :type: SaveOptionsData
         """
         self._save_options = save_options
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._save_options is not None:
+            self._save_options.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class HeaderFooterLink(object):
     """HeaderFooter link element.
     """
@@ -115,6 +114,13 @@ class HeaderFooterLink(object):
             self._type = type
         else:
             self._type = allowed_values[int(type) if six.PY3 else long(type)]
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
 
 
     def to_dict(self):

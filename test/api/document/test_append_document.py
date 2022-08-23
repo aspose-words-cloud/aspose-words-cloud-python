@@ -56,16 +56,14 @@ class TestAppendDocument(BaseTestContext):
     # Test for appending document online.
     #
     def test_append_document_online(self):
-        remote_data_folder = self.remote_test_folder + '/DocumentActions/AppendDocument'
         local_file = 'Common/test_multi_pages.docx'
-        remote_file_name = 'TestAppendDocument.docx'
-
-        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request_document_list_document_entries0 = asposewordscloud.DocumentEntry(href=remote_data_folder + '/' + remote_file_name, import_format_mode='KeepSourceFormatting')
-        request_document_list_document_entries = [request_document_list_document_entries0]
-        request_document_list = asposewordscloud.DocumentEntryList(document_entries=request_document_list_document_entries)
+        request_document_list_online_document_entries0_file_stream = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request_document_list_online_document_entries0_file = asposewordscloud.FileContent(local_file, request_document_list_online_document_entries0_file_stream)
+        request_document_list_online_document_entries0 = asposewordscloud.OnlineDocumentEntry(file=request_document_list_online_document_entries0_file, import_format_mode='KeepSourceFormatting')
+        request_document_list_online_document_entries = [request_document_list_online_document_entries0]
+        request_document_list = asposewordscloud.OnlineDocumentEntryList(online_document_entries=request_document_list_online_document_entries)
         request = asposewordscloud.models.requests.AppendDocumentOnlineRequest(document=request_document, document_list=request_document_list)
 
         result = self.words_api.append_document_online(request)

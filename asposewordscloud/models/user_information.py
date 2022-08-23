@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class UserInformation(object):
     """DTO for user information.
     """
@@ -135,6 +134,9 @@ class UserInformation(object):
         """
         self._name = name
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

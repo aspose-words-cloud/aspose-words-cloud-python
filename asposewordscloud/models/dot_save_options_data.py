@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class DotSaveOptionsData(object):
     """Container class for dot save options.
     """
@@ -585,6 +584,29 @@ class DotSaveOptionsData(object):
         :rtype: str
         """
         return self._save_format
+
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._custom_time_zone_info_data is not None:
+            self._custom_time_zone_info_data.extract_files_content(filesContentResult)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

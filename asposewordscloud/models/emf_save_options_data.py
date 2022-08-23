@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class EmfSaveOptionsData(object):
     """Container class for emf save options.
     """
@@ -1022,6 +1021,46 @@ class EmfSaveOptionsData(object):
         :rtype: str
         """
         return self._save_format
+
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._custom_time_zone_info_data is not None:
+            self._custom_time_zone_info_data.extract_files_content(filesContentResult)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        if self._metafile_rendering_options is not None:
+            self._metafile_rendering_options.extract_files_content(filesContentResult)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

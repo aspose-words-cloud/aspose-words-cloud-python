@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class PageSetup(object):
     """Represents the page setup properties of a section.
     """
@@ -927,6 +926,41 @@ class PageSetup(object):
             self._vertical_alignment = vertical_alignment
         else:
             self._vertical_alignment = allowed_values[int(vertical_alignment) if six.PY3 else long(vertical_alignment)]
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     def to_dict(self):

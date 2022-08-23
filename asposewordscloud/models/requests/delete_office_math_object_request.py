@@ -119,16 +119,19 @@ class DeleteOfficeMathObjectRequest(BaseRequestObject):
 
         header_params = {}
 
+        file_content_params = []
         form_params = []
 
-        body_params = None
+        for file_content_value in file_content_params:
+            form_params.append([file_content_value.id, file_content_value.content, 'file'])  # noqa: E501
+
         return {
             "method": "DELETE",
             "path": path,
+            "body": None,
             "query_params": query_params,
             "header_params": header_params,
             "form_params": form_params,
-            "body": body_params,
             "collection_formats": collection_formats,
             "response_type": 'None'  # noqa: E501
         }

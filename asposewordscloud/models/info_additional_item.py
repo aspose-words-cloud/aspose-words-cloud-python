@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class InfoAdditionalItem(object):
     """Info additional item.
     """
@@ -108,6 +107,9 @@ class InfoAdditionalItem(object):
         """
         self._value = value
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

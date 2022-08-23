@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class CompareData(object):
     """Container class for compare documents.
     """
@@ -188,6 +187,15 @@ class CompareData(object):
         :type: str
         """
         self._result_document_format = result_document_format
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._compare_options is not None:
+            self._compare_options.extract_files_content(filesContentResult)
+
+
+
 
 
     def to_dict(self):

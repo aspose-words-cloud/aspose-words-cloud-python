@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class FieldResponse(object):
     """The REST response with a field.
     """
@@ -107,6 +106,12 @@ class FieldResponse(object):
         :type: Field
         """
         self._field = field
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._field is not None:
+            self._field.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

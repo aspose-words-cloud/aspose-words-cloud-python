@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ClassificationResult(object):
     """Represents a single classification result.
     """
@@ -108,6 +107,9 @@ class ClassificationResult(object):
         """
         self._class_probability = class_probability
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

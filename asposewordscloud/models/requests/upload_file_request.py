@@ -84,18 +84,21 @@ class UploadFileRequest(BaseRequestObject):
         header_params['Content-Type'] = api_client.select_header_content_type(  # noqa: E501
             ['multipart/form-data'])  # noqa: E501
 
+        file_content_params = []
         form_params = []
         if self.file_content is not None:
             form_params.append(['fileContent', self.file_content, 'file'])  # noqa: E501
 
-        body_params = None
+        for file_content_value in file_content_params:
+            form_params.append([file_content_value.id, file_content_value.content, 'file'])  # noqa: E501
+
         return {
             "method": "PUT",
             "path": path,
+            "body": None,
             "query_params": query_params,
             "header_params": header_params,
             "form_params": form_params,
-            "body": body_params,
             "collection_formats": collection_formats,
             "response_type": 'FilesUploadResult'  # noqa: E501
         }

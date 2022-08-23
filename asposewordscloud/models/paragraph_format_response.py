@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ParagraphFormatResponse(object):
     """The REST response with the formatting properties of a paragraph.
     """
@@ -107,6 +106,12 @@ class ParagraphFormatResponse(object):
         :type: ParagraphFormat
         """
         self._paragraph_format = paragraph_format
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._paragraph_format is not None:
+            self._paragraph_format.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

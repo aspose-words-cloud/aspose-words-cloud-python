@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ProtectionDataResponse(object):
     """The REST response with data on document's protection.
     """
@@ -134,6 +133,15 @@ class ProtectionDataResponse(object):
         :type: ProtectionData
         """
         self._protection_data = protection_data
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._document_link is not None:
+            self._document_link.extract_files_content(filesContentResult)
+
+        if self._protection_data is not None:
+            self._protection_data.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

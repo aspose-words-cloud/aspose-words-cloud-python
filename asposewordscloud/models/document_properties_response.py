@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class DocumentPropertiesResponse(object):
     """The REST response with a collection of document properties.
     """
@@ -107,6 +106,12 @@ class DocumentPropertiesResponse(object):
         :type: DocumentProperties
         """
         self._document_properties = document_properties
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._document_properties is not None:
+            self._document_properties.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

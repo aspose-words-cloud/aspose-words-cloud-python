@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class SearchResponse(object):
     """The REST response with a regular expression pattern and a collection of search results.
     """
@@ -134,6 +133,12 @@ class SearchResponse(object):
         :type: SearchResultsCollection
         """
         self._search_results = search_results
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._search_results is not None:
+            self._search_results.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

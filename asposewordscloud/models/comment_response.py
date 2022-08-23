@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class CommentResponse(object):
     """The REST response with a comment.
     """
@@ -107,6 +106,12 @@ class CommentResponse(object):
         :type: Comment
         """
         self._comment = comment
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._comment is not None:
+            self._comment.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

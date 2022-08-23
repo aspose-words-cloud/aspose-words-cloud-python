@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class FilesUploadResult(object):
     """File upload result.
     """
@@ -107,6 +106,14 @@ class FilesUploadResult(object):
         :type: list[str]
         """
         self._uploaded = uploaded
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._errors is not None:
+            for element in self._errors:
+                element.extract_files_content(filesContentResult)
+
 
 
     def to_dict(self):

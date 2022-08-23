@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class SectionLinkCollection(object):
     """The collection of section's links.
     """
@@ -107,6 +106,16 @@ class SectionLinkCollection(object):
         :type: list[SectionLink]
         """
         self._section_link_list = section_link_list
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
+        if self._section_link_list is not None:
+            for element in self._section_link_list:
+                element.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

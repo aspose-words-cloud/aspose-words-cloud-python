@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class WatermarkText(object):
     """Class for insert watermark text request building.
     """
@@ -108,6 +107,9 @@ class WatermarkText(object):
         """
         self._text = text
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

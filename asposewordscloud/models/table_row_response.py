@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class TableRowResponse(object):
     """The REST response with a table row.
     """
@@ -107,6 +106,12 @@ class TableRowResponse(object):
         :type: TableRow
         """
         self._row = row
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._row is not None:
+            self._row.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

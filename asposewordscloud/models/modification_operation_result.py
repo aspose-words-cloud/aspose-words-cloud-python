@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ModificationOperationResult(object):
     """result of the operation which modifies the original document and saves the result.
     """
@@ -107,6 +106,15 @@ class ModificationOperationResult(object):
         :type: FileLink
         """
         self._source = source
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._dest is not None:
+            self._dest.extract_files_content(filesContentResult)
+
+        if self._source is not None:
+            self._source.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

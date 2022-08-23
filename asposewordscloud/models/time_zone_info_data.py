@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class TimeZoneInfoData(object):
     """Class to specify TimeZoneInfo parameters.
     """
@@ -162,6 +161,9 @@ class TimeZoneInfoData(object):
         """
         self._standard_display_name = standard_display_name
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

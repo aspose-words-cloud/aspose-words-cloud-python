@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class NodeLink(object):
     """Reference to node.
     """
@@ -107,6 +106,13 @@ class NodeLink(object):
         :type: str
         """
         self._node_id = node_id
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
 
 
     def to_dict(self):

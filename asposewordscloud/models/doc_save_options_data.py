@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class DocSaveOptionsData(object):
     """Container class for doc/dot save options.
     """
@@ -586,6 +585,29 @@ class DocSaveOptionsData(object):
         :type: bool
         """
         self._save_routing_slip = save_routing_slip
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._custom_time_zone_info_data is not None:
+            self._custom_time_zone_info_data.extract_files_content(filesContentResult)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     def to_dict(self):

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class RtfSaveOptionsData(object):
     """Container class for rtf save options.
     """
@@ -586,6 +585,29 @@ class RtfSaveOptionsData(object):
         :type: bool
         """
         self._save_images_as_wmf = save_images_as_wmf
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._custom_time_zone_info_data is not None:
+            self._custom_time_zone_info_data.extract_files_content(filesContentResult)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     def to_dict(self):

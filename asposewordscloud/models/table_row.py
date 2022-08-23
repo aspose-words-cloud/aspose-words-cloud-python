@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class TableRow(object):
     """DTO container with a table row element.
     """
@@ -161,6 +160,20 @@ class TableRow(object):
         :type: list[TableCell]
         """
         self._table_cell_list = table_cell_list
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
+
+        if self._row_format is not None:
+            self._row_format.extract_files_content(filesContentResult)
+
+        if self._table_cell_list is not None:
+            for element in self._table_cell_list:
+                element.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

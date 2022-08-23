@@ -83,12 +83,12 @@ class ApiClient(object):
 
         self.pool = None
         self.rest_client = rest.RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '22.8'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '22.7'}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'python sdk 22.8'
+        self.user_agent = 'python sdk 22.7'
 
     def __del__(self):
         if not self.pool is None:
@@ -111,9 +111,7 @@ class ApiClient(object):
     def request_token(self):
         config = self.configuration
         request_url = "/connect/token"
-        form_params = [['grant_type', 'client_credentials', 'string'],
-                       ['client_id', config.client_secret['client_id'], 'string'],
-                       ['client_secret', config.client_secret['client_secret'], 'string']]
+        body = 'grant_type=client_credentials&client_id=' + config.client_secret['client_id'] + '&client_secret=' + config.client_secret['client_secret']
 
         header_params = {'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded'}
 
@@ -127,13 +125,6 @@ class ApiClient(object):
         # remove optional path parameters
         resource_path = request_url.replace('//', '/')
 
-        # post parameters
-        if form_params:
-            form_params = self.prepare_post_parameters(form_params)
-            form_params = self.sanitize_for_serialization(form_params)
-            form_params = self.parameters_to_tuples(form_params,
-                                                    {})
-
         # request url
         url = ''
         if six.PY3:
@@ -144,7 +135,7 @@ class ApiClient(object):
         # perform request and return response
         response_data = self.request(
             'POST', url, query_params=[], headers=header_params,
-            post_params=form_params, body=None,
+            post_params=None, body=body,
             _preload_content=True,
             _request_timeout=None)
 
@@ -181,9 +172,16 @@ class ApiClient(object):
 
         # post parameters
         if post_params:
-            post_params = self.prepare_post_parameters(post_params)
-            post_params = self.sanitize_for_serialization(post_params)
-            post_params = self.parameters_to_tuples(post_params, collection_formats)
+            if len(post_params) == 1:
+                post_params = self.prepare_post_parameters(post_params)
+                body = post_params[0][1][1]
+                header_params['Content-Type'] = post_params[0][1][2]
+                post_params = None
+            elif len(post_params) > 1:
+                post_params = self.prepare_post_parameters(post_params)
+                post_params = self.sanitize_for_serialization(post_params)
+                post_params = self.parameters_to_tuples(post_params, collection_formats)
+                header_params['Content-Type'] = 'multipart/form-data'
 
         # auth setting
         self.update_params_for_auth(header_params, query_params, auth_settings)
@@ -321,7 +319,7 @@ class ApiClient(object):
 
                 result = None
                 if code == 200:
-                    if response_type is not 'None':
+                    if response_type != 'None':
                         result = self.deserialize(body, headers, response_type)
                 else:
                     result = rest.ApiException(status=code, reason=body.decode('UTF-8'))
@@ -392,6 +390,9 @@ class ApiClient(object):
             return None
 
         if type(klass) == str:
+            if klass == 'None':
+                return None
+
             if klass.startswith('list['):
                 sub_kls = re.match(r'list\[(.*)\]', klass).group(1)
                 return [self.__deserialize(sub_data, sub_kls)
@@ -481,62 +482,13 @@ class ApiClient(object):
                 post_params=None, body=None, _preload_content=True,
                 _request_timeout=None):
         """Makes the HTTP request using RESTClient."""
-        if method == "GET":
-            return self.rest_client.GET(url,
-                                        query_params=query_params,
-                                        _preload_content=_preload_content,
-                                        _request_timeout=_request_timeout,
-                                        headers=headers)
-        elif method == "HEAD":
-            return self.rest_client.HEAD(url,
-                                         query_params=query_params,
-                                         _preload_content=_preload_content,
-                                         _request_timeout=_request_timeout,
-                                         headers=headers)
-        elif method == "OPTIONS":
-            return self.rest_client.OPTIONS(url,
-                                            query_params=query_params,
-                                            headers=headers,
-                                            post_params=post_params,
-                                            _preload_content=_preload_content,
-                                            _request_timeout=_request_timeout,
-                                            body=body)
-        elif method == "POST":
-            return self.rest_client.POST(url,
-                                         query_params=query_params,
-                                         headers=headers,
-                                         post_params=post_params,
-                                         _preload_content=_preload_content,
-                                         _request_timeout=_request_timeout,
-                                         body=body)
-        elif method == "PUT":
-            return self.rest_client.PUT(url,
-                                        query_params=query_params,
-                                        headers=headers,
-                                        post_params=post_params,
-                                        _preload_content=_preload_content,
-                                        _request_timeout=_request_timeout,
-                                        body=body)
-        elif method == "PATCH":
-            return self.rest_client.PATCH(url,
-                                          query_params=query_params,
-                                          headers=headers,
-                                          post_params=post_params,
-                                          _preload_content=_preload_content,
-                                          _request_timeout=_request_timeout,
-                                          body=body)
-        elif method == "DELETE":
-            return self.rest_client.DELETE(url,
-                                           query_params=query_params,
-                                           headers=headers,
-                                           _preload_content=_preload_content,
-                                           _request_timeout=_request_timeout,
-                                           body=body)
-        else:
-            raise ValueError(
-                "http method must be `GET`, `HEAD`, `OPTIONS`,"
-                " `POST`, `PATCH`, `PUT` or `DELETE`."
-            )
+        return self.rest_client.request(method, url,
+                            headers=headers,
+                            query_params=query_params,
+                            post_params=post_params,
+                            _preload_content=_preload_content,
+                            _request_timeout=_request_timeout,
+                            body=body)
 
     def parameters_to_tuples(self, params, collection_formats):
         """Get parameters as list of tuples, formatting collections.
@@ -583,7 +535,10 @@ class ApiClient(object):
                         params.append(tuple([k, tuple([None, v, 'application/http; msgtype=request'])]))
 
                     if t == 'string':
-                        params.append(tuple([k, v]))
+                        params.append(tuple([k, tuple([None, v, 'text/plain'])]))
+
+                    if t == 'json':
+                        params.append(tuple([k, tuple([None, v.to_json(), 'application/json'])]))
 
                     if t == 'file':
                         if not v:
@@ -764,18 +719,23 @@ class ApiClient(object):
         if http_request['query_params']:
             url += '?' + urlencode(http_request['query_params'])
 
-        body = None
+        body = http_request['body']
         if http_request['form_params']:
             post_params = self.prepare_post_parameters(http_request['form_params'])
-            post_params = self.sanitize_for_serialization(post_params)
-            post_params = self.parameters_to_tuples(post_params, http_request['collection_formats'])
-            body, content_type = encode_multipart_formdata(post_params)
-            http_request['header_params']['Content-Type'] = content_type
+            if len(post_params) == 1:
+                body = post_params[0][1][1]
+                http_request['header_params']['Content-Type'] = post_params[0][1][2]
+                http_request['form_params'] = {}
+            elif len(post_params) > 1:
+                post_params = self.sanitize_for_serialization(post_params)
+                post_params = self.parameters_to_tuples(post_params, http_request['collection_formats'])
+                body, content_type = encode_multipart_formdata(post_params)
+                http_request['header_params']['Content-Type'] = content_type
 
-        if http_request['body']:
-            body = self.sanitize_for_serialization(http_request['body'])
-            if type(body) != str:
-                body = json.dumps(body).encode('UTF-8')
+        if body:
+            body = self.sanitize_for_serialization(body)
+            if isinstance(body, str):
+                body = body.encode('UTF-8')
 
         result = bytearray()
         result.extend(http_request['method'].encode('UTF-8'))

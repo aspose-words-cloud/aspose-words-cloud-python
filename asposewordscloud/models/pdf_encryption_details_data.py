@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class PdfEncryptionDetailsData(object):
     """Container class for details of encryption.
     """
@@ -135,6 +134,9 @@ class PdfEncryptionDetailsData(object):
         """
         self._user_password = user_password
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

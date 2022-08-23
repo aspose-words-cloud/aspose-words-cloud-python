@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class TabStopsResponse(object):
     """The REST response with an array of tab stops.
     """
@@ -107,6 +106,13 @@ class TabStopsResponse(object):
         :type: list[TabStop]
         """
         self._tab_stops = tab_stops
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._tab_stops is not None:
+            for element in self._tab_stops:
+                element.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

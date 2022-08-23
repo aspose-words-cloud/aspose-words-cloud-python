@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class StyleInsert(object):
     """Represents a single document style to insert.
     """
@@ -116,6 +115,9 @@ class StyleInsert(object):
         else:
             self._style_type = allowed_values[int(style_type) if six.PY3 else long(style_type)]
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class SplitDocumentResponse(object):
     """The REST response with a result of document splitting.
     """
@@ -107,6 +106,12 @@ class SplitDocumentResponse(object):
         :type: SplitDocumentResult
         """
         self._split_result = split_result
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._split_result is not None:
+            self._split_result.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

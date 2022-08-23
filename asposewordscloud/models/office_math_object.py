@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class OfficeMathObject(object):
     """DTO container with an OfficeMath object.
     """
@@ -239,6 +238,19 @@ class OfficeMathObject(object):
             self._math_object_type = math_object_type
         else:
             self._math_object_type = allowed_values[int(math_object_type) if six.PY3 else long(math_object_type)]
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
+
+        if self._content is not None:
+            self._content.extract_files_content(filesContentResult)
+
+
+
 
 
     def to_dict(self):
