@@ -40,15 +40,21 @@ class ConvertDocumentRequest(BaseRequestObject):
     :param out_path The path to the output document on a local storage.
     :param file_name_field_value The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.
     :param storage Original document storage.
+    :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+    :param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+    :param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
     :param fonts_location Folder in filestorage with custom fonts.
     """
 
-    def __init__(self, document, format, out_path=None, file_name_field_value=None, storage=None, fonts_location=None):
+    def __init__(self, document, format, out_path=None, file_name_field_value=None, storage=None, load_encoding=None, password=None, encrypted_password=None, fonts_location=None):
         self.document = document
         self.format = format
         self.out_path = out_path
         self.file_name_field_value = file_name_field_value
         self.storage = storage
+        self.load_encoding = load_encoding
+        self.password = password
+        self.encrypted_password = encrypted_password
         self.fonts_location = fonts_location
 
     def create_http_request(self, api_client):
@@ -61,6 +67,10 @@ class ConvertDocumentRequest(BaseRequestObject):
 
         path = '/v4.0/words/convert'
         path_params = {}
+        if self.out_path is not None:
+            path_params['outPath'] = self.out_path  # noqa: E501
+        else:
+            path_params['outPath'] = ''  # noqa: E501
 
         # path parameters
         collection_formats = {}
@@ -80,12 +90,16 @@ class ConvertDocumentRequest(BaseRequestObject):
         query_params = []
         if self.format is not None:
                 query_params.append(('format', self.format))  # noqa: E501
-        if self.out_path is not None:
-                query_params.append(('outPath', self.out_path))  # noqa: E501
         if self.file_name_field_value is not None:
                 query_params.append(('fileNameFieldValue', self.file_name_field_value))  # noqa: E501
         if self.storage is not None:
                 query_params.append(('storage', self.storage))  # noqa: E501
+        if self.load_encoding is not None:
+                query_params.append(('loadEncoding', self.load_encoding))  # noqa: E501
+        if self.password is not None:
+                query_params.append(('password', self.password))  # noqa: E501
+        if self.encrypted_password is not None:
+                query_params.append(('encryptedPassword', self.encrypted_password))  # noqa: E501
         if self.fonts_location is not None:
                 query_params.append(('fontsLocation', self.fonts_location))  # noqa: E501
 
