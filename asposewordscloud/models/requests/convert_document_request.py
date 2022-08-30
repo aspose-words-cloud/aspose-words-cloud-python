@@ -67,10 +67,6 @@ class ConvertDocumentRequest(BaseRequestObject):
 
         path = '/v4.0/words/convert'
         path_params = {}
-        if self.out_path is not None:
-            path_params['outPath'] = self.out_path  # noqa: E501
-        else:
-            path_params['outPath'] = ''  # noqa: E501
 
         # path parameters
         collection_formats = {}
@@ -90,6 +86,8 @@ class ConvertDocumentRequest(BaseRequestObject):
         query_params = []
         if self.format is not None:
                 query_params.append(('format', self.format))  # noqa: E501
+        if self.out_path is not None:
+                query_params.append(('outPath', self.out_path))  # noqa: E501
         if self.file_name_field_value is not None:
                 query_params.append(('fileNameFieldValue', self.file_name_field_value))  # noqa: E501
         if self.storage is not None:
