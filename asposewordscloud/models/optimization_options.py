@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class OptimizationOptions(object):
     """Container class for the document optimization options.
     """
@@ -89,6 +88,9 @@ class OptimizationOptions(object):
         else:
             self._ms_word_version = allowed_values[int(ms_word_version) if six.PY3 else long(ms_word_version)]
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

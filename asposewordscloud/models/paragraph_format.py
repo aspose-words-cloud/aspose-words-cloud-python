@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ParagraphFormat(object):
     """Paragraph format element.
     """
@@ -876,6 +875,42 @@ class ParagraphFormat(object):
         :type: bool
         """
         self._is_list_item = is_list_item
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        if self._shading is not None:
+            self._shading.extract_files_content(filesContentResult)
+
+
+
+
+
+
+
+
+
+
+
 
 
     def to_dict(self):

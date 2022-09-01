@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class Border(object):
     """Represents a border of an object.
     """
@@ -258,6 +257,20 @@ class Border(object):
         :type: bool
         """
         self._shadow = shadow
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
+
+        if self._color is not None:
+            self._color.extract_files_content(filesContentResult)
+
+
+
+
 
 
     def to_dict(self):

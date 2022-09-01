@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class Shading(object):
     """DTO container with a paragraph format shading element.
     """
@@ -142,6 +141,16 @@ class Shading(object):
             self._texture = texture
         else:
             self._texture = allowed_values[int(texture) if six.PY3 else long(texture)]
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._background_pattern_color is not None:
+            self._background_pattern_color.extract_files_content(filesContentResult)
+
+        if self._foreground_pattern_color is not None:
+            self._foreground_pattern_color.extract_files_content(filesContentResult)
+
 
 
     def to_dict(self):

@@ -108,19 +108,22 @@ class CompareDocumentRequest(BaseRequestObject):
         header_params['Content-Type'] = api_client.select_header_content_type(  # noqa: E501
             ['application/xml', 'application/json'])  # noqa: E501
 
+        file_content_params = []
         form_params = []
-
-        body_params = None
         if self.compare_data is not None:
-            body_params = self.compare_data
+            form_params.append(['compareData', self.compare_data, 'json'])  # noqa: E501
+            self.compare_data.extract_files_content(file_content_params)
+
+        for file_content_value in file_content_params:
+            form_params.append([file_content_value.id, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "PUT",
             "path": path,
+            "body": None,
             "query_params": query_params,
             "header_params": header_params,
             "form_params": form_params,
-            "body": body_params,
             "collection_formats": collection_formats,
             "response_type": 'DocumentResponse'  # noqa: E501
         }

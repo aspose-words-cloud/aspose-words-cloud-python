@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ApiError(object):
     """Api error.
     """
@@ -188,6 +187,13 @@ class ApiError(object):
         :type: str
         """
         self._message = message
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._inner_error is not None:
+            self._inner_error.extract_files_content(filesContentResult)
+
 
 
     def to_dict(self):

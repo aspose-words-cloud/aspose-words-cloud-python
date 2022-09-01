@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class RunLink(object):
     """Run link element.
     """
@@ -134,6 +133,14 @@ class RunLink(object):
         :type: str
         """
         self._text = text
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
+
 
 
     def to_dict(self):

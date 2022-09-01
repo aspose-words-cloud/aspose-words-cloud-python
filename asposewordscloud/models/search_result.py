@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class SearchResult(object):
     """Result of search operation.
     """
@@ -107,6 +106,15 @@ class SearchResult(object):
         :type: DocumentPosition
         """
         self._range_start = range_start
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._range_end is not None:
+            self._range_end.extract_files_content(filesContentResult)
+
+        if self._range_start is not None:
+            self._range_start.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

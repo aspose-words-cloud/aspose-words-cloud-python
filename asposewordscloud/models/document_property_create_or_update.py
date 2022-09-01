@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class DocumentPropertyCreateOrUpdate(object):
     """Words document property DTO for create or update.
     """
@@ -81,6 +80,9 @@ class DocumentPropertyCreateOrUpdate(object):
         """
         self._value = value
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

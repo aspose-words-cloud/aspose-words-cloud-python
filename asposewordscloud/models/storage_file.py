@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class StorageFile(object):
     """File or folder information.
     """
@@ -189,6 +188,9 @@ class StorageFile(object):
         """
         self._size = size
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

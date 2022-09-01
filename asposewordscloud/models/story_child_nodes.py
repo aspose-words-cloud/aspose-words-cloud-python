@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class StoryChildNodes(object):
     """Child nodes of Story or InlineStory.
     """
@@ -80,6 +79,13 @@ class StoryChildNodes(object):
         :type: list[NodeLink]
         """
         self._child_nodes = child_nodes
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._child_nodes is not None:
+            for element in self._child_nodes:
+                element.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class StylesResponse(object):
     """The REST response with an array of styles.
     """
@@ -107,6 +106,13 @@ class StylesResponse(object):
         :type: list[Style]
         """
         self._styles = styles
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._styles is not None:
+            for element in self._styles:
+                element.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

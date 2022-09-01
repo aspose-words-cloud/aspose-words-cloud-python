@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ListLevel(object):
     """DTO container with a document list level.
     """
@@ -428,6 +427,28 @@ class ListLevel(object):
             self._trailing_character = trailing_character
         else:
             self._trailing_character = allowed_values[int(trailing_character) if six.PY3 else long(trailing_character)]
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
+
+        if self._font is not None:
+            self._font.extract_files_content(filesContentResult)
+
+
+        if self._linked_style is not None:
+            self._linked_style.extract_files_content(filesContentResult)
+
+
+
+
+
+
+
+
 
 
     def to_dict(self):

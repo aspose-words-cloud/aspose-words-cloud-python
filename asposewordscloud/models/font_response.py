@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class FontResponse(object):
     """The REST response with a font.
     """
@@ -107,6 +106,12 @@ class FontResponse(object):
         :type: Font
         """
         self._font = font
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._font is not None:
+            self._font.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

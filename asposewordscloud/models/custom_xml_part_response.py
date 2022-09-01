@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class CustomXmlPartResponse(object):
     """The REST response with a custom xml part.
     """
@@ -107,6 +106,12 @@ class CustomXmlPartResponse(object):
         :type: CustomXmlPart
         """
         self._custom_xml_part = custom_xml_part
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._custom_xml_part is not None:
+            self._custom_xml_part.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

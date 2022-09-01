@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class OutlineOptionsData(object):
     """Container class for outline options.
     """
@@ -215,6 +214,18 @@ class OutlineOptionsData(object):
         :type: int
         """
         self._headings_outline_levels = headings_outline_levels
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._bookmarks_outline_levels is not None:
+            for element in self._bookmarks_outline_levels:
+                element.extract_files_content(filesContentResult)
+
+
+
+
+
 
 
     def to_dict(self):

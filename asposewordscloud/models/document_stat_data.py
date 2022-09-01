@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class DocumentStatData(object):
     """Container for the document's statistical data.
     """
@@ -188,6 +187,19 @@ class DocumentStatData(object):
         :type: int
         """
         self._word_count = word_count
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._footnotes_stat_data is not None:
+            self._footnotes_stat_data.extract_files_content(filesContentResult)
+
+
+        if self._page_stat_data is not None:
+            for element in self._page_stat_data:
+                element.extract_files_content(filesContentResult)
+
+
 
 
     def to_dict(self):

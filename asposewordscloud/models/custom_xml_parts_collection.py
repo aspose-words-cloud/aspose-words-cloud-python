@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class CustomXmlPartsCollection(object):
     """The collection of CustomXmlPart.
     """
@@ -107,6 +106,16 @@ class CustomXmlPartsCollection(object):
         :type: list[CustomXmlPart]
         """
         self._custom_xml_parts_list = custom_xml_parts_list
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
+        if self._custom_xml_parts_list is not None:
+            for element in self._custom_xml_parts_list:
+                element.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

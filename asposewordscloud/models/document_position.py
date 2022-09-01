@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class DocumentPosition(object):
     """DTO container with a position in the document tree.
     """
@@ -107,6 +106,13 @@ class DocumentPosition(object):
         :type: int
         """
         self._offset = offset
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._node is not None:
+            self._node.extract_files_content(filesContentResult)
+
 
 
     def to_dict(self):

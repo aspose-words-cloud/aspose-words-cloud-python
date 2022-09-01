@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class BookmarksResponse(object):
     """The REST response with a collection of bookmarks.
     """
@@ -107,6 +106,12 @@ class BookmarksResponse(object):
         :type: Bookmarks
         """
         self._bookmarks = bookmarks
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._bookmarks is not None:
+            self._bookmarks.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

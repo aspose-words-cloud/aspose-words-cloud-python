@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class CommentUpdate(object):
     """Comment update.
     """
@@ -215,6 +214,16 @@ class CommentUpdate(object):
         :type: str
         """
         self._text = text
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._range_end is not None:
+            self._range_end.extract_files_content(filesContentResult)
+
+        if self._range_start is not None:
+            self._range_start.extract_files_content(filesContentResult)
+
 
 
     def to_dict(self):

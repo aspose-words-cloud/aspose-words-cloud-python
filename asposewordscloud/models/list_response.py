@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ListResponse(object):
     """The REST response with a list information.
     """
@@ -107,6 +106,12 @@ class ListResponse(object):
         :type: ListInfo
         """
         self._list = list
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._list is not None:
+            self._list.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

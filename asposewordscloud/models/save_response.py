@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class SaveResponse(object):
     """The REST response with a save result.
     """
@@ -107,6 +106,12 @@ class SaveResponse(object):
         :type: SaveResult
         """
         self._save_result = save_result
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._save_result is not None:
+            self._save_result.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class HyperlinkResponse(object):
     """The REST response with a hyperlink.
     """
@@ -107,6 +106,12 @@ class HyperlinkResponse(object):
         :type: Hyperlink
         """
         self._hyperlink = hyperlink
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._hyperlink is not None:
+            self._hyperlink.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

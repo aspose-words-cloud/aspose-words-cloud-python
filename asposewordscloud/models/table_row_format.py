@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class TableRowFormat(object):
     """DTO container with formatting for a table row.
     """
@@ -196,6 +195,16 @@ class TableRowFormat(object):
             self._height_rule = height_rule
         else:
             self._height_rule = allowed_values[int(height_rule) if six.PY3 else long(height_rule)]
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
+
+
+
 
 
     def to_dict(self):

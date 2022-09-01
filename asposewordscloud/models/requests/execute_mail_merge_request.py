@@ -119,20 +119,24 @@ class ExecuteMailMergeRequest(BaseRequestObject):
         header_params['Content-Type'] = api_client.select_header_content_type(  # noqa: E501
             ['multipart/form-data'])  # noqa: E501
 
+        file_content_params = []
         form_params = []
         if self.data is not None:
             form_params.append(['data', self.data, 'string'])  # noqa: E501
         if self.options is not None:
-            form_params.append(['options', self.options.to_json(), 'string'])  # noqa: E501
+            form_params.append(['options', self.options, 'json'])  # noqa: E501
+            self.options.extract_files_content(file_content_params)
 
-        body_params = None
+        for file_content_value in file_content_params:
+            form_params.append([file_content_value.id, file_content_value.content, 'file'])  # noqa: E501
+
         return {
             "method": "PUT",
             "path": path,
+            "body": None,
             "query_params": query_params,
             "header_params": header_params,
             "form_params": form_params,
-            "body": body_params,
             "collection_formats": collection_formats,
             "response_type": 'DocumentResponse'  # noqa: E501
         }

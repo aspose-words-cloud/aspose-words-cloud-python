@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class BordersResponse(object):
     """The REST response with a collection of borders.
     """
@@ -107,6 +106,12 @@ class BordersResponse(object):
         :type: BordersCollection
         """
         self._borders = borders
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._borders is not None:
+            self._borders.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

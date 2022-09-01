@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class CompressOptions(object):
     """Options of document compress.
     """
@@ -108,6 +107,9 @@ class CompressOptions(object):
         """
         self._images_reduce_size_factor = images_reduce_size_factor
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

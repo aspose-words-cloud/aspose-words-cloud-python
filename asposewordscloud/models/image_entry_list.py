@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ImageEntryList(object):
     """Represents a list of images which will be appended to the original resource document or image.
     """
@@ -107,6 +106,13 @@ class ImageEntryList(object):
         :type: list[ImageEntry]
         """
         self._image_entries = image_entries
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._image_entries is not None:
+            for element in self._image_entries:
+                element.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

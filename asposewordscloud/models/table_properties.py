@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class TableProperties(object):
     """DTO container with table properties.
     """
@@ -490,6 +489,28 @@ class TableProperties(object):
         :type: float
         """
         self._top_padding = top_padding
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
+
+
+
+
+
+
+
+        if self._preferred_width is not None:
+            self._preferred_width.extract_files_content(filesContentResult)
+
+
+
+
+
+
 
 
     def to_dict(self):

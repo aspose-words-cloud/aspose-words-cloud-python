@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class FormFieldCheckbox(object):
     """FormField checkbox element.
     """
@@ -431,6 +430,25 @@ class FormFieldCheckbox(object):
         :type: bool
         """
         self._is_check_box_exact_size = is_check_box_exact_size
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     def to_dict(self):

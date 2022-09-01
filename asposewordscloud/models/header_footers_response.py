@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class HeaderFootersResponse(object):
     """The REST response with a collection of HeaderFooter elements.
     """
@@ -107,6 +106,12 @@ class HeaderFootersResponse(object):
         :type: HeaderFooterLinkCollection
         """
         self._header_footers = header_footers
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._header_footers is not None:
+            self._header_footers.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

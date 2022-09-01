@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class FootnoteInsert(object):
     """Footnote for insert.
     """
@@ -169,6 +168,14 @@ class FootnoteInsert(object):
         :type: str
         """
         self._text = text
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._position is not None:
+            self._position.extract_files_content(filesContentResult)
+
+
 
 
     def to_dict(self):

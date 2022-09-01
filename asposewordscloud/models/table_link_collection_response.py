@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class TableLinkCollectionResponse(object):
     """The REST response with a collection of tables.
     """
@@ -107,6 +106,12 @@ class TableLinkCollectionResponse(object):
         :type: TableLinkCollection
         """
         self._tables = tables
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._tables is not None:
+            self._tables.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

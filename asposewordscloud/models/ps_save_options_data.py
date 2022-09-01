@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class PsSaveOptionsData(object):
     """Container class for ps save options.
     """
@@ -710,6 +709,35 @@ class PsSaveOptionsData(object):
         :type: bool
         """
         self._use_book_fold_printing_settings = use_book_fold_printing_settings
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._custom_time_zone_info_data is not None:
+            self._custom_time_zone_info_data.extract_files_content(filesContentResult)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        if self._metafile_rendering_options is not None:
+            self._metafile_rendering_options.extract_files_content(filesContentResult)
+
+
+
+
+
+
 
 
     def to_dict(self):

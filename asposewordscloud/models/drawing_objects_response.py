@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class DrawingObjectsResponse(object):
     """The REST response with a collection of DrawingObjects.
     """
@@ -107,6 +106,12 @@ class DrawingObjectsResponse(object):
         :type: DrawingObjectCollection
         """
         self._drawing_objects = drawing_objects
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._drawing_objects is not None:
+            self._drawing_objects.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

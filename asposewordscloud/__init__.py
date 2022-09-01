@@ -10,9 +10,11 @@ from asposewordscloud.apis.words_api import WordsApi
 from asposewordscloud.api_client import ApiClient
 from asposewordscloud.configuration import Configuration
 # import models into sdk package
+from asposewordscloud.models.file_content import FileContent
 from asposewordscloud.models.api_error import ApiError
 from asposewordscloud.models.available_fonts_response import AvailableFontsResponse
-from asposewordscloud.models.base_entry import BaseEntry
+from asposewordscloud.models.base_document_entry_list import BaseDocumentEntryList
+from asposewordscloud.models.base_image_entry_list import BaseImageEntryList
 from asposewordscloud.models.bmp_save_options_data import BmpSaveOptionsData
 from asposewordscloud.models.bookmark import Bookmark
 from asposewordscloud.models.bookmark_data import BookmarkData
@@ -154,6 +156,10 @@ from asposewordscloud.models.office_math_object import OfficeMathObject
 from asposewordscloud.models.office_math_object_response import OfficeMathObjectResponse
 from asposewordscloud.models.office_math_objects_collection import OfficeMathObjectsCollection
 from asposewordscloud.models.office_math_objects_response import OfficeMathObjectsResponse
+from asposewordscloud.models.online_document_entry import OnlineDocumentEntry
+from asposewordscloud.models.online_document_entry_list import OnlineDocumentEntryList
+from asposewordscloud.models.online_image_entry import OnlineImageEntry
+from asposewordscloud.models.online_image_entry_list import OnlineImageEntryList
 from asposewordscloud.models.open_xps_save_options_data import OpenXpsSaveOptionsData
 from asposewordscloud.models.optimization_options import OptimizationOptions
 from asposewordscloud.models.ott_save_options_data import OttSaveOptionsData

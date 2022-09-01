@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class RunResponse(object):
     """The REST response with a Run element.
     """
@@ -107,6 +106,12 @@ class RunResponse(object):
         :type: Run
         """
         self._run = run
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._run is not None:
+            self._run.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class Font(object):
     """DTO container with a font element.
     """
@@ -1184,6 +1183,60 @@ class Font(object):
         :type: XmlColor
         """
         self._underline_color = underline_color
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
+
+
+
+
+        if self._border is not None:
+            self._border.extract_files_content(filesContentResult)
+
+        if self._color is not None:
+            self._color.extract_files_content(filesContentResult)
+
+
+
+
+
+
+        if self._highlight_color is not None:
+            self._highlight_color.extract_files_content(filesContentResult)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        if self._underline_color is not None:
+            self._underline_color.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

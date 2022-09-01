@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class FormFieldDropDown(object):
     """FormField dropdownlist element.
     """
@@ -404,6 +403,24 @@ class FormFieldDropDown(object):
         :type: int
         """
         self._drop_down_selected_index = drop_down_selected_index
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     def to_dict(self):

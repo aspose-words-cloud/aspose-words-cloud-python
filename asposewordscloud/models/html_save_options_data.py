@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class HtmlSaveOptionsData(object):
     """Container class for html save options.
     """
@@ -1568,6 +1567,63 @@ class HtmlSaveOptionsData(object):
             self._table_width_output_mode = table_width_output_mode
         else:
             self._table_width_output_mode = allowed_values[int(table_width_output_mode) if six.PY3 else long(table_width_output_mode)]
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._custom_time_zone_info_data is not None:
+            self._custom_time_zone_info_data.extract_files_content(filesContentResult)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     def to_dict(self):

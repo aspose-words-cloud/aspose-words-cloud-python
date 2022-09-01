@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class TableRowFormatResponse(object):
     """The REST response with the formatting properties of a table row.
     """
@@ -107,6 +106,12 @@ class TableRowFormatResponse(object):
         :type: TableRowFormat
         """
         self._row_format = row_format
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._row_format is not None:
+            self._row_format.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

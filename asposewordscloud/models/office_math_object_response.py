@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class OfficeMathObjectResponse(object):
     """The REST response with a OfficeMath object.
     """
@@ -107,6 +106,12 @@ class OfficeMathObjectResponse(object):
         :type: OfficeMathObject
         """
         self._office_math_object = office_math_object
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._office_math_object is not None:
+            self._office_math_object.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

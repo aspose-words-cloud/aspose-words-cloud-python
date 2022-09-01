@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class TextSaveOptionsData(object):
     """Container class for text save options.
     """
@@ -702,6 +701,33 @@ class TextSaveOptionsData(object):
         :type: bool
         """
         self._simplify_list_labels = simplify_list_labels
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._custom_time_zone_info_data is not None:
+            self._custom_time_zone_info_data.extract_files_content(filesContentResult)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     def to_dict(self):

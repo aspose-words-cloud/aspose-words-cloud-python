@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class CommentsCollection(object):
     """The collection of comments.
     """
@@ -107,6 +106,16 @@ class CommentsCollection(object):
         :type: list[Comment]
         """
         self._comment_list = comment_list
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
+        if self._comment_list is not None:
+            for element in self._comment_list:
+                element.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

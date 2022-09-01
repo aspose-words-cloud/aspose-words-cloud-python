@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class XmlDataLoadOptions(object):
     """Represents options for XML data loading.
     """
@@ -81,6 +80,9 @@ class XmlDataLoadOptions(object):
         """
         self._always_generate_root_object = always_generate_root_object
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

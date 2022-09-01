@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class Bookmarks(object):
     """Represents an array of bookmarks.
     """
@@ -107,6 +106,16 @@ class Bookmarks(object):
         :type: list[Bookmark]
         """
         self._bookmark_list = bookmark_list
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
+        if self._bookmark_list is not None:
+            for element in self._bookmark_list:
+                element.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class FormFieldTextInput(object):
     """FormField text input element.
     """
@@ -466,6 +465,26 @@ class FormFieldTextInput(object):
             self._text_input_type = text_input_type
         else:
             self._text_input_type = allowed_values[int(text_input_type) if six.PY3 else long(text_input_type)]
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._link is not None:
+            self._link.extract_files_content(filesContentResult)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     def to_dict(self):

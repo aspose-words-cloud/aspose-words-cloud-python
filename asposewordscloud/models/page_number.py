@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class PageNumber(object):
     """Class is used for insert page number request building.
     """
@@ -162,6 +161,9 @@ class PageNumber(object):
         """
         self._set_page_number_on_first_page = set_page_number_on_first_page
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

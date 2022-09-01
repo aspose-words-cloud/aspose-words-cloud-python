@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class InfoResponse(object):
     """Response with API info.
     """
@@ -161,6 +160,15 @@ class InfoResponse(object):
         :type: str
         """
         self._version = version
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._additional_info is not None:
+            for element in self._additional_info:
+                element.extract_files_content(filesContentResult)
+
+
 
 
     def to_dict(self):

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class DocumentEntry(object):
     """Represents a document which will be appended to the original resource document.
     """
@@ -44,30 +43,30 @@ class DocumentEntry(object):
     """
     swagger_types = {
         'encrypted_password': 'str',
-        'href': 'str',
-        'import_format_mode': 'str'
+        'import_format_mode': 'str',
+        'href': 'str'
     }
 
     attribute_map = {
         'encrypted_password': 'EncryptedPassword',
-        'href': 'Href',
-        'import_format_mode': 'ImportFormatMode'
+        'import_format_mode': 'ImportFormatMode',
+        'href': 'Href'
     }
 
-    def __init__(self, encrypted_password=None, href=None, import_format_mode=None):  # noqa: E501
+    def __init__(self, encrypted_password=None, import_format_mode=None, href=None):  # noqa: E501
         """DocumentEntry - a model defined in Swagger"""  # noqa: E501
 
         self._encrypted_password = None
-        self._href = None
         self._import_format_mode = None
+        self._href = None
         self.discriminator = None
 
         if encrypted_password is not None:
             self.encrypted_password = encrypted_password
-        if href is not None:
-            self.href = href
         if import_format_mode is not None:
             self.import_format_mode = import_format_mode
+        if href is not None:
+            self.href = href
 
     @property
     def encrypted_password(self):
@@ -92,28 +91,6 @@ class DocumentEntry(object):
         self._encrypted_password = encrypted_password
 
     @property
-    def href(self):
-        """Gets the href of this DocumentEntry.  # noqa: E501
-
-        Gets or sets the path to document to append at the server.  # noqa: E501
-
-        :return: The href of this DocumentEntry.  # noqa: E501
-        :rtype: str
-        """
-        return self._href
-
-    @href.setter
-    def href(self, href):
-        """Sets the href of this DocumentEntry.
-
-        Gets or sets the path to document to append at the server.  # noqa: E501
-
-        :param href: The href of this DocumentEntry.  # noqa: E501
-        :type: str
-        """
-        self._href = href
-
-    @property
     def import_format_mode(self):
         """Gets the import_format_mode of this DocumentEntry.  # noqa: E501
 
@@ -135,6 +112,31 @@ class DocumentEntry(object):
         """
         self._import_format_mode = import_format_mode
 
+    @property
+    def href(self):
+        """Gets the href of this DocumentEntry.  # noqa: E501
+
+        Gets or sets the path to document to append at the server.  # noqa: E501
+
+        :return: The href of this DocumentEntry.  # noqa: E501
+        :rtype: str
+        """
+        return self._href
+
+    @href.setter
+    def href(self, href):
+        """Sets the href of this DocumentEntry.
+
+        Gets or sets the path to document to append at the server.  # noqa: E501
+
+        :param href: The href of this DocumentEntry.  # noqa: E501
+        :type: str
+        """
+        self._href = href
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""
