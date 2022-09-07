@@ -1280,6 +1280,9 @@ class WordsApi(Encryptor, object):
         :param out_path str : The path to the output document on a local storage.
         :param file_name_field_value str : The filename of the output document, that will be used when the resulting document has a dynamic field {filename}. If it is not set, the "sourceFilename" will be used instead.
         :param storage str : Original document storage.
+        :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
+        :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
+        :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
         :param fonts_location str : Folder in filestorage with custom fonts.
         :return: file
                  If the method is called asynchronously,
