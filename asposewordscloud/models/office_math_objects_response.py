@@ -110,9 +110,6 @@ class OfficeMathObjectsResponse(object):
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
-        if self._office_math_objects is not None:
-            self._office_math_objects.extract_files_content(filesContentResult)
-
 
     def to_dict(self):
         """Returns the model properties as a dict"""

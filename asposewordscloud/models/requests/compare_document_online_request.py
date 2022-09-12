@@ -104,12 +104,11 @@ class CompareDocumentOnlineRequest(BaseRequestObject):
             form_params.append(['document', self.document, 'file'])  # noqa: E501
         if self.compare_data is not None:
             form_params.append(['compareData', self.compare_data, 'json'])  # noqa: E501
-            self.compare_data.extract_files_content(file_content_params)
         if self.comparing_document is not None:
             form_params.append(['comparingDocument', self.comparing_document, 'file'])  # noqa: E501
 
         for file_content_value in file_content_params:
-            form_params.append([file_content_value.id, file_content_value.content, 'file'])  # noqa: E501
+            form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "PUT",

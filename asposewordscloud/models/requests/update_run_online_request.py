@@ -124,10 +124,9 @@ class UpdateRunOnlineRequest(BaseRequestObject):
             form_params.append(['document', self.document, 'file'])  # noqa: E501
         if self.run is not None:
             form_params.append(['run', self.run, 'json'])  # noqa: E501
-            self.run.extract_files_content(file_content_params)
 
         for file_content_value in file_content_params:
-            form_params.append([file_content_value.id, file_content_value.content, 'file'])  # noqa: E501
+            form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "PUT",

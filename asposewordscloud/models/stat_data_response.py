@@ -137,12 +137,6 @@ class StatDataResponse(object):
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
-        if self._document_link is not None:
-            self._document_link.extract_files_content(filesContentResult)
-
-        if self._stat_data is not None:
-            self._stat_data.extract_files_content(filesContentResult)
-
 
     def to_dict(self):
         """Returns the model properties as a dict"""

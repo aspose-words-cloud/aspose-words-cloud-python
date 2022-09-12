@@ -218,25 +218,6 @@ class Section(object):
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
-        if self._link is not None:
-            self._link.extract_files_content(filesContentResult)
-
-        if self._child_nodes is not None:
-            for element in self._child_nodes:
-                element.extract_files_content(filesContentResult)
-
-        if self._header_footers is not None:
-            self._header_footers.extract_files_content(filesContentResult)
-
-        if self._page_setup is not None:
-            self._page_setup.extract_files_content(filesContentResult)
-
-        if self._paragraphs is not None:
-            self._paragraphs.extract_files_content(filesContentResult)
-
-        if self._tables is not None:
-            self._tables.extract_files_content(filesContentResult)
-
 
     def to_dict(self):
         """Returns the model properties as a dict"""

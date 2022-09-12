@@ -42,31 +42,53 @@ class DocumentEntry(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'file_reference': 'FileReference',
         'encrypted_password': 'str',
-        'import_format_mode': 'str',
-        'href': 'str'
+        'import_format_mode': 'str'
     }
 
     attribute_map = {
+        'file_reference': 'FileReference',
         'encrypted_password': 'EncryptedPassword',
-        'import_format_mode': 'ImportFormatMode',
-        'href': 'Href'
+        'import_format_mode': 'ImportFormatMode'
     }
 
-    def __init__(self, encrypted_password=None, import_format_mode=None, href=None):  # noqa: E501
+    def __init__(self, file_reference=None, encrypted_password=None, import_format_mode=None):  # noqa: E501
         """DocumentEntry - a model defined in Swagger"""  # noqa: E501
 
+        self._file_reference = None
         self._encrypted_password = None
         self._import_format_mode = None
-        self._href = None
         self.discriminator = None
 
+        if file_reference is not None:
+            self.file_reference = file_reference
         if encrypted_password is not None:
             self.encrypted_password = encrypted_password
         if import_format_mode is not None:
             self.import_format_mode = import_format_mode
-        if href is not None:
-            self.href = href
+
+    @property
+    def file_reference(self):
+        """Gets the file_reference of this DocumentEntry.  # noqa: E501
+
+        Gets or sets the file reference.  # noqa: E501
+
+        :return: The file_reference of this DocumentEntry.  # noqa: E501
+        :rtype: FileReference
+        """
+        return self._file_reference
+
+    @file_reference.setter
+    def file_reference(self, file_reference):
+        """Sets the file_reference of this DocumentEntry.
+
+        Gets or sets the file reference.  # noqa: E501
+
+        :param file_reference: The file_reference of this DocumentEntry.  # noqa: E501
+        :type: FileReference
+        """
+        self._file_reference = file_reference
 
     @property
     def encrypted_password(self):
@@ -112,31 +134,14 @@ class DocumentEntry(object):
         """
         self._import_format_mode = import_format_mode
 
-    @property
-    def href(self):
-        """Gets the href of this DocumentEntry.  # noqa: E501
-
-        Gets or sets the path to document to append at the server.  # noqa: E501
-
-        :return: The href of this DocumentEntry.  # noqa: E501
-        :rtype: str
-        """
-        return self._href
-
-    @href.setter
-    def href(self, href):
-        """Sets the href of this DocumentEntry.
-
-        Gets or sets the path to document to append at the server.  # noqa: E501
-
-        :param href: The href of this DocumentEntry.  # noqa: E501
-        :type: str
-        """
-        self._href = href
-
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
+        if self._file_reference is not None:
+            self._file_reference.extract_files_content(filesContentResult)
+
+
+
 
     def to_dict(self):
         """Returns the model properties as a dict"""

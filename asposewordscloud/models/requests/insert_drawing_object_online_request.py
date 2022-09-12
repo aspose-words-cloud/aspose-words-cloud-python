@@ -117,12 +117,11 @@ class InsertDrawingObjectOnlineRequest(BaseRequestObject):
             form_params.append(['document', self.document, 'file'])  # noqa: E501
         if self.drawing_object is not None:
             form_params.append(['drawingObject', self.drawing_object, 'json'])  # noqa: E501
-            self.drawing_object.extract_files_content(file_content_params)
         if self.image_file is not None:
             form_params.append(['imageFile', self.image_file, 'file'])  # noqa: E501
 
         for file_content_value in file_content_params:
-            form_params.append([file_content_value.id, file_content_value.content, 'file'])  # noqa: E501
+            form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "PUT",

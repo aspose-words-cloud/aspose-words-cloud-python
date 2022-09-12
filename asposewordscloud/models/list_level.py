@@ -431,25 +431,6 @@ class ListLevel(object):
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
-        if self._link is not None:
-            self._link.extract_files_content(filesContentResult)
-
-
-        if self._font is not None:
-            self._font.extract_files_content(filesContentResult)
-
-
-        if self._linked_style is not None:
-            self._linked_style.extract_files_content(filesContentResult)
-
-
-
-
-
-
-
-
-
 
     def to_dict(self):
         """Returns the model properties as a dict"""

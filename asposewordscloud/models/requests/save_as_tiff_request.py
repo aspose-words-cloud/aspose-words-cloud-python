@@ -176,10 +176,9 @@ class SaveAsTiffRequest(BaseRequestObject):
         form_params = []
         if self.save_options is not None:
             form_params.append(['saveOptions', self.save_options, 'json'])  # noqa: E501
-            self.save_options.extract_files_content(file_content_params)
 
         for file_content_value in file_content_params:
-            form_params.append([file_content_value.id, file_content_value.content, 'file'])  # noqa: E501
+            form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "PUT",

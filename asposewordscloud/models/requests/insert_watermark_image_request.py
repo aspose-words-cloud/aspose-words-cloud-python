@@ -123,7 +123,7 @@ class InsertWatermarkImageRequest(BaseRequestObject):
             form_params.append(['imageFile', self.image_file, 'file'])  # noqa: E501
 
         for file_content_value in file_content_params:
-            form_params.append([file_content_value.id, file_content_value.content, 'file'])  # noqa: E501
+            form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "POST",

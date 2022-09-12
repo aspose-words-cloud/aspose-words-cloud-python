@@ -164,12 +164,6 @@ class BookmarkInsert(object):
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
-        if self._end_range is not None:
-            self._end_range.extract_files_content(filesContentResult)
-
-        if self._start_range is not None:
-            self._start_range.extract_files_content(filesContentResult)
-
 
     def to_dict(self):
         """Returns the model properties as a dict"""

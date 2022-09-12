@@ -145,13 +145,6 @@ class Shading(object):
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
-        if self._background_pattern_color is not None:
-            self._background_pattern_color.extract_files_content(filesContentResult)
-
-        if self._foreground_pattern_color is not None:
-            self._foreground_pattern_color.extract_files_content(filesContentResult)
-
-
 
     def to_dict(self):
         """Returns the model properties as a dict"""

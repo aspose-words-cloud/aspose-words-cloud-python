@@ -83,10 +83,6 @@ class StoryChildNodes(object):
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
-        if self._child_nodes is not None:
-            for element in self._child_nodes:
-                element.extract_files_content(filesContentResult)
-
 
     def to_dict(self):
         """Returns the model properties as a dict"""

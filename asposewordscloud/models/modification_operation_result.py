@@ -110,12 +110,6 @@ class ModificationOperationResult(object):
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
-        if self._dest is not None:
-            self._dest.extract_files_content(filesContentResult)
-
-        if self._source is not None:
-            self._source.extract_files_content(filesContentResult)
-
 
     def to_dict(self):
         """Returns the model properties as a dict"""

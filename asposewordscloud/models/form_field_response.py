@@ -110,9 +110,6 @@ class FormFieldResponse(object):
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
-        if self._form_field is not None:
-            self._form_field.extract_files_content(filesContentResult)
-
 
     def to_dict(self):
         """Returns the model properties as a dict"""

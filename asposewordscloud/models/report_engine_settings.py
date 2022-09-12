@@ -226,18 +226,6 @@ class ReportEngineSettings(object):
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
-        if self._csv_data_load_options is not None:
-            self._csv_data_load_options.extract_files_content(filesContentResult)
-
-
-
-        if self._json_data_load_options is not None:
-            self._json_data_load_options.extract_files_content(filesContentResult)
-
-
-        if self._xml_data_load_options is not None:
-            self._xml_data_load_options.extract_files_content(filesContentResult)
-
 
     def to_dict(self):
         """Returns the model properties as a dict"""

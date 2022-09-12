@@ -137,16 +137,6 @@ class SplitDocumentResult(object):
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
-        if self._pages is not None:
-            for element in self._pages:
-                element.extract_files_content(filesContentResult)
-
-        if self._source_document is not None:
-            self._source_document.extract_files_content(filesContentResult)
-
-        if self._zipped_pages is not None:
-            self._zipped_pages.extract_files_content(filesContentResult)
-
 
     def to_dict(self):
         """Returns the model properties as a dict"""

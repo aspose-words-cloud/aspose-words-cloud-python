@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="file_content.py">
+# <copyright company="Aspose" file="file_reference.py">
 #   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -31,29 +31,37 @@ import six
 import json
 import uuid
 
-class FileContent(object):
+class FileReference(object):
     swagger_types = {
-        'id': 'str',
-        'filename': 'str'
+        'source': 'str',
+        'reference': 'str'
     }
 
     attribute_map = {
-        'id': 'Id',
-        'filename': 'Filename'
+        'source': 'Source',
+        'reference': 'Reference'
     }
 
-    def __init__(self, filename, content):  # noqa: E501
-        self._id = str(uuid.uuid4()) 
-        self._filename = filename
+    def __init__(self, source, reference, content):  # noqa: E501
+        self._source = source
+        self._reference = reference
         self._content = content
 
-    @property
-    def id(self):
-        return self._id
+    @staticmethod
+    def fromRemoteFilePath(remoteFilePath):
+        return FileReference('Storage', remoteFilePath, None)
+
+    @staticmethod
+    def fromLocalFileContent(localFileContent):
+        return FileReference('Request', str(uuid.uuid4()), localFileContent)
 
     @property
-    def filename(self):
-        return self._filename
+    def source(self):
+        return self._source
+
+    @property
+    def reference(self):
+        return self._reference
 
     @property
     def content(self):
@@ -61,7 +69,8 @@ class FileContent(object):
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
-        filesContentResult.append(self)
+        if self._source == 'Request':
+            filesContentResult.append(self)
 
     def to_dict(self):
         """Returns the model properties as a dict"""

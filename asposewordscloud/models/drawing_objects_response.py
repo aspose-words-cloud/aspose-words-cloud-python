@@ -110,9 +110,6 @@ class DrawingObjectsResponse(object):
 
     def extract_files_content(self, filesContentResult):
         """Append the file content result list"""
-        if self._drawing_objects is not None:
-            self._drawing_objects.extract_files_content(filesContentResult)
-
 
     def to_dict(self):
         """Returns the model properties as a dict"""

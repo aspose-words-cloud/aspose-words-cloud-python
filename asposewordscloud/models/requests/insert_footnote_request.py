@@ -122,10 +122,9 @@ class InsertFootnoteRequest(BaseRequestObject):
         form_params = []
         if self.footnote_dto is not None:
             form_params.append(['footnoteDto', self.footnote_dto, 'json'])  # noqa: E501
-            self.footnote_dto.extract_files_content(file_content_params)
 
         for file_content_value in file_content_params:
-            form_params.append([file_content_value.id, file_content_value.content, 'file'])  # noqa: E501
+            form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "POST",

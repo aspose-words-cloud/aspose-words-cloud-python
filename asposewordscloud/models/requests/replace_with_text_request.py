@@ -123,10 +123,9 @@ class ReplaceWithTextRequest(BaseRequestObject):
         form_params = []
         if self.range_text is not None:
             form_params.append(['rangeText', self.range_text, 'json'])  # noqa: E501
-            self.range_text.extract_files_content(file_content_params)
 
         for file_content_value in file_content_params:
-            form_params.append([file_content_value.id, file_content_value.content, 'file'])  # noqa: E501
+            form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
             "method": "POST",
