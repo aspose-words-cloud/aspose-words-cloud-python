@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class FootnoteUpdate(object):
     """Footnote for update.
     """
@@ -170,6 +169,9 @@ class FootnoteUpdate(object):
         """
         self._text = text
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

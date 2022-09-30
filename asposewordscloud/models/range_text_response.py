@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class RangeTextResponse(object):
     """The REST response with a range's text.
     """
@@ -108,6 +107,9 @@ class RangeTextResponse(object):
         """
         self._text = text
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

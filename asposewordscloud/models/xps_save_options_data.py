@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class XpsSaveOptionsData(object):
     """Container class for xps save options.
     """
@@ -792,6 +791,9 @@ class XpsSaveOptionsData(object):
         """
         self._use_book_fold_printing_settings = use_book_fold_printing_settings
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

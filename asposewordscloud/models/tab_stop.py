@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class TabStop(object):
     """DTO container with paragraph format tab stop.
     """
@@ -178,6 +177,9 @@ class TabStop(object):
         """
         self._is_clear = is_clear
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

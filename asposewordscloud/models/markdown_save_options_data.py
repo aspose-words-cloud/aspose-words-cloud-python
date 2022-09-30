@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class MarkdownSaveOptionsData(object):
     """Container class for markdown save options.
     """
@@ -630,6 +629,9 @@ class MarkdownSaveOptionsData(object):
         else:
             self._table_content_alignment = allowed_values[int(table_content_alignment) if six.PY3 else long(table_content_alignment)]
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

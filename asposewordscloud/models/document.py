@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class Document(object):
     """Represents Words document DTO.
     """
@@ -224,6 +223,9 @@ class Document(object):
         else:
             self._source_format = allowed_values[int(source_format) if six.PY3 else long(source_format)]
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class SectionPageSetupResponse(object):
     """The REST response with a page setup of a section.
     """
@@ -108,6 +107,9 @@ class SectionPageSetupResponse(object):
         """
         self._page_setup = page_setup
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class PublicKeyResponse(object):
     """REST response for RSA public key info.
     """
@@ -135,6 +134,9 @@ class PublicKeyResponse(object):
         """
         self._modulus = modulus
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

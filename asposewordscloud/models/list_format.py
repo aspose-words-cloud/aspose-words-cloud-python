@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ListFormat(object):
     """DTO container with a paragraph list format element.
     """
@@ -162,6 +161,9 @@ class ListFormat(object):
         """
         self._list_level_number = list_level_number
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

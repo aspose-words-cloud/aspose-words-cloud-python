@@ -10,9 +10,9 @@ from asposewordscloud.apis.words_api import WordsApi
 from asposewordscloud.api_client import ApiClient
 from asposewordscloud.configuration import Configuration
 # import models into sdk package
+from asposewordscloud.models.file_reference import FileReference
 from asposewordscloud.models.api_error import ApiError
 from asposewordscloud.models.available_fonts_response import AvailableFontsResponse
-from asposewordscloud.models.base_entry import BaseEntry
 from asposewordscloud.models.bmp_save_options_data import BmpSaveOptionsData
 from asposewordscloud.models.bookmark import Bookmark
 from asposewordscloud.models.bookmark_data import BookmarkData

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class FilesUploadResult(object):
     """File upload result.
     """
@@ -108,6 +107,9 @@ class FilesUploadResult(object):
         """
         self._uploaded = uploaded
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

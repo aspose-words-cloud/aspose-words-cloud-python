@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class CompareData(object):
     """Container class for compare documents.
     """
@@ -189,6 +188,9 @@ class CompareData(object):
         """
         self._result_document_format = result_document_format
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

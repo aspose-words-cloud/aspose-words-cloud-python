@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class CustomXmlPartInsert(object):
     """Custom xml part insert.
     """
@@ -135,6 +134,9 @@ class CustomXmlPartInsert(object):
         """
         self._id = id
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class TableCellFormat(object):
     """DTO container with all formatting for a table row.
     """
@@ -437,6 +436,9 @@ class TableCellFormat(object):
         """
         self._wrap_text = wrap_text
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class Lists(object):
     """DTO container with an array of document lists.
     """
@@ -108,6 +107,9 @@ class Lists(object):
         """
         self._list_info = list_info
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

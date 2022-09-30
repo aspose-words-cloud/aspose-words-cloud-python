@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class TablePropertiesResponse(object):
     """The REST response with a table.
     """
@@ -108,6 +107,9 @@ class TablePropertiesResponse(object):
         """
         self._properties = properties
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

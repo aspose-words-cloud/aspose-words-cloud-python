@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class StyleUpdate(object):
     """Represents a single document style properties to update.
     """
@@ -162,6 +161,9 @@ class StyleUpdate(object):
         """
         self._next_paragraph_style_name = next_paragraph_style_name
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class HtmlFixedSaveOptionsData(object):
     """Container class for fixed html save options.
     """
@@ -1078,6 +1077,9 @@ class HtmlFixedSaveOptionsData(object):
         """
         self._use_target_machine_fonts = use_target_machine_fonts
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

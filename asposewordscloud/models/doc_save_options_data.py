@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class DocSaveOptionsData(object):
     """Container class for doc/dot save options.
     """
@@ -587,6 +586,9 @@ class DocSaveOptionsData(object):
         """
         self._save_routing_slip = save_routing_slip
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

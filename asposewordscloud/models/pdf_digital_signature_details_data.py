@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class PdfDigitalSignatureDetailsData(object):
     """Container class for details of digital signature.
     """
@@ -197,6 +196,9 @@ class PdfDigitalSignatureDetailsData(object):
         """
         self._signature_date = signature_date
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

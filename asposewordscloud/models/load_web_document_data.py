@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class LoadWebDocumentData(object):
     """Contains data for load web document.
     """
@@ -108,6 +107,9 @@ class LoadWebDocumentData(object):
         """
         self._save_options = save_options
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

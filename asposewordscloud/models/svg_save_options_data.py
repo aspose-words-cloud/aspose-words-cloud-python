@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class SvgSaveOptionsData(object):
     """Container class for svg save options.
     """
@@ -854,6 +853,9 @@ class SvgSaveOptionsData(object):
         else:
             self._text_output_mode = allowed_values[int(text_output_mode) if six.PY3 else long(text_output_mode)]
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

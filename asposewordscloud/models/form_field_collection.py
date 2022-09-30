@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class FormFieldCollection(object):
     """DTO container with a collection of form fields.
     """
@@ -108,6 +107,9 @@ class FormFieldCollection(object):
         """
         self._list = list
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

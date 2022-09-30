@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ProtectionRequest(object):
     """Request on changing of protection.
     """
@@ -135,6 +134,9 @@ class ProtectionRequest(object):
         """
         self._protection_type = protection_type
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

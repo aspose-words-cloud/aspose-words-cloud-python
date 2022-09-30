@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class Comment(object):
     """DTO container with a comment.
     """
@@ -270,6 +269,9 @@ class Comment(object):
         """
         self._text = text
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

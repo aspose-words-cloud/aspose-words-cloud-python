@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class SectionLinkCollectionResponse(object):
     """The REST response with a collection of sections.
     """
@@ -108,6 +107,9 @@ class SectionLinkCollectionResponse(object):
         """
         self._sections = sections
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class TiffSaveOptionsData(object):
     """Container class for tiff save options.
     """
@@ -1121,6 +1120,9 @@ class TiffSaveOptionsData(object):
         else:
             self._tiff_compression = allowed_values[int(tiff_compression) if six.PY3 else long(tiff_compression)]
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

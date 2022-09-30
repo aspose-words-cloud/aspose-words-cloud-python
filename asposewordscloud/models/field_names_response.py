@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class FieldNamesResponse(object):
     """The REST response with a collection of mail merge fields.
     """
@@ -108,6 +107,9 @@ class FieldNamesResponse(object):
         """
         self._field_names = field_names
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

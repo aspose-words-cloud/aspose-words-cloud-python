@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class EmfSaveOptionsData(object):
     """Container class for emf save options.
     """
@@ -1024,6 +1023,9 @@ class EmfSaveOptionsData(object):
         return self._save_format
 
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

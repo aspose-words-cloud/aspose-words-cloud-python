@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ListUpdate(object):
     """Update document properties if document list.
     """
@@ -81,6 +80,9 @@ class ListUpdate(object):
         """
         self._is_restart_at_each_section = is_restart_at_each_section
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

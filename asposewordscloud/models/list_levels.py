@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ListLevels(object):
     """DTO container with a single document list.
     """
@@ -108,6 +107,9 @@ class ListLevels(object):
         """
         self._list_level = list_level
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

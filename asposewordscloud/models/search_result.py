@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class SearchResult(object):
     """Result of search operation.
     """
@@ -108,6 +107,9 @@ class SearchResult(object):
         """
         self._range_start = range_start
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

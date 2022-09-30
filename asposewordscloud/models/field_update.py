@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class FieldUpdate(object):
     """Field for update.
     """
@@ -108,6 +107,9 @@ class FieldUpdate(object):
         """
         self._locale_id = locale_id
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

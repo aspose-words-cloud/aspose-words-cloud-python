@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class TextSaveOptionsData(object):
     """Container class for text save options.
     """
@@ -703,6 +702,9 @@ class TextSaveOptionsData(object):
         """
         self._simplify_list_labels = simplify_list_labels
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

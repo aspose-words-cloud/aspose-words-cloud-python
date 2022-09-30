@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class WordsApiErrorResponse(object):
     """The REST response with an API error.
     """
@@ -108,6 +107,9 @@ class WordsApiErrorResponse(object):
         """
         self._error = error
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

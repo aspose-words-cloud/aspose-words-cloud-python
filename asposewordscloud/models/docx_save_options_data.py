@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class DocxSaveOptionsData(object):
     """Container class for docx save options.
     """
@@ -603,6 +602,9 @@ class DocxSaveOptionsData(object):
         return self._save_format
 
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

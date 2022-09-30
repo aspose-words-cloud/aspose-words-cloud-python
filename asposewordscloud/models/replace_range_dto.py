@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ReplaceRangeDto(object):
     """DTO container with a range element.
     """
@@ -116,6 +115,9 @@ class ReplaceRangeDto(object):
         else:
             self._text_type = allowed_values[int(text_type) if six.PY3 else long(text_type)]
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class HtmlSaveOptionsData(object):
     """Container class for html save options.
     """
@@ -1569,6 +1568,9 @@ class HtmlSaveOptionsData(object):
         else:
             self._table_width_output_mode = allowed_values[int(table_width_output_mode) if six.PY3 else long(table_width_output_mode)]
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class CsvDataLoadOptions(object):
     """Represents options for parsing CSV data.
     """
@@ -162,6 +161,9 @@ class CsvDataLoadOptions(object):
         """
         self._quote_char = quote_char
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

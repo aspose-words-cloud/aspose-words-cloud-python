@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class SearchResponse(object):
     """The REST response with a regular expression pattern and a collection of search results.
     """
@@ -135,6 +134,9 @@ class SearchResponse(object):
         """
         self._search_results = search_results
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

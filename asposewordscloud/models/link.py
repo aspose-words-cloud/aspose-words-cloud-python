@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class Link(object):
     """Provides information for the object link. This is supposed to be an atom:link, therefore it should have all attributes specified here http://tools.ietf.org/html/rfc4287#section-4.2.7.
     """
@@ -162,6 +161,9 @@ class Link(object):
         """
         self._type = type
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

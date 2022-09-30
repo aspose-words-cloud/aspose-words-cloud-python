@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class XamlFlowSaveOptionsData(object):
     """Container class for xaml flow save options.
     """
@@ -533,6 +532,9 @@ class XamlFlowSaveOptionsData(object):
         return self._save_format
 
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

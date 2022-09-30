@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class DocumentPropertyResponse(object):
     """The REST response with a document property.
     """
@@ -108,6 +107,9 @@ class DocumentPropertyResponse(object):
         """
         self._document_property = document_property
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

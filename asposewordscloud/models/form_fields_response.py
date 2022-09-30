@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class FormFieldsResponse(object):
     """The REST response with a collection of form fields.
     """
@@ -108,6 +107,9 @@ class FormFieldsResponse(object):
         """
         self._form_fields = form_fields
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class JpegSaveOptionsData(object):
     """Container class for jpeg save options.
     """
@@ -1024,6 +1023,9 @@ class JpegSaveOptionsData(object):
         return self._save_format
 
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

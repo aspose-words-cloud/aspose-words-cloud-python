@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class PdfSaveOptionsData(object):
     """Container class for pdf save options.
     """
@@ -1423,6 +1422,9 @@ class PdfSaveOptionsData(object):
         """
         self._zoom_factor = zoom_factor
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

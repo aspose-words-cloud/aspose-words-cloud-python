@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class RunsResponse(object):
     """The REST response with a collection of Run elements.
     """
@@ -108,6 +107,9 @@ class RunsResponse(object):
         """
         self._runs = runs
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

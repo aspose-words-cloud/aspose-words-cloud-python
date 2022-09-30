@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ModificationOperationResult(object):
     """result of the operation which modifies the original document and saves the result.
     """
@@ -108,6 +107,9 @@ class ModificationOperationResult(object):
         """
         self._source = source
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""
