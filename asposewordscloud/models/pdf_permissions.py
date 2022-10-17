@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class PdfPermissions(object):
     """Specifies the operations that are allowed to a user on an encrypted PDF document.
     """
@@ -68,6 +67,9 @@ class PdfPermissions(object):
         self.discriminator = None
 
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

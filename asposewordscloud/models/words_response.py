@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class WordsResponse(object):
     """The base class for all responses.
     """
@@ -81,6 +80,9 @@ class WordsResponse(object):
         """
         self._request_id = request_id
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

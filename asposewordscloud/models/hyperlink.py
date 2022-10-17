@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class Hyperlink(object):
     """Hyperlink element.
     """
@@ -135,6 +134,9 @@ class Hyperlink(object):
         """
         self._value = value
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

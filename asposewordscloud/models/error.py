@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class Error(object):
     """Error.
     """
@@ -162,6 +161,9 @@ class Error(object):
         """
         self._message = message
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

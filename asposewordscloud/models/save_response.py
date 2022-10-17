@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class SaveResponse(object):
     """The REST response with a save result.
     """
@@ -108,6 +107,9 @@ class SaveResponse(object):
         """
         self._save_result = save_result
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ParagraphFormat(object):
     """Paragraph format element.
     """
@@ -877,6 +876,9 @@ class ParagraphFormat(object):
         """
         self._is_list_item = is_list_item
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class Table(object):
     """DTO container with a table element.
     """
@@ -162,6 +161,9 @@ class Table(object):
         """
         self._table_row_list = table_row_list
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

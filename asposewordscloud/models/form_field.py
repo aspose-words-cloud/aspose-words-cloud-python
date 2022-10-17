@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class FormField(object):
     """FromField.
     """
@@ -351,6 +350,9 @@ class FormField(object):
         """
         self._status_text = status_text
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

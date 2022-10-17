@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ListLevelUpdate(object):
     """Represents a document list levels.
     """
@@ -348,6 +347,9 @@ class ListLevelUpdate(object):
         else:
             self._trailing_character = allowed_values[int(trailing_character) if six.PY3 else long(trailing_character)]
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

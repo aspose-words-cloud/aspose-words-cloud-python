@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class FootnotesResponse(object):
     """The REST response with a collection of footnotes.
     """
@@ -108,6 +107,9 @@ class FootnotesResponse(object):
         """
         self._footnotes = footnotes
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

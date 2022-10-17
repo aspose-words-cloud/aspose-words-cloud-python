@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class SplitDocumentResult(object):
     """Result of splitting document.
     """
@@ -135,6 +134,9 @@ class SplitDocumentResult(object):
         """
         self._zipped_pages = zipped_pages
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

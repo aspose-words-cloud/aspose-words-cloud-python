@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class MarkdownSaveOptionsData(object):
     """Container class for markdown save options.
     """
@@ -49,7 +48,6 @@ class MarkdownSaveOptionsData(object):
         'dml_effects_rendering_mode': 'str',
         'dml_rendering_mode': 'str',
         'file_name': 'str',
-        'flat_opc_xml_mapping_only': 'bool',
         'iml_rendering_mode': 'str',
         'update_created_time_property': 'bool',
         'update_fields': 'bool',
@@ -72,7 +70,6 @@ class MarkdownSaveOptionsData(object):
         'dml_effects_rendering_mode': 'DmlEffectsRenderingMode',
         'dml_rendering_mode': 'DmlRenderingMode',
         'file_name': 'FileName',
-        'flat_opc_xml_mapping_only': 'FlatOpcXmlMappingOnly',
         'iml_rendering_mode': 'ImlRenderingMode',
         'update_created_time_property': 'UpdateCreatedTimeProperty',
         'update_fields': 'UpdateFields',
@@ -88,7 +85,7 @@ class MarkdownSaveOptionsData(object):
         'table_content_alignment': 'TableContentAlignment'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, flat_opc_xml_mapping_only=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, encoding=None, export_headers_footers_mode=None, force_page_breaks=None, paragraph_break=None, table_content_alignment=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, encoding=None, export_headers_footers_mode=None, force_page_breaks=None, paragraph_break=None, table_content_alignment=None):  # noqa: E501
         """MarkdownSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -97,7 +94,6 @@ class MarkdownSaveOptionsData(object):
         self._dml_effects_rendering_mode = None
         self._dml_rendering_mode = None
         self._file_name = None
-        self._flat_opc_xml_mapping_only = None
         self._iml_rendering_mode = None
         self._update_created_time_property = None
         self._update_fields = None
@@ -125,8 +121,6 @@ class MarkdownSaveOptionsData(object):
             self.dml_rendering_mode = dml_rendering_mode
         if file_name is not None:
             self.file_name = file_name
-        if flat_opc_xml_mapping_only is not None:
-            self.flat_opc_xml_mapping_only = flat_opc_xml_mapping_only
         if iml_rendering_mode is not None:
             self.iml_rendering_mode = iml_rendering_mode
         if update_created_time_property is not None:
@@ -307,28 +301,6 @@ class MarkdownSaveOptionsData(object):
         :type: str
         """
         self._file_name = file_name
-
-    @property
-    def flat_opc_xml_mapping_only(self):
-        """Gets the flat_opc_xml_mapping_only of this MarkdownSaveOptionsData.  # noqa: E501
-
-        Gets or sets value determining which document formats are allowed to be mapped by Aspose.Words.Markup.StructuredDocumentTag.XmlMapping. By default only Aspose.Words.LoadFormat.FlatOpc document format is allowed to be mapped.  # noqa: E501
-
-        :return: The flat_opc_xml_mapping_only of this MarkdownSaveOptionsData.  # noqa: E501
-        :rtype: bool
-        """
-        return self._flat_opc_xml_mapping_only
-
-    @flat_opc_xml_mapping_only.setter
-    def flat_opc_xml_mapping_only(self, flat_opc_xml_mapping_only):
-        """Sets the flat_opc_xml_mapping_only of this MarkdownSaveOptionsData.
-
-        Gets or sets value determining which document formats are allowed to be mapped by Aspose.Words.Markup.StructuredDocumentTag.XmlMapping. By default only Aspose.Words.LoadFormat.FlatOpc document format is allowed to be mapped.  # noqa: E501
-
-        :param flat_opc_xml_mapping_only: The flat_opc_xml_mapping_only of this MarkdownSaveOptionsData.  # noqa: E501
-        :type: bool
-        """
-        self._flat_opc_xml_mapping_only = flat_opc_xml_mapping_only
 
     @property
     def iml_rendering_mode(self):
@@ -630,6 +602,9 @@ class MarkdownSaveOptionsData(object):
         else:
             self._table_content_alignment = allowed_values[int(table_content_alignment) if six.PY3 else long(table_content_alignment)]
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

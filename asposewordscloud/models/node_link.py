@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class NodeLink(object):
     """Reference to node.
     """
@@ -108,6 +107,9 @@ class NodeLink(object):
         """
         self._node_id = node_id
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

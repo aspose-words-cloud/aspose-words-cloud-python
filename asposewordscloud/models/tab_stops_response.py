@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class TabStopsResponse(object):
     """The REST response with an array of tab stops.
     """
@@ -108,6 +107,9 @@ class TabStopsResponse(object):
         """
         self._tab_stops = tab_stops
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

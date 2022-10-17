@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ClassificationResponse(object):
     """The REST response with data on multi-class text classification.
     """
@@ -162,6 +161,9 @@ class ClassificationResponse(object):
         """
         self._best_results = best_results
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

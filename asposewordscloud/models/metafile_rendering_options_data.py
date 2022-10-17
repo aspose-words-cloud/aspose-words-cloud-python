@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class MetafileRenderingOptionsData(object):
     """Container class for options of metafile rendering.
     """
@@ -205,6 +204,9 @@ class MetafileRenderingOptionsData(object):
         """
         self._use_emf_embedded_to_wmf = use_emf_embedded_to_wmf
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ListInsert(object):
     """Insert document to document list.
     """
@@ -89,6 +88,9 @@ class ListInsert(object):
         else:
             self._template = allowed_values[int(template) if six.PY3 else long(template)]
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

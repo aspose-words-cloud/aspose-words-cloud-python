@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class OutlineOptionsData(object):
     """Container class for outline options.
     """
@@ -216,6 +215,9 @@ class OutlineOptionsData(object):
         """
         self._headings_outline_levels = headings_outline_levels
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

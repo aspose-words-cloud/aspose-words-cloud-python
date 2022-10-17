@@ -42,7 +42,8 @@ class TestAppendDocument(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
-        request_document_list_document_entries0 = asposewordscloud.DocumentEntry(href=remote_data_folder + '/' + remote_file_name, import_format_mode='KeepSourceFormatting')
+        request_document_list_document_entries0_file_reference = asposewordscloud.FileReference.fromRemoteFilePath(remote_data_folder + '/' + remote_file_name)
+        request_document_list_document_entries0 = asposewordscloud.DocumentEntry(file_reference=request_document_list_document_entries0_file_reference, import_format_mode='KeepSourceFormatting')
         request_document_list_document_entries = [request_document_list_document_entries0]
         request_document_list = asposewordscloud.DocumentEntryList(document_entries=request_document_list_document_entries)
         request = asposewordscloud.models.requests.AppendDocumentRequest(name=remote_file_name, document_list=request_document_list, folder=remote_data_folder, dest_file_name=self.remote_test_out + '/' + remote_file_name)
@@ -56,14 +57,12 @@ class TestAppendDocument(BaseTestContext):
     # Test for appending document online.
     #
     def test_append_document_online(self):
-        remote_data_folder = self.remote_test_folder + '/DocumentActions/AppendDocument'
         local_file = 'Common/test_multi_pages.docx'
-        remote_file_name = 'TestAppendDocument.docx'
-
-        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
 
         request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
-        request_document_list_document_entries0 = asposewordscloud.DocumentEntry(href=remote_data_folder + '/' + remote_file_name, import_format_mode='KeepSourceFormatting')
+        request_document_list_document_entries0_file_reference_stream = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request_document_list_document_entries0_file_reference = asposewordscloud.FileReference.fromLocalFileContent(request_document_list_document_entries0_file_reference_stream)
+        request_document_list_document_entries0 = asposewordscloud.DocumentEntry(file_reference=request_document_list_document_entries0_file_reference, import_format_mode='KeepSourceFormatting')
         request_document_list_document_entries = [request_document_list_document_entries0]
         request_document_list = asposewordscloud.DocumentEntryList(document_entries=request_document_list_document_entries)
         request = asposewordscloud.models.requests.AppendDocumentOnlineRequest(document=request_document, document_list=request_document_list)

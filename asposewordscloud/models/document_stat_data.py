@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class DocumentStatData(object):
     """Container for the document's statistical data.
     """
@@ -189,6 +188,9 @@ class DocumentStatData(object):
         """
         self._word_count = word_count
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

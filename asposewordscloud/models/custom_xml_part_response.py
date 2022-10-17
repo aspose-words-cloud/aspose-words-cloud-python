@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class CustomXmlPartResponse(object):
     """The REST response with a custom xml part.
     """
@@ -108,6 +107,9 @@ class CustomXmlPartResponse(object):
         """
         self._custom_xml_part = custom_xml_part
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class DownsampleOptionsData(object):
     """Container class for Downsample options.
     """
@@ -135,6 +134,9 @@ class DownsampleOptionsData(object):
         """
         self._resolution_threshold = resolution_threshold
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

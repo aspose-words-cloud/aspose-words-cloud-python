@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class TableProperties(object):
     """DTO container with table properties.
     """
@@ -491,6 +490,9 @@ class TableProperties(object):
         """
         self._top_padding = top_padding
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

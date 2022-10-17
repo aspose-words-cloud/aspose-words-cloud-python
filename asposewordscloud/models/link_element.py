@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class LinkElement(object):
     """Reference to a document.
     """
@@ -81,6 +80,9 @@ class LinkElement(object):
         """
         self._link = link
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

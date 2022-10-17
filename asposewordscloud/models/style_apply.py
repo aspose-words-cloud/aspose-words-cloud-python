@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class StyleApply(object):
     """Represents a single document style to insert.
     """
@@ -81,6 +80,9 @@ class StyleApply(object):
         """
         self._style_name = style_name
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

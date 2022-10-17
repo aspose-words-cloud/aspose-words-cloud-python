@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ListsResponse(object):
     """The REST response with a collection of lists, contained in the document.
     """
@@ -108,6 +107,9 @@ class ListsResponse(object):
         """
         self._lists = lists
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

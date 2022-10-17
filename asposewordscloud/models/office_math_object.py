@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class OfficeMathObject(object):
     """DTO container with an OfficeMath object.
     """
@@ -240,6 +239,9 @@ class OfficeMathObject(object):
         else:
             self._math_object_type = allowed_values[int(math_object_type) if six.PY3 else long(math_object_type)]
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

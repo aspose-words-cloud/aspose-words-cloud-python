@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="base_entry.py">
+# <copyright company="Aspose" file="file_reference.py">
 #   Copyright (c) 2022 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -29,58 +29,48 @@ import re  # noqa: F401
 import datetime
 import six
 import json
+import uuid
 
-
-class BaseEntry(object):
-    """Represents a entry which will be appended to the original resource document.
-    """
-
-    """
-    Attributes:
-      swagger_types (dict): The key is attribute name
-                            and the value is attribute type.
-      attribute_map (dict): The key is attribute name
-                            and the value is json key in definition.
-    """
+class FileReference(object):
     swagger_types = {
-        'href': 'str'
+        'source': 'str',
+        'reference': 'str'
     }
 
     attribute_map = {
-        'href': 'Href'
+        'source': 'Source',
+        'reference': 'Reference'
     }
 
-    def __init__(self, href=None):  # noqa: E501
-        """BaseEntry - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, source, reference, content):  # noqa: E501
+        self._source = source
+        self._reference = reference
+        self._content = content
 
-        self._href = None
-        self.discriminator = None
+    @staticmethod
+    def fromRemoteFilePath(remoteFilePath):
+        return FileReference('Storage', remoteFilePath, None)
 
-        if href is not None:
-            self.href = href
+    @staticmethod
+    def fromLocalFileContent(localFileContent):
+        return FileReference('Request', str(uuid.uuid4()), localFileContent)
 
     @property
-    def href(self):
-        """Gets the href of this BaseEntry.  # noqa: E501
+    def source(self):
+        return self._source
 
-        Gets or sets the path to entry to append at the server.  # noqa: E501
+    @property
+    def reference(self):
+        return self._reference
 
-        :return: The href of this BaseEntry.  # noqa: E501
-        :rtype: str
-        """
-        return self._href
+    @property
+    def content(self):
+        return self._content
 
-    @href.setter
-    def href(self, href):
-        """Sets the href of this BaseEntry.
-
-        Gets or sets the path to entry to append at the server.  # noqa: E501
-
-        :param href: The href of this BaseEntry.  # noqa: E501
-        :type: str
-        """
-        self._href = href
-
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._source == 'Request':
+            filesContentResult.append(self)
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -139,18 +129,3 @@ class BaseEntry(object):
     def to_str(self):
         """Returns the string representation of the model"""
         return pprint.pformat(self.to_dict())
-
-    def __repr__(self):
-        """For `print` and `pprint`"""
-        return self.to_str()
-
-    def __eq__(self, other):
-        """Returns true if both objects are equal"""
-        if not isinstance(other, BaseEntry):
-            return False
-
-        return self.__dict__ == other.__dict__
-
-    def __ne__(self, other):
-        """Returns true if both objects are not equal"""
-        return not self == other

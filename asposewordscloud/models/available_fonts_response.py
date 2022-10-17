@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class AvailableFontsResponse(object):
     """The REST response with data on system, additional and custom fonts, available for document processing.
     """
@@ -162,6 +161,9 @@ class AvailableFontsResponse(object):
         """
         self._system_fonts = system_fonts
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

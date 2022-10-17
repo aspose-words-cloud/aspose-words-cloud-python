@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class SaveResult(object):
     """Result of saving.
     """
@@ -135,6 +134,9 @@ class SaveResult(object):
         """
         self._source_document = source_document
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

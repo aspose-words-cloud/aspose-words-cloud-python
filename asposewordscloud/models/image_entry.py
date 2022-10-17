@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ImageEntry(object):
     """Represents a image which will be appended to the original resource image or document.
     """
@@ -43,43 +42,49 @@ class ImageEntry(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'href': 'str'
+        'file_reference': 'FileReference'
     }
 
     attribute_map = {
-        'href': 'Href'
+        'file_reference': 'FileReference'
     }
 
-    def __init__(self, href=None):  # noqa: E501
+    def __init__(self, file_reference=None):  # noqa: E501
         """ImageEntry - a model defined in Swagger"""  # noqa: E501
 
-        self._href = None
+        self._file_reference = None
         self.discriminator = None
 
-        if href is not None:
-            self.href = href
+        if file_reference is not None:
+            self.file_reference = file_reference
 
     @property
-    def href(self):
-        """Gets the href of this ImageEntry.  # noqa: E501
+    def file_reference(self):
+        """Gets the file_reference of this ImageEntry.  # noqa: E501
 
-        Gets or sets the path to entry to append at the server.  # noqa: E501
+        Gets or sets the file reference.  # noqa: E501
 
-        :return: The href of this ImageEntry.  # noqa: E501
-        :rtype: str
+        :return: The file_reference of this ImageEntry.  # noqa: E501
+        :rtype: FileReference
         """
-        return self._href
+        return self._file_reference
 
-    @href.setter
-    def href(self, href):
-        """Sets the href of this ImageEntry.
+    @file_reference.setter
+    def file_reference(self, file_reference):
+        """Sets the file_reference of this ImageEntry.
 
-        Gets or sets the path to entry to append at the server.  # noqa: E501
+        Gets or sets the file reference.  # noqa: E501
 
-        :param href: The href of this ImageEntry.  # noqa: E501
-        :type: str
+        :param file_reference: The file_reference of this ImageEntry.  # noqa: E501
+        :type: FileReference
         """
-        self._href = href
+        self._file_reference = file_reference
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._file_reference is not None:
+            self._file_reference.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

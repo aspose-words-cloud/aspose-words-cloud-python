@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class BookmarkInsert(object):
     """Represents a bookmark to insert.
     """
@@ -162,6 +161,9 @@ class BookmarkInsert(object):
         """
         self._start_range = start_range
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

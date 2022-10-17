@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class DrawingObjectUpdate(object):
     """Drawing object element for update.
     """
@@ -267,6 +266,9 @@ class DrawingObjectUpdate(object):
         else:
             self._wrap_type = allowed_values[int(wrap_type) if six.PY3 else long(wrap_type)]
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

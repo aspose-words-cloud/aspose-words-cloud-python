@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class DocumentEntryList(object):
     """Represents a list of documents which will be appended to the original resource document.
     """
@@ -107,6 +106,13 @@ class DocumentEntryList(object):
         :type: list[DocumentEntry]
         """
         self._document_entries = document_entries
+
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
+        if self._document_entries is not None:
+            for element in self._document_entries:
+                element.extract_files_content(filesContentResult)
 
 
     def to_dict(self):

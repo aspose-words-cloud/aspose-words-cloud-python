@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class JsonDataLoadOptions(object):
     """Represents options for parsing JSON data.
     """
@@ -143,6 +142,9 @@ class JsonDataLoadOptions(object):
         else:
             self._simple_value_parse_mode = allowed_values[int(simple_value_parse_mode) if six.PY3 else long(simple_value_parse_mode)]
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

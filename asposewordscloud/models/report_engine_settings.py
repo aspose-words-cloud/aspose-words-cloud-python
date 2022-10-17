@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ReportEngineSettings(object):
     """Report engine settings.
     """
@@ -224,6 +223,9 @@ class ReportEngineSettings(object):
         """
         self._xml_data_load_options = xml_data_load_options
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

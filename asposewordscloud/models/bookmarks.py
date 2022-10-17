@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class Bookmarks(object):
     """Represents an array of bookmarks.
     """
@@ -108,6 +107,9 @@ class Bookmarks(object):
         """
         self._bookmark_list = bookmark_list
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

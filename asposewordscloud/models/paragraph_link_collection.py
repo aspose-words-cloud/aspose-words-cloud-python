@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ParagraphLinkCollection(object):
     """The collection of paragraph's links.
     """
@@ -108,6 +107,9 @@ class ParagraphLinkCollection(object):
         """
         self._paragraph_link_list = paragraph_link_list
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

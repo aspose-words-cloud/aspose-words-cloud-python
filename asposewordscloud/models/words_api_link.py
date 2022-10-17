@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class WordsApiLink(object):
     """Provides information for the words API resource link.
     """
@@ -162,6 +161,9 @@ class WordsApiLink(object):
         """
         self._type = type
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

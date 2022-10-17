@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class PageNumber(object):
     """Class is used for insert page number request building.
     """
@@ -46,6 +45,7 @@ class PageNumber(object):
         'alignment': 'str',
         'format': 'str',
         'is_top': 'bool',
+        'page_starting_number': 'int',
         'set_page_number_on_first_page': 'bool'
     }
 
@@ -53,15 +53,17 @@ class PageNumber(object):
         'alignment': 'Alignment',
         'format': 'Format',
         'is_top': 'IsTop',
+        'page_starting_number': 'PageStartingNumber',
         'set_page_number_on_first_page': 'SetPageNumberOnFirstPage'
     }
 
-    def __init__(self, alignment=None, format=None, is_top=None, set_page_number_on_first_page=None):  # noqa: E501
+    def __init__(self, alignment=None, format=None, is_top=None, page_starting_number=None, set_page_number_on_first_page=None):  # noqa: E501
         """PageNumber - a model defined in Swagger"""  # noqa: E501
 
         self._alignment = None
         self._format = None
         self._is_top = None
+        self._page_starting_number = None
         self._set_page_number_on_first_page = None
         self.discriminator = None
 
@@ -71,6 +73,8 @@ class PageNumber(object):
             self.format = format
         if is_top is not None:
             self.is_top = is_top
+        if page_starting_number is not None:
+            self.page_starting_number = page_starting_number
         if set_page_number_on_first_page is not None:
             self.set_page_number_on_first_page = set_page_number_on_first_page
 
@@ -141,6 +145,28 @@ class PageNumber(object):
         self._is_top = is_top
 
     @property
+    def page_starting_number(self):
+        """Gets the page_starting_number of this PageNumber.  # noqa: E501
+
+        Gets or sets the starting page number of the document.  # noqa: E501
+
+        :return: The page_starting_number of this PageNumber.  # noqa: E501
+        :rtype: int
+        """
+        return self._page_starting_number
+
+    @page_starting_number.setter
+    def page_starting_number(self, page_starting_number):
+        """Sets the page_starting_number of this PageNumber.
+
+        Gets or sets the starting page number of the document.  # noqa: E501
+
+        :param page_starting_number: The page_starting_number of this PageNumber.  # noqa: E501
+        :type: int
+        """
+        self._page_starting_number = page_starting_number
+
+    @property
     def set_page_number_on_first_page(self):
         """Gets the set_page_number_on_first_page of this PageNumber.  # noqa: E501
 
@@ -162,6 +188,9 @@ class PageNumber(object):
         """
         self._set_page_number_on_first_page = set_page_number_on_first_page
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

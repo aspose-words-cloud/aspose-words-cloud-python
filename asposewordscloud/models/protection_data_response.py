@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class ProtectionDataResponse(object):
     """The REST response with data on document's protection.
     """
@@ -135,6 +134,9 @@ class ProtectionDataResponse(object):
         """
         self._protection_data = protection_data
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

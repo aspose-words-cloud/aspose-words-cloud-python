@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class FieldNames(object):
     """Represents a collection of merge fields within a document.
     """
@@ -108,6 +107,9 @@ class FieldNames(object):
         """
         self._names = names
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

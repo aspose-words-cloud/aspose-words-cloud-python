@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class RevisionsModificationResponse(object):
     """The REST response with a result of the modification operations for the revisions collection (now these are acceptAll and rejectAll).
     """
@@ -108,6 +107,9 @@ class RevisionsModificationResponse(object):
         """
         self._result = result
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

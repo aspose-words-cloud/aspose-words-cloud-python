@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class DocumentPosition(object):
     """DTO container with a position in the document tree.
     """
@@ -108,6 +107,9 @@ class DocumentPosition(object):
         """
         self._offset = offset
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

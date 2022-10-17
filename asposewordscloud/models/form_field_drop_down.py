@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class FormFieldDropDown(object):
     """FormField dropdownlist element.
     """
@@ -405,6 +404,9 @@ class FormFieldDropDown(object):
         """
         self._drop_down_selected_index = drop_down_selected_index
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

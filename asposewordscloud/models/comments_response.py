@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class CommentsResponse(object):
     """The REST response with a collection of comments.
     """
@@ -108,6 +107,9 @@ class CommentsResponse(object):
         """
         self._comments = comments
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

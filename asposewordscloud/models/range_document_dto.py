@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class RangeDocumentDto(object):
     """DTO container with a Range element.
     """
@@ -81,6 +80,9 @@ class RangeDocumentDto(object):
         """
         self._document_name = document_name
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""

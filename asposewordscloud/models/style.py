@@ -30,7 +30,6 @@ import datetime
 import six
 import json
 
-
 class Style(object):
     """DTO container with a single document style.
     """
@@ -394,6 +393,9 @@ class Style(object):
         else:
             self._type = allowed_values[int(type) if six.PY3 else long(type)]
 
+
+    def extract_files_content(self, filesContentResult):
+        """Append the file content result list"""
 
     def to_dict(self):
         """Returns the model properties as a dict"""
