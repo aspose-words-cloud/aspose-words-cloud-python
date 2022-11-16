@@ -31,7 +31,7 @@ import six
 import json
 
 class CsvDataLoadOptions(object):
-    """Represents options for parsing CSV data.
+    """Represents options for parsing CSV data. To learn more, visit the LINQ Reporting Engine documentation article.
     """
 
     """

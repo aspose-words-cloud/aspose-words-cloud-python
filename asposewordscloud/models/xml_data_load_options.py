@@ -31,7 +31,7 @@ import six
 import json
 
 class XmlDataLoadOptions(object):
-    """Represents options for XML data loading.
+    """Represents options for XML data loading. To learn more, visit the LINQ Reporting Engine documentation article.
     """
 
     """
