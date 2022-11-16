@@ -62,13 +62,14 @@ class PdfSaveOptionsData(object):
         'optimize_output': 'bool',
         'page_count': 'int',
         'page_index': 'int',
-        'cache_header_footer_shapes': 'bool',
+        'cache_background_graphics': 'bool',
         'compliance': 'str',
         'create_note_hyperlinks': 'bool',
         'custom_properties_export': 'str',
         'digital_signature_details': 'PdfDigitalSignatureDetailsData',
         'display_doc_title': 'bool',
         'downsample_options': 'DownsampleOptionsData',
+        'embed_attachments': 'bool',
         'embed_full_fonts': 'bool',
         'encryption_details': 'PdfEncryptionDetailsData',
         'export_document_structure': 'bool',
@@ -112,13 +113,14 @@ class PdfSaveOptionsData(object):
         'optimize_output': 'OptimizeOutput',
         'page_count': 'PageCount',
         'page_index': 'PageIndex',
-        'cache_header_footer_shapes': 'CacheHeaderFooterShapes',
+        'cache_background_graphics': 'CacheBackgroundGraphics',
         'compliance': 'Compliance',
         'create_note_hyperlinks': 'CreateNoteHyperlinks',
         'custom_properties_export': 'CustomPropertiesExport',
         'digital_signature_details': 'DigitalSignatureDetails',
         'display_doc_title': 'DisplayDocTitle',
         'downsample_options': 'DownsampleOptions',
+        'embed_attachments': 'EmbedAttachments',
         'embed_full_fonts': 'EmbedFullFonts',
         'encryption_details': 'EncryptionDetails',
         'export_document_structure': 'ExportDocumentStructure',
@@ -141,7 +143,7 @@ class PdfSaveOptionsData(object):
         'zoom_factor': 'ZoomFactor'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, cache_header_footer_shapes=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_full_fonts=None, encryption_details=None, export_document_structure=None, export_language_to_span_tag=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, interpolate_images=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, cache_background_graphics=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_attachments=None, embed_full_fonts=None, encryption_details=None, export_document_structure=None, export_language_to_span_tag=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, interpolate_images=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
         """PdfSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -164,13 +166,14 @@ class PdfSaveOptionsData(object):
         self._optimize_output = None
         self._page_count = None
         self._page_index = None
-        self._cache_header_footer_shapes = None
+        self._cache_background_graphics = None
         self._compliance = None
         self._create_note_hyperlinks = None
         self._custom_properties_export = None
         self._digital_signature_details = None
         self._display_doc_title = None
         self._downsample_options = None
+        self._embed_attachments = None
         self._embed_full_fonts = None
         self._encryption_details = None
         self._export_document_structure = None
@@ -233,8 +236,8 @@ class PdfSaveOptionsData(object):
             self.page_count = page_count
         if page_index is not None:
             self.page_index = page_index
-        if cache_header_footer_shapes is not None:
-            self.cache_header_footer_shapes = cache_header_footer_shapes
+        if cache_background_graphics is not None:
+            self.cache_background_graphics = cache_background_graphics
         if compliance is not None:
             self.compliance = compliance
         if create_note_hyperlinks is not None:
@@ -247,6 +250,8 @@ class PdfSaveOptionsData(object):
             self.display_doc_title = display_doc_title
         if downsample_options is not None:
             self.downsample_options = downsample_options
+        if embed_attachments is not None:
+            self.embed_attachments = embed_attachments
         if embed_full_fonts is not None:
             self.embed_full_fonts = embed_full_fonts
         if encryption_details is not None:
@@ -775,26 +780,26 @@ class PdfSaveOptionsData(object):
         self._page_index = page_index
 
     @property
-    def cache_header_footer_shapes(self):
-        """Gets the cache_header_footer_shapes of this PdfSaveOptionsData.  # noqa: E501
+    def cache_background_graphics(self):
+        """Gets the cache_background_graphics of this PdfSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether or not to cache shapes placed in header and footer of document.  # noqa: E501
+        Gets or sets a value determining whether or not to cache graphics placed in document's background.  # noqa: E501
 
-        :return: The cache_header_footer_shapes of this PdfSaveOptionsData.  # noqa: E501
+        :return: The cache_background_graphics of this PdfSaveOptionsData.  # noqa: E501
         :rtype: bool
         """
-        return self._cache_header_footer_shapes
+        return self._cache_background_graphics
 
-    @cache_header_footer_shapes.setter
-    def cache_header_footer_shapes(self, cache_header_footer_shapes):
-        """Sets the cache_header_footer_shapes of this PdfSaveOptionsData.
+    @cache_background_graphics.setter
+    def cache_background_graphics(self, cache_background_graphics):
+        """Sets the cache_background_graphics of this PdfSaveOptionsData.
 
-        Gets or sets a value indicating whether or not to cache shapes placed in header and footer of document.  # noqa: E501
+        Gets or sets a value determining whether or not to cache graphics placed in document's background.  # noqa: E501
 
-        :param cache_header_footer_shapes: The cache_header_footer_shapes of this PdfSaveOptionsData.  # noqa: E501
+        :param cache_background_graphics: The cache_background_graphics of this PdfSaveOptionsData.  # noqa: E501
         :type: bool
         """
-        self._cache_header_footer_shapes = cache_header_footer_shapes
+        self._cache_background_graphics = cache_background_graphics
 
     @property
     def compliance(self):
@@ -943,6 +948,28 @@ class PdfSaveOptionsData(object):
         :type: DownsampleOptionsData
         """
         self._downsample_options = downsample_options
+
+    @property
+    def embed_attachments(self):
+        """Gets the embed_attachments of this PdfSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value determining whether or not to embed attachments to the PDF document.  # noqa: E501
+
+        :return: The embed_attachments of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._embed_attachments
+
+    @embed_attachments.setter
+    def embed_attachments(self, embed_attachments):
+        """Sets the embed_attachments of this PdfSaveOptionsData.
+
+        Gets or sets a value determining whether or not to embed attachments to the PDF document.  # noqa: E501
+
+        :param embed_attachments: The embed_attachments of this PdfSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._embed_attachments = embed_attachments
 
     @property
     def embed_full_fonts(self):

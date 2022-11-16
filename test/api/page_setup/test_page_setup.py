@@ -106,7 +106,7 @@ class TestPageSetup(BaseTestContext):
 
         self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_text_file), 'rb'))
 
-        request = asposewordscloud.models.requests.RenderPageRequest(name=remote_file_name, page_index=1, format='bmp', folder=remote_data_folder)
+        request = asposewordscloud.models.requests.RenderPageRequest(name=remote_file_name, page_index=1, format='jpg', folder=remote_data_folder)
 
         result = self.words_api.render_page(request)
         self.assertIsNotNone(result, 'Error has occurred.')
@@ -119,7 +119,7 @@ class TestPageSetup(BaseTestContext):
         local_text_file = 'DocumentElements/Text/SampleWordDocument.docx'
 
         request_document = open(os.path.join(self.local_test_folder, local_text_file), 'rb')
-        request = asposewordscloud.models.requests.RenderPageOnlineRequest(document=request_document, page_index=1, format='bmp')
+        request = asposewordscloud.models.requests.RenderPageOnlineRequest(document=request_document, page_index=1, format='jpg')
 
         result = self.words_api.render_page_online(request)
         self.assertIsNotNone(result, 'Error has occurred.')
