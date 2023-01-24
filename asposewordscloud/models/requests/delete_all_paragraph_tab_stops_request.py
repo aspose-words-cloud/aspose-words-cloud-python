@@ -1,7 +1,7 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
 # <copyright company="Aspose" file="delete_all_paragraph_tab_stops_request.py">
-#   Copyright (c) 2022 Aspose.Words for Cloud
+#   Copyright (c) 2023 Aspose.Words for Cloud
 # </copyright>
 # <summary>
 #   Permission is hereby granted, free of charge, to any person obtaining a copy

@@ -16,6 +16,16 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 - [Convert a document to desired file format](https://docs.aspose.cloud/display/wordscloud/Convert+Document+to+Destination+Format+with+Detailed+Settings+and+Save+Result+to+Storage) along with detailed settings.
 - Convert an encrypted PDF document into Word document format.
 
+## Enhancements in Version 23.1
+
+- Various changes related to stability and performance
+
+
+## Enhancements in Version 22.12
+
+- Various changes related to stability and performance
+
+
 ## Enhancements in Version 22.11
 
 - Added 'EmbedAttachments' property for PdfSaveOptionsData class.
@@ -71,7 +81,6 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 - Online methods returns the dictionary of files with included original filename as key instead of single file content in responses.
 - Parameters contained sensitive data should be passed in encrypted form. Names of the parameters have 'encrypted' prefix.
 - Added Encrypt method to encrypt data on the API public key. Use it to prepare values for parameters required encrypted data.
-- GetPublicKey method is not billable.
 - Changed type of enumerations for members of SaveOptionsData and other inherited classes from string to enum.
 
 
