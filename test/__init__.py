@@ -39,6 +39,7 @@ from test.api.run.test_run import TestRun
 from test.api.sections.test_section import TestSection
 from test.api.storage.test_file import TestFile
 from test.api.storage.test_folder import TestFolder
+from test.api.structured_document_tag.test_structured_document_tag import TestStructuredDocumentTag
 from test.api.styles.test_styles import TestStyles
 from test.api.table.test_table import TestTable
 from test.api.table.test_table_border import TestTableBorder
