@@ -13328,8 +13328,8 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param range_start_identifier str : The range start identifier. (required)
-        :param range_end_identifier str : The range end identifier.
+        :param range_start_identifier str : The range start identifier. Identifier examples: id0.0.0, page0. (required)
+        :param range_end_identifier str : The range end identifier. Identifier examples: id1.0.0, id0.0.0:end, page1, page1:end, document:end.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -13406,8 +13406,8 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param document file : The document. (required)
-        :param range_start_identifier str : The range start identifier. (required)
-        :param range_end_identifier str : The range end identifier.
+        :param range_start_identifier str : The range start identifier. Identifier examples: id0.0.0, page0. (required)
+        :param range_end_identifier str : The range end identifier. Identifier examples: id1.0.0, id0.0.0:end, page1, page1:end, document:end.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -20389,8 +20389,8 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param range_start_identifier str : The range start identifier. (required)
-        :param range_end_identifier str : The range end identifier.
+        :param range_start_identifier str : The range start identifier. Identifier examples: id0.0.0, page0. (required)
+        :param range_end_identifier str : The range end identifier. Identifier examples: id1.0.0, id0.0.0:end, page1, page1:end, document:end.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -20468,8 +20468,8 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param document file : The document. (required)
-        :param range_start_identifier str : The range start identifier. (required)
-        :param range_end_identifier str : The range end identifier.
+        :param range_start_identifier str : The range start identifier. Identifier examples: id0.0.0, page0. (required)
+        :param range_end_identifier str : The range end identifier. Identifier examples: id1.0.0, id0.0.0:end, page1, page1:end, document:end.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -21523,9 +21523,9 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param range_start_identifier str : The range start identifier. (required)
+        :param range_start_identifier str : The range start identifier. Identifier examples: id0.0.0, page0. (required)
         :param range_text ReplaceRange : Model with text for replacement. (required)
-        :param range_end_identifier str : The range end identifier.
+        :param range_end_identifier str : The range end identifier. Identifier examples: id1.0.0, id0.0.0:end, page1, page1:end, document:end.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -21606,9 +21606,9 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param document file : The document. (required)
-        :param range_start_identifier str : The range start identifier. (required)
+        :param range_start_identifier str : The range start identifier. Identifier examples: id0.0.0, page0. (required)
         :param range_text ReplaceRange : Model with text for replacement. (required)
-        :param range_end_identifier str : The range end identifier.
+        :param range_end_identifier str : The range end identifier. Identifier examples: id1.0.0, id0.0.0:end, page1, page1:end, document:end.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -21917,9 +21917,9 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param name str : The filename of the input document. (required)
-        :param range_start_identifier str : The range start identifier. (required)
+        :param range_start_identifier str : The range start identifier. Identifier examples: id0.0.0, page0. (required)
         :param document_parameters RangeDocument : Parameters of a new document. (required)
-        :param range_end_identifier str : The range end identifier.
+        :param range_end_identifier str : The range end identifier. Identifier examples: id1.0.0, id0.0.0:end, page1, page1:end, document:end.
         :param folder str : Original document folder.
         :param storage str : Original document storage.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
@@ -21999,9 +21999,9 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param document file : The document. (required)
-        :param range_start_identifier str : The range start identifier. (required)
+        :param range_start_identifier str : The range start identifier. Identifier examples: id0.0.0, page0. (required)
         :param document_parameters RangeDocument : Parameters of a new document. (required)
-        :param range_end_identifier str : The range end identifier.
+        :param range_end_identifier str : The range end identifier. Identifier examples: id1.0.0, id0.0.0:end, page1, page1:end, document:end.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.

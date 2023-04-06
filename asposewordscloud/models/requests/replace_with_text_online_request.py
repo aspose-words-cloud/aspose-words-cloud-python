@@ -36,9 +36,9 @@ class ReplaceWithTextOnlineRequest(BaseRequestObject):
     Request model for replace_with_text_online operation.
     Initializes a new instance.
     :param document The document.
-    :param range_start_identifier The range start identifier.
+    :param range_start_identifier The range start identifier. Identifier examples: id0.0.0, page0.
     :param range_text Model with text for replacement.
-    :param range_end_identifier The range end identifier.
+    :param range_end_identifier The range end identifier. Identifier examples: id1.0.0, id0.0.0:end, page1, page1:end, document:end.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
     :param password Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
     :param encrypted_password Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
