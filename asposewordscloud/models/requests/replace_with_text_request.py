@@ -36,9 +36,9 @@ class ReplaceWithTextRequest(BaseRequestObject):
     Request model for replace_with_text operation.
     Initializes a new instance.
     :param name The filename of the input document.
-    :param range_start_identifier The range start identifier.
+    :param range_start_identifier The range start identifier. Identifier examples: id0.0.0, page0.
     :param range_text Model with text for replacement.
-    :param range_end_identifier The range end identifier.
+    :param range_end_identifier The range end identifier. Identifier examples: id1.0.0, id0.0.0:end, page1, page1:end, document:end.
     :param folder Original document folder.
     :param storage Original document storage.
     :param load_encoding Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
