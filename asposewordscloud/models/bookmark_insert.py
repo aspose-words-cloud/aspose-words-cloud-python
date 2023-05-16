@@ -44,8 +44,8 @@ class BookmarkInsert(object):
     swagger_types = {
         'name': 'str',
         'text': 'str',
-        'end_range': 'DocumentPosition',
-        'start_range': 'DocumentPosition'
+        'end_range': 'NewDocumentPosition',
+        'start_range': 'NewDocumentPosition'
     }
 
     attribute_map = {
@@ -124,7 +124,7 @@ class BookmarkInsert(object):
         Gets or sets the link to end bookmark node.  # noqa: E501
 
         :return: The end_range of this BookmarkInsert.  # noqa: E501
-        :rtype: DocumentPosition
+        :rtype: NewDocumentPosition
         """
         return self._end_range
 
@@ -135,7 +135,7 @@ class BookmarkInsert(object):
         Gets or sets the link to end bookmark node.  # noqa: E501
 
         :param end_range: The end_range of this BookmarkInsert.  # noqa: E501
-        :type: DocumentPosition
+        :type: NewDocumentPosition
         """
         self._end_range = end_range
 
@@ -146,7 +146,7 @@ class BookmarkInsert(object):
         Gets or sets the link to start bookmark node.  # noqa: E501
 
         :return: The start_range of this BookmarkInsert.  # noqa: E501
-        :rtype: DocumentPosition
+        :rtype: NewDocumentPosition
         """
         return self._start_range
 
@@ -157,7 +157,7 @@ class BookmarkInsert(object):
         Gets or sets the link to start bookmark node.  # noqa: E501
 
         :param start_range: The start_range of this BookmarkInsert.  # noqa: E501
-        :type: DocumentPosition
+        :type: NewDocumentPosition
         """
         self._start_range = start_range
 

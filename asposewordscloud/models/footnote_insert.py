@@ -43,7 +43,7 @@ class FootnoteInsert(object):
     """
     swagger_types = {
         'footnote_type': 'str',
-        'position': 'DocumentPosition',
+        'position': 'NewDocumentPosition',
         'reference_mark': 'str',
         'text': 'str'
     }
@@ -110,7 +110,7 @@ class FootnoteInsert(object):
         Gets or sets the link to comment range start node.  # noqa: E501
 
         :return: The position of this FootnoteInsert.  # noqa: E501
-        :rtype: DocumentPosition
+        :rtype: NewDocumentPosition
         """
         return self._position
 
@@ -121,7 +121,7 @@ class FootnoteInsert(object):
         Gets or sets the link to comment range start node.  # noqa: E501
 
         :param position: The position of this FootnoteInsert.  # noqa: E501
-        :type: DocumentPosition
+        :type: NewDocumentPosition
         """
         self._position = position
 

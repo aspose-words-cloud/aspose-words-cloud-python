@@ -1,6 +1,6 @@
 # coding: utf-8
 # -----------------------------------------------------------------------------------
-# <copyright company="Aspose" file="footnote_update.py">
+# <copyright company="Aspose" file="new_document_position.py">
 #   Copyright (c) 2023 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -30,8 +30,8 @@ import datetime
 import six
 import json
 
-class FootnoteUpdate(object):
-    """Footnote for update.
+class NewDocumentPosition(object):
+    """DTO container with a new position in the document tree.
     """
 
     """
@@ -42,132 +42,70 @@ class FootnoteUpdate(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'footnote_type': 'str',
-        'position': 'NewDocumentPosition',
-        'reference_mark': 'str',
-        'text': 'str'
+        'node_id': 'str',
+        'offset': 'int'
     }
 
     attribute_map = {
-        'footnote_type': 'FootnoteType',
-        'position': 'Position',
-        'reference_mark': 'ReferenceMark',
-        'text': 'Text'
+        'node_id': 'NodeId',
+        'offset': 'Offset'
     }
 
-    def __init__(self, footnote_type=None, position=None, reference_mark=None, text=None):  # noqa: E501
-        """FootnoteUpdate - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, node_id=None, offset=None):  # noqa: E501
+        """NewDocumentPosition - a model defined in Swagger"""  # noqa: E501
 
-        self._footnote_type = None
-        self._position = None
-        self._reference_mark = None
-        self._text = None
+        self._node_id = None
+        self._offset = None
         self.discriminator = None
 
-        if footnote_type is not None:
-            self.footnote_type = footnote_type
-        if position is not None:
-            self.position = position
-        if reference_mark is not None:
-            self.reference_mark = reference_mark
-        if text is not None:
-            self.text = text
+        if node_id is not None:
+            self.node_id = node_id
+        if offset is not None:
+            self.offset = offset
 
     @property
-    def footnote_type(self):
-        """Gets the footnote_type of this FootnoteUpdate.  # noqa: E501
+    def node_id(self):
+        """Gets the node_id of this NewDocumentPosition.  # noqa: E501
 
-        Gets or sets the option, that specifies whether this is a footnote or endnote.  # noqa: E501
+        Gets or sets the node id.  # noqa: E501
 
-        :return: The footnote_type of this FootnoteUpdate.  # noqa: E501
+        :return: The node_id of this NewDocumentPosition.  # noqa: E501
         :rtype: str
         """
-        return self._footnote_type
+        return self._node_id
 
-    @footnote_type.setter
-    def footnote_type(self, footnote_type):
-        """Sets the footnote_type of this FootnoteUpdate.
+    @node_id.setter
+    def node_id(self, node_id):
+        """Sets the node_id of this NewDocumentPosition.
 
-        Gets or sets the option, that specifies whether this is a footnote or endnote.  # noqa: E501
+        Gets or sets the node id.  # noqa: E501
 
-        :param footnote_type: The footnote_type of this FootnoteUpdate.  # noqa: E501
+        :param node_id: The node_id of this NewDocumentPosition.  # noqa: E501
         :type: str
         """
-        allowed_values = ["Footnote", "Endnote"]  # noqa: E501
-        if not footnote_type.isdigit():
-            if footnote_type not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `footnote_type` ({0}), must be one of {1}"  # noqa: E501
-                    .format(footnote_type, allowed_values))
-            self._footnote_type = footnote_type
-        else:
-            self._footnote_type = allowed_values[int(footnote_type) if six.PY3 else long(footnote_type)]
+        self._node_id = node_id
 
     @property
-    def position(self):
-        """Gets the position of this FootnoteUpdate.  # noqa: E501
+    def offset(self):
+        """Gets the offset of this NewDocumentPosition.  # noqa: E501
 
-        Gets or sets the link to comment range start node.  # noqa: E501
+        Gets or sets the offset in the node.  # noqa: E501
 
-        :return: The position of this FootnoteUpdate.  # noqa: E501
-        :rtype: NewDocumentPosition
+        :return: The offset of this NewDocumentPosition.  # noqa: E501
+        :rtype: int
         """
-        return self._position
+        return self._offset
 
-    @position.setter
-    def position(self, position):
-        """Sets the position of this FootnoteUpdate.
+    @offset.setter
+    def offset(self, offset):
+        """Sets the offset of this NewDocumentPosition.
 
-        Gets or sets the link to comment range start node.  # noqa: E501
+        Gets or sets the offset in the node.  # noqa: E501
 
-        :param position: The position of this FootnoteUpdate.  # noqa: E501
-        :type: NewDocumentPosition
+        :param offset: The offset of this NewDocumentPosition.  # noqa: E501
+        :type: int
         """
-        self._position = position
-
-    @property
-    def reference_mark(self):
-        """Gets the reference_mark of this FootnoteUpdate.  # noqa: E501
-
-        Gets or sets the custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.  # noqa: E501
-
-        :return: The reference_mark of this FootnoteUpdate.  # noqa: E501
-        :rtype: str
-        """
-        return self._reference_mark
-
-    @reference_mark.setter
-    def reference_mark(self, reference_mark):
-        """Sets the reference_mark of this FootnoteUpdate.
-
-        Gets or sets the custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.  # noqa: E501
-
-        :param reference_mark: The reference_mark of this FootnoteUpdate.  # noqa: E501
-        :type: str
-        """
-        self._reference_mark = reference_mark
-
-    @property
-    def text(self):
-        """Gets the text of this FootnoteUpdate.  # noqa: E501
-
-        Gets or sets text of the footnote.  # noqa: E501
-
-        :return: The text of this FootnoteUpdate.  # noqa: E501
-        :rtype: str
-        """
-        return self._text
-
-    @text.setter
-    def text(self, text):
-        """Sets the text of this FootnoteUpdate.
-
-        Gets or sets text of the footnote.  # noqa: E501
-
-        :param text: The text of this FootnoteUpdate.  # noqa: E501
-        :type: str
-        """
-        self._text = text
+        self._offset = offset
 
 
     def extract_files_content(self, filesContentResult):
@@ -237,7 +175,7 @@ class FootnoteUpdate(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, FootnoteUpdate):
+        if not isinstance(other, NewDocumentPosition):
             return False
 
         return self.__dict__ == other.__dict__

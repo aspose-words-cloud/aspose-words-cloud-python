@@ -44,7 +44,7 @@ class DrawingObjectInsert(object):
     swagger_types = {
         'height': 'float',
         'left': 'float',
-        'position': 'DocumentPosition',
+        'position': 'NewDocumentPosition',
         'relative_horizontal_position': 'str',
         'relative_vertical_position': 'str',
         'top': 'float',
@@ -144,7 +144,7 @@ class DrawingObjectInsert(object):
         Gets or sets the position, before which the DrawingObject will be inserted.  # noqa: E501
 
         :return: The position of this DrawingObjectInsert.  # noqa: E501
-        :rtype: DocumentPosition
+        :rtype: NewDocumentPosition
         """
         return self._position
 
@@ -155,7 +155,7 @@ class DrawingObjectInsert(object):
         Gets or sets the position, before which the DrawingObject will be inserted.  # noqa: E501
 
         :param position: The position of this DrawingObjectInsert.  # noqa: E501
-        :type: DocumentPosition
+        :type: NewDocumentPosition
         """
         self._position = position
 

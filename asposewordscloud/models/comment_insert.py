@@ -45,8 +45,8 @@ class CommentInsert(object):
         'author': 'str',
         'date_time': 'datetime',
         'initial': 'str',
-        'range_end': 'DocumentPosition',
-        'range_start': 'DocumentPosition',
+        'range_end': 'NewDocumentPosition',
+        'range_start': 'NewDocumentPosition',
         'text': 'str'
     }
 
@@ -156,7 +156,7 @@ class CommentInsert(object):
         Gets or sets the link to comment range end node.  # noqa: E501
 
         :return: The range_end of this CommentInsert.  # noqa: E501
-        :rtype: DocumentPosition
+        :rtype: NewDocumentPosition
         """
         return self._range_end
 
@@ -167,7 +167,7 @@ class CommentInsert(object):
         Gets or sets the link to comment range end node.  # noqa: E501
 
         :param range_end: The range_end of this CommentInsert.  # noqa: E501
-        :type: DocumentPosition
+        :type: NewDocumentPosition
         """
         self._range_end = range_end
 
@@ -178,7 +178,7 @@ class CommentInsert(object):
         Gets or sets the link to comment range start node.  # noqa: E501
 
         :return: The range_start of this CommentInsert.  # noqa: E501
-        :rtype: DocumentPosition
+        :rtype: NewDocumentPosition
         """
         return self._range_start
 
@@ -189,7 +189,7 @@ class CommentInsert(object):
         Gets or sets the link to comment range start node.  # noqa: E501
 
         :param range_start: The range_start of this CommentInsert.  # noqa: E501
-        :type: DocumentPosition
+        :type: NewDocumentPosition
         """
         self._range_start = range_start
 
