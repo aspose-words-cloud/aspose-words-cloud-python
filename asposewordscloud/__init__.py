@@ -147,6 +147,7 @@ from asposewordscloud.models.markdown_save_options_data import MarkdownSaveOptio
 from asposewordscloud.models.metafile_rendering_options_data import MetafileRenderingOptionsData
 from asposewordscloud.models.mhtml_save_options_data import MhtmlSaveOptionsData
 from asposewordscloud.models.modification_operation_result import ModificationOperationResult
+from asposewordscloud.models.new_document_position import NewDocumentPosition
 from asposewordscloud.models.node_link import NodeLink
 from asposewordscloud.models.odt_save_options_data import OdtSaveOptionsData
 from asposewordscloud.models.office_math_link import OfficeMathLink

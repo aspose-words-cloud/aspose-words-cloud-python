@@ -43,7 +43,7 @@ class TableInsert(object):
     """
     swagger_types = {
         'columns_count': 'int',
-        'position': 'DocumentPosition',
+        'position': 'NewDocumentPosition',
         'rows_count': 'int'
     }
 
@@ -97,7 +97,7 @@ class TableInsert(object):
         Gets or sets the position to insert the table. The table will be inserted before the specified position.  # noqa: E501
 
         :return: The position of this TableInsert.  # noqa: E501
-        :rtype: DocumentPosition
+        :rtype: NewDocumentPosition
         """
         return self._position
 
@@ -108,7 +108,7 @@ class TableInsert(object):
         Gets or sets the position to insert the table. The table will be inserted before the specified position.  # noqa: E501
 
         :param position: The position of this TableInsert.  # noqa: E501
-        :type: DocumentPosition
+        :type: NewDocumentPosition
         """
         self._position = position
 
