@@ -125,6 +125,34 @@ class TestSection(BaseTestContext):
 
 
     #
+    # Test for insertion a section.
+    #
+    def test_insert_section(self):
+        remote_data_folder = self.remote_test_folder + '/DocumentElements/Section'
+        local_file = 'Common/test_multi_pages.docx'
+        remote_file_name = 'TestInsertSection.docx'
+
+        self.upload_file(remote_data_folder + '/' + remote_file_name, open(os.path.join(self.local_test_folder, local_file), 'rb'))
+
+        request = asposewordscloud.models.requests.InsertSectionRequest(name=remote_file_name, section_index=0, folder=remote_data_folder)
+
+        self.words_api.insert_section(request)
+
+
+    #
+    # Test for insertion a section online.
+    #
+    def test_insert_section_online(self):
+        local_file = 'Common/test_multi_pages.docx'
+
+        request_document = open(os.path.join(self.local_test_folder, local_file), 'rb')
+        request = asposewordscloud.models.requests.InsertSectionOnlineRequest(document=request_document, section_index=0)
+
+        result = self.words_api.insert_section_online(request)
+        self.assertIsNotNone(result, 'Error has occurred.')
+
+
+    #
     # Test for linking headers and footers to previous section.
     #
     def test_link_header_footers_to_previous(self):

@@ -40,12 +40,15 @@ class CreateDocumentRequest(BaseRequestObject):
     :param storage Original document storage.
     """
 
-    def __init__(self, file_name=None, folder=None, storage=None):
+    def __init__(self, file_name, folder=None, storage=None):
         self.file_name = file_name
         self.folder = folder
         self.storage = storage
 
     def create_http_request(self, api_client):
+        # verify the required parameter 'file_name' is set
+        if self.file_name is None:
+            raise ValueError("Missing the required parameter `file_name` when calling `create_document`")  # noqa: E501
 
         path = '/v4.0/words/create'
         path_params = {}
