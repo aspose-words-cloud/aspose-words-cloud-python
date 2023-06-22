@@ -113,7 +113,7 @@ class InsertSectionOnlineRequest(BaseRequestObject):
             form_params.append([file_content_value.reference, file_content_value.content, 'file'])  # noqa: E501
 
         return {
-            "method": "POST",
+            "method": "PUT",
             "path": path,
             "body": None,
             "query_params": query_params,
