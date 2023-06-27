@@ -110,7 +110,7 @@ class ApiClient(object):
 
     def request_token(self):
         config = self.configuration
-        request_url = "/connect/token"
+        request_url = "/v4.0/words/connect/token"
         body = 'grant_type=client_credentials&client_id=' + config.client_secret['client_id'] + '&client_secret=' + config.client_secret['client_secret']
 
         header_params = {'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded'}
