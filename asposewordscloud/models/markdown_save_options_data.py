@@ -59,8 +59,8 @@ class MarkdownSaveOptionsData(object):
         'export_headers_footers_mode': 'str',
         'force_page_breaks': 'bool',
         'paragraph_break': 'str',
-        'save_format': 'str',
-        'table_content_alignment': 'str'
+        'table_content_alignment': 'str',
+        'save_format': 'str'
     }
 
     attribute_map = {
@@ -81,8 +81,8 @@ class MarkdownSaveOptionsData(object):
         'export_headers_footers_mode': 'ExportHeadersFootersMode',
         'force_page_breaks': 'ForcePageBreaks',
         'paragraph_break': 'ParagraphBreak',
-        'save_format': 'SaveFormat',
-        'table_content_alignment': 'TableContentAlignment'
+        'table_content_alignment': 'TableContentAlignment',
+        'save_format': 'SaveFormat'
     }
 
     def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, encoding=None, export_headers_footers_mode=None, force_page_breaks=None, paragraph_break=None, table_content_alignment=None):  # noqa: E501
@@ -105,8 +105,8 @@ class MarkdownSaveOptionsData(object):
         self._export_headers_footers_mode = None
         self._force_page_breaks = None
         self._paragraph_break = None
-        self._save_format = "md"
         self._table_content_alignment = None
+        self._save_format = "md"
         self.discriminator = None
 
         if allow_embedding_post_script_fonts is not None:
@@ -561,18 +561,6 @@ class MarkdownSaveOptionsData(object):
         self._paragraph_break = paragraph_break
 
     @property
-    def save_format(self):
-        """Gets the save_format of this MarkdownSaveOptionsData.  # noqa: E501
-
-        Gets the format of save.  # noqa: E501
-
-        :return: The save_format of this MarkdownSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._save_format
-
-
-    @property
     def table_content_alignment(self):
         """Gets the table_content_alignment of this MarkdownSaveOptionsData.  # noqa: E501
 
@@ -601,6 +589,18 @@ class MarkdownSaveOptionsData(object):
             self._table_content_alignment = table_content_alignment
         else:
             self._table_content_alignment = allowed_values[int(table_content_alignment) if six.PY3 else long(table_content_alignment)]
+
+    @property
+    def save_format(self):
+        """Gets the save_format of this MarkdownSaveOptionsData.  # noqa: E501
+
+        Gets the format of save.  # noqa: E501
+
+        :return: The save_format of this MarkdownSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._save_format
+
 
 
     def extract_files_content(self, filesContentResult):

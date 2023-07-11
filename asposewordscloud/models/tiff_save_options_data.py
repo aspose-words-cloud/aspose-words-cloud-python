@@ -71,13 +71,13 @@ class TiffSaveOptionsData(object):
         'resolution': 'float',
         'scale': 'float',
         'use_anti_aliasing': 'bool',
-        'use_gdi_emf_renderer': 'bool',
         'use_high_quality_rendering': 'bool',
         'vertical_resolution': 'float',
-        'save_format': 'str',
+        'use_gdi_emf_renderer': 'bool',
         'threshold_for_floyd_steinberg_dithering': 'int',
         'tiff_binarization_method': 'str',
-        'tiff_compression': 'str'
+        'tiff_compression': 'str',
+        'save_format': 'str'
     }
 
     attribute_map = {
@@ -110,16 +110,16 @@ class TiffSaveOptionsData(object):
         'resolution': 'Resolution',
         'scale': 'Scale',
         'use_anti_aliasing': 'UseAntiAliasing',
-        'use_gdi_emf_renderer': 'UseGdiEmfRenderer',
         'use_high_quality_rendering': 'UseHighQualityRendering',
         'vertical_resolution': 'VerticalResolution',
-        'save_format': 'SaveFormat',
+        'use_gdi_emf_renderer': 'UseGdiEmfRenderer',
         'threshold_for_floyd_steinberg_dithering': 'ThresholdForFloydSteinbergDithering',
         'tiff_binarization_method': 'TiffBinarizationMethod',
-        'tiff_compression': 'TiffCompression'
+        'tiff_compression': 'TiffCompression',
+        'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, horizontal_resolution=None, image_brightness=None, image_color_mode=None, image_contrast=None, paper_color=None, pixel_format=None, resolution=None, scale=None, use_anti_aliasing=None, use_gdi_emf_renderer=None, use_high_quality_rendering=None, vertical_resolution=None, threshold_for_floyd_steinberg_dithering=None, tiff_binarization_method=None, tiff_compression=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, horizontal_resolution=None, image_brightness=None, image_color_mode=None, image_contrast=None, paper_color=None, pixel_format=None, resolution=None, scale=None, use_anti_aliasing=None, use_high_quality_rendering=None, vertical_resolution=None, use_gdi_emf_renderer=None, threshold_for_floyd_steinberg_dithering=None, tiff_binarization_method=None, tiff_compression=None):  # noqa: E501
         """TiffSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -151,13 +151,13 @@ class TiffSaveOptionsData(object):
         self._resolution = None
         self._scale = None
         self._use_anti_aliasing = None
-        self._use_gdi_emf_renderer = None
         self._use_high_quality_rendering = None
         self._vertical_resolution = None
-        self._save_format = "tiff"
+        self._use_gdi_emf_renderer = None
         self._threshold_for_floyd_steinberg_dithering = None
         self._tiff_binarization_method = None
         self._tiff_compression = None
+        self._save_format = "tiff"
         self.discriminator = None
 
         if allow_embedding_post_script_fonts is not None:
@@ -218,12 +218,12 @@ class TiffSaveOptionsData(object):
             self.scale = scale
         if use_anti_aliasing is not None:
             self.use_anti_aliasing = use_anti_aliasing
-        if use_gdi_emf_renderer is not None:
-            self.use_gdi_emf_renderer = use_gdi_emf_renderer
         if use_high_quality_rendering is not None:
             self.use_high_quality_rendering = use_high_quality_rendering
         if vertical_resolution is not None:
             self.vertical_resolution = vertical_resolution
+        if use_gdi_emf_renderer is not None:
+            self.use_gdi_emf_renderer = use_gdi_emf_renderer
         if threshold_for_floyd_steinberg_dithering is not None:
             self.threshold_for_floyd_steinberg_dithering = threshold_for_floyd_steinberg_dithering
         if tiff_binarization_method is not None:
@@ -934,28 +934,6 @@ class TiffSaveOptionsData(object):
         self._use_anti_aliasing = use_anti_aliasing
 
     @property
-    def use_gdi_emf_renderer(self):
-        """Gets the use_gdi_emf_renderer of this TiffSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.  # noqa: E501
-
-        :return: The use_gdi_emf_renderer of this TiffSaveOptionsData.  # noqa: E501
-        :rtype: bool
-        """
-        return self._use_gdi_emf_renderer
-
-    @use_gdi_emf_renderer.setter
-    def use_gdi_emf_renderer(self, use_gdi_emf_renderer):
-        """Sets the use_gdi_emf_renderer of this TiffSaveOptionsData.
-
-        Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.  # noqa: E501
-
-        :param use_gdi_emf_renderer: The use_gdi_emf_renderer of this TiffSaveOptionsData.  # noqa: E501
-        :type: bool
-        """
-        self._use_gdi_emf_renderer = use_gdi_emf_renderer
-
-    @property
     def use_high_quality_rendering(self):
         """Gets the use_high_quality_rendering of this TiffSaveOptionsData.  # noqa: E501
 
@@ -1000,16 +978,26 @@ class TiffSaveOptionsData(object):
         self._vertical_resolution = vertical_resolution
 
     @property
-    def save_format(self):
-        """Gets the save_format of this TiffSaveOptionsData.  # noqa: E501
+    def use_gdi_emf_renderer(self):
+        """Gets the use_gdi_emf_renderer of this TiffSaveOptionsData.  # noqa: E501
 
-        Gets the format of save.  # noqa: E501
+        Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.  # noqa: E501
 
-        :return: The save_format of this TiffSaveOptionsData.  # noqa: E501
-        :rtype: str
+        :return: The use_gdi_emf_renderer of this TiffSaveOptionsData.  # noqa: E501
+        :rtype: bool
         """
-        return self._save_format
+        return self._use_gdi_emf_renderer
 
+    @use_gdi_emf_renderer.setter
+    def use_gdi_emf_renderer(self, use_gdi_emf_renderer):
+        """Sets the use_gdi_emf_renderer of this TiffSaveOptionsData.
+
+        Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.  # noqa: E501
+
+        :param use_gdi_emf_renderer: The use_gdi_emf_renderer of this TiffSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._use_gdi_emf_renderer = use_gdi_emf_renderer
 
     @property
     def threshold_for_floyd_steinberg_dithering(self):
@@ -1092,6 +1080,18 @@ class TiffSaveOptionsData(object):
             self._tiff_compression = tiff_compression
         else:
             self._tiff_compression = allowed_values[int(tiff_compression) if six.PY3 else long(tiff_compression)]
+
+    @property
+    def save_format(self):
+        """Gets the save_format of this TiffSaveOptionsData.  # noqa: E501
+
+        Gets the format of save.  # noqa: E501
+
+        :return: The save_format of this TiffSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._save_format
+
 
 
     def extract_files_content(self, filesContentResult):

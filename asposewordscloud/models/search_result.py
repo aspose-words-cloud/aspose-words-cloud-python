@@ -42,48 +42,26 @@ class SearchResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'range_end': 'DocumentPosition',
-        'range_start': 'DocumentPosition'
+        'range_start': 'DocumentPosition',
+        'range_end': 'DocumentPosition'
     }
 
     attribute_map = {
-        'range_end': 'RangeEnd',
-        'range_start': 'RangeStart'
+        'range_start': 'RangeStart',
+        'range_end': 'RangeEnd'
     }
 
-    def __init__(self, range_end=None, range_start=None):  # noqa: E501
+    def __init__(self, range_start=None, range_end=None):  # noqa: E501
         """SearchResult - a model defined in Swagger"""  # noqa: E501
 
-        self._range_end = None
         self._range_start = None
+        self._range_end = None
         self.discriminator = None
 
-        if range_end is not None:
-            self.range_end = range_end
         if range_start is not None:
             self.range_start = range_start
-
-    @property
-    def range_end(self):
-        """Gets the range_end of this SearchResult.  # noqa: E501
-
-        Gets or sets the link to result range end node.  # noqa: E501
-
-        :return: The range_end of this SearchResult.  # noqa: E501
-        :rtype: DocumentPosition
-        """
-        return self._range_end
-
-    @range_end.setter
-    def range_end(self, range_end):
-        """Sets the range_end of this SearchResult.
-
-        Gets or sets the link to result range end node.  # noqa: E501
-
-        :param range_end: The range_end of this SearchResult.  # noqa: E501
-        :type: DocumentPosition
-        """
-        self._range_end = range_end
+        if range_end is not None:
+            self.range_end = range_end
 
     @property
     def range_start(self):
@@ -106,6 +84,28 @@ class SearchResult(object):
         :type: DocumentPosition
         """
         self._range_start = range_start
+
+    @property
+    def range_end(self):
+        """Gets the range_end of this SearchResult.  # noqa: E501
+
+        Gets or sets the link to result range end node.  # noqa: E501
+
+        :return: The range_end of this SearchResult.  # noqa: E501
+        :rtype: DocumentPosition
+        """
+        return self._range_end
+
+    @range_end.setter
+    def range_end(self, range_end):
+        """Sets the range_end of this SearchResult.
+
+        Gets or sets the link to result range end node.  # noqa: E501
+
+        :param range_end: The range_end of this SearchResult.  # noqa: E501
+        :type: DocumentPosition
+        """
+        self._range_end = range_end
 
 
     def extract_files_content(self, filesContentResult):

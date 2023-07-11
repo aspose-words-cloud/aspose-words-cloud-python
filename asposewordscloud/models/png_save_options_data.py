@@ -71,9 +71,9 @@ class PngSaveOptionsData(object):
         'resolution': 'float',
         'scale': 'float',
         'use_anti_aliasing': 'bool',
-        'use_gdi_emf_renderer': 'bool',
         'use_high_quality_rendering': 'bool',
         'vertical_resolution': 'float',
+        'use_gdi_emf_renderer': 'bool',
         'save_format': 'str'
     }
 
@@ -107,13 +107,13 @@ class PngSaveOptionsData(object):
         'resolution': 'Resolution',
         'scale': 'Scale',
         'use_anti_aliasing': 'UseAntiAliasing',
-        'use_gdi_emf_renderer': 'UseGdiEmfRenderer',
         'use_high_quality_rendering': 'UseHighQualityRendering',
         'vertical_resolution': 'VerticalResolution',
+        'use_gdi_emf_renderer': 'UseGdiEmfRenderer',
         'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, horizontal_resolution=None, image_brightness=None, image_color_mode=None, image_contrast=None, paper_color=None, pixel_format=None, resolution=None, scale=None, use_anti_aliasing=None, use_gdi_emf_renderer=None, use_high_quality_rendering=None, vertical_resolution=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, horizontal_resolution=None, image_brightness=None, image_color_mode=None, image_contrast=None, paper_color=None, pixel_format=None, resolution=None, scale=None, use_anti_aliasing=None, use_high_quality_rendering=None, vertical_resolution=None, use_gdi_emf_renderer=None):  # noqa: E501
         """PngSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -145,9 +145,9 @@ class PngSaveOptionsData(object):
         self._resolution = None
         self._scale = None
         self._use_anti_aliasing = None
-        self._use_gdi_emf_renderer = None
         self._use_high_quality_rendering = None
         self._vertical_resolution = None
+        self._use_gdi_emf_renderer = None
         self._save_format = "png"
         self.discriminator = None
 
@@ -209,12 +209,12 @@ class PngSaveOptionsData(object):
             self.scale = scale
         if use_anti_aliasing is not None:
             self.use_anti_aliasing = use_anti_aliasing
-        if use_gdi_emf_renderer is not None:
-            self.use_gdi_emf_renderer = use_gdi_emf_renderer
         if use_high_quality_rendering is not None:
             self.use_high_quality_rendering = use_high_quality_rendering
         if vertical_resolution is not None:
             self.vertical_resolution = vertical_resolution
+        if use_gdi_emf_renderer is not None:
+            self.use_gdi_emf_renderer = use_gdi_emf_renderer
 
     @property
     def allow_embedding_post_script_fonts(self):
@@ -919,28 +919,6 @@ class PngSaveOptionsData(object):
         self._use_anti_aliasing = use_anti_aliasing
 
     @property
-    def use_gdi_emf_renderer(self):
-        """Gets the use_gdi_emf_renderer of this PngSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.  # noqa: E501
-
-        :return: The use_gdi_emf_renderer of this PngSaveOptionsData.  # noqa: E501
-        :rtype: bool
-        """
-        return self._use_gdi_emf_renderer
-
-    @use_gdi_emf_renderer.setter
-    def use_gdi_emf_renderer(self, use_gdi_emf_renderer):
-        """Sets the use_gdi_emf_renderer of this PngSaveOptionsData.
-
-        Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.  # noqa: E501
-
-        :param use_gdi_emf_renderer: The use_gdi_emf_renderer of this PngSaveOptionsData.  # noqa: E501
-        :type: bool
-        """
-        self._use_gdi_emf_renderer = use_gdi_emf_renderer
-
-    @property
     def use_high_quality_rendering(self):
         """Gets the use_high_quality_rendering of this PngSaveOptionsData.  # noqa: E501
 
@@ -983,6 +961,28 @@ class PngSaveOptionsData(object):
         :type: float
         """
         self._vertical_resolution = vertical_resolution
+
+    @property
+    def use_gdi_emf_renderer(self):
+        """Gets the use_gdi_emf_renderer of this PngSaveOptionsData.  # noqa: E501
+
+        Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.  # noqa: E501
+
+        :return: The use_gdi_emf_renderer of this PngSaveOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_gdi_emf_renderer
+
+    @use_gdi_emf_renderer.setter
+    def use_gdi_emf_renderer(self, use_gdi_emf_renderer):
+        """Sets the use_gdi_emf_renderer of this PngSaveOptionsData.
+
+        Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.  # noqa: E501
+
+        :param use_gdi_emf_renderer: The use_gdi_emf_renderer of this PngSaveOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._use_gdi_emf_renderer = use_gdi_emf_renderer
 
     @property
     def save_format(self):

@@ -62,8 +62,8 @@ class TextSaveOptionsData(object):
         'add_bidi_marks': 'bool',
         'max_characters_per_line': 'int',
         'preserve_table_layout': 'bool',
-        'save_format': 'str',
-        'simplify_list_labels': 'bool'
+        'simplify_list_labels': 'bool',
+        'save_format': 'str'
     }
 
     attribute_map = {
@@ -87,8 +87,8 @@ class TextSaveOptionsData(object):
         'add_bidi_marks': 'AddBidiMarks',
         'max_characters_per_line': 'MaxCharactersPerLine',
         'preserve_table_layout': 'PreserveTableLayout',
-        'save_format': 'SaveFormat',
-        'simplify_list_labels': 'SimplifyListLabels'
+        'simplify_list_labels': 'SimplifyListLabels',
+        'save_format': 'SaveFormat'
     }
 
     def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, encoding=None, export_headers_footers_mode=None, force_page_breaks=None, paragraph_break=None, add_bidi_marks=None, max_characters_per_line=None, preserve_table_layout=None, simplify_list_labels=None):  # noqa: E501
@@ -114,8 +114,8 @@ class TextSaveOptionsData(object):
         self._add_bidi_marks = None
         self._max_characters_per_line = None
         self._preserve_table_layout = None
-        self._save_format = "txt"
         self._simplify_list_labels = None
+        self._save_format = "txt"
         self.discriminator = None
 
         if allow_embedding_post_script_fonts is not None:
@@ -642,18 +642,6 @@ class TextSaveOptionsData(object):
         self._preserve_table_layout = preserve_table_layout
 
     @property
-    def save_format(self):
-        """Gets the save_format of this TextSaveOptionsData.  # noqa: E501
-
-        Gets the format of save.  # noqa: E501
-
-        :return: The save_format of this TextSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._save_format
-
-
-    @property
     def simplify_list_labels(self):
         """Gets the simplify_list_labels of this TextSaveOptionsData.  # noqa: E501
 
@@ -674,6 +662,18 @@ class TextSaveOptionsData(object):
         :type: bool
         """
         self._simplify_list_labels = simplify_list_labels
+
+    @property
+    def save_format(self):
+        """Gets the save_format of this TextSaveOptionsData.  # noqa: E501
+
+        Gets the format of save.  # noqa: E501
+
+        :return: The save_format of this TextSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._save_format
+
 
 
     def extract_files_content(self, filesContentResult):

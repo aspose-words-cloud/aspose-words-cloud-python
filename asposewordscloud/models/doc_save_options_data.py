@@ -57,9 +57,9 @@ class DocSaveOptionsData(object):
         'zip_output': 'bool',
         'always_compress_metafiles': 'bool',
         'password': 'str',
-        'save_format': 'str',
         'save_picture_bullet': 'bool',
-        'save_routing_slip': 'bool'
+        'save_routing_slip': 'bool',
+        'save_format': 'str'
     }
 
     attribute_map = {
@@ -78,9 +78,9 @@ class DocSaveOptionsData(object):
         'zip_output': 'ZipOutput',
         'always_compress_metafiles': 'AlwaysCompressMetafiles',
         'password': 'Password',
-        'save_format': 'SaveFormat',
         'save_picture_bullet': 'SavePictureBullet',
-        'save_routing_slip': 'SaveRoutingSlip'
+        'save_routing_slip': 'SaveRoutingSlip',
+        'save_format': 'SaveFormat'
     }
 
     def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, always_compress_metafiles=None, password=None, save_picture_bullet=None, save_routing_slip=None):  # noqa: E501
@@ -101,9 +101,9 @@ class DocSaveOptionsData(object):
         self._zip_output = None
         self._always_compress_metafiles = None
         self._password = None
-        self._save_format = "doc"
         self._save_picture_bullet = None
         self._save_routing_slip = None
+        self._save_format = "doc"
         self.discriminator = None
 
         if allow_embedding_post_script_fonts is not None:
@@ -504,18 +504,6 @@ class DocSaveOptionsData(object):
         self._password = password
 
     @property
-    def save_format(self):
-        """Gets the save_format of this DocSaveOptionsData.  # noqa: E501
-
-        Gets the format of save.  # noqa: E501
-
-        :return: The save_format of this DocSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._save_format
-
-
-    @property
     def save_picture_bullet(self):
         """Gets the save_picture_bullet of this DocSaveOptionsData.  # noqa: E501
 
@@ -558,6 +546,18 @@ class DocSaveOptionsData(object):
         :type: bool
         """
         self._save_routing_slip = save_routing_slip
+
+    @property
+    def save_format(self):
+        """Gets the save_format of this DocSaveOptionsData.  # noqa: E501
+
+        Gets the format of save.  # noqa: E501
+
+        :return: The save_format of this DocSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._save_format
+
 
 
     def extract_files_content(self, filesContentResult):

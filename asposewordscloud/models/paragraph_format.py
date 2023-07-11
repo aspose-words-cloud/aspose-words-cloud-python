@@ -59,7 +59,6 @@ class ParagraphFormat(object):
         'outline_level': 'str',
         'page_break_before': 'bool',
         'right_indent': 'float',
-        'shading': 'Shading',
         'space_after': 'float',
         'space_after_auto': 'bool',
         'space_before': 'float',
@@ -69,8 +68,9 @@ class ParagraphFormat(object):
         'suppress_auto_hyphens': 'bool',
         'suppress_line_numbers': 'bool',
         'widow_control': 'bool',
-        'is_heading': 'bool',
-        'is_list_item': 'bool'
+        'shading': 'Shading',
+        'is_list_item': 'bool',
+        'is_heading': 'bool'
     }
 
     attribute_map = {
@@ -91,7 +91,6 @@ class ParagraphFormat(object):
         'outline_level': 'OutlineLevel',
         'page_break_before': 'PageBreakBefore',
         'right_indent': 'RightIndent',
-        'shading': 'Shading',
         'space_after': 'SpaceAfter',
         'space_after_auto': 'SpaceAfterAuto',
         'space_before': 'SpaceBefore',
@@ -101,11 +100,12 @@ class ParagraphFormat(object):
         'suppress_auto_hyphens': 'SuppressAutoHyphens',
         'suppress_line_numbers': 'SuppressLineNumbers',
         'widow_control': 'WidowControl',
-        'is_heading': 'IsHeading',
-        'is_list_item': 'IsListItem'
+        'shading': 'Shading',
+        'is_list_item': 'IsListItem',
+        'is_heading': 'IsHeading'
     }
 
-    def __init__(self, link=None, add_space_between_far_east_and_alpha=None, add_space_between_far_east_and_digit=None, alignment=None, bidi=None, drop_cap_position=None, first_line_indent=None, keep_together=None, keep_with_next=None, left_indent=None, line_spacing=None, line_spacing_rule=None, lines_to_drop=None, no_space_between_paragraphs_of_same_style=None, outline_level=None, page_break_before=None, right_indent=None, shading=None, space_after=None, space_after_auto=None, space_before=None, space_before_auto=None, style_identifier=None, style_name=None, suppress_auto_hyphens=None, suppress_line_numbers=None, widow_control=None, is_heading=None, is_list_item=None):  # noqa: E501
+    def __init__(self, link=None, add_space_between_far_east_and_alpha=None, add_space_between_far_east_and_digit=None, alignment=None, bidi=None, drop_cap_position=None, first_line_indent=None, keep_together=None, keep_with_next=None, left_indent=None, line_spacing=None, line_spacing_rule=None, lines_to_drop=None, no_space_between_paragraphs_of_same_style=None, outline_level=None, page_break_before=None, right_indent=None, space_after=None, space_after_auto=None, space_before=None, space_before_auto=None, style_identifier=None, style_name=None, suppress_auto_hyphens=None, suppress_line_numbers=None, widow_control=None, shading=None, is_list_item=None, is_heading=None):  # noqa: E501
         """ParagraphFormat - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
@@ -125,7 +125,6 @@ class ParagraphFormat(object):
         self._outline_level = None
         self._page_break_before = None
         self._right_indent = None
-        self._shading = None
         self._space_after = None
         self._space_after_auto = None
         self._space_before = None
@@ -135,8 +134,9 @@ class ParagraphFormat(object):
         self._suppress_auto_hyphens = None
         self._suppress_line_numbers = None
         self._widow_control = None
-        self._is_heading = None
+        self._shading = None
         self._is_list_item = None
+        self._is_heading = None
         self.discriminator = None
 
         if link is not None:
@@ -173,8 +173,6 @@ class ParagraphFormat(object):
             self.page_break_before = page_break_before
         if right_indent is not None:
             self.right_indent = right_indent
-        if shading is not None:
-            self.shading = shading
         if space_after is not None:
             self.space_after = space_after
         if space_after_auto is not None:
@@ -193,10 +191,12 @@ class ParagraphFormat(object):
             self.suppress_line_numbers = suppress_line_numbers
         if widow_control is not None:
             self.widow_control = widow_control
-        if is_heading is not None:
-            self.is_heading = is_heading
+        if shading is not None:
+            self.shading = shading
         if is_list_item is not None:
             self.is_list_item = is_list_item
+        if is_heading is not None:
+            self.is_heading = is_heading
 
     @property
     def link(self):
@@ -605,28 +605,6 @@ class ParagraphFormat(object):
         self._right_indent = right_indent
 
     @property
-    def shading(self):
-        """Gets the shading of this ParagraphFormat.  # noqa: E501
-
-        Gets or sets the Shading object, that refers to the shading formatting for the paragraph.  # noqa: E501
-
-        :return: The shading of this ParagraphFormat.  # noqa: E501
-        :rtype: Shading
-        """
-        return self._shading
-
-    @shading.setter
-    def shading(self, shading):
-        """Sets the shading of this ParagraphFormat.
-
-        Gets or sets the Shading object, that refers to the shading formatting for the paragraph.  # noqa: E501
-
-        :param shading: The shading of this ParagraphFormat.  # noqa: E501
-        :type: Shading
-        """
-        self._shading = shading
-
-    @property
     def space_after(self):
         """Gets the space_after of this ParagraphFormat.  # noqa: E501
 
@@ -833,26 +811,26 @@ class ParagraphFormat(object):
         self._widow_control = widow_control
 
     @property
-    def is_heading(self):
-        """Gets the is_heading of this ParagraphFormat.  # noqa: E501
+    def shading(self):
+        """Gets the shading of this ParagraphFormat.  # noqa: E501
 
-        Gets or sets a value indicating whether the paragraph style is one of the built-in Heading styles.  # noqa: E501
+        Gets or sets the Shading object, that refers to the shading formatting for the paragraph.  # noqa: E501
 
-        :return: The is_heading of this ParagraphFormat.  # noqa: E501
-        :rtype: bool
+        :return: The shading of this ParagraphFormat.  # noqa: E501
+        :rtype: Shading
         """
-        return self._is_heading
+        return self._shading
 
-    @is_heading.setter
-    def is_heading(self, is_heading):
-        """Sets the is_heading of this ParagraphFormat.
+    @shading.setter
+    def shading(self, shading):
+        """Sets the shading of this ParagraphFormat.
 
-        Gets or sets a value indicating whether the paragraph style is one of the built-in Heading styles.  # noqa: E501
+        Gets or sets the Shading object, that refers to the shading formatting for the paragraph.  # noqa: E501
 
-        :param is_heading: The is_heading of this ParagraphFormat.  # noqa: E501
-        :type: bool
+        :param shading: The shading of this ParagraphFormat.  # noqa: E501
+        :type: Shading
         """
-        self._is_heading = is_heading
+        self._shading = shading
 
     @property
     def is_list_item(self):
@@ -875,6 +853,28 @@ class ParagraphFormat(object):
         :type: bool
         """
         self._is_list_item = is_list_item
+
+    @property
+    def is_heading(self):
+        """Gets the is_heading of this ParagraphFormat.  # noqa: E501
+
+        Gets or sets a value indicating whether the paragraph style is one of the built-in Heading styles.  # noqa: E501
+
+        :return: The is_heading of this ParagraphFormat.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_heading
+
+    @is_heading.setter
+    def is_heading(self, is_heading):
+        """Sets the is_heading of this ParagraphFormat.
+
+        Gets or sets a value indicating whether the paragraph style is one of the built-in Heading styles.  # noqa: E501
+
+        :param is_heading: The is_heading of this ParagraphFormat.  # noqa: E501
+        :type: bool
+        """
+        self._is_heading = is_heading
 
 
     def extract_files_content(self, filesContentResult):

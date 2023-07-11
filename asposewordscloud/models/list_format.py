@@ -43,35 +43,35 @@ class ListFormat(object):
     """
     swagger_types = {
         'link': 'WordsApiLink',
-        'is_list_item': 'bool',
+        'list_level_number': 'int',
         'list_id': 'int',
-        'list_level_number': 'int'
+        'is_list_item': 'bool'
     }
 
     attribute_map = {
         'link': 'Link',
-        'is_list_item': 'IsListItem',
+        'list_level_number': 'ListLevelNumber',
         'list_id': 'ListId',
-        'list_level_number': 'ListLevelNumber'
+        'is_list_item': 'IsListItem'
     }
 
-    def __init__(self, link=None, is_list_item=None, list_id=None, list_level_number=None):  # noqa: E501
+    def __init__(self, link=None, list_level_number=None, list_id=None, is_list_item=None):  # noqa: E501
         """ListFormat - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
-        self._is_list_item = None
-        self._list_id = None
         self._list_level_number = None
+        self._list_id = None
+        self._is_list_item = None
         self.discriminator = None
 
         if link is not None:
             self.link = link
-        if is_list_item is not None:
-            self.is_list_item = is_list_item
-        if list_id is not None:
-            self.list_id = list_id
         if list_level_number is not None:
             self.list_level_number = list_level_number
+        if list_id is not None:
+            self.list_id = list_id
+        if is_list_item is not None:
+            self.is_list_item = is_list_item
 
     @property
     def link(self):
@@ -96,26 +96,26 @@ class ListFormat(object):
         self._link = link
 
     @property
-    def is_list_item(self):
-        """Gets the is_list_item of this ListFormat.  # noqa: E501
+    def list_level_number(self):
+        """Gets the list_level_number of this ListFormat.  # noqa: E501
 
-        Gets or sets a value indicating whether the paragraph has bulleted or numbered formatting applied to it.  # noqa: E501
+        Gets or sets the list level number (0 to 8) for the paragraph.  # noqa: E501
 
-        :return: The is_list_item of this ListFormat.  # noqa: E501
-        :rtype: bool
+        :return: The list_level_number of this ListFormat.  # noqa: E501
+        :rtype: int
         """
-        return self._is_list_item
+        return self._list_level_number
 
-    @is_list_item.setter
-    def is_list_item(self, is_list_item):
-        """Sets the is_list_item of this ListFormat.
+    @list_level_number.setter
+    def list_level_number(self, list_level_number):
+        """Sets the list_level_number of this ListFormat.
 
-        Gets or sets a value indicating whether the paragraph has bulleted or numbered formatting applied to it.  # noqa: E501
+        Gets or sets the list level number (0 to 8) for the paragraph.  # noqa: E501
 
-        :param is_list_item: The is_list_item of this ListFormat.  # noqa: E501
-        :type: bool
+        :param list_level_number: The list_level_number of this ListFormat.  # noqa: E501
+        :type: int
         """
-        self._is_list_item = is_list_item
+        self._list_level_number = list_level_number
 
     @property
     def list_id(self):
@@ -140,26 +140,26 @@ class ListFormat(object):
         self._list_id = list_id
 
     @property
-    def list_level_number(self):
-        """Gets the list_level_number of this ListFormat.  # noqa: E501
+    def is_list_item(self):
+        """Gets the is_list_item of this ListFormat.  # noqa: E501
 
-        Gets or sets the list level number (0 to 8) for the paragraph.  # noqa: E501
+        Gets or sets a value indicating whether the paragraph has bulleted or numbered formatting applied to it.  # noqa: E501
 
-        :return: The list_level_number of this ListFormat.  # noqa: E501
-        :rtype: int
+        :return: The is_list_item of this ListFormat.  # noqa: E501
+        :rtype: bool
         """
-        return self._list_level_number
+        return self._is_list_item
 
-    @list_level_number.setter
-    def list_level_number(self, list_level_number):
-        """Sets the list_level_number of this ListFormat.
+    @is_list_item.setter
+    def is_list_item(self, is_list_item):
+        """Sets the is_list_item of this ListFormat.
 
-        Gets or sets the list level number (0 to 8) for the paragraph.  # noqa: E501
+        Gets or sets a value indicating whether the paragraph has bulleted or numbered formatting applied to it.  # noqa: E501
 
-        :param list_level_number: The list_level_number of this ListFormat.  # noqa: E501
-        :type: int
+        :param is_list_item: The is_list_item of this ListFormat.  # noqa: E501
+        :type: bool
         """
-        self._list_level_number = list_level_number
+        self._is_list_item = is_list_item
 
 
     def extract_files_content(self, filesContentResult):

@@ -42,46 +42,90 @@ class CommentInsert(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'range_start': 'NewDocumentPosition',
+        'range_end': 'NewDocumentPosition',
         'author': 'str',
         'date_time': 'datetime',
         'initial': 'str',
-        'range_end': 'NewDocumentPosition',
-        'range_start': 'NewDocumentPosition',
         'text': 'str'
     }
 
     attribute_map = {
+        'range_start': 'RangeStart',
+        'range_end': 'RangeEnd',
         'author': 'Author',
         'date_time': 'DateTime',
         'initial': 'Initial',
-        'range_end': 'RangeEnd',
-        'range_start': 'RangeStart',
         'text': 'Text'
     }
 
-    def __init__(self, author=None, date_time=None, initial=None, range_end=None, range_start=None, text=None):  # noqa: E501
+    def __init__(self, range_start=None, range_end=None, author=None, date_time=None, initial=None, text=None):  # noqa: E501
         """CommentInsert - a model defined in Swagger"""  # noqa: E501
 
+        self._range_start = None
+        self._range_end = None
         self._author = None
         self._date_time = None
         self._initial = None
-        self._range_end = None
-        self._range_start = None
         self._text = None
         self.discriminator = None
 
+        if range_start is not None:
+            self.range_start = range_start
+        if range_end is not None:
+            self.range_end = range_end
         if author is not None:
             self.author = author
         if date_time is not None:
             self.date_time = date_time
         if initial is not None:
             self.initial = initial
-        if range_end is not None:
-            self.range_end = range_end
-        if range_start is not None:
-            self.range_start = range_start
         if text is not None:
             self.text = text
+
+    @property
+    def range_start(self):
+        """Gets the range_start of this CommentInsert.  # noqa: E501
+
+        Gets or sets the link to comment range start node.  # noqa: E501
+
+        :return: The range_start of this CommentInsert.  # noqa: E501
+        :rtype: NewDocumentPosition
+        """
+        return self._range_start
+
+    @range_start.setter
+    def range_start(self, range_start):
+        """Sets the range_start of this CommentInsert.
+
+        Gets or sets the link to comment range start node.  # noqa: E501
+
+        :param range_start: The range_start of this CommentInsert.  # noqa: E501
+        :type: NewDocumentPosition
+        """
+        self._range_start = range_start
+
+    @property
+    def range_end(self):
+        """Gets the range_end of this CommentInsert.  # noqa: E501
+
+        Gets or sets the link to comment range end node.  # noqa: E501
+
+        :return: The range_end of this CommentInsert.  # noqa: E501
+        :rtype: NewDocumentPosition
+        """
+        return self._range_end
+
+    @range_end.setter
+    def range_end(self, range_end):
+        """Sets the range_end of this CommentInsert.
+
+        Gets or sets the link to comment range end node.  # noqa: E501
+
+        :param range_end: The range_end of this CommentInsert.  # noqa: E501
+        :type: NewDocumentPosition
+        """
+        self._range_end = range_end
 
     @property
     def author(self):
@@ -148,50 +192,6 @@ class CommentInsert(object):
         :type: str
         """
         self._initial = initial
-
-    @property
-    def range_end(self):
-        """Gets the range_end of this CommentInsert.  # noqa: E501
-
-        Gets or sets the link to comment range end node.  # noqa: E501
-
-        :return: The range_end of this CommentInsert.  # noqa: E501
-        :rtype: NewDocumentPosition
-        """
-        return self._range_end
-
-    @range_end.setter
-    def range_end(self, range_end):
-        """Sets the range_end of this CommentInsert.
-
-        Gets or sets the link to comment range end node.  # noqa: E501
-
-        :param range_end: The range_end of this CommentInsert.  # noqa: E501
-        :type: NewDocumentPosition
-        """
-        self._range_end = range_end
-
-    @property
-    def range_start(self):
-        """Gets the range_start of this CommentInsert.  # noqa: E501
-
-        Gets or sets the link to comment range start node.  # noqa: E501
-
-        :return: The range_start of this CommentInsert.  # noqa: E501
-        :rtype: NewDocumentPosition
-        """
-        return self._range_start
-
-    @range_start.setter
-    def range_start(self, range_start):
-        """Sets the range_start of this CommentInsert.
-
-        Gets or sets the link to comment range start node.  # noqa: E501
-
-        :param range_start: The range_start of this CommentInsert.  # noqa: E501
-        :type: NewDocumentPosition
-        """
-        self._range_start = range_start
 
     @property
     def text(self):

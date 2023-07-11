@@ -42,34 +42,36 @@ class Document(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'links': 'list[Link]',
         'document_properties': 'DocumentProperties',
         'file_name': 'str',
         'is_encrypted': 'bool',
         'is_signed': 'bool',
-        'links': 'list[Link]',
         'source_format': 'str'
     }
 
     attribute_map = {
+        'links': 'Links',
         'document_properties': 'DocumentProperties',
         'file_name': 'FileName',
         'is_encrypted': 'IsEncrypted',
         'is_signed': 'IsSigned',
-        'links': 'Links',
         'source_format': 'SourceFormat'
     }
 
-    def __init__(self, document_properties=None, file_name=None, is_encrypted=None, is_signed=None, links=None, source_format=None):  # noqa: E501
+    def __init__(self, links=None, document_properties=None, file_name=None, is_encrypted=None, is_signed=None, source_format=None):  # noqa: E501
         """Document - a model defined in Swagger"""  # noqa: E501
 
+        self._links = None
         self._document_properties = None
         self._file_name = None
         self._is_encrypted = None
         self._is_signed = None
-        self._links = None
         self._source_format = None
         self.discriminator = None
 
+        if links is not None:
+            self.links = links
         if document_properties is not None:
             self.document_properties = document_properties
         if file_name is not None:
@@ -78,10 +80,30 @@ class Document(object):
             self.is_encrypted = is_encrypted
         if is_signed is not None:
             self.is_signed = is_signed
-        if links is not None:
-            self.links = links
         if source_format is not None:
             self.source_format = source_format
+
+    @property
+    def links(self):
+        """Gets the links of this Document.  # noqa: E501
+
+        Gets or sets the list of links that originate from this document.  # noqa: E501
+
+        :return: The links of this Document.  # noqa: E501
+        :rtype: list[Link]
+        """
+        return self._links
+
+    @links.setter
+    def links(self, links):
+        """Sets the links of this Document.
+
+        Gets or sets the list of links that originate from this document.  # noqa: E501
+
+        :param links: The links of this Document.  # noqa: E501
+        :type: list[Link]
+        """
+        self._links = links
 
     @property
     def document_properties(self):
@@ -170,28 +192,6 @@ class Document(object):
         :type: bool
         """
         self._is_signed = is_signed
-
-    @property
-    def links(self):
-        """Gets the links of this Document.  # noqa: E501
-
-        Gets or sets the list of links that originate from this document.  # noqa: E501
-
-        :return: The links of this Document.  # noqa: E501
-        :rtype: list[Link]
-        """
-        return self._links
-
-    @links.setter
-    def links(self, links):
-        """Sets the links of this Document.
-
-        Gets or sets the list of links that originate from this document.  # noqa: E501
-
-        :param links: The links of this Document.  # noqa: E501
-        :type: list[Link]
-        """
-        self._links = links
 
     @property
     def source_format(self):

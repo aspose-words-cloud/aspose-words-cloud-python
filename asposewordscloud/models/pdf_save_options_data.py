@@ -84,12 +84,12 @@ class PdfSaveOptionsData(object):
         'page_mode': 'str',
         'preblend_images': 'bool',
         'preserve_form_fields': 'bool',
-        'save_format': 'str',
         'text_compression': 'str',
         'use_book_fold_printing_settings': 'bool',
         'use_core_fonts': 'bool',
         'zoom_behavior': 'str',
-        'zoom_factor': 'int'
+        'zoom_factor': 'int',
+        'save_format': 'str'
     }
 
     attribute_map = {
@@ -135,12 +135,12 @@ class PdfSaveOptionsData(object):
         'page_mode': 'PageMode',
         'preblend_images': 'PreblendImages',
         'preserve_form_fields': 'PreserveFormFields',
-        'save_format': 'SaveFormat',
         'text_compression': 'TextCompression',
         'use_book_fold_printing_settings': 'UseBookFoldPrintingSettings',
         'use_core_fonts': 'UseCoreFonts',
         'zoom_behavior': 'ZoomBehavior',
-        'zoom_factor': 'ZoomFactor'
+        'zoom_factor': 'ZoomFactor',
+        'save_format': 'SaveFormat'
     }
 
     def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, cache_background_graphics=None, compliance=None, create_note_hyperlinks=None, custom_properties_export=None, digital_signature_details=None, display_doc_title=None, downsample_options=None, embed_attachments=None, embed_full_fonts=None, encryption_details=None, export_document_structure=None, export_language_to_span_tag=None, font_embedding_mode=None, header_footer_bookmarks_export_mode=None, image_color_space_export_mode=None, image_compression=None, interpolate_images=None, open_hyperlinks_in_new_window=None, outline_options=None, page_mode=None, preblend_images=None, preserve_form_fields=None, text_compression=None, use_book_fold_printing_settings=None, use_core_fonts=None, zoom_behavior=None, zoom_factor=None):  # noqa: E501
@@ -188,12 +188,12 @@ class PdfSaveOptionsData(object):
         self._page_mode = None
         self._preblend_images = None
         self._preserve_form_fields = None
-        self._save_format = "pdf"
         self._text_compression = None
         self._use_book_fold_printing_settings = None
         self._use_core_fonts = None
         self._zoom_behavior = None
         self._zoom_factor = None
+        self._save_format = "pdf"
         self.discriminator = None
 
         if allow_embedding_post_script_fonts is not None:
@@ -1312,18 +1312,6 @@ class PdfSaveOptionsData(object):
         self._preserve_form_fields = preserve_form_fields
 
     @property
-    def save_format(self):
-        """Gets the save_format of this PdfSaveOptionsData.  # noqa: E501
-
-        Gets the format of save.  # noqa: E501
-
-        :return: The save_format of this PdfSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._save_format
-
-
-    @property
     def text_compression(self):
         """Gets the text_compression of this PdfSaveOptionsData.  # noqa: E501
 
@@ -1448,6 +1436,18 @@ class PdfSaveOptionsData(object):
         :type: int
         """
         self._zoom_factor = zoom_factor
+
+    @property
+    def save_format(self):
+        """Gets the save_format of this PdfSaveOptionsData.  # noqa: E501
+
+        Gets the format of save.  # noqa: E501
+
+        :return: The save_format of this PdfSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._save_format
+
 
 
     def extract_files_content(self, filesContentResult):

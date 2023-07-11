@@ -44,34 +44,34 @@ class Table(object):
     swagger_types = {
         'link': 'WordsApiLink',
         'node_id': 'str',
-        'table_properties': 'TableProperties',
-        'table_row_list': 'list[TableRow]'
+        'table_row_list': 'list[TableRow]',
+        'table_properties': 'TableProperties'
     }
 
     attribute_map = {
         'link': 'Link',
         'node_id': 'NodeId',
-        'table_properties': 'TableProperties',
-        'table_row_list': 'TableRowList'
+        'table_row_list': 'TableRowList',
+        'table_properties': 'TableProperties'
     }
 
-    def __init__(self, link=None, node_id=None, table_properties=None, table_row_list=None):  # noqa: E501
+    def __init__(self, link=None, node_id=None, table_row_list=None, table_properties=None):  # noqa: E501
         """Table - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
         self._node_id = None
-        self._table_properties = None
         self._table_row_list = None
+        self._table_properties = None
         self.discriminator = None
 
         if link is not None:
             self.link = link
         if node_id is not None:
             self.node_id = node_id
-        if table_properties is not None:
-            self.table_properties = table_properties
         if table_row_list is not None:
             self.table_row_list = table_row_list
+        if table_properties is not None:
+            self.table_properties = table_properties
 
     @property
     def link(self):
@@ -118,28 +118,6 @@ class Table(object):
         self._node_id = node_id
 
     @property
-    def table_properties(self):
-        """Gets the table_properties of this Table.  # noqa: E501
-
-        Gets or sets table properties.  # noqa: E501
-
-        :return: The table_properties of this Table.  # noqa: E501
-        :rtype: TableProperties
-        """
-        return self._table_properties
-
-    @table_properties.setter
-    def table_properties(self, table_properties):
-        """Sets the table_properties of this Table.
-
-        Gets or sets table properties.  # noqa: E501
-
-        :param table_properties: The table_properties of this Table.  # noqa: E501
-        :type: TableProperties
-        """
-        self._table_properties = table_properties
-
-    @property
     def table_row_list(self):
         """Gets the table_row_list of this Table.  # noqa: E501
 
@@ -160,6 +138,28 @@ class Table(object):
         :type: list[TableRow]
         """
         self._table_row_list = table_row_list
+
+    @property
+    def table_properties(self):
+        """Gets the table_properties of this Table.  # noqa: E501
+
+        Gets or sets table properties.  # noqa: E501
+
+        :return: The table_properties of this Table.  # noqa: E501
+        :rtype: TableProperties
+        """
+        return self._table_properties
+
+    @table_properties.setter
+    def table_properties(self, table_properties):
+        """Sets the table_properties of this Table.
+
+        Gets or sets table properties.  # noqa: E501
+
+        :param table_properties: The table_properties of this Table.  # noqa: E501
+        :type: TableProperties
+        """
+        self._table_properties = table_properties
 
 
     def extract_files_content(self, filesContentResult):

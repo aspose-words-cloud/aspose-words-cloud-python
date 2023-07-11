@@ -43,55 +43,55 @@ class Comment(object):
     """
     swagger_types = {
         'link': 'WordsApiLink',
-        'author': 'str',
-        'content': 'StoryChildNodes',
-        'date_time': 'datetime',
-        'initial': 'str',
-        'range_end': 'DocumentPosition',
         'range_start': 'DocumentPosition',
-        'text': 'str'
+        'range_end': 'DocumentPosition',
+        'author': 'str',
+        'initial': 'str',
+        'date_time': 'datetime',
+        'text': 'str',
+        'content': 'StoryChildNodes'
     }
 
     attribute_map = {
         'link': 'Link',
-        'author': 'Author',
-        'content': 'Content',
-        'date_time': 'DateTime',
-        'initial': 'Initial',
-        'range_end': 'RangeEnd',
         'range_start': 'RangeStart',
-        'text': 'Text'
+        'range_end': 'RangeEnd',
+        'author': 'Author',
+        'initial': 'Initial',
+        'date_time': 'DateTime',
+        'text': 'Text',
+        'content': 'Content'
     }
 
-    def __init__(self, link=None, author=None, content=None, date_time=None, initial=None, range_end=None, range_start=None, text=None):  # noqa: E501
+    def __init__(self, link=None, range_start=None, range_end=None, author=None, initial=None, date_time=None, text=None, content=None):  # noqa: E501
         """Comment - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
-        self._author = None
-        self._content = None
-        self._date_time = None
-        self._initial = None
-        self._range_end = None
         self._range_start = None
+        self._range_end = None
+        self._author = None
+        self._initial = None
+        self._date_time = None
         self._text = None
+        self._content = None
         self.discriminator = None
 
         if link is not None:
             self.link = link
-        if author is not None:
-            self.author = author
-        if content is not None:
-            self.content = content
-        if date_time is not None:
-            self.date_time = date_time
-        if initial is not None:
-            self.initial = initial
-        if range_end is not None:
-            self.range_end = range_end
         if range_start is not None:
             self.range_start = range_start
+        if range_end is not None:
+            self.range_end = range_end
+        if author is not None:
+            self.author = author
+        if initial is not None:
+            self.initial = initial
+        if date_time is not None:
+            self.date_time = date_time
         if text is not None:
             self.text = text
+        if content is not None:
+            self.content = content
 
     @property
     def link(self):
@@ -116,92 +116,26 @@ class Comment(object):
         self._link = link
 
     @property
-    def author(self):
-        """Gets the author of this Comment.  # noqa: E501
+    def range_start(self):
+        """Gets the range_start of this Comment.  # noqa: E501
 
-        Gets or sets the author name for a comment.  # noqa: E501
+        Gets or sets the link to comment range start node.  # noqa: E501
 
-        :return: The author of this Comment.  # noqa: E501
-        :rtype: str
+        :return: The range_start of this Comment.  # noqa: E501
+        :rtype: DocumentPosition
         """
-        return self._author
+        return self._range_start
 
-    @author.setter
-    def author(self, author):
-        """Sets the author of this Comment.
+    @range_start.setter
+    def range_start(self, range_start):
+        """Sets the range_start of this Comment.
 
-        Gets or sets the author name for a comment.  # noqa: E501
+        Gets or sets the link to comment range start node.  # noqa: E501
 
-        :param author: The author of this Comment.  # noqa: E501
-        :type: str
+        :param range_start: The range_start of this Comment.  # noqa: E501
+        :type: DocumentPosition
         """
-        self._author = author
-
-    @property
-    def content(self):
-        """Gets the content of this Comment.  # noqa: E501
-
-        Gets or sets the content of the comment.  # noqa: E501
-
-        :return: The content of this Comment.  # noqa: E501
-        :rtype: StoryChildNodes
-        """
-        return self._content
-
-    @content.setter
-    def content(self, content):
-        """Sets the content of this Comment.
-
-        Gets or sets the content of the comment.  # noqa: E501
-
-        :param content: The content of this Comment.  # noqa: E501
-        :type: StoryChildNodes
-        """
-        self._content = content
-
-    @property
-    def date_time(self):
-        """Gets the date_time of this Comment.  # noqa: E501
-
-        Gets or sets the date and time that the comment was made.  # noqa: E501
-
-        :return: The date_time of this Comment.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._date_time
-
-    @date_time.setter
-    def date_time(self, date_time):
-        """Sets the date_time of this Comment.
-
-        Gets or sets the date and time that the comment was made.  # noqa: E501
-
-        :param date_time: The date_time of this Comment.  # noqa: E501
-        :type: datetime
-        """
-        self._date_time = date_time
-
-    @property
-    def initial(self):
-        """Gets the initial of this Comment.  # noqa: E501
-
-        Gets or sets the initials of the user associated with a specific comment.  # noqa: E501
-
-        :return: The initial of this Comment.  # noqa: E501
-        :rtype: str
-        """
-        return self._initial
-
-    @initial.setter
-    def initial(self, initial):
-        """Sets the initial of this Comment.
-
-        Gets or sets the initials of the user associated with a specific comment.  # noqa: E501
-
-        :param initial: The initial of this Comment.  # noqa: E501
-        :type: str
-        """
-        self._initial = initial
+        self._range_start = range_start
 
     @property
     def range_end(self):
@@ -226,26 +160,70 @@ class Comment(object):
         self._range_end = range_end
 
     @property
-    def range_start(self):
-        """Gets the range_start of this Comment.  # noqa: E501
+    def author(self):
+        """Gets the author of this Comment.  # noqa: E501
 
-        Gets or sets the link to comment range start node.  # noqa: E501
+        Gets or sets the author name for a comment.  # noqa: E501
 
-        :return: The range_start of this Comment.  # noqa: E501
-        :rtype: DocumentPosition
+        :return: The author of this Comment.  # noqa: E501
+        :rtype: str
         """
-        return self._range_start
+        return self._author
 
-    @range_start.setter
-    def range_start(self, range_start):
-        """Sets the range_start of this Comment.
+    @author.setter
+    def author(self, author):
+        """Sets the author of this Comment.
 
-        Gets or sets the link to comment range start node.  # noqa: E501
+        Gets or sets the author name for a comment.  # noqa: E501
 
-        :param range_start: The range_start of this Comment.  # noqa: E501
-        :type: DocumentPosition
+        :param author: The author of this Comment.  # noqa: E501
+        :type: str
         """
-        self._range_start = range_start
+        self._author = author
+
+    @property
+    def initial(self):
+        """Gets the initial of this Comment.  # noqa: E501
+
+        Gets or sets the initials of the user associated with a specific comment.  # noqa: E501
+
+        :return: The initial of this Comment.  # noqa: E501
+        :rtype: str
+        """
+        return self._initial
+
+    @initial.setter
+    def initial(self, initial):
+        """Sets the initial of this Comment.
+
+        Gets or sets the initials of the user associated with a specific comment.  # noqa: E501
+
+        :param initial: The initial of this Comment.  # noqa: E501
+        :type: str
+        """
+        self._initial = initial
+
+    @property
+    def date_time(self):
+        """Gets the date_time of this Comment.  # noqa: E501
+
+        Gets or sets the date and time that the comment was made.  # noqa: E501
+
+        :return: The date_time of this Comment.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._date_time
+
+    @date_time.setter
+    def date_time(self, date_time):
+        """Sets the date_time of this Comment.
+
+        Gets or sets the date and time that the comment was made.  # noqa: E501
+
+        :param date_time: The date_time of this Comment.  # noqa: E501
+        :type: datetime
+        """
+        self._date_time = date_time
 
     @property
     def text(self):
@@ -268,6 +246,28 @@ class Comment(object):
         :type: str
         """
         self._text = text
+
+    @property
+    def content(self):
+        """Gets the content of this Comment.  # noqa: E501
+
+        Gets or sets the content of the comment.  # noqa: E501
+
+        :return: The content of this Comment.  # noqa: E501
+        :rtype: StoryChildNodes
+        """
+        return self._content
+
+    @content.setter
+    def content(self, content):
+        """Sets the content of this Comment.
+
+        Gets or sets the content of the comment.  # noqa: E501
+
+        :param content: The content of this Comment.  # noqa: E501
+        :type: StoryChildNodes
+        """
+        self._content = content
 
 
     def extract_files_content(self, filesContentResult):

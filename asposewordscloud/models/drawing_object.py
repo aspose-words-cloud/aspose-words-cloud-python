@@ -44,47 +44,47 @@ class DrawingObject(object):
     swagger_types = {
         'link': 'WordsApiLink',
         'node_id': 'str',
-        'height': 'float',
-        'image_data_link': 'WordsApiLink',
-        'left': 'float',
-        'ole_data_link': 'WordsApiLink',
-        'relative_horizontal_position': 'str',
-        'relative_vertical_position': 'str',
         'render_links': 'list[WordsApiLink]',
-        'top': 'float',
         'width': 'float',
+        'height': 'float',
+        'ole_data_link': 'WordsApiLink',
+        'image_data_link': 'WordsApiLink',
+        'relative_horizontal_position': 'str',
+        'left': 'float',
+        'relative_vertical_position': 'str',
+        'top': 'float',
         'wrap_type': 'str'
     }
 
     attribute_map = {
         'link': 'Link',
         'node_id': 'NodeId',
-        'height': 'Height',
-        'image_data_link': 'ImageDataLink',
-        'left': 'Left',
-        'ole_data_link': 'OleDataLink',
-        'relative_horizontal_position': 'RelativeHorizontalPosition',
-        'relative_vertical_position': 'RelativeVerticalPosition',
         'render_links': 'RenderLinks',
-        'top': 'Top',
         'width': 'Width',
+        'height': 'Height',
+        'ole_data_link': 'OleDataLink',
+        'image_data_link': 'ImageDataLink',
+        'relative_horizontal_position': 'RelativeHorizontalPosition',
+        'left': 'Left',
+        'relative_vertical_position': 'RelativeVerticalPosition',
+        'top': 'Top',
         'wrap_type': 'WrapType'
     }
 
-    def __init__(self, link=None, node_id=None, height=None, image_data_link=None, left=None, ole_data_link=None, relative_horizontal_position=None, relative_vertical_position=None, render_links=None, top=None, width=None, wrap_type=None):  # noqa: E501
+    def __init__(self, link=None, node_id=None, render_links=None, width=None, height=None, ole_data_link=None, image_data_link=None, relative_horizontal_position=None, left=None, relative_vertical_position=None, top=None, wrap_type=None):  # noqa: E501
         """DrawingObject - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
         self._node_id = None
-        self._height = None
-        self._image_data_link = None
-        self._left = None
-        self._ole_data_link = None
-        self._relative_horizontal_position = None
-        self._relative_vertical_position = None
         self._render_links = None
-        self._top = None
         self._width = None
+        self._height = None
+        self._ole_data_link = None
+        self._image_data_link = None
+        self._relative_horizontal_position = None
+        self._left = None
+        self._relative_vertical_position = None
+        self._top = None
         self._wrap_type = None
         self.discriminator = None
 
@@ -92,24 +92,24 @@ class DrawingObject(object):
             self.link = link
         if node_id is not None:
             self.node_id = node_id
-        if height is not None:
-            self.height = height
-        if image_data_link is not None:
-            self.image_data_link = image_data_link
-        if left is not None:
-            self.left = left
-        if ole_data_link is not None:
-            self.ole_data_link = ole_data_link
-        if relative_horizontal_position is not None:
-            self.relative_horizontal_position = relative_horizontal_position
-        if relative_vertical_position is not None:
-            self.relative_vertical_position = relative_vertical_position
         if render_links is not None:
             self.render_links = render_links
-        if top is not None:
-            self.top = top
         if width is not None:
             self.width = width
+        if height is not None:
+            self.height = height
+        if ole_data_link is not None:
+            self.ole_data_link = ole_data_link
+        if image_data_link is not None:
+            self.image_data_link = image_data_link
+        if relative_horizontal_position is not None:
+            self.relative_horizontal_position = relative_horizontal_position
+        if left is not None:
+            self.left = left
+        if relative_vertical_position is not None:
+            self.relative_vertical_position = relative_vertical_position
+        if top is not None:
+            self.top = top
         if wrap_type is not None:
             self.wrap_type = wrap_type
 
@@ -158,6 +158,50 @@ class DrawingObject(object):
         self._node_id = node_id
 
     @property
+    def render_links(self):
+        """Gets the render_links of this DrawingObject.  # noqa: E501
+
+        Gets or sets the list of links that originate from this DrawingObjectDto.  # noqa: E501
+
+        :return: The render_links of this DrawingObject.  # noqa: E501
+        :rtype: list[WordsApiLink]
+        """
+        return self._render_links
+
+    @render_links.setter
+    def render_links(self, render_links):
+        """Sets the render_links of this DrawingObject.
+
+        Gets or sets the list of links that originate from this DrawingObjectDto.  # noqa: E501
+
+        :param render_links: The render_links of this DrawingObject.  # noqa: E501
+        :type: list[WordsApiLink]
+        """
+        self._render_links = render_links
+
+    @property
+    def width(self):
+        """Gets the width of this DrawingObject.  # noqa: E501
+
+        Gets or sets the width of the DrawingObjects in points.  # noqa: E501
+
+        :return: The width of this DrawingObject.  # noqa: E501
+        :rtype: float
+        """
+        return self._width
+
+    @width.setter
+    def width(self, width):
+        """Sets the width of this DrawingObject.
+
+        Gets or sets the width of the DrawingObjects in points.  # noqa: E501
+
+        :param width: The width of this DrawingObject.  # noqa: E501
+        :type: float
+        """
+        self._width = width
+
+    @property
     def height(self):
         """Gets the height of this DrawingObject.  # noqa: E501
 
@@ -180,50 +224,6 @@ class DrawingObject(object):
         self._height = height
 
     @property
-    def image_data_link(self):
-        """Gets the image_data_link of this DrawingObject.  # noqa: E501
-
-        Gets or sets the link to image data. Can be null if shape does not have an image.  # noqa: E501
-
-        :return: The image_data_link of this DrawingObject.  # noqa: E501
-        :rtype: WordsApiLink
-        """
-        return self._image_data_link
-
-    @image_data_link.setter
-    def image_data_link(self, image_data_link):
-        """Sets the image_data_link of this DrawingObject.
-
-        Gets or sets the link to image data. Can be null if shape does not have an image.  # noqa: E501
-
-        :param image_data_link: The image_data_link of this DrawingObject.  # noqa: E501
-        :type: WordsApiLink
-        """
-        self._image_data_link = image_data_link
-
-    @property
-    def left(self):
-        """Gets the left of this DrawingObject.  # noqa: E501
-
-        Gets or sets the distance in points from the origin to the left side of the image.  # noqa: E501
-
-        :return: The left of this DrawingObject.  # noqa: E501
-        :rtype: float
-        """
-        return self._left
-
-    @left.setter
-    def left(self, left):
-        """Sets the left of this DrawingObject.
-
-        Gets or sets the distance in points from the origin to the left side of the image.  # noqa: E501
-
-        :param left: The left of this DrawingObject.  # noqa: E501
-        :type: float
-        """
-        self._left = left
-
-    @property
     def ole_data_link(self):
         """Gets the ole_data_link of this DrawingObject.  # noqa: E501
 
@@ -244,6 +244,28 @@ class DrawingObject(object):
         :type: WordsApiLink
         """
         self._ole_data_link = ole_data_link
+
+    @property
+    def image_data_link(self):
+        """Gets the image_data_link of this DrawingObject.  # noqa: E501
+
+        Gets or sets the link to image data. Can be null if shape does not have an image.  # noqa: E501
+
+        :return: The image_data_link of this DrawingObject.  # noqa: E501
+        :rtype: WordsApiLink
+        """
+        return self._image_data_link
+
+    @image_data_link.setter
+    def image_data_link(self, image_data_link):
+        """Sets the image_data_link of this DrawingObject.
+
+        Gets or sets the link to image data. Can be null if shape does not have an image.  # noqa: E501
+
+        :param image_data_link: The image_data_link of this DrawingObject.  # noqa: E501
+        :type: WordsApiLink
+        """
+        self._image_data_link = image_data_link
 
     @property
     def relative_horizontal_position(self):
@@ -276,6 +298,28 @@ class DrawingObject(object):
             self._relative_horizontal_position = allowed_values[int(relative_horizontal_position) if six.PY3 else long(relative_horizontal_position)]
 
     @property
+    def left(self):
+        """Gets the left of this DrawingObject.  # noqa: E501
+
+        Gets or sets the distance in points from the origin to the left side of the image.  # noqa: E501
+
+        :return: The left of this DrawingObject.  # noqa: E501
+        :rtype: float
+        """
+        return self._left
+
+    @left.setter
+    def left(self, left):
+        """Sets the left of this DrawingObject.
+
+        Gets or sets the distance in points from the origin to the left side of the image.  # noqa: E501
+
+        :param left: The left of this DrawingObject.  # noqa: E501
+        :type: float
+        """
+        self._left = left
+
+    @property
     def relative_vertical_position(self):
         """Gets the relative_vertical_position of this DrawingObject.  # noqa: E501
 
@@ -306,28 +350,6 @@ class DrawingObject(object):
             self._relative_vertical_position = allowed_values[int(relative_vertical_position) if six.PY3 else long(relative_vertical_position)]
 
     @property
-    def render_links(self):
-        """Gets the render_links of this DrawingObject.  # noqa: E501
-
-        Gets or sets the list of links that originate from this DrawingObjectDto.  # noqa: E501
-
-        :return: The render_links of this DrawingObject.  # noqa: E501
-        :rtype: list[WordsApiLink]
-        """
-        return self._render_links
-
-    @render_links.setter
-    def render_links(self, render_links):
-        """Sets the render_links of this DrawingObject.
-
-        Gets or sets the list of links that originate from this DrawingObjectDto.  # noqa: E501
-
-        :param render_links: The render_links of this DrawingObject.  # noqa: E501
-        :type: list[WordsApiLink]
-        """
-        self._render_links = render_links
-
-    @property
     def top(self):
         """Gets the top of this DrawingObject.  # noqa: E501
 
@@ -348,28 +370,6 @@ class DrawingObject(object):
         :type: float
         """
         self._top = top
-
-    @property
-    def width(self):
-        """Gets the width of this DrawingObject.  # noqa: E501
-
-        Gets or sets the width of the DrawingObjects in points.  # noqa: E501
-
-        :return: The width of this DrawingObject.  # noqa: E501
-        :rtype: float
-        """
-        return self._width
-
-    @width.setter
-    def width(self, width):
-        """Sets the width of this DrawingObject.
-
-        Gets or sets the width of the DrawingObjects in points.  # noqa: E501
-
-        :param width: The width of this DrawingObject.  # noqa: E501
-        :type: float
-        """
-        self._width = width
 
     @property
     def wrap_type(self):

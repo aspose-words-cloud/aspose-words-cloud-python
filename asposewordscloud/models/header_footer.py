@@ -45,26 +45,26 @@ class HeaderFooter(object):
         'link': 'WordsApiLink',
         'type': 'str',
         'child_nodes': 'list[NodeLink]',
-        'drawing_objects': 'LinkElement',
-        'paragraphs': 'LinkElement'
+        'paragraphs': 'LinkElement',
+        'drawing_objects': 'LinkElement'
     }
 
     attribute_map = {
         'link': 'Link',
         'type': 'Type',
         'child_nodes': 'ChildNodes',
-        'drawing_objects': 'DrawingObjects',
-        'paragraphs': 'Paragraphs'
+        'paragraphs': 'Paragraphs',
+        'drawing_objects': 'DrawingObjects'
     }
 
-    def __init__(self, link=None, type=None, child_nodes=None, drawing_objects=None, paragraphs=None):  # noqa: E501
+    def __init__(self, link=None, type=None, child_nodes=None, paragraphs=None, drawing_objects=None):  # noqa: E501
         """HeaderFooter - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
         self._type = None
         self._child_nodes = None
-        self._drawing_objects = None
         self._paragraphs = None
+        self._drawing_objects = None
         self.discriminator = None
 
         if link is not None:
@@ -73,10 +73,10 @@ class HeaderFooter(object):
             self.type = type
         if child_nodes is not None:
             self.child_nodes = child_nodes
-        if drawing_objects is not None:
-            self.drawing_objects = drawing_objects
         if paragraphs is not None:
             self.paragraphs = paragraphs
+        if drawing_objects is not None:
+            self.drawing_objects = drawing_objects
 
     @property
     def link(self):
@@ -153,28 +153,6 @@ class HeaderFooter(object):
         self._child_nodes = child_nodes
 
     @property
-    def drawing_objects(self):
-        """Gets the drawing_objects of this HeaderFooter.  # noqa: E501
-
-        Gets or sets the link to DrawingObjects resource.  # noqa: E501
-
-        :return: The drawing_objects of this HeaderFooter.  # noqa: E501
-        :rtype: LinkElement
-        """
-        return self._drawing_objects
-
-    @drawing_objects.setter
-    def drawing_objects(self, drawing_objects):
-        """Sets the drawing_objects of this HeaderFooter.
-
-        Gets or sets the link to DrawingObjects resource.  # noqa: E501
-
-        :param drawing_objects: The drawing_objects of this HeaderFooter.  # noqa: E501
-        :type: LinkElement
-        """
-        self._drawing_objects = drawing_objects
-
-    @property
     def paragraphs(self):
         """Gets the paragraphs of this HeaderFooter.  # noqa: E501
 
@@ -195,6 +173,28 @@ class HeaderFooter(object):
         :type: LinkElement
         """
         self._paragraphs = paragraphs
+
+    @property
+    def drawing_objects(self):
+        """Gets the drawing_objects of this HeaderFooter.  # noqa: E501
+
+        Gets or sets the link to DrawingObjects resource.  # noqa: E501
+
+        :return: The drawing_objects of this HeaderFooter.  # noqa: E501
+        :rtype: LinkElement
+        """
+        return self._drawing_objects
+
+    @drawing_objects.setter
+    def drawing_objects(self, drawing_objects):
+        """Sets the drawing_objects of this HeaderFooter.
+
+        Gets or sets the link to DrawingObjects resource.  # noqa: E501
+
+        :param drawing_objects: The drawing_objects of this HeaderFooter.  # noqa: E501
+        :type: LinkElement
+        """
+        self._drawing_objects = drawing_objects
 
 
     def extract_files_content(self, filesContentResult):

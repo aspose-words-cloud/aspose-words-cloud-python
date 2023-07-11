@@ -62,8 +62,8 @@ class PsSaveOptionsData(object):
         'optimize_output': 'bool',
         'page_count': 'int',
         'page_index': 'int',
-        'save_format': 'str',
-        'use_book_fold_printing_settings': 'bool'
+        'use_book_fold_printing_settings': 'bool',
+        'save_format': 'str'
     }
 
     attribute_map = {
@@ -87,8 +87,8 @@ class PsSaveOptionsData(object):
         'optimize_output': 'OptimizeOutput',
         'page_count': 'PageCount',
         'page_index': 'PageIndex',
-        'save_format': 'SaveFormat',
-        'use_book_fold_printing_settings': 'UseBookFoldPrintingSettings'
+        'use_book_fold_printing_settings': 'UseBookFoldPrintingSettings',
+        'save_format': 'SaveFormat'
     }
 
     def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, use_book_fold_printing_settings=None):  # noqa: E501
@@ -114,8 +114,8 @@ class PsSaveOptionsData(object):
         self._optimize_output = None
         self._page_count = None
         self._page_index = None
-        self._save_format = "ps"
         self._use_book_fold_printing_settings = None
+        self._save_format = "ps"
         self.discriminator = None
 
         if allow_embedding_post_script_fonts is not None:
@@ -650,18 +650,6 @@ class PsSaveOptionsData(object):
         self._page_index = page_index
 
     @property
-    def save_format(self):
-        """Gets the save_format of this PsSaveOptionsData.  # noqa: E501
-
-        Gets the format of save.  # noqa: E501
-
-        :return: The save_format of this PsSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._save_format
-
-
-    @property
     def use_book_fold_printing_settings(self):
         """Gets the use_book_fold_printing_settings of this PsSaveOptionsData.  # noqa: E501
 
@@ -682,6 +670,18 @@ class PsSaveOptionsData(object):
         :type: bool
         """
         self._use_book_fold_printing_settings = use_book_fold_printing_settings
+
+    @property
+    def save_format(self):
+        """Gets the save_format of this PsSaveOptionsData.  # noqa: E501
+
+        Gets the format of save.  # noqa: E501
+
+        :return: The save_format of this PsSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._save_format
+
 
 
     def extract_files_content(self, filesContentResult):

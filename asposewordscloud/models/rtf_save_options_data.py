@@ -58,8 +58,8 @@ class RtfSaveOptionsData(object):
         'export_compact_size': 'bool',
         'export_images_for_old_readers': 'bool',
         'pretty_format': 'bool',
-        'save_format': 'str',
-        'save_images_as_wmf': 'bool'
+        'save_images_as_wmf': 'bool',
+        'save_format': 'str'
     }
 
     attribute_map = {
@@ -79,8 +79,8 @@ class RtfSaveOptionsData(object):
         'export_compact_size': 'ExportCompactSize',
         'export_images_for_old_readers': 'ExportImagesForOldReaders',
         'pretty_format': 'PrettyFormat',
-        'save_format': 'SaveFormat',
-        'save_images_as_wmf': 'SaveImagesAsWmf'
+        'save_images_as_wmf': 'SaveImagesAsWmf',
+        'save_format': 'SaveFormat'
     }
 
     def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, export_compact_size=None, export_images_for_old_readers=None, pretty_format=None, save_images_as_wmf=None):  # noqa: E501
@@ -102,8 +102,8 @@ class RtfSaveOptionsData(object):
         self._export_compact_size = None
         self._export_images_for_old_readers = None
         self._pretty_format = None
-        self._save_format = "rtf"
         self._save_images_as_wmf = None
+        self._save_format = "rtf"
         self.discriminator = None
 
         if allow_embedding_post_script_fonts is not None:
@@ -526,18 +526,6 @@ class RtfSaveOptionsData(object):
         self._pretty_format = pretty_format
 
     @property
-    def save_format(self):
-        """Gets the save_format of this RtfSaveOptionsData.  # noqa: E501
-
-        Gets the format of save.  # noqa: E501
-
-        :return: The save_format of this RtfSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._save_format
-
-
-    @property
     def save_images_as_wmf(self):
         """Gets the save_images_as_wmf of this RtfSaveOptionsData.  # noqa: E501
 
@@ -558,6 +546,18 @@ class RtfSaveOptionsData(object):
         :type: bool
         """
         self._save_images_as_wmf = save_images_as_wmf
+
+    @property
+    def save_format(self):
+        """Gets the save_format of this RtfSaveOptionsData.  # noqa: E501
+
+        Gets the format of save.  # noqa: E501
+
+        :return: The save_format of this RtfSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._save_format
+
 
 
     def extract_files_content(self, filesContentResult):

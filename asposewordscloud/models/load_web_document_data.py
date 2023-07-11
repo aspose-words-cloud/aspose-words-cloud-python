@@ -42,48 +42,26 @@ class LoadWebDocumentData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'loading_document_url': 'str',
-        'save_options': 'SaveOptionsData'
+        'save_options': 'SaveOptionsData',
+        'loading_document_url': 'str'
     }
 
     attribute_map = {
-        'loading_document_url': 'LoadingDocumentUrl',
-        'save_options': 'SaveOptions'
+        'save_options': 'SaveOptions',
+        'loading_document_url': 'LoadingDocumentUrl'
     }
 
-    def __init__(self, loading_document_url=None, save_options=None):  # noqa: E501
+    def __init__(self, save_options=None, loading_document_url=None):  # noqa: E501
         """LoadWebDocumentData - a model defined in Swagger"""  # noqa: E501
 
-        self._loading_document_url = None
         self._save_options = None
+        self._loading_document_url = None
         self.discriminator = None
 
-        if loading_document_url is not None:
-            self.loading_document_url = loading_document_url
         if save_options is not None:
             self.save_options = save_options
-
-    @property
-    def loading_document_url(self):
-        """Gets the loading_document_url of this LoadWebDocumentData.  # noqa: E501
-
-        Gets or sets the web document URL.  # noqa: E501
-
-        :return: The loading_document_url of this LoadWebDocumentData.  # noqa: E501
-        :rtype: str
-        """
-        return self._loading_document_url
-
-    @loading_document_url.setter
-    def loading_document_url(self, loading_document_url):
-        """Sets the loading_document_url of this LoadWebDocumentData.
-
-        Gets or sets the web document URL.  # noqa: E501
-
-        :param loading_document_url: The loading_document_url of this LoadWebDocumentData.  # noqa: E501
-        :type: str
-        """
-        self._loading_document_url = loading_document_url
+        if loading_document_url is not None:
+            self.loading_document_url = loading_document_url
 
     @property
     def save_options(self):
@@ -106,6 +84,28 @@ class LoadWebDocumentData(object):
         :type: SaveOptionsData
         """
         self._save_options = save_options
+
+    @property
+    def loading_document_url(self):
+        """Gets the loading_document_url of this LoadWebDocumentData.  # noqa: E501
+
+        Gets or sets the web document URL.  # noqa: E501
+
+        :return: The loading_document_url of this LoadWebDocumentData.  # noqa: E501
+        :rtype: str
+        """
+        return self._loading_document_url
+
+    @loading_document_url.setter
+    def loading_document_url(self, loading_document_url):
+        """Sets the loading_document_url of this LoadWebDocumentData.
+
+        Gets or sets the web document URL.  # noqa: E501
+
+        :param loading_document_url: The loading_document_url of this LoadWebDocumentData.  # noqa: E501
+        :type: str
+        """
+        self._loading_document_url = loading_document_url
 
 
     def extract_files_content(self, filesContentResult):

@@ -43,55 +43,55 @@ class ListInfo(object):
     """
     swagger_types = {
         'link': 'WordsApiLink',
-        'is_list_style_definition': 'bool',
-        'is_list_style_reference': 'bool',
+        'list_id': 'int',
         'is_multi_level': 'bool',
         'is_restart_at_each_section': 'bool',
-        'list_id': 'int',
-        'list_levels': 'ListLevels',
-        'style': 'Style'
+        'is_list_style_definition': 'bool',
+        'is_list_style_reference': 'bool',
+        'style': 'Style',
+        'list_levels': 'ListLevels'
     }
 
     attribute_map = {
         'link': 'Link',
-        'is_list_style_definition': 'IsListStyleDefinition',
-        'is_list_style_reference': 'IsListStyleReference',
+        'list_id': 'ListId',
         'is_multi_level': 'IsMultiLevel',
         'is_restart_at_each_section': 'IsRestartAtEachSection',
-        'list_id': 'ListId',
-        'list_levels': 'ListLevels',
-        'style': 'Style'
+        'is_list_style_definition': 'IsListStyleDefinition',
+        'is_list_style_reference': 'IsListStyleReference',
+        'style': 'Style',
+        'list_levels': 'ListLevels'
     }
 
-    def __init__(self, link=None, is_list_style_definition=None, is_list_style_reference=None, is_multi_level=None, is_restart_at_each_section=None, list_id=None, list_levels=None, style=None):  # noqa: E501
+    def __init__(self, link=None, list_id=None, is_multi_level=None, is_restart_at_each_section=None, is_list_style_definition=None, is_list_style_reference=None, style=None, list_levels=None):  # noqa: E501
         """ListInfo - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
-        self._is_list_style_definition = None
-        self._is_list_style_reference = None
+        self._list_id = None
         self._is_multi_level = None
         self._is_restart_at_each_section = None
-        self._list_id = None
-        self._list_levels = None
+        self._is_list_style_definition = None
+        self._is_list_style_reference = None
         self._style = None
+        self._list_levels = None
         self.discriminator = None
 
         if link is not None:
             self.link = link
-        if is_list_style_definition is not None:
-            self.is_list_style_definition = is_list_style_definition
-        if is_list_style_reference is not None:
-            self.is_list_style_reference = is_list_style_reference
+        if list_id is not None:
+            self.list_id = list_id
         if is_multi_level is not None:
             self.is_multi_level = is_multi_level
         if is_restart_at_each_section is not None:
             self.is_restart_at_each_section = is_restart_at_each_section
-        if list_id is not None:
-            self.list_id = list_id
-        if list_levels is not None:
-            self.list_levels = list_levels
+        if is_list_style_definition is not None:
+            self.is_list_style_definition = is_list_style_definition
+        if is_list_style_reference is not None:
+            self.is_list_style_reference = is_list_style_reference
         if style is not None:
             self.style = style
+        if list_levels is not None:
+            self.list_levels = list_levels
 
     @property
     def link(self):
@@ -116,48 +116,26 @@ class ListInfo(object):
         self._link = link
 
     @property
-    def is_list_style_definition(self):
-        """Gets the is_list_style_definition of this ListInfo.  # noqa: E501
+    def list_id(self):
+        """Gets the list_id of this ListInfo.  # noqa: E501
 
-        Gets or sets a value indicating whether this list is a definition of a list style.  # noqa: E501
+        Gets or sets the unique identifier of the list.  # noqa: E501
 
-        :return: The is_list_style_definition of this ListInfo.  # noqa: E501
-        :rtype: bool
+        :return: The list_id of this ListInfo.  # noqa: E501
+        :rtype: int
         """
-        return self._is_list_style_definition
+        return self._list_id
 
-    @is_list_style_definition.setter
-    def is_list_style_definition(self, is_list_style_definition):
-        """Sets the is_list_style_definition of this ListInfo.
+    @list_id.setter
+    def list_id(self, list_id):
+        """Sets the list_id of this ListInfo.
 
-        Gets or sets a value indicating whether this list is a definition of a list style.  # noqa: E501
+        Gets or sets the unique identifier of the list.  # noqa: E501
 
-        :param is_list_style_definition: The is_list_style_definition of this ListInfo.  # noqa: E501
-        :type: bool
+        :param list_id: The list_id of this ListInfo.  # noqa: E501
+        :type: int
         """
-        self._is_list_style_definition = is_list_style_definition
-
-    @property
-    def is_list_style_reference(self):
-        """Gets the is_list_style_reference of this ListInfo.  # noqa: E501
-
-        Gets or sets a value indicating whether this list is a reference to a list style.  # noqa: E501
-
-        :return: The is_list_style_reference of this ListInfo.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_list_style_reference
-
-    @is_list_style_reference.setter
-    def is_list_style_reference(self, is_list_style_reference):
-        """Sets the is_list_style_reference of this ListInfo.
-
-        Gets or sets a value indicating whether this list is a reference to a list style.  # noqa: E501
-
-        :param is_list_style_reference: The is_list_style_reference of this ListInfo.  # noqa: E501
-        :type: bool
-        """
-        self._is_list_style_reference = is_list_style_reference
+        self._list_id = list_id
 
     @property
     def is_multi_level(self):
@@ -204,48 +182,48 @@ class ListInfo(object):
         self._is_restart_at_each_section = is_restart_at_each_section
 
     @property
-    def list_id(self):
-        """Gets the list_id of this ListInfo.  # noqa: E501
+    def is_list_style_definition(self):
+        """Gets the is_list_style_definition of this ListInfo.  # noqa: E501
 
-        Gets or sets the unique identifier of the list.  # noqa: E501
+        Gets or sets a value indicating whether this list is a definition of a list style.  # noqa: E501
 
-        :return: The list_id of this ListInfo.  # noqa: E501
-        :rtype: int
+        :return: The is_list_style_definition of this ListInfo.  # noqa: E501
+        :rtype: bool
         """
-        return self._list_id
+        return self._is_list_style_definition
 
-    @list_id.setter
-    def list_id(self, list_id):
-        """Sets the list_id of this ListInfo.
+    @is_list_style_definition.setter
+    def is_list_style_definition(self, is_list_style_definition):
+        """Sets the is_list_style_definition of this ListInfo.
 
-        Gets or sets the unique identifier of the list.  # noqa: E501
+        Gets or sets a value indicating whether this list is a definition of a list style.  # noqa: E501
 
-        :param list_id: The list_id of this ListInfo.  # noqa: E501
-        :type: int
+        :param is_list_style_definition: The is_list_style_definition of this ListInfo.  # noqa: E501
+        :type: bool
         """
-        self._list_id = list_id
+        self._is_list_style_definition = is_list_style_definition
 
     @property
-    def list_levels(self):
-        """Gets the list_levels of this ListInfo.  # noqa: E501
+    def is_list_style_reference(self):
+        """Gets the is_list_style_reference of this ListInfo.  # noqa: E501
 
-        Gets or sets the collection of list levels for this list.  # noqa: E501
+        Gets or sets a value indicating whether this list is a reference to a list style.  # noqa: E501
 
-        :return: The list_levels of this ListInfo.  # noqa: E501
-        :rtype: ListLevels
+        :return: The is_list_style_reference of this ListInfo.  # noqa: E501
+        :rtype: bool
         """
-        return self._list_levels
+        return self._is_list_style_reference
 
-    @list_levels.setter
-    def list_levels(self, list_levels):
-        """Sets the list_levels of this ListInfo.
+    @is_list_style_reference.setter
+    def is_list_style_reference(self, is_list_style_reference):
+        """Sets the is_list_style_reference of this ListInfo.
 
-        Gets or sets the collection of list levels for this list.  # noqa: E501
+        Gets or sets a value indicating whether this list is a reference to a list style.  # noqa: E501
 
-        :param list_levels: The list_levels of this ListInfo.  # noqa: E501
-        :type: ListLevels
+        :param is_list_style_reference: The is_list_style_reference of this ListInfo.  # noqa: E501
+        :type: bool
         """
-        self._list_levels = list_levels
+        self._is_list_style_reference = is_list_style_reference
 
     @property
     def style(self):
@@ -268,6 +246,28 @@ class ListInfo(object):
         :type: Style
         """
         self._style = style
+
+    @property
+    def list_levels(self):
+        """Gets the list_levels of this ListInfo.  # noqa: E501
+
+        Gets or sets the collection of list levels for this list.  # noqa: E501
+
+        :return: The list_levels of this ListInfo.  # noqa: E501
+        :rtype: ListLevels
+        """
+        return self._list_levels
+
+    @list_levels.setter
+    def list_levels(self, list_levels):
+        """Sets the list_levels of this ListInfo.
+
+        Gets or sets the collection of list levels for this list.  # noqa: E501
+
+        :param list_levels: The list_levels of this ListInfo.  # noqa: E501
+        :type: ListLevels
+        """
+        self._list_levels = list_levels
 
 
     def extract_files_content(self, filesContentResult):
