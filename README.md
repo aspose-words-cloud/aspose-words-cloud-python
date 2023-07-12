@@ -18,6 +18,7 @@ Python Cloud SDK wraps Aspose.Words Cloud API so you could seamlessly integrate 
 
 ## Enhancements in Version 23.6
 
+- Fix XMLHttpRequest in web applications.
 
 
 ## Enhancements in Version 23.5
