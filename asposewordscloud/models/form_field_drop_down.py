@@ -44,15 +44,15 @@ class FormFieldDropDown(object):
     swagger_types = {
         'link': 'WordsApiLink',
         'node_id': 'str',
-        'calculate_on_exit': 'bool',
+        'name': 'str',
         'enabled': 'bool',
+        'status_text': 'str',
+        'own_status': 'bool',
+        'help_text': 'str',
+        'own_help': 'bool',
+        'calculate_on_exit': 'bool',
         'entry_macro': 'str',
         'exit_macro': 'str',
-        'help_text': 'str',
-        'name': 'str',
-        'own_help': 'bool',
-        'own_status': 'bool',
-        'status_text': 'str',
         'drop_down_items': 'list[str]',
         'drop_down_selected_index': 'int'
     }
@@ -60,33 +60,33 @@ class FormFieldDropDown(object):
     attribute_map = {
         'link': 'Link',
         'node_id': 'NodeId',
-        'calculate_on_exit': 'CalculateOnExit',
+        'name': 'Name',
         'enabled': 'Enabled',
+        'status_text': 'StatusText',
+        'own_status': 'OwnStatus',
+        'help_text': 'HelpText',
+        'own_help': 'OwnHelp',
+        'calculate_on_exit': 'CalculateOnExit',
         'entry_macro': 'EntryMacro',
         'exit_macro': 'ExitMacro',
-        'help_text': 'HelpText',
-        'name': 'Name',
-        'own_help': 'OwnHelp',
-        'own_status': 'OwnStatus',
-        'status_text': 'StatusText',
         'drop_down_items': 'DropDownItems',
         'drop_down_selected_index': 'DropDownSelectedIndex'
     }
 
-    def __init__(self, link=None, node_id=None, calculate_on_exit=None, enabled=None, entry_macro=None, exit_macro=None, help_text=None, name=None, own_help=None, own_status=None, status_text=None, drop_down_items=None, drop_down_selected_index=None):  # noqa: E501
+    def __init__(self, link=None, node_id=None, name=None, enabled=None, status_text=None, own_status=None, help_text=None, own_help=None, calculate_on_exit=None, entry_macro=None, exit_macro=None, drop_down_items=None, drop_down_selected_index=None):  # noqa: E501
         """FormFieldDropDown - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
         self._node_id = None
-        self._calculate_on_exit = None
+        self._name = None
         self._enabled = None
+        self._status_text = None
+        self._own_status = None
+        self._help_text = None
+        self._own_help = None
+        self._calculate_on_exit = None
         self._entry_macro = None
         self._exit_macro = None
-        self._help_text = None
-        self._name = None
-        self._own_help = None
-        self._own_status = None
-        self._status_text = None
         self._drop_down_items = None
         self._drop_down_selected_index = None
         self.discriminator = None
@@ -95,24 +95,24 @@ class FormFieldDropDown(object):
             self.link = link
         if node_id is not None:
             self.node_id = node_id
-        if calculate_on_exit is not None:
-            self.calculate_on_exit = calculate_on_exit
+        if name is not None:
+            self.name = name
         if enabled is not None:
             self.enabled = enabled
+        if status_text is not None:
+            self.status_text = status_text
+        if own_status is not None:
+            self.own_status = own_status
+        if help_text is not None:
+            self.help_text = help_text
+        if own_help is not None:
+            self.own_help = own_help
+        if calculate_on_exit is not None:
+            self.calculate_on_exit = calculate_on_exit
         if entry_macro is not None:
             self.entry_macro = entry_macro
         if exit_macro is not None:
             self.exit_macro = exit_macro
-        if help_text is not None:
-            self.help_text = help_text
-        if name is not None:
-            self.name = name
-        if own_help is not None:
-            self.own_help = own_help
-        if own_status is not None:
-            self.own_status = own_status
-        if status_text is not None:
-            self.status_text = status_text
         if drop_down_items is not None:
             self.drop_down_items = drop_down_items
         if drop_down_selected_index is not None:
@@ -163,26 +163,26 @@ class FormFieldDropDown(object):
         self._node_id = node_id
 
     @property
-    def calculate_on_exit(self):
-        """Gets the calculate_on_exit of this FormFieldDropDown.  # noqa: E501
+    def name(self):
+        """Gets the name of this FormFieldDropDown.  # noqa: E501
 
-        Gets or sets a value indicating whether references to the specified form field are automatically updated whenever the field is exited.  # noqa: E501
+        Gets or sets the form field name.  # noqa: E501
 
-        :return: The calculate_on_exit of this FormFieldDropDown.  # noqa: E501
-        :rtype: bool
+        :return: The name of this FormFieldDropDown.  # noqa: E501
+        :rtype: str
         """
-        return self._calculate_on_exit
+        return self._name
 
-    @calculate_on_exit.setter
-    def calculate_on_exit(self, calculate_on_exit):
-        """Sets the calculate_on_exit of this FormFieldDropDown.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this FormFieldDropDown.
 
-        Gets or sets a value indicating whether references to the specified form field are automatically updated whenever the field is exited.  # noqa: E501
+        Gets or sets the form field name.  # noqa: E501
 
-        :param calculate_on_exit: The calculate_on_exit of this FormFieldDropDown.  # noqa: E501
-        :type: bool
+        :param name: The name of this FormFieldDropDown.  # noqa: E501
+        :type: str
         """
-        self._calculate_on_exit = calculate_on_exit
+        self._name = name
 
     @property
     def enabled(self):
@@ -205,6 +205,116 @@ class FormFieldDropDown(object):
         :type: bool
         """
         self._enabled = enabled
+
+    @property
+    def status_text(self):
+        """Gets the status_text of this FormFieldDropDown.  # noqa: E501
+
+        Gets or sets text, displayed in the status bar when a form field has the focus.  # noqa: E501
+
+        :return: The status_text of this FormFieldDropDown.  # noqa: E501
+        :rtype: str
+        """
+        return self._status_text
+
+    @status_text.setter
+    def status_text(self, status_text):
+        """Sets the status_text of this FormFieldDropDown.
+
+        Gets or sets text, displayed in the status bar when a form field has the focus.  # noqa: E501
+
+        :param status_text: The status_text of this FormFieldDropDown.  # noqa: E501
+        :type: str
+        """
+        self._status_text = status_text
+
+    @property
+    def own_status(self):
+        """Gets the own_status of this FormFieldDropDown.  # noqa: E501
+
+        Gets or sets a value indicating whether the source of the text that's displayed in the status bar when a form field has the focus.  # noqa: E501
+
+        :return: The own_status of this FormFieldDropDown.  # noqa: E501
+        :rtype: bool
+        """
+        return self._own_status
+
+    @own_status.setter
+    def own_status(self, own_status):
+        """Sets the own_status of this FormFieldDropDown.
+
+        Gets or sets a value indicating whether the source of the text that's displayed in the status bar when a form field has the focus.  # noqa: E501
+
+        :param own_status: The own_status of this FormFieldDropDown.  # noqa: E501
+        :type: bool
+        """
+        self._own_status = own_status
+
+    @property
+    def help_text(self):
+        """Gets the help_text of this FormFieldDropDown.  # noqa: E501
+
+        Gets or sets text, displayed in a message box when the form field has the focus and the user presses F1.  # noqa: E501
+
+        :return: The help_text of this FormFieldDropDown.  # noqa: E501
+        :rtype: str
+        """
+        return self._help_text
+
+    @help_text.setter
+    def help_text(self, help_text):
+        """Sets the help_text of this FormFieldDropDown.
+
+        Gets or sets text, displayed in a message box when the form field has the focus and the user presses F1.  # noqa: E501
+
+        :param help_text: The help_text of this FormFieldDropDown.  # noqa: E501
+        :type: str
+        """
+        self._help_text = help_text
+
+    @property
+    def own_help(self):
+        """Gets the own_help of this FormFieldDropDown.  # noqa: E501
+
+        Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.  # noqa: E501
+
+        :return: The own_help of this FormFieldDropDown.  # noqa: E501
+        :rtype: bool
+        """
+        return self._own_help
+
+    @own_help.setter
+    def own_help(self, own_help):
+        """Sets the own_help of this FormFieldDropDown.
+
+        Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.  # noqa: E501
+
+        :param own_help: The own_help of this FormFieldDropDown.  # noqa: E501
+        :type: bool
+        """
+        self._own_help = own_help
+
+    @property
+    def calculate_on_exit(self):
+        """Gets the calculate_on_exit of this FormFieldDropDown.  # noqa: E501
+
+        Gets or sets a value indicating whether references to the specified form field are automatically updated whenever the field is exited.  # noqa: E501
+
+        :return: The calculate_on_exit of this FormFieldDropDown.  # noqa: E501
+        :rtype: bool
+        """
+        return self._calculate_on_exit
+
+    @calculate_on_exit.setter
+    def calculate_on_exit(self, calculate_on_exit):
+        """Sets the calculate_on_exit of this FormFieldDropDown.
+
+        Gets or sets a value indicating whether references to the specified form field are automatically updated whenever the field is exited.  # noqa: E501
+
+        :param calculate_on_exit: The calculate_on_exit of this FormFieldDropDown.  # noqa: E501
+        :type: bool
+        """
+        self._calculate_on_exit = calculate_on_exit
 
     @property
     def entry_macro(self):
@@ -249,116 +359,6 @@ class FormFieldDropDown(object):
         :type: str
         """
         self._exit_macro = exit_macro
-
-    @property
-    def help_text(self):
-        """Gets the help_text of this FormFieldDropDown.  # noqa: E501
-
-        Gets or sets text, displayed in a message box when the form field has the focus and the user presses F1.  # noqa: E501
-
-        :return: The help_text of this FormFieldDropDown.  # noqa: E501
-        :rtype: str
-        """
-        return self._help_text
-
-    @help_text.setter
-    def help_text(self, help_text):
-        """Sets the help_text of this FormFieldDropDown.
-
-        Gets or sets text, displayed in a message box when the form field has the focus and the user presses F1.  # noqa: E501
-
-        :param help_text: The help_text of this FormFieldDropDown.  # noqa: E501
-        :type: str
-        """
-        self._help_text = help_text
-
-    @property
-    def name(self):
-        """Gets the name of this FormFieldDropDown.  # noqa: E501
-
-        Gets or sets the form field name.  # noqa: E501
-
-        :return: The name of this FormFieldDropDown.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this FormFieldDropDown.
-
-        Gets or sets the form field name.  # noqa: E501
-
-        :param name: The name of this FormFieldDropDown.  # noqa: E501
-        :type: str
-        """
-        self._name = name
-
-    @property
-    def own_help(self):
-        """Gets the own_help of this FormFieldDropDown.  # noqa: E501
-
-        Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.  # noqa: E501
-
-        :return: The own_help of this FormFieldDropDown.  # noqa: E501
-        :rtype: bool
-        """
-        return self._own_help
-
-    @own_help.setter
-    def own_help(self, own_help):
-        """Sets the own_help of this FormFieldDropDown.
-
-        Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.  # noqa: E501
-
-        :param own_help: The own_help of this FormFieldDropDown.  # noqa: E501
-        :type: bool
-        """
-        self._own_help = own_help
-
-    @property
-    def own_status(self):
-        """Gets the own_status of this FormFieldDropDown.  # noqa: E501
-
-        Gets or sets a value indicating whether the source of the text that's displayed in the status bar when a form field has the focus.  # noqa: E501
-
-        :return: The own_status of this FormFieldDropDown.  # noqa: E501
-        :rtype: bool
-        """
-        return self._own_status
-
-    @own_status.setter
-    def own_status(self, own_status):
-        """Sets the own_status of this FormFieldDropDown.
-
-        Gets or sets a value indicating whether the source of the text that's displayed in the status bar when a form field has the focus.  # noqa: E501
-
-        :param own_status: The own_status of this FormFieldDropDown.  # noqa: E501
-        :type: bool
-        """
-        self._own_status = own_status
-
-    @property
-    def status_text(self):
-        """Gets the status_text of this FormFieldDropDown.  # noqa: E501
-
-        Gets or sets text, displayed in the status bar when a form field has the focus.  # noqa: E501
-
-        :return: The status_text of this FormFieldDropDown.  # noqa: E501
-        :rtype: str
-        """
-        return self._status_text
-
-    @status_text.setter
-    def status_text(self, status_text):
-        """Sets the status_text of this FormFieldDropDown.
-
-        Gets or sets text, displayed in the status bar when a form field has the focus.  # noqa: E501
-
-        :param status_text: The status_text of this FormFieldDropDown.  # noqa: E501
-        :type: str
-        """
-        self._status_text = status_text
 
     @property
     def drop_down_items(self):

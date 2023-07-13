@@ -43,35 +43,35 @@ class DocumentProperty(object):
     """
     swagger_types = {
         'link': 'WordsApiLink',
-        'built_in': 'bool',
         'name': 'str',
-        'value': 'str'
+        'value': 'str',
+        'built_in': 'bool'
     }
 
     attribute_map = {
         'link': 'Link',
-        'built_in': 'BuiltIn',
         'name': 'Name',
-        'value': 'Value'
+        'value': 'Value',
+        'built_in': 'BuiltIn'
     }
 
-    def __init__(self, link=None, built_in=None, name=None, value=None):  # noqa: E501
+    def __init__(self, link=None, name=None, value=None, built_in=None):  # noqa: E501
         """DocumentProperty - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
-        self._built_in = None
         self._name = None
         self._value = None
+        self._built_in = None
         self.discriminator = None
 
         if link is not None:
             self.link = link
-        if built_in is not None:
-            self.built_in = built_in
         if name is not None:
             self.name = name
         if value is not None:
             self.value = value
+        if built_in is not None:
+            self.built_in = built_in
 
     @property
     def link(self):
@@ -94,28 +94,6 @@ class DocumentProperty(object):
         :type: WordsApiLink
         """
         self._link = link
-
-    @property
-    def built_in(self):
-        """Gets the built_in of this DocumentProperty.  # noqa: E501
-
-        Gets or sets a value indicating whether the property is built-in or not. If true the property is built-in, if false the property is custom.  # noqa: E501
-
-        :return: The built_in of this DocumentProperty.  # noqa: E501
-        :rtype: bool
-        """
-        return self._built_in
-
-    @built_in.setter
-    def built_in(self, built_in):
-        """Sets the built_in of this DocumentProperty.
-
-        Gets or sets a value indicating whether the property is built-in or not. If true the property is built-in, if false the property is custom.  # noqa: E501
-
-        :param built_in: The built_in of this DocumentProperty.  # noqa: E501
-        :type: bool
-        """
-        self._built_in = built_in
 
     @property
     def name(self):
@@ -160,6 +138,28 @@ class DocumentProperty(object):
         :type: str
         """
         self._value = value
+
+    @property
+    def built_in(self):
+        """Gets the built_in of this DocumentProperty.  # noqa: E501
+
+        Gets or sets a value indicating whether the property is built-in or not. If true the property is built-in, if false the property is custom.  # noqa: E501
+
+        :return: The built_in of this DocumentProperty.  # noqa: E501
+        :rtype: bool
+        """
+        return self._built_in
+
+    @built_in.setter
+    def built_in(self, built_in):
+        """Sets the built_in of this DocumentProperty.
+
+        Gets or sets a value indicating whether the property is built-in or not. If true the property is built-in, if false the property is custom.  # noqa: E501
+
+        :param built_in: The built_in of this DocumentProperty.  # noqa: E501
+        :type: bool
+        """
+        self._built_in = built_in
 
 
     def extract_files_content(self, filesContentResult):

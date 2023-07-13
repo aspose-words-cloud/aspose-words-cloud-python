@@ -43,35 +43,35 @@ class PageStatData(object):
     """
     swagger_types = {
         'footnotes_stat_data': 'FootnotesStatData',
-        'page_number': 'int',
         'paragraph_count': 'int',
-        'word_count': 'int'
+        'word_count': 'int',
+        'page_number': 'int'
     }
 
     attribute_map = {
         'footnotes_stat_data': 'FootnotesStatData',
-        'page_number': 'PageNumber',
         'paragraph_count': 'ParagraphCount',
-        'word_count': 'WordCount'
+        'word_count': 'WordCount',
+        'page_number': 'PageNumber'
     }
 
-    def __init__(self, footnotes_stat_data=None, page_number=None, paragraph_count=None, word_count=None):  # noqa: E501
+    def __init__(self, footnotes_stat_data=None, paragraph_count=None, word_count=None, page_number=None):  # noqa: E501
         """PageStatData - a model defined in Swagger"""  # noqa: E501
 
         self._footnotes_stat_data = None
-        self._page_number = None
         self._paragraph_count = None
         self._word_count = None
+        self._page_number = None
         self.discriminator = None
 
         if footnotes_stat_data is not None:
             self.footnotes_stat_data = footnotes_stat_data
-        if page_number is not None:
-            self.page_number = page_number
         if paragraph_count is not None:
             self.paragraph_count = paragraph_count
         if word_count is not None:
             self.word_count = word_count
+        if page_number is not None:
+            self.page_number = page_number
 
     @property
     def footnotes_stat_data(self):
@@ -94,28 +94,6 @@ class PageStatData(object):
         :type: FootnotesStatData
         """
         self._footnotes_stat_data = footnotes_stat_data
-
-    @property
-    def page_number(self):
-        """Gets the page_number of this PageStatData.  # noqa: E501
-
-        Gets or sets the page number.  # noqa: E501
-
-        :return: The page_number of this PageStatData.  # noqa: E501
-        :rtype: int
-        """
-        return self._page_number
-
-    @page_number.setter
-    def page_number(self, page_number):
-        """Sets the page_number of this PageStatData.
-
-        Gets or sets the page number.  # noqa: E501
-
-        :param page_number: The page_number of this PageStatData.  # noqa: E501
-        :type: int
-        """
-        self._page_number = page_number
 
     @property
     def paragraph_count(self):
@@ -160,6 +138,28 @@ class PageStatData(object):
         :type: int
         """
         self._word_count = word_count
+
+    @property
+    def page_number(self):
+        """Gets the page_number of this PageStatData.  # noqa: E501
+
+        Gets or sets the page number.  # noqa: E501
+
+        :return: The page_number of this PageStatData.  # noqa: E501
+        :rtype: int
+        """
+        return self._page_number
+
+    @page_number.setter
+    def page_number(self, page_number):
+        """Sets the page_number of this PageStatData.
+
+        Gets or sets the page number.  # noqa: E501
+
+        :param page_number: The page_number of this PageStatData.  # noqa: E501
+        :type: int
+        """
+        self._page_number = page_number
 
 
     def extract_files_content(self, filesContentResult):

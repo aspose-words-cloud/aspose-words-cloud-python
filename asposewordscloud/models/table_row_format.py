@@ -43,40 +43,40 @@ class TableRowFormat(object):
     """
     swagger_types = {
         'link': 'WordsApiLink',
-        'allow_break_across_pages': 'bool',
-        'heading_format': 'bool',
         'height': 'float',
-        'height_rule': 'str'
+        'height_rule': 'str',
+        'allow_break_across_pages': 'bool',
+        'heading_format': 'bool'
     }
 
     attribute_map = {
         'link': 'Link',
-        'allow_break_across_pages': 'AllowBreakAcrossPages',
-        'heading_format': 'HeadingFormat',
         'height': 'Height',
-        'height_rule': 'HeightRule'
+        'height_rule': 'HeightRule',
+        'allow_break_across_pages': 'AllowBreakAcrossPages',
+        'heading_format': 'HeadingFormat'
     }
 
-    def __init__(self, link=None, allow_break_across_pages=None, heading_format=None, height=None, height_rule=None):  # noqa: E501
+    def __init__(self, link=None, height=None, height_rule=None, allow_break_across_pages=None, heading_format=None):  # noqa: E501
         """TableRowFormat - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
-        self._allow_break_across_pages = None
-        self._heading_format = None
         self._height = None
         self._height_rule = None
+        self._allow_break_across_pages = None
+        self._heading_format = None
         self.discriminator = None
 
         if link is not None:
             self.link = link
-        if allow_break_across_pages is not None:
-            self.allow_break_across_pages = allow_break_across_pages
-        if heading_format is not None:
-            self.heading_format = heading_format
         if height is not None:
             self.height = height
         if height_rule is not None:
             self.height_rule = height_rule
+        if allow_break_across_pages is not None:
+            self.allow_break_across_pages = allow_break_across_pages
+        if heading_format is not None:
+            self.heading_format = heading_format
 
     @property
     def link(self):
@@ -99,50 +99,6 @@ class TableRowFormat(object):
         :type: WordsApiLink
         """
         self._link = link
-
-    @property
-    def allow_break_across_pages(self):
-        """Gets the allow_break_across_pages of this TableRowFormat.  # noqa: E501
-
-        Gets or sets a value indicating whether the text in a table row is allowed to split across a page break.  # noqa: E501
-
-        :return: The allow_break_across_pages of this TableRowFormat.  # noqa: E501
-        :rtype: bool
-        """
-        return self._allow_break_across_pages
-
-    @allow_break_across_pages.setter
-    def allow_break_across_pages(self, allow_break_across_pages):
-        """Sets the allow_break_across_pages of this TableRowFormat.
-
-        Gets or sets a value indicating whether the text in a table row is allowed to split across a page break.  # noqa: E501
-
-        :param allow_break_across_pages: The allow_break_across_pages of this TableRowFormat.  # noqa: E501
-        :type: bool
-        """
-        self._allow_break_across_pages = allow_break_across_pages
-
-    @property
-    def heading_format(self):
-        """Gets the heading_format of this TableRowFormat.  # noqa: E501
-
-        Gets or sets a value indicating whether the row is repeated as a table heading on every page when the table spans more than one page.  # noqa: E501
-
-        :return: The heading_format of this TableRowFormat.  # noqa: E501
-        :rtype: bool
-        """
-        return self._heading_format
-
-    @heading_format.setter
-    def heading_format(self, heading_format):
-        """Sets the heading_format of this TableRowFormat.
-
-        Gets or sets a value indicating whether the row is repeated as a table heading on every page when the table spans more than one page.  # noqa: E501
-
-        :param heading_format: The heading_format of this TableRowFormat.  # noqa: E501
-        :type: bool
-        """
-        self._heading_format = heading_format
 
     @property
     def height(self):
@@ -195,6 +151,50 @@ class TableRowFormat(object):
             self._height_rule = height_rule
         else:
             self._height_rule = allowed_values[int(height_rule) if six.PY3 else long(height_rule)]
+
+    @property
+    def allow_break_across_pages(self):
+        """Gets the allow_break_across_pages of this TableRowFormat.  # noqa: E501
+
+        Gets or sets a value indicating whether the text in a table row is allowed to split across a page break.  # noqa: E501
+
+        :return: The allow_break_across_pages of this TableRowFormat.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_break_across_pages
+
+    @allow_break_across_pages.setter
+    def allow_break_across_pages(self, allow_break_across_pages):
+        """Sets the allow_break_across_pages of this TableRowFormat.
+
+        Gets or sets a value indicating whether the text in a table row is allowed to split across a page break.  # noqa: E501
+
+        :param allow_break_across_pages: The allow_break_across_pages of this TableRowFormat.  # noqa: E501
+        :type: bool
+        """
+        self._allow_break_across_pages = allow_break_across_pages
+
+    @property
+    def heading_format(self):
+        """Gets the heading_format of this TableRowFormat.  # noqa: E501
+
+        Gets or sets a value indicating whether the row is repeated as a table heading on every page when the table spans more than one page.  # noqa: E501
+
+        :return: The heading_format of this TableRowFormat.  # noqa: E501
+        :rtype: bool
+        """
+        return self._heading_format
+
+    @heading_format.setter
+    def heading_format(self, heading_format):
+        """Sets the heading_format of this TableRowFormat.
+
+        Gets or sets a value indicating whether the row is repeated as a table heading on every page when the table spans more than one page.  # noqa: E501
+
+        :param heading_format: The heading_format of this TableRowFormat.  # noqa: E501
+        :type: bool
+        """
+        self._heading_format = heading_format
 
 
     def extract_files_content(self, filesContentResult):

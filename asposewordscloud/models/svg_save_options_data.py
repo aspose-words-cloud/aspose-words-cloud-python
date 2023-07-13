@@ -66,9 +66,9 @@ class SvgSaveOptionsData(object):
         'fit_to_view_port': 'bool',
         'resources_folder': 'str',
         'resources_folder_alias': 'str',
-        'save_format': 'str',
         'show_page_border': 'bool',
-        'text_output_mode': 'str'
+        'text_output_mode': 'str',
+        'save_format': 'str'
     }
 
     attribute_map = {
@@ -96,9 +96,9 @@ class SvgSaveOptionsData(object):
         'fit_to_view_port': 'FitToViewPort',
         'resources_folder': 'ResourcesFolder',
         'resources_folder_alias': 'ResourcesFolderAlias',
-        'save_format': 'SaveFormat',
         'show_page_border': 'ShowPageBorder',
-        'text_output_mode': 'TextOutputMode'
+        'text_output_mode': 'TextOutputMode',
+        'save_format': 'SaveFormat'
     }
 
     def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, export_embedded_images=None, fit_to_view_port=None, resources_folder=None, resources_folder_alias=None, show_page_border=None, text_output_mode=None):  # noqa: E501
@@ -128,9 +128,9 @@ class SvgSaveOptionsData(object):
         self._fit_to_view_port = None
         self._resources_folder = None
         self._resources_folder_alias = None
-        self._save_format = "svg"
         self._show_page_border = None
         self._text_output_mode = None
+        self._save_format = "svg"
         self.discriminator = None
 
         if allow_embedding_post_script_fonts is not None:
@@ -763,18 +763,6 @@ class SvgSaveOptionsData(object):
         self._resources_folder_alias = resources_folder_alias
 
     @property
-    def save_format(self):
-        """Gets the save_format of this SvgSaveOptionsData.  # noqa: E501
-
-        Gets the format of save.  # noqa: E501
-
-        :return: The save_format of this SvgSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._save_format
-
-
-    @property
     def show_page_border(self):
         """Gets the show_page_border of this SvgSaveOptionsData.  # noqa: E501
 
@@ -825,6 +813,18 @@ class SvgSaveOptionsData(object):
             self._text_output_mode = text_output_mode
         else:
             self._text_output_mode = allowed_values[int(text_output_mode) if six.PY3 else long(text_output_mode)]
+
+    @property
+    def save_format(self):
+        """Gets the save_format of this SvgSaveOptionsData.  # noqa: E501
+
+        Gets the format of save.  # noqa: E501
+
+        :return: The save_format of this SvgSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._save_format
+
 
 
     def extract_files_content(self, filesContentResult):

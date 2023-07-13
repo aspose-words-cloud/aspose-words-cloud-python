@@ -42,53 +42,31 @@ class SaveResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'additional_items': 'list[FileLink]',
         'dest_document': 'FileLink',
-        'source_document': 'FileLink'
+        'source_document': 'FileLink',
+        'additional_items': 'list[FileLink]'
     }
 
     attribute_map = {
-        'additional_items': 'AdditionalItems',
         'dest_document': 'DestDocument',
-        'source_document': 'SourceDocument'
+        'source_document': 'SourceDocument',
+        'additional_items': 'AdditionalItems'
     }
 
-    def __init__(self, additional_items=None, dest_document=None, source_document=None):  # noqa: E501
+    def __init__(self, dest_document=None, source_document=None, additional_items=None):  # noqa: E501
         """SaveResult - a model defined in Swagger"""  # noqa: E501
 
-        self._additional_items = None
         self._dest_document = None
         self._source_document = None
+        self._additional_items = None
         self.discriminator = None
 
-        if additional_items is not None:
-            self.additional_items = additional_items
         if dest_document is not None:
             self.dest_document = dest_document
         if source_document is not None:
             self.source_document = source_document
-
-    @property
-    def additional_items(self):
-        """Gets the additional_items of this SaveResult.  # noqa: E501
-
-        Gets or sets the list of links to additional items (css, images etc).  # noqa: E501
-
-        :return: The additional_items of this SaveResult.  # noqa: E501
-        :rtype: list[FileLink]
-        """
-        return self._additional_items
-
-    @additional_items.setter
-    def additional_items(self, additional_items):
-        """Sets the additional_items of this SaveResult.
-
-        Gets or sets the list of links to additional items (css, images etc).  # noqa: E501
-
-        :param additional_items: The additional_items of this SaveResult.  # noqa: E501
-        :type: list[FileLink]
-        """
-        self._additional_items = additional_items
+        if additional_items is not None:
+            self.additional_items = additional_items
 
     @property
     def dest_document(self):
@@ -133,6 +111,28 @@ class SaveResult(object):
         :type: FileLink
         """
         self._source_document = source_document
+
+    @property
+    def additional_items(self):
+        """Gets the additional_items of this SaveResult.  # noqa: E501
+
+        Gets or sets the list of links to additional items (css, images etc).  # noqa: E501
+
+        :return: The additional_items of this SaveResult.  # noqa: E501
+        :rtype: list[FileLink]
+        """
+        return self._additional_items
+
+    @additional_items.setter
+    def additional_items(self, additional_items):
+        """Sets the additional_items of this SaveResult.
+
+        Gets or sets the list of links to additional items (css, images etc).  # noqa: E501
+
+        :param additional_items: The additional_items of this SaveResult.  # noqa: E501
+        :type: list[FileLink]
+        """
+        self._additional_items = additional_items
 
 
     def extract_files_content(self, filesContentResult):

@@ -74,9 +74,9 @@ class HtmlFixedSaveOptionsData(object):
         'resources_folder': 'str',
         'resources_folder_alias': 'str',
         'save_font_face_css_separately': 'bool',
-        'save_format': 'str',
         'show_page_border': 'bool',
-        'use_target_machine_fonts': 'bool'
+        'use_target_machine_fonts': 'bool',
+        'save_format': 'str'
     }
 
     attribute_map = {
@@ -112,9 +112,9 @@ class HtmlFixedSaveOptionsData(object):
         'resources_folder': 'ResourcesFolder',
         'resources_folder_alias': 'ResourcesFolderAlias',
         'save_font_face_css_separately': 'SaveFontFaceCssSeparately',
-        'save_format': 'SaveFormat',
         'show_page_border': 'ShowPageBorder',
-        'use_target_machine_fonts': 'UseTargetMachineFonts'
+        'use_target_machine_fonts': 'UseTargetMachineFonts',
+        'save_format': 'SaveFormat'
     }
 
     def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, css_class_names_prefix=None, encoding=None, export_embedded_css=None, export_embedded_fonts=None, export_embedded_images=None, export_form_fields=None, font_format=None, page_horizontal_alignment=None, page_margins=None, resources_folder=None, resources_folder_alias=None, save_font_face_css_separately=None, show_page_border=None, use_target_machine_fonts=None):  # noqa: E501
@@ -152,9 +152,9 @@ class HtmlFixedSaveOptionsData(object):
         self._resources_folder = None
         self._resources_folder_alias = None
         self._save_font_face_css_separately = None
-        self._save_format = "htmlfixed"
         self._show_page_border = None
         self._use_target_machine_fonts = None
+        self._save_format = "htmlfixed"
         self.discriminator = None
 
         if allow_embedding_post_script_fonts is not None:
@@ -995,18 +995,6 @@ class HtmlFixedSaveOptionsData(object):
         self._save_font_face_css_separately = save_font_face_css_separately
 
     @property
-    def save_format(self):
-        """Gets the save_format of this HtmlFixedSaveOptionsData.  # noqa: E501
-
-        Gets the format of save.  # noqa: E501
-
-        :return: The save_format of this HtmlFixedSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._save_format
-
-
-    @property
     def show_page_border(self):
         """Gets the show_page_border of this HtmlFixedSaveOptionsData.  # noqa: E501
 
@@ -1049,6 +1037,18 @@ class HtmlFixedSaveOptionsData(object):
         :type: bool
         """
         self._use_target_machine_fonts = use_target_machine_fonts
+
+    @property
+    def save_format(self):
+        """Gets the save_format of this HtmlFixedSaveOptionsData.  # noqa: E501
+
+        Gets the format of save.  # noqa: E501
+
+        :return: The save_format of this HtmlFixedSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._save_format
+
 
 
     def extract_files_content(self, filesContentResult):

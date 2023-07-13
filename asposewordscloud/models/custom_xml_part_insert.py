@@ -43,30 +43,30 @@ class CustomXmlPartInsert(object):
     """
     swagger_types = {
         'link': 'WordsApiLink',
-        'data': 'str',
-        'id': 'str'
+        'id': 'str',
+        'data': 'str'
     }
 
     attribute_map = {
         'link': 'Link',
-        'data': 'Data',
-        'id': 'Id'
+        'id': 'Id',
+        'data': 'Data'
     }
 
-    def __init__(self, link=None, data=None, id=None):  # noqa: E501
+    def __init__(self, link=None, id=None, data=None):  # noqa: E501
         """CustomXmlPartInsert - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
-        self._data = None
         self._id = None
+        self._data = None
         self.discriminator = None
 
         if link is not None:
             self.link = link
-        if data is not None:
-            self.data = data
         if id is not None:
             self.id = id
+        if data is not None:
+            self.data = data
 
     @property
     def link(self):
@@ -91,28 +91,6 @@ class CustomXmlPartInsert(object):
         self._link = link
 
     @property
-    def data(self):
-        """Gets the data of this CustomXmlPartInsert.  # noqa: E501
-
-        Gets or sets the custom xml part data.  # noqa: E501
-
-        :return: The data of this CustomXmlPartInsert.  # noqa: E501
-        :rtype: str
-        """
-        return self._data
-
-    @data.setter
-    def data(self, data):
-        """Sets the data of this CustomXmlPartInsert.
-
-        Gets or sets the custom xml part data.  # noqa: E501
-
-        :param data: The data of this CustomXmlPartInsert.  # noqa: E501
-        :type: str
-        """
-        self._data = data
-
-    @property
     def id(self):
         """Gets the id of this CustomXmlPartInsert.  # noqa: E501
 
@@ -133,6 +111,28 @@ class CustomXmlPartInsert(object):
         :type: str
         """
         self._id = id
+
+    @property
+    def data(self):
+        """Gets the data of this CustomXmlPartInsert.  # noqa: E501
+
+        Gets or sets the custom xml part data.  # noqa: E501
+
+        :return: The data of this CustomXmlPartInsert.  # noqa: E501
+        :rtype: str
+        """
+        return self._data
+
+    @data.setter
+    def data(self, data):
+        """Sets the data of this CustomXmlPartInsert.
+
+        Gets or sets the custom xml part data.  # noqa: E501
+
+        :param data: The data of this CustomXmlPartInsert.  # noqa: E501
+        :type: str
+        """
+        self._data = data
 
 
     def extract_files_content(self, filesContentResult):

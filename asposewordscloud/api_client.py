@@ -83,12 +83,12 @@ class ApiClient(object):
 
         self.pool = None
         self.rest_client = rest.RESTClientObject(configuration)
-        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '23.5'}
+        self.default_headers = {'x-aspose-client': 'python sdk', 'x-aspose-version': '23.6'}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'python sdk 23.5'
+        self.user_agent = 'python sdk 23.6'
 
     def __del__(self):
         if not self.pool is None:
@@ -110,7 +110,7 @@ class ApiClient(object):
 
     def request_token(self):
         config = self.configuration
-        request_url = "/connect/token"
+        request_url = "/v4.0/words/connect/token"
         body = 'grant_type=client_credentials&client_id=' + config.client_secret['client_id'] + '&client_secret=' + config.client_secret['client_secret']
 
         header_params = {'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded'}

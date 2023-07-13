@@ -132,7 +132,15 @@ class DocumentEntry(object):
         :param import_format_mode: The import_format_mode of this DocumentEntry.  # noqa: E501
         :type: str
         """
-        self._import_format_mode = import_format_mode
+        allowed_values = ["UseDestinationStyles", "KeepSourceFormatting", "KeepDifferentStyles"]  # noqa: E501
+        if not import_format_mode.isdigit():
+            if import_format_mode not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `import_format_mode` ({0}), must be one of {1}"  # noqa: E501
+                    .format(import_format_mode, allowed_values))
+            self._import_format_mode = import_format_mode
+        else:
+            self._import_format_mode = allowed_values[int(import_format_mode) if six.PY3 else long(import_format_mode)]
 
 
     def extract_files_content(self, filesContentResult):

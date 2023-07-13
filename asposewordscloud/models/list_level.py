@@ -43,80 +43,80 @@ class ListLevel(object):
     """
     swagger_types = {
         'link': 'WordsApiLink',
-        'alignment': 'str',
-        'font': 'Font',
-        'is_legal': 'bool',
-        'linked_style': 'Style',
-        'number_format': 'str',
-        'number_position': 'float',
-        'number_style': 'str',
-        'restart_after_level': 'int',
         'start_at': 'int',
+        'number_style': 'str',
+        'number_format': 'str',
+        'alignment': 'str',
+        'is_legal': 'bool',
+        'restart_after_level': 'int',
+        'trailing_character': 'str',
+        'font': 'Font',
         'tab_position': 'float',
+        'number_position': 'float',
         'text_position': 'float',
-        'trailing_character': 'str'
+        'linked_style': 'Style'
     }
 
     attribute_map = {
         'link': 'Link',
-        'alignment': 'Alignment',
-        'font': 'Font',
-        'is_legal': 'IsLegal',
-        'linked_style': 'LinkedStyle',
-        'number_format': 'NumberFormat',
-        'number_position': 'NumberPosition',
-        'number_style': 'NumberStyle',
-        'restart_after_level': 'RestartAfterLevel',
         'start_at': 'StartAt',
+        'number_style': 'NumberStyle',
+        'number_format': 'NumberFormat',
+        'alignment': 'Alignment',
+        'is_legal': 'IsLegal',
+        'restart_after_level': 'RestartAfterLevel',
+        'trailing_character': 'TrailingCharacter',
+        'font': 'Font',
         'tab_position': 'TabPosition',
+        'number_position': 'NumberPosition',
         'text_position': 'TextPosition',
-        'trailing_character': 'TrailingCharacter'
+        'linked_style': 'LinkedStyle'
     }
 
-    def __init__(self, link=None, alignment=None, font=None, is_legal=None, linked_style=None, number_format=None, number_position=None, number_style=None, restart_after_level=None, start_at=None, tab_position=None, text_position=None, trailing_character=None):  # noqa: E501
+    def __init__(self, link=None, start_at=None, number_style=None, number_format=None, alignment=None, is_legal=None, restart_after_level=None, trailing_character=None, font=None, tab_position=None, number_position=None, text_position=None, linked_style=None):  # noqa: E501
         """ListLevel - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
-        self._alignment = None
-        self._font = None
-        self._is_legal = None
-        self._linked_style = None
-        self._number_format = None
-        self._number_position = None
-        self._number_style = None
-        self._restart_after_level = None
         self._start_at = None
-        self._tab_position = None
-        self._text_position = None
+        self._number_style = None
+        self._number_format = None
+        self._alignment = None
+        self._is_legal = None
+        self._restart_after_level = None
         self._trailing_character = None
+        self._font = None
+        self._tab_position = None
+        self._number_position = None
+        self._text_position = None
+        self._linked_style = None
         self.discriminator = None
 
         if link is not None:
             self.link = link
-        if alignment is not None:
-            self.alignment = alignment
-        if font is not None:
-            self.font = font
-        if is_legal is not None:
-            self.is_legal = is_legal
-        if linked_style is not None:
-            self.linked_style = linked_style
-        if number_format is not None:
-            self.number_format = number_format
-        if number_position is not None:
-            self.number_position = number_position
-        if number_style is not None:
-            self.number_style = number_style
-        if restart_after_level is not None:
-            self.restart_after_level = restart_after_level
         if start_at is not None:
             self.start_at = start_at
-        if tab_position is not None:
-            self.tab_position = tab_position
-        if text_position is not None:
-            self.text_position = text_position
+        if number_style is not None:
+            self.number_style = number_style
+        if number_format is not None:
+            self.number_format = number_format
+        if alignment is not None:
+            self.alignment = alignment
+        if is_legal is not None:
+            self.is_legal = is_legal
+        if restart_after_level is not None:
+            self.restart_after_level = restart_after_level
         if trailing_character is not None:
             self.trailing_character = trailing_character
+        if font is not None:
+            self.font = font
+        if tab_position is not None:
+            self.tab_position = tab_position
+        if number_position is not None:
+            self.number_position = number_position
+        if text_position is not None:
+            self.text_position = text_position
+        if linked_style is not None:
+            self.linked_style = linked_style
 
     @property
     def link(self):
@@ -141,144 +141,26 @@ class ListLevel(object):
         self._link = link
 
     @property
-    def alignment(self):
-        """Gets the alignment of this ListLevel.  # noqa: E501
+    def start_at(self):
+        """Gets the start_at of this ListLevel.  # noqa: E501
 
-        Gets or sets the justification of the actual number of the list item.  # noqa: E501
+        Gets or sets the starting number for this list level.  # noqa: E501
 
-        :return: The alignment of this ListLevel.  # noqa: E501
-        :rtype: str
+        :return: The start_at of this ListLevel.  # noqa: E501
+        :rtype: int
         """
-        return self._alignment
+        return self._start_at
 
-    @alignment.setter
-    def alignment(self, alignment):
-        """Sets the alignment of this ListLevel.
+    @start_at.setter
+    def start_at(self, start_at):
+        """Sets the start_at of this ListLevel.
 
-        Gets or sets the justification of the actual number of the list item.  # noqa: E501
+        Gets or sets the starting number for this list level.  # noqa: E501
 
-        :param alignment: The alignment of this ListLevel.  # noqa: E501
-        :type: str
+        :param start_at: The start_at of this ListLevel.  # noqa: E501
+        :type: int
         """
-        allowed_values = ["Left", "Center", "Right"]  # noqa: E501
-        if not alignment.isdigit():
-            if alignment not in allowed_values:
-                raise ValueError(
-                    "Invalid value for `alignment` ({0}), must be one of {1}"  # noqa: E501
-                    .format(alignment, allowed_values))
-            self._alignment = alignment
-        else:
-            self._alignment = allowed_values[int(alignment) if six.PY3 else long(alignment)]
-
-    @property
-    def font(self):
-        """Gets the font of this ListLevel.  # noqa: E501
-
-        Gets or sets character formatting used for the list label.  # noqa: E501
-
-        :return: The font of this ListLevel.  # noqa: E501
-        :rtype: Font
-        """
-        return self._font
-
-    @font.setter
-    def font(self, font):
-        """Sets the font of this ListLevel.
-
-        Gets or sets character formatting used for the list label.  # noqa: E501
-
-        :param font: The font of this ListLevel.  # noqa: E501
-        :type: Font
-        """
-        self._font = font
-
-    @property
-    def is_legal(self):
-        """Gets the is_legal of this ListLevel.  # noqa: E501
-
-        Gets or sets a value indicating whether the level turns all inherited numbers to Arabic, false if it preserves their number style.  # noqa: E501
-
-        :return: The is_legal of this ListLevel.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_legal
-
-    @is_legal.setter
-    def is_legal(self, is_legal):
-        """Sets the is_legal of this ListLevel.
-
-        Gets or sets a value indicating whether the level turns all inherited numbers to Arabic, false if it preserves their number style.  # noqa: E501
-
-        :param is_legal: The is_legal of this ListLevel.  # noqa: E501
-        :type: bool
-        """
-        self._is_legal = is_legal
-
-    @property
-    def linked_style(self):
-        """Gets the linked_style of this ListLevel.  # noqa: E501
-
-        Gets or sets the paragraph style that is linked to this list level.  # noqa: E501
-
-        :return: The linked_style of this ListLevel.  # noqa: E501
-        :rtype: Style
-        """
-        return self._linked_style
-
-    @linked_style.setter
-    def linked_style(self, linked_style):
-        """Sets the linked_style of this ListLevel.
-
-        Gets or sets the paragraph style that is linked to this list level.  # noqa: E501
-
-        :param linked_style: The linked_style of this ListLevel.  # noqa: E501
-        :type: Style
-        """
-        self._linked_style = linked_style
-
-    @property
-    def number_format(self):
-        """Gets the number_format of this ListLevel.  # noqa: E501
-
-        Gets or sets the number format for the list level.  # noqa: E501
-
-        :return: The number_format of this ListLevel.  # noqa: E501
-        :rtype: str
-        """
-        return self._number_format
-
-    @number_format.setter
-    def number_format(self, number_format):
-        """Sets the number_format of this ListLevel.
-
-        Gets or sets the number format for the list level.  # noqa: E501
-
-        :param number_format: The number_format of this ListLevel.  # noqa: E501
-        :type: str
-        """
-        self._number_format = number_format
-
-    @property
-    def number_position(self):
-        """Gets the number_position of this ListLevel.  # noqa: E501
-
-        Gets or sets the position (in points) of the number or bullet for the list level.  # noqa: E501
-
-        :return: The number_position of this ListLevel.  # noqa: E501
-        :rtype: float
-        """
-        return self._number_position
-
-    @number_position.setter
-    def number_position(self, number_position):
-        """Sets the number_position of this ListLevel.
-
-        Gets or sets the position (in points) of the number or bullet for the list level.  # noqa: E501
-
-        :param number_position: The number_position of this ListLevel.  # noqa: E501
-        :type: float
-        """
-        self._number_position = number_position
+        self._start_at = start_at
 
     @property
     def number_style(self):
@@ -311,6 +193,80 @@ class ListLevel(object):
             self._number_style = allowed_values[int(number_style) if six.PY3 else long(number_style)]
 
     @property
+    def number_format(self):
+        """Gets the number_format of this ListLevel.  # noqa: E501
+
+        Gets or sets the number format for the list level.  # noqa: E501
+
+        :return: The number_format of this ListLevel.  # noqa: E501
+        :rtype: str
+        """
+        return self._number_format
+
+    @number_format.setter
+    def number_format(self, number_format):
+        """Sets the number_format of this ListLevel.
+
+        Gets or sets the number format for the list level.  # noqa: E501
+
+        :param number_format: The number_format of this ListLevel.  # noqa: E501
+        :type: str
+        """
+        self._number_format = number_format
+
+    @property
+    def alignment(self):
+        """Gets the alignment of this ListLevel.  # noqa: E501
+
+        Gets or sets the justification of the actual number of the list item.  # noqa: E501
+
+        :return: The alignment of this ListLevel.  # noqa: E501
+        :rtype: str
+        """
+        return self._alignment
+
+    @alignment.setter
+    def alignment(self, alignment):
+        """Sets the alignment of this ListLevel.
+
+        Gets or sets the justification of the actual number of the list item.  # noqa: E501
+
+        :param alignment: The alignment of this ListLevel.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["Left", "Center", "Right"]  # noqa: E501
+        if not alignment.isdigit():
+            if alignment not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `alignment` ({0}), must be one of {1}"  # noqa: E501
+                    .format(alignment, allowed_values))
+            self._alignment = alignment
+        else:
+            self._alignment = allowed_values[int(alignment) if six.PY3 else long(alignment)]
+
+    @property
+    def is_legal(self):
+        """Gets the is_legal of this ListLevel.  # noqa: E501
+
+        Gets or sets a value indicating whether the level turns all inherited numbers to Arabic, false if it preserves their number style.  # noqa: E501
+
+        :return: The is_legal of this ListLevel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_legal
+
+    @is_legal.setter
+    def is_legal(self, is_legal):
+        """Sets the is_legal of this ListLevel.
+
+        Gets or sets a value indicating whether the level turns all inherited numbers to Arabic, false if it preserves their number style.  # noqa: E501
+
+        :param is_legal: The is_legal of this ListLevel.  # noqa: E501
+        :type: bool
+        """
+        self._is_legal = is_legal
+
+    @property
     def restart_after_level(self):
         """Gets the restart_after_level of this ListLevel.  # noqa: E501
 
@@ -331,72 +287,6 @@ class ListLevel(object):
         :type: int
         """
         self._restart_after_level = restart_after_level
-
-    @property
-    def start_at(self):
-        """Gets the start_at of this ListLevel.  # noqa: E501
-
-        Gets or sets the starting number for this list level.  # noqa: E501
-
-        :return: The start_at of this ListLevel.  # noqa: E501
-        :rtype: int
-        """
-        return self._start_at
-
-    @start_at.setter
-    def start_at(self, start_at):
-        """Sets the start_at of this ListLevel.
-
-        Gets or sets the starting number for this list level.  # noqa: E501
-
-        :param start_at: The start_at of this ListLevel.  # noqa: E501
-        :type: int
-        """
-        self._start_at = start_at
-
-    @property
-    def tab_position(self):
-        """Gets the tab_position of this ListLevel.  # noqa: E501
-
-        Gets or sets the tab position (in points) for the list level.  # noqa: E501
-
-        :return: The tab_position of this ListLevel.  # noqa: E501
-        :rtype: float
-        """
-        return self._tab_position
-
-    @tab_position.setter
-    def tab_position(self, tab_position):
-        """Sets the tab_position of this ListLevel.
-
-        Gets or sets the tab position (in points) for the list level.  # noqa: E501
-
-        :param tab_position: The tab_position of this ListLevel.  # noqa: E501
-        :type: float
-        """
-        self._tab_position = tab_position
-
-    @property
-    def text_position(self):
-        """Gets the text_position of this ListLevel.  # noqa: E501
-
-        Gets or sets the position (in points) for the second line of wrapping text for the list level.  # noqa: E501
-
-        :return: The text_position of this ListLevel.  # noqa: E501
-        :rtype: float
-        """
-        return self._text_position
-
-    @text_position.setter
-    def text_position(self, text_position):
-        """Sets the text_position of this ListLevel.
-
-        Gets or sets the position (in points) for the second line of wrapping text for the list level.  # noqa: E501
-
-        :param text_position: The text_position of this ListLevel.  # noqa: E501
-        :type: float
-        """
-        self._text_position = text_position
 
     @property
     def trailing_character(self):
@@ -427,6 +317,116 @@ class ListLevel(object):
             self._trailing_character = trailing_character
         else:
             self._trailing_character = allowed_values[int(trailing_character) if six.PY3 else long(trailing_character)]
+
+    @property
+    def font(self):
+        """Gets the font of this ListLevel.  # noqa: E501
+
+        Gets or sets character formatting used for the list label.  # noqa: E501
+
+        :return: The font of this ListLevel.  # noqa: E501
+        :rtype: Font
+        """
+        return self._font
+
+    @font.setter
+    def font(self, font):
+        """Sets the font of this ListLevel.
+
+        Gets or sets character formatting used for the list label.  # noqa: E501
+
+        :param font: The font of this ListLevel.  # noqa: E501
+        :type: Font
+        """
+        self._font = font
+
+    @property
+    def tab_position(self):
+        """Gets the tab_position of this ListLevel.  # noqa: E501
+
+        Gets or sets the tab position (in points) for the list level.  # noqa: E501
+
+        :return: The tab_position of this ListLevel.  # noqa: E501
+        :rtype: float
+        """
+        return self._tab_position
+
+    @tab_position.setter
+    def tab_position(self, tab_position):
+        """Sets the tab_position of this ListLevel.
+
+        Gets or sets the tab position (in points) for the list level.  # noqa: E501
+
+        :param tab_position: The tab_position of this ListLevel.  # noqa: E501
+        :type: float
+        """
+        self._tab_position = tab_position
+
+    @property
+    def number_position(self):
+        """Gets the number_position of this ListLevel.  # noqa: E501
+
+        Gets or sets the position (in points) of the number or bullet for the list level.  # noqa: E501
+
+        :return: The number_position of this ListLevel.  # noqa: E501
+        :rtype: float
+        """
+        return self._number_position
+
+    @number_position.setter
+    def number_position(self, number_position):
+        """Sets the number_position of this ListLevel.
+
+        Gets or sets the position (in points) of the number or bullet for the list level.  # noqa: E501
+
+        :param number_position: The number_position of this ListLevel.  # noqa: E501
+        :type: float
+        """
+        self._number_position = number_position
+
+    @property
+    def text_position(self):
+        """Gets the text_position of this ListLevel.  # noqa: E501
+
+        Gets or sets the position (in points) for the second line of wrapping text for the list level.  # noqa: E501
+
+        :return: The text_position of this ListLevel.  # noqa: E501
+        :rtype: float
+        """
+        return self._text_position
+
+    @text_position.setter
+    def text_position(self, text_position):
+        """Sets the text_position of this ListLevel.
+
+        Gets or sets the position (in points) for the second line of wrapping text for the list level.  # noqa: E501
+
+        :param text_position: The text_position of this ListLevel.  # noqa: E501
+        :type: float
+        """
+        self._text_position = text_position
+
+    @property
+    def linked_style(self):
+        """Gets the linked_style of this ListLevel.  # noqa: E501
+
+        Gets or sets the paragraph style that is linked to this list level.  # noqa: E501
+
+        :return: The linked_style of this ListLevel.  # noqa: E501
+        :rtype: Style
+        """
+        return self._linked_style
+
+    @linked_style.setter
+    def linked_style(self, linked_style):
+        """Sets the linked_style of this ListLevel.
+
+        Gets or sets the paragraph style that is linked to this list level.  # noqa: E501
+
+        :param linked_style: The linked_style of this ListLevel.  # noqa: E501
+        :type: Style
+        """
+        self._linked_style = linked_style
 
 
     def extract_files_content(self, filesContentResult):

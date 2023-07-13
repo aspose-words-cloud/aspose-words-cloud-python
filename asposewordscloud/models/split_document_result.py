@@ -42,53 +42,31 @@ class SplitDocumentResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'pages': 'list[FileLink]',
         'source_document': 'FileLink',
-        'zipped_pages': 'FileLink'
+        'zipped_pages': 'FileLink',
+        'pages': 'list[FileLink]'
     }
 
     attribute_map = {
-        'pages': 'Pages',
         'source_document': 'SourceDocument',
-        'zipped_pages': 'ZippedPages'
+        'zipped_pages': 'ZippedPages',
+        'pages': 'Pages'
     }
 
-    def __init__(self, pages=None, source_document=None, zipped_pages=None):  # noqa: E501
+    def __init__(self, source_document=None, zipped_pages=None, pages=None):  # noqa: E501
         """SplitDocumentResult - a model defined in Swagger"""  # noqa: E501
 
-        self._pages = None
         self._source_document = None
         self._zipped_pages = None
+        self._pages = None
         self.discriminator = None
 
-        if pages is not None:
-            self.pages = pages
         if source_document is not None:
             self.source_document = source_document
         if zipped_pages is not None:
             self.zipped_pages = zipped_pages
-
-    @property
-    def pages(self):
-        """Gets the pages of this SplitDocumentResult.  # noqa: E501
-
-        Gets or sets the list of pages.  # noqa: E501
-
-        :return: The pages of this SplitDocumentResult.  # noqa: E501
-        :rtype: list[FileLink]
-        """
-        return self._pages
-
-    @pages.setter
-    def pages(self, pages):
-        """Sets the pages of this SplitDocumentResult.
-
-        Gets or sets the list of pages.  # noqa: E501
-
-        :param pages: The pages of this SplitDocumentResult.  # noqa: E501
-        :type: list[FileLink]
-        """
-        self._pages = pages
+        if pages is not None:
+            self.pages = pages
 
     @property
     def source_document(self):
@@ -133,6 +111,28 @@ class SplitDocumentResult(object):
         :type: FileLink
         """
         self._zipped_pages = zipped_pages
+
+    @property
+    def pages(self):
+        """Gets the pages of this SplitDocumentResult.  # noqa: E501
+
+        Gets or sets the list of pages.  # noqa: E501
+
+        :return: The pages of this SplitDocumentResult.  # noqa: E501
+        :rtype: list[FileLink]
+        """
+        return self._pages
+
+    @pages.setter
+    def pages(self, pages):
+        """Sets the pages of this SplitDocumentResult.
+
+        Gets or sets the list of pages.  # noqa: E501
+
+        :param pages: The pages of this SplitDocumentResult.  # noqa: E501
+        :type: list[FileLink]
+        """
+        self._pages = pages
 
 
     def extract_files_content(self, filesContentResult):

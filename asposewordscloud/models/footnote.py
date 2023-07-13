@@ -44,49 +44,49 @@ class Footnote(object):
     swagger_types = {
         'link': 'WordsApiLink',
         'node_id': 'str',
-        'content': 'StoryChildNodes',
-        'footnote_type': 'str',
         'position': 'DocumentPosition',
+        'footnote_type': 'str',
         'reference_mark': 'str',
-        'text': 'str'
+        'text': 'str',
+        'content': 'StoryChildNodes'
     }
 
     attribute_map = {
         'link': 'Link',
         'node_id': 'NodeId',
-        'content': 'Content',
-        'footnote_type': 'FootnoteType',
         'position': 'Position',
+        'footnote_type': 'FootnoteType',
         'reference_mark': 'ReferenceMark',
-        'text': 'Text'
+        'text': 'Text',
+        'content': 'Content'
     }
 
-    def __init__(self, link=None, node_id=None, content=None, footnote_type=None, position=None, reference_mark=None, text=None):  # noqa: E501
+    def __init__(self, link=None, node_id=None, position=None, footnote_type=None, reference_mark=None, text=None, content=None):  # noqa: E501
         """Footnote - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
         self._node_id = None
-        self._content = None
-        self._footnote_type = None
         self._position = None
+        self._footnote_type = None
         self._reference_mark = None
         self._text = None
+        self._content = None
         self.discriminator = None
 
         if link is not None:
             self.link = link
         if node_id is not None:
             self.node_id = node_id
-        if content is not None:
-            self.content = content
-        if footnote_type is not None:
-            self.footnote_type = footnote_type
         if position is not None:
             self.position = position
+        if footnote_type is not None:
+            self.footnote_type = footnote_type
         if reference_mark is not None:
             self.reference_mark = reference_mark
         if text is not None:
             self.text = text
+        if content is not None:
+            self.content = content
 
     @property
     def link(self):
@@ -133,26 +133,26 @@ class Footnote(object):
         self._node_id = node_id
 
     @property
-    def content(self):
-        """Gets the content of this Footnote.  # noqa: E501
+    def position(self):
+        """Gets the position of this Footnote.  # noqa: E501
 
-        Gets or sets the content of the footnote.  # noqa: E501
+        Gets or sets the link to comment range start node.  # noqa: E501
 
-        :return: The content of this Footnote.  # noqa: E501
-        :rtype: StoryChildNodes
+        :return: The position of this Footnote.  # noqa: E501
+        :rtype: DocumentPosition
         """
-        return self._content
+        return self._position
 
-    @content.setter
-    def content(self, content):
-        """Sets the content of this Footnote.
+    @position.setter
+    def position(self, position):
+        """Sets the position of this Footnote.
 
-        Gets or sets the content of the footnote.  # noqa: E501
+        Gets or sets the link to comment range start node.  # noqa: E501
 
-        :param content: The content of this Footnote.  # noqa: E501
-        :type: StoryChildNodes
+        :param position: The position of this Footnote.  # noqa: E501
+        :type: DocumentPosition
         """
-        self._content = content
+        self._position = position
 
     @property
     def footnote_type(self):
@@ -183,28 +183,6 @@ class Footnote(object):
             self._footnote_type = footnote_type
         else:
             self._footnote_type = allowed_values[int(footnote_type) if six.PY3 else long(footnote_type)]
-
-    @property
-    def position(self):
-        """Gets the position of this Footnote.  # noqa: E501
-
-        Gets or sets the link to comment range start node.  # noqa: E501
-
-        :return: The position of this Footnote.  # noqa: E501
-        :rtype: DocumentPosition
-        """
-        return self._position
-
-    @position.setter
-    def position(self, position):
-        """Sets the position of this Footnote.
-
-        Gets or sets the link to comment range start node.  # noqa: E501
-
-        :param position: The position of this Footnote.  # noqa: E501
-        :type: DocumentPosition
-        """
-        self._position = position
 
     @property
     def reference_mark(self):
@@ -249,6 +227,28 @@ class Footnote(object):
         :type: str
         """
         self._text = text
+
+    @property
+    def content(self):
+        """Gets the content of this Footnote.  # noqa: E501
+
+        Gets or sets the content of the footnote.  # noqa: E501
+
+        :return: The content of this Footnote.  # noqa: E501
+        :rtype: StoryChildNodes
+        """
+        return self._content
+
+    @content.setter
+    def content(self, content):
+        """Sets the content of this Footnote.
+
+        Gets or sets the content of the footnote.  # noqa: E501
+
+        :param content: The content of this Footnote.  # noqa: E501
+        :type: StoryChildNodes
+        """
+        self._content = content
 
 
     def extract_files_content(self, filesContentResult):

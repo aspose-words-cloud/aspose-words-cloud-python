@@ -44,29 +44,29 @@ class Section(object):
     swagger_types = {
         'link': 'WordsApiLink',
         'child_nodes': 'list[NodeLink]',
-        'header_footers': 'LinkElement',
-        'page_setup': 'LinkElement',
         'paragraphs': 'LinkElement',
+        'page_setup': 'LinkElement',
+        'header_footers': 'LinkElement',
         'tables': 'LinkElement'
     }
 
     attribute_map = {
         'link': 'Link',
         'child_nodes': 'ChildNodes',
-        'header_footers': 'HeaderFooters',
-        'page_setup': 'PageSetup',
         'paragraphs': 'Paragraphs',
+        'page_setup': 'PageSetup',
+        'header_footers': 'HeaderFooters',
         'tables': 'Tables'
     }
 
-    def __init__(self, link=None, child_nodes=None, header_footers=None, page_setup=None, paragraphs=None, tables=None):  # noqa: E501
+    def __init__(self, link=None, child_nodes=None, paragraphs=None, page_setup=None, header_footers=None, tables=None):  # noqa: E501
         """Section - a model defined in Swagger"""  # noqa: E501
 
         self._link = None
         self._child_nodes = None
-        self._header_footers = None
-        self._page_setup = None
         self._paragraphs = None
+        self._page_setup = None
+        self._header_footers = None
         self._tables = None
         self.discriminator = None
 
@@ -74,12 +74,12 @@ class Section(object):
             self.link = link
         if child_nodes is not None:
             self.child_nodes = child_nodes
-        if header_footers is not None:
-            self.header_footers = header_footers
-        if page_setup is not None:
-            self.page_setup = page_setup
         if paragraphs is not None:
             self.paragraphs = paragraphs
+        if page_setup is not None:
+            self.page_setup = page_setup
+        if header_footers is not None:
+            self.header_footers = header_footers
         if tables is not None:
             self.tables = tables
 
@@ -128,26 +128,26 @@ class Section(object):
         self._child_nodes = child_nodes
 
     @property
-    def header_footers(self):
-        """Gets the header_footers of this Section.  # noqa: E501
+    def paragraphs(self):
+        """Gets the paragraphs of this Section.  # noqa: E501
 
-        Gets or sets the link to HeaderFooters resource.  # noqa: E501
+        Gets or sets the link to Paragraphs resource.  # noqa: E501
 
-        :return: The header_footers of this Section.  # noqa: E501
+        :return: The paragraphs of this Section.  # noqa: E501
         :rtype: LinkElement
         """
-        return self._header_footers
+        return self._paragraphs
 
-    @header_footers.setter
-    def header_footers(self, header_footers):
-        """Sets the header_footers of this Section.
+    @paragraphs.setter
+    def paragraphs(self, paragraphs):
+        """Sets the paragraphs of this Section.
 
-        Gets or sets the link to HeaderFooters resource.  # noqa: E501
+        Gets or sets the link to Paragraphs resource.  # noqa: E501
 
-        :param header_footers: The header_footers of this Section.  # noqa: E501
+        :param paragraphs: The paragraphs of this Section.  # noqa: E501
         :type: LinkElement
         """
-        self._header_footers = header_footers
+        self._paragraphs = paragraphs
 
     @property
     def page_setup(self):
@@ -172,26 +172,26 @@ class Section(object):
         self._page_setup = page_setup
 
     @property
-    def paragraphs(self):
-        """Gets the paragraphs of this Section.  # noqa: E501
+    def header_footers(self):
+        """Gets the header_footers of this Section.  # noqa: E501
 
-        Gets or sets the link to Paragraphs resource.  # noqa: E501
+        Gets or sets the link to HeaderFooters resource.  # noqa: E501
 
-        :return: The paragraphs of this Section.  # noqa: E501
+        :return: The header_footers of this Section.  # noqa: E501
         :rtype: LinkElement
         """
-        return self._paragraphs
+        return self._header_footers
 
-    @paragraphs.setter
-    def paragraphs(self, paragraphs):
-        """Sets the paragraphs of this Section.
+    @header_footers.setter
+    def header_footers(self, header_footers):
+        """Sets the header_footers of this Section.
 
-        Gets or sets the link to Paragraphs resource.  # noqa: E501
+        Gets or sets the link to HeaderFooters resource.  # noqa: E501
 
-        :param paragraphs: The paragraphs of this Section.  # noqa: E501
+        :param header_footers: The header_footers of this Section.  # noqa: E501
         :type: LinkElement
         """
-        self._paragraphs = paragraphs
+        self._header_footers = header_footers
 
     @property
     def tables(self):

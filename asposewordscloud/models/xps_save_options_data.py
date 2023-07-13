@@ -65,8 +65,8 @@ class XpsSaveOptionsData(object):
         'bookmarks_outline_level': 'int',
         'headings_outline_levels': 'int',
         'outline_options': 'OutlineOptionsData',
-        'save_format': 'str',
-        'use_book_fold_printing_settings': 'bool'
+        'use_book_fold_printing_settings': 'bool',
+        'save_format': 'str'
     }
 
     attribute_map = {
@@ -93,8 +93,8 @@ class XpsSaveOptionsData(object):
         'bookmarks_outline_level': 'BookmarksOutlineLevel',
         'headings_outline_levels': 'HeadingsOutlineLevels',
         'outline_options': 'OutlineOptions',
-        'save_format': 'SaveFormat',
-        'use_book_fold_printing_settings': 'UseBookFoldPrintingSettings'
+        'use_book_fold_printing_settings': 'UseBookFoldPrintingSettings',
+        'save_format': 'SaveFormat'
     }
 
     def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, bookmarks_outline_level=None, headings_outline_levels=None, outline_options=None, use_book_fold_printing_settings=None):  # noqa: E501
@@ -123,8 +123,8 @@ class XpsSaveOptionsData(object):
         self._bookmarks_outline_level = None
         self._headings_outline_levels = None
         self._outline_options = None
-        self._save_format = "xps"
         self._use_book_fold_printing_settings = None
+        self._save_format = "xps"
         self.discriminator = None
 
         if allow_embedding_post_script_fonts is not None:
@@ -731,18 +731,6 @@ class XpsSaveOptionsData(object):
         self._outline_options = outline_options
 
     @property
-    def save_format(self):
-        """Gets the save_format of this XpsSaveOptionsData.  # noqa: E501
-
-        Gets the format of save.  # noqa: E501
-
-        :return: The save_format of this XpsSaveOptionsData.  # noqa: E501
-        :rtype: str
-        """
-        return self._save_format
-
-
-    @property
     def use_book_fold_printing_settings(self):
         """Gets the use_book_fold_printing_settings of this XpsSaveOptionsData.  # noqa: E501
 
@@ -763,6 +751,18 @@ class XpsSaveOptionsData(object):
         :type: bool
         """
         self._use_book_fold_printing_settings = use_book_fold_printing_settings
+
+    @property
+    def save_format(self):
+        """Gets the save_format of this XpsSaveOptionsData.  # noqa: E501
+
+        Gets the format of save.  # noqa: E501
+
+        :return: The save_format of this XpsSaveOptionsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._save_format
+
 
 
     def extract_files_content(self, filesContentResult):
