@@ -53,7 +53,6 @@ class MhtmlSaveOptionsData(object):
         'update_fields': 'bool',
         'update_last_printed_property': 'bool',
         'update_last_saved_time_property': 'bool',
-        'update_sdt_content': 'bool',
         'zip_output': 'bool',
         'allow_negative_indent': 'bool',
         'css_class_name_prefix': 'str',
@@ -109,7 +108,6 @@ class MhtmlSaveOptionsData(object):
         'update_fields': 'UpdateFields',
         'update_last_printed_property': 'UpdateLastPrintedProperty',
         'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
-        'update_sdt_content': 'UpdateSdtContent',
         'zip_output': 'ZipOutput',
         'allow_negative_indent': 'AllowNegativeIndent',
         'css_class_name_prefix': 'CssClassNamePrefix',
@@ -153,7 +151,7 @@ class MhtmlSaveOptionsData(object):
         'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, allow_negative_indent=None, css_class_name_prefix=None, css_style_sheet_file_name=None, css_style_sheet_type=None, document_split_criteria=None, document_split_heading_level=None, encoding=None, export_document_properties=None, export_drop_down_form_field_as_text=None, export_font_resources=None, export_fonts_as_base64=None, export_headers_footers_mode=None, export_images_as_base64=None, export_language_information=None, export_list_labels=None, export_original_url_for_linked_images=None, export_page_margins=None, export_page_setup=None, export_relative_font_size=None, export_roundtrip_information=None, export_text_input_form_field_as_text=None, export_toc_page_numbers=None, export_xhtml_transitional=None, font_resources_subsetting_size_threshold=None, fonts_folder=None, fonts_folder_alias=None, html_version=None, image_resolution=None, images_folder=None, images_folder_alias=None, metafile_format=None, office_math_output_mode=None, pretty_format=None, resolve_font_names=None, resource_folder=None, resource_folder_alias=None, scale_image_to_shape_size=None, table_width_output_mode=None, export_cid_urls_for_mhtml_resources=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, allow_negative_indent=None, css_class_name_prefix=None, css_style_sheet_file_name=None, css_style_sheet_type=None, document_split_criteria=None, document_split_heading_level=None, encoding=None, export_document_properties=None, export_drop_down_form_field_as_text=None, export_font_resources=None, export_fonts_as_base64=None, export_headers_footers_mode=None, export_images_as_base64=None, export_language_information=None, export_list_labels=None, export_original_url_for_linked_images=None, export_page_margins=None, export_page_setup=None, export_relative_font_size=None, export_roundtrip_information=None, export_text_input_form_field_as_text=None, export_toc_page_numbers=None, export_xhtml_transitional=None, font_resources_subsetting_size_threshold=None, fonts_folder=None, fonts_folder_alias=None, html_version=None, image_resolution=None, images_folder=None, images_folder_alias=None, metafile_format=None, office_math_output_mode=None, pretty_format=None, resolve_font_names=None, resource_folder=None, resource_folder_alias=None, scale_image_to_shape_size=None, table_width_output_mode=None, export_cid_urls_for_mhtml_resources=None):  # noqa: E501
         """MhtmlSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -167,7 +165,6 @@ class MhtmlSaveOptionsData(object):
         self._update_fields = None
         self._update_last_printed_property = None
         self._update_last_saved_time_property = None
-        self._update_sdt_content = None
         self._zip_output = None
         self._allow_negative_indent = None
         self._css_class_name_prefix = None
@@ -233,8 +230,6 @@ class MhtmlSaveOptionsData(object):
             self.update_last_printed_property = update_last_printed_property
         if update_last_saved_time_property is not None:
             self.update_last_saved_time_property = update_last_saved_time_property
-        if update_sdt_content is not None:
-            self.update_sdt_content = update_sdt_content
         if zip_output is not None:
             self.zip_output = zip_output
         if allow_negative_indent is not None:
@@ -589,28 +584,6 @@ class MhtmlSaveOptionsData(object):
         :type: bool
         """
         self._update_last_saved_time_property = update_last_saved_time_property
-
-    @property
-    def update_sdt_content(self):
-        """Gets the update_sdt_content of this MhtmlSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
-
-        :return: The update_sdt_content of this MhtmlSaveOptionsData.  # noqa: E501
-        :rtype: bool
-        """
-        return self._update_sdt_content
-
-    @update_sdt_content.setter
-    def update_sdt_content(self, update_sdt_content):
-        """Sets the update_sdt_content of this MhtmlSaveOptionsData.
-
-        Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
-
-        :param update_sdt_content: The update_sdt_content of this MhtmlSaveOptionsData.  # noqa: E501
-        :type: bool
-        """
-        self._update_sdt_content = update_sdt_content
 
     @property
     def zip_output(self):

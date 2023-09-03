@@ -53,7 +53,6 @@ class OttSaveOptionsData(object):
         'update_fields': 'bool',
         'update_last_printed_property': 'bool',
         'update_last_saved_time_property': 'bool',
-        'update_sdt_content': 'bool',
         'zip_output': 'bool',
         'is_strict_schema11': 'bool',
         'measure_unit': 'str',
@@ -74,7 +73,6 @@ class OttSaveOptionsData(object):
         'update_fields': 'UpdateFields',
         'update_last_printed_property': 'UpdateLastPrintedProperty',
         'update_last_saved_time_property': 'UpdateLastSavedTimeProperty',
-        'update_sdt_content': 'UpdateSdtContent',
         'zip_output': 'ZipOutput',
         'is_strict_schema11': 'IsStrictSchema11',
         'measure_unit': 'MeasureUnit',
@@ -83,7 +81,7 @@ class OttSaveOptionsData(object):
         'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, update_sdt_content=None, zip_output=None, is_strict_schema11=None, measure_unit=None, password=None, pretty_format=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, is_strict_schema11=None, measure_unit=None, password=None, pretty_format=None):  # noqa: E501
         """OttSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -97,7 +95,6 @@ class OttSaveOptionsData(object):
         self._update_fields = None
         self._update_last_printed_property = None
         self._update_last_saved_time_property = None
-        self._update_sdt_content = None
         self._zip_output = None
         self._is_strict_schema11 = None
         self._measure_unit = None
@@ -128,8 +125,6 @@ class OttSaveOptionsData(object):
             self.update_last_printed_property = update_last_printed_property
         if update_last_saved_time_property is not None:
             self.update_last_saved_time_property = update_last_saved_time_property
-        if update_sdt_content is not None:
-            self.update_sdt_content = update_sdt_content
         if zip_output is not None:
             self.zip_output = zip_output
         if is_strict_schema11 is not None:
@@ -414,28 +409,6 @@ class OttSaveOptionsData(object):
         :type: bool
         """
         self._update_last_saved_time_property = update_last_saved_time_property
-
-    @property
-    def update_sdt_content(self):
-        """Gets the update_sdt_content of this OttSaveOptionsData.  # noqa: E501
-
-        Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
-
-        :return: The update_sdt_content of this OttSaveOptionsData.  # noqa: E501
-        :rtype: bool
-        """
-        return self._update_sdt_content
-
-    @update_sdt_content.setter
-    def update_sdt_content(self, update_sdt_content):
-        """Sets the update_sdt_content of this OttSaveOptionsData.
-
-        Gets or sets a value indicating whether content of StructuredDocumentTag is updated before saving.  # noqa: E501
-
-        :param update_sdt_content: The update_sdt_content of this OttSaveOptionsData.  # noqa: E501
-        :type: bool
-        """
-        self._update_sdt_content = update_sdt_content
 
     @property
     def zip_output(self):
