@@ -44,26 +44,26 @@ class MetafileRenderingOptionsData(object):
     swagger_types = {
         'emf_plus_dual_rendering_mode': 'str',
         'emulate_raster_operations': 'bool',
+        'emulate_rendering_to_size_on_page': 'bool',
         'rendering_mode': 'str',
-        'scale_wmf_fonts_to_metafile_size': 'bool',
         'use_emf_embedded_to_wmf': 'bool'
     }
 
     attribute_map = {
         'emf_plus_dual_rendering_mode': 'EmfPlusDualRenderingMode',
         'emulate_raster_operations': 'EmulateRasterOperations',
+        'emulate_rendering_to_size_on_page': 'EmulateRenderingToSizeOnPage',
         'rendering_mode': 'RenderingMode',
-        'scale_wmf_fonts_to_metafile_size': 'ScaleWmfFontsToMetafileSize',
         'use_emf_embedded_to_wmf': 'UseEmfEmbeddedToWmf'
     }
 
-    def __init__(self, emf_plus_dual_rendering_mode=None, emulate_raster_operations=None, rendering_mode=None, scale_wmf_fonts_to_metafile_size=None, use_emf_embedded_to_wmf=None):  # noqa: E501
+    def __init__(self, emf_plus_dual_rendering_mode=None, emulate_raster_operations=None, emulate_rendering_to_size_on_page=None, rendering_mode=None, use_emf_embedded_to_wmf=None):  # noqa: E501
         """MetafileRenderingOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._emf_plus_dual_rendering_mode = None
         self._emulate_raster_operations = None
+        self._emulate_rendering_to_size_on_page = None
         self._rendering_mode = None
-        self._scale_wmf_fonts_to_metafile_size = None
         self._use_emf_embedded_to_wmf = None
         self.discriminator = None
 
@@ -71,10 +71,10 @@ class MetafileRenderingOptionsData(object):
             self.emf_plus_dual_rendering_mode = emf_plus_dual_rendering_mode
         if emulate_raster_operations is not None:
             self.emulate_raster_operations = emulate_raster_operations
+        if emulate_rendering_to_size_on_page is not None:
+            self.emulate_rendering_to_size_on_page = emulate_rendering_to_size_on_page
         if rendering_mode is not None:
             self.rendering_mode = rendering_mode
-        if scale_wmf_fonts_to_metafile_size is not None:
-            self.scale_wmf_fonts_to_metafile_size = scale_wmf_fonts_to_metafile_size
         if use_emf_embedded_to_wmf is not None:
             self.use_emf_embedded_to_wmf = use_emf_embedded_to_wmf
 
@@ -131,6 +131,28 @@ class MetafileRenderingOptionsData(object):
         self._emulate_raster_operations = emulate_raster_operations
 
     @property
+    def emulate_rendering_to_size_on_page(self):
+        """Gets the emulate_rendering_to_size_on_page of this MetafileRenderingOptionsData.  # noqa: E501
+
+        Gets or sets a value determining whether metafile rendering emulates the display of the metafile according to the size on page or the display of the metafile in its default size.  # noqa: E501
+
+        :return: The emulate_rendering_to_size_on_page of this MetafileRenderingOptionsData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._emulate_rendering_to_size_on_page
+
+    @emulate_rendering_to_size_on_page.setter
+    def emulate_rendering_to_size_on_page(self, emulate_rendering_to_size_on_page):
+        """Sets the emulate_rendering_to_size_on_page of this MetafileRenderingOptionsData.
+
+        Gets or sets a value determining whether metafile rendering emulates the display of the metafile according to the size on page or the display of the metafile in its default size.  # noqa: E501
+
+        :param emulate_rendering_to_size_on_page: The emulate_rendering_to_size_on_page of this MetafileRenderingOptionsData.  # noqa: E501
+        :type: bool
+        """
+        self._emulate_rendering_to_size_on_page = emulate_rendering_to_size_on_page
+
+    @property
     def rendering_mode(self):
         """Gets the rendering_mode of this MetafileRenderingOptionsData.  # noqa: E501
 
@@ -159,28 +181,6 @@ class MetafileRenderingOptionsData(object):
             self._rendering_mode = rendering_mode
         else:
             self._rendering_mode = allowed_values[int(rendering_mode) if six.PY3 else long(rendering_mode)]
-
-    @property
-    def scale_wmf_fonts_to_metafile_size(self):
-        """Gets the scale_wmf_fonts_to_metafile_size of this MetafileRenderingOptionsData.  # noqa: E501
-
-        Gets or sets a value indicating whether to scale fonts in WMF metafile according to metafile size on the page. The default value is true.  # noqa: E501
-
-        :return: The scale_wmf_fonts_to_metafile_size of this MetafileRenderingOptionsData.  # noqa: E501
-        :rtype: bool
-        """
-        return self._scale_wmf_fonts_to_metafile_size
-
-    @scale_wmf_fonts_to_metafile_size.setter
-    def scale_wmf_fonts_to_metafile_size(self, scale_wmf_fonts_to_metafile_size):
-        """Sets the scale_wmf_fonts_to_metafile_size of this MetafileRenderingOptionsData.
-
-        Gets or sets a value indicating whether to scale fonts in WMF metafile according to metafile size on the page. The default value is true.  # noqa: E501
-
-        :param scale_wmf_fonts_to_metafile_size: The scale_wmf_fonts_to_metafile_size of this MetafileRenderingOptionsData.  # noqa: E501
-        :type: bool
-        """
-        self._scale_wmf_fonts_to_metafile_size = scale_wmf_fonts_to_metafile_size
 
     @property
     def use_emf_embedded_to_wmf(self):
