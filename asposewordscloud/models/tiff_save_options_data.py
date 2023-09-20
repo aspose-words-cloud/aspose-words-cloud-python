@@ -72,6 +72,8 @@ class TiffSaveOptionsData(object):
         'use_anti_aliasing': 'bool',
         'use_high_quality_rendering': 'bool',
         'vertical_resolution': 'float',
+        'image_height': 'int',
+        'image_width': 'int',
         'use_gdi_emf_renderer': 'bool',
         'threshold_for_floyd_steinberg_dithering': 'int',
         'tiff_binarization_method': 'str',
@@ -110,6 +112,8 @@ class TiffSaveOptionsData(object):
         'use_anti_aliasing': 'UseAntiAliasing',
         'use_high_quality_rendering': 'UseHighQualityRendering',
         'vertical_resolution': 'VerticalResolution',
+        'image_height': 'ImageHeight',
+        'image_width': 'ImageWidth',
         'use_gdi_emf_renderer': 'UseGdiEmfRenderer',
         'threshold_for_floyd_steinberg_dithering': 'ThresholdForFloydSteinbergDithering',
         'tiff_binarization_method': 'TiffBinarizationMethod',
@@ -117,7 +121,7 @@ class TiffSaveOptionsData(object):
         'save_format': 'SaveFormat'
     }
 
-    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, horizontal_resolution=None, image_brightness=None, image_color_mode=None, image_contrast=None, paper_color=None, pixel_format=None, resolution=None, scale=None, use_anti_aliasing=None, use_high_quality_rendering=None, vertical_resolution=None, use_gdi_emf_renderer=None, threshold_for_floyd_steinberg_dithering=None, tiff_binarization_method=None, tiff_compression=None):  # noqa: E501
+    def __init__(self, allow_embedding_post_script_fonts=None, custom_time_zone_info_data=None, dml3_d_effects_rendering_mode=None, dml_effects_rendering_mode=None, dml_rendering_mode=None, file_name=None, iml_rendering_mode=None, update_created_time_property=None, update_fields=None, update_last_printed_property=None, update_last_saved_time_property=None, zip_output=None, color_mode=None, jpeg_quality=None, metafile_rendering_options=None, numeral_format=None, optimize_output=None, page_count=None, page_index=None, horizontal_resolution=None, image_brightness=None, image_color_mode=None, image_contrast=None, paper_color=None, pixel_format=None, resolution=None, scale=None, use_anti_aliasing=None, use_high_quality_rendering=None, vertical_resolution=None, image_height=None, image_width=None, use_gdi_emf_renderer=None, threshold_for_floyd_steinberg_dithering=None, tiff_binarization_method=None, tiff_compression=None):  # noqa: E501
         """TiffSaveOptionsData - a model defined in Swagger"""  # noqa: E501
 
         self._allow_embedding_post_script_fonts = None
@@ -150,6 +154,8 @@ class TiffSaveOptionsData(object):
         self._use_anti_aliasing = None
         self._use_high_quality_rendering = None
         self._vertical_resolution = None
+        self._image_height = None
+        self._image_width = None
         self._use_gdi_emf_renderer = None
         self._threshold_for_floyd_steinberg_dithering = None
         self._tiff_binarization_method = None
@@ -217,6 +223,10 @@ class TiffSaveOptionsData(object):
             self.use_high_quality_rendering = use_high_quality_rendering
         if vertical_resolution is not None:
             self.vertical_resolution = vertical_resolution
+        if image_height is not None:
+            self.image_height = image_height
+        if image_width is not None:
+            self.image_width = image_width
         if use_gdi_emf_renderer is not None:
             self.use_gdi_emf_renderer = use_gdi_emf_renderer
         if threshold_for_floyd_steinberg_dithering is not None:
@@ -949,6 +959,50 @@ class TiffSaveOptionsData(object):
         :type: float
         """
         self._vertical_resolution = vertical_resolution
+
+    @property
+    def image_height(self):
+        """Gets the image_height of this TiffSaveOptionsData.  # noqa: E501
+
+        Gets or sets the height of a generated image in pixels.  # noqa: E501
+
+        :return: The image_height of this TiffSaveOptionsData.  # noqa: E501
+        :rtype: int
+        """
+        return self._image_height
+
+    @image_height.setter
+    def image_height(self, image_height):
+        """Sets the image_height of this TiffSaveOptionsData.
+
+        Gets or sets the height of a generated image in pixels.  # noqa: E501
+
+        :param image_height: The image_height of this TiffSaveOptionsData.  # noqa: E501
+        :type: int
+        """
+        self._image_height = image_height
+
+    @property
+    def image_width(self):
+        """Gets the image_width of this TiffSaveOptionsData.  # noqa: E501
+
+        Gets or sets the width of a generated image in pixels.  # noqa: E501
+
+        :return: The image_width of this TiffSaveOptionsData.  # noqa: E501
+        :rtype: int
+        """
+        return self._image_width
+
+    @image_width.setter
+    def image_width(self, image_width):
+        """Sets the image_width of this TiffSaveOptionsData.
+
+        Gets or sets the width of a generated image in pixels.  # noqa: E501
+
+        :param image_width: The image_width of this TiffSaveOptionsData.  # noqa: E501
+        :type: int
+        """
+        self._image_width = image_width
 
     @property
     def use_gdi_emf_renderer(self):

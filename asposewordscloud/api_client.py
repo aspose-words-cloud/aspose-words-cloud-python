@@ -137,6 +137,7 @@ class ApiClient(object):
         'DrawingObjectsResponse, _': asposewordscloud.models.DrawingObjectsResponse,
         'DrawingObjectUpdate, _': asposewordscloud.models.DrawingObjectUpdate,
         'EmfSaveOptionsData, _': asposewordscloud.models.EmfSaveOptionsData,
+        'EpsSaveOptionsData, _': asposewordscloud.models.EpsSaveOptionsData,
         'EpubSaveOptionsData, _': asposewordscloud.models.EpubSaveOptionsData,
         'Error, _': asposewordscloud.models.Error,
         'ErrorDetails, _': asposewordscloud.models.ErrorDetails,

@@ -72,6 +72,7 @@ from asposewordscloud.models.drawing_object_response import DrawingObjectRespons
 from asposewordscloud.models.drawing_objects_response import DrawingObjectsResponse
 from asposewordscloud.models.drawing_object_update import DrawingObjectUpdate
 from asposewordscloud.models.emf_save_options_data import EmfSaveOptionsData
+from asposewordscloud.models.eps_save_options_data import EpsSaveOptionsData
 from asposewordscloud.models.epub_save_options_data import EpubSaveOptionsData
 from asposewordscloud.models.error import Error
 from asposewordscloud.models.error_details import ErrorDetails
