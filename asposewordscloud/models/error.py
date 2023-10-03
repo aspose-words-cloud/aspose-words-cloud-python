@@ -77,7 +77,7 @@ class Error(object):
     def code(self):
         """Gets the code of this Error.  # noqa: E501
 
-        Code.  # noqa: E501
+        Gets or sets Code.  # noqa: E501
 
         :return: The code of this Error.  # noqa: E501
         :rtype: str
@@ -88,7 +88,7 @@ class Error(object):
     def code(self, code):
         """Sets the code of this Error.
 
-        Code.  # noqa: E501
+        Gets or sets Code.  # noqa: E501
 
         :param code: The code of this Error.  # noqa: E501
         :type: str
@@ -99,7 +99,7 @@ class Error(object):
     def description(self):
         """Gets the description of this Error.  # noqa: E501
 
-        Description.  # noqa: E501
+        Gets or sets Description.  # noqa: E501
 
         :return: The description of this Error.  # noqa: E501
         :rtype: str
@@ -110,7 +110,7 @@ class Error(object):
     def description(self, description):
         """Sets the description of this Error.
 
-        Description.  # noqa: E501
+        Gets or sets Description.  # noqa: E501
 
         :param description: The description of this Error.  # noqa: E501
         :type: str
@@ -121,7 +121,7 @@ class Error(object):
     def inner_error(self):
         """Gets the inner_error of this Error.  # noqa: E501
 
-        Inner Error.  # noqa: E501
+        Gets or sets InnerError.  # noqa: E501
 
         :return: The inner_error of this Error.  # noqa: E501
         :rtype: ErrorDetails
@@ -132,7 +132,7 @@ class Error(object):
     def inner_error(self, inner_error):
         """Sets the inner_error of this Error.
 
-        Inner Error.  # noqa: E501
+        Gets or sets InnerError.  # noqa: E501
 
         :param inner_error: The inner_error of this Error.  # noqa: E501
         :type: ErrorDetails
@@ -143,7 +143,7 @@ class Error(object):
     def message(self):
         """Gets the message of this Error.  # noqa: E501
 
-        Message.  # noqa: E501
+        Gets or sets Message.  # noqa: E501
 
         :return: The message of this Error.  # noqa: E501
         :rtype: str
@@ -154,7 +154,7 @@ class Error(object):
     def message(self, message):
         """Sets the message of this Error.
 
-        Message.  # noqa: E501
+        Gets or sets Message.  # noqa: E501
 
         :param message: The message of this Error.  # noqa: E501
         :type: str

@@ -67,7 +67,7 @@ class ErrorDetails(object):
     def error_date_time(self):
         """Gets the error_date_time of this ErrorDetails.  # noqa: E501
 
-        Error datetime.  # noqa: E501
+        Gets or sets ErrorDateTime.  # noqa: E501
 
         :return: The error_date_time of this ErrorDetails.  # noqa: E501
         :rtype: datetime
@@ -78,7 +78,7 @@ class ErrorDetails(object):
     def error_date_time(self, error_date_time):
         """Sets the error_date_time of this ErrorDetails.
 
-        Error datetime.  # noqa: E501
+        Gets or sets ErrorDateTime.  # noqa: E501
 
         :param error_date_time: The error_date_time of this ErrorDetails.  # noqa: E501
         :type: datetime
@@ -89,7 +89,7 @@ class ErrorDetails(object):
     def request_id(self):
         """Gets the request_id of this ErrorDetails.  # noqa: E501
 
-        The request id.  # noqa: E501
+        Gets or sets RequestId.  # noqa: E501
 
         :return: The request_id of this ErrorDetails.  # noqa: E501
         :rtype: str
@@ -100,7 +100,7 @@ class ErrorDetails(object):
     def request_id(self, request_id):
         """Sets the request_id of this ErrorDetails.
 
-        The request id.  # noqa: E501
+        Gets or sets RequestId.  # noqa: E501
 
         :param request_id: The request_id of this ErrorDetails.  # noqa: E501
         :type: str

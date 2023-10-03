@@ -62,7 +62,7 @@ class ListUpdate(object):
     def is_restart_at_each_section(self):
         """Gets the is_restart_at_each_section of this ListUpdate.  # noqa: E501
 
-        Gets or sets a value indicating whether list should be restarted at each section. The default value is false.  # noqa: E501
+        Gets or sets a value indicating whether list should be restarted at each section. The default value is false. This option is supported only in RTF, DOC and DOCX document formats. This option will be written to DOCX only if Aspose.Words.Saving.OoxmlCompliance is higher than Aspose.Words.Saving.OoxmlCompliance.Ecma376_2006.  # noqa: E501
 
         :return: The is_restart_at_each_section of this ListUpdate.  # noqa: E501
         :rtype: bool
@@ -73,7 +73,7 @@ class ListUpdate(object):
     def is_restart_at_each_section(self, is_restart_at_each_section):
         """Sets the is_restart_at_each_section of this ListUpdate.
 
-        Gets or sets a value indicating whether list should be restarted at each section. The default value is false.  # noqa: E501
+        Gets or sets a value indicating whether list should be restarted at each section. The default value is false. This option is supported only in RTF, DOC and DOCX document formats. This option will be written to DOCX only if Aspose.Words.Saving.OoxmlCompliance is higher than Aspose.Words.Saving.OoxmlCompliance.Ecma376_2006.  # noqa: E501
 
         :param is_restart_at_each_section: The is_restart_at_each_section of this ListUpdate.  # noqa: E501
         :type: bool

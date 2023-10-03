@@ -99,7 +99,7 @@ class ListFormat(object):
     def list_level_number(self):
         """Gets the list_level_number of this ListFormat.  # noqa: E501
 
-        Gets or sets the list level number (0 to 8) for the paragraph.  # noqa: E501
+        Gets or sets the list level number (0 to 8) for the paragraph. In Word documents, lists may consist of 1 or 9 levels, numbered 0 to 8. Has effect only when the Aspose.Words.ListFormat.List property is set to reference a valid list. Aspose.Words.ListFormat.List.  # noqa: E501
 
         :return: The list_level_number of this ListFormat.  # noqa: E501
         :rtype: int
@@ -110,7 +110,7 @@ class ListFormat(object):
     def list_level_number(self, list_level_number):
         """Sets the list_level_number of this ListFormat.
 
-        Gets or sets the list level number (0 to 8) for the paragraph.  # noqa: E501
+        Gets or sets the list level number (0 to 8) for the paragraph. In Word documents, lists may consist of 1 or 9 levels, numbered 0 to 8. Has effect only when the Aspose.Words.ListFormat.List property is set to reference a valid list. Aspose.Words.ListFormat.List.  # noqa: E501
 
         :param list_level_number: The list_level_number of this ListFormat.  # noqa: E501
         :type: int
@@ -121,7 +121,7 @@ class ListFormat(object):
     def list_id(self):
         """Gets the list_id of this ListFormat.  # noqa: E501
 
-        Gets or sets the list id of this paragraph.  # noqa: E501
+        Gets or sets the list id of this paragraph. The list that is being assigned to this property must belong to the current document.The list that is being assigned to this property must not be a list style definition.  # noqa: E501
 
         :return: The list_id of this ListFormat.  # noqa: E501
         :rtype: int
@@ -132,7 +132,7 @@ class ListFormat(object):
     def list_id(self, list_id):
         """Sets the list_id of this ListFormat.
 
-        Gets or sets the list id of this paragraph.  # noqa: E501
+        Gets or sets the list id of this paragraph. The list that is being assigned to this property must belong to the current document.The list that is being assigned to this property must not be a list style definition.  # noqa: E501
 
         :param list_id: The list_id of this ListFormat.  # noqa: E501
         :type: int

@@ -31,7 +31,7 @@ import six
 import json
 
 class BordersResponse(object):
-    """The REST response with a collection of borders.
+    """The REST response with a collection of borders. This response is returned by the Service when handling "GET {nodeWithBorders}/borders" REST API requests.
     """
 
     """

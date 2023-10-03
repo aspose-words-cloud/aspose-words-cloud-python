@@ -31,7 +31,7 @@ import six
 import json
 
 class ListsResponse(object):
-    """The REST response with a collection of lists, contained in the document.
+    """The REST response with a collection of lists, contained in the document. This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/lists" REST API requests.
     """
 
     """

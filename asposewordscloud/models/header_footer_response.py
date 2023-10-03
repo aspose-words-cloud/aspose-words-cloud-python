@@ -31,7 +31,7 @@ import six
 import json
 
 class HeaderFooterResponse(object):
-    """The REST response with a HeaderFooter.
+    """The REST response with a HeaderFooter. This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/headersfooters/{0}" REST API requests.
     """
 
     """

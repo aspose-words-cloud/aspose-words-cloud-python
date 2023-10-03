@@ -42,48 +42,26 @@ class FieldUpdate(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'field_code': 'str',
-        'locale_id': 'str'
+        'locale_id': 'str',
+        'field_code': 'str'
     }
 
     attribute_map = {
-        'field_code': 'FieldCode',
-        'locale_id': 'LocaleId'
+        'locale_id': 'LocaleId',
+        'field_code': 'FieldCode'
     }
 
-    def __init__(self, field_code=None, locale_id=None):  # noqa: E501
+    def __init__(self, locale_id=None, field_code=None):  # noqa: E501
         """FieldUpdate - a model defined in Swagger"""  # noqa: E501
 
-        self._field_code = None
         self._locale_id = None
+        self._field_code = None
         self.discriminator = None
 
-        if field_code is not None:
-            self.field_code = field_code
         if locale_id is not None:
             self.locale_id = locale_id
-
-    @property
-    def field_code(self):
-        """Gets the field_code of this FieldUpdate.  # noqa: E501
-
-        Gets or sets the field code.  # noqa: E501
-
-        :return: The field_code of this FieldUpdate.  # noqa: E501
-        :rtype: str
-        """
-        return self._field_code
-
-    @field_code.setter
-    def field_code(self, field_code):
-        """Sets the field_code of this FieldUpdate.
-
-        Gets or sets the field code.  # noqa: E501
-
-        :param field_code: The field_code of this FieldUpdate.  # noqa: E501
-        :type: str
-        """
-        self._field_code = field_code
+        if field_code is not None:
+            self.field_code = field_code
 
     @property
     def locale_id(self):
@@ -106,6 +84,28 @@ class FieldUpdate(object):
         :type: str
         """
         self._locale_id = locale_id
+
+    @property
+    def field_code(self):
+        """Gets the field_code of this FieldUpdate.  # noqa: E501
+
+        Gets or sets the field code.  # noqa: E501
+
+        :return: The field_code of this FieldUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._field_code
+
+    @field_code.setter
+    def field_code(self, field_code):
+        """Sets the field_code of this FieldUpdate.
+
+        Gets or sets the field code.  # noqa: E501
+
+        :param field_code: The field_code of this FieldUpdate.  # noqa: E501
+        :type: str
+        """
+        self._field_code = field_code
 
 
     def extract_files_content(self, filesContentResult):

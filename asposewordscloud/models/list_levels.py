@@ -89,7 +89,7 @@ class ListLevels(object):
     def list_level(self):
         """Gets the list_level of this ListLevels.  # noqa: E501
 
-        Gets or sets the collection of list levels for this list.  # noqa: E501
+        Gets or sets the collection of list levels for this list. Use this property to access and modify formatting individual to each level of the list.  # noqa: E501
 
         :return: The list_level of this ListLevels.  # noqa: E501
         :rtype: list[ListLevel]
@@ -100,7 +100,7 @@ class ListLevels(object):
     def list_level(self, list_level):
         """Sets the list_level of this ListLevels.
 
-        Gets or sets the collection of list levels for this list.  # noqa: E501
+        Gets or sets the collection of list levels for this list. Use this property to access and modify formatting individual to each level of the list.  # noqa: E501
 
         :param list_level: The list_level of this ListLevels.  # noqa: E501
         :type: list[ListLevel]

@@ -198,7 +198,7 @@ class FormFieldTextInput(object):
     def enabled(self):
         """Gets the enabled of this FormFieldTextInput.  # noqa: E501
 
-        Gets or sets a value indicating whether a form field is enabled.  # noqa: E501
+        Gets or sets a value indicating whether a form field is enabled. If a form field is enabled, its contents can be changed as the form is filled in.  # noqa: E501
 
         :return: The enabled of this FormFieldTextInput.  # noqa: E501
         :rtype: bool
@@ -209,7 +209,7 @@ class FormFieldTextInput(object):
     def enabled(self, enabled):
         """Sets the enabled of this FormFieldTextInput.
 
-        Gets or sets a value indicating whether a form field is enabled.  # noqa: E501
+        Gets or sets a value indicating whether a form field is enabled. If a form field is enabled, its contents can be changed as the form is filled in.  # noqa: E501
 
         :param enabled: The enabled of this FormFieldTextInput.  # noqa: E501
         :type: bool
@@ -220,7 +220,7 @@ class FormFieldTextInput(object):
     def status_text(self):
         """Gets the status_text of this FormFieldTextInput.  # noqa: E501
 
-        Gets or sets text, displayed in the status bar when a form field has the focus.  # noqa: E501
+        Gets or sets text, displayed in the status bar when a form field has the focus. If the OwnStatus property is set to true, the StatusText property specifies the status bar text. If the OwnStatus property is set to false, the StatusText property specifies the name of an AutoText entry that contains status bar text for the form field.  # noqa: E501
 
         :return: The status_text of this FormFieldTextInput.  # noqa: E501
         :rtype: str
@@ -231,7 +231,7 @@ class FormFieldTextInput(object):
     def status_text(self, status_text):
         """Sets the status_text of this FormFieldTextInput.
 
-        Gets or sets text, displayed in the status bar when a form field has the focus.  # noqa: E501
+        Gets or sets text, displayed in the status bar when a form field has the focus. If the OwnStatus property is set to true, the StatusText property specifies the status bar text. If the OwnStatus property is set to false, the StatusText property specifies the name of an AutoText entry that contains status bar text for the form field.  # noqa: E501
 
         :param status_text: The status_text of this FormFieldTextInput.  # noqa: E501
         :type: str
@@ -242,7 +242,7 @@ class FormFieldTextInput(object):
     def own_status(self):
         """Gets the own_status of this FormFieldTextInput.  # noqa: E501
 
-        Gets or sets a value indicating whether the source of the text that's displayed in the status bar when a form field has the focus.  # noqa: E501
+        Gets or sets a value indicating whether the source of the text that's displayed in the status bar when a form field has the focus. If true, the text specified by the StatusText property is displayed. If false, the text of the AutoText entry specified by the StatusText property is displayed.  # noqa: E501
 
         :return: The own_status of this FormFieldTextInput.  # noqa: E501
         :rtype: bool
@@ -253,7 +253,7 @@ class FormFieldTextInput(object):
     def own_status(self, own_status):
         """Sets the own_status of this FormFieldTextInput.
 
-        Gets or sets a value indicating whether the source of the text that's displayed in the status bar when a form field has the focus.  # noqa: E501
+        Gets or sets a value indicating whether the source of the text that's displayed in the status bar when a form field has the focus. If true, the text specified by the StatusText property is displayed. If false, the text of the AutoText entry specified by the StatusText property is displayed.  # noqa: E501
 
         :param own_status: The own_status of this FormFieldTextInput.  # noqa: E501
         :type: bool
@@ -264,7 +264,7 @@ class FormFieldTextInput(object):
     def help_text(self):
         """Gets the help_text of this FormFieldTextInput.  # noqa: E501
 
-        Gets or sets text, displayed in a message box when the form field has the focus and the user presses F1.  # noqa: E501
+        Gets or sets text, displayed in a message box when the form field has the focus and the user presses F1. If the OwnHelp property is set to True, HelpText specifies the text string value. If OwnHelp is set to False, HelpText specifies the name of an AutoText entry that contains help text for the form field.  # noqa: E501
 
         :return: The help_text of this FormFieldTextInput.  # noqa: E501
         :rtype: str
@@ -275,7 +275,7 @@ class FormFieldTextInput(object):
     def help_text(self, help_text):
         """Sets the help_text of this FormFieldTextInput.
 
-        Gets or sets text, displayed in a message box when the form field has the focus and the user presses F1.  # noqa: E501
+        Gets or sets text, displayed in a message box when the form field has the focus and the user presses F1. If the OwnHelp property is set to True, HelpText specifies the text string value. If OwnHelp is set to False, HelpText specifies the name of an AutoText entry that contains help text for the form field.  # noqa: E501
 
         :param help_text: The help_text of this FormFieldTextInput.  # noqa: E501
         :type: str
@@ -286,7 +286,7 @@ class FormFieldTextInput(object):
     def own_help(self):
         """Gets the own_help of this FormFieldTextInput.  # noqa: E501
 
-        Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.  # noqa: E501
+        Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1. If True, the text specified by the HelpText property is displayed. If False, the text in the AutoText entry specified by the HelpText property is displayed.  # noqa: E501
 
         :return: The own_help of this FormFieldTextInput.  # noqa: E501
         :rtype: bool
@@ -297,7 +297,7 @@ class FormFieldTextInput(object):
     def own_help(self, own_help):
         """Sets the own_help of this FormFieldTextInput.
 
-        Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1.  # noqa: E501
+        Gets or sets a value indicating whether the source of the text that's displayed in a message box when a form field has the focus and the user presses F1. If True, the text specified by the HelpText property is displayed. If False, the text in the AutoText entry specified by the HelpText property is displayed.  # noqa: E501
 
         :param own_help: The own_help of this FormFieldTextInput.  # noqa: E501
         :type: bool
@@ -308,7 +308,7 @@ class FormFieldTextInput(object):
     def calculate_on_exit(self):
         """Gets the calculate_on_exit of this FormFieldTextInput.  # noqa: E501
 
-        Gets or sets a value indicating whether references to the specified form field are automatically updated whenever the field is exited.  # noqa: E501
+        Gets or sets a value indicating whether references to the specified form field are automatically updated whenever the field is exited. Setting CalculateOnExit only affects the behavior of the form field when the document is opened in Microsoft Word. Aspose.Words never updates references to the form field.  # noqa: E501
 
         :return: The calculate_on_exit of this FormFieldTextInput.  # noqa: E501
         :rtype: bool
@@ -319,7 +319,7 @@ class FormFieldTextInput(object):
     def calculate_on_exit(self, calculate_on_exit):
         """Sets the calculate_on_exit of this FormFieldTextInput.
 
-        Gets or sets a value indicating whether references to the specified form field are automatically updated whenever the field is exited.  # noqa: E501
+        Gets or sets a value indicating whether references to the specified form field are automatically updated whenever the field is exited. Setting CalculateOnExit only affects the behavior of the form field when the document is opened in Microsoft Word. Aspose.Words never updates references to the form field.  # noqa: E501
 
         :param calculate_on_exit: The calculate_on_exit of this FormFieldTextInput.  # noqa: E501
         :type: bool
@@ -330,7 +330,7 @@ class FormFieldTextInput(object):
     def entry_macro(self):
         """Gets the entry_macro of this FormFieldTextInput.  # noqa: E501
 
-        Gets or sets the entry macro name for the form field.  # noqa: E501
+        Gets or sets the entry macro name for the form field. The entry macro runs when the form field gets the focus in Microsoft Word.  # noqa: E501
 
         :return: The entry_macro of this FormFieldTextInput.  # noqa: E501
         :rtype: str
@@ -341,7 +341,7 @@ class FormFieldTextInput(object):
     def entry_macro(self, entry_macro):
         """Sets the entry_macro of this FormFieldTextInput.
 
-        Gets or sets the entry macro name for the form field.  # noqa: E501
+        Gets or sets the entry macro name for the form field. The entry macro runs when the form field gets the focus in Microsoft Word.  # noqa: E501
 
         :param entry_macro: The entry_macro of this FormFieldTextInput.  # noqa: E501
         :type: str
@@ -352,7 +352,7 @@ class FormFieldTextInput(object):
     def exit_macro(self):
         """Gets the exit_macro of this FormFieldTextInput.  # noqa: E501
 
-        Gets or sets the exit macro name for the form field.  # noqa: E501
+        Gets or sets the exit macro name for the form field. The exit macro runs when the form field loses the focus in Microsoft Word.  # noqa: E501
 
         :return: The exit_macro of this FormFieldTextInput.  # noqa: E501
         :rtype: str
@@ -363,7 +363,7 @@ class FormFieldTextInput(object):
     def exit_macro(self, exit_macro):
         """Sets the exit_macro of this FormFieldTextInput.
 
-        Gets or sets the exit macro name for the form field.  # noqa: E501
+        Gets or sets the exit macro name for the form field. The exit macro runs when the form field loses the focus in Microsoft Word.  # noqa: E501
 
         :param exit_macro: The exit_macro of this FormFieldTextInput.  # noqa: E501
         :type: str
@@ -374,7 +374,7 @@ class FormFieldTextInput(object):
     def text_input_format(self):
         """Gets the text_input_format of this FormFieldTextInput.  # noqa: E501
 
-        Gets or sets text formatting for the text form field.  # noqa: E501
+        Gets or sets text formatting for the text form field. If the text form field contains regular text, then valid format strings are "", "UPPERCASE", "LOWERCASE", "FIRST CAPITAL" and "TITLE CASE". The strings are case-insensitive.If the text form field contains a number or a date/time value, then valid format strings are number or date and time format strings.  # noqa: E501
 
         :return: The text_input_format of this FormFieldTextInput.  # noqa: E501
         :rtype: str
@@ -385,7 +385,7 @@ class FormFieldTextInput(object):
     def text_input_format(self, text_input_format):
         """Sets the text_input_format of this FormFieldTextInput.
 
-        Gets or sets text formatting for the text form field.  # noqa: E501
+        Gets or sets text formatting for the text form field. If the text form field contains regular text, then valid format strings are "", "UPPERCASE", "LOWERCASE", "FIRST CAPITAL" and "TITLE CASE". The strings are case-insensitive.If the text form field contains a number or a date/time value, then valid format strings are number or date and time format strings.  # noqa: E501
 
         :param text_input_format: The text_input_format of this FormFieldTextInput.  # noqa: E501
         :type: str
@@ -426,7 +426,7 @@ class FormFieldTextInput(object):
     def text_input_default(self):
         """Gets the text_input_default of this FormFieldTextInput.  # noqa: E501
 
-        Gets or sets the default string or a calculation expression of the text form field.  # noqa: E501
+        Gets or sets the default string or a calculation expression of the text form field. The meaning of this property depends on the value of the TextInputType property.When TextInputType is Regular or Number, this string specifies the default string for the text form field. This string is the content that Microsoft Word will display in the document when the form field is empty.When TextInputType is Calculated, then this string holds the expression to be calculated. The expression needs to be a formula valid according to Microsoft Word formula field requirements. When you set a new expression using this property, Aspose.Words calculates the formula result automatically and inserts it into the form field.  # noqa: E501
 
         :return: The text_input_default of this FormFieldTextInput.  # noqa: E501
         :rtype: str
@@ -437,7 +437,7 @@ class FormFieldTextInput(object):
     def text_input_default(self, text_input_default):
         """Sets the text_input_default of this FormFieldTextInput.
 
-        Gets or sets the default string or a calculation expression of the text form field.  # noqa: E501
+        Gets or sets the default string or a calculation expression of the text form field. The meaning of this property depends on the value of the TextInputType property.When TextInputType is Regular or Number, this string specifies the default string for the text form field. This string is the content that Microsoft Word will display in the document when the form field is empty.When TextInputType is Calculated, then this string holds the expression to be calculated. The expression needs to be a formula valid according to Microsoft Word formula field requirements. When you set a new expression using this property, Aspose.Words calculates the formula result automatically and inserts it into the form field.  # noqa: E501
 
         :param text_input_default: The text_input_default of this FormFieldTextInput.  # noqa: E501
         :type: str

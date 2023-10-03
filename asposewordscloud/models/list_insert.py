@@ -62,7 +62,7 @@ class ListInsert(object):
     def template(self):
         """Gets the template of this ListInsert.  # noqa: E501
 
-        Gets or sets the option that controls how list should be restarted at each section.  # noqa: E501
+        Gets or sets the option that controls how list should be restarted at each section. This option is supported only in RTF, DOC and DOCX document formats. This option will be written to DOCX only if Aspose.Words.Saving.OoxmlCompliance is higher then Aspose.Words.Saving.OoxmlCompliance.Ecma376_2006.  # noqa: E501
 
         :return: The template of this ListInsert.  # noqa: E501
         :rtype: str
@@ -73,7 +73,7 @@ class ListInsert(object):
     def template(self, template):
         """Sets the template of this ListInsert.
 
-        Gets or sets the option that controls how list should be restarted at each section.  # noqa: E501
+        Gets or sets the option that controls how list should be restarted at each section. This option is supported only in RTF, DOC and DOCX document formats. This option will be written to DOCX only if Aspose.Words.Saving.OoxmlCompliance is higher then Aspose.Words.Saving.OoxmlCompliance.Ecma376_2006.  # noqa: E501
 
         :param template: The template of this ListInsert.  # noqa: E501
         :type: str

@@ -31,7 +31,7 @@ import six
 import json
 
 class BookmarkResponse(object):
-    """The REST response with a bookmark.
+    """The REST response with a bookmark. This response should be returned by the service when handling: GET bookmarks/{bookmarkName}.
     """
 
     """

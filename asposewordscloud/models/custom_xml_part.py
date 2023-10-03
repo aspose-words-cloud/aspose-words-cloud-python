@@ -94,7 +94,7 @@ class CustomXmlPart(object):
     def id(self):
         """Gets the id of this CustomXmlPart.  # noqa: E501
 
-        Gets or sets the custom xml part id.  # noqa: E501
+        Gets or sets the custom xml part id. Cannot be null.  # noqa: E501
 
         :return: The id of this CustomXmlPart.  # noqa: E501
         :rtype: str
@@ -105,7 +105,7 @@ class CustomXmlPart(object):
     def id(self, id):
         """Sets the id of this CustomXmlPart.
 
-        Gets or sets the custom xml part id.  # noqa: E501
+        Gets or sets the custom xml part id. Cannot be null.  # noqa: E501
 
         :param id: The id of this CustomXmlPart.  # noqa: E501
         :type: str
@@ -116,7 +116,7 @@ class CustomXmlPart(object):
     def data(self):
         """Gets the data of this CustomXmlPart.  # noqa: E501
 
-        Gets or sets the custom xml part data.  # noqa: E501
+        Gets or sets the custom xml part data. Cannot be null.Default is empty string.  # noqa: E501
 
         :return: The data of this CustomXmlPart.  # noqa: E501
         :rtype: str
@@ -127,7 +127,7 @@ class CustomXmlPart(object):
     def data(self, data):
         """Sets the data of this CustomXmlPart.
 
-        Gets or sets the custom xml part data.  # noqa: E501
+        Gets or sets the custom xml part data. Cannot be null.Default is empty string.  # noqa: E501
 
         :param data: The data of this CustomXmlPart.  # noqa: E501
         :type: str

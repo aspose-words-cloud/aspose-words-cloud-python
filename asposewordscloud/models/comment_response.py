@@ -31,7 +31,7 @@ import six
 import json
 
 class CommentResponse(object):
-    """The REST response with a comment.
+    """The REST response with a comment. This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/comments/0" REST API requests.
     """
 
     """

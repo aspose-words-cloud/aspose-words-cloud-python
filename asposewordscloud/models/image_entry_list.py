@@ -67,7 +67,7 @@ class ImageEntryList(object):
     def append_each_image_on_new_page(self):
         """Gets the append_each_image_on_new_page of this ImageEntryList.  # noqa: E501
 
-        Gets or sets a value indicating whether each image should be added to a new page in the document.  # noqa: E501
+        Gets or sets a value indicating whether each image should be added to a new page in the document. This value only has an effect when adding images to a document that supports pagination.  # noqa: E501
 
         :return: The append_each_image_on_new_page of this ImageEntryList.  # noqa: E501
         :rtype: bool
@@ -78,7 +78,7 @@ class ImageEntryList(object):
     def append_each_image_on_new_page(self, append_each_image_on_new_page):
         """Sets the append_each_image_on_new_page of this ImageEntryList.
 
-        Gets or sets a value indicating whether each image should be added to a new page in the document.  # noqa: E501
+        Gets or sets a value indicating whether each image should be added to a new page in the document. This value only has an effect when adding images to a document that supports pagination.  # noqa: E501
 
         :param append_each_image_on_new_page: The append_each_image_on_new_page of this ImageEntryList.  # noqa: E501
         :type: bool

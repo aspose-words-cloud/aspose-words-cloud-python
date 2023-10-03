@@ -1109,7 +1109,7 @@ class WordsApi(Encryptor, object):
             collection_formats=http_params['collection_formats']))
 
     def compress_document(self, request, **kwargs):  # noqa: E501
-        """The default settings allows to reduce the size of the document without any visible degradation of images quality.  # noqa: E501
+        """Compress and resize images inside the document. The default settings allows to reduce the size of the document without any visible degradation of images quality.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1141,7 +1141,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def compress_document_with_http_info(self, request, **kwargs):  # noqa: E501
-        """The default settings allows to reduce the size of the document without any visible degradation of images quality.  # noqa: E501
+        """Compress and resize images inside the document. The default settings allows to reduce the size of the document without any visible degradation of images quality.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1190,7 +1190,7 @@ class WordsApi(Encryptor, object):
             collection_formats=http_params['collection_formats']))
 
     def compress_document_online(self, request, **kwargs):  # noqa: E501
-        """Compress and resize images inside the document.  # noqa: E501
+        """Compress and resize images inside the document. The default settings allows to reduce the size of the document without any visible degradation of images quality.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1220,7 +1220,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def compress_document_online_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Compress and resize images inside the document.  # noqa: E501
+        """Compress and resize images inside the document. The default settings allows to reduce the size of the document without any visible degradation of images quality.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1744,7 +1744,7 @@ class WordsApi(Encryptor, object):
             collection_formats=http_params['collection_formats']))
 
     def create_document(self, request, **kwargs):  # noqa: E501
-        """Supported all save format extensions.  # noqa: E501
+        """Creates a new document in cloud storage in the format, determined by the file extension. Supported all save format extensions.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -1771,7 +1771,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def create_document_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Supported all save format extensions.  # noqa: E501
+        """Creates a new document in cloud storage in the format, determined by the file extension. Supported all save format extensions.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2534,7 +2534,7 @@ class WordsApi(Encryptor, object):
             collection_formats=http_params['collection_formats']))
 
     def delete_border(self, request, **kwargs):  # noqa: E501
-        """The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
+        """Removes a border from the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2569,7 +2569,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def delete_border_with_http_info(self, request, **kwargs):  # noqa: E501
-        """The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
+        """Removes a border from the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2615,7 +2615,7 @@ class WordsApi(Encryptor, object):
             collection_formats=http_params['collection_formats']))
 
     def delete_border_online(self, request, **kwargs):  # noqa: E501
-        """Removes a border from the document node.  # noqa: E501
+        """Removes a border from the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2648,7 +2648,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def delete_border_online_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Removes a border from the document node.  # noqa: E501
+        """Removes a border from the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2697,7 +2697,7 @@ class WordsApi(Encryptor, object):
             collection_formats=http_params['collection_formats']))
 
     def delete_borders(self, request, **kwargs):  # noqa: E501
-        """The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
+        """Removes borders from the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2731,7 +2731,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def delete_borders_with_http_info(self, request, **kwargs):  # noqa: E501
-        """The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
+        """Removes borders from the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2777,7 +2777,7 @@ class WordsApi(Encryptor, object):
             collection_formats=http_params['collection_formats']))
 
     def delete_borders_online(self, request, **kwargs):  # noqa: E501
-        """Removes borders from the document node.  # noqa: E501
+        """Removes borders from the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -2809,7 +2809,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def delete_borders_online_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Removes borders from the document node.  # noqa: E501
+        """Removes borders from the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -7505,7 +7505,7 @@ class WordsApi(Encryptor, object):
             collection_formats=http_params['collection_formats']))
 
     def get_border(self, request, **kwargs):  # noqa: E501
-        """The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
+        """Reads a border from the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -7537,7 +7537,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def get_border_with_http_info(self, request, **kwargs):  # noqa: E501
-        """The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
+        """Reads a border from the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -7583,7 +7583,7 @@ class WordsApi(Encryptor, object):
             collection_formats=http_params['collection_formats']))
 
     def get_border_online(self, request, **kwargs):  # noqa: E501
-        """Reads a border from the document node.  # noqa: E501
+        """Reads a border from the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -7613,7 +7613,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def get_border_online_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Reads a border from the document node.  # noqa: E501
+        """Reads a border from the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -19519,7 +19519,7 @@ class WordsApi(Encryptor, object):
 
         :param is_async bool
         :param document file : The document. (required)
-        :param image_file file : File with image. (required)
+        :param image_file file : File with image.
         :param load_encoding str : Encoding that will be used to load an HTML (or TXT) document if the encoding is not specified in HTML.
         :param password str : Password of protected Word document. Use the parameter to pass a password via SDK. SDK encrypts it automatically. We don't recommend to use the parameter to pass a plain password for direct call of API.
         :param encrypted_password str : Password of protected Word document. Use the parameter to pass an encrypted password for direct calls of API. See SDK code for encyption details.
@@ -21992,7 +21992,7 @@ class WordsApi(Encryptor, object):
             collection_formats=http_params['collection_formats']))
 
     def save_as_online(self, request, **kwargs):  # noqa: E501
-        """Converts a document to the specified format.  # noqa: E501
+        """Converts a document in cloud storage to the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -22022,7 +22022,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def save_as_online_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Converts a document to the specified format.  # noqa: E501
+        """Converts a document in cloud storage to the specified format.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -22331,7 +22331,7 @@ class WordsApi(Encryptor, object):
             collection_formats=http_params['collection_formats']))
 
     def save_as_tiff_online(self, request, **kwargs):  # noqa: E501
-        """Converts a document to TIFF format using detailed conversion settings.  # noqa: E501
+        """Converts a document in cloud storage to TIFF format using detailed conversion settings.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -22378,7 +22378,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def save_as_tiff_online_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Converts a document to TIFF format using detailed conversion settings.  # noqa: E501
+        """Converts a document in cloud storage to TIFF format using detailed conversion settings.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -23073,7 +23073,7 @@ class WordsApi(Encryptor, object):
             collection_formats=http_params['collection_formats']))
 
     def update_border(self, request, **kwargs):  # noqa: E501
-        """The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
+        """Updates a border in the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -23109,7 +23109,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def update_border_with_http_info(self, request, **kwargs):  # noqa: E501
-        """The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
+        """Updates a border in the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -23158,7 +23158,7 @@ class WordsApi(Encryptor, object):
             collection_formats=http_params['collection_formats']))
 
     def update_border_online(self, request, **kwargs):  # noqa: E501
-        """Updates a border in the document node.  # noqa: E501
+        """Updates a border in the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True
@@ -23192,7 +23192,7 @@ class WordsApi(Encryptor, object):
             return data
         
     def update_border_online_with_http_info(self, request, **kwargs):  # noqa: E501
-        """Updates a border in the document node.  # noqa: E501
+        """Updates a border in the document node. The 'nodePath' parameter should refer to a paragraph, a cell or a row.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass is_async=True

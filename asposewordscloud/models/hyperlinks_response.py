@@ -31,7 +31,7 @@ import six
 import json
 
 class HyperlinksResponse(object):
-    """The REST response with a collection of hyperlinks.
+    """The REST response with a collection of hyperlinks. This response should be returned by the service when handling "GET /{name}/hyperlinks" REST API calls.
     """
 
     """

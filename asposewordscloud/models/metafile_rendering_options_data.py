@@ -112,7 +112,7 @@ class MetafileRenderingOptionsData(object):
     def emulate_raster_operations(self):
         """Gets the emulate_raster_operations of this MetafileRenderingOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether the raster operations should be emulated.  # noqa: E501
+        Gets or sets a value indicating whether the raster operations should be emulated. Specific raster operations could be used in metafiles. They can not be rendered directly to vector graphics. Emulating raster operations requires partial rasterization of the resulting vector graphics which may affect the metafile rendering performance. When this value is set to true, Aspose.Words emulates the raster operations. The resulting output maybe partially rasterized and performance might be slower. When this value is set to false, Aspose.Words does not emulate the raster operations. When Aspose.Words encounters a raster operation in a metafile it fallbacks to rendering the metafile into a bitmap by using the operating system. This option is used only when metafile is rendered as vector graphics. The default value is true.  # noqa: E501
 
         :return: The emulate_raster_operations of this MetafileRenderingOptionsData.  # noqa: E501
         :rtype: bool
@@ -123,7 +123,7 @@ class MetafileRenderingOptionsData(object):
     def emulate_raster_operations(self, emulate_raster_operations):
         """Sets the emulate_raster_operations of this MetafileRenderingOptionsData.
 
-        Gets or sets a value indicating whether the raster operations should be emulated.  # noqa: E501
+        Gets or sets a value indicating whether the raster operations should be emulated. Specific raster operations could be used in metafiles. They can not be rendered directly to vector graphics. Emulating raster operations requires partial rasterization of the resulting vector graphics which may affect the metafile rendering performance. When this value is set to true, Aspose.Words emulates the raster operations. The resulting output maybe partially rasterized and performance might be slower. When this value is set to false, Aspose.Words does not emulate the raster operations. When Aspose.Words encounters a raster operation in a metafile it fallbacks to rendering the metafile into a bitmap by using the operating system. This option is used only when metafile is rendered as vector graphics. The default value is true.  # noqa: E501
 
         :param emulate_raster_operations: The emulate_raster_operations of this MetafileRenderingOptionsData.  # noqa: E501
         :type: bool

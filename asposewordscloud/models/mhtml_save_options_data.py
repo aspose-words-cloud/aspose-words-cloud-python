@@ -315,7 +315,7 @@ class MhtmlSaveOptionsData(object):
     def allow_embedding_post_script_fonts(self):
         """Gets the allow_embedding_post_script_fonts of this MhtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..  # noqa: E501
+        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false.. Note, Word does not embed PostScript fonts, but can open documents with embedded fonts of this type. This option only works when Aspose.Words.Fonts.FontInfoCollection.EmbedTrueTypeFonts of the Aspose.Words.DocumentBase.FontInfos property is set to true. The default value is false.  # noqa: E501
 
         :return: The allow_embedding_post_script_fonts of this MhtmlSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -326,7 +326,7 @@ class MhtmlSaveOptionsData(object):
     def allow_embedding_post_script_fonts(self, allow_embedding_post_script_fonts):
         """Sets the allow_embedding_post_script_fonts of this MhtmlSaveOptionsData.
 
-        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..  # noqa: E501
+        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false.. Note, Word does not embed PostScript fonts, but can open documents with embedded fonts of this type. This option only works when Aspose.Words.Fonts.FontInfoCollection.EmbedTrueTypeFonts of the Aspose.Words.DocumentBase.FontInfos property is set to true. The default value is false.  # noqa: E501
 
         :param allow_embedding_post_script_fonts: The allow_embedding_post_script_fonts of this MhtmlSaveOptionsData.  # noqa: E501
         :type: bool
@@ -359,7 +359,7 @@ class MhtmlSaveOptionsData(object):
     def dml3_d_effects_rendering_mode(self):
         """Gets the dml3_d_effects_rendering_mode of this MhtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
+        Gets or sets the value determining how 3D effects are rendered. The default value is Aspose.Words.Saving.Dml3DEffectsRenderingMode.Basic.  # noqa: E501
 
         :return: The dml3_d_effects_rendering_mode of this MhtmlSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -370,7 +370,7 @@ class MhtmlSaveOptionsData(object):
     def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
         """Sets the dml3_d_effects_rendering_mode of this MhtmlSaveOptionsData.
 
-        Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
+        Gets or sets the value determining how 3D effects are rendered. The default value is Aspose.Words.Saving.Dml3DEffectsRenderingMode.Basic.  # noqa: E501
 
         :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this MhtmlSaveOptionsData.  # noqa: E501
         :type: str
@@ -389,7 +389,7 @@ class MhtmlSaveOptionsData(object):
     def dml_effects_rendering_mode(self):
         """Gets the dml_effects_rendering_mode of this MhtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }. The default value is Simplified. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :return: The dml_effects_rendering_mode of this MhtmlSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -400,7 +400,7 @@ class MhtmlSaveOptionsData(object):
     def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
         """Sets the dml_effects_rendering_mode of this MhtmlSaveOptionsData.
 
-        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }. The default value is Simplified. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this MhtmlSaveOptionsData.  # noqa: E501
         :type: str
@@ -419,7 +419,7 @@ class MhtmlSaveOptionsData(object):
     def dml_rendering_mode(self):
         """Gets the dml_rendering_mode of this MhtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
+        Gets or sets the option that controls how DrawingML shapes are rendered. { Fallback | DrawingML }. The default value is Fallback. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :return: The dml_rendering_mode of this MhtmlSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -430,7 +430,7 @@ class MhtmlSaveOptionsData(object):
     def dml_rendering_mode(self, dml_rendering_mode):
         """Sets the dml_rendering_mode of this MhtmlSaveOptionsData.
 
-        Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
+        Gets or sets the option that controls how DrawingML shapes are rendered. { Fallback | DrawingML }. The default value is Fallback. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :param dml_rendering_mode: The dml_rendering_mode of this MhtmlSaveOptionsData.  # noqa: E501
         :type: str
@@ -471,7 +471,7 @@ class MhtmlSaveOptionsData(object):
     def iml_rendering_mode(self):
         """Gets the iml_rendering_mode of this MhtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
+        Gets or sets the value determining how ink (InkML) objects are rendered. The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.  # noqa: E501
 
         :return: The iml_rendering_mode of this MhtmlSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -482,7 +482,7 @@ class MhtmlSaveOptionsData(object):
     def iml_rendering_mode(self, iml_rendering_mode):
         """Sets the iml_rendering_mode of this MhtmlSaveOptionsData.
 
-        Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
+        Gets or sets the value determining how ink (InkML) objects are rendered. The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.  # noqa: E501
 
         :param iml_rendering_mode: The iml_rendering_mode of this MhtmlSaveOptionsData.  # noqa: E501
         :type: str
@@ -567,7 +567,7 @@ class MhtmlSaveOptionsData(object):
     def update_last_saved_time_property(self):
         """Gets the update_last_saved_time_property of this MhtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :return: The update_last_saved_time_property of this MhtmlSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -578,7 +578,7 @@ class MhtmlSaveOptionsData(object):
     def update_last_saved_time_property(self, update_last_saved_time_property):
         """Sets the update_last_saved_time_property of this MhtmlSaveOptionsData.
 
-        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :param update_last_saved_time_property: The update_last_saved_time_property of this MhtmlSaveOptionsData.  # noqa: E501
         :type: bool
@@ -589,7 +589,7 @@ class MhtmlSaveOptionsData(object):
     def zip_output(self):
         """Gets the zip_output of this MhtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to zip output or not. The default value is false. When set to true, output files will be zipped.  # noqa: E501
 
         :return: The zip_output of this MhtmlSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -600,7 +600,7 @@ class MhtmlSaveOptionsData(object):
     def zip_output(self, zip_output):
         """Sets the zip_output of this MhtmlSaveOptionsData.
 
-        Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to zip output or not. The default value is false. When set to true, output files will be zipped.  # noqa: E501
 
         :param zip_output: The zip_output of this MhtmlSaveOptionsData.  # noqa: E501
         :type: bool
@@ -803,7 +803,7 @@ class MhtmlSaveOptionsData(object):
     def export_drop_down_form_field_as_text(self):
         """Gets the export_drop_down_form_field_as_text of this MhtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets the flag, that controls how drop-down form fields are saved to HTML. The default value is false.  # noqa: E501
+        Gets or sets the flag, that controls how drop-down form fields are saved to HTML. The default value is false. When set to true, exports drop-down form fields as normal text. When false, exports drop-down form fields as SELECT element in HTML.  # noqa: E501
 
         :return: The export_drop_down_form_field_as_text of this MhtmlSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -814,7 +814,7 @@ class MhtmlSaveOptionsData(object):
     def export_drop_down_form_field_as_text(self, export_drop_down_form_field_as_text):
         """Sets the export_drop_down_form_field_as_text of this MhtmlSaveOptionsData.
 
-        Gets or sets the flag, that controls how drop-down form fields are saved to HTML. The default value is false.  # noqa: E501
+        Gets or sets the flag, that controls how drop-down form fields are saved to HTML. The default value is false. When set to true, exports drop-down form fields as normal text. When false, exports drop-down form fields as SELECT element in HTML.  # noqa: E501
 
         :param export_drop_down_form_field_as_text: The export_drop_down_form_field_as_text of this MhtmlSaveOptionsData.  # noqa: E501
         :type: bool
@@ -973,7 +973,7 @@ class MhtmlSaveOptionsData(object):
     def export_original_url_for_linked_images(self):
         """Gets the export_original_url_for_linked_images of this MhtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether the original URL should be used as the URL of the linked images. The default value is false.  # noqa: E501
+        Gets or sets a value indicating whether the original URL should be used as the URL of the linked images. The default value is false. If value is set to true - ResourceFolder value is used as the URL of linked images and linked images are not loaded into document's folder or ImagesFolder.If value is set to false - linked images are loaded into document's folder or ImagesFolder and URL of each linked image is constructed depending on document's folder, ImagesFolder and ImagesFolderAlias properties.  # noqa: E501
 
         :return: The export_original_url_for_linked_images of this MhtmlSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -984,7 +984,7 @@ class MhtmlSaveOptionsData(object):
     def export_original_url_for_linked_images(self, export_original_url_for_linked_images):
         """Sets the export_original_url_for_linked_images of this MhtmlSaveOptionsData.
 
-        Gets or sets a value indicating whether the original URL should be used as the URL of the linked images. The default value is false.  # noqa: E501
+        Gets or sets a value indicating whether the original URL should be used as the URL of the linked images. The default value is false. If value is set to true - ResourceFolder value is used as the URL of linked images and linked images are not loaded into document's folder or ImagesFolder.If value is set to false - linked images are loaded into document's folder or ImagesFolder and URL of each linked image is constructed depending on document's folder, ImagesFolder and ImagesFolderAlias properties.  # noqa: E501
 
         :param export_original_url_for_linked_images: The export_original_url_for_linked_images of this MhtmlSaveOptionsData.  # noqa: E501
         :type: bool
@@ -995,7 +995,7 @@ class MhtmlSaveOptionsData(object):
     def export_page_margins(self):
         """Gets the export_page_margins of this MhtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether page margins are exported to HTML, MHTML or EPUB. The default value is false.  # noqa: E501
+        Gets or sets a value indicating whether page margins are exported to HTML, MHTML or EPUB. The default value is false. Aspose.Words does not show area of page margins by default. If any elements are completely or partially clipped by the document edge the displayed area can be extended with this option.  # noqa: E501
 
         :return: The export_page_margins of this MhtmlSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -1006,7 +1006,7 @@ class MhtmlSaveOptionsData(object):
     def export_page_margins(self, export_page_margins):
         """Sets the export_page_margins of this MhtmlSaveOptionsData.
 
-        Gets or sets a value indicating whether page margins are exported to HTML, MHTML or EPUB. The default value is false.  # noqa: E501
+        Gets or sets a value indicating whether page margins are exported to HTML, MHTML or EPUB. The default value is false. Aspose.Words does not show area of page margins by default. If any elements are completely or partially clipped by the document edge the displayed area can be extended with this option.  # noqa: E501
 
         :param export_page_margins: The export_page_margins of this MhtmlSaveOptionsData.  # noqa: E501
         :type: bool
@@ -1061,7 +1061,7 @@ class MhtmlSaveOptionsData(object):
     def export_roundtrip_information(self):
         """Gets the export_roundtrip_information of this MhtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether to write the roundtrip information when saving to HTML. The default value is true.  # noqa: E501
+        Gets or sets a value indicating whether to write the roundtrip information when saving to HTML. The default value is true. Saving of the roundtrip information allows to restore document properties such as tab stops, comments, headers and footers during the HTML documents loading back into a Document object.When true, the roundtrip information is exported as -aw-* CSS properties of the corresponding HTML elements.When false, causes no roundtrip information to be output into produced files.  # noqa: E501
 
         :return: The export_roundtrip_information of this MhtmlSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -1072,7 +1072,7 @@ class MhtmlSaveOptionsData(object):
     def export_roundtrip_information(self, export_roundtrip_information):
         """Sets the export_roundtrip_information of this MhtmlSaveOptionsData.
 
-        Gets or sets a value indicating whether to write the roundtrip information when saving to HTML. The default value is true.  # noqa: E501
+        Gets or sets a value indicating whether to write the roundtrip information when saving to HTML. The default value is true. Saving of the roundtrip information allows to restore document properties such as tab stops, comments, headers and footers during the HTML documents loading back into a Document object.When true, the roundtrip information is exported as -aw-* CSS properties of the corresponding HTML elements.When false, causes no roundtrip information to be output into produced files.  # noqa: E501
 
         :param export_roundtrip_information: The export_roundtrip_information of this MhtmlSaveOptionsData.  # noqa: E501
         :type: bool
@@ -1511,7 +1511,7 @@ class MhtmlSaveOptionsData(object):
     def export_cid_urls_for_mhtml_resources(self):
         """Gets the export_cid_urls_for_mhtml_resources of this MhtmlSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether to use CID (Content-ID) URLs to reference resources (images, fonts, CSS) included in MHTML documents. The default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to use CID (Content-ID) URLs to reference resources (images, fonts, CSS) included in MHTML documents. The default value is false. By default, resources in MHTML documents are referenced by file name (for example, "image.png"), which are matched against "Content-Location" headers of MIME parts. This option enables an alternative method, where references to resource files are written as CID (Content-ID) URLs (for example, "cid:image.png") and are matched against "Content-ID" headers. In theory, there should be no difference between the two referencing methods and either of them should work fine in any browser or mail agent. In practice, however, some agents fail to fetch resources by file name. If your browser or mail agent refuses to load resources included in an MTHML document (doesn't show images or doesn't load CSS styles), try exporting the document with CID URLs.  # noqa: E501
 
         :return: The export_cid_urls_for_mhtml_resources of this MhtmlSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -1522,7 +1522,7 @@ class MhtmlSaveOptionsData(object):
     def export_cid_urls_for_mhtml_resources(self, export_cid_urls_for_mhtml_resources):
         """Sets the export_cid_urls_for_mhtml_resources of this MhtmlSaveOptionsData.
 
-        Gets or sets a value indicating whether to use CID (Content-ID) URLs to reference resources (images, fonts, CSS) included in MHTML documents. The default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to use CID (Content-ID) URLs to reference resources (images, fonts, CSS) included in MHTML documents. The default value is false. By default, resources in MHTML documents are referenced by file name (for example, "image.png"), which are matched against "Content-Location" headers of MIME parts. This option enables an alternative method, where references to resource files are written as CID (Content-ID) URLs (for example, "cid:image.png") and are matched against "Content-ID" headers. In theory, there should be no difference between the two referencing methods and either of them should work fine in any browser or mail agent. In practice, however, some agents fail to fetch resources by file name. If your browser or mail agent refuses to load resources included in an MTHML document (doesn't show images or doesn't load CSS styles), try exporting the document with CID URLs.  # noqa: E501
 
         :param export_cid_urls_for_mhtml_resources: The export_cid_urls_for_mhtml_resources of this MhtmlSaveOptionsData.  # noqa: E501
         :type: bool
