@@ -175,7 +175,7 @@ class XpsSaveOptionsData(object):
     def allow_embedding_post_script_fonts(self):
         """Gets the allow_embedding_post_script_fonts of this XpsSaveOptionsData.  # noqa: E501
 
-        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..  # noqa: E501
+        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false.. Note, Word does not embed PostScript fonts, but can open documents with embedded fonts of this type. This option only works when Aspose.Words.Fonts.FontInfoCollection.EmbedTrueTypeFonts of the Aspose.Words.DocumentBase.FontInfos property is set to true. The default value is false.  # noqa: E501
 
         :return: The allow_embedding_post_script_fonts of this XpsSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -186,7 +186,7 @@ class XpsSaveOptionsData(object):
     def allow_embedding_post_script_fonts(self, allow_embedding_post_script_fonts):
         """Sets the allow_embedding_post_script_fonts of this XpsSaveOptionsData.
 
-        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false..  # noqa: E501
+        Gets or sets a boolean value indicating whether to allow embedding fonts with PostScript outlines when embedding TrueType fonts in a document upon it is saved. The default value is false.. Note, Word does not embed PostScript fonts, but can open documents with embedded fonts of this type. This option only works when Aspose.Words.Fonts.FontInfoCollection.EmbedTrueTypeFonts of the Aspose.Words.DocumentBase.FontInfos property is set to true. The default value is false.  # noqa: E501
 
         :param allow_embedding_post_script_fonts: The allow_embedding_post_script_fonts of this XpsSaveOptionsData.  # noqa: E501
         :type: bool
@@ -219,7 +219,7 @@ class XpsSaveOptionsData(object):
     def dml3_d_effects_rendering_mode(self):
         """Gets the dml3_d_effects_rendering_mode of this XpsSaveOptionsData.  # noqa: E501
 
-        Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
+        Gets or sets the value determining how 3D effects are rendered. The default value is Aspose.Words.Saving.Dml3DEffectsRenderingMode.Basic.  # noqa: E501
 
         :return: The dml3_d_effects_rendering_mode of this XpsSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -230,7 +230,7 @@ class XpsSaveOptionsData(object):
     def dml3_d_effects_rendering_mode(self, dml3_d_effects_rendering_mode):
         """Sets the dml3_d_effects_rendering_mode of this XpsSaveOptionsData.
 
-        Gets or sets the value determining how 3D effects are rendered.  # noqa: E501
+        Gets or sets the value determining how 3D effects are rendered. The default value is Aspose.Words.Saving.Dml3DEffectsRenderingMode.Basic.  # noqa: E501
 
         :param dml3_d_effects_rendering_mode: The dml3_d_effects_rendering_mode of this XpsSaveOptionsData.  # noqa: E501
         :type: str
@@ -249,7 +249,7 @@ class XpsSaveOptionsData(object):
     def dml_effects_rendering_mode(self):
         """Gets the dml_effects_rendering_mode of this XpsSaveOptionsData.  # noqa: E501
 
-        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }. The default value is Simplified. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :return: The dml_effects_rendering_mode of this XpsSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -260,7 +260,7 @@ class XpsSaveOptionsData(object):
     def dml_effects_rendering_mode(self, dml_effects_rendering_mode):
         """Sets the dml_effects_rendering_mode of this XpsSaveOptionsData.
 
-        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }.  # noqa: E501
+        Gets or sets the value determining how DrawingML effects are rendered. { Simplified | None | Fine }. The default value is Simplified. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :param dml_effects_rendering_mode: The dml_effects_rendering_mode of this XpsSaveOptionsData.  # noqa: E501
         :type: str
@@ -279,7 +279,7 @@ class XpsSaveOptionsData(object):
     def dml_rendering_mode(self):
         """Gets the dml_rendering_mode of this XpsSaveOptionsData.  # noqa: E501
 
-        Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
+        Gets or sets the option that controls how DrawingML shapes are rendered. { Fallback | DrawingML }. The default value is Fallback. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :return: The dml_rendering_mode of this XpsSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -290,7 +290,7 @@ class XpsSaveOptionsData(object):
     def dml_rendering_mode(self, dml_rendering_mode):
         """Sets the dml_rendering_mode of this XpsSaveOptionsData.
 
-        Gets or sets the option that controls how DrawingML shapes are rendered.  # noqa: E501
+        Gets or sets the option that controls how DrawingML shapes are rendered. { Fallback | DrawingML }. The default value is Fallback. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :param dml_rendering_mode: The dml_rendering_mode of this XpsSaveOptionsData.  # noqa: E501
         :type: str
@@ -331,7 +331,7 @@ class XpsSaveOptionsData(object):
     def iml_rendering_mode(self):
         """Gets the iml_rendering_mode of this XpsSaveOptionsData.  # noqa: E501
 
-        Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
+        Gets or sets the value determining how ink (InkML) objects are rendered. The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.  # noqa: E501
 
         :return: The iml_rendering_mode of this XpsSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -342,7 +342,7 @@ class XpsSaveOptionsData(object):
     def iml_rendering_mode(self, iml_rendering_mode):
         """Sets the iml_rendering_mode of this XpsSaveOptionsData.
 
-        Gets or sets the value determining how ink (InkML) objects are rendered.  # noqa: E501
+        Gets or sets the value determining how ink (InkML) objects are rendered. The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.  # noqa: E501
 
         :param iml_rendering_mode: The iml_rendering_mode of this XpsSaveOptionsData.  # noqa: E501
         :type: str
@@ -427,7 +427,7 @@ class XpsSaveOptionsData(object):
     def update_last_saved_time_property(self):
         """Gets the update_last_saved_time_property of this XpsSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :return: The update_last_saved_time_property of this XpsSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -438,7 +438,7 @@ class XpsSaveOptionsData(object):
     def update_last_saved_time_property(self, update_last_saved_time_property):
         """Sets the update_last_saved_time_property of this XpsSaveOptionsData.
 
-        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.  # noqa: E501
+        Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving. The default value is false.  # noqa: E501
 
         :param update_last_saved_time_property: The update_last_saved_time_property of this XpsSaveOptionsData.  # noqa: E501
         :type: bool
@@ -449,7 +449,7 @@ class XpsSaveOptionsData(object):
     def zip_output(self):
         """Gets the zip_output of this XpsSaveOptionsData.  # noqa: E501
 
-        Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to zip output or not. The default value is false. When set to true, output files will be zipped.  # noqa: E501
 
         :return: The zip_output of this XpsSaveOptionsData.  # noqa: E501
         :rtype: bool
@@ -460,7 +460,7 @@ class XpsSaveOptionsData(object):
     def zip_output(self, zip_output):
         """Sets the zip_output of this XpsSaveOptionsData.
 
-        Gets or sets a value indicating whether to zip output or not. The default value is false.  # noqa: E501
+        Gets or sets a value indicating whether to zip output or not. The default value is false. When set to true, output files will be zipped.  # noqa: E501
 
         :param zip_output: The zip_output of this XpsSaveOptionsData.  # noqa: E501
         :type: bool
@@ -471,7 +471,7 @@ class XpsSaveOptionsData(object):
     def color_mode(self):
         """Gets the color_mode of this XpsSaveOptionsData.  # noqa: E501
 
-        Gets or sets the value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
+        Gets or sets the value determining how colors are rendered. { Normal | Grayscale}. The default value is Normal. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :return: The color_mode of this XpsSaveOptionsData.  # noqa: E501
         :rtype: str
@@ -482,7 +482,7 @@ class XpsSaveOptionsData(object):
     def color_mode(self, color_mode):
         """Sets the color_mode of this XpsSaveOptionsData.
 
-        Gets or sets the value determining how colors are rendered. { Normal | Grayscale}.  # noqa: E501
+        Gets or sets the value determining how colors are rendered. { Normal | Grayscale}. The default value is Normal. This property is used when the document is exported to fixed page formats.  # noqa: E501
 
         :param color_mode: The color_mode of this XpsSaveOptionsData.  # noqa: E501
         :type: str

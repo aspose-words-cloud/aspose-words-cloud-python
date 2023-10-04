@@ -154,7 +154,7 @@ class TableProperties(object):
     def alignment(self):
         """Gets the alignment of this TableProperties.  # noqa: E501
 
-        Gets or sets the option that controls how an inline table is aligned in the document.  # noqa: E501
+        Gets or sets the option that controls how an inline table is aligned in the document. The default value is Left.  # noqa: E501
 
         :return: The alignment of this TableProperties.  # noqa: E501
         :rtype: str
@@ -165,7 +165,7 @@ class TableProperties(object):
     def alignment(self, alignment):
         """Sets the alignment of this TableProperties.
 
-        Gets or sets the option that controls how an inline table is aligned in the document.  # noqa: E501
+        Gets or sets the option that controls how an inline table is aligned in the document. The default value is Left.  # noqa: E501
 
         :param alignment: The alignment of this TableProperties.  # noqa: E501
         :type: str
@@ -184,7 +184,7 @@ class TableProperties(object):
     def allow_auto_fit(self):
         """Gets the allow_auto_fit of this TableProperties.  # noqa: E501
 
-        Gets or sets a value indicating whether to automatically resize cells in a table to fit their contents.  # noqa: E501
+        Gets or sets a value indicating whether to automatically resize cells in a table to fit their contents. The default value is true.  # noqa: E501
 
         :return: The allow_auto_fit of this TableProperties.  # noqa: E501
         :rtype: bool
@@ -195,7 +195,7 @@ class TableProperties(object):
     def allow_auto_fit(self, allow_auto_fit):
         """Sets the allow_auto_fit of this TableProperties.
 
-        Gets or sets a value indicating whether to automatically resize cells in a table to fit their contents.  # noqa: E501
+        Gets or sets a value indicating whether to automatically resize cells in a table to fit their contents. The default value is true.  # noqa: E501
 
         :param allow_auto_fit: The allow_auto_fit of this TableProperties.  # noqa: E501
         :type: bool
@@ -206,7 +206,7 @@ class TableProperties(object):
     def bidi(self):
         """Gets the bidi of this TableProperties.  # noqa: E501
 
-        Gets or sets a value indicating whether this is a right-to-left table.  # noqa: E501
+        Gets or sets a value indicating whether this is a right-to-left table. When true, the cells in this row are laid out right to left.The default value is false.  # noqa: E501
 
         :return: The bidi of this TableProperties.  # noqa: E501
         :rtype: bool
@@ -217,7 +217,7 @@ class TableProperties(object):
     def bidi(self, bidi):
         """Sets the bidi of this TableProperties.
 
-        Gets or sets a value indicating whether this is a right-to-left table.  # noqa: E501
+        Gets or sets a value indicating whether this is a right-to-left table. When true, the cells in this row are laid out right to left.The default value is false.  # noqa: E501
 
         :param bidi: The bidi of this TableProperties.  # noqa: E501
         :type: bool

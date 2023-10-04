@@ -42,54 +42,32 @@ class ListFormatUpdate(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'list_id': 'int',
-        'list_level_number': 'int'
+        'list_level_number': 'int',
+        'list_id': 'int'
     }
 
     attribute_map = {
-        'list_id': 'ListId',
-        'list_level_number': 'ListLevelNumber'
+        'list_level_number': 'ListLevelNumber',
+        'list_id': 'ListId'
     }
 
-    def __init__(self, list_id=None, list_level_number=None):  # noqa: E501
+    def __init__(self, list_level_number=None, list_id=None):  # noqa: E501
         """ListFormatUpdate - a model defined in Swagger"""  # noqa: E501
 
-        self._list_id = None
         self._list_level_number = None
+        self._list_id = None
         self.discriminator = None
 
-        if list_id is not None:
-            self.list_id = list_id
         if list_level_number is not None:
             self.list_level_number = list_level_number
-
-    @property
-    def list_id(self):
-        """Gets the list_id of this ListFormatUpdate.  # noqa: E501
-
-        Gets or sets the list id of this paragraph.  # noqa: E501
-
-        :return: The list_id of this ListFormatUpdate.  # noqa: E501
-        :rtype: int
-        """
-        return self._list_id
-
-    @list_id.setter
-    def list_id(self, list_id):
-        """Sets the list_id of this ListFormatUpdate.
-
-        Gets or sets the list id of this paragraph.  # noqa: E501
-
-        :param list_id: The list_id of this ListFormatUpdate.  # noqa: E501
-        :type: int
-        """
-        self._list_id = list_id
+        if list_id is not None:
+            self.list_id = list_id
 
     @property
     def list_level_number(self):
         """Gets the list_level_number of this ListFormatUpdate.  # noqa: E501
 
-        Gets or sets the list level number (0 to 8) for the paragraph.  # noqa: E501
+        Gets or sets the list level number (0 to 8) for the paragraph. In Word documents, lists may consist of 1 or 9 levels, numbered 0 to 8. Has effect only when the Aspose.Words.ListFormat.List property is set to reference a valid list. Aspose.Words.ListFormat.List.  # noqa: E501
 
         :return: The list_level_number of this ListFormatUpdate.  # noqa: E501
         :rtype: int
@@ -100,12 +78,34 @@ class ListFormatUpdate(object):
     def list_level_number(self, list_level_number):
         """Sets the list_level_number of this ListFormatUpdate.
 
-        Gets or sets the list level number (0 to 8) for the paragraph.  # noqa: E501
+        Gets or sets the list level number (0 to 8) for the paragraph. In Word documents, lists may consist of 1 or 9 levels, numbered 0 to 8. Has effect only when the Aspose.Words.ListFormat.List property is set to reference a valid list. Aspose.Words.ListFormat.List.  # noqa: E501
 
         :param list_level_number: The list_level_number of this ListFormatUpdate.  # noqa: E501
         :type: int
         """
         self._list_level_number = list_level_number
+
+    @property
+    def list_id(self):
+        """Gets the list_id of this ListFormatUpdate.  # noqa: E501
+
+        Gets or sets the list id of this paragraph. The list that is being assigned to this property must belong to the current document. The list that is being assigned to this property must not be a list style definition.  # noqa: E501
+
+        :return: The list_id of this ListFormatUpdate.  # noqa: E501
+        :rtype: int
+        """
+        return self._list_id
+
+    @list_id.setter
+    def list_id(self, list_id):
+        """Sets the list_id of this ListFormatUpdate.
+
+        Gets or sets the list id of this paragraph. The list that is being assigned to this property must belong to the current document. The list that is being assigned to this property must not be a list style definition.  # noqa: E501
+
+        :param list_id: The list_id of this ListFormatUpdate.  # noqa: E501
+        :type: int
+        """
+        self._list_id = list_id
 
 
     def extract_files_content(self, filesContentResult):

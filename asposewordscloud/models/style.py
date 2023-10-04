@@ -139,7 +139,7 @@ class Style(object):
     def font(self):
         """Gets the font of this Style.  # noqa: E501
 
-        Gets or sets the character formatting of the style.  # noqa: E501
+        Gets or sets the character formatting of the style. For list styles this property returns null.  # noqa: E501
 
         :return: The font of this Style.  # noqa: E501
         :rtype: Font
@@ -150,7 +150,7 @@ class Style(object):
     def font(self, font):
         """Sets the font of this Style.
 
-        Gets or sets the character formatting of the style.  # noqa: E501
+        Gets or sets the character formatting of the style. For list styles this property returns null.  # noqa: E501
 
         :param font: The font of this Style.  # noqa: E501
         :type: Font
@@ -183,7 +183,7 @@ class Style(object):
     def next_paragraph_style_name(self):
         """Gets the next_paragraph_style_name of this Style.  # noqa: E501
 
-        Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.  # noqa: E501
+        Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style. This property is not used by Aspose.Words. The next paragraph style will only be applied automatically when you edit the document in MS Word.  # noqa: E501
 
         :return: The next_paragraph_style_name of this Style.  # noqa: E501
         :rtype: str
@@ -194,7 +194,7 @@ class Style(object):
     def next_paragraph_style_name(self, next_paragraph_style_name):
         """Sets the next_paragraph_style_name of this Style.
 
-        Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style.  # noqa: E501
+        Gets or sets the name of the style to be applied automatically to a new paragraph inserted after a paragraph formatted with the specified style. This property is not used by Aspose.Words. The next paragraph style will only be applied automatically when you edit the document in MS Word.  # noqa: E501
 
         :param next_paragraph_style_name: The next_paragraph_style_name of this Style.  # noqa: E501
         :type: str
@@ -205,7 +205,7 @@ class Style(object):
     def base_style_name(self):
         """Gets the base_style_name of this Style.  # noqa: E501
 
-        Gets or sets the name of the style this style is based on.  # noqa: E501
+        Gets or sets the name of the style this style is based on. This will be an empty string if the style is not based on any other style and it can be set to an empty string.  # noqa: E501
 
         :return: The base_style_name of this Style.  # noqa: E501
         :rtype: str
@@ -216,7 +216,7 @@ class Style(object):
     def base_style_name(self, base_style_name):
         """Sets the base_style_name of this Style.
 
-        Gets or sets the name of the style this style is based on.  # noqa: E501
+        Gets or sets the name of the style this style is based on. This will be an empty string if the style is not based on any other style and it can be set to an empty string.  # noqa: E501
 
         :param base_style_name: The base_style_name of this Style.  # noqa: E501
         :type: str
@@ -345,7 +345,7 @@ class Style(object):
     def style_identifier(self):
         """Gets the style_identifier of this Style.  # noqa: E501
 
-        Gets or sets the locale independent style identifier for a built-in style.  # noqa: E501
+        Gets or sets the locale independent style identifier for a built-in style. For user defined (custom) styles, this property returns Aspose.Words.StyleIdentifier.User. Aspose.Words.Style.Name.  # noqa: E501
 
         :return: The style_identifier of this Style.  # noqa: E501
         :rtype: str
@@ -356,7 +356,7 @@ class Style(object):
     def style_identifier(self, style_identifier):
         """Sets the style_identifier of this Style.
 
-        Gets or sets the locale independent style identifier for a built-in style.  # noqa: E501
+        Gets or sets the locale independent style identifier for a built-in style. For user defined (custom) styles, this property returns Aspose.Words.StyleIdentifier.User. Aspose.Words.Style.Name.  # noqa: E501
 
         :param style_identifier: The style_identifier of this Style.  # noqa: E501
         :type: str
@@ -375,7 +375,7 @@ class Style(object):
     def name(self):
         """Gets the name of this Style.  # noqa: E501
 
-        Gets or sets the name of the style.  # noqa: E501
+        Gets or sets the name of the style. Can not be empty string. If there already is a style with such name in the collection, then this style will override it. All affected nodes will reference new style.  # noqa: E501
 
         :return: The name of this Style.  # noqa: E501
         :rtype: str
@@ -386,7 +386,7 @@ class Style(object):
     def name(self, name):
         """Sets the name of this Style.
 
-        Gets or sets the name of the style.  # noqa: E501
+        Gets or sets the name of the style. Can not be empty string. If there already is a style with such name in the collection, then this style will override it. All affected nodes will reference new style.  # noqa: E501
 
         :param name: The name of this Style.  # noqa: E501
         :type: str

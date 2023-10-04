@@ -42,36 +42,58 @@ class FootnoteInsert(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'footnote_type': 'str',
         'position': 'NewDocumentPosition',
+        'footnote_type': 'str',
         'reference_mark': 'str',
         'text': 'str'
     }
 
     attribute_map = {
-        'footnote_type': 'FootnoteType',
         'position': 'Position',
+        'footnote_type': 'FootnoteType',
         'reference_mark': 'ReferenceMark',
         'text': 'Text'
     }
 
-    def __init__(self, footnote_type=None, position=None, reference_mark=None, text=None):  # noqa: E501
+    def __init__(self, position=None, footnote_type=None, reference_mark=None, text=None):  # noqa: E501
         """FootnoteInsert - a model defined in Swagger"""  # noqa: E501
 
-        self._footnote_type = None
         self._position = None
+        self._footnote_type = None
         self._reference_mark = None
         self._text = None
         self.discriminator = None
 
-        if footnote_type is not None:
-            self.footnote_type = footnote_type
         if position is not None:
             self.position = position
+        if footnote_type is not None:
+            self.footnote_type = footnote_type
         if reference_mark is not None:
             self.reference_mark = reference_mark
         if text is not None:
             self.text = text
+
+    @property
+    def position(self):
+        """Gets the position of this FootnoteInsert.  # noqa: E501
+
+        Gets or sets the link to comment range start node.  # noqa: E501
+
+        :return: The position of this FootnoteInsert.  # noqa: E501
+        :rtype: NewDocumentPosition
+        """
+        return self._position
+
+    @position.setter
+    def position(self, position):
+        """Sets the position of this FootnoteInsert.
+
+        Gets or sets the link to comment range start node.  # noqa: E501
+
+        :param position: The position of this FootnoteInsert.  # noqa: E501
+        :type: NewDocumentPosition
+        """
+        self._position = position
 
     @property
     def footnote_type(self):
@@ -104,32 +126,10 @@ class FootnoteInsert(object):
             self._footnote_type = allowed_values[int(footnote_type) if six.PY3 else long(footnote_type)]
 
     @property
-    def position(self):
-        """Gets the position of this FootnoteInsert.  # noqa: E501
-
-        Gets or sets the link to comment range start node.  # noqa: E501
-
-        :return: The position of this FootnoteInsert.  # noqa: E501
-        :rtype: NewDocumentPosition
-        """
-        return self._position
-
-    @position.setter
-    def position(self, position):
-        """Sets the position of this FootnoteInsert.
-
-        Gets or sets the link to comment range start node.  # noqa: E501
-
-        :param position: The position of this FootnoteInsert.  # noqa: E501
-        :type: NewDocumentPosition
-        """
-        self._position = position
-
-    @property
     def reference_mark(self):
         """Gets the reference_mark of this FootnoteInsert.  # noqa: E501
 
-        Gets or sets the custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.  # noqa: E501
+        Gets or sets the custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used. RTF-format can only store 1 symbol as custom reference mark, so upon export only the first symbol will be written others will be discard.  # noqa: E501
 
         :return: The reference_mark of this FootnoteInsert.  # noqa: E501
         :rtype: str
@@ -140,7 +140,7 @@ class FootnoteInsert(object):
     def reference_mark(self, reference_mark):
         """Sets the reference_mark of this FootnoteInsert.
 
-        Gets or sets the custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.  # noqa: E501
+        Gets or sets the custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used. RTF-format can only store 1 symbol as custom reference mark, so upon export only the first symbol will be written others will be discard.  # noqa: E501
 
         :param reference_mark: The reference_mark of this FootnoteInsert.  # noqa: E501
         :type: str
@@ -151,7 +151,7 @@ class FootnoteInsert(object):
     def text(self):
         """Gets the text of this FootnoteInsert.  # noqa: E501
 
-        Gets or sets text of the footnote.  # noqa: E501
+        Gets or sets text of the footnote. This method allows to quickly set text of a footnote from a string. The string can contain paragraph breaks, this will create paragraphs of text in the footnote accordingly.  # noqa: E501
 
         :return: The text of this FootnoteInsert.  # noqa: E501
         :rtype: str
@@ -162,7 +162,7 @@ class FootnoteInsert(object):
     def text(self, text):
         """Sets the text of this FootnoteInsert.
 
-        Gets or sets text of the footnote.  # noqa: E501
+        Gets or sets text of the footnote. This method allows to quickly set text of a footnote from a string. The string can contain paragraph breaks, this will create paragraphs of text in the footnote accordingly.  # noqa: E501
 
         :param text: The text of this FootnoteInsert.  # noqa: E501
         :type: str

@@ -31,7 +31,7 @@ import six
 import json
 
 class FootnotesResponse(object):
-    """The REST response with a collection of footnotes.
+    """The REST response with a collection of footnotes. This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/footnotes" REST API requests.
     """
 
     """

@@ -188,7 +188,7 @@ class Footnote(object):
     def reference_mark(self):
         """Gets the reference_mark of this Footnote.  # noqa: E501
 
-        Gets or sets the custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.  # noqa: E501
+        Gets or sets the custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used. RTF-format can only store 1 symbol as custom reference mark, so upon export only the first symbol will be written others will be discard.  # noqa: E501
 
         :return: The reference_mark of this Footnote.  # noqa: E501
         :rtype: str
@@ -199,7 +199,7 @@ class Footnote(object):
     def reference_mark(self, reference_mark):
         """Sets the reference_mark of this Footnote.
 
-        Gets or sets the custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used.  # noqa: E501
+        Gets or sets the custom reference mark to be used for this footnote. Default value is Empty, meaning auto-numbered footnotes are used. RTF-format can only store 1 symbol as custom reference mark, so upon export only the first symbol will be written others will be discard.  # noqa: E501
 
         :param reference_mark: The reference_mark of this Footnote.  # noqa: E501
         :type: str
@@ -210,7 +210,7 @@ class Footnote(object):
     def text(self):
         """Gets the text of this Footnote.  # noqa: E501
 
-        Gets or sets text of the footnote.  # noqa: E501
+        Gets or sets text of the footnote. This method allows to quickly set text of a footnote from a string. The string can contain paragraph breaks, this will create paragraphs of text in the footnote accordingly.  # noqa: E501
 
         :return: The text of this Footnote.  # noqa: E501
         :rtype: str
@@ -221,7 +221,7 @@ class Footnote(object):
     def text(self, text):
         """Sets the text of this Footnote.
 
-        Gets or sets text of the footnote.  # noqa: E501
+        Gets or sets text of the footnote. This method allows to quickly set text of a footnote from a string. The string can contain paragraph breaks, this will create paragraphs of text in the footnote accordingly.  # noqa: E501
 
         :param text: The text of this Footnote.  # noqa: E501
         :type: str

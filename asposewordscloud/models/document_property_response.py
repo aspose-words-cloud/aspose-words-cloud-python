@@ -31,7 +31,7 @@ import six
 import json
 
 class DocumentPropertyResponse(object):
-    """The REST response with a document property.
+    """The REST response with a document property. This response should be returned by the service when handling: GET documentProperties/{propertyName}.
     """
 
     """

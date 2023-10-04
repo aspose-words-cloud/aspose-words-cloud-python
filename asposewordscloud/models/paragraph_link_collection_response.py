@@ -31,7 +31,7 @@ import six
 import json
 
 class ParagraphLinkCollectionResponse(object):
-    """The REST response with a collection of paragraphs.
+    """The REST response with a collection of paragraphs. This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/paragraphs" REST API requests.
     """
 
     """

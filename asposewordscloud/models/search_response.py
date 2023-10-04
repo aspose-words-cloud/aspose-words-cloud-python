@@ -31,7 +31,7 @@ import six
 import json
 
 class SearchResponse(object):
-    """The REST response with a regular expression pattern and a collection of search results.
+    """The REST response with a regular expression pattern and a collection of search results. This response is returned by the Service when handling "GET https://api.aspose.cloud/v4.0/words/Test.doc/search" REST API requests.
     """
 
     """
